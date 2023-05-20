@@ -1,4 +1,4 @@
-module github.com/awslabs/goformation/v7
+module github.com/drmmarsunited/goformation/v7
 
 require (
 	github.com/onsi/ginkgo/v2 v2.9.5
