@@ -17,6 +17,8 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 			return []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
 		case "AWS::NoValue":
 			return nil
+		case "AWS::Partition":
+			return "aws"
 		case "AWS::Region":
 			return "us-east-1"
 		case "AWS::StackId":
