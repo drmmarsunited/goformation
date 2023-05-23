@@ -3,7 +3,7 @@
 package lex
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // BotAlias_S3BucketLogDestination AWS CloudFormation Resource (AWS::Lex::BotAlias.S3BucketLogDestination)

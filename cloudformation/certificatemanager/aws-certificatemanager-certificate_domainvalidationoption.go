@@ -3,7 +3,7 @@
 package certificatemanager
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Certificate_DomainValidationOption AWS CloudFormation Resource (AWS::CertificateManager::Certificate.DomainValidationOption)

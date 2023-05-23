@@ -3,7 +3,7 @@
 package medialive
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Input_InputDeviceSettings AWS CloudFormation Resource (AWS::MediaLive::Input.InputDeviceSettings)

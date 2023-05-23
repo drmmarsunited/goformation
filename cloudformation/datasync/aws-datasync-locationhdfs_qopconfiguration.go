@@ -3,7 +3,7 @@
 package datasync
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // LocationHDFS_QopConfiguration AWS CloudFormation Resource (AWS::DataSync::LocationHDFS.QopConfiguration)

@@ -3,7 +3,7 @@
 package cloudfront
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // PublicKey_PublicKeyConfig AWS CloudFormation Resource (AWS::CloudFront::PublicKey.PublicKeyConfig)

@@ -3,7 +3,7 @@
 package quicksight
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Analysis_FieldSort AWS CloudFormation Resource (AWS::QuickSight::Analysis.FieldSort)

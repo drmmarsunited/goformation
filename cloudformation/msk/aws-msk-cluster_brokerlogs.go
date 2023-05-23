@@ -3,7 +3,7 @@
 package msk
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Cluster_BrokerLogs AWS CloudFormation Resource (AWS::MSK::Cluster.BrokerLogs)

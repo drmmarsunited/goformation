@@ -3,7 +3,7 @@
 package appsync
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // FunctionConfiguration_AppSyncRuntime AWS CloudFormation Resource (AWS::AppSync::FunctionConfiguration.AppSyncRuntime)

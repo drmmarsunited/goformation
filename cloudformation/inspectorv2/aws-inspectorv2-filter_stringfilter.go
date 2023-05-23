@@ -3,7 +3,7 @@
 package inspectorv2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Filter_StringFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.StringFilter)

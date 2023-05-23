@@ -3,7 +3,7 @@
 package medialive
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Channel_EncoderSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EncoderSettings)

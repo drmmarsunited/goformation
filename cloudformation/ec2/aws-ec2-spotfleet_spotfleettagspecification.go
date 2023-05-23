@@ -3,8 +3,8 @@
 package ec2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
-	"github.com/awslabs/goformation/v7/cloudformation/tags"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // SpotFleet_SpotFleetTagSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotFleetTagSpecification)

@@ -100,7 +100,7 @@ func ProcessJSON(input []byte, options *ProcessorOptions) ([]byte, error) {
 			evaluateConditions(unmarshalled, options)
 		}
 
-		// Process all of the intrinsic functions
+		// Process all the intrinsic functions
 		processed = search(unmarshalled, unmarshalled, options)
 
 	}
@@ -169,7 +169,7 @@ func search(input interface{}, template interface{}, options *ProcessorOptions) 
 
 		// We've found an object in the JSON, it might be an intrinsic, it might not.
 		// To check, we need to see if it contains a specific key that matches the name
-		// of an intrinsic function. As golang maps do not guarentee ordering, we need
+		// of an intrinsic function. As golang maps do not guarantee ordering, we need
 		// to check every key, not just the first.
 		processed := map[string]interface{}{}
 		for key, val := range value {
@@ -253,7 +253,7 @@ func search(input interface{}, template interface{}, options *ProcessorOptions) 
 // If not, it returns nil, false.
 func handler(name string, options *ProcessorOptions) (IntrinsicHandler, bool) {
 
-	// Check if we have a handler for this intrinsic type in the instrinsic handler
+	// Check if we have a handler for this intrinsic type in the intrinsic handler
 	// overrides in the options provided to Process()
 	if options != nil {
 		if h, ok := options.IntrinsicHandlerOverrides[name]; ok {

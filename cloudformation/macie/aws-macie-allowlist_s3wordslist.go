@@ -3,7 +3,7 @@
 package macie
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // AllowList_S3WordsList AWS CloudFormation Resource (AWS::Macie::AllowList.S3WordsList)

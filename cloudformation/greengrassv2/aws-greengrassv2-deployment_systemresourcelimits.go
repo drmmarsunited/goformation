@@ -3,7 +3,7 @@
 package greengrassv2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Deployment_SystemResourceLimits AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.SystemResourceLimits)

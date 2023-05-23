@@ -3,7 +3,7 @@
 package elasticache
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ReplicationGroup_LogDeliveryConfigurationRequest AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.LogDeliveryConfigurationRequest)

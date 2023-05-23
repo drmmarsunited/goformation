@@ -3,7 +3,7 @@
 package glue
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Partition_SkewedInfo AWS CloudFormation Resource (AWS::Glue::Partition.SkewedInfo)

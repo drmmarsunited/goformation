@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"encoding/json"
 
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
-	"github.com/awslabs/goformation/v7/cloudformation/tags"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // NetworkAcl AWS CloudFormation Resource (AWS::EC2::NetworkAcl)

@@ -3,7 +3,7 @@
 package rds
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DBCluster_ReadEndpoint AWS CloudFormation Resource (AWS::RDS::DBCluster.ReadEndpoint)

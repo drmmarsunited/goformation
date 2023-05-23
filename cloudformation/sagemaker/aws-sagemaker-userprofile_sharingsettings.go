@@ -3,7 +3,7 @@
 package sagemaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // UserProfile_SharingSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.SharingSettings)

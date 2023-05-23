@@ -3,7 +3,7 @@
 package resourcegroups
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Group_Query AWS CloudFormation Resource (AWS::ResourceGroups::Group.Query)

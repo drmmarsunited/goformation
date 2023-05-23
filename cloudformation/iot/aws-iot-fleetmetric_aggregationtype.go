@@ -3,7 +3,7 @@
 package iot
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // FleetMetric_AggregationType AWS CloudFormation Resource (AWS::IoT::FleetMetric.AggregationType)

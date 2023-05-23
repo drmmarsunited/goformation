@@ -3,7 +3,7 @@
 package networkmanager
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ConnectPeer_ConnectPeerConfiguration AWS CloudFormation Resource (AWS::NetworkManager::ConnectPeer.ConnectPeerConfiguration)

@@ -3,7 +3,7 @@
 package lightsail
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Distribution_CacheBehavior AWS CloudFormation Resource (AWS::Lightsail::Distribution.CacheBehavior)

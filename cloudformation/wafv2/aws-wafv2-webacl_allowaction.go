@@ -3,7 +3,7 @@
 package wafv2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // WebACL_AllowAction AWS CloudFormation Resource (AWS::WAFv2::WebACL.AllowAction)

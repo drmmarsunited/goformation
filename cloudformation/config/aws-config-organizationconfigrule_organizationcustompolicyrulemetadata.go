@@ -3,7 +3,7 @@
 package config
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata AWS CloudFormation Resource (AWS::Config::OrganizationConfigRule.OrganizationCustomPolicyRuleMetadata)

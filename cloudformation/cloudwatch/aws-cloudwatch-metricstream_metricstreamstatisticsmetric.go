@@ -3,7 +3,7 @@
 package cloudwatch
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // MetricStream_MetricStreamStatisticsMetric AWS CloudFormation Resource (AWS::CloudWatch::MetricStream.MetricStreamStatisticsMetric)

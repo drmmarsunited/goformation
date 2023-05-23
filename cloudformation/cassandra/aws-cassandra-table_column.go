@@ -3,7 +3,7 @@
 package cassandra
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Table_Column AWS CloudFormation Resource (AWS::Cassandra::Table.Column)

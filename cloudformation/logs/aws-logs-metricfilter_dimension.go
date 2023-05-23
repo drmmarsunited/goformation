@@ -3,7 +3,7 @@
 package logs
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // MetricFilter_Dimension AWS CloudFormation Resource (AWS::Logs::MetricFilter.Dimension)

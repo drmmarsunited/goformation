@@ -3,7 +3,7 @@
 package iotcoredeviceadvisor
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // SuiteDefinition_SuiteDefinitionConfiguration AWS CloudFormation Resource (AWS::IoTCoreDeviceAdvisor::SuiteDefinition.SuiteDefinitionConfiguration)

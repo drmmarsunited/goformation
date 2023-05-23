@@ -3,7 +3,7 @@
 package personalize
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Solution_ContinuousHyperParameterRange AWS CloudFormation Resource (AWS::Personalize::Solution.ContinuousHyperParameterRange)

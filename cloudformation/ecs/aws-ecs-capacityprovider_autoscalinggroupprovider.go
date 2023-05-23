@@ -3,7 +3,7 @@
 package ecs
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // CapacityProvider_AutoScalingGroupProvider AWS CloudFormation Resource (AWS::ECS::CapacityProvider.AutoScalingGroupProvider)

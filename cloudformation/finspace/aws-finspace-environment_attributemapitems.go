@@ -3,7 +3,7 @@
 package finspace
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Environment_AttributeMapItems AWS CloudFormation Resource (AWS::FinSpace::Environment.AttributeMapItems)

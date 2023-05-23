@@ -3,7 +3,7 @@
 package forecast
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Dataset_AttributesItems AWS CloudFormation Resource (AWS::Forecast::Dataset.AttributesItems)

@@ -3,7 +3,7 @@
 package ec2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // VerifiedAccessTrustProvider_DeviceOptions AWS CloudFormation Resource (AWS::EC2::VerifiedAccessTrustProvider.DeviceOptions)

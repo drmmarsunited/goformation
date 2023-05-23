@@ -3,7 +3,7 @@
 package ivs
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // RecordingConfiguration_S3DestinationConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration.S3DestinationConfiguration)

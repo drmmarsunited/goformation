@@ -3,7 +3,7 @@
 package appconfig
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Extension_Parameter AWS CloudFormation Resource (AWS::AppConfig::Extension.Parameter)

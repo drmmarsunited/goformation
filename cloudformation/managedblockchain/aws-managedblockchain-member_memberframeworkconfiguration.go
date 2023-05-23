@@ -3,7 +3,7 @@
 package managedblockchain
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Member_MemberFrameworkConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.MemberFrameworkConfiguration)

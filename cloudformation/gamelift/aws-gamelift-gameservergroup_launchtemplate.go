@@ -3,7 +3,7 @@
 package gamelift
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // GameServerGroup_LaunchTemplate AWS CloudFormation Resource (AWS::GameLift::GameServerGroup.LaunchTemplate)

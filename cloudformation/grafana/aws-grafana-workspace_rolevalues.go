@@ -3,7 +3,7 @@
 package grafana
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Workspace_RoleValues AWS CloudFormation Resource (AWS::Grafana::Workspace.RoleValues)

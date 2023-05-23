@@ -3,7 +3,7 @@
 package imagebuilder
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Image_ImageScanningConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::Image.ImageScanningConfiguration)

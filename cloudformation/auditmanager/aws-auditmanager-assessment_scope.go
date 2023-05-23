@@ -3,7 +3,7 @@
 package auditmanager
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Assessment_Scope AWS CloudFormation Resource (AWS::AuditManager::Assessment.Scope)

@@ -3,7 +3,7 @@
 package fsx
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DataRepositoryAssociation_S3 AWS CloudFormation Resource (AWS::FSx::DataRepositoryAssociation.S3)

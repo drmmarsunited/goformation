@@ -3,7 +3,7 @@
 package iotfleetwise
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DecoderManifest_SignalDecodersItems AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.SignalDecodersItems)

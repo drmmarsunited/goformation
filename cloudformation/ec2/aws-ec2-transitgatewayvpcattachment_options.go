@@ -3,7 +3,7 @@
 package ec2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // TransitGatewayVpcAttachment_Options AWS CloudFormation Resource (AWS::EC2::TransitGatewayVpcAttachment.Options)

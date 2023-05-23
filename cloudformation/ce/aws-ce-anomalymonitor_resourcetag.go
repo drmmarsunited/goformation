@@ -3,7 +3,7 @@
 package ce
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // AnomalyMonitor_ResourceTag AWS CloudFormation Resource (AWS::CE::AnomalyMonitor.ResourceTag)

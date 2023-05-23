@@ -3,7 +3,7 @@
 package lex
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Bot_TextLogDestination AWS CloudFormation Resource (AWS::Lex::Bot.TextLogDestination)

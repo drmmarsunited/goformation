@@ -3,7 +3,7 @@
 package networkmanager
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // CoreNetwork_CoreNetworkEdge AWS CloudFormation Resource (AWS::NetworkManager::CoreNetwork.CoreNetworkEdge)

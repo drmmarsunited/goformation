@@ -3,7 +3,7 @@
 package autoscaling
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ScalingPolicy_MetricStat AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.MetricStat)

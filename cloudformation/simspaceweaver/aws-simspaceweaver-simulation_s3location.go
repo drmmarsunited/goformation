@@ -3,7 +3,7 @@
 package simspaceweaver
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Simulation_S3Location AWS CloudFormation Resource (AWS::SimSpaceWeaver::Simulation.S3Location)

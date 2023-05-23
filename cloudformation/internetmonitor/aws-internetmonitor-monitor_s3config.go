@@ -3,7 +3,7 @@
 package internetmonitor
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Monitor_S3Config AWS CloudFormation Resource (AWS::InternetMonitor::Monitor.S3Config)

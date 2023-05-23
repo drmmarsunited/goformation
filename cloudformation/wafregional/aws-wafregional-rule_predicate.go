@@ -3,7 +3,7 @@
 package wafregional
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Rule_Predicate AWS CloudFormation Resource (AWS::WAFRegional::Rule.Predicate)

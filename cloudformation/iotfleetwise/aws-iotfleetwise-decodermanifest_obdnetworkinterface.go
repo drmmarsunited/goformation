@@ -3,7 +3,7 @@
 package iotfleetwise
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DecoderManifest_ObdNetworkInterface AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.ObdNetworkInterface)

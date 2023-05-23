@@ -3,7 +3,7 @@
 package ivschat
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // LoggingConfiguration_CloudWatchLogsDestinationConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration.CloudWatchLogsDestinationConfiguration)

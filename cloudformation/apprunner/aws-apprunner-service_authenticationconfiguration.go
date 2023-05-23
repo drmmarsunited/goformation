@@ -3,7 +3,7 @@
 package apprunner
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Service_AuthenticationConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.AuthenticationConfiguration)

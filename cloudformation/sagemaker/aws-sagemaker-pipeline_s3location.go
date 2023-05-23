@@ -3,7 +3,7 @@
 package sagemaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Pipeline_S3Location AWS CloudFormation Resource (AWS::SageMaker::Pipeline.S3Location)

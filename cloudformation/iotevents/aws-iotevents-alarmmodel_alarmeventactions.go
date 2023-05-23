@@ -3,7 +3,7 @@
 package iotevents
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // AlarmModel_AlarmEventActions AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AlarmEventActions)

@@ -3,7 +3,7 @@
 package sagemaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // InferenceExperiment_ShadowModeConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.ShadowModeConfig)

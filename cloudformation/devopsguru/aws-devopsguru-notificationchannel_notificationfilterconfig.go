@@ -3,7 +3,7 @@
 package devopsguru
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // NotificationChannel_NotificationFilterConfig AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel.NotificationFilterConfig)

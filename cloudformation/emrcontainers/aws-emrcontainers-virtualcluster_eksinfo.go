@@ -3,7 +3,7 @@
 package emrcontainers
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // VirtualCluster_EksInfo AWS CloudFormation Resource (AWS::EMRContainers::VirtualCluster.EksInfo)

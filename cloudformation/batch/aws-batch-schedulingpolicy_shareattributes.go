@@ -3,7 +3,7 @@
 package batch
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // SchedulingPolicy_ShareAttributes AWS CloudFormation Resource (AWS::Batch::SchedulingPolicy.ShareAttributes)

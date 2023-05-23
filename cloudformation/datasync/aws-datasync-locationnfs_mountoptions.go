@@ -3,7 +3,7 @@
 package datasync
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // LocationNFS_MountOptions AWS CloudFormation Resource (AWS::DataSync::LocationNFS.MountOptions)

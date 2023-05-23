@@ -3,7 +3,7 @@
 package osis
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Pipeline_LogPublishingOptions AWS CloudFormation Resource (AWS::OSIS::Pipeline.LogPublishingOptions)

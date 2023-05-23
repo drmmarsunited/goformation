@@ -3,7 +3,7 @@
 package connect
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // User_UserPhoneConfig AWS CloudFormation Resource (AWS::Connect::User.UserPhoneConfig)

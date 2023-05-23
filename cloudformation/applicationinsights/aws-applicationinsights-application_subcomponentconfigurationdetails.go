@@ -3,7 +3,7 @@
 package applicationinsights
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Application_SubComponentConfigurationDetails AWS CloudFormation Resource (AWS::ApplicationInsights::Application.SubComponentConfigurationDetails)

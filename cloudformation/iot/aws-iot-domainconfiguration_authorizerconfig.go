@@ -3,7 +3,7 @@
 package iot
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DomainConfiguration_AuthorizerConfig AWS CloudFormation Resource (AWS::IoT::DomainConfiguration.AuthorizerConfig)

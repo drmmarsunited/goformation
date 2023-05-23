@@ -3,7 +3,7 @@
 package sagemaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ModelPackage_SourceAlgorithm AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.SourceAlgorithm)

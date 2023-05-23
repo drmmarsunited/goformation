@@ -3,7 +3,7 @@
 package appflow
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Flow_DestinationFlowConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.DestinationFlowConfig)

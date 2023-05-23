@@ -3,7 +3,7 @@
 package pinpoint
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Campaign_InAppMessageContent AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageContent)

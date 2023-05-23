@@ -3,7 +3,7 @@
 package rekognition
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // StreamProcessor_FaceSearchSettings AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.FaceSearchSettings)

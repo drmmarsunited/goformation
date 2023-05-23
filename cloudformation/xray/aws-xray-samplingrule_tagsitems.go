@@ -3,7 +3,7 @@
 package xray
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // SamplingRule_TagsItems AWS CloudFormation Resource (AWS::XRay::SamplingRule.TagsItems)

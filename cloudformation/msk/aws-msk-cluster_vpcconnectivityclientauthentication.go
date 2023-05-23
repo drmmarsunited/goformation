@@ -3,7 +3,7 @@
 package msk
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Cluster_VpcConnectivityClientAuthentication AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivityClientAuthentication)

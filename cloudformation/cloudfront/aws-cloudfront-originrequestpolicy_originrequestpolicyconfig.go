@@ -3,7 +3,7 @@
 package cloudfront
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // OriginRequestPolicy_OriginRequestPolicyConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.OriginRequestPolicyConfig)

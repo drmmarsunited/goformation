@@ -3,7 +3,7 @@
 package databrew
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Recipe_ParameterMap AWS CloudFormation Resource (AWS::DataBrew::Recipe.ParameterMap)

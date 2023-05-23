@@ -3,7 +3,7 @@
 package iotevents
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DetectorModel_SetVariable AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.SetVariable)

@@ -3,9 +3,9 @@ package cloudformation_test
 import (
 	"strings"
 
-	"github.com/awslabs/goformation/v7"
-	"github.com/awslabs/goformation/v7/cloudformation"
-	"github.com/awslabs/goformation/v7/intrinsics"
+	"github.com/drmmarsunited/goformation/v7"
+	"github.com/drmmarsunited/goformation/v7/cloudformation"
+	"github.com/drmmarsunited/goformation/v7/intrinsics"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -80,8 +80,8 @@ var _ = Describe("Goformation", func() {
 				Expected: `{"Description":{"Fn::Join":["a",["b","c"]]}}`,
 			},
 			{
-				Name:     "Join Nested",
-				Input:    `Description:
+				Name: "Join Nested",
+				Input: `Description:
   Fn::Join:
   - ''
   - - !Sub '${AWS::Region}'
@@ -97,8 +97,8 @@ var _ = Describe("Goformation", func() {
 				Expected: `{"Description":{"Fn::Select":["a",["b","c"]]}}`,
 			},
 			{
-				Name:     "Select Nested",
-				Input:    `Description:
+				Name: "Select Nested",
+				Input: `Description:
   Fn::Select:
     - 2
     - Fn::Split:

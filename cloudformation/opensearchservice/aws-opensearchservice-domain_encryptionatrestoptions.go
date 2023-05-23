@@ -3,7 +3,7 @@
 package opensearchservice
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Domain_EncryptionAtRestOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.EncryptionAtRestOptions)

@@ -3,7 +3,7 @@
 package pinpointemail
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ConfigurationSetEventDestination_DimensionConfiguration AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration)

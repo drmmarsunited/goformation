@@ -3,7 +3,7 @@
 package lookoutequipment
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // InferenceScheduler_InputNameConfiguration AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler.InputNameConfiguration)

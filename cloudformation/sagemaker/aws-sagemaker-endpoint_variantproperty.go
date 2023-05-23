@@ -3,7 +3,7 @@
 package sagemaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Endpoint_VariantProperty AWS CloudFormation Resource (AWS::SageMaker::Endpoint.VariantProperty)

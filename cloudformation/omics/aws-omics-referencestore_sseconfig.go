@@ -3,7 +3,7 @@
 package omics
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ReferenceStore_SseConfig AWS CloudFormation Resource (AWS::Omics::ReferenceStore.SseConfig)

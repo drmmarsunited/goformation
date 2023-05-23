@@ -3,7 +3,7 @@
 package lakeformation
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DataCellsFilter_ColumnWildcard AWS CloudFormation Resource (AWS::LakeFormation::DataCellsFilter.ColumnWildcard)

@@ -3,7 +3,7 @@
 package cloudtrail
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Channel_Destination AWS CloudFormation Resource (AWS::CloudTrail::Channel.Destination)

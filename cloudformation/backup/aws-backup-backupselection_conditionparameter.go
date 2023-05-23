@@ -3,7 +3,7 @@
 package backup
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // BackupSelection_ConditionParameter AWS CloudFormation Resource (AWS::Backup::BackupSelection.ConditionParameter)

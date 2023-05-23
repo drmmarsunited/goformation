@@ -3,7 +3,7 @@
 package billingconductor
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // CustomLineItem_CustomLineItemPercentageChargeDetails AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem.CustomLineItemPercentageChargeDetails)

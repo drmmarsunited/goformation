@@ -3,7 +3,7 @@
 package wafv2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // LoggingConfiguration_LoggingFilter AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.LoggingFilter)

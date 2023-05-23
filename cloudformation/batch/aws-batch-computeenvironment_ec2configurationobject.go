@@ -3,7 +3,7 @@
 package batch
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ComputeEnvironment_Ec2ConfigurationObject AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.Ec2ConfigurationObject)

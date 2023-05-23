@@ -3,7 +3,7 @@
 package redshift
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // EndpointAccess_VpcSecurityGroup AWS CloudFormation Resource (AWS::Redshift::EndpointAccess.VpcSecurityGroup)

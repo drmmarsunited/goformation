@@ -3,7 +3,7 @@
 package customerprofiles
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Integration_SourceConnectorProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.SourceConnectorProperties)

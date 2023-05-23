@@ -1,9 +1,13 @@
 package intrinsics
 
+var pph, _ = newPseudoParamHelper()
+
 // Ref resolves the 'Ref' AWS CloudFormation intrinsic function.
 // Currently, this only resolves against CloudFormation Parameter default values
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
 func Ref(name string, input interface{}, template interface{}) interface{} {
+	// Load caller data
+	pph.getCallerIdentityData()
 
 	// Dang son, this has got more nest than a bald eagle
 	// Check the input is a string
@@ -12,23 +16,29 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 		switch name {
 
 		case "AWS::AccountId":
-			return "123456789012"
-		case "AWS::NotificationARNs": //
+			pph.parseAwsAccountId()
+			return pph.accountId
+		case "AWS::NotificationARNs":
+			// This data is not knowable outside the context of the AWS CloudFormation service, using a dummy value
 			return []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
 		case "AWS::NoValue":
 			return nil
 		case "AWS::Partition":
-			return "aws"
+			pph.parseAwsPartition()
+			return pph.partition
 		case "AWS::Region":
-			return "us-east-1"
+			pph.parseAwsRegion()
+			return pph.region
 		case "AWS::StackId":
+			// This data is not knowable outside the context of the AWS CloudFormation service, using a dummy value
 			return "arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0"
 		case "AWS::StackName":
+			// This data is not knowable outside the context of the AWS CloudFormation service, using a dummy value
 			return "goformation-stack"
 
 		default:
 
-			// This isn't a pseudo 'Ref' paramater, so we need to look inside the CloudFormation template
+			// This isn't a pseudo 'Ref' parameter, so we need to look inside the CloudFormation template
 			// to see if we can resolve the reference. This implementation just looks at the Parameters section
 			// to see if there is a parameter matching the name, and if so, return the default value.
 

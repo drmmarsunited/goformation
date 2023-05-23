@@ -3,7 +3,7 @@
 package mediapackage
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // PackagingConfiguration_MssManifest AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.MssManifest)

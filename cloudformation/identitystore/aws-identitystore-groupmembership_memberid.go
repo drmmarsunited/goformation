@@ -3,7 +3,7 @@
 package identitystore
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // GroupMembership_MemberId AWS CloudFormation Resource (AWS::IdentityStore::GroupMembership.MemberId)

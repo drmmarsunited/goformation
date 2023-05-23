@@ -3,7 +3,7 @@
 package connect
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // InstanceStorageConfig_S3Config AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.S3Config)

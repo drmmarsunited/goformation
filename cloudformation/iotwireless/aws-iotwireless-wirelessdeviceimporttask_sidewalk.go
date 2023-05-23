@@ -3,7 +3,7 @@
 package iotwireless
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // WirelessDeviceImportTask_Sidewalk AWS CloudFormation Resource (AWS::IoTWireless::WirelessDeviceImportTask.Sidewalk)

@@ -3,7 +3,7 @@
 package glue
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Trigger_EventBatchingCondition AWS CloudFormation Resource (AWS::Glue::Trigger.EventBatchingCondition)

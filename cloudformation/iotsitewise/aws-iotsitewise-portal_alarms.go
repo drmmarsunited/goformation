@@ -3,7 +3,7 @@
 package iotsitewise
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Portal_Alarms AWS CloudFormation Resource (AWS::IoTSiteWise::Portal.Alarms)

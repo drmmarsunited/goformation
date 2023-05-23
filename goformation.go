@@ -2,11 +2,11 @@ package goformation
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"os"
 	"strings"
 
-	"github.com/awslabs/goformation/v7/cloudformation"
-	"github.com/awslabs/goformation/v7/intrinsics"
+	"github.com/drmmarsunited/goformation/v7/cloudformation"
+	"github.com/drmmarsunited/goformation/v7/intrinsics"
 )
 
 //go:generate generate/generate.sh
@@ -22,7 +22,7 @@ func Open(filename string) (*cloudformation.Template, error) {
 // Parsing can be tweaked via the specified options.
 func OpenWithOptions(filename string, options *intrinsics.ProcessorOptions) (*cloudformation.Template, error) {
 
-	data, err := ioutil.ReadFile(filename)
+	data, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}

@@ -3,7 +3,7 @@
 package batch
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // JobDefinition_PodProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.PodProperties)

@@ -3,7 +3,7 @@
 package vpclattice
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // TargetGroup_TargetGroupConfig AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup.TargetGroupConfig)

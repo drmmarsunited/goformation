@@ -3,7 +3,7 @@
 package quicksight
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Analysis_ForecastScenario AWS CloudFormation Resource (AWS::QuickSight::Analysis.ForecastScenario)

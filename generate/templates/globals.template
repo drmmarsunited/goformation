@@ -3,7 +3,7 @@
 package {{.PackageName}}
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/{{.ImportName}}"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/{{.ImportName}}"
 )
 
 // {{.StructName}} AWS CloudFormation Resource ({{.Name}})

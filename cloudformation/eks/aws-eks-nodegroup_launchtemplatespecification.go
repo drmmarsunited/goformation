@@ -3,7 +3,7 @@
 package eks
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Nodegroup_LaunchTemplateSpecification AWS CloudFormation Resource (AWS::EKS::Nodegroup.LaunchTemplateSpecification)

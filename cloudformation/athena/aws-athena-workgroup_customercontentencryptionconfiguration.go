@@ -3,7 +3,7 @@
 package athena
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // WorkGroup_CustomerContentEncryptionConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.CustomerContentEncryptionConfiguration)

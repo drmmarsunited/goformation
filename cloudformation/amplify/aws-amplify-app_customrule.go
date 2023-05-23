@@ -3,7 +3,7 @@
 package amplify
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // App_CustomRule AWS CloudFormation Resource (AWS::Amplify::App.CustomRule)

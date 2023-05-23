@@ -3,7 +3,7 @@
 package kafkaconnect
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Connector_KafkaCluster AWS CloudFormation Resource (AWS::KafkaConnect::Connector.KafkaCluster)

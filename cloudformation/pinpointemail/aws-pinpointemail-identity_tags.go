@@ -3,7 +3,7 @@
 package pinpointemail
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Identity_Tags AWS CloudFormation Resource (AWS::PinpointEmail::Identity.Tags)

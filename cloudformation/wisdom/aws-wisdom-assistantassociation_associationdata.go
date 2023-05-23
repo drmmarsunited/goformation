@@ -3,7 +3,7 @@
 package wisdom
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // AssistantAssociation_AssociationData AWS CloudFormation Resource (AWS::Wisdom::AssistantAssociation.AssociationData)

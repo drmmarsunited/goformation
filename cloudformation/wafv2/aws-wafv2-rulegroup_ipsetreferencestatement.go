@@ -3,7 +3,7 @@
 package wafv2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // RuleGroup_IPSetReferenceStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.IPSetReferenceStatement)

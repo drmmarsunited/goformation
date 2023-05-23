@@ -3,7 +3,7 @@
 package redshiftserverless
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Workgroup_NetworkInterface AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.NetworkInterface)

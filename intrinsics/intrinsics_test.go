@@ -3,7 +3,7 @@ package intrinsics_test
 import (
 	"encoding/base64"
 	"encoding/json"
-	. "github.com/awslabs/goformation/v7/intrinsics"
+	. "github.com/drmmarsunited/goformation/v7/intrinsics"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -3,7 +3,7 @@
 package ssmcontacts
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Plan_Stage AWS CloudFormation Resource (AWS::SSMContacts::Plan.Stage)

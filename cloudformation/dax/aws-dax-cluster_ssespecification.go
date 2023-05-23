@@ -3,7 +3,7 @@
 package dax
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Cluster_SSESpecification AWS CloudFormation Resource (AWS::DAX::Cluster.SSESpecification)

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/awslabs/goformation/v7/intrinsics"
+	"github.com/drmmarsunited/goformation/v7/intrinsics"
 )
 
 func strWrap(fn func(interface{}) string) intrinsics.IntrinsicHandler {
@@ -287,7 +287,7 @@ func JoinPtr(delimiter interface{}, value interface{}) *string {
 }
 
 // Select returns a single object from a list of objects by index.
-func Select(index , list interface{}) string {
+func Select(index, list interface{}) string {
 	return encode(fmt.Sprintf(`{ "Fn::Select": [ %s, %s ] }`, toJSON(index), toJSON(list)))
 }
 

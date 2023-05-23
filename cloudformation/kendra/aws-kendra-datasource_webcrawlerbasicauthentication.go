@@ -3,7 +3,7 @@
 package kendra
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DataSource_WebCrawlerBasicAuthentication AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerBasicAuthentication)

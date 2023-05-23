@@ -3,7 +3,7 @@
 package ivschat
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Room_MessageReviewHandler AWS CloudFormation Resource (AWS::IVSChat::Room.MessageReviewHandler)

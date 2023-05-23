@@ -3,7 +3,7 @@
 package connectcampaigns
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Campaign_AnswerMachineDetectionConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.AnswerMachineDetectionConfig)

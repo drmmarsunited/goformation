@@ -3,7 +3,7 @@
 package opensearchserverless
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // SecurityConfig_SamlConfigOptions AWS CloudFormation Resource (AWS::OpenSearchServerless::SecurityConfig.SamlConfigOptions)

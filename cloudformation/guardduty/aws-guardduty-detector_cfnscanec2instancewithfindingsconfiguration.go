@@ -3,7 +3,7 @@
 package guardduty
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Detector_CFNScanEc2InstanceWithFindingsConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNScanEc2InstanceWithFindingsConfiguration)

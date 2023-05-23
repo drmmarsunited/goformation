@@ -3,7 +3,7 @@
 package rolesanywhere
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // TrustAnchor_Source AWS CloudFormation Resource (AWS::RolesAnywhere::TrustAnchor.Source)

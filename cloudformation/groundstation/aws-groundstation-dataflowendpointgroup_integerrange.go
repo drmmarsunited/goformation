@@ -3,7 +3,7 @@
 package groundstation
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // DataflowEndpointGroup_IntegerRange AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.IntegerRange)

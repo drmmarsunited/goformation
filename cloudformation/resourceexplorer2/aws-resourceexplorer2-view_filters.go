@@ -3,7 +3,7 @@
 package resourceexplorer2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // View_Filters AWS CloudFormation Resource (AWS::ResourceExplorer2::View.Filters)

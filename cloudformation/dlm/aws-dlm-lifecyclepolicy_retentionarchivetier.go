@@ -3,7 +3,7 @@
 package dlm
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // LifecyclePolicy_RetentionArchiveTier AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.RetentionArchiveTier)

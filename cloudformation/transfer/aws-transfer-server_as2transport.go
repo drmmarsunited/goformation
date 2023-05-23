@@ -3,7 +3,7 @@
 package transfer
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Server_As2Transport AWS CloudFormation Resource (AWS::Transfer::Server.As2Transport)

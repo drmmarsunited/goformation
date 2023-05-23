@@ -3,7 +3,7 @@
 package rum
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // AppMonitor_MetricDefinition AWS CloudFormation Resource (AWS::RUM::AppMonitor.MetricDefinition)

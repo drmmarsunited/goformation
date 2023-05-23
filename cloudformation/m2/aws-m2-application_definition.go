@@ -3,7 +3,7 @@
 package m2
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Application_Definition AWS CloudFormation Resource (AWS::M2::Application.Definition)

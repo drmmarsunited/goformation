@@ -3,7 +3,7 @@
 package global
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/serverless"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/serverless"
 )
 
 // Function AWS CloudFormation Resource (Function)

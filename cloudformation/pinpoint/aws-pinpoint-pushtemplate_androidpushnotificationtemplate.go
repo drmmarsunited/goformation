@@ -3,7 +3,7 @@
 package pinpoint
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // PushTemplate_AndroidPushNotificationTemplate AWS CloudFormation Resource (AWS::Pinpoint::PushTemplate.AndroidPushNotificationTemplate)

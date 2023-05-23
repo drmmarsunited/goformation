@@ -3,7 +3,7 @@
 package route53recoveryreadiness
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ResourceSet_NLBResource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.NLBResource)

@@ -3,7 +3,7 @@
 package amplifyuibuilder
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Form_FormInputValueProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormInputValueProperty)

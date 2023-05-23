@@ -3,7 +3,7 @@
 package cloudfront
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // RealtimeLogConfig_EndPoint AWS CloudFormation Resource (AWS::CloudFront::RealtimeLogConfig.EndPoint)

@@ -3,7 +3,7 @@
 package acmpca
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Certificate_PolicyInformation AWS CloudFormation Resource (AWS::ACMPCA::Certificate.PolicyInformation)

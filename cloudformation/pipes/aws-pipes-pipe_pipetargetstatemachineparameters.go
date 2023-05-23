@@ -3,7 +3,7 @@
 package pipes
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Pipe_PipeTargetStateMachineParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetStateMachineParameters)

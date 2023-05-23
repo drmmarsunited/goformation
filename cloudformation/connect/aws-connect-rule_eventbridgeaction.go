@@ -3,7 +3,7 @@
 package connect
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Rule_EventBridgeAction AWS CloudFormation Resource (AWS::Connect::Rule.EventBridgeAction)

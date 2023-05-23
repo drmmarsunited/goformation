@@ -3,7 +3,7 @@
 package appflow
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ConnectorProfile_ConnectorProfileConfig AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ConnectorProfileConfig)

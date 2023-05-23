@@ -3,7 +3,7 @@
 package glue
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Job_ConnectionsList AWS CloudFormation Resource (AWS::Glue::Job.ConnectionsList)

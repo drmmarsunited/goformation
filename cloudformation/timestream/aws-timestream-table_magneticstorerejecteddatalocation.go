@@ -3,7 +3,7 @@
 package timestream
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Table_MagneticStoreRejectedDataLocation AWS CloudFormation Resource (AWS::Timestream::Table.MagneticStoreRejectedDataLocation)

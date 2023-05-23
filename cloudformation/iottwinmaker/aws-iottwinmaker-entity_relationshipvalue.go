@@ -3,7 +3,7 @@
 package iottwinmaker
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // Entity_RelationshipValue AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.RelationshipValue)

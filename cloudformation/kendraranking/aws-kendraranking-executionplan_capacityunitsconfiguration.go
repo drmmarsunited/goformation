@@ -3,7 +3,7 @@
 package kendraranking
 
 import (
-	"github.com/awslabs/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
 )
 
 // ExecutionPlan_CapacityUnitsConfiguration AWS CloudFormation Resource (AWS::KendraRanking::ExecutionPlan.CapacityUnitsConfiguration)
