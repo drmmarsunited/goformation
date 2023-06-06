@@ -3,6 +3,7 @@ package cloudformation
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/drmmarsunited/goformation/v7/intrinsics"
@@ -57,6 +58,115 @@ type Parameters map[string]Parameter
 type Resources map[string]Resource
 type Globals map[string]Resource
 type Outputs map[string]Output
+
+func (p *Parameters) UnmarshalJSON(data []byte) error {
+	// Unmarshal into temp map
+	var rawParams map[string]json.RawMessage
+	if err := json.Unmarshal(data, &rawParams); err != nil {
+		return fmt.Errorf("unmarshal error: %s", err.Error())
+	}
+
+	// Loop through param keys
+	newParams := Parameters{}
+	for name, raw := range rawParams {
+		res, err := UnmarshalParameter(name, raw)
+		if err != nil {
+			return err
+		}
+
+		newParams[name] = *res
+	}
+
+	*p = newParams
+
+	return nil
+}
+
+func (p *Parameter) UnmarshalJSON(data []byte) error {
+	// Unmarshal into temp map
+	var interim map[string]any
+	if err := json.Unmarshal(data, &interim); err != nil {
+		return fmt.Errorf("unmarshal error: %s", err.Error())
+	}
+
+	for k, v := range interim {
+		switch k {
+		case "Type":
+			p.Type = v.(string)
+		case "Description":
+			val := v.(string)
+			p.Description = &val
+		case "Default":
+			p.Default = v
+		case "AllowedPattern":
+			val := v.(string)
+			p.AllowedPattern = &val
+		case "AllowedValues":
+			p.AllowedValues = v.([]interface{})
+		case "ConstraintDescription":
+			val := v.(string)
+			p.ConstraintDescription = &val
+		case "MaxLength":
+			switch v.(type) {
+			case string:
+				val, _ := strconv.Atoi(v.(string))
+				p.MaxLength = &val
+			case int:
+				val := v.(int)
+				p.MaxLength = &val
+			}
+		case "MinLength":
+			switch v.(type) {
+			case string:
+				val, _ := strconv.Atoi(v.(string))
+				p.MinLength = &val
+			case int:
+				val := v.(int)
+				p.MinLength = &val
+			}
+		case "MaxValue":
+			switch v.(type) {
+			case string:
+				val, _ := strconv.ParseFloat(strings.TrimSpace(v.(string)), 64)
+				p.MaxValue = &val
+			case int:
+				val := float64(v.(int))
+				p.MaxValue = &val
+			}
+		case "MinValue":
+			switch v.(type) {
+			case string:
+				val, _ := strconv.ParseFloat(strings.TrimSpace(v.(string)), 64)
+				p.MinValue = &val
+			case int:
+				val := float64(interim["MinValue"].(int))
+				p.MinValue = &val
+			}
+		case "NoEcho":
+			switch v.(type) {
+			case string:
+				val, _ := strconv.ParseBool(interim["NoEcho"].(string))
+				p.NoEcho = &val
+			case bool:
+				val := v.(bool)
+				p.NoEcho = &val
+			}
+		}
+	}
+
+	return nil
+}
+
+func UnmarshalParameter(name string, rawJson json.RawMessage) (*Parameter, error) {
+	var param Parameter
+	err := json.Unmarshal(rawJson, &param)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &param, nil
+}
 
 func (resources *Resources) UnmarshalJSON(b []byte) error {
 	// Resources
@@ -116,7 +226,7 @@ func unmarshallResource(name string, raw_json *json.RawMessage) (Resource, error
 	}
 
 	if rtype.Type == "" {
-		return nil, fmt.Errorf("Cannot find Type for %v", name)
+		return nil, fmt.Errorf("cannot find Type for %v", name)
 	}
 
 	// Custom Resource Handler
