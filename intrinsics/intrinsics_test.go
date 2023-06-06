@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	. "github.com/drmmarsunited/goformation/v7/intrinsics"
+	"strconv"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -42,6 +43,37 @@ var _ = Describe("AWS CloudFormation intrinsic function processing", func() {
 		properties := resource["Properties"].(map[string]interface{})
 
 		It("should have the correct values", func() {
+			Expect(properties["Timeout"]).To(Equal(float64(120)))
+			Expect(properties["Runtime"]).To(Equal("nodejs6.10"))
+		})
+
+	})
+
+	Context("with a template that contains a 'Ref' intrinsic function with MaxLength param string", func() {
+
+		input := `{"Parameters":{"Name":{"Type":"String", "Default":"test", "MaxLength": "10"}, "FunctionTimeout":{"Type":"Number","Default":120}},"Resources":{"MyServerlessFunction":{"Type":"AWS::Serverless::Function","Properties":{"Runtime":"nodejs6.10","Timeout":{"Ref":"FunctionTimeout"}}}}}`
+		processed, err := ProcessJSON([]byte(input), nil)
+		It("should successfully process the template", func() {
+			Expect(err).Should(BeNil())
+			Expect(processed).ShouldNot(BeNil())
+		})
+
+		var result interface{}
+		err = json.Unmarshal(processed, &result)
+		It("should be valid JSON, and marshal to a Go type", func() {
+			Expect(processed).ToNot(BeNil())
+			Expect(err).To(BeNil())
+		})
+
+		template := result.(map[string]interface{})
+		parameters := template["Parameters"].(map[string]interface{})
+		pName := parameters["Name"].(map[string]interface{})
+		resources := template["Resources"].(map[string]interface{})
+		resource := resources["MyServerlessFunction"].(map[string]interface{})
+		properties := resource["Properties"].(map[string]interface{})
+
+		It("should have the correct values", func() {
+			Expect(pName["MaxLength"]).To(Equal(strconv.Itoa(10)))
 			Expect(properties["Timeout"]).To(Equal(float64(120)))
 			Expect(properties["Runtime"]).To(Equal("nodejs6.10"))
 		})
@@ -245,7 +277,7 @@ var _ = Describe("AWS CloudFormation intrinsic function processing", func() {
 
 		// GetAtt isn't implemented today
 		It("should resolve a resource attribute within a !Sub", func() {
-			Expect(properties["Role"]).To(Equal(""))
+			Expect(properties["Role"]).To(Equal("dummyvalue"))
 		})
 
 	})
@@ -604,8 +636,8 @@ var _ = Describe("AWS CloudFormation intrinsic function processing", func() {
             "Description": "Enter the application name. If you are not sure then use the value from the project name in GitLab.",
             "ConstraintDescription": "The application name must be between 1 and 8 characters in length.",
             "AllowedPattern": "(^[a-zA-Z0-9][a-zA-Z0-9._()-]{0,7}$)",
-            "MinLength": 1,
-            "MaxLength": 8,
+            "MinLength": "1",
+            "MaxLength": "8",
             "Default": "TEST"
         },
         "pApplicationNameLC": {
@@ -613,8 +645,8 @@ var _ = Describe("AWS CloudFormation intrinsic function processing", func() {
             "Description": "Enter the application name in Lowercase. If you are not sure then use the value from the project name in GitLab.",
             "ConstraintDescription": "The application name must be between 1 and 8 characters in length.",
             "AllowedPattern": "(^[a-z0-9][a-z0-9._()-]{0,7}$)",
-            "MinLength": 1,
-            "MaxLength": 8,
+            "MinLength": "1",
+            "MaxLength": "8",
             "Default": "test"
         },
         "pSubDivision": {

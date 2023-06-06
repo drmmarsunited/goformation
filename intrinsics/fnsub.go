@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// ResolveFnSub resolves the 'Fn::Sub' AWS CloudFormation intrinsic function.
+// FnSub resolves the 'Fn::Sub' AWS CloudFormation intrinsic function.
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html
 func FnSub(name string, input interface{}, template interface{}) interface{} {
 

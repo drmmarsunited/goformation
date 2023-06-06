@@ -5,5 +5,5 @@ package intrinsics
 func FnGetAtt(name string, input interface{}, template interface{}) interface{} {
 
 	// { "Fn::GetAtt" : [ "logicalNameOfResource", "attributeName" ] }
-	return nil
+	return "dummyvalue"
 }
