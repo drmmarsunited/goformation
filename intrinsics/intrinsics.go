@@ -67,12 +67,12 @@ func ProcessYAML(input []byte, options *ProcessorOptions) ([]byte, error) {
 		target: &yamlObj,
 	})
 	if err != nil {
-		return nil, fmt.Errorf("invalid YAML template: %s", err)
+		return nil, fmt.Errorf("intrinsics: ProcessYAML: invalid YAML template: %w", err)
 	}
 
 	data, err := json.Marshal(yamlObj)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("intrinsics: ProcessYAML: error when marshaling YAML to JSON: %w", err)
 	}
 
 	return ProcessJSON(data, options)
@@ -85,7 +85,7 @@ func ProcessJSON(input []byte, options *ProcessorOptions) ([]byte, error) {
 	// First, unmarshal the JSON to a generic interface{} type
 	var unmarshalled interface{}
 	if err := json.Unmarshal(input, &unmarshalled); err != nil {
-		return nil, fmt.Errorf("invalid JSON: %s", err)
+		return nil, fmt.Errorf("intrinsics: ProcessJSON: error when unmarshaling JSON: %w", err)
 	}
 
 	var processed interface{}

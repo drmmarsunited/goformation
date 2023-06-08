@@ -2,6 +2,7 @@ package goformation
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"strings"
 
@@ -47,7 +48,7 @@ func ParseYAMLWithOptions(data []byte, options *intrinsics.ProcessorOptions) (*c
 	// Process all AWS CloudFormation intrinsic functions (e.g. Fn::Join)
 	intrinsified, err := intrinsics.ProcessYAML(data, options)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("goformation: ParseYamlWithOptions: received error when trying to process intrinsics: %w", err)
 	}
 
 	return unmarshal(intrinsified)
@@ -66,7 +67,7 @@ func ParseJSONWithOptions(data []byte, options *intrinsics.ProcessorOptions) (*c
 	// Process all AWS CloudFormation intrinsic functions (e.g. Fn::Join)
 	intrinsified, err := intrinsics.ProcessJSON(data, options)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("goformation: ParseJSONWithOptions: error when unmarshaling JSON: %w", err)
 	}
 
 	return unmarshal(intrinsified)
@@ -74,12 +75,11 @@ func ParseJSONWithOptions(data []byte, options *intrinsics.ProcessorOptions) (*c
 }
 
 func unmarshal(data []byte) (*cloudformation.Template, error) {
-	template := &cloudformation.Template{}
+	template := cloudformation.Template{}
 
-	if err := json.Unmarshal(data, template); err != nil {
-		return nil, err
+	if err := json.Unmarshal(data, &template); err != nil {
+		return nil, fmt.Errorf("goformation: unmarshal: error when unmarshaling JSON: %w", err)
 	}
 
-	return template, nil
-
+	return &template, nil
 }
