@@ -3,7 +3,6 @@ package cloudformation
 import (
 	"encoding/json"
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/drmmarsunited/goformation/v7/intrinsics"
@@ -25,17 +24,17 @@ type Template struct {
 	Globals                  Globals                `json:"Globals,omitempty"`
 }
 
-type Parameter struct {
+type Parameter[T any] struct {
 	Type                  string        `json:"Type"`
 	Description           *string       `json:"Description,omitempty"`
 	Default               interface{}   `json:"Default,omitempty"`
 	AllowedPattern        *string       `json:"AllowedPattern,omitempty"`
 	AllowedValues         []interface{} `json:"AllowedValues,omitempty"`
 	ConstraintDescription *string       `json:"ConstraintDescription,omitempty"`
-	MaxLength             *int          `json:"MaxLength,omitempty"`
-	MinLength             *int          `json:"MinLength,omitempty"`
-	MaxValue              *float64      `json:"MaxValue,omitempty"`
-	MinValue              *float64      `json:"MinValue,omitempty"`
+	MaxLength             *T            `json:"MaxLength,omitempty"`
+	MinLength             *T            `json:"MinLength,omitempty"`
+	MaxValue              *T            `json:"MaxValue,omitempty"`
+	MinValue              *T            `json:"MinValue,omitempty"`
 	NoEcho                *bool         `json:"NoEcho,omitempty"`
 }
 
@@ -54,7 +53,7 @@ type Resource interface {
 	AWSCloudFormationType() string
 }
 
-type Parameters map[string]Parameter
+type Parameters map[string]Parameter[any]
 type Resources map[string]Resource
 type Globals map[string]Resource
 type Outputs map[string]Output
@@ -63,7 +62,7 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 	// Unmarshal into temp map
 	var rawParams map[string]json.RawMessage
 	if err := json.Unmarshal(data, &rawParams); err != nil {
-		return fmt.Errorf("unmarshal error: %s", err.Error())
+		return fmt.Errorf("template: parameter unmarshaller: error unmarshalling rawParams: %w", err)
 	}
 
 	// Loop through param keys
@@ -71,7 +70,7 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 	for name, raw := range rawParams {
 		res, err := UnmarshalParameter(name, raw)
 		if err != nil {
-			return err
+			return fmt.Errorf("template: parameter unmarshaller: error when unmarshalling %s: %w", name, err)
 		}
 
 		newParams[name] = *res
@@ -82,83 +81,8 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (p *Parameter) UnmarshalJSON(data []byte) error {
-	// Unmarshal into temp map
-	var interim map[string]any
-	if err := json.Unmarshal(data, &interim); err != nil {
-		return fmt.Errorf("unmarshal error: %s", err.Error())
-	}
-
-	for k, v := range interim {
-		switch k {
-		case "Type":
-			p.Type = v.(string)
-		case "Description":
-			val := v.(string)
-			p.Description = &val
-		case "Default":
-			p.Default = v
-		case "AllowedPattern":
-			val := v.(string)
-			p.AllowedPattern = &val
-		case "AllowedValues":
-			p.AllowedValues = v.([]interface{})
-		case "ConstraintDescription":
-			val := v.(string)
-			p.ConstraintDescription = &val
-		case "MaxLength":
-			switch v.(type) {
-			case string:
-				val, _ := strconv.Atoi(v.(string))
-				p.MaxLength = &val
-			case int:
-				val := v.(int)
-				p.MaxLength = &val
-			}
-		case "MinLength":
-			switch v.(type) {
-			case string:
-				val, _ := strconv.Atoi(v.(string))
-				p.MinLength = &val
-			case int:
-				val := v.(int)
-				p.MinLength = &val
-			}
-		case "MaxValue":
-			switch v.(type) {
-			case string:
-				val, _ := strconv.ParseFloat(strings.TrimSpace(v.(string)), 64)
-				p.MaxValue = &val
-			case int:
-				val := float64(v.(int))
-				p.MaxValue = &val
-			}
-		case "MinValue":
-			switch v.(type) {
-			case string:
-				val, _ := strconv.ParseFloat(strings.TrimSpace(v.(string)), 64)
-				p.MinValue = &val
-			case int:
-				val := float64(interim["MinValue"].(int))
-				p.MinValue = &val
-			}
-		case "NoEcho":
-			switch v.(type) {
-			case string:
-				val, _ := strconv.ParseBool(interim["NoEcho"].(string))
-				p.NoEcho = &val
-			case bool:
-				val := v.(bool)
-				p.NoEcho = &val
-			}
-		}
-	}
-
-	return nil
-}
-
-func UnmarshalParameter(name string, rawJson json.RawMessage) (*Parameter, error) {
-	var param Parameter
+func UnmarshalParameter(name string, rawJson json.RawMessage) (*Parameter[any], error) {
+	var param Parameter[any]
 	err := json.Unmarshal(rawJson, &param)
 
 	if err != nil {
@@ -181,7 +105,7 @@ func (resources *Resources) UnmarshalJSON(b []byte) error {
 	for name, raw := range rawResources {
 		res, err := unmarshallResource(name, raw)
 		if err != nil {
-			return err
+			return fmt.Errorf("template: ResourceUnmarshaler: error unmarshaling resource %s: %w", name, err)
 		}
 		newResources[name] = res
 	}
@@ -213,7 +137,7 @@ func (globals *Globals) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func unmarshallResource(name string, raw_json *json.RawMessage) (Resource, error) {
+func unmarshallResource(name string, rawJson *json.RawMessage) (Resource, error) {
 	var err error
 
 	type rType struct {
@@ -221,12 +145,12 @@ func unmarshallResource(name string, raw_json *json.RawMessage) (Resource, error
 	}
 
 	var rtype rType
-	if err = json.Unmarshal(*raw_json, &rtype); err != nil {
-		return nil, err
+	if err = json.Unmarshal(*rawJson, &rtype); err != nil {
+		return nil, fmt.Errorf("unmarshallResource: error unmarshaling rType: %w", err)
 	}
 
 	if rtype.Type == "" {
-		return nil, fmt.Errorf("cannot find Type for %v", name)
+		return nil, fmt.Errorf("unmarshallResource: cannot find Type for %v", name)
 	}
 
 	// Custom Resource Handler
@@ -238,10 +162,10 @@ func unmarshallResource(name string, raw_json *json.RawMessage) (Resource, error
 		resourceStruct = AllResources()[rtype.Type]
 	}
 
-	err = json.Unmarshal(*raw_json, resourceStruct)
+	err = json.Unmarshal(*rawJson, resourceStruct)
 
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("unmarshallResource: error unmarshaling resource %s: %w", name, err)
 	}
 	return resourceStruct, nil
 }
