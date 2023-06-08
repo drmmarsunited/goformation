@@ -11,10 +11,10 @@ import (
 
 var typeToGo = map[string]string{
 	"String":    "string",
-	"Long":      "int64",
-	"Integer":   "int",
-	"Double":    "float64",
-	"Boolean":   "bool",
+	"Long":      "T",
+	"Integer":   "T",
+	"Double":    "T",
+	"Boolean":   "T",
 	"Timestamp": "string",
 	"Json":      "interface{}",
 	"Map":       "interface{}",
@@ -293,7 +293,7 @@ func (p Property) IsCustomType() bool {
 	return p.PrimitiveType == "" && p.ItemType == "" && p.PrimitiveItemType == ""
 }
 
-// IsGeneric checks wether a property doesn't match any known type
+// IsGeneric checks whether a property doesn't match any known type
 func (p Property) IsGeneric() bool {
 	return !p.IsPolymorphic() && !p.IsMap() && !p.IsList() && !p.IsCustomType() && convertTypeToGo(p.PrimitiveType) == "interface{}"
 }
@@ -345,7 +345,7 @@ func (p Property) GoType(typename string, basename string, name string) string {
 	if p.IsPolymorphic() {
 
 		generatePolymorphicProperty(typename, basename+"_"+name, p)
-		return basename + "_" + name
+		return basename + "_" + name + "[any]"
 
 	}
 
@@ -355,7 +355,7 @@ func (p Property) GoType(typename string, basename string, name string) string {
 			return "map[string]" + p.convertTypeToGo()
 		}
 
-		return "map[string]" + basename + "_" + p.ItemType
+		return "map[string]" + basename + "_" + p.ItemType + "[any]"
 
 	}
 
@@ -365,11 +365,11 @@ func (p Property) GoType(typename string, basename string, name string) string {
 			return "[]" + p.convertTypeToGo()
 		}
 
-		return "[]" + basename + "_" + p.ItemType
+		return "[]" + basename + "_" + p.ItemType + "[any]"
 	}
 
 	if p.IsCustomType() {
-		return basename + "_" + p.Type
+		return basename + "_" + p.Type + "[any]"
 	}
 
 	// Must be a primitive value
