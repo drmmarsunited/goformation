@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_HostEntry AWS CloudFormation Resource (AWS::ECS::TaskDefinition.HostEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-hostentry.html
-type TaskDefinition_HostEntry struct {
+type TaskDefinition_HostEntry[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_HostEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_HostEntry) AWSCloudFormationType() string {
+func (r *TaskDefinition_HostEntry[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.HostEntry"
 }

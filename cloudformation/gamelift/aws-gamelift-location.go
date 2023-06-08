@@ -12,7 +12,7 @@ import (
 
 // Location AWS CloudFormation Resource (AWS::GameLift::Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-location.html
-type Location struct {
+type Location[T any] struct {
 
 	// LocationName AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Location) AWSCloudFormationType() string {
+func (r *Location[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Location"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Location) MarshalJSON() ([]byte, error) {
-	type Properties Location
+func (r Location[any]) MarshalJSON() ([]byte, error) {
+	type Properties Location[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r Location) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Location) UnmarshalJSON(b []byte) error {
-	type Properties Location
+func (r *Location[any]) UnmarshalJSON(b []byte) error {
+	type Properties Location[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *Location) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Location(*res.Properties)
+		*r = Location[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

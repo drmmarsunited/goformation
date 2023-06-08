@@ -8,12 +8,12 @@ import (
 
 // ModelQualityJobDefinition_ClusterConfig AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.ClusterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html
-type ModelQualityJobDefinition_ClusterConfig struct {
+type ModelQualityJobDefinition_ClusterConfig[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type ModelQualityJobDefinition_ClusterConfig struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB"`
+	VolumeSizeInGB T `json:"VolumeSizeInGB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ModelQualityJobDefinition_ClusterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_ClusterConfig) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_ClusterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.ClusterConfig"
 }

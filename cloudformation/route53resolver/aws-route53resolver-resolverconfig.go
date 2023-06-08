@@ -11,7 +11,7 @@ import (
 
 // ResolverConfig AWS CloudFormation Resource (AWS::Route53Resolver::ResolverConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html
-type ResolverConfig struct {
+type ResolverConfig[T any] struct {
 
 	// AutodefinedReverseFlag AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ResolverConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverConfig) AWSCloudFormationType() string {
+func (r *ResolverConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverConfig) MarshalJSON() ([]byte, error) {
-	type Properties ResolverConfig
+func (r ResolverConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ResolverConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverConfig) UnmarshalJSON(b []byte) error {
-	type Properties ResolverConfig
+func (r *ResolverConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ResolverConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverConfig(*res.Properties)
+		*r = ResolverConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,12 +12,12 @@ import (
 
 // CapacityProvider AWS CloudFormation Resource (AWS::ECS::CapacityProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-capacityprovider.html
-type CapacityProvider struct {
+type CapacityProvider[T any] struct {
 
 	// AutoScalingGroupProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-capacityprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider
-	AutoScalingGroupProvider *CapacityProvider_AutoScalingGroupProvider `json:"AutoScalingGroupProvider"`
+	AutoScalingGroupProvider *CapacityProvider_AutoScalingGroupProvider[any] `json:"AutoScalingGroupProvider"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type CapacityProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityProvider) AWSCloudFormationType() string {
+func (r *CapacityProvider[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::CapacityProvider"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CapacityProvider) MarshalJSON() ([]byte, error) {
-	type Properties CapacityProvider
+func (r CapacityProvider[any]) MarshalJSON() ([]byte, error) {
+	type Properties CapacityProvider[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r CapacityProvider) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CapacityProvider) UnmarshalJSON(b []byte) error {
-	type Properties CapacityProvider
+func (r *CapacityProvider[any]) UnmarshalJSON(b []byte) error {
+	type Properties CapacityProvider[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *CapacityProvider) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CapacityProvider(*res.Properties)
+		*r = CapacityProvider[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

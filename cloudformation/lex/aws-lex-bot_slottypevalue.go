@@ -8,17 +8,17 @@ import (
 
 // Bot_SlotTypeValue AWS CloudFormation Resource (AWS::Lex::Bot.SlotTypeValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottypevalue.html
-type Bot_SlotTypeValue struct {
+type Bot_SlotTypeValue[T any] struct {
 
 	// SampleValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottypevalue.html#cfn-lex-bot-slottypevalue-samplevalue
-	SampleValue *Bot_SampleValue `json:"SampleValue"`
+	SampleValue *Bot_SampleValue[any] `json:"SampleValue"`
 
 	// Synonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottypevalue.html#cfn-lex-bot-slottypevalue-synonyms
-	Synonyms []Bot_SampleValue `json:"Synonyms,omitempty"`
+	Synonyms []Bot_SampleValue[any] `json:"Synonyms,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_SlotTypeValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotTypeValue) AWSCloudFormationType() string {
+func (r *Bot_SlotTypeValue[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotTypeValue"
 }

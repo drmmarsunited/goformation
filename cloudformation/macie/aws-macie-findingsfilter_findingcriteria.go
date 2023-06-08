@@ -8,12 +8,12 @@ import (
 
 // FindingsFilter_FindingCriteria AWS CloudFormation Resource (AWS::Macie::FindingsFilter.FindingCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html
-type FindingsFilter_FindingCriteria struct {
+type FindingsFilter_FindingCriteria[T any] struct {
 
 	// Criterion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion
-	Criterion map[string]FindingsFilter_CriterionAdditionalProperties `json:"Criterion,omitempty"`
+	Criterion map[string]FindingsFilter_CriterionAdditionalProperties[any] `json:"Criterion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FindingsFilter_FindingCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FindingsFilter_FindingCriteria) AWSCloudFormationType() string {
+func (r *FindingsFilter_FindingCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::FindingsFilter.FindingCriteria"
 }

@@ -11,7 +11,7 @@ import (
 
 // StreamingImage AWS CloudFormation Resource (AWS::NimbleStudio::StreamingImage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html
-type StreamingImage struct {
+type StreamingImage[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type StreamingImage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingImage) AWSCloudFormationType() string {
+func (r *StreamingImage[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StreamingImage"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StreamingImage) MarshalJSON() ([]byte, error) {
-	type Properties StreamingImage
+func (r StreamingImage[any]) MarshalJSON() ([]byte, error) {
+	type Properties StreamingImage[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r StreamingImage) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StreamingImage) UnmarshalJSON(b []byte) error {
-	type Properties StreamingImage
+func (r *StreamingImage[any]) UnmarshalJSON(b []byte) error {
+	type Properties StreamingImage[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *StreamingImage) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StreamingImage(*res.Properties)
+		*r = StreamingImage[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

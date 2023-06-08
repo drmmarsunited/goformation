@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_AcknowledgeFlow AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AcknowledgeFlow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-acknowledgeflow.html
-type AlarmModel_AcknowledgeFlow struct {
+type AlarmModel_AcknowledgeFlow[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-acknowledgeflow.html#cfn-iotevents-alarmmodel-acknowledgeflow-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AlarmModel_AcknowledgeFlow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AcknowledgeFlow) AWSCloudFormationType() string {
+func (r *AlarmModel_AcknowledgeFlow[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AcknowledgeFlow"
 }

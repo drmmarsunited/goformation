@@ -8,7 +8,7 @@ import (
 
 // Application_AlarmMetric AWS CloudFormation Resource (AWS::ApplicationInsights::Application.AlarmMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarmmetric.html
-type Application_AlarmMetric struct {
+type Application_AlarmMetric[T any] struct {
 
 	// AlarmMetricName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Application_AlarmMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_AlarmMetric) AWSCloudFormationType() string {
+func (r *Application_AlarmMetric[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.AlarmMetric"
 }

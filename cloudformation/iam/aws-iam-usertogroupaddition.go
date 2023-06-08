@@ -11,7 +11,7 @@ import (
 
 // UserToGroupAddition AWS CloudFormation Resource (AWS::IAM::UserToGroupAddition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html
-type UserToGroupAddition struct {
+type UserToGroupAddition[T any] struct {
 
 	// GroupName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type UserToGroupAddition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserToGroupAddition) AWSCloudFormationType() string {
+func (r *UserToGroupAddition[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::UserToGroupAddition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserToGroupAddition) MarshalJSON() ([]byte, error) {
-	type Properties UserToGroupAddition
+func (r UserToGroupAddition[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserToGroupAddition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r UserToGroupAddition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserToGroupAddition) UnmarshalJSON(b []byte) error {
-	type Properties UserToGroupAddition
+func (r *UserToGroupAddition[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserToGroupAddition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *UserToGroupAddition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserToGroupAddition(*res.Properties)
+		*r = UserToGroupAddition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

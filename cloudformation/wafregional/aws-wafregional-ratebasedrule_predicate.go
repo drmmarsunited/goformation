@@ -8,7 +8,7 @@ import (
 
 // RateBasedRule_Predicate AWS CloudFormation Resource (AWS::WAFRegional::RateBasedRule.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ratebasedrule-predicate.html
-type RateBasedRule_Predicate struct {
+type RateBasedRule_Predicate[T any] struct {
 
 	// DataId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type RateBasedRule_Predicate struct {
 	// Negated AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ratebasedrule-predicate.html#cfn-wafregional-ratebasedrule-predicate-negated
-	Negated bool `json:"Negated"`
+	Negated T `json:"Negated"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RateBasedRule_Predicate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RateBasedRule_Predicate) AWSCloudFormationType() string {
+func (r *RateBasedRule_Predicate[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::RateBasedRule.Predicate"
 }

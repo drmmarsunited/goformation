@@ -8,7 +8,7 @@ import (
 
 // ApplicationOutput_KinesisStreamsOutput AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisstreamsoutput.html
-type ApplicationOutput_KinesisStreamsOutput struct {
+type ApplicationOutput_KinesisStreamsOutput[T any] struct {
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ApplicationOutput_KinesisStreamsOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput_KinesisStreamsOutput) AWSCloudFormationType() string {
+func (r *ApplicationOutput_KinesisStreamsOutput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput"
 }

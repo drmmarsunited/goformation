@@ -8,17 +8,17 @@ import (
 
 // WebACL_ManagedRuleGroupConfig AWS CloudFormation Resource (AWS::WAFv2::WebACL.ManagedRuleGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html
-type WebACL_ManagedRuleGroupConfig struct {
+type WebACL_ManagedRuleGroupConfig[T any] struct {
 
 	// AWSManagedRulesATPRuleSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-awsmanagedrulesatpruleset
-	AWSManagedRulesATPRuleSet *WebACL_AWSManagedRulesATPRuleSet `json:"AWSManagedRulesATPRuleSet,omitempty"`
+	AWSManagedRulesATPRuleSet *WebACL_AWSManagedRulesATPRuleSet[any] `json:"AWSManagedRulesATPRuleSet,omitempty"`
 
 	// AWSManagedRulesBotControlRuleSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-awsmanagedrulesbotcontrolruleset
-	AWSManagedRulesBotControlRuleSet *WebACL_AWSManagedRulesBotControlRuleSet `json:"AWSManagedRulesBotControlRuleSet,omitempty"`
+	AWSManagedRulesBotControlRuleSet *WebACL_AWSManagedRulesBotControlRuleSet[any] `json:"AWSManagedRulesBotControlRuleSet,omitempty"`
 
 	// LoginPath AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type WebACL_ManagedRuleGroupConfig struct {
 	// PasswordField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-passwordfield
-	PasswordField *WebACL_FieldIdentifier `json:"PasswordField,omitempty"`
+	PasswordField *WebACL_FieldIdentifier[any] `json:"PasswordField,omitempty"`
 
 	// PayloadType AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type WebACL_ManagedRuleGroupConfig struct {
 	// UsernameField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-usernamefield
-	UsernameField *WebACL_FieldIdentifier `json:"UsernameField,omitempty"`
+	UsernameField *WebACL_FieldIdentifier[any] `json:"UsernameField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type WebACL_ManagedRuleGroupConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ManagedRuleGroupConfig) AWSCloudFormationType() string {
+func (r *WebACL_ManagedRuleGroupConfig[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ManagedRuleGroupConfig"
 }

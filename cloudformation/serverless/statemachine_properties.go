@@ -12,14 +12,14 @@ import (
 )
 
 // StateMachine_Properties is a helper struct that can hold either a CloudWatchEventEvent, EventBridgeRuleEvent, ScheduleEvent, or ApiEvent value
-type StateMachine_Properties struct {
-	CloudWatchEventEvent *StateMachine_CloudWatchEventEvent
-	EventBridgeRuleEvent *StateMachine_EventBridgeRuleEvent
-	ScheduleEvent        *StateMachine_ScheduleEvent
-	ApiEvent             *StateMachine_ApiEvent
+type StateMachine_Properties[T any] struct {
+	CloudWatchEventEvent *StateMachine_CloudWatchEventEvent[any]
+	EventBridgeRuleEvent *StateMachine_EventBridgeRuleEvent[any]
+	ScheduleEvent        *StateMachine_ScheduleEvent[any]
+	ApiEvent             *StateMachine_ApiEvent[any]
 }
 
-func (r StateMachine_Properties) value() interface{} {
+func (r StateMachine_Properties[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.CloudWatchEventEvent != nil {
@@ -46,12 +46,12 @@ func (r StateMachine_Properties) value() interface{} {
 	return nil
 }
 
-func (r StateMachine_Properties) MarshalJSON() ([]byte, error) {
+func (r StateMachine_Properties[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *StateMachine_Properties) UnmarshalJSON(b []byte) error {
+func (r *StateMachine_Properties[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

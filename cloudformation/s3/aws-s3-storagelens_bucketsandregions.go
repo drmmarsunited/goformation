@@ -8,7 +8,7 @@ import (
 
 // StorageLens_BucketsAndRegions AWS CloudFormation Resource (AWS::S3::StorageLens.BucketsAndRegions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketsandregions.html
-type StorageLens_BucketsAndRegions struct {
+type StorageLens_BucketsAndRegions[T any] struct {
 
 	// Buckets AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StorageLens_BucketsAndRegions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_BucketsAndRegions) AWSCloudFormationType() string {
+func (r *StorageLens_BucketsAndRegions[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.BucketsAndRegions"
 }

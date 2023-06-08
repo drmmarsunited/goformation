@@ -8,7 +8,7 @@ import (
 
 // TopicRule_TimestreamAction AWS CloudFormation Resource (AWS::IoT::TopicRule.TimestreamAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html
-type TopicRule_TimestreamAction struct {
+type TopicRule_TimestreamAction[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type TopicRule_TimestreamAction struct {
 	// Dimensions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-dimensions
-	Dimensions []TopicRule_TimestreamDimension `json:"Dimensions"`
+	Dimensions []TopicRule_TimestreamDimension[any] `json:"Dimensions"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type TopicRule_TimestreamAction struct {
 	// Timestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-timestamp
-	Timestamp *TopicRule_TimestreamTimestamp `json:"Timestamp,omitempty"`
+	Timestamp *TopicRule_TimestreamTimestamp[any] `json:"Timestamp,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type TopicRule_TimestreamAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_TimestreamAction) AWSCloudFormationType() string {
+func (r *TopicRule_TimestreamAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.TimestreamAction"
 }

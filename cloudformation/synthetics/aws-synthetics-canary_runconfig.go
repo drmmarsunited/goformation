@@ -8,12 +8,12 @@ import (
 
 // Canary_RunConfig AWS CloudFormation Resource (AWS::Synthetics::Canary.RunConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html
-type Canary_RunConfig struct {
+type Canary_RunConfig[T any] struct {
 
 	// ActiveTracing AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing
-	ActiveTracing *bool `json:"ActiveTracing,omitempty"`
+	ActiveTracing *T `json:"ActiveTracing,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Canary_RunConfig struct {
 	// MemoryInMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-memoryinmb
-	MemoryInMB *int `json:"MemoryInMB,omitempty"`
+	MemoryInMB *T `json:"MemoryInMB,omitempty"`
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds
-	TimeoutInSeconds *int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *T `json:"TimeoutInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Canary_RunConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_RunConfig) AWSCloudFormationType() string {
+func (r *Canary_RunConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.RunConfig"
 }

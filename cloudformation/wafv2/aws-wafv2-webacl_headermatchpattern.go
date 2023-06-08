@@ -8,7 +8,7 @@ import (
 
 // WebACL_HeaderMatchPattern AWS CloudFormation Resource (AWS::WAFv2::WebACL.HeaderMatchPattern)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-headermatchpattern.html
-type WebACL_HeaderMatchPattern struct {
+type WebACL_HeaderMatchPattern[T any] struct {
 
 	// All AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type WebACL_HeaderMatchPattern struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_HeaderMatchPattern) AWSCloudFormationType() string {
+func (r *WebACL_HeaderMatchPattern[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.HeaderMatchPattern"
 }

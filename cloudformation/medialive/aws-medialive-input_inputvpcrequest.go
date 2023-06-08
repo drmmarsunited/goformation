@@ -8,7 +8,7 @@ import (
 
 // Input_InputVpcRequest AWS CloudFormation Resource (AWS::MediaLive::Input.InputVpcRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html
-type Input_InputVpcRequest struct {
+type Input_InputVpcRequest[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Input_InputVpcRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_InputVpcRequest) AWSCloudFormationType() string {
+func (r *Input_InputVpcRequest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input.InputVpcRequest"
 }

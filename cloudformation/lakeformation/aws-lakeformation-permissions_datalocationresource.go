@@ -8,7 +8,7 @@ import (
 
 // Permissions_DataLocationResource AWS CloudFormation Resource (AWS::LakeFormation::Permissions.DataLocationResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalocationresource.html
-type Permissions_DataLocationResource struct {
+type Permissions_DataLocationResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Permissions_DataLocationResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions_DataLocationResource) AWSCloudFormationType() string {
+func (r *Permissions_DataLocationResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions.DataLocationResource"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_FontSize AWS CloudFormation Resource (AWS::QuickSight::Analysis.FontSize)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontsize.html
-type Analysis_FontSize struct {
+type Analysis_FontSize[T any] struct {
 
 	// Relative AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_FontSize struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FontSize) AWSCloudFormationType() string {
+func (r *Analysis_FontSize[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FontSize"
 }

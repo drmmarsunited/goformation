@@ -8,7 +8,7 @@ import (
 
 // Member_NetworkConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html
-type Member_NetworkConfiguration struct {
+type Member_NetworkConfiguration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Member_NetworkConfiguration struct {
 	// NetworkFrameworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-networkframeworkconfiguration
-	NetworkFrameworkConfiguration *Member_NetworkFrameworkConfiguration `json:"NetworkFrameworkConfiguration,omitempty"`
+	NetworkFrameworkConfiguration *Member_NetworkFrameworkConfiguration[any] `json:"NetworkFrameworkConfiguration,omitempty"`
 
 	// VotingPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-votingpolicy
-	VotingPolicy *Member_VotingPolicy `json:"VotingPolicy"`
+	VotingPolicy *Member_VotingPolicy[any] `json:"VotingPolicy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Member_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Member_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.NetworkConfiguration"
 }

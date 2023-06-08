@@ -12,7 +12,7 @@ import (
 
 // ACL AWS CloudFormation Resource (AWS::MemoryDB::ACL)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-acl.html
-type ACL struct {
+type ACL[T any] struct {
 
 	// ACLName AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type ACL struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ACL) AWSCloudFormationType() string {
+func (r *ACL[any]) AWSCloudFormationType() string {
 	return "AWS::MemoryDB::ACL"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ACL) MarshalJSON() ([]byte, error) {
-	type Properties ACL
+func (r ACL[any]) MarshalJSON() ([]byte, error) {
+	type Properties ACL[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r ACL) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ACL) UnmarshalJSON(b []byte) error {
-	type Properties ACL
+func (r *ACL[any]) UnmarshalJSON(b []byte) error {
+	type Properties ACL[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *ACL) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ACL(*res.Properties)
+		*r = ACL[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

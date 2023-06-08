@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_VeevaConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-veevaconnectorprofileproperties.html
-type ConnectorProfile_VeevaConnectorProfileProperties struct {
+type ConnectorProfile_VeevaConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_VeevaConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_VeevaConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_VeevaConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileProperties"
 }

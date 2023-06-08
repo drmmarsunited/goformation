@@ -8,7 +8,7 @@ import (
 
 // DataSource_AclConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.AclConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-aclconfiguration.html
-type DataSource_AclConfiguration struct {
+type DataSource_AclConfiguration[T any] struct {
 
 	// AllowedGroupsColumnName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_AclConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AclConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_AclConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.AclConfiguration"
 }

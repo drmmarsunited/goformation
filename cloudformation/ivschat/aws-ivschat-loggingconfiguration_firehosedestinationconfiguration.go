@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_FirehoseDestinationConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration.FirehoseDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-firehosedestinationconfiguration.html
-type LoggingConfiguration_FirehoseDestinationConfiguration struct {
+type LoggingConfiguration_FirehoseDestinationConfiguration[T any] struct {
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_FirehoseDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_FirehoseDestinationConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_FirehoseDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::LoggingConfiguration.FirehoseDestinationConfiguration"
 }

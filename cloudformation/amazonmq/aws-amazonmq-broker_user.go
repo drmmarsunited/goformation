@@ -8,12 +8,12 @@ import (
 
 // Broker_User AWS CloudFormation Resource (AWS::AmazonMQ::Broker.User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html
-type Broker_User struct {
+type Broker_User[T any] struct {
 
 	// ConsoleAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-consoleaccess
-	ConsoleAccess *bool `json:"ConsoleAccess,omitempty"`
+	ConsoleAccess *T `json:"ConsoleAccess,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Broker_User struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_User) AWSCloudFormationType() string {
+func (r *Broker_User[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.User"
 }

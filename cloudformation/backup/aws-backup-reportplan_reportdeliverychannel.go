@@ -8,7 +8,7 @@ import (
 
 // ReportPlan_ReportDeliveryChannel AWS CloudFormation Resource (AWS::Backup::ReportPlan.ReportDeliveryChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html
-type ReportPlan_ReportDeliveryChannel struct {
+type ReportPlan_ReportDeliveryChannel[T any] struct {
 
 	// Formats AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ReportPlan_ReportDeliveryChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportPlan_ReportDeliveryChannel) AWSCloudFormationType() string {
+func (r *ReportPlan_ReportDeliveryChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::ReportPlan.ReportDeliveryChannel"
 }

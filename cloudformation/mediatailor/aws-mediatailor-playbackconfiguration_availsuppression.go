@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_AvailSuppression AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.AvailSuppression)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-availsuppression.html
-type PlaybackConfiguration_AvailSuppression struct {
+type PlaybackConfiguration_AvailSuppression[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type PlaybackConfiguration_AvailSuppression struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_AvailSuppression) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_AvailSuppression[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.AvailSuppression"
 }

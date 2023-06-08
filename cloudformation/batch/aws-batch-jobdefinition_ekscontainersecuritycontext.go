@@ -8,32 +8,32 @@ import (
 
 // JobDefinition_EksContainerSecurityContext AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksContainerSecurityContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html
-type JobDefinition_EksContainerSecurityContext struct {
+type JobDefinition_EksContainerSecurityContext[T any] struct {
 
 	// Privileged AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-privileged
-	Privileged *bool `json:"Privileged,omitempty"`
+	Privileged *T `json:"Privileged,omitempty"`
 
 	// ReadOnlyRootFilesystem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-readonlyrootfilesystem
-	ReadOnlyRootFilesystem *bool `json:"ReadOnlyRootFilesystem,omitempty"`
+	ReadOnlyRootFilesystem *T `json:"ReadOnlyRootFilesystem,omitempty"`
 
 	// RunAsGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-runasgroup
-	RunAsGroup *int `json:"RunAsGroup,omitempty"`
+	RunAsGroup *T `json:"RunAsGroup,omitempty"`
 
 	// RunAsNonRoot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-runasnonroot
-	RunAsNonRoot *bool `json:"RunAsNonRoot,omitempty"`
+	RunAsNonRoot *T `json:"RunAsNonRoot,omitempty"`
 
 	// RunAsUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-runasuser
-	RunAsUser *int `json:"RunAsUser,omitempty"`
+	RunAsUser *T `json:"RunAsUser,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type JobDefinition_EksContainerSecurityContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksContainerSecurityContext) AWSCloudFormationType() string {
+func (r *JobDefinition_EksContainerSecurityContext[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksContainerSecurityContext"
 }

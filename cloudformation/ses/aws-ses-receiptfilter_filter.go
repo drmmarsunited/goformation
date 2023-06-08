@@ -8,12 +8,12 @@ import (
 
 // ReceiptFilter_Filter AWS CloudFormation Resource (AWS::SES::ReceiptFilter.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html
-type ReceiptFilter_Filter struct {
+type ReceiptFilter_Filter[T any] struct {
 
 	// IpFilter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter
-	IpFilter *ReceiptFilter_IpFilter `json:"IpFilter"`
+	IpFilter *ReceiptFilter_IpFilter[any] `json:"IpFilter"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ReceiptFilter_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptFilter_Filter) AWSCloudFormationType() string {
+func (r *ReceiptFilter_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptFilter.Filter"
 }

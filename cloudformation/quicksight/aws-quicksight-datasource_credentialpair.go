@@ -8,12 +8,12 @@ import (
 
 // DataSource_CredentialPair AWS CloudFormation Resource (AWS::QuickSight::DataSource.CredentialPair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html
-type DataSource_CredentialPair struct {
+type DataSource_CredentialPair[T any] struct {
 
 	// AlternateDataSourceParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-alternatedatasourceparameters
-	AlternateDataSourceParameters []DataSource_DataSourceParameters `json:"AlternateDataSourceParameters,omitempty"`
+	AlternateDataSourceParameters []DataSource_DataSourceParameters[any] `json:"AlternateDataSourceParameters,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_CredentialPair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_CredentialPair) AWSCloudFormationType() string {
+func (r *DataSource_CredentialPair[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.CredentialPair"
 }

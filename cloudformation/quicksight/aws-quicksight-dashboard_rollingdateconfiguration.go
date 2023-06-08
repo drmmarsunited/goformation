@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RollingDateConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RollingDateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-rollingdateconfiguration.html
-type Dashboard_RollingDateConfiguration struct {
+type Dashboard_RollingDateConfiguration[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_RollingDateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RollingDateConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_RollingDateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RollingDateConfiguration"
 }

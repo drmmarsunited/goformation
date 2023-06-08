@@ -8,12 +8,12 @@ import (
 
 // Dashboard_GeospatialPointStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GeospatialPointStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpointstyleoptions.html
-type Dashboard_GeospatialPointStyleOptions struct {
+type Dashboard_GeospatialPointStyleOptions[T any] struct {
 
 	// ClusterMarkerConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpointstyleoptions.html#cfn-quicksight-dashboard-geospatialpointstyleoptions-clustermarkerconfiguration
-	ClusterMarkerConfiguration *Dashboard_ClusterMarkerConfiguration `json:"ClusterMarkerConfiguration,omitempty"`
+	ClusterMarkerConfiguration *Dashboard_ClusterMarkerConfiguration[any] `json:"ClusterMarkerConfiguration,omitempty"`
 
 	// SelectedPointStyle AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_GeospatialPointStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GeospatialPointStyleOptions) AWSCloudFormationType() string {
+func (r *Dashboard_GeospatialPointStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GeospatialPointStyleOptions"
 }

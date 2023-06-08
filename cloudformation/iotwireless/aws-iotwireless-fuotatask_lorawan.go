@@ -8,7 +8,7 @@ import (
 
 // FuotaTask_LoRaWAN AWS CloudFormation Resource (AWS::IoTWireless::FuotaTask.LoRaWAN)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-fuotatask-lorawan.html
-type FuotaTask_LoRaWAN struct {
+type FuotaTask_LoRaWAN[T any] struct {
 
 	// RfRegion AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FuotaTask_LoRaWAN struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FuotaTask_LoRaWAN) AWSCloudFormationType() string {
+func (r *FuotaTask_LoRaWAN[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::FuotaTask.LoRaWAN"
 }

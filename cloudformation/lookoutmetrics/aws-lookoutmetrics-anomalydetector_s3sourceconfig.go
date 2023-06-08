@@ -8,12 +8,12 @@ import (
 
 // AnomalyDetector_S3SourceConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.S3SourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-s3sourceconfig.html
-type AnomalyDetector_S3SourceConfig struct {
+type AnomalyDetector_S3SourceConfig[T any] struct {
 
 	// FileFormatDescriptor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-s3sourceconfig.html#cfn-lookoutmetrics-anomalydetector-s3sourceconfig-fileformatdescriptor
-	FileFormatDescriptor *AnomalyDetector_FileFormatDescriptor `json:"FileFormatDescriptor"`
+	FileFormatDescriptor *AnomalyDetector_FileFormatDescriptor[any] `json:"FileFormatDescriptor"`
 
 	// HistoricalDataPathList AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type AnomalyDetector_S3SourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_S3SourceConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_S3SourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.S3SourceConfig"
 }

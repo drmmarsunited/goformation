@@ -8,27 +8,27 @@ import (
 
 // Analysis_MeasureField AWS CloudFormation Resource (AWS::QuickSight::Analysis.MeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-measurefield.html
-type Analysis_MeasureField struct {
+type Analysis_MeasureField[T any] struct {
 
 	// CalculatedMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-measurefield.html#cfn-quicksight-analysis-measurefield-calculatedmeasurefield
-	CalculatedMeasureField *Analysis_CalculatedMeasureField `json:"CalculatedMeasureField,omitempty"`
+	CalculatedMeasureField *Analysis_CalculatedMeasureField[any] `json:"CalculatedMeasureField,omitempty"`
 
 	// CategoricalMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-measurefield.html#cfn-quicksight-analysis-measurefield-categoricalmeasurefield
-	CategoricalMeasureField *Analysis_CategoricalMeasureField `json:"CategoricalMeasureField,omitempty"`
+	CategoricalMeasureField *Analysis_CategoricalMeasureField[any] `json:"CategoricalMeasureField,omitempty"`
 
 	// DateMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-measurefield.html#cfn-quicksight-analysis-measurefield-datemeasurefield
-	DateMeasureField *Analysis_DateMeasureField `json:"DateMeasureField,omitempty"`
+	DateMeasureField *Analysis_DateMeasureField[any] `json:"DateMeasureField,omitempty"`
 
 	// NumericalMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-measurefield.html#cfn-quicksight-analysis-measurefield-numericalmeasurefield
-	NumericalMeasureField *Analysis_NumericalMeasureField `json:"NumericalMeasureField,omitempty"`
+	NumericalMeasureField *Analysis_NumericalMeasureField[any] `json:"NumericalMeasureField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_MeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_MeasureField) AWSCloudFormationType() string {
+func (r *Analysis_MeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.MeasureField"
 }

@@ -12,22 +12,22 @@ import (
 
 // PackagingConfiguration AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html
-type PackagingConfiguration struct {
+type PackagingConfiguration[T any] struct {
 
 	// CmafPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage
-	CmafPackage *PackagingConfiguration_CmafPackage `json:"CmafPackage,omitempty"`
+	CmafPackage *PackagingConfiguration_CmafPackage[any] `json:"CmafPackage,omitempty"`
 
 	// DashPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage
-	DashPackage *PackagingConfiguration_DashPackage `json:"DashPackage,omitempty"`
+	DashPackage *PackagingConfiguration_DashPackage[any] `json:"DashPackage,omitempty"`
 
 	// HlsPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage
-	HlsPackage *PackagingConfiguration_HlsPackage `json:"HlsPackage,omitempty"`
+	HlsPackage *PackagingConfiguration_HlsPackage[any] `json:"HlsPackage,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type PackagingConfiguration struct {
 	// MssPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage
-	MssPackage *PackagingConfiguration_MssPackage `json:"MssPackage,omitempty"`
+	MssPackage *PackagingConfiguration_MssPackage[any] `json:"MssPackage,omitempty"`
 
 	// PackagingGroupId AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type PackagingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration) AWSCloudFormationType() string {
+func (r *PackagingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PackagingConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties PackagingConfiguration
+func (r PackagingConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties PackagingConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r PackagingConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PackagingConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties PackagingConfiguration
+func (r *PackagingConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties PackagingConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *PackagingConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PackagingConfiguration(*res.Properties)
+		*r = PackagingConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

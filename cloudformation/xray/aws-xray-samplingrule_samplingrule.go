@@ -8,7 +8,7 @@ import (
 
 // SamplingRule_SamplingRule AWS CloudFormation Resource (AWS::XRay::SamplingRule.SamplingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html
-type SamplingRule_SamplingRule struct {
+type SamplingRule_SamplingRule[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type SamplingRule_SamplingRule struct {
 	// FixedRate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-fixedrate
-	FixedRate float64 `json:"FixedRate"`
+	FixedRate T `json:"FixedRate"`
 
 	// HTTPMethod AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type SamplingRule_SamplingRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// ReservoirSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-reservoirsize
-	ReservoirSize int `json:"ReservoirSize"`
+	ReservoirSize T `json:"ReservoirSize"`
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -73,7 +73,7 @@ type SamplingRule_SamplingRule struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-version
-	Version *int `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -92,6 +92,6 @@ type SamplingRule_SamplingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SamplingRule_SamplingRule) AWSCloudFormationType() string {
+func (r *SamplingRule_SamplingRule[any]) AWSCloudFormationType() string {
 	return "AWS::XRay::SamplingRule.SamplingRule"
 }

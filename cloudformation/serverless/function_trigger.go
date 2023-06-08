@@ -12,13 +12,13 @@ import (
 )
 
 // Function_Trigger is a helper struct that can hold either a String or String value
-type Function_Trigger struct {
+type Function_Trigger[T any] struct {
 	String *string
 
 	StringArray *[]string
 }
 
-func (r Function_Trigger) value() interface{} {
+func (r Function_Trigger[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r Function_Trigger) value() interface{} {
 	return nil
 }
 
-func (r Function_Trigger) MarshalJSON() ([]byte, error) {
+func (r Function_Trigger[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_Trigger) UnmarshalJSON(b []byte) error {
+func (r *Function_Trigger[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

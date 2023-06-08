@@ -12,7 +12,7 @@ import (
 
 // Agent AWS CloudFormation Resource (AWS::DataSync::Agent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html
-type Agent struct {
+type Agent[T any] struct {
 
 	// ActivationKey AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Agent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Agent) AWSCloudFormationType() string {
+func (r *Agent[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::Agent"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Agent) MarshalJSON() ([]byte, error) {
-	type Properties Agent
+func (r Agent[any]) MarshalJSON() ([]byte, error) {
+	type Properties Agent[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Agent) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Agent) UnmarshalJSON(b []byte) error {
-	type Properties Agent
+func (r *Agent[any]) UnmarshalJSON(b []byte) error {
+	type Properties Agent[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Agent) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Agent(*res.Properties)
+		*r = Agent[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

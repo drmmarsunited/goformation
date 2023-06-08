@@ -8,7 +8,7 @@ import (
 
 // FunctionDefinitionVersion_FunctionConfiguration AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinitionVersion.FunctionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html
-type FunctionDefinitionVersion_FunctionConfiguration struct {
+type FunctionDefinitionVersion_FunctionConfiguration[T any] struct {
 
 	// EncodingType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type FunctionDefinitionVersion_FunctionConfiguration struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-environment
-	Environment *FunctionDefinitionVersion_Environment `json:"Environment,omitempty"`
+	Environment *FunctionDefinitionVersion_Environment[any] `json:"Environment,omitempty"`
 
 	// ExecArgs AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type FunctionDefinitionVersion_FunctionConfiguration struct {
 	// MemorySize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-memorysize
-	MemorySize *int `json:"MemorySize,omitempty"`
+	MemorySize *T `json:"MemorySize,omitempty"`
 
 	// Pinned AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-pinned
-	Pinned *bool `json:"Pinned,omitempty"`
+	Pinned *T `json:"Pinned,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type FunctionDefinitionVersion_FunctionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinitionVersion_FunctionConfiguration) AWSCloudFormationType() string {
+func (r *FunctionDefinitionVersion_FunctionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinitionVersion.FunctionConfiguration"
 }

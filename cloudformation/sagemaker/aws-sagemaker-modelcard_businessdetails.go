@@ -8,7 +8,7 @@ import (
 
 // ModelCard_BusinessDetails AWS CloudFormation Resource (AWS::SageMaker::ModelCard.BusinessDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html
-type ModelCard_BusinessDetails struct {
+type ModelCard_BusinessDetails[T any] struct {
 
 	// BusinessProblem AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelCard_BusinessDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_BusinessDetails) AWSCloudFormationType() string {
+func (r *ModelCard_BusinessDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.BusinessDetails"
 }

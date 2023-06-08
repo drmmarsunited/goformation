@@ -8,17 +8,17 @@ import (
 
 // PatchBaseline_Rule AWS CloudFormation Resource (AWS::SSM::PatchBaseline.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
-type PatchBaseline_Rule struct {
+type PatchBaseline_Rule[T any] struct {
 
 	// ApproveAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
-	ApproveAfterDays *int `json:"ApproveAfterDays,omitempty"`
+	ApproveAfterDays *T `json:"ApproveAfterDays,omitempty"`
 
 	// ApproveUntilDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate
-	ApproveUntilDate *PatchBaseline_PatchStringDate `json:"ApproveUntilDate,omitempty"`
+	ApproveUntilDate *PatchBaseline_PatchStringDate[any] `json:"ApproveUntilDate,omitempty"`
 
 	// ComplianceLevel AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type PatchBaseline_Rule struct {
 	// EnableNonSecurity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity
-	EnableNonSecurity *bool `json:"EnableNonSecurity,omitempty"`
+	EnableNonSecurity *T `json:"EnableNonSecurity,omitempty"`
 
 	// PatchFilterGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-patchfiltergroup
-	PatchFilterGroup *PatchBaseline_PatchFilterGroup `json:"PatchFilterGroup,omitempty"`
+	PatchFilterGroup *PatchBaseline_PatchFilterGroup[any] `json:"PatchFilterGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type PatchBaseline_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_Rule) AWSCloudFormationType() string {
+func (r *PatchBaseline_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.Rule"
 }

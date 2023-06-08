@@ -8,27 +8,27 @@ import (
 
 // Bot_WaitAndContinueSpecification AWS CloudFormation Resource (AWS::Lex::Bot.WaitAndContinueSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html
-type Bot_WaitAndContinueSpecification struct {
+type Bot_WaitAndContinueSpecification[T any] struct {
 
 	// ContinueResponse AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-continueresponse
-	ContinueResponse *Bot_ResponseSpecification `json:"ContinueResponse"`
+	ContinueResponse *Bot_ResponseSpecification[any] `json:"ContinueResponse"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-isactive
-	IsActive *bool `json:"IsActive,omitempty"`
+	IsActive *T `json:"IsActive,omitempty"`
 
 	// StillWaitingResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-stillwaitingresponse
-	StillWaitingResponse *Bot_StillWaitingResponseSpecification `json:"StillWaitingResponse,omitempty"`
+	StillWaitingResponse *Bot_StillWaitingResponseSpecification[any] `json:"StillWaitingResponse,omitempty"`
 
 	// WaitingResponse AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-waitingresponse
-	WaitingResponse *Bot_ResponseSpecification `json:"WaitingResponse"`
+	WaitingResponse *Bot_ResponseSpecification[any] `json:"WaitingResponse"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_WaitAndContinueSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_WaitAndContinueSpecification) AWSCloudFormationType() string {
+func (r *Bot_WaitAndContinueSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.WaitAndContinueSpecification"
 }

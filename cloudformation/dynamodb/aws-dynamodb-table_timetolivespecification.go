@@ -8,7 +8,7 @@ import (
 
 // Table_TimeToLiveSpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.TimeToLiveSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-timetolivespecification.html
-type Table_TimeToLiveSpecification struct {
+type Table_TimeToLiveSpecification[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Table_TimeToLiveSpecification struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-timetolivespecification.html#cfn-dynamodb-table-timetolivespecification-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Table_TimeToLiveSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_TimeToLiveSpecification) AWSCloudFormationType() string {
+func (r *Table_TimeToLiveSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.TimeToLiveSpecification"
 }

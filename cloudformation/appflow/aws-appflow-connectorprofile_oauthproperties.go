@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_OAuthProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.OAuthProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthproperties.html
-type ConnectorProfile_OAuthProperties struct {
+type ConnectorProfile_OAuthProperties[T any] struct {
 
 	// AuthCodeUrl AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ConnectorProfile_OAuthProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_OAuthProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_OAuthProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.OAuthProperties"
 }

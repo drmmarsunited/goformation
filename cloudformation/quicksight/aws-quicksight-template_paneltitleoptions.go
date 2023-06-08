@@ -8,12 +8,12 @@ import (
 
 // Template_PanelTitleOptions AWS CloudFormation Resource (AWS::QuickSight::Template.PanelTitleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-paneltitleoptions.html
-type Template_PanelTitleOptions struct {
+type Template_PanelTitleOptions[T any] struct {
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-paneltitleoptions.html#cfn-quicksight-template-paneltitleoptions-fontconfiguration
-	FontConfiguration *Template_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Template_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// HorizontalTextAlignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_PanelTitleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PanelTitleOptions) AWSCloudFormationType() string {
+func (r *Template_PanelTitleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PanelTitleOptions"
 }

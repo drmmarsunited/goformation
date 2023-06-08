@@ -8,12 +8,12 @@ import (
 
 // Analysis_ItemsLimitConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ItemsLimitConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-itemslimitconfiguration.html
-type Analysis_ItemsLimitConfiguration struct {
+type Analysis_ItemsLimitConfiguration[T any] struct {
 
 	// ItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-itemslimitconfiguration.html#cfn-quicksight-analysis-itemslimitconfiguration-itemslimit
-	ItemsLimit *float64 `json:"ItemsLimit,omitempty"`
+	ItemsLimit *T `json:"ItemsLimit,omitempty"`
 
 	// OtherCategories AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ItemsLimitConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ItemsLimitConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ItemsLimitConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ItemsLimitConfiguration"
 }

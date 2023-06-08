@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_ExtendedS3DestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html
-type DeliveryStream_ExtendedS3DestinationConfiguration struct {
+type DeliveryStream_ExtendedS3DestinationConfiguration[T any] struct {
 
 	// BucketARN AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type DeliveryStream_ExtendedS3DestinationConfiguration struct {
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_BufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_BufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// CompressionFormat AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type DeliveryStream_ExtendedS3DestinationConfiguration struct {
 	// DataFormatConversionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration
-	DataFormatConversionConfiguration *DeliveryStream_DataFormatConversionConfiguration `json:"DataFormatConversionConfiguration,omitempty"`
+	DataFormatConversionConfiguration *DeliveryStream_DataFormatConversionConfiguration[any] `json:"DataFormatConversionConfiguration,omitempty"`
 
 	// DynamicPartitioningConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dynamicpartitioningconfiguration
-	DynamicPartitioningConfiguration *DeliveryStream_DynamicPartitioningConfiguration `json:"DynamicPartitioningConfiguration,omitempty"`
+	DynamicPartitioningConfiguration *DeliveryStream_DynamicPartitioningConfiguration[any] `json:"DynamicPartitioningConfiguration,omitempty"`
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration
-	EncryptionConfiguration *DeliveryStream_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *DeliveryStream_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// ErrorOutputPrefix AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type DeliveryStream_ExtendedS3DestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -68,7 +68,7 @@ type DeliveryStream_ExtendedS3DestinationConfiguration struct {
 	// S3BackupConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration
-	S3BackupConfiguration *DeliveryStream_S3DestinationConfiguration `json:"S3BackupConfiguration,omitempty"`
+	S3BackupConfiguration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3BackupConfiguration,omitempty"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type DeliveryStream_ExtendedS3DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_ExtendedS3DestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_ExtendedS3DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // UserPool_Policies AWS CloudFormation Resource (AWS::Cognito::UserPool.Policies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
-type UserPool_Policies struct {
+type UserPool_Policies[T any] struct {
 
 	// PasswordPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-passwordpolicy
-	PasswordPolicy *UserPool_PasswordPolicy `json:"PasswordPolicy,omitempty"`
+	PasswordPolicy *UserPool_PasswordPolicy[any] `json:"PasswordPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type UserPool_Policies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_Policies) AWSCloudFormationType() string {
+func (r *UserPool_Policies[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.Policies"
 }

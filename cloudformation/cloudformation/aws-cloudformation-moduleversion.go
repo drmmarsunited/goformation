@@ -11,7 +11,7 @@ import (
 
 // ModuleVersion AWS CloudFormation Resource (AWS::CloudFormation::ModuleVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html
-type ModuleVersion struct {
+type ModuleVersion[T any] struct {
 
 	// ModuleName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ModuleVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModuleVersion) AWSCloudFormationType() string {
+func (r *ModuleVersion[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::ModuleVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModuleVersion) MarshalJSON() ([]byte, error) {
-	type Properties ModuleVersion
+func (r ModuleVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModuleVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ModuleVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModuleVersion) UnmarshalJSON(b []byte) error {
-	type Properties ModuleVersion
+func (r *ModuleVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModuleVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ModuleVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModuleVersion(*res.Properties)
+		*r = ModuleVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

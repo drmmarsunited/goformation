@@ -12,12 +12,12 @@ import (
 
 // LoggingConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-loggingconfiguration.html
-type LoggingConfiguration struct {
+type LoggingConfiguration[T any] struct {
 
 	// DestinationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-loggingconfiguration.html#cfn-ivschat-loggingconfiguration-destinationconfiguration
-	DestinationConfiguration *LoggingConfiguration_DestinationConfiguration `json:"DestinationConfiguration"`
+	DestinationConfiguration *LoggingConfiguration_DestinationConfiguration[any] `json:"DestinationConfiguration"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::LoggingConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LoggingConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties LoggingConfiguration
+func (r LoggingConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties LoggingConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r LoggingConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LoggingConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties LoggingConfiguration
+func (r *LoggingConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties LoggingConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *LoggingConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LoggingConfiguration(*res.Properties)
+		*r = LoggingConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

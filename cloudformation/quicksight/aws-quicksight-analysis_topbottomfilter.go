@@ -8,17 +8,17 @@ import (
 
 // Analysis_TopBottomFilter AWS CloudFormation Resource (AWS::QuickSight::Analysis.TopBottomFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottomfilter.html
-type Analysis_TopBottomFilter struct {
+type Analysis_TopBottomFilter[T any] struct {
 
 	// AggregationSortConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottomfilter.html#cfn-quicksight-analysis-topbottomfilter-aggregationsortconfigurations
-	AggregationSortConfigurations []Analysis_AggregationSortConfiguration `json:"AggregationSortConfigurations"`
+	AggregationSortConfigurations []Analysis_AggregationSortConfiguration[any] `json:"AggregationSortConfigurations"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottomfilter.html#cfn-quicksight-analysis-topbottomfilter-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_TopBottomFilter struct {
 	// Limit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottomfilter.html#cfn-quicksight-analysis-topbottomfilter-limit
-	Limit *float64 `json:"Limit,omitempty"`
+	Limit *T `json:"Limit,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Analysis_TopBottomFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TopBottomFilter) AWSCloudFormationType() string {
+func (r *Analysis_TopBottomFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TopBottomFilter"
 }

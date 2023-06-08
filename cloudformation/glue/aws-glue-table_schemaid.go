@@ -8,7 +8,7 @@ import (
 
 // Table_SchemaId AWS CloudFormation Resource (AWS::Glue::Table.SchemaId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html
-type Table_SchemaId struct {
+type Table_SchemaId[T any] struct {
 
 	// RegistryName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_SchemaId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_SchemaId) AWSCloudFormationType() string {
+func (r *Table_SchemaId[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.SchemaId"
 }

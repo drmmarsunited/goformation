@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SAPODataConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html
-type ConnectorProfile_SAPODataConnectorProfileProperties struct {
+type ConnectorProfile_SAPODataConnectorProfileProperties[T any] struct {
 
 	// ApplicationHostUrl AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type ConnectorProfile_SAPODataConnectorProfileProperties struct {
 	// OAuthProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-oauthproperties
-	OAuthProperties *ConnectorProfile_OAuthProperties `json:"OAuthProperties,omitempty"`
+	OAuthProperties *ConnectorProfile_OAuthProperties[any] `json:"OAuthProperties,omitempty"`
 
 	// PortNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-portnumber
-	PortNumber *int `json:"PortNumber,omitempty"`
+	PortNumber *T `json:"PortNumber,omitempty"`
 
 	// PrivateLinkServiceName AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type ConnectorProfile_SAPODataConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SAPODataConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SAPODataConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileProperties"
 }

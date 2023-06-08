@@ -8,7 +8,7 @@ import (
 
 // ClientVpnEndpoint_ClientLoginBannerOptions AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html
-type ClientVpnEndpoint_ClientLoginBannerOptions struct {
+type ClientVpnEndpoint_ClientLoginBannerOptions[T any] struct {
 
 	// BannerText AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ClientVpnEndpoint_ClientLoginBannerOptions struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ClientVpnEndpoint_ClientLoginBannerOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_ClientLoginBannerOptions) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_ClientLoginBannerOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions"
 }

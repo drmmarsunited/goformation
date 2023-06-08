@@ -8,12 +8,12 @@ import (
 
 // Channel_InputLossBehavior AWS CloudFormation Resource (AWS::MediaLive::Channel.InputLossBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html
-type Channel_InputLossBehavior struct {
+type Channel_InputLossBehavior[T any] struct {
 
 	// BlackFrameMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-blackframemsec
-	BlackFrameMsec *int `json:"BlackFrameMsec,omitempty"`
+	BlackFrameMsec *T `json:"BlackFrameMsec,omitempty"`
 
 	// InputLossImageColor AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_InputLossBehavior struct {
 	// InputLossImageSlate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimageslate
-	InputLossImageSlate *Channel_InputLocation `json:"InputLossImageSlate,omitempty"`
+	InputLossImageSlate *Channel_InputLocation[any] `json:"InputLossImageSlate,omitempty"`
 
 	// InputLossImageType AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Channel_InputLossBehavior struct {
 	// RepeatFrameMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-repeatframemsec
-	RepeatFrameMsec *int `json:"RepeatFrameMsec,omitempty"`
+	RepeatFrameMsec *T `json:"RepeatFrameMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Channel_InputLossBehavior struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputLossBehavior) AWSCloudFormationType() string {
+func (r *Channel_InputLossBehavior[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputLossBehavior"
 }

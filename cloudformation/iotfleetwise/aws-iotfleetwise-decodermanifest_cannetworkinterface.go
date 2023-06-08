@@ -13,7 +13,7 @@ type DecoderManifest_CanNetworkInterface struct {
 	// CanInterface AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-caninterface
-	CanInterface *DecoderManifest_CanInterface `json:"CanInterface"`
+	CanInterface *DecoderManifest_CanInterface[any] `json:"CanInterface"`
 
 	// InterfaceId AWS CloudFormation Property
 	// Required: true

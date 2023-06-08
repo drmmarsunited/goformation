@@ -8,7 +8,7 @@ import (
 
 // LocationHDFS_QopConfiguration AWS CloudFormation Resource (AWS::DataSync::LocationHDFS.QopConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-qopconfiguration.html
-type LocationHDFS_QopConfiguration struct {
+type LocationHDFS_QopConfiguration[T any] struct {
 
 	// DataTransferProtection AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LocationHDFS_QopConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationHDFS_QopConfiguration) AWSCloudFormationType() string {
+func (r *LocationHDFS_QopConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationHDFS.QopConfiguration"
 }

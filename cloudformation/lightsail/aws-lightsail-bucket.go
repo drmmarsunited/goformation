@@ -12,12 +12,12 @@ import (
 
 // Bucket AWS CloudFormation Resource (AWS::Lightsail::Bucket)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html
-type Bucket struct {
+type Bucket[T any] struct {
 
 	// AccessRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-accessrules
-	AccessRules *Bucket_AccessRules `json:"AccessRules,omitempty"`
+	AccessRules *Bucket_AccessRules[any] `json:"AccessRules,omitempty"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Bucket struct {
 	// ObjectVersioning AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-objectversioning
-	ObjectVersioning *bool `json:"ObjectVersioning,omitempty"`
+	ObjectVersioning *T `json:"ObjectVersioning,omitempty"`
 
 	// ReadOnlyAccessAccounts AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Bucket struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket) AWSCloudFormationType() string {
+func (r *Bucket[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Bucket"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Bucket) MarshalJSON() ([]byte, error) {
-	type Properties Bucket
+func (r Bucket[any]) MarshalJSON() ([]byte, error) {
+	type Properties Bucket[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Bucket) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Bucket) UnmarshalJSON(b []byte) error {
-	type Properties Bucket
+func (r *Bucket[any]) UnmarshalJSON(b []byte) error {
+	type Properties Bucket[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Bucket) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Bucket(*res.Properties)
+		*r = Bucket[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

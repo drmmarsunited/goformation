@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_AcceleratorTotalMemoryMiB AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.AcceleratorTotalMemoryMiB)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratortotalmemorymib.html
-type LaunchTemplate_AcceleratorTotalMemoryMiB struct {
+type LaunchTemplate_AcceleratorTotalMemoryMiB[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratortotalmemorymib.html#cfn-ec2-launchtemplate-acceleratortotalmemorymib-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratortotalmemorymib.html#cfn-ec2-launchtemplate-acceleratortotalmemorymib-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_AcceleratorTotalMemoryMiB struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_AcceleratorTotalMemoryMiB) AWSCloudFormationType() string {
+func (r *LaunchTemplate_AcceleratorTotalMemoryMiB[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.AcceleratorTotalMemoryMiB"
 }

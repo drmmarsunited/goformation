@@ -8,12 +8,12 @@ import (
 
 // Analysis_IntegerValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.IntegerValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integervaluewhenunsetconfiguration.html
-type Analysis_IntegerValueWhenUnsetConfiguration struct {
+type Analysis_IntegerValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integervaluewhenunsetconfiguration.html#cfn-quicksight-analysis-integervaluewhenunsetconfiguration-customvalue
-	CustomValue *float64 `json:"CustomValue,omitempty"`
+	CustomValue *T `json:"CustomValue,omitempty"`
 
 	// ValueWhenUnsetOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_IntegerValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_IntegerValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_IntegerValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.IntegerValueWhenUnsetConfiguration"
 }

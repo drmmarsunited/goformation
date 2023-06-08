@@ -11,12 +11,12 @@ import (
 
 // GlobalTable AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html
-type GlobalTable struct {
+type GlobalTable[T any] struct {
 
 	// AttributeDefinitions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-attributedefinitions
-	AttributeDefinitions []GlobalTable_AttributeDefinition `json:"AttributeDefinitions"`
+	AttributeDefinitions []GlobalTable_AttributeDefinition[any] `json:"AttributeDefinitions"`
 
 	// BillingMode AWS CloudFormation Property
 	// Required: false
@@ -26,32 +26,32 @@ type GlobalTable struct {
 	// GlobalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-globalsecondaryindexes
-	GlobalSecondaryIndexes []GlobalTable_GlobalSecondaryIndex `json:"GlobalSecondaryIndexes,omitempty"`
+	GlobalSecondaryIndexes []GlobalTable_GlobalSecondaryIndex[any] `json:"GlobalSecondaryIndexes,omitempty"`
 
 	// KeySchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-keyschema
-	KeySchema []GlobalTable_KeySchema `json:"KeySchema"`
+	KeySchema []GlobalTable_KeySchema[any] `json:"KeySchema"`
 
 	// LocalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-localsecondaryindexes
-	LocalSecondaryIndexes []GlobalTable_LocalSecondaryIndex `json:"LocalSecondaryIndexes,omitempty"`
+	LocalSecondaryIndexes []GlobalTable_LocalSecondaryIndex[any] `json:"LocalSecondaryIndexes,omitempty"`
 
 	// Replicas AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas
-	Replicas []GlobalTable_ReplicaSpecification `json:"Replicas"`
+	Replicas []GlobalTable_ReplicaSpecification[any] `json:"Replicas"`
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-ssespecification
-	SSESpecification *GlobalTable_SSESpecification `json:"SSESpecification,omitempty"`
+	SSESpecification *GlobalTable_SSESpecification[any] `json:"SSESpecification,omitempty"`
 
 	// StreamSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification
-	StreamSpecification *GlobalTable_StreamSpecification `json:"StreamSpecification,omitempty"`
+	StreamSpecification *GlobalTable_StreamSpecification[any] `json:"StreamSpecification,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
@@ -61,12 +61,12 @@ type GlobalTable struct {
 	// TimeToLiveSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-timetolivespecification
-	TimeToLiveSpecification *GlobalTable_TimeToLiveSpecification `json:"TimeToLiveSpecification,omitempty"`
+	TimeToLiveSpecification *GlobalTable_TimeToLiveSpecification[any] `json:"TimeToLiveSpecification,omitempty"`
 
 	// WriteProvisionedThroughputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings
-	WriteProvisionedThroughputSettings *GlobalTable_WriteProvisionedThroughputSettings `json:"WriteProvisionedThroughputSettings,omitempty"`
+	WriteProvisionedThroughputSettings *GlobalTable_WriteProvisionedThroughputSettings[any] `json:"WriteProvisionedThroughputSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -85,14 +85,15 @@ type GlobalTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable) AWSCloudFormationType() string {
+func (r *GlobalTable[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GlobalTable) MarshalJSON() ([]byte, error) {
-	type Properties GlobalTable
+func (r GlobalTable[any]) MarshalJSON() ([]byte, error) {
+	type Properties GlobalTable[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r GlobalTable) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GlobalTable) UnmarshalJSON(b []byte) error {
-	type Properties GlobalTable
+func (r *GlobalTable[any]) UnmarshalJSON(b []byte) error {
+	type Properties GlobalTable[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *GlobalTable) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GlobalTable(*res.Properties)
+		*r = GlobalTable[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

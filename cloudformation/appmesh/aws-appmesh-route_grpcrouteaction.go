@@ -8,12 +8,12 @@ import (
 
 // Route_GrpcRouteAction AWS CloudFormation Resource (AWS::AppMesh::Route.GrpcRouteAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html
-type Route_GrpcRouteAction struct {
+type Route_GrpcRouteAction[T any] struct {
 
 	// WeightedTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html#cfn-appmesh-route-grpcrouteaction-weightedtargets
-	WeightedTargets []Route_WeightedTarget `json:"WeightedTargets"`
+	WeightedTargets []Route_WeightedTarget[any] `json:"WeightedTargets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Route_GrpcRouteAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_GrpcRouteAction) AWSCloudFormationType() string {
+func (r *Route_GrpcRouteAction[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.GrpcRouteAction"
 }

@@ -8,22 +8,22 @@ import (
 
 // Analysis_FormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html
-type Analysis_FormatConfiguration struct {
+type Analysis_FormatConfiguration[T any] struct {
 
 	// DateTimeFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-datetimeformatconfiguration
-	DateTimeFormatConfiguration *Analysis_DateTimeFormatConfiguration `json:"DateTimeFormatConfiguration,omitempty"`
+	DateTimeFormatConfiguration *Analysis_DateTimeFormatConfiguration[any] `json:"DateTimeFormatConfiguration,omitempty"`
 
 	// NumberFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-numberformatconfiguration
-	NumberFormatConfiguration *Analysis_NumberFormatConfiguration `json:"NumberFormatConfiguration,omitempty"`
+	NumberFormatConfiguration *Analysis_NumberFormatConfiguration[any] `json:"NumberFormatConfiguration,omitempty"`
 
 	// StringFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-stringformatconfiguration
-	StringFormatConfiguration *Analysis_StringFormatConfiguration `json:"StringFormatConfiguration,omitempty"`
+	StringFormatConfiguration *Analysis_StringFormatConfiguration[any] `json:"StringFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_FormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FormatConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FormatConfiguration"
 }

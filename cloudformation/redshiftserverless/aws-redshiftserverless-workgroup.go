@@ -12,22 +12,22 @@ import (
 
 // Workgroup AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html
-type Workgroup struct {
+type Workgroup[T any] struct {
 
 	// BaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-basecapacity
-	BaseCapacity *int `json:"BaseCapacity,omitempty"`
+	BaseCapacity *T `json:"BaseCapacity,omitempty"`
 
 	// ConfigParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-configparameters
-	ConfigParameters []Workgroup_ConfigParameter `json:"ConfigParameters,omitempty"`
+	ConfigParameters []Workgroup_ConfigParameter[any] `json:"ConfigParameters,omitempty"`
 
 	// EnhancedVpcRouting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-enhancedvpcrouting
-	EnhancedVpcRouting *bool `json:"EnhancedVpcRouting,omitempty"`
+	EnhancedVpcRouting *T `json:"EnhancedVpcRouting,omitempty"`
 
 	// NamespaceName AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Workgroup struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Workgroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup) AWSCloudFormationType() string {
+func (r *Workgroup[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Workgroup) MarshalJSON() ([]byte, error) {
-	type Properties Workgroup
+func (r Workgroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties Workgroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Workgroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Workgroup) UnmarshalJSON(b []byte) error {
-	type Properties Workgroup
+func (r *Workgroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties Workgroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Workgroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Workgroup(*res.Properties)
+		*r = Workgroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

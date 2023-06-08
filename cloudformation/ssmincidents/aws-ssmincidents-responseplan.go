@@ -12,17 +12,17 @@ import (
 
 // ResponsePlan AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html
-type ResponsePlan struct {
+type ResponsePlan[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-actions
-	Actions []ResponsePlan_Action `json:"Actions,omitempty"`
+	Actions []ResponsePlan_Action[any] `json:"Actions,omitempty"`
 
 	// ChatChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel
-	ChatChannel *ResponsePlan_ChatChannel `json:"ChatChannel,omitempty"`
+	ChatChannel *ResponsePlan_ChatChannel[any] `json:"ChatChannel,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type ResponsePlan struct {
 	// IncidentTemplate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-incidenttemplate
-	IncidentTemplate *ResponsePlan_IncidentTemplate `json:"IncidentTemplate"`
+	IncidentTemplate *ResponsePlan_IncidentTemplate[any] `json:"IncidentTemplate"`
 
 	// Integrations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-integrations
-	Integrations []ResponsePlan_Integration `json:"Integrations,omitempty"`
+	Integrations []ResponsePlan_Integration[any] `json:"Integrations,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type ResponsePlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan) AWSCloudFormationType() string {
+func (r *ResponsePlan[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResponsePlan) MarshalJSON() ([]byte, error) {
-	type Properties ResponsePlan
+func (r ResponsePlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResponsePlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r ResponsePlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResponsePlan) UnmarshalJSON(b []byte) error {
-	type Properties ResponsePlan
+func (r *ResponsePlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResponsePlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *ResponsePlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResponsePlan(*res.Properties)
+		*r = ResponsePlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

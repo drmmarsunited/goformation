@@ -8,17 +8,17 @@ import (
 
 // Analysis_ExplicitHierarchy AWS CloudFormation Resource (AWS::QuickSight::Analysis.ExplicitHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-explicithierarchy.html
-type Analysis_ExplicitHierarchy struct {
+type Analysis_ExplicitHierarchy[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-explicithierarchy.html#cfn-quicksight-analysis-explicithierarchy-columns
-	Columns []Analysis_ColumnIdentifier `json:"Columns"`
+	Columns []Analysis_ColumnIdentifier[any] `json:"Columns"`
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-explicithierarchy.html#cfn-quicksight-analysis-explicithierarchy-drilldownfilters
-	DrillDownFilters []Analysis_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Analysis_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_ExplicitHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ExplicitHierarchy) AWSCloudFormationType() string {
+func (r *Analysis_ExplicitHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ExplicitHierarchy"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DashboardSourceEntity AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DashboardSourceEntity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourceentity.html
-type Dashboard_DashboardSourceEntity struct {
+type Dashboard_DashboardSourceEntity[T any] struct {
 
 	// SourceTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourceentity.html#cfn-quicksight-dashboard-dashboardsourceentity-sourcetemplate
-	SourceTemplate *Dashboard_DashboardSourceTemplate `json:"SourceTemplate,omitempty"`
+	SourceTemplate *Dashboard_DashboardSourceTemplate[any] `json:"SourceTemplate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_DashboardSourceEntity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DashboardSourceEntity) AWSCloudFormationType() string {
+func (r *Dashboard_DashboardSourceEntity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DashboardSourceEntity"
 }

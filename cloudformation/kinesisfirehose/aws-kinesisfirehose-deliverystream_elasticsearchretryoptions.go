@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_ElasticsearchRetryOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html
-type DeliveryStream_ElasticsearchRetryOptions struct {
+type DeliveryStream_ElasticsearchRetryOptions[T any] struct {
 
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html#cfn-kinesisfirehose-deliverystream-elasticsearchretryoptions-durationinseconds
-	DurationInSeconds *int `json:"DurationInSeconds,omitempty"`
+	DurationInSeconds *T `json:"DurationInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeliveryStream_ElasticsearchRetryOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_ElasticsearchRetryOptions) AWSCloudFormationType() string {
+func (r *DeliveryStream_ElasticsearchRetryOptions[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions"
 }

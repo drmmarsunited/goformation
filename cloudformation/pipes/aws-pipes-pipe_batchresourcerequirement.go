@@ -8,7 +8,7 @@ import (
 
 // Pipe_BatchResourceRequirement AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchResourceRequirement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchresourcerequirement.html
-type Pipe_BatchResourceRequirement struct {
+type Pipe_BatchResourceRequirement[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipe_BatchResourceRequirement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchResourceRequirement) AWSCloudFormationType() string {
+func (r *Pipe_BatchResourceRequirement[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchResourceRequirement"
 }

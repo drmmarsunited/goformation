@@ -8,7 +8,7 @@ import (
 
 // AccessPolicy_Portal AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.Portal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-portal.html
-type AccessPolicy_Portal struct {
+type AccessPolicy_Portal[T any] struct {
 
 	// id AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AccessPolicy_Portal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_Portal) AWSCloudFormationType() string {
+func (r *AccessPolicy_Portal[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.Portal"
 }

@@ -8,12 +8,12 @@ import (
 
 // Member_VotingPolicy AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.VotingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html
-type Member_VotingPolicy struct {
+type Member_VotingPolicy[T any] struct {
 
 	// ApprovalThresholdPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html#cfn-managedblockchain-member-votingpolicy-approvalthresholdpolicy
-	ApprovalThresholdPolicy *Member_ApprovalThresholdPolicy `json:"ApprovalThresholdPolicy,omitempty"`
+	ApprovalThresholdPolicy *Member_ApprovalThresholdPolicy[any] `json:"ApprovalThresholdPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Member_VotingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_VotingPolicy) AWSCloudFormationType() string {
+func (r *Member_VotingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.VotingPolicy"
 }

@@ -12,7 +12,7 @@ import (
 
 // VerifiedAccessTrustProvider AWS CloudFormation Resource (AWS::EC2::VerifiedAccessTrustProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html
-type VerifiedAccessTrustProvider struct {
+type VerifiedAccessTrustProvider[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type VerifiedAccessTrustProvider struct {
 	// DeviceOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-deviceoptions
-	DeviceOptions *VerifiedAccessTrustProvider_DeviceOptions `json:"DeviceOptions,omitempty"`
+	DeviceOptions *VerifiedAccessTrustProvider_DeviceOptions[any] `json:"DeviceOptions,omitempty"`
 
 	// DeviceTrustProviderType AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type VerifiedAccessTrustProvider struct {
 	// OidcOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions
-	OidcOptions *VerifiedAccessTrustProvider_OidcOptions `json:"OidcOptions,omitempty"`
+	OidcOptions *VerifiedAccessTrustProvider_OidcOptions[any] `json:"OidcOptions,omitempty"`
 
 	// PolicyReferenceName AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type VerifiedAccessTrustProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessTrustProvider) AWSCloudFormationType() string {
+func (r *VerifiedAccessTrustProvider[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessTrustProvider"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VerifiedAccessTrustProvider) MarshalJSON() ([]byte, error) {
-	type Properties VerifiedAccessTrustProvider
+func (r VerifiedAccessTrustProvider[any]) MarshalJSON() ([]byte, error) {
+	type Properties VerifiedAccessTrustProvider[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r VerifiedAccessTrustProvider) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VerifiedAccessTrustProvider) UnmarshalJSON(b []byte) error {
-	type Properties VerifiedAccessTrustProvider
+func (r *VerifiedAccessTrustProvider[any]) UnmarshalJSON(b []byte) error {
+	type Properties VerifiedAccessTrustProvider[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *VerifiedAccessTrustProvider) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VerifiedAccessTrustProvider(*res.Properties)
+		*r = VerifiedAccessTrustProvider[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

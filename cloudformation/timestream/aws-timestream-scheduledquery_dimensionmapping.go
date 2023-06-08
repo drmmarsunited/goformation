@@ -8,7 +8,7 @@ import (
 
 // ScheduledQuery_DimensionMapping AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.DimensionMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-dimensionmapping.html
-type ScheduledQuery_DimensionMapping struct {
+type ScheduledQuery_DimensionMapping[T any] struct {
 
 	// DimensionValueType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScheduledQuery_DimensionMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_DimensionMapping) AWSCloudFormationType() string {
+func (r *ScheduledQuery_DimensionMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.DimensionMapping"
 }

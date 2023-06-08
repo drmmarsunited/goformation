@@ -8,7 +8,7 @@ import (
 
 // Template_SecondaryValueOptions AWS CloudFormation Resource (AWS::QuickSight::Template.SecondaryValueOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-secondaryvalueoptions.html
-type Template_SecondaryValueOptions struct {
+type Template_SecondaryValueOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_SecondaryValueOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SecondaryValueOptions) AWSCloudFormationType() string {
+func (r *Template_SecondaryValueOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SecondaryValueOptions"
 }

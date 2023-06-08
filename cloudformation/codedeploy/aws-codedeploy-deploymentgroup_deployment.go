@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_Deployment AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.Deployment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html
-type DeploymentGroup_Deployment struct {
+type DeploymentGroup_Deployment[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type DeploymentGroup_Deployment struct {
 	// IgnoreApplicationStopFailures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures
-	IgnoreApplicationStopFailures *bool `json:"IgnoreApplicationStopFailures,omitempty"`
+	IgnoreApplicationStopFailures *T `json:"IgnoreApplicationStopFailures,omitempty"`
 
 	// Revision AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision
-	Revision *DeploymentGroup_RevisionLocation `json:"Revision"`
+	Revision *DeploymentGroup_RevisionLocation[any] `json:"Revision"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DeploymentGroup_Deployment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_Deployment) AWSCloudFormationType() string {
+func (r *DeploymentGroup_Deployment[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.Deployment"
 }

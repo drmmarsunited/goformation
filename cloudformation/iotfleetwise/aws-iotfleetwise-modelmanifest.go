@@ -12,7 +12,7 @@ import (
 
 // ModelManifest AWS CloudFormation Resource (AWS::IoTFleetWise::ModelManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-modelmanifest.html
-type ModelManifest struct {
+type ModelManifest[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type ModelManifest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelManifest) AWSCloudFormationType() string {
+func (r *ModelManifest[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::ModelManifest"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModelManifest) MarshalJSON() ([]byte, error) {
-	type Properties ModelManifest
+func (r ModelManifest[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModelManifest[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ModelManifest) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModelManifest) UnmarshalJSON(b []byte) error {
-	type Properties ModelManifest
+func (r *ModelManifest[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModelManifest[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ModelManifest) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModelManifest(*res.Properties)
+		*r = ModelManifest[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // AssetModel_Attribute AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.Attribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-attribute.html
-type AssetModel_Attribute struct {
+type AssetModel_Attribute[T any] struct {
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AssetModel_Attribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_Attribute) AWSCloudFormationType() string {
+func (r *AssetModel_Attribute[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.Attribute"
 }

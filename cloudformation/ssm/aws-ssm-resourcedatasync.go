@@ -11,7 +11,7 @@ import (
 
 // ResourceDataSync AWS CloudFormation Resource (AWS::SSM::ResourceDataSync)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html
-type ResourceDataSync struct {
+type ResourceDataSync[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type ResourceDataSync struct {
 	// S3Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
-	S3Destination *ResourceDataSync_S3Destination `json:"S3Destination,omitempty"`
+	S3Destination *ResourceDataSync_S3Destination[any] `json:"S3Destination,omitempty"`
 
 	// SyncFormat AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type ResourceDataSync struct {
 	// SyncSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
-	SyncSource *ResourceDataSync_SyncSource `json:"SyncSource,omitempty"`
+	SyncSource *ResourceDataSync_SyncSource[any] `json:"SyncSource,omitempty"`
 
 	// SyncType AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type ResourceDataSync struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDataSync) AWSCloudFormationType() string {
+func (r *ResourceDataSync[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::ResourceDataSync"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceDataSync) MarshalJSON() ([]byte, error) {
-	type Properties ResourceDataSync
+func (r ResourceDataSync[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceDataSync[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r ResourceDataSync) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceDataSync) UnmarshalJSON(b []byte) error {
-	type Properties ResourceDataSync
+func (r *ResourceDataSync[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceDataSync[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *ResourceDataSync) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceDataSync(*res.Properties)
+		*r = ResourceDataSync[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // InputSecurityGroup AWS CloudFormation Resource (AWS::MediaLive::InputSecurityGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html
-type InputSecurityGroup struct {
+type InputSecurityGroup[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type InputSecurityGroup struct {
 	// WhitelistRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules
-	WhitelistRules []InputSecurityGroup_InputWhitelistRuleCidr `json:"WhitelistRules,omitempty"`
+	WhitelistRules []InputSecurityGroup_InputWhitelistRuleCidr[any] `json:"WhitelistRules,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type InputSecurityGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InputSecurityGroup) AWSCloudFormationType() string {
+func (r *InputSecurityGroup[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::InputSecurityGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InputSecurityGroup) MarshalJSON() ([]byte, error) {
-	type Properties InputSecurityGroup
+func (r InputSecurityGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties InputSecurityGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r InputSecurityGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InputSecurityGroup) UnmarshalJSON(b []byte) error {
-	type Properties InputSecurityGroup
+func (r *InputSecurityGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties InputSecurityGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *InputSecurityGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InputSecurityGroup(*res.Properties)
+		*r = InputSecurityGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

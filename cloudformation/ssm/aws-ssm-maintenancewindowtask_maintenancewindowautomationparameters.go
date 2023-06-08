@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_MaintenanceWindowAutomationParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
-type MaintenanceWindowTask_MaintenanceWindowAutomationParameters struct {
+type MaintenanceWindowTask_MaintenanceWindowAutomationParameters[T any] struct {
 
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MaintenanceWindowTask_MaintenanceWindowAutomationParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_MaintenanceWindowAutomationParameters) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_MaintenanceWindowAutomationParameters[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters"
 }

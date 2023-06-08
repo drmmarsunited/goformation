@@ -8,7 +8,7 @@ import (
 
 // TaskSet_ServiceRegistry AWS CloudFormation Resource (AWS::ECS::TaskSet.ServiceRegistry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html
-type TaskSet_ServiceRegistry struct {
+type TaskSet_ServiceRegistry[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type TaskSet_ServiceRegistry struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html#cfn-ecs-taskset-serviceregistry-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html#cfn-ecs-taskset-serviceregistry-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// RegistryArn AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type TaskSet_ServiceRegistry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskSet_ServiceRegistry) AWSCloudFormationType() string {
+func (r *TaskSet_ServiceRegistry[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskSet.ServiceRegistry"
 }

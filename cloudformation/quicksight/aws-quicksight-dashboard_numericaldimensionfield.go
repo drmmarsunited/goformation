@@ -8,12 +8,12 @@ import (
 
 // Dashboard_NumericalDimensionField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericalDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaldimensionfield.html
-type Dashboard_NumericalDimensionField struct {
+type Dashboard_NumericalDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaldimensionfield.html#cfn-quicksight-dashboard-numericaldimensionfield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_NumericalDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaldimensionfield.html#cfn-quicksight-dashboard-numericaldimensionfield-formatconfiguration
-	FormatConfiguration *Dashboard_NumberFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_NumberFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_NumericalDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericalDimensionField) AWSCloudFormationType() string {
+func (r *Dashboard_NumericalDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericalDimensionField"
 }

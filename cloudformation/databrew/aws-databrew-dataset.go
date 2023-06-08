@@ -12,7 +12,7 @@ import (
 
 // Dataset AWS CloudFormation Resource (AWS::DataBrew::Dataset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html
-type Dataset struct {
+type Dataset[T any] struct {
 
 	// Format AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Dataset struct {
 	// FormatOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-formatoptions
-	FormatOptions *Dataset_FormatOptions `json:"FormatOptions,omitempty"`
+	FormatOptions *Dataset_FormatOptions[any] `json:"FormatOptions,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-input
-	Input *Dataset_Input `json:"Input"`
+	Input *Dataset_Input[any] `json:"Input"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Dataset struct {
 	// PathOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-pathoptions
-	PathOptions *Dataset_PathOptions `json:"PathOptions,omitempty"`
+	PathOptions *Dataset_PathOptions[any] `json:"PathOptions,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Dataset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset) AWSCloudFormationType() string {
+func (r *Dataset[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Dataset) MarshalJSON() ([]byte, error) {
-	type Properties Dataset
+func (r Dataset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Dataset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Dataset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Dataset) UnmarshalJSON(b []byte) error {
-	type Properties Dataset
+func (r *Dataset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Dataset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Dataset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Dataset(*res.Properties)
+		*r = Dataset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

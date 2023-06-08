@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_VCpuCount AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.VCpuCount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-vcpucount.html
-type LaunchTemplate_VCpuCount struct {
+type LaunchTemplate_VCpuCount[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-vcpucount.html#cfn-ec2-launchtemplate-vcpucount-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-vcpucount.html#cfn-ec2-launchtemplate-vcpucount-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_VCpuCount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_VCpuCount) AWSCloudFormationType() string {
+func (r *LaunchTemplate_VCpuCount[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.VCpuCount"
 }

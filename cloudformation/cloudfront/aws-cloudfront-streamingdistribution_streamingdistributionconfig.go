@@ -8,7 +8,7 @@ import (
 
 // StreamingDistribution_StreamingDistributionConfig AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html
-type StreamingDistribution_StreamingDistributionConfig struct {
+type StreamingDistribution_StreamingDistributionConfig[T any] struct {
 
 	// Aliases AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type StreamingDistribution_StreamingDistributionConfig struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-logging
-	Logging *StreamingDistribution_Logging `json:"Logging,omitempty"`
+	Logging *StreamingDistribution_Logging[any] `json:"Logging,omitempty"`
 
 	// PriceClass AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type StreamingDistribution_StreamingDistributionConfig struct {
 	// S3Origin AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-s3origin
-	S3Origin *StreamingDistribution_S3Origin `json:"S3Origin"`
+	S3Origin *StreamingDistribution_S3Origin[any] `json:"S3Origin"`
 
 	// TrustedSigners AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-trustedsigners
-	TrustedSigners *StreamingDistribution_TrustedSigners `json:"TrustedSigners"`
+	TrustedSigners *StreamingDistribution_TrustedSigners[any] `json:"TrustedSigners"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type StreamingDistribution_StreamingDistributionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingDistribution_StreamingDistributionConfig) AWSCloudFormationType() string {
+func (r *StreamingDistribution_StreamingDistributionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig"
 }

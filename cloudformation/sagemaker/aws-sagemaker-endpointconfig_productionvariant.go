@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ProductionVariant AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ProductionVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html
-type EndpointConfig_ProductionVariant struct {
+type EndpointConfig_ProductionVariant[T any] struct {
 
 	// AcceleratorType AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type EndpointConfig_ProductionVariant struct {
 	// ContainerStartupHealthCheckTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-containerstartuphealthchecktimeoutinseconds
-	ContainerStartupHealthCheckTimeoutInSeconds *int `json:"ContainerStartupHealthCheckTimeoutInSeconds,omitempty"`
+	ContainerStartupHealthCheckTimeoutInSeconds *T `json:"ContainerStartupHealthCheckTimeoutInSeconds,omitempty"`
 
 	// EnableSSMAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-enablessmaccess
-	EnableSSMAccess *bool `json:"EnableSSMAccess,omitempty"`
+	EnableSSMAccess *T `json:"EnableSSMAccess,omitempty"`
 
 	// InitialInstanceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialinstancecount
-	InitialInstanceCount *int `json:"InitialInstanceCount,omitempty"`
+	InitialInstanceCount *T `json:"InitialInstanceCount,omitempty"`
 
 	// InitialVariantWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialvariantweight
-	InitialVariantWeight float64 `json:"InitialVariantWeight"`
+	InitialVariantWeight T `json:"InitialVariantWeight"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type EndpointConfig_ProductionVariant struct {
 	// ModelDataDownloadTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modeldatadownloadtimeoutinseconds
-	ModelDataDownloadTimeoutInSeconds *int `json:"ModelDataDownloadTimeoutInSeconds,omitempty"`
+	ModelDataDownloadTimeoutInSeconds *T `json:"ModelDataDownloadTimeoutInSeconds,omitempty"`
 
 	// ModelName AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type EndpointConfig_ProductionVariant struct {
 	// ServerlessConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig
-	ServerlessConfig *EndpointConfig_ServerlessConfig `json:"ServerlessConfig,omitempty"`
+	ServerlessConfig *EndpointConfig_ServerlessConfig[any] `json:"ServerlessConfig,omitempty"`
 
 	// VariantName AWS CloudFormation Property
 	// Required: true
@@ -63,7 +63,7 @@ type EndpointConfig_ProductionVariant struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-volumesizeingb
-	VolumeSizeInGB *int `json:"VolumeSizeInGB,omitempty"`
+	VolumeSizeInGB *T `json:"VolumeSizeInGB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type EndpointConfig_ProductionVariant struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ProductionVariant) AWSCloudFormationType() string {
+func (r *EndpointConfig_ProductionVariant[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ProductionVariant"
 }

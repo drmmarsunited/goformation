@@ -8,7 +8,7 @@ import (
 
 // Template_DataPathLabelType AWS CloudFormation Resource (AWS::QuickSight::Template.DataPathLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathlabeltype.html
-type Template_DataPathLabelType struct {
+type Template_DataPathLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_DataPathLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataPathLabelType) AWSCloudFormationType() string {
+func (r *Template_DataPathLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataPathLabelType"
 }

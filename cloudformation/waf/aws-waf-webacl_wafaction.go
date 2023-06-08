@@ -8,7 +8,7 @@ import (
 
 // WebACL_WafAction AWS CloudFormation Resource (AWS::WAF::WebACL.WafAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html
-type WebACL_WafAction struct {
+type WebACL_WafAction[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_WafAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_WafAction) AWSCloudFormationType() string {
+func (r *WebACL_WafAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::WebACL.WafAction"
 }

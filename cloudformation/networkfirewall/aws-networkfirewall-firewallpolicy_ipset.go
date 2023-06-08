@@ -8,7 +8,7 @@ import (
 
 // FirewallPolicy_IPSet AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.IPSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-ipset.html
-type FirewallPolicy_IPSet struct {
+type FirewallPolicy_IPSet[T any] struct {
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type FirewallPolicy_IPSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_IPSet) AWSCloudFormationType() string {
+func (r *FirewallPolicy_IPSet[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.IPSet"
 }

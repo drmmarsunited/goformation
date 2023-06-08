@@ -8,17 +8,17 @@ import (
 
 // Template_AxisDataOptions AWS CloudFormation Resource (AWS::QuickSight::Template.AxisDataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdataoptions.html
-type Template_AxisDataOptions struct {
+type Template_AxisDataOptions[T any] struct {
 
 	// DateAxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdataoptions.html#cfn-quicksight-template-axisdataoptions-dateaxisoptions
-	DateAxisOptions *Template_DateAxisOptions `json:"DateAxisOptions,omitempty"`
+	DateAxisOptions *Template_DateAxisOptions[any] `json:"DateAxisOptions,omitempty"`
 
 	// NumericAxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdataoptions.html#cfn-quicksight-template-axisdataoptions-numericaxisoptions
-	NumericAxisOptions *Template_NumericAxisOptions `json:"NumericAxisOptions,omitempty"`
+	NumericAxisOptions *Template_NumericAxisOptions[any] `json:"NumericAxisOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_AxisDataOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AxisDataOptions) AWSCloudFormationType() string {
+func (r *Template_AxisDataOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AxisDataOptions"
 }

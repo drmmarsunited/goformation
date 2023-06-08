@@ -11,22 +11,22 @@ import (
 
 // AnomalyDetector AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html
-type AnomalyDetector struct {
+type AnomalyDetector[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-configuration
-	Configuration *AnomalyDetector_Configuration `json:"Configuration,omitempty"`
+	Configuration *AnomalyDetector_Configuration[any] `json:"Configuration,omitempty"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-dimensions
-	Dimensions []AnomalyDetector_Dimension `json:"Dimensions,omitempty"`
+	Dimensions []AnomalyDetector_Dimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricMathAnomalyDetector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-metricmathanomalydetector
-	MetricMathAnomalyDetector *AnomalyDetector_MetricMathAnomalyDetector `json:"MetricMathAnomalyDetector,omitempty"`
+	MetricMathAnomalyDetector *AnomalyDetector_MetricMathAnomalyDetector[any] `json:"MetricMathAnomalyDetector,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type AnomalyDetector struct {
 	// SingleMetricAnomalyDetector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-singlemetricanomalydetector
-	SingleMetricAnomalyDetector *AnomalyDetector_SingleMetricAnomalyDetector `json:"SingleMetricAnomalyDetector,omitempty"`
+	SingleMetricAnomalyDetector *AnomalyDetector_SingleMetricAnomalyDetector[any] `json:"SingleMetricAnomalyDetector,omitempty"`
 
 	// Stat AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type AnomalyDetector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector) AWSCloudFormationType() string {
+func (r *AnomalyDetector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AnomalyDetector) MarshalJSON() ([]byte, error) {
-	type Properties AnomalyDetector
+func (r AnomalyDetector[any]) MarshalJSON() ([]byte, error) {
+	type Properties AnomalyDetector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r AnomalyDetector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AnomalyDetector) UnmarshalJSON(b []byte) error {
-	type Properties AnomalyDetector
+func (r *AnomalyDetector[any]) UnmarshalJSON(b []byte) error {
+	type Properties AnomalyDetector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *AnomalyDetector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AnomalyDetector(*res.Properties)
+		*r = AnomalyDetector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_ConstraintsResource AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.ConstraintsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-constraintsresource.html
-type ModelQualityJobDefinition_ConstraintsResource struct {
+type ModelQualityJobDefinition_ConstraintsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelQualityJobDefinition_ConstraintsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_ConstraintsResource) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_ConstraintsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.ConstraintsResource"
 }

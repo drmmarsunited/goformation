@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_BasicAuthCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.BasicAuthCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-basicauthcredentials.html
-type ConnectorProfile_BasicAuthCredentials struct {
+type ConnectorProfile_BasicAuthCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_BasicAuthCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_BasicAuthCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_BasicAuthCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.BasicAuthCredentials"
 }

@@ -11,7 +11,7 @@ import (
 
 // SourceCredential AWS CloudFormation Resource (AWS::CodeBuild::SourceCredential)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html
-type SourceCredential struct {
+type SourceCredential[T any] struct {
 
 	// AuthType AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type SourceCredential struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SourceCredential) AWSCloudFormationType() string {
+func (r *SourceCredential[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::SourceCredential"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SourceCredential) MarshalJSON() ([]byte, error) {
-	type Properties SourceCredential
+func (r SourceCredential[any]) MarshalJSON() ([]byte, error) {
+	type Properties SourceCredential[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r SourceCredential) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SourceCredential) UnmarshalJSON(b []byte) error {
-	type Properties SourceCredential
+func (r *SourceCredential[any]) UnmarshalJSON(b []byte) error {
+	type Properties SourceCredential[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *SourceCredential) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SourceCredential(*res.Properties)
+		*r = SourceCredential[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

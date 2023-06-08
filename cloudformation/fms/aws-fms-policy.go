@@ -11,27 +11,27 @@ import (
 
 // Policy AWS CloudFormation Resource (AWS::FMS::Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html
-type Policy struct {
+type Policy[T any] struct {
 
 	// DeleteAllPolicyResources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-deleteallpolicyresources
-	DeleteAllPolicyResources *bool `json:"DeleteAllPolicyResources,omitempty"`
+	DeleteAllPolicyResources *T `json:"DeleteAllPolicyResources,omitempty"`
 
 	// ExcludeMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excludemap
-	ExcludeMap *Policy_IEMap `json:"ExcludeMap,omitempty"`
+	ExcludeMap *Policy_IEMap[any] `json:"ExcludeMap,omitempty"`
 
 	// ExcludeResourceTags AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excluderesourcetags
-	ExcludeResourceTags bool `json:"ExcludeResourceTags"`
+	ExcludeResourceTags T `json:"ExcludeResourceTags"`
 
 	// IncludeMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-includemap
-	IncludeMap *Policy_IEMap `json:"IncludeMap,omitempty"`
+	IncludeMap *Policy_IEMap[any] `json:"IncludeMap,omitempty"`
 
 	// PolicyDescription AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type Policy struct {
 	// RemediationEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-remediationenabled
-	RemediationEnabled bool `json:"RemediationEnabled"`
+	RemediationEnabled T `json:"RemediationEnabled"`
 
 	// ResourceSetIds AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type Policy struct {
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetags
-	ResourceTags []Policy_ResourceTag `json:"ResourceTags,omitempty"`
+	ResourceTags []Policy_ResourceTag[any] `json:"ResourceTags,omitempty"`
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
@@ -71,17 +71,17 @@ type Policy struct {
 	// ResourcesCleanUp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup
-	ResourcesCleanUp *bool `json:"ResourcesCleanUp,omitempty"`
+	ResourcesCleanUp *T `json:"ResourcesCleanUp,omitempty"`
 
 	// SecurityServicePolicyData AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-securityservicepolicydata
-	SecurityServicePolicyData *Policy_SecurityServicePolicyData `json:"SecurityServicePolicyData"`
+	SecurityServicePolicyData *Policy_SecurityServicePolicyData[any] `json:"SecurityServicePolicyData"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-tags
-	Tags []Policy_PolicyTag `json:"Tags,omitempty"`
+	Tags []Policy_PolicyTag[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -100,14 +100,15 @@ type Policy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy) AWSCloudFormationType() string {
+func (r *Policy[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Policy) MarshalJSON() ([]byte, error) {
-	type Properties Policy
+func (r Policy[any]) MarshalJSON() ([]byte, error) {
+	type Properties Policy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r Policy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Policy) UnmarshalJSON(b []byte) error {
-	type Properties Policy
+func (r *Policy[any]) UnmarshalJSON(b []byte) error {
+	type Properties Policy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *Policy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Policy(*res.Properties)
+		*r = Policy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

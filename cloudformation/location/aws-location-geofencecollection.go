@@ -11,7 +11,7 @@ import (
 
 // GeofenceCollection AWS CloudFormation Resource (AWS::Location::GeofenceCollection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html
-type GeofenceCollection struct {
+type GeofenceCollection[T any] struct {
 
 	// CollectionName AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type GeofenceCollection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GeofenceCollection) AWSCloudFormationType() string {
+func (r *GeofenceCollection[any]) AWSCloudFormationType() string {
 	return "AWS::Location::GeofenceCollection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GeofenceCollection) MarshalJSON() ([]byte, error) {
-	type Properties GeofenceCollection
+func (r GeofenceCollection[any]) MarshalJSON() ([]byte, error) {
+	type Properties GeofenceCollection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r GeofenceCollection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GeofenceCollection) UnmarshalJSON(b []byte) error {
-	type Properties GeofenceCollection
+func (r *GeofenceCollection[any]) UnmarshalJSON(b []byte) error {
+	type Properties GeofenceCollection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *GeofenceCollection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GeofenceCollection(*res.Properties)
+		*r = GeofenceCollection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

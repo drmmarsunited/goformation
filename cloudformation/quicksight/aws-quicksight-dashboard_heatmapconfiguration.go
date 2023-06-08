@@ -8,47 +8,47 @@ import (
 
 // Dashboard_HeatMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HeatMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html
-type Dashboard_HeatMapConfiguration struct {
+type Dashboard_HeatMapConfiguration[T any] struct {
 
 	// ColorScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-colorscale
-	ColorScale *Dashboard_ColorScale `json:"ColorScale,omitempty"`
+	ColorScale *Dashboard_ColorScale[any] `json:"ColorScale,omitempty"`
 
 	// ColumnLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-columnlabeloptions
-	ColumnLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ColumnLabelOptions,omitempty"`
+	ColumnLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ColumnLabelOptions,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-fieldwells
-	FieldWells *Dashboard_HeatMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_HeatMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// RowLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-rowlabeloptions
-	RowLabelOptions *Dashboard_ChartAxisLabelOptions `json:"RowLabelOptions,omitempty"`
+	RowLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"RowLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_HeatMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_HeatMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapconfiguration.html#cfn-quicksight-dashboard-heatmapconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Dashboard_HeatMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HeatMapConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_HeatMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HeatMapConfiguration"
 }

@@ -8,22 +8,22 @@ import (
 
 // Dashboard_SmallMultiplesOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SmallMultiplesOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-smallmultiplesoptions.html
-type Dashboard_SmallMultiplesOptions struct {
+type Dashboard_SmallMultiplesOptions[T any] struct {
 
 	// MaxVisibleColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-smallmultiplesoptions.html#cfn-quicksight-dashboard-smallmultiplesoptions-maxvisiblecolumns
-	MaxVisibleColumns *float64 `json:"MaxVisibleColumns,omitempty"`
+	MaxVisibleColumns *T `json:"MaxVisibleColumns,omitempty"`
 
 	// MaxVisibleRows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-smallmultiplesoptions.html#cfn-quicksight-dashboard-smallmultiplesoptions-maxvisiblerows
-	MaxVisibleRows *float64 `json:"MaxVisibleRows,omitempty"`
+	MaxVisibleRows *T `json:"MaxVisibleRows,omitempty"`
 
 	// PanelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-smallmultiplesoptions.html#cfn-quicksight-dashboard-smallmultiplesoptions-panelconfiguration
-	PanelConfiguration *Dashboard_PanelConfiguration `json:"PanelConfiguration,omitempty"`
+	PanelConfiguration *Dashboard_PanelConfiguration[any] `json:"PanelConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_SmallMultiplesOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SmallMultiplesOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SmallMultiplesOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SmallMultiplesOptions"
 }

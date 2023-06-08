@@ -8,7 +8,7 @@ import (
 
 // Analysis_TotalAggregationComputation AWS CloudFormation Resource (AWS::QuickSight::Analysis.TotalAggregationComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totalaggregationcomputation.html
-type Analysis_TotalAggregationComputation struct {
+type Analysis_TotalAggregationComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_TotalAggregationComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totalaggregationcomputation.html#cfn-quicksight-analysis-totalaggregationcomputation-value
-	Value *Analysis_MeasureField `json:"Value"`
+	Value *Analysis_MeasureField[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_TotalAggregationComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TotalAggregationComputation) AWSCloudFormationType() string {
+func (r *Analysis_TotalAggregationComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TotalAggregationComputation"
 }

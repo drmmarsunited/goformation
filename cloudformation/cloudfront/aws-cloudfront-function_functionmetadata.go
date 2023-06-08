@@ -8,7 +8,7 @@ import (
 
 // Function_FunctionMetadata AWS CloudFormation Resource (AWS::CloudFront::Function.FunctionMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html
-type Function_FunctionMetadata struct {
+type Function_FunctionMetadata[T any] struct {
 
 	// FunctionARN AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Function_FunctionMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_FunctionMetadata) AWSCloudFormationType() string {
+func (r *Function_FunctionMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Function.FunctionMetadata"
 }

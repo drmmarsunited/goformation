@@ -8,27 +8,27 @@ import (
 
 // Analysis_ScatterPlotCategoricallyAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.ScatterPlotCategoricallyAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells.html
-type Analysis_ScatterPlotCategoricallyAggregatedFieldWells struct {
+type Analysis_ScatterPlotCategoricallyAggregatedFieldWells[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells-category
-	Category []Analysis_DimensionField `json:"Category,omitempty"`
+	Category []Analysis_DimensionField[any] `json:"Category,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells-size
-	Size []Analysis_MeasureField `json:"Size,omitempty"`
+	Size []Analysis_MeasureField[any] `json:"Size,omitempty"`
 
 	// XAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells-xaxis
-	XAxis []Analysis_MeasureField `json:"XAxis,omitempty"`
+	XAxis []Analysis_MeasureField[any] `json:"XAxis,omitempty"`
 
 	// YAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotcategoricallyaggregatedfieldwells-yaxis
-	YAxis []Analysis_MeasureField `json:"YAxis,omitempty"`
+	YAxis []Analysis_MeasureField[any] `json:"YAxis,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_ScatterPlotCategoricallyAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ScatterPlotCategoricallyAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_ScatterPlotCategoricallyAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ScatterPlotCategoricallyAggregatedFieldWells"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bucket_FilterTag AWS CloudFormation Resource (AWS::S3Outposts::Bucket.FilterTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html
-type Bucket_FilterTag struct {
+type Bucket_FilterTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_FilterTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_FilterTag) AWSCloudFormationType() string {
+func (r *Bucket_FilterTag[any]) AWSCloudFormationType() string {
 	return "AWS::S3Outposts::Bucket.FilterTag"
 }

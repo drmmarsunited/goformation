@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyExplainerConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyExplainerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyexplainerconfig.html
-type EndpointConfig_ClarifyExplainerConfig struct {
+type EndpointConfig_ClarifyExplainerConfig[T any] struct {
 
 	// EnableExplanations AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type EndpointConfig_ClarifyExplainerConfig struct {
 	// InferenceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyexplainerconfig.html#cfn-sagemaker-endpointconfig-clarifyexplainerconfig-inferenceconfig
-	InferenceConfig *EndpointConfig_ClarifyInferenceConfig `json:"InferenceConfig,omitempty"`
+	InferenceConfig *EndpointConfig_ClarifyInferenceConfig[any] `json:"InferenceConfig,omitempty"`
 
 	// ShapConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyexplainerconfig.html#cfn-sagemaker-endpointconfig-clarifyexplainerconfig-shapconfig
-	ShapConfig *EndpointConfig_ClarifyShapConfig `json:"ShapConfig"`
+	ShapConfig *EndpointConfig_ClarifyShapConfig[any] `json:"ShapConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type EndpointConfig_ClarifyExplainerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyExplainerConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyExplainerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyExplainerConfig"
 }

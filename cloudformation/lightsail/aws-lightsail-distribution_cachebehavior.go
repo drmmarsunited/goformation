@@ -8,7 +8,7 @@ import (
 
 // Distribution_CacheBehavior AWS CloudFormation Resource (AWS::Lightsail::Distribution.CacheBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachebehavior.html
-type Distribution_CacheBehavior struct {
+type Distribution_CacheBehavior[T any] struct {
 
 	// Behavior AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Distribution_CacheBehavior struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CacheBehavior) AWSCloudFormationType() string {
+func (r *Distribution_CacheBehavior[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.CacheBehavior"
 }

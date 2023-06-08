@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_DashPackage AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.DashPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html
-type OriginEndpoint_DashPackage struct {
+type OriginEndpoint_DashPackage[T any] struct {
 
 	// AdTriggers AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type OriginEndpoint_DashPackage struct {
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-encryption
-	Encryption *OriginEndpoint_DashEncryption `json:"Encryption,omitempty"`
+	Encryption *OriginEndpoint_DashEncryption[any] `json:"Encryption,omitempty"`
 
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *T `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// ManifestLayout AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type OriginEndpoint_DashPackage struct {
 	// ManifestWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-manifestwindowseconds
-	ManifestWindowSeconds *int `json:"ManifestWindowSeconds,omitempty"`
+	ManifestWindowSeconds *T `json:"ManifestWindowSeconds,omitempty"`
 
 	// MinBufferTimeSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-minbuffertimeseconds
-	MinBufferTimeSeconds *int `json:"MinBufferTimeSeconds,omitempty"`
+	MinBufferTimeSeconds *T `json:"MinBufferTimeSeconds,omitempty"`
 
 	// MinUpdatePeriodSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-minupdateperiodseconds
-	MinUpdatePeriodSeconds *int `json:"MinUpdatePeriodSeconds,omitempty"`
+	MinUpdatePeriodSeconds *T `json:"MinUpdatePeriodSeconds,omitempty"`
 
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type OriginEndpoint_DashPackage struct {
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false
@@ -73,12 +73,12 @@ type OriginEndpoint_DashPackage struct {
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-streamselection
-	StreamSelection *OriginEndpoint_StreamSelection `json:"StreamSelection,omitempty"`
+	StreamSelection *OriginEndpoint_StreamSelection[any] `json:"StreamSelection,omitempty"`
 
 	// SuggestedPresentationDelaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-suggestedpresentationdelayseconds
-	SuggestedPresentationDelaySeconds *int `json:"SuggestedPresentationDelaySeconds,omitempty"`
+	SuggestedPresentationDelaySeconds *T `json:"SuggestedPresentationDelaySeconds,omitempty"`
 
 	// UtcTiming AWS CloudFormation Property
 	// Required: false
@@ -107,6 +107,6 @@ type OriginEndpoint_DashPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_DashPackage) AWSCloudFormationType() string {
+func (r *OriginEndpoint_DashPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.DashPackage"
 }

@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_ValidationProfile AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ValidationProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationprofile.html
-type ModelPackage_ValidationProfile struct {
+type ModelPackage_ValidationProfile[T any] struct {
 
 	// ProfileName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ModelPackage_ValidationProfile struct {
 	// TransformJobDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationprofile.html#cfn-sagemaker-modelpackage-validationprofile-transformjobdefinition
-	TransformJobDefinition *ModelPackage_TransformJobDefinition `json:"TransformJobDefinition"`
+	TransformJobDefinition *ModelPackage_TransformJobDefinition[any] `json:"TransformJobDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelPackage_ValidationProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ValidationProfile) AWSCloudFormationType() string {
+func (r *ModelPackage_ValidationProfile[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ValidationProfile"
 }

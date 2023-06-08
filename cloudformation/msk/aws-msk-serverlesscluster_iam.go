@@ -8,12 +8,12 @@ import (
 
 // ServerlessCluster_Iam AWS CloudFormation Resource (AWS::MSK::ServerlessCluster.Iam)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html
-type ServerlessCluster_Iam struct {
+type ServerlessCluster_Iam[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html#cfn-msk-serverlesscluster-iam-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ServerlessCluster_Iam struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServerlessCluster_Iam) AWSCloudFormationType() string {
+func (r *ServerlessCluster_Iam[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::ServerlessCluster.Iam"
 }

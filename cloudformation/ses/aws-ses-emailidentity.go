@@ -11,22 +11,22 @@ import (
 
 // EmailIdentity AWS CloudFormation Resource (AWS::SES::EmailIdentity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html
-type EmailIdentity struct {
+type EmailIdentity[T any] struct {
 
 	// ConfigurationSetAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-configurationsetattributes
-	ConfigurationSetAttributes *EmailIdentity_ConfigurationSetAttributes `json:"ConfigurationSetAttributes,omitempty"`
+	ConfigurationSetAttributes *EmailIdentity_ConfigurationSetAttributes[any] `json:"ConfigurationSetAttributes,omitempty"`
 
 	// DkimAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-dkimattributes
-	DkimAttributes *EmailIdentity_DkimAttributes `json:"DkimAttributes,omitempty"`
+	DkimAttributes *EmailIdentity_DkimAttributes[any] `json:"DkimAttributes,omitempty"`
 
 	// DkimSigningAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-dkimsigningattributes
-	DkimSigningAttributes *EmailIdentity_DkimSigningAttributes `json:"DkimSigningAttributes,omitempty"`
+	DkimSigningAttributes *EmailIdentity_DkimSigningAttributes[any] `json:"DkimSigningAttributes,omitempty"`
 
 	// EmailIdentity AWS CloudFormation Property
 	// Required: true
@@ -36,12 +36,12 @@ type EmailIdentity struct {
 	// FeedbackAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-feedbackattributes
-	FeedbackAttributes *EmailIdentity_FeedbackAttributes `json:"FeedbackAttributes,omitempty"`
+	FeedbackAttributes *EmailIdentity_FeedbackAttributes[any] `json:"FeedbackAttributes,omitempty"`
 
 	// MailFromAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-mailfromattributes
-	MailFromAttributes *EmailIdentity_MailFromAttributes `json:"MailFromAttributes,omitempty"`
+	MailFromAttributes *EmailIdentity_MailFromAttributes[any] `json:"MailFromAttributes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type EmailIdentity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailIdentity) AWSCloudFormationType() string {
+func (r *EmailIdentity[any]) AWSCloudFormationType() string {
 	return "AWS::SES::EmailIdentity"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EmailIdentity) MarshalJSON() ([]byte, error) {
-	type Properties EmailIdentity
+func (r EmailIdentity[any]) MarshalJSON() ([]byte, error) {
+	type Properties EmailIdentity[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r EmailIdentity) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EmailIdentity) UnmarshalJSON(b []byte) error {
-	type Properties EmailIdentity
+func (r *EmailIdentity[any]) UnmarshalJSON(b []byte) error {
+	type Properties EmailIdentity[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *EmailIdentity) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EmailIdentity(*res.Properties)
+		*r = EmailIdentity[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

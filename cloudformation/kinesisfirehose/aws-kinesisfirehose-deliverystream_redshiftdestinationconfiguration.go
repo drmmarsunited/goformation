@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_RedshiftDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html
-type DeliveryStream_RedshiftDestinationConfiguration struct {
+type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// ClusterJDBCURL AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DeliveryStream_RedshiftDestinationConfiguration struct {
 	// CopyCommand AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-copycommand
-	CopyCommand *DeliveryStream_CopyCommand `json:"CopyCommand"`
+	CopyCommand *DeliveryStream_CopyCommand[any] `json:"CopyCommand"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type DeliveryStream_RedshiftDestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_RedshiftRetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_RedshiftRetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type DeliveryStream_RedshiftDestinationConfiguration struct {
 	// S3BackupConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupconfiguration
-	S3BackupConfiguration *DeliveryStream_S3DestinationConfiguration `json:"S3BackupConfiguration,omitempty"`
+	S3BackupConfiguration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3BackupConfiguration,omitempty"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type DeliveryStream_RedshiftDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// Username AWS CloudFormation Property
 	// Required: true
@@ -82,6 +82,6 @@ type DeliveryStream_RedshiftDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_RedshiftDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_RedshiftDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration"
 }

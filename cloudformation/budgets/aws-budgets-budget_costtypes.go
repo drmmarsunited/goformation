@@ -8,62 +8,62 @@ import (
 
 // Budget_CostTypes AWS CloudFormation Resource (AWS::Budgets::Budget.CostTypes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html
-type Budget_CostTypes struct {
+type Budget_CostTypes[T any] struct {
 
 	// IncludeCredit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includecredit
-	IncludeCredit *bool `json:"IncludeCredit,omitempty"`
+	IncludeCredit *T `json:"IncludeCredit,omitempty"`
 
 	// IncludeDiscount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount
-	IncludeDiscount *bool `json:"IncludeDiscount,omitempty"`
+	IncludeDiscount *T `json:"IncludeDiscount,omitempty"`
 
 	// IncludeOtherSubscription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription
-	IncludeOtherSubscription *bool `json:"IncludeOtherSubscription,omitempty"`
+	IncludeOtherSubscription *T `json:"IncludeOtherSubscription,omitempty"`
 
 	// IncludeRecurring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring
-	IncludeRecurring *bool `json:"IncludeRecurring,omitempty"`
+	IncludeRecurring *T `json:"IncludeRecurring,omitempty"`
 
 	// IncludeRefund AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund
-	IncludeRefund *bool `json:"IncludeRefund,omitempty"`
+	IncludeRefund *T `json:"IncludeRefund,omitempty"`
 
 	// IncludeSubscription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription
-	IncludeSubscription *bool `json:"IncludeSubscription,omitempty"`
+	IncludeSubscription *T `json:"IncludeSubscription,omitempty"`
 
 	// IncludeSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport
-	IncludeSupport *bool `json:"IncludeSupport,omitempty"`
+	IncludeSupport *T `json:"IncludeSupport,omitempty"`
 
 	// IncludeTax AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax
-	IncludeTax *bool `json:"IncludeTax,omitempty"`
+	IncludeTax *T `json:"IncludeTax,omitempty"`
 
 	// IncludeUpfront AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront
-	IncludeUpfront *bool `json:"IncludeUpfront,omitempty"`
+	IncludeUpfront *T `json:"IncludeUpfront,omitempty"`
 
 	// UseAmortized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized
-	UseAmortized *bool `json:"UseAmortized,omitempty"`
+	UseAmortized *T `json:"UseAmortized,omitempty"`
 
 	// UseBlended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended
-	UseBlended *bool `json:"UseBlended,omitempty"`
+	UseBlended *T `json:"UseBlended,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Budget_CostTypes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_CostTypes) AWSCloudFormationType() string {
+func (r *Budget_CostTypes[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.CostTypes"
 }

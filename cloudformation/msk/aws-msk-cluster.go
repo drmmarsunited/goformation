@@ -11,17 +11,17 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::MSK::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// BrokerNodeGroupInfo AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo
-	BrokerNodeGroupInfo *Cluster_BrokerNodeGroupInfo `json:"BrokerNodeGroupInfo"`
+	BrokerNodeGroupInfo *Cluster_BrokerNodeGroupInfo[any] `json:"BrokerNodeGroupInfo"`
 
 	// ClientAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication
-	ClientAuthentication *Cluster_ClientAuthentication `json:"ClientAuthentication,omitempty"`
+	ClientAuthentication *Cluster_ClientAuthentication[any] `json:"ClientAuthentication,omitempty"`
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Cluster struct {
 	// ConfigurationInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo
-	ConfigurationInfo *Cluster_ConfigurationInfo `json:"ConfigurationInfo,omitempty"`
+	ConfigurationInfo *Cluster_ConfigurationInfo[any] `json:"ConfigurationInfo,omitempty"`
 
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type Cluster struct {
 	// EncryptionInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo
-	EncryptionInfo *Cluster_EncryptionInfo `json:"EncryptionInfo,omitempty"`
+	EncryptionInfo *Cluster_EncryptionInfo[any] `json:"EncryptionInfo,omitempty"`
 
 	// EnhancedMonitoring AWS CloudFormation Property
 	// Required: false
@@ -56,17 +56,17 @@ type Cluster struct {
 	// LoggingInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo
-	LoggingInfo *Cluster_LoggingInfo `json:"LoggingInfo,omitempty"`
+	LoggingInfo *Cluster_LoggingInfo[any] `json:"LoggingInfo,omitempty"`
 
 	// NumberOfBrokerNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
-	NumberOfBrokerNodes int `json:"NumberOfBrokerNodes"`
+	NumberOfBrokerNodes T `json:"NumberOfBrokerNodes"`
 
 	// OpenMonitoring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring
-	OpenMonitoring *Cluster_OpenMonitoring `json:"OpenMonitoring,omitempty"`
+	OpenMonitoring *Cluster_OpenMonitoring[any] `json:"OpenMonitoring,omitempty"`
 
 	// StorageMode AWS CloudFormation Property
 	// Required: false
@@ -95,14 +95,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

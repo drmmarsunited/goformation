@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_TrafficRoute AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.TrafficRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-trafficroute.html
-type DeploymentGroup_TrafficRoute struct {
+type DeploymentGroup_TrafficRoute[T any] struct {
 
 	// ListenerArns AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeploymentGroup_TrafficRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_TrafficRoute) AWSCloudFormationType() string {
+func (r *DeploymentGroup_TrafficRoute[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.TrafficRoute"
 }

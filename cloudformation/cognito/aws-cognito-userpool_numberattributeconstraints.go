@@ -8,7 +8,7 @@ import (
 
 // UserPool_NumberAttributeConstraints AWS CloudFormation Resource (AWS::Cognito::UserPool.NumberAttributeConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
-type UserPool_NumberAttributeConstraints struct {
+type UserPool_NumberAttributeConstraints[T any] struct {
 
 	// MaxValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPool_NumberAttributeConstraints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_NumberAttributeConstraints) AWSCloudFormationType() string {
+func (r *UserPool_NumberAttributeConstraints[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.NumberAttributeConstraints"
 }

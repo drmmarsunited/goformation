@@ -8,12 +8,12 @@ import (
 
 // Cluster_CapacityProviderStrategyItem AWS CloudFormation Resource (AWS::ECS::Cluster.CapacityProviderStrategyItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-capacityproviderstrategyitem.html
-type Cluster_CapacityProviderStrategyItem struct {
+type Cluster_CapacityProviderStrategyItem[T any] struct {
 
 	// Base AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-capacityproviderstrategyitem.html#cfn-ecs-cluster-capacityproviderstrategyitem-base
-	Base *int `json:"Base,omitempty"`
+	Base *T `json:"Base,omitempty"`
 
 	// CapacityProvider AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Cluster_CapacityProviderStrategyItem struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-capacityproviderstrategyitem.html#cfn-ecs-cluster-capacityproviderstrategyitem-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Cluster_CapacityProviderStrategyItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_CapacityProviderStrategyItem) AWSCloudFormationType() string {
+func (r *Cluster_CapacityProviderStrategyItem[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Cluster.CapacityProviderStrategyItem"
 }

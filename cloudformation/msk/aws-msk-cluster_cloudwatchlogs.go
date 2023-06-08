@@ -8,12 +8,12 @@ import (
 
 // Cluster_CloudWatchLogs AWS CloudFormation Resource (AWS::MSK::Cluster.CloudWatchLogs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html
-type Cluster_CloudWatchLogs struct {
+type Cluster_CloudWatchLogs[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_CloudWatchLogs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_CloudWatchLogs) AWSCloudFormationType() string {
+func (r *Cluster_CloudWatchLogs[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.CloudWatchLogs"
 }

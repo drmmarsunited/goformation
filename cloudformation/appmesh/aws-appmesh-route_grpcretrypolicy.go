@@ -8,7 +8,7 @@ import (
 
 // Route_GrpcRetryPolicy AWS CloudFormation Resource (AWS::AppMesh::Route.GrpcRetryPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html
-type Route_GrpcRetryPolicy struct {
+type Route_GrpcRetryPolicy[T any] struct {
 
 	// GrpcRetryEvents AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Route_GrpcRetryPolicy struct {
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-maxretries
-	MaxRetries int `json:"MaxRetries"`
+	MaxRetries T `json:"MaxRetries"`
 
 	// PerRetryTimeout AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-perretrytimeout
-	PerRetryTimeout *Route_Duration `json:"PerRetryTimeout"`
+	PerRetryTimeout *Route_Duration[any] `json:"PerRetryTimeout"`
 
 	// TcpRetryEvents AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Route_GrpcRetryPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_GrpcRetryPolicy) AWSCloudFormationType() string {
+func (r *Route_GrpcRetryPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.GrpcRetryPolicy"
 }

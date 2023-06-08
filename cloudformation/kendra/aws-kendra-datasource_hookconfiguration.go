@@ -8,12 +8,12 @@ import (
 
 // DataSource_HookConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.HookConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html
-type DataSource_HookConfiguration struct {
+type DataSource_HookConfiguration[T any] struct {
 
 	// InvocationCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-invocationcondition
-	InvocationCondition *DataSource_DocumentAttributeCondition `json:"InvocationCondition,omitempty"`
+	InvocationCondition *DataSource_DocumentAttributeCondition[any] `json:"InvocationCondition,omitempty"`
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_HookConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_HookConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_HookConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.HookConfiguration"
 }

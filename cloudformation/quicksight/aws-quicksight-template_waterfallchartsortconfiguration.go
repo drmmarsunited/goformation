@@ -8,17 +8,17 @@ import (
 
 // Template_WaterfallChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.WaterfallChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-waterfallchartsortconfiguration.html
-type Template_WaterfallChartSortConfiguration struct {
+type Template_WaterfallChartSortConfiguration[T any] struct {
 
 	// BreakdownItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-waterfallchartsortconfiguration.html#cfn-quicksight-template-waterfallchartsortconfiguration-breakdownitemslimit
-	BreakdownItemsLimit *Template_ItemsLimitConfiguration `json:"BreakdownItemsLimit,omitempty"`
+	BreakdownItemsLimit *Template_ItemsLimitConfiguration[any] `json:"BreakdownItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-waterfallchartsortconfiguration.html#cfn-quicksight-template-waterfallchartsortconfiguration-categorysort
-	CategorySort []Template_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Template_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_WaterfallChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_WaterfallChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Template_WaterfallChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.WaterfallChartSortConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSource_EventBridgeConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.EventBridgeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-eventbridgeconfig.html
-type DataSource_EventBridgeConfig struct {
+type DataSource_EventBridgeConfig[T any] struct {
 
 	// EventBusArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_EventBridgeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_EventBridgeConfig) AWSCloudFormationType() string {
+func (r *DataSource_EventBridgeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.EventBridgeConfig"
 }

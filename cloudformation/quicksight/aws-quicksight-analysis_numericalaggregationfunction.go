@@ -8,12 +8,12 @@ import (
 
 // Analysis_NumericalAggregationFunction AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumericalAggregationFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalaggregationfunction.html
-type Analysis_NumericalAggregationFunction struct {
+type Analysis_NumericalAggregationFunction[T any] struct {
 
 	// PercentileAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalaggregationfunction.html#cfn-quicksight-analysis-numericalaggregationfunction-percentileaggregation
-	PercentileAggregation *Analysis_PercentileAggregation `json:"PercentileAggregation,omitempty"`
+	PercentileAggregation *Analysis_PercentileAggregation[any] `json:"PercentileAggregation,omitempty"`
 
 	// SimpleNumericalAggregation AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_NumericalAggregationFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumericalAggregationFunction) AWSCloudFormationType() string {
+func (r *Analysis_NumericalAggregationFunction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumericalAggregationFunction"
 }

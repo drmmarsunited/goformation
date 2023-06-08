@@ -8,7 +8,7 @@ import (
 
 // Dashboard_BarChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BarChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html
-type Dashboard_BarChartConfiguration struct {
+type Dashboard_BarChartConfiguration[T any] struct {
 
 	// BarsArrangement AWS CloudFormation Property
 	// Required: false
@@ -18,37 +18,37 @@ type Dashboard_BarChartConfiguration struct {
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-categoryaxis
-	CategoryAxis *Dashboard_AxisDisplayOptions `json:"CategoryAxis,omitempty"`
+	CategoryAxis *Dashboard_AxisDisplayOptions[any] `json:"CategoryAxis,omitempty"`
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// ColorLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-colorlabeloptions
-	ColorLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ColorLabelOptions,omitempty"`
+	ColorLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ColorLabelOptions,omitempty"`
 
 	// ContributionAnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-contributionanalysisdefaults
-	ContributionAnalysisDefaults []Dashboard_ContributionAnalysisDefault `json:"ContributionAnalysisDefaults,omitempty"`
+	ContributionAnalysisDefaults []Dashboard_ContributionAnalysisDefault[any] `json:"ContributionAnalysisDefaults,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-fieldwells
-	FieldWells *Dashboard_BarChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_BarChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// Orientation AWS CloudFormation Property
 	// Required: false
@@ -58,37 +58,37 @@ type Dashboard_BarChartConfiguration struct {
 	// ReferenceLines AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-referencelines
-	ReferenceLines []Dashboard_ReferenceLine `json:"ReferenceLines,omitempty"`
+	ReferenceLines []Dashboard_ReferenceLine[any] `json:"ReferenceLines,omitempty"`
 
 	// SmallMultiplesOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-smallmultiplesoptions
-	SmallMultiplesOptions *Dashboard_SmallMultiplesOptions `json:"SmallMultiplesOptions,omitempty"`
+	SmallMultiplesOptions *Dashboard_SmallMultiplesOptions[any] `json:"SmallMultiplesOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_BarChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_BarChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// ValueAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-valueaxis
-	ValueAxis *Dashboard_AxisDisplayOptions `json:"ValueAxis,omitempty"`
+	ValueAxis *Dashboard_AxisDisplayOptions[any] `json:"ValueAxis,omitempty"`
 
 	// ValueLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-valuelabeloptions
-	ValueLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ValueLabelOptions,omitempty"`
+	ValueLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ValueLabelOptions,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartconfiguration.html#cfn-quicksight-dashboard-barchartconfiguration-visualpalette
-	VisualPalette *Dashboard_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Dashboard_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -107,6 +107,6 @@ type Dashboard_BarChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BarChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_BarChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BarChartConfiguration"
 }

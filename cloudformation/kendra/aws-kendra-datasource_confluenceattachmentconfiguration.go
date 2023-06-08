@@ -8,17 +8,17 @@ import (
 
 // DataSource_ConfluenceAttachmentConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceAttachmentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html
-type DataSource_ConfluenceAttachmentConfiguration struct {
+type DataSource_ConfluenceAttachmentConfiguration[T any] struct {
 
 	// AttachmentFieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-attachmentfieldmappings
-	AttachmentFieldMappings []DataSource_ConfluenceAttachmentToIndexFieldMapping `json:"AttachmentFieldMappings,omitempty"`
+	AttachmentFieldMappings []DataSource_ConfluenceAttachmentToIndexFieldMapping[any] `json:"AttachmentFieldMappings,omitempty"`
 
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *T `json:"CrawlAttachments,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_ConfluenceAttachmentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceAttachmentConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceAttachmentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceAttachmentConfiguration"
 }

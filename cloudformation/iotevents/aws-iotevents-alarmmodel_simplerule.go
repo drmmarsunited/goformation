@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_SimpleRule AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.SimpleRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-simplerule.html
-type AlarmModel_SimpleRule struct {
+type AlarmModel_SimpleRule[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AlarmModel_SimpleRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_SimpleRule) AWSCloudFormationType() string {
+func (r *AlarmModel_SimpleRule[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.SimpleRule"
 }

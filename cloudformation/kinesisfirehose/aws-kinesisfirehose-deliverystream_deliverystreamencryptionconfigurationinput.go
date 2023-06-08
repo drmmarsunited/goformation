@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_DeliveryStreamEncryptionConfigurationInput AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.DeliveryStreamEncryptionConfigurationInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput.html
-type DeliveryStream_DeliveryStreamEncryptionConfigurationInput struct {
+type DeliveryStream_DeliveryStreamEncryptionConfigurationInput[T any] struct {
 
 	// KeyARN AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DeliveryStream_DeliveryStreamEncryptionConfigurationInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_DeliveryStreamEncryptionConfigurationInput) AWSCloudFormationType() string {
+func (r *DeliveryStream_DeliveryStreamEncryptionConfigurationInput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.DeliveryStreamEncryptionConfigurationInput"
 }

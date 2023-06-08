@@ -11,7 +11,7 @@ import (
 
 // Endpoint AWS CloudFormation Resource (AWS::S3Outposts::Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html
-type Endpoint struct {
+type Endpoint[T any] struct {
 
 	// AccessType AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint) AWSCloudFormationType() string {
+func (r *Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::S3Outposts::Endpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Endpoint) MarshalJSON() ([]byte, error) {
-	type Properties Endpoint
+func (r Endpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties Endpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Endpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Endpoint) UnmarshalJSON(b []byte) error {
-	type Properties Endpoint
+func (r *Endpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties Endpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Endpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Endpoint(*res.Properties)
+		*r = Endpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

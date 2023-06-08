@@ -8,7 +8,7 @@ import (
 
 // Analysis_SameSheetTargetVisualConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SameSheetTargetVisualConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-samesheettargetvisualconfiguration.html
-type Analysis_SameSheetTargetVisualConfiguration struct {
+type Analysis_SameSheetTargetVisualConfiguration[T any] struct {
 
 	// TargetVisualOptions AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_SameSheetTargetVisualConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SameSheetTargetVisualConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SameSheetTargetVisualConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SameSheetTargetVisualConfiguration"
 }

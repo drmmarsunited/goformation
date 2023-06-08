@@ -8,27 +8,27 @@ import (
 
 // StorageLens_StorageLensConfiguration AWS CloudFormation Resource (AWS::S3::StorageLens.StorageLensConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html
-type StorageLens_StorageLensConfiguration struct {
+type StorageLens_StorageLensConfiguration[T any] struct {
 
 	// AccountLevel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-accountlevel
-	AccountLevel *StorageLens_AccountLevel `json:"AccountLevel"`
+	AccountLevel *StorageLens_AccountLevel[any] `json:"AccountLevel"`
 
 	// AwsOrg AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-awsorg
-	AwsOrg *StorageLens_AwsOrg `json:"AwsOrg,omitempty"`
+	AwsOrg *StorageLens_AwsOrg[any] `json:"AwsOrg,omitempty"`
 
 	// DataExport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-dataexport
-	DataExport *StorageLens_DataExport `json:"DataExport,omitempty"`
+	DataExport *StorageLens_DataExport[any] `json:"DataExport,omitempty"`
 
 	// Exclude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-exclude
-	Exclude *StorageLens_BucketsAndRegions `json:"Exclude,omitempty"`
+	Exclude *StorageLens_BucketsAndRegions[any] `json:"Exclude,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type StorageLens_StorageLensConfiguration struct {
 	// Include AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-include
-	Include *StorageLens_BucketsAndRegions `json:"Include,omitempty"`
+	Include *StorageLens_BucketsAndRegions[any] `json:"Include,omitempty"`
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-isenabled
-	IsEnabled bool `json:"IsEnabled"`
+	IsEnabled T `json:"IsEnabled"`
 
 	// StorageLensArn AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type StorageLens_StorageLensConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_StorageLensConfiguration) AWSCloudFormationType() string {
+func (r *StorageLens_StorageLensConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.StorageLensConfiguration"
 }

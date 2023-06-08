@@ -8,7 +8,7 @@ import (
 
 // SecurityConfiguration_S3Encryptions AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration.S3Encryptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-s3encryptions.html
-type SecurityConfiguration_S3Encryptions struct {
+type SecurityConfiguration_S3Encryptions[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type SecurityConfiguration_S3Encryptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration_S3Encryptions) AWSCloudFormationType() string {
+func (r *SecurityConfiguration_S3Encryptions[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration.S3Encryptions"
 }

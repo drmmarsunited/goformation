@@ -8,7 +8,7 @@ import (
 
 // ScheduledQuery_S3Configuration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.S3Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-s3configuration.html
-type ScheduledQuery_S3Configuration struct {
+type ScheduledQuery_S3Configuration[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ScheduledQuery_S3Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_S3Configuration) AWSCloudFormationType() string {
+func (r *ScheduledQuery_S3Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.S3Configuration"
 }

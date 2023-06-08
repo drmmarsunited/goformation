@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_AssetPropertyVariant AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.AssetPropertyVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html
-type DetectorModel_AssetPropertyVariant struct {
+type DetectorModel_AssetPropertyVariant[T any] struct {
 
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DetectorModel_AssetPropertyVariant struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_AssetPropertyVariant) AWSCloudFormationType() string {
+func (r *DetectorModel_AssetPropertyVariant[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.AssetPropertyVariant"
 }

@@ -8,7 +8,7 @@ import (
 
 // Database_PrincipalPrivileges AWS CloudFormation Resource (AWS::Glue::Database.PrincipalPrivileges)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html
-type Database_PrincipalPrivileges struct {
+type Database_PrincipalPrivileges[T any] struct {
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Database_PrincipalPrivileges struct {
 	// Principal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal
-	Principal *Database_DataLakePrincipal `json:"Principal,omitempty"`
+	Principal *Database_DataLakePrincipal[any] `json:"Principal,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Database_PrincipalPrivileges struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_PrincipalPrivileges) AWSCloudFormationType() string {
+func (r *Database_PrincipalPrivileges[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.PrincipalPrivileges"
 }

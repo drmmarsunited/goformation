@@ -8,7 +8,7 @@ import (
 
 // ScalingPolicy_MetricDimension AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html
-type ScalingPolicy_MetricDimension struct {
+type ScalingPolicy_MetricDimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPolicy_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_MetricDimension) AWSCloudFormationType() string {
+func (r *ScalingPolicy_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension"
 }

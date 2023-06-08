@@ -11,12 +11,12 @@ import (
 
 // Deployment AWS CloudFormation Resource (AWS::ApiGateway::Deployment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
-type Deployment struct {
+type Deployment[T any] struct {
 
 	// DeploymentCanarySettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings
-	DeploymentCanarySettings *Deployment_DeploymentCanarySettings `json:"DeploymentCanarySettings,omitempty"`
+	DeploymentCanarySettings *Deployment_DeploymentCanarySettings[any] `json:"DeploymentCanarySettings,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Deployment struct {
 	// StageDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription
-	StageDescription *Deployment_StageDescription `json:"StageDescription,omitempty"`
+	StageDescription *Deployment_StageDescription[any] `json:"StageDescription,omitempty"`
 
 	// StageName AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Deployment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment) AWSCloudFormationType() string {
+func (r *Deployment[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Deployment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Deployment) MarshalJSON() ([]byte, error) {
-	type Properties Deployment
+func (r Deployment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Deployment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Deployment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Deployment) UnmarshalJSON(b []byte) error {
-	type Properties Deployment
+func (r *Deployment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Deployment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Deployment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Deployment(*res.Properties)
+		*r = Deployment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

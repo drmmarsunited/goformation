@@ -8,12 +8,12 @@ import (
 
 // FHIRDatastore_SseConfiguration AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore.SseConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-sseconfiguration.html
-type FHIRDatastore_SseConfiguration struct {
+type FHIRDatastore_SseConfiguration[T any] struct {
 
 	// KmsEncryptionConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-sseconfiguration.html#cfn-healthlake-fhirdatastore-sseconfiguration-kmsencryptionconfig
-	KmsEncryptionConfig *FHIRDatastore_KmsEncryptionConfig `json:"KmsEncryptionConfig"`
+	KmsEncryptionConfig *FHIRDatastore_KmsEncryptionConfig[any] `json:"KmsEncryptionConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FHIRDatastore_SseConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FHIRDatastore_SseConfiguration) AWSCloudFormationType() string {
+func (r *FHIRDatastore_SseConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::HealthLake::FHIRDatastore.SseConfiguration"
 }

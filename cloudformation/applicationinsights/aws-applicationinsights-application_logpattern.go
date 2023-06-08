@@ -8,7 +8,7 @@ import (
 
 // Application_LogPattern AWS CloudFormation Resource (AWS::ApplicationInsights::Application.LogPattern)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpattern.html
-type Application_LogPattern struct {
+type Application_LogPattern[T any] struct {
 
 	// Pattern AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Application_LogPattern struct {
 	// Rank AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpattern.html#cfn-applicationinsights-application-logpattern-rank
-	Rank int `json:"Rank"`
+	Rank T `json:"Rank"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Application_LogPattern struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_LogPattern) AWSCloudFormationType() string {
+func (r *Application_LogPattern[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.LogPattern"
 }

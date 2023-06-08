@@ -8,7 +8,7 @@ import (
 
 // Stack_ChefConfiguration AWS CloudFormation Resource (AWS::OpsWorks::Stack.ChefConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html
-type Stack_ChefConfiguration struct {
+type Stack_ChefConfiguration[T any] struct {
 
 	// BerkshelfVersion AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Stack_ChefConfiguration struct {
 	// ManageBerkshelf AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion
-	ManageBerkshelf *bool `json:"ManageBerkshelf,omitempty"`
+	ManageBerkshelf *T `json:"ManageBerkshelf,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Stack_ChefConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_ChefConfiguration) AWSCloudFormationType() string {
+func (r *Stack_ChefConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.ChefConfiguration"
 }

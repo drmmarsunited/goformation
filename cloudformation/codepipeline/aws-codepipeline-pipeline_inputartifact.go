@@ -8,7 +8,7 @@ import (
 
 // Pipeline_InputArtifact AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.InputArtifact)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
-type Pipeline_InputArtifact struct {
+type Pipeline_InputArtifact[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Pipeline_InputArtifact struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_InputArtifact) AWSCloudFormationType() string {
+func (r *Pipeline_InputArtifact[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.InputArtifact"
 }

@@ -8,12 +8,12 @@ import (
 
 // BackupSelection_BackupSelectionResourceType AWS CloudFormation Resource (AWS::Backup::BackupSelection.BackupSelectionResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html
-type BackupSelection_BackupSelectionResourceType struct {
+type BackupSelection_BackupSelectionResourceType[T any] struct {
 
 	// Conditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions
-	Conditions *BackupSelection_Conditions `json:"Conditions,omitempty"`
+	Conditions *BackupSelection_Conditions[any] `json:"Conditions,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type BackupSelection_BackupSelectionResourceType struct {
 	// ListOfTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags
-	ListOfTags []BackupSelection_ConditionResourceType `json:"ListOfTags,omitempty"`
+	ListOfTags []BackupSelection_ConditionResourceType[any] `json:"ListOfTags,omitempty"`
 
 	// NotResources AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type BackupSelection_BackupSelectionResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupSelection_BackupSelectionResourceType) AWSCloudFormationType() string {
+func (r *BackupSelection_BackupSelectionResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupSelection.BackupSelectionResourceType"
 }

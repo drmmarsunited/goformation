@@ -8,17 +8,17 @@ import (
 
 // MonitoringSchedule_MonitoringInput AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringinput.html
-type MonitoringSchedule_MonitoringInput struct {
+type MonitoringSchedule_MonitoringInput[T any] struct {
 
 	// BatchTransformInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringinput.html#cfn-sagemaker-monitoringschedule-monitoringinput-batchtransforminput
-	BatchTransformInput *MonitoringSchedule_BatchTransformInput `json:"BatchTransformInput,omitempty"`
+	BatchTransformInput *MonitoringSchedule_BatchTransformInput[any] `json:"BatchTransformInput,omitempty"`
 
 	// EndpointInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringinput.html#cfn-sagemaker-monitoringschedule-monitoringinput-endpointinput
-	EndpointInput *MonitoringSchedule_EndpointInput `json:"EndpointInput,omitempty"`
+	EndpointInput *MonitoringSchedule_EndpointInput[any] `json:"EndpointInput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type MonitoringSchedule_MonitoringInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringInput) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringInput"
 }

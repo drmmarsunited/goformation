@@ -8,12 +8,12 @@ import (
 
 // Cluster_Iam AWS CloudFormation Resource (AWS::MSK::Cluster.Iam)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-iam.html
-type Cluster_Iam struct {
+type Cluster_Iam[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-iam.html#cfn-msk-cluster-iam-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_Iam struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Iam) AWSCloudFormationType() string {
+func (r *Cluster_Iam[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Iam"
 }

@@ -8,17 +8,17 @@ import (
 
 // Rule_PathMatch AWS CloudFormation Resource (AWS::VpcLattice::Rule.PathMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-pathmatch.html
-type Rule_PathMatch struct {
+type Rule_PathMatch[T any] struct {
 
 	// CaseSensitive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-pathmatch.html#cfn-vpclattice-rule-pathmatch-casesensitive
-	CaseSensitive *bool `json:"CaseSensitive,omitempty"`
+	CaseSensitive *T `json:"CaseSensitive,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-pathmatch.html#cfn-vpclattice-rule-pathmatch-match
-	Match *Rule_PathMatchType `json:"Match"`
+	Match *Rule_PathMatchType[any] `json:"Match"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Rule_PathMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_PathMatch) AWSCloudFormationType() string {
+func (r *Rule_PathMatch[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.PathMatch"
 }

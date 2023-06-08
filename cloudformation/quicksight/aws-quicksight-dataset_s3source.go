@@ -8,7 +8,7 @@ import (
 
 // DataSet_S3Source AWS CloudFormation Resource (AWS::QuickSight::DataSet.S3Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html
-type DataSet_S3Source struct {
+type DataSet_S3Source[T any] struct {
 
 	// DataSourceArn AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type DataSet_S3Source struct {
 	// InputColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-inputcolumns
-	InputColumns []DataSet_InputColumn `json:"InputColumns"`
+	InputColumns []DataSet_InputColumn[any] `json:"InputColumns"`
 
 	// UploadSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-uploadsettings
-	UploadSettings *DataSet_UploadSettings `json:"UploadSettings,omitempty"`
+	UploadSettings *DataSet_UploadSettings[any] `json:"UploadSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSet_S3Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_S3Source) AWSCloudFormationType() string {
+func (r *DataSet_S3Source[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.S3Source"
 }

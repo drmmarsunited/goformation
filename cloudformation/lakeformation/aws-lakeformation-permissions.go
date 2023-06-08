@@ -11,12 +11,12 @@ import (
 
 // Permissions AWS CloudFormation Resource (AWS::LakeFormation::Permissions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html
-type Permissions struct {
+type Permissions[T any] struct {
 
 	// DataLakePrincipal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-datalakeprincipal
-	DataLakePrincipal *Permissions_DataLakePrincipal `json:"DataLakePrincipal"`
+	DataLakePrincipal *Permissions_DataLakePrincipal[any] `json:"DataLakePrincipal"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Permissions struct {
 	// Resource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource
-	Resource *Permissions_Resource `json:"Resource"`
+	Resource *Permissions_Resource[any] `json:"Resource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type Permissions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions) AWSCloudFormationType() string {
+func (r *Permissions[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Permissions) MarshalJSON() ([]byte, error) {
-	type Properties Permissions
+func (r Permissions[any]) MarshalJSON() ([]byte, error) {
+	type Properties Permissions[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Permissions) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Permissions) UnmarshalJSON(b []byte) error {
-	type Properties Permissions
+func (r *Permissions[any]) UnmarshalJSON(b []byte) error {
+	type Properties Permissions[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Permissions) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Permissions(*res.Properties)
+		*r = Permissions[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

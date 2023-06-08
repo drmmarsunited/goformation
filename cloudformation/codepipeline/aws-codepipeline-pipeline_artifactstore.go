@@ -8,12 +8,12 @@ import (
 
 // Pipeline_ArtifactStore AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ArtifactStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html
-type Pipeline_ArtifactStore struct {
+type Pipeline_ArtifactStore[T any] struct {
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey
-	EncryptionKey *Pipeline_EncryptionKey `json:"EncryptionKey,omitempty"`
+	EncryptionKey *Pipeline_EncryptionKey[any] `json:"EncryptionKey,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_ArtifactStore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ArtifactStore) AWSCloudFormationType() string {
+func (r *Pipeline_ArtifactStore[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ArtifactStore"
 }

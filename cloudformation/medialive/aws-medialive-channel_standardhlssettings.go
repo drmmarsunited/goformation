@@ -8,7 +8,7 @@ import (
 
 // Channel_StandardHlsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.StandardHlsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-standardhlssettings.html
-type Channel_StandardHlsSettings struct {
+type Channel_StandardHlsSettings[T any] struct {
 
 	// AudioRenditionSets AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_StandardHlsSettings struct {
 	// M3u8Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-standardhlssettings.html#cfn-medialive-channel-standardhlssettings-m3u8settings
-	M3u8Settings *Channel_M3u8Settings `json:"M3u8Settings,omitempty"`
+	M3u8Settings *Channel_M3u8Settings[any] `json:"M3u8Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_StandardHlsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_StandardHlsSettings) AWSCloudFormationType() string {
+func (r *Channel_StandardHlsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.StandardHlsSettings"
 }

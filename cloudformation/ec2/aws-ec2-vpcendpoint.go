@@ -11,7 +11,7 @@ import (
 
 // VPCEndpoint AWS CloudFormation Resource (AWS::EC2::VPCEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html
-type VPCEndpoint struct {
+type VPCEndpoint[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type VPCEndpoint struct {
 	// PrivateDnsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-privatednsenabled
-	PrivateDnsEnabled *bool `json:"PrivateDnsEnabled,omitempty"`
+	PrivateDnsEnabled *T `json:"PrivateDnsEnabled,omitempty"`
 
 	// RouteTableIds AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type VPCEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCEndpoint) AWSCloudFormationType() string {
+func (r *VPCEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPCEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPCEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties VPCEndpoint
+func (r VPCEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPCEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r VPCEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPCEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties VPCEndpoint
+func (r *VPCEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPCEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *VPCEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPCEndpoint(*res.Properties)
+		*r = VPCEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

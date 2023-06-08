@@ -8,7 +8,7 @@ import (
 
 // Distribution_LambdaFunctionAssociation AWS CloudFormation Resource (AWS::CloudFront::Distribution.LambdaFunctionAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html
-type Distribution_LambdaFunctionAssociation struct {
+type Distribution_LambdaFunctionAssociation[T any] struct {
 
 	// EventType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Distribution_LambdaFunctionAssociation struct {
 	// IncludeBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
-	IncludeBody *bool `json:"IncludeBody,omitempty"`
+	IncludeBody *T `json:"IncludeBody,omitempty"`
 
 	// LambdaFunctionARN AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Distribution_LambdaFunctionAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_LambdaFunctionAssociation) AWSCloudFormationType() string {
+func (r *Distribution_LambdaFunctionAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.LambdaFunctionAssociation"
 }

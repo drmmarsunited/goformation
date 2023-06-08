@@ -8,7 +8,7 @@ import (
 
 // Analysis_FieldSort AWS CloudFormation Resource (AWS::QuickSight::Analysis.FieldSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsort.html
-type Analysis_FieldSort struct {
+type Analysis_FieldSort[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_FieldSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FieldSort) AWSCloudFormationType() string {
+func (r *Analysis_FieldSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FieldSort"
 }

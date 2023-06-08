@@ -8,12 +8,12 @@ import (
 
 // NetworkInterface_PrivateIpAddressSpecification AWS CloudFormation Resource (AWS::EC2::NetworkInterface.PrivateIpAddressSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-privateipaddressspecification.html
-type NetworkInterface_PrivateIpAddressSpecification struct {
+type NetworkInterface_PrivateIpAddressSpecification[T any] struct {
 
 	// Primary AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-privateipaddressspecification.html#cfn-ec2-networkinterface-privateipaddressspecification-primary
-	Primary bool `json:"Primary"`
+	Primary T `json:"Primary"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type NetworkInterface_PrivateIpAddressSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInterface_PrivateIpAddressSpecification) AWSCloudFormationType() string {
+func (r *NetworkInterface_PrivateIpAddressSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInterface.PrivateIpAddressSpecification"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_SourcePriority AWS CloudFormation Resource (AWS::MediaConnect::Flow.SourcePriority)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcepriority.html
-type Flow_SourcePriority struct {
+type Flow_SourcePriority[T any] struct {
 
 	// PrimarySource AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_SourcePriority struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SourcePriority) AWSCloudFormationType() string {
+func (r *Flow_SourcePriority[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::Flow.SourcePriority"
 }

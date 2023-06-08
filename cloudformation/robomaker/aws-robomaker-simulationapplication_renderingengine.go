@@ -8,7 +8,7 @@ import (
 
 // SimulationApplication_RenderingEngine AWS CloudFormation Resource (AWS::RoboMaker::SimulationApplication.RenderingEngine)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html
-type SimulationApplication_RenderingEngine struct {
+type SimulationApplication_RenderingEngine[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SimulationApplication_RenderingEngine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimulationApplication_RenderingEngine) AWSCloudFormationType() string {
+func (r *SimulationApplication_RenderingEngine[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::SimulationApplication.RenderingEngine"
 }

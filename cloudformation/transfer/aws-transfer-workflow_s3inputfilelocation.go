@@ -8,7 +8,7 @@ import (
 
 // Workflow_S3InputFileLocation AWS CloudFormation Resource (AWS::Transfer::Workflow.S3InputFileLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3inputfilelocation.html
-type Workflow_S3InputFileLocation struct {
+type Workflow_S3InputFileLocation[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workflow_S3InputFileLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_S3InputFileLocation) AWSCloudFormationType() string {
+func (r *Workflow_S3InputFileLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.S3InputFileLocation"
 }

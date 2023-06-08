@@ -8,12 +8,12 @@ import (
 
 // Table_GlobalSecondaryIndex AWS CloudFormation Resource (AWS::DynamoDB::Table.GlobalSecondaryIndex)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html
-type Table_GlobalSecondaryIndex struct {
+type Table_GlobalSecondaryIndex[T any] struct {
 
 	// ContributorInsightsSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-contributorinsightsspecification
-	ContributorInsightsSpecification *Table_ContributorInsightsSpecification `json:"ContributorInsightsSpecification,omitempty"`
+	ContributorInsightsSpecification *Table_ContributorInsightsSpecification[any] `json:"ContributorInsightsSpecification,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type Table_GlobalSecondaryIndex struct {
 	// KeySchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-keyschema
-	KeySchema []Table_KeySchema `json:"KeySchema"`
+	KeySchema []Table_KeySchema[any] `json:"KeySchema"`
 
 	// Projection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-projection
-	Projection *Table_Projection `json:"Projection"`
+	Projection *Table_Projection[any] `json:"Projection"`
 
 	// ProvisionedThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-provisionedthroughput
-	ProvisionedThroughput *Table_ProvisionedThroughput `json:"ProvisionedThroughput,omitempty"`
+	ProvisionedThroughput *Table_ProvisionedThroughput[any] `json:"ProvisionedThroughput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Table_GlobalSecondaryIndex struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_GlobalSecondaryIndex) AWSCloudFormationType() string {
+func (r *Table_GlobalSecondaryIndex[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.GlobalSecondaryIndex"
 }

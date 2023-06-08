@@ -8,7 +8,7 @@ import (
 
 // Analysis_BoxPlotOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.BoxPlotOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotoptions.html
-type Analysis_BoxPlotOptions struct {
+type Analysis_BoxPlotOptions[T any] struct {
 
 	// AllDataPointsVisibility AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_BoxPlotOptions struct {
 	// StyleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotoptions.html#cfn-quicksight-analysis-boxplotoptions-styleoptions
-	StyleOptions *Analysis_BoxPlotStyleOptions `json:"StyleOptions,omitempty"`
+	StyleOptions *Analysis_BoxPlotStyleOptions[any] `json:"StyleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_BoxPlotOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_BoxPlotOptions) AWSCloudFormationType() string {
+func (r *Analysis_BoxPlotOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.BoxPlotOptions"
 }

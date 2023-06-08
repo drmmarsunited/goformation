@@ -8,17 +8,17 @@ import (
 
 // Recipe_RecipeStep AWS CloudFormation Resource (AWS::DataBrew::Recipe.RecipeStep)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html
-type Recipe_RecipeStep struct {
+type Recipe_RecipeStep[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action
-	Action *Recipe_Action `json:"Action"`
+	Action *Recipe_Action[any] `json:"Action"`
 
 	// ConditionExpressions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions
-	ConditionExpressions []Recipe_ConditionExpression `json:"ConditionExpressions,omitempty"`
+	ConditionExpressions []Recipe_ConditionExpression[any] `json:"ConditionExpressions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Recipe_RecipeStep struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe_RecipeStep) AWSCloudFormationType() string {
+func (r *Recipe_RecipeStep[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe.RecipeStep"
 }

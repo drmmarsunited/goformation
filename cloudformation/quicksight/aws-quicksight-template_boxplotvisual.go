@@ -8,32 +8,32 @@ import (
 
 // Template_BoxPlotVisual AWS CloudFormation Resource (AWS::QuickSight::Template.BoxPlotVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html
-type Template_BoxPlotVisual struct {
+type Template_BoxPlotVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html#cfn-quicksight-template-boxplotvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html#cfn-quicksight-template-boxplotvisual-chartconfiguration
-	ChartConfiguration *Template_BoxPlotChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_BoxPlotChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html#cfn-quicksight-template-boxplotvisual-columnhierarchies
-	ColumnHierarchies []Template_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Template_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html#cfn-quicksight-template-boxplotvisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotvisual.html#cfn-quicksight-template-boxplotvisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_BoxPlotVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BoxPlotVisual) AWSCloudFormationType() string {
+func (r *Template_BoxPlotVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BoxPlotVisual"
 }

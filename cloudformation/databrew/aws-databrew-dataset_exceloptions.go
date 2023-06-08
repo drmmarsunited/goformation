@@ -8,17 +8,17 @@ import (
 
 // Dataset_ExcelOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.ExcelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html
-type Dataset_ExcelOptions struct {
+type Dataset_ExcelOptions[T any] struct {
 
 	// HeaderRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-headerrow
-	HeaderRow *bool `json:"HeaderRow,omitempty"`
+	HeaderRow *T `json:"HeaderRow,omitempty"`
 
 	// SheetIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-sheetindexes
-	SheetIndexes []int `json:"SheetIndexes,omitempty"`
+	SheetIndexes []T `json:"SheetIndexes,omitempty"`
 
 	// SheetNames AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dataset_ExcelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_ExcelOptions) AWSCloudFormationType() string {
+func (r *Dataset_ExcelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.ExcelOptions"
 }

@@ -11,7 +11,7 @@ import (
 
 // Dataset AWS CloudFormation Resource (AWS::Personalize::Dataset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html
-type Dataset struct {
+type Dataset[T any] struct {
 
 	// DatasetGroupArn AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Dataset struct {
 	// DatasetImportJob AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasetimportjob
-	DatasetImportJob *Dataset_DatasetImportJob `json:"DatasetImportJob,omitempty"`
+	DatasetImportJob *Dataset_DatasetImportJob[any] `json:"DatasetImportJob,omitempty"`
 
 	// DatasetType AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type Dataset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset) AWSCloudFormationType() string {
+func (r *Dataset[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Dataset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Dataset) MarshalJSON() ([]byte, error) {
-	type Properties Dataset
+func (r Dataset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Dataset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Dataset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Dataset) UnmarshalJSON(b []byte) error {
-	type Properties Dataset
+func (r *Dataset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Dataset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Dataset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Dataset(*res.Properties)
+		*r = Dataset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

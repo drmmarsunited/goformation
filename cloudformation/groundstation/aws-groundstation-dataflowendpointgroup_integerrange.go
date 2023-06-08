@@ -8,17 +8,17 @@ import (
 
 // DataflowEndpointGroup_IntegerRange AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.IntegerRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-integerrange.html
-type DataflowEndpointGroup_IntegerRange struct {
+type DataflowEndpointGroup_IntegerRange[T any] struct {
 
 	// Maximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-integerrange.html#cfn-groundstation-dataflowendpointgroup-integerrange-maximum
-	Maximum *int `json:"Maximum,omitempty"`
+	Maximum *T `json:"Maximum,omitempty"`
 
 	// Minimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-integerrange.html#cfn-groundstation-dataflowendpointgroup-integerrange-minimum
-	Minimum *int `json:"Minimum,omitempty"`
+	Minimum *T `json:"Minimum,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataflowEndpointGroup_IntegerRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_IntegerRange) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_IntegerRange[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.IntegerRange"
 }

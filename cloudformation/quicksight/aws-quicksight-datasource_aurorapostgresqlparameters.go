@@ -8,7 +8,7 @@ import (
 
 // DataSource_AuroraPostgreSqlParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.AuroraPostgreSqlParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-aurorapostgresqlparameters.html
-type DataSource_AuroraPostgreSqlParameters struct {
+type DataSource_AuroraPostgreSqlParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_AuroraPostgreSqlParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-aurorapostgresqlparameters.html#cfn-quicksight-datasource-aurorapostgresqlparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_AuroraPostgreSqlParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AuroraPostgreSqlParameters) AWSCloudFormationType() string {
+func (r *DataSource_AuroraPostgreSqlParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.AuroraPostgreSqlParameters"
 }

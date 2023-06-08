@@ -8,12 +8,12 @@ import (
 
 // AnomalyDetector_MetricMathAnomalyDetector AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.MetricMathAnomalyDetector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricmathanomalydetector.html
-type AnomalyDetector_MetricMathAnomalyDetector struct {
+type AnomalyDetector_MetricMathAnomalyDetector[T any] struct {
 
 	// MetricDataQueries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricmathanomalydetector.html#cfn-cloudwatch-anomalydetector-metricmathanomalydetector-metricdataqueries
-	MetricDataQueries []AnomalyDetector_MetricDataQuery `json:"MetricDataQueries,omitempty"`
+	MetricDataQueries []AnomalyDetector_MetricDataQuery[any] `json:"MetricDataQueries,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AnomalyDetector_MetricMathAnomalyDetector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricMathAnomalyDetector) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricMathAnomalyDetector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.MetricMathAnomalyDetector"
 }

@@ -8,7 +8,7 @@ import (
 
 // WebACL_FieldIdentifier AWS CloudFormation Resource (AWS::WAFv2::WebACL.FieldIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldidentifier.html
-type WebACL_FieldIdentifier struct {
+type WebACL_FieldIdentifier[T any] struct {
 
 	// Identifier AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_FieldIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_FieldIdentifier) AWSCloudFormationType() string {
+func (r *WebACL_FieldIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.FieldIdentifier"
 }

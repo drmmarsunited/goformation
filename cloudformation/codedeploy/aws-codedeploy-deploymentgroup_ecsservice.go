@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_ECSService AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.ECSService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html
-type DeploymentGroup_ECSService struct {
+type DeploymentGroup_ECSService[T any] struct {
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DeploymentGroup_ECSService struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_ECSService) AWSCloudFormationType() string {
+func (r *DeploymentGroup_ECSService[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.ECSService"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataIntegration_FileConfiguration AWS CloudFormation Resource (AWS::AppIntegrations::DataIntegration.FileConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-fileconfiguration.html
-type DataIntegration_FileConfiguration struct {
+type DataIntegration_FileConfiguration[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataIntegration_FileConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataIntegration_FileConfiguration) AWSCloudFormationType() string {
+func (r *DataIntegration_FileConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppIntegrations::DataIntegration.FileConfiguration"
 }

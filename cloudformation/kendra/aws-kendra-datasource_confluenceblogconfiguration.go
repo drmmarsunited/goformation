@@ -8,12 +8,12 @@ import (
 
 // DataSource_ConfluenceBlogConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceBlogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogconfiguration.html
-type DataSource_ConfluenceBlogConfiguration struct {
+type DataSource_ConfluenceBlogConfiguration[T any] struct {
 
 	// BlogFieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogconfiguration.html#cfn-kendra-datasource-confluenceblogconfiguration-blogfieldmappings
-	BlogFieldMappings []DataSource_ConfluenceBlogToIndexFieldMapping `json:"BlogFieldMappings,omitempty"`
+	BlogFieldMappings []DataSource_ConfluenceBlogToIndexFieldMapping[any] `json:"BlogFieldMappings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSource_ConfluenceBlogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceBlogConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceBlogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceBlogConfiguration"
 }

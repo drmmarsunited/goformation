@@ -8,7 +8,7 @@ import (
 
 // EvaluationForm_EvaluationFormSingleSelectQuestionAutomation AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormSingleSelectQuestionAutomation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionautomation.html
-type EvaluationForm_EvaluationFormSingleSelectQuestionAutomation struct {
+type EvaluationForm_EvaluationFormSingleSelectQuestionAutomation[T any] struct {
 
 	// DefaultOptionRefId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionAutomation struct {
 	// Options AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionautomation.html#cfn-connect-evaluationform-evaluationformsingleselectquestionautomation-options
-	Options []EvaluationForm_EvaluationFormSingleSelectQuestionAutomationOption `json:"Options"`
+	Options []EvaluationForm_EvaluationFormSingleSelectQuestionAutomationOption[any] `json:"Options"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionAutomation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormSingleSelectQuestionAutomation) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormSingleSelectQuestionAutomation[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormSingleSelectQuestionAutomation"
 }

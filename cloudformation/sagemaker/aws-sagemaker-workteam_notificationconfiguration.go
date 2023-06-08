@@ -8,7 +8,7 @@ import (
 
 // Workteam_NotificationConfiguration AWS CloudFormation Resource (AWS::SageMaker::Workteam.NotificationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html
-type Workteam_NotificationConfiguration struct {
+type Workteam_NotificationConfiguration[T any] struct {
 
 	// NotificationTopicArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Workteam_NotificationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workteam_NotificationConfiguration) AWSCloudFormationType() string {
+func (r *Workteam_NotificationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Workteam.NotificationConfiguration"
 }

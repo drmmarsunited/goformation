@@ -8,7 +8,7 @@ import (
 
 // Rule_Predicate AWS CloudFormation Resource (AWS::WAF::Rule.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html
-type Rule_Predicate struct {
+type Rule_Predicate[T any] struct {
 
 	// DataId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Rule_Predicate struct {
 	// Negated AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-negated
-	Negated bool `json:"Negated"`
+	Negated T `json:"Negated"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Rule_Predicate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Predicate) AWSCloudFormationType() string {
+func (r *Rule_Predicate[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::Rule.Predicate"
 }

@@ -8,42 +8,42 @@ import (
 
 // TaskDefinition_LinuxParameters AWS CloudFormation Resource (AWS::ECS::TaskDefinition.LinuxParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html
-type TaskDefinition_LinuxParameters struct {
+type TaskDefinition_LinuxParameters[T any] struct {
 
 	// Capabilities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities
-	Capabilities *TaskDefinition_KernelCapabilities `json:"Capabilities,omitempty"`
+	Capabilities *TaskDefinition_KernelCapabilities[any] `json:"Capabilities,omitempty"`
 
 	// Devices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices
-	Devices []TaskDefinition_Device `json:"Devices,omitempty"`
+	Devices []TaskDefinition_Device[any] `json:"Devices,omitempty"`
 
 	// InitProcessEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled
-	InitProcessEnabled *bool `json:"InitProcessEnabled,omitempty"`
+	InitProcessEnabled *T `json:"InitProcessEnabled,omitempty"`
 
 	// MaxSwap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-maxswap
-	MaxSwap *int `json:"MaxSwap,omitempty"`
+	MaxSwap *T `json:"MaxSwap,omitempty"`
 
 	// SharedMemorySize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize
-	SharedMemorySize *int `json:"SharedMemorySize,omitempty"`
+	SharedMemorySize *T `json:"SharedMemorySize,omitempty"`
 
 	// Swappiness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-swappiness
-	Swappiness *int `json:"Swappiness,omitempty"`
+	Swappiness *T `json:"Swappiness,omitempty"`
 
 	// Tmpfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs
-	Tmpfs []TaskDefinition_Tmpfs `json:"Tmpfs,omitempty"`
+	Tmpfs []TaskDefinition_Tmpfs[any] `json:"Tmpfs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type TaskDefinition_LinuxParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_LinuxParameters) AWSCloudFormationType() string {
+func (r *TaskDefinition_LinuxParameters[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.LinuxParameters"
 }

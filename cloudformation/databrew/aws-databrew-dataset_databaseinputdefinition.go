@@ -8,7 +8,7 @@ import (
 
 // Dataset_DatabaseInputDefinition AWS CloudFormation Resource (AWS::DataBrew::Dataset.DatabaseInputDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html
-type Dataset_DatabaseInputDefinition struct {
+type Dataset_DatabaseInputDefinition[T any] struct {
 
 	// DatabaseTableName AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dataset_DatabaseInputDefinition struct {
 	// TempDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory
-	TempDirectory *Dataset_S3Location `json:"TempDirectory,omitempty"`
+	TempDirectory *Dataset_S3Location[any] `json:"TempDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dataset_DatabaseInputDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatabaseInputDefinition) AWSCloudFormationType() string {
+func (r *Dataset_DatabaseInputDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.DatabaseInputDefinition"
 }

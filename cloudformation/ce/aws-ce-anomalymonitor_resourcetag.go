@@ -8,7 +8,7 @@ import (
 
 // AnomalyMonitor_ResourceTag AWS CloudFormation Resource (AWS::CE::AnomalyMonitor.ResourceTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-anomalymonitor-resourcetag.html
-type AnomalyMonitor_ResourceTag struct {
+type AnomalyMonitor_ResourceTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalyMonitor_ResourceTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyMonitor_ResourceTag) AWSCloudFormationType() string {
+func (r *AnomalyMonitor_ResourceTag[any]) AWSCloudFormationType() string {
 	return "AWS::CE::AnomalyMonitor.ResourceTag"
 }

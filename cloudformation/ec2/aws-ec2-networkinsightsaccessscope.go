@@ -12,17 +12,17 @@ import (
 
 // NetworkInsightsAccessScope AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScope)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html
-type NetworkInsightsAccessScope struct {
+type NetworkInsightsAccessScope[T any] struct {
 
 	// ExcludePaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-excludepaths
-	ExcludePaths []NetworkInsightsAccessScope_AccessScopePathRequest `json:"ExcludePaths,omitempty"`
+	ExcludePaths []NetworkInsightsAccessScope_AccessScopePathRequest[any] `json:"ExcludePaths,omitempty"`
 
 	// MatchPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-matchpaths
-	MatchPaths []NetworkInsightsAccessScope_AccessScopePathRequest `json:"MatchPaths,omitempty"`
+	MatchPaths []NetworkInsightsAccessScope_AccessScopePathRequest[any] `json:"MatchPaths,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type NetworkInsightsAccessScope struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScope) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScope[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScope"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkInsightsAccessScope) MarshalJSON() ([]byte, error) {
-	type Properties NetworkInsightsAccessScope
+func (r NetworkInsightsAccessScope[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkInsightsAccessScope[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r NetworkInsightsAccessScope) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkInsightsAccessScope) UnmarshalJSON(b []byte) error {
-	type Properties NetworkInsightsAccessScope
+func (r *NetworkInsightsAccessScope[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkInsightsAccessScope[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *NetworkInsightsAccessScope) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkInsightsAccessScope(*res.Properties)
+		*r = NetworkInsightsAccessScope[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

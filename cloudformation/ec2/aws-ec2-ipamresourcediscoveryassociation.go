@@ -12,7 +12,7 @@ import (
 
 // IPAMResourceDiscoveryAssociation AWS CloudFormation Resource (AWS::EC2::IPAMResourceDiscoveryAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html
-type IPAMResourceDiscoveryAssociation struct {
+type IPAMResourceDiscoveryAssociation[T any] struct {
 
 	// IpamId AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type IPAMResourceDiscoveryAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAMResourceDiscoveryAssociation) AWSCloudFormationType() string {
+func (r *IPAMResourceDiscoveryAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAMResourceDiscoveryAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IPAMResourceDiscoveryAssociation) MarshalJSON() ([]byte, error) {
-	type Properties IPAMResourceDiscoveryAssociation
+func (r IPAMResourceDiscoveryAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties IPAMResourceDiscoveryAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r IPAMResourceDiscoveryAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IPAMResourceDiscoveryAssociation) UnmarshalJSON(b []byte) error {
-	type Properties IPAMResourceDiscoveryAssociation
+func (r *IPAMResourceDiscoveryAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties IPAMResourceDiscoveryAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *IPAMResourceDiscoveryAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IPAMResourceDiscoveryAssociation(*res.Properties)
+		*r = IPAMResourceDiscoveryAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

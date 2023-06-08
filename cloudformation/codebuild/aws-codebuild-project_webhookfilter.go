@@ -8,12 +8,12 @@ import (
 
 // Project_WebhookFilter AWS CloudFormation Resource (AWS::CodeBuild::Project.WebhookFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html
-type Project_WebhookFilter struct {
+type Project_WebhookFilter[T any] struct {
 
 	// ExcludeMatchedPattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern
-	ExcludeMatchedPattern *bool `json:"ExcludeMatchedPattern,omitempty"`
+	ExcludeMatchedPattern *T `json:"ExcludeMatchedPattern,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Project_WebhookFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_WebhookFilter) AWSCloudFormationType() string {
+func (r *Project_WebhookFilter[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.WebhookFilter"
 }

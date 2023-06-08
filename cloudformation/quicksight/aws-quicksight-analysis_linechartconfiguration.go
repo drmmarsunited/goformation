@@ -8,82 +8,82 @@ import (
 
 // Analysis_LineChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.LineChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html
-type Analysis_LineChartConfiguration struct {
+type Analysis_LineChartConfiguration[T any] struct {
 
 	// ContributionAnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-contributionanalysisdefaults
-	ContributionAnalysisDefaults []Analysis_ContributionAnalysisDefault `json:"ContributionAnalysisDefaults,omitempty"`
+	ContributionAnalysisDefaults []Analysis_ContributionAnalysisDefault[any] `json:"ContributionAnalysisDefaults,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-datalabels
-	DataLabels *Analysis_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Analysis_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// DefaultSeriesSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-defaultseriessettings
-	DefaultSeriesSettings *Analysis_LineChartDefaultSeriesSettings `json:"DefaultSeriesSettings,omitempty"`
+	DefaultSeriesSettings *Analysis_LineChartDefaultSeriesSettings[any] `json:"DefaultSeriesSettings,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-fieldwells
-	FieldWells *Analysis_LineChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_LineChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// ForecastConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-forecastconfigurations
-	ForecastConfigurations []Analysis_ForecastConfiguration `json:"ForecastConfigurations,omitempty"`
+	ForecastConfigurations []Analysis_ForecastConfiguration[any] `json:"ForecastConfigurations,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-legend
-	Legend *Analysis_LegendOptions `json:"Legend,omitempty"`
+	Legend *Analysis_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// PrimaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-primaryyaxisdisplayoptions
-	PrimaryYAxisDisplayOptions *Analysis_LineSeriesAxisDisplayOptions `json:"PrimaryYAxisDisplayOptions,omitempty"`
+	PrimaryYAxisDisplayOptions *Analysis_LineSeriesAxisDisplayOptions[any] `json:"PrimaryYAxisDisplayOptions,omitempty"`
 
 	// PrimaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-primaryyaxislabeloptions
-	PrimaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions `json:"PrimaryYAxisLabelOptions,omitempty"`
+	PrimaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"PrimaryYAxisLabelOptions,omitempty"`
 
 	// ReferenceLines AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-referencelines
-	ReferenceLines []Analysis_ReferenceLine `json:"ReferenceLines,omitempty"`
+	ReferenceLines []Analysis_ReferenceLine[any] `json:"ReferenceLines,omitempty"`
 
 	// SecondaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-secondaryyaxisdisplayoptions
-	SecondaryYAxisDisplayOptions *Analysis_LineSeriesAxisDisplayOptions `json:"SecondaryYAxisDisplayOptions,omitempty"`
+	SecondaryYAxisDisplayOptions *Analysis_LineSeriesAxisDisplayOptions[any] `json:"SecondaryYAxisDisplayOptions,omitempty"`
 
 	// SecondaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-secondaryyaxislabeloptions
-	SecondaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions `json:"SecondaryYAxisLabelOptions,omitempty"`
+	SecondaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"SecondaryYAxisLabelOptions,omitempty"`
 
 	// Series AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-series
-	Series []Analysis_SeriesItem `json:"Series,omitempty"`
+	Series []Analysis_SeriesItem[any] `json:"Series,omitempty"`
 
 	// SmallMultiplesOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-smallmultiplesoptions
-	SmallMultiplesOptions *Analysis_SmallMultiplesOptions `json:"SmallMultiplesOptions,omitempty"`
+	SmallMultiplesOptions *Analysis_SmallMultiplesOptions[any] `json:"SmallMultiplesOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-sortconfiguration
-	SortConfiguration *Analysis_LineChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_LineChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-tooltip
-	Tooltip *Analysis_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Analysis_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -93,17 +93,17 @@ type Analysis_LineChartConfiguration struct {
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-visualpalette
-	VisualPalette *Analysis_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Analysis_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// XAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-xaxisdisplayoptions
-	XAxisDisplayOptions *Analysis_AxisDisplayOptions `json:"XAxisDisplayOptions,omitempty"`
+	XAxisDisplayOptions *Analysis_AxisDisplayOptions[any] `json:"XAxisDisplayOptions,omitempty"`
 
 	// XAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-xaxislabeloptions
-	XAxisLabelOptions *Analysis_ChartAxisLabelOptions `json:"XAxisLabelOptions,omitempty"`
+	XAxisLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"XAxisLabelOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -122,6 +122,6 @@ type Analysis_LineChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LineChartConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_LineChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LineChartConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // Mesh_MeshSpec AWS CloudFormation Resource (AWS::AppMesh::Mesh.MeshSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
-type Mesh_MeshSpec struct {
+type Mesh_MeshSpec[T any] struct {
 
 	// EgressFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
-	EgressFilter *Mesh_EgressFilter `json:"EgressFilter,omitempty"`
+	EgressFilter *Mesh_EgressFilter[any] `json:"EgressFilter,omitempty"`
 
 	// ServiceDiscovery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-servicediscovery
-	ServiceDiscovery *Mesh_MeshServiceDiscovery `json:"ServiceDiscovery,omitempty"`
+	ServiceDiscovery *Mesh_MeshServiceDiscovery[any] `json:"ServiceDiscovery,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Mesh_MeshSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Mesh_MeshSpec) AWSCloudFormationType() string {
+func (r *Mesh_MeshSpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Mesh.MeshSpec"
 }

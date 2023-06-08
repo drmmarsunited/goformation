@@ -8,7 +8,7 @@ import (
 
 // Budget_Notification AWS CloudFormation Resource (AWS::Budgets::Budget.Notification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html
-type Budget_Notification struct {
+type Budget_Notification[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Budget_Notification struct {
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold
-	Threshold float64 `json:"Threshold"`
+	Threshold T `json:"Threshold"`
 
 	// ThresholdType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Budget_Notification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_Notification) AWSCloudFormationType() string {
+func (r *Budget_Notification[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.Notification"
 }

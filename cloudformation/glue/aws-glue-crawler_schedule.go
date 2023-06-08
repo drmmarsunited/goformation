@@ -8,7 +8,7 @@ import (
 
 // Crawler_Schedule AWS CloudFormation Resource (AWS::Glue::Crawler.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html
-type Crawler_Schedule struct {
+type Crawler_Schedule[T any] struct {
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Crawler_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_Schedule) AWSCloudFormationType() string {
+func (r *Crawler_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.Schedule"
 }

@@ -8,12 +8,12 @@ import (
 
 // Instance_ElasticInferenceAccelerator AWS CloudFormation Resource (AWS::EC2::Instance.ElasticInferenceAccelerator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html
-type Instance_ElasticInferenceAccelerator struct {
+type Instance_ElasticInferenceAccelerator[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Instance_ElasticInferenceAccelerator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_ElasticInferenceAccelerator) AWSCloudFormationType() string {
+func (r *Instance_ElasticInferenceAccelerator[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.ElasticInferenceAccelerator"
 }

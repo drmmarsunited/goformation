@@ -8,7 +8,7 @@ import (
 
 // FirewallPolicy_StatefulRuleGroupOverride AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupoverride.html
-type FirewallPolicy_StatefulRuleGroupOverride struct {
+type FirewallPolicy_StatefulRuleGroupOverride[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type FirewallPolicy_StatefulRuleGroupOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_StatefulRuleGroupOverride) AWSCloudFormationType() string {
+func (r *FirewallPolicy_StatefulRuleGroupOverride[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupOverride"
 }

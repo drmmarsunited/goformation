@@ -8,7 +8,7 @@ import (
 
 // InstanceStorageConfig_S3Config AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.S3Config)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-s3config.html
-type InstanceStorageConfig_S3Config struct {
+type InstanceStorageConfig_S3Config[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type InstanceStorageConfig_S3Config struct {
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-s3config.html#cfn-connect-instancestorageconfig-s3config-encryptionconfig
-	EncryptionConfig *InstanceStorageConfig_EncryptionConfig `json:"EncryptionConfig,omitempty"`
+	EncryptionConfig *InstanceStorageConfig_EncryptionConfig[any] `json:"EncryptionConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type InstanceStorageConfig_S3Config struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig_S3Config) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig_S3Config[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig.S3Config"
 }

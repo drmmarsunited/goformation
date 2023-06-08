@@ -8,7 +8,7 @@ import (
 
 // Branch_EnvironmentVariable AWS CloudFormation Resource (AWS::Amplify::Branch.EnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html
-type Branch_EnvironmentVariable struct {
+type Branch_EnvironmentVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Branch_EnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Branch_EnvironmentVariable) AWSCloudFormationType() string {
+func (r *Branch_EnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::Branch.EnvironmentVariable"
 }

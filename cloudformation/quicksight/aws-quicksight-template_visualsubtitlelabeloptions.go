@@ -8,12 +8,12 @@ import (
 
 // Template_VisualSubtitleLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Template.VisualSubtitleLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualsubtitlelabeloptions.html
-type Template_VisualSubtitleLabelOptions struct {
+type Template_VisualSubtitleLabelOptions[T any] struct {
 
 	// FormatText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualsubtitlelabeloptions.html#cfn-quicksight-template-visualsubtitlelabeloptions-formattext
-	FormatText *Template_LongFormatText `json:"FormatText,omitempty"`
+	FormatText *Template_LongFormatText[any] `json:"FormatText,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_VisualSubtitleLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_VisualSubtitleLabelOptions) AWSCloudFormationType() string {
+func (r *Template_VisualSubtitleLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.VisualSubtitleLabelOptions"
 }

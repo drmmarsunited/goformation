@@ -11,7 +11,7 @@ import (
 
 // Scene AWS CloudFormation Resource (AWS::IoTTwinMaker::Scene)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html
-type Scene struct {
+type Scene[T any] struct {
 
 	// Capabilities AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type Scene struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Scene) AWSCloudFormationType() string {
+func (r *Scene[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Scene"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Scene) MarshalJSON() ([]byte, error) {
-	type Properties Scene
+func (r Scene[any]) MarshalJSON() ([]byte, error) {
+	type Properties Scene[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r Scene) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Scene) UnmarshalJSON(b []byte) error {
-	type Properties Scene
+func (r *Scene[any]) UnmarshalJSON(b []byte) error {
+	type Properties Scene[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *Scene) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Scene(*res.Properties)
+		*r = Scene[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

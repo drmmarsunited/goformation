@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_KernelCapabilities AWS CloudFormation Resource (AWS::ECS::TaskDefinition.KernelCapabilities)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-kernelcapabilities.html
-type TaskDefinition_KernelCapabilities struct {
+type TaskDefinition_KernelCapabilities[T any] struct {
 
 	// Add AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_KernelCapabilities struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_KernelCapabilities) AWSCloudFormationType() string {
+func (r *TaskDefinition_KernelCapabilities[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.KernelCapabilities"
 }

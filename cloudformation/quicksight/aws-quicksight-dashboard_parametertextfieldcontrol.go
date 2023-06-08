@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ParameterTextFieldControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterTextFieldControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextfieldcontrol.html
-type Dashboard_ParameterTextFieldControl struct {
+type Dashboard_ParameterTextFieldControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextfieldcontrol.html#cfn-quicksight-dashboard-parametertextfieldcontrol-displayoptions
-	DisplayOptions *Dashboard_TextFieldControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_TextFieldControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dashboard_ParameterTextFieldControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterTextFieldControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterTextFieldControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterTextFieldControl"
 }

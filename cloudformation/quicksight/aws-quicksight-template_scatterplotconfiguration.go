@@ -8,52 +8,52 @@ import (
 
 // Template_ScatterPlotConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ScatterPlotConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html
-type Template_ScatterPlotConfiguration struct {
+type Template_ScatterPlotConfiguration[T any] struct {
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-datalabels
-	DataLabels *Template_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Template_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-fieldwells
-	FieldWells *Template_ScatterPlotFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_ScatterPlotFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-legend
-	Legend *Template_LegendOptions `json:"Legend,omitempty"`
+	Legend *Template_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-tooltip
-	Tooltip *Template_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Template_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-visualpalette
-	VisualPalette *Template_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Template_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// XAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-xaxisdisplayoptions
-	XAxisDisplayOptions *Template_AxisDisplayOptions `json:"XAxisDisplayOptions,omitempty"`
+	XAxisDisplayOptions *Template_AxisDisplayOptions[any] `json:"XAxisDisplayOptions,omitempty"`
 
 	// XAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-xaxislabeloptions
-	XAxisLabelOptions *Template_ChartAxisLabelOptions `json:"XAxisLabelOptions,omitempty"`
+	XAxisLabelOptions *Template_ChartAxisLabelOptions[any] `json:"XAxisLabelOptions,omitempty"`
 
 	// YAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-yaxisdisplayoptions
-	YAxisDisplayOptions *Template_AxisDisplayOptions `json:"YAxisDisplayOptions,omitempty"`
+	YAxisDisplayOptions *Template_AxisDisplayOptions[any] `json:"YAxisDisplayOptions,omitempty"`
 
 	// YAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotconfiguration.html#cfn-quicksight-template-scatterplotconfiguration-yaxislabeloptions
-	YAxisLabelOptions *Template_ChartAxisLabelOptions `json:"YAxisLabelOptions,omitempty"`
+	YAxisLabelOptions *Template_ChartAxisLabelOptions[any] `json:"YAxisLabelOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Template_ScatterPlotConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ScatterPlotConfiguration) AWSCloudFormationType() string {
+func (r *Template_ScatterPlotConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ScatterPlotConfiguration"
 }

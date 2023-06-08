@@ -8,7 +8,7 @@ import (
 
 // Rule_Target AWS CloudFormation Resource (AWS::Events::Rule.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
-type Rule_Target struct {
+type Rule_Target[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,22 +18,22 @@ type Rule_Target struct {
 	// BatchParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-batchparameters
-	BatchParameters *Rule_BatchParameters `json:"BatchParameters,omitempty"`
+	BatchParameters *Rule_BatchParameters[any] `json:"BatchParameters,omitempty"`
 
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-deadletterconfig
-	DeadLetterConfig *Rule_DeadLetterConfig `json:"DeadLetterConfig,omitempty"`
+	DeadLetterConfig *Rule_DeadLetterConfig[any] `json:"DeadLetterConfig,omitempty"`
 
 	// EcsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters
-	EcsParameters *Rule_EcsParameters `json:"EcsParameters,omitempty"`
+	EcsParameters *Rule_EcsParameters[any] `json:"EcsParameters,omitempty"`
 
 	// HttpParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-httpparameters
-	HttpParameters *Rule_HttpParameters `json:"HttpParameters,omitempty"`
+	HttpParameters *Rule_HttpParameters[any] `json:"HttpParameters,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -53,22 +53,22 @@ type Rule_Target struct {
 	// InputTransformer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer
-	InputTransformer *Rule_InputTransformer `json:"InputTransformer,omitempty"`
+	InputTransformer *Rule_InputTransformer[any] `json:"InputTransformer,omitempty"`
 
 	// KinesisParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters
-	KinesisParameters *Rule_KinesisParameters `json:"KinesisParameters,omitempty"`
+	KinesisParameters *Rule_KinesisParameters[any] `json:"KinesisParameters,omitempty"`
 
 	// RedshiftDataParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-redshiftdataparameters
-	RedshiftDataParameters *Rule_RedshiftDataParameters `json:"RedshiftDataParameters,omitempty"`
+	RedshiftDataParameters *Rule_RedshiftDataParameters[any] `json:"RedshiftDataParameters,omitempty"`
 
 	// RetryPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy
-	RetryPolicy *Rule_RetryPolicy `json:"RetryPolicy,omitempty"`
+	RetryPolicy *Rule_RetryPolicy[any] `json:"RetryPolicy,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -78,17 +78,17 @@ type Rule_Target struct {
 	// RunCommandParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters
-	RunCommandParameters *Rule_RunCommandParameters `json:"RunCommandParameters,omitempty"`
+	RunCommandParameters *Rule_RunCommandParameters[any] `json:"RunCommandParameters,omitempty"`
 
 	// SageMakerPipelineParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sagemakerpipelineparameters
-	SageMakerPipelineParameters *Rule_SageMakerPipelineParameters `json:"SageMakerPipelineParameters,omitempty"`
+	SageMakerPipelineParameters *Rule_SageMakerPipelineParameters[any] `json:"SageMakerPipelineParameters,omitempty"`
 
 	// SqsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters
-	SqsParameters *Rule_SqsParameters `json:"SqsParameters,omitempty"`
+	SqsParameters *Rule_SqsParameters[any] `json:"SqsParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -107,6 +107,6 @@ type Rule_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Target) AWSCloudFormationType() string {
+func (r *Rule_Target[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.Target"
 }

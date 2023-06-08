@@ -8,7 +8,7 @@ import (
 
 // Package_StorageLocation AWS CloudFormation Resource (AWS::Panorama::Package.StorageLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html
-type Package_StorageLocation struct {
+type Package_StorageLocation[T any] struct {
 
 	// BinaryPrefixLocation AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Package_StorageLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Package_StorageLocation) AWSCloudFormationType() string {
+func (r *Package_StorageLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Panorama::Package.StorageLocation"
 }

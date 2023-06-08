@@ -8,27 +8,27 @@ import (
 
 // GatewayRoute_GatewayRouteSpec AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html
-type GatewayRoute_GatewayRouteSpec struct {
+type GatewayRoute_GatewayRouteSpec[T any] struct {
 
 	// GrpcRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-grpcroute
-	GrpcRoute *GatewayRoute_GrpcGatewayRoute `json:"GrpcRoute,omitempty"`
+	GrpcRoute *GatewayRoute_GrpcGatewayRoute[any] `json:"GrpcRoute,omitempty"`
 
 	// Http2Route AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-http2route
-	Http2Route *GatewayRoute_HttpGatewayRoute `json:"Http2Route,omitempty"`
+	Http2Route *GatewayRoute_HttpGatewayRoute[any] `json:"Http2Route,omitempty"`
 
 	// HttpRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-httproute
-	HttpRoute *GatewayRoute_HttpGatewayRoute `json:"HttpRoute,omitempty"`
+	HttpRoute *GatewayRoute_HttpGatewayRoute[any] `json:"HttpRoute,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type GatewayRoute_GatewayRouteSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteSpec) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteSpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteSpec"
 }

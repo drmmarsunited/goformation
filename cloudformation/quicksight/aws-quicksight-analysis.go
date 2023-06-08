@@ -12,7 +12,7 @@ import (
 
 // Analysis AWS CloudFormation Resource (AWS::QuickSight::Analysis)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html
-type Analysis struct {
+type Analysis[T any] struct {
 
 	// AnalysisId AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Analysis struct {
 	// Definition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-definition
-	Definition *Analysis_AnalysisDefinition `json:"Definition,omitempty"`
+	Definition *Analysis_AnalysisDefinition[any] `json:"Definition,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,17 +37,17 @@ type Analysis struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-parameters
-	Parameters *Analysis_Parameters `json:"Parameters,omitempty"`
+	Parameters *Analysis_Parameters[any] `json:"Parameters,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-permissions
-	Permissions []Analysis_ResourcePermission `json:"Permissions,omitempty"`
+	Permissions []Analysis_ResourcePermission[any] `json:"Permissions,omitempty"`
 
 	// SourceEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-sourceentity
-	SourceEntity *Analysis_AnalysisSourceEntity `json:"SourceEntity,omitempty"`
+	SourceEntity *Analysis_AnalysisSourceEntity[any] `json:"SourceEntity,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Analysis struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis) AWSCloudFormationType() string {
+func (r *Analysis[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Analysis) MarshalJSON() ([]byte, error) {
-	type Properties Analysis
+func (r Analysis[any]) MarshalJSON() ([]byte, error) {
+	type Properties Analysis[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Analysis) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Analysis) UnmarshalJSON(b []byte) error {
-	type Properties Analysis
+func (r *Analysis[any]) UnmarshalJSON(b []byte) error {
+	type Properties Analysis[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Analysis) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Analysis(*res.Properties)
+		*r = Analysis[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

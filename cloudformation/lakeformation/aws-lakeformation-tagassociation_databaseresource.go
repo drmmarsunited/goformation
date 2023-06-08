@@ -8,7 +8,7 @@ import (
 
 // TagAssociation_DatabaseResource AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation.DatabaseResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-databaseresource.html
-type TagAssociation_DatabaseResource struct {
+type TagAssociation_DatabaseResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TagAssociation_DatabaseResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TagAssociation_DatabaseResource) AWSCloudFormationType() string {
+func (r *TagAssociation_DatabaseResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::TagAssociation.DatabaseResource"
 }

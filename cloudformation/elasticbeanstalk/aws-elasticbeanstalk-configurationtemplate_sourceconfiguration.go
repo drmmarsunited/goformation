@@ -8,7 +8,7 @@ import (
 
 // ConfigurationTemplate_SourceConfiguration AWS CloudFormation Resource (AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-sourceconfiguration.html
-type ConfigurationTemplate_SourceConfiguration struct {
+type ConfigurationTemplate_SourceConfiguration[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConfigurationTemplate_SourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationTemplate_SourceConfiguration) AWSCloudFormationType() string {
+func (r *ConfigurationTemplate_SourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration"
 }

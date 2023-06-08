@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TextAreaControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TextAreaControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textareacontroldisplayoptions.html
-type Dashboard_TextAreaControlDisplayOptions struct {
+type Dashboard_TextAreaControlDisplayOptions[T any] struct {
 
 	// PlaceholderOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textareacontroldisplayoptions.html#cfn-quicksight-dashboard-textareacontroldisplayoptions-placeholderoptions
-	PlaceholderOptions *Dashboard_TextControlPlaceholderOptions `json:"PlaceholderOptions,omitempty"`
+	PlaceholderOptions *Dashboard_TextControlPlaceholderOptions[any] `json:"PlaceholderOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textareacontroldisplayoptions.html#cfn-quicksight-dashboard-textareacontroldisplayoptions-titleoptions
-	TitleOptions *Dashboard_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Dashboard_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_TextAreaControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TextAreaControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Dashboard_TextAreaControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TextAreaControlDisplayOptions"
 }

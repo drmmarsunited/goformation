@@ -8,17 +8,17 @@ import (
 
 // Analysis_FunnelChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FunnelChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartsortconfiguration.html
-type Analysis_FunnelChartSortConfiguration struct {
+type Analysis_FunnelChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartsortconfiguration.html#cfn-quicksight-analysis-funnelchartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Analysis_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartsortconfiguration.html#cfn-quicksight-analysis-funnelchartsortconfiguration-categorysort
-	CategorySort []Analysis_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Analysis_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_FunnelChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FunnelChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FunnelChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FunnelChartSortConfiguration"
 }

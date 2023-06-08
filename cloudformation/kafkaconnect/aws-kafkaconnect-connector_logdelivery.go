@@ -8,12 +8,12 @@ import (
 
 // Connector_LogDelivery AWS CloudFormation Resource (AWS::KafkaConnect::Connector.LogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-logdelivery.html
-type Connector_LogDelivery struct {
+type Connector_LogDelivery[T any] struct {
 
 	// WorkerLogDelivery AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-logdelivery.html#cfn-kafkaconnect-connector-logdelivery-workerlogdelivery
-	WorkerLogDelivery *Connector_WorkerLogDelivery `json:"WorkerLogDelivery"`
+	WorkerLogDelivery *Connector_WorkerLogDelivery[any] `json:"WorkerLogDelivery"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Connector_LogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_LogDelivery) AWSCloudFormationType() string {
+func (r *Connector_LogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.LogDelivery"
 }

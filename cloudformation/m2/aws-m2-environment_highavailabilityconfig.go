@@ -8,12 +8,12 @@ import (
 
 // Environment_HighAvailabilityConfig AWS CloudFormation Resource (AWS::M2::Environment.HighAvailabilityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-highavailabilityconfig.html
-type Environment_HighAvailabilityConfig struct {
+type Environment_HighAvailabilityConfig[T any] struct {
 
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-highavailabilityconfig.html#cfn-m2-environment-highavailabilityconfig-desiredcapacity
-	DesiredCapacity int `json:"DesiredCapacity"`
+	DesiredCapacity T `json:"DesiredCapacity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Environment_HighAvailabilityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_HighAvailabilityConfig) AWSCloudFormationType() string {
+func (r *Environment_HighAvailabilityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::M2::Environment.HighAvailabilityConfig"
 }

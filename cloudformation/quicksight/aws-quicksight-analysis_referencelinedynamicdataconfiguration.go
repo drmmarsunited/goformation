@@ -8,22 +8,22 @@ import (
 
 // Analysis_ReferenceLineDynamicDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ReferenceLineDynamicDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedynamicdataconfiguration.html
-type Analysis_ReferenceLineDynamicDataConfiguration struct {
+type Analysis_ReferenceLineDynamicDataConfiguration[T any] struct {
 
 	// Calculation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedynamicdataconfiguration.html#cfn-quicksight-analysis-referencelinedynamicdataconfiguration-calculation
-	Calculation *Analysis_NumericalAggregationFunction `json:"Calculation"`
+	Calculation *Analysis_NumericalAggregationFunction[any] `json:"Calculation"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedynamicdataconfiguration.html#cfn-quicksight-analysis-referencelinedynamicdataconfiguration-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// MeasureAggregationFunction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedynamicdataconfiguration.html#cfn-quicksight-analysis-referencelinedynamicdataconfiguration-measureaggregationfunction
-	MeasureAggregationFunction *Analysis_AggregationFunction `json:"MeasureAggregationFunction"`
+	MeasureAggregationFunction *Analysis_AggregationFunction[any] `json:"MeasureAggregationFunction"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ReferenceLineDynamicDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ReferenceLineDynamicDataConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ReferenceLineDynamicDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ReferenceLineDynamicDataConfiguration"
 }

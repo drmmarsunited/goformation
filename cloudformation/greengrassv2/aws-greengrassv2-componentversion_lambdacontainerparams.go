@@ -8,27 +8,27 @@ import (
 
 // ComponentVersion_LambdaContainerParams AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaContainerParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html
-type ComponentVersion_LambdaContainerParams struct {
+type ComponentVersion_LambdaContainerParams[T any] struct {
 
 	// Devices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-devices
-	Devices []ComponentVersion_LambdaDeviceMount `json:"Devices,omitempty"`
+	Devices []ComponentVersion_LambdaDeviceMount[any] `json:"Devices,omitempty"`
 
 	// MemorySizeInKB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-memorysizeinkb
-	MemorySizeInKB *int `json:"MemorySizeInKB,omitempty"`
+	MemorySizeInKB *T `json:"MemorySizeInKB,omitempty"`
 
 	// MountROSysfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-mountrosysfs
-	MountROSysfs *bool `json:"MountROSysfs,omitempty"`
+	MountROSysfs *T `json:"MountROSysfs,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-volumes
-	Volumes []ComponentVersion_LambdaVolumeMount `json:"Volumes,omitempty"`
+	Volumes []ComponentVersion_LambdaVolumeMount[any] `json:"Volumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ComponentVersion_LambdaContainerParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaContainerParams) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaContainerParams[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaContainerParams"
 }

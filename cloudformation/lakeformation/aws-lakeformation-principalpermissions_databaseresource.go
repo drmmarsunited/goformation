@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_DatabaseResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.DatabaseResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-databaseresource.html
-type PrincipalPermissions_DatabaseResource struct {
+type PrincipalPermissions_DatabaseResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type PrincipalPermissions_DatabaseResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_DatabaseResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_DatabaseResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.DatabaseResource"
 }

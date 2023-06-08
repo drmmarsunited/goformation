@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_AssetPropertyVariant AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AssetPropertyVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvariant.html
-type AlarmModel_AssetPropertyVariant struct {
+type AlarmModel_AssetPropertyVariant[T any] struct {
 
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type AlarmModel_AssetPropertyVariant struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AssetPropertyVariant) AWSCloudFormationType() string {
+func (r *AlarmModel_AssetPropertyVariant[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AssetPropertyVariant"
 }

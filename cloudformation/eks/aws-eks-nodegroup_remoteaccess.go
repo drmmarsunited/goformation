@@ -8,7 +8,7 @@ import (
 
 // Nodegroup_RemoteAccess AWS CloudFormation Resource (AWS::EKS::Nodegroup.RemoteAccess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-remoteaccess.html
-type Nodegroup_RemoteAccess struct {
+type Nodegroup_RemoteAccess[T any] struct {
 
 	// Ec2SshKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Nodegroup_RemoteAccess struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Nodegroup_RemoteAccess) AWSCloudFormationType() string {
+func (r *Nodegroup_RemoteAccess[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Nodegroup.RemoteAccess"
 }

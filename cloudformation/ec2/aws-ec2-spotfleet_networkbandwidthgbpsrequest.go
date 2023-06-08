@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_NetworkBandwidthGbpsRequest AWS CloudFormation Resource (AWS::EC2::SpotFleet.NetworkBandwidthGbpsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html
-type SpotFleet_NetworkBandwidthGbpsRequest struct {
+type SpotFleet_NetworkBandwidthGbpsRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_NetworkBandwidthGbpsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_NetworkBandwidthGbpsRequest) AWSCloudFormationType() string {
+func (r *SpotFleet_NetworkBandwidthGbpsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.NetworkBandwidthGbpsRequest"
 }

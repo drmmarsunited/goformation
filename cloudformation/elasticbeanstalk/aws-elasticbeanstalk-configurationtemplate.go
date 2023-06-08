@@ -11,7 +11,7 @@ import (
 
 // ConfigurationTemplate AWS CloudFormation Resource (AWS::ElasticBeanstalk::ConfigurationTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html
-type ConfigurationTemplate struct {
+type ConfigurationTemplate[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type ConfigurationTemplate struct {
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings
-	OptionSettings []ConfigurationTemplate_ConfigurationOptionSetting `json:"OptionSettings,omitempty"`
+	OptionSettings []ConfigurationTemplate_ConfigurationOptionSetting[any] `json:"OptionSettings,omitempty"`
 
 	// PlatformArn AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type ConfigurationTemplate struct {
 	// SourceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration
-	SourceConfiguration *ConfigurationTemplate_SourceConfiguration `json:"SourceConfiguration,omitempty"`
+	SourceConfiguration *ConfigurationTemplate_SourceConfiguration[any] `json:"SourceConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type ConfigurationTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationTemplate) AWSCloudFormationType() string {
+func (r *ConfigurationTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ConfigurationTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigurationTemplate) MarshalJSON() ([]byte, error) {
-	type Properties ConfigurationTemplate
+func (r ConfigurationTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigurationTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r ConfigurationTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigurationTemplate) UnmarshalJSON(b []byte) error {
-	type Properties ConfigurationTemplate
+func (r *ConfigurationTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigurationTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *ConfigurationTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigurationTemplate(*res.Properties)
+		*r = ConfigurationTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

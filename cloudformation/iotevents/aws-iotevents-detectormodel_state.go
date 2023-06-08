@@ -8,22 +8,22 @@ import (
 
 // DetectorModel_State AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.State)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html
-type DetectorModel_State struct {
+type DetectorModel_State[T any] struct {
 
 	// OnEnter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter
-	OnEnter *DetectorModel_OnEnter `json:"OnEnter,omitempty"`
+	OnEnter *DetectorModel_OnEnter[any] `json:"OnEnter,omitempty"`
 
 	// OnExit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
-	OnExit *DetectorModel_OnExit `json:"OnExit,omitempty"`
+	OnExit *DetectorModel_OnExit[any] `json:"OnExit,omitempty"`
 
 	// OnInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
-	OnInput *DetectorModel_OnInput `json:"OnInput,omitempty"`
+	OnInput *DetectorModel_OnInput[any] `json:"OnInput,omitempty"`
 
 	// StateName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DetectorModel_State struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_State) AWSCloudFormationType() string {
+func (r *DetectorModel_State[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.State"
 }

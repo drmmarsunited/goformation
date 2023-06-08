@@ -8,7 +8,7 @@ import (
 
 // Template_PivotFieldSortOptions AWS CloudFormation Resource (AWS::QuickSight::Template.PivotFieldSortOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivotfieldsortoptions.html
-type Template_PivotFieldSortOptions struct {
+type Template_PivotFieldSortOptions[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_PivotFieldSortOptions struct {
 	// SortBy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivotfieldsortoptions.html#cfn-quicksight-template-pivotfieldsortoptions-sortby
-	SortBy *Template_PivotTableSortBy `json:"SortBy"`
+	SortBy *Template_PivotTableSortBy[any] `json:"SortBy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_PivotFieldSortOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotFieldSortOptions) AWSCloudFormationType() string {
+func (r *Template_PivotFieldSortOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotFieldSortOptions"
 }

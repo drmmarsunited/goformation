@@ -8,7 +8,7 @@ import (
 
 // Application_ApplicationLocation AWS CloudFormation Resource (AWS::Serverless::Application.ApplicationLocation)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-type Application_ApplicationLocation struct {
+type Application_ApplicationLocation[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_ApplicationLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationLocation) AWSCloudFormationType() string {
+func (r *Application_ApplicationLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Application.ApplicationLocation"
 }

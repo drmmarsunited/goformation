@@ -12,7 +12,7 @@ import (
 
 // ContactList AWS CloudFormation Resource (AWS::SES::ContactList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-contactlist.html
-type ContactList struct {
+type ContactList[T any] struct {
 
 	// ContactListName AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type ContactList struct {
 	// Topics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-contactlist.html#cfn-ses-contactlist-topics
-	Topics []ContactList_Topic `json:"Topics,omitempty"`
+	Topics []ContactList_Topic[any] `json:"Topics,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -51,14 +51,15 @@ type ContactList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContactList) AWSCloudFormationType() string {
+func (r *ContactList[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ContactList"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ContactList) MarshalJSON() ([]byte, error) {
-	type Properties ContactList
+func (r ContactList[any]) MarshalJSON() ([]byte, error) {
+	type Properties ContactList[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ContactList) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ContactList) UnmarshalJSON(b []byte) error {
-	type Properties ContactList
+func (r *ContactList[any]) UnmarshalJSON(b []byte) error {
+	type Properties ContactList[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ContactList) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ContactList(*res.Properties)
+		*r = ContactList[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

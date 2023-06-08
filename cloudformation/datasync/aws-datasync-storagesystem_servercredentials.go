@@ -8,7 +8,7 @@ import (
 
 // StorageSystem_ServerCredentials AWS CloudFormation Resource (AWS::DataSync::StorageSystem.ServerCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-storagesystem-servercredentials.html
-type StorageSystem_ServerCredentials struct {
+type StorageSystem_ServerCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StorageSystem_ServerCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageSystem_ServerCredentials) AWSCloudFormationType() string {
+func (r *StorageSystem_ServerCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::StorageSystem.ServerCredentials"
 }

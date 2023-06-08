@@ -8,17 +8,17 @@ import (
 
 // ComputeEnvironment_UpdatePolicy AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.UpdatePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html
-type ComputeEnvironment_UpdatePolicy struct {
+type ComputeEnvironment_UpdatePolicy[T any] struct {
 
 	// JobExecutionTimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html#cfn-batch-computeenvironment-updatepolicy-jobexecutiontimeoutminutes
-	JobExecutionTimeoutMinutes *int `json:"JobExecutionTimeoutMinutes,omitempty"`
+	JobExecutionTimeoutMinutes *T `json:"JobExecutionTimeoutMinutes,omitempty"`
 
 	// TerminateJobsOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html#cfn-batch-computeenvironment-updatepolicy-terminatejobsonupdate
-	TerminateJobsOnUpdate *bool `json:"TerminateJobsOnUpdate,omitempty"`
+	TerminateJobsOnUpdate *T `json:"TerminateJobsOnUpdate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ComputeEnvironment_UpdatePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment_UpdatePolicy) AWSCloudFormationType() string {
+func (r *ComputeEnvironment_UpdatePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.UpdatePolicy"
 }

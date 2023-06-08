@@ -8,17 +8,17 @@ import (
 
 // ContinuousDeploymentPolicy_SessionStickinessConfig AWS CloudFormation Resource (AWS::CloudFront::ContinuousDeploymentPolicy.SessionStickinessConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html
-type ContinuousDeploymentPolicy_SessionStickinessConfig struct {
+type ContinuousDeploymentPolicy_SessionStickinessConfig[T any] struct {
 
 	// IdleTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-idlettl
-	IdleTTL int `json:"IdleTTL"`
+	IdleTTL T `json:"IdleTTL"`
 
 	// MaximumTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-maximumttl
-	MaximumTTL int `json:"MaximumTTL"`
+	MaximumTTL T `json:"MaximumTTL"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ContinuousDeploymentPolicy_SessionStickinessConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContinuousDeploymentPolicy_SessionStickinessConfig) AWSCloudFormationType() string {
+func (r *ContinuousDeploymentPolicy_SessionStickinessConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ContinuousDeploymentPolicy.SessionStickinessConfig"
 }

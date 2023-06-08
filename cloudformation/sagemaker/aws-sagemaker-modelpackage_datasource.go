@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_DataSource AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-datasource.html
-type ModelPackage_DataSource struct {
+type ModelPackage_DataSource[T any] struct {
 
 	// S3DataSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-datasource.html#cfn-sagemaker-modelpackage-datasource-s3datasource
-	S3DataSource *ModelPackage_S3DataSource `json:"S3DataSource"`
+	S3DataSource *ModelPackage_S3DataSource[any] `json:"S3DataSource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelPackage_DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_DataSource) AWSCloudFormationType() string {
+func (r *ModelPackage_DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.DataSource"
 }

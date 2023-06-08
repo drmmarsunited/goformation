@@ -8,7 +8,7 @@ import (
 
 // ReportPlan_ReportSetting AWS CloudFormation Resource (AWS::Backup::ReportPlan.ReportSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html
-type ReportPlan_ReportSetting struct {
+type ReportPlan_ReportSetting[T any] struct {
 
 	// Accounts AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ReportPlan_ReportSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportPlan_ReportSetting) AWSCloudFormationType() string {
+func (r *ReportPlan_ReportSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::ReportPlan.ReportSetting"
 }

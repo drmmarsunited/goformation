@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_TextTransformation AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.TextTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-texttransformation.html
-type RuleGroup_TextTransformation struct {
+type RuleGroup_TextTransformation[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-texttransformation.html#cfn-wafv2-rulegroup-texttransformation-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_TextTransformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_TextTransformation) AWSCloudFormationType() string {
+func (r *RuleGroup_TextTransformation[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.TextTransformation"
 }

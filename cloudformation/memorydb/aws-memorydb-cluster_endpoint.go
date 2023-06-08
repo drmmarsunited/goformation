@@ -8,7 +8,7 @@ import (
 
 // Cluster_Endpoint AWS CloudFormation Resource (AWS::MemoryDB::Cluster.Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-cluster-endpoint.html
-type Cluster_Endpoint struct {
+type Cluster_Endpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_Endpoint struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-cluster-endpoint.html#cfn-memorydb-cluster-endpoint-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Endpoint) AWSCloudFormationType() string {
+func (r *Cluster_Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::MemoryDB::Cluster.Endpoint"
 }

@@ -8,72 +8,72 @@ import (
 
 // Bot_IntentConfirmationSetting AWS CloudFormation Resource (AWS::Lex::Bot.IntentConfirmationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html
-type Bot_IntentConfirmationSetting struct {
+type Bot_IntentConfirmationSetting[T any] struct {
 
 	// CodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-codehook
-	CodeHook *Bot_DialogCodeHookInvocationSetting `json:"CodeHook,omitempty"`
+	CodeHook *Bot_DialogCodeHookInvocationSetting[any] `json:"CodeHook,omitempty"`
 
 	// ConfirmationConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-confirmationconditional
-	ConfirmationConditional *Bot_ConditionalSpecification `json:"ConfirmationConditional,omitempty"`
+	ConfirmationConditional *Bot_ConditionalSpecification[any] `json:"ConfirmationConditional,omitempty"`
 
 	// ConfirmationNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-confirmationnextstep
-	ConfirmationNextStep *Bot_DialogState `json:"ConfirmationNextStep,omitempty"`
+	ConfirmationNextStep *Bot_DialogState[any] `json:"ConfirmationNextStep,omitempty"`
 
 	// ConfirmationResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-confirmationresponse
-	ConfirmationResponse *Bot_ResponseSpecification `json:"ConfirmationResponse,omitempty"`
+	ConfirmationResponse *Bot_ResponseSpecification[any] `json:"ConfirmationResponse,omitempty"`
 
 	// DeclinationConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-declinationconditional
-	DeclinationConditional *Bot_ConditionalSpecification `json:"DeclinationConditional,omitempty"`
+	DeclinationConditional *Bot_ConditionalSpecification[any] `json:"DeclinationConditional,omitempty"`
 
 	// DeclinationNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-declinationnextstep
-	DeclinationNextStep *Bot_DialogState `json:"DeclinationNextStep,omitempty"`
+	DeclinationNextStep *Bot_DialogState[any] `json:"DeclinationNextStep,omitempty"`
 
 	// DeclinationResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-declinationresponse
-	DeclinationResponse *Bot_ResponseSpecification `json:"DeclinationResponse,omitempty"`
+	DeclinationResponse *Bot_ResponseSpecification[any] `json:"DeclinationResponse,omitempty"`
 
 	// ElicitationCodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-elicitationcodehook
-	ElicitationCodeHook *Bot_ElicitationCodeHookInvocationSetting `json:"ElicitationCodeHook,omitempty"`
+	ElicitationCodeHook *Bot_ElicitationCodeHookInvocationSetting[any] `json:"ElicitationCodeHook,omitempty"`
 
 	// FailureConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-failureconditional
-	FailureConditional *Bot_ConditionalSpecification `json:"FailureConditional,omitempty"`
+	FailureConditional *Bot_ConditionalSpecification[any] `json:"FailureConditional,omitempty"`
 
 	// FailureNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-failurenextstep
-	FailureNextStep *Bot_DialogState `json:"FailureNextStep,omitempty"`
+	FailureNextStep *Bot_DialogState[any] `json:"FailureNextStep,omitempty"`
 
 	// FailureResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-failureresponse
-	FailureResponse *Bot_ResponseSpecification `json:"FailureResponse,omitempty"`
+	FailureResponse *Bot_ResponseSpecification[any] `json:"FailureResponse,omitempty"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-isactive
-	IsActive *bool `json:"IsActive,omitempty"`
+	IsActive *T `json:"IsActive,omitempty"`
 
 	// PromptSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-promptspecification
-	PromptSpecification *Bot_PromptSpecification `json:"PromptSpecification"`
+	PromptSpecification *Bot_PromptSpecification[any] `json:"PromptSpecification"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -92,6 +92,6 @@ type Bot_IntentConfirmationSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_IntentConfirmationSetting) AWSCloudFormationType() string {
+func (r *Bot_IntentConfirmationSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.IntentConfirmationSetting"
 }

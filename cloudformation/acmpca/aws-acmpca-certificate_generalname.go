@@ -8,12 +8,12 @@ import (
 
 // Certificate_GeneralName AWS CloudFormation Resource (AWS::ACMPCA::Certificate.GeneralName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html
-type Certificate_GeneralName struct {
+type Certificate_GeneralName[T any] struct {
 
 	// DirectoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-directoryname
-	DirectoryName *Certificate_Subject `json:"DirectoryName,omitempty"`
+	DirectoryName *Certificate_Subject[any] `json:"DirectoryName,omitempty"`
 
 	// DnsName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Certificate_GeneralName struct {
 	// EdiPartyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-edipartyname
-	EdiPartyName *Certificate_EdiPartyName `json:"EdiPartyName,omitempty"`
+	EdiPartyName *Certificate_EdiPartyName[any] `json:"EdiPartyName,omitempty"`
 
 	// IpAddress AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Certificate_GeneralName struct {
 	// OtherName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-othername
-	OtherName *Certificate_OtherName `json:"OtherName,omitempty"`
+	OtherName *Certificate_OtherName[any] `json:"OtherName,omitempty"`
 
 	// RegisteredId AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Certificate_GeneralName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_GeneralName) AWSCloudFormationType() string {
+func (r *Certificate_GeneralName[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.GeneralName"
 }

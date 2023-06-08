@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_MonitoringAppSpecification AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringAppSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html
-type MonitoringSchedule_MonitoringAppSpecification struct {
+type MonitoringSchedule_MonitoringAppSpecification[T any] struct {
 
 	// ContainerArguments AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type MonitoringSchedule_MonitoringAppSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringAppSpecification) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringAppSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringAppSpecification"
 }

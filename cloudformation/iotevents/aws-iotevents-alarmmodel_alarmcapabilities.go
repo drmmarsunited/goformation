@@ -8,17 +8,17 @@ import (
 
 // AlarmModel_AlarmCapabilities AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AlarmCapabilities)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmcapabilities.html
-type AlarmModel_AlarmCapabilities struct {
+type AlarmModel_AlarmCapabilities[T any] struct {
 
 	// AcknowledgeFlow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmcapabilities.html#cfn-iotevents-alarmmodel-alarmcapabilities-acknowledgeflow
-	AcknowledgeFlow *AlarmModel_AcknowledgeFlow `json:"AcknowledgeFlow,omitempty"`
+	AcknowledgeFlow *AlarmModel_AcknowledgeFlow[any] `json:"AcknowledgeFlow,omitempty"`
 
 	// InitializationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmcapabilities.html#cfn-iotevents-alarmmodel-alarmcapabilities-initializationconfiguration
-	InitializationConfiguration *AlarmModel_InitializationConfiguration `json:"InitializationConfiguration,omitempty"`
+	InitializationConfiguration *AlarmModel_InitializationConfiguration[any] `json:"InitializationConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AlarmModel_AlarmCapabilities struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AlarmCapabilities) AWSCloudFormationType() string {
+func (r *AlarmModel_AlarmCapabilities[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AlarmCapabilities"
 }

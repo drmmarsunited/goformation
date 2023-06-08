@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_MountPoint AWS CloudFormation Resource (AWS::ECS::TaskDefinition.MountPoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-mountpoint.html
-type TaskDefinition_MountPoint struct {
+type TaskDefinition_MountPoint[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type TaskDefinition_MountPoint struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-mountpoint.html#cfn-ecs-taskdefinition-mountpoint-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// SourceVolume AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskDefinition_MountPoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_MountPoint) AWSCloudFormationType() string {
+func (r *TaskDefinition_MountPoint[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.MountPoint"
 }

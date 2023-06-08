@@ -8,17 +8,17 @@ import (
 
 // Bot_TestBotAliasSettings AWS CloudFormation Resource (AWS::Lex::Bot.TestBotAliasSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html
-type Bot_TestBotAliasSettings struct {
+type Bot_TestBotAliasSettings[T any] struct {
 
 	// BotAliasLocaleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-botaliaslocalesettings
-	BotAliasLocaleSettings []Bot_BotAliasLocaleSettingsItem `json:"BotAliasLocaleSettings,omitempty"`
+	BotAliasLocaleSettings []Bot_BotAliasLocaleSettingsItem[any] `json:"BotAliasLocaleSettings,omitempty"`
 
 	// ConversationLogSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-conversationlogsettings
-	ConversationLogSettings *Bot_ConversationLogSettings `json:"ConversationLogSettings,omitempty"`
+	ConversationLogSettings *Bot_ConversationLogSettings[any] `json:"ConversationLogSettings,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Bot_TestBotAliasSettings struct {
 	// SentimentAnalysisSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-sentimentanalysissettings
-	SentimentAnalysisSettings *Bot_SentimentAnalysisSettings `json:"SentimentAnalysisSettings,omitempty"`
+	SentimentAnalysisSettings *Bot_SentimentAnalysisSettings[any] `json:"SentimentAnalysisSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_TestBotAliasSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_TestBotAliasSettings) AWSCloudFormationType() string {
+func (r *Bot_TestBotAliasSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.TestBotAliasSettings"
 }

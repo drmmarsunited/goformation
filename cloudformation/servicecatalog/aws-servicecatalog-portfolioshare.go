@@ -11,7 +11,7 @@ import (
 
 // PortfolioShare AWS CloudFormation Resource (AWS::ServiceCatalog::PortfolioShare)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
-type PortfolioShare struct {
+type PortfolioShare[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type PortfolioShare struct {
 	// ShareTagOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-sharetagoptions
-	ShareTagOptions *bool `json:"ShareTagOptions,omitempty"`
+	ShareTagOptions *T `json:"ShareTagOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type PortfolioShare struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PortfolioShare) AWSCloudFormationType() string {
+func (r *PortfolioShare[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::PortfolioShare"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PortfolioShare) MarshalJSON() ([]byte, error) {
-	type Properties PortfolioShare
+func (r PortfolioShare[any]) MarshalJSON() ([]byte, error) {
+	type Properties PortfolioShare[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r PortfolioShare) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PortfolioShare) UnmarshalJSON(b []byte) error {
-	type Properties PortfolioShare
+func (r *PortfolioShare[any]) UnmarshalJSON(b []byte) error {
+	type Properties PortfolioShare[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *PortfolioShare) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PortfolioShare(*res.Properties)
+		*r = PortfolioShare[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // UserPoolUser AWS CloudFormation Resource (AWS::Cognito::UserPoolUser)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html
-type UserPoolUser struct {
+type UserPoolUser[T any] struct {
 
 	// ClientMetadata AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type UserPoolUser struct {
 	// ForceAliasCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation
-	ForceAliasCreation *bool `json:"ForceAliasCreation,omitempty"`
+	ForceAliasCreation *T `json:"ForceAliasCreation,omitempty"`
 
 	// MessageAction AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type UserPoolUser struct {
 	// UserAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes
-	UserAttributes []UserPoolUser_AttributeType `json:"UserAttributes,omitempty"`
+	UserAttributes []UserPoolUser_AttributeType[any] `json:"UserAttributes,omitempty"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type UserPoolUser struct {
 	// ValidationData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-validationdata
-	ValidationData []UserPoolUser_AttributeType `json:"ValidationData,omitempty"`
+	ValidationData []UserPoolUser_AttributeType[any] `json:"ValidationData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type UserPoolUser struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolUser) AWSCloudFormationType() string {
+func (r *UserPoolUser[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolUser"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolUser) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolUser
+func (r UserPoolUser[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolUser[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r UserPoolUser) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolUser) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolUser
+func (r *UserPoolUser[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolUser[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *UserPoolUser) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolUser(*res.Properties)
+		*r = UserPoolUser[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

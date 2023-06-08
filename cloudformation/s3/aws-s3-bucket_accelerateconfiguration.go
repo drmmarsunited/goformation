@@ -8,7 +8,7 @@ import (
 
 // Bucket_AccelerateConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.AccelerateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accelerateconfiguration.html
-type Bucket_AccelerateConfiguration struct {
+type Bucket_AccelerateConfiguration[T any] struct {
 
 	// AccelerationStatus AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_AccelerateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_AccelerateConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_AccelerateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.AccelerateConfiguration"
 }

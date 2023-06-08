@@ -8,12 +8,12 @@ import (
 
 // Dashboard_VisibleRangeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisibleRangeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visiblerangeoptions.html
-type Dashboard_VisibleRangeOptions struct {
+type Dashboard_VisibleRangeOptions[T any] struct {
 
 	// PercentRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visiblerangeoptions.html#cfn-quicksight-dashboard-visiblerangeoptions-percentrange
-	PercentRange *Dashboard_PercentVisibleRange `json:"PercentRange,omitempty"`
+	PercentRange *Dashboard_PercentVisibleRange[any] `json:"PercentRange,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_VisibleRangeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisibleRangeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_VisibleRangeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisibleRangeOptions"
 }

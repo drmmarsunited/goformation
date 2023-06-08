@@ -8,7 +8,7 @@ import (
 
 // ApplicationOutput_DestinationSchema AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html
-type ApplicationOutput_DestinationSchema struct {
+type ApplicationOutput_DestinationSchema[T any] struct {
 
 	// RecordFormatType AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ApplicationOutput_DestinationSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput_DestinationSchema) AWSCloudFormationType() string {
+func (r *ApplicationOutput_DestinationSchema[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema"
 }

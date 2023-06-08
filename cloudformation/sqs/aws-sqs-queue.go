@@ -12,12 +12,12 @@ import (
 
 // Queue AWS CloudFormation Resource (AWS::SQS::Queue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html
-type Queue struct {
+type Queue[T any] struct {
 
 	// ContentBasedDeduplication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-contentbaseddeduplication
-	ContentBasedDeduplication *bool `json:"ContentBasedDeduplication,omitempty"`
+	ContentBasedDeduplication *T `json:"ContentBasedDeduplication,omitempty"`
 
 	// DeduplicationScope AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type Queue struct {
 	// DelaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-delayseconds
-	DelaySeconds *int `json:"DelaySeconds,omitempty"`
+	DelaySeconds *T `json:"DelaySeconds,omitempty"`
 
 	// FifoQueue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-fifoqueue
-	FifoQueue *bool `json:"FifoQueue,omitempty"`
+	FifoQueue *T `json:"FifoQueue,omitempty"`
 
 	// FifoThroughputLimit AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Queue struct {
 	// KmsDataKeyReusePeriodSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-kmsdatakeyreuseperiodseconds
-	KmsDataKeyReusePeriodSeconds *int `json:"KmsDataKeyReusePeriodSeconds,omitempty"`
+	KmsDataKeyReusePeriodSeconds *T `json:"KmsDataKeyReusePeriodSeconds,omitempty"`
 
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type Queue struct {
 	// MaximumMessageSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-maximummessagesize
-	MaximumMessageSize *int `json:"MaximumMessageSize,omitempty"`
+	MaximumMessageSize *T `json:"MaximumMessageSize,omitempty"`
 
 	// MessageRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-messageretentionperiod
-	MessageRetentionPeriod *int `json:"MessageRetentionPeriod,omitempty"`
+	MessageRetentionPeriod *T `json:"MessageRetentionPeriod,omitempty"`
 
 	// QueueName AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type Queue struct {
 	// ReceiveMessageWaitTimeSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-receivemessagewaittimeseconds
-	ReceiveMessageWaitTimeSeconds *int `json:"ReceiveMessageWaitTimeSeconds,omitempty"`
+	ReceiveMessageWaitTimeSeconds *T `json:"ReceiveMessageWaitTimeSeconds,omitempty"`
 
 	// RedriveAllowPolicy AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Queue struct {
 	// SqsManagedSseEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-sqsmanagedsseenabled
-	SqsManagedSseEnabled *bool `json:"SqsManagedSseEnabled,omitempty"`
+	SqsManagedSseEnabled *T `json:"SqsManagedSseEnabled,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -92,7 +92,7 @@ type Queue struct {
 	// VisibilityTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-visibilitytimeout
-	VisibilityTimeout *int `json:"VisibilityTimeout,omitempty"`
+	VisibilityTimeout *T `json:"VisibilityTimeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -111,14 +111,15 @@ type Queue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Queue) AWSCloudFormationType() string {
+func (r *Queue[any]) AWSCloudFormationType() string {
 	return "AWS::SQS::Queue"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Queue) MarshalJSON() ([]byte, error) {
-	type Properties Queue
+func (r Queue[any]) MarshalJSON() ([]byte, error) {
+	type Properties Queue[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -140,8 +141,9 @@ func (r Queue) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Queue) UnmarshalJSON(b []byte) error {
-	type Properties Queue
+func (r *Queue[any]) UnmarshalJSON(b []byte) error {
+	type Properties Queue[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -161,7 +163,7 @@ func (r *Queue) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Queue(*res.Properties)
+		*r = Queue[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

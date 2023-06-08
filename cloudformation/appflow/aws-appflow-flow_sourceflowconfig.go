@@ -8,7 +8,7 @@ import (
 
 // Flow_SourceFlowConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.SourceFlowConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html
-type Flow_SourceFlowConfig struct {
+type Flow_SourceFlowConfig[T any] struct {
 
 	// ApiVersion AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Flow_SourceFlowConfig struct {
 	// IncrementalPullConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-incrementalpullconfig
-	IncrementalPullConfig *Flow_IncrementalPullConfig `json:"IncrementalPullConfig,omitempty"`
+	IncrementalPullConfig *Flow_IncrementalPullConfig[any] `json:"IncrementalPullConfig,omitempty"`
 
 	// SourceConnectorProperties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-sourceconnectorproperties
-	SourceConnectorProperties *Flow_SourceConnectorProperties `json:"SourceConnectorProperties"`
+	SourceConnectorProperties *Flow_SourceConnectorProperties[any] `json:"SourceConnectorProperties"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Flow_SourceFlowConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SourceFlowConfig) AWSCloudFormationType() string {
+func (r *Flow_SourceFlowConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SourceFlowConfig"
 }

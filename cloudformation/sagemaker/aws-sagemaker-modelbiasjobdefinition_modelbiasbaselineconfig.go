@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_ModelBiasBaselineConfig AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.ModelBiasBaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html
-type ModelBiasJobDefinition_ModelBiasBaselineConfig struct {
+type ModelBiasJobDefinition_ModelBiasBaselineConfig[T any] struct {
 
 	// BaseliningJobName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelBiasJobDefinition_ModelBiasBaselineConfig struct {
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-constraintsresource
-	ConstraintsResource *ModelBiasJobDefinition_ConstraintsResource `json:"ConstraintsResource,omitempty"`
+	ConstraintsResource *ModelBiasJobDefinition_ConstraintsResource[any] `json:"ConstraintsResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelBiasJobDefinition_ModelBiasBaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_ModelBiasBaselineConfig) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_ModelBiasBaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasBaselineConfig"
 }

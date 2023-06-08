@@ -8,17 +8,17 @@ import (
 
 // RecordSetGroup_RecordSet AWS CloudFormation Resource (AWS::Route53::RecordSetGroup.RecordSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
-type RecordSetGroup_RecordSet struct {
+type RecordSetGroup_RecordSet[T any] struct {
 
 	// AliasTarget AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget
-	AliasTarget *RecordSetGroup_AliasTarget `json:"AliasTarget,omitempty"`
+	AliasTarget *RecordSetGroup_AliasTarget[any] `json:"AliasTarget,omitempty"`
 
 	// CidrRoutingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-cidrroutingconfig
-	CidrRoutingConfig *RecordSetGroup_CidrRoutingConfig `json:"CidrRoutingConfig,omitempty"`
+	CidrRoutingConfig *RecordSetGroup_CidrRoutingConfig[any] `json:"CidrRoutingConfig,omitempty"`
 
 	// Failover AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type RecordSetGroup_RecordSet struct {
 	// GeoLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation
-	GeoLocation *RecordSetGroup_GeoLocation `json:"GeoLocation,omitempty"`
+	GeoLocation *RecordSetGroup_GeoLocation[any] `json:"GeoLocation,omitempty"`
 
 	// HealthCheckId AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type RecordSetGroup_RecordSet struct {
 	// MultiValueAnswer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-multivalueanswer
-	MultiValueAnswer *bool `json:"MultiValueAnswer,omitempty"`
+	MultiValueAnswer *T `json:"MultiValueAnswer,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -83,7 +83,7 @@ type RecordSetGroup_RecordSet struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -102,6 +102,6 @@ type RecordSetGroup_RecordSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordSetGroup_RecordSet) AWSCloudFormationType() string {
+func (r *RecordSetGroup_RecordSet[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSetGroup.RecordSet"
 }

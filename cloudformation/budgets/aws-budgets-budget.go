@@ -11,17 +11,17 @@ import (
 
 // Budget AWS CloudFormation Resource (AWS::Budgets::Budget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html
-type Budget struct {
+type Budget[T any] struct {
 
 	// Budget AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget
-	Budget *Budget_BudgetData `json:"Budget"`
+	Budget *Budget_BudgetData[any] `json:"Budget"`
 
 	// NotificationsWithSubscribers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers
-	NotificationsWithSubscribers []Budget_NotificationWithSubscribers `json:"NotificationsWithSubscribers,omitempty"`
+	NotificationsWithSubscribers []Budget_NotificationWithSubscribers[any] `json:"NotificationsWithSubscribers,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type Budget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget) AWSCloudFormationType() string {
+func (r *Budget[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Budget) MarshalJSON() ([]byte, error) {
-	type Properties Budget
+func (r Budget[any]) MarshalJSON() ([]byte, error) {
+	type Properties Budget[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Budget) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Budget) UnmarshalJSON(b []byte) error {
-	type Properties Budget
+func (r *Budget[any]) UnmarshalJSON(b []byte) error {
+	type Properties Budget[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Budget) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Budget(*res.Properties)
+		*r = Budget[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

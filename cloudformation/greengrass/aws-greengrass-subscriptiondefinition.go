@@ -11,12 +11,12 @@ import (
 
 // SubscriptionDefinition AWS CloudFormation Resource (AWS::Greengrass::SubscriptionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html
-type SubscriptionDefinition struct {
+type SubscriptionDefinition[T any] struct {
 
 	// InitialVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-initialversion
-	InitialVersion *SubscriptionDefinition_SubscriptionDefinitionVersion `json:"InitialVersion,omitempty"`
+	InitialVersion *SubscriptionDefinition_SubscriptionDefinitionVersion[any] `json:"InitialVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type SubscriptionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubscriptionDefinition) AWSCloudFormationType() string {
+func (r *SubscriptionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::SubscriptionDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubscriptionDefinition) MarshalJSON() ([]byte, error) {
-	type Properties SubscriptionDefinition
+func (r SubscriptionDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubscriptionDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r SubscriptionDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubscriptionDefinition) UnmarshalJSON(b []byte) error {
-	type Properties SubscriptionDefinition
+func (r *SubscriptionDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubscriptionDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *SubscriptionDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubscriptionDefinition(*res.Properties)
+		*r = SubscriptionDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CustomActionURLOperation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomActionURLOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionurloperation.html
-type Dashboard_CustomActionURLOperation struct {
+type Dashboard_CustomActionURLOperation[T any] struct {
 
 	// URLTarget AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_CustomActionURLOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomActionURLOperation) AWSCloudFormationType() string {
+func (r *Dashboard_CustomActionURLOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomActionURLOperation"
 }

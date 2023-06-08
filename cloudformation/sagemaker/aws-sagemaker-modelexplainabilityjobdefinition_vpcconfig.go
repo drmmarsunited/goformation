@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html
-type ModelExplainabilityJobDefinition_VpcConfig struct {
+type ModelExplainabilityJobDefinition_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelExplainabilityJobDefinition_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_VpcConfig) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.VpcConfig"
 }

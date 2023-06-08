@@ -11,7 +11,7 @@ import (
 
 // ComponentType AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html
-type ComponentType struct {
+type ComponentType[T any] struct {
 
 	// ComponentTypeId AWS CloudFormation Property
 	// Required: true
@@ -31,22 +31,22 @@ type ComponentType struct {
 	// Functions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-functions
-	Functions map[string]ComponentType_Function `json:"Functions,omitempty"`
+	Functions map[string]ComponentType_Function[any] `json:"Functions,omitempty"`
 
 	// IsSingleton AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-issingleton
-	IsSingleton *bool `json:"IsSingleton,omitempty"`
+	IsSingleton *T `json:"IsSingleton,omitempty"`
 
 	// PropertyDefinitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-propertydefinitions
-	PropertyDefinitions map[string]ComponentType_PropertyDefinition `json:"PropertyDefinitions,omitempty"`
+	PropertyDefinitions map[string]ComponentType_PropertyDefinition[any] `json:"PropertyDefinitions,omitempty"`
 
 	// PropertyGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-propertygroups
-	PropertyGroups map[string]ComponentType_PropertyGroup `json:"PropertyGroups,omitempty"`
+	PropertyGroups map[string]ComponentType_PropertyGroup[any] `json:"PropertyGroups,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type ComponentType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType) AWSCloudFormationType() string {
+func (r *ComponentType[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ComponentType) MarshalJSON() ([]byte, error) {
-	type Properties ComponentType
+func (r ComponentType[any]) MarshalJSON() ([]byte, error) {
+	type Properties ComponentType[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r ComponentType) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ComponentType) UnmarshalJSON(b []byte) error {
-	type Properties ComponentType
+func (r *ComponentType[any]) UnmarshalJSON(b []byte) error {
+	type Properties ComponentType[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *ComponentType) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ComponentType(*res.Properties)
+		*r = ComponentType[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

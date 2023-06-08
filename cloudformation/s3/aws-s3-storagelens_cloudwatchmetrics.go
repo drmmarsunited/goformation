@@ -8,12 +8,12 @@ import (
 
 // StorageLens_CloudWatchMetrics AWS CloudFormation Resource (AWS::S3::StorageLens.CloudWatchMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html
-type StorageLens_CloudWatchMetrics struct {
+type StorageLens_CloudWatchMetrics[T any] struct {
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html#cfn-s3-storagelens-cloudwatchmetrics-isenabled
-	IsEnabled bool `json:"IsEnabled"`
+	IsEnabled T `json:"IsEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StorageLens_CloudWatchMetrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_CloudWatchMetrics) AWSCloudFormationType() string {
+func (r *StorageLens_CloudWatchMetrics[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.CloudWatchMetrics"
 }

@@ -8,7 +8,7 @@ import (
 
 // CloudFormationProduct_ProvisioningArtifactProperties AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html
-type CloudFormationProduct_ProvisioningArtifactProperties struct {
+type CloudFormationProduct_ProvisioningArtifactProperties[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type CloudFormationProduct_ProvisioningArtifactProperties struct {
 	// DisableTemplateValidation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-disabletemplatevalidation
-	DisableTemplateValidation *bool `json:"DisableTemplateValidation,omitempty"`
+	DisableTemplateValidation *T `json:"DisableTemplateValidation,omitempty"`
 
 	// Info AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type CloudFormationProduct_ProvisioningArtifactProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProduct_ProvisioningArtifactProperties) AWSCloudFormationType() string {
+func (r *CloudFormationProduct_ProvisioningArtifactProperties[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties"
 }

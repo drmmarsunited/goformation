@@ -8,7 +8,7 @@ import (
 
 // Deployment_AccessLogSetting AWS CloudFormation Resource (AWS::ApiGateway::Deployment.AccessLogSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html
-type Deployment_AccessLogSetting struct {
+type Deployment_AccessLogSetting[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Deployment_AccessLogSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_AccessLogSetting) AWSCloudFormationType() string {
+func (r *Deployment_AccessLogSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Deployment.AccessLogSetting"
 }

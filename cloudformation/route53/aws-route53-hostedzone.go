@@ -11,17 +11,17 @@ import (
 
 // HostedZone AWS CloudFormation Resource (AWS::Route53::HostedZone)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html
-type HostedZone struct {
+type HostedZone[T any] struct {
 
 	// HostedZoneConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzoneconfig
-	HostedZoneConfig *HostedZone_HostedZoneConfig `json:"HostedZoneConfig,omitempty"`
+	HostedZoneConfig *HostedZone_HostedZoneConfig[any] `json:"HostedZoneConfig,omitempty"`
 
 	// HostedZoneTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzonetags
-	HostedZoneTags []HostedZone_HostedZoneTag `json:"HostedZoneTags,omitempty"`
+	HostedZoneTags []HostedZone_HostedZoneTag[any] `json:"HostedZoneTags,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type HostedZone struct {
 	// QueryLoggingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-queryloggingconfig
-	QueryLoggingConfig *HostedZone_QueryLoggingConfig `json:"QueryLoggingConfig,omitempty"`
+	QueryLoggingConfig *HostedZone_QueryLoggingConfig[any] `json:"QueryLoggingConfig,omitempty"`
 
 	// VPCs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs
-	VPCs []HostedZone_VPC `json:"VPCs,omitempty"`
+	VPCs []HostedZone_VPC[any] `json:"VPCs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type HostedZone struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HostedZone) AWSCloudFormationType() string {
+func (r *HostedZone[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HostedZone"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HostedZone) MarshalJSON() ([]byte, error) {
-	type Properties HostedZone
+func (r HostedZone[any]) MarshalJSON() ([]byte, error) {
+	type Properties HostedZone[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r HostedZone) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HostedZone) UnmarshalJSON(b []byte) error {
-	type Properties HostedZone
+func (r *HostedZone[any]) UnmarshalJSON(b []byte) error {
+	type Properties HostedZone[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *HostedZone) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HostedZone(*res.Properties)
+		*r = HostedZone[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

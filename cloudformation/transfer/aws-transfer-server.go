@@ -12,7 +12,7 @@ import (
 
 // Server AWS CloudFormation Resource (AWS::Transfer::Server)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html
-type Server struct {
+type Server[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Server struct {
 	// EndpointDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails
-	EndpointDetails *Server_EndpointDetails `json:"EndpointDetails,omitempty"`
+	EndpointDetails *Server_EndpointDetails[any] `json:"EndpointDetails,omitempty"`
 
 	// EndpointType AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Server struct {
 	// IdentityProviderDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails
-	IdentityProviderDetails *Server_IdentityProviderDetails `json:"IdentityProviderDetails,omitempty"`
+	IdentityProviderDetails *Server_IdentityProviderDetails[any] `json:"IdentityProviderDetails,omitempty"`
 
 	// IdentityProviderType AWS CloudFormation Property
 	// Required: false
@@ -62,12 +62,12 @@ type Server struct {
 	// ProtocolDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocoldetails
-	ProtocolDetails *Server_ProtocolDetails `json:"ProtocolDetails,omitempty"`
+	ProtocolDetails *Server_ProtocolDetails[any] `json:"ProtocolDetails,omitempty"`
 
 	// Protocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocols
-	Protocols []Server_Protocol `json:"Protocols,omitempty"`
+	Protocols []Server_Protocol[any] `json:"Protocols,omitempty"`
 
 	// SecurityPolicyName AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Server struct {
 	// WorkflowDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-workflowdetails
-	WorkflowDetails *Server_WorkflowDetails `json:"WorkflowDetails,omitempty"`
+	WorkflowDetails *Server_WorkflowDetails[any] `json:"WorkflowDetails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -101,14 +101,15 @@ type Server struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server) AWSCloudFormationType() string {
+func (r *Server[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Server) MarshalJSON() ([]byte, error) {
-	type Properties Server
+func (r Server[any]) MarshalJSON() ([]byte, error) {
+	type Properties Server[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -130,8 +131,9 @@ func (r Server) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Server) UnmarshalJSON(b []byte) error {
-	type Properties Server
+func (r *Server[any]) UnmarshalJSON(b []byte) error {
+	type Properties Server[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -151,7 +153,7 @@ func (r *Server) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Server(*res.Properties)
+		*r = Server[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

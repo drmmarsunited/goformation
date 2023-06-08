@@ -8,7 +8,7 @@ import (
 
 // Firewall_SubnetMapping AWS CloudFormation Resource (AWS::NetworkFirewall::Firewall.SubnetMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html
-type Firewall_SubnetMapping struct {
+type Firewall_SubnetMapping[T any] struct {
 
 	// IPAddressType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Firewall_SubnetMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Firewall_SubnetMapping) AWSCloudFormationType() string {
+func (r *Firewall_SubnetMapping[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::Firewall.SubnetMapping"
 }

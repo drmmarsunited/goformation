@@ -8,12 +8,12 @@ import (
 
 // Analysis_TooltipOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TooltipOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tooltipoptions.html
-type Analysis_TooltipOptions struct {
+type Analysis_TooltipOptions[T any] struct {
 
 	// FieldBasedTooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tooltipoptions.html#cfn-quicksight-analysis-tooltipoptions-fieldbasedtooltip
-	FieldBasedTooltip *Analysis_FieldBasedTooltip `json:"FieldBasedTooltip,omitempty"`
+	FieldBasedTooltip *Analysis_FieldBasedTooltip[any] `json:"FieldBasedTooltip,omitempty"`
 
 	// SelectedTooltipType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_TooltipOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TooltipOptions) AWSCloudFormationType() string {
+func (r *Analysis_TooltipOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TooltipOptions"
 }

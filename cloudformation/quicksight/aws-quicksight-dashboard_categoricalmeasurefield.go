@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CategoricalMeasureField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CategoricalMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricalmeasurefield.html
-type Dashboard_CategoricalMeasureField struct {
+type Dashboard_CategoricalMeasureField[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_CategoricalMeasureField struct {
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricalmeasurefield.html#cfn-quicksight-dashboard-categoricalmeasurefield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_CategoricalMeasureField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricalmeasurefield.html#cfn-quicksight-dashboard-categoricalmeasurefield-formatconfiguration
-	FormatConfiguration *Dashboard_StringFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_StringFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_CategoricalMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CategoricalMeasureField) AWSCloudFormationType() string {
+func (r *Dashboard_CategoricalMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CategoricalMeasureField"
 }

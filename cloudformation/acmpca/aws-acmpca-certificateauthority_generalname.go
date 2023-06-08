@@ -8,12 +8,12 @@ import (
 
 // CertificateAuthority_GeneralName AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.GeneralName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html
-type CertificateAuthority_GeneralName struct {
+type CertificateAuthority_GeneralName[T any] struct {
 
 	// DirectoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-directoryname
-	DirectoryName *CertificateAuthority_Subject `json:"DirectoryName,omitempty"`
+	DirectoryName *CertificateAuthority_Subject[any] `json:"DirectoryName,omitempty"`
 
 	// DnsName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type CertificateAuthority_GeneralName struct {
 	// EdiPartyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-edipartyname
-	EdiPartyName *CertificateAuthority_EdiPartyName `json:"EdiPartyName,omitempty"`
+	EdiPartyName *CertificateAuthority_EdiPartyName[any] `json:"EdiPartyName,omitempty"`
 
 	// IpAddress AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type CertificateAuthority_GeneralName struct {
 	// OtherName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-othername
-	OtherName *CertificateAuthority_OtherName `json:"OtherName,omitempty"`
+	OtherName *CertificateAuthority_OtherName[any] `json:"OtherName,omitempty"`
 
 	// RegisteredId AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type CertificateAuthority_GeneralName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_GeneralName) AWSCloudFormationType() string {
+func (r *CertificateAuthority_GeneralName[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.GeneralName"
 }

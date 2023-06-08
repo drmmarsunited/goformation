@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilterSliderControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterSliderControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html
-type Dashboard_FilterSliderControl struct {
+type Dashboard_FilterSliderControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-displayoptions
-	DisplayOptions *Dashboard_SliderControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_SliderControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Dashboard_FilterSliderControl struct {
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-maximumvalue
-	MaximumValue float64 `json:"MaximumValue"`
+	MaximumValue T `json:"MaximumValue"`
 
 	// MinimumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-minimumvalue
-	MinimumValue float64 `json:"MinimumValue"`
+	MinimumValue T `json:"MinimumValue"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Dashboard_FilterSliderControl struct {
 	// StepSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-stepsize
-	StepSize float64 `json:"StepSize"`
+	StepSize T `json:"StepSize"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type Dashboard_FilterSliderControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterSliderControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterSliderControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterSliderControl"
 }

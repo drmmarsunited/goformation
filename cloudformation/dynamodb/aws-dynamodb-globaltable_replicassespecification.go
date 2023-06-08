@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_ReplicaSSESpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReplicaSSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicassespecification.html
-type GlobalTable_ReplicaSSESpecification struct {
+type GlobalTable_ReplicaSSESpecification[T any] struct {
 
 	// KMSMasterKeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type GlobalTable_ReplicaSSESpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_ReplicaSSESpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_ReplicaSSESpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.ReplicaSSESpecification"
 }

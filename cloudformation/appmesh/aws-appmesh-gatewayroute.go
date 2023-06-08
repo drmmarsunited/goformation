@@ -12,7 +12,7 @@ import (
 
 // GatewayRoute AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html
-type GatewayRoute struct {
+type GatewayRoute[T any] struct {
 
 	// GatewayRouteName AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type GatewayRoute struct {
 	// Spec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-spec
-	Spec *GatewayRoute_GatewayRouteSpec `json:"Spec"`
+	Spec *GatewayRoute_GatewayRouteSpec[any] `json:"Spec"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type GatewayRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute) AWSCloudFormationType() string {
+func (r *GatewayRoute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GatewayRoute) MarshalJSON() ([]byte, error) {
-	type Properties GatewayRoute
+func (r GatewayRoute[any]) MarshalJSON() ([]byte, error) {
+	type Properties GatewayRoute[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r GatewayRoute) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GatewayRoute) UnmarshalJSON(b []byte) error {
-	type Properties GatewayRoute
+func (r *GatewayRoute[any]) UnmarshalJSON(b []byte) error {
+	type Properties GatewayRoute[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *GatewayRoute) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GatewayRoute(*res.Properties)
+		*r = GatewayRoute[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

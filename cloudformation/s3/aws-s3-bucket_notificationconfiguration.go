@@ -8,27 +8,27 @@ import (
 
 // Bucket_NotificationConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.NotificationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
-type Bucket_NotificationConfiguration struct {
+type Bucket_NotificationConfiguration[T any] struct {
 
 	// EventBridgeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-eventbridgeconfig
-	EventBridgeConfiguration *Bucket_EventBridgeConfiguration `json:"EventBridgeConfiguration,omitempty"`
+	EventBridgeConfiguration *Bucket_EventBridgeConfiguration[any] `json:"EventBridgeConfiguration,omitempty"`
 
 	// LambdaConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
-	LambdaConfigurations []Bucket_LambdaConfiguration `json:"LambdaConfigurations,omitempty"`
+	LambdaConfigurations []Bucket_LambdaConfiguration[any] `json:"LambdaConfigurations,omitempty"`
 
 	// QueueConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
-	QueueConfigurations []Bucket_QueueConfiguration `json:"QueueConfigurations,omitempty"`
+	QueueConfigurations []Bucket_QueueConfiguration[any] `json:"QueueConfigurations,omitempty"`
 
 	// TopicConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
-	TopicConfigurations []Bucket_TopicConfiguration `json:"TopicConfigurations,omitempty"`
+	TopicConfigurations []Bucket_TopicConfiguration[any] `json:"TopicConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bucket_NotificationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_NotificationConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_NotificationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.NotificationConfiguration"
 }

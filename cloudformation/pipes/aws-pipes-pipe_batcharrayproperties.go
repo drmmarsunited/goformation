@@ -8,12 +8,12 @@ import (
 
 // Pipe_BatchArrayProperties AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchArrayProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batcharrayproperties.html
-type Pipe_BatchArrayProperties struct {
+type Pipe_BatchArrayProperties[T any] struct {
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batcharrayproperties.html#cfn-pipes-pipe-batcharrayproperties-size
-	Size *int `json:"Size,omitempty"`
+	Size *T `json:"Size,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_BatchArrayProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchArrayProperties) AWSCloudFormationType() string {
+func (r *Pipe_BatchArrayProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchArrayProperties"
 }

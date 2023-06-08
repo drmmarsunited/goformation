@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_AuthorizationConfig AWS CloudFormation Resource (AWS::ECS::TaskDefinition.AuthorizationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-authorizationconfig.html
-type TaskDefinition_AuthorizationConfig struct {
+type TaskDefinition_AuthorizationConfig[T any] struct {
 
 	// AccessPointId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_AuthorizationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_AuthorizationConfig) AWSCloudFormationType() string {
+func (r *TaskDefinition_AuthorizationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.AuthorizationConfig"
 }

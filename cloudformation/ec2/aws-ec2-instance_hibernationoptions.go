@@ -8,12 +8,12 @@ import (
 
 // Instance_HibernationOptions AWS CloudFormation Resource (AWS::EC2::Instance.HibernationOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-hibernationoptions.html
-type Instance_HibernationOptions struct {
+type Instance_HibernationOptions[T any] struct {
 
 	// Configured AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-hibernationoptions.html#cfn-ec2-instance-hibernationoptions-configured
-	Configured *bool `json:"Configured,omitempty"`
+	Configured *T `json:"Configured,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Instance_HibernationOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_HibernationOptions) AWSCloudFormationType() string {
+func (r *Instance_HibernationOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.HibernationOptions"
 }

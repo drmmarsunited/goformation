@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-labeloptions.html
-type Dashboard_LabelOptions struct {
+type Dashboard_LabelOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_LabelOptions struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-labeloptions.html#cfn-quicksight-dashboard-labeloptions-fontconfiguration
-	FontConfiguration *Dashboard_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Dashboard_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_LabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_LabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LabelOptions"
 }

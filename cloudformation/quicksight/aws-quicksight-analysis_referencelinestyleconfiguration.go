@@ -8,7 +8,7 @@ import (
 
 // Analysis_ReferenceLineStyleConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ReferenceLineStyleConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinestyleconfiguration.html
-type Analysis_ReferenceLineStyleConfiguration struct {
+type Analysis_ReferenceLineStyleConfiguration[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ReferenceLineStyleConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ReferenceLineStyleConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ReferenceLineStyleConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ReferenceLineStyleConfiguration"
 }

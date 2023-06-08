@@ -8,7 +8,7 @@ import (
 
 // Project_AppConfigResourceObject AWS CloudFormation Resource (AWS::Evidently::Project.AppConfigResourceObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-appconfigresourceobject.html
-type Project_AppConfigResourceObject struct {
+type Project_AppConfigResourceObject[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_AppConfigResourceObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_AppConfigResourceObject) AWSCloudFormationType() string {
+func (r *Project_AppConfigResourceObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Project.AppConfigResourceObject"
 }

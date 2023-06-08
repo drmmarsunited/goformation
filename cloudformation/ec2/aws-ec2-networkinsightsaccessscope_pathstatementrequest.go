@@ -8,17 +8,17 @@ import (
 
 // NetworkInsightsAccessScope_PathStatementRequest AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html
-type NetworkInsightsAccessScope_PathStatementRequest struct {
+type NetworkInsightsAccessScope_PathStatementRequest[T any] struct {
 
 	// PacketHeaderStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement
-	PacketHeaderStatement *NetworkInsightsAccessScope_PacketHeaderStatementRequest `json:"PacketHeaderStatement,omitempty"`
+	PacketHeaderStatement *NetworkInsightsAccessScope_PacketHeaderStatementRequest[any] `json:"PacketHeaderStatement,omitempty"`
 
 	// ResourceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement
-	ResourceStatement *NetworkInsightsAccessScope_ResourceStatementRequest `json:"ResourceStatement,omitempty"`
+	ResourceStatement *NetworkInsightsAccessScope_ResourceStatementRequest[any] `json:"ResourceStatement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkInsightsAccessScope_PathStatementRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScope_PathStatementRequest) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScope_PathStatementRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest"
 }

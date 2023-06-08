@@ -8,7 +8,7 @@ import (
 
 // Policy_ResourceTag AWS CloudFormation Resource (AWS::FMS::Policy.ResourceTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-resourcetag.html
-type Policy_ResourceTag struct {
+type Policy_ResourceTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Policy_ResourceTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_ResourceTag) AWSCloudFormationType() string {
+func (r *Policy_ResourceTag[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.ResourceTag"
 }

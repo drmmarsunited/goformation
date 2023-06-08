@@ -12,7 +12,7 @@ import (
 
 // IPAM AWS CloudFormation Resource (AWS::EC2::IPAM)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html
-type IPAM struct {
+type IPAM[T any] struct {
 
 	// DefaultResourceDiscoveryAssociationId AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,7 @@ type IPAM struct {
 	// OperatingRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-operatingregions
-	OperatingRegions []IPAM_IpamOperatingRegion `json:"OperatingRegions,omitempty"`
-
-	// ResourceDiscoveryAssociationCount AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-resourcediscoveryassociationcount
-	ResourceDiscoveryAssociationCount *int `json:"ResourceDiscoveryAssociationCount,omitempty"`
+	OperatingRegions []IPAM_IpamOperatingRegion[any] `json:"OperatingRegions,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +56,15 @@ type IPAM struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAM) AWSCloudFormationType() string {
+func (r *IPAM[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAM"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IPAM) MarshalJSON() ([]byte, error) {
-	type Properties IPAM
+func (r IPAM[any]) MarshalJSON() ([]byte, error) {
+	type Properties IPAM[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +86,9 @@ func (r IPAM) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IPAM) UnmarshalJSON(b []byte) error {
-	type Properties IPAM
+func (r *IPAM[any]) UnmarshalJSON(b []byte) error {
+	type Properties IPAM[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +108,7 @@ func (r *IPAM) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IPAM(*res.Properties)
+		*r = IPAM[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

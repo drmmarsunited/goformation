@@ -12,17 +12,17 @@ import (
 
 // DataSource AWS CloudFormation Resource (AWS::Kendra::DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html
-type DataSource struct {
+type DataSource[T any] struct {
 
 	// CustomDocumentEnrichmentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration
-	CustomDocumentEnrichmentConfiguration *DataSource_CustomDocumentEnrichmentConfiguration `json:"CustomDocumentEnrichmentConfiguration,omitempty"`
+	CustomDocumentEnrichmentConfiguration *DataSource_CustomDocumentEnrichmentConfiguration[any] `json:"CustomDocumentEnrichmentConfiguration,omitempty"`
 
 	// DataSourceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-datasourceconfiguration
-	DataSourceConfiguration *DataSource_DataSourceConfiguration `json:"DataSourceConfiguration,omitempty"`
+	DataSourceConfiguration *DataSource_DataSourceConfiguration[any] `json:"DataSourceConfiguration,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource) AWSCloudFormationType() string {
+func (r *DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataSource) MarshalJSON() ([]byte, error) {
-	type Properties DataSource
+func (r DataSource[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataSource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r DataSource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataSource) UnmarshalJSON(b []byte) error {
-	type Properties DataSource
+func (r *DataSource[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataSource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *DataSource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataSource(*res.Properties)
+		*r = DataSource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

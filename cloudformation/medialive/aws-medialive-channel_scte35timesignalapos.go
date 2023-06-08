@@ -8,12 +8,12 @@ import (
 
 // Channel_Scte35TimeSignalApos AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte35TimeSignalApos)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html
-type Channel_Scte35TimeSignalApos struct {
+type Channel_Scte35TimeSignalApos[T any] struct {
 
 	// AdAvailOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-adavailoffset
-	AdAvailOffset *int `json:"AdAvailOffset,omitempty"`
+	AdAvailOffset *T `json:"AdAvailOffset,omitempty"`
 
 	// NoRegionalBlackoutFlag AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_Scte35TimeSignalApos struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Scte35TimeSignalApos) AWSCloudFormationType() string {
+func (r *Channel_Scte35TimeSignalApos[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Scte35TimeSignalApos"
 }

@@ -8,22 +8,22 @@ import (
 
 // Feature_VariationObject AWS CloudFormation Resource (AWS::Evidently::Feature.VariationObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html
-type Feature_VariationObject struct {
+type Feature_VariationObject[T any] struct {
 
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-booleanvalue
-	BooleanValue *bool `json:"BooleanValue,omitempty"`
+	BooleanValue *T `json:"BooleanValue,omitempty"`
 
 	// DoubleValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-doublevalue
-	DoubleValue *float64 `json:"DoubleValue,omitempty"`
+	DoubleValue *T `json:"DoubleValue,omitempty"`
 
 	// LongValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-longvalue
-	LongValue *float64 `json:"LongValue,omitempty"`
+	LongValue *T `json:"LongValue,omitempty"`
 
 	// StringValue AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Feature_VariationObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Feature_VariationObject) AWSCloudFormationType() string {
+func (r *Feature_VariationObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Feature.VariationObject"
 }

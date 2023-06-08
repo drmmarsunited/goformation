@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_ListenerTls AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html
-type VirtualNode_ListenerTls struct {
+type VirtualNode_ListenerTls[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-certificate
-	Certificate *VirtualNode_ListenerTlsCertificate `json:"Certificate"`
+	Certificate *VirtualNode_ListenerTlsCertificate[any] `json:"Certificate"`
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type VirtualNode_ListenerTls struct {
 	// Validation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation
-	Validation *VirtualNode_ListenerTlsValidationContext `json:"Validation,omitempty"`
+	Validation *VirtualNode_ListenerTlsValidationContext[any] `json:"Validation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualNode_ListenerTls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTls) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTls[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTls"
 }

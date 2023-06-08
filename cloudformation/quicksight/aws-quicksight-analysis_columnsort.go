@@ -8,12 +8,12 @@ import (
 
 // Analysis_ColumnSort AWS CloudFormation Resource (AWS::QuickSight::Analysis.ColumnSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html
-type Analysis_ColumnSort struct {
+type Analysis_ColumnSort[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-aggregationfunction
-	AggregationFunction *Analysis_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Analysis_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_ColumnSort struct {
 	// SortBy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-sortby
-	SortBy *Analysis_ColumnIdentifier `json:"SortBy"`
+	SortBy *Analysis_ColumnIdentifier[any] `json:"SortBy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ColumnSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ColumnSort) AWSCloudFormationType() string {
+func (r *Analysis_ColumnSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ColumnSort"
 }

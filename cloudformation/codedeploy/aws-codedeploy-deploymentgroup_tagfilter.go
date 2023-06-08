@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_TagFilter AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html
-type DeploymentGroup_TagFilter struct {
+type DeploymentGroup_TagFilter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DeploymentGroup_TagFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_TagFilter) AWSCloudFormationType() string {
+func (r *DeploymentGroup_TagFilter[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.TagFilter"
 }

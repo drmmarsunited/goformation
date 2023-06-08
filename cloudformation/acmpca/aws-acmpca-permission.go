@@ -11,7 +11,7 @@ import (
 
 // Permission AWS CloudFormation Resource (AWS::ACMPCA::Permission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html
-type Permission struct {
+type Permission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type Permission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permission) AWSCloudFormationType() string {
+func (r *Permission[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Permission"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Permission) MarshalJSON() ([]byte, error) {
-	type Properties Permission
+func (r Permission[any]) MarshalJSON() ([]byte, error) {
+	type Properties Permission[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Permission) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Permission) UnmarshalJSON(b []byte) error {
-	type Properties Permission
+func (r *Permission[any]) UnmarshalJSON(b []byte) error {
+	type Properties Permission[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Permission) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Permission(*res.Properties)
+		*r = Permission[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

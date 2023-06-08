@@ -11,7 +11,7 @@ import (
 
 // GroupVersion AWS CloudFormation Resource (AWS::Greengrass::GroupVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html
-type GroupVersion struct {
+type GroupVersion[T any] struct {
 
 	// ConnectorDefinitionVersionArn AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type GroupVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GroupVersion) AWSCloudFormationType() string {
+func (r *GroupVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::GroupVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GroupVersion) MarshalJSON() ([]byte, error) {
-	type Properties GroupVersion
+func (r GroupVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties GroupVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r GroupVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GroupVersion) UnmarshalJSON(b []byte) error {
-	type Properties GroupVersion
+func (r *GroupVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties GroupVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *GroupVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GroupVersion(*res.Properties)
+		*r = GroupVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

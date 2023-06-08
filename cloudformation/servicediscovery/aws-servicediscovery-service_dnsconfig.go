@@ -8,12 +8,12 @@ import (
 
 // Service_DnsConfig AWS CloudFormation Resource (AWS::ServiceDiscovery::Service.DnsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html
-type Service_DnsConfig struct {
+type Service_DnsConfig[T any] struct {
 
 	// DnsRecords AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-dnsrecords
-	DnsRecords []Service_DnsRecord `json:"DnsRecords"`
+	DnsRecords []Service_DnsRecord[any] `json:"DnsRecords"`
 
 	// NamespaceId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Service_DnsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DnsConfig) AWSCloudFormationType() string {
+func (r *Service_DnsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::Service.DnsConfig"
 }

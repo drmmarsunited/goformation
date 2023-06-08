@@ -8,7 +8,7 @@ import (
 
 // ApplicationOutput_KinesisFirehoseOutput AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisfirehoseoutput.html
-type ApplicationOutput_KinesisFirehoseOutput struct {
+type ApplicationOutput_KinesisFirehoseOutput[T any] struct {
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ApplicationOutput_KinesisFirehoseOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput_KinesisFirehoseOutput) AWSCloudFormationType() string {
+func (r *ApplicationOutput_KinesisFirehoseOutput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput"
 }

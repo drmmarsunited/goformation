@@ -8,7 +8,7 @@ import (
 
 // Application_Tags AWS CloudFormation Resource (AWS::AppConfig::Application.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-application-tags.html
-type Application_Tags struct {
+type Application_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_Tags) AWSCloudFormationType() string {
+func (r *Application_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Application.Tags"
 }

@@ -12,17 +12,17 @@ import (
 
 // MaintenanceWindow AWS CloudFormation Resource (AWS::SSM::MaintenanceWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html
-type MaintenanceWindow struct {
+type MaintenanceWindow[T any] struct {
 
 	// AllowUnassociatedTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-allowunassociatedtargets
-	AllowUnassociatedTargets bool `json:"AllowUnassociatedTargets"`
+	AllowUnassociatedTargets T `json:"AllowUnassociatedTargets"`
 
 	// Cutoff AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-cutoff
-	Cutoff int `json:"Cutoff"`
+	Cutoff T `json:"Cutoff"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type MaintenanceWindow struct {
 	// Duration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-duration
-	Duration int `json:"Duration"`
+	Duration T `json:"Duration"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type MaintenanceWindow struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-scheduleoffset
-	ScheduleOffset *int `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *T `json:"ScheduleOffset,omitempty"`
 
 	// ScheduleTimezone AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type MaintenanceWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindow) AWSCloudFormationType() string {
+func (r *MaintenanceWindow[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindow"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MaintenanceWindow) MarshalJSON() ([]byte, error) {
-	type Properties MaintenanceWindow
+func (r MaintenanceWindow[any]) MarshalJSON() ([]byte, error) {
+	type Properties MaintenanceWindow[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r MaintenanceWindow) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MaintenanceWindow) UnmarshalJSON(b []byte) error {
-	type Properties MaintenanceWindow
+func (r *MaintenanceWindow[any]) UnmarshalJSON(b []byte) error {
+	type Properties MaintenanceWindow[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *MaintenanceWindow) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MaintenanceWindow(*res.Properties)
+		*r = MaintenanceWindow[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

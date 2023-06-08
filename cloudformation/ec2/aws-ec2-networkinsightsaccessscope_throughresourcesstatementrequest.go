@@ -8,12 +8,12 @@ import (
 
 // NetworkInsightsAccessScope_ThroughResourcesStatementRequest AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html
-type NetworkInsightsAccessScope_ThroughResourcesStatementRequest struct {
+type NetworkInsightsAccessScope_ThroughResourcesStatementRequest[T any] struct {
 
 	// ResourceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html#cfn-ec2-networkinsightsaccessscope-throughresourcesstatementrequest-resourcestatement
-	ResourceStatement *NetworkInsightsAccessScope_ResourceStatementRequest `json:"ResourceStatement,omitempty"`
+	ResourceStatement *NetworkInsightsAccessScope_ResourceStatementRequest[any] `json:"ResourceStatement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type NetworkInsightsAccessScope_ThroughResourcesStatementRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScope_ThroughResourcesStatementRequest) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScope_ThroughResourcesStatementRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest"
 }

@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_ContainerDistributionConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.ContainerDistributionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-containerdistributionconfiguration.html
-type DistributionConfiguration_ContainerDistributionConfiguration struct {
+type DistributionConfiguration_ContainerDistributionConfiguration[T any] struct {
 
 	// ContainerTags AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DistributionConfiguration_ContainerDistributionConfiguration struct {
 	// TargetRepository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-containerdistributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-containerdistributionconfiguration-targetrepository
-	TargetRepository *DistributionConfiguration_TargetContainerRepository `json:"TargetRepository,omitempty"`
+	TargetRepository *DistributionConfiguration_TargetContainerRepository[any] `json:"TargetRepository,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DistributionConfiguration_ContainerDistributionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_ContainerDistributionConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_ContainerDistributionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.ContainerDistributionConfiguration"
 }

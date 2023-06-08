@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ExportHiddenFieldsOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ExportHiddenFieldsOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-exporthiddenfieldsoption.html
-type Dashboard_ExportHiddenFieldsOption struct {
+type Dashboard_ExportHiddenFieldsOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ExportHiddenFieldsOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ExportHiddenFieldsOption) AWSCloudFormationType() string {
+func (r *Dashboard_ExportHiddenFieldsOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ExportHiddenFieldsOption"
 }

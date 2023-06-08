@@ -8,7 +8,7 @@ import (
 
 // QuickConnect_PhoneNumberQuickConnectConfig AWS CloudFormation Resource (AWS::Connect::QuickConnect.PhoneNumberQuickConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-phonenumberquickconnectconfig.html
-type QuickConnect_PhoneNumberQuickConnectConfig struct {
+type QuickConnect_PhoneNumberQuickConnectConfig[T any] struct {
 
 	// PhoneNumber AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type QuickConnect_PhoneNumberQuickConnectConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QuickConnect_PhoneNumberQuickConnectConfig) AWSCloudFormationType() string {
+func (r *QuickConnect_PhoneNumberQuickConnectConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::QuickConnect.PhoneNumberQuickConnectConfig"
 }

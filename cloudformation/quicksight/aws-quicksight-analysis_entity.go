@@ -8,7 +8,7 @@ import (
 
 // Analysis_Entity AWS CloudFormation Resource (AWS::QuickSight::Analysis.Entity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-entity.html
-type Analysis_Entity struct {
+type Analysis_Entity[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_Entity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_Entity) AWSCloudFormationType() string {
+func (r *Analysis_Entity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.Entity"
 }

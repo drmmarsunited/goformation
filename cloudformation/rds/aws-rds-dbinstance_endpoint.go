@@ -8,7 +8,7 @@ import (
 
 // DBInstance_Endpoint AWS CloudFormation Resource (AWS::RDS::DBInstance.Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-endpoint.html
-type DBInstance_Endpoint struct {
+type DBInstance_Endpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DBInstance_Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance_Endpoint) AWSCloudFormationType() string {
+func (r *DBInstance_Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance.Endpoint"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bot_PlainTextMessage AWS CloudFormation Resource (AWS::Lex::Bot.PlainTextMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-plaintextmessage.html
-type Bot_PlainTextMessage struct {
+type Bot_PlainTextMessage[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_PlainTextMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_PlainTextMessage) AWSCloudFormationType() string {
+func (r *Bot_PlainTextMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.PlainTextMessage"
 }

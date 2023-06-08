@@ -12,7 +12,7 @@ import (
 
 // RestApi AWS CloudFormation Resource (AWS::ApiGateway::RestApi)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
-type RestApi struct {
+type RestApi[T any] struct {
 
 	// ApiKeySourceType AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type RestApi struct {
 	// BodyS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location
-	BodyS3Location *RestApi_S3Location `json:"BodyS3Location,omitempty"`
+	BodyS3Location *RestApi_S3Location[any] `json:"BodyS3Location,omitempty"`
 
 	// CloneFrom AWS CloudFormation Property
 	// Required: false
@@ -47,22 +47,22 @@ type RestApi struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *T `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration
-	EndpointConfiguration *RestApi_EndpointConfiguration `json:"EndpointConfiguration,omitempty"`
+	EndpointConfiguration *RestApi_EndpointConfiguration[any] `json:"EndpointConfiguration,omitempty"`
 
 	// FailOnWarnings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings
-	FailOnWarnings *bool `json:"FailOnWarnings,omitempty"`
+	FailOnWarnings *T `json:"FailOnWarnings,omitempty"`
 
 	// MinimumCompressionSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize
-	MinimumCompressionSize *int `json:"MinimumCompressionSize,omitempty"`
+	MinimumCompressionSize *T `json:"MinimumCompressionSize,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -106,14 +106,15 @@ type RestApi struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RestApi) AWSCloudFormationType() string {
+func (r *RestApi[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::RestApi"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RestApi) MarshalJSON() ([]byte, error) {
-	type Properties RestApi
+func (r RestApi[any]) MarshalJSON() ([]byte, error) {
+	type Properties RestApi[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r RestApi) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RestApi) UnmarshalJSON(b []byte) error {
-	type Properties RestApi
+func (r *RestApi[any]) UnmarshalJSON(b []byte) error {
+	type Properties RestApi[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *RestApi) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RestApi(*res.Properties)
+		*r = RestApi[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

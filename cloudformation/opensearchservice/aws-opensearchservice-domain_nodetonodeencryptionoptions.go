@@ -8,12 +8,12 @@ import (
 
 // Domain_NodeToNodeEncryptionOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html
-type Domain_NodeToNodeEncryptionOptions struct {
+type Domain_NodeToNodeEncryptionOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_NodeToNodeEncryptionOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_NodeToNodeEncryptionOptions) AWSCloudFormationType() string {
+func (r *Domain_NodeToNodeEncryptionOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions"
 }

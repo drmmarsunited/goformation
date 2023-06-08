@@ -8,12 +8,12 @@ import (
 
 // Application_InputParallelism AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.InputParallelism)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputparallelism.html
-type Application_InputParallelism struct {
+type Application_InputParallelism[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputparallelism.html#cfn-kinesisanalyticsv2-application-inputparallelism-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_InputParallelism struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InputParallelism) AWSCloudFormationType() string {
+func (r *Application_InputParallelism[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.InputParallelism"
 }

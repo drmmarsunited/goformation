@@ -8,7 +8,7 @@ import (
 
 // App_AutoBranchCreationConfig AWS CloudFormation Resource (AWS::Amplify::App.AutoBranchCreationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html
-type App_AutoBranchCreationConfig struct {
+type App_AutoBranchCreationConfig[T any] struct {
 
 	// AutoBranchCreationPatterns AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type App_AutoBranchCreationConfig struct {
 	// BasicAuthConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-basicauthconfig
-	BasicAuthConfig *App_BasicAuthConfig `json:"BasicAuthConfig,omitempty"`
+	BasicAuthConfig *App_BasicAuthConfig[any] `json:"BasicAuthConfig,omitempty"`
 
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
@@ -28,27 +28,27 @@ type App_AutoBranchCreationConfig struct {
 	// EnableAutoBranchCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableautobranchcreation
-	EnableAutoBranchCreation *bool `json:"EnableAutoBranchCreation,omitempty"`
+	EnableAutoBranchCreation *T `json:"EnableAutoBranchCreation,omitempty"`
 
 	// EnableAutoBuild AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableautobuild
-	EnableAutoBuild *bool `json:"EnableAutoBuild,omitempty"`
+	EnableAutoBuild *T `json:"EnableAutoBuild,omitempty"`
 
 	// EnablePerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableperformancemode
-	EnablePerformanceMode *bool `json:"EnablePerformanceMode,omitempty"`
+	EnablePerformanceMode *T `json:"EnablePerformanceMode,omitempty"`
 
 	// EnablePullRequestPreview AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enablepullrequestpreview
-	EnablePullRequestPreview *bool `json:"EnablePullRequestPreview,omitempty"`
+	EnablePullRequestPreview *T `json:"EnablePullRequestPreview,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-environmentvariables
-	EnvironmentVariables []App_EnvironmentVariable `json:"EnvironmentVariables,omitempty"`
+	EnvironmentVariables []App_EnvironmentVariable[any] `json:"EnvironmentVariables,omitempty"`
 
 	// Framework AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type App_AutoBranchCreationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_AutoBranchCreationConfig) AWSCloudFormationType() string {
+func (r *App_AutoBranchCreationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::App.AutoBranchCreationConfig"
 }

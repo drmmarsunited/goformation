@@ -8,12 +8,12 @@ import (
 
 // SqlInjectionMatchSet_SqlInjectionMatchTuple AWS CloudFormation Resource (AWS::WAF::SqlInjectionMatchSet.SqlInjectionMatchTuple)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html
-type SqlInjectionMatchSet_SqlInjectionMatchTuple struct {
+type SqlInjectionMatchSet_SqlInjectionMatchTuple[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples-fieldtomatch
-	FieldToMatch *SqlInjectionMatchSet_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *SqlInjectionMatchSet_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SqlInjectionMatchSet_SqlInjectionMatchTuple struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SqlInjectionMatchSet_SqlInjectionMatchTuple) AWSCloudFormationType() string {
+func (r *SqlInjectionMatchSet_SqlInjectionMatchTuple[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::SqlInjectionMatchSet.SqlInjectionMatchTuple"
 }

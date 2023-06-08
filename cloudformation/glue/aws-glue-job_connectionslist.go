@@ -8,7 +8,7 @@ import (
 
 // Job_ConnectionsList AWS CloudFormation Resource (AWS::Glue::Job.ConnectionsList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html
-type Job_ConnectionsList struct {
+type Job_ConnectionsList[T any] struct {
 
 	// Connections AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Job_ConnectionsList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_ConnectionsList) AWSCloudFormationType() string {
+func (r *Job_ConnectionsList[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Job.ConnectionsList"
 }

@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_BlockDeviceMapping AWS CloudFormation Resource (AWS::EC2::SpotFleet.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html
-type SpotFleet_BlockDeviceMapping struct {
+type SpotFleet_BlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type SpotFleet_BlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-ebs
-	Ebs *SpotFleet_EbsBlockDevice `json:"Ebs,omitempty"`
+	Ebs *SpotFleet_EbsBlockDevice[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type SpotFleet_BlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_BlockDeviceMapping) AWSCloudFormationType() string {
+func (r *SpotFleet_BlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.BlockDeviceMapping"
 }

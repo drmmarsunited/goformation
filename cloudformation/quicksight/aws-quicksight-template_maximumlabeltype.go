@@ -8,7 +8,7 @@ import (
 
 // Template_MaximumLabelType AWS CloudFormation Resource (AWS::QuickSight::Template.MaximumLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-maximumlabeltype.html
-type Template_MaximumLabelType struct {
+type Template_MaximumLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_MaximumLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_MaximumLabelType) AWSCloudFormationType() string {
+func (r *Template_MaximumLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.MaximumLabelType"
 }

@@ -11,7 +11,7 @@ import (
 
 // EC2Fleet AWS CloudFormation Resource (AWS::EC2::EC2Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html
-type EC2Fleet struct {
+type EC2Fleet[T any] struct {
 
 	// Context AWS CloudFormation Property
 	// Required: false
@@ -26,37 +26,37 @@ type EC2Fleet struct {
 	// LaunchTemplateConfigs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-launchtemplateconfigs
-	LaunchTemplateConfigs []EC2Fleet_FleetLaunchTemplateConfigRequest `json:"LaunchTemplateConfigs"`
+	LaunchTemplateConfigs []EC2Fleet_FleetLaunchTemplateConfigRequest[any] `json:"LaunchTemplateConfigs"`
 
 	// OnDemandOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-ondemandoptions
-	OnDemandOptions *EC2Fleet_OnDemandOptionsRequest `json:"OnDemandOptions,omitempty"`
+	OnDemandOptions *EC2Fleet_OnDemandOptionsRequest[any] `json:"OnDemandOptions,omitempty"`
 
 	// ReplaceUnhealthyInstances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-replaceunhealthyinstances
-	ReplaceUnhealthyInstances *bool `json:"ReplaceUnhealthyInstances,omitempty"`
+	ReplaceUnhealthyInstances *T `json:"ReplaceUnhealthyInstances,omitempty"`
 
 	// SpotOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-spotoptions
-	SpotOptions *EC2Fleet_SpotOptionsRequest `json:"SpotOptions,omitempty"`
+	SpotOptions *EC2Fleet_SpotOptionsRequest[any] `json:"SpotOptions,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-tagspecifications
-	TagSpecifications []EC2Fleet_TagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []EC2Fleet_TagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// TargetCapacitySpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-targetcapacityspecification
-	TargetCapacitySpecification *EC2Fleet_TargetCapacitySpecificationRequest `json:"TargetCapacitySpecification"`
+	TargetCapacitySpecification *EC2Fleet_TargetCapacitySpecificationRequest[any] `json:"TargetCapacitySpecification"`
 
 	// TerminateInstancesWithExpiration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-terminateinstanceswithexpiration
-	TerminateInstancesWithExpiration *bool `json:"TerminateInstancesWithExpiration,omitempty"`
+	TerminateInstancesWithExpiration *T `json:"TerminateInstancesWithExpiration,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -90,14 +90,15 @@ type EC2Fleet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet) AWSCloudFormationType() string {
+func (r *EC2Fleet[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EC2Fleet) MarshalJSON() ([]byte, error) {
-	type Properties EC2Fleet
+func (r EC2Fleet[any]) MarshalJSON() ([]byte, error) {
+	type Properties EC2Fleet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r EC2Fleet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EC2Fleet) UnmarshalJSON(b []byte) error {
-	type Properties EC2Fleet
+func (r *EC2Fleet[any]) UnmarshalJSON(b []byte) error {
+	type Properties EC2Fleet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *EC2Fleet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EC2Fleet(*res.Properties)
+		*r = EC2Fleet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

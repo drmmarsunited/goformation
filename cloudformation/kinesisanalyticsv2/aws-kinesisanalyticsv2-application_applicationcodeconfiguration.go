@@ -8,12 +8,12 @@ import (
 
 // Application_ApplicationCodeConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html
-type Application_ApplicationCodeConfiguration struct {
+type Application_ApplicationCodeConfiguration[T any] struct {
 
 	// CodeContent AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontent
-	CodeContent *Application_CodeContent `json:"CodeContent"`
+	CodeContent *Application_CodeContent[any] `json:"CodeContent"`
 
 	// CodeContentType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_ApplicationCodeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationCodeConfiguration) AWSCloudFormationType() string {
+func (r *Application_ApplicationCodeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration"
 }

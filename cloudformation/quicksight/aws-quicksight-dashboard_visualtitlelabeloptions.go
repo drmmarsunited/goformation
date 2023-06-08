@@ -8,12 +8,12 @@ import (
 
 // Dashboard_VisualTitleLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualTitleLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualtitlelabeloptions.html
-type Dashboard_VisualTitleLabelOptions struct {
+type Dashboard_VisualTitleLabelOptions[T any] struct {
 
 	// FormatText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualtitlelabeloptions.html#cfn-quicksight-dashboard-visualtitlelabeloptions-formattext
-	FormatText *Dashboard_ShortFormatText `json:"FormatText,omitempty"`
+	FormatText *Dashboard_ShortFormatText[any] `json:"FormatText,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_VisualTitleLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualTitleLabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_VisualTitleLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualTitleLabelOptions"
 }

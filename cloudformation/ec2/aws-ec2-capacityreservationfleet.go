@@ -11,7 +11,7 @@ import (
 
 // CapacityReservationFleet AWS CloudFormation Resource (AWS::EC2::CapacityReservationFleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html
-type CapacityReservationFleet struct {
+type CapacityReservationFleet[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -31,22 +31,22 @@ type CapacityReservationFleet struct {
 	// InstanceTypeSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-instancetypespecifications
-	InstanceTypeSpecifications []CapacityReservationFleet_InstanceTypeSpecification `json:"InstanceTypeSpecifications,omitempty"`
+	InstanceTypeSpecifications []CapacityReservationFleet_InstanceTypeSpecification[any] `json:"InstanceTypeSpecifications,omitempty"`
 
 	// NoRemoveEndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-noremoveenddate
-	NoRemoveEndDate *bool `json:"NoRemoveEndDate,omitempty"`
+	NoRemoveEndDate *T `json:"NoRemoveEndDate,omitempty"`
 
 	// RemoveEndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-removeenddate
-	RemoveEndDate *bool `json:"RemoveEndDate,omitempty"`
+	RemoveEndDate *T `json:"RemoveEndDate,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tagspecifications
-	TagSpecifications []CapacityReservationFleet_TagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []CapacityReservationFleet_TagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// Tenancy AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type CapacityReservationFleet struct {
 	// TotalTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-totaltargetcapacity
-	TotalTargetCapacity *int `json:"TotalTargetCapacity,omitempty"`
+	TotalTargetCapacity *T `json:"TotalTargetCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -75,14 +75,15 @@ type CapacityReservationFleet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityReservationFleet) AWSCloudFormationType() string {
+func (r *CapacityReservationFleet[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::CapacityReservationFleet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CapacityReservationFleet) MarshalJSON() ([]byte, error) {
-	type Properties CapacityReservationFleet
+func (r CapacityReservationFleet[any]) MarshalJSON() ([]byte, error) {
+	type Properties CapacityReservationFleet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r CapacityReservationFleet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CapacityReservationFleet) UnmarshalJSON(b []byte) error {
-	type Properties CapacityReservationFleet
+func (r *CapacityReservationFleet[any]) UnmarshalJSON(b []byte) error {
+	type Properties CapacityReservationFleet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *CapacityReservationFleet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CapacityReservationFleet(*res.Properties)
+		*r = CapacityReservationFleet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

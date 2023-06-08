@@ -12,7 +12,7 @@ import (
 
 // Project AWS CloudFormation Resource (AWS::DataBrew::Project)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html
-type Project struct {
+type Project[T any] struct {
 
 	// DatasetName AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Project struct {
 	// Sample AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-sample
-	Sample *Project_Sample `json:"Sample,omitempty"`
+	Sample *Project_Sample[any] `json:"Sample,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Project struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project) AWSCloudFormationType() string {
+func (r *Project[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Project"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Project) MarshalJSON() ([]byte, error) {
-	type Properties Project
+func (r Project[any]) MarshalJSON() ([]byte, error) {
+	type Properties Project[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Project) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Project) UnmarshalJSON(b []byte) error {
-	type Properties Project
+func (r *Project[any]) UnmarshalJSON(b []byte) error {
+	type Properties Project[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Project) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Project(*res.Properties)
+		*r = Project[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

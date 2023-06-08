@@ -8,7 +8,7 @@ import (
 
 // Layer_Recipes AWS CloudFormation Resource (AWS::OpsWorks::Layer.Recipes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html
-type Layer_Recipes struct {
+type Layer_Recipes[T any] struct {
 
 	// Configure AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Layer_Recipes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Layer_Recipes) AWSCloudFormationType() string {
+func (r *Layer_Recipes[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.Recipes"
 }

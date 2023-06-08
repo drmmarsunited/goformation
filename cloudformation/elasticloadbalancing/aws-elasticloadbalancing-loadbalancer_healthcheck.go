@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_HealthCheck AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html
-type LoadBalancer_HealthCheck struct {
+type LoadBalancer_HealthCheck[T any] struct {
 
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type LoadBalancer_HealthCheck struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_HealthCheck) AWSCloudFormationType() string {
+func (r *LoadBalancer_HealthCheck[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck"
 }

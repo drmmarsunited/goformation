@@ -8,22 +8,22 @@ import (
 
 // Pipe_PipeTargetBatchJobParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetBatchJobParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html
-type Pipe_PipeTargetBatchJobParameters struct {
+type Pipe_PipeTargetBatchJobParameters[T any] struct {
 
 	// ArrayProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-arrayproperties
-	ArrayProperties *Pipe_BatchArrayProperties `json:"ArrayProperties,omitempty"`
+	ArrayProperties *Pipe_BatchArrayProperties[any] `json:"ArrayProperties,omitempty"`
 
 	// ContainerOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-containeroverrides
-	ContainerOverrides *Pipe_BatchContainerOverrides `json:"ContainerOverrides,omitempty"`
+	ContainerOverrides *Pipe_BatchContainerOverrides[any] `json:"ContainerOverrides,omitempty"`
 
 	// DependsOn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-dependson
-	DependsOnProp []Pipe_BatchJobDependency `json:"DependsOn,omitempty"`
+	DependsOnProp []Pipe_BatchJobDependency[any] `json:"DependsOn,omitempty"`
 
 	// JobDefinition AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type Pipe_PipeTargetBatchJobParameters struct {
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-retrystrategy
-	RetryStrategy *Pipe_BatchRetryStrategy `json:"RetryStrategy,omitempty"`
+	RetryStrategy *Pipe_BatchRetryStrategy[any] `json:"RetryStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Pipe_PipeTargetBatchJobParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetBatchJobParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetBatchJobParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetBatchJobParameters"
 }

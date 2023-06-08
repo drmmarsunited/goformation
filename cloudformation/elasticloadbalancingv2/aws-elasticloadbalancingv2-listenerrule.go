@@ -11,17 +11,17 @@ import (
 
 // ListenerRule AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html
-type ListenerRule struct {
+type ListenerRule[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
-	Actions []ListenerRule_Action `json:"Actions"`
+	Actions []ListenerRule_Action[any] `json:"Actions"`
 
 	// Conditions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
-	Conditions []ListenerRule_RuleCondition `json:"Conditions"`
+	Conditions []ListenerRule_RuleCondition[any] `json:"Conditions"`
 
 	// ListenerArn AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type ListenerRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type ListenerRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule) AWSCloudFormationType() string {
+func (r *ListenerRule[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ListenerRule) MarshalJSON() ([]byte, error) {
-	type Properties ListenerRule
+func (r ListenerRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties ListenerRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r ListenerRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ListenerRule) UnmarshalJSON(b []byte) error {
-	type Properties ListenerRule
+func (r *ListenerRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties ListenerRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *ListenerRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ListenerRule(*res.Properties)
+		*r = ListenerRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

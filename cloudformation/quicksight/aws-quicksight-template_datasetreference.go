@@ -8,7 +8,7 @@ import (
 
 // Template_DataSetReference AWS CloudFormation Resource (AWS::QuickSight::Template.DataSetReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetreference.html
-type Template_DataSetReference struct {
+type Template_DataSetReference[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_DataSetReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataSetReference) AWSCloudFormationType() string {
+func (r *Template_DataSetReference[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataSetReference"
 }

@@ -8,7 +8,7 @@ import (
 
 // LifecyclePolicy_CrossRegionCopyRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html
-type LifecyclePolicy_CrossRegionCopyRule struct {
+type LifecyclePolicy_CrossRegionCopyRule[T any] struct {
 
 	// CmkArn AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type LifecyclePolicy_CrossRegionCopyRule struct {
 	// CopyTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-copytags
-	CopyTags *bool `json:"CopyTags,omitempty"`
+	CopyTags *T `json:"CopyTags,omitempty"`
 
 	// DeprecateRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-deprecaterule
-	DeprecateRule *LifecyclePolicy_CrossRegionCopyDeprecateRule `json:"DeprecateRule,omitempty"`
+	DeprecateRule *LifecyclePolicy_CrossRegionCopyDeprecateRule[any] `json:"DeprecateRule,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-encrypted
-	Encrypted bool `json:"Encrypted"`
+	Encrypted T `json:"Encrypted"`
 
 	// RetainRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-retainrule
-	RetainRule *LifecyclePolicy_CrossRegionCopyRetainRule `json:"RetainRule,omitempty"`
+	RetainRule *LifecyclePolicy_CrossRegionCopyRetainRule[any] `json:"RetainRule,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type LifecyclePolicy_CrossRegionCopyRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_CrossRegionCopyRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_CrossRegionCopyRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.CrossRegionCopyRule"
 }

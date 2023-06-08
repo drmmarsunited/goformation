@@ -11,12 +11,12 @@ import (
 
 // DocumentationPart AWS CloudFormation Resource (AWS::ApiGateway::DocumentationPart)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html
-type DocumentationPart struct {
+type DocumentationPart[T any] struct {
 
 	// Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
-	Location *DocumentationPart_Location `json:"Location"`
+	Location *DocumentationPart_Location[any] `json:"Location"`
 
 	// Properties AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type DocumentationPart struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DocumentationPart) AWSCloudFormationType() string {
+func (r *DocumentationPart[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DocumentationPart"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DocumentationPart) MarshalJSON() ([]byte, error) {
-	type Properties DocumentationPart
+func (r DocumentationPart[any]) MarshalJSON() ([]byte, error) {
+	type Properties DocumentationPart[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r DocumentationPart) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DocumentationPart) UnmarshalJSON(b []byte) error {
-	type Properties DocumentationPart
+func (r *DocumentationPart[any]) UnmarshalJSON(b []byte) error {
+	type Properties DocumentationPart[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *DocumentationPart) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DocumentationPart(*res.Properties)
+		*r = DocumentationPart[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

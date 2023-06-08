@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_SourceAlgorithm AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.SourceAlgorithm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-sourcealgorithm.html
-type ModelPackage_SourceAlgorithm struct {
+type ModelPackage_SourceAlgorithm[T any] struct {
 
 	// AlgorithmName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelPackage_SourceAlgorithm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_SourceAlgorithm) AWSCloudFormationType() string {
+func (r *ModelPackage_SourceAlgorithm[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.SourceAlgorithm"
 }

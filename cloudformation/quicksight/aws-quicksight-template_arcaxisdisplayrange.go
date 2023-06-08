@@ -8,17 +8,17 @@ import (
 
 // Template_ArcAxisDisplayRange AWS CloudFormation Resource (AWS::QuickSight::Template.ArcAxisDisplayRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcaxisdisplayrange.html
-type Template_ArcAxisDisplayRange struct {
+type Template_ArcAxisDisplayRange[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcaxisdisplayrange.html#cfn-quicksight-template-arcaxisdisplayrange-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcaxisdisplayrange.html#cfn-quicksight-template-arcaxisdisplayrange-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ArcAxisDisplayRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ArcAxisDisplayRange) AWSCloudFormationType() string {
+func (r *Template_ArcAxisDisplayRange[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ArcAxisDisplayRange"
 }

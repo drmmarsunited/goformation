@@ -8,22 +8,22 @@ import (
 
 // Channel_FailoverConditionSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FailoverConditionSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html
-type Channel_FailoverConditionSettings struct {
+type Channel_FailoverConditionSettings[T any] struct {
 
 	// AudioSilenceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-audiosilencesettings
-	AudioSilenceSettings *Channel_AudioSilenceFailoverSettings `json:"AudioSilenceSettings,omitempty"`
+	AudioSilenceSettings *Channel_AudioSilenceFailoverSettings[any] `json:"AudioSilenceSettings,omitempty"`
 
 	// InputLossSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-inputlosssettings
-	InputLossSettings *Channel_InputLossFailoverSettings `json:"InputLossSettings,omitempty"`
+	InputLossSettings *Channel_InputLossFailoverSettings[any] `json:"InputLossSettings,omitempty"`
 
 	// VideoBlackSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-videoblacksettings
-	VideoBlackSettings *Channel_VideoBlackFailoverSettings `json:"VideoBlackSettings,omitempty"`
+	VideoBlackSettings *Channel_VideoBlackFailoverSettings[any] `json:"VideoBlackSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_FailoverConditionSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FailoverConditionSettings) AWSCloudFormationType() string {
+func (r *Channel_FailoverConditionSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FailoverConditionSettings"
 }

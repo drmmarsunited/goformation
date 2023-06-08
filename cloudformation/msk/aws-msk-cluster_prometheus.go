@@ -8,17 +8,17 @@ import (
 
 // Cluster_Prometheus AWS CloudFormation Resource (AWS::MSK::Cluster.Prometheus)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html
-type Cluster_Prometheus struct {
+type Cluster_Prometheus[T any] struct {
 
 	// JmxExporter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-jmxexporter
-	JmxExporter *Cluster_JmxExporter `json:"JmxExporter,omitempty"`
+	JmxExporter *Cluster_JmxExporter[any] `json:"JmxExporter,omitempty"`
 
 	// NodeExporter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-nodeexporter
-	NodeExporter *Cluster_NodeExporter `json:"NodeExporter,omitempty"`
+	NodeExporter *Cluster_NodeExporter[any] `json:"NodeExporter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_Prometheus struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Prometheus) AWSCloudFormationType() string {
+func (r *Cluster_Prometheus[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Prometheus"
 }

@@ -8,12 +8,12 @@ import (
 
 // Application_DeployAsApplicationConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.DeployAsApplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-deployasapplicationconfiguration.html
-type Application_DeployAsApplicationConfiguration struct {
+type Application_DeployAsApplicationConfiguration[T any] struct {
 
 	// S3ContentLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-deployasapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-deployasapplicationconfiguration-s3contentlocation
-	S3ContentLocation *Application_S3ContentBaseLocation `json:"S3ContentLocation"`
+	S3ContentLocation *Application_S3ContentBaseLocation[any] `json:"S3ContentLocation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_DeployAsApplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_DeployAsApplicationConfiguration) AWSCloudFormationType() string {
+func (r *Application_DeployAsApplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.DeployAsApplicationConfiguration"
 }

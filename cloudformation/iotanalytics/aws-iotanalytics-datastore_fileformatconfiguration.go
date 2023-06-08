@@ -8,7 +8,7 @@ import (
 
 // Datastore_FileFormatConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.FileFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-fileformatconfiguration.html
-type Datastore_FileFormatConfiguration struct {
+type Datastore_FileFormatConfiguration[T any] struct {
 
 	// JsonConfiguration AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Datastore_FileFormatConfiguration struct {
 	// ParquetConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-fileformatconfiguration.html#cfn-iotanalytics-datastore-fileformatconfiguration-parquetconfiguration
-	ParquetConfiguration *Datastore_ParquetConfiguration `json:"ParquetConfiguration,omitempty"`
+	ParquetConfiguration *Datastore_ParquetConfiguration[any] `json:"ParquetConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Datastore_FileFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_FileFormatConfiguration) AWSCloudFormationType() string {
+func (r *Datastore_FileFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.FileFormatConfiguration"
 }

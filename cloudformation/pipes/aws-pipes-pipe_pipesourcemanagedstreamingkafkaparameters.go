@@ -8,12 +8,12 @@ import (
 
 // Pipe_PipeSourceManagedStreamingKafkaParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceManagedStreamingKafkaParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html
-type Pipe_PipeSourceManagedStreamingKafkaParameters struct {
+type Pipe_PipeSourceManagedStreamingKafkaParameters[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// ConsumerGroupID AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Pipe_PipeSourceManagedStreamingKafkaParameters struct {
 	// Credentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-credentials
-	Credentials *Pipe_MSKAccessCredentials `json:"Credentials,omitempty"`
+	Credentials *Pipe_MSKAccessCredentials[any] `json:"Credentials,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Pipe_PipeSourceManagedStreamingKafkaParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceManagedStreamingKafkaParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceManagedStreamingKafkaParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceManagedStreamingKafkaParameters"
 }

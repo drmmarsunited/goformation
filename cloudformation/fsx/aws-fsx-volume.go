@@ -12,7 +12,7 @@ import (
 
 // Volume AWS CloudFormation Resource (AWS::FSx::Volume)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html
-type Volume struct {
+type Volume[T any] struct {
 
 	// BackupId AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type Volume struct {
 	// OntapConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-ontapconfiguration
-	OntapConfiguration *Volume_OntapConfiguration `json:"OntapConfiguration,omitempty"`
+	OntapConfiguration *Volume_OntapConfiguration[any] `json:"OntapConfiguration,omitempty"`
 
 	// OpenZFSConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-openzfsconfiguration
-	OpenZFSConfiguration *Volume_OpenZFSConfiguration `json:"OpenZFSConfiguration,omitempty"`
+	OpenZFSConfiguration *Volume_OpenZFSConfiguration[any] `json:"OpenZFSConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Volume struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume) AWSCloudFormationType() string {
+func (r *Volume[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Volume) MarshalJSON() ([]byte, error) {
-	type Properties Volume
+func (r Volume[any]) MarshalJSON() ([]byte, error) {
+	type Properties Volume[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Volume) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Volume) UnmarshalJSON(b []byte) error {
-	type Properties Volume
+func (r *Volume[any]) UnmarshalJSON(b []byte) error {
+	type Properties Volume[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Volume) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Volume(*res.Properties)
+		*r = Volume[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

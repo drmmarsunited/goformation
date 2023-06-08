@@ -8,7 +8,7 @@ import (
 
 // InstanceStorageConfig_KinesisFirehoseConfig AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.KinesisFirehoseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisfirehoseconfig.html
-type InstanceStorageConfig_KinesisFirehoseConfig struct {
+type InstanceStorageConfig_KinesisFirehoseConfig[T any] struct {
 
 	// FirehoseArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type InstanceStorageConfig_KinesisFirehoseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig_KinesisFirehoseConfig) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig_KinesisFirehoseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig.KinesisFirehoseConfig"
 }

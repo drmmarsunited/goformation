@@ -8,12 +8,12 @@ import (
 
 // Template_DefaultSectionBasedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DefaultSectionBasedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultsectionbasedlayoutconfiguration.html
-type Template_DefaultSectionBasedLayoutConfiguration struct {
+type Template_DefaultSectionBasedLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultsectionbasedlayoutconfiguration.html#cfn-quicksight-template-defaultsectionbasedlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Template_SectionBasedLayoutCanvasSizeOptions `json:"CanvasSizeOptions"`
+	CanvasSizeOptions *Template_SectionBasedLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_DefaultSectionBasedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DefaultSectionBasedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_DefaultSectionBasedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DefaultSectionBasedLayoutConfiguration"
 }

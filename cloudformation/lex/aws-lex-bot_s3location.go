@@ -8,7 +8,7 @@ import (
 
 // Bot_S3Location AWS CloudFormation Resource (AWS::Lex::Bot.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3location.html
-type Bot_S3Location struct {
+type Bot_S3Location[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Bot_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_S3Location) AWSCloudFormationType() string {
+func (r *Bot_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.S3Location"
 }

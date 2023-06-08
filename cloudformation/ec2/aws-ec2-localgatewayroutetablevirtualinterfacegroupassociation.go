@@ -12,7 +12,7 @@ import (
 
 // LocalGatewayRouteTableVirtualInterfaceGroupAssociation AWS CloudFormation Resource (AWS::EC2::LocalGatewayRouteTableVirtualInterfaceGroupAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html
-type LocalGatewayRouteTableVirtualInterfaceGroupAssociation struct {
+type LocalGatewayRouteTableVirtualInterfaceGroupAssociation[T any] struct {
 
 	// LocalGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type LocalGatewayRouteTableVirtualInterfaceGroupAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocalGatewayRouteTableVirtualInterfaceGroupAssociation) AWSCloudFormationType() string {
+func (r *LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LocalGatewayRouteTableVirtualInterfaceGroupAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocalGatewayRouteTableVirtualInterfaceGroupAssociation) MarshalJSON() ([]byte, error) {
-	type Properties LocalGatewayRouteTableVirtualInterfaceGroupAssociation
+func (r LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r LocalGatewayRouteTableVirtualInterfaceGroupAssociation) MarshalJSON() ([
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocalGatewayRouteTableVirtualInterfaceGroupAssociation) UnmarshalJSON(b []byte) error {
-	type Properties LocalGatewayRouteTableVirtualInterfaceGroupAssociation
+func (r *LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *LocalGatewayRouteTableVirtualInterfaceGroupAssociation) UnmarshalJSON(b
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocalGatewayRouteTableVirtualInterfaceGroupAssociation(*res.Properties)
+		*r = LocalGatewayRouteTableVirtualInterfaceGroupAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

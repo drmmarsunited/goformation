@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ItemsLimitConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ItemsLimitConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-itemslimitconfiguration.html
-type Dashboard_ItemsLimitConfiguration struct {
+type Dashboard_ItemsLimitConfiguration[T any] struct {
 
 	// ItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-itemslimitconfiguration.html#cfn-quicksight-dashboard-itemslimitconfiguration-itemslimit
-	ItemsLimit *float64 `json:"ItemsLimit,omitempty"`
+	ItemsLimit *T `json:"ItemsLimit,omitempty"`
 
 	// OtherCategories AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ItemsLimitConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ItemsLimitConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ItemsLimitConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ItemsLimitConfiguration"
 }

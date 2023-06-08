@@ -8,7 +8,7 @@ import (
 
 // User_SshPublicKey AWS CloudFormation Resource (AWS::Transfer::User.SshPublicKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-sshpublickey.html
-type User_SshPublicKey struct {
+type User_SshPublicKey[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type User_SshPublicKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_SshPublicKey) AWSCloudFormationType() string {
+func (r *User_SshPublicKey[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::User.SshPublicKey"
 }

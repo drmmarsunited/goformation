@@ -12,7 +12,7 @@ import (
 
 // Label AWS CloudFormation Resource (AWS::FraudDetector::Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html
-type Label struct {
+type Label[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Label) AWSCloudFormationType() string {
+func (r *Label[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Label"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Label) MarshalJSON() ([]byte, error) {
-	type Properties Label
+func (r Label[any]) MarshalJSON() ([]byte, error) {
+	type Properties Label[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r Label) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Label) UnmarshalJSON(b []byte) error {
-	type Properties Label
+func (r *Label[any]) UnmarshalJSON(b []byte) error {
+	type Properties Label[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *Label) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Label(*res.Properties)
+		*r = Label[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

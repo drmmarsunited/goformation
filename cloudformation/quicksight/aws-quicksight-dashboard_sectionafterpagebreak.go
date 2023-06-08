@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SectionAfterPageBreak AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SectionAfterPageBreak)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionafterpagebreak.html
-type Dashboard_SectionAfterPageBreak struct {
+type Dashboard_SectionAfterPageBreak[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SectionAfterPageBreak struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SectionAfterPageBreak) AWSCloudFormationType() string {
+func (r *Dashboard_SectionAfterPageBreak[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SectionAfterPageBreak"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_PivotTableSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortconfiguration.html
-type Dashboard_PivotTableSortConfiguration struct {
+type Dashboard_PivotTableSortConfiguration[T any] struct {
 
 	// FieldSortOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortconfiguration.html#cfn-quicksight-dashboard-pivottablesortconfiguration-fieldsortoptions
-	FieldSortOptions []Dashboard_PivotFieldSortOptions `json:"FieldSortOptions,omitempty"`
+	FieldSortOptions []Dashboard_PivotFieldSortOptions[any] `json:"FieldSortOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_PivotTableSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableSortConfiguration"
 }

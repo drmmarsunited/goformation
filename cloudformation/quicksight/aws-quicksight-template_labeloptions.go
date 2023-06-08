@@ -8,7 +8,7 @@ import (
 
 // Template_LabelOptions AWS CloudFormation Resource (AWS::QuickSight::Template.LabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-labeloptions.html
-type Template_LabelOptions struct {
+type Template_LabelOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_LabelOptions struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-labeloptions.html#cfn-quicksight-template-labeloptions-fontconfiguration
-	FontConfiguration *Template_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Template_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_LabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LabelOptions) AWSCloudFormationType() string {
+func (r *Template_LabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LabelOptions"
 }

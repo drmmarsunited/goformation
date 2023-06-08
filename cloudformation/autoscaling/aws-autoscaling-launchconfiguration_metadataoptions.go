@@ -8,7 +8,7 @@ import (
 
 // LaunchConfiguration_MetadataOptions AWS CloudFormation Resource (AWS::AutoScaling::LaunchConfiguration.MetadataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-metadataoptions.html
-type LaunchConfiguration_MetadataOptions struct {
+type LaunchConfiguration_MetadataOptions[T any] struct {
 
 	// HttpEndpoint AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LaunchConfiguration_MetadataOptions struct {
 	// HttpPutResponseHopLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-metadataoptions.html#cfn-autoscaling-launchconfiguration-metadataoptions-httpputresponsehoplimit
-	HttpPutResponseHopLimit *int `json:"HttpPutResponseHopLimit,omitempty"`
+	HttpPutResponseHopLimit *T `json:"HttpPutResponseHopLimit,omitempty"`
 
 	// HttpTokens AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LaunchConfiguration_MetadataOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchConfiguration_MetadataOptions) AWSCloudFormationType() string {
+func (r *LaunchConfiguration_MetadataOptions[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LaunchConfiguration.MetadataOptions"
 }

@@ -8,17 +8,17 @@ import (
 
 // WebACL_ManagedRuleGroupStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.ManagedRuleGroupStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html
-type WebACL_ManagedRuleGroupStatement struct {
+type WebACL_ManagedRuleGroupStatement[T any] struct {
 
 	// ExcludedRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules
-	ExcludedRules []WebACL_ExcludedRule `json:"ExcludedRules,omitempty"`
+	ExcludedRules []WebACL_ExcludedRule[any] `json:"ExcludedRules,omitempty"`
 
 	// ManagedRuleGroupConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-managedrulegroupconfigs
-	ManagedRuleGroupConfigs []WebACL_ManagedRuleGroupConfig `json:"ManagedRuleGroupConfigs,omitempty"`
+	ManagedRuleGroupConfigs []WebACL_ManagedRuleGroupConfig[any] `json:"ManagedRuleGroupConfigs,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type WebACL_ManagedRuleGroupStatement struct {
 	// RuleActionOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-ruleactionoverrides
-	RuleActionOverrides []WebACL_RuleActionOverride `json:"RuleActionOverrides,omitempty"`
+	RuleActionOverrides []WebACL_RuleActionOverride[any] `json:"RuleActionOverrides,omitempty"`
 
 	// ScopeDownStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-scopedownstatement
-	ScopeDownStatement *WebACL_Statement `json:"ScopeDownStatement,omitempty"`
+	ScopeDownStatement *WebACL_Statement[any] `json:"ScopeDownStatement,omitempty"`
 
 	// VendorName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type WebACL_ManagedRuleGroupStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ManagedRuleGroupStatement) AWSCloudFormationType() string {
+func (r *WebACL_ManagedRuleGroupStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ManagedRuleGroupStatement"
 }

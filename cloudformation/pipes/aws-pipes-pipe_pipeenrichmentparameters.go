@@ -8,12 +8,12 @@ import (
 
 // Pipe_PipeEnrichmentParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeEnrichmentParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmentparameters.html
-type Pipe_PipeEnrichmentParameters struct {
+type Pipe_PipeEnrichmentParameters[T any] struct {
 
 	// HttpParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmentparameters.html#cfn-pipes-pipe-pipeenrichmentparameters-httpparameters
-	HttpParameters *Pipe_PipeEnrichmentHttpParameters `json:"HttpParameters,omitempty"`
+	HttpParameters *Pipe_PipeEnrichmentHttpParameters[any] `json:"HttpParameters,omitempty"`
 
 	// InputTemplate AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_PipeEnrichmentParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeEnrichmentParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeEnrichmentParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeEnrichmentParameters"
 }

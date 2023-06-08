@@ -8,7 +8,7 @@ import (
 
 // Bot_SlotType AWS CloudFormation Resource (AWS::Lex::Bot.SlotType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html
-type Bot_SlotType struct {
+type Bot_SlotType[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Bot_SlotType struct {
 	// ExternalSourceSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-externalsourcesetting
-	ExternalSourceSetting *Bot_ExternalSourceSetting `json:"ExternalSourceSetting,omitempty"`
+	ExternalSourceSetting *Bot_ExternalSourceSetting[any] `json:"ExternalSourceSetting,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type Bot_SlotType struct {
 	// SlotTypeValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-slottypevalues
-	SlotTypeValues []Bot_SlotTypeValue `json:"SlotTypeValues,omitempty"`
+	SlotTypeValues []Bot_SlotTypeValue[any] `json:"SlotTypeValues,omitempty"`
 
 	// ValueSelectionSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-valueselectionsetting
-	ValueSelectionSetting *Bot_SlotValueSelectionSetting `json:"ValueSelectionSetting,omitempty"`
+	ValueSelectionSetting *Bot_SlotValueSelectionSetting[any] `json:"ValueSelectionSetting,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Bot_SlotType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotType) AWSCloudFormationType() string {
+func (r *Bot_SlotType[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotType"
 }

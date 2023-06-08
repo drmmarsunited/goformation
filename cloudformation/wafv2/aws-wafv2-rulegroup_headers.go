@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_Headers AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Headers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-headers.html
-type RuleGroup_Headers struct {
+type RuleGroup_Headers[T any] struct {
 
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-headers.html#cfn-wafv2-rulegroup-headers-matchpattern
-	MatchPattern *RuleGroup_HeaderMatchPattern `json:"MatchPattern"`
+	MatchPattern *RuleGroup_HeaderMatchPattern[any] `json:"MatchPattern"`
 
 	// MatchScope AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RuleGroup_Headers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Headers) AWSCloudFormationType() string {
+func (r *RuleGroup_Headers[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.Headers"
 }

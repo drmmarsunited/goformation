@@ -8,7 +8,7 @@ import (
 
 // Campaign_CampaignSmsMessage AWS CloudFormation Resource (AWS::Pinpoint::Campaign.CampaignSmsMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html
-type Campaign_CampaignSmsMessage struct {
+type Campaign_CampaignSmsMessage[T any] struct {
 
 	// Body AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Campaign_CampaignSmsMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CampaignSmsMessage) AWSCloudFormationType() string {
+func (r *Campaign_CampaignSmsMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.CampaignSmsMessage"
 }

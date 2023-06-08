@@ -8,7 +8,7 @@ import (
 
 // MetricFilter_Dimension AWS CloudFormation Resource (AWS::Logs::MetricFilter.Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-dimension.html
-type MetricFilter_Dimension struct {
+type MetricFilter_Dimension[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MetricFilter_Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MetricFilter_Dimension) AWSCloudFormationType() string {
+func (r *MetricFilter_Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::MetricFilter.Dimension"
 }

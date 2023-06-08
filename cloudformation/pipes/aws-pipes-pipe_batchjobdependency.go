@@ -8,7 +8,7 @@ import (
 
 // Pipe_BatchJobDependency AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchJobDependency)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchjobdependency.html
-type Pipe_BatchJobDependency struct {
+type Pipe_BatchJobDependency[T any] struct {
 
 	// JobId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_BatchJobDependency struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchJobDependency) AWSCloudFormationType() string {
+func (r *Pipe_BatchJobDependency[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchJobDependency"
 }

@@ -8,7 +8,7 @@ import (
 
 // Job_ValidationConfiguration AWS CloudFormation Resource (AWS::DataBrew::Job.ValidationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-validationconfiguration.html
-type Job_ValidationConfiguration struct {
+type Job_ValidationConfiguration[T any] struct {
 
 	// RulesetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Job_ValidationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_ValidationConfiguration) AWSCloudFormationType() string {
+func (r *Job_ValidationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.ValidationConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TableOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableoptions.html
-type Dashboard_TableOptions struct {
+type Dashboard_TableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableoptions.html#cfn-quicksight-dashboard-tableoptions-cellstyle
-	CellStyle *Dashboard_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Dashboard_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// HeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableoptions.html#cfn-quicksight-dashboard-tableoptions-headerstyle
-	HeaderStyle *Dashboard_TableCellStyle `json:"HeaderStyle,omitempty"`
+	HeaderStyle *Dashboard_TableCellStyle[any] `json:"HeaderStyle,omitempty"`
 
 	// Orientation AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_TableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableoptions.html#cfn-quicksight-dashboard-tableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Dashboard_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Dashboard_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_TableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableOptions) AWSCloudFormationType() string {
+func (r *Dashboard_TableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableOptions"
 }

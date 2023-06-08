@@ -8,7 +8,7 @@ import (
 
 // Distribution_CacheBehaviorPerPath AWS CloudFormation Resource (AWS::Lightsail::Distribution.CacheBehaviorPerPath)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachebehaviorperpath.html
-type Distribution_CacheBehaviorPerPath struct {
+type Distribution_CacheBehaviorPerPath[T any] struct {
 
 	// Behavior AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_CacheBehaviorPerPath struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CacheBehaviorPerPath) AWSCloudFormationType() string {
+func (r *Distribution_CacheBehaviorPerPath[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.CacheBehaviorPerPath"
 }

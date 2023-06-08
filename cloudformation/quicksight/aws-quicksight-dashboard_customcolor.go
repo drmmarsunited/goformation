@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CustomColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcolor.html
-type Dashboard_CustomColor struct {
+type Dashboard_CustomColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_CustomColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomColor) AWSCloudFormationType() string {
+func (r *Dashboard_CustomColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomColor"
 }

@@ -8,12 +8,12 @@ import (
 
 // ScheduledQuery_TargetConfiguration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.TargetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-targetconfiguration.html
-type ScheduledQuery_TargetConfiguration struct {
+type ScheduledQuery_TargetConfiguration[T any] struct {
 
 	// TimestreamConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-targetconfiguration.html#cfn-timestream-scheduledquery-targetconfiguration-timestreamconfiguration
-	TimestreamConfiguration *ScheduledQuery_TimestreamConfiguration `json:"TimestreamConfiguration"`
+	TimestreamConfiguration *ScheduledQuery_TimestreamConfiguration[any] `json:"TimestreamConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ScheduledQuery_TargetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_TargetConfiguration) AWSCloudFormationType() string {
+func (r *ScheduledQuery_TargetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.TargetConfiguration"
 }

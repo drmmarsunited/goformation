@@ -8,17 +8,17 @@ import (
 
 // Bot_MessageGroup AWS CloudFormation Resource (AWS::Lex::Bot.MessageGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-messagegroup.html
-type Bot_MessageGroup struct {
+type Bot_MessageGroup[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-messagegroup.html#cfn-lex-bot-messagegroup-message
-	Message *Bot_Message `json:"Message"`
+	Message *Bot_Message[any] `json:"Message"`
 
 	// Variations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-messagegroup.html#cfn-lex-bot-messagegroup-variations
-	Variations []Bot_Message `json:"Variations,omitempty"`
+	Variations []Bot_Message[any] `json:"Variations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_MessageGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_MessageGroup) AWSCloudFormationType() string {
+func (r *Bot_MessageGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.MessageGroup"
 }

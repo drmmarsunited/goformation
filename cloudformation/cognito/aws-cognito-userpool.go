@@ -11,17 +11,17 @@ import (
 
 // UserPool AWS CloudFormation Resource (AWS::Cognito::UserPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html
-type UserPool struct {
+type UserPool[T any] struct {
 
 	// AccountRecoverySetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-accountrecoverysetting
-	AccountRecoverySetting *UserPool_AccountRecoverySetting `json:"AccountRecoverySetting,omitempty"`
+	AccountRecoverySetting *UserPool_AccountRecoverySetting[any] `json:"AccountRecoverySetting,omitempty"`
 
 	// AdminCreateUserConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig
-	AdminCreateUserConfig *UserPool_AdminCreateUserConfig `json:"AdminCreateUserConfig,omitempty"`
+	AdminCreateUserConfig *UserPool_AdminCreateUserConfig[any] `json:"AdminCreateUserConfig,omitempty"`
 
 	// AliasAttributes AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type UserPool struct {
 	// DeviceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration
-	DeviceConfiguration *UserPool_DeviceConfiguration `json:"DeviceConfiguration,omitempty"`
+	DeviceConfiguration *UserPool_DeviceConfiguration[any] `json:"DeviceConfiguration,omitempty"`
 
 	// EmailConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration
-	EmailConfiguration *UserPool_EmailConfiguration `json:"EmailConfiguration,omitempty"`
+	EmailConfiguration *UserPool_EmailConfiguration[any] `json:"EmailConfiguration,omitempty"`
 
 	// EmailVerificationMessage AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type UserPool struct {
 	// LambdaConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig
-	LambdaConfig *UserPool_LambdaConfig `json:"LambdaConfig,omitempty"`
+	LambdaConfig *UserPool_LambdaConfig[any] `json:"LambdaConfig,omitempty"`
 
 	// MfaConfiguration AWS CloudFormation Property
 	// Required: false
@@ -76,12 +76,12 @@ type UserPool struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies
-	Policies *UserPool_Policies `json:"Policies,omitempty"`
+	Policies *UserPool_Policies[any] `json:"Policies,omitempty"`
 
 	// Schema AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
-	Schema []UserPool_SchemaAttribute `json:"Schema,omitempty"`
+	Schema []UserPool_SchemaAttribute[any] `json:"Schema,omitempty"`
 
 	// SmsAuthenticationMessage AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type UserPool struct {
 	// SmsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration
-	SmsConfiguration *UserPool_SmsConfiguration `json:"SmsConfiguration,omitempty"`
+	SmsConfiguration *UserPool_SmsConfiguration[any] `json:"SmsConfiguration,omitempty"`
 
 	// SmsVerificationMessage AWS CloudFormation Property
 	// Required: false
@@ -101,12 +101,12 @@ type UserPool struct {
 	// UserAttributeUpdateSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userattributeupdatesettings
-	UserAttributeUpdateSettings *UserPool_UserAttributeUpdateSettings `json:"UserAttributeUpdateSettings,omitempty"`
+	UserAttributeUpdateSettings *UserPool_UserAttributeUpdateSettings[any] `json:"UserAttributeUpdateSettings,omitempty"`
 
 	// UserPoolAddOns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons
-	UserPoolAddOns *UserPool_UserPoolAddOns `json:"UserPoolAddOns,omitempty"`
+	UserPoolAddOns *UserPool_UserPoolAddOns[any] `json:"UserPoolAddOns,omitempty"`
 
 	// UserPoolName AWS CloudFormation Property
 	// Required: false
@@ -126,12 +126,12 @@ type UserPool struct {
 	// UsernameConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameconfiguration
-	UsernameConfiguration *UserPool_UsernameConfiguration `json:"UsernameConfiguration,omitempty"`
+	UsernameConfiguration *UserPool_UsernameConfiguration[any] `json:"UsernameConfiguration,omitempty"`
 
 	// VerificationMessageTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate
-	VerificationMessageTemplate *UserPool_VerificationMessageTemplate `json:"VerificationMessageTemplate,omitempty"`
+	VerificationMessageTemplate *UserPool_VerificationMessageTemplate[any] `json:"VerificationMessageTemplate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -150,14 +150,15 @@ type UserPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool) AWSCloudFormationType() string {
+func (r *UserPool[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPool) MarshalJSON() ([]byte, error) {
-	type Properties UserPool
+func (r UserPool[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPool[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -179,8 +180,9 @@ func (r UserPool) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPool) UnmarshalJSON(b []byte) error {
-	type Properties UserPool
+func (r *UserPool[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPool[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -200,7 +202,7 @@ func (r *UserPool) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPool(*res.Properties)
+		*r = UserPool[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

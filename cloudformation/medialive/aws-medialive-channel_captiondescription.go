@@ -8,7 +8,7 @@ import (
 
 // Channel_CaptionDescription AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html
-type Channel_CaptionDescription struct {
+type Channel_CaptionDescription[T any] struct {
 
 	// Accessibility AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_CaptionDescription struct {
 	// DestinationSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-destinationsettings
-	DestinationSettings *Channel_CaptionDestinationSettings `json:"DestinationSettings,omitempty"`
+	DestinationSettings *Channel_CaptionDestinationSettings[any] `json:"DestinationSettings,omitempty"`
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Channel_CaptionDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CaptionDescription) AWSCloudFormationType() string {
+func (r *Channel_CaptionDescription[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CaptionDescription"
 }

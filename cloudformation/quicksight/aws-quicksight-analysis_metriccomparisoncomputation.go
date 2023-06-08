@@ -8,7 +8,7 @@ import (
 
 // Analysis_MetricComparisonComputation AWS CloudFormation Resource (AWS::QuickSight::Analysis.MetricComparisonComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-metriccomparisoncomputation.html
-type Analysis_MetricComparisonComputation struct {
+type Analysis_MetricComparisonComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_MetricComparisonComputation struct {
 	// FromValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-metriccomparisoncomputation.html#cfn-quicksight-analysis-metriccomparisoncomputation-fromvalue
-	FromValue *Analysis_MeasureField `json:"FromValue"`
+	FromValue *Analysis_MeasureField[any] `json:"FromValue"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Analysis_MetricComparisonComputation struct {
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-metriccomparisoncomputation.html#cfn-quicksight-analysis-metriccomparisoncomputation-targetvalue
-	TargetValue *Analysis_MeasureField `json:"TargetValue"`
+	TargetValue *Analysis_MeasureField[any] `json:"TargetValue"`
 
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-metriccomparisoncomputation.html#cfn-quicksight-analysis-metriccomparisoncomputation-time
-	Time *Analysis_DimensionField `json:"Time"`
+	Time *Analysis_DimensionField[any] `json:"Time"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_MetricComparisonComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_MetricComparisonComputation) AWSCloudFormationType() string {
+func (r *Analysis_MetricComparisonComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.MetricComparisonComputation"
 }

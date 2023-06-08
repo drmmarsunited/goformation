@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_LaunchTemplateConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.LaunchTemplateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html
-type DistributionConfiguration_LaunchTemplateConfiguration struct {
+type DistributionConfiguration_LaunchTemplateConfiguration[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DistributionConfiguration_LaunchTemplateConfiguration struct {
 	// SetDefaultVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchtemplateconfiguration-setdefaultversion
-	SetDefaultVersion *bool `json:"SetDefaultVersion,omitempty"`
+	SetDefaultVersion *T `json:"SetDefaultVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DistributionConfiguration_LaunchTemplateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_LaunchTemplateConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_LaunchTemplateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.LaunchTemplateConfiguration"
 }

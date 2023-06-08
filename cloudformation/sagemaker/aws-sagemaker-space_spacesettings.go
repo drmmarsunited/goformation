@@ -8,17 +8,17 @@ import (
 
 // Space_SpaceSettings AWS CloudFormation Resource (AWS::SageMaker::Space.SpaceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html
-type Space_SpaceSettings struct {
+type Space_SpaceSettings[T any] struct {
 
 	// JupyterServerAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-jupyterserverappsettings
-	JupyterServerAppSettings *Space_JupyterServerAppSettings `json:"JupyterServerAppSettings,omitempty"`
+	JupyterServerAppSettings *Space_JupyterServerAppSettings[any] `json:"JupyterServerAppSettings,omitempty"`
 
 	// KernelGatewayAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-kernelgatewayappsettings
-	KernelGatewayAppSettings *Space_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+	KernelGatewayAppSettings *Space_KernelGatewayAppSettings[any] `json:"KernelGatewayAppSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Space_SpaceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Space_SpaceSettings) AWSCloudFormationType() string {
+func (r *Space_SpaceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Space.SpaceSettings"
 }

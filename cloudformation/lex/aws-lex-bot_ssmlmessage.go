@@ -8,7 +8,7 @@ import (
 
 // Bot_SSMLMessage AWS CloudFormation Resource (AWS::Lex::Bot.SSMLMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html
-type Bot_SSMLMessage struct {
+type Bot_SSMLMessage[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_SSMLMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SSMLMessage) AWSCloudFormationType() string {
+func (r *Bot_SSMLMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SSMLMessage"
 }

@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_Range AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.Range)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-range.html
-type AnomalyDetector_Range struct {
+type AnomalyDetector_Range[T any] struct {
 
 	// EndTime AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalyDetector_Range struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_Range) AWSCloudFormationType() string {
+func (r *AnomalyDetector_Range[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.Range"
 }

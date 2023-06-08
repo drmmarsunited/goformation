@@ -8,12 +8,12 @@ import (
 
 // Analysis_NumericalDimensionField AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumericalDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericaldimensionfield.html
-type Analysis_NumericalDimensionField struct {
+type Analysis_NumericalDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericaldimensionfield.html#cfn-quicksight-analysis-numericaldimensionfield-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_NumericalDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericaldimensionfield.html#cfn-quicksight-analysis-numericaldimensionfield-formatconfiguration
-	FormatConfiguration *Analysis_NumberFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_NumberFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Analysis_NumericalDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumericalDimensionField) AWSCloudFormationType() string {
+func (r *Analysis_NumericalDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumericalDimensionField"
 }

@@ -8,12 +8,12 @@ import (
 
 // Form_FieldValidationConfiguration AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FieldValidationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldvalidationconfiguration.html
-type Form_FieldValidationConfiguration struct {
+type Form_FieldValidationConfiguration[T any] struct {
 
 	// NumValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldvalidationconfiguration.html#cfn-amplifyuibuilder-form-fieldvalidationconfiguration-numvalues
-	NumValues []float64 `json:"NumValues,omitempty"`
+	NumValues []T `json:"NumValues,omitempty"`
 
 	// StrValues AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Form_FieldValidationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FieldValidationConfiguration) AWSCloudFormationType() string {
+func (r *Form_FieldValidationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FieldValidationConfiguration"
 }

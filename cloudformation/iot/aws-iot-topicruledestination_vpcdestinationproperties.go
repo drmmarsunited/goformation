@@ -8,7 +8,7 @@ import (
 
 // TopicRuleDestination_VpcDestinationProperties AWS CloudFormation Resource (AWS::IoT::TopicRuleDestination.VpcDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html
-type TopicRuleDestination_VpcDestinationProperties struct {
+type TopicRuleDestination_VpcDestinationProperties[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type TopicRuleDestination_VpcDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRuleDestination_VpcDestinationProperties) AWSCloudFormationType() string {
+func (r *TopicRuleDestination_VpcDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRuleDestination.VpcDestinationProperties"
 }

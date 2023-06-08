@@ -11,7 +11,7 @@ import (
 
 // TrafficMirrorFilterRule AWS CloudFormation Resource (AWS::EC2::TrafficMirrorFilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html
-type TrafficMirrorFilterRule struct {
+type TrafficMirrorFilterRule[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type TrafficMirrorFilterRule struct {
 	// DestinationPortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationportrange
-	DestinationPortRange *TrafficMirrorFilterRule_TrafficMirrorPortRange `json:"DestinationPortRange,omitempty"`
+	DestinationPortRange *TrafficMirrorFilterRule_TrafficMirrorPortRange[any] `json:"DestinationPortRange,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-protocol
-	Protocol *int `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// RuleAction AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type TrafficMirrorFilterRule struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-rulenumber
-	RuleNumber int `json:"RuleNumber"`
+	RuleNumber T `json:"RuleNumber"`
 
 	// SourceCidrBlock AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type TrafficMirrorFilterRule struct {
 	// SourcePortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourceportrange
-	SourcePortRange *TrafficMirrorFilterRule_TrafficMirrorPortRange `json:"SourcePortRange,omitempty"`
+	SourcePortRange *TrafficMirrorFilterRule_TrafficMirrorPortRange[any] `json:"SourcePortRange,omitempty"`
 
 	// TrafficDirection AWS CloudFormation Property
 	// Required: true
@@ -80,14 +80,15 @@ type TrafficMirrorFilterRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TrafficMirrorFilterRule) AWSCloudFormationType() string {
+func (r *TrafficMirrorFilterRule[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TrafficMirrorFilterRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TrafficMirrorFilterRule) MarshalJSON() ([]byte, error) {
-	type Properties TrafficMirrorFilterRule
+func (r TrafficMirrorFilterRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties TrafficMirrorFilterRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r TrafficMirrorFilterRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TrafficMirrorFilterRule) UnmarshalJSON(b []byte) error {
-	type Properties TrafficMirrorFilterRule
+func (r *TrafficMirrorFilterRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties TrafficMirrorFilterRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *TrafficMirrorFilterRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TrafficMirrorFilterRule(*res.Properties)
+		*r = TrafficMirrorFilterRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

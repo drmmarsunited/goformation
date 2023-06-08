@@ -8,7 +8,7 @@ import (
 
 // Connection_PhysicalConnectionRequirements AWS CloudFormation Resource (AWS::Glue::Connection.PhysicalConnectionRequirements)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html
-type Connection_PhysicalConnectionRequirements struct {
+type Connection_PhysicalConnectionRequirements[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Connection_PhysicalConnectionRequirements struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_PhysicalConnectionRequirements) AWSCloudFormationType() string {
+func (r *Connection_PhysicalConnectionRequirements[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Connection.PhysicalConnectionRequirements"
 }

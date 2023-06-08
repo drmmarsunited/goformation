@@ -8,17 +8,17 @@ import (
 
 // Template_BinWidthOptions AWS CloudFormation Resource (AWS::QuickSight::Template.BinWidthOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-binwidthoptions.html
-type Template_BinWidthOptions struct {
+type Template_BinWidthOptions[T any] struct {
 
 	// BinCountLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-binwidthoptions.html#cfn-quicksight-template-binwidthoptions-bincountlimit
-	BinCountLimit *float64 `json:"BinCountLimit,omitempty"`
+	BinCountLimit *T `json:"BinCountLimit,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-binwidthoptions.html#cfn-quicksight-template-binwidthoptions-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_BinWidthOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BinWidthOptions) AWSCloudFormationType() string {
+func (r *Template_BinWidthOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BinWidthOptions"
 }

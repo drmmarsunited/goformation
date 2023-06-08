@@ -8,7 +8,7 @@ import (
 
 // Domain_SubDomainSetting AWS CloudFormation Resource (AWS::Amplify::Domain.SubDomainSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-domain-subdomainsetting.html
-type Domain_SubDomainSetting struct {
+type Domain_SubDomainSetting[T any] struct {
 
 	// BranchName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Domain_SubDomainSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_SubDomainSetting) AWSCloudFormationType() string {
+func (r *Domain_SubDomainSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::Domain.SubDomainSetting"
 }

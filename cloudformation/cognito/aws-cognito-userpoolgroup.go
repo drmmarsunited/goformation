@@ -11,7 +11,7 @@ import (
 
 // UserPoolGroup AWS CloudFormation Resource (AWS::Cognito::UserPoolGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
-type UserPoolGroup struct {
+type UserPoolGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type UserPoolGroup struct {
 	// Precedence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
-	Precedence *float64 `json:"Precedence,omitempty"`
+	Precedence *T `json:"Precedence,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type UserPoolGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolGroup) AWSCloudFormationType() string {
+func (r *UserPoolGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolGroup) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolGroup
+func (r UserPoolGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r UserPoolGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolGroup) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolGroup
+func (r *UserPoolGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *UserPoolGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolGroup(*res.Properties)
+		*r = UserPoolGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

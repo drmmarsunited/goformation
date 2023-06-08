@@ -8,7 +8,7 @@ import (
 
 // Template_FieldLabelType AWS CloudFormation Resource (AWS::QuickSight::Template.FieldLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldlabeltype.html
-type Template_FieldLabelType struct {
+type Template_FieldLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_FieldLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FieldLabelType) AWSCloudFormationType() string {
+func (r *Template_FieldLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FieldLabelType"
 }

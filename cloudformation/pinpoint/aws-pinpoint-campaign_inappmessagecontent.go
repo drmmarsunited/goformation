@@ -8,7 +8,7 @@ import (
 
 // Campaign_InAppMessageContent AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html
-type Campaign_InAppMessageContent struct {
+type Campaign_InAppMessageContent[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Campaign_InAppMessageContent struct {
 	// BodyConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-bodyconfig
-	BodyConfig *Campaign_InAppMessageBodyConfig `json:"BodyConfig,omitempty"`
+	BodyConfig *Campaign_InAppMessageBodyConfig[any] `json:"BodyConfig,omitempty"`
 
 	// HeaderConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-headerconfig
-	HeaderConfig *Campaign_InAppMessageHeaderConfig `json:"HeaderConfig,omitempty"`
+	HeaderConfig *Campaign_InAppMessageHeaderConfig[any] `json:"HeaderConfig,omitempty"`
 
 	// ImageUrl AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Campaign_InAppMessageContent struct {
 	// PrimaryBtn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-primarybtn
-	PrimaryBtn *Campaign_InAppMessageButton `json:"PrimaryBtn,omitempty"`
+	PrimaryBtn *Campaign_InAppMessageButton[any] `json:"PrimaryBtn,omitempty"`
 
 	// SecondaryBtn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-secondarybtn
-	SecondaryBtn *Campaign_InAppMessageButton `json:"SecondaryBtn,omitempty"`
+	SecondaryBtn *Campaign_InAppMessageButton[any] `json:"SecondaryBtn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Campaign_InAppMessageContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_InAppMessageContent) AWSCloudFormationType() string {
+func (r *Campaign_InAppMessageContent[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.InAppMessageContent"
 }

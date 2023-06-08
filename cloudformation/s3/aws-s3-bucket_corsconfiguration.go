@@ -8,12 +8,12 @@ import (
 
 // Bucket_CorsConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.CorsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html
-type Bucket_CorsConfiguration struct {
+type Bucket_CorsConfiguration[T any] struct {
 
 	// CorsRules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html#cfn-s3-bucket-cors-corsrule
-	CorsRules []Bucket_CorsRule `json:"CorsRules"`
+	CorsRules []Bucket_CorsRule[any] `json:"CorsRules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_CorsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_CorsConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_CorsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.CorsConfiguration"
 }

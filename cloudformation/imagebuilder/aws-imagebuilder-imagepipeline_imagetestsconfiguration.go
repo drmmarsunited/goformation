@@ -8,17 +8,17 @@ import (
 
 // ImagePipeline_ImageTestsConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html
-type ImagePipeline_ImageTestsConfiguration struct {
+type ImagePipeline_ImageTestsConfiguration[T any] struct {
 
 	// ImageTestsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration-imagetestsenabled
-	ImageTestsEnabled *bool `json:"ImageTestsEnabled,omitempty"`
+	ImageTestsEnabled *T `json:"ImageTestsEnabled,omitempty"`
 
 	// TimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration-timeoutminutes
-	TimeoutMinutes *int `json:"TimeoutMinutes,omitempty"`
+	TimeoutMinutes *T `json:"TimeoutMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ImagePipeline_ImageTestsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImagePipeline_ImageTestsConfiguration) AWSCloudFormationType() string {
+func (r *ImagePipeline_ImageTestsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration"
 }

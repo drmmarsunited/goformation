@@ -8,7 +8,7 @@ import (
 
 // OriginRequestPolicy_OriginRequestPolicyConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.OriginRequestPolicyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html
-type OriginRequestPolicy_OriginRequestPolicyConfig struct {
+type OriginRequestPolicy_OriginRequestPolicyConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type OriginRequestPolicy_OriginRequestPolicyConfig struct {
 	// CookiesConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-cookiesconfig
-	CookiesConfig *OriginRequestPolicy_CookiesConfig `json:"CookiesConfig"`
+	CookiesConfig *OriginRequestPolicy_CookiesConfig[any] `json:"CookiesConfig"`
 
 	// HeadersConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-headersconfig
-	HeadersConfig *OriginRequestPolicy_HeadersConfig `json:"HeadersConfig"`
+	HeadersConfig *OriginRequestPolicy_HeadersConfig[any] `json:"HeadersConfig"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type OriginRequestPolicy_OriginRequestPolicyConfig struct {
 	// QueryStringsConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-querystringsconfig
-	QueryStringsConfig *OriginRequestPolicy_QueryStringsConfig `json:"QueryStringsConfig"`
+	QueryStringsConfig *OriginRequestPolicy_QueryStringsConfig[any] `json:"QueryStringsConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type OriginRequestPolicy_OriginRequestPolicyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginRequestPolicy_OriginRequestPolicyConfig) AWSCloudFormationType() string {
+func (r *OriginRequestPolicy_OriginRequestPolicyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginRequestPolicy.OriginRequestPolicyConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Endpoint_KafkaSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.KafkaSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html
-type Endpoint_KafkaSettings struct {
+type Endpoint_KafkaSettings[T any] struct {
 
 	// Broker AWS CloudFormation Property
 	// Required: false
@@ -18,27 +18,27 @@ type Endpoint_KafkaSettings struct {
 	// IncludeControlDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includecontroldetails
-	IncludeControlDetails *bool `json:"IncludeControlDetails,omitempty"`
+	IncludeControlDetails *T `json:"IncludeControlDetails,omitempty"`
 
 	// IncludeNullAndEmpty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includenullandempty
-	IncludeNullAndEmpty *bool `json:"IncludeNullAndEmpty,omitempty"`
+	IncludeNullAndEmpty *T `json:"IncludeNullAndEmpty,omitempty"`
 
 	// IncludePartitionValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includepartitionvalue
-	IncludePartitionValue *bool `json:"IncludePartitionValue,omitempty"`
+	IncludePartitionValue *T `json:"IncludePartitionValue,omitempty"`
 
 	// IncludeTableAlterOperations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includetablealteroperations
-	IncludeTableAlterOperations *bool `json:"IncludeTableAlterOperations,omitempty"`
+	IncludeTableAlterOperations *T `json:"IncludeTableAlterOperations,omitempty"`
 
 	// IncludeTransactionDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includetransactiondetails
-	IncludeTransactionDetails *bool `json:"IncludeTransactionDetails,omitempty"`
+	IncludeTransactionDetails *T `json:"IncludeTransactionDetails,omitempty"`
 
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
@@ -48,17 +48,17 @@ type Endpoint_KafkaSettings struct {
 	// MessageMaxBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-messagemaxbytes
-	MessageMaxBytes *int `json:"MessageMaxBytes,omitempty"`
+	MessageMaxBytes *T `json:"MessageMaxBytes,omitempty"`
 
 	// NoHexPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-nohexprefix
-	NoHexPrefix *bool `json:"NoHexPrefix,omitempty"`
+	NoHexPrefix *T `json:"NoHexPrefix,omitempty"`
 
 	// PartitionIncludeSchemaTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-partitionincludeschematable
-	PartitionIncludeSchemaTable *bool `json:"PartitionIncludeSchemaTable,omitempty"`
+	PartitionIncludeSchemaTable *T `json:"PartitionIncludeSchemaTable,omitempty"`
 
 	// SaslPassword AWS CloudFormation Property
 	// Required: false
@@ -117,6 +117,6 @@ type Endpoint_KafkaSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_KafkaSettings) AWSCloudFormationType() string {
+func (r *Endpoint_KafkaSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.KafkaSettings"
 }

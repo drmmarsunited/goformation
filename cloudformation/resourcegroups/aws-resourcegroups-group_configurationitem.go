@@ -8,12 +8,12 @@ import (
 
 // Group_ConfigurationItem AWS CloudFormation Resource (AWS::ResourceGroups::Group.ConfigurationItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationitem.html
-type Group_ConfigurationItem struct {
+type Group_ConfigurationItem[T any] struct {
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationitem.html#cfn-resourcegroups-group-configurationitem-parameters
-	Parameters []Group_ConfigurationParameter `json:"Parameters,omitempty"`
+	Parameters []Group_ConfigurationParameter[any] `json:"Parameters,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Group_ConfigurationItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_ConfigurationItem) AWSCloudFormationType() string {
+func (r *Group_ConfigurationItem[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceGroups::Group.ConfigurationItem"
 }

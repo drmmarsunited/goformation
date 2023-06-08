@@ -8,7 +8,7 @@ import (
 
 // Table_S3Configuration AWS CloudFormation Resource (AWS::Timestream::Table.S3Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html
-type Table_S3Configuration struct {
+type Table_S3Configuration[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Table_S3Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_S3Configuration) AWSCloudFormationType() string {
+func (r *Table_S3Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::Table.S3Configuration"
 }

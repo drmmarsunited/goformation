@@ -8,7 +8,7 @@ import (
 
 // DocumentationPart_Location AWS CloudFormation Resource (AWS::ApiGateway::DocumentationPart.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html
-type DocumentationPart_Location struct {
+type DocumentationPart_Location[T any] struct {
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type DocumentationPart_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DocumentationPart_Location) AWSCloudFormationType() string {
+func (r *DocumentationPart_Location[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DocumentationPart.Location"
 }

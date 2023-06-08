@@ -8,7 +8,7 @@ import (
 
 // Bot_SlotValueRegexFilter AWS CloudFormation Resource (AWS::Lex::Bot.SlotValueRegexFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html
-type Bot_SlotValueRegexFilter struct {
+type Bot_SlotValueRegexFilter[T any] struct {
 
 	// Pattern AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_SlotValueRegexFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotValueRegexFilter) AWSCloudFormationType() string {
+func (r *Bot_SlotValueRegexFilter[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotValueRegexFilter"
 }

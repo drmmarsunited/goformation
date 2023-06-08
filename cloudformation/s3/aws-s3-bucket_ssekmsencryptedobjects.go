@@ -8,7 +8,7 @@ import (
 
 // Bucket_SseKmsEncryptedObjects AWS CloudFormation Resource (AWS::S3::Bucket.SseKmsEncryptedObjects)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html
-type Bucket_SseKmsEncryptedObjects struct {
+type Bucket_SseKmsEncryptedObjects[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_SseKmsEncryptedObjects struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_SseKmsEncryptedObjects) AWSCloudFormationType() string {
+func (r *Bucket_SseKmsEncryptedObjects[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.SseKmsEncryptedObjects"
 }

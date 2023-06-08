@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_S3DestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html
-type DeliveryStream_S3DestinationConfiguration struct {
+type DeliveryStream_S3DestinationConfiguration[T any] struct {
 
 	// BucketARN AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type DeliveryStream_S3DestinationConfiguration struct {
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_BufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_BufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// CompressionFormat AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DeliveryStream_S3DestinationConfiguration struct {
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-encryptionconfiguration
-	EncryptionConfiguration *DeliveryStream_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *DeliveryStream_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// ErrorOutputPrefix AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type DeliveryStream_S3DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_S3DestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_S3DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration"
 }

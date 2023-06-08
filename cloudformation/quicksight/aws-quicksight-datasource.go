@@ -12,12 +12,12 @@ import (
 
 // DataSource AWS CloudFormation Resource (AWS::QuickSight::DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html
-type DataSource struct {
+type DataSource[T any] struct {
 
 	// AlternateDataSourceParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-alternatedatasourceparameters
-	AlternateDataSourceParameters []DataSource_DataSourceParameters `json:"AlternateDataSourceParameters,omitempty"`
+	AlternateDataSourceParameters []DataSource_DataSourceParameters[any] `json:"AlternateDataSourceParameters,omitempty"`
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type DataSource struct {
 	// Credentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-credentials
-	Credentials *DataSource_DataSourceCredentials `json:"Credentials,omitempty"`
+	Credentials *DataSource_DataSourceCredentials[any] `json:"Credentials,omitempty"`
 
 	// DataSourceId AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type DataSource struct {
 	// DataSourceParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceparameters
-	DataSourceParameters *DataSource_DataSourceParameters `json:"DataSourceParameters,omitempty"`
+	DataSourceParameters *DataSource_DataSourceParameters[any] `json:"DataSourceParameters,omitempty"`
 
 	// ErrorInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-errorinfo
-	ErrorInfo *DataSource_DataSourceErrorInfo `json:"ErrorInfo,omitempty"`
+	ErrorInfo *DataSource_DataSourceErrorInfo[any] `json:"ErrorInfo,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type DataSource struct {
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-permissions
-	Permissions []DataSource_ResourcePermission `json:"Permissions,omitempty"`
+	Permissions []DataSource_ResourcePermission[any] `json:"Permissions,omitempty"`
 
 	// SslProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-sslproperties
-	SslProperties *DataSource_SslProperties `json:"SslProperties,omitempty"`
+	SslProperties *DataSource_SslProperties[any] `json:"SslProperties,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type DataSource struct {
 	// VpcConnectionProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-vpcconnectionproperties
-	VpcConnectionProperties *DataSource_VpcConnectionProperties `json:"VpcConnectionProperties,omitempty"`
+	VpcConnectionProperties *DataSource_VpcConnectionProperties[any] `json:"VpcConnectionProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -91,14 +91,15 @@ type DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource) AWSCloudFormationType() string {
+func (r *DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataSource) MarshalJSON() ([]byte, error) {
-	type Properties DataSource
+func (r DataSource[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataSource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r DataSource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataSource) UnmarshalJSON(b []byte) error {
-	type Properties DataSource
+func (r *DataSource[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataSource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *DataSource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataSource(*res.Properties)
+		*r = DataSource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

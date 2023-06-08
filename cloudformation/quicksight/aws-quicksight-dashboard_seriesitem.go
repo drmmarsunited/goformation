@@ -8,17 +8,17 @@ import (
 
 // Dashboard_SeriesItem AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SeriesItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-seriesitem.html
-type Dashboard_SeriesItem struct {
+type Dashboard_SeriesItem[T any] struct {
 
 	// DataFieldSeriesItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-seriesitem.html#cfn-quicksight-dashboard-seriesitem-datafieldseriesitem
-	DataFieldSeriesItem *Dashboard_DataFieldSeriesItem `json:"DataFieldSeriesItem,omitempty"`
+	DataFieldSeriesItem *Dashboard_DataFieldSeriesItem[any] `json:"DataFieldSeriesItem,omitempty"`
 
 	// FieldSeriesItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-seriesitem.html#cfn-quicksight-dashboard-seriesitem-fieldseriesitem
-	FieldSeriesItem *Dashboard_FieldSeriesItem `json:"FieldSeriesItem,omitempty"`
+	FieldSeriesItem *Dashboard_FieldSeriesItem[any] `json:"FieldSeriesItem,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_SeriesItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SeriesItem) AWSCloudFormationType() string {
+func (r *Dashboard_SeriesItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SeriesItem"
 }

@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_TransformOutput AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformoutput.html
-type ModelPackage_TransformOutput struct {
+type ModelPackage_TransformOutput[T any] struct {
 
 	// Accept AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ModelPackage_TransformOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_TransformOutput) AWSCloudFormationType() string {
+func (r *ModelPackage_TransformOutput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.TransformOutput"
 }

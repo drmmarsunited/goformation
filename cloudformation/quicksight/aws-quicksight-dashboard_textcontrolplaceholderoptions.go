@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TextControlPlaceholderOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TextControlPlaceholderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textcontrolplaceholderoptions.html
-type Dashboard_TextControlPlaceholderOptions struct {
+type Dashboard_TextControlPlaceholderOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_TextControlPlaceholderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TextControlPlaceholderOptions) AWSCloudFormationType() string {
+func (r *Dashboard_TextControlPlaceholderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TextControlPlaceholderOptions"
 }

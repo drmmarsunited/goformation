@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessEndpoint_LoadBalancerOptions AWS CloudFormation Resource (AWS::EC2::VerifiedAccessEndpoint.LoadBalancerOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-loadbalanceroptions.html
-type VerifiedAccessEndpoint_LoadBalancerOptions struct {
+type VerifiedAccessEndpoint_LoadBalancerOptions[T any] struct {
 
 	// LoadBalancerArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type VerifiedAccessEndpoint_LoadBalancerOptions struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-loadbalanceroptions.html#cfn-ec2-verifiedaccessendpoint-loadbalanceroptions-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type VerifiedAccessEndpoint_LoadBalancerOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessEndpoint_LoadBalancerOptions) AWSCloudFormationType() string {
+func (r *VerifiedAccessEndpoint_LoadBalancerOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessEndpoint.LoadBalancerOptions"
 }

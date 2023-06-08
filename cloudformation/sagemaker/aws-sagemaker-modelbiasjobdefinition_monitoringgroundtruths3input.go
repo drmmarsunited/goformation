@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_MonitoringGroundTruthS3Input AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.MonitoringGroundTruthS3Input)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input.html
-type ModelBiasJobDefinition_MonitoringGroundTruthS3Input struct {
+type ModelBiasJobDefinition_MonitoringGroundTruthS3Input[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ModelBiasJobDefinition_MonitoringGroundTruthS3Input struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_MonitoringGroundTruthS3Input) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_MonitoringGroundTruthS3Input[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.MonitoringGroundTruthS3Input"
 }

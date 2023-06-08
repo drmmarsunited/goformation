@@ -12,7 +12,7 @@ import (
 
 // Environment AWS CloudFormation Resource (AWS::ElasticBeanstalk::Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html
-type Environment struct {
+type Environment[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Environment struct {
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-optionsettings
-	OptionSettings []Environment_OptionSetting `json:"OptionSettings,omitempty"`
+	OptionSettings []Environment_OptionSetting[any] `json:"OptionSettings,omitempty"`
 
 	// PlatformArn AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type Environment struct {
 	// Tier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-tier
-	Tier *Environment_Tier `json:"Tier,omitempty"`
+	Tier *Environment_Tier[any] `json:"Tier,omitempty"`
 
 	// VersionLabel AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment) AWSCloudFormationType() string {
+func (r *Environment[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Environment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Environment) MarshalJSON() ([]byte, error) {
-	type Properties Environment
+func (r Environment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Environment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Environment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Environment) UnmarshalJSON(b []byte) error {
-	type Properties Environment
+func (r *Environment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Environment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Environment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Environment(*res.Properties)
+		*r = Environment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

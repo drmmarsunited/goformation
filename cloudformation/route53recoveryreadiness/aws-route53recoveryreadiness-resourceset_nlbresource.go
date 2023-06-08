@@ -8,7 +8,7 @@ import (
 
 // ResourceSet_NLBResource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.NLBResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-nlbresource.html
-type ResourceSet_NLBResource struct {
+type ResourceSet_NLBResource[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ResourceSet_NLBResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet_NLBResource) AWSCloudFormationType() string {
+func (r *ResourceSet_NLBResource[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet.NLBResource"
 }

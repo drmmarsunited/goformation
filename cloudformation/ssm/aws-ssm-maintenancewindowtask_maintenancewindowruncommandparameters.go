@@ -8,12 +8,12 @@ import (
 
 // MaintenanceWindowTask_MaintenanceWindowRunCommandParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
-type MaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
+type MaintenanceWindowTask_MaintenanceWindowRunCommandParameters[T any] struct {
 
 	// CloudWatchOutputConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-cloudwatchoutputconfig
-	CloudWatchOutputConfig *MaintenanceWindowTask_CloudWatchOutputConfig `json:"CloudWatchOutputConfig,omitempty"`
+	CloudWatchOutputConfig *MaintenanceWindowTask_CloudWatchOutputConfig[any] `json:"CloudWatchOutputConfig,omitempty"`
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type MaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 	// NotificationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig
-	NotificationConfig *MaintenanceWindowTask_NotificationConfig `json:"NotificationConfig,omitempty"`
+	NotificationConfig *MaintenanceWindowTask_NotificationConfig[any] `json:"NotificationConfig,omitempty"`
 
 	// OutputS3BucketName AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type MaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds
-	TimeoutSeconds *int `json:"TimeoutSeconds,omitempty"`
+	TimeoutSeconds *T `json:"TimeoutSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type MaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_MaintenanceWindowRunCommandParameters) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_MaintenanceWindowRunCommandParameters[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters"
 }

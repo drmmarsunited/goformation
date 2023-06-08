@@ -8,12 +8,12 @@ import (
 
 // Bot_SlotDefaultValueSpecification AWS CloudFormation Resource (AWS::Lex::Bot.SlotDefaultValueSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotdefaultvaluespecification.html
-type Bot_SlotDefaultValueSpecification struct {
+type Bot_SlotDefaultValueSpecification[T any] struct {
 
 	// DefaultValueList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotdefaultvaluespecification.html#cfn-lex-bot-slotdefaultvaluespecification-defaultvaluelist
-	DefaultValueList []Bot_SlotDefaultValue `json:"DefaultValueList"`
+	DefaultValueList []Bot_SlotDefaultValue[any] `json:"DefaultValueList"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_SlotDefaultValueSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotDefaultValueSpecification) AWSCloudFormationType() string {
+func (r *Bot_SlotDefaultValueSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotDefaultValueSpecification"
 }

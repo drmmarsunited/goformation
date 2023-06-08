@@ -8,7 +8,7 @@ import (
 
 // WebACL_ExcludedRule AWS CloudFormation Resource (AWS::WAFv2::WebACL.ExcludedRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-excludedrule.html
-type WebACL_ExcludedRule struct {
+type WebACL_ExcludedRule[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_ExcludedRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ExcludedRule) AWSCloudFormationType() string {
+func (r *WebACL_ExcludedRule[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ExcludedRule"
 }

@@ -8,7 +8,7 @@ import (
 
 // Endpoint_IbmDb2Settings AWS CloudFormation Resource (AWS::DMS::Endpoint.IbmDb2Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html
-type Endpoint_IbmDb2Settings struct {
+type Endpoint_IbmDb2Settings[T any] struct {
 
 	// CurrentLsn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Endpoint_IbmDb2Settings struct {
 	// MaxKBytesPerRead AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-maxkbytesperread
-	MaxKBytesPerRead *int `json:"MaxKBytesPerRead,omitempty"`
+	MaxKBytesPerRead *T `json:"MaxKBytesPerRead,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Endpoint_IbmDb2Settings struct {
 	// SetDataCaptureChanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-setdatacapturechanges
-	SetDataCaptureChanges *bool `json:"SetDataCaptureChanges,omitempty"`
+	SetDataCaptureChanges *T `json:"SetDataCaptureChanges,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Endpoint_IbmDb2Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_IbmDb2Settings) AWSCloudFormationType() string {
+func (r *Endpoint_IbmDb2Settings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.IbmDb2Settings"
 }

@@ -8,12 +8,12 @@ import (
 
 // RealtimeLogConfig_EndPoint AWS CloudFormation Resource (AWS::CloudFront::RealtimeLogConfig.EndPoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-endpoint.html
-type RealtimeLogConfig_EndPoint struct {
+type RealtimeLogConfig_EndPoint[T any] struct {
 
 	// KinesisStreamConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-endpoint.html#cfn-cloudfront-realtimelogconfig-endpoint-kinesisstreamconfig
-	KinesisStreamConfig *RealtimeLogConfig_KinesisStreamConfig `json:"KinesisStreamConfig"`
+	KinesisStreamConfig *RealtimeLogConfig_KinesisStreamConfig[any] `json:"KinesisStreamConfig"`
 
 	// StreamType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RealtimeLogConfig_EndPoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RealtimeLogConfig_EndPoint) AWSCloudFormationType() string {
+func (r *RealtimeLogConfig_EndPoint[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::RealtimeLogConfig.EndPoint"
 }

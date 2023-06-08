@@ -12,7 +12,7 @@ import (
 
 // OrganizationalUnit AWS CloudFormation Resource (AWS::Organizations::OrganizationalUnit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html
-type OrganizationalUnit struct {
+type OrganizationalUnit[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type OrganizationalUnit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OrganizationalUnit) AWSCloudFormationType() string {
+func (r *OrganizationalUnit[any]) AWSCloudFormationType() string {
 	return "AWS::Organizations::OrganizationalUnit"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r OrganizationalUnit) MarshalJSON() ([]byte, error) {
-	type Properties OrganizationalUnit
+func (r OrganizationalUnit[any]) MarshalJSON() ([]byte, error) {
+	type Properties OrganizationalUnit[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r OrganizationalUnit) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *OrganizationalUnit) UnmarshalJSON(b []byte) error {
-	type Properties OrganizationalUnit
+func (r *OrganizationalUnit[any]) UnmarshalJSON(b []byte) error {
+	type Properties OrganizationalUnit[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *OrganizationalUnit) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = OrganizationalUnit(*res.Properties)
+		*r = OrganizationalUnit[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Broker_LogList AWS CloudFormation Resource (AWS::AmazonMQ::Broker.LogList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html
-type Broker_LogList struct {
+type Broker_LogList[T any] struct {
 
 	// Audit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-audit
-	Audit *bool `json:"Audit,omitempty"`
+	Audit *T `json:"Audit,omitempty"`
 
 	// General AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-general
-	General *bool `json:"General,omitempty"`
+	General *T `json:"General,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Broker_LogList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_LogList) AWSCloudFormationType() string {
+func (r *Broker_LogList[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.LogList"
 }

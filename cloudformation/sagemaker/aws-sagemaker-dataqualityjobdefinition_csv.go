@@ -8,12 +8,12 @@ import (
 
 // DataQualityJobDefinition_Csv AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.Csv)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-csv.html
-type DataQualityJobDefinition_Csv struct {
+type DataQualityJobDefinition_Csv[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-csv.html#cfn-sagemaker-dataqualityjobdefinition-csv-header
-	Header *bool `json:"Header,omitempty"`
+	Header *T `json:"Header,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataQualityJobDefinition_Csv struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_Csv) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_Csv[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.Csv"
 }

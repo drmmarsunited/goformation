@@ -8,7 +8,7 @@ import (
 
 // UserPool_EmailConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPool.EmailConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html
-type UserPool_EmailConfiguration struct {
+type UserPool_EmailConfiguration[T any] struct {
 
 	// ConfigurationSet AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type UserPool_EmailConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_EmailConfiguration) AWSCloudFormationType() string {
+func (r *UserPool_EmailConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.EmailConfiguration"
 }

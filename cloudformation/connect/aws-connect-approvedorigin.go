@@ -11,7 +11,7 @@ import (
 
 // ApprovedOrigin AWS CloudFormation Resource (AWS::Connect::ApprovedOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-approvedorigin.html
-type ApprovedOrigin struct {
+type ApprovedOrigin[T any] struct {
 
 	// InstanceId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ApprovedOrigin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApprovedOrigin) AWSCloudFormationType() string {
+func (r *ApprovedOrigin[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::ApprovedOrigin"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApprovedOrigin) MarshalJSON() ([]byte, error) {
-	type Properties ApprovedOrigin
+func (r ApprovedOrigin[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApprovedOrigin[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ApprovedOrigin) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApprovedOrigin) UnmarshalJSON(b []byte) error {
-	type Properties ApprovedOrigin
+func (r *ApprovedOrigin[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApprovedOrigin[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ApprovedOrigin) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApprovedOrigin(*res.Properties)
+		*r = ApprovedOrigin[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

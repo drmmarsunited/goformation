@@ -12,12 +12,12 @@ import (
 
 // Endpoint AWS CloudFormation Resource (AWS::SageMaker::Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html
-type Endpoint struct {
+type Endpoint[T any] struct {
 
 	// DeploymentConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-deploymentconfig
-	DeploymentConfig *Endpoint_DeploymentConfig `json:"DeploymentConfig,omitempty"`
+	DeploymentConfig *Endpoint_DeploymentConfig[any] `json:"DeploymentConfig,omitempty"`
 
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: true
@@ -32,17 +32,17 @@ type Endpoint struct {
 	// ExcludeRetainedVariantProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties
-	ExcludeRetainedVariantProperties []Endpoint_VariantProperty `json:"ExcludeRetainedVariantProperties,omitempty"`
+	ExcludeRetainedVariantProperties []Endpoint_VariantProperty[any] `json:"ExcludeRetainedVariantProperties,omitempty"`
 
 	// RetainAllVariantProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties
-	RetainAllVariantProperties *bool `json:"RetainAllVariantProperties,omitempty"`
+	RetainAllVariantProperties *T `json:"RetainAllVariantProperties,omitempty"`
 
 	// RetainDeploymentConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retaindeploymentconfig
-	RetainDeploymentConfig *bool `json:"RetainDeploymentConfig,omitempty"`
+	RetainDeploymentConfig *T `json:"RetainDeploymentConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint) AWSCloudFormationType() string {
+func (r *Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Endpoint) MarshalJSON() ([]byte, error) {
-	type Properties Endpoint
+func (r Endpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties Endpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Endpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Endpoint) UnmarshalJSON(b []byte) error {
-	type Properties Endpoint
+func (r *Endpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties Endpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Endpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Endpoint(*res.Properties)
+		*r = Endpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

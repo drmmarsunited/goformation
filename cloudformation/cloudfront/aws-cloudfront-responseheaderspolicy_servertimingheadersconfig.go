@@ -8,17 +8,17 @@ import (
 
 // ResponseHeadersPolicy_ServerTimingHeadersConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ServerTimingHeadersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html
-type ResponseHeadersPolicy_ServerTimingHeadersConfig struct {
+type ResponseHeadersPolicy_ServerTimingHeadersConfig[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// SamplingRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-samplingrate
-	SamplingRate *float64 `json:"SamplingRate,omitempty"`
+	SamplingRate *T `json:"SamplingRate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResponseHeadersPolicy_ServerTimingHeadersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_ServerTimingHeadersConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_ServerTimingHeadersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.ServerTimingHeadersConfig"
 }

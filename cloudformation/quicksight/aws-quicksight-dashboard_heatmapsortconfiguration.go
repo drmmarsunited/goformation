@@ -8,27 +8,27 @@ import (
 
 // Dashboard_HeatMapSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HeatMapSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapsortconfiguration.html
-type Dashboard_HeatMapSortConfiguration struct {
+type Dashboard_HeatMapSortConfiguration[T any] struct {
 
 	// HeatMapColumnItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapsortconfiguration.html#cfn-quicksight-dashboard-heatmapsortconfiguration-heatmapcolumnitemslimitconfiguration
-	HeatMapColumnItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"HeatMapColumnItemsLimitConfiguration,omitempty"`
+	HeatMapColumnItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"HeatMapColumnItemsLimitConfiguration,omitempty"`
 
 	// HeatMapColumnSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapsortconfiguration.html#cfn-quicksight-dashboard-heatmapsortconfiguration-heatmapcolumnsort
-	HeatMapColumnSort []Dashboard_FieldSortOptions `json:"HeatMapColumnSort,omitempty"`
+	HeatMapColumnSort []Dashboard_FieldSortOptions[any] `json:"HeatMapColumnSort,omitempty"`
 
 	// HeatMapRowItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapsortconfiguration.html#cfn-quicksight-dashboard-heatmapsortconfiguration-heatmaprowitemslimitconfiguration
-	HeatMapRowItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"HeatMapRowItemsLimitConfiguration,omitempty"`
+	HeatMapRowItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"HeatMapRowItemsLimitConfiguration,omitempty"`
 
 	// HeatMapRowSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapsortconfiguration.html#cfn-quicksight-dashboard-heatmapsortconfiguration-heatmaprowsort
-	HeatMapRowSort []Dashboard_FieldSortOptions `json:"HeatMapRowSort,omitempty"`
+	HeatMapRowSort []Dashboard_FieldSortOptions[any] `json:"HeatMapRowSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_HeatMapSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HeatMapSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_HeatMapSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HeatMapSortConfiguration"
 }

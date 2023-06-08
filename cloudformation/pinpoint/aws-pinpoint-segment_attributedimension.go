@@ -8,7 +8,7 @@ import (
 
 // Segment_AttributeDimension AWS CloudFormation Resource (AWS::Pinpoint::Segment.AttributeDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-attributedimension.html
-type Segment_AttributeDimension struct {
+type Segment_AttributeDimension[T any] struct {
 
 	// AttributeType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Segment_AttributeDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_AttributeDimension) AWSCloudFormationType() string {
+func (r *Segment_AttributeDimension[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.AttributeDimension"
 }

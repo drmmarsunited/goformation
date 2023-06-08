@@ -8,7 +8,7 @@ import (
 
 // Stream_StreamModeDetails AWS CloudFormation Resource (AWS::Kinesis::Stream.StreamModeDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html
-type Stream_StreamModeDetails struct {
+type Stream_StreamModeDetails[T any] struct {
 
 	// StreamMode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Stream_StreamModeDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stream_StreamModeDetails) AWSCloudFormationType() string {
+func (r *Stream_StreamModeDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Kinesis::Stream.StreamModeDetails"
 }

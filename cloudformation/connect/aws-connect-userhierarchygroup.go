@@ -11,7 +11,7 @@ import (
 
 // UserHierarchyGroup AWS CloudFormation Resource (AWS::Connect::UserHierarchyGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html
-type UserHierarchyGroup struct {
+type UserHierarchyGroup[T any] struct {
 
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type UserHierarchyGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserHierarchyGroup) AWSCloudFormationType() string {
+func (r *UserHierarchyGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::UserHierarchyGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserHierarchyGroup) MarshalJSON() ([]byte, error) {
-	type Properties UserHierarchyGroup
+func (r UserHierarchyGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserHierarchyGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r UserHierarchyGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserHierarchyGroup) UnmarshalJSON(b []byte) error {
-	type Properties UserHierarchyGroup
+func (r *UserHierarchyGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserHierarchyGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *UserHierarchyGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserHierarchyGroup(*res.Properties)
+		*r = UserHierarchyGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

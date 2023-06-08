@@ -8,22 +8,22 @@ import (
 
 // Dashboard_DrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-drilldownfilter.html
-type Dashboard_DrillDownFilter struct {
+type Dashboard_DrillDownFilter[T any] struct {
 
 	// CategoryFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-drilldownfilter.html#cfn-quicksight-dashboard-drilldownfilter-categoryfilter
-	CategoryFilter *Dashboard_CategoryDrillDownFilter `json:"CategoryFilter,omitempty"`
+	CategoryFilter *Dashboard_CategoryDrillDownFilter[any] `json:"CategoryFilter,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-drilldownfilter.html#cfn-quicksight-dashboard-drilldownfilter-numericequalityfilter
-	NumericEqualityFilter *Dashboard_NumericEqualityDrillDownFilter `json:"NumericEqualityFilter,omitempty"`
+	NumericEqualityFilter *Dashboard_NumericEqualityDrillDownFilter[any] `json:"NumericEqualityFilter,omitempty"`
 
 	// TimeRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-drilldownfilter.html#cfn-quicksight-dashboard-drilldownfilter-timerangefilter
-	TimeRangeFilter *Dashboard_TimeRangeDrillDownFilter `json:"TimeRangeFilter,omitempty"`
+	TimeRangeFilter *Dashboard_TimeRangeDrillDownFilter[any] `json:"TimeRangeFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_DrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DrillDownFilter) AWSCloudFormationType() string {
+func (r *Dashboard_DrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DrillDownFilter"
 }

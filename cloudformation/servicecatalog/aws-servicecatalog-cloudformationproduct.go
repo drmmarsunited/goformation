@@ -12,7 +12,7 @@ import (
 
 // CloudFormationProduct AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
-type CloudFormationProduct struct {
+type CloudFormationProduct[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -47,17 +47,17 @@ type CloudFormationProduct struct {
 	// ProvisioningArtifactParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
-	ProvisioningArtifactParameters []CloudFormationProduct_ProvisioningArtifactProperties `json:"ProvisioningArtifactParameters,omitempty"`
+	ProvisioningArtifactParameters []CloudFormationProduct_ProvisioningArtifactProperties[any] `json:"ProvisioningArtifactParameters,omitempty"`
 
 	// ReplaceProvisioningArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts
-	ReplaceProvisioningArtifacts *bool `json:"ReplaceProvisioningArtifacts,omitempty"`
+	ReplaceProvisioningArtifacts *T `json:"ReplaceProvisioningArtifacts,omitempty"`
 
 	// SourceConnection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-sourceconnection
-	SourceConnection *CloudFormationProduct_SourceConnection `json:"SourceConnection,omitempty"`
+	SourceConnection *CloudFormationProduct_SourceConnection[any] `json:"SourceConnection,omitempty"`
 
 	// SupportDescription AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type CloudFormationProduct struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProduct) AWSCloudFormationType() string {
+func (r *CloudFormationProduct[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CloudFormationProduct) MarshalJSON() ([]byte, error) {
-	type Properties CloudFormationProduct
+func (r CloudFormationProduct[any]) MarshalJSON() ([]byte, error) {
+	type Properties CloudFormationProduct[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r CloudFormationProduct) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CloudFormationProduct) UnmarshalJSON(b []byte) error {
-	type Properties CloudFormationProduct
+func (r *CloudFormationProduct[any]) UnmarshalJSON(b []byte) error {
+	type Properties CloudFormationProduct[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *CloudFormationProduct) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CloudFormationProduct(*res.Properties)
+		*r = CloudFormationProduct[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

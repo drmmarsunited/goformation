@@ -11,7 +11,7 @@ import (
 
 // UserPoolResourceServer AWS CloudFormation Resource (AWS::Cognito::UserPoolResourceServer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html
-type UserPoolResourceServer struct {
+type UserPoolResourceServer[T any] struct {
 
 	// Identifier AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type UserPoolResourceServer struct {
 	// Scopes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-scopes
-	Scopes []UserPoolResourceServer_ResourceServerScopeType `json:"Scopes,omitempty"`
+	Scopes []UserPoolResourceServer_ResourceServerScopeType[any] `json:"Scopes,omitempty"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type UserPoolResourceServer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolResourceServer) AWSCloudFormationType() string {
+func (r *UserPoolResourceServer[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolResourceServer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolResourceServer) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolResourceServer
+func (r UserPoolResourceServer[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolResourceServer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r UserPoolResourceServer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolResourceServer) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolResourceServer
+func (r *UserPoolResourceServer[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolResourceServer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *UserPoolResourceServer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolResourceServer(*res.Properties)
+		*r = UserPoolResourceServer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

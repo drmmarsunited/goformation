@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_GlobalSecondaryIndex AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.GlobalSecondaryIndex)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html
-type GlobalTable_GlobalSecondaryIndex struct {
+type GlobalTable_GlobalSecondaryIndex[T any] struct {
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
@@ -18,17 +18,17 @@ type GlobalTable_GlobalSecondaryIndex struct {
 	// KeySchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-keyschema
-	KeySchema []GlobalTable_KeySchema `json:"KeySchema"`
+	KeySchema []GlobalTable_KeySchema[any] `json:"KeySchema"`
 
 	// Projection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-projection
-	Projection *GlobalTable_Projection `json:"Projection"`
+	Projection *GlobalTable_Projection[any] `json:"Projection"`
 
 	// WriteProvisionedThroughputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeprovisionedthroughputsettings
-	WriteProvisionedThroughputSettings *GlobalTable_WriteProvisionedThroughputSettings `json:"WriteProvisionedThroughputSettings,omitempty"`
+	WriteProvisionedThroughputSettings *GlobalTable_WriteProvisionedThroughputSettings[any] `json:"WriteProvisionedThroughputSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type GlobalTable_GlobalSecondaryIndex struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_GlobalSecondaryIndex) AWSCloudFormationType() string {
+func (r *GlobalTable_GlobalSecondaryIndex[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.GlobalSecondaryIndex"
 }

@@ -11,7 +11,7 @@ import (
 
 // Schema AWS CloudFormation Resource (AWS::EventSchemas::Schema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html
-type Schema struct {
+type Schema[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type Schema struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-tags
-	Tags []Schema_TagsEntry `json:"Tags,omitempty"`
+	Tags []Schema_TagsEntry[any] `json:"Tags,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type Schema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schema) AWSCloudFormationType() string {
+func (r *Schema[any]) AWSCloudFormationType() string {
 	return "AWS::EventSchemas::Schema"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Schema) MarshalJSON() ([]byte, error) {
-	type Properties Schema
+func (r Schema[any]) MarshalJSON() ([]byte, error) {
+	type Properties Schema[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r Schema) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Schema) UnmarshalJSON(b []byte) error {
-	type Properties Schema
+func (r *Schema[any]) UnmarshalJSON(b []byte) error {
+	type Properties Schema[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *Schema) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Schema(*res.Properties)
+		*r = Schema[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

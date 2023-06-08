@@ -8,7 +8,7 @@ import (
 
 // FirewallRuleGroup_FirewallRule AWS CloudFormation Resource (AWS::Route53Resolver::FirewallRuleGroup.FirewallRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html
-type FirewallRuleGroup_FirewallRule struct {
+type FirewallRuleGroup_FirewallRule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type FirewallRuleGroup_FirewallRule struct {
 	// BlockOverrideTtl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridettl
-	BlockOverrideTtl *int `json:"BlockOverrideTtl,omitempty"`
+	BlockOverrideTtl *T `json:"BlockOverrideTtl,omitempty"`
 
 	// BlockResponse AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type FirewallRuleGroup_FirewallRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type FirewallRuleGroup_FirewallRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallRuleGroup_FirewallRule) AWSCloudFormationType() string {
+func (r *FirewallRuleGroup_FirewallRule[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::FirewallRuleGroup.FirewallRule"
 }

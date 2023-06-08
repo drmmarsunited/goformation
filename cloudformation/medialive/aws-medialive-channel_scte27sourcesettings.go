@@ -8,7 +8,7 @@ import (
 
 // Channel_Scte27SourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte27SourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html
-type Channel_Scte27SourceSettings struct {
+type Channel_Scte27SourceSettings[T any] struct {
 
 	// OcrLanguage AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_Scte27SourceSettings struct {
 	// Pid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-pid
-	Pid *int `json:"Pid,omitempty"`
+	Pid *T `json:"Pid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_Scte27SourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Scte27SourceSettings) AWSCloudFormationType() string {
+func (r *Channel_Scte27SourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Scte27SourceSettings"
 }

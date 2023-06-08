@@ -11,7 +11,7 @@ import (
 
 // CustomResource AWS CloudFormation Resource (AWS::CloudFormation::CustomResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html
-type CustomResource struct {
+type CustomResource[T any] struct {
 
 	// ServiceToken AWS CloudFormation Property
 	// Required: true
@@ -35,14 +35,15 @@ type CustomResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomResource) AWSCloudFormationType() string {
+func (r *CustomResource[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::CustomResource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CustomResource) MarshalJSON() ([]byte, error) {
-	type Properties CustomResource
+func (r CustomResource[any]) MarshalJSON() ([]byte, error) {
+	type Properties CustomResource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r CustomResource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CustomResource) UnmarshalJSON(b []byte) error {
-	type Properties CustomResource
+func (r *CustomResource[any]) UnmarshalJSON(b []byte) error {
+	type Properties CustomResource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *CustomResource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CustomResource(*res.Properties)
+		*r = CustomResource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,22 +8,22 @@ import (
 
 // Dashboard_RadarChartAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RadarChartAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartaggregatedfieldwells.html
-type Dashboard_RadarChartAggregatedFieldWells struct {
+type Dashboard_RadarChartAggregatedFieldWells[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartaggregatedfieldwells.html#cfn-quicksight-dashboard-radarchartaggregatedfieldwells-category
-	Category []Dashboard_DimensionField `json:"Category,omitempty"`
+	Category []Dashboard_DimensionField[any] `json:"Category,omitempty"`
 
 	// Color AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartaggregatedfieldwells.html#cfn-quicksight-dashboard-radarchartaggregatedfieldwells-color
-	Color []Dashboard_DimensionField `json:"Color,omitempty"`
+	Color []Dashboard_DimensionField[any] `json:"Color,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartaggregatedfieldwells.html#cfn-quicksight-dashboard-radarchartaggregatedfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_RadarChartAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RadarChartAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_RadarChartAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RadarChartAggregatedFieldWells"
 }

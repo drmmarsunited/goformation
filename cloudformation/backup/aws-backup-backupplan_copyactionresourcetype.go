@@ -8,7 +8,7 @@ import (
 
 // BackupPlan_CopyActionResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.CopyActionResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html
-type BackupPlan_CopyActionResourceType struct {
+type BackupPlan_CopyActionResourceType[T any] struct {
 
 	// DestinationBackupVaultArn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type BackupPlan_CopyActionResourceType struct {
 	// Lifecycle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-lifecycle
-	Lifecycle *BackupPlan_LifecycleResourceType `json:"Lifecycle,omitempty"`
+	Lifecycle *BackupPlan_LifecycleResourceType[any] `json:"Lifecycle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type BackupPlan_CopyActionResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupPlan_CopyActionResourceType) AWSCloudFormationType() string {
+func (r *BackupPlan_CopyActionResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupPlan.CopyActionResourceType"
 }

@@ -8,7 +8,7 @@ import (
 
 // Schedule_DeadLetterConfig AWS CloudFormation Resource (AWS::Scheduler::Schedule.DeadLetterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-deadletterconfig.html
-type Schedule_DeadLetterConfig struct {
+type Schedule_DeadLetterConfig[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Schedule_DeadLetterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_DeadLetterConfig) AWSCloudFormationType() string {
+func (r *Schedule_DeadLetterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.DeadLetterConfig"
 }

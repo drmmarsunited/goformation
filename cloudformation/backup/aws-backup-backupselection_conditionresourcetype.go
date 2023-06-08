@@ -8,7 +8,7 @@ import (
 
 // BackupSelection_ConditionResourceType AWS CloudFormation Resource (AWS::Backup::BackupSelection.ConditionResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html
-type BackupSelection_ConditionResourceType struct {
+type BackupSelection_ConditionResourceType[T any] struct {
 
 	// ConditionKey AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type BackupSelection_ConditionResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupSelection_ConditionResourceType) AWSCloudFormationType() string {
+func (r *BackupSelection_ConditionResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupSelection.ConditionResourceType"
 }

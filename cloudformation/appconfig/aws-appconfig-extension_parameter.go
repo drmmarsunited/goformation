@@ -8,7 +8,7 @@ import (
 
 // Extension_Parameter AWS CloudFormation Resource (AWS::AppConfig::Extension.Parameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-extension-parameter.html
-type Extension_Parameter struct {
+type Extension_Parameter[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Extension_Parameter struct {
 	// Required AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-extension-parameter.html#cfn-appconfig-extension-parameter-required
-	Required bool `json:"Required"`
+	Required T `json:"Required"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Extension_Parameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Extension_Parameter) AWSCloudFormationType() string {
+func (r *Extension_Parameter[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Extension.Parameter"
 }

@@ -8,17 +8,17 @@ import (
 
 // Template_BoxPlotAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.BoxPlotAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotaggregatedfieldwells.html
-type Template_BoxPlotAggregatedFieldWells struct {
+type Template_BoxPlotAggregatedFieldWells[T any] struct {
 
 	// GroupBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotaggregatedfieldwells.html#cfn-quicksight-template-boxplotaggregatedfieldwells-groupby
-	GroupBy []Template_DimensionField `json:"GroupBy,omitempty"`
+	GroupBy []Template_DimensionField[any] `json:"GroupBy,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotaggregatedfieldwells.html#cfn-quicksight-template-boxplotaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_BoxPlotAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BoxPlotAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_BoxPlotAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BoxPlotAggregatedFieldWells"
 }

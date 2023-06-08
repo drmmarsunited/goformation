@@ -8,12 +8,12 @@ import (
 
 // Api_CorsConfiguration AWS CloudFormation Resource (AWS::Serverless::Api.CorsConfiguration)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-type Api_CorsConfiguration struct {
+type Api_CorsConfiguration[T any] struct {
 
 	// AllowCredentials AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-	AllowCredentials *bool `json:"AllowCredentials,omitempty"`
+	AllowCredentials *T `json:"AllowCredentials,omitempty"`
 
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Api_CorsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api_CorsConfiguration) AWSCloudFormationType() string {
+func (r *Api_CorsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Api.CorsConfiguration"
 }

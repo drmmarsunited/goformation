@@ -8,7 +8,7 @@ import (
 
 // Application_InitialCapacityConfigKeyValuePair AWS CloudFormation Resource (AWS::EMRServerless::Application.InitialCapacityConfigKeyValuePair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfigkeyvaluepair.html
-type Application_InitialCapacityConfigKeyValuePair struct {
+type Application_InitialCapacityConfigKeyValuePair[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Application_InitialCapacityConfigKeyValuePair struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfigkeyvaluepair.html#cfn-emrserverless-application-initialcapacityconfigkeyvaluepair-value
-	Value *Application_InitialCapacityConfig `json:"Value"`
+	Value *Application_InitialCapacityConfig[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_InitialCapacityConfigKeyValuePair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InitialCapacityConfigKeyValuePair) AWSCloudFormationType() string {
+func (r *Application_InitialCapacityConfigKeyValuePair[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.InitialCapacityConfigKeyValuePair"
 }

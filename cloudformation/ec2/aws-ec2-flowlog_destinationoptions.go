@@ -8,7 +8,7 @@ import (
 
 // FlowLog_DestinationOptions AWS CloudFormation Resource (AWS::EC2::FlowLog.DestinationOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html
-type FlowLog_DestinationOptions struct {
+type FlowLog_DestinationOptions[T any] struct {
 
 	// FileFormat AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type FlowLog_DestinationOptions struct {
 	// HiveCompatiblePartitions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-hivecompatiblepartitions
-	HiveCompatiblePartitions bool `json:"HiveCompatiblePartitions"`
+	HiveCompatiblePartitions T `json:"HiveCompatiblePartitions"`
 
 	// PerHourPartition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-perhourpartition
-	PerHourPartition bool `json:"PerHourPartition"`
+	PerHourPartition T `json:"PerHourPartition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type FlowLog_DestinationOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowLog_DestinationOptions) AWSCloudFormationType() string {
+func (r *FlowLog_DestinationOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::FlowLog.DestinationOptions"
 }

@@ -8,12 +8,12 @@ import (
 
 // WebACL_RequestInspection AWS CloudFormation Resource (AWS::WAFv2::WebACL.RequestInspection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestinspection.html
-type WebACL_RequestInspection struct {
+type WebACL_RequestInspection[T any] struct {
 
 	// PasswordField AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestinspection.html#cfn-wafv2-webacl-requestinspection-passwordfield
-	PasswordField *WebACL_FieldIdentifier `json:"PasswordField"`
+	PasswordField *WebACL_FieldIdentifier[any] `json:"PasswordField"`
 
 	// PayloadType AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type WebACL_RequestInspection struct {
 	// UsernameField AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestinspection.html#cfn-wafv2-webacl-requestinspection-usernamefield
-	UsernameField *WebACL_FieldIdentifier `json:"UsernameField"`
+	UsernameField *WebACL_FieldIdentifier[any] `json:"UsernameField"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_RequestInspection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_RequestInspection) AWSCloudFormationType() string {
+func (r *WebACL_RequestInspection[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.RequestInspection"
 }

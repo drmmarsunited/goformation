@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_TaskDefinitionPlacementConstraint AWS CloudFormation Resource (AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html
-type TaskDefinition_TaskDefinitionPlacementConstraint struct {
+type TaskDefinition_TaskDefinitionPlacementConstraint[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_TaskDefinitionPlacementConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_TaskDefinitionPlacementConstraint) AWSCloudFormationType() string {
+func (r *TaskDefinition_TaskDefinitionPlacementConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint"
 }

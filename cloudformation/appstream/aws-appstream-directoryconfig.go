@@ -11,12 +11,12 @@ import (
 
 // DirectoryConfig AWS CloudFormation Resource (AWS::AppStream::DirectoryConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html
-type DirectoryConfig struct {
+type DirectoryConfig[T any] struct {
 
 	// CertificateBasedAuthProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-certificatebasedauthproperties
-	CertificateBasedAuthProperties *DirectoryConfig_CertificateBasedAuthProperties `json:"CertificateBasedAuthProperties,omitempty"`
+	CertificateBasedAuthProperties *DirectoryConfig_CertificateBasedAuthProperties[any] `json:"CertificateBasedAuthProperties,omitempty"`
 
 	// DirectoryName AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type DirectoryConfig struct {
 	// ServiceAccountCredentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials
-	ServiceAccountCredentials *DirectoryConfig_ServiceAccountCredentials `json:"ServiceAccountCredentials"`
+	ServiceAccountCredentials *DirectoryConfig_ServiceAccountCredentials[any] `json:"ServiceAccountCredentials"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type DirectoryConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DirectoryConfig) AWSCloudFormationType() string {
+func (r *DirectoryConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::DirectoryConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DirectoryConfig) MarshalJSON() ([]byte, error) {
-	type Properties DirectoryConfig
+func (r DirectoryConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties DirectoryConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r DirectoryConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DirectoryConfig) UnmarshalJSON(b []byte) error {
-	type Properties DirectoryConfig
+func (r *DirectoryConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties DirectoryConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *DirectoryConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DirectoryConfig(*res.Properties)
+		*r = DirectoryConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

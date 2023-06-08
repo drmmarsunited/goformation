@@ -8,12 +8,12 @@ import (
 
 // Association_InstanceAssociationOutputLocation AWS CloudFormation Resource (AWS::SSM::Association.InstanceAssociationOutputLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
-type Association_InstanceAssociationOutputLocation struct {
+type Association_InstanceAssociationOutputLocation[T any] struct {
 
 	// S3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location
-	S3Location *Association_S3OutputLocation `json:"S3Location,omitempty"`
+	S3Location *Association_S3OutputLocation[any] `json:"S3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Association_InstanceAssociationOutputLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Association_InstanceAssociationOutputLocation) AWSCloudFormationType() string {
+func (r *Association_InstanceAssociationOutputLocation[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Association.InstanceAssociationOutputLocation"
 }

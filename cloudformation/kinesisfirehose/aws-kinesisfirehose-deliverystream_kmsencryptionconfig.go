@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_KMSEncryptionConfig AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html
-type DeliveryStream_KMSEncryptionConfig struct {
+type DeliveryStream_KMSEncryptionConfig[T any] struct {
 
 	// AWSKMSKeyARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DeliveryStream_KMSEncryptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_KMSEncryptionConfig) AWSCloudFormationType() string {
+func (r *DeliveryStream_KMSEncryptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig"
 }

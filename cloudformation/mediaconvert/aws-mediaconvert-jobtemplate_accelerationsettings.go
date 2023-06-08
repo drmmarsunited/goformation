@@ -8,7 +8,7 @@ import (
 
 // JobTemplate_AccelerationSettings AWS CloudFormation Resource (AWS::MediaConvert::JobTemplate.AccelerationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-accelerationsettings.html
-type JobTemplate_AccelerationSettings struct {
+type JobTemplate_AccelerationSettings[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type JobTemplate_AccelerationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_AccelerationSettings) AWSCloudFormationType() string {
+func (r *JobTemplate_AccelerationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConvert::JobTemplate.AccelerationSettings"
 }

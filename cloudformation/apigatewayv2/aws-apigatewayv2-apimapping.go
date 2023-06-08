@@ -11,7 +11,7 @@ import (
 
 // ApiMapping AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html
-type ApiMapping struct {
+type ApiMapping[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type ApiMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiMapping) AWSCloudFormationType() string {
+func (r *ApiMapping[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiMapping"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApiMapping) MarshalJSON() ([]byte, error) {
-	type Properties ApiMapping
+func (r ApiMapping[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApiMapping[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r ApiMapping) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApiMapping) UnmarshalJSON(b []byte) error {
-	type Properties ApiMapping
+func (r *ApiMapping[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApiMapping[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *ApiMapping) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApiMapping(*res.Properties)
+		*r = ApiMapping[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

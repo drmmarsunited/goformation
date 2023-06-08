@@ -8,7 +8,7 @@ import (
 
 // LocationSMB_MountOptions AWS CloudFormation Resource (AWS::DataSync::LocationSMB.MountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationsmb-mountoptions.html
-type LocationSMB_MountOptions struct {
+type LocationSMB_MountOptions[T any] struct {
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LocationSMB_MountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationSMB_MountOptions) AWSCloudFormationType() string {
+func (r *LocationSMB_MountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationSMB.MountOptions"
 }

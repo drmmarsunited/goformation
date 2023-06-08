@@ -11,12 +11,12 @@ import (
 
 // Method AWS CloudFormation Resource (AWS::ApiGateway::Method)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
-type Method struct {
+type Method[T any] struct {
 
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
-	ApiKeyRequired *bool `json:"ApiKeyRequired,omitempty"`
+	ApiKeyRequired *T `json:"ApiKeyRequired,omitempty"`
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type Method struct {
 	// Integration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration
-	Integration *Method_Integration `json:"Integration,omitempty"`
+	Integration *Method_Integration[any] `json:"Integration,omitempty"`
 
 	// MethodResponses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses
-	MethodResponses []Method_MethodResponse `json:"MethodResponses,omitempty"`
+	MethodResponses []Method_MethodResponse[any] `json:"MethodResponses,omitempty"`
 
 	// OperationName AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type Method struct {
 	// RequestParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters
-	RequestParameters map[string]bool `json:"RequestParameters,omitempty"`
+	RequestParameters map[string]T `json:"RequestParameters,omitempty"`
 
 	// RequestValidatorId AWS CloudFormation Property
 	// Required: false
@@ -95,14 +95,15 @@ type Method struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Method) AWSCloudFormationType() string {
+func (r *Method[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Method"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Method) MarshalJSON() ([]byte, error) {
-	type Properties Method
+func (r Method[any]) MarshalJSON() ([]byte, error) {
+	type Properties Method[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r Method) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Method) UnmarshalJSON(b []byte) error {
-	type Properties Method
+func (r *Method[any]) UnmarshalJSON(b []byte) error {
+	type Properties Method[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *Method) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Method(*res.Properties)
+		*r = Method[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

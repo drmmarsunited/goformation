@@ -8,47 +8,47 @@ import (
 
 // Template_HistogramConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.HistogramConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html
-type Template_HistogramConfiguration struct {
+type Template_HistogramConfiguration[T any] struct {
 
 	// BinOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-binoptions
-	BinOptions *Template_HistogramBinOptions `json:"BinOptions,omitempty"`
+	BinOptions *Template_HistogramBinOptions[any] `json:"BinOptions,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-datalabels
-	DataLabels *Template_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Template_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-fieldwells
-	FieldWells *Template_HistogramFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_HistogramFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-tooltip
-	Tooltip *Template_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Template_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-visualpalette
-	VisualPalette *Template_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Template_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// XAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-xaxisdisplayoptions
-	XAxisDisplayOptions *Template_AxisDisplayOptions `json:"XAxisDisplayOptions,omitempty"`
+	XAxisDisplayOptions *Template_AxisDisplayOptions[any] `json:"XAxisDisplayOptions,omitempty"`
 
 	// XAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-xaxislabeloptions
-	XAxisLabelOptions *Template_ChartAxisLabelOptions `json:"XAxisLabelOptions,omitempty"`
+	XAxisLabelOptions *Template_ChartAxisLabelOptions[any] `json:"XAxisLabelOptions,omitempty"`
 
 	// YAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramconfiguration.html#cfn-quicksight-template-histogramconfiguration-yaxisdisplayoptions
-	YAxisDisplayOptions *Template_AxisDisplayOptions `json:"YAxisDisplayOptions,omitempty"`
+	YAxisDisplayOptions *Template_AxisDisplayOptions[any] `json:"YAxisDisplayOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Template_HistogramConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HistogramConfiguration) AWSCloudFormationType() string {
+func (r *Template_HistogramConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HistogramConfiguration"
 }

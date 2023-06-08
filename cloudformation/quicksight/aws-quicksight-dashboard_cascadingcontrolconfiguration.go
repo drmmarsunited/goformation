@@ -8,12 +8,12 @@ import (
 
 // Dashboard_CascadingControlConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CascadingControlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-cascadingcontrolconfiguration.html
-type Dashboard_CascadingControlConfiguration struct {
+type Dashboard_CascadingControlConfiguration[T any] struct {
 
 	// SourceControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-cascadingcontrolconfiguration.html#cfn-quicksight-dashboard-cascadingcontrolconfiguration-sourcecontrols
-	SourceControls []Dashboard_CascadingControlSource `json:"SourceControls,omitempty"`
+	SourceControls []Dashboard_CascadingControlSource[any] `json:"SourceControls,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_CascadingControlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CascadingControlConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_CascadingControlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CascadingControlConfiguration"
 }

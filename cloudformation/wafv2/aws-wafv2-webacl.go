@@ -12,27 +12,27 @@ import (
 
 // WebACL AWS CloudFormation Resource (AWS::WAFv2::WebACL)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html
-type WebACL struct {
+type WebACL[T any] struct {
 
 	// CaptchaConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-captchaconfig
-	CaptchaConfig *WebACL_CaptchaConfig `json:"CaptchaConfig,omitempty"`
+	CaptchaConfig *WebACL_CaptchaConfig[any] `json:"CaptchaConfig,omitempty"`
 
 	// ChallengeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-challengeconfig
-	ChallengeConfig *WebACL_ChallengeConfig `json:"ChallengeConfig,omitempty"`
+	ChallengeConfig *WebACL_ChallengeConfig[any] `json:"ChallengeConfig,omitempty"`
 
 	// CustomResponseBodies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies
-	CustomResponseBodies map[string]WebACL_CustomResponseBody `json:"CustomResponseBodies,omitempty"`
+	CustomResponseBodies map[string]WebACL_CustomResponseBody[any] `json:"CustomResponseBodies,omitempty"`
 
 	// DefaultAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-defaultaction
-	DefaultAction *WebACL_DefaultAction `json:"DefaultAction"`
+	DefaultAction *WebACL_DefaultAction[any] `json:"DefaultAction"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type WebACL struct {
 	// Rules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-rules
-	Rules []WebACL_Rule `json:"Rules,omitempty"`
+	Rules []WebACL_Rule[any] `json:"Rules,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type WebACL struct {
 	// VisibilityConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig
-	VisibilityConfig *WebACL_VisibilityConfig `json:"VisibilityConfig"`
+	VisibilityConfig *WebACL_VisibilityConfig[any] `json:"VisibilityConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -86,14 +86,15 @@ type WebACL struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL) AWSCloudFormationType() string {
+func (r *WebACL[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WebACL) MarshalJSON() ([]byte, error) {
-	type Properties WebACL
+func (r WebACL[any]) MarshalJSON() ([]byte, error) {
+	type Properties WebACL[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r WebACL) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WebACL) UnmarshalJSON(b []byte) error {
-	type Properties WebACL
+func (r *WebACL[any]) UnmarshalJSON(b []byte) error {
+	type Properties WebACL[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *WebACL) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WebACL(*res.Properties)
+		*r = WebACL[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

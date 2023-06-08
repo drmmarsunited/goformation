@@ -8,7 +8,7 @@ import (
 
 // Instance_ElasticGpuSpecification AWS CloudFormation Resource (AWS::EC2::Instance.ElasticGpuSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html
-type Instance_ElasticGpuSpecification struct {
+type Instance_ElasticGpuSpecification[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Instance_ElasticGpuSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_ElasticGpuSpecification) AWSCloudFormationType() string {
+func (r *Instance_ElasticGpuSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.ElasticGpuSpecification"
 }

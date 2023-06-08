@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FreeFormLayoutElementBorderStyle AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormLayoutElementBorderStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelementborderstyle.html
-type Dashboard_FreeFormLayoutElementBorderStyle struct {
+type Dashboard_FreeFormLayoutElementBorderStyle[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_FreeFormLayoutElementBorderStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormLayoutElementBorderStyle) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormLayoutElementBorderStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormLayoutElementBorderStyle"
 }

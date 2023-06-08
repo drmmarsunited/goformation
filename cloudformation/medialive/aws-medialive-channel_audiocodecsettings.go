@@ -8,42 +8,42 @@ import (
 
 // Channel_AudioCodecSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioCodecSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html
-type Channel_AudioCodecSettings struct {
+type Channel_AudioCodecSettings[T any] struct {
 
 	// AacSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-aacsettings
-	AacSettings *Channel_AacSettings `json:"AacSettings,omitempty"`
+	AacSettings *Channel_AacSettings[any] `json:"AacSettings,omitempty"`
 
 	// Ac3Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-ac3settings
-	Ac3Settings *Channel_Ac3Settings `json:"Ac3Settings,omitempty"`
+	Ac3Settings *Channel_Ac3Settings[any] `json:"Ac3Settings,omitempty"`
 
 	// Eac3AtmosSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-eac3atmossettings
-	Eac3AtmosSettings *Channel_Eac3AtmosSettings `json:"Eac3AtmosSettings,omitempty"`
+	Eac3AtmosSettings *Channel_Eac3AtmosSettings[any] `json:"Eac3AtmosSettings,omitempty"`
 
 	// Eac3Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-eac3settings
-	Eac3Settings *Channel_Eac3Settings `json:"Eac3Settings,omitempty"`
+	Eac3Settings *Channel_Eac3Settings[any] `json:"Eac3Settings,omitempty"`
 
 	// Mp2Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-mp2settings
-	Mp2Settings *Channel_Mp2Settings `json:"Mp2Settings,omitempty"`
+	Mp2Settings *Channel_Mp2Settings[any] `json:"Mp2Settings,omitempty"`
 
 	// PassThroughSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-passthroughsettings
-	PassThroughSettings *Channel_PassThroughSettings `json:"PassThroughSettings,omitempty"`
+	PassThroughSettings *Channel_PassThroughSettings[any] `json:"PassThroughSettings,omitempty"`
 
 	// WavSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-wavsettings
-	WavSettings *Channel_WavSettings `json:"WavSettings,omitempty"`
+	WavSettings *Channel_WavSettings[any] `json:"WavSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Channel_AudioCodecSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioCodecSettings) AWSCloudFormationType() string {
+func (r *Channel_AudioCodecSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioCodecSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_ParameterTextAreaControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterTextAreaControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametertextareacontrol.html
-type Template_ParameterTextAreaControl struct {
+type Template_ParameterTextAreaControl[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_ParameterTextAreaControl struct {
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametertextareacontrol.html#cfn-quicksight-template-parametertextareacontrol-displayoptions
-	DisplayOptions *Template_TextAreaControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_TextAreaControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Template_ParameterTextAreaControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterTextAreaControl) AWSCloudFormationType() string {
+func (r *Template_ParameterTextAreaControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterTextAreaControl"
 }

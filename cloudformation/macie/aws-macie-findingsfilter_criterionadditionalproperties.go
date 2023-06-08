@@ -8,7 +8,7 @@ import (
 
 // FindingsFilter_CriterionAdditionalProperties AWS CloudFormation Resource (AWS::Macie::FindingsFilter.CriterionAdditionalProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html
-type FindingsFilter_CriterionAdditionalProperties struct {
+type FindingsFilter_CriterionAdditionalProperties[T any] struct {
 
 	// eq AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type FindingsFilter_CriterionAdditionalProperties struct {
 	// gt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gt
-	gt *int `json:"gt,omitempty"`
+	gt *T `json:"gt,omitempty"`
 
 	// gte AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gte
-	gte *int `json:"gte,omitempty"`
+	gte *T `json:"gte,omitempty"`
 
 	// lt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lt
-	lt *int `json:"lt,omitempty"`
+	lt *T `json:"lt,omitempty"`
 
 	// lte AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lte
-	lte *int `json:"lte,omitempty"`
+	lte *T `json:"lte,omitempty"`
 
 	// neq AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type FindingsFilter_CriterionAdditionalProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FindingsFilter_CriterionAdditionalProperties) AWSCloudFormationType() string {
+func (r *FindingsFilter_CriterionAdditionalProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::FindingsFilter.CriterionAdditionalProperties"
 }

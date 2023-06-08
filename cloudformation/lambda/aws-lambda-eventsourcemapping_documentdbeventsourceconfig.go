@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_DocumentDBEventSourceConfig AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.DocumentDBEventSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html
-type EventSourceMapping_DocumentDBEventSourceConfig struct {
+type EventSourceMapping_DocumentDBEventSourceConfig[T any] struct {
 
 	// CollectionName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EventSourceMapping_DocumentDBEventSourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_DocumentDBEventSourceConfig) AWSCloudFormationType() string {
+func (r *EventSourceMapping_DocumentDBEventSourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.DocumentDBEventSourceConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Stack_AccessEndpoint AWS CloudFormation Resource (AWS::AppStream::Stack.AccessEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-accessendpoint.html
-type Stack_AccessEndpoint struct {
+type Stack_AccessEndpoint[T any] struct {
 
 	// EndpointType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Stack_AccessEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_AccessEndpoint) AWSCloudFormationType() string {
+func (r *Stack_AccessEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Stack.AccessEndpoint"
 }

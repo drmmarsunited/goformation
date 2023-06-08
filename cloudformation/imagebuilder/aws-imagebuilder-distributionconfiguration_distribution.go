@@ -8,27 +8,27 @@ import (
 
 // DistributionConfiguration_Distribution AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.Distribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html
-type DistributionConfiguration_Distribution struct {
+type DistributionConfiguration_Distribution[T any] struct {
 
 	// AmiDistributionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-amidistributionconfiguration
-	AmiDistributionConfiguration *DistributionConfiguration_AmiDistributionConfiguration `json:"AmiDistributionConfiguration,omitempty"`
+	AmiDistributionConfiguration *DistributionConfiguration_AmiDistributionConfiguration[any] `json:"AmiDistributionConfiguration,omitempty"`
 
 	// ContainerDistributionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-containerdistributionconfiguration
-	ContainerDistributionConfiguration *DistributionConfiguration_ContainerDistributionConfiguration `json:"ContainerDistributionConfiguration,omitempty"`
+	ContainerDistributionConfiguration *DistributionConfiguration_ContainerDistributionConfiguration[any] `json:"ContainerDistributionConfiguration,omitempty"`
 
 	// FastLaunchConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-fastlaunchconfigurations
-	FastLaunchConfigurations []DistributionConfiguration_FastLaunchConfiguration `json:"FastLaunchConfigurations,omitempty"`
+	FastLaunchConfigurations []DistributionConfiguration_FastLaunchConfiguration[any] `json:"FastLaunchConfigurations,omitempty"`
 
 	// LaunchTemplateConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-launchtemplateconfigurations
-	LaunchTemplateConfigurations []DistributionConfiguration_LaunchTemplateConfiguration `json:"LaunchTemplateConfigurations,omitempty"`
+	LaunchTemplateConfigurations []DistributionConfiguration_LaunchTemplateConfiguration[any] `json:"LaunchTemplateConfigurations,omitempty"`
 
 	// LicenseConfigurationArns AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DistributionConfiguration_Distribution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_Distribution) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_Distribution[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.Distribution"
 }

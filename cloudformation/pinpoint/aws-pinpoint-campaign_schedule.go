@@ -8,7 +8,7 @@ import (
 
 // Campaign_Schedule AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html
-type Campaign_Schedule struct {
+type Campaign_Schedule[T any] struct {
 
 	// EndTime AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Campaign_Schedule struct {
 	// EventFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-eventfilter
-	EventFilter *Campaign_CampaignEventFilter `json:"EventFilter,omitempty"`
+	EventFilter *Campaign_CampaignEventFilter[any] `json:"EventFilter,omitempty"`
 
 	// Frequency AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Campaign_Schedule struct {
 	// IsLocalTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-islocaltime
-	IsLocalTime *bool `json:"IsLocalTime,omitempty"`
+	IsLocalTime *T `json:"IsLocalTime,omitempty"`
 
 	// QuietTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-quiettime
-	QuietTime *Campaign_QuietTime `json:"QuietTime,omitempty"`
+	QuietTime *Campaign_QuietTime[any] `json:"QuietTime,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Campaign_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_Schedule) AWSCloudFormationType() string {
+func (r *Campaign_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.Schedule"
 }

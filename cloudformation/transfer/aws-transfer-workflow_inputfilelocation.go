@@ -8,17 +8,17 @@ import (
 
 // Workflow_InputFileLocation AWS CloudFormation Resource (AWS::Transfer::Workflow.InputFileLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-inputfilelocation.html
-type Workflow_InputFileLocation struct {
+type Workflow_InputFileLocation[T any] struct {
 
 	// EfsFileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-inputfilelocation.html#cfn-transfer-workflow-inputfilelocation-efsfilelocation
-	EfsFileLocation *Workflow_EfsInputFileLocation `json:"EfsFileLocation,omitempty"`
+	EfsFileLocation *Workflow_EfsInputFileLocation[any] `json:"EfsFileLocation,omitempty"`
 
 	// S3FileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-inputfilelocation.html#cfn-transfer-workflow-inputfilelocation-s3filelocation
-	S3FileLocation *Workflow_S3InputFileLocation `json:"S3FileLocation,omitempty"`
+	S3FileLocation *Workflow_S3InputFileLocation[any] `json:"S3FileLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Workflow_InputFileLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_InputFileLocation) AWSCloudFormationType() string {
+func (r *Workflow_InputFileLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.InputFileLocation"
 }

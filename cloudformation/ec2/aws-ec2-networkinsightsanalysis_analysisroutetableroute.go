@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisRouteTableRoute AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisRouteTableRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html
-type NetworkInsightsAnalysis_AnalysisRouteTableRoute struct {
+type NetworkInsightsAnalysis_AnalysisRouteTableRoute[T any] struct {
 
 	// NatGatewayId AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type NetworkInsightsAnalysis_AnalysisRouteTableRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisRouteTableRoute) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisRouteTableRoute[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisRouteTableRoute"
 }

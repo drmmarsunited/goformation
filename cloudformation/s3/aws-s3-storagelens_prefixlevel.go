@@ -8,12 +8,12 @@ import (
 
 // StorageLens_PrefixLevel AWS CloudFormation Resource (AWS::S3::StorageLens.PrefixLevel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevel.html
-type StorageLens_PrefixLevel struct {
+type StorageLens_PrefixLevel[T any] struct {
 
 	// StorageMetrics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevel.html#cfn-s3-storagelens-prefixlevel-storagemetrics
-	StorageMetrics *StorageLens_PrefixLevelStorageMetrics `json:"StorageMetrics"`
+	StorageMetrics *StorageLens_PrefixLevelStorageMetrics[any] `json:"StorageMetrics"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StorageLens_PrefixLevel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_PrefixLevel) AWSCloudFormationType() string {
+func (r *StorageLens_PrefixLevel[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.PrefixLevel"
 }

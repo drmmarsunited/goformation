@@ -11,7 +11,7 @@ import (
 
 // FindingsFilter AWS CloudFormation Resource (AWS::Macie::FindingsFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html
-type FindingsFilter struct {
+type FindingsFilter[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type FindingsFilter struct {
 	// FindingCriteria AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-findingcriteria
-	FindingCriteria *FindingsFilter_FindingCriteria `json:"FindingCriteria"`
+	FindingCriteria *FindingsFilter_FindingCriteria[any] `json:"FindingCriteria"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type FindingsFilter struct {
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-position
-	Position *int `json:"Position,omitempty"`
+	Position *T `json:"Position,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type FindingsFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FindingsFilter) AWSCloudFormationType() string {
+func (r *FindingsFilter[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::FindingsFilter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FindingsFilter) MarshalJSON() ([]byte, error) {
-	type Properties FindingsFilter
+func (r FindingsFilter[any]) MarshalJSON() ([]byte, error) {
+	type Properties FindingsFilter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r FindingsFilter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FindingsFilter) UnmarshalJSON(b []byte) error {
-	type Properties FindingsFilter
+func (r *FindingsFilter[any]) UnmarshalJSON(b []byte) error {
+	type Properties FindingsFilter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *FindingsFilter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FindingsFilter(*res.Properties)
+		*r = FindingsFilter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

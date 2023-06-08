@@ -8,22 +8,22 @@ import (
 
 // Dashboard_HeatMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HeatMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapaggregatedfieldwells.html
-type Dashboard_HeatMapAggregatedFieldWells struct {
+type Dashboard_HeatMapAggregatedFieldWells[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapaggregatedfieldwells.html#cfn-quicksight-dashboard-heatmapaggregatedfieldwells-columns
-	Columns []Dashboard_DimensionField `json:"Columns,omitempty"`
+	Columns []Dashboard_DimensionField[any] `json:"Columns,omitempty"`
 
 	// Rows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapaggregatedfieldwells.html#cfn-quicksight-dashboard-heatmapaggregatedfieldwells-rows
-	Rows []Dashboard_DimensionField `json:"Rows,omitempty"`
+	Rows []Dashboard_DimensionField[any] `json:"Rows,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapaggregatedfieldwells.html#cfn-quicksight-dashboard-heatmapaggregatedfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_HeatMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HeatMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_HeatMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HeatMapAggregatedFieldWells"
 }

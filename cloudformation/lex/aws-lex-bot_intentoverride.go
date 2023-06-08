@@ -8,7 +8,7 @@ import (
 
 // Bot_IntentOverride AWS CloudFormation Resource (AWS::Lex::Bot.IntentOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentoverride.html
-type Bot_IntentOverride struct {
+type Bot_IntentOverride[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Bot_IntentOverride struct {
 	// Slots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentoverride.html#cfn-lex-bot-intentoverride-slots
-	Slots []Bot_SlotValueOverrideMap `json:"Slots,omitempty"`
+	Slots []Bot_SlotValueOverrideMap[any] `json:"Slots,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_IntentOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_IntentOverride) AWSCloudFormationType() string {
+func (r *Bot_IntentOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.IntentOverride"
 }

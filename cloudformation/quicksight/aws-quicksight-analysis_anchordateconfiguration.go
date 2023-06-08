@@ -8,7 +8,7 @@ import (
 
 // Analysis_AnchorDateConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnchorDateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-anchordateconfiguration.html
-type Analysis_AnchorDateConfiguration struct {
+type Analysis_AnchorDateConfiguration[T any] struct {
 
 	// AnchorOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_AnchorDateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AnchorDateConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_AnchorDateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AnchorDateConfiguration"
 }

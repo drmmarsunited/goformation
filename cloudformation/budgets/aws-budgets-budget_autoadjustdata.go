@@ -8,7 +8,7 @@ import (
 
 // Budget_AutoAdjustData AWS CloudFormation Resource (AWS::Budgets::Budget.AutoAdjustData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-autoadjustdata.html
-type Budget_AutoAdjustData struct {
+type Budget_AutoAdjustData[T any] struct {
 
 	// AutoAdjustType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Budget_AutoAdjustData struct {
 	// HistoricalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-autoadjustdata.html#cfn-budgets-budget-autoadjustdata-historicaloptions
-	HistoricalOptions *Budget_HistoricalOptions `json:"HistoricalOptions,omitempty"`
+	HistoricalOptions *Budget_HistoricalOptions[any] `json:"HistoricalOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Budget_AutoAdjustData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_AutoAdjustData) AWSCloudFormationType() string {
+func (r *Budget_AutoAdjustData[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.AutoAdjustData"
 }

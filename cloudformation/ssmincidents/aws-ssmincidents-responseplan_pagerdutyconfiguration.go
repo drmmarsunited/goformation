@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_PagerDutyConfiguration AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.PagerDutyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html
-type ResponsePlan_PagerDutyConfiguration struct {
+type ResponsePlan_PagerDutyConfiguration[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResponsePlan_PagerDutyConfiguration struct {
 	// PagerDutyIncidentConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-pagerdutyincidentconfiguration
-	PagerDutyIncidentConfiguration *ResponsePlan_PagerDutyIncidentConfiguration `json:"PagerDutyIncidentConfiguration"`
+	PagerDutyIncidentConfiguration *ResponsePlan_PagerDutyIncidentConfiguration[any] `json:"PagerDutyIncidentConfiguration"`
 
 	// SecretId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ResponsePlan_PagerDutyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_PagerDutyConfiguration) AWSCloudFormationType() string {
+func (r *ResponsePlan_PagerDutyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.PagerDutyConfiguration"
 }

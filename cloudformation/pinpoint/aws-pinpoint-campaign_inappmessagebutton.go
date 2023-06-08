@@ -8,27 +8,27 @@ import (
 
 // Campaign_InAppMessageButton AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageButton)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html
-type Campaign_InAppMessageButton struct {
+type Campaign_InAppMessageButton[T any] struct {
 
 	// Android AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-android
-	Android *Campaign_OverrideButtonConfiguration `json:"Android,omitempty"`
+	Android *Campaign_OverrideButtonConfiguration[any] `json:"Android,omitempty"`
 
 	// DefaultConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-defaultconfig
-	DefaultConfig *Campaign_DefaultButtonConfiguration `json:"DefaultConfig,omitempty"`
+	DefaultConfig *Campaign_DefaultButtonConfiguration[any] `json:"DefaultConfig,omitempty"`
 
 	// IOS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-ios
-	IOS *Campaign_OverrideButtonConfiguration `json:"IOS,omitempty"`
+	IOS *Campaign_OverrideButtonConfiguration[any] `json:"IOS,omitempty"`
 
 	// Web AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebutton.html#cfn-pinpoint-campaign-inappmessagebutton-web
-	Web *Campaign_OverrideButtonConfiguration `json:"Web,omitempty"`
+	Web *Campaign_OverrideButtonConfiguration[any] `json:"Web,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Campaign_InAppMessageButton struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_InAppMessageButton) AWSCloudFormationType() string {
+func (r *Campaign_InAppMessageButton[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.InAppMessageButton"
 }

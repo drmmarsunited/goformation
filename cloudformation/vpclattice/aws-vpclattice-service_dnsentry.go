@@ -8,7 +8,7 @@ import (
 
 // Service_DnsEntry AWS CloudFormation Resource (AWS::VpcLattice::Service.DnsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-service-dnsentry.html
-type Service_DnsEntry struct {
+type Service_DnsEntry[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_DnsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DnsEntry) AWSCloudFormationType() string {
+func (r *Service_DnsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Service.DnsEntry"
 }

@@ -8,7 +8,7 @@ import (
 
 // InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue AWS CloudFormation Resource (AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttributeValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributevalue.html
-type InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue struct {
+type InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue[T any] struct {
 
 	// Source AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue str
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue) AWSCloudFormationType() string {
+func (r *InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue[any]) AWSCloudFormationType() string {
 	return "AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttributeValue"
 }

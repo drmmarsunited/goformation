@@ -9,7 +9,7 @@ import (
 
 // Detector_EventType AWS CloudFormation Resource (AWS::FraudDetector::Detector.EventType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html
-type Detector_EventType struct {
+type Detector_EventType[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -29,22 +29,22 @@ type Detector_EventType struct {
 	// EntityTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-entitytypes
-	EntityTypes []Detector_EntityType `json:"EntityTypes,omitempty"`
+	EntityTypes []Detector_EntityType[any] `json:"EntityTypes,omitempty"`
 
 	// EventVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-eventvariables
-	EventVariables []Detector_EventVariable `json:"EventVariables,omitempty"`
+	EventVariables []Detector_EventVariable[any] `json:"EventVariables,omitempty"`
 
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// Labels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-labels
-	Labels []Detector_Label `json:"Labels,omitempty"`
+	Labels []Detector_Label[any] `json:"Labels,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -78,6 +78,6 @@ type Detector_EventType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_EventType) AWSCloudFormationType() string {
+func (r *Detector_EventType[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.EventType"
 }

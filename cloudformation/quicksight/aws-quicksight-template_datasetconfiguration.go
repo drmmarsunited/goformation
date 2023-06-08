@@ -8,17 +8,17 @@ import (
 
 // Template_DataSetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DataSetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html
-type Template_DataSetConfiguration struct {
+type Template_DataSetConfiguration[T any] struct {
 
 	// ColumnGroupSchemaList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-columngroupschemalist
-	ColumnGroupSchemaList []Template_ColumnGroupSchema `json:"ColumnGroupSchemaList,omitempty"`
+	ColumnGroupSchemaList []Template_ColumnGroupSchema[any] `json:"ColumnGroupSchemaList,omitempty"`
 
 	// DataSetSchema AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-datasetschema
-	DataSetSchema *Template_DataSetSchema `json:"DataSetSchema,omitempty"`
+	DataSetSchema *Template_DataSetSchema[any] `json:"DataSetSchema,omitempty"`
 
 	// Placeholder AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_DataSetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataSetConfiguration) AWSCloudFormationType() string {
+func (r *Template_DataSetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataSetConfiguration"
 }

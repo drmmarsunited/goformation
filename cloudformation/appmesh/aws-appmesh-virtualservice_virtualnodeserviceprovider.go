@@ -8,7 +8,7 @@ import (
 
 // VirtualService_VirtualNodeServiceProvider AWS CloudFormation Resource (AWS::AppMesh::VirtualService.VirtualNodeServiceProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html
-type VirtualService_VirtualNodeServiceProvider struct {
+type VirtualService_VirtualNodeServiceProvider[T any] struct {
 
 	// VirtualNodeName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualService_VirtualNodeServiceProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualService_VirtualNodeServiceProvider) AWSCloudFormationType() string {
+func (r *VirtualService_VirtualNodeServiceProvider[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualService.VirtualNodeServiceProvider"
 }

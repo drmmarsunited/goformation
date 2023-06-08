@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_SNSAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.SNSAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-snsaction.html
-type ReceiptRule_SNSAction struct {
+type ReceiptRule_SNSAction[T any] struct {
 
 	// Encoding AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ReceiptRule_SNSAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_SNSAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_SNSAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.SNSAction"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_CustomActionURLOperation AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomActionURLOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionurloperation.html
-type Analysis_CustomActionURLOperation struct {
+type Analysis_CustomActionURLOperation[T any] struct {
 
 	// URLTarget AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_CustomActionURLOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomActionURLOperation) AWSCloudFormationType() string {
+func (r *Analysis_CustomActionURLOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomActionURLOperation"
 }

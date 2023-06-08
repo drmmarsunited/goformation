@@ -12,7 +12,7 @@ import (
 
 // Stream AWS CloudFormation Resource (AWS::Kinesis::Stream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
-type Stream struct {
+type Stream[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -22,22 +22,22 @@ type Stream struct {
 	// RetentionPeriodHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
-	RetentionPeriodHours *int `json:"RetentionPeriodHours,omitempty"`
+	RetentionPeriodHours *T `json:"RetentionPeriodHours,omitempty"`
 
 	// ShardCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
-	ShardCount *int `json:"ShardCount,omitempty"`
+	ShardCount *T `json:"ShardCount,omitempty"`
 
 	// StreamEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
-	StreamEncryption *Stream_StreamEncryption `json:"StreamEncryption,omitempty"`
+	StreamEncryption *Stream_StreamEncryption[any] `json:"StreamEncryption,omitempty"`
 
 	// StreamModeDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streammodedetails
-	StreamModeDetails *Stream_StreamModeDetails `json:"StreamModeDetails,omitempty"`
+	StreamModeDetails *Stream_StreamModeDetails[any] `json:"StreamModeDetails,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Stream struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stream) AWSCloudFormationType() string {
+func (r *Stream[any]) AWSCloudFormationType() string {
 	return "AWS::Kinesis::Stream"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Stream) MarshalJSON() ([]byte, error) {
-	type Properties Stream
+func (r Stream[any]) MarshalJSON() ([]byte, error) {
+	type Properties Stream[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Stream) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Stream) UnmarshalJSON(b []byte) error {
-	type Properties Stream
+func (r *Stream[any]) UnmarshalJSON(b []byte) error {
+	type Properties Stream[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Stream) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Stream(*res.Properties)
+		*r = Stream[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

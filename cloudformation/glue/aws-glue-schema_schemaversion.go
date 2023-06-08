@@ -8,17 +8,17 @@ import (
 
 // Schema_SchemaVersion AWS CloudFormation Resource (AWS::Glue::Schema.SchemaVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-schemaversion.html
-type Schema_SchemaVersion struct {
+type Schema_SchemaVersion[T any] struct {
 
 	// IsLatest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-schemaversion.html#cfn-glue-schema-schemaversion-islatest
-	IsLatest *bool `json:"IsLatest,omitempty"`
+	IsLatest *T `json:"IsLatest,omitempty"`
 
 	// VersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-schemaversion.html#cfn-glue-schema-schemaversion-versionnumber
-	VersionNumber *int `json:"VersionNumber,omitempty"`
+	VersionNumber *T `json:"VersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Schema_SchemaVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schema_SchemaVersion) AWSCloudFormationType() string {
+func (r *Schema_SchemaVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Schema.SchemaVersion"
 }

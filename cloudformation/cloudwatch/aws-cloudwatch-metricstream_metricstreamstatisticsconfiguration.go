@@ -8,7 +8,7 @@ import (
 
 // MetricStream_MetricStreamStatisticsConfiguration AWS CloudFormation Resource (AWS::CloudWatch::MetricStream.MetricStreamStatisticsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-metricstream-metricstreamstatisticsconfiguration.html
-type MetricStream_MetricStreamStatisticsConfiguration struct {
+type MetricStream_MetricStreamStatisticsConfiguration[T any] struct {
 
 	// AdditionalStatistics AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type MetricStream_MetricStreamStatisticsConfiguration struct {
 	// IncludeMetrics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-metricstream-metricstreamstatisticsconfiguration.html#cfn-cloudwatch-metricstream-metricstreamstatisticsconfiguration-includemetrics
-	IncludeMetrics []MetricStream_MetricStreamStatisticsMetric `json:"IncludeMetrics"`
+	IncludeMetrics []MetricStream_MetricStreamStatisticsMetric[any] `json:"IncludeMetrics"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type MetricStream_MetricStreamStatisticsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MetricStream_MetricStreamStatisticsConfiguration) AWSCloudFormationType() string {
+func (r *MetricStream_MetricStreamStatisticsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::MetricStream.MetricStreamStatisticsConfiguration"
 }

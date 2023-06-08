@@ -8,7 +8,7 @@ import (
 
 // Bucket_ServerSideEncryptionByDefault AWS CloudFormation Resource (AWS::S3::Bucket.ServerSideEncryptionByDefault)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html
-type Bucket_ServerSideEncryptionByDefault struct {
+type Bucket_ServerSideEncryptionByDefault[T any] struct {
 
 	// KMSMasterKeyID AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bucket_ServerSideEncryptionByDefault struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ServerSideEncryptionByDefault) AWSCloudFormationType() string {
+func (r *Bucket_ServerSideEncryptionByDefault[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ServerSideEncryptionByDefault"
 }

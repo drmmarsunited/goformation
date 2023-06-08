@@ -8,17 +8,17 @@ import (
 
 // Template_GridLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.GridLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutconfiguration.html
-type Template_GridLayoutConfiguration struct {
+type Template_GridLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutconfiguration.html#cfn-quicksight-template-gridlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Template_GridLayoutCanvasSizeOptions `json:"CanvasSizeOptions,omitempty"`
+	CanvasSizeOptions *Template_GridLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions,omitempty"`
 
 	// Elements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutconfiguration.html#cfn-quicksight-template-gridlayoutconfiguration-elements
-	Elements []Template_GridLayoutElement `json:"Elements"`
+	Elements []Template_GridLayoutElement[any] `json:"Elements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_GridLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GridLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_GridLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GridLayoutConfiguration"
 }

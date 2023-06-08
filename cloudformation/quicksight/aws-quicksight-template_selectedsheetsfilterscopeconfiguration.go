@@ -8,12 +8,12 @@ import (
 
 // Template_SelectedSheetsFilterScopeConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.SelectedSheetsFilterScopeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-selectedsheetsfilterscopeconfiguration.html
-type Template_SelectedSheetsFilterScopeConfiguration struct {
+type Template_SelectedSheetsFilterScopeConfiguration[T any] struct {
 
 	// SheetVisualScopingConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-selectedsheetsfilterscopeconfiguration.html#cfn-quicksight-template-selectedsheetsfilterscopeconfiguration-sheetvisualscopingconfigurations
-	SheetVisualScopingConfigurations []Template_SheetVisualScopingConfiguration `json:"SheetVisualScopingConfigurations,omitempty"`
+	SheetVisualScopingConfigurations []Template_SheetVisualScopingConfiguration[any] `json:"SheetVisualScopingConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_SelectedSheetsFilterScopeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SelectedSheetsFilterScopeConfiguration) AWSCloudFormationType() string {
+func (r *Template_SelectedSheetsFilterScopeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SelectedSheetsFilterScopeConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // AutoScalingGroup_MixedInstancesPolicy AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html
-type AutoScalingGroup_MixedInstancesPolicy struct {
+type AutoScalingGroup_MixedInstancesPolicy[T any] struct {
 
 	// InstancesDistribution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-instancesdistribution
-	InstancesDistribution *AutoScalingGroup_InstancesDistribution `json:"InstancesDistribution,omitempty"`
+	InstancesDistribution *AutoScalingGroup_InstancesDistribution[any] `json:"InstancesDistribution,omitempty"`
 
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-launchtemplate
-	LaunchTemplate *AutoScalingGroup_LaunchTemplate `json:"LaunchTemplate"`
+	LaunchTemplate *AutoScalingGroup_LaunchTemplate[any] `json:"LaunchTemplate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AutoScalingGroup_MixedInstancesPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_MixedInstancesPolicy) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_MixedInstancesPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy"
 }

@@ -8,7 +8,7 @@ import (
 
 // Asset_AssetProperty AWS CloudFormation Resource (AWS::IoTSiteWise::Asset.AssetProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assetproperty.html
-type Asset_AssetProperty struct {
+type Asset_AssetProperty[T any] struct {
 
 	// Alias AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Asset_AssetProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Asset_AssetProperty) AWSCloudFormationType() string {
+func (r *Asset_AssetProperty[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Asset.AssetProperty"
 }

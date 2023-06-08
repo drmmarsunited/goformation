@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_S3Output AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.S3Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html
-type ModelBiasJobDefinition_S3Output struct {
+type ModelBiasJobDefinition_S3Output[T any] struct {
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelBiasJobDefinition_S3Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_S3Output) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_S3Output[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.S3Output"
 }

@@ -12,7 +12,7 @@ import (
 
 // Accessor AWS CloudFormation Resource (AWS::ManagedBlockchain::Accessor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-accessor.html
-type Accessor struct {
+type Accessor[T any] struct {
 
 	// AccessorType AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type Accessor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Accessor) AWSCloudFormationType() string {
+func (r *Accessor[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Accessor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Accessor) MarshalJSON() ([]byte, error) {
-	type Properties Accessor
+func (r Accessor[any]) MarshalJSON() ([]byte, error) {
+	type Properties Accessor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r Accessor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Accessor) UnmarshalJSON(b []byte) error {
-	type Properties Accessor
+func (r *Accessor[any]) UnmarshalJSON(b []byte) error {
+	type Properties Accessor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *Accessor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Accessor(*res.Properties)
+		*r = Accessor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

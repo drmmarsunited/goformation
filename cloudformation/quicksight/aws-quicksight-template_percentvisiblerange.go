@@ -8,17 +8,17 @@ import (
 
 // Template_PercentVisibleRange AWS CloudFormation Resource (AWS::QuickSight::Template.PercentVisibleRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-percentvisiblerange.html
-type Template_PercentVisibleRange struct {
+type Template_PercentVisibleRange[T any] struct {
 
 	// From AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-percentvisiblerange.html#cfn-quicksight-template-percentvisiblerange-from
-	From *float64 `json:"From,omitempty"`
+	From *T `json:"From,omitempty"`
 
 	// To AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-percentvisiblerange.html#cfn-quicksight-template-percentvisiblerange-to
-	To *float64 `json:"To,omitempty"`
+	To *T `json:"To,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_PercentVisibleRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PercentVisibleRange) AWSCloudFormationType() string {
+func (r *Template_PercentVisibleRange[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PercentVisibleRange"
 }

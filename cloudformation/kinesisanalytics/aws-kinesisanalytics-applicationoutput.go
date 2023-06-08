@@ -11,7 +11,7 @@ import (
 
 // ApplicationOutput AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html
-type ApplicationOutput struct {
+type ApplicationOutput[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ApplicationOutput struct {
 	// Output AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output
-	Output *ApplicationOutput_Output `json:"Output"`
+	Output *ApplicationOutput_Output[any] `json:"Output"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ApplicationOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput) AWSCloudFormationType() string {
+func (r *ApplicationOutput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationOutput"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationOutput) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationOutput
+func (r ApplicationOutput[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationOutput[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ApplicationOutput) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationOutput) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationOutput
+func (r *ApplicationOutput[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationOutput[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ApplicationOutput) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationOutput(*res.Properties)
+		*r = ApplicationOutput[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

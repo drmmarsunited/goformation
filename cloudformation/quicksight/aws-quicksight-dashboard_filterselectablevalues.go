@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FilterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterselectablevalues.html
-type Dashboard_FilterSelectableValues struct {
+type Dashboard_FilterSelectableValues[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_FilterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterSelectableValues) AWSCloudFormationType() string {
+func (r *Dashboard_FilterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterSelectableValues"
 }

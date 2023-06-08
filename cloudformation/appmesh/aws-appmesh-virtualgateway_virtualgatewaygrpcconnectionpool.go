@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayGrpcConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayGrpcConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaygrpcconnectionpool.html
-type VirtualGateway_VirtualGatewayGrpcConnectionPool struct {
+type VirtualGateway_VirtualGatewayGrpcConnectionPool[T any] struct {
 
 	// MaxRequests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaygrpcconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewaygrpcconnectionpool-maxrequests
-	MaxRequests int `json:"MaxRequests"`
+	MaxRequests T `json:"MaxRequests"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayGrpcConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayGrpcConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayGrpcConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayGrpcConnectionPool"
 }

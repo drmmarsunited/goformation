@@ -8,7 +8,7 @@ import (
 
 // Pipeline_Channel AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Channel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-channel.html
-type Pipeline_Channel struct {
+type Pipeline_Channel[T any] struct {
 
 	// ChannelName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_Channel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Channel) AWSCloudFormationType() string {
+func (r *Pipeline_Channel[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Channel"
 }

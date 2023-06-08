@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TableConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableconditionalformatting.html
-type Dashboard_TableConditionalFormatting struct {
+type Dashboard_TableConditionalFormatting[T any] struct {
 
 	// ConditionalFormattingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableconditionalformatting.html#cfn-quicksight-dashboard-tableconditionalformatting-conditionalformattingoptions
-	ConditionalFormattingOptions []Dashboard_TableConditionalFormattingOption `json:"ConditionalFormattingOptions,omitempty"`
+	ConditionalFormattingOptions []Dashboard_TableConditionalFormattingOption[any] `json:"ConditionalFormattingOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_TableConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_TableConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableConditionalFormatting"
 }

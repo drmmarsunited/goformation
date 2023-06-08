@@ -8,7 +8,7 @@ import (
 
 // EmailIdentity_DkimSigningAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.DkimSigningAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimsigningattributes.html
-type EmailIdentity_DkimSigningAttributes struct {
+type EmailIdentity_DkimSigningAttributes[T any] struct {
 
 	// DomainSigningPrivateKey AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EmailIdentity_DkimSigningAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailIdentity_DkimSigningAttributes) AWSCloudFormationType() string {
+func (r *EmailIdentity_DkimSigningAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::EmailIdentity.DkimSigningAttributes"
 }

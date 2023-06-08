@@ -8,7 +8,7 @@ import (
 
 // Channel_Destination AWS CloudFormation Resource (AWS::CloudTrail::Channel.Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-channel-destination.html
-type Channel_Destination struct {
+type Channel_Destination[T any] struct {
 
 	// Location AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Channel_Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Destination) AWSCloudFormationType() string {
+func (r *Channel_Destination[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Channel.Destination"
 }

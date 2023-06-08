@@ -8,12 +8,12 @@ import (
 
 // Cluster_JmxExporter AWS CloudFormation Resource (AWS::MSK::Cluster.JmxExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html
-type Cluster_JmxExporter struct {
+type Cluster_JmxExporter[T any] struct {
 
 	// EnabledInBroker AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
-	EnabledInBroker bool `json:"EnabledInBroker"`
+	EnabledInBroker T `json:"EnabledInBroker"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_JmxExporter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_JmxExporter) AWSCloudFormationType() string {
+func (r *Cluster_JmxExporter[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.JmxExporter"
 }

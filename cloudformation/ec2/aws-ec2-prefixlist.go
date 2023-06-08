@@ -12,7 +12,7 @@ import (
 
 // PrefixList AWS CloudFormation Resource (AWS::EC2::PrefixList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html
-type PrefixList struct {
+type PrefixList[T any] struct {
 
 	// AddressFamily AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,12 @@ type PrefixList struct {
 	// Entries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-entries
-	Entries []PrefixList_Entry `json:"Entries,omitempty"`
+	Entries []PrefixList_Entry[any] `json:"Entries,omitempty"`
 
 	// MaxEntries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-maxentries
-	MaxEntries int `json:"MaxEntries"`
+	MaxEntries T `json:"MaxEntries"`
 
 	// PrefixListName AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type PrefixList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrefixList) AWSCloudFormationType() string {
+func (r *PrefixList[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::PrefixList"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PrefixList) MarshalJSON() ([]byte, error) {
-	type Properties PrefixList
+func (r PrefixList[any]) MarshalJSON() ([]byte, error) {
+	type Properties PrefixList[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r PrefixList) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PrefixList) UnmarshalJSON(b []byte) error {
-	type Properties PrefixList
+func (r *PrefixList[any]) UnmarshalJSON(b []byte) error {
+	type Properties PrefixList[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *PrefixList) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PrefixList(*res.Properties)
+		*r = PrefixList[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

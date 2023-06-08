@@ -8,7 +8,7 @@ import (
 
 // App_SslConfiguration AWS CloudFormation Resource (AWS::OpsWorks::App.SslConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
-type App_SslConfiguration struct {
+type App_SslConfiguration[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type App_SslConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_SslConfiguration) AWSCloudFormationType() string {
+func (r *App_SslConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App.SslConfiguration"
 }

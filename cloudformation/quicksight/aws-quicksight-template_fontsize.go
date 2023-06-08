@@ -8,7 +8,7 @@ import (
 
 // Template_FontSize AWS CloudFormation Resource (AWS::QuickSight::Template.FontSize)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fontsize.html
-type Template_FontSize struct {
+type Template_FontSize[T any] struct {
 
 	// Relative AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_FontSize struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FontSize) AWSCloudFormationType() string {
+func (r *Template_FontSize[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FontSize"
 }

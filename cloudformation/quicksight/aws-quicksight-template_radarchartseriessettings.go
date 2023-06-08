@@ -8,12 +8,12 @@ import (
 
 // Template_RadarChartSeriesSettings AWS CloudFormation Resource (AWS::QuickSight::Template.RadarChartSeriesSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartseriessettings.html
-type Template_RadarChartSeriesSettings struct {
+type Template_RadarChartSeriesSettings[T any] struct {
 
 	// AreaStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartseriessettings.html#cfn-quicksight-template-radarchartseriessettings-areastylesettings
-	AreaStyleSettings *Template_RadarChartAreaStyleSettings `json:"AreaStyleSettings,omitempty"`
+	AreaStyleSettings *Template_RadarChartAreaStyleSettings[any] `json:"AreaStyleSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_RadarChartSeriesSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RadarChartSeriesSettings) AWSCloudFormationType() string {
+func (r *Template_RadarChartSeriesSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RadarChartSeriesSettings"
 }

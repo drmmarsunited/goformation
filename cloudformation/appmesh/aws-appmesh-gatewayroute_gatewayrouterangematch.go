@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_GatewayRouteRangeMatch AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html
-type GatewayRoute_GatewayRouteRangeMatch struct {
+type GatewayRoute_GatewayRouteRangeMatch[T any] struct {
 
 	// End AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-end
-	End int `json:"End"`
+	End T `json:"End"`
 
 	// Start AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-start
-	Start int `json:"Start"`
+	Start T `json:"Start"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GatewayRoute_GatewayRouteRangeMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteRangeMatch) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteRangeMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch"
 }

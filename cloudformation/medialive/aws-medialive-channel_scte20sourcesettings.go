@@ -8,7 +8,7 @@ import (
 
 // Channel_Scte20SourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte20SourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html
-type Channel_Scte20SourceSettings struct {
+type Channel_Scte20SourceSettings[T any] struct {
 
 	// Convert608To708 AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_Scte20SourceSettings struct {
 	// Source608ChannelNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-source608channelnumber
-	Source608ChannelNumber *int `json:"Source608ChannelNumber,omitempty"`
+	Source608ChannelNumber *T `json:"Source608ChannelNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_Scte20SourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Scte20SourceSettings) AWSCloudFormationType() string {
+func (r *Channel_Scte20SourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Scte20SourceSettings"
 }

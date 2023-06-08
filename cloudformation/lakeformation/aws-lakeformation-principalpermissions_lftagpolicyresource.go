@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_LFTagPolicyResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.LFTagPolicyResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-lftagpolicyresource.html
-type PrincipalPermissions_LFTagPolicyResource struct {
+type PrincipalPermissions_LFTagPolicyResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type PrincipalPermissions_LFTagPolicyResource struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-lftagpolicyresource.html#cfn-lakeformation-principalpermissions-lftagpolicyresource-expression
-	Expression []PrincipalPermissions_LFTag `json:"Expression"`
+	Expression []PrincipalPermissions_LFTag[any] `json:"Expression"`
 
 	// ResourceType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type PrincipalPermissions_LFTagPolicyResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_LFTagPolicyResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_LFTagPolicyResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.LFTagPolicyResource"
 }

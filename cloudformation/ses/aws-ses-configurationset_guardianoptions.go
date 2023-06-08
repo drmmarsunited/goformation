@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_GuardianOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.GuardianOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-guardianoptions.html
-type ConfigurationSet_GuardianOptions struct {
+type ConfigurationSet_GuardianOptions[T any] struct {
 
 	// OptimizedSharedDelivery AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConfigurationSet_GuardianOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_GuardianOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_GuardianOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.GuardianOptions"
 }

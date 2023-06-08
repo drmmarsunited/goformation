@@ -8,7 +8,7 @@ import (
 
 // Workflow_TagStepDetails AWS CloudFormation Resource (AWS::Transfer::Workflow.TagStepDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-tagstepdetails.html
-type Workflow_TagStepDetails struct {
+type Workflow_TagStepDetails[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Workflow_TagStepDetails struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-tagstepdetails.html#cfn-transfer-workflow-tagstepdetails-tags
-	Tags []Workflow_S3Tag `json:"Tags,omitempty"`
+	Tags []Workflow_S3Tag[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Workflow_TagStepDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_TagStepDetails) AWSCloudFormationType() string {
+func (r *Workflow_TagStepDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.TagStepDetails"
 }

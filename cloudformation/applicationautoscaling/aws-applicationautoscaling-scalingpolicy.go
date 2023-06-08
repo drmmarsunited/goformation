@@ -11,7 +11,7 @@ import (
 
 // ScalingPolicy AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html
-type ScalingPolicy struct {
+type ScalingPolicy[T any] struct {
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
@@ -46,12 +46,12 @@ type ScalingPolicy struct {
 	// StepScalingPolicyConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration
-	StepScalingPolicyConfiguration *ScalingPolicy_StepScalingPolicyConfiguration `json:"StepScalingPolicyConfiguration,omitempty"`
+	StepScalingPolicyConfiguration *ScalingPolicy_StepScalingPolicyConfiguration[any] `json:"StepScalingPolicyConfiguration,omitempty"`
 
 	// TargetTrackingScalingPolicyConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration
-	TargetTrackingScalingPolicyConfiguration *ScalingPolicy_TargetTrackingScalingPolicyConfiguration `json:"TargetTrackingScalingPolicyConfiguration,omitempty"`
+	TargetTrackingScalingPolicyConfiguration *ScalingPolicy_TargetTrackingScalingPolicyConfiguration[any] `json:"TargetTrackingScalingPolicyConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type ScalingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy) AWSCloudFormationType() string {
+func (r *ScalingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScalingPolicy) MarshalJSON() ([]byte, error) {
-	type Properties ScalingPolicy
+func (r ScalingPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScalingPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r ScalingPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScalingPolicy) UnmarshalJSON(b []byte) error {
-	type Properties ScalingPolicy
+func (r *ScalingPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScalingPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *ScalingPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScalingPolicy(*res.Properties)
+		*r = ScalingPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Member_MemberFabricConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.MemberFabricConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html
-type Member_MemberFabricConfiguration struct {
+type Member_MemberFabricConfiguration[T any] struct {
 
 	// AdminPassword AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Member_MemberFabricConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_MemberFabricConfiguration) AWSCloudFormationType() string {
+func (r *Member_MemberFabricConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.MemberFabricConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_UnaggregatedField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.UnaggregatedField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-unaggregatedfield.html
-type Dashboard_UnaggregatedField struct {
+type Dashboard_UnaggregatedField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-unaggregatedfield.html#cfn-quicksight-dashboard-unaggregatedfield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_UnaggregatedField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-unaggregatedfield.html#cfn-quicksight-dashboard-unaggregatedfield-formatconfiguration
-	FormatConfiguration *Dashboard_FormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_FormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_UnaggregatedField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_UnaggregatedField) AWSCloudFormationType() string {
+func (r *Dashboard_UnaggregatedField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.UnaggregatedField"
 }

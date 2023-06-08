@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_PodProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.PodProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html
-type JobDefinition_PodProperties struct {
+type JobDefinition_PodProperties[T any] struct {
 
 	// Containers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-containers
-	Containers []JobDefinition_EksContainer `json:"Containers,omitempty"`
+	Containers []JobDefinition_EksContainer[any] `json:"Containers,omitempty"`
 
 	// DnsPolicy AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type JobDefinition_PodProperties struct {
 	// HostNetwork AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-hostnetwork
-	HostNetwork *bool `json:"HostNetwork,omitempty"`
+	HostNetwork *T `json:"HostNetwork,omitempty"`
 
 	// Metadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-metadata
-	Metadata *JobDefinition_Metadata `json:"Metadata,omitempty"`
+	Metadata *JobDefinition_Metadata[any] `json:"Metadata,omitempty"`
 
 	// ServiceAccountName AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type JobDefinition_PodProperties struct {
 	// Volumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-volumes
-	Volumes []JobDefinition_EksVolume `json:"Volumes,omitempty"`
+	Volumes []JobDefinition_EksVolume[any] `json:"Volumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type JobDefinition_PodProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_PodProperties) AWSCloudFormationType() string {
+func (r *JobDefinition_PodProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.PodProperties"
 }

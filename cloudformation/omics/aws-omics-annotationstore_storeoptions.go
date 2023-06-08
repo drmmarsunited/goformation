@@ -8,12 +8,12 @@ import (
 
 // AnnotationStore_StoreOptions AWS CloudFormation Resource (AWS::Omics::AnnotationStore.StoreOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-storeoptions.html
-type AnnotationStore_StoreOptions struct {
+type AnnotationStore_StoreOptions[T any] struct {
 
 	// TsvStoreOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-storeoptions.html#cfn-omics-annotationstore-storeoptions-tsvstoreoptions
-	TsvStoreOptions *AnnotationStore_TsvStoreOptions `json:"TsvStoreOptions"`
+	TsvStoreOptions *AnnotationStore_TsvStoreOptions[any] `json:"TsvStoreOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AnnotationStore_StoreOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnnotationStore_StoreOptions) AWSCloudFormationType() string {
+func (r *AnnotationStore_StoreOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::AnnotationStore.StoreOptions"
 }

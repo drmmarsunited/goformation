@@ -12,7 +12,7 @@ import (
 
 // LocationEFS AWS CloudFormation Resource (AWS::DataSync::LocationEFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html
-type LocationEFS struct {
+type LocationEFS[T any] struct {
 
 	// AccessPointArn AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type LocationEFS struct {
 	// Ec2Config AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-ec2config
-	Ec2Config *LocationEFS_Ec2Config `json:"Ec2Config"`
+	Ec2Config *LocationEFS_Ec2Config[any] `json:"Ec2Config"`
 
 	// EfsFilesystemArn AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type LocationEFS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationEFS) AWSCloudFormationType() string {
+func (r *LocationEFS[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationEFS"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationEFS) MarshalJSON() ([]byte, error) {
-	type Properties LocationEFS
+func (r LocationEFS[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationEFS[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r LocationEFS) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationEFS) UnmarshalJSON(b []byte) error {
-	type Properties LocationEFS
+func (r *LocationEFS[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationEFS[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *LocationEFS) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationEFS(*res.Properties)
+		*r = LocationEFS[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

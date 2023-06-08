@@ -8,12 +8,12 @@ import (
 
 // Analysis_ComboChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ComboChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html
-type Analysis_ComboChartConfiguration struct {
+type Analysis_ComboChartConfiguration[T any] struct {
 
 	// BarDataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-bardatalabels
-	BarDataLabels *Analysis_DataLabelOptions `json:"BarDataLabels,omitempty"`
+	BarDataLabels *Analysis_DataLabelOptions[any] `json:"BarDataLabels,omitempty"`
 
 	// BarsArrangement AWS CloudFormation Property
 	// Required: false
@@ -23,72 +23,72 @@ type Analysis_ComboChartConfiguration struct {
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-categoryaxis
-	CategoryAxis *Analysis_AxisDisplayOptions `json:"CategoryAxis,omitempty"`
+	CategoryAxis *Analysis_AxisDisplayOptions[any] `json:"CategoryAxis,omitempty"`
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Analysis_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// ColorLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-colorlabeloptions
-	ColorLabelOptions *Analysis_ChartAxisLabelOptions `json:"ColorLabelOptions,omitempty"`
+	ColorLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"ColorLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-fieldwells
-	FieldWells *Analysis_ComboChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_ComboChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-legend
-	Legend *Analysis_LegendOptions `json:"Legend,omitempty"`
+	Legend *Analysis_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// LineDataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-linedatalabels
-	LineDataLabels *Analysis_DataLabelOptions `json:"LineDataLabels,omitempty"`
+	LineDataLabels *Analysis_DataLabelOptions[any] `json:"LineDataLabels,omitempty"`
 
 	// PrimaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-primaryyaxisdisplayoptions
-	PrimaryYAxisDisplayOptions *Analysis_AxisDisplayOptions `json:"PrimaryYAxisDisplayOptions,omitempty"`
+	PrimaryYAxisDisplayOptions *Analysis_AxisDisplayOptions[any] `json:"PrimaryYAxisDisplayOptions,omitempty"`
 
 	// PrimaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-primaryyaxislabeloptions
-	PrimaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions `json:"PrimaryYAxisLabelOptions,omitempty"`
+	PrimaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"PrimaryYAxisLabelOptions,omitempty"`
 
 	// ReferenceLines AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-referencelines
-	ReferenceLines []Analysis_ReferenceLine `json:"ReferenceLines,omitempty"`
+	ReferenceLines []Analysis_ReferenceLine[any] `json:"ReferenceLines,omitempty"`
 
 	// SecondaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-secondaryyaxisdisplayoptions
-	SecondaryYAxisDisplayOptions *Analysis_AxisDisplayOptions `json:"SecondaryYAxisDisplayOptions,omitempty"`
+	SecondaryYAxisDisplayOptions *Analysis_AxisDisplayOptions[any] `json:"SecondaryYAxisDisplayOptions,omitempty"`
 
 	// SecondaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-secondaryyaxislabeloptions
-	SecondaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions `json:"SecondaryYAxisLabelOptions,omitempty"`
+	SecondaryYAxisLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"SecondaryYAxisLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-sortconfiguration
-	SortConfiguration *Analysis_ComboChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_ComboChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-tooltip
-	Tooltip *Analysis_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Analysis_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-visualpalette
-	VisualPalette *Analysis_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Analysis_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -107,6 +107,6 @@ type Analysis_ComboChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ComboChartConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ComboChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ComboChartConfiguration"
 }

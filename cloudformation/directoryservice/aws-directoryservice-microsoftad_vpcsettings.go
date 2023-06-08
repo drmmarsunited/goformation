@@ -8,7 +8,7 @@ import (
 
 // MicrosoftAD_VpcSettings AWS CloudFormation Resource (AWS::DirectoryService::MicrosoftAD.VpcSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html
-type MicrosoftAD_VpcSettings struct {
+type MicrosoftAD_VpcSettings[T any] struct {
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MicrosoftAD_VpcSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MicrosoftAD_VpcSettings) AWSCloudFormationType() string {
+func (r *MicrosoftAD_VpcSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DirectoryService::MicrosoftAD.VpcSettings"
 }

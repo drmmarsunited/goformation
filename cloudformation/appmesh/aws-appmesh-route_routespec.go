@@ -8,32 +8,32 @@ import (
 
 // Route_RouteSpec AWS CloudFormation Resource (AWS::AppMesh::Route.RouteSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html
-type Route_RouteSpec struct {
+type Route_RouteSpec[T any] struct {
 
 	// GrpcRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-grpcroute
-	GrpcRoute *Route_GrpcRoute `json:"GrpcRoute,omitempty"`
+	GrpcRoute *Route_GrpcRoute[any] `json:"GrpcRoute,omitempty"`
 
 	// Http2Route AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-http2route
-	Http2Route *Route_HttpRoute `json:"Http2Route,omitempty"`
+	Http2Route *Route_HttpRoute[any] `json:"Http2Route,omitempty"`
 
 	// HttpRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute
-	HttpRoute *Route_HttpRoute `json:"HttpRoute,omitempty"`
+	HttpRoute *Route_HttpRoute[any] `json:"HttpRoute,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// TcpRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-tcproute
-	TcpRoute *Route_TcpRoute `json:"TcpRoute,omitempty"`
+	TcpRoute *Route_TcpRoute[any] `json:"TcpRoute,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Route_RouteSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_RouteSpec) AWSCloudFormationType() string {
+func (r *Route_RouteSpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.RouteSpec"
 }

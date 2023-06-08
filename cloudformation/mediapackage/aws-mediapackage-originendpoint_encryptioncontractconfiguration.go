@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_EncryptionContractConfiguration AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.EncryptionContractConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-encryptioncontractconfiguration.html
-type OriginEndpoint_EncryptionContractConfiguration struct {
+type OriginEndpoint_EncryptionContractConfiguration[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type OriginEndpoint_EncryptionContractConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_EncryptionContractConfiguration) AWSCloudFormationType() string {
+func (r *OriginEndpoint_EncryptionContractConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.EncryptionContractConfiguration"
 }

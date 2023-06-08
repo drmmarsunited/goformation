@@ -8,7 +8,7 @@ import (
 
 // InstanceGroupConfig_CloudWatchAlarmDefinition AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html
-type InstanceGroupConfig_CloudWatchAlarmDefinition struct {
+type InstanceGroupConfig_CloudWatchAlarmDefinition[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition struct {
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-dimensions
-	Dimensions []InstanceGroupConfig_MetricDimension `json:"Dimensions,omitempty"`
+	Dimensions []InstanceGroupConfig_MetricDimension[any] `json:"Dimensions,omitempty"`
 
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-evaluationperiods
-	EvaluationPeriods *int `json:"EvaluationPeriods,omitempty"`
+	EvaluationPeriods *T `json:"EvaluationPeriods,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition struct {
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-period
-	Period int `json:"Period"`
+	Period T `json:"Period"`
 
 	// Statistic AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition struct {
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-threshold
-	Threshold float64 `json:"Threshold"`
+	Threshold T `json:"Threshold"`
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_CloudWatchAlarmDefinition) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_CloudWatchAlarmDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition"
 }

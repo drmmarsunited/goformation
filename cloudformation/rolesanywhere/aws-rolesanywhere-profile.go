@@ -12,17 +12,17 @@ import (
 
 // Profile AWS CloudFormation Resource (AWS::RolesAnywhere::Profile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html
-type Profile struct {
+type Profile[T any] struct {
 
 	// DurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-durationseconds
-	DurationSeconds *float64 `json:"DurationSeconds,omitempty"`
+	DurationSeconds *T `json:"DurationSeconds,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Profile struct {
 	// RequireInstanceProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-requireinstanceproperties
-	RequireInstanceProperties *bool `json:"RequireInstanceProperties,omitempty"`
+	RequireInstanceProperties *T `json:"RequireInstanceProperties,omitempty"`
 
 	// RoleArns AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type Profile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Profile) AWSCloudFormationType() string {
+func (r *Profile[any]) AWSCloudFormationType() string {
 	return "AWS::RolesAnywhere::Profile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Profile) MarshalJSON() ([]byte, error) {
-	type Properties Profile
+func (r Profile[any]) MarshalJSON() ([]byte, error) {
+	type Properties Profile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Profile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Profile) UnmarshalJSON(b []byte) error {
-	type Properties Profile
+func (r *Profile[any]) UnmarshalJSON(b []byte) error {
+	type Properties Profile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Profile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Profile(*res.Properties)
+		*r = Profile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

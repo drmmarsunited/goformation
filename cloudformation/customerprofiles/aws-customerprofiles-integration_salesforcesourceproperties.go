@@ -8,17 +8,17 @@ import (
 
 // Integration_SalesforceSourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.SalesforceSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html
-type Integration_SalesforceSourceProperties struct {
+type Integration_SalesforceSourceProperties[T any] struct {
 
 	// EnableDynamicFieldUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html#cfn-customerprofiles-integration-salesforcesourceproperties-enabledynamicfieldupdate
-	EnableDynamicFieldUpdate *bool `json:"EnableDynamicFieldUpdate,omitempty"`
+	EnableDynamicFieldUpdate *T `json:"EnableDynamicFieldUpdate,omitempty"`
 
 	// IncludeDeletedRecords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html#cfn-customerprofiles-integration-salesforcesourceproperties-includedeletedrecords
-	IncludeDeletedRecords *bool `json:"IncludeDeletedRecords,omitempty"`
+	IncludeDeletedRecords *T `json:"IncludeDeletedRecords,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Integration_SalesforceSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_SalesforceSourceProperties) AWSCloudFormationType() string {
+func (r *Integration_SalesforceSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.SalesforceSourceProperties"
 }

@@ -8,17 +8,17 @@ import (
 
 // Analysis_ColumnTooltipItem AWS CloudFormation Resource (AWS::QuickSight::Analysis.ColumnTooltipItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columntooltipitem.html
-type Analysis_ColumnTooltipItem struct {
+type Analysis_ColumnTooltipItem[T any] struct {
 
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columntooltipitem.html#cfn-quicksight-analysis-columntooltipitem-aggregation
-	Aggregation *Analysis_AggregationFunction `json:"Aggregation,omitempty"`
+	Aggregation *Analysis_AggregationFunction[any] `json:"Aggregation,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columntooltipitem.html#cfn-quicksight-analysis-columntooltipitem-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// Label AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Analysis_ColumnTooltipItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ColumnTooltipItem) AWSCloudFormationType() string {
+func (r *Analysis_ColumnTooltipItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ColumnTooltipItem"
 }

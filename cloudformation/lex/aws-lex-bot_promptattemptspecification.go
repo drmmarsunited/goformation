@@ -8,27 +8,27 @@ import (
 
 // Bot_PromptAttemptSpecification AWS CloudFormation Resource (AWS::Lex::Bot.PromptAttemptSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html
-type Bot_PromptAttemptSpecification struct {
+type Bot_PromptAttemptSpecification[T any] struct {
 
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *T `json:"AllowInterrupt,omitempty"`
 
 	// AllowedInputTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowedinputtypes
-	AllowedInputTypes *Bot_AllowedInputTypes `json:"AllowedInputTypes"`
+	AllowedInputTypes *Bot_AllowedInputTypes[any] `json:"AllowedInputTypes"`
 
 	// AudioAndDTMFInputSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-audioanddtmfinputspecification
-	AudioAndDTMFInputSpecification *Bot_AudioAndDTMFInputSpecification `json:"AudioAndDTMFInputSpecification,omitempty"`
+	AudioAndDTMFInputSpecification *Bot_AudioAndDTMFInputSpecification[any] `json:"AudioAndDTMFInputSpecification,omitempty"`
 
 	// TextInputSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-textinputspecification
-	TextInputSpecification *Bot_TextInputSpecification `json:"TextInputSpecification,omitempty"`
+	TextInputSpecification *Bot_TextInputSpecification[any] `json:"TextInputSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_PromptAttemptSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_PromptAttemptSpecification) AWSCloudFormationType() string {
+func (r *Bot_PromptAttemptSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.PromptAttemptSpecification"
 }

@@ -8,27 +8,27 @@ import (
 
 // Analysis_GeospatialCoordinateBounds AWS CloudFormation Resource (AWS::QuickSight::Analysis.GeospatialCoordinateBounds)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html
-type Analysis_GeospatialCoordinateBounds struct {
+type Analysis_GeospatialCoordinateBounds[T any] struct {
 
 	// East AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-east
-	East float64 `json:"East"`
+	East T `json:"East"`
 
 	// North AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-north
-	North float64 `json:"North"`
+	North T `json:"North"`
 
 	// South AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-south
-	South float64 `json:"South"`
+	South T `json:"South"`
 
 	// West AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-west
-	West float64 `json:"West"`
+	West T `json:"West"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_GeospatialCoordinateBounds struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GeospatialCoordinateBounds) AWSCloudFormationType() string {
+func (r *Analysis_GeospatialCoordinateBounds[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GeospatialCoordinateBounds"
 }

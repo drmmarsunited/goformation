@@ -8,7 +8,7 @@ import (
 
 // Workspace_RoleValues AWS CloudFormation Resource (AWS::Grafana::Workspace.RoleValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-rolevalues.html
-type Workspace_RoleValues struct {
+type Workspace_RoleValues[T any] struct {
 
 	// Admin AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workspace_RoleValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_RoleValues) AWSCloudFormationType() string {
+func (r *Workspace_RoleValues[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.RoleValues"
 }

@@ -8,7 +8,7 @@ import (
 
 // Function_ScheduleEvent AWS CloudFormation Resource (AWS::Serverless::Function.ScheduleEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
-type Function_ScheduleEvent struct {
+type Function_ScheduleEvent[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Function_ScheduleEvent struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Function_ScheduleEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_ScheduleEvent) AWSCloudFormationType() string {
+func (r *Function_ScheduleEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.ScheduleEvent"
 }

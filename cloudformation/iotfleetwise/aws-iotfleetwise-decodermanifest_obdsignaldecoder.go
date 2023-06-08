@@ -23,7 +23,7 @@ type DecoderManifest_ObdSignalDecoder struct {
 	// ObdSignal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-obdsignal
-	ObdSignal *DecoderManifest_ObdSignal `json:"ObdSignal"`
+	ObdSignal *DecoderManifest_ObdSignal[any] `json:"ObdSignal"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

@@ -8,12 +8,12 @@ import (
 
 // Template_ComparisonConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ComparisonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-comparisonconfiguration.html
-type Template_ComparisonConfiguration struct {
+type Template_ComparisonConfiguration[T any] struct {
 
 	// ComparisonFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-comparisonconfiguration.html#cfn-quicksight-template-comparisonconfiguration-comparisonformat
-	ComparisonFormat *Template_ComparisonFormatConfiguration `json:"ComparisonFormat,omitempty"`
+	ComparisonFormat *Template_ComparisonFormatConfiguration[any] `json:"ComparisonFormat,omitempty"`
 
 	// ComparisonMethod AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_ComparisonConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ComparisonConfiguration) AWSCloudFormationType() string {
+func (r *Template_ComparisonConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ComparisonConfiguration"
 }

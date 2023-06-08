@@ -8,7 +8,7 @@ import (
 
 // Template_AxisDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.AxisDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdisplayoptions.html
-type Template_AxisDisplayOptions struct {
+type Template_AxisDisplayOptions[T any] struct {
 
 	// AxisLineVisibility AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_AxisDisplayOptions struct {
 	// DataOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdisplayoptions.html#cfn-quicksight-template-axisdisplayoptions-dataoptions
-	DataOptions *Template_AxisDataOptions `json:"DataOptions,omitempty"`
+	DataOptions *Template_AxisDataOptions[any] `json:"DataOptions,omitempty"`
 
 	// GridLineVisibility AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Template_AxisDisplayOptions struct {
 	// ScrollbarOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdisplayoptions.html#cfn-quicksight-template-axisdisplayoptions-scrollbaroptions
-	ScrollbarOptions *Template_ScrollBarOptions `json:"ScrollbarOptions,omitempty"`
+	ScrollbarOptions *Template_ScrollBarOptions[any] `json:"ScrollbarOptions,omitempty"`
 
 	// TickLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisdisplayoptions.html#cfn-quicksight-template-axisdisplayoptions-ticklabeloptions
-	TickLabelOptions *Template_AxisTickLabelOptions `json:"TickLabelOptions,omitempty"`
+	TickLabelOptions *Template_AxisTickLabelOptions[any] `json:"TickLabelOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_AxisDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AxisDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_AxisDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AxisDisplayOptions"
 }

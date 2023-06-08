@@ -8,97 +8,97 @@ import (
 
 // ConnectorProfile_ConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html
-type ConnectorProfile_ConnectorProfileCredentials struct {
+type ConnectorProfile_ConnectorProfileCredentials[T any] struct {
 
 	// Amplitude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-amplitude
-	Amplitude *ConnectorProfile_AmplitudeConnectorProfileCredentials `json:"Amplitude,omitempty"`
+	Amplitude *ConnectorProfile_AmplitudeConnectorProfileCredentials[any] `json:"Amplitude,omitempty"`
 
 	// CustomConnector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-customconnector
-	CustomConnector *ConnectorProfile_CustomConnectorProfileCredentials `json:"CustomConnector,omitempty"`
+	CustomConnector *ConnectorProfile_CustomConnectorProfileCredentials[any] `json:"CustomConnector,omitempty"`
 
 	// Datadog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-datadog
-	Datadog *ConnectorProfile_DatadogConnectorProfileCredentials `json:"Datadog,omitempty"`
+	Datadog *ConnectorProfile_DatadogConnectorProfileCredentials[any] `json:"Datadog,omitempty"`
 
 	// Dynatrace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-dynatrace
-	Dynatrace *ConnectorProfile_DynatraceConnectorProfileCredentials `json:"Dynatrace,omitempty"`
+	Dynatrace *ConnectorProfile_DynatraceConnectorProfileCredentials[any] `json:"Dynatrace,omitempty"`
 
 	// GoogleAnalytics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-googleanalytics
-	GoogleAnalytics *ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials `json:"GoogleAnalytics,omitempty"`
+	GoogleAnalytics *ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials[any] `json:"GoogleAnalytics,omitempty"`
 
 	// InforNexus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-infornexus
-	InforNexus *ConnectorProfile_InforNexusConnectorProfileCredentials `json:"InforNexus,omitempty"`
+	InforNexus *ConnectorProfile_InforNexusConnectorProfileCredentials[any] `json:"InforNexus,omitempty"`
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-marketo
-	Marketo *ConnectorProfile_MarketoConnectorProfileCredentials `json:"Marketo,omitempty"`
+	Marketo *ConnectorProfile_MarketoConnectorProfileCredentials[any] `json:"Marketo,omitempty"`
 
 	// Pardot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-pardot
-	Pardot *ConnectorProfile_PardotConnectorProfileCredentials `json:"Pardot,omitempty"`
+	Pardot *ConnectorProfile_PardotConnectorProfileCredentials[any] `json:"Pardot,omitempty"`
 
 	// Redshift AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-redshift
-	Redshift *ConnectorProfile_RedshiftConnectorProfileCredentials `json:"Redshift,omitempty"`
+	Redshift *ConnectorProfile_RedshiftConnectorProfileCredentials[any] `json:"Redshift,omitempty"`
 
 	// SAPOData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-sapodata
-	SAPOData *ConnectorProfile_SAPODataConnectorProfileCredentials `json:"SAPOData,omitempty"`
+	SAPOData *ConnectorProfile_SAPODataConnectorProfileCredentials[any] `json:"SAPOData,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-salesforce
-	Salesforce *ConnectorProfile_SalesforceConnectorProfileCredentials `json:"Salesforce,omitempty"`
+	Salesforce *ConnectorProfile_SalesforceConnectorProfileCredentials[any] `json:"Salesforce,omitempty"`
 
 	// ServiceNow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-servicenow
-	ServiceNow *ConnectorProfile_ServiceNowConnectorProfileCredentials `json:"ServiceNow,omitempty"`
+	ServiceNow *ConnectorProfile_ServiceNowConnectorProfileCredentials[any] `json:"ServiceNow,omitempty"`
 
 	// Singular AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-singular
-	Singular *ConnectorProfile_SingularConnectorProfileCredentials `json:"Singular,omitempty"`
+	Singular *ConnectorProfile_SingularConnectorProfileCredentials[any] `json:"Singular,omitempty"`
 
 	// Slack AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-slack
-	Slack *ConnectorProfile_SlackConnectorProfileCredentials `json:"Slack,omitempty"`
+	Slack *ConnectorProfile_SlackConnectorProfileCredentials[any] `json:"Slack,omitempty"`
 
 	// Snowflake AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-snowflake
-	Snowflake *ConnectorProfile_SnowflakeConnectorProfileCredentials `json:"Snowflake,omitempty"`
+	Snowflake *ConnectorProfile_SnowflakeConnectorProfileCredentials[any] `json:"Snowflake,omitempty"`
 
 	// Trendmicro AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-trendmicro
-	Trendmicro *ConnectorProfile_TrendmicroConnectorProfileCredentials `json:"Trendmicro,omitempty"`
+	Trendmicro *ConnectorProfile_TrendmicroConnectorProfileCredentials[any] `json:"Trendmicro,omitempty"`
 
 	// Veeva AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-veeva
-	Veeva *ConnectorProfile_VeevaConnectorProfileCredentials `json:"Veeva,omitempty"`
+	Veeva *ConnectorProfile_VeevaConnectorProfileCredentials[any] `json:"Veeva,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-zendesk
-	Zendesk *ConnectorProfile_ZendeskConnectorProfileCredentials `json:"Zendesk,omitempty"`
+	Zendesk *ConnectorProfile_ZendeskConnectorProfileCredentials[any] `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -117,6 +117,6 @@ type ConnectorProfile_ConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ConnectorProfileCredentials"
 }

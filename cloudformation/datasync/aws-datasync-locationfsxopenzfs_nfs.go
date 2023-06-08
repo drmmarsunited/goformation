@@ -8,12 +8,12 @@ import (
 
 // LocationFSxOpenZFS_NFS AWS CloudFormation Resource (AWS::DataSync::LocationFSxOpenZFS.NFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-nfs.html
-type LocationFSxOpenZFS_NFS struct {
+type LocationFSxOpenZFS_NFS[T any] struct {
 
 	// MountOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-nfs.html#cfn-datasync-locationfsxopenzfs-nfs-mountoptions
-	MountOptions *LocationFSxOpenZFS_MountOptions `json:"MountOptions"`
+	MountOptions *LocationFSxOpenZFS_MountOptions[any] `json:"MountOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LocationFSxOpenZFS_NFS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxOpenZFS_NFS) AWSCloudFormationType() string {
+func (r *LocationFSxOpenZFS_NFS[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxOpenZFS.NFS"
 }

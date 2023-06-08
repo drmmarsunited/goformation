@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_MonitoringOutputConfig AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html
-type ModelExplainabilityJobDefinition_MonitoringOutputConfig struct {
+type ModelExplainabilityJobDefinition_MonitoringOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelExplainabilityJobDefinition_MonitoringOutputConfig struct {
 	// MonitoringOutputs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-monitoringoutputs
-	MonitoringOutputs []ModelExplainabilityJobDefinition_MonitoringOutput `json:"MonitoringOutputs"`
+	MonitoringOutputs []ModelExplainabilityJobDefinition_MonitoringOutput[any] `json:"MonitoringOutputs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelExplainabilityJobDefinition_MonitoringOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_MonitoringOutputConfig) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_MonitoringOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutputConfig"
 }

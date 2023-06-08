@@ -11,7 +11,7 @@ import (
 
 // RequestValidator AWS CloudFormation Resource (AWS::ApiGateway::RequestValidator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
-type RequestValidator struct {
+type RequestValidator[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type RequestValidator struct {
 	// ValidateRequestBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
-	ValidateRequestBody *bool `json:"ValidateRequestBody,omitempty"`
+	ValidateRequestBody *T `json:"ValidateRequestBody,omitempty"`
 
 	// ValidateRequestParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
-	ValidateRequestParameters *bool `json:"ValidateRequestParameters,omitempty"`
+	ValidateRequestParameters *T `json:"ValidateRequestParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type RequestValidator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RequestValidator) AWSCloudFormationType() string {
+func (r *RequestValidator[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::RequestValidator"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RequestValidator) MarshalJSON() ([]byte, error) {
-	type Properties RequestValidator
+func (r RequestValidator[any]) MarshalJSON() ([]byte, error) {
+	type Properties RequestValidator[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r RequestValidator) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RequestValidator) UnmarshalJSON(b []byte) error {
-	type Properties RequestValidator
+func (r *RequestValidator[any]) UnmarshalJSON(b []byte) error {
+	type Properties RequestValidator[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *RequestValidator) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RequestValidator(*res.Properties)
+		*r = RequestValidator[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

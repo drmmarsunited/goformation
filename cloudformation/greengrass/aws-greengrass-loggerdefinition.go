@@ -11,12 +11,12 @@ import (
 
 // LoggerDefinition AWS CloudFormation Resource (AWS::Greengrass::LoggerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html
-type LoggerDefinition struct {
+type LoggerDefinition[T any] struct {
 
 	// InitialVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-initialversion
-	InitialVersion *LoggerDefinition_LoggerDefinitionVersion `json:"InitialVersion,omitempty"`
+	InitialVersion *LoggerDefinition_LoggerDefinitionVersion[any] `json:"InitialVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type LoggerDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggerDefinition) AWSCloudFormationType() string {
+func (r *LoggerDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::LoggerDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LoggerDefinition) MarshalJSON() ([]byte, error) {
-	type Properties LoggerDefinition
+func (r LoggerDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties LoggerDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r LoggerDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LoggerDefinition) UnmarshalJSON(b []byte) error {
-	type Properties LoggerDefinition
+func (r *LoggerDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties LoggerDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *LoggerDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LoggerDefinition(*res.Properties)
+		*r = LoggerDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

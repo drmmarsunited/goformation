@@ -12,12 +12,12 @@ import (
 
 // EnvironmentEC2 AWS CloudFormation Resource (AWS::Cloud9::EnvironmentEC2)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html
-type EnvironmentEC2 struct {
+type EnvironmentEC2[T any] struct {
 
 	// AutomaticStopTimeMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
-	AutomaticStopTimeMinutes *int `json:"AutomaticStopTimeMinutes,omitempty"`
+	AutomaticStopTimeMinutes *T `json:"AutomaticStopTimeMinutes,omitempty"`
 
 	// ConnectionType AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type EnvironmentEC2 struct {
 	// Repositories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories
-	Repositories []EnvironmentEC2_Repository `json:"Repositories,omitempty"`
+	Repositories []EnvironmentEC2_Repository[any] `json:"Repositories,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type EnvironmentEC2 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EnvironmentEC2) AWSCloudFormationType() string {
+func (r *EnvironmentEC2[any]) AWSCloudFormationType() string {
 	return "AWS::Cloud9::EnvironmentEC2"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EnvironmentEC2) MarshalJSON() ([]byte, error) {
-	type Properties EnvironmentEC2
+func (r EnvironmentEC2[any]) MarshalJSON() ([]byte, error) {
+	type Properties EnvironmentEC2[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r EnvironmentEC2) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EnvironmentEC2) UnmarshalJSON(b []byte) error {
-	type Properties EnvironmentEC2
+func (r *EnvironmentEC2[any]) UnmarshalJSON(b []byte) error {
+	type Properties EnvironmentEC2[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *EnvironmentEC2) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EnvironmentEC2(*res.Properties)
+		*r = EnvironmentEC2[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

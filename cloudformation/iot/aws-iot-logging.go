@@ -11,7 +11,7 @@ import (
 
 // Logging AWS CloudFormation Resource (AWS::IoT::Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-logging.html
-type Logging struct {
+type Logging[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type Logging struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Logging) AWSCloudFormationType() string {
+func (r *Logging[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::Logging"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Logging) MarshalJSON() ([]byte, error) {
-	type Properties Logging
+func (r Logging[any]) MarshalJSON() ([]byte, error) {
+	type Properties Logging[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Logging) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Logging) UnmarshalJSON(b []byte) error {
-	type Properties Logging
+func (r *Logging[any]) UnmarshalJSON(b []byte) error {
+	type Properties Logging[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Logging) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Logging(*res.Properties)
+		*r = Logging[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

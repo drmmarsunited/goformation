@@ -8,17 +8,17 @@ import (
 
 // DeploymentConfig_TimeBasedLinear AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.TimeBasedLinear)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html
-type DeploymentConfig_TimeBasedLinear struct {
+type DeploymentConfig_TimeBasedLinear[T any] struct {
 
 	// LinearInterval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-codedeploy-deploymentconfig-timebasedlinear-linearinterval
-	LinearInterval int `json:"LinearInterval"`
+	LinearInterval T `json:"LinearInterval"`
 
 	// LinearPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-codedeploy-deploymentconfig-timebasedlinear-linearpercentage
-	LinearPercentage int `json:"LinearPercentage"`
+	LinearPercentage T `json:"LinearPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeploymentConfig_TimeBasedLinear struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentConfig_TimeBasedLinear) AWSCloudFormationType() string {
+func (r *DeploymentConfig_TimeBasedLinear[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentConfig.TimeBasedLinear"
 }

@@ -8,7 +8,7 @@ import (
 
 // Crawler_DynamoDBTarget AWS CloudFormation Resource (AWS::Glue::Crawler.DynamoDBTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html
-type Crawler_DynamoDBTarget struct {
+type Crawler_DynamoDBTarget[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Crawler_DynamoDBTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_DynamoDBTarget) AWSCloudFormationType() string {
+func (r *Crawler_DynamoDBTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.DynamoDBTarget"
 }

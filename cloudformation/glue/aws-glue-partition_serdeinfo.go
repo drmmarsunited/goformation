@@ -8,7 +8,7 @@ import (
 
 // Partition_SerdeInfo AWS CloudFormation Resource (AWS::Glue::Partition.SerdeInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
-type Partition_SerdeInfo struct {
+type Partition_SerdeInfo[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Partition_SerdeInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_SerdeInfo) AWSCloudFormationType() string {
+func (r *Partition_SerdeInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SerdeInfo"
 }

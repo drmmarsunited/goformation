@@ -8,7 +8,7 @@ import (
 
 // Template_StringValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.StringValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-stringvaluewhenunsetconfiguration.html
-type Template_StringValueWhenUnsetConfiguration struct {
+type Template_StringValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_StringValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_StringValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Template_StringValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.StringValueWhenUnsetConfiguration"
 }

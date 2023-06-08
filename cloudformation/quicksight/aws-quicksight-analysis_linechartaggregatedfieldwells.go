@@ -8,27 +8,27 @@ import (
 
 // Analysis_LineChartAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.LineChartAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartaggregatedfieldwells.html
-type Analysis_LineChartAggregatedFieldWells struct {
+type Analysis_LineChartAggregatedFieldWells[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartaggregatedfieldwells.html#cfn-quicksight-analysis-linechartaggregatedfieldwells-category
-	Category []Analysis_DimensionField `json:"Category,omitempty"`
+	Category []Analysis_DimensionField[any] `json:"Category,omitempty"`
 
 	// Colors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartaggregatedfieldwells.html#cfn-quicksight-analysis-linechartaggregatedfieldwells-colors
-	Colors []Analysis_DimensionField `json:"Colors,omitempty"`
+	Colors []Analysis_DimensionField[any] `json:"Colors,omitempty"`
 
 	// SmallMultiples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartaggregatedfieldwells.html#cfn-quicksight-analysis-linechartaggregatedfieldwells-smallmultiples
-	SmallMultiples []Analysis_DimensionField `json:"SmallMultiples,omitempty"`
+	SmallMultiples []Analysis_DimensionField[any] `json:"SmallMultiples,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartaggregatedfieldwells.html#cfn-quicksight-analysis-linechartaggregatedfieldwells-values
-	Values []Analysis_MeasureField `json:"Values,omitempty"`
+	Values []Analysis_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_LineChartAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LineChartAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_LineChartAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LineChartAggregatedFieldWells"
 }

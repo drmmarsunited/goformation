@@ -8,7 +8,7 @@ import (
 
 // Project_VpcConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html
-type Project_VpcConfig struct {
+type Project_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Project_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_VpcConfig) AWSCloudFormationType() string {
+func (r *Project_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.VpcConfig"
 }

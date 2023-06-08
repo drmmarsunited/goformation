@@ -8,22 +8,22 @@ import (
 
 // Dashboard_GaugeChartOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GaugeChartOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartoptions.html
-type Dashboard_GaugeChartOptions struct {
+type Dashboard_GaugeChartOptions[T any] struct {
 
 	// Arc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartoptions.html#cfn-quicksight-dashboard-gaugechartoptions-arc
-	Arc *Dashboard_ArcConfiguration `json:"Arc,omitempty"`
+	Arc *Dashboard_ArcConfiguration[any] `json:"Arc,omitempty"`
 
 	// ArcAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartoptions.html#cfn-quicksight-dashboard-gaugechartoptions-arcaxis
-	ArcAxis *Dashboard_ArcAxisConfiguration `json:"ArcAxis,omitempty"`
+	ArcAxis *Dashboard_ArcAxisConfiguration[any] `json:"ArcAxis,omitempty"`
 
 	// Comparison AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartoptions.html#cfn-quicksight-dashboard-gaugechartoptions-comparison
-	Comparison *Dashboard_ComparisonConfiguration `json:"Comparison,omitempty"`
+	Comparison *Dashboard_ComparisonConfiguration[any] `json:"Comparison,omitempty"`
 
 	// PrimaryValueDisplayType AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_GaugeChartOptions struct {
 	// PrimaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartoptions.html#cfn-quicksight-dashboard-gaugechartoptions-primaryvaluefontconfiguration
-	PrimaryValueFontConfiguration *Dashboard_FontConfiguration `json:"PrimaryValueFontConfiguration,omitempty"`
+	PrimaryValueFontConfiguration *Dashboard_FontConfiguration[any] `json:"PrimaryValueFontConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_GaugeChartOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GaugeChartOptions) AWSCloudFormationType() string {
+func (r *Dashboard_GaugeChartOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GaugeChartOptions"
 }

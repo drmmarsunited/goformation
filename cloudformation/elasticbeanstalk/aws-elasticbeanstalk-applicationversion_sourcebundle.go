@@ -8,7 +8,7 @@ import (
 
 // ApplicationVersion_SourceBundle AWS CloudFormation Resource (AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-applicationversion-sourcebundle.html
-type ApplicationVersion_SourceBundle struct {
+type ApplicationVersion_SourceBundle[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ApplicationVersion_SourceBundle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationVersion_SourceBundle) AWSCloudFormationType() string {
+func (r *ApplicationVersion_SourceBundle[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle"
 }

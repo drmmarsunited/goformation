@@ -8,12 +8,12 @@ import (
 
 // Bucket_NoncurrentVersionTransition AWS CloudFormation Resource (AWS::S3::Bucket.NoncurrentVersionTransition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html
-type Bucket_NoncurrentVersionTransition struct {
+type Bucket_NoncurrentVersionTransition[T any] struct {
 
 	// NewerNoncurrentVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-newernoncurrentversions
-	NewerNoncurrentVersions *int `json:"NewerNoncurrentVersions,omitempty"`
+	NewerNoncurrentVersions *T `json:"NewerNoncurrentVersions,omitempty"`
 
 	// StorageClass AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Bucket_NoncurrentVersionTransition struct {
 	// TransitionInDays AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays
-	TransitionInDays int `json:"TransitionInDays"`
+	TransitionInDays T `json:"TransitionInDays"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bucket_NoncurrentVersionTransition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_NoncurrentVersionTransition) AWSCloudFormationType() string {
+func (r *Bucket_NoncurrentVersionTransition[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.NoncurrentVersionTransition"
 }

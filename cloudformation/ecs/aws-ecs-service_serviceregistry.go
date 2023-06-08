@@ -8,7 +8,7 @@ import (
 
 // Service_ServiceRegistry AWS CloudFormation Resource (AWS::ECS::Service.ServiceRegistry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html
-type Service_ServiceRegistry struct {
+type Service_ServiceRegistry[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Service_ServiceRegistry struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// RegistryArn AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Service_ServiceRegistry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ServiceRegistry) AWSCloudFormationType() string {
+func (r *Service_ServiceRegistry[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.ServiceRegistry"
 }

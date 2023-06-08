@@ -8,7 +8,7 @@ import (
 
 // Classifier_XMLClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.XMLClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html
-type Classifier_XMLClassifier struct {
+type Classifier_XMLClassifier[T any] struct {
 
 	// Classification AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Classifier_XMLClassifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Classifier_XMLClassifier) AWSCloudFormationType() string {
+func (r *Classifier_XMLClassifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier.XMLClassifier"
 }

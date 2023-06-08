@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_SpotFleetRequestConfigData AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotFleetRequestConfigData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html
-type SpotFleet_SpotFleetRequestConfigData struct {
+type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -38,22 +38,22 @@ type SpotFleet_SpotFleetRequestConfigData struct {
 	// InstancePoolsToUseCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-instancepoolstousecount
-	InstancePoolsToUseCount *int `json:"InstancePoolsToUseCount,omitempty"`
+	InstancePoolsToUseCount *T `json:"InstancePoolsToUseCount,omitempty"`
 
 	// LaunchSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications
-	LaunchSpecifications []SpotFleet_SpotFleetLaunchSpecification `json:"LaunchSpecifications,omitempty"`
+	LaunchSpecifications []SpotFleet_SpotFleetLaunchSpecification[any] `json:"LaunchSpecifications,omitempty"`
 
 	// LaunchTemplateConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchtemplateconfigs
-	LaunchTemplateConfigs []SpotFleet_LaunchTemplateConfig `json:"LaunchTemplateConfigs,omitempty"`
+	LaunchTemplateConfigs []SpotFleet_LaunchTemplateConfig[any] `json:"LaunchTemplateConfigs,omitempty"`
 
 	// LoadBalancersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-loadbalancersconfig
-	LoadBalancersConfig *SpotFleet_LoadBalancersConfig `json:"LoadBalancersConfig,omitempty"`
+	LoadBalancersConfig *SpotFleet_LoadBalancersConfig[any] `json:"LoadBalancersConfig,omitempty"`
 
 	// OnDemandAllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -68,17 +68,17 @@ type SpotFleet_SpotFleetRequestConfigData struct {
 	// OnDemandTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandtargetcapacity
-	OnDemandTargetCapacity *int `json:"OnDemandTargetCapacity,omitempty"`
+	OnDemandTargetCapacity *T `json:"OnDemandTargetCapacity,omitempty"`
 
 	// ReplaceUnhealthyInstances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances
-	ReplaceUnhealthyInstances *bool `json:"ReplaceUnhealthyInstances,omitempty"`
+	ReplaceUnhealthyInstances *T `json:"ReplaceUnhealthyInstances,omitempty"`
 
 	// SpotMaintenanceStrategies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaintenancestrategies
-	SpotMaintenanceStrategies *SpotFleet_SpotMaintenanceStrategies `json:"SpotMaintenanceStrategies,omitempty"`
+	SpotMaintenanceStrategies *SpotFleet_SpotMaintenanceStrategies[any] `json:"SpotMaintenanceStrategies,omitempty"`
 
 	// SpotMaxTotalPrice AWS CloudFormation Property
 	// Required: false
@@ -93,12 +93,12 @@ type SpotFleet_SpotFleetRequestConfigData struct {
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-tagspecifications
-	TagSpecifications []SpotFleet_SpotFleetTagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []SpotFleet_SpotFleetTagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// TargetCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-targetcapacity
-	TargetCapacity int `json:"TargetCapacity"`
+	TargetCapacity T `json:"TargetCapacity"`
 
 	// TargetCapacityUnitType AWS CloudFormation Property
 	// Required: false
@@ -108,7 +108,7 @@ type SpotFleet_SpotFleetRequestConfigData struct {
 	// TerminateInstancesWithExpiration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-terminateinstanceswithexpiration
-	TerminateInstancesWithExpiration *bool `json:"TerminateInstancesWithExpiration,omitempty"`
+	TerminateInstancesWithExpiration *T `json:"TerminateInstancesWithExpiration,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -142,6 +142,6 @@ type SpotFleet_SpotFleetRequestConfigData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_SpotFleetRequestConfigData) AWSCloudFormationType() string {
+func (r *SpotFleet_SpotFleetRequestConfigData[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotFleetRequestConfigData"
 }

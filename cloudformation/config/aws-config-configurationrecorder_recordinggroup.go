@@ -8,17 +8,17 @@ import (
 
 // ConfigurationRecorder_RecordingGroup AWS CloudFormation Resource (AWS::Config::ConfigurationRecorder.RecordingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html
-type ConfigurationRecorder_RecordingGroup struct {
+type ConfigurationRecorder_RecordingGroup[T any] struct {
 
 	// AllSupported AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-allsupported
-	AllSupported *bool `json:"AllSupported,omitempty"`
+	AllSupported *T `json:"AllSupported,omitempty"`
 
 	// IncludeGlobalResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-includeglobalresourcetypes
-	IncludeGlobalResourceTypes *bool `json:"IncludeGlobalResourceTypes,omitempty"`
+	IncludeGlobalResourceTypes *T `json:"IncludeGlobalResourceTypes,omitempty"`
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ConfigurationRecorder_RecordingGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationRecorder_RecordingGroup) AWSCloudFormationType() string {
+func (r *ConfigurationRecorder_RecordingGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigurationRecorder.RecordingGroup"
 }

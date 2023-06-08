@@ -8,17 +8,17 @@ import (
 
 // ApplicationReferenceDataSource_ReferenceDataSource AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceDataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referencedatasource.html
-type ApplicationReferenceDataSource_ReferenceDataSource struct {
+type ApplicationReferenceDataSource_ReferenceDataSource[T any] struct {
 
 	// ReferenceSchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource-referenceschema
-	ReferenceSchema *ApplicationReferenceDataSource_ReferenceSchema `json:"ReferenceSchema"`
+	ReferenceSchema *ApplicationReferenceDataSource_ReferenceSchema[any] `json:"ReferenceSchema"`
 
 	// S3ReferenceDataSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource-s3referencedatasource
-	S3ReferenceDataSource *ApplicationReferenceDataSource_S3ReferenceDataSource `json:"S3ReferenceDataSource,omitempty"`
+	S3ReferenceDataSource *ApplicationReferenceDataSource_S3ReferenceDataSource[any] `json:"S3ReferenceDataSource,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ApplicationReferenceDataSource_ReferenceDataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource_ReferenceDataSource) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource_ReferenceDataSource[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceDataSource"
 }

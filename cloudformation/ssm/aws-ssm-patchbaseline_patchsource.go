@@ -8,7 +8,7 @@ import (
 
 // PatchBaseline_PatchSource AWS CloudFormation Resource (AWS::SSM::PatchBaseline.PatchSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html
-type PatchBaseline_PatchSource struct {
+type PatchBaseline_PatchSource[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type PatchBaseline_PatchSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_PatchSource) AWSCloudFormationType() string {
+func (r *PatchBaseline_PatchSource[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.PatchSource"
 }

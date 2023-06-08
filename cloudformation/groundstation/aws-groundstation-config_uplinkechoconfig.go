@@ -8,7 +8,7 @@ import (
 
 // Config_UplinkEchoConfig AWS CloudFormation Resource (AWS::GroundStation::Config.UplinkEchoConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkechoconfig.html
-type Config_UplinkEchoConfig struct {
+type Config_UplinkEchoConfig[T any] struct {
 
 	// AntennaUplinkConfigArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Config_UplinkEchoConfig struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkechoconfig.html#cfn-groundstation-config-uplinkechoconfig-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Config_UplinkEchoConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_UplinkEchoConfig) AWSCloudFormationType() string {
+func (r *Config_UplinkEchoConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.UplinkEchoConfig"
 }

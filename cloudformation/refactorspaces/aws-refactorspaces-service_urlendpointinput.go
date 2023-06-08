@@ -8,7 +8,7 @@ import (
 
 // Service_UrlEndpointInput AWS CloudFormation Resource (AWS::RefactorSpaces::Service.UrlEndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-service-urlendpointinput.html
-type Service_UrlEndpointInput struct {
+type Service_UrlEndpointInput[T any] struct {
 
 	// HealthUrl AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_UrlEndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_UrlEndpointInput) AWSCloudFormationType() string {
+func (r *Service_UrlEndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Service.UrlEndpointInput"
 }

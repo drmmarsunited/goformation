@@ -8,22 +8,22 @@ import (
 
 // Layer_LoadBasedAutoScaling AWS CloudFormation Resource (AWS::OpsWorks::Layer.LoadBasedAutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html
-type Layer_LoadBasedAutoScaling struct {
+type Layer_LoadBasedAutoScaling[T any] struct {
 
 	// DownScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-downscaling
-	DownScaling *Layer_AutoScalingThresholds `json:"DownScaling,omitempty"`
+	DownScaling *Layer_AutoScalingThresholds[any] `json:"DownScaling,omitempty"`
 
 	// Enable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable
-	Enable *bool `json:"Enable,omitempty"`
+	Enable *T `json:"Enable,omitempty"`
 
 	// UpScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling
-	UpScaling *Layer_AutoScalingThresholds `json:"UpScaling,omitempty"`
+	UpScaling *Layer_AutoScalingThresholds[any] `json:"UpScaling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Layer_LoadBasedAutoScaling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Layer_LoadBasedAutoScaling) AWSCloudFormationType() string {
+func (r *Layer_LoadBasedAutoScaling[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.LoadBasedAutoScaling"
 }

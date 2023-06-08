@@ -8,7 +8,7 @@ import (
 
 // StorageVirtualMachine_ActiveDirectoryConfiguration AWS CloudFormation Resource (AWS::FSx::StorageVirtualMachine.ActiveDirectoryConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration.html
-type StorageVirtualMachine_ActiveDirectoryConfiguration struct {
+type StorageVirtualMachine_ActiveDirectoryConfiguration[T any] struct {
 
 	// NetBiosName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type StorageVirtualMachine_ActiveDirectoryConfiguration struct {
 	// SelfManagedActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration
-	SelfManagedActiveDirectoryConfiguration *StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration `json:"SelfManagedActiveDirectoryConfiguration,omitempty"`
+	SelfManagedActiveDirectoryConfiguration *StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration[any] `json:"SelfManagedActiveDirectoryConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StorageVirtualMachine_ActiveDirectoryConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageVirtualMachine_ActiveDirectoryConfiguration) AWSCloudFormationType() string {
+func (r *StorageVirtualMachine_ActiveDirectoryConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::StorageVirtualMachine.ActiveDirectoryConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_PrivateDnsNameOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.PrivateDnsNameOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html
-type LaunchTemplate_PrivateDnsNameOptions struct {
+type LaunchTemplate_PrivateDnsNameOptions[T any] struct {
 
 	// EnableResourceNameDnsAAAARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord
-	EnableResourceNameDnsAAAARecord *bool `json:"EnableResourceNameDnsAAAARecord,omitempty"`
+	EnableResourceNameDnsAAAARecord *T `json:"EnableResourceNameDnsAAAARecord,omitempty"`
 
 	// EnableResourceNameDnsARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord
-	EnableResourceNameDnsARecord *bool `json:"EnableResourceNameDnsARecord,omitempty"`
+	EnableResourceNameDnsARecord *T `json:"EnableResourceNameDnsARecord,omitempty"`
 
 	// HostnameType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LaunchTemplate_PrivateDnsNameOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_PrivateDnsNameOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_PrivateDnsNameOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.PrivateDnsNameOptions"
 }

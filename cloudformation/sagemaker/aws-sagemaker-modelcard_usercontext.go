@@ -8,7 +8,7 @@ import (
 
 // ModelCard_UserContext AWS CloudFormation Resource (AWS::SageMaker::ModelCard.UserContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html
-type ModelCard_UserContext struct {
+type ModelCard_UserContext[T any] struct {
 
 	// DomainId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelCard_UserContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_UserContext) AWSCloudFormationType() string {
+func (r *ModelCard_UserContext[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.UserContext"
 }

@@ -8,12 +8,12 @@ import (
 
 // Campaign_TimeBasedCollectionScheme AWS CloudFormation Resource (AWS::IoTFleetWise::Campaign.TimeBasedCollectionScheme)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timebasedcollectionscheme.html
-type Campaign_TimeBasedCollectionScheme struct {
+type Campaign_TimeBasedCollectionScheme[T any] struct {
 
 	// PeriodMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timebasedcollectionscheme.html#cfn-iotfleetwise-campaign-timebasedcollectionscheme-periodms
-	PeriodMs float64 `json:"PeriodMs"`
+	PeriodMs T `json:"PeriodMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Campaign_TimeBasedCollectionScheme struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_TimeBasedCollectionScheme) AWSCloudFormationType() string {
+func (r *Campaign_TimeBasedCollectionScheme[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Campaign.TimeBasedCollectionScheme"
 }

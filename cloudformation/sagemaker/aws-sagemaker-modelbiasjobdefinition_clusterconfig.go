@@ -8,12 +8,12 @@ import (
 
 // ModelBiasJobDefinition_ClusterConfig AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.ClusterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html
-type ModelBiasJobDefinition_ClusterConfig struct {
+type ModelBiasJobDefinition_ClusterConfig[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type ModelBiasJobDefinition_ClusterConfig struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB"`
+	VolumeSizeInGB T `json:"VolumeSizeInGB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ModelBiasJobDefinition_ClusterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_ClusterConfig) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_ClusterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.ClusterConfig"
 }

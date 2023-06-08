@@ -8,7 +8,7 @@ import (
 
 // Repository_RepositoryTrigger AWS CloudFormation Resource (AWS::CodeCommit::Repository.RepositoryTrigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html
-type Repository_RepositoryTrigger struct {
+type Repository_RepositoryTrigger[T any] struct {
 
 	// Branches AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Repository_RepositoryTrigger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository_RepositoryTrigger) AWSCloudFormationType() string {
+func (r *Repository_RepositoryTrigger[any]) AWSCloudFormationType() string {
 	return "AWS::CodeCommit::Repository.RepositoryTrigger"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSet_TagColumnOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.TagColumnOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html
-type DataSet_TagColumnOperation struct {
+type DataSet_TagColumnOperation[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSet_TagColumnOperation struct {
 	// Tags AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html#cfn-quicksight-dataset-tagcolumnoperation-tags
-	Tags []DataSet_ColumnTag `json:"Tags"`
+	Tags []DataSet_ColumnTag[any] `json:"Tags"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSet_TagColumnOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_TagColumnOperation) AWSCloudFormationType() string {
+func (r *DataSet_TagColumnOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.TagColumnOperation"
 }

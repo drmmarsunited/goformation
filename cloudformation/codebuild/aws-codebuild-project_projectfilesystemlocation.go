@@ -8,7 +8,7 @@ import (
 
 // Project_ProjectFileSystemLocation AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectFileSystemLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html
-type Project_ProjectFileSystemLocation struct {
+type Project_ProjectFileSystemLocation[T any] struct {
 
 	// Identifier AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Project_ProjectFileSystemLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProjectFileSystemLocation) AWSCloudFormationType() string {
+func (r *Project_ProjectFileSystemLocation[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectFileSystemLocation"
 }

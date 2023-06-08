@@ -8,7 +8,7 @@ import (
 
 // CustomActionType_ConfigurationProperties AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType.ConfigurationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html
-type CustomActionType_ConfigurationProperties struct {
+type CustomActionType_ConfigurationProperties[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type CustomActionType_ConfigurationProperties struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-key
-	Key bool `json:"Key"`
+	Key T `json:"Key"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -28,17 +28,17 @@ type CustomActionType_ConfigurationProperties struct {
 	// Queryable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-queryable
-	Queryable *bool `json:"Queryable,omitempty"`
+	Queryable *T `json:"Queryable,omitempty"`
 
 	// Required AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-required
-	Required bool `json:"Required"`
+	Required T `json:"Required"`
 
 	// Secret AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-secret
-	Secret bool `json:"Secret"`
+	Secret T `json:"Secret"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type CustomActionType_ConfigurationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomActionType_ConfigurationProperties) AWSCloudFormationType() string {
+func (r *CustomActionType_ConfigurationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::CustomActionType.ConfigurationProperties"
 }

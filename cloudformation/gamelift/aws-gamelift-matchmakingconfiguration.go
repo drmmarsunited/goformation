@@ -12,22 +12,22 @@ import (
 
 // MatchmakingConfiguration AWS CloudFormation Resource (AWS::GameLift::MatchmakingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html
-type MatchmakingConfiguration struct {
+type MatchmakingConfiguration[T any] struct {
 
 	// AcceptanceRequired AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancerequired
-	AcceptanceRequired bool `json:"AcceptanceRequired"`
+	AcceptanceRequired T `json:"AcceptanceRequired"`
 
 	// AcceptanceTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancetimeoutseconds
-	AcceptanceTimeoutSeconds *int `json:"AcceptanceTimeoutSeconds,omitempty"`
+	AcceptanceTimeoutSeconds *T `json:"AcceptanceTimeoutSeconds,omitempty"`
 
 	// AdditionalPlayerCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-additionalplayercount
-	AdditionalPlayerCount *int `json:"AdditionalPlayerCount,omitempty"`
+	AdditionalPlayerCount *T `json:"AdditionalPlayerCount,omitempty"`
 
 	// BackfillMode AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type MatchmakingConfiguration struct {
 	// GameProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gameproperties
-	GameProperties []MatchmakingConfiguration_GameProperty `json:"GameProperties,omitempty"`
+	GameProperties []MatchmakingConfiguration_GameProperty[any] `json:"GameProperties,omitempty"`
 
 	// GameSessionData AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type MatchmakingConfiguration struct {
 	// RequestTimeoutSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds
-	RequestTimeoutSeconds int `json:"RequestTimeoutSeconds"`
+	RequestTimeoutSeconds T `json:"RequestTimeoutSeconds"`
 
 	// RuleSetName AWS CloudFormation Property
 	// Required: true
@@ -106,14 +106,15 @@ type MatchmakingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MatchmakingConfiguration) AWSCloudFormationType() string {
+func (r *MatchmakingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::MatchmakingConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MatchmakingConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties MatchmakingConfiguration
+func (r MatchmakingConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties MatchmakingConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r MatchmakingConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MatchmakingConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties MatchmakingConfiguration
+func (r *MatchmakingConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties MatchmakingConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *MatchmakingConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MatchmakingConfiguration(*res.Properties)
+		*r = MatchmakingConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

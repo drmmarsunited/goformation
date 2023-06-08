@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_Device AWS CloudFormation Resource (AWS::Batch::JobDefinition.Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html
-type JobDefinition_Device struct {
+type JobDefinition_Device[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type JobDefinition_Device struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Device) AWSCloudFormationType() string {
+func (r *JobDefinition_Device[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Device"
 }

@@ -9,12 +9,12 @@ import (
 
 // TransitGatewayRouteTableAttachment_ProposedSegmentChange AWS CloudFormation Resource (AWS::NetworkManager::TransitGatewayRouteTableAttachment.ProposedSegmentChange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html
-type TransitGatewayRouteTableAttachment_ProposedSegmentChange struct {
+type TransitGatewayRouteTableAttachment_ProposedSegmentChange[T any] struct {
 
 	// AttachmentPolicyRuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-attachmentpolicyrulenumber
-	AttachmentPolicyRuleNumber *int `json:"AttachmentPolicyRuleNumber,omitempty"`
+	AttachmentPolicyRuleNumber *T `json:"AttachmentPolicyRuleNumber,omitempty"`
 
 	// SegmentName AWS CloudFormation Property
 	// Required: false
@@ -43,6 +43,6 @@ type TransitGatewayRouteTableAttachment_ProposedSegmentChange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayRouteTableAttachment_ProposedSegmentChange) AWSCloudFormationType() string {
+func (r *TransitGatewayRouteTableAttachment_ProposedSegmentChange[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::TransitGatewayRouteTableAttachment.ProposedSegmentChange"
 }

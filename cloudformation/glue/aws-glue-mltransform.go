@@ -11,7 +11,7 @@ import (
 
 // MLTransform AWS CloudFormation Resource (AWS::Glue::MLTransform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html
-type MLTransform struct {
+type MLTransform[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,17 +26,17 @@ type MLTransform struct {
 	// InputRecordTables AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-inputrecordtables
-	InputRecordTables *MLTransform_InputRecordTables `json:"InputRecordTables"`
+	InputRecordTables *MLTransform_InputRecordTables[any] `json:"InputRecordTables"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxcapacity
-	MaxCapacity *float64 `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries
-	MaxRetries *int `json:"MaxRetries,omitempty"`
+	MaxRetries *T `json:"MaxRetries,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type MLTransform struct {
 	// NumberOfWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
-	NumberOfWorkers *int `json:"NumberOfWorkers,omitempty"`
+	NumberOfWorkers *T `json:"NumberOfWorkers,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -61,17 +61,17 @@ type MLTransform struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// TransformEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformencryption
-	TransformEncryption *MLTransform_TransformEncryption `json:"TransformEncryption,omitempty"`
+	TransformEncryption *MLTransform_TransformEncryption[any] `json:"TransformEncryption,omitempty"`
 
 	// TransformParameters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformparameters
-	TransformParameters *MLTransform_TransformParameters `json:"TransformParameters"`
+	TransformParameters *MLTransform_TransformParameters[any] `json:"TransformParameters"`
 
 	// WorkerType AWS CloudFormation Property
 	// Required: false
@@ -95,14 +95,15 @@ type MLTransform struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform) AWSCloudFormationType() string {
+func (r *MLTransform[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MLTransform) MarshalJSON() ([]byte, error) {
-	type Properties MLTransform
+func (r MLTransform[any]) MarshalJSON() ([]byte, error) {
+	type Properties MLTransform[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r MLTransform) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MLTransform) UnmarshalJSON(b []byte) error {
-	type Properties MLTransform
+func (r *MLTransform[any]) UnmarshalJSON(b []byte) error {
+	type Properties MLTransform[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *MLTransform) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MLTransform(*res.Properties)
+		*r = MLTransform[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

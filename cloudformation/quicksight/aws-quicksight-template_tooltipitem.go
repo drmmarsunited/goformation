@@ -8,17 +8,17 @@ import (
 
 // Template_TooltipItem AWS CloudFormation Resource (AWS::QuickSight::Template.TooltipItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tooltipitem.html
-type Template_TooltipItem struct {
+type Template_TooltipItem[T any] struct {
 
 	// ColumnTooltipItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tooltipitem.html#cfn-quicksight-template-tooltipitem-columntooltipitem
-	ColumnTooltipItem *Template_ColumnTooltipItem `json:"ColumnTooltipItem,omitempty"`
+	ColumnTooltipItem *Template_ColumnTooltipItem[any] `json:"ColumnTooltipItem,omitempty"`
 
 	// FieldTooltipItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tooltipitem.html#cfn-quicksight-template-tooltipitem-fieldtooltipitem
-	FieldTooltipItem *Template_FieldTooltipItem `json:"FieldTooltipItem,omitempty"`
+	FieldTooltipItem *Template_FieldTooltipItem[any] `json:"FieldTooltipItem,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_TooltipItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TooltipItem) AWSCloudFormationType() string {
+func (r *Template_TooltipItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TooltipItem"
 }

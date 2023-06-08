@@ -8,7 +8,7 @@ import (
 
 // WebACL_ResponseInspectionHeader AWS CloudFormation Resource (AWS::WAFv2::WebACL.ResponseInspectionHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionheader.html
-type WebACL_ResponseInspectionHeader struct {
+type WebACL_ResponseInspectionHeader[T any] struct {
 
 	// FailureValues AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WebACL_ResponseInspectionHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ResponseInspectionHeader) AWSCloudFormationType() string {
+func (r *WebACL_ResponseInspectionHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ResponseInspectionHeader"
 }

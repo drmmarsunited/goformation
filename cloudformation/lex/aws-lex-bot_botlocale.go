@@ -8,12 +8,12 @@ import (
 
 // Bot_BotLocale AWS CloudFormation Resource (AWS::Lex::Bot.BotLocale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html
-type Bot_BotLocale struct {
+type Bot_BotLocale[T any] struct {
 
 	// CustomVocabulary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-customvocabulary
-	CustomVocabulary *Bot_CustomVocabulary `json:"CustomVocabulary,omitempty"`
+	CustomVocabulary *Bot_CustomVocabulary[any] `json:"CustomVocabulary,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bot_BotLocale struct {
 	// Intents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-intents
-	Intents []Bot_Intent `json:"Intents,omitempty"`
+	Intents []Bot_Intent[any] `json:"Intents,omitempty"`
 
 	// LocaleId AWS CloudFormation Property
 	// Required: true
@@ -33,17 +33,17 @@ type Bot_BotLocale struct {
 	// NluConfidenceThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-nluconfidencethreshold
-	NluConfidenceThreshold float64 `json:"NluConfidenceThreshold"`
+	NluConfidenceThreshold T `json:"NluConfidenceThreshold"`
 
 	// SlotTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-slottypes
-	SlotTypes []Bot_SlotType `json:"SlotTypes,omitempty"`
+	SlotTypes []Bot_SlotType[any] `json:"SlotTypes,omitempty"`
 
 	// VoiceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-voicesettings
-	VoiceSettings *Bot_VoiceSettings `json:"VoiceSettings,omitempty"`
+	VoiceSettings *Bot_VoiceSettings[any] `json:"VoiceSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Bot_BotLocale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_BotLocale) AWSCloudFormationType() string {
+func (r *Bot_BotLocale[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.BotLocale"
 }

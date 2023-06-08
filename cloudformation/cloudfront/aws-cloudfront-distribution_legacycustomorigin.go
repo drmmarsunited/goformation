@@ -8,7 +8,7 @@ import (
 
 // Distribution_LegacyCustomOrigin AWS CloudFormation Resource (AWS::CloudFront::Distribution.LegacyCustomOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html
-type Distribution_LegacyCustomOrigin struct {
+type Distribution_LegacyCustomOrigin[T any] struct {
 
 	// DNSName AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Distribution_LegacyCustomOrigin struct {
 	// HTTPPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-httpport
-	HTTPPort *int `json:"HTTPPort,omitempty"`
+	HTTPPort *T `json:"HTTPPort,omitempty"`
 
 	// HTTPSPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-httpsport
-	HTTPSPort *int `json:"HTTPSPort,omitempty"`
+	HTTPSPort *T `json:"HTTPSPort,omitempty"`
 
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Distribution_LegacyCustomOrigin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_LegacyCustomOrigin) AWSCloudFormationType() string {
+func (r *Distribution_LegacyCustomOrigin[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.LegacyCustomOrigin"
 }

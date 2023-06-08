@@ -8,7 +8,7 @@ import (
 
 // Function_RuntimeManagementConfig AWS CloudFormation Resource (AWS::Lambda::Function.RuntimeManagementConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html
-type Function_RuntimeManagementConfig struct {
+type Function_RuntimeManagementConfig[T any] struct {
 
 	// RuntimeVersionArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Function_RuntimeManagementConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_RuntimeManagementConfig) AWSCloudFormationType() string {
+func (r *Function_RuntimeManagementConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.RuntimeManagementConfig"
 }

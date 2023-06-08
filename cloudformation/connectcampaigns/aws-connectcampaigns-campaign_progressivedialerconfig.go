@@ -8,12 +8,12 @@ import (
 
 // Campaign_ProgressiveDialerConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.ProgressiveDialerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-progressivedialerconfig.html
-type Campaign_ProgressiveDialerConfig struct {
+type Campaign_ProgressiveDialerConfig[T any] struct {
 
 	// BandwidthAllocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-progressivedialerconfig.html#cfn-connectcampaigns-campaign-progressivedialerconfig-bandwidthallocation
-	BandwidthAllocation float64 `json:"BandwidthAllocation"`
+	BandwidthAllocation T `json:"BandwidthAllocation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Campaign_ProgressiveDialerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_ProgressiveDialerConfig) AWSCloudFormationType() string {
+func (r *Campaign_ProgressiveDialerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign.ProgressiveDialerConfig"
 }

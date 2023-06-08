@@ -8,17 +8,17 @@ import (
 
 // Job_ColumnStatisticsConfiguration AWS CloudFormation Resource (AWS::DataBrew::Job.ColumnStatisticsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html
-type Job_ColumnStatisticsConfiguration struct {
+type Job_ColumnStatisticsConfiguration[T any] struct {
 
 	// Selectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-selectors
-	Selectors []Job_ColumnSelector `json:"Selectors,omitempty"`
+	Selectors []Job_ColumnSelector[any] `json:"Selectors,omitempty"`
 
 	// Statistics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics
-	Statistics *Job_StatisticsConfiguration `json:"Statistics"`
+	Statistics *Job_StatisticsConfiguration[any] `json:"Statistics"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Job_ColumnStatisticsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_ColumnStatisticsConfiguration) AWSCloudFormationType() string {
+func (r *Job_ColumnStatisticsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.ColumnStatisticsConfiguration"
 }

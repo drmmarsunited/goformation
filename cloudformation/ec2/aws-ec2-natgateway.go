@@ -12,7 +12,7 @@ import (
 
 // NatGateway AWS CloudFormation Resource (AWS::EC2::NatGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html
-type NatGateway struct {
+type NatGateway[T any] struct {
 
 	// AllocationId AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type NatGateway struct {
 	// MaxDrainDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-maxdraindurationseconds
-	MaxDrainDurationSeconds *int `json:"MaxDrainDurationSeconds,omitempty"`
+	MaxDrainDurationSeconds *T `json:"MaxDrainDurationSeconds,omitempty"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type NatGateway struct {
 	// SecondaryPrivateIpAddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresscount
-	SecondaryPrivateIpAddressCount *int `json:"SecondaryPrivateIpAddressCount,omitempty"`
+	SecondaryPrivateIpAddressCount *T `json:"SecondaryPrivateIpAddressCount,omitempty"`
 
 	// SecondaryPrivateIpAddresses AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type NatGateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NatGateway) AWSCloudFormationType() string {
+func (r *NatGateway[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NatGateway"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NatGateway) MarshalJSON() ([]byte, error) {
-	type Properties NatGateway
+func (r NatGateway[any]) MarshalJSON() ([]byte, error) {
+	type Properties NatGateway[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r NatGateway) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NatGateway) UnmarshalJSON(b []byte) error {
-	type Properties NatGateway
+func (r *NatGateway[any]) UnmarshalJSON(b []byte) error {
+	type Properties NatGateway[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *NatGateway) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NatGateway(*res.Properties)
+		*r = NatGateway[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

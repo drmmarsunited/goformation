@@ -8,7 +8,7 @@ import (
 
 // Function_DeadLetterConfig AWS CloudFormation Resource (AWS::Lambda::Function.DeadLetterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html
-type Function_DeadLetterConfig struct {
+type Function_DeadLetterConfig[T any] struct {
 
 	// TargetArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Function_DeadLetterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DeadLetterConfig) AWSCloudFormationType() string {
+func (r *Function_DeadLetterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.DeadLetterConfig"
 }

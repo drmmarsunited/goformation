@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_CapacityReservationOptionsRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html
-type EC2Fleet_CapacityReservationOptionsRequest struct {
+type EC2Fleet_CapacityReservationOptionsRequest[T any] struct {
 
 	// UsageStrategy AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EC2Fleet_CapacityReservationOptionsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_CapacityReservationOptionsRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_CapacityReservationOptionsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest"
 }

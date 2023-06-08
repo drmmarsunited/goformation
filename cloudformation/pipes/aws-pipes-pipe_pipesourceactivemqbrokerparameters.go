@@ -8,22 +8,22 @@ import (
 
 // Pipe_PipeSourceActiveMQBrokerParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceActiveMQBrokerParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceactivemqbrokerparameters.html
-type Pipe_PipeSourceActiveMQBrokerParameters struct {
+type Pipe_PipeSourceActiveMQBrokerParameters[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceactivemqbrokerparameters.html#cfn-pipes-pipe-pipesourceactivemqbrokerparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceactivemqbrokerparameters.html#cfn-pipes-pipe-pipesourceactivemqbrokerparameters-credentials
-	Credentials *Pipe_MQBrokerAccessCredentials `json:"Credentials"`
+	Credentials *Pipe_MQBrokerAccessCredentials[any] `json:"Credentials"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceactivemqbrokerparameters.html#cfn-pipes-pipe-pipesourceactivemqbrokerparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// QueueName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Pipe_PipeSourceActiveMQBrokerParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceActiveMQBrokerParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceActiveMQBrokerParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceActiveMQBrokerParameters"
 }

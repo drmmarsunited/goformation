@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TimeRangeDrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TimeRangeDrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangedrilldownfilter.html
-type Dashboard_TimeRangeDrillDownFilter struct {
+type Dashboard_TimeRangeDrillDownFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangedrilldownfilter.html#cfn-quicksight-dashboard-timerangedrilldownfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// RangeMaximum AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dashboard_TimeRangeDrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TimeRangeDrillDownFilter) AWSCloudFormationType() string {
+func (r *Dashboard_TimeRangeDrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TimeRangeDrillDownFilter"
 }

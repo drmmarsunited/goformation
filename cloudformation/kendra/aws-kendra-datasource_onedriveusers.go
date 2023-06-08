@@ -8,7 +8,7 @@ import (
 
 // DataSource_OneDriveUsers AWS CloudFormation Resource (AWS::Kendra::DataSource.OneDriveUsers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveusers.html
-type DataSource_OneDriveUsers struct {
+type DataSource_OneDriveUsers[T any] struct {
 
 	// OneDriveUserList AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataSource_OneDriveUsers struct {
 	// OneDriveUserS3Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveusers.html#cfn-kendra-datasource-onedriveusers-onedriveusers3path
-	OneDriveUserS3Path *DataSource_S3Path `json:"OneDriveUserS3Path,omitempty"`
+	OneDriveUserS3Path *DataSource_S3Path[any] `json:"OneDriveUserS3Path,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_OneDriveUsers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_OneDriveUsers) AWSCloudFormationType() string {
+func (r *DataSource_OneDriveUsers[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.OneDriveUsers"
 }

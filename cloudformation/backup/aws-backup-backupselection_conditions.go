@@ -8,27 +8,27 @@ import (
 
 // BackupSelection_Conditions AWS CloudFormation Resource (AWS::Backup::BackupSelection.Conditions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html
-type BackupSelection_Conditions struct {
+type BackupSelection_Conditions[T any] struct {
 
 	// StringEquals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringequals
-	StringEquals []BackupSelection_ConditionParameter `json:"StringEquals,omitempty"`
+	StringEquals []BackupSelection_ConditionParameter[any] `json:"StringEquals,omitempty"`
 
 	// StringLike AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringlike
-	StringLike []BackupSelection_ConditionParameter `json:"StringLike,omitempty"`
+	StringLike []BackupSelection_ConditionParameter[any] `json:"StringLike,omitempty"`
 
 	// StringNotEquals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotequals
-	StringNotEquals []BackupSelection_ConditionParameter `json:"StringNotEquals,omitempty"`
+	StringNotEquals []BackupSelection_ConditionParameter[any] `json:"StringNotEquals,omitempty"`
 
 	// StringNotLike AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotlike
-	StringNotLike []BackupSelection_ConditionParameter `json:"StringNotLike,omitempty"`
+	StringNotLike []BackupSelection_ConditionParameter[any] `json:"StringNotLike,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type BackupSelection_Conditions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupSelection_Conditions) AWSCloudFormationType() string {
+func (r *BackupSelection_Conditions[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupSelection.Conditions"
 }

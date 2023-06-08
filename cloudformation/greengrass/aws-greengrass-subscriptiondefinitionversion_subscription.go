@@ -8,7 +8,7 @@ import (
 
 // SubscriptionDefinitionVersion_Subscription AWS CloudFormation Resource (AWS::Greengrass::SubscriptionDefinitionVersion.Subscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html
-type SubscriptionDefinitionVersion_Subscription struct {
+type SubscriptionDefinitionVersion_Subscription[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type SubscriptionDefinitionVersion_Subscription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubscriptionDefinitionVersion_Subscription) AWSCloudFormationType() string {
+func (r *SubscriptionDefinitionVersion_Subscription[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::SubscriptionDefinitionVersion.Subscription"
 }

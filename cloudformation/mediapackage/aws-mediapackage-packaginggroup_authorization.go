@@ -8,7 +8,7 @@ import (
 
 // PackagingGroup_Authorization AWS CloudFormation Resource (AWS::MediaPackage::PackagingGroup.Authorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packaginggroup-authorization.html
-type PackagingGroup_Authorization struct {
+type PackagingGroup_Authorization[T any] struct {
 
 	// CdnIdentifierSecret AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type PackagingGroup_Authorization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingGroup_Authorization) AWSCloudFormationType() string {
+func (r *PackagingGroup_Authorization[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingGroup.Authorization"
 }

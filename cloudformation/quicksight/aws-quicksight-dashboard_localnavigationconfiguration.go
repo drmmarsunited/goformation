@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LocalNavigationConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LocalNavigationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-localnavigationconfiguration.html
-type Dashboard_LocalNavigationConfiguration struct {
+type Dashboard_LocalNavigationConfiguration[T any] struct {
 
 	// TargetSheetId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_LocalNavigationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LocalNavigationConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_LocalNavigationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LocalNavigationConfiguration"
 }

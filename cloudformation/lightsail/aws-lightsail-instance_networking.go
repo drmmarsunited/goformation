@@ -8,17 +8,17 @@ import (
 
 // Instance_Networking AWS CloudFormation Resource (AWS::Lightsail::Instance.Networking)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-networking.html
-type Instance_Networking struct {
+type Instance_Networking[T any] struct {
 
 	// MonthlyTransfer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-networking.html#cfn-lightsail-instance-networking-monthlytransfer
-	MonthlyTransfer *Instance_MonthlyTransfer `json:"MonthlyTransfer,omitempty"`
+	MonthlyTransfer *Instance_MonthlyTransfer[any] `json:"MonthlyTransfer,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-networking.html#cfn-lightsail-instance-networking-ports
-	Ports []Instance_Port `json:"Ports"`
+	Ports []Instance_Port[any] `json:"Ports"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Instance_Networking struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Networking) AWSCloudFormationType() string {
+func (r *Instance_Networking[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.Networking"
 }

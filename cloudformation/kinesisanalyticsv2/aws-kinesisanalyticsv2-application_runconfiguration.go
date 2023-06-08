@@ -8,17 +8,17 @@ import (
 
 // Application_RunConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.RunConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-runconfiguration.html
-type Application_RunConfiguration struct {
+type Application_RunConfiguration[T any] struct {
 
 	// ApplicationRestoreConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-runconfiguration.html#cfn-kinesisanalyticsv2-application-runconfiguration-applicationrestoreconfiguration
-	ApplicationRestoreConfiguration *Application_ApplicationRestoreConfiguration `json:"ApplicationRestoreConfiguration,omitempty"`
+	ApplicationRestoreConfiguration *Application_ApplicationRestoreConfiguration[any] `json:"ApplicationRestoreConfiguration,omitempty"`
 
 	// FlinkRunConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-runconfiguration.html#cfn-kinesisanalyticsv2-application-runconfiguration-flinkrunconfiguration
-	FlinkRunConfiguration *Application_FlinkRunConfiguration `json:"FlinkRunConfiguration,omitempty"`
+	FlinkRunConfiguration *Application_FlinkRunConfiguration[any] `json:"FlinkRunConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_RunConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_RunConfiguration) AWSCloudFormationType() string {
+func (r *Application_RunConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.RunConfiguration"
 }

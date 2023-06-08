@@ -12,12 +12,12 @@ import (
 
 // TransitGateway AWS CloudFormation Resource (AWS::EC2::TransitGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html
-type TransitGateway struct {
+type TransitGateway[T any] struct {
 
 	// AmazonSideAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
-	AmazonSideAsn *int `json:"AmazonSideAsn,omitempty"`
+	AmazonSideAsn *T `json:"AmazonSideAsn,omitempty"`
 
 	// AssociationDefaultRouteTableId AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type TransitGateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGateway) AWSCloudFormationType() string {
+func (r *TransitGateway[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGateway"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGateway) MarshalJSON() ([]byte, error) {
-	type Properties TransitGateway
+func (r TransitGateway[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGateway[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r TransitGateway) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGateway) UnmarshalJSON(b []byte) error {
-	type Properties TransitGateway
+func (r *TransitGateway[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGateway[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *TransitGateway) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGateway(*res.Properties)
+		*r = TransitGateway[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

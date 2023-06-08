@@ -8,12 +8,12 @@ import (
 
 // ScheduledAction_ResizeClusterMessage AWS CloudFormation Resource (AWS::Redshift::ScheduledAction.ResizeClusterMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html
-type ScheduledAction_ResizeClusterMessage struct {
+type ScheduledAction_ResizeClusterMessage[T any] struct {
 
 	// Classic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-classic
-	Classic *bool `json:"Classic,omitempty"`
+	Classic *T `json:"Classic,omitempty"`
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type ScheduledAction_ResizeClusterMessage struct {
 	// NumberOfNodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-numberofnodes
-	NumberOfNodes *int `json:"NumberOfNodes,omitempty"`
+	NumberOfNodes *T `json:"NumberOfNodes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ScheduledAction_ResizeClusterMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledAction_ResizeClusterMessage) AWSCloudFormationType() string {
+func (r *ScheduledAction_ResizeClusterMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ScheduledAction.ResizeClusterMessage"
 }

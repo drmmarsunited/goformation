@@ -8,12 +8,12 @@ import (
 
 // AccountAuditConfiguration_AuditNotificationTargetConfigurations AWS CloudFormation Resource (AWS::IoT::AccountAuditConfiguration.AuditNotificationTargetConfigurations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtargetconfigurations.html
-type AccountAuditConfiguration_AuditNotificationTargetConfigurations struct {
+type AccountAuditConfiguration_AuditNotificationTargetConfigurations[T any] struct {
 
 	// Sns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtargetconfigurations.html#cfn-iot-accountauditconfiguration-auditnotificationtargetconfigurations-sns
-	Sns *AccountAuditConfiguration_AuditNotificationTarget `json:"Sns,omitempty"`
+	Sns *AccountAuditConfiguration_AuditNotificationTarget[any] `json:"Sns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AccountAuditConfiguration_AuditNotificationTargetConfigurations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccountAuditConfiguration_AuditNotificationTargetConfigurations) AWSCloudFormationType() string {
+func (r *AccountAuditConfiguration_AuditNotificationTargetConfigurations[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::AccountAuditConfiguration.AuditNotificationTargetConfigurations"
 }

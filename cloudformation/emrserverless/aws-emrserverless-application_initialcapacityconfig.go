@@ -8,17 +8,17 @@ import (
 
 // Application_InitialCapacityConfig AWS CloudFormation Resource (AWS::EMRServerless::Application.InitialCapacityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfig.html
-type Application_InitialCapacityConfig struct {
+type Application_InitialCapacityConfig[T any] struct {
 
 	// WorkerConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfig.html#cfn-emrserverless-application-initialcapacityconfig-workerconfiguration
-	WorkerConfiguration *Application_WorkerConfiguration `json:"WorkerConfiguration"`
+	WorkerConfiguration *Application_WorkerConfiguration[any] `json:"WorkerConfiguration"`
 
 	// WorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfig.html#cfn-emrserverless-application-initialcapacityconfig-workercount
-	WorkerCount int `json:"WorkerCount"`
+	WorkerCount T `json:"WorkerCount"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_InitialCapacityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InitialCapacityConfig) AWSCloudFormationType() string {
+func (r *Application_InitialCapacityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.InitialCapacityConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Authorizer_JWTConfiguration AWS CloudFormation Resource (AWS::ApiGatewayV2::Authorizer.JWTConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html
-type Authorizer_JWTConfiguration struct {
+type Authorizer_JWTConfiguration[T any] struct {
 
 	// Audience AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Authorizer_JWTConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Authorizer_JWTConfiguration) AWSCloudFormationType() string {
+func (r *Authorizer_JWTConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Authorizer.JWTConfiguration"
 }

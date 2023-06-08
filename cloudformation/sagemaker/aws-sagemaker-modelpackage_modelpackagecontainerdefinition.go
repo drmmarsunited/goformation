@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_ModelPackageContainerDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelPackageContainerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html
-type ModelPackage_ModelPackageContainerDefinition struct {
+type ModelPackage_ModelPackageContainerDefinition[T any] struct {
 
 	// ContainerHostname AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type ModelPackage_ModelPackageContainerDefinition struct {
 	// ModelInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-modelinput
-	ModelInput *ModelPackage_ModelInput `json:"ModelInput,omitempty"`
+	ModelInput *ModelPackage_ModelInput[any] `json:"ModelInput,omitempty"`
 
 	// NearestModelName AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type ModelPackage_ModelPackageContainerDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelPackageContainerDefinition) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelPackageContainerDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelPackageContainerDefinition"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_PivotTableConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconditionalformatting.html
-type Dashboard_PivotTableConditionalFormatting struct {
+type Dashboard_PivotTableConditionalFormatting[T any] struct {
 
 	// ConditionalFormattingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconditionalformatting.html#cfn-quicksight-dashboard-pivottableconditionalformatting-conditionalformattingoptions
-	ConditionalFormattingOptions []Dashboard_PivotTableConditionalFormattingOption `json:"ConditionalFormattingOptions,omitempty"`
+	ConditionalFormattingOptions []Dashboard_PivotTableConditionalFormattingOption[any] `json:"ConditionalFormattingOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_PivotTableConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableConditionalFormatting"
 }

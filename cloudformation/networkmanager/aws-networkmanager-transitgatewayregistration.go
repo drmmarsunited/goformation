@@ -11,7 +11,7 @@ import (
 
 // TransitGatewayRegistration AWS CloudFormation Resource (AWS::NetworkManager::TransitGatewayRegistration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html
-type TransitGatewayRegistration struct {
+type TransitGatewayRegistration[T any] struct {
 
 	// GlobalNetworkId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type TransitGatewayRegistration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayRegistration) AWSCloudFormationType() string {
+func (r *TransitGatewayRegistration[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::TransitGatewayRegistration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayRegistration) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayRegistration
+func (r TransitGatewayRegistration[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayRegistration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r TransitGatewayRegistration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayRegistration) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayRegistration
+func (r *TransitGatewayRegistration[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayRegistration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *TransitGatewayRegistration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayRegistration(*res.Properties)
+		*r = TransitGatewayRegistration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

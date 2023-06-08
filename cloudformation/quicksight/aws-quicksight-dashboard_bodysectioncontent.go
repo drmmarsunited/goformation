@@ -8,12 +8,12 @@ import (
 
 // Dashboard_BodySectionContent AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BodySectionContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectioncontent.html
-type Dashboard_BodySectionContent struct {
+type Dashboard_BodySectionContent[T any] struct {
 
 	// Layout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectioncontent.html#cfn-quicksight-dashboard-bodysectioncontent-layout
-	Layout *Dashboard_SectionLayoutConfiguration `json:"Layout,omitempty"`
+	Layout *Dashboard_SectionLayoutConfiguration[any] `json:"Layout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_BodySectionContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BodySectionContent) AWSCloudFormationType() string {
+func (r *Dashboard_BodySectionContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BodySectionContent"
 }

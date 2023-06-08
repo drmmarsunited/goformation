@@ -8,7 +8,7 @@ import (
 
 // Deployment_ComponentRunWith AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.ComponentRunWith)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentrunwith.html
-type Deployment_ComponentRunWith struct {
+type Deployment_ComponentRunWith[T any] struct {
 
 	// PosixUser AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Deployment_ComponentRunWith struct {
 	// SystemResourceLimits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentrunwith.html#cfn-greengrassv2-deployment-componentrunwith-systemresourcelimits
-	SystemResourceLimits *Deployment_SystemResourceLimits `json:"SystemResourceLimits,omitempty"`
+	SystemResourceLimits *Deployment_SystemResourceLimits[any] `json:"SystemResourceLimits,omitempty"`
 
 	// WindowsUser AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Deployment_ComponentRunWith struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_ComponentRunWith) AWSCloudFormationType() string {
+func (r *Deployment_ComponentRunWith[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.ComponentRunWith"
 }

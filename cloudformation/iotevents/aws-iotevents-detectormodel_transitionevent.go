@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_TransitionEvent AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.TransitionEvent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html
-type DetectorModel_TransitionEvent struct {
+type DetectorModel_TransitionEvent[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-actions
-	Actions []DetectorModel_Action `json:"Actions,omitempty"`
+	Actions []DetectorModel_Action[any] `json:"Actions,omitempty"`
 
 	// Condition AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DetectorModel_TransitionEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_TransitionEvent) AWSCloudFormationType() string {
+func (r *DetectorModel_TransitionEvent[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.TransitionEvent"
 }

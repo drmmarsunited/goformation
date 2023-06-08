@@ -8,12 +8,12 @@ import (
 
 // TopicRule_HttpAuthorization AWS CloudFormation Resource (AWS::IoT::TopicRule.HttpAuthorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpauthorization.html
-type TopicRule_HttpAuthorization struct {
+type TopicRule_HttpAuthorization[T any] struct {
 
 	// Sigv4 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpauthorization.html#cfn-iot-topicrule-httpauthorization-sigv4
-	Sigv4 *TopicRule_SigV4Authorization `json:"Sigv4,omitempty"`
+	Sigv4 *TopicRule_SigV4Authorization[any] `json:"Sigv4,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type TopicRule_HttpAuthorization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_HttpAuthorization) AWSCloudFormationType() string {
+func (r *TopicRule_HttpAuthorization[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.HttpAuthorization"
 }

@@ -11,7 +11,7 @@ import (
 
 // InfrastructureConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html
-type InfrastructureConfiguration struct {
+type InfrastructureConfiguration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type InfrastructureConfiguration struct {
 	// InstanceMetadataOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-instancemetadataoptions
-	InstanceMetadataOptions *InfrastructureConfiguration_InstanceMetadataOptions `json:"InstanceMetadataOptions,omitempty"`
+	InstanceMetadataOptions *InfrastructureConfiguration_InstanceMetadataOptions[any] `json:"InstanceMetadataOptions,omitempty"`
 
 	// InstanceProfileName AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type InfrastructureConfiguration struct {
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-logging
-	Logging *InfrastructureConfiguration_Logging `json:"Logging,omitempty"`
+	Logging *InfrastructureConfiguration_Logging[any] `json:"Logging,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -76,7 +76,7 @@ type InfrastructureConfiguration struct {
 	// TerminateInstanceOnFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-terminateinstanceonfailure
-	TerminateInstanceOnFailure *bool `json:"TerminateInstanceOnFailure,omitempty"`
+	TerminateInstanceOnFailure *T `json:"TerminateInstanceOnFailure,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -95,14 +95,15 @@ type InfrastructureConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InfrastructureConfiguration) AWSCloudFormationType() string {
+func (r *InfrastructureConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::InfrastructureConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InfrastructureConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties InfrastructureConfiguration
+func (r InfrastructureConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties InfrastructureConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r InfrastructureConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InfrastructureConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties InfrastructureConfiguration
+func (r *InfrastructureConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties InfrastructureConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *InfrastructureConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InfrastructureConfiguration(*res.Properties)
+		*r = InfrastructureConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

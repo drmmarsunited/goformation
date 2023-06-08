@@ -8,12 +8,12 @@ import (
 
 // Deployment_DeploymentConfigurationValidationPolicy AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.DeploymentConfigurationValidationPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentconfigurationvalidationpolicy.html
-type Deployment_DeploymentConfigurationValidationPolicy struct {
+type Deployment_DeploymentConfigurationValidationPolicy[T any] struct {
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentconfigurationvalidationpolicy.html#cfn-greengrassv2-deployment-deploymentconfigurationvalidationpolicy-timeoutinseconds
-	TimeoutInSeconds *int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *T `json:"TimeoutInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Deployment_DeploymentConfigurationValidationPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_DeploymentConfigurationValidationPolicy) AWSCloudFormationType() string {
+func (r *Deployment_DeploymentConfigurationValidationPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.DeploymentConfigurationValidationPolicy"
 }

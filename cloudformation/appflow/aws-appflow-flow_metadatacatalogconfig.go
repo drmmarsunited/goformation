@@ -8,12 +8,12 @@ import (
 
 // Flow_MetadataCatalogConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.MetadataCatalogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-metadatacatalogconfig.html
-type Flow_MetadataCatalogConfig struct {
+type Flow_MetadataCatalogConfig[T any] struct {
 
 	// GlueDataCatalog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-metadatacatalogconfig.html#cfn-appflow-flow-metadatacatalogconfig-gluedatacatalog
-	GlueDataCatalog *Flow_GlueDataCatalog `json:"GlueDataCatalog,omitempty"`
+	GlueDataCatalog *Flow_GlueDataCatalog[any] `json:"GlueDataCatalog,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Flow_MetadataCatalogConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_MetadataCatalogConfig) AWSCloudFormationType() string {
+func (r *Flow_MetadataCatalogConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.MetadataCatalogConfig"
 }

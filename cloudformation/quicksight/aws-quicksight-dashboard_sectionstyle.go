@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SectionStyle AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SectionStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionstyle.html
-type Dashboard_SectionStyle struct {
+type Dashboard_SectionStyle[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_SectionStyle struct {
 	// Padding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionstyle.html#cfn-quicksight-dashboard-sectionstyle-padding
-	Padding *Dashboard_Spacing `json:"Padding,omitempty"`
+	Padding *Dashboard_Spacing[any] `json:"Padding,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_SectionStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SectionStyle) AWSCloudFormationType() string {
+func (r *Dashboard_SectionStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SectionStyle"
 }

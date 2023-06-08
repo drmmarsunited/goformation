@@ -8,12 +8,12 @@ import (
 
 // Connector_CloudWatchLogsLogDelivery AWS CloudFormation Resource (AWS::KafkaConnect::Connector.CloudWatchLogsLogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-cloudwatchlogslogdelivery.html
-type Connector_CloudWatchLogsLogDelivery struct {
+type Connector_CloudWatchLogsLogDelivery[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-cloudwatchlogslogdelivery.html#cfn-kafkaconnect-connector-cloudwatchlogslogdelivery-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Connector_CloudWatchLogsLogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_CloudWatchLogsLogDelivery) AWSCloudFormationType() string {
+func (r *Connector_CloudWatchLogsLogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.CloudWatchLogsLogDelivery"
 }

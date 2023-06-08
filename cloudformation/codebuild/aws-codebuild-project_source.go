@@ -8,12 +8,12 @@ import (
 
 // Project_Source AWS CloudFormation Resource (AWS::CodeBuild::Project.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html
-type Project_Source struct {
+type Project_Source[T any] struct {
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-auth
-	Auth *Project_SourceAuth `json:"Auth,omitempty"`
+	Auth *Project_SourceAuth[any] `json:"Auth,omitempty"`
 
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type Project_Source struct {
 	// BuildStatusConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildstatusconfig
-	BuildStatusConfig *Project_BuildStatusConfig `json:"BuildStatusConfig,omitempty"`
+	BuildStatusConfig *Project_BuildStatusConfig[any] `json:"BuildStatusConfig,omitempty"`
 
 	// GitCloneDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth
-	GitCloneDepth *int `json:"GitCloneDepth,omitempty"`
+	GitCloneDepth *T `json:"GitCloneDepth,omitempty"`
 
 	// GitSubmodulesConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitsubmodulesconfig
-	GitSubmodulesConfig *Project_GitSubmodulesConfig `json:"GitSubmodulesConfig,omitempty"`
+	GitSubmodulesConfig *Project_GitSubmodulesConfig[any] `json:"GitSubmodulesConfig,omitempty"`
 
 	// InsecureSsl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl
-	InsecureSsl *bool `json:"InsecureSsl,omitempty"`
+	InsecureSsl *T `json:"InsecureSsl,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Project_Source struct {
 	// ReportBuildStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus
-	ReportBuildStatus *bool `json:"ReportBuildStatus,omitempty"`
+	ReportBuildStatus *T `json:"ReportBuildStatus,omitempty"`
 
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type Project_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_Source) AWSCloudFormationType() string {
+func (r *Project_Source[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.Source"
 }

@@ -8,7 +8,7 @@ import (
 
 // Function_S3Location AWS CloudFormation Resource (AWS::Serverless::Function.S3Location)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-type Function_S3Location struct {
+type Function_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Function_S3Location struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Version *int `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Function_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_S3Location) AWSCloudFormationType() string {
+func (r *Function_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.S3Location"
 }

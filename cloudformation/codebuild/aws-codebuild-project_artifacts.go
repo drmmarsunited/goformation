@@ -8,7 +8,7 @@ import (
 
 // Project_Artifacts AWS CloudFormation Resource (AWS::CodeBuild::Project.Artifacts)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html
-type Project_Artifacts struct {
+type Project_Artifacts[T any] struct {
 
 	// ArtifactIdentifier AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Project_Artifacts struct {
 	// EncryptionDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled
-	EncryptionDisabled *bool `json:"EncryptionDisabled,omitempty"`
+	EncryptionDisabled *T `json:"EncryptionDisabled,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Project_Artifacts struct {
 	// OverrideArtifactName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname
-	OverrideArtifactName *bool `json:"OverrideArtifactName,omitempty"`
+	OverrideArtifactName *T `json:"OverrideArtifactName,omitempty"`
 
 	// Packaging AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Project_Artifacts struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_Artifacts) AWSCloudFormationType() string {
+func (r *Project_Artifacts[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.Artifacts"
 }

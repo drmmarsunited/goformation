@@ -8,7 +8,7 @@ import (
 
 // Domain_SharingSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.SharingSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html
-type Domain_SharingSettings struct {
+type Domain_SharingSettings[T any] struct {
 
 	// NotebookOutputOption AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Domain_SharingSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_SharingSettings) AWSCloudFormationType() string {
+func (r *Domain_SharingSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.SharingSettings"
 }

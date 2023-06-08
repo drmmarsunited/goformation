@@ -8,17 +8,17 @@ import (
 
 // OriginEndpoint_StreamSelection AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.StreamSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html
-type OriginEndpoint_StreamSelection struct {
+type OriginEndpoint_StreamSelection[T any] struct {
 
 	// MaxVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-maxvideobitspersecond
-	MaxVideoBitsPerSecond *int `json:"MaxVideoBitsPerSecond,omitempty"`
+	MaxVideoBitsPerSecond *T `json:"MaxVideoBitsPerSecond,omitempty"`
 
 	// MinVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-minvideobitspersecond
-	MinVideoBitsPerSecond *int `json:"MinVideoBitsPerSecond,omitempty"`
+	MinVideoBitsPerSecond *T `json:"MinVideoBitsPerSecond,omitempty"`
 
 	// StreamOrder AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type OriginEndpoint_StreamSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_StreamSelection) AWSCloudFormationType() string {
+func (r *OriginEndpoint_StreamSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.StreamSelection"
 }

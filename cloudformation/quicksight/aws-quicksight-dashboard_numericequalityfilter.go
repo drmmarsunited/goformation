@@ -8,17 +8,17 @@ import (
 
 // Dashboard_NumericEqualityFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericEqualityFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html
-type Dashboard_NumericEqualityFilter struct {
+type Dashboard_NumericEqualityFilter[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-aggregationfunction
-	AggregationFunction *Dashboard_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Dashboard_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type Dashboard_NumericEqualityFilter struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Dashboard_NumericEqualityFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericEqualityFilter) AWSCloudFormationType() string {
+func (r *Dashboard_NumericEqualityFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericEqualityFilter"
 }

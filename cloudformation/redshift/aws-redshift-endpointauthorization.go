@@ -11,7 +11,7 @@ import (
 
 // EndpointAuthorization AWS CloudFormation Resource (AWS::Redshift::EndpointAuthorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html
-type EndpointAuthorization struct {
+type EndpointAuthorization[T any] struct {
 
 	// Account AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type EndpointAuthorization struct {
 	// Force AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-force
-	Force *bool `json:"Force,omitempty"`
+	Force *T `json:"Force,omitempty"`
 
 	// VpcIds AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type EndpointAuthorization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointAuthorization) AWSCloudFormationType() string {
+func (r *EndpointAuthorization[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::EndpointAuthorization"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EndpointAuthorization) MarshalJSON() ([]byte, error) {
-	type Properties EndpointAuthorization
+func (r EndpointAuthorization[any]) MarshalJSON() ([]byte, error) {
+	type Properties EndpointAuthorization[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r EndpointAuthorization) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EndpointAuthorization) UnmarshalJSON(b []byte) error {
-	type Properties EndpointAuthorization
+func (r *EndpointAuthorization[any]) UnmarshalJSON(b []byte) error {
+	type Properties EndpointAuthorization[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *EndpointAuthorization) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EndpointAuthorization(*res.Properties)
+		*r = EndpointAuthorization[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

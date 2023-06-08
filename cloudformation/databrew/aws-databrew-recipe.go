@@ -12,7 +12,7 @@ import (
 
 // Recipe AWS CloudFormation Resource (AWS::DataBrew::Recipe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html
-type Recipe struct {
+type Recipe[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Recipe struct {
 	// Steps AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-steps
-	Steps []Recipe_RecipeStep `json:"Steps"`
+	Steps []Recipe_RecipeStep[any] `json:"Steps"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Recipe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe) AWSCloudFormationType() string {
+func (r *Recipe[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Recipe) MarshalJSON() ([]byte, error) {
-	type Properties Recipe
+func (r Recipe[any]) MarshalJSON() ([]byte, error) {
+	type Properties Recipe[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Recipe) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Recipe) UnmarshalJSON(b []byte) error {
-	type Properties Recipe
+func (r *Recipe[any]) UnmarshalJSON(b []byte) error {
+	type Properties Recipe[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Recipe) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Recipe(*res.Properties)
+		*r = Recipe[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // RealtimeLogConfig_KinesisStreamConfig AWS CloudFormation Resource (AWS::CloudFront::RealtimeLogConfig.KinesisStreamConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-kinesisstreamconfig.html
-type RealtimeLogConfig_KinesisStreamConfig struct {
+type RealtimeLogConfig_KinesisStreamConfig[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RealtimeLogConfig_KinesisStreamConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RealtimeLogConfig_KinesisStreamConfig) AWSCloudFormationType() string {
+func (r *RealtimeLogConfig_KinesisStreamConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::RealtimeLogConfig.KinesisStreamConfig"
 }

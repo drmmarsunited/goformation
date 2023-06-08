@@ -8,7 +8,7 @@ import (
 
 // CodeSigningConfig_CodeSigningPolicies AWS CloudFormation Resource (AWS::Lambda::CodeSigningConfig.CodeSigningPolicies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-codesigningpolicies.html
-type CodeSigningConfig_CodeSigningPolicies struct {
+type CodeSigningConfig_CodeSigningPolicies[T any] struct {
 
 	// UntrustedArtifactOnDeployment AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type CodeSigningConfig_CodeSigningPolicies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CodeSigningConfig_CodeSigningPolicies) AWSCloudFormationType() string {
+func (r *CodeSigningConfig_CodeSigningPolicies[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::CodeSigningConfig.CodeSigningPolicies"
 }

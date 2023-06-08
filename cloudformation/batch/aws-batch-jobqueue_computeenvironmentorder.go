@@ -8,7 +8,7 @@ import (
 
 // JobQueue_ComputeEnvironmentOrder AWS CloudFormation Resource (AWS::Batch::JobQueue.ComputeEnvironmentOrder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html
-type JobQueue_ComputeEnvironmentOrder struct {
+type JobQueue_ComputeEnvironmentOrder[T any] struct {
 
 	// ComputeEnvironment AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type JobQueue_ComputeEnvironmentOrder struct {
 	// Order AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order
-	Order int `json:"Order"`
+	Order T `json:"Order"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type JobQueue_ComputeEnvironmentOrder struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobQueue_ComputeEnvironmentOrder) AWSCloudFormationType() string {
+func (r *JobQueue_ComputeEnvironmentOrder[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobQueue.ComputeEnvironmentOrder"
 }

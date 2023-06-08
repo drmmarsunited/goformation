@@ -8,12 +8,12 @@ import (
 
 // AnomalyDetector_SingleMetricAnomalyDetector AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.SingleMetricAnomalyDetector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-singlemetricanomalydetector.html
-type AnomalyDetector_SingleMetricAnomalyDetector struct {
+type AnomalyDetector_SingleMetricAnomalyDetector[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-singlemetricanomalydetector.html#cfn-cloudwatch-anomalydetector-singlemetricanomalydetector-dimensions
-	Dimensions []AnomalyDetector_Dimension `json:"Dimensions,omitempty"`
+	Dimensions []AnomalyDetector_Dimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type AnomalyDetector_SingleMetricAnomalyDetector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_SingleMetricAnomalyDetector) AWSCloudFormationType() string {
+func (r *AnomalyDetector_SingleMetricAnomalyDetector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.SingleMetricAnomalyDetector"
 }

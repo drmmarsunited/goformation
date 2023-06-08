@@ -12,7 +12,7 @@ import (
 
 // AppImageConfig AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html
-type AppImageConfig struct {
+type AppImageConfig[T any] struct {
 
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type AppImageConfig struct {
 	// KernelGatewayImageConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig
-	KernelGatewayImageConfig *AppImageConfig_KernelGatewayImageConfig `json:"KernelGatewayImageConfig,omitempty"`
+	KernelGatewayImageConfig *AppImageConfig_KernelGatewayImageConfig[any] `json:"KernelGatewayImageConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type AppImageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppImageConfig) AWSCloudFormationType() string {
+func (r *AppImageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::AppImageConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AppImageConfig) MarshalJSON() ([]byte, error) {
-	type Properties AppImageConfig
+func (r AppImageConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties AppImageConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r AppImageConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AppImageConfig) UnmarshalJSON(b []byte) error {
-	type Properties AppImageConfig
+func (r *AppImageConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties AppImageConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *AppImageConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AppImageConfig(*res.Properties)
+		*r = AppImageConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

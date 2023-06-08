@@ -8,12 +8,12 @@ import (
 
 // Domain_DomainSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.DomainSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html
-type Domain_DomainSettings struct {
+type Domain_DomainSettings[T any] struct {
 
 	// RStudioServerProDomainSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-rstudioserverprodomainsettings
-	RStudioServerProDomainSettings *Domain_RStudioServerProDomainSettings `json:"RStudioServerProDomainSettings,omitempty"`
+	RStudioServerProDomainSettings *Domain_RStudioServerProDomainSettings[any] `json:"RStudioServerProDomainSettings,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Domain_DomainSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_DomainSettings) AWSCloudFormationType() string {
+func (r *Domain_DomainSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.DomainSettings"
 }

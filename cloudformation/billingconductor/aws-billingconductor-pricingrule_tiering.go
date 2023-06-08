@@ -8,12 +8,12 @@ import (
 
 // PricingRule_Tiering AWS CloudFormation Resource (AWS::BillingConductor::PricingRule.Tiering)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html
-type PricingRule_Tiering struct {
+type PricingRule_Tiering[T any] struct {
 
 	// FreeTier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html#cfn-billingconductor-pricingrule-tiering-freetier
-	FreeTier *PricingRule_FreeTier `json:"FreeTier,omitempty"`
+	FreeTier *PricingRule_FreeTier[any] `json:"FreeTier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PricingRule_Tiering struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PricingRule_Tiering) AWSCloudFormationType() string {
+func (r *PricingRule_Tiering[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::PricingRule.Tiering"
 }

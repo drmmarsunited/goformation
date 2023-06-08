@@ -8,17 +8,17 @@ import (
 
 // ResiliencyPolicy_FailurePolicy AWS CloudFormation Resource (AWS::ResilienceHub::ResiliencyPolicy.FailurePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html
-type ResiliencyPolicy_FailurePolicy struct {
+type ResiliencyPolicy_FailurePolicy[T any] struct {
 
 	// RpoInSecs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html#cfn-resiliencehub-resiliencypolicy-failurepolicy-rpoinsecs
-	RpoInSecs int `json:"RpoInSecs"`
+	RpoInSecs T `json:"RpoInSecs"`
 
 	// RtoInSecs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html#cfn-resiliencehub-resiliencypolicy-failurepolicy-rtoinsecs
-	RtoInSecs int `json:"RtoInSecs"`
+	RtoInSecs T `json:"RtoInSecs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResiliencyPolicy_FailurePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResiliencyPolicy_FailurePolicy) AWSCloudFormationType() string {
+func (r *ResiliencyPolicy_FailurePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ResilienceHub::ResiliencyPolicy.FailurePolicy"
 }

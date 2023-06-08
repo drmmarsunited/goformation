@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_MatchPattern AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.MatchPattern)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-matchpattern.html
-type LoggingConfiguration_MatchPattern struct {
+type LoggingConfiguration_MatchPattern[T any] struct {
 
 	// All AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LoggingConfiguration_MatchPattern struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_MatchPattern) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_MatchPattern[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.MatchPattern"
 }

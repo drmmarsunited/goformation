@@ -8,17 +8,17 @@ import (
 
 // Flywheel_TaskConfig AWS CloudFormation Resource (AWS::Comprehend::Flywheel.TaskConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-taskconfig.html
-type Flywheel_TaskConfig struct {
+type Flywheel_TaskConfig[T any] struct {
 
 	// DocumentClassificationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-taskconfig.html#cfn-comprehend-flywheel-taskconfig-documentclassificationconfig
-	DocumentClassificationConfig *Flywheel_DocumentClassificationConfig `json:"DocumentClassificationConfig,omitempty"`
+	DocumentClassificationConfig *Flywheel_DocumentClassificationConfig[any] `json:"DocumentClassificationConfig,omitempty"`
 
 	// EntityRecognitionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-taskconfig.html#cfn-comprehend-flywheel-taskconfig-entityrecognitionconfig
-	EntityRecognitionConfig *Flywheel_EntityRecognitionConfig `json:"EntityRecognitionConfig,omitempty"`
+	EntityRecognitionConfig *Flywheel_EntityRecognitionConfig[any] `json:"EntityRecognitionConfig,omitempty"`
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Flywheel_TaskConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_TaskConfig) AWSCloudFormationType() string {
+func (r *Flywheel_TaskConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.TaskConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // Connector_ScaleOutPolicy AWS CloudFormation Resource (AWS::KafkaConnect::Connector.ScaleOutPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleoutpolicy.html
-type Connector_ScaleOutPolicy struct {
+type Connector_ScaleOutPolicy[T any] struct {
 
 	// CpuUtilizationPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleoutpolicy.html#cfn-kafkaconnect-connector-scaleoutpolicy-cpuutilizationpercentage
-	CpuUtilizationPercentage int `json:"CpuUtilizationPercentage"`
+	CpuUtilizationPercentage T `json:"CpuUtilizationPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Connector_ScaleOutPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_ScaleOutPolicy) AWSCloudFormationType() string {
+func (r *Connector_ScaleOutPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.ScaleOutPolicy"
 }

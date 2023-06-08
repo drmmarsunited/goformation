@@ -8,17 +8,17 @@ import (
 
 // Template_BodySectionConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.BodySectionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectionconfiguration.html
-type Template_BodySectionConfiguration struct {
+type Template_BodySectionConfiguration[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectionconfiguration.html#cfn-quicksight-template-bodysectionconfiguration-content
-	Content *Template_BodySectionContent `json:"Content"`
+	Content *Template_BodySectionContent[any] `json:"Content"`
 
 	// PageBreakConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectionconfiguration.html#cfn-quicksight-template-bodysectionconfiguration-pagebreakconfiguration
-	PageBreakConfiguration *Template_SectionPageBreakConfiguration `json:"PageBreakConfiguration,omitempty"`
+	PageBreakConfiguration *Template_SectionPageBreakConfiguration[any] `json:"PageBreakConfiguration,omitempty"`
 
 	// SectionId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_BodySectionConfiguration struct {
 	// Style AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectionconfiguration.html#cfn-quicksight-template-bodysectionconfiguration-style
-	Style *Template_SectionStyle `json:"Style,omitempty"`
+	Style *Template_SectionStyle[any] `json:"Style,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_BodySectionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BodySectionConfiguration) AWSCloudFormationType() string {
+func (r *Template_BodySectionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BodySectionConfiguration"
 }

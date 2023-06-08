@@ -8,7 +8,7 @@ import (
 
 // Solution_HpoObjective AWS CloudFormation Resource (AWS::Personalize::Solution.HpoObjective)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hpoobjective.html
-type Solution_HpoObjective struct {
+type Solution_HpoObjective[T any] struct {
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Solution_HpoObjective struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_HpoObjective) AWSCloudFormationType() string {
+func (r *Solution_HpoObjective[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.HpoObjective"
 }

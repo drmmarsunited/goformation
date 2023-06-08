@@ -8,7 +8,7 @@ import (
 
 // Partition_Order AWS CloudFormation Resource (AWS::Glue::Partition.Order)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html
-type Partition_Order struct {
+type Partition_Order[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Partition_Order struct {
 	// SortOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-sortorder
-	SortOrder *int `json:"SortOrder,omitempty"`
+	SortOrder *T `json:"SortOrder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Partition_Order struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_Order) AWSCloudFormationType() string {
+func (r *Partition_Order[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.Order"
 }

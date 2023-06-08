@@ -8,12 +8,12 @@ import (
 
 // Template_CascadingControlSource AWS CloudFormation Resource (AWS::QuickSight::Template.CascadingControlSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-cascadingcontrolsource.html
-type Template_CascadingControlSource struct {
+type Template_CascadingControlSource[T any] struct {
 
 	// ColumnToMatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-cascadingcontrolsource.html#cfn-quicksight-template-cascadingcontrolsource-columntomatch
-	ColumnToMatch *Template_ColumnIdentifier `json:"ColumnToMatch,omitempty"`
+	ColumnToMatch *Template_ColumnIdentifier[any] `json:"ColumnToMatch,omitempty"`
 
 	// SourceSheetControlId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_CascadingControlSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CascadingControlSource) AWSCloudFormationType() string {
+func (r *Template_CascadingControlSource[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CascadingControlSource"
 }

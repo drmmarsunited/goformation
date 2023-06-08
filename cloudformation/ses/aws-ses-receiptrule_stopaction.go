@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_StopAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.StopAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html
-type ReceiptRule_StopAction struct {
+type ReceiptRule_StopAction[T any] struct {
 
 	// Scope AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ReceiptRule_StopAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_StopAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_StopAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.StopAction"
 }

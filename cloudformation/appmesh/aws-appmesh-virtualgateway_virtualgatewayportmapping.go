@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayPortMapping AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html
-type VirtualGateway_VirtualGatewayPortMapping struct {
+type VirtualGateway_VirtualGatewayPortMapping[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualGateway_VirtualGatewayPortMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayPortMapping) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayPortMapping[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping"
 }

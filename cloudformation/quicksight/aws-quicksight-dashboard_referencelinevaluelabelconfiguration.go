@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ReferenceLineValueLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineValueLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinevaluelabelconfiguration.html
-type Dashboard_ReferenceLineValueLabelConfiguration struct {
+type Dashboard_ReferenceLineValueLabelConfiguration[T any] struct {
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinevaluelabelconfiguration.html#cfn-quicksight-dashboard-referencelinevaluelabelconfiguration-formatconfiguration
-	FormatConfiguration *Dashboard_NumericFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_NumericFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// RelativePosition AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ReferenceLineValueLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineValueLabelConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineValueLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineValueLabelConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Model_RepositoryAuthConfig AWS CloudFormation Resource (AWS::SageMaker::Model.RepositoryAuthConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig.html
-type Model_RepositoryAuthConfig struct {
+type Model_RepositoryAuthConfig[T any] struct {
 
 	// RepositoryCredentialsProviderArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Model_RepositoryAuthConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_RepositoryAuthConfig) AWSCloudFormationType() string {
+func (r *Model_RepositoryAuthConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.RepositoryAuthConfig"
 }

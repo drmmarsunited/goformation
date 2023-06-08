@@ -8,7 +8,7 @@ import (
 
 // Container_MetricPolicyRule AWS CloudFormation Resource (AWS::MediaStore::Container.MetricPolicyRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicyrule.html
-type Container_MetricPolicyRule struct {
+type Container_MetricPolicyRule[T any] struct {
 
 	// ObjectGroup AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Container_MetricPolicyRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_MetricPolicyRule) AWSCloudFormationType() string {
+func (r *Container_MetricPolicyRule[any]) AWSCloudFormationType() string {
 	return "AWS::MediaStore::Container.MetricPolicyRule"
 }

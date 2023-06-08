@@ -8,7 +8,7 @@ import (
 
 // Template_SetParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.SetParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-setparametervalueconfiguration.html
-type Template_SetParameterValueConfiguration struct {
+type Template_SetParameterValueConfiguration[T any] struct {
 
 	// DestinationParameterName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_SetParameterValueConfiguration struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-setparametervalueconfiguration.html#cfn-quicksight-template-setparametervalueconfiguration-value
-	Value *Template_DestinationParameterValueConfiguration `json:"Value"`
+	Value *Template_DestinationParameterValueConfiguration[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_SetParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SetParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Template_SetParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SetParameterValueConfiguration"
 }

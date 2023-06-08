@@ -8,12 +8,12 @@ import (
 
 // Application_HANAPrometheusExporter AWS CloudFormation Resource (AWS::ApplicationInsights::Application.HANAPrometheusExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html
-type Application_HANAPrometheusExporter struct {
+type Application_HANAPrometheusExporter[T any] struct {
 
 	// AgreeToInstallHANADBClient AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-agreetoinstallhanadbclient
-	AgreeToInstallHANADBClient bool `json:"AgreeToInstallHANADBClient"`
+	AgreeToInstallHANADBClient T `json:"AgreeToInstallHANADBClient"`
 
 	// HANAPort AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Application_HANAPrometheusExporter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_HANAPrometheusExporter) AWSCloudFormationType() string {
+func (r *Application_HANAPrometheusExporter[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.HANAPrometheusExporter"
 }

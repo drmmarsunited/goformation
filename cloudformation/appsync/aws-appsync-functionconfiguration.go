@@ -11,7 +11,7 @@ import (
 
 // FunctionConfiguration AWS CloudFormation Resource (AWS::AppSync::FunctionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html
-type FunctionConfiguration struct {
+type FunctionConfiguration[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type FunctionConfiguration struct {
 	// MaxBatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-maxbatchsize
-	MaxBatchSize *int `json:"MaxBatchSize,omitempty"`
+	MaxBatchSize *T `json:"MaxBatchSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -76,12 +76,12 @@ type FunctionConfiguration struct {
 	// Runtime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-runtime
-	Runtime *FunctionConfiguration_AppSyncRuntime `json:"Runtime,omitempty"`
+	Runtime *FunctionConfiguration_AppSyncRuntime[any] `json:"Runtime,omitempty"`
 
 	// SyncConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-syncconfig
-	SyncConfig *FunctionConfiguration_SyncConfig `json:"SyncConfig,omitempty"`
+	SyncConfig *FunctionConfiguration_SyncConfig[any] `json:"SyncConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -100,14 +100,15 @@ type FunctionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionConfiguration) AWSCloudFormationType() string {
+func (r *FunctionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::FunctionConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FunctionConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties FunctionConfiguration
+func (r FunctionConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties FunctionConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r FunctionConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FunctionConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties FunctionConfiguration
+func (r *FunctionConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties FunctionConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *FunctionConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FunctionConfiguration(*res.Properties)
+		*r = FunctionConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

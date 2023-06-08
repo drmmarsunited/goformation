@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_ClientPolicy AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ClientPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicy.html
-type VirtualNode_ClientPolicy struct {
+type VirtualNode_ClientPolicy[T any] struct {
 
 	// TLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicy.html#cfn-appmesh-virtualnode-clientpolicy-tls
-	TLS *VirtualNode_ClientPolicyTls `json:"TLS,omitempty"`
+	TLS *VirtualNode_ClientPolicyTls[any] `json:"TLS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_ClientPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ClientPolicy) AWSCloudFormationType() string {
+func (r *VirtualNode_ClientPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ClientPolicy"
 }

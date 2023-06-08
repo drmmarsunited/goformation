@@ -8,27 +8,27 @@ import (
 
 // Channel_CaptionRectangle AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionRectangle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html
-type Channel_CaptionRectangle struct {
+type Channel_CaptionRectangle[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-height
-	Height *float64 `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// LeftOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-leftoffset
-	LeftOffset *float64 `json:"LeftOffset,omitempty"`
+	LeftOffset *T `json:"LeftOffset,omitempty"`
 
 	// TopOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-topoffset
-	TopOffset *float64 `json:"TopOffset,omitempty"`
+	TopOffset *T `json:"TopOffset,omitempty"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-width
-	Width *float64 `json:"Width,omitempty"`
+	Width *T `json:"Width,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_CaptionRectangle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CaptionRectangle) AWSCloudFormationType() string {
+func (r *Channel_CaptionRectangle[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CaptionRectangle"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FontSize AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FontSize)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontsize.html
-type Dashboard_FontSize struct {
+type Dashboard_FontSize[T any] struct {
 
 	// Relative AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_FontSize struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FontSize) AWSCloudFormationType() string {
+func (r *Dashboard_FontSize[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FontSize"
 }

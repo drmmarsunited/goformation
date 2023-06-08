@@ -11,7 +11,7 @@ import (
 
 // AccessPointPolicy AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPointPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspointpolicy.html
-type AccessPointPolicy struct {
+type AccessPointPolicy[T any] struct {
 
 	// ObjectLambdaAccessPoint AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type AccessPointPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPointPolicy) AWSCloudFormationType() string {
+func (r *AccessPointPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPointPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccessPointPolicy) MarshalJSON() ([]byte, error) {
-	type Properties AccessPointPolicy
+func (r AccessPointPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccessPointPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r AccessPointPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccessPointPolicy) UnmarshalJSON(b []byte) error {
-	type Properties AccessPointPolicy
+func (r *AccessPointPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccessPointPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *AccessPointPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccessPointPolicy(*res.Properties)
+		*r = AccessPointPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

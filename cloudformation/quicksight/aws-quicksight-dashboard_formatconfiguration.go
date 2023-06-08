@@ -8,22 +8,22 @@ import (
 
 // Dashboard_FormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-formatconfiguration.html
-type Dashboard_FormatConfiguration struct {
+type Dashboard_FormatConfiguration[T any] struct {
 
 	// DateTimeFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-formatconfiguration.html#cfn-quicksight-dashboard-formatconfiguration-datetimeformatconfiguration
-	DateTimeFormatConfiguration *Dashboard_DateTimeFormatConfiguration `json:"DateTimeFormatConfiguration,omitempty"`
+	DateTimeFormatConfiguration *Dashboard_DateTimeFormatConfiguration[any] `json:"DateTimeFormatConfiguration,omitempty"`
 
 	// NumberFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-formatconfiguration.html#cfn-quicksight-dashboard-formatconfiguration-numberformatconfiguration
-	NumberFormatConfiguration *Dashboard_NumberFormatConfiguration `json:"NumberFormatConfiguration,omitempty"`
+	NumberFormatConfiguration *Dashboard_NumberFormatConfiguration[any] `json:"NumberFormatConfiguration,omitempty"`
 
 	// StringFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-formatconfiguration.html#cfn-quicksight-dashboard-formatconfiguration-stringformatconfiguration
-	StringFormatConfiguration *Dashboard_StringFormatConfiguration `json:"StringFormatConfiguration,omitempty"`
+	StringFormatConfiguration *Dashboard_StringFormatConfiguration[any] `json:"StringFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_FormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FormatConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FormatConfiguration"
 }

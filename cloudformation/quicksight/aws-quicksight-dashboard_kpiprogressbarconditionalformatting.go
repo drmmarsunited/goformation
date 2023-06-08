@@ -8,12 +8,12 @@ import (
 
 // Dashboard_KPIProgressBarConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIProgressBarConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiprogressbarconditionalformatting.html
-type Dashboard_KPIProgressBarConditionalFormatting struct {
+type Dashboard_KPIProgressBarConditionalFormatting[T any] struct {
 
 	// ForegroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiprogressbarconditionalformatting.html#cfn-quicksight-dashboard-kpiprogressbarconditionalformatting-foregroundcolor
-	ForegroundColor *Dashboard_ConditionalFormattingColor `json:"ForegroundColor,omitempty"`
+	ForegroundColor *Dashboard_ConditionalFormattingColor[any] `json:"ForegroundColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_KPIProgressBarConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIProgressBarConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_KPIProgressBarConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIProgressBarConditionalFormatting"
 }

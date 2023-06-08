@@ -8,12 +8,12 @@ import (
 
 // Application_ParallelismConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html
-type Application_ParallelismConfiguration struct {
+type Application_ParallelismConfiguration[T any] struct {
 
 	// AutoScalingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-autoscalingenabled
-	AutoScalingEnabled *bool `json:"AutoScalingEnabled,omitempty"`
+	AutoScalingEnabled *T `json:"AutoScalingEnabled,omitempty"`
 
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Application_ParallelismConfiguration struct {
 	// Parallelism AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelism
-	Parallelism *int `json:"Parallelism,omitempty"`
+	Parallelism *T `json:"Parallelism,omitempty"`
 
 	// ParallelismPerKPU AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelismperkpu
-	ParallelismPerKPU *int `json:"ParallelismPerKPU,omitempty"`
+	ParallelismPerKPU *T `json:"ParallelismPerKPU,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Application_ParallelismConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ParallelismConfiguration) AWSCloudFormationType() string {
+func (r *Application_ParallelismConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration"
 }

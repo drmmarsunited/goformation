@@ -8,17 +8,17 @@ import (
 
 // DataSet_DataSetUsageConfiguration AWS CloudFormation Resource (AWS::QuickSight::DataSet.DataSetUsageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html
-type DataSet_DataSetUsageConfiguration struct {
+type DataSet_DataSetUsageConfiguration[T any] struct {
 
 	// DisableUseAsDirectQuerySource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html#cfn-quicksight-dataset-datasetusageconfiguration-disableuseasdirectquerysource
-	DisableUseAsDirectQuerySource *bool `json:"DisableUseAsDirectQuerySource,omitempty"`
+	DisableUseAsDirectQuerySource *T `json:"DisableUseAsDirectQuerySource,omitempty"`
 
 	// DisableUseAsImportedSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html#cfn-quicksight-dataset-datasetusageconfiguration-disableuseasimportedsource
-	DisableUseAsImportedSource *bool `json:"DisableUseAsImportedSource,omitempty"`
+	DisableUseAsImportedSource *T `json:"DisableUseAsImportedSource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSet_DataSetUsageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_DataSetUsageConfiguration) AWSCloudFormationType() string {
+func (r *DataSet_DataSetUsageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.DataSetUsageConfiguration"
 }

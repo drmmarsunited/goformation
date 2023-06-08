@@ -8,12 +8,12 @@ import (
 
 // LifecyclePolicy_CrossRegionCopyRetainRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyRetainRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html
-type LifecyclePolicy_CrossRegionCopyRetainRule struct {
+type LifecyclePolicy_CrossRegionCopyRetainRule[T any] struct {
 
 	// Interval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyretainrule-interval
-	Interval int `json:"Interval"`
+	Interval T `json:"Interval"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LifecyclePolicy_CrossRegionCopyRetainRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_CrossRegionCopyRetainRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_CrossRegionCopyRetainRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.CrossRegionCopyRetainRule"
 }

@@ -8,7 +8,7 @@ import (
 
 // GameSessionQueue_FilterConfiguration AWS CloudFormation Resource (AWS::GameLift::GameSessionQueue.FilterConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-filterconfiguration.html
-type GameSessionQueue_FilterConfiguration struct {
+type GameSessionQueue_FilterConfiguration[T any] struct {
 
 	// AllowedLocations AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type GameSessionQueue_FilterConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameSessionQueue_FilterConfiguration) AWSCloudFormationType() string {
+func (r *GameSessionQueue_FilterConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameSessionQueue.FilterConfiguration"
 }

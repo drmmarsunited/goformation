@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ColorScale AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColorScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-colorscale.html
-type Dashboard_ColorScale struct {
+type Dashboard_ColorScale[T any] struct {
 
 	// ColorFillType AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Dashboard_ColorScale struct {
 	// Colors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-colorscale.html#cfn-quicksight-dashboard-colorscale-colors
-	Colors []Dashboard_DataColor `json:"Colors"`
+	Colors []Dashboard_DataColor[any] `json:"Colors"`
 
 	// NullValueColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-colorscale.html#cfn-quicksight-dashboard-colorscale-nullvaluecolor
-	NullValueColor *Dashboard_DataColor `json:"NullValueColor,omitempty"`
+	NullValueColor *Dashboard_DataColor[any] `json:"NullValueColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ColorScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColorScale) AWSCloudFormationType() string {
+func (r *Dashboard_ColorScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColorScale"
 }

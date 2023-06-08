@@ -8,7 +8,7 @@ import (
 
 // Template_DateTimePickerControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.DateTimePickerControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimepickercontroldisplayoptions.html
-type Template_DateTimePickerControlDisplayOptions struct {
+type Template_DateTimePickerControlDisplayOptions[T any] struct {
 
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_DateTimePickerControlDisplayOptions struct {
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimepickercontroldisplayoptions.html#cfn-quicksight-template-datetimepickercontroldisplayoptions-titleoptions
-	TitleOptions *Template_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Template_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_DateTimePickerControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DateTimePickerControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_DateTimePickerControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DateTimePickerControlDisplayOptions"
 }

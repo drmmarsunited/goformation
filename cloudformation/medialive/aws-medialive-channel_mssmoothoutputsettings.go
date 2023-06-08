@@ -8,7 +8,7 @@ import (
 
 // Channel_MsSmoothOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MsSmoothOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothoutputsettings.html
-type Channel_MsSmoothOutputSettings struct {
+type Channel_MsSmoothOutputSettings[T any] struct {
 
 	// H265PackagingType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_MsSmoothOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MsSmoothOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_MsSmoothOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MsSmoothOutputSettings"
 }

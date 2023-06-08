@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeSourceSelfManagedKafkaParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceSelfManagedKafkaParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html
-type Pipe_PipeSourceSelfManagedKafkaParameters struct {
+type Pipe_PipeSourceSelfManagedKafkaParameters[T any] struct {
 
 	// AdditionalBootstrapServers AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Pipe_PipeSourceSelfManagedKafkaParameters struct {
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// ConsumerGroupID AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Pipe_PipeSourceSelfManagedKafkaParameters struct {
 	// Credentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-credentials
-	Credentials *Pipe_SelfManagedKafkaAccessConfigurationCredentials `json:"Credentials,omitempty"`
+	Credentials *Pipe_SelfManagedKafkaAccessConfigurationCredentials[any] `json:"Credentials,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// ServerRootCaCertificate AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Pipe_PipeSourceSelfManagedKafkaParameters struct {
 	// Vpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-vpc
-	Vpc *Pipe_SelfManagedKafkaAccessConfigurationVpc `json:"Vpc,omitempty"`
+	Vpc *Pipe_SelfManagedKafkaAccessConfigurationVpc[any] `json:"Vpc,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Pipe_PipeSourceSelfManagedKafkaParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceSelfManagedKafkaParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceSelfManagedKafkaParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceSelfManagedKafkaParameters"
 }

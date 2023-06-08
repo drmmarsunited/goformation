@@ -8,7 +8,7 @@ import (
 
 // Server_IdentityProviderDetails AWS CloudFormation Resource (AWS::Transfer::Server.IdentityProviderDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html
-type Server_IdentityProviderDetails struct {
+type Server_IdentityProviderDetails[T any] struct {
 
 	// DirectoryId AWS CloudFormation Property
 	// Required: false
@@ -24,6 +24,11 @@ type Server_IdentityProviderDetails struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
 	InvocationRole *string `json:"InvocationRole,omitempty"`
+
+	// SftpAuthenticationMethods AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-sftpauthenticationmethods
+	SftpAuthenticationMethods *string `json:"SftpAuthenticationMethods,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
@@ -47,6 +52,6 @@ type Server_IdentityProviderDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_IdentityProviderDetails) AWSCloudFormationType() string {
+func (r *Server_IdentityProviderDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.IdentityProviderDetails"
 }

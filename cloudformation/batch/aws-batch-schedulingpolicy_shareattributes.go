@@ -8,7 +8,7 @@ import (
 
 // SchedulingPolicy_ShareAttributes AWS CloudFormation Resource (AWS::Batch::SchedulingPolicy.ShareAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-shareattributes.html
-type SchedulingPolicy_ShareAttributes struct {
+type SchedulingPolicy_ShareAttributes[T any] struct {
 
 	// ShareIdentifier AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type SchedulingPolicy_ShareAttributes struct {
 	// WeightFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-shareattributes.html#cfn-batch-schedulingpolicy-shareattributes-weightfactor
-	WeightFactor *float64 `json:"WeightFactor,omitempty"`
+	WeightFactor *T `json:"WeightFactor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SchedulingPolicy_ShareAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SchedulingPolicy_ShareAttributes) AWSCloudFormationType() string {
+func (r *SchedulingPolicy_ShareAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::SchedulingPolicy.ShareAttributes"
 }

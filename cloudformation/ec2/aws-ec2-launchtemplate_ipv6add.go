@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_Ipv6Add AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.Ipv6Add)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html
-type LaunchTemplate_Ipv6Add struct {
+type LaunchTemplate_Ipv6Add[T any] struct {
 
 	// Ipv6Address AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_Ipv6Add struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_Ipv6Add) AWSCloudFormationType() string {
+func (r *LaunchTemplate_Ipv6Add[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.Ipv6Add"
 }

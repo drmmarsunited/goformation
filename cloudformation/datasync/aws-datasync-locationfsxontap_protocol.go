@@ -8,17 +8,17 @@ import (
 
 // LocationFSxONTAP_Protocol AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP.Protocol)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-protocol.html
-type LocationFSxONTAP_Protocol struct {
+type LocationFSxONTAP_Protocol[T any] struct {
 
 	// NFS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-protocol.html#cfn-datasync-locationfsxontap-protocol-nfs
-	NFS *LocationFSxONTAP_NFS `json:"NFS,omitempty"`
+	NFS *LocationFSxONTAP_NFS[any] `json:"NFS,omitempty"`
 
 	// SMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-protocol.html#cfn-datasync-locationfsxontap-protocol-smb
-	SMB *LocationFSxONTAP_SMB `json:"SMB,omitempty"`
+	SMB *LocationFSxONTAP_SMB[any] `json:"SMB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LocationFSxONTAP_Protocol struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP_Protocol) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP_Protocol[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP.Protocol"
 }

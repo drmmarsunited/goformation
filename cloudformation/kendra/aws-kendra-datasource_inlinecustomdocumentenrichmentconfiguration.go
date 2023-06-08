@@ -8,22 +8,22 @@ import (
 
 // DataSource_InlineCustomDocumentEnrichmentConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.InlineCustomDocumentEnrichmentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html
-type DataSource_InlineCustomDocumentEnrichmentConfiguration struct {
+type DataSource_InlineCustomDocumentEnrichmentConfiguration[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-condition
-	Condition *DataSource_DocumentAttributeCondition `json:"Condition,omitempty"`
+	Condition *DataSource_DocumentAttributeCondition[any] `json:"Condition,omitempty"`
 
 	// DocumentContentDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-documentcontentdeletion
-	DocumentContentDeletion *bool `json:"DocumentContentDeletion,omitempty"`
+	DocumentContentDeletion *T `json:"DocumentContentDeletion,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-target
-	Target *DataSource_DocumentAttributeTarget `json:"Target,omitempty"`
+	Target *DataSource_DocumentAttributeTarget[any] `json:"Target,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_InlineCustomDocumentEnrichmentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_InlineCustomDocumentEnrichmentConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_InlineCustomDocumentEnrichmentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.InlineCustomDocumentEnrichmentConfiguration"
 }

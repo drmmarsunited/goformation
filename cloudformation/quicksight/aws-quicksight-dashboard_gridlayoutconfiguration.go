@@ -8,17 +8,17 @@ import (
 
 // Dashboard_GridLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GridLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutconfiguration.html
-type Dashboard_GridLayoutConfiguration struct {
+type Dashboard_GridLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutconfiguration.html#cfn-quicksight-dashboard-gridlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Dashboard_GridLayoutCanvasSizeOptions `json:"CanvasSizeOptions,omitempty"`
+	CanvasSizeOptions *Dashboard_GridLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions,omitempty"`
 
 	// Elements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutconfiguration.html#cfn-quicksight-dashboard-gridlayoutconfiguration-elements
-	Elements []Dashboard_GridLayoutElement `json:"Elements"`
+	Elements []Dashboard_GridLayoutElement[any] `json:"Elements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_GridLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GridLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_GridLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GridLayoutConfiguration"
 }

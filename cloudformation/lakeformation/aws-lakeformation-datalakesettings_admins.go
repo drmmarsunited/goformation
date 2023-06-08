@@ -8,7 +8,7 @@ import (
 
 // DataLakeSettings_Admins AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings.Admins)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-admins.html
-type DataLakeSettings_Admins struct {
+type DataLakeSettings_Admins[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type DataLakeSettings_Admins struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings_Admins) AWSCloudFormationType() string {
+func (r *DataLakeSettings_Admins[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings.Admins"
 }

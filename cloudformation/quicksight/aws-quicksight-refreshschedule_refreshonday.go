@@ -8,7 +8,7 @@ import (
 
 // RefreshSchedule_RefreshOnDay AWS CloudFormation Resource (AWS::QuickSight::RefreshSchedule.RefreshOnDay)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshonday.html
-type RefreshSchedule_RefreshOnDay struct {
+type RefreshSchedule_RefreshOnDay[T any] struct {
 
 	// DayOfMonth AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type RefreshSchedule_RefreshOnDay struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RefreshSchedule_RefreshOnDay) AWSCloudFormationType() string {
+func (r *RefreshSchedule_RefreshOnDay[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::RefreshSchedule.RefreshOnDay"
 }

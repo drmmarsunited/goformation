@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ParameterDropDownControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterDropDownControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html
-type Dashboard_ParameterDropDownControl struct {
+type Dashboard_ParameterDropDownControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-displayoptions
-	DisplayOptions *Dashboard_DropDownControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_DropDownControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_ParameterDropDownControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-selectablevalues
-	SelectableValues *Dashboard_ParameterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Dashboard_ParameterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Dashboard_ParameterDropDownControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterDropDownControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterDropDownControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterDropDownControl"
 }

@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_FileAccessLog AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.FileAccessLog)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html
-type VirtualNode_FileAccessLog struct {
+type VirtualNode_FileAccessLog[T any] struct {
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-format
-	Format *VirtualNode_LoggingFormat `json:"Format,omitempty"`
+	Format *VirtualNode_LoggingFormat[any] `json:"Format,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_FileAccessLog struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_FileAccessLog) AWSCloudFormationType() string {
+func (r *VirtualNode_FileAccessLog[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.FileAccessLog"
 }

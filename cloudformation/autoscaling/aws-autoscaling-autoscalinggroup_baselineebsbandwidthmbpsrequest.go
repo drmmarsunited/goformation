@@ -8,17 +8,17 @@ import (
 
 // AutoScalingGroup_BaselineEbsBandwidthMbpsRequest AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.BaselineEbsBandwidthMbpsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-baselineebsbandwidthmbpsrequest.html
-type AutoScalingGroup_BaselineEbsBandwidthMbpsRequest struct {
+type AutoScalingGroup_BaselineEbsBandwidthMbpsRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-baselineebsbandwidthmbpsrequest.html#cfn-autoscaling-autoscalinggroup-baselineebsbandwidthmbpsrequest-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-baselineebsbandwidthmbpsrequest.html#cfn-autoscaling-autoscalinggroup-baselineebsbandwidthmbpsrequest-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AutoScalingGroup_BaselineEbsBandwidthMbpsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_BaselineEbsBandwidthMbpsRequest) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_BaselineEbsBandwidthMbpsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.BaselineEbsBandwidthMbpsRequest"
 }

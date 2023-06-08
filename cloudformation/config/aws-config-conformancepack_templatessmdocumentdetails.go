@@ -8,7 +8,7 @@ import (
 
 // ConformancePack_TemplateSSMDocumentDetails AWS CloudFormation Resource (AWS::Config::ConformancePack.TemplateSSMDocumentDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-templatessmdocumentdetails.html
-type ConformancePack_TemplateSSMDocumentDetails struct {
+type ConformancePack_TemplateSSMDocumentDetails[T any] struct {
 
 	// DocumentName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConformancePack_TemplateSSMDocumentDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConformancePack_TemplateSSMDocumentDetails) AWSCloudFormationType() string {
+func (r *ConformancePack_TemplateSSMDocumentDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConformancePack.TemplateSSMDocumentDetails"
 }

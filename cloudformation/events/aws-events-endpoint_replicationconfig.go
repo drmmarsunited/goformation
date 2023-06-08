@@ -8,7 +8,7 @@ import (
 
 // Endpoint_ReplicationConfig AWS CloudFormation Resource (AWS::Events::Endpoint.ReplicationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-replicationconfig.html
-type Endpoint_ReplicationConfig struct {
+type Endpoint_ReplicationConfig[T any] struct {
 
 	// State AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_ReplicationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_ReplicationConfig) AWSCloudFormationType() string {
+func (r *Endpoint_ReplicationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.ReplicationConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelCard_MetricGroup AWS CloudFormation Resource (AWS::SageMaker::ModelCard.MetricGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html
-type ModelCard_MetricGroup struct {
+type ModelCard_MetricGroup[T any] struct {
 
 	// MetricData AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html#cfn-sagemaker-modelcard-metricgroup-metricdata
-	MetricData []ModelCard_MetricDataItems `json:"MetricData"`
+	MetricData []ModelCard_MetricDataItems[any] `json:"MetricData"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelCard_MetricGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_MetricGroup) AWSCloudFormationType() string {
+func (r *ModelCard_MetricGroup[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.MetricGroup"
 }

@@ -8,22 +8,22 @@ import (
 
 // Config_AntennaUplinkConfig AWS CloudFormation Resource (AWS::GroundStation::Config.AntennaUplinkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html
-type Config_AntennaUplinkConfig struct {
+type Config_AntennaUplinkConfig[T any] struct {
 
 	// SpectrumConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-spectrumconfig
-	SpectrumConfig *Config_UplinkSpectrumConfig `json:"SpectrumConfig,omitempty"`
+	SpectrumConfig *Config_UplinkSpectrumConfig[any] `json:"SpectrumConfig,omitempty"`
 
 	// TargetEirp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-targeteirp
-	TargetEirp *Config_Eirp `json:"TargetEirp,omitempty"`
+	TargetEirp *Config_Eirp[any] `json:"TargetEirp,omitempty"`
 
 	// TransmitDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-transmitdisabled
-	TransmitDisabled *bool `json:"TransmitDisabled,omitempty"`
+	TransmitDisabled *T `json:"TransmitDisabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Config_AntennaUplinkConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_AntennaUplinkConfig) AWSCloudFormationType() string {
+func (r *Config_AntennaUplinkConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.AntennaUplinkConfig"
 }

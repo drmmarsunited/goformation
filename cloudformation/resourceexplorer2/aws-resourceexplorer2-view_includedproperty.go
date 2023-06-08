@@ -8,7 +8,7 @@ import (
 
 // View_IncludedProperty AWS CloudFormation Resource (AWS::ResourceExplorer2::View.IncludedProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourceexplorer2-view-includedproperty.html
-type View_IncludedProperty struct {
+type View_IncludedProperty[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type View_IncludedProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *View_IncludedProperty) AWSCloudFormationType() string {
+func (r *View_IncludedProperty[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceExplorer2::View.IncludedProperty"
 }

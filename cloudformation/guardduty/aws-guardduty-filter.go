@@ -12,7 +12,7 @@ import (
 
 // Filter AWS CloudFormation Resource (AWS::GuardDuty::Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
-type Filter struct {
+type Filter[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Filter struct {
 	// FindingCriteria AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
-	FindingCriteria *Filter_FindingCriteria `json:"FindingCriteria"`
+	FindingCriteria *Filter_FindingCriteria[any] `json:"FindingCriteria"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Filter struct {
 	// Rank AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
-	Rank int `json:"Rank"`
+	Rank T `json:"Rank"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter) AWSCloudFormationType() string {
+func (r *Filter[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Filter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Filter) MarshalJSON() ([]byte, error) {
-	type Properties Filter
+func (r Filter[any]) MarshalJSON() ([]byte, error) {
+	type Properties Filter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Filter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Filter) UnmarshalJSON(b []byte) error {
-	type Properties Filter
+func (r *Filter[any]) UnmarshalJSON(b []byte) error {
+	type Properties Filter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Filter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Filter(*res.Properties)
+		*r = Filter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // EventSourceMapping_SelfManagedEventSource AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.SelfManagedEventSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedeventsource.html
-type EventSourceMapping_SelfManagedEventSource struct {
+type EventSourceMapping_SelfManagedEventSource[T any] struct {
 
 	// Endpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedeventsource.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource-endpoints
-	Endpoints *EventSourceMapping_Endpoints `json:"Endpoints,omitempty"`
+	Endpoints *EventSourceMapping_Endpoints[any] `json:"Endpoints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EventSourceMapping_SelfManagedEventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_SelfManagedEventSource) AWSCloudFormationType() string {
+func (r *EventSourceMapping_SelfManagedEventSource[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.SelfManagedEventSource"
 }

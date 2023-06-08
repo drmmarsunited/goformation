@@ -8,7 +8,7 @@ import (
 
 // MLTransform_GlueTables AWS CloudFormation Resource (AWS::Glue::MLTransform.GlueTables)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html
-type MLTransform_GlueTables struct {
+type MLTransform_GlueTables[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type MLTransform_GlueTables struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_GlueTables) AWSCloudFormationType() string {
+func (r *MLTransform_GlueTables[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.GlueTables"
 }

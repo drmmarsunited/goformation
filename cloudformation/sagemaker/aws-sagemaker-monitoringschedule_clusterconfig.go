@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_ClusterConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.ClusterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html
-type MonitoringSchedule_ClusterConfig struct {
+type MonitoringSchedule_ClusterConfig[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type MonitoringSchedule_ClusterConfig struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB"`
+	VolumeSizeInGB T `json:"VolumeSizeInGB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type MonitoringSchedule_ClusterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_ClusterConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_ClusterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.ClusterConfig"
 }

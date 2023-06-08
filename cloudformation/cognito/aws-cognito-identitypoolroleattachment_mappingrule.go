@@ -8,7 +8,7 @@ import (
 
 // IdentityPoolRoleAttachment_MappingRule AWS CloudFormation Resource (AWS::Cognito::IdentityPoolRoleAttachment.MappingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html
-type IdentityPoolRoleAttachment_MappingRule struct {
+type IdentityPoolRoleAttachment_MappingRule[T any] struct {
 
 	// Claim AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type IdentityPoolRoleAttachment_MappingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPoolRoleAttachment_MappingRule) AWSCloudFormationType() string {
+func (r *IdentityPoolRoleAttachment_MappingRule[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPoolRoleAttachment.MappingRule"
 }

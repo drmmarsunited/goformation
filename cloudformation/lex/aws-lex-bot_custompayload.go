@@ -8,7 +8,7 @@ import (
 
 // Bot_CustomPayload AWS CloudFormation Resource (AWS::Lex::Bot.CustomPayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-custompayload.html
-type Bot_CustomPayload struct {
+type Bot_CustomPayload[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_CustomPayload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_CustomPayload) AWSCloudFormationType() string {
+func (r *Bot_CustomPayload[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.CustomPayload"
 }

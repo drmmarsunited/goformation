@@ -8,7 +8,7 @@ import (
 
 // UserProfile_ResourceSpec AWS CloudFormation Resource (AWS::SageMaker::UserProfile.ResourceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html
-type UserProfile_ResourceSpec struct {
+type UserProfile_ResourceSpec[T any] struct {
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserProfile_ResourceSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_ResourceSpec) AWSCloudFormationType() string {
+func (r *UserProfile_ResourceSpec[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.ResourceSpec"
 }

@@ -8,7 +8,7 @@ import (
 
 // ModelCard_SourceAlgorithm AWS CloudFormation Resource (AWS::SageMaker::ModelCard.SourceAlgorithm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-sourcealgorithm.html
-type ModelCard_SourceAlgorithm struct {
+type ModelCard_SourceAlgorithm[T any] struct {
 
 	// AlgorithmName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelCard_SourceAlgorithm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_SourceAlgorithm) AWSCloudFormationType() string {
+func (r *ModelCard_SourceAlgorithm[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.SourceAlgorithm"
 }

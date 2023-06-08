@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html
-type DataQualityJobDefinition_EndpointInput struct {
+type DataQualityJobDefinition_EndpointInput[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DataQualityJobDefinition_EndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_EndpointInput) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_EndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.EndpointInput"
 }

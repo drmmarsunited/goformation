@@ -8,7 +8,7 @@ import (
 
 // ScheduledAction_ResumeClusterMessage AWS CloudFormation Resource (AWS::Redshift::ScheduledAction.ResumeClusterMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resumeclustermessage.html
-type ScheduledAction_ResumeClusterMessage struct {
+type ScheduledAction_ResumeClusterMessage[T any] struct {
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ScheduledAction_ResumeClusterMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledAction_ResumeClusterMessage) AWSCloudFormationType() string {
+func (r *ScheduledAction_ResumeClusterMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ScheduledAction.ResumeClusterMessage"
 }

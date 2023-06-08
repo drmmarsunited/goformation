@@ -8,12 +8,12 @@ import (
 
 // WebACL_VisibilityConfig AWS CloudFormation Resource (AWS::WAFv2::WebACL.VisibilityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html
-type WebACL_VisibilityConfig struct {
+type WebACL_VisibilityConfig[T any] struct {
 
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-cloudwatchmetricsenabled
-	CloudWatchMetricsEnabled bool `json:"CloudWatchMetricsEnabled"`
+	CloudWatchMetricsEnabled T `json:"CloudWatchMetricsEnabled"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type WebACL_VisibilityConfig struct {
 	// SampledRequestsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-sampledrequestsenabled
-	SampledRequestsEnabled bool `json:"SampledRequestsEnabled"`
+	SampledRequestsEnabled T `json:"SampledRequestsEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_VisibilityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_VisibilityConfig) AWSCloudFormationType() string {
+func (r *WebACL_VisibilityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.VisibilityConfig"
 }

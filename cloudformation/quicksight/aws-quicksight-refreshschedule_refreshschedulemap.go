@@ -8,7 +8,7 @@ import (
 
 // RefreshSchedule_RefreshScheduleMap AWS CloudFormation Resource (AWS::QuickSight::RefreshSchedule.RefreshScheduleMap)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshschedulemap.html
-type RefreshSchedule_RefreshScheduleMap struct {
+type RefreshSchedule_RefreshScheduleMap[T any] struct {
 
 	// RefreshType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type RefreshSchedule_RefreshScheduleMap struct {
 	// ScheduleFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshschedulemap.html#cfn-quicksight-refreshschedule-refreshschedulemap-schedulefrequency
-	ScheduleFrequency *RefreshSchedule_ScheduleFrequency `json:"ScheduleFrequency,omitempty"`
+	ScheduleFrequency *RefreshSchedule_ScheduleFrequency[any] `json:"ScheduleFrequency,omitempty"`
 
 	// ScheduleId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type RefreshSchedule_RefreshScheduleMap struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RefreshSchedule_RefreshScheduleMap) AWSCloudFormationType() string {
+func (r *RefreshSchedule_RefreshScheduleMap[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::RefreshSchedule.RefreshScheduleMap"
 }

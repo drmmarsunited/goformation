@@ -8,12 +8,12 @@ import (
 
 // Channel_WavSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.WavSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html
-type Channel_WavSettings struct {
+type Channel_WavSettings[T any] struct {
 
 	// BitDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-bitdepth
-	BitDepth *float64 `json:"BitDepth,omitempty"`
+	BitDepth *T `json:"BitDepth,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_WavSettings struct {
 	// SampleRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-samplerate
-	SampleRate *float64 `json:"SampleRate,omitempty"`
+	SampleRate *T `json:"SampleRate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_WavSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_WavSettings) AWSCloudFormationType() string {
+func (r *Channel_WavSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.WavSettings"
 }

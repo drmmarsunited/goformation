@@ -8,17 +8,17 @@ import (
 
 // StackSet_StackInstances AWS CloudFormation Resource (AWS::CloudFormation::StackSet.StackInstances)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html
-type StackSet_StackInstances struct {
+type StackSet_StackInstances[T any] struct {
 
 	// DeploymentTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html#cfn-cloudformation-stackset-stackinstances-deploymenttargets
-	DeploymentTargets *StackSet_DeploymentTargets `json:"DeploymentTargets"`
+	DeploymentTargets *StackSet_DeploymentTargets[any] `json:"DeploymentTargets"`
 
 	// ParameterOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html#cfn-cloudformation-stackset-stackinstances-parameteroverrides
-	ParameterOverrides []StackSet_Parameter `json:"ParameterOverrides,omitempty"`
+	ParameterOverrides []StackSet_Parameter[any] `json:"ParameterOverrides,omitempty"`
 
 	// Regions AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type StackSet_StackInstances struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet_StackInstances) AWSCloudFormationType() string {
+func (r *StackSet_StackInstances[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet.StackInstances"
 }

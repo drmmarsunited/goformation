@@ -11,12 +11,12 @@ import (
 
 // RealtimeLogConfig AWS CloudFormation Resource (AWS::CloudFront::RealtimeLogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html
-type RealtimeLogConfig struct {
+type RealtimeLogConfig[T any] struct {
 
 	// EndPoints AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-endpoints
-	EndPoints []RealtimeLogConfig_EndPoint `json:"EndPoints"`
+	EndPoints []RealtimeLogConfig_EndPoint[any] `json:"EndPoints"`
 
 	// Fields AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type RealtimeLogConfig struct {
 	// SamplingRate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-samplingrate
-	SamplingRate float64 `json:"SamplingRate"`
+	SamplingRate T `json:"SamplingRate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type RealtimeLogConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RealtimeLogConfig) AWSCloudFormationType() string {
+func (r *RealtimeLogConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::RealtimeLogConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RealtimeLogConfig) MarshalJSON() ([]byte, error) {
-	type Properties RealtimeLogConfig
+func (r RealtimeLogConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties RealtimeLogConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r RealtimeLogConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RealtimeLogConfig) UnmarshalJSON(b []byte) error {
-	type Properties RealtimeLogConfig
+func (r *RealtimeLogConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties RealtimeLogConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *RealtimeLogConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RealtimeLogConfig(*res.Properties)
+		*r = RealtimeLogConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

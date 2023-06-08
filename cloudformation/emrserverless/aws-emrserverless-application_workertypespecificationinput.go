@@ -8,12 +8,12 @@ import (
 
 // Application_WorkerTypeSpecificationInput AWS CloudFormation Resource (AWS::EMRServerless::Application.WorkerTypeSpecificationInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workertypespecificationinput.html
-type Application_WorkerTypeSpecificationInput struct {
+type Application_WorkerTypeSpecificationInput[T any] struct {
 
 	// ImageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workertypespecificationinput.html#cfn-emrserverless-application-workertypespecificationinput-imageconfiguration
-	ImageConfiguration *Application_ImageConfigurationInput `json:"ImageConfiguration,omitempty"`
+	ImageConfiguration *Application_ImageConfigurationInput[any] `json:"ImageConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_WorkerTypeSpecificationInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_WorkerTypeSpecificationInput) AWSCloudFormationType() string {
+func (r *Application_WorkerTypeSpecificationInput[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.WorkerTypeSpecificationInput"
 }

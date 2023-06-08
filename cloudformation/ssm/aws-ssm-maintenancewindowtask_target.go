@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_Target AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
-type MaintenanceWindowTask_Target struct {
+type MaintenanceWindowTask_Target[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MaintenanceWindowTask_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_Target) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_Target[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.Target"
 }

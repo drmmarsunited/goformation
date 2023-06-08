@@ -11,17 +11,17 @@ import (
 
 // Skill AWS CloudFormation Resource (Alexa::ASK::Skill)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html
-type Skill struct {
+type Skill[T any] struct {
 
 	// AuthenticationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration
-	AuthenticationConfiguration *Skill_AuthenticationConfiguration `json:"AuthenticationConfiguration"`
+	AuthenticationConfiguration *Skill_AuthenticationConfiguration[any] `json:"AuthenticationConfiguration"`
 
 	// SkillPackage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage
-	SkillPackage *Skill_SkillPackage `json:"SkillPackage"`
+	SkillPackage *Skill_SkillPackage[any] `json:"SkillPackage"`
 
 	// VendorId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type Skill struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Skill) AWSCloudFormationType() string {
+func (r *Skill[any]) AWSCloudFormationType() string {
 	return "Alexa::ASK::Skill"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Skill) MarshalJSON() ([]byte, error) {
-	type Properties Skill
+func (r Skill[any]) MarshalJSON() ([]byte, error) {
+	type Properties Skill[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Skill) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Skill) UnmarshalJSON(b []byte) error {
-	type Properties Skill
+func (r *Skill[any]) UnmarshalJSON(b []byte) error {
+	type Properties Skill[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Skill) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Skill(*res.Properties)
+		*r = Skill[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

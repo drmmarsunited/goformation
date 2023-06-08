@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_CustomHeader AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.CustomHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html
-type ResponseHeadersPolicy_CustomHeader struct {
+type ResponseHeadersPolicy_CustomHeader[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResponseHeadersPolicy_CustomHeader struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ResponseHeadersPolicy_CustomHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_CustomHeader) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_CustomHeader[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.CustomHeader"
 }

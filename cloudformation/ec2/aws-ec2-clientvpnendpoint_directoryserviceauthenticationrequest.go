@@ -8,7 +8,7 @@ import (
 
 // ClientVpnEndpoint_DirectoryServiceAuthenticationRequest AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html
-type ClientVpnEndpoint_DirectoryServiceAuthenticationRequest struct {
+type ClientVpnEndpoint_DirectoryServiceAuthenticationRequest[T any] struct {
 
 	// DirectoryId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ClientVpnEndpoint_DirectoryServiceAuthenticationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_DirectoryServiceAuthenticationRequest) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_DirectoryServiceAuthenticationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest"
 }

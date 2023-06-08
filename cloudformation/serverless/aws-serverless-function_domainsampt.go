@@ -8,7 +8,7 @@ import (
 
 // Function_DomainSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.DomainSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_DomainSAMPT struct {
+type Function_DomainSAMPT[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_DomainSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DomainSAMPT) AWSCloudFormationType() string {
+func (r *Function_DomainSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DomainSAMPT"
 }

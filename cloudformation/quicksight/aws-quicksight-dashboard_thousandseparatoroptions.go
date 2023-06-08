@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ThousandSeparatorOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ThousandSeparatorOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-thousandseparatoroptions.html
-type Dashboard_ThousandSeparatorOptions struct {
+type Dashboard_ThousandSeparatorOptions[T any] struct {
 
 	// Symbol AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ThousandSeparatorOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ThousandSeparatorOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ThousandSeparatorOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ThousandSeparatorOptions"
 }

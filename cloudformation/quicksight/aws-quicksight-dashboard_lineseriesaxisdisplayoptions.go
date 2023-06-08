@@ -8,17 +8,17 @@ import (
 
 // Dashboard_LineSeriesAxisDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LineSeriesAxisDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-lineseriesaxisdisplayoptions.html
-type Dashboard_LineSeriesAxisDisplayOptions struct {
+type Dashboard_LineSeriesAxisDisplayOptions[T any] struct {
 
 	// AxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-lineseriesaxisdisplayoptions.html#cfn-quicksight-dashboard-lineseriesaxisdisplayoptions-axisoptions
-	AxisOptions *Dashboard_AxisDisplayOptions `json:"AxisOptions,omitempty"`
+	AxisOptions *Dashboard_AxisDisplayOptions[any] `json:"AxisOptions,omitempty"`
 
 	// MissingDataConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-lineseriesaxisdisplayoptions.html#cfn-quicksight-dashboard-lineseriesaxisdisplayoptions-missingdataconfigurations
-	MissingDataConfigurations []Dashboard_MissingDataConfiguration `json:"MissingDataConfigurations,omitempty"`
+	MissingDataConfigurations []Dashboard_MissingDataConfiguration[any] `json:"MissingDataConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_LineSeriesAxisDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LineSeriesAxisDisplayOptions) AWSCloudFormationType() string {
+func (r *Dashboard_LineSeriesAxisDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LineSeriesAxisDisplayOptions"
 }

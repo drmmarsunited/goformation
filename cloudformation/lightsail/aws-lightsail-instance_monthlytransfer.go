@@ -8,7 +8,7 @@ import (
 
 // Instance_MonthlyTransfer AWS CloudFormation Resource (AWS::Lightsail::Instance.MonthlyTransfer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-monthlytransfer.html
-type Instance_MonthlyTransfer struct {
+type Instance_MonthlyTransfer[T any] struct {
 
 	// GbPerMonthAllocated AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Instance_MonthlyTransfer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_MonthlyTransfer) AWSCloudFormationType() string {
+func (r *Instance_MonthlyTransfer[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.MonthlyTransfer"
 }

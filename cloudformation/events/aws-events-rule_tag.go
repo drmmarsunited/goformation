@@ -8,7 +8,7 @@ import (
 
 // Rule_Tag AWS CloudFormation Resource (AWS::Events::Rule.Tag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-tag.html
-type Rule_Tag struct {
+type Rule_Tag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_Tag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Tag) AWSCloudFormationType() string {
+func (r *Rule_Tag[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.Tag"
 }

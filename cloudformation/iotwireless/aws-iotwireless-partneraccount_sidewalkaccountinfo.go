@@ -8,7 +8,7 @@ import (
 
 // PartnerAccount_SidewalkAccountInfo AWS CloudFormation Resource (AWS::IoTWireless::PartnerAccount.SidewalkAccountInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfo.html
-type PartnerAccount_SidewalkAccountInfo struct {
+type PartnerAccount_SidewalkAccountInfo[T any] struct {
 
 	// AppServerPrivateKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type PartnerAccount_SidewalkAccountInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PartnerAccount_SidewalkAccountInfo) AWSCloudFormationType() string {
+func (r *PartnerAccount_SidewalkAccountInfo[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::PartnerAccount.SidewalkAccountInfo"
 }

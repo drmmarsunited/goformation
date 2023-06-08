@@ -8,12 +8,12 @@ import (
 
 // WebACL_SqliMatchStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.SqliMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html
-type WebACL_SqliMatchStatement struct {
+type WebACL_SqliMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-fieldtomatch
-	FieldToMatch *WebACL_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *WebACL_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// SensitivityLevel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type WebACL_SqliMatchStatement struct {
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-texttransformations
-	TextTransformations []WebACL_TextTransformation `json:"TextTransformations"`
+	TextTransformations []WebACL_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_SqliMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_SqliMatchStatement) AWSCloudFormationType() string {
+func (r *WebACL_SqliMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.SqliMatchStatement"
 }

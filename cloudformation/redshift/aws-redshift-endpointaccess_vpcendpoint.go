@@ -8,12 +8,12 @@ import (
 
 // EndpointAccess_VpcEndpoint AWS CloudFormation Resource (AWS::Redshift::EndpointAccess.VpcEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html
-type EndpointAccess_VpcEndpoint struct {
+type EndpointAccess_VpcEndpoint[T any] struct {
 
 	// NetworkInterfaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-networkinterfaces
-	NetworkInterfaces []EndpointAccess_NetworkInterface `json:"NetworkInterfaces,omitempty"`
+	NetworkInterfaces []EndpointAccess_NetworkInterface[any] `json:"NetworkInterfaces,omitempty"`
 
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EndpointAccess_VpcEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointAccess_VpcEndpoint) AWSCloudFormationType() string {
+func (r *EndpointAccess_VpcEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::EndpointAccess.VpcEndpoint"
 }

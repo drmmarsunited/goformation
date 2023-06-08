@@ -11,7 +11,7 @@ import (
 
 // SqlInjectionMatchSet AWS CloudFormation Resource (AWS::WAF::SqlInjectionMatchSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
-type SqlInjectionMatchSet struct {
+type SqlInjectionMatchSet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type SqlInjectionMatchSet struct {
 	// SqlInjectionMatchTuples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples
-	SqlInjectionMatchTuples []SqlInjectionMatchSet_SqlInjectionMatchTuple `json:"SqlInjectionMatchTuples,omitempty"`
+	SqlInjectionMatchTuples []SqlInjectionMatchSet_SqlInjectionMatchTuple[any] `json:"SqlInjectionMatchTuples,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type SqlInjectionMatchSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SqlInjectionMatchSet) AWSCloudFormationType() string {
+func (r *SqlInjectionMatchSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::SqlInjectionMatchSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SqlInjectionMatchSet) MarshalJSON() ([]byte, error) {
-	type Properties SqlInjectionMatchSet
+func (r SqlInjectionMatchSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties SqlInjectionMatchSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SqlInjectionMatchSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SqlInjectionMatchSet) UnmarshalJSON(b []byte) error {
-	type Properties SqlInjectionMatchSet
+func (r *SqlInjectionMatchSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties SqlInjectionMatchSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SqlInjectionMatchSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SqlInjectionMatchSet(*res.Properties)
+		*r = SqlInjectionMatchSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

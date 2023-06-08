@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_ModelPackageStatusItem AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelPackageStatusItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagestatusitem.html
-type ModelPackage_ModelPackageStatusItem struct {
+type ModelPackage_ModelPackageStatusItem[T any] struct {
 
 	// FailureReason AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelPackage_ModelPackageStatusItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelPackageStatusItem) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelPackageStatusItem[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelPackageStatusItem"
 }

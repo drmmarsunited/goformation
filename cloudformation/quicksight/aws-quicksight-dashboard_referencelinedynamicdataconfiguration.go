@@ -8,22 +8,22 @@ import (
 
 // Dashboard_ReferenceLineDynamicDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineDynamicDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedynamicdataconfiguration.html
-type Dashboard_ReferenceLineDynamicDataConfiguration struct {
+type Dashboard_ReferenceLineDynamicDataConfiguration[T any] struct {
 
 	// Calculation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedynamicdataconfiguration.html#cfn-quicksight-dashboard-referencelinedynamicdataconfiguration-calculation
-	Calculation *Dashboard_NumericalAggregationFunction `json:"Calculation"`
+	Calculation *Dashboard_NumericalAggregationFunction[any] `json:"Calculation"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedynamicdataconfiguration.html#cfn-quicksight-dashboard-referencelinedynamicdataconfiguration-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// MeasureAggregationFunction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedynamicdataconfiguration.html#cfn-quicksight-dashboard-referencelinedynamicdataconfiguration-measureaggregationfunction
-	MeasureAggregationFunction *Dashboard_AggregationFunction `json:"MeasureAggregationFunction"`
+	MeasureAggregationFunction *Dashboard_AggregationFunction[any] `json:"MeasureAggregationFunction"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ReferenceLineDynamicDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineDynamicDataConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineDynamicDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineDynamicDataConfiguration"
 }

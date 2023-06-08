@@ -8,37 +8,37 @@ import (
 
 // Filter_PackageFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.PackageFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html
-type Filter_PackageFilter struct {
+type Filter_PackageFilter[T any] struct {
 
 	// Architecture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-architecture
-	Architecture *Filter_StringFilter `json:"Architecture,omitempty"`
+	Architecture *Filter_StringFilter[any] `json:"Architecture,omitempty"`
 
 	// Epoch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-epoch
-	Epoch *Filter_NumberFilter `json:"Epoch,omitempty"`
+	Epoch *Filter_NumberFilter[any] `json:"Epoch,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-name
-	Name *Filter_StringFilter `json:"Name,omitempty"`
+	Name *Filter_StringFilter[any] `json:"Name,omitempty"`
 
 	// Release AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-release
-	Release *Filter_StringFilter `json:"Release,omitempty"`
+	Release *Filter_StringFilter[any] `json:"Release,omitempty"`
 
 	// SourceLayerHash AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-sourcelayerhash
-	SourceLayerHash *Filter_StringFilter `json:"SourceLayerHash,omitempty"`
+	SourceLayerHash *Filter_StringFilter[any] `json:"SourceLayerHash,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-version
-	Version *Filter_StringFilter `json:"Version,omitempty"`
+	Version *Filter_StringFilter[any] `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Filter_PackageFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter_PackageFilter) AWSCloudFormationType() string {
+func (r *Filter_PackageFilter[any]) AWSCloudFormationType() string {
 	return "AWS::InspectorV2::Filter.PackageFilter"
 }

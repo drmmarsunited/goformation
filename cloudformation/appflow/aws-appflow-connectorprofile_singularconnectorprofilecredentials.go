@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SingularConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SingularConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-singularconnectorprofilecredentials.html
-type ConnectorProfile_SingularConnectorProfileCredentials struct {
+type ConnectorProfile_SingularConnectorProfileCredentials[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_SingularConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SingularConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SingularConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SingularConnectorProfileCredentials"
 }

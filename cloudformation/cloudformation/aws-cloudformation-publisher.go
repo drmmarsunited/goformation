@@ -11,12 +11,12 @@ import (
 
 // Publisher AWS CloudFormation Resource (AWS::CloudFormation::Publisher)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html
-type Publisher struct {
+type Publisher[T any] struct {
 
 	// AcceptTermsAndConditions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html#cfn-cloudformation-publisher-accepttermsandconditions
-	AcceptTermsAndConditions bool `json:"AcceptTermsAndConditions"`
+	AcceptTermsAndConditions T `json:"AcceptTermsAndConditions"`
 
 	// ConnectionArn AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type Publisher struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Publisher) AWSCloudFormationType() string {
+func (r *Publisher[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::Publisher"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Publisher) MarshalJSON() ([]byte, error) {
-	type Properties Publisher
+func (r Publisher[any]) MarshalJSON() ([]byte, error) {
+	type Properties Publisher[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Publisher) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Publisher) UnmarshalJSON(b []byte) error {
-	type Properties Publisher
+func (r *Publisher[any]) UnmarshalJSON(b []byte) error {
+	type Properties Publisher[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Publisher) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Publisher(*res.Properties)
+		*r = Publisher[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Bucket_TopicConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.TopicConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html
-type Bucket_TopicConfiguration struct {
+type Bucket_TopicConfiguration[T any] struct {
 
 	// Event AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Bucket_TopicConfiguration struct {
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-filter
-	Filter *Bucket_NotificationFilter `json:"Filter,omitempty"`
+	Filter *Bucket_NotificationFilter[any] `json:"Filter,omitempty"`
 
 	// Topic AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Bucket_TopicConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_TopicConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_TopicConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.TopicConfiguration"
 }

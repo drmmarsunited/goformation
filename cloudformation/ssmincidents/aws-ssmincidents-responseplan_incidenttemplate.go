@@ -9,7 +9,7 @@ import (
 
 // ResponsePlan_IncidentTemplate AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.IncidentTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html
-type ResponsePlan_IncidentTemplate struct {
+type ResponsePlan_IncidentTemplate[T any] struct {
 
 	// DedupeString AWS CloudFormation Property
 	// Required: false
@@ -19,7 +19,7 @@ type ResponsePlan_IncidentTemplate struct {
 	// Impact AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-impact
-	Impact int `json:"Impact"`
+	Impact T `json:"Impact"`
 
 	// IncidentTags AWS CloudFormation Property
 	// Required: false
@@ -29,7 +29,7 @@ type ResponsePlan_IncidentTemplate struct {
 	// NotificationTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-notificationtargets
-	NotificationTargets []ResponsePlan_NotificationTargetItem `json:"NotificationTargets,omitempty"`
+	NotificationTargets []ResponsePlan_NotificationTargetItem[any] `json:"NotificationTargets,omitempty"`
 
 	// Summary AWS CloudFormation Property
 	// Required: false
@@ -58,6 +58,6 @@ type ResponsePlan_IncidentTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_IncidentTemplate) AWSCloudFormationType() string {
+func (r *ResponsePlan_IncidentTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.IncidentTemplate"
 }

@@ -8,7 +8,7 @@ import (
 
 // Input_InputSourceRequest AWS CloudFormation Resource (AWS::MediaLive::Input.InputSourceRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html
-type Input_InputSourceRequest struct {
+type Input_InputSourceRequest[T any] struct {
 
 	// PasswordParam AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Input_InputSourceRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_InputSourceRequest) AWSCloudFormationType() string {
+func (r *Input_InputSourceRequest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input.InputSourceRequest"
 }

@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-vpcconfig.html
-type MonitoringSchedule_VpcConfig struct {
+type MonitoringSchedule_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MonitoringSchedule_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_VpcConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.VpcConfig"
 }

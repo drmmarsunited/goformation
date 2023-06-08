@@ -8,12 +8,12 @@ import (
 
 // Bot_MultipleValuesSetting AWS CloudFormation Resource (AWS::Lex::Bot.MultipleValuesSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html
-type Bot_MultipleValuesSetting struct {
+type Bot_MultipleValuesSetting[T any] struct {
 
 	// AllowMultipleValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html#cfn-lex-bot-multiplevaluessetting-allowmultiplevalues
-	AllowMultipleValues *bool `json:"AllowMultipleValues,omitempty"`
+	AllowMultipleValues *T `json:"AllowMultipleValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_MultipleValuesSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_MultipleValuesSetting) AWSCloudFormationType() string {
+func (r *Bot_MultipleValuesSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.MultipleValuesSetting"
 }

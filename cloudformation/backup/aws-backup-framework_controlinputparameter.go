@@ -8,7 +8,7 @@ import (
 
 // Framework_ControlInputParameter AWS CloudFormation Resource (AWS::Backup::Framework.ControlInputParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlinputparameter.html
-type Framework_ControlInputParameter struct {
+type Framework_ControlInputParameter[T any] struct {
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Framework_ControlInputParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Framework_ControlInputParameter) AWSCloudFormationType() string {
+func (r *Framework_ControlInputParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::Framework.ControlInputParameter"
 }

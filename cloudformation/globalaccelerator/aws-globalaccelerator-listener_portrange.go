@@ -8,17 +8,17 @@ import (
 
 // Listener_PortRange AWS CloudFormation Resource (AWS::GlobalAccelerator::Listener.PortRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-listener-portrange.html
-type Listener_PortRange struct {
+type Listener_PortRange[T any] struct {
 
 	// FromPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-listener-portrange.html#cfn-globalaccelerator-listener-portrange-fromport
-	FromPort int `json:"FromPort"`
+	FromPort T `json:"FromPort"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-listener-portrange.html#cfn-globalaccelerator-listener-portrange-toport
-	ToPort int `json:"ToPort"`
+	ToPort T `json:"ToPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Listener_PortRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_PortRange) AWSCloudFormationType() string {
+func (r *Listener_PortRange[any]) AWSCloudFormationType() string {
 	return "AWS::GlobalAccelerator::Listener.PortRange"
 }

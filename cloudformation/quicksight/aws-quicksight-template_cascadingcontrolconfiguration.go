@@ -8,12 +8,12 @@ import (
 
 // Template_CascadingControlConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.CascadingControlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-cascadingcontrolconfiguration.html
-type Template_CascadingControlConfiguration struct {
+type Template_CascadingControlConfiguration[T any] struct {
 
 	// SourceControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-cascadingcontrolconfiguration.html#cfn-quicksight-template-cascadingcontrolconfiguration-sourcecontrols
-	SourceControls []Template_CascadingControlSource `json:"SourceControls,omitempty"`
+	SourceControls []Template_CascadingControlSource[any] `json:"SourceControls,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_CascadingControlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CascadingControlConfiguration) AWSCloudFormationType() string {
+func (r *Template_CascadingControlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CascadingControlConfiguration"
 }

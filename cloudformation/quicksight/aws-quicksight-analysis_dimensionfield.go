@@ -8,22 +8,22 @@ import (
 
 // Analysis_DimensionField AWS CloudFormation Resource (AWS::QuickSight::Analysis.DimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dimensionfield.html
-type Analysis_DimensionField struct {
+type Analysis_DimensionField[T any] struct {
 
 	// CategoricalDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dimensionfield.html#cfn-quicksight-analysis-dimensionfield-categoricaldimensionfield
-	CategoricalDimensionField *Analysis_CategoricalDimensionField `json:"CategoricalDimensionField,omitempty"`
+	CategoricalDimensionField *Analysis_CategoricalDimensionField[any] `json:"CategoricalDimensionField,omitempty"`
 
 	// DateDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dimensionfield.html#cfn-quicksight-analysis-dimensionfield-datedimensionfield
-	DateDimensionField *Analysis_DateDimensionField `json:"DateDimensionField,omitempty"`
+	DateDimensionField *Analysis_DateDimensionField[any] `json:"DateDimensionField,omitempty"`
 
 	// NumericalDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dimensionfield.html#cfn-quicksight-analysis-dimensionfield-numericaldimensionfield
-	NumericalDimensionField *Analysis_NumericalDimensionField `json:"NumericalDimensionField,omitempty"`
+	NumericalDimensionField *Analysis_NumericalDimensionField[any] `json:"NumericalDimensionField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_DimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DimensionField) AWSCloudFormationType() string {
+func (r *Analysis_DimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DimensionField"
 }

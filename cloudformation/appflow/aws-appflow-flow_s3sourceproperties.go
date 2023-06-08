@@ -8,7 +8,7 @@ import (
 
 // Flow_S3SourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.S3SourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html
-type Flow_S3SourceProperties struct {
+type Flow_S3SourceProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Flow_S3SourceProperties struct {
 	// S3InputFormatConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-s3inputformatconfig
-	S3InputFormatConfig *Flow_S3InputFormatConfig `json:"S3InputFormatConfig,omitempty"`
+	S3InputFormatConfig *Flow_S3InputFormatConfig[any] `json:"S3InputFormatConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Flow_S3SourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_S3SourceProperties) AWSCloudFormationType() string {
+func (r *Flow_S3SourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.S3SourceProperties"
 }

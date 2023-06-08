@@ -8,7 +8,7 @@ import (
 
 // Broker_MaintenanceWindow AWS CloudFormation Resource (AWS::AmazonMQ::Broker.MaintenanceWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html
-type Broker_MaintenanceWindow struct {
+type Broker_MaintenanceWindow[T any] struct {
 
 	// DayOfWeek AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Broker_MaintenanceWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_MaintenanceWindow) AWSCloudFormationType() string {
+func (r *Broker_MaintenanceWindow[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.MaintenanceWindow"
 }

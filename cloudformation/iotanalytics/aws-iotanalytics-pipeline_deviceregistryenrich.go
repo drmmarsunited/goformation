@@ -8,7 +8,7 @@ import (
 
 // Pipeline_DeviceRegistryEnrich AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceregistryenrich.html
-type Pipeline_DeviceRegistryEnrich struct {
+type Pipeline_DeviceRegistryEnrich[T any] struct {
 
 	// Attribute AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Pipeline_DeviceRegistryEnrich struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_DeviceRegistryEnrich) AWSCloudFormationType() string {
+func (r *Pipeline_DeviceRegistryEnrich[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich"
 }

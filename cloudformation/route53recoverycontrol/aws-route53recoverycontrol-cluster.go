@@ -12,7 +12,7 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::Route53RecoveryControl::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

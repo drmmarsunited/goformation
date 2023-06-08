@@ -8,7 +8,7 @@ import (
 
 // NotificationChannel_NotificationFilterConfig AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel.NotificationFilterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html
-type NotificationChannel_NotificationFilterConfig struct {
+type NotificationChannel_NotificationFilterConfig[T any] struct {
 
 	// MessageTypes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type NotificationChannel_NotificationFilterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationChannel_NotificationFilterConfig) AWSCloudFormationType() string {
+func (r *NotificationChannel_NotificationFilterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::NotificationChannel.NotificationFilterConfig"
 }

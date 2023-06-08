@@ -11,12 +11,12 @@ import (
 
 // AccessKey AWS CloudFormation Resource (AWS::IAM::AccessKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html
-type AccessKey struct {
+type AccessKey[T any] struct {
 
 	// Serial AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial
-	Serial *int `json:"Serial,omitempty"`
+	Serial *T `json:"Serial,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type AccessKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessKey) AWSCloudFormationType() string {
+func (r *AccessKey[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::AccessKey"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccessKey) MarshalJSON() ([]byte, error) {
-	type Properties AccessKey
+func (r AccessKey[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccessKey[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r AccessKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccessKey) UnmarshalJSON(b []byte) error {
-	type Properties AccessKey
+func (r *AccessKey[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccessKey[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *AccessKey) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccessKey(*res.Properties)
+		*r = AccessKey[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

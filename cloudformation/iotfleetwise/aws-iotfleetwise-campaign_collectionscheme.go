@@ -8,17 +8,17 @@ import (
 
 // Campaign_CollectionScheme AWS CloudFormation Resource (AWS::IoTFleetWise::Campaign.CollectionScheme)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-collectionscheme.html
-type Campaign_CollectionScheme struct {
+type Campaign_CollectionScheme[T any] struct {
 
 	// ConditionBasedCollectionScheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-collectionscheme.html#cfn-iotfleetwise-campaign-collectionscheme-conditionbasedcollectionscheme
-	ConditionBasedCollectionScheme *Campaign_ConditionBasedCollectionScheme `json:"ConditionBasedCollectionScheme,omitempty"`
+	ConditionBasedCollectionScheme *Campaign_ConditionBasedCollectionScheme[any] `json:"ConditionBasedCollectionScheme,omitempty"`
 
 	// TimeBasedCollectionScheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-collectionscheme.html#cfn-iotfleetwise-campaign-collectionscheme-timebasedcollectionscheme
-	TimeBasedCollectionScheme *Campaign_TimeBasedCollectionScheme `json:"TimeBasedCollectionScheme,omitempty"`
+	TimeBasedCollectionScheme *Campaign_TimeBasedCollectionScheme[any] `json:"TimeBasedCollectionScheme,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Campaign_CollectionScheme struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CollectionScheme) AWSCloudFormationType() string {
+func (r *Campaign_CollectionScheme[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Campaign.CollectionScheme"
 }

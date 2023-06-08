@@ -8,22 +8,22 @@ import (
 
 // ModelQualityJobDefinition_DatasetFormat AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.DatasetFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-datasetformat.html
-type ModelQualityJobDefinition_DatasetFormat struct {
+type ModelQualityJobDefinition_DatasetFormat[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-datasetformat.html#cfn-sagemaker-modelqualityjobdefinition-datasetformat-csv
-	Csv *ModelQualityJobDefinition_Csv `json:"Csv,omitempty"`
+	Csv *ModelQualityJobDefinition_Csv[any] `json:"Csv,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-datasetformat.html#cfn-sagemaker-modelqualityjobdefinition-datasetformat-json
-	Json *ModelQualityJobDefinition_Json `json:"Json,omitempty"`
+	Json *ModelQualityJobDefinition_Json[any] `json:"Json,omitempty"`
 
 	// Parquet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-datasetformat.html#cfn-sagemaker-modelqualityjobdefinition-datasetformat-parquet
-	Parquet *bool `json:"Parquet,omitempty"`
+	Parquet *T `json:"Parquet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelQualityJobDefinition_DatasetFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_DatasetFormat) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_DatasetFormat[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.DatasetFormat"
 }

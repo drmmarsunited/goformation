@@ -8,7 +8,7 @@ import (
 
 // UserPool_UserAttributeUpdateSettings AWS CloudFormation Resource (AWS::Cognito::UserPool.UserAttributeUpdateSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userattributeupdatesettings.html
-type UserPool_UserAttributeUpdateSettings struct {
+type UserPool_UserAttributeUpdateSettings[T any] struct {
 
 	// AttributesRequireVerificationBeforeUpdate AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type UserPool_UserAttributeUpdateSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_UserAttributeUpdateSettings) AWSCloudFormationType() string {
+func (r *UserPool_UserAttributeUpdateSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.UserAttributeUpdateSettings"
 }

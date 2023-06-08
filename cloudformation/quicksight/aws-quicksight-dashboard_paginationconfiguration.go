@@ -8,17 +8,17 @@ import (
 
 // Dashboard_PaginationConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PaginationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-paginationconfiguration.html
-type Dashboard_PaginationConfiguration struct {
+type Dashboard_PaginationConfiguration[T any] struct {
 
 	// PageNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-paginationconfiguration.html#cfn-quicksight-dashboard-paginationconfiguration-pagenumber
-	PageNumber float64 `json:"PageNumber"`
+	PageNumber T `json:"PageNumber"`
 
 	// PageSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-paginationconfiguration.html#cfn-quicksight-dashboard-paginationconfiguration-pagesize
-	PageSize float64 `json:"PageSize"`
+	PageSize T `json:"PageSize"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_PaginationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PaginationConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PaginationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PaginationConfiguration"
 }

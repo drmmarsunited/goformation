@@ -8,17 +8,17 @@ import (
 
 // ModelCard_TrainingDetails AWS CloudFormation Resource (AWS::SageMaker::ModelCard.TrainingDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html
-type ModelCard_TrainingDetails struct {
+type ModelCard_TrainingDetails[T any] struct {
 
 	// ObjectiveFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-objectivefunction
-	ObjectiveFunction *ModelCard_ObjectiveFunction `json:"ObjectiveFunction,omitempty"`
+	ObjectiveFunction *ModelCard_ObjectiveFunction[any] `json:"ObjectiveFunction,omitempty"`
 
 	// TrainingJobDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingjobdetails
-	TrainingJobDetails *ModelCard_TrainingJobDetails `json:"TrainingJobDetails,omitempty"`
+	TrainingJobDetails *ModelCard_TrainingJobDetails[any] `json:"TrainingJobDetails,omitempty"`
 
 	// TrainingObservations AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelCard_TrainingDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_TrainingDetails) AWSCloudFormationType() string {
+func (r *ModelCard_TrainingDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.TrainingDetails"
 }

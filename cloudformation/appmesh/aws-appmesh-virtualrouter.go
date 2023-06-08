@@ -12,7 +12,7 @@ import (
 
 // VirtualRouter AWS CloudFormation Resource (AWS::AppMesh::VirtualRouter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html
-type VirtualRouter struct {
+type VirtualRouter[T any] struct {
 
 	// MeshName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type VirtualRouter struct {
 	// Spec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec
-	Spec *VirtualRouter_VirtualRouterSpec `json:"Spec"`
+	Spec *VirtualRouter_VirtualRouterSpec[any] `json:"Spec"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type VirtualRouter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualRouter) AWSCloudFormationType() string {
+func (r *VirtualRouter[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualRouter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VirtualRouter) MarshalJSON() ([]byte, error) {
-	type Properties VirtualRouter
+func (r VirtualRouter[any]) MarshalJSON() ([]byte, error) {
+	type Properties VirtualRouter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r VirtualRouter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VirtualRouter) UnmarshalJSON(b []byte) error {
-	type Properties VirtualRouter
+func (r *VirtualRouter[any]) UnmarshalJSON(b []byte) error {
+	type Properties VirtualRouter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *VirtualRouter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VirtualRouter(*res.Properties)
+		*r = VirtualRouter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

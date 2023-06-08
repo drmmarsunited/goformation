@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_ConstraintsResource AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.ConstraintsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-constraintsresource.html
-type DataQualityJobDefinition_ConstraintsResource struct {
+type DataQualityJobDefinition_ConstraintsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataQualityJobDefinition_ConstraintsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_ConstraintsResource) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_ConstraintsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.ConstraintsResource"
 }

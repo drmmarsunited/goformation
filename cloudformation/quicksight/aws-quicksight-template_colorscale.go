@@ -8,7 +8,7 @@ import (
 
 // Template_ColorScale AWS CloudFormation Resource (AWS::QuickSight::Template.ColorScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-colorscale.html
-type Template_ColorScale struct {
+type Template_ColorScale[T any] struct {
 
 	// ColorFillType AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Template_ColorScale struct {
 	// Colors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-colorscale.html#cfn-quicksight-template-colorscale-colors
-	Colors []Template_DataColor `json:"Colors"`
+	Colors []Template_DataColor[any] `json:"Colors"`
 
 	// NullValueColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-colorscale.html#cfn-quicksight-template-colorscale-nullvaluecolor
-	NullValueColor *Template_DataColor `json:"NullValueColor,omitempty"`
+	NullValueColor *Template_DataColor[any] `json:"NullValueColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_ColorScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColorScale) AWSCloudFormationType() string {
+func (r *Template_ColorScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColorScale"
 }

@@ -8,12 +8,12 @@ import (
 
 // ResponsePlan_Action AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-action.html
-type ResponsePlan_Action struct {
+type ResponsePlan_Action[T any] struct {
 
 	// SsmAutomation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-action.html#cfn-ssmincidents-responseplan-action-ssmautomation
-	SsmAutomation *ResponsePlan_SsmAutomation `json:"SsmAutomation,omitempty"`
+	SsmAutomation *ResponsePlan_SsmAutomation[any] `json:"SsmAutomation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResponsePlan_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_Action) AWSCloudFormationType() string {
+func (r *ResponsePlan_Action[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.Action"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_CustomConnectorSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.CustomConnectorSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectorsourceproperties.html
-type Flow_CustomConnectorSourceProperties struct {
+type Flow_CustomConnectorSourceProperties[T any] struct {
 
 	// CustomProperties AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Flow_CustomConnectorSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_CustomConnectorSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_CustomConnectorSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.CustomConnectorSourceProperties"
 }

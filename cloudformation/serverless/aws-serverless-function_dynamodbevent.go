@@ -8,47 +8,47 @@ import (
 
 // Function_DynamoDBEvent AWS CloudFormation Resource (AWS::Serverless::Function.DynamoDBEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-type Function_DynamoDBEvent struct {
+type Function_DynamoDBEvent[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// BisectBatchOnFunctionError AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	BisectBatchOnFunctionError *bool `json:"BisectBatchOnFunctionError,omitempty"`
+	BisectBatchOnFunctionError *T `json:"BisectBatchOnFunctionError,omitempty"`
 
 	// DestinationConfig AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	DestinationConfig *Function_DestinationConfig `json:"DestinationConfig,omitempty"`
+	DestinationConfig *Function_DestinationConfig[any] `json:"DestinationConfig,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// MaximumRecordAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	MaximumRecordAgeInSeconds *int `json:"MaximumRecordAgeInSeconds,omitempty"`
+	MaximumRecordAgeInSeconds *T `json:"MaximumRecordAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	ParallelizationFactor *int `json:"ParallelizationFactor,omitempty"`
+	ParallelizationFactor *T `json:"ParallelizationFactor,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
@@ -77,6 +77,6 @@ type Function_DynamoDBEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DynamoDBEvent) AWSCloudFormationType() string {
+func (r *Function_DynamoDBEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DynamoDBEvent"
 }

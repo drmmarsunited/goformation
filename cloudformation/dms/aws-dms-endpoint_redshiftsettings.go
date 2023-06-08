@@ -8,12 +8,12 @@ import (
 
 // Endpoint_RedshiftSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.RedshiftSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html
-type Endpoint_RedshiftSettings struct {
+type Endpoint_RedshiftSettings[T any] struct {
 
 	// AcceptAnyDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-acceptanydate
-	AcceptAnyDate *bool `json:"AcceptAnyDate,omitempty"`
+	AcceptAnyDate *T `json:"AcceptAnyDate,omitempty"`
 
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Endpoint_RedshiftSettings struct {
 	// CaseSensitiveNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-casesensitivenames
-	CaseSensitiveNames *bool `json:"CaseSensitiveNames,omitempty"`
+	CaseSensitiveNames *T `json:"CaseSensitiveNames,omitempty"`
 
 	// CompUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-compupdate
-	CompUpdate *bool `json:"CompUpdate,omitempty"`
+	CompUpdate *T `json:"CompUpdate,omitempty"`
 
 	// ConnectionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-connectiontimeout
-	ConnectionTimeout *int `json:"ConnectionTimeout,omitempty"`
+	ConnectionTimeout *T `json:"ConnectionTimeout,omitempty"`
 
 	// DateFormat AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Endpoint_RedshiftSettings struct {
 	// EmptyAsNull AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-emptyasnull
-	EmptyAsNull *bool `json:"EmptyAsNull,omitempty"`
+	EmptyAsNull *T `json:"EmptyAsNull,omitempty"`
 
 	// EncryptionMode AWS CloudFormation Property
 	// Required: false
@@ -63,32 +63,32 @@ type Endpoint_RedshiftSettings struct {
 	// ExplicitIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-explicitids
-	ExplicitIds *bool `json:"ExplicitIds,omitempty"`
+	ExplicitIds *T `json:"ExplicitIds,omitempty"`
 
 	// FileTransferUploadStreams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-filetransferuploadstreams
-	FileTransferUploadStreams *int `json:"FileTransferUploadStreams,omitempty"`
+	FileTransferUploadStreams *T `json:"FileTransferUploadStreams,omitempty"`
 
 	// LoadTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-loadtimeout
-	LoadTimeout *int `json:"LoadTimeout,omitempty"`
+	LoadTimeout *T `json:"LoadTimeout,omitempty"`
 
 	// MapBooleanAsBoolean AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-mapbooleanasboolean
-	MapBooleanAsBoolean *bool `json:"MapBooleanAsBoolean,omitempty"`
+	MapBooleanAsBoolean *T `json:"MapBooleanAsBoolean,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *T `json:"MaxFileSize,omitempty"`
 
 	// RemoveQuotes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-removequotes
-	RemoveQuotes *bool `json:"RemoveQuotes,omitempty"`
+	RemoveQuotes *T `json:"RemoveQuotes,omitempty"`
 
 	// ReplaceChars AWS CloudFormation Property
 	// Required: false
@@ -128,17 +128,17 @@ type Endpoint_RedshiftSettings struct {
 	// TrimBlanks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-trimblanks
-	TrimBlanks *bool `json:"TrimBlanks,omitempty"`
+	TrimBlanks *T `json:"TrimBlanks,omitempty"`
 
 	// TruncateColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-truncatecolumns
-	TruncateColumns *bool `json:"TruncateColumns,omitempty"`
+	TruncateColumns *T `json:"TruncateColumns,omitempty"`
 
 	// WriteBufferSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-writebuffersize
-	WriteBufferSize *int `json:"WriteBufferSize,omitempty"`
+	WriteBufferSize *T `json:"WriteBufferSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -157,6 +157,6 @@ type Endpoint_RedshiftSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_RedshiftSettings) AWSCloudFormationType() string {
+func (r *Endpoint_RedshiftSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.RedshiftSettings"
 }

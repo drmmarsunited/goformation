@@ -11,7 +11,7 @@ import (
 
 // DeploymentConfig AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html
-type DeploymentConfig struct {
+type DeploymentConfig[T any] struct {
 
 	// ComputePlatform AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type DeploymentConfig struct {
 	// MinimumHealthyHosts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts
-	MinimumHealthyHosts *DeploymentConfig_MinimumHealthyHosts `json:"MinimumHealthyHosts,omitempty"`
+	MinimumHealthyHosts *DeploymentConfig_MinimumHealthyHosts[any] `json:"MinimumHealthyHosts,omitempty"`
 
 	// TrafficRoutingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig
-	TrafficRoutingConfig *DeploymentConfig_TrafficRoutingConfig `json:"TrafficRoutingConfig,omitempty"`
+	TrafficRoutingConfig *DeploymentConfig_TrafficRoutingConfig[any] `json:"TrafficRoutingConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type DeploymentConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentConfig) AWSCloudFormationType() string {
+func (r *DeploymentConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeploymentConfig) MarshalJSON() ([]byte, error) {
-	type Properties DeploymentConfig
+func (r DeploymentConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeploymentConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r DeploymentConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeploymentConfig) UnmarshalJSON(b []byte) error {
-	type Properties DeploymentConfig
+func (r *DeploymentConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeploymentConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *DeploymentConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeploymentConfig(*res.Properties)
+		*r = DeploymentConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

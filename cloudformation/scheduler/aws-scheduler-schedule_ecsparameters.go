@@ -8,22 +8,22 @@ import (
 
 // Schedule_EcsParameters AWS CloudFormation Resource (AWS::Scheduler::Schedule.EcsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html
-type Schedule_EcsParameters struct {
+type Schedule_EcsParameters[T any] struct {
 
 	// CapacityProviderStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-capacityproviderstrategy
-	CapacityProviderStrategy []Schedule_CapacityProviderStrategyItem `json:"CapacityProviderStrategy,omitempty"`
+	CapacityProviderStrategy []Schedule_CapacityProviderStrategyItem[any] `json:"CapacityProviderStrategy,omitempty"`
 
 	// EnableECSManagedTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-enableecsmanagedtags
-	EnableECSManagedTags *bool `json:"EnableECSManagedTags,omitempty"`
+	EnableECSManagedTags *T `json:"EnableECSManagedTags,omitempty"`
 
 	// EnableExecuteCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-enableexecutecommand
-	EnableExecuteCommand *bool `json:"EnableExecuteCommand,omitempty"`
+	EnableExecuteCommand *T `json:"EnableExecuteCommand,omitempty"`
 
 	// Group AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Schedule_EcsParameters struct {
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-networkconfiguration
-	NetworkConfiguration *Schedule_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Schedule_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-placementconstraints
-	PlacementConstraints []Schedule_PlacementConstraint `json:"PlacementConstraints,omitempty"`
+	PlacementConstraints []Schedule_PlacementConstraint[any] `json:"PlacementConstraints,omitempty"`
 
 	// PlacementStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-placementstrategy
-	PlacementStrategy []Schedule_PlacementStrategy `json:"PlacementStrategy,omitempty"`
+	PlacementStrategy []Schedule_PlacementStrategy[any] `json:"PlacementStrategy,omitempty"`
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type Schedule_EcsParameters struct {
 	// TaskCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-taskcount
-	TaskCount *float64 `json:"TaskCount,omitempty"`
+	TaskCount *T `json:"TaskCount,omitempty"`
 
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
@@ -97,6 +97,6 @@ type Schedule_EcsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_EcsParameters) AWSCloudFormationType() string {
+func (r *Schedule_EcsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.EcsParameters"
 }

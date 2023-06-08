@@ -8,7 +8,7 @@ import (
 
 // ResolverEndpoint_IpAddressRequest AWS CloudFormation Resource (AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html
-type ResolverEndpoint_IpAddressRequest struct {
+type ResolverEndpoint_IpAddressRequest[T any] struct {
 
 	// Ip AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ResolverEndpoint_IpAddressRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverEndpoint_IpAddressRequest) AWSCloudFormationType() string {
+func (r *ResolverEndpoint_IpAddressRequest[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest"
 }

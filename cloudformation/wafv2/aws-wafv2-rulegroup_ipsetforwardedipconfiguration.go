@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_IPSetForwardedIPConfiguration AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.IPSetForwardedIPConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetforwardedipconfiguration.html
-type RuleGroup_IPSetForwardedIPConfiguration struct {
+type RuleGroup_IPSetForwardedIPConfiguration[T any] struct {
 
 	// FallbackBehavior AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RuleGroup_IPSetForwardedIPConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_IPSetForwardedIPConfiguration) AWSCloudFormationType() string {
+func (r *RuleGroup_IPSetForwardedIPConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.IPSetForwardedIPConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_HistogramBinOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HistogramBinOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogrambinoptions.html
-type Dashboard_HistogramBinOptions struct {
+type Dashboard_HistogramBinOptions[T any] struct {
 
 	// BinCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogrambinoptions.html#cfn-quicksight-dashboard-histogrambinoptions-bincount
-	BinCount *Dashboard_BinCountOptions `json:"BinCount,omitempty"`
+	BinCount *Dashboard_BinCountOptions[any] `json:"BinCount,omitempty"`
 
 	// BinWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogrambinoptions.html#cfn-quicksight-dashboard-histogrambinoptions-binwidth
-	BinWidth *Dashboard_BinWidthOptions `json:"BinWidth,omitempty"`
+	BinWidth *Dashboard_BinWidthOptions[any] `json:"BinWidth,omitempty"`
 
 	// SelectedBinType AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_HistogramBinOptions struct {
 	// StartValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogrambinoptions.html#cfn-quicksight-dashboard-histogrambinoptions-startvalue
-	StartValue *float64 `json:"StartValue,omitempty"`
+	StartValue *T `json:"StartValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_HistogramBinOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HistogramBinOptions) AWSCloudFormationType() string {
+func (r *Dashboard_HistogramBinOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HistogramBinOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Application_InputLambdaProcessor AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputlambdaprocessor.html
-type Application_InputLambdaProcessor struct {
+type Application_InputLambdaProcessor[T any] struct {
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Application_InputLambdaProcessor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InputLambdaProcessor) AWSCloudFormationType() string {
+func (r *Application_InputLambdaProcessor[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor"
 }

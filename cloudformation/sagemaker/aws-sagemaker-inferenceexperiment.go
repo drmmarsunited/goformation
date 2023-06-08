@@ -12,12 +12,12 @@ import (
 
 // InferenceExperiment AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html
-type InferenceExperiment struct {
+type InferenceExperiment[T any] struct {
 
 	// DataStorageConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-datastorageconfig
-	DataStorageConfig *InferenceExperiment_DataStorageConfig `json:"DataStorageConfig,omitempty"`
+	DataStorageConfig *InferenceExperiment_DataStorageConfig[any] `json:"DataStorageConfig,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type InferenceExperiment struct {
 	// ModelVariants AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-modelvariants
-	ModelVariants []InferenceExperiment_ModelVariantConfig `json:"ModelVariants"`
+	ModelVariants []InferenceExperiment_ModelVariantConfig[any] `json:"ModelVariants"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -57,12 +57,12 @@ type InferenceExperiment struct {
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-schedule
-	Schedule *InferenceExperiment_InferenceExperimentSchedule `json:"Schedule,omitempty"`
+	Schedule *InferenceExperiment_InferenceExperimentSchedule[any] `json:"Schedule,omitempty"`
 
 	// ShadowModeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-shadowmodeconfig
-	ShadowModeConfig *InferenceExperiment_ShadowModeConfig `json:"ShadowModeConfig,omitempty"`
+	ShadowModeConfig *InferenceExperiment_ShadowModeConfig[any] `json:"ShadowModeConfig,omitempty"`
 
 	// StatusReason AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type InferenceExperiment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment) AWSCloudFormationType() string {
+func (r *InferenceExperiment[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InferenceExperiment) MarshalJSON() ([]byte, error) {
-	type Properties InferenceExperiment
+func (r InferenceExperiment[any]) MarshalJSON() ([]byte, error) {
+	type Properties InferenceExperiment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r InferenceExperiment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InferenceExperiment) UnmarshalJSON(b []byte) error {
-	type Properties InferenceExperiment
+func (r *InferenceExperiment[any]) UnmarshalJSON(b []byte) error {
+	type Properties InferenceExperiment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *InferenceExperiment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InferenceExperiment(*res.Properties)
+		*r = InferenceExperiment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

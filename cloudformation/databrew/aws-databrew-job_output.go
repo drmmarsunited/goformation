@@ -8,7 +8,7 @@ import (
 
 // Job_Output AWS CloudFormation Resource (AWS::DataBrew::Job.Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html
-type Job_Output struct {
+type Job_Output[T any] struct {
 
 	// CompressionFormat AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type Job_Output struct {
 	// FormatOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions
-	FormatOptions *Job_OutputFormatOptions `json:"FormatOptions,omitempty"`
+	FormatOptions *Job_OutputFormatOptions[any] `json:"FormatOptions,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location
-	Location *Job_S3Location `json:"Location"`
+	Location *Job_S3Location[any] `json:"Location"`
 
 	// MaxOutputFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles
-	MaxOutputFiles *int `json:"MaxOutputFiles,omitempty"`
+	MaxOutputFiles *T `json:"MaxOutputFiles,omitempty"`
 
 	// Overwrite AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite
-	Overwrite *bool `json:"Overwrite,omitempty"`
+	Overwrite *T `json:"Overwrite,omitempty"`
 
 	// PartitionColumns AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Job_Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_Output) AWSCloudFormationType() string {
+func (r *Job_Output[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.Output"
 }

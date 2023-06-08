@@ -8,32 +8,32 @@ import (
 
 // DBCluster_ScalingConfiguration AWS CloudFormation Resource (AWS::RDS::DBCluster.ScalingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html
-type DBCluster_ScalingConfiguration struct {
+type DBCluster_ScalingConfiguration[T any] struct {
 
 	// AutoPause AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-autopause
-	AutoPause *bool `json:"AutoPause,omitempty"`
+	AutoPause *T `json:"AutoPause,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity
-	MaxCapacity *int `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity
-	MinCapacity *int `json:"MinCapacity,omitempty"`
+	MinCapacity *T `json:"MinCapacity,omitempty"`
 
 	// SecondsBeforeTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsbeforetimeout
-	SecondsBeforeTimeout *int `json:"SecondsBeforeTimeout,omitempty"`
+	SecondsBeforeTimeout *T `json:"SecondsBeforeTimeout,omitempty"`
 
 	// SecondsUntilAutoPause AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause
-	SecondsUntilAutoPause *int `json:"SecondsUntilAutoPause,omitempty"`
+	SecondsUntilAutoPause *T `json:"SecondsUntilAutoPause,omitempty"`
 
 	// TimeoutAction AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DBCluster_ScalingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster_ScalingConfiguration) AWSCloudFormationType() string {
+func (r *DBCluster_ScalingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBCluster.ScalingConfiguration"
 }

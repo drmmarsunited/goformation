@@ -8,7 +8,7 @@ import (
 
 // AutoScalingGroup_MetricsCollection AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.MetricsCollection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
-type AutoScalingGroup_MetricsCollection struct {
+type AutoScalingGroup_MetricsCollection[T any] struct {
 
 	// Granularity AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AutoScalingGroup_MetricsCollection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_MetricsCollection) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_MetricsCollection[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.MetricsCollection"
 }

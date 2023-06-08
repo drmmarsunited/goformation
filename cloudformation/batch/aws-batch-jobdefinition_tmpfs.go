@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_Tmpfs AWS CloudFormation Resource (AWS::Batch::JobDefinition.Tmpfs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html
-type JobDefinition_Tmpfs struct {
+type JobDefinition_Tmpfs[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type JobDefinition_Tmpfs struct {
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-size
-	Size int `json:"Size"`
+	Size T `json:"Size"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobDefinition_Tmpfs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Tmpfs) AWSCloudFormationType() string {
+func (r *JobDefinition_Tmpfs[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Tmpfs"
 }

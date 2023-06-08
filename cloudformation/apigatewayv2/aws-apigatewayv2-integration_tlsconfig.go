@@ -8,7 +8,7 @@ import (
 
 // Integration_TlsConfig AWS CloudFormation Resource (AWS::ApiGatewayV2::Integration.TlsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-tlsconfig.html
-type Integration_TlsConfig struct {
+type Integration_TlsConfig[T any] struct {
 
 	// ServerNameToVerify AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Integration_TlsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_TlsConfig) AWSCloudFormationType() string {
+func (r *Integration_TlsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Integration.TlsConfig"
 }

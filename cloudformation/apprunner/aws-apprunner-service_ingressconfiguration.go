@@ -8,12 +8,12 @@ import (
 
 // Service_IngressConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.IngressConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-ingressconfiguration.html
-type Service_IngressConfiguration struct {
+type Service_IngressConfiguration[T any] struct {
 
 	// IsPubliclyAccessible AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-ingressconfiguration.html#cfn-apprunner-service-ingressconfiguration-ispubliclyaccessible
-	IsPubliclyAccessible bool `json:"IsPubliclyAccessible"`
+	IsPubliclyAccessible T `json:"IsPubliclyAccessible"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Service_IngressConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_IngressConfiguration) AWSCloudFormationType() string {
+func (r *Service_IngressConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.IngressConfiguration"
 }

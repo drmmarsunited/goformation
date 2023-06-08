@@ -11,12 +11,12 @@ import (
 
 // VPCCidrBlock AWS CloudFormation Resource (AWS::EC2::VPCCidrBlock)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
-type VPCCidrBlock struct {
+type VPCCidrBlock[T any] struct {
 
 	// AmazonProvidedIpv6CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
-	AmazonProvidedIpv6CidrBlock *bool `json:"AmazonProvidedIpv6CidrBlock,omitempty"`
+	AmazonProvidedIpv6CidrBlock *T `json:"AmazonProvidedIpv6CidrBlock,omitempty"`
 
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type VPCCidrBlock struct {
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4netmasklength
-	Ipv4NetmaskLength *int `json:"Ipv4NetmaskLength,omitempty"`
+	Ipv4NetmaskLength *T `json:"Ipv4NetmaskLength,omitempty"`
 
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type VPCCidrBlock struct {
 	// Ipv6NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6netmasklength
-	Ipv6NetmaskLength *int `json:"Ipv6NetmaskLength,omitempty"`
+	Ipv6NetmaskLength *T `json:"Ipv6NetmaskLength,omitempty"`
 
 	// Ipv6Pool AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type VPCCidrBlock struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCCidrBlock) AWSCloudFormationType() string {
+func (r *VPCCidrBlock[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPCCidrBlock"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPCCidrBlock) MarshalJSON() ([]byte, error) {
-	type Properties VPCCidrBlock
+func (r VPCCidrBlock[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPCCidrBlock[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r VPCCidrBlock) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPCCidrBlock) UnmarshalJSON(b []byte) error {
-	type Properties VPCCidrBlock
+func (r *VPCCidrBlock[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPCCidrBlock[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *VPCCidrBlock) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPCCidrBlock(*res.Properties)
+		*r = VPCCidrBlock[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

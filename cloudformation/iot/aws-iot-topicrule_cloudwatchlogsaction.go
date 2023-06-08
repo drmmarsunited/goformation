@@ -8,12 +8,12 @@ import (
 
 // TopicRule_CloudwatchLogsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.CloudwatchLogsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html
-type TopicRule_CloudwatchLogsAction struct {
+type TopicRule_CloudwatchLogsAction[T any] struct {
 
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-batchmode
-	BatchMode *bool `json:"BatchMode,omitempty"`
+	BatchMode *T `json:"BatchMode,omitempty"`
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type TopicRule_CloudwatchLogsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_CloudwatchLogsAction) AWSCloudFormationType() string {
+func (r *TopicRule_CloudwatchLogsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.CloudwatchLogsAction"
 }

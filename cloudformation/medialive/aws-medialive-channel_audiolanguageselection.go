@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioLanguageSelection AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioLanguageSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html
-type Channel_AudioLanguageSelection struct {
+type Channel_AudioLanguageSelection[T any] struct {
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_AudioLanguageSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioLanguageSelection) AWSCloudFormationType() string {
+func (r *Channel_AudioLanguageSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioLanguageSelection"
 }

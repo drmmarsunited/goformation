@@ -8,7 +8,7 @@ import (
 
 // Channel_CaptionSelector AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html
-type Channel_CaptionSelector struct {
+type Channel_CaptionSelector[T any] struct {
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_CaptionSelector struct {
 	// SelectorSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-selectorsettings
-	SelectorSettings *Channel_CaptionSelectorSettings `json:"SelectorSettings,omitempty"`
+	SelectorSettings *Channel_CaptionSelectorSettings[any] `json:"SelectorSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_CaptionSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CaptionSelector) AWSCloudFormationType() string {
+func (r *Channel_CaptionSelector[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CaptionSelector"
 }

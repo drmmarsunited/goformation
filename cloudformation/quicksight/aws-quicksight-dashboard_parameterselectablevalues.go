@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ParameterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterselectablevalues.html
-type Dashboard_ParameterSelectableValues struct {
+type Dashboard_ParameterSelectableValues[T any] struct {
 
 	// LinkToDataSetColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterselectablevalues.html#cfn-quicksight-dashboard-parameterselectablevalues-linktodatasetcolumn
-	LinkToDataSetColumn *Dashboard_ColumnIdentifier `json:"LinkToDataSetColumn,omitempty"`
+	LinkToDataSetColumn *Dashboard_ColumnIdentifier[any] `json:"LinkToDataSetColumn,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ParameterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterSelectableValues) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterSelectableValues"
 }

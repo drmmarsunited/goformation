@@ -8,12 +8,12 @@ import (
 
 // Dashboard_CustomActionNavigationOperation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomActionNavigationOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionnavigationoperation.html
-type Dashboard_CustomActionNavigationOperation struct {
+type Dashboard_CustomActionNavigationOperation[T any] struct {
 
 	// LocalNavigationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionnavigationoperation.html#cfn-quicksight-dashboard-customactionnavigationoperation-localnavigationconfiguration
-	LocalNavigationConfiguration *Dashboard_LocalNavigationConfiguration `json:"LocalNavigationConfiguration,omitempty"`
+	LocalNavigationConfiguration *Dashboard_LocalNavigationConfiguration[any] `json:"LocalNavigationConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_CustomActionNavigationOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomActionNavigationOperation) AWSCloudFormationType() string {
+func (r *Dashboard_CustomActionNavigationOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomActionNavigationOperation"
 }

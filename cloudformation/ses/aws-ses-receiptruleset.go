@@ -11,7 +11,7 @@ import (
 
 // ReceiptRuleSet AWS CloudFormation Resource (AWS::SES::ReceiptRuleSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
-type ReceiptRuleSet struct {
+type ReceiptRuleSet[T any] struct {
 
 	// RuleSetName AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type ReceiptRuleSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRuleSet) AWSCloudFormationType() string {
+func (r *ReceiptRuleSet[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRuleSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReceiptRuleSet) MarshalJSON() ([]byte, error) {
-	type Properties ReceiptRuleSet
+func (r ReceiptRuleSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReceiptRuleSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ReceiptRuleSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReceiptRuleSet) UnmarshalJSON(b []byte) error {
-	type Properties ReceiptRuleSet
+func (r *ReceiptRuleSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReceiptRuleSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ReceiptRuleSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReceiptRuleSet(*res.Properties)
+		*r = ReceiptRuleSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

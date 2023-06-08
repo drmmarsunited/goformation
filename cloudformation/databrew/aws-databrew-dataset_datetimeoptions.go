@@ -8,7 +8,7 @@ import (
 
 // Dataset_DatetimeOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.DatetimeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datetimeoptions.html
-type Dataset_DatetimeOptions struct {
+type Dataset_DatetimeOptions[T any] struct {
 
 	// Format AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dataset_DatetimeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatetimeOptions) AWSCloudFormationType() string {
+func (r *Dataset_DatetimeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.DatetimeOptions"
 }

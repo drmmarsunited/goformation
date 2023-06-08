@@ -8,17 +8,17 @@ import (
 
 // Dashboard_BinWidthOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BinWidthOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-binwidthoptions.html
-type Dashboard_BinWidthOptions struct {
+type Dashboard_BinWidthOptions[T any] struct {
 
 	// BinCountLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-binwidthoptions.html#cfn-quicksight-dashboard-binwidthoptions-bincountlimit
-	BinCountLimit *float64 `json:"BinCountLimit,omitempty"`
+	BinCountLimit *T `json:"BinCountLimit,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-binwidthoptions.html#cfn-quicksight-dashboard-binwidthoptions-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_BinWidthOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BinWidthOptions) AWSCloudFormationType() string {
+func (r *Dashboard_BinWidthOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BinWidthOptions"
 }

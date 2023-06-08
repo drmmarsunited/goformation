@@ -8,12 +8,12 @@ import (
 
 // Bot_GrammarSlotTypeSetting AWS CloudFormation Resource (AWS::Lex::Bot.GrammarSlotTypeSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html
-type Bot_GrammarSlotTypeSetting struct {
+type Bot_GrammarSlotTypeSetting[T any] struct {
 
 	// Source AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html#cfn-lex-bot-grammarslottypesetting-source
-	Source *Bot_GrammarSlotTypeSource `json:"Source,omitempty"`
+	Source *Bot_GrammarSlotTypeSource[any] `json:"Source,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_GrammarSlotTypeSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_GrammarSlotTypeSetting) AWSCloudFormationType() string {
+func (r *Bot_GrammarSlotTypeSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.GrammarSlotTypeSetting"
 }

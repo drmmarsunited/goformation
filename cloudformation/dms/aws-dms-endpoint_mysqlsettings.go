@@ -8,7 +8,7 @@ import (
 
 // Endpoint_MySqlSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.MySqlSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html
-type Endpoint_MySqlSettings struct {
+type Endpoint_MySqlSettings[T any] struct {
 
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type Endpoint_MySqlSettings struct {
 	// CleanSourceMetadataOnMismatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-cleansourcemetadataonmismatch
-	CleanSourceMetadataOnMismatch *bool `json:"CleanSourceMetadataOnMismatch,omitempty"`
+	CleanSourceMetadataOnMismatch *T `json:"CleanSourceMetadataOnMismatch,omitempty"`
 
 	// EventsPollInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-eventspollinterval
-	EventsPollInterval *int `json:"EventsPollInterval,omitempty"`
+	EventsPollInterval *T `json:"EventsPollInterval,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *T `json:"MaxFileSize,omitempty"`
 
 	// ParallelLoadThreads AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-parallelloadthreads
-	ParallelLoadThreads *int `json:"ParallelLoadThreads,omitempty"`
+	ParallelLoadThreads *T `json:"ParallelLoadThreads,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Endpoint_MySqlSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_MySqlSettings) AWSCloudFormationType() string {
+func (r *Endpoint_MySqlSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.MySqlSettings"
 }

@@ -8,12 +8,12 @@ import (
 
 // ListenerRule_QueryStringConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringconfig.html
-type ListenerRule_QueryStringConfig struct {
+type ListenerRule_QueryStringConfig[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringconfig.html#cfn-elasticloadbalancingv2-listenerrule-querystringconfig-values
-	Values []ListenerRule_QueryStringKeyValue `json:"Values,omitempty"`
+	Values []ListenerRule_QueryStringKeyValue[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ListenerRule_QueryStringConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_QueryStringConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_QueryStringConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig"
 }

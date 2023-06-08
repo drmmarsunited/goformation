@@ -8,7 +8,7 @@ import (
 
 // Analysis_FilterGroup AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filtergroup.html
-type Analysis_FilterGroup struct {
+type Analysis_FilterGroup[T any] struct {
 
 	// CrossDataset AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Analysis_FilterGroup struct {
 	// Filters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filtergroup.html#cfn-quicksight-analysis-filtergroup-filters
-	Filters []Analysis_Filter `json:"Filters"`
+	Filters []Analysis_Filter[any] `json:"Filters"`
 
 	// ScopeConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filtergroup.html#cfn-quicksight-analysis-filtergroup-scopeconfiguration
-	ScopeConfiguration *Analysis_FilterScopeConfiguration `json:"ScopeConfiguration"`
+	ScopeConfiguration *Analysis_FilterScopeConfiguration[any] `json:"ScopeConfiguration"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analysis_FilterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterGroup) AWSCloudFormationType() string {
+func (r *Analysis_FilterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterGroup"
 }

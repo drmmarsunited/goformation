@@ -8,12 +8,12 @@ import (
 
 // Project_Sample AWS CloudFormation Resource (AWS::DataBrew::Project.Sample)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html
-type Project_Sample struct {
+type Project_Sample[T any] struct {
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size
-	Size *int `json:"Size,omitempty"`
+	Size *T `json:"Size,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_Sample struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_Sample) AWSCloudFormationType() string {
+func (r *Project_Sample[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Project.Sample"
 }

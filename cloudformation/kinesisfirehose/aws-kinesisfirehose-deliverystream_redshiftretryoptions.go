@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_RedshiftRetryOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.RedshiftRetryOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftretryoptions.html
-type DeliveryStream_RedshiftRetryOptions struct {
+type DeliveryStream_RedshiftRetryOptions[T any] struct {
 
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftretryoptions.html#cfn-kinesisfirehose-deliverystream-redshiftretryoptions-durationinseconds
-	DurationInSeconds *int `json:"DurationInSeconds,omitempty"`
+	DurationInSeconds *T `json:"DurationInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeliveryStream_RedshiftRetryOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_RedshiftRetryOptions) AWSCloudFormationType() string {
+func (r *DeliveryStream_RedshiftRetryOptions[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.RedshiftRetryOptions"
 }

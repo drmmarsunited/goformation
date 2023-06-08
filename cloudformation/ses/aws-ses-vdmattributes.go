@@ -11,17 +11,17 @@ import (
 
 // VdmAttributes AWS CloudFormation Resource (AWS::SES::VdmAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-vdmattributes.html
-type VdmAttributes struct {
+type VdmAttributes[T any] struct {
 
 	// DashboardAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-vdmattributes.html#cfn-ses-vdmattributes-dashboardattributes
-	DashboardAttributes *VdmAttributes_DashboardAttributes `json:"DashboardAttributes,omitempty"`
+	DashboardAttributes *VdmAttributes_DashboardAttributes[any] `json:"DashboardAttributes,omitempty"`
 
 	// GuardianAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-vdmattributes.html#cfn-ses-vdmattributes-guardianattributes
-	GuardianAttributes *VdmAttributes_GuardianAttributes `json:"GuardianAttributes,omitempty"`
+	GuardianAttributes *VdmAttributes_GuardianAttributes[any] `json:"GuardianAttributes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type VdmAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VdmAttributes) AWSCloudFormationType() string {
+func (r *VdmAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::VdmAttributes"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VdmAttributes) MarshalJSON() ([]byte, error) {
-	type Properties VdmAttributes
+func (r VdmAttributes[any]) MarshalJSON() ([]byte, error) {
+	type Properties VdmAttributes[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r VdmAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VdmAttributes) UnmarshalJSON(b []byte) error {
-	type Properties VdmAttributes
+func (r *VdmAttributes[any]) UnmarshalJSON(b []byte) error {
+	type Properties VdmAttributes[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *VdmAttributes) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VdmAttributes(*res.Properties)
+		*r = VdmAttributes[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

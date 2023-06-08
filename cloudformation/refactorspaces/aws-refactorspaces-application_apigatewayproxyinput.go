@@ -8,7 +8,7 @@ import (
 
 // Application_ApiGatewayProxyInput AWS CloudFormation Resource (AWS::RefactorSpaces::Application.ApiGatewayProxyInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-application-apigatewayproxyinput.html
-type Application_ApiGatewayProxyInput struct {
+type Application_ApiGatewayProxyInput[T any] struct {
 
 	// EndpointType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_ApiGatewayProxyInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApiGatewayProxyInput) AWSCloudFormationType() string {
+func (r *Application_ApiGatewayProxyInput[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Application.ApiGatewayProxyInput"
 }

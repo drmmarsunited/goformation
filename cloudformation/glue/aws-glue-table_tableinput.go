@@ -8,7 +8,7 @@ import (
 
 // Table_TableInput AWS CloudFormation Resource (AWS::Glue::Table.TableInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
-type Table_TableInput struct {
+type Table_TableInput[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Table_TableInput struct {
 	// PartitionKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-partitionkeys
-	PartitionKeys []Table_Column `json:"PartitionKeys,omitempty"`
+	PartitionKeys []Table_Column[any] `json:"PartitionKeys,omitempty"`
 
 	// Retention AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention
-	Retention *int `json:"Retention,omitempty"`
+	Retention *T `json:"Retention,omitempty"`
 
 	// StorageDescriptor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-storagedescriptor
-	StorageDescriptor *Table_StorageDescriptor `json:"StorageDescriptor,omitempty"`
+	StorageDescriptor *Table_StorageDescriptor[any] `json:"StorageDescriptor,omitempty"`
 
 	// TableType AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Table_TableInput struct {
 	// TargetTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-targettable
-	TargetTable *Table_TableIdentifier `json:"TargetTable,omitempty"`
+	TargetTable *Table_TableIdentifier[any] `json:"TargetTable,omitempty"`
 
 	// ViewExpandedText AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type Table_TableInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_TableInput) AWSCloudFormationType() string {
+func (r *Table_TableInput[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.TableInput"
 }

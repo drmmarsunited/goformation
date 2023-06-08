@@ -8,12 +8,12 @@ import (
 
 // Cluster_SSESpecification AWS CloudFormation Resource (AWS::DAX::Cluster.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html
-type Cluster_SSESpecification struct {
+type Cluster_SSESpecification[T any] struct {
 
 	// SSEEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled
-	SSEEnabled *bool `json:"SSEEnabled,omitempty"`
+	SSEEnabled *T `json:"SSEEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_SSESpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_SSESpecification) AWSCloudFormationType() string {
+func (r *Cluster_SSESpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DAX::Cluster.SSESpecification"
 }

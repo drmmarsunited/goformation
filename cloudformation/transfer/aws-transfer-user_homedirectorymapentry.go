@@ -8,7 +8,7 @@ import (
 
 // User_HomeDirectoryMapEntry AWS CloudFormation Resource (AWS::Transfer::User.HomeDirectoryMapEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html
-type User_HomeDirectoryMapEntry struct {
+type User_HomeDirectoryMapEntry[T any] struct {
 
 	// Entry AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type User_HomeDirectoryMapEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_HomeDirectoryMapEntry) AWSCloudFormationType() string {
+func (r *User_HomeDirectoryMapEntry[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::User.HomeDirectoryMapEntry"
 }

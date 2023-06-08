@@ -8,12 +8,12 @@ import (
 
 // Bucket_S3KeyFilter AWS CloudFormation Resource (AWS::S3::Bucket.S3KeyFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
-type Bucket_S3KeyFilter struct {
+type Bucket_S3KeyFilter[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules
-	Rules []Bucket_FilterRule `json:"Rules"`
+	Rules []Bucket_FilterRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_S3KeyFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_S3KeyFilter) AWSCloudFormationType() string {
+func (r *Bucket_S3KeyFilter[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.S3KeyFilter"
 }

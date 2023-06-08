@@ -8,7 +8,7 @@ import (
 
 // DataSet_CalculatedColumn AWS CloudFormation Resource (AWS::QuickSight::DataSet.CalculatedColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-calculatedcolumn.html
-type DataSet_CalculatedColumn struct {
+type DataSet_CalculatedColumn[T any] struct {
 
 	// ColumnId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSet_CalculatedColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_CalculatedColumn) AWSCloudFormationType() string {
+func (r *DataSet_CalculatedColumn[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.CalculatedColumn"
 }

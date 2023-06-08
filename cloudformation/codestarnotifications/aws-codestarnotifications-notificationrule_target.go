@@ -8,7 +8,7 @@ import (
 
 // NotificationRule_Target AWS CloudFormation Resource (AWS::CodeStarNotifications::NotificationRule.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestarnotifications-notificationrule-target.html
-type NotificationRule_Target struct {
+type NotificationRule_Target[T any] struct {
 
 	// TargetAddress AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type NotificationRule_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationRule_Target) AWSCloudFormationType() string {
+func (r *NotificationRule_Target[any]) AWSCloudFormationType() string {
 	return "AWS::CodeStarNotifications::NotificationRule.Target"
 }

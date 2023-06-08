@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_SsmAutomation AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.SsmAutomation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html
-type ResponsePlan_SsmAutomation struct {
+type ResponsePlan_SsmAutomation[T any] struct {
 
 	// DocumentName AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type ResponsePlan_SsmAutomation struct {
 	// DynamicParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-dynamicparameters
-	DynamicParameters []ResponsePlan_DynamicSsmParameter `json:"DynamicParameters,omitempty"`
+	DynamicParameters []ResponsePlan_DynamicSsmParameter[any] `json:"DynamicParameters,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-parameters
-	Parameters []ResponsePlan_SsmParameter `json:"Parameters,omitempty"`
+	Parameters []ResponsePlan_SsmParameter[any] `json:"Parameters,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type ResponsePlan_SsmAutomation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_SsmAutomation) AWSCloudFormationType() string {
+func (r *ResponsePlan_SsmAutomation[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.SsmAutomation"
 }

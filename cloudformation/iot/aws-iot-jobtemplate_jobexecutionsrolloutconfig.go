@@ -8,17 +8,17 @@ import (
 
 // JobTemplate_JobExecutionsRolloutConfig AWS CloudFormation Resource (AWS::IoT::JobTemplate.JobExecutionsRolloutConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html
-type JobTemplate_JobExecutionsRolloutConfig struct {
+type JobTemplate_JobExecutionsRolloutConfig[T any] struct {
 
 	// ExponentialRolloutRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-exponentialrolloutrate
-	ExponentialRolloutRate *JobTemplate_ExponentialRolloutRate `json:"ExponentialRolloutRate,omitempty"`
+	ExponentialRolloutRate *JobTemplate_ExponentialRolloutRate[any] `json:"ExponentialRolloutRate,omitempty"`
 
 	// MaximumPerMinute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-maximumperminute
-	MaximumPerMinute *int `json:"MaximumPerMinute,omitempty"`
+	MaximumPerMinute *T `json:"MaximumPerMinute,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type JobTemplate_JobExecutionsRolloutConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_JobExecutionsRolloutConfig) AWSCloudFormationType() string {
+func (r *JobTemplate_JobExecutionsRolloutConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.JobExecutionsRolloutConfig"
 }

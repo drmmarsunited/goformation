@@ -8,7 +8,7 @@ import (
 
 // ReplicationGroup_KinesisFirehoseDestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.KinesisFirehoseDestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-kinesisfirehosedestinationdetails.html
-type ReplicationGroup_KinesisFirehoseDestinationDetails struct {
+type ReplicationGroup_KinesisFirehoseDestinationDetails[T any] struct {
 
 	// DeliveryStream AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ReplicationGroup_KinesisFirehoseDestinationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationGroup_KinesisFirehoseDestinationDetails) AWSCloudFormationType() string {
+func (r *ReplicationGroup_KinesisFirehoseDestinationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::ReplicationGroup.KinesisFirehoseDestinationDetails"
 }

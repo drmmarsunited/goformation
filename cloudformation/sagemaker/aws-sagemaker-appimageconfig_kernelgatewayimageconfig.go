@@ -8,17 +8,17 @@ import (
 
 // AppImageConfig_KernelGatewayImageConfig AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig.KernelGatewayImageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html
-type AppImageConfig_KernelGatewayImageConfig struct {
+type AppImageConfig_KernelGatewayImageConfig[T any] struct {
 
 	// FileSystemConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig-filesystemconfig
-	FileSystemConfig *AppImageConfig_FileSystemConfig `json:"FileSystemConfig,omitempty"`
+	FileSystemConfig *AppImageConfig_FileSystemConfig[any] `json:"FileSystemConfig,omitempty"`
 
 	// KernelSpecs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig-kernelspecs
-	KernelSpecs []AppImageConfig_KernelSpec `json:"KernelSpecs"`
+	KernelSpecs []AppImageConfig_KernelSpec[any] `json:"KernelSpecs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AppImageConfig_KernelGatewayImageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppImageConfig_KernelGatewayImageConfig) AWSCloudFormationType() string {
+func (r *AppImageConfig_KernelGatewayImageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::AppImageConfig.KernelGatewayImageConfig"
 }

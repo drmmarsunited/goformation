@@ -8,7 +8,7 @@ import (
 
 // Analysis_VisualPalette AWS CloudFormation Resource (AWS::QuickSight::Analysis.VisualPalette)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualpalette.html
-type Analysis_VisualPalette struct {
+type Analysis_VisualPalette[T any] struct {
 
 	// ChartColor AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_VisualPalette struct {
 	// ColorMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualpalette.html#cfn-quicksight-analysis-visualpalette-colormap
-	ColorMap []Analysis_DataPathColor `json:"ColorMap,omitempty"`
+	ColorMap []Analysis_DataPathColor[any] `json:"ColorMap,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_VisualPalette struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_VisualPalette) AWSCloudFormationType() string {
+func (r *Analysis_VisualPalette[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.VisualPalette"
 }

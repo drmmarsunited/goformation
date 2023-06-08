@@ -11,7 +11,7 @@ import (
 
 // LoadBalancerTlsCertificate AWS CloudFormation Resource (AWS::Lightsail::LoadBalancerTlsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html
-type LoadBalancerTlsCertificate struct {
+type LoadBalancerTlsCertificate[T any] struct {
 
 	// CertificateAlternativeNames AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type LoadBalancerTlsCertificate struct {
 	// HttpsRedirectionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-httpsredirectionenabled
-	HttpsRedirectionEnabled *bool `json:"HttpsRedirectionEnabled,omitempty"`
+	HttpsRedirectionEnabled *T `json:"HttpsRedirectionEnabled,omitempty"`
 
 	// IsAttached AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-isattached
-	IsAttached *bool `json:"IsAttached,omitempty"`
+	IsAttached *T `json:"IsAttached,omitempty"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type LoadBalancerTlsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancerTlsCertificate) AWSCloudFormationType() string {
+func (r *LoadBalancerTlsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::LoadBalancerTlsCertificate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LoadBalancerTlsCertificate) MarshalJSON() ([]byte, error) {
-	type Properties LoadBalancerTlsCertificate
+func (r LoadBalancerTlsCertificate[any]) MarshalJSON() ([]byte, error) {
+	type Properties LoadBalancerTlsCertificate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r LoadBalancerTlsCertificate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LoadBalancerTlsCertificate) UnmarshalJSON(b []byte) error {
-	type Properties LoadBalancerTlsCertificate
+func (r *LoadBalancerTlsCertificate[any]) UnmarshalJSON(b []byte) error {
+	type Properties LoadBalancerTlsCertificate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *LoadBalancerTlsCertificate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LoadBalancerTlsCertificate(*res.Properties)
+		*r = LoadBalancerTlsCertificate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

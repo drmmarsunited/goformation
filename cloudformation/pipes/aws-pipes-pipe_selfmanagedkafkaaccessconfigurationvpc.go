@@ -8,7 +8,7 @@ import (
 
 // Pipe_SelfManagedKafkaAccessConfigurationVpc AWS CloudFormation Resource (AWS::Pipes::Pipe.SelfManagedKafkaAccessConfigurationVpc)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationvpc.html
-type Pipe_SelfManagedKafkaAccessConfigurationVpc struct {
+type Pipe_SelfManagedKafkaAccessConfigurationVpc[T any] struct {
 
 	// SecurityGroup AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_SelfManagedKafkaAccessConfigurationVpc struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_SelfManagedKafkaAccessConfigurationVpc) AWSCloudFormationType() string {
+func (r *Pipe_SelfManagedKafkaAccessConfigurationVpc[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.SelfManagedKafkaAccessConfigurationVpc"
 }

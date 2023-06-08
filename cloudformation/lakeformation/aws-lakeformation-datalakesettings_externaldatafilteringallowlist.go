@@ -8,7 +8,7 @@ import (
 
 // DataLakeSettings_ExternalDataFilteringAllowList AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings.ExternalDataFilteringAllowList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-externaldatafilteringallowlist.html
-type DataLakeSettings_ExternalDataFilteringAllowList struct {
+type DataLakeSettings_ExternalDataFilteringAllowList[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type DataLakeSettings_ExternalDataFilteringAllowList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings_ExternalDataFilteringAllowList) AWSCloudFormationType() string {
+func (r *DataLakeSettings_ExternalDataFilteringAllowList[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings.ExternalDataFilteringAllowList"
 }

@@ -8,7 +8,7 @@ import (
 
 // Function_AuthResourcePolicy AWS CloudFormation Resource (AWS::Serverless::Function.AuthResourcePolicy)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-type Function_AuthResourcePolicy struct {
+type Function_AuthResourcePolicy[T any] struct {
 
 	// AwsAccountBlacklist AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type Function_AuthResourcePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_AuthResourcePolicy) AWSCloudFormationType() string {
+func (r *Function_AuthResourcePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.AuthResourcePolicy"
 }

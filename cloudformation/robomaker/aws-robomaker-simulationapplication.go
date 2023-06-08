@@ -11,7 +11,7 @@ import (
 
 // SimulationApplication AWS CloudFormation Resource (AWS::RoboMaker::SimulationApplication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
-type SimulationApplication struct {
+type SimulationApplication[T any] struct {
 
 	// CurrentRevisionId AWS CloudFormation Property
 	// Required: false
@@ -31,22 +31,22 @@ type SimulationApplication struct {
 	// RenderingEngine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine
-	RenderingEngine *SimulationApplication_RenderingEngine `json:"RenderingEngine,omitempty"`
+	RenderingEngine *SimulationApplication_RenderingEngine[any] `json:"RenderingEngine,omitempty"`
 
 	// RobotSoftwareSuite AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
-	RobotSoftwareSuite *SimulationApplication_RobotSoftwareSuite `json:"RobotSoftwareSuite"`
+	RobotSoftwareSuite *SimulationApplication_RobotSoftwareSuite[any] `json:"RobotSoftwareSuite"`
 
 	// SimulationSoftwareSuite AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
-	SimulationSoftwareSuite *SimulationApplication_SimulationSoftwareSuite `json:"SimulationSoftwareSuite"`
+	SimulationSoftwareSuite *SimulationApplication_SimulationSoftwareSuite[any] `json:"SimulationSoftwareSuite"`
 
 	// Sources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources
-	Sources []SimulationApplication_SourceConfig `json:"Sources,omitempty"`
+	Sources []SimulationApplication_SourceConfig[any] `json:"Sources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type SimulationApplication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimulationApplication) AWSCloudFormationType() string {
+func (r *SimulationApplication[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::SimulationApplication"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SimulationApplication) MarshalJSON() ([]byte, error) {
-	type Properties SimulationApplication
+func (r SimulationApplication[any]) MarshalJSON() ([]byte, error) {
+	type Properties SimulationApplication[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r SimulationApplication) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SimulationApplication) UnmarshalJSON(b []byte) error {
-	type Properties SimulationApplication
+func (r *SimulationApplication[any]) UnmarshalJSON(b []byte) error {
+	type Properties SimulationApplication[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *SimulationApplication) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SimulationApplication(*res.Properties)
+		*r = SimulationApplication[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

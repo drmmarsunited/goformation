@@ -8,17 +8,17 @@ import (
 
 // Function_EventInvokeDestinationConfig AWS CloudFormation Resource (AWS::Serverless::Function.EventInvokeDestinationConfig)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-destination-config-object
-type Function_EventInvokeDestinationConfig struct {
+type Function_EventInvokeDestinationConfig[T any] struct {
 
 	// OnFailure AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-destination-config-object
-	OnFailure *Function_Destination `json:"OnFailure"`
+	OnFailure *Function_Destination[any] `json:"OnFailure"`
 
 	// OnSuccess AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-destination-config-object
-	OnSuccess *Function_Destination `json:"OnSuccess"`
+	OnSuccess *Function_Destination[any] `json:"OnSuccess"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Function_EventInvokeDestinationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EventInvokeDestinationConfig) AWSCloudFormationType() string {
+func (r *Function_EventInvokeDestinationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.EventInvokeDestinationConfig"
 }

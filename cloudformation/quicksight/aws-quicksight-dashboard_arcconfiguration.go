@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ArcConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ArcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcconfiguration.html
-type Dashboard_ArcConfiguration struct {
+type Dashboard_ArcConfiguration[T any] struct {
 
 	// ArcAngle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcconfiguration.html#cfn-quicksight-dashboard-arcconfiguration-arcangle
-	ArcAngle *float64 `json:"ArcAngle,omitempty"`
+	ArcAngle *T `json:"ArcAngle,omitempty"`
 
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ArcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ArcConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ArcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ArcConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Job_Recipe AWS CloudFormation Resource (AWS::DataBrew::Job.Recipe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html
-type Job_Recipe struct {
+type Job_Recipe[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Job_Recipe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_Recipe) AWSCloudFormationType() string {
+func (r *Job_Recipe[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.Recipe"
 }

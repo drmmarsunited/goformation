@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_TlsValidationContextSdsTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html
-type VirtualNode_TlsValidationContextSdsTrust struct {
+type VirtualNode_TlsValidationContextSdsTrust[T any] struct {
 
 	// SecretName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualNode_TlsValidationContextSdsTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_TlsValidationContextSdsTrust) AWSCloudFormationType() string {
+func (r *VirtualNode_TlsValidationContextSdsTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust"
 }

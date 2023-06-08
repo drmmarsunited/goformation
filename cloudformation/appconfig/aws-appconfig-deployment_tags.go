@@ -8,7 +8,7 @@ import (
 
 // Deployment_Tags AWS CloudFormation Resource (AWS::AppConfig::Deployment.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-tags.html
-type Deployment_Tags struct {
+type Deployment_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Deployment_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_Tags) AWSCloudFormationType() string {
+func (r *Deployment_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Deployment.Tags"
 }

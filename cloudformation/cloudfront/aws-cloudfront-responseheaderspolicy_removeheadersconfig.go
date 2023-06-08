@@ -8,12 +8,12 @@ import (
 
 // ResponseHeadersPolicy_RemoveHeadersConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.RemoveHeadersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheadersconfig.html
-type ResponseHeadersPolicy_RemoveHeadersConfig struct {
+type ResponseHeadersPolicy_RemoveHeadersConfig[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheadersconfig.html#cfn-cloudfront-responseheaderspolicy-removeheadersconfig-items
-	Items []ResponseHeadersPolicy_RemoveHeader `json:"Items"`
+	Items []ResponseHeadersPolicy_RemoveHeader[any] `json:"Items"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_RemoveHeadersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_RemoveHeadersConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_RemoveHeadersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeadersConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // MLTransform_TransformParameters AWS CloudFormation Resource (AWS::Glue::MLTransform.TransformParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html
-type MLTransform_TransformParameters struct {
+type MLTransform_TransformParameters[T any] struct {
 
 	// FindMatchesParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters
-	FindMatchesParameters *MLTransform_FindMatchesParameters `json:"FindMatchesParameters,omitempty"`
+	FindMatchesParameters *MLTransform_FindMatchesParameters[any] `json:"FindMatchesParameters,omitempty"`
 
 	// TransformType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MLTransform_TransformParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_TransformParameters) AWSCloudFormationType() string {
+func (r *MLTransform_TransformParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.TransformParameters"
 }

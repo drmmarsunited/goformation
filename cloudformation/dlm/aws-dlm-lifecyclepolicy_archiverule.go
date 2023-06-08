@@ -8,12 +8,12 @@ import (
 
 // LifecyclePolicy_ArchiveRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.ArchiveRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-archiverule.html
-type LifecyclePolicy_ArchiveRule struct {
+type LifecyclePolicy_ArchiveRule[T any] struct {
 
 	// RetainRule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-archiverule.html#cfn-dlm-lifecyclepolicy-archiverule-retainrule
-	RetainRule *LifecyclePolicy_ArchiveRetainRule `json:"RetainRule"`
+	RetainRule *LifecyclePolicy_ArchiveRetainRule[any] `json:"RetainRule"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LifecyclePolicy_ArchiveRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_ArchiveRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_ArchiveRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.ArchiveRule"
 }

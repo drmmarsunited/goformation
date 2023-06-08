@@ -12,7 +12,7 @@ import (
 
 // RegexPatternSet AWS CloudFormation Resource (AWS::WAFv2::RegexPatternSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html
-type RegexPatternSet struct {
+type RegexPatternSet[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type RegexPatternSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RegexPatternSet) AWSCloudFormationType() string {
+func (r *RegexPatternSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RegexPatternSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RegexPatternSet) MarshalJSON() ([]byte, error) {
-	type Properties RegexPatternSet
+func (r RegexPatternSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties RegexPatternSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r RegexPatternSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RegexPatternSet) UnmarshalJSON(b []byte) error {
-	type Properties RegexPatternSet
+func (r *RegexPatternSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties RegexPatternSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *RegexPatternSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RegexPatternSet(*res.Properties)
+		*r = RegexPatternSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

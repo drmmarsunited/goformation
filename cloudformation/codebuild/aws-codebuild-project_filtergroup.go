@@ -8,7 +8,7 @@ import (
 
 // Project_FilterGroup AWS CloudFormation Resource (AWS::CodeBuild::Project.FilterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-filtergroup.html
-type Project_FilterGroup struct {
+type Project_FilterGroup[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Project_FilterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_FilterGroup) AWSCloudFormationType() string {
+func (r *Project_FilterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.FilterGroup"
 }

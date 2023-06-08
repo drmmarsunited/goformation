@@ -8,7 +8,7 @@ import (
 
 // UserPoolClient_TokenValidityUnits AWS CloudFormation Resource (AWS::Cognito::UserPoolClient.TokenValidityUnits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html
-type UserPoolClient_TokenValidityUnits struct {
+type UserPoolClient_TokenValidityUnits[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserPoolClient_TokenValidityUnits struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolClient_TokenValidityUnits) AWSCloudFormationType() string {
+func (r *UserPoolClient_TokenValidityUnits[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolClient.TokenValidityUnits"
 }

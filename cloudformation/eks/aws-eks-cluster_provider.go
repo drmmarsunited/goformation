@@ -8,7 +8,7 @@ import (
 
 // Cluster_Provider AWS CloudFormation Resource (AWS::EKS::Cluster.Provider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-provider.html
-type Cluster_Provider struct {
+type Cluster_Provider[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Cluster_Provider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Provider) AWSCloudFormationType() string {
+func (r *Cluster_Provider[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.Provider"
 }

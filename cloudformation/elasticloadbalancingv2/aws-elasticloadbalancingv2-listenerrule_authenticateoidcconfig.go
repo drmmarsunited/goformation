@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_AuthenticateOidcConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html
-type ListenerRule_AuthenticateOidcConfig struct {
+type ListenerRule_AuthenticateOidcConfig[T any] struct {
 
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type ListenerRule_AuthenticateOidcConfig struct {
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessiontimeout
-	SessionTimeout *int `json:"SessionTimeout,omitempty"`
+	SessionTimeout *T `json:"SessionTimeout,omitempty"`
 
 	// TokenEndpoint AWS CloudFormation Property
 	// Required: true
@@ -63,7 +63,7 @@ type ListenerRule_AuthenticateOidcConfig struct {
 	// UseExistingClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret
-	UseExistingClientSecret *bool `json:"UseExistingClientSecret,omitempty"`
+	UseExistingClientSecret *T `json:"UseExistingClientSecret,omitempty"`
 
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: true
@@ -87,6 +87,6 @@ type ListenerRule_AuthenticateOidcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_AuthenticateOidcConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_AuthenticateOidcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig"
 }

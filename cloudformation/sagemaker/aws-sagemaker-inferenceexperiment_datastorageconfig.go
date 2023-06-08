@@ -8,12 +8,12 @@ import (
 
 // InferenceExperiment_DataStorageConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.DataStorageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-datastorageconfig.html
-type InferenceExperiment_DataStorageConfig struct {
+type InferenceExperiment_DataStorageConfig[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-datastorageconfig.html#cfn-sagemaker-inferenceexperiment-datastorageconfig-contenttype
-	ContentType *InferenceExperiment_CaptureContentTypeHeader `json:"ContentType,omitempty"`
+	ContentType *InferenceExperiment_CaptureContentTypeHeader[any] `json:"ContentType,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type InferenceExperiment_DataStorageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_DataStorageConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_DataStorageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.DataStorageConfig"
 }

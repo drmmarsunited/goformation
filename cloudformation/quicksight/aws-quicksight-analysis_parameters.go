@@ -8,27 +8,27 @@ import (
 
 // Analysis_Parameters AWS CloudFormation Resource (AWS::QuickSight::Analysis.Parameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html
-type Analysis_Parameters struct {
+type Analysis_Parameters[T any] struct {
 
 	// DateTimeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-datetimeparameters
-	DateTimeParameters []Analysis_DateTimeParameter `json:"DateTimeParameters,omitempty"`
+	DateTimeParameters []Analysis_DateTimeParameter[any] `json:"DateTimeParameters,omitempty"`
 
 	// DecimalParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-decimalparameters
-	DecimalParameters []Analysis_DecimalParameter `json:"DecimalParameters,omitempty"`
+	DecimalParameters []Analysis_DecimalParameter[any] `json:"DecimalParameters,omitempty"`
 
 	// IntegerParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-integerparameters
-	IntegerParameters []Analysis_IntegerParameter `json:"IntegerParameters,omitempty"`
+	IntegerParameters []Analysis_IntegerParameter[any] `json:"IntegerParameters,omitempty"`
 
 	// StringParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-stringparameters
-	StringParameters []Analysis_StringParameter `json:"StringParameters,omitempty"`
+	StringParameters []Analysis_StringParameter[any] `json:"StringParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_Parameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_Parameters) AWSCloudFormationType() string {
+func (r *Analysis_Parameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.Parameters"
 }

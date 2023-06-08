@@ -8,7 +8,7 @@ import (
 
 // Pipeline_Filter AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html
-type Pipeline_Filter struct {
+type Pipeline_Filter[T any] struct {
 
 	// Filter AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Filter) AWSCloudFormationType() string {
+func (r *Pipeline_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Filter"
 }

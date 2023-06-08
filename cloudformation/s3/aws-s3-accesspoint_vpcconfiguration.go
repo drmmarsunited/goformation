@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_VpcConfiguration AWS CloudFormation Resource (AWS::S3::AccessPoint.VpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-vpcconfiguration.html
-type AccessPoint_VpcConfiguration struct {
+type AccessPoint_VpcConfiguration[T any] struct {
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AccessPoint_VpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_VpcConfiguration) AWSCloudFormationType() string {
+func (r *AccessPoint_VpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::AccessPoint.VpcConfiguration"
 }

@@ -12,12 +12,12 @@ import (
 
 // Firewall AWS CloudFormation Resource (AWS::NetworkFirewall::Firewall)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html
-type Firewall struct {
+type Firewall[T any] struct {
 
 	// DeleteProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-deleteprotection
-	DeleteProtection *bool `json:"DeleteProtection,omitempty"`
+	DeleteProtection *T `json:"DeleteProtection,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type Firewall struct {
 	// FirewallPolicyChangeProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-firewallpolicychangeprotection
-	FirewallPolicyChangeProtection *bool `json:"FirewallPolicyChangeProtection,omitempty"`
+	FirewallPolicyChangeProtection *T `json:"FirewallPolicyChangeProtection,omitempty"`
 
 	// SubnetChangeProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-subnetchangeprotection
-	SubnetChangeProtection *bool `json:"SubnetChangeProtection,omitempty"`
+	SubnetChangeProtection *T `json:"SubnetChangeProtection,omitempty"`
 
 	// SubnetMappings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-subnetmappings
-	SubnetMappings []Firewall_SubnetMapping `json:"SubnetMappings"`
+	SubnetMappings []Firewall_SubnetMapping[any] `json:"SubnetMappings"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type Firewall struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Firewall) AWSCloudFormationType() string {
+func (r *Firewall[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::Firewall"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Firewall) MarshalJSON() ([]byte, error) {
-	type Properties Firewall
+func (r Firewall[any]) MarshalJSON() ([]byte, error) {
+	type Properties Firewall[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Firewall) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Firewall) UnmarshalJSON(b []byte) error {
-	type Properties Firewall
+func (r *Firewall[any]) UnmarshalJSON(b []byte) error {
+	type Properties Firewall[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Firewall) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Firewall(*res.Properties)
+		*r = Firewall[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

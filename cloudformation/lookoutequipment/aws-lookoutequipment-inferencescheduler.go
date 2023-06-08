@@ -12,22 +12,22 @@ import (
 
 // InferenceScheduler AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html
-type InferenceScheduler struct {
+type InferenceScheduler[T any] struct {
 
 	// DataDelayOffsetInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datadelayoffsetinminutes
-	DataDelayOffsetInMinutes *int `json:"DataDelayOffsetInMinutes,omitempty"`
+	DataDelayOffsetInMinutes *T `json:"DataDelayOffsetInMinutes,omitempty"`
 
 	// DataInputConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration
-	DataInputConfiguration *InferenceScheduler_DataInputConfiguration `json:"DataInputConfiguration"`
+	DataInputConfiguration *InferenceScheduler_DataInputConfiguration[any] `json:"DataInputConfiguration"`
 
 	// DataOutputConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration
-	DataOutputConfiguration *InferenceScheduler_DataOutputConfiguration `json:"DataOutputConfiguration"`
+	DataOutputConfiguration *InferenceScheduler_DataOutputConfiguration[any] `json:"DataOutputConfiguration"`
 
 	// DataUploadFrequency AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type InferenceScheduler struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceScheduler) AWSCloudFormationType() string {
+func (r *InferenceScheduler[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutEquipment::InferenceScheduler"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InferenceScheduler) MarshalJSON() ([]byte, error) {
-	type Properties InferenceScheduler
+func (r InferenceScheduler[any]) MarshalJSON() ([]byte, error) {
+	type Properties InferenceScheduler[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r InferenceScheduler) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InferenceScheduler) UnmarshalJSON(b []byte) error {
-	type Properties InferenceScheduler
+func (r *InferenceScheduler[any]) UnmarshalJSON(b []byte) error {
+	type Properties InferenceScheduler[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *InferenceScheduler) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InferenceScheduler(*res.Properties)
+		*r = InferenceScheduler[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

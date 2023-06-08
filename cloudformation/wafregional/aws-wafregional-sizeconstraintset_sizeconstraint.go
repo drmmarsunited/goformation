@@ -8,7 +8,7 @@ import (
 
 // SizeConstraintSet_SizeConstraint AWS CloudFormation Resource (AWS::WAFRegional::SizeConstraintSet.SizeConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html
-type SizeConstraintSet_SizeConstraint struct {
+type SizeConstraintSet_SizeConstraint[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type SizeConstraintSet_SizeConstraint struct {
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-fieldtomatch
-	FieldToMatch *SizeConstraintSet_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *SizeConstraintSet_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-size
-	Size int `json:"Size"`
+	Size T `json:"Size"`
 
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type SizeConstraintSet_SizeConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SizeConstraintSet_SizeConstraint) AWSCloudFormationType() string {
+func (r *SizeConstraintSet_SizeConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::SizeConstraintSet.SizeConstraint"
 }

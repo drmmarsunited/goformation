@@ -8,27 +8,27 @@ import (
 
 // Channel_HlsInputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsInputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html
-type Channel_HlsInputSettings struct {
+type Channel_HlsInputSettings[T any] struct {
 
 	// Bandwidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-bandwidth
-	Bandwidth *int `json:"Bandwidth,omitempty"`
+	Bandwidth *T `json:"Bandwidth,omitempty"`
 
 	// BufferSegments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-buffersegments
-	BufferSegments *int `json:"BufferSegments,omitempty"`
+	BufferSegments *T `json:"BufferSegments,omitempty"`
 
 	// Retries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retries
-	Retries *int `json:"Retries,omitempty"`
+	Retries *T `json:"Retries,omitempty"`
 
 	// RetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval
-	RetryInterval *int `json:"RetryInterval,omitempty"`
+	RetryInterval *T `json:"RetryInterval,omitempty"`
 
 	// Scte35Source AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Channel_HlsInputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsInputSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsInputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsInputSettings"
 }

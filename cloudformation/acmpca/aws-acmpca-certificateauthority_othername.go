@@ -8,7 +8,7 @@ import (
 
 // CertificateAuthority_OtherName AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.OtherName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-othername.html
-type CertificateAuthority_OtherName struct {
+type CertificateAuthority_OtherName[T any] struct {
 
 	// TypeId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CertificateAuthority_OtherName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_OtherName) AWSCloudFormationType() string {
+func (r *CertificateAuthority_OtherName[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.OtherName"
 }

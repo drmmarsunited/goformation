@@ -8,7 +8,7 @@ import (
 
 // Channel_UdpGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.UdpGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html
-type Channel_UdpGroupSettings struct {
+type Channel_UdpGroupSettings[T any] struct {
 
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_UdpGroupSettings struct {
 	// TimedMetadataId3Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-timedmetadataid3period
-	TimedMetadataId3Period *int `json:"TimedMetadataId3Period,omitempty"`
+	TimedMetadataId3Period *T `json:"TimedMetadataId3Period,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_UdpGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_UdpGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_UdpGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.UdpGroupSettings"
 }

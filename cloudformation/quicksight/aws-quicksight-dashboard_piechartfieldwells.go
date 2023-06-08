@@ -8,12 +8,12 @@ import (
 
 // Dashboard_PieChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PieChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartfieldwells.html
-type Dashboard_PieChartFieldWells struct {
+type Dashboard_PieChartFieldWells[T any] struct {
 
 	// PieChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartfieldwells.html#cfn-quicksight-dashboard-piechartfieldwells-piechartaggregatedfieldwells
-	PieChartAggregatedFieldWells *Dashboard_PieChartAggregatedFieldWells `json:"PieChartAggregatedFieldWells,omitempty"`
+	PieChartAggregatedFieldWells *Dashboard_PieChartAggregatedFieldWells[any] `json:"PieChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_PieChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PieChartFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_PieChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PieChartFieldWells"
 }

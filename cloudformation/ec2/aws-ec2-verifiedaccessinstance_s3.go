@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessInstance_S3 AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance.S3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-s3.html
-type VerifiedAccessInstance_S3 struct {
+type VerifiedAccessInstance_S3[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type VerifiedAccessInstance_S3 struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-s3.html#cfn-ec2-verifiedaccessinstance-s3-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type VerifiedAccessInstance_S3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance_S3) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance_S3[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance.S3"
 }

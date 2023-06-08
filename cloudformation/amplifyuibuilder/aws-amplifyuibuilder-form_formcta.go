@@ -8,17 +8,17 @@ import (
 
 // Form_FormCTA AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormCTA)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formcta.html
-type Form_FormCTA struct {
+type Form_FormCTA[T any] struct {
 
 	// Cancel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formcta.html#cfn-amplifyuibuilder-form-formcta-cancel
-	Cancel *Form_FormButton `json:"Cancel,omitempty"`
+	Cancel *Form_FormButton[any] `json:"Cancel,omitempty"`
 
 	// Clear AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formcta.html#cfn-amplifyuibuilder-form-formcta-clear
-	Clear *Form_FormButton `json:"Clear,omitempty"`
+	Clear *Form_FormButton[any] `json:"Clear,omitempty"`
 
 	// Position AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Form_FormCTA struct {
 	// Submit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formcta.html#cfn-amplifyuibuilder-form-formcta-submit
-	Submit *Form_FormButton `json:"Submit,omitempty"`
+	Submit *Form_FormButton[any] `json:"Submit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Form_FormCTA struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormCTA) AWSCloudFormationType() string {
+func (r *Form_FormCTA[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormCTA"
 }

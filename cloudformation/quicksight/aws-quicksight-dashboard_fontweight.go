@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FontWeight AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FontWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontweight.html
-type Dashboard_FontWeight struct {
+type Dashboard_FontWeight[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_FontWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FontWeight) AWSCloudFormationType() string {
+func (r *Dashboard_FontWeight[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FontWeight"
 }

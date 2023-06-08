@@ -8,7 +8,7 @@ import (
 
 // InstanceFleetConfig_SpotProvisioningSpecification AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html
-type InstanceFleetConfig_SpotProvisioningSpecification struct {
+type InstanceFleetConfig_SpotProvisioningSpecification[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type InstanceFleetConfig_SpotProvisioningSpecification struct {
 	// BlockDurationMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-blockdurationminutes
-	BlockDurationMinutes *int `json:"BlockDurationMinutes,omitempty"`
+	BlockDurationMinutes *T `json:"BlockDurationMinutes,omitempty"`
 
 	// TimeoutAction AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type InstanceFleetConfig_SpotProvisioningSpecification struct {
 	// TimeoutDurationMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutdurationminutes
-	TimeoutDurationMinutes int `json:"TimeoutDurationMinutes"`
+	TimeoutDurationMinutes T `json:"TimeoutDurationMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type InstanceFleetConfig_SpotProvisioningSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_SpotProvisioningSpecification) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_SpotProvisioningSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification"
 }

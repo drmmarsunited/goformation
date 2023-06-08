@@ -12,7 +12,7 @@ import (
 
 // ScheduleGroup AWS CloudFormation Resource (AWS::Scheduler::ScheduleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html
-type ScheduleGroup struct {
+type ScheduleGroup[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type ScheduleGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduleGroup) AWSCloudFormationType() string {
+func (r *ScheduleGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::ScheduleGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScheduleGroup) MarshalJSON() ([]byte, error) {
-	type Properties ScheduleGroup
+func (r ScheduleGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScheduleGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r ScheduleGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScheduleGroup) UnmarshalJSON(b []byte) error {
-	type Properties ScheduleGroup
+func (r *ScheduleGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScheduleGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *ScheduleGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScheduleGroup(*res.Properties)
+		*r = ScheduleGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // LoggingConfiguration_FieldToMatch AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-fieldtomatch.html
-type LoggingConfiguration_FieldToMatch struct {
+type LoggingConfiguration_FieldToMatch[T any] struct {
 
 	// JsonBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-fieldtomatch.html#cfn-wafv2-loggingconfiguration-fieldtomatch-jsonbody
-	JsonBody *LoggingConfiguration_JsonBody `json:"JsonBody,omitempty"`
+	JsonBody *LoggingConfiguration_JsonBody[any] `json:"JsonBody,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type LoggingConfiguration_FieldToMatch struct {
 	// SingleHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-fieldtomatch.html#cfn-wafv2-loggingconfiguration-fieldtomatch-singleheader
-	SingleHeader *LoggingConfiguration_SingleHeader `json:"SingleHeader,omitempty"`
+	SingleHeader *LoggingConfiguration_SingleHeader[any] `json:"SingleHeader,omitempty"`
 
 	// UriPath AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type LoggingConfiguration_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_FieldToMatch) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.FieldToMatch"
 }

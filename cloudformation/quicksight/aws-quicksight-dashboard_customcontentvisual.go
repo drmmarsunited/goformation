@@ -8,17 +8,17 @@ import (
 
 // Dashboard_CustomContentVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomContentVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html
-type Dashboard_CustomContentVisual struct {
+type Dashboard_CustomContentVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-chartconfiguration
-	ChartConfiguration *Dashboard_CustomContentConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_CustomContentConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Dashboard_CustomContentVisual struct {
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_CustomContentVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomContentVisual) AWSCloudFormationType() string {
+func (r *Dashboard_CustomContentVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomContentVisual"
 }

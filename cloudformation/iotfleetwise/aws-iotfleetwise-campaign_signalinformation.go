@@ -8,17 +8,17 @@ import (
 
 // Campaign_SignalInformation AWS CloudFormation Resource (AWS::IoTFleetWise::Campaign.SignalInformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html
-type Campaign_SignalInformation struct {
+type Campaign_SignalInformation[T any] struct {
 
 	// MaxSampleCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-maxsamplecount
-	MaxSampleCount *float64 `json:"MaxSampleCount,omitempty"`
+	MaxSampleCount *T `json:"MaxSampleCount,omitempty"`
 
 	// MinimumSamplingIntervalMs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-minimumsamplingintervalms
-	MinimumSamplingIntervalMs *float64 `json:"MinimumSamplingIntervalMs,omitempty"`
+	MinimumSamplingIntervalMs *T `json:"MinimumSamplingIntervalMs,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Campaign_SignalInformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_SignalInformation) AWSCloudFormationType() string {
+func (r *Campaign_SignalInformation[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Campaign.SignalInformation"
 }

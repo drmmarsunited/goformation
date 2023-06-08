@@ -8,37 +8,37 @@ import (
 
 // Template_TableSideBorderOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TableSideBorderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html
-type Template_TableSideBorderOptions struct {
+type Template_TableSideBorderOptions[T any] struct {
 
 	// Bottom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-bottom
-	Bottom *Template_TableBorderOptions `json:"Bottom,omitempty"`
+	Bottom *Template_TableBorderOptions[any] `json:"Bottom,omitempty"`
 
 	// InnerHorizontal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-innerhorizontal
-	InnerHorizontal *Template_TableBorderOptions `json:"InnerHorizontal,omitempty"`
+	InnerHorizontal *Template_TableBorderOptions[any] `json:"InnerHorizontal,omitempty"`
 
 	// InnerVertical AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-innervertical
-	InnerVertical *Template_TableBorderOptions `json:"InnerVertical,omitempty"`
+	InnerVertical *Template_TableBorderOptions[any] `json:"InnerVertical,omitempty"`
 
 	// Left AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-left
-	Left *Template_TableBorderOptions `json:"Left,omitempty"`
+	Left *Template_TableBorderOptions[any] `json:"Left,omitempty"`
 
 	// Right AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-right
-	Right *Template_TableBorderOptions `json:"Right,omitempty"`
+	Right *Template_TableBorderOptions[any] `json:"Right,omitempty"`
 
 	// Top AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablesideborderoptions.html#cfn-quicksight-template-tablesideborderoptions-top
-	Top *Template_TableBorderOptions `json:"Top,omitempty"`
+	Top *Template_TableBorderOptions[any] `json:"Top,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_TableSideBorderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableSideBorderOptions) AWSCloudFormationType() string {
+func (r *Template_TableSideBorderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableSideBorderOptions"
 }

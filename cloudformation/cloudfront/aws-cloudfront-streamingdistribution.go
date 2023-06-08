@@ -12,12 +12,12 @@ import (
 
 // StreamingDistribution AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html
-type StreamingDistribution struct {
+type StreamingDistribution[T any] struct {
 
 	// StreamingDistributionConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig
-	StreamingDistributionConfig *StreamingDistribution_StreamingDistributionConfig `json:"StreamingDistributionConfig"`
+	StreamingDistributionConfig *StreamingDistribution_StreamingDistributionConfig[any] `json:"StreamingDistributionConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type StreamingDistribution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingDistribution) AWSCloudFormationType() string {
+func (r *StreamingDistribution[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StreamingDistribution) MarshalJSON() ([]byte, error) {
-	type Properties StreamingDistribution
+func (r StreamingDistribution[any]) MarshalJSON() ([]byte, error) {
+	type Properties StreamingDistribution[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r StreamingDistribution) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StreamingDistribution) UnmarshalJSON(b []byte) error {
-	type Properties StreamingDistribution
+func (r *StreamingDistribution[any]) UnmarshalJSON(b []byte) error {
+	type Properties StreamingDistribution[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *StreamingDistribution) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StreamingDistribution(*res.Properties)
+		*r = StreamingDistribution[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

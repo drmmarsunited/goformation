@@ -8,32 +8,32 @@ import (
 
 // Pipe_PipeSourceKinesisStreamParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceKinesisStreamParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html
-type Pipe_PipeSourceKinesisStreamParameters struct {
+type Pipe_PipeSourceKinesisStreamParameters[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-deadletterconfig
-	DeadLetterConfig *Pipe_DeadLetterConfig `json:"DeadLetterConfig,omitempty"`
+	DeadLetterConfig *Pipe_DeadLetterConfig[any] `json:"DeadLetterConfig,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// MaximumRecordAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-maximumrecordageinseconds
-	MaximumRecordAgeInSeconds *int `json:"MaximumRecordAgeInSeconds,omitempty"`
+	MaximumRecordAgeInSeconds *T `json:"MaximumRecordAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-maximumretryattempts
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// OnPartialBatchItemFailure AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Pipe_PipeSourceKinesisStreamParameters struct {
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-parallelizationfactor
-	ParallelizationFactor *int `json:"ParallelizationFactor,omitempty"`
+	ParallelizationFactor *T `json:"ParallelizationFactor,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type Pipe_PipeSourceKinesisStreamParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceKinesisStreamParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceKinesisStreamParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceKinesisStreamParameters"
 }

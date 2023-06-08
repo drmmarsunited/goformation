@@ -8,7 +8,7 @@ import (
 
 // VirtualCluster_EksInfo AWS CloudFormation Resource (AWS::EMRContainers::VirtualCluster.EksInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-eksinfo.html
-type VirtualCluster_EksInfo struct {
+type VirtualCluster_EksInfo[T any] struct {
 
 	// Namespace AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualCluster_EksInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualCluster_EksInfo) AWSCloudFormationType() string {
+func (r *VirtualCluster_EksInfo[any]) AWSCloudFormationType() string {
 	return "AWS::EMRContainers::VirtualCluster.EksInfo"
 }

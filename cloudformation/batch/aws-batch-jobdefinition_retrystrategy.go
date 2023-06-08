@@ -8,17 +8,17 @@ import (
 
 // JobDefinition_RetryStrategy AWS CloudFormation Resource (AWS::Batch::JobDefinition.RetryStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html
-type JobDefinition_RetryStrategy struct {
+type JobDefinition_RetryStrategy[T any] struct {
 
 	// Attempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-attempts
-	Attempts *int `json:"Attempts,omitempty"`
+	Attempts *T `json:"Attempts,omitempty"`
 
 	// EvaluateOnExit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-evaluateonexit
-	EvaluateOnExit []JobDefinition_EvaluateOnExit `json:"EvaluateOnExit,omitempty"`
+	EvaluateOnExit []JobDefinition_EvaluateOnExit[any] `json:"EvaluateOnExit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type JobDefinition_RetryStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_RetryStrategy) AWSCloudFormationType() string {
+func (r *JobDefinition_RetryStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.RetryStrategy"
 }

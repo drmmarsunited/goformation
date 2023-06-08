@@ -8,22 +8,22 @@ import (
 
 // Template_GeospatialMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.GeospatialMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialmapaggregatedfieldwells.html
-type Template_GeospatialMapAggregatedFieldWells struct {
+type Template_GeospatialMapAggregatedFieldWells[T any] struct {
 
 	// Colors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialmapaggregatedfieldwells.html#cfn-quicksight-template-geospatialmapaggregatedfieldwells-colors
-	Colors []Template_DimensionField `json:"Colors,omitempty"`
+	Colors []Template_DimensionField[any] `json:"Colors,omitempty"`
 
 	// Geospatial AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialmapaggregatedfieldwells.html#cfn-quicksight-template-geospatialmapaggregatedfieldwells-geospatial
-	Geospatial []Template_DimensionField `json:"Geospatial,omitempty"`
+	Geospatial []Template_DimensionField[any] `json:"Geospatial,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialmapaggregatedfieldwells.html#cfn-quicksight-template-geospatialmapaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_GeospatialMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GeospatialMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_GeospatialMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GeospatialMapAggregatedFieldWells"
 }

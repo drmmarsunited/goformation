@@ -8,7 +8,7 @@ import (
 
 // Analysis_GradientStop AWS CloudFormation Resource (AWS::QuickSight::Analysis.GradientStop)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gradientstop.html
-type Analysis_GradientStop struct {
+type Analysis_GradientStop[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Analysis_GradientStop struct {
 	// DataValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gradientstop.html#cfn-quicksight-analysis-gradientstop-datavalue
-	DataValue *float64 `json:"DataValue,omitempty"`
+	DataValue *T `json:"DataValue,omitempty"`
 
 	// GradientOffset AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gradientstop.html#cfn-quicksight-analysis-gradientstop-gradientoffset
-	GradientOffset float64 `json:"GradientOffset"`
+	GradientOffset T `json:"GradientOffset"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_GradientStop struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GradientStop) AWSCloudFormationType() string {
+func (r *Analysis_GradientStop[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GradientStop"
 }

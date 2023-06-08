@@ -8,7 +8,7 @@ import (
 
 // ModelCard_SecurityConfig AWS CloudFormation Resource (AWS::SageMaker::ModelCard.SecurityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-securityconfig.html
-type ModelCard_SecurityConfig struct {
+type ModelCard_SecurityConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelCard_SecurityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_SecurityConfig) AWSCloudFormationType() string {
+func (r *ModelCard_SecurityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.SecurityConfig"
 }

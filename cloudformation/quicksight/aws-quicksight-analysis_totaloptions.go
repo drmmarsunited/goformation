@@ -8,7 +8,7 @@ import (
 
 // Analysis_TotalOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html
-type Analysis_TotalOptions struct {
+type Analysis_TotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Analysis_TotalOptions struct {
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-totalcellstyle
-	TotalCellStyle *Analysis_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Analysis_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analysis_TotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TotalOptions) AWSCloudFormationType() string {
+func (r *Analysis_TotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TotalOptions"
 }

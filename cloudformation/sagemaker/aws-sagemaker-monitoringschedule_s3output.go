@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_S3Output AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.S3Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-s3output.html
-type MonitoringSchedule_S3Output struct {
+type MonitoringSchedule_S3Output[T any] struct {
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type MonitoringSchedule_S3Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_S3Output) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_S3Output[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.S3Output"
 }

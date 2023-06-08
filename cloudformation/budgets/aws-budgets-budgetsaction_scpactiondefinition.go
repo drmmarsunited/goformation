@@ -8,7 +8,7 @@ import (
 
 // BudgetsAction_ScpActionDefinition AWS CloudFormation Resource (AWS::Budgets::BudgetsAction.ScpActionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-scpactiondefinition.html
-type BudgetsAction_ScpActionDefinition struct {
+type BudgetsAction_ScpActionDefinition[T any] struct {
 
 	// PolicyId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type BudgetsAction_ScpActionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction_ScpActionDefinition) AWSCloudFormationType() string {
+func (r *BudgetsAction_ScpActionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction.ScpActionDefinition"
 }

@@ -8,7 +8,7 @@ import (
 
 // StreamingImage_StreamingImageEncryptionConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StreamingImage.StreamingImageEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html
-type StreamingImage_StreamingImageEncryptionConfiguration struct {
+type StreamingImage_StreamingImageEncryptionConfiguration[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StreamingImage_StreamingImageEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingImage_StreamingImageEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *StreamingImage_StreamingImageEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StreamingImage.StreamingImageEncryptionConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ContributionAnalysisDefault AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ContributionAnalysisDefault)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-contributionanalysisdefault.html
-type Dashboard_ContributionAnalysisDefault struct {
+type Dashboard_ContributionAnalysisDefault[T any] struct {
 
 	// ContributorDimensions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-contributionanalysisdefault.html#cfn-quicksight-dashboard-contributionanalysisdefault-contributordimensions
-	ContributorDimensions []Dashboard_ColumnIdentifier `json:"ContributorDimensions"`
+	ContributorDimensions []Dashboard_ColumnIdentifier[any] `json:"ContributorDimensions"`
 
 	// MeasureFieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_ContributionAnalysisDefault struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ContributionAnalysisDefault) AWSCloudFormationType() string {
+func (r *Dashboard_ContributionAnalysisDefault[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ContributionAnalysisDefault"
 }

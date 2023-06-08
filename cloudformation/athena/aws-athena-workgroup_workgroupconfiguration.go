@@ -8,7 +8,7 @@ import (
 
 // WorkGroup_WorkGroupConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.WorkGroupConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html
-type WorkGroup_WorkGroupConfiguration struct {
+type WorkGroup_WorkGroupConfiguration[T any] struct {
 
 	// AdditionalConfiguration AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type WorkGroup_WorkGroupConfiguration struct {
 	// BytesScannedCutoffPerQuery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-bytesscannedcutoffperquery
-	BytesScannedCutoffPerQuery *int `json:"BytesScannedCutoffPerQuery,omitempty"`
+	BytesScannedCutoffPerQuery *T `json:"BytesScannedCutoffPerQuery,omitempty"`
 
 	// CustomerContentEncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-customercontentencryptionconfiguration
-	CustomerContentEncryptionConfiguration *WorkGroup_CustomerContentEncryptionConfiguration `json:"CustomerContentEncryptionConfiguration,omitempty"`
+	CustomerContentEncryptionConfiguration *WorkGroup_CustomerContentEncryptionConfiguration[any] `json:"CustomerContentEncryptionConfiguration,omitempty"`
 
 	// EnforceWorkGroupConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-enforceworkgroupconfiguration
-	EnforceWorkGroupConfiguration *bool `json:"EnforceWorkGroupConfiguration,omitempty"`
+	EnforceWorkGroupConfiguration *T `json:"EnforceWorkGroupConfiguration,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-engineversion
-	EngineVersion *WorkGroup_EngineVersion `json:"EngineVersion,omitempty"`
+	EngineVersion *WorkGroup_EngineVersion[any] `json:"EngineVersion,omitempty"`
 
 	// ExecutionRole AWS CloudFormation Property
 	// Required: false
@@ -43,17 +43,17 @@ type WorkGroup_WorkGroupConfiguration struct {
 	// PublishCloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-publishcloudwatchmetricsenabled
-	PublishCloudWatchMetricsEnabled *bool `json:"PublishCloudWatchMetricsEnabled,omitempty"`
+	PublishCloudWatchMetricsEnabled *T `json:"PublishCloudWatchMetricsEnabled,omitempty"`
 
 	// RequesterPaysEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled
-	RequesterPaysEnabled *bool `json:"RequesterPaysEnabled,omitempty"`
+	RequesterPaysEnabled *T `json:"RequesterPaysEnabled,omitempty"`
 
 	// ResultConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-resultconfiguration
-	ResultConfiguration *WorkGroup_ResultConfiguration `json:"ResultConfiguration,omitempty"`
+	ResultConfiguration *WorkGroup_ResultConfiguration[any] `json:"ResultConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type WorkGroup_WorkGroupConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_WorkGroupConfiguration) AWSCloudFormationType() string {
+func (r *WorkGroup_WorkGroupConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.WorkGroupConfiguration"
 }

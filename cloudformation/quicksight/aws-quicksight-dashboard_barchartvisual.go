@@ -8,32 +8,32 @@ import (
 
 // Dashboard_BarChartVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BarChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html
-type Dashboard_BarChartVisual struct {
+type Dashboard_BarChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-chartconfiguration
-	ChartConfiguration *Dashboard_BarChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_BarChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-columnhierarchies
-	ColumnHierarchies []Dashboard_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Dashboard_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_BarChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BarChartVisual) AWSCloudFormationType() string {
+func (r *Dashboard_BarChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BarChartVisual"
 }

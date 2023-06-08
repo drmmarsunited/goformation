@@ -8,12 +8,12 @@ import (
 
 // ExecutionPlan_CapacityUnitsConfiguration AWS CloudFormation Resource (AWS::KendraRanking::ExecutionPlan.CapacityUnitsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendraranking-executionplan-capacityunitsconfiguration.html
-type ExecutionPlan_CapacityUnitsConfiguration struct {
+type ExecutionPlan_CapacityUnitsConfiguration[T any] struct {
 
 	// RescoreCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendraranking-executionplan-capacityunitsconfiguration.html#cfn-kendraranking-executionplan-capacityunitsconfiguration-rescorecapacityunits
-	RescoreCapacityUnits int `json:"RescoreCapacityUnits"`
+	RescoreCapacityUnits T `json:"RescoreCapacityUnits"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ExecutionPlan_CapacityUnitsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExecutionPlan_CapacityUnitsConfiguration) AWSCloudFormationType() string {
+func (r *ExecutionPlan_CapacityUnitsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KendraRanking::ExecutionPlan.CapacityUnitsConfiguration"
 }

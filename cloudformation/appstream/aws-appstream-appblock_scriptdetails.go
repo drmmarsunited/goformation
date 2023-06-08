@@ -8,7 +8,7 @@ import (
 
 // AppBlock_ScriptDetails AWS CloudFormation Resource (AWS::AppStream::AppBlock.ScriptDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblock-scriptdetails.html
-type AppBlock_ScriptDetails struct {
+type AppBlock_ScriptDetails[T any] struct {
 
 	// ExecutableParameters AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type AppBlock_ScriptDetails struct {
 	// ScriptS3Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblock-scriptdetails.html#cfn-appstream-appblock-scriptdetails-scripts3location
-	ScriptS3Location *AppBlock_S3Location `json:"ScriptS3Location"`
+	ScriptS3Location *AppBlock_S3Location[any] `json:"ScriptS3Location"`
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblock-scriptdetails.html#cfn-appstream-appblock-scriptdetails-timeoutinseconds
-	TimeoutInSeconds int `json:"TimeoutInSeconds"`
+	TimeoutInSeconds T `json:"TimeoutInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type AppBlock_ScriptDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppBlock_ScriptDetails) AWSCloudFormationType() string {
+func (r *AppBlock_ScriptDetails[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::AppBlock.ScriptDetails"
 }

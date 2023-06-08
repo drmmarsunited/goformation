@@ -8,22 +8,22 @@ import (
 
 // Dashboard_CategoryFilterConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CategoryFilterConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilterconfiguration.html
-type Dashboard_CategoryFilterConfiguration struct {
+type Dashboard_CategoryFilterConfiguration[T any] struct {
 
 	// CustomFilterConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilterconfiguration.html#cfn-quicksight-dashboard-categoryfilterconfiguration-customfilterconfiguration
-	CustomFilterConfiguration *Dashboard_CustomFilterConfiguration `json:"CustomFilterConfiguration,omitempty"`
+	CustomFilterConfiguration *Dashboard_CustomFilterConfiguration[any] `json:"CustomFilterConfiguration,omitempty"`
 
 	// CustomFilterListConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilterconfiguration.html#cfn-quicksight-dashboard-categoryfilterconfiguration-customfilterlistconfiguration
-	CustomFilterListConfiguration *Dashboard_CustomFilterListConfiguration `json:"CustomFilterListConfiguration,omitempty"`
+	CustomFilterListConfiguration *Dashboard_CustomFilterListConfiguration[any] `json:"CustomFilterListConfiguration,omitempty"`
 
 	// FilterListConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilterconfiguration.html#cfn-quicksight-dashboard-categoryfilterconfiguration-filterlistconfiguration
-	FilterListConfiguration *Dashboard_FilterListConfiguration `json:"FilterListConfiguration,omitempty"`
+	FilterListConfiguration *Dashboard_FilterListConfiguration[any] `json:"FilterListConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_CategoryFilterConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CategoryFilterConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_CategoryFilterConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CategoryFilterConfiguration"
 }

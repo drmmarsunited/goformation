@@ -8,7 +8,7 @@ import (
 
 // WebACL_CustomResponse AWS CloudFormation Resource (AWS::WAFv2::WebACL.CustomResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html
-type WebACL_CustomResponse struct {
+type WebACL_CustomResponse[T any] struct {
 
 	// CustomResponseBodyKey AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type WebACL_CustomResponse struct {
 	// ResponseCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-responsecode
-	ResponseCode int `json:"ResponseCode"`
+	ResponseCode T `json:"ResponseCode"`
 
 	// ResponseHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-responseheaders
-	ResponseHeaders []WebACL_CustomHTTPHeader `json:"ResponseHeaders,omitempty"`
+	ResponseHeaders []WebACL_CustomHTTPHeader[any] `json:"ResponseHeaders,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_CustomResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_CustomResponse) AWSCloudFormationType() string {
+func (r *WebACL_CustomResponse[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.CustomResponse"
 }

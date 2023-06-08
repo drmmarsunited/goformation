@@ -8,52 +8,52 @@ import (
 
 // Bot_PostDialogCodeHookInvocationSpecification AWS CloudFormation Resource (AWS::Lex::Bot.PostDialogCodeHookInvocationSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html
-type Bot_PostDialogCodeHookInvocationSpecification struct {
+type Bot_PostDialogCodeHookInvocationSpecification[T any] struct {
 
 	// FailureConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-failureconditional
-	FailureConditional *Bot_ConditionalSpecification `json:"FailureConditional,omitempty"`
+	FailureConditional *Bot_ConditionalSpecification[any] `json:"FailureConditional,omitempty"`
 
 	// FailureNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-failurenextstep
-	FailureNextStep *Bot_DialogState `json:"FailureNextStep,omitempty"`
+	FailureNextStep *Bot_DialogState[any] `json:"FailureNextStep,omitempty"`
 
 	// FailureResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-failureresponse
-	FailureResponse *Bot_ResponseSpecification `json:"FailureResponse,omitempty"`
+	FailureResponse *Bot_ResponseSpecification[any] `json:"FailureResponse,omitempty"`
 
 	// SuccessConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-successconditional
-	SuccessConditional *Bot_ConditionalSpecification `json:"SuccessConditional,omitempty"`
+	SuccessConditional *Bot_ConditionalSpecification[any] `json:"SuccessConditional,omitempty"`
 
 	// SuccessNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-successnextstep
-	SuccessNextStep *Bot_DialogState `json:"SuccessNextStep,omitempty"`
+	SuccessNextStep *Bot_DialogState[any] `json:"SuccessNextStep,omitempty"`
 
 	// SuccessResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-successresponse
-	SuccessResponse *Bot_ResponseSpecification `json:"SuccessResponse,omitempty"`
+	SuccessResponse *Bot_ResponseSpecification[any] `json:"SuccessResponse,omitempty"`
 
 	// TimeoutConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-timeoutconditional
-	TimeoutConditional *Bot_ConditionalSpecification `json:"TimeoutConditional,omitempty"`
+	TimeoutConditional *Bot_ConditionalSpecification[any] `json:"TimeoutConditional,omitempty"`
 
 	// TimeoutNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-timeoutnextstep
-	TimeoutNextStep *Bot_DialogState `json:"TimeoutNextStep,omitempty"`
+	TimeoutNextStep *Bot_DialogState[any] `json:"TimeoutNextStep,omitempty"`
 
 	// TimeoutResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postdialogcodehookinvocationspecification.html#cfn-lex-bot-postdialogcodehookinvocationspecification-timeoutresponse
-	TimeoutResponse *Bot_ResponseSpecification `json:"TimeoutResponse,omitempty"`
+	TimeoutResponse *Bot_ResponseSpecification[any] `json:"TimeoutResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Bot_PostDialogCodeHookInvocationSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_PostDialogCodeHookInvocationSpecification) AWSCloudFormationType() string {
+func (r *Bot_PostDialogCodeHookInvocationSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.PostDialogCodeHookInvocationSpecification"
 }

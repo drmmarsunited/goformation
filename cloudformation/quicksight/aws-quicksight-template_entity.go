@@ -8,7 +8,7 @@ import (
 
 // Template_Entity AWS CloudFormation Resource (AWS::QuickSight::Template.Entity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-entity.html
-type Template_Entity struct {
+type Template_Entity[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_Entity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Entity) AWSCloudFormationType() string {
+func (r *Template_Entity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Entity"
 }

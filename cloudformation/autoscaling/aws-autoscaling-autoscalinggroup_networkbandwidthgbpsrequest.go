@@ -8,17 +8,17 @@ import (
 
 // AutoScalingGroup_NetworkBandwidthGbpsRequest AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.NetworkBandwidthGbpsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkbandwidthgbpsrequest.html
-type AutoScalingGroup_NetworkBandwidthGbpsRequest struct {
+type AutoScalingGroup_NetworkBandwidthGbpsRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkbandwidthgbpsrequest.html#cfn-autoscaling-autoscalinggroup-networkbandwidthgbpsrequest-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkbandwidthgbpsrequest.html#cfn-autoscaling-autoscalinggroup-networkbandwidthgbpsrequest-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AutoScalingGroup_NetworkBandwidthGbpsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_NetworkBandwidthGbpsRequest) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_NetworkBandwidthGbpsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.NetworkBandwidthGbpsRequest"
 }

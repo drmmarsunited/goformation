@@ -8,37 +8,37 @@ import (
 
 // Analysis_ParameterControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.ParameterControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html
-type Analysis_ParameterControl struct {
+type Analysis_ParameterControl[T any] struct {
 
 	// DateTimePicker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-datetimepicker
-	DateTimePicker *Analysis_ParameterDateTimePickerControl `json:"DateTimePicker,omitempty"`
+	DateTimePicker *Analysis_ParameterDateTimePickerControl[any] `json:"DateTimePicker,omitempty"`
 
 	// Dropdown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-dropdown
-	Dropdown *Analysis_ParameterDropDownControl `json:"Dropdown,omitempty"`
+	Dropdown *Analysis_ParameterDropDownControl[any] `json:"Dropdown,omitempty"`
 
 	// List AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-list
-	List *Analysis_ParameterListControl `json:"List,omitempty"`
+	List *Analysis_ParameterListControl[any] `json:"List,omitempty"`
 
 	// Slider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-slider
-	Slider *Analysis_ParameterSliderControl `json:"Slider,omitempty"`
+	Slider *Analysis_ParameterSliderControl[any] `json:"Slider,omitempty"`
 
 	// TextArea AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-textarea
-	TextArea *Analysis_ParameterTextAreaControl `json:"TextArea,omitempty"`
+	TextArea *Analysis_ParameterTextAreaControl[any] `json:"TextArea,omitempty"`
 
 	// TextField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parametercontrol.html#cfn-quicksight-analysis-parametercontrol-textfield
-	TextField *Analysis_ParameterTextFieldControl `json:"TextField,omitempty"`
+	TextField *Analysis_ParameterTextFieldControl[any] `json:"TextField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Analysis_ParameterControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ParameterControl) AWSCloudFormationType() string {
+func (r *Analysis_ParameterControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ParameterControl"
 }

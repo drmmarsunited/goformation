@@ -8,7 +8,7 @@ import (
 
 // Service_InstanceConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.InstanceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-instanceconfiguration.html
-type Service_InstanceConfiguration struct {
+type Service_InstanceConfiguration[T any] struct {
 
 	// Cpu AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Service_InstanceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_InstanceConfiguration) AWSCloudFormationType() string {
+func (r *Service_InstanceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.InstanceConfiguration"
 }

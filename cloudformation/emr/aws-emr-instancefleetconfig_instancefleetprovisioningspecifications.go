@@ -8,17 +8,17 @@ import (
 
 // InstanceFleetConfig_InstanceFleetProvisioningSpecifications AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.InstanceFleetProvisioningSpecifications)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html
-type InstanceFleetConfig_InstanceFleetProvisioningSpecifications struct {
+type InstanceFleetConfig_InstanceFleetProvisioningSpecifications[T any] struct {
 
 	// OnDemandSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-ondemandspecification
-	OnDemandSpecification *InstanceFleetConfig_OnDemandProvisioningSpecification `json:"OnDemandSpecification,omitempty"`
+	OnDemandSpecification *InstanceFleetConfig_OnDemandProvisioningSpecification[any] `json:"OnDemandSpecification,omitempty"`
 
 	// SpotSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification
-	SpotSpecification *InstanceFleetConfig_SpotProvisioningSpecification `json:"SpotSpecification,omitempty"`
+	SpotSpecification *InstanceFleetConfig_SpotProvisioningSpecification[any] `json:"SpotSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceFleetConfig_InstanceFleetProvisioningSpecifications struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_InstanceFleetProvisioningSpecifications) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_InstanceFleetProvisioningSpecifications[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.InstanceFleetProvisioningSpecifications"
 }

@@ -12,7 +12,7 @@ import (
 
 // Environment AWS CloudFormation Resource (AWS::FinSpace::Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html
-type Environment struct {
+type Environment[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Environment struct {
 	// FederationParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-federationparameters
-	FederationParameters *Environment_FederationParameters `json:"FederationParameters,omitempty"`
+	FederationParameters *Environment_FederationParameters[any] `json:"FederationParameters,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Environment struct {
 	// SuperuserParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-superuserparameters
-	SuperuserParameters *Environment_SuperuserParameters `json:"SuperuserParameters,omitempty"`
+	SuperuserParameters *Environment_SuperuserParameters[any] `json:"SuperuserParameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment) AWSCloudFormationType() string {
+func (r *Environment[any]) AWSCloudFormationType() string {
 	return "AWS::FinSpace::Environment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Environment) MarshalJSON() ([]byte, error) {
-	type Properties Environment
+func (r Environment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Environment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Environment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Environment) UnmarshalJSON(b []byte) error {
-	type Properties Environment
+func (r *Environment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Environment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Environment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Environment(*res.Properties)
+		*r = Environment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

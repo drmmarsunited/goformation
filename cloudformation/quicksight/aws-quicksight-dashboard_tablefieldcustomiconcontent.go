@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TableFieldCustomIconContent AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldCustomIconContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldcustomiconcontent.html
-type Dashboard_TableFieldCustomIconContent struct {
+type Dashboard_TableFieldCustomIconContent[T any] struct {
 
 	// Icon AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_TableFieldCustomIconContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldCustomIconContent) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldCustomIconContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldCustomIconContent"
 }

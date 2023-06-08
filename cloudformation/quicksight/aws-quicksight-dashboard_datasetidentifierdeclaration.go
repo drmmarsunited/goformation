@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataSetIdentifierDeclaration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataSetIdentifierDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetidentifierdeclaration.html
-type Dashboard_DataSetIdentifierDeclaration struct {
+type Dashboard_DataSetIdentifierDeclaration[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_DataSetIdentifierDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataSetIdentifierDeclaration) AWSCloudFormationType() string {
+func (r *Dashboard_DataSetIdentifierDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataSetIdentifierDeclaration"
 }

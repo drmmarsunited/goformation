@@ -8,7 +8,7 @@ import (
 
 // Input_Attribute AWS CloudFormation Resource (AWS::IoTEvents::Input.Attribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-attribute.html
-type Input_Attribute struct {
+type Input_Attribute[T any] struct {
 
 	// JsonPath AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Input_Attribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_Attribute) AWSCloudFormationType() string {
+func (r *Input_Attribute[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::Input.Attribute"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_RegistryCredential AWS CloudFormation Resource (AWS::CodeBuild::Project.RegistryCredential)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html
-type Project_RegistryCredential struct {
+type Project_RegistryCredential[T any] struct {
 
 	// Credential AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_RegistryCredential struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_RegistryCredential) AWSCloudFormationType() string {
+func (r *Project_RegistryCredential[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.RegistryCredential"
 }

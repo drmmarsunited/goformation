@@ -8,7 +8,7 @@ import (
 
 // Template_CustomFilterConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.CustomFilterConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customfilterconfiguration.html
-type Template_CustomFilterConfiguration struct {
+type Template_CustomFilterConfiguration[T any] struct {
 
 	// CategoryValue AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Template_CustomFilterConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CustomFilterConfiguration) AWSCloudFormationType() string {
+func (r *Template_CustomFilterConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CustomFilterConfiguration"
 }

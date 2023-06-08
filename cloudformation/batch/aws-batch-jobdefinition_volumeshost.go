@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_VolumesHost AWS CloudFormation Resource (AWS::Batch::JobDefinition.VolumesHost)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumeshost.html
-type JobDefinition_VolumesHost struct {
+type JobDefinition_VolumesHost[T any] struct {
 
 	// SourcePath AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type JobDefinition_VolumesHost struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_VolumesHost) AWSCloudFormationType() string {
+func (r *JobDefinition_VolumesHost[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.VolumesHost"
 }

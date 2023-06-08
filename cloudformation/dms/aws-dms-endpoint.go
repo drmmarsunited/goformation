@@ -12,7 +12,7 @@ import (
 
 // Endpoint AWS CloudFormation Resource (AWS::DMS::Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html
-type Endpoint struct {
+type Endpoint[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -27,17 +27,17 @@ type Endpoint struct {
 	// DocDbSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-docdbsettings
-	DocDbSettings *Endpoint_DocDbSettings `json:"DocDbSettings,omitempty"`
+	DocDbSettings *Endpoint_DocDbSettings[any] `json:"DocDbSettings,omitempty"`
 
 	// DynamoDbSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings
-	DynamoDbSettings *Endpoint_DynamoDbSettings `json:"DynamoDbSettings,omitempty"`
+	DynamoDbSettings *Endpoint_DynamoDbSettings[any] `json:"DynamoDbSettings,omitempty"`
 
 	// ElasticsearchSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-elasticsearchsettings
-	ElasticsearchSettings *Endpoint_ElasticsearchSettings `json:"ElasticsearchSettings,omitempty"`
+	ElasticsearchSettings *Endpoint_ElasticsearchSettings[any] `json:"ElasticsearchSettings,omitempty"`
 
 	// EndpointIdentifier AWS CloudFormation Property
 	// Required: false
@@ -62,22 +62,22 @@ type Endpoint struct {
 	// GcpMySQLSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-gcpmysqlsettings
-	GcpMySQLSettings *Endpoint_GcpMySQLSettings `json:"GcpMySQLSettings,omitempty"`
+	GcpMySQLSettings *Endpoint_GcpMySQLSettings[any] `json:"GcpMySQLSettings,omitempty"`
 
 	// IbmDb2Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-ibmdb2settings
-	IbmDb2Settings *Endpoint_IbmDb2Settings `json:"IbmDb2Settings,omitempty"`
+	IbmDb2Settings *Endpoint_IbmDb2Settings[any] `json:"IbmDb2Settings,omitempty"`
 
 	// KafkaSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kafkasettings
-	KafkaSettings *Endpoint_KafkaSettings `json:"KafkaSettings,omitempty"`
+	KafkaSettings *Endpoint_KafkaSettings[any] `json:"KafkaSettings,omitempty"`
 
 	// KinesisSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings
-	KinesisSettings *Endpoint_KinesisSettings `json:"KinesisSettings,omitempty"`
+	KinesisSettings *Endpoint_KinesisSettings[any] `json:"KinesisSettings,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -87,27 +87,27 @@ type Endpoint struct {
 	// MicrosoftSqlServerSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-microsoftsqlserversettings
-	MicrosoftSqlServerSettings *Endpoint_MicrosoftSqlServerSettings `json:"MicrosoftSqlServerSettings,omitempty"`
+	MicrosoftSqlServerSettings *Endpoint_MicrosoftSqlServerSettings[any] `json:"MicrosoftSqlServerSettings,omitempty"`
 
 	// MongoDbSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings
-	MongoDbSettings *Endpoint_MongoDbSettings `json:"MongoDbSettings,omitempty"`
+	MongoDbSettings *Endpoint_MongoDbSettings[any] `json:"MongoDbSettings,omitempty"`
 
 	// MySqlSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mysqlsettings
-	MySqlSettings *Endpoint_MySqlSettings `json:"MySqlSettings,omitempty"`
+	MySqlSettings *Endpoint_MySqlSettings[any] `json:"MySqlSettings,omitempty"`
 
 	// NeptuneSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-neptunesettings
-	NeptuneSettings *Endpoint_NeptuneSettings `json:"NeptuneSettings,omitempty"`
+	NeptuneSettings *Endpoint_NeptuneSettings[any] `json:"NeptuneSettings,omitempty"`
 
 	// OracleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-oraclesettings
-	OracleSettings *Endpoint_OracleSettings `json:"OracleSettings,omitempty"`
+	OracleSettings *Endpoint_OracleSettings[any] `json:"OracleSettings,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -117,22 +117,22 @@ type Endpoint struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// PostgreSqlSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-postgresqlsettings
-	PostgreSqlSettings *Endpoint_PostgreSqlSettings `json:"PostgreSqlSettings,omitempty"`
+	PostgreSqlSettings *Endpoint_PostgreSqlSettings[any] `json:"PostgreSqlSettings,omitempty"`
 
 	// RedisSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-redissettings
-	RedisSettings *Endpoint_RedisSettings `json:"RedisSettings,omitempty"`
+	RedisSettings *Endpoint_RedisSettings[any] `json:"RedisSettings,omitempty"`
 
 	// RedshiftSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-redshiftsettings
-	RedshiftSettings *Endpoint_RedshiftSettings `json:"RedshiftSettings,omitempty"`
+	RedshiftSettings *Endpoint_RedshiftSettings[any] `json:"RedshiftSettings,omitempty"`
 
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -142,7 +142,7 @@ type Endpoint struct {
 	// S3Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings
-	S3Settings *Endpoint_S3Settings `json:"S3Settings,omitempty"`
+	S3Settings *Endpoint_S3Settings[any] `json:"S3Settings,omitempty"`
 
 	// ServerName AWS CloudFormation Property
 	// Required: false
@@ -157,7 +157,7 @@ type Endpoint struct {
 	// SybaseSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sybasesettings
-	SybaseSettings *Endpoint_SybaseSettings `json:"SybaseSettings,omitempty"`
+	SybaseSettings *Endpoint_SybaseSettings[any] `json:"SybaseSettings,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -186,14 +186,15 @@ type Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint) AWSCloudFormationType() string {
+func (r *Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Endpoint) MarshalJSON() ([]byte, error) {
-	type Properties Endpoint
+func (r Endpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties Endpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -215,8 +216,9 @@ func (r Endpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Endpoint) UnmarshalJSON(b []byte) error {
-	type Properties Endpoint
+func (r *Endpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties Endpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -236,7 +238,7 @@ func (r *Endpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Endpoint(*res.Properties)
+		*r = Endpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

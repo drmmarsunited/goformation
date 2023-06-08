@@ -8,7 +8,7 @@ import (
 
 // ContinuousDeploymentPolicy_SingleHeaderConfig AWS CloudFormation Resource (AWS::CloudFront::ContinuousDeploymentPolicy.SingleHeaderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html
-type ContinuousDeploymentPolicy_SingleHeaderConfig struct {
+type ContinuousDeploymentPolicy_SingleHeaderConfig[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ContinuousDeploymentPolicy_SingleHeaderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContinuousDeploymentPolicy_SingleHeaderConfig) AWSCloudFormationType() string {
+func (r *ContinuousDeploymentPolicy_SingleHeaderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ContinuousDeploymentPolicy.SingleHeaderConfig"
 }

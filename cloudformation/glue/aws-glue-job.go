@@ -11,22 +11,22 @@ import (
 
 // Job AWS CloudFormation Resource (AWS::Glue::Job)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html
-type Job struct {
+type Job[T any] struct {
 
 	// AllocatedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-allocatedcapacity
-	AllocatedCapacity *float64 `json:"AllocatedCapacity,omitempty"`
+	AllocatedCapacity *T `json:"AllocatedCapacity,omitempty"`
 
 	// Command AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-command
-	Command *Job_JobCommand `json:"Command"`
+	Command *Job_JobCommand[any] `json:"Command"`
 
 	// Connections AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-connections
-	Connections *Job_ConnectionsList `json:"Connections,omitempty"`
+	Connections *Job_ConnectionsList[any] `json:"Connections,omitempty"`
 
 	// DefaultArguments AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type Job struct {
 	// ExecutionProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionproperty
-	ExecutionProperty *Job_ExecutionProperty `json:"ExecutionProperty,omitempty"`
+	ExecutionProperty *Job_ExecutionProperty[any] `json:"ExecutionProperty,omitempty"`
 
 	// GlueVersion AWS CloudFormation Property
 	// Required: false
@@ -61,12 +61,12 @@ type Job struct {
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxcapacity
-	MaxCapacity *float64 `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries
-	MaxRetries *float64 `json:"MaxRetries,omitempty"`
+	MaxRetries *T `json:"MaxRetries,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -81,12 +81,12 @@ type Job struct {
 	// NotificationProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty
-	NotificationProperty *Job_NotificationProperty `json:"NotificationProperty,omitempty"`
+	NotificationProperty *Job_NotificationProperty[any] `json:"NotificationProperty,omitempty"`
 
 	// NumberOfWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-numberofworkers
-	NumberOfWorkers *int `json:"NumberOfWorkers,omitempty"`
+	NumberOfWorkers *T `json:"NumberOfWorkers,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -106,7 +106,7 @@ type Job struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// WorkerType AWS CloudFormation Property
 	// Required: false
@@ -130,14 +130,15 @@ type Job struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job) AWSCloudFormationType() string {
+func (r *Job[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Job"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Job) MarshalJSON() ([]byte, error) {
-	type Properties Job
+func (r Job[any]) MarshalJSON() ([]byte, error) {
+	type Properties Job[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -159,8 +160,9 @@ func (r Job) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Job) UnmarshalJSON(b []byte) error {
-	type Properties Job
+func (r *Job[any]) UnmarshalJSON(b []byte) error {
+	type Properties Job[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -180,7 +182,7 @@ func (r *Job) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Job(*res.Properties)
+		*r = Job[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

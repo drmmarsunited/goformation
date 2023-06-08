@@ -8,22 +8,22 @@ import (
 
 // Bot_ConditionalSpecification AWS CloudFormation Resource (AWS::Lex::Bot.ConditionalSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalspecification.html
-type Bot_ConditionalSpecification struct {
+type Bot_ConditionalSpecification[T any] struct {
 
 	// ConditionalBranches AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalspecification.html#cfn-lex-bot-conditionalspecification-conditionalbranches
-	ConditionalBranches []Bot_ConditionalBranch `json:"ConditionalBranches"`
+	ConditionalBranches []Bot_ConditionalBranch[any] `json:"ConditionalBranches"`
 
 	// DefaultBranch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalspecification.html#cfn-lex-bot-conditionalspecification-defaultbranch
-	DefaultBranch *Bot_DefaultConditionalBranch `json:"DefaultBranch"`
+	DefaultBranch *Bot_DefaultConditionalBranch[any] `json:"DefaultBranch"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalspecification.html#cfn-lex-bot-conditionalspecification-isactive
-	IsActive bool `json:"IsActive"`
+	IsActive T `json:"IsActive"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_ConditionalSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ConditionalSpecification) AWSCloudFormationType() string {
+func (r *Bot_ConditionalSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ConditionalSpecification"
 }

@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_LoadBalancerAttribute AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html
-type LoadBalancer_LoadBalancerAttribute struct {
+type LoadBalancer_LoadBalancerAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LoadBalancer_LoadBalancerAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_LoadBalancerAttribute) AWSCloudFormationType() string {
+func (r *LoadBalancer_LoadBalancerAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute"
 }

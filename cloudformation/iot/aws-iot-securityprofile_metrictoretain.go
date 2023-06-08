@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_MetricToRetain AWS CloudFormation Resource (AWS::IoT::SecurityProfile.MetricToRetain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metrictoretain.html
-type SecurityProfile_MetricToRetain struct {
+type SecurityProfile_MetricToRetain[T any] struct {
 
 	// Metric AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type SecurityProfile_MetricToRetain struct {
 	// MetricDimension AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metrictoretain.html#cfn-iot-securityprofile-metrictoretain-metricdimension
-	MetricDimension *SecurityProfile_MetricDimension `json:"MetricDimension,omitempty"`
+	MetricDimension *SecurityProfile_MetricDimension[any] `json:"MetricDimension,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SecurityProfile_MetricToRetain struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_MetricToRetain) AWSCloudFormationType() string {
+func (r *SecurityProfile_MetricToRetain[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.MetricToRetain"
 }

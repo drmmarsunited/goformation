@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_MonitoringScheduleConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringScheduleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html
-type MonitoringSchedule_MonitoringScheduleConfig struct {
+type MonitoringSchedule_MonitoringScheduleConfig[T any] struct {
 
 	// MonitoringJobDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringjobdefinition
-	MonitoringJobDefinition *MonitoringSchedule_MonitoringJobDefinition `json:"MonitoringJobDefinition,omitempty"`
+	MonitoringJobDefinition *MonitoringSchedule_MonitoringJobDefinition[any] `json:"MonitoringJobDefinition,omitempty"`
 
 	// MonitoringJobDefinitionName AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type MonitoringSchedule_MonitoringScheduleConfig struct {
 	// ScheduleConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-scheduleconfig
-	ScheduleConfig *MonitoringSchedule_ScheduleConfig `json:"ScheduleConfig,omitempty"`
+	ScheduleConfig *MonitoringSchedule_ScheduleConfig[any] `json:"ScheduleConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type MonitoringSchedule_MonitoringScheduleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringScheduleConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringScheduleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringScheduleConfig"
 }

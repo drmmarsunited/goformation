@@ -8,7 +8,7 @@ import (
 
 // Bot_GrammarSlotTypeSource AWS CloudFormation Resource (AWS::Lex::Bot.GrammarSlotTypeSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesource.html
-type Bot_GrammarSlotTypeSource struct {
+type Bot_GrammarSlotTypeSource[T any] struct {
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Bot_GrammarSlotTypeSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_GrammarSlotTypeSource) AWSCloudFormationType() string {
+func (r *Bot_GrammarSlotTypeSource[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.GrammarSlotTypeSource"
 }

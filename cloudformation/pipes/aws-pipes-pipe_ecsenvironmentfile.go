@@ -8,7 +8,7 @@ import (
 
 // Pipe_EcsEnvironmentFile AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsEnvironmentFile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsenvironmentfile.html
-type Pipe_EcsEnvironmentFile struct {
+type Pipe_EcsEnvironmentFile[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipe_EcsEnvironmentFile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsEnvironmentFile) AWSCloudFormationType() string {
+func (r *Pipe_EcsEnvironmentFile[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsEnvironmentFile"
 }

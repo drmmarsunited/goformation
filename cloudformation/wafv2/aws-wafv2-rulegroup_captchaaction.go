@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_CaptchaAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CaptchaAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaaction.html
-type RuleGroup_CaptchaAction struct {
+type RuleGroup_CaptchaAction[T any] struct {
 
 	// CustomRequestHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaaction.html#cfn-wafv2-rulegroup-captchaaction-customrequesthandling
-	CustomRequestHandling *RuleGroup_CustomRequestHandling `json:"CustomRequestHandling,omitempty"`
+	CustomRequestHandling *RuleGroup_CustomRequestHandling[any] `json:"CustomRequestHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_CaptchaAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CaptchaAction) AWSCloudFormationType() string {
+func (r *RuleGroup_CaptchaAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CaptchaAction"
 }

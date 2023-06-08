@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetDefinition AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html
-type Dashboard_SheetDefinition struct {
+type Dashboard_SheetDefinition[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Dashboard_SheetDefinition struct {
 	// FilterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-filtercontrols
-	FilterControls []Dashboard_FilterControl `json:"FilterControls,omitempty"`
+	FilterControls []Dashboard_FilterControl[any] `json:"FilterControls,omitempty"`
 
 	// Layouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-layouts
-	Layouts []Dashboard_Layout `json:"Layouts,omitempty"`
+	Layouts []Dashboard_Layout[any] `json:"Layouts,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Dashboard_SheetDefinition struct {
 	// ParameterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-parametercontrols
-	ParameterControls []Dashboard_ParameterControl `json:"ParameterControls,omitempty"`
+	ParameterControls []Dashboard_ParameterControl[any] `json:"ParameterControls,omitempty"`
 
 	// SheetControlLayouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-sheetcontrollayouts
-	SheetControlLayouts []Dashboard_SheetControlLayout `json:"SheetControlLayouts,omitempty"`
+	SheetControlLayouts []Dashboard_SheetControlLayout[any] `json:"SheetControlLayouts,omitempty"`
 
 	// SheetId AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Dashboard_SheetDefinition struct {
 	// TextBoxes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-textboxes
-	TextBoxes []Dashboard_SheetTextBox `json:"TextBoxes,omitempty"`
+	TextBoxes []Dashboard_SheetTextBox[any] `json:"TextBoxes,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Dashboard_SheetDefinition struct {
 	// Visuals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-visuals
-	Visuals []Dashboard_Visual `json:"Visuals,omitempty"`
+	Visuals []Dashboard_Visual[any] `json:"Visuals,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Dashboard_SheetDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetDefinition) AWSCloudFormationType() string {
+func (r *Dashboard_SheetDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetDefinition"
 }

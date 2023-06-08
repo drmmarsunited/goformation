@@ -8,17 +8,17 @@ import (
 
 // Campaign_DialerConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.DialerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-dialerconfig.html
-type Campaign_DialerConfig struct {
+type Campaign_DialerConfig[T any] struct {
 
 	// PredictiveDialerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-dialerconfig.html#cfn-connectcampaigns-campaign-dialerconfig-predictivedialerconfig
-	PredictiveDialerConfig *Campaign_PredictiveDialerConfig `json:"PredictiveDialerConfig,omitempty"`
+	PredictiveDialerConfig *Campaign_PredictiveDialerConfig[any] `json:"PredictiveDialerConfig,omitempty"`
 
 	// ProgressiveDialerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-dialerconfig.html#cfn-connectcampaigns-campaign-dialerconfig-progressivedialerconfig
-	ProgressiveDialerConfig *Campaign_ProgressiveDialerConfig `json:"ProgressiveDialerConfig,omitempty"`
+	ProgressiveDialerConfig *Campaign_ProgressiveDialerConfig[any] `json:"ProgressiveDialerConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Campaign_DialerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_DialerConfig) AWSCloudFormationType() string {
+func (r *Campaign_DialerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign.DialerConfig"
 }

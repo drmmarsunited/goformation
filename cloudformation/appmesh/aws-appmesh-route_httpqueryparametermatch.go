@@ -8,7 +8,7 @@ import (
 
 // Route_HttpQueryParameterMatch AWS CloudFormation Resource (AWS::AppMesh::Route.HttpQueryParameterMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html
-type Route_HttpQueryParameterMatch struct {
+type Route_HttpQueryParameterMatch[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Route_HttpQueryParameterMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpQueryParameterMatch) AWSCloudFormationType() string {
+func (r *Route_HttpQueryParameterMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpQueryParameterMatch"
 }

@@ -8,7 +8,7 @@ import (
 
 // UserPoolClient_AnalyticsConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPoolClient.AnalyticsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html
-type UserPoolClient_AnalyticsConfiguration struct {
+type UserPoolClient_AnalyticsConfiguration[T any] struct {
 
 	// ApplicationArn AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type UserPoolClient_AnalyticsConfiguration struct {
 	// UserDataShared AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-userdatashared
-	UserDataShared *bool `json:"UserDataShared,omitempty"`
+	UserDataShared *T `json:"UserDataShared,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type UserPoolClient_AnalyticsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolClient_AnalyticsConfiguration) AWSCloudFormationType() string {
+func (r *UserPoolClient_AnalyticsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolClient.AnalyticsConfiguration"
 }

@@ -8,22 +8,22 @@ import (
 
 // VirtualGateway_VirtualGatewayTlsValidationContextTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html
-type VirtualGateway_VirtualGatewayTlsValidationContextTrust struct {
+type VirtualGateway_VirtualGatewayTlsValidationContextTrust[T any] struct {
 
 	// ACM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-acm
-	ACM *VirtualGateway_VirtualGatewayTlsValidationContextAcmTrust `json:"ACM,omitempty"`
+	ACM *VirtualGateway_VirtualGatewayTlsValidationContextAcmTrust[any] `json:"ACM,omitempty"`
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-file
-	File *VirtualGateway_VirtualGatewayTlsValidationContextFileTrust `json:"File,omitempty"`
+	File *VirtualGateway_VirtualGatewayTlsValidationContextFileTrust[any] `json:"File,omitempty"`
 
 	// SDS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-sds
-	SDS *VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust `json:"SDS,omitempty"`
+	SDS *VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust[any] `json:"SDS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualGateway_VirtualGatewayTlsValidationContextTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayTlsValidationContextTrust) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayTlsValidationContextTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextTrust"
 }

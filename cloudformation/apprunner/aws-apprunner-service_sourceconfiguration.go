@@ -8,27 +8,27 @@ import (
 
 // Service_SourceConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.SourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html
-type Service_SourceConfiguration struct {
+type Service_SourceConfiguration[T any] struct {
 
 	// AuthenticationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-authenticationconfiguration
-	AuthenticationConfiguration *Service_AuthenticationConfiguration `json:"AuthenticationConfiguration,omitempty"`
+	AuthenticationConfiguration *Service_AuthenticationConfiguration[any] `json:"AuthenticationConfiguration,omitempty"`
 
 	// AutoDeploymentsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-autodeploymentsenabled
-	AutoDeploymentsEnabled *bool `json:"AutoDeploymentsEnabled,omitempty"`
+	AutoDeploymentsEnabled *T `json:"AutoDeploymentsEnabled,omitempty"`
 
 	// CodeRepository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-coderepository
-	CodeRepository *Service_CodeRepository `json:"CodeRepository,omitempty"`
+	CodeRepository *Service_CodeRepository[any] `json:"CodeRepository,omitempty"`
 
 	// ImageRepository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-imagerepository
-	ImageRepository *Service_ImageRepository `json:"ImageRepository,omitempty"`
+	ImageRepository *Service_ImageRepository[any] `json:"ImageRepository,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Service_SourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_SourceConfiguration) AWSCloudFormationType() string {
+func (r *Service_SourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.SourceConfiguration"
 }

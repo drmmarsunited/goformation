@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_HttpEndpointRequestConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HttpEndpointRequestConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html
-type DeliveryStream_HttpEndpointRequestConfiguration struct {
+type DeliveryStream_HttpEndpointRequestConfiguration[T any] struct {
 
 	// CommonAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointrequestconfiguration-commonattributes
-	CommonAttributes []DeliveryStream_HttpEndpointCommonAttribute `json:"CommonAttributes,omitempty"`
+	CommonAttributes []DeliveryStream_HttpEndpointCommonAttribute[any] `json:"CommonAttributes,omitempty"`
 
 	// ContentEncoding AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DeliveryStream_HttpEndpointRequestConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_HttpEndpointRequestConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_HttpEndpointRequestConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.HttpEndpointRequestConfiguration"
 }

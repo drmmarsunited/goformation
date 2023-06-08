@@ -8,7 +8,7 @@ import (
 
 // Contact_ChannelTargetInfo AWS CloudFormation Resource (AWS::SSMContacts::Contact.ChannelTargetInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-channeltargetinfo.html
-type Contact_ChannelTargetInfo struct {
+type Contact_ChannelTargetInfo[T any] struct {
 
 	// ChannelId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Contact_ChannelTargetInfo struct {
 	// RetryIntervalInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-channeltargetinfo.html#cfn-ssmcontacts-contact-channeltargetinfo-retryintervalinminutes
-	RetryIntervalInMinutes int `json:"RetryIntervalInMinutes"`
+	RetryIntervalInMinutes T `json:"RetryIntervalInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Contact_ChannelTargetInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Contact_ChannelTargetInfo) AWSCloudFormationType() string {
+func (r *Contact_ChannelTargetInfo[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Contact.ChannelTargetInfo"
 }

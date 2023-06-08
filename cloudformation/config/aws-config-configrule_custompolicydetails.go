@@ -8,12 +8,12 @@ import (
 
 // ConfigRule_CustomPolicyDetails AWS CloudFormation Resource (AWS::Config::ConfigRule.CustomPolicyDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html
-type ConfigRule_CustomPolicyDetails struct {
+type ConfigRule_CustomPolicyDetails[T any] struct {
 
 	// EnableDebugLogDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-enabledebuglogdelivery
-	EnableDebugLogDelivery *bool `json:"EnableDebugLogDelivery,omitempty"`
+	EnableDebugLogDelivery *T `json:"EnableDebugLogDelivery,omitempty"`
 
 	// PolicyRuntime AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ConfigRule_CustomPolicyDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigRule_CustomPolicyDetails) AWSCloudFormationType() string {
+func (r *ConfigRule_CustomPolicyDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule.CustomPolicyDetails"
 }

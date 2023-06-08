@@ -8,12 +8,12 @@ import (
 
 // Service_HealthCheckConfig AWS CloudFormation Resource (AWS::ServiceDiscovery::Service.HealthCheckConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html
-type Service_HealthCheckConfig struct {
+type Service_HealthCheckConfig[T any] struct {
 
 	// FailureThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold
-	FailureThreshold *float64 `json:"FailureThreshold,omitempty"`
+	FailureThreshold *T `json:"FailureThreshold,omitempty"`
 
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Service_HealthCheckConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_HealthCheckConfig) AWSCloudFormationType() string {
+func (r *Service_HealthCheckConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::Service.HealthCheckConfig"
 }

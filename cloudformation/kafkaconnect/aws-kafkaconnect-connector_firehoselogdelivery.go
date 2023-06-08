@@ -8,7 +8,7 @@ import (
 
 // Connector_FirehoseLogDelivery AWS CloudFormation Resource (AWS::KafkaConnect::Connector.FirehoseLogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-firehoselogdelivery.html
-type Connector_FirehoseLogDelivery struct {
+type Connector_FirehoseLogDelivery[T any] struct {
 
 	// DeliveryStream AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Connector_FirehoseLogDelivery struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-firehoselogdelivery.html#cfn-kafkaconnect-connector-firehoselogdelivery-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Connector_FirehoseLogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_FirehoseLogDelivery) AWSCloudFormationType() string {
+func (r *Connector_FirehoseLogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.FirehoseLogDelivery"
 }

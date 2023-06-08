@@ -8,7 +8,7 @@ import (
 
 // ClusterParameterGroup_Parameter AWS CloudFormation Resource (AWS::Redshift::ClusterParameterGroup.Parameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-clusterparametergroup-parameter.html
-type ClusterParameterGroup_Parameter struct {
+type ClusterParameterGroup_Parameter[T any] struct {
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ClusterParameterGroup_Parameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClusterParameterGroup_Parameter) AWSCloudFormationType() string {
+func (r *ClusterParameterGroup_Parameter[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ClusterParameterGroup.Parameter"
 }

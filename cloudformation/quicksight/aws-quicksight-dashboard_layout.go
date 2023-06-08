@@ -8,12 +8,12 @@ import (
 
 // Dashboard_Layout AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Layout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layout.html
-type Dashboard_Layout struct {
+type Dashboard_Layout[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layout.html#cfn-quicksight-dashboard-layout-configuration
-	Configuration *Dashboard_LayoutConfiguration `json:"Configuration"`
+	Configuration *Dashboard_LayoutConfiguration[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_Layout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Layout) AWSCloudFormationType() string {
+func (r *Dashboard_Layout[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Layout"
 }

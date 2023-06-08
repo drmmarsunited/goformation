@@ -8,17 +8,17 @@ import (
 
 // Template_BoxPlotSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.BoxPlotSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotsortconfiguration.html
-type Template_BoxPlotSortConfiguration struct {
+type Template_BoxPlotSortConfiguration[T any] struct {
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotsortconfiguration.html#cfn-quicksight-template-boxplotsortconfiguration-categorysort
-	CategorySort []Template_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Template_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// PaginationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotsortconfiguration.html#cfn-quicksight-template-boxplotsortconfiguration-paginationconfiguration
-	PaginationConfiguration *Template_PaginationConfiguration `json:"PaginationConfiguration,omitempty"`
+	PaginationConfiguration *Template_PaginationConfiguration[any] `json:"PaginationConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_BoxPlotSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BoxPlotSortConfiguration) AWSCloudFormationType() string {
+func (r *Template_BoxPlotSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BoxPlotSortConfiguration"
 }

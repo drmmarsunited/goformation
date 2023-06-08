@@ -8,7 +8,7 @@ import (
 
 // Template_PanelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.PanelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-panelconfiguration.html
-type Template_PanelConfiguration struct {
+type Template_PanelConfiguration[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Template_PanelConfiguration struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-panelconfiguration.html#cfn-quicksight-template-panelconfiguration-title
-	Title *Template_PanelTitleOptions `json:"Title,omitempty"`
+	Title *Template_PanelTitleOptions[any] `json:"Title,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Template_PanelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PanelConfiguration) AWSCloudFormationType() string {
+func (r *Template_PanelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PanelConfiguration"
 }

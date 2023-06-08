@@ -8,22 +8,22 @@ import (
 
 // DataSource_DatabaseConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.DatabaseConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html
-type DataSource_DatabaseConfiguration struct {
+type DataSource_DatabaseConfiguration[T any] struct {
 
 	// AclConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-aclconfiguration
-	AclConfiguration *DataSource_AclConfiguration `json:"AclConfiguration,omitempty"`
+	AclConfiguration *DataSource_AclConfiguration[any] `json:"AclConfiguration,omitempty"`
 
 	// ColumnConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-columnconfiguration
-	ColumnConfiguration *DataSource_ColumnConfiguration `json:"ColumnConfiguration"`
+	ColumnConfiguration *DataSource_ColumnConfiguration[any] `json:"ColumnConfiguration"`
 
 	// ConnectionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-connectionconfiguration
-	ConnectionConfiguration *DataSource_ConnectionConfiguration `json:"ConnectionConfiguration"`
+	ConnectionConfiguration *DataSource_ConnectionConfiguration[any] `json:"ConnectionConfiguration"`
 
 	// DatabaseEngineType AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type DataSource_DatabaseConfiguration struct {
 	// SqlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-sqlconfiguration
-	SqlConfiguration *DataSource_SqlConfiguration `json:"SqlConfiguration,omitempty"`
+	SqlConfiguration *DataSource_SqlConfiguration[any] `json:"SqlConfiguration,omitempty"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-vpcconfiguration
-	VpcConfiguration *DataSource_DataSourceVpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DataSource_DataSourceVpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type DataSource_DatabaseConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DatabaseConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_DatabaseConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DatabaseConfiguration"
 }

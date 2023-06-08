@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RowAlternateColorOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RowAlternateColorOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-rowalternatecoloroptions.html
-type Dashboard_RowAlternateColorOptions struct {
+type Dashboard_RowAlternateColorOptions[T any] struct {
 
 	// RowAlternateColors AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_RowAlternateColorOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RowAlternateColorOptions) AWSCloudFormationType() string {
+func (r *Dashboard_RowAlternateColorOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RowAlternateColorOptions"
 }

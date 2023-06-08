@@ -12,7 +12,7 @@ import (
 
 // ObservabilityConfiguration AWS CloudFormation Resource (AWS::AppRunner::ObservabilityConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html
-type ObservabilityConfiguration struct {
+type ObservabilityConfiguration[T any] struct {
 
 	// ObservabilityConfigurationName AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type ObservabilityConfiguration struct {
 	// TraceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#cfn-apprunner-observabilityconfiguration-traceconfiguration
-	TraceConfiguration *ObservabilityConfiguration_TraceConfiguration `json:"TraceConfiguration,omitempty"`
+	TraceConfiguration *ObservabilityConfiguration_TraceConfiguration[any] `json:"TraceConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -46,14 +46,15 @@ type ObservabilityConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ObservabilityConfiguration) AWSCloudFormationType() string {
+func (r *ObservabilityConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::ObservabilityConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ObservabilityConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties ObservabilityConfiguration
+func (r ObservabilityConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties ObservabilityConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r ObservabilityConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ObservabilityConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties ObservabilityConfiguration
+func (r *ObservabilityConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties ObservabilityConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *ObservabilityConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ObservabilityConfiguration(*res.Properties)
+		*r = ObservabilityConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

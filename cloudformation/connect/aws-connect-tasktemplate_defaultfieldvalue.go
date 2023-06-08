@@ -8,7 +8,7 @@ import (
 
 // TaskTemplate_DefaultFieldValue AWS CloudFormation Resource (AWS::Connect::TaskTemplate.DefaultFieldValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-defaultfieldvalue.html
-type TaskTemplate_DefaultFieldValue struct {
+type TaskTemplate_DefaultFieldValue[T any] struct {
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type TaskTemplate_DefaultFieldValue struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-defaultfieldvalue.html#cfn-connect-tasktemplate-defaultfieldvalue-id
-	Id *TaskTemplate_FieldIdentifier `json:"Id"`
+	Id *TaskTemplate_FieldIdentifier[any] `json:"Id"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type TaskTemplate_DefaultFieldValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_DefaultFieldValue) AWSCloudFormationType() string {
+func (r *TaskTemplate_DefaultFieldValue[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.DefaultFieldValue"
 }

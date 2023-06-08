@@ -8,27 +8,27 @@ import (
 
 // Dashboard_WordCloudChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.WordCloudChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudchartconfiguration.html
-type Dashboard_WordCloudChartConfiguration struct {
+type Dashboard_WordCloudChartConfiguration[T any] struct {
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudchartconfiguration.html#cfn-quicksight-dashboard-wordcloudchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudchartconfiguration.html#cfn-quicksight-dashboard-wordcloudchartconfiguration-fieldwells
-	FieldWells *Dashboard_WordCloudFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_WordCloudFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudchartconfiguration.html#cfn-quicksight-dashboard-wordcloudchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_WordCloudSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_WordCloudSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// WordCloudOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudchartconfiguration.html#cfn-quicksight-dashboard-wordcloudchartconfiguration-wordcloudoptions
-	WordCloudOptions *Dashboard_WordCloudOptions `json:"WordCloudOptions,omitempty"`
+	WordCloudOptions *Dashboard_WordCloudOptions[any] `json:"WordCloudOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_WordCloudChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_WordCloudChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_WordCloudChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.WordCloudChartConfiguration"
 }

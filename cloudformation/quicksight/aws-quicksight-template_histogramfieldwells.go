@@ -8,12 +8,12 @@ import (
 
 // Template_HistogramFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.HistogramFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramfieldwells.html
-type Template_HistogramFieldWells struct {
+type Template_HistogramFieldWells[T any] struct {
 
 	// HistogramAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramfieldwells.html#cfn-quicksight-template-histogramfieldwells-histogramaggregatedfieldwells
-	HistogramAggregatedFieldWells *Template_HistogramAggregatedFieldWells `json:"HistogramAggregatedFieldWells,omitempty"`
+	HistogramAggregatedFieldWells *Template_HistogramAggregatedFieldWells[any] `json:"HistogramAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_HistogramFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HistogramFieldWells) AWSCloudFormationType() string {
+func (r *Template_HistogramFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HistogramFieldWells"
 }

@@ -8,7 +8,7 @@ import (
 
 // NetworkAnalyzerConfiguration_TraceContent AWS CloudFormation Resource (AWS::IoTWireless::NetworkAnalyzerConfiguration.TraceContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html
-type NetworkAnalyzerConfiguration_TraceContent struct {
+type NetworkAnalyzerConfiguration_TraceContent[T any] struct {
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type NetworkAnalyzerConfiguration_TraceContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAnalyzerConfiguration_TraceContent) AWSCloudFormationType() string {
+func (r *NetworkAnalyzerConfiguration_TraceContent[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::NetworkAnalyzerConfiguration.TraceContent"
 }

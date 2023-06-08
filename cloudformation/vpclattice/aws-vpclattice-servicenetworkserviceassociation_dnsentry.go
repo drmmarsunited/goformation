@@ -8,7 +8,7 @@ import (
 
 // ServiceNetworkServiceAssociation_DnsEntry AWS CloudFormation Resource (AWS::VpcLattice::ServiceNetworkServiceAssociation.DnsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-servicenetworkserviceassociation-dnsentry.html
-type ServiceNetworkServiceAssociation_DnsEntry struct {
+type ServiceNetworkServiceAssociation_DnsEntry[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ServiceNetworkServiceAssociation_DnsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceNetworkServiceAssociation_DnsEntry) AWSCloudFormationType() string {
+func (r *ServiceNetworkServiceAssociation_DnsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::ServiceNetworkServiceAssociation.DnsEntry"
 }

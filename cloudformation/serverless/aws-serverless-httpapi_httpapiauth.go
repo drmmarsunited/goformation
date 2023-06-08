@@ -8,7 +8,7 @@ import (
 
 // HttpApi_HttpApiAuth AWS CloudFormation Resource (AWS::Serverless::HttpApi.HttpApiAuth)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-httpapiauth.html
-type HttpApi_HttpApiAuth struct {
+type HttpApi_HttpApiAuth[T any] struct {
 
 	// Authorizers AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type HttpApi_HttpApiAuth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_HttpApiAuth) AWSCloudFormationType() string {
+func (r *HttpApi_HttpApiAuth[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.HttpApiAuth"
 }

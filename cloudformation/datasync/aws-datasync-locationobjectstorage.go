@@ -12,7 +12,7 @@ import (
 
 // LocationObjectStorage AWS CloudFormation Resource (AWS::DataSync::LocationObjectStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html
-type LocationObjectStorage struct {
+type LocationObjectStorage[T any] struct {
 
 	// AccessKey AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type LocationObjectStorage struct {
 	// ServerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverport
-	ServerPort *int `json:"ServerPort,omitempty"`
+	ServerPort *T `json:"ServerPort,omitempty"`
 
 	// ServerProtocol AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type LocationObjectStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationObjectStorage) AWSCloudFormationType() string {
+func (r *LocationObjectStorage[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationObjectStorage"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationObjectStorage) MarshalJSON() ([]byte, error) {
-	type Properties LocationObjectStorage
+func (r LocationObjectStorage[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationObjectStorage[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r LocationObjectStorage) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationObjectStorage) UnmarshalJSON(b []byte) error {
-	type Properties LocationObjectStorage
+func (r *LocationObjectStorage[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationObjectStorage[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *LocationObjectStorage) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationObjectStorage(*res.Properties)
+		*r = LocationObjectStorage[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

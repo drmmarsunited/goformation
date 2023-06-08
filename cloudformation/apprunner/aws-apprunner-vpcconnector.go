@@ -12,7 +12,7 @@ import (
 
 // VpcConnector AWS CloudFormation Resource (AWS::AppRunner::VpcConnector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcconnector.html
-type VpcConnector struct {
+type VpcConnector[T any] struct {
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type VpcConnector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VpcConnector) AWSCloudFormationType() string {
+func (r *VpcConnector[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::VpcConnector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VpcConnector) MarshalJSON() ([]byte, error) {
-	type Properties VpcConnector
+func (r VpcConnector[any]) MarshalJSON() ([]byte, error) {
+	type Properties VpcConnector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r VpcConnector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VpcConnector) UnmarshalJSON(b []byte) error {
-	type Properties VpcConnector
+func (r *VpcConnector[any]) UnmarshalJSON(b []byte) error {
+	type Properties VpcConnector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *VpcConnector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VpcConnector(*res.Properties)
+		*r = VpcConnector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

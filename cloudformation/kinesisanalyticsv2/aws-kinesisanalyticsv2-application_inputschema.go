@@ -8,12 +8,12 @@ import (
 
 // Application_InputSchema AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.InputSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html
-type Application_InputSchema struct {
+type Application_InputSchema[T any] struct {
 
 	// RecordColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordcolumns
-	RecordColumns []Application_RecordColumn `json:"RecordColumns"`
+	RecordColumns []Application_RecordColumn[any] `json:"RecordColumns"`
 
 	// RecordEncoding AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Application_InputSchema struct {
 	// RecordFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordformat
-	RecordFormat *Application_RecordFormat `json:"RecordFormat"`
+	RecordFormat *Application_RecordFormat[any] `json:"RecordFormat"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Application_InputSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InputSchema) AWSCloudFormationType() string {
+func (r *Application_InputSchema[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.InputSchema"
 }

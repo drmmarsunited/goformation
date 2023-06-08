@@ -8,17 +8,17 @@ import (
 
 // Certificate_ApiPassthrough AWS CloudFormation Resource (AWS::ACMPCA::Certificate.ApiPassthrough)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html
-type Certificate_ApiPassthrough struct {
+type Certificate_ApiPassthrough[T any] struct {
 
 	// Extensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html#cfn-acmpca-certificate-apipassthrough-extensions
-	Extensions *Certificate_Extensions `json:"Extensions,omitempty"`
+	Extensions *Certificate_Extensions[any] `json:"Extensions,omitempty"`
 
 	// Subject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html#cfn-acmpca-certificate-apipassthrough-subject
-	Subject *Certificate_Subject `json:"Subject,omitempty"`
+	Subject *Certificate_Subject[any] `json:"Subject,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Certificate_ApiPassthrough struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_ApiPassthrough) AWSCloudFormationType() string {
+func (r *Certificate_ApiPassthrough[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.ApiPassthrough"
 }

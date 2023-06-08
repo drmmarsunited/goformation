@@ -8,7 +8,7 @@ import (
 
 // Connector_KafkaClusterClientAuthentication AWS CloudFormation Resource (AWS::KafkaConnect::Connector.KafkaClusterClientAuthentication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkaclusterclientauthentication.html
-type Connector_KafkaClusterClientAuthentication struct {
+type Connector_KafkaClusterClientAuthentication[T any] struct {
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Connector_KafkaClusterClientAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_KafkaClusterClientAuthentication) AWSCloudFormationType() string {
+func (r *Connector_KafkaClusterClientAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.KafkaClusterClientAuthentication"
 }

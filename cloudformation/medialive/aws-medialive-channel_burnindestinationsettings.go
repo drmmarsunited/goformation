@@ -8,7 +8,7 @@ import (
 
 // Channel_BurnInDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.BurnInDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html
-type Channel_BurnInDestinationSettings struct {
+type Channel_BurnInDestinationSettings[T any] struct {
 
 	// Alignment AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Channel_BurnInDestinationSettings struct {
 	// BackgroundOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-backgroundopacity
-	BackgroundOpacity *int `json:"BackgroundOpacity,omitempty"`
+	BackgroundOpacity *T `json:"BackgroundOpacity,omitempty"`
 
 	// Font AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-font
-	Font *Channel_InputLocation `json:"Font,omitempty"`
+	Font *Channel_InputLocation[any] `json:"Font,omitempty"`
 
 	// FontColor AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Channel_BurnInDestinationSettings struct {
 	// FontOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontopacity
-	FontOpacity *int `json:"FontOpacity,omitempty"`
+	FontOpacity *T `json:"FontOpacity,omitempty"`
 
 	// FontResolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-fontresolution
-	FontResolution *int `json:"FontResolution,omitempty"`
+	FontResolution *T `json:"FontResolution,omitempty"`
 
 	// FontSize AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Channel_BurnInDestinationSettings struct {
 	// OutlineSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-outlinesize
-	OutlineSize *int `json:"OutlineSize,omitempty"`
+	OutlineSize *T `json:"OutlineSize,omitempty"`
 
 	// ShadowColor AWS CloudFormation Property
 	// Required: false
@@ -68,17 +68,17 @@ type Channel_BurnInDestinationSettings struct {
 	// ShadowOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowopacity
-	ShadowOpacity *int `json:"ShadowOpacity,omitempty"`
+	ShadowOpacity *T `json:"ShadowOpacity,omitempty"`
 
 	// ShadowXOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowxoffset
-	ShadowXOffset *int `json:"ShadowXOffset,omitempty"`
+	ShadowXOffset *T `json:"ShadowXOffset,omitempty"`
 
 	// ShadowYOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-shadowyoffset
-	ShadowYOffset *int `json:"ShadowYOffset,omitempty"`
+	ShadowYOffset *T `json:"ShadowYOffset,omitempty"`
 
 	// TeletextGridControl AWS CloudFormation Property
 	// Required: false
@@ -88,12 +88,12 @@ type Channel_BurnInDestinationSettings struct {
 	// XPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-xposition
-	XPosition *int `json:"XPosition,omitempty"`
+	XPosition *T `json:"XPosition,omitempty"`
 
 	// YPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-yposition
-	YPosition *int `json:"YPosition,omitempty"`
+	YPosition *T `json:"YPosition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -112,6 +112,6 @@ type Channel_BurnInDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_BurnInDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_BurnInDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.BurnInDestinationSettings"
 }

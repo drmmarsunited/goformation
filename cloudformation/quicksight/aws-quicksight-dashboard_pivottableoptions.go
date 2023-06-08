@@ -8,17 +8,17 @@ import (
 
 // Dashboard_PivotTableOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html
-type Dashboard_PivotTableOptions struct {
+type Dashboard_PivotTableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html#cfn-quicksight-dashboard-pivottableoptions-cellstyle
-	CellStyle *Dashboard_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Dashboard_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// ColumnHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html#cfn-quicksight-dashboard-pivottableoptions-columnheaderstyle
-	ColumnHeaderStyle *Dashboard_TableCellStyle `json:"ColumnHeaderStyle,omitempty"`
+	ColumnHeaderStyle *Dashboard_TableCellStyle[any] `json:"ColumnHeaderStyle,omitempty"`
 
 	// ColumnNamesVisibility AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Dashboard_PivotTableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html#cfn-quicksight-dashboard-pivottableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Dashboard_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Dashboard_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// RowFieldNamesStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html#cfn-quicksight-dashboard-pivottableoptions-rowfieldnamesstyle
-	RowFieldNamesStyle *Dashboard_TableCellStyle `json:"RowFieldNamesStyle,omitempty"`
+	RowFieldNamesStyle *Dashboard_TableCellStyle[any] `json:"RowFieldNamesStyle,omitempty"`
 
 	// RowHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableoptions.html#cfn-quicksight-dashboard-pivottableoptions-rowheaderstyle
-	RowHeaderStyle *Dashboard_TableCellStyle `json:"RowHeaderStyle,omitempty"`
+	RowHeaderStyle *Dashboard_TableCellStyle[any] `json:"RowHeaderStyle,omitempty"`
 
 	// SingleMetricVisibility AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Dashboard_PivotTableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableOptions) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableOptions"
 }

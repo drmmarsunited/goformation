@@ -8,7 +8,7 @@ import (
 
 // Channel_RawSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.RawSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rawsettings.html
-type Channel_RawSettings struct {
+type Channel_RawSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_RawSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_RawSettings) AWSCloudFormationType() string {
+func (r *Channel_RawSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.RawSettings"
 }

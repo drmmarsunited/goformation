@@ -8,7 +8,7 @@ import (
 
 // Analysis_DateTimeValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimeValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimevaluewhenunsetconfiguration.html
-type Analysis_DateTimeValueWhenUnsetConfiguration struct {
+type Analysis_DateTimeValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_DateTimeValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimeValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_DateTimeValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimeValueWhenUnsetConfiguration"
 }

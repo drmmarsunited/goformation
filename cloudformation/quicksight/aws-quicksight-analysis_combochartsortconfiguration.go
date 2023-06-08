@@ -8,27 +8,27 @@ import (
 
 // Analysis_ComboChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ComboChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartsortconfiguration.html
-type Analysis_ComboChartSortConfiguration struct {
+type Analysis_ComboChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartsortconfiguration.html#cfn-quicksight-analysis-combochartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Analysis_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartsortconfiguration.html#cfn-quicksight-analysis-combochartsortconfiguration-categorysort
-	CategorySort []Analysis_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Analysis_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartsortconfiguration.html#cfn-quicksight-analysis-combochartsortconfiguration-coloritemslimit
-	ColorItemsLimit *Analysis_ItemsLimitConfiguration `json:"ColorItemsLimit,omitempty"`
+	ColorItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"ColorItemsLimit,omitempty"`
 
 	// ColorSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartsortconfiguration.html#cfn-quicksight-analysis-combochartsortconfiguration-colorsort
-	ColorSort []Analysis_FieldSortOptions `json:"ColorSort,omitempty"`
+	ColorSort []Analysis_FieldSortOptions[any] `json:"ColorSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_ComboChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ComboChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ComboChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ComboChartSortConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // UserPoolRiskConfigurationAttachment_NotifyConfigurationType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html
-type UserPoolRiskConfigurationAttachment_NotifyConfigurationType struct {
+type UserPoolRiskConfigurationAttachment_NotifyConfigurationType[T any] struct {
 
 	// BlockEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-blockemail
-	BlockEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType `json:"BlockEmail,omitempty"`
+	BlockEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType[any] `json:"BlockEmail,omitempty"`
 
 	// From AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type UserPoolRiskConfigurationAttachment_NotifyConfigurationType struct {
 	// MfaEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-mfaemail
-	MfaEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType `json:"MfaEmail,omitempty"`
+	MfaEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType[any] `json:"MfaEmail,omitempty"`
 
 	// NoActionEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-noactionemail
-	NoActionEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType `json:"NoActionEmail,omitempty"`
+	NoActionEmail *UserPoolRiskConfigurationAttachment_NotifyEmailType[any] `json:"NoActionEmail,omitempty"`
 
 	// ReplyTo AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type UserPoolRiskConfigurationAttachment_NotifyConfigurationType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_NotifyConfigurationType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_NotifyConfigurationType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType"
 }

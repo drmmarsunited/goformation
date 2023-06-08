@@ -8,12 +8,12 @@ import (
 
 // ModelExplainabilityJobDefinition_ClusterConfig AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.ClusterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html
-type ModelExplainabilityJobDefinition_ClusterConfig struct {
+type ModelExplainabilityJobDefinition_ClusterConfig[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type ModelExplainabilityJobDefinition_ClusterConfig struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB"`
+	VolumeSizeInGB T `json:"VolumeSizeInGB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ModelExplainabilityJobDefinition_ClusterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_ClusterConfig) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_ClusterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.ClusterConfig"
 }

@@ -9,7 +9,7 @@ import (
 
 // ClientVpnEndpoint_TagSpecification AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.TagSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html
-type ClientVpnEndpoint_TagSpecification struct {
+type ClientVpnEndpoint_TagSpecification[T any] struct {
 
 	// ResourceType AWS CloudFormation Property
 	// Required: true
@@ -38,6 +38,6 @@ type ClientVpnEndpoint_TagSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_TagSpecification) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_TagSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.TagSpecification"
 }

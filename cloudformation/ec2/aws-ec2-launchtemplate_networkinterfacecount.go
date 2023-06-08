@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_NetworkInterfaceCount AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.NetworkInterfaceCount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html
-type LaunchTemplate_NetworkInterfaceCount struct {
+type LaunchTemplate_NetworkInterfaceCount[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html#cfn-ec2-launchtemplate-networkinterfacecount-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html#cfn-ec2-launchtemplate-networkinterfacecount-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_NetworkInterfaceCount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_NetworkInterfaceCount) AWSCloudFormationType() string {
+func (r *LaunchTemplate_NetworkInterfaceCount[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.NetworkInterfaceCount"
 }

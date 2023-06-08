@@ -8,7 +8,7 @@ import (
 
 // CertificateAuthority_CrlConfiguration AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.CrlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html
-type CertificateAuthority_CrlConfiguration struct {
+type CertificateAuthority_CrlConfiguration[T any] struct {
 
 	// CustomCname AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type CertificateAuthority_CrlConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-expirationindays
-	ExpirationInDays *int `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *T `json:"ExpirationInDays,omitempty"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type CertificateAuthority_CrlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_CrlConfiguration) AWSCloudFormationType() string {
+func (r *CertificateAuthority_CrlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.CrlConfiguration"
 }

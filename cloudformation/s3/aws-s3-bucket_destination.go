@@ -8,7 +8,7 @@ import (
 
 // Bucket_Destination AWS CloudFormation Resource (AWS::S3::Bucket.Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html
-type Bucket_Destination struct {
+type Bucket_Destination[T any] struct {
 
 	// BucketAccountId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Bucket_Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Destination) AWSCloudFormationType() string {
+func (r *Bucket_Destination[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Destination"
 }

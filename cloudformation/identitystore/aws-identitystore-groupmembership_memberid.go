@@ -8,7 +8,7 @@ import (
 
 // GroupMembership_MemberId AWS CloudFormation Resource (AWS::IdentityStore::GroupMembership.MemberId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-identitystore-groupmembership-memberid.html
-type GroupMembership_MemberId struct {
+type GroupMembership_MemberId[T any] struct {
 
 	// UserId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type GroupMembership_MemberId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GroupMembership_MemberId) AWSCloudFormationType() string {
+func (r *GroupMembership_MemberId[any]) AWSCloudFormationType() string {
 	return "AWS::IdentityStore::GroupMembership.MemberId"
 }

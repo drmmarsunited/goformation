@@ -8,17 +8,17 @@ import (
 
 // WebACL_ActivatedRule AWS CloudFormation Resource (AWS::WAF::WebACL.ActivatedRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html
-type WebACL_ActivatedRule struct {
+type WebACL_ActivatedRule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-action
-	Action *WebACL_WafAction `json:"Action,omitempty"`
+	Action *WebACL_WafAction[any] `json:"Action,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// RuleId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WebACL_ActivatedRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ActivatedRule) AWSCloudFormationType() string {
+func (r *WebACL_ActivatedRule[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::WebACL.ActivatedRule"
 }

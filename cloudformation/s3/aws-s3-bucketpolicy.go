@@ -11,7 +11,7 @@ import (
 
 // BucketPolicy AWS CloudFormation Resource (AWS::S3::BucketPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
-type BucketPolicy struct {
+type BucketPolicy[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type BucketPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BucketPolicy) AWSCloudFormationType() string {
+func (r *BucketPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::S3::BucketPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BucketPolicy) MarshalJSON() ([]byte, error) {
-	type Properties BucketPolicy
+func (r BucketPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties BucketPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r BucketPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BucketPolicy) UnmarshalJSON(b []byte) error {
-	type Properties BucketPolicy
+func (r *BucketPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties BucketPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *BucketPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BucketPolicy(*res.Properties)
+		*r = BucketPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

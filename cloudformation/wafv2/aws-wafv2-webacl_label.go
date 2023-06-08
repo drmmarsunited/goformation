@@ -8,7 +8,7 @@ import (
 
 // WebACL_Label AWS CloudFormation Resource (AWS::WAFv2::WebACL.Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-label.html
-type WebACL_Label struct {
+type WebACL_Label[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Label) AWSCloudFormationType() string {
+func (r *WebACL_Label[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.Label"
 }

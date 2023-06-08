@@ -8,7 +8,7 @@ import (
 
 // StorageLens_SelectionCriteria AWS CloudFormation Resource (AWS::S3::StorageLens.SelectionCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html
-type StorageLens_SelectionCriteria struct {
+type StorageLens_SelectionCriteria[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type StorageLens_SelectionCriteria struct {
 	// MaxDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html#cfn-s3-storagelens-selectioncriteria-maxdepth
-	MaxDepth *int `json:"MaxDepth,omitempty"`
+	MaxDepth *T `json:"MaxDepth,omitempty"`
 
 	// MinStorageBytesPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html#cfn-s3-storagelens-selectioncriteria-minstoragebytespercentage
-	MinStorageBytesPercentage *float64 `json:"MinStorageBytesPercentage,omitempty"`
+	MinStorageBytesPercentage *T `json:"MinStorageBytesPercentage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type StorageLens_SelectionCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_SelectionCriteria) AWSCloudFormationType() string {
+func (r *StorageLens_SelectionCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.SelectionCriteria"
 }

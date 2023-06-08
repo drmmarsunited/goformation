@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyTextConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyTextConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifytextconfig.html
-type EndpointConfig_ClarifyTextConfig struct {
+type EndpointConfig_ClarifyTextConfig[T any] struct {
 
 	// Granularity AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type EndpointConfig_ClarifyTextConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyTextConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyTextConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyTextConfig"
 }

@@ -12,7 +12,7 @@ import (
 
 // Domain AWS CloudFormation Resource (AWS::OpenSearchService::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html
-type Domain struct {
+type Domain[T any] struct {
 
 	// AccessPolicies AWS CloudFormation Property
 	// Required: false
@@ -27,22 +27,22 @@ type Domain struct {
 	// AdvancedSecurityOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedsecurityoptions
-	AdvancedSecurityOptions *Domain_AdvancedSecurityOptionsInput `json:"AdvancedSecurityOptions,omitempty"`
+	AdvancedSecurityOptions *Domain_AdvancedSecurityOptionsInput[any] `json:"AdvancedSecurityOptions,omitempty"`
 
 	// ClusterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-clusterconfig
-	ClusterConfig *Domain_ClusterConfig `json:"ClusterConfig,omitempty"`
+	ClusterConfig *Domain_ClusterConfig[any] `json:"ClusterConfig,omitempty"`
 
 	// CognitoOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-cognitooptions
-	CognitoOptions *Domain_CognitoOptions `json:"CognitoOptions,omitempty"`
+	CognitoOptions *Domain_CognitoOptions[any] `json:"CognitoOptions,omitempty"`
 
 	// DomainEndpointOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions
-	DomainEndpointOptions *Domain_DomainEndpointOptions `json:"DomainEndpointOptions,omitempty"`
+	DomainEndpointOptions *Domain_DomainEndpointOptions[any] `json:"DomainEndpointOptions,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type Domain struct {
 	// EBSOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ebsoptions
-	EBSOptions *Domain_EBSOptions `json:"EBSOptions,omitempty"`
+	EBSOptions *Domain_EBSOptions[any] `json:"EBSOptions,omitempty"`
 
 	// EncryptionAtRestOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-encryptionatrestoptions
-	EncryptionAtRestOptions *Domain_EncryptionAtRestOptions `json:"EncryptionAtRestOptions,omitempty"`
+	EncryptionAtRestOptions *Domain_EncryptionAtRestOptions[any] `json:"EncryptionAtRestOptions,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
@@ -67,27 +67,27 @@ type Domain struct {
 	// LogPublishingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-logpublishingoptions
-	LogPublishingOptions map[string]Domain_LogPublishingOption `json:"LogPublishingOptions,omitempty"`
+	LogPublishingOptions map[string]Domain_LogPublishingOption[any] `json:"LogPublishingOptions,omitempty"`
 
 	// NodeToNodeEncryptionOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions
-	NodeToNodeEncryptionOptions *Domain_NodeToNodeEncryptionOptions `json:"NodeToNodeEncryptionOptions,omitempty"`
+	NodeToNodeEncryptionOptions *Domain_NodeToNodeEncryptionOptions[any] `json:"NodeToNodeEncryptionOptions,omitempty"`
 
 	// OffPeakWindowOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-offpeakwindowoptions
-	OffPeakWindowOptions *Domain_OffPeakWindowOptions `json:"OffPeakWindowOptions,omitempty"`
+	OffPeakWindowOptions *Domain_OffPeakWindowOptions[any] `json:"OffPeakWindowOptions,omitempty"`
 
 	// SnapshotOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-snapshotoptions
-	SnapshotOptions *Domain_SnapshotOptions `json:"SnapshotOptions,omitempty"`
+	SnapshotOptions *Domain_SnapshotOptions[any] `json:"SnapshotOptions,omitempty"`
 
 	// SoftwareUpdateOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-softwareupdateoptions
-	SoftwareUpdateOptions *Domain_SoftwareUpdateOptions `json:"SoftwareUpdateOptions,omitempty"`
+	SoftwareUpdateOptions *Domain_SoftwareUpdateOptions[any] `json:"SoftwareUpdateOptions,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type Domain struct {
 	// VPCOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-vpcoptions
-	VPCOptions *Domain_VPCOptions `json:"VPCOptions,omitempty"`
+	VPCOptions *Domain_VPCOptions[any] `json:"VPCOptions,omitempty"`
 
 	// AWSCloudFormationUpdatePolicy represents a CloudFormation UpdatePolicy
 	AWSCloudFormationUpdatePolicy *policies.UpdatePolicy `json:"-"`
@@ -119,14 +119,15 @@ type Domain struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain) AWSCloudFormationType() string {
+func (r *Domain[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Domain) MarshalJSON() ([]byte, error) {
-	type Properties Domain
+func (r Domain[any]) MarshalJSON() ([]byte, error) {
+	type Properties Domain[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -150,8 +151,9 @@ func (r Domain) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Domain) UnmarshalJSON(b []byte) error {
-	type Properties Domain
+func (r *Domain[any]) UnmarshalJSON(b []byte) error {
+	type Properties Domain[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -172,7 +174,7 @@ func (r *Domain) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Domain(*res.Properties)
+		*r = Domain[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

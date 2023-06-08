@@ -8,7 +8,7 @@ import (
 
 // Model_ImageConfig AWS CloudFormation Resource (AWS::SageMaker::Model.ImageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html
-type Model_ImageConfig struct {
+type Model_ImageConfig[T any] struct {
 
 	// RepositoryAccessMode AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Model_ImageConfig struct {
 	// RepositoryAuthConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig
-	RepositoryAuthConfig *Model_RepositoryAuthConfig `json:"RepositoryAuthConfig,omitempty"`
+	RepositoryAuthConfig *Model_RepositoryAuthConfig[any] `json:"RepositoryAuthConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Model_ImageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_ImageConfig) AWSCloudFormationType() string {
+func (r *Model_ImageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.ImageConfig"
 }

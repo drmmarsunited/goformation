@@ -8,7 +8,7 @@ import (
 
 // Pipe_SelfManagedKafkaAccessConfigurationCredentials AWS CloudFormation Resource (AWS::Pipes::Pipe.SelfManagedKafkaAccessConfigurationCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials.html
-type Pipe_SelfManagedKafkaAccessConfigurationCredentials struct {
+type Pipe_SelfManagedKafkaAccessConfigurationCredentials[T any] struct {
 
 	// BasicAuth AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Pipe_SelfManagedKafkaAccessConfigurationCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_SelfManagedKafkaAccessConfigurationCredentials) AWSCloudFormationType() string {
+func (r *Pipe_SelfManagedKafkaAccessConfigurationCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.SelfManagedKafkaAccessConfigurationCredentials"
 }

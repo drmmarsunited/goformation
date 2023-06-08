@@ -8,7 +8,7 @@ import (
 
 // PackagingConfiguration_HlsEncryption AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.HlsEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html
-type PackagingConfiguration_HlsEncryption struct {
+type PackagingConfiguration_HlsEncryption[T any] struct {
 
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type PackagingConfiguration_HlsEncryption struct {
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-spekekeyprovider
-	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type PackagingConfiguration_HlsEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_HlsEncryption) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_HlsEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.HlsEncryption"
 }

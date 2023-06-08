@@ -8,7 +8,7 @@ import (
 
 // TopicRule_UserProperty AWS CloudFormation Resource (AWS::IoT::TopicRule.UserProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-userproperty.html
-type TopicRule_UserProperty struct {
+type TopicRule_UserProperty[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TopicRule_UserProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_UserProperty) AWSCloudFormationType() string {
+func (r *TopicRule_UserProperty[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.UserProperty"
 }

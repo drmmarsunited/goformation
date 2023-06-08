@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_CloudwatchConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.CloudwatchConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-cloudwatchconfig.html
-type AnomalyDetector_CloudwatchConfig struct {
+type AnomalyDetector_CloudwatchConfig[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type AnomalyDetector_CloudwatchConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_CloudwatchConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_CloudwatchConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.CloudwatchConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // StreamingDistribution_S3Origin AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.S3Origin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html
-type StreamingDistribution_S3Origin struct {
+type StreamingDistribution_S3Origin[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StreamingDistribution_S3Origin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingDistribution_S3Origin) AWSCloudFormationType() string {
+func (r *StreamingDistribution_S3Origin[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.S3Origin"
 }

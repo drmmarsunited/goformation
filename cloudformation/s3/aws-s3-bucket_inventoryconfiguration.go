@@ -8,17 +8,17 @@ import (
 
 // Bucket_InventoryConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.InventoryConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html
-type Bucket_InventoryConfiguration struct {
+type Bucket_InventoryConfiguration[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-destination
-	Destination *Bucket_Destination `json:"Destination"`
+	Destination *Bucket_Destination[any] `json:"Destination"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Bucket_InventoryConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_InventoryConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_InventoryConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.InventoryConfiguration"
 }

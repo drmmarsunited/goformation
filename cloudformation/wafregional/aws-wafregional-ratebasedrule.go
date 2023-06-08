@@ -11,12 +11,12 @@ import (
 
 // RateBasedRule AWS CloudFormation Resource (AWS::WAFRegional::RateBasedRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html
-type RateBasedRule struct {
+type RateBasedRule[T any] struct {
 
 	// MatchPredicates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-matchpredicates
-	MatchPredicates []RateBasedRule_Predicate `json:"MatchPredicates,omitempty"`
+	MatchPredicates []RateBasedRule_Predicate[any] `json:"MatchPredicates,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type RateBasedRule struct {
 	// RateLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratelimit
-	RateLimit int `json:"RateLimit"`
+	RateLimit T `json:"RateLimit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type RateBasedRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RateBasedRule) AWSCloudFormationType() string {
+func (r *RateBasedRule[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::RateBasedRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RateBasedRule) MarshalJSON() ([]byte, error) {
-	type Properties RateBasedRule
+func (r RateBasedRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties RateBasedRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r RateBasedRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RateBasedRule) UnmarshalJSON(b []byte) error {
-	type Properties RateBasedRule
+func (r *RateBasedRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties RateBasedRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *RateBasedRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RateBasedRule(*res.Properties)
+		*r = RateBasedRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

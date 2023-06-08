@@ -8,12 +8,12 @@ import (
 
 // ScalingPolicy_PredictiveScalingCustomizedLoadMetric AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingCustomizedLoadMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingcustomizedloadmetric.html
-type ScalingPolicy_PredictiveScalingCustomizedLoadMetric struct {
+type ScalingPolicy_PredictiveScalingCustomizedLoadMetric[T any] struct {
 
 	// MetricDataQueries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingcustomizedloadmetric.html#cfn-autoscaling-scalingpolicy-predictivescalingcustomizedloadmetric-metricdataqueries
-	MetricDataQueries []ScalingPolicy_MetricDataQuery `json:"MetricDataQueries"`
+	MetricDataQueries []ScalingPolicy_MetricDataQuery[any] `json:"MetricDataQueries"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ScalingPolicy_PredictiveScalingCustomizedLoadMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_PredictiveScalingCustomizedLoadMetric) AWSCloudFormationType() string {
+func (r *ScalingPolicy_PredictiveScalingCustomizedLoadMetric[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.PredictiveScalingCustomizedLoadMetric"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_FieldTooltipItem AWS CloudFormation Resource (AWS::QuickSight::Analysis.FieldTooltipItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldtooltipitem.html
-type Analysis_FieldTooltipItem struct {
+type Analysis_FieldTooltipItem[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_FieldTooltipItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FieldTooltipItem) AWSCloudFormationType() string {
+func (r *Analysis_FieldTooltipItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FieldTooltipItem"
 }

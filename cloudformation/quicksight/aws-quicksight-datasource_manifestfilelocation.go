@@ -8,7 +8,7 @@ import (
 
 // DataSource_ManifestFileLocation AWS CloudFormation Resource (AWS::QuickSight::DataSource.ManifestFileLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-manifestfilelocation.html
-type DataSource_ManifestFileLocation struct {
+type DataSource_ManifestFileLocation[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_ManifestFileLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ManifestFileLocation) AWSCloudFormationType() string {
+func (r *DataSource_ManifestFileLocation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.ManifestFileLocation"
 }

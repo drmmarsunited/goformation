@@ -8,7 +8,7 @@ import (
 
 // AnnotationStore_SseConfig AWS CloudFormation Resource (AWS::Omics::AnnotationStore.SseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-sseconfig.html
-type AnnotationStore_SseConfig struct {
+type AnnotationStore_SseConfig[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AnnotationStore_SseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnnotationStore_SseConfig) AWSCloudFormationType() string {
+func (r *AnnotationStore_SseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::AnnotationStore.SseConfig"
 }

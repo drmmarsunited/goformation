@@ -8,17 +8,17 @@ import (
 
 // Recipe_SecondaryInput AWS CloudFormation Resource (AWS::DataBrew::Recipe.SecondaryInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html
-type Recipe_SecondaryInput struct {
+type Recipe_SecondaryInput[T any] struct {
 
 	// DataCatalogInputDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-datacataloginputdefinition
-	DataCatalogInputDefinition *Recipe_DataCatalogInputDefinition `json:"DataCatalogInputDefinition,omitempty"`
+	DataCatalogInputDefinition *Recipe_DataCatalogInputDefinition[any] `json:"DataCatalogInputDefinition,omitempty"`
 
 	// S3InputDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-s3inputdefinition
-	S3InputDefinition *Recipe_S3Location `json:"S3InputDefinition,omitempty"`
+	S3InputDefinition *Recipe_S3Location[any] `json:"S3InputDefinition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Recipe_SecondaryInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe_SecondaryInput) AWSCloudFormationType() string {
+func (r *Recipe_SecondaryInput[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe.SecondaryInput"
 }

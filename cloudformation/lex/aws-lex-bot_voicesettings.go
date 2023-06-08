@@ -8,7 +8,7 @@ import (
 
 // Bot_VoiceSettings AWS CloudFormation Resource (AWS::Lex::Bot.VoiceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html
-type Bot_VoiceSettings struct {
+type Bot_VoiceSettings[T any] struct {
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bot_VoiceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_VoiceSettings) AWSCloudFormationType() string {
+func (r *Bot_VoiceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.VoiceSettings"
 }

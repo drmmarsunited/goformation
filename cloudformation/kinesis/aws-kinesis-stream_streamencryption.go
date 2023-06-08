@@ -8,7 +8,7 @@ import (
 
 // Stream_StreamEncryption AWS CloudFormation Resource (AWS::Kinesis::Stream.StreamEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html
-type Stream_StreamEncryption struct {
+type Stream_StreamEncryption[T any] struct {
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Stream_StreamEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stream_StreamEncryption) AWSCloudFormationType() string {
+func (r *Stream_StreamEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Kinesis::Stream.StreamEncryption"
 }

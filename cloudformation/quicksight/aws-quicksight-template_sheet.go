@@ -8,7 +8,7 @@ import (
 
 // Template_Sheet AWS CloudFormation Resource (AWS::QuickSight::Template.Sheet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html
-type Template_Sheet struct {
+type Template_Sheet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_Sheet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Sheet) AWSCloudFormationType() string {
+func (r *Template_Sheet[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Sheet"
 }

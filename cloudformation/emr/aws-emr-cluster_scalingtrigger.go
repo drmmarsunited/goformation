@@ -8,12 +8,12 @@ import (
 
 // Cluster_ScalingTrigger AWS CloudFormation Resource (AWS::EMR::Cluster.ScalingTrigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html
-type Cluster_ScalingTrigger struct {
+type Cluster_ScalingTrigger[T any] struct {
 
 	// CloudWatchAlarmDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition
-	CloudWatchAlarmDefinition *Cluster_CloudWatchAlarmDefinition `json:"CloudWatchAlarmDefinition"`
+	CloudWatchAlarmDefinition *Cluster_CloudWatchAlarmDefinition[any] `json:"CloudWatchAlarmDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_ScalingTrigger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ScalingTrigger) AWSCloudFormationType() string {
+func (r *Cluster_ScalingTrigger[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ScalingTrigger"
 }

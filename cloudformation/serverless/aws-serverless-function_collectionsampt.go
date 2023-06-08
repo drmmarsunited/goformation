@@ -8,7 +8,7 @@ import (
 
 // Function_CollectionSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.CollectionSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_CollectionSAMPT struct {
+type Function_CollectionSAMPT[T any] struct {
 
 	// CollectionId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_CollectionSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_CollectionSAMPT) AWSCloudFormationType() string {
+func (r *Function_CollectionSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.CollectionSAMPT"
 }

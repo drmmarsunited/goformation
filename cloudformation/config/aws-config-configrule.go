@@ -11,7 +11,7 @@ import (
 
 // ConfigRule AWS CloudFormation Resource (AWS::Config::ConfigRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html
-type ConfigRule struct {
+type ConfigRule[T any] struct {
 
 	// ConfigRuleName AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type ConfigRule struct {
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-scope
-	Scope *ConfigRule_Scope `json:"Scope,omitempty"`
+	Scope *ConfigRule_Scope[any] `json:"Scope,omitempty"`
 
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source
-	Source *ConfigRule_Source `json:"Source"`
+	Source *ConfigRule_Source[any] `json:"Source"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type ConfigRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigRule) AWSCloudFormationType() string {
+func (r *ConfigRule[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigRule) MarshalJSON() ([]byte, error) {
-	type Properties ConfigRule
+func (r ConfigRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r ConfigRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigRule) UnmarshalJSON(b []byte) error {
-	type Properties ConfigRule
+func (r *ConfigRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *ConfigRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigRule(*res.Properties)
+		*r = ConfigRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

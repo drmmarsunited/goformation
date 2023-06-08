@@ -8,12 +8,12 @@ import (
 
 // Component_ComponentBindingPropertiesValue AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentBindingPropertiesValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalue.html
-type Component_ComponentBindingPropertiesValue struct {
+type Component_ComponentBindingPropertiesValue[T any] struct {
 
 	// BindingProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalue.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalue-bindingproperties
-	BindingProperties *Component_ComponentBindingPropertiesValueProperties `json:"BindingProperties,omitempty"`
+	BindingProperties *Component_ComponentBindingPropertiesValueProperties[any] `json:"BindingProperties,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Component_ComponentBindingPropertiesValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentBindingPropertiesValue) AWSCloudFormationType() string {
+func (r *Component_ComponentBindingPropertiesValue[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentBindingPropertiesValue"
 }

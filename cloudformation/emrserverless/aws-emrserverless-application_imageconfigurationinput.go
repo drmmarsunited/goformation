@@ -8,7 +8,7 @@ import (
 
 // Application_ImageConfigurationInput AWS CloudFormation Resource (AWS::EMRServerless::Application.ImageConfigurationInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-imageconfigurationinput.html
-type Application_ImageConfigurationInput struct {
+type Application_ImageConfigurationInput[T any] struct {
 
 	// ImageUri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Application_ImageConfigurationInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ImageConfigurationInput) AWSCloudFormationType() string {
+func (r *Application_ImageConfigurationInput[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.ImageConfigurationInput"
 }

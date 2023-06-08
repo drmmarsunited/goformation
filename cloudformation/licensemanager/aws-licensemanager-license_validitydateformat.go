@@ -8,7 +8,7 @@ import (
 
 // License_ValidityDateFormat AWS CloudFormation Resource (AWS::LicenseManager::License.ValidityDateFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-validitydateformat.html
-type License_ValidityDateFormat struct {
+type License_ValidityDateFormat[T any] struct {
 
 	// Begin AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type License_ValidityDateFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_ValidityDateFormat) AWSCloudFormationType() string {
+func (r *License_ValidityDateFormat[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.ValidityDateFormat"
 }

@@ -8,7 +8,7 @@ import (
 
 // FunctionConfiguration_SyncConfig AWS CloudFormation Resource (AWS::AppSync::FunctionConfiguration.SyncConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html
-type FunctionConfiguration_SyncConfig struct {
+type FunctionConfiguration_SyncConfig[T any] struct {
 
 	// ConflictDetection AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type FunctionConfiguration_SyncConfig struct {
 	// LambdaConflictHandlerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-lambdaconflicthandlerconfig
-	LambdaConflictHandlerConfig *FunctionConfiguration_LambdaConflictHandlerConfig `json:"LambdaConflictHandlerConfig,omitempty"`
+	LambdaConflictHandlerConfig *FunctionConfiguration_LambdaConflictHandlerConfig[any] `json:"LambdaConflictHandlerConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type FunctionConfiguration_SyncConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionConfiguration_SyncConfig) AWSCloudFormationType() string {
+func (r *FunctionConfiguration_SyncConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::FunctionConfiguration.SyncConfig"
 }

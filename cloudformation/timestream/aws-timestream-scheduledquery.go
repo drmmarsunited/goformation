@@ -12,7 +12,7 @@ import (
 
 // ScheduledQuery AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html
-type ScheduledQuery struct {
+type ScheduledQuery[T any] struct {
 
 	// ClientToken AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type ScheduledQuery struct {
 	// ErrorReportConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-errorreportconfiguration
-	ErrorReportConfiguration *ScheduledQuery_ErrorReportConfiguration `json:"ErrorReportConfiguration"`
+	ErrorReportConfiguration *ScheduledQuery_ErrorReportConfiguration[any] `json:"ErrorReportConfiguration"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type ScheduledQuery struct {
 	// NotificationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-notificationconfiguration
-	NotificationConfiguration *ScheduledQuery_NotificationConfiguration `json:"NotificationConfiguration"`
+	NotificationConfiguration *ScheduledQuery_NotificationConfiguration[any] `json:"NotificationConfiguration"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type ScheduledQuery struct {
 	// ScheduleConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduleconfiguration
-	ScheduleConfiguration *ScheduledQuery_ScheduleConfiguration `json:"ScheduleConfiguration"`
+	ScheduleConfiguration *ScheduledQuery_ScheduleConfiguration[any] `json:"ScheduleConfiguration"`
 
 	// ScheduledQueryExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type ScheduledQuery struct {
 	// TargetConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-targetconfiguration
-	TargetConfiguration *ScheduledQuery_TargetConfiguration `json:"TargetConfiguration,omitempty"`
+	TargetConfiguration *ScheduledQuery_TargetConfiguration[any] `json:"TargetConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -81,14 +81,15 @@ type ScheduledQuery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery) AWSCloudFormationType() string {
+func (r *ScheduledQuery[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScheduledQuery) MarshalJSON() ([]byte, error) {
-	type Properties ScheduledQuery
+func (r ScheduledQuery[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScheduledQuery[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r ScheduledQuery) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScheduledQuery) UnmarshalJSON(b []byte) error {
-	type Properties ScheduledQuery
+func (r *ScheduledQuery[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScheduledQuery[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *ScheduledQuery) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScheduledQuery(*res.Properties)
+		*r = ScheduledQuery[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

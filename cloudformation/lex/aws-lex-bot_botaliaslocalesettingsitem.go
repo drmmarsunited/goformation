@@ -8,12 +8,12 @@ import (
 
 // Bot_BotAliasLocaleSettingsItem AWS CloudFormation Resource (AWS::Lex::Bot.BotAliasLocaleSettingsItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html
-type Bot_BotAliasLocaleSettingsItem struct {
+type Bot_BotAliasLocaleSettingsItem[T any] struct {
 
 	// BotAliasLocaleSetting AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-botaliaslocalesetting
-	BotAliasLocaleSetting *Bot_BotAliasLocaleSettings `json:"BotAliasLocaleSetting"`
+	BotAliasLocaleSetting *Bot_BotAliasLocaleSettings[any] `json:"BotAliasLocaleSetting"`
 
 	// LocaleId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bot_BotAliasLocaleSettingsItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_BotAliasLocaleSettingsItem) AWSCloudFormationType() string {
+func (r *Bot_BotAliasLocaleSettingsItem[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.BotAliasLocaleSettingsItem"
 }

@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinition_ResourceInstance AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.ResourceInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html
-type ResourceDefinition_ResourceInstance struct {
+type ResourceDefinition_ResourceInstance[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ResourceDefinition_ResourceInstance struct {
 	// ResourceDataContainer AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-resourcedatacontainer
-	ResourceDataContainer *ResourceDefinition_ResourceDataContainer `json:"ResourceDataContainer"`
+	ResourceDataContainer *ResourceDefinition_ResourceDataContainer[any] `json:"ResourceDataContainer"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ResourceDefinition_ResourceInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_ResourceInstance) AWSCloudFormationType() string {
+func (r *ResourceDefinition_ResourceInstance[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.ResourceInstance"
 }

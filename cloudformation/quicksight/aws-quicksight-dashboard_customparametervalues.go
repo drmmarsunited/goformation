@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CustomParameterValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomParameterValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customparametervalues.html
-type Dashboard_CustomParameterValues struct {
+type Dashboard_CustomParameterValues[T any] struct {
 
 	// DateTimeValues AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Dashboard_CustomParameterValues struct {
 	// DecimalValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customparametervalues.html#cfn-quicksight-dashboard-customparametervalues-decimalvalues
-	DecimalValues []float64 `json:"DecimalValues,omitempty"`
+	DecimalValues []T `json:"DecimalValues,omitempty"`
 
 	// IntegerValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customparametervalues.html#cfn-quicksight-dashboard-customparametervalues-integervalues
-	IntegerValues []float64 `json:"IntegerValues,omitempty"`
+	IntegerValues []T `json:"IntegerValues,omitempty"`
 
 	// StringValues AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_CustomParameterValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomParameterValues) AWSCloudFormationType() string {
+func (r *Dashboard_CustomParameterValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomParameterValues"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_SimpleClusterMarker AWS CloudFormation Resource (AWS::QuickSight::Template.SimpleClusterMarker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-simpleclustermarker.html
-type Template_SimpleClusterMarker struct {
+type Template_SimpleClusterMarker[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_SimpleClusterMarker struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SimpleClusterMarker) AWSCloudFormationType() string {
+func (r *Template_SimpleClusterMarker[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SimpleClusterMarker"
 }

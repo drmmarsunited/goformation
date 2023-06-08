@@ -8,7 +8,7 @@ import (
 
 // Channel_OutputDestination AWS CloudFormation Resource (AWS::MediaLive::Channel.OutputDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html
-type Channel_OutputDestination struct {
+type Channel_OutputDestination[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Channel_OutputDestination struct {
 	// MediaPackageSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings
-	MediaPackageSettings []Channel_MediaPackageOutputDestinationSettings `json:"MediaPackageSettings,omitempty"`
+	MediaPackageSettings []Channel_MediaPackageOutputDestinationSettings[any] `json:"MediaPackageSettings,omitempty"`
 
 	// MultiplexSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings
-	MultiplexSettings *Channel_MultiplexProgramChannelDestinationSettings `json:"MultiplexSettings,omitempty"`
+	MultiplexSettings *Channel_MultiplexProgramChannelDestinationSettings[any] `json:"MultiplexSettings,omitempty"`
 
 	// Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings
-	Settings []Channel_OutputDestinationSettings `json:"Settings,omitempty"`
+	Settings []Channel_OutputDestinationSettings[any] `json:"Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_OutputDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_OutputDestination) AWSCloudFormationType() string {
+func (r *Channel_OutputDestination[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.OutputDestination"
 }

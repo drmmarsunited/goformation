@@ -8,17 +8,17 @@ import (
 
 // Template_ReferenceLine AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLine)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referenceline.html
-type Template_ReferenceLine struct {
+type Template_ReferenceLine[T any] struct {
 
 	// DataConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referenceline.html#cfn-quicksight-template-referenceline-dataconfiguration
-	DataConfiguration *Template_ReferenceLineDataConfiguration `json:"DataConfiguration"`
+	DataConfiguration *Template_ReferenceLineDataConfiguration[any] `json:"DataConfiguration"`
 
 	// LabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referenceline.html#cfn-quicksight-template-referenceline-labelconfiguration
-	LabelConfiguration *Template_ReferenceLineLabelConfiguration `json:"LabelConfiguration,omitempty"`
+	LabelConfiguration *Template_ReferenceLineLabelConfiguration[any] `json:"LabelConfiguration,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_ReferenceLine struct {
 	// StyleConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referenceline.html#cfn-quicksight-template-referenceline-styleconfiguration
-	StyleConfiguration *Template_ReferenceLineStyleConfiguration `json:"StyleConfiguration,omitempty"`
+	StyleConfiguration *Template_ReferenceLineStyleConfiguration[any] `json:"StyleConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_ReferenceLine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLine) AWSCloudFormationType() string {
+func (r *Template_ReferenceLine[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLine"
 }

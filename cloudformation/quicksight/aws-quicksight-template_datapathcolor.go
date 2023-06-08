@@ -8,7 +8,7 @@ import (
 
 // Template_DataPathColor AWS CloudFormation Resource (AWS::QuickSight::Template.DataPathColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathcolor.html
-type Template_DataPathColor struct {
+type Template_DataPathColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_DataPathColor struct {
 	// Element AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathcolor.html#cfn-quicksight-template-datapathcolor-element
-	Element *Template_DataPathValue `json:"Element"`
+	Element *Template_DataPathValue[any] `json:"Element"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_DataPathColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataPathColor) AWSCloudFormationType() string {
+func (r *Template_DataPathColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataPathColor"
 }

@@ -8,7 +8,7 @@ import (
 
 // Workflow_EfsInputFileLocation AWS CloudFormation Resource (AWS::Transfer::Workflow.EfsInputFileLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-efsinputfilelocation.html
-type Workflow_EfsInputFileLocation struct {
+type Workflow_EfsInputFileLocation[T any] struct {
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workflow_EfsInputFileLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_EfsInputFileLocation) AWSCloudFormationType() string {
+func (r *Workflow_EfsInputFileLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.EfsInputFileLocation"
 }

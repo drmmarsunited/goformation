@@ -12,7 +12,7 @@ import (
 
 // KeyPair AWS CloudFormation Resource (AWS::EC2::KeyPair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html
-type KeyPair struct {
+type KeyPair[T any] struct {
 
 	// KeyName AWS CloudFormation Property
 	// Required: true
@@ -51,14 +51,15 @@ type KeyPair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KeyPair) AWSCloudFormationType() string {
+func (r *KeyPair[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::KeyPair"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r KeyPair) MarshalJSON() ([]byte, error) {
-	type Properties KeyPair
+func (r KeyPair[any]) MarshalJSON() ([]byte, error) {
+	type Properties KeyPair[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r KeyPair) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *KeyPair) UnmarshalJSON(b []byte) error {
-	type Properties KeyPair
+func (r *KeyPair[any]) UnmarshalJSON(b []byte) error {
+	type Properties KeyPair[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *KeyPair) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = KeyPair(*res.Properties)
+		*r = KeyPair[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

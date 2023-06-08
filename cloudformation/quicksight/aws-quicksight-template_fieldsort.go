@@ -8,7 +8,7 @@ import (
 
 // Template_FieldSort AWS CloudFormation Resource (AWS::QuickSight::Template.FieldSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldsort.html
-type Template_FieldSort struct {
+type Template_FieldSort[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_FieldSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FieldSort) AWSCloudFormationType() string {
+func (r *Template_FieldSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FieldSort"
 }

@@ -11,7 +11,7 @@ import (
 
 // ConfigurationAssociation AWS CloudFormation Resource (AWS::AmazonMQ::ConfigurationAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html
-type ConfigurationAssociation struct {
+type ConfigurationAssociation[T any] struct {
 
 	// Broker AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ConfigurationAssociation struct {
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-configuration
-	Configuration *ConfigurationAssociation_ConfigurationId `json:"Configuration"`
+	Configuration *ConfigurationAssociation_ConfigurationId[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ConfigurationAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationAssociation) AWSCloudFormationType() string {
+func (r *ConfigurationAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::ConfigurationAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigurationAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ConfigurationAssociation
+func (r ConfigurationAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigurationAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ConfigurationAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigurationAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ConfigurationAssociation
+func (r *ConfigurationAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigurationAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ConfigurationAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigurationAssociation(*res.Properties)
+		*r = ConfigurationAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Cluster_VpcConnectivitySasl AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivitySasl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html
-type Cluster_VpcConnectivitySasl struct {
+type Cluster_VpcConnectivitySasl[T any] struct {
 
 	// Iam AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-iam
-	Iam *Cluster_VpcConnectivityIam `json:"Iam,omitempty"`
+	Iam *Cluster_VpcConnectivityIam[any] `json:"Iam,omitempty"`
 
 	// Scram AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-scram
-	Scram *Cluster_VpcConnectivityScram `json:"Scram,omitempty"`
+	Scram *Cluster_VpcConnectivityScram[any] `json:"Scram,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_VpcConnectivitySasl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivitySasl) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivitySasl[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivitySasl"
 }

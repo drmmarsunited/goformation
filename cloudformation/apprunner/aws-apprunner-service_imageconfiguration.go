@@ -8,7 +8,7 @@ import (
 
 // Service_ImageConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.ImageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html
-type Service_ImageConfiguration struct {
+type Service_ImageConfiguration[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Service_ImageConfiguration struct {
 	// RuntimeEnvironmentSecrets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentsecrets
-	RuntimeEnvironmentSecrets []Service_KeyValuePair `json:"RuntimeEnvironmentSecrets,omitempty"`
+	RuntimeEnvironmentSecrets []Service_KeyValuePair[any] `json:"RuntimeEnvironmentSecrets,omitempty"`
 
 	// RuntimeEnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentvariables
-	RuntimeEnvironmentVariables []Service_KeyValuePair `json:"RuntimeEnvironmentVariables,omitempty"`
+	RuntimeEnvironmentVariables []Service_KeyValuePair[any] `json:"RuntimeEnvironmentVariables,omitempty"`
 
 	// StartCommand AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Service_ImageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ImageConfiguration) AWSCloudFormationType() string {
+func (r *Service_ImageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.ImageConfiguration"
 }

@@ -12,12 +12,12 @@ import (
 
 // DataRepositoryAssociation AWS CloudFormation Resource (AWS::FSx::DataRepositoryAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html
-type DataRepositoryAssociation struct {
+type DataRepositoryAssociation[T any] struct {
 
 	// BatchImportMetaDataOnCreate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-batchimportmetadataoncreate
-	BatchImportMetaDataOnCreate *bool `json:"BatchImportMetaDataOnCreate,omitempty"`
+	BatchImportMetaDataOnCreate *T `json:"BatchImportMetaDataOnCreate,omitempty"`
 
 	// DataRepositoryPath AWS CloudFormation Property
 	// Required: true
@@ -37,12 +37,12 @@ type DataRepositoryAssociation struct {
 	// ImportedFileChunkSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-importedfilechunksize
-	ImportedFileChunkSize *int `json:"ImportedFileChunkSize,omitempty"`
+	ImportedFileChunkSize *T `json:"ImportedFileChunkSize,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-s3
-	S3 *DataRepositoryAssociation_S3 `json:"S3,omitempty"`
+	S3 *DataRepositoryAssociation_S3[any] `json:"S3,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type DataRepositoryAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataRepositoryAssociation) AWSCloudFormationType() string {
+func (r *DataRepositoryAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::DataRepositoryAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataRepositoryAssociation) MarshalJSON() ([]byte, error) {
-	type Properties DataRepositoryAssociation
+func (r DataRepositoryAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataRepositoryAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r DataRepositoryAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataRepositoryAssociation) UnmarshalJSON(b []byte) error {
-	type Properties DataRepositoryAssociation
+func (r *DataRepositoryAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataRepositoryAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *DataRepositoryAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataRepositoryAssociation(*res.Properties)
+		*r = DataRepositoryAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

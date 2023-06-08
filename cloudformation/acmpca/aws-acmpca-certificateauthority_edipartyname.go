@@ -8,7 +8,7 @@ import (
 
 // CertificateAuthority_EdiPartyName AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.EdiPartyName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-edipartyname.html
-type CertificateAuthority_EdiPartyName struct {
+type CertificateAuthority_EdiPartyName[T any] struct {
 
 	// NameAssigner AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CertificateAuthority_EdiPartyName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_EdiPartyName) AWSCloudFormationType() string {
+func (r *CertificateAuthority_EdiPartyName[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.EdiPartyName"
 }

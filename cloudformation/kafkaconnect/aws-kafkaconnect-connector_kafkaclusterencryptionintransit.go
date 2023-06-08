@@ -8,7 +8,7 @@ import (
 
 // Connector_KafkaClusterEncryptionInTransit AWS CloudFormation Resource (AWS::KafkaConnect::Connector.KafkaClusterEncryptionInTransit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkaclusterencryptionintransit.html
-type Connector_KafkaClusterEncryptionInTransit struct {
+type Connector_KafkaClusterEncryptionInTransit[T any] struct {
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Connector_KafkaClusterEncryptionInTransit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_KafkaClusterEncryptionInTransit) AWSCloudFormationType() string {
+func (r *Connector_KafkaClusterEncryptionInTransit[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.KafkaClusterEncryptionInTransit"
 }

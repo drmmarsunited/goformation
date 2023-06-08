@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyInferenceConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyInferenceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html
-type EndpointConfig_ClarifyInferenceConfig struct {
+type EndpointConfig_ClarifyInferenceConfig[T any] struct {
 
 	// ContentTemplate AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 	// FeatureHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-featureheaders
-	FeatureHeaders []EndpointConfig_ClarifyHeader `json:"FeatureHeaders,omitempty"`
+	FeatureHeaders []EndpointConfig_ClarifyHeader[any] `json:"FeatureHeaders,omitempty"`
 
 	// FeatureTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-featuretypes
-	FeatureTypes []EndpointConfig_ClarifyFeatureType `json:"FeatureTypes,omitempty"`
+	FeatureTypes []EndpointConfig_ClarifyFeatureType[any] `json:"FeatureTypes,omitempty"`
 
 	// FeaturesAttribute AWS CloudFormation Property
 	// Required: false
@@ -38,22 +38,22 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 	// LabelHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-labelheaders
-	LabelHeaders []EndpointConfig_ClarifyHeader `json:"LabelHeaders,omitempty"`
+	LabelHeaders []EndpointConfig_ClarifyHeader[any] `json:"LabelHeaders,omitempty"`
 
 	// LabelIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-labelindex
-	LabelIndex *int `json:"LabelIndex,omitempty"`
+	LabelIndex *T `json:"LabelIndex,omitempty"`
 
 	// MaxPayloadInMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-maxpayloadinmb
-	MaxPayloadInMB *int `json:"MaxPayloadInMB,omitempty"`
+	MaxPayloadInMB *T `json:"MaxPayloadInMB,omitempty"`
 
 	// MaxRecordCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-maxrecordcount
-	MaxRecordCount *int `json:"MaxRecordCount,omitempty"`
+	MaxRecordCount *T `json:"MaxRecordCount,omitempty"`
 
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 	// ProbabilityIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-probabilityindex
-	ProbabilityIndex *int `json:"ProbabilityIndex,omitempty"`
+	ProbabilityIndex *T `json:"ProbabilityIndex,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyInferenceConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyInferenceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyInferenceConfig"
 }

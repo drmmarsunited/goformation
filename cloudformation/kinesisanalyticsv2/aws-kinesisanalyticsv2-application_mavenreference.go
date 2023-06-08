@@ -8,7 +8,7 @@ import (
 
 // Application_MavenReference AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.MavenReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mavenreference.html
-type Application_MavenReference struct {
+type Application_MavenReference[T any] struct {
 
 	// ArtifactId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Application_MavenReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_MavenReference) AWSCloudFormationType() string {
+func (r *Application_MavenReference[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.MavenReference"
 }

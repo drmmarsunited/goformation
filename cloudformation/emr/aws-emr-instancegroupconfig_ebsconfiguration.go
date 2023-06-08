@@ -8,17 +8,17 @@ import (
 
 // InstanceGroupConfig_EbsConfiguration AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.EbsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html
-type InstanceGroupConfig_EbsConfiguration struct {
+type InstanceGroupConfig_EbsConfiguration[T any] struct {
 
 	// EbsBlockDeviceConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfigs
-	EbsBlockDeviceConfigs []InstanceGroupConfig_EbsBlockDeviceConfig `json:"EbsBlockDeviceConfigs,omitempty"`
+	EbsBlockDeviceConfigs []InstanceGroupConfig_EbsBlockDeviceConfig[any] `json:"EbsBlockDeviceConfigs,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *T `json:"EbsOptimized,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceGroupConfig_EbsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_EbsConfiguration) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_EbsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.EbsConfiguration"
 }

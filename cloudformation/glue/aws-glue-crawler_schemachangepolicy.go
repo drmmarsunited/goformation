@@ -8,7 +8,7 @@ import (
 
 // Crawler_SchemaChangePolicy AWS CloudFormation Resource (AWS::Glue::Crawler.SchemaChangePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html
-type Crawler_SchemaChangePolicy struct {
+type Crawler_SchemaChangePolicy[T any] struct {
 
 	// DeleteBehavior AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Crawler_SchemaChangePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_SchemaChangePolicy) AWSCloudFormationType() string {
+func (r *Crawler_SchemaChangePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.SchemaChangePolicy"
 }

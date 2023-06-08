@@ -8,7 +8,7 @@ import (
 
 // Entity_Error AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.Error)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html
-type Entity_Error struct {
+type Entity_Error[T any] struct {
 
 	// Code AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Entity_Error struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_Error) AWSCloudFormationType() string {
+func (r *Entity_Error[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.Error"
 }

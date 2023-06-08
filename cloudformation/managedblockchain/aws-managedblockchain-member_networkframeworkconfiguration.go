@@ -8,12 +8,12 @@ import (
 
 // Member_NetworkFrameworkConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkframeworkconfiguration.html
-type Member_NetworkFrameworkConfiguration struct {
+type Member_NetworkFrameworkConfiguration[T any] struct {
 
 	// NetworkFabricConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkframeworkconfiguration.html#cfn-managedblockchain-member-networkframeworkconfiguration-networkfabricconfiguration
-	NetworkFabricConfiguration *Member_NetworkFabricConfiguration `json:"NetworkFabricConfiguration,omitempty"`
+	NetworkFabricConfiguration *Member_NetworkFabricConfiguration[any] `json:"NetworkFabricConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Member_NetworkFrameworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_NetworkFrameworkConfiguration) AWSCloudFormationType() string {
+func (r *Member_NetworkFrameworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration"
 }

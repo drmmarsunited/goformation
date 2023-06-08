@@ -8,7 +8,7 @@ import (
 
 // Function_Destination AWS CloudFormation Resource (AWS::Serverless::Function.Destination)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object
-type Function_Destination struct {
+type Function_Destination[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_Destination) AWSCloudFormationType() string {
+func (r *Function_Destination[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.Destination"
 }

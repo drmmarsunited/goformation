@@ -8,12 +8,12 @@ import (
 
 // PackagingConfiguration_SpekeKeyProvider AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.SpekeKeyProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html
-type PackagingConfiguration_SpekeKeyProvider struct {
+type PackagingConfiguration_SpekeKeyProvider[T any] struct {
 
 	// EncryptionContractConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html#cfn-mediapackage-packagingconfiguration-spekekeyprovider-encryptioncontractconfiguration
-	EncryptionContractConfiguration *PackagingConfiguration_EncryptionContractConfiguration `json:"EncryptionContractConfiguration,omitempty"`
+	EncryptionContractConfiguration *PackagingConfiguration_EncryptionContractConfiguration[any] `json:"EncryptionContractConfiguration,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type PackagingConfiguration_SpekeKeyProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_SpekeKeyProvider) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_SpekeKeyProvider[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.SpekeKeyProvider"
 }

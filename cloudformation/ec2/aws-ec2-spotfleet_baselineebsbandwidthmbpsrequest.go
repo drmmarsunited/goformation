@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_BaselineEbsBandwidthMbpsRequest AWS CloudFormation Resource (AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html
-type SpotFleet_BaselineEbsBandwidthMbpsRequest struct {
+type SpotFleet_BaselineEbsBandwidthMbpsRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_BaselineEbsBandwidthMbpsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_BaselineEbsBandwidthMbpsRequest) AWSCloudFormationType() string {
+func (r *SpotFleet_BaselineEbsBandwidthMbpsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest"
 }

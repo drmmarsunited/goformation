@@ -8,57 +8,57 @@ import (
 
 // DataSource_DataSourceConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.DataSourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html
-type DataSource_DataSourceConfiguration struct {
+type DataSource_DataSourceConfiguration[T any] struct {
 
 	// ConfluenceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-confluenceconfiguration
-	ConfluenceConfiguration *DataSource_ConfluenceConfiguration `json:"ConfluenceConfiguration,omitempty"`
+	ConfluenceConfiguration *DataSource_ConfluenceConfiguration[any] `json:"ConfluenceConfiguration,omitempty"`
 
 	// DatabaseConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-databaseconfiguration
-	DatabaseConfiguration *DataSource_DatabaseConfiguration `json:"DatabaseConfiguration,omitempty"`
+	DatabaseConfiguration *DataSource_DatabaseConfiguration[any] `json:"DatabaseConfiguration,omitempty"`
 
 	// GoogleDriveConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-googledriveconfiguration
-	GoogleDriveConfiguration *DataSource_GoogleDriveConfiguration `json:"GoogleDriveConfiguration,omitempty"`
+	GoogleDriveConfiguration *DataSource_GoogleDriveConfiguration[any] `json:"GoogleDriveConfiguration,omitempty"`
 
 	// OneDriveConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-onedriveconfiguration
-	OneDriveConfiguration *DataSource_OneDriveConfiguration `json:"OneDriveConfiguration,omitempty"`
+	OneDriveConfiguration *DataSource_OneDriveConfiguration[any] `json:"OneDriveConfiguration,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-s3configuration
-	S3Configuration *DataSource_S3DataSourceConfiguration `json:"S3Configuration,omitempty"`
+	S3Configuration *DataSource_S3DataSourceConfiguration[any] `json:"S3Configuration,omitempty"`
 
 	// SalesforceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-salesforceconfiguration
-	SalesforceConfiguration *DataSource_SalesforceConfiguration `json:"SalesforceConfiguration,omitempty"`
+	SalesforceConfiguration *DataSource_SalesforceConfiguration[any] `json:"SalesforceConfiguration,omitempty"`
 
 	// ServiceNowConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-servicenowconfiguration
-	ServiceNowConfiguration *DataSource_ServiceNowConfiguration `json:"ServiceNowConfiguration,omitempty"`
+	ServiceNowConfiguration *DataSource_ServiceNowConfiguration[any] `json:"ServiceNowConfiguration,omitempty"`
 
 	// SharePointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-sharepointconfiguration
-	SharePointConfiguration *DataSource_SharePointConfiguration `json:"SharePointConfiguration,omitempty"`
+	SharePointConfiguration *DataSource_SharePointConfiguration[any] `json:"SharePointConfiguration,omitempty"`
 
 	// WebCrawlerConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-webcrawlerconfiguration
-	WebCrawlerConfiguration *DataSource_WebCrawlerConfiguration `json:"WebCrawlerConfiguration,omitempty"`
+	WebCrawlerConfiguration *DataSource_WebCrawlerConfiguration[any] `json:"WebCrawlerConfiguration,omitempty"`
 
 	// WorkDocsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-workdocsconfiguration
-	WorkDocsConfiguration *DataSource_WorkDocsConfiguration `json:"WorkDocsConfiguration,omitempty"`
+	WorkDocsConfiguration *DataSource_WorkDocsConfiguration[any] `json:"WorkDocsConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type DataSource_DataSourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DataSourceConfiguration"
 }

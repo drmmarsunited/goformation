@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_SingleHeader AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.SingleHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-singleheader.html
-type LoggingConfiguration_SingleHeader struct {
+type LoggingConfiguration_SingleHeader[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_SingleHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_SingleHeader) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_SingleHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.SingleHeader"
 }

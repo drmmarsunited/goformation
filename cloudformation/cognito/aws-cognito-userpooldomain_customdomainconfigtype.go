@@ -8,7 +8,7 @@ import (
 
 // UserPoolDomain_CustomDomainConfigType AWS CloudFormation Resource (AWS::Cognito::UserPoolDomain.CustomDomainConfigType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html
-type UserPoolDomain_CustomDomainConfigType struct {
+type UserPoolDomain_CustomDomainConfigType[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type UserPoolDomain_CustomDomainConfigType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolDomain_CustomDomainConfigType) AWSCloudFormationType() string {
+func (r *UserPoolDomain_CustomDomainConfigType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolDomain.CustomDomainConfigType"
 }

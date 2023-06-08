@@ -8,7 +8,7 @@ import (
 
 // ComputeEnvironment_ComputeResources AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.ComputeResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html
-type ComputeEnvironment_ComputeResources struct {
+type ComputeEnvironment_ComputeResources[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type ComputeEnvironment_ComputeResources struct {
 	// BidPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-bidpercentage
-	BidPercentage *int `json:"BidPercentage,omitempty"`
+	BidPercentage *T `json:"BidPercentage,omitempty"`
 
 	// DesiredvCpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus
-	DesiredvCpus *int `json:"DesiredvCpus,omitempty"`
+	DesiredvCpus *T `json:"DesiredvCpus,omitempty"`
 
 	// Ec2Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2configuration
-	Ec2Configuration []ComputeEnvironment_Ec2ConfigurationObject `json:"Ec2Configuration,omitempty"`
+	Ec2Configuration []ComputeEnvironment_Ec2ConfigurationObject[any] `json:"Ec2Configuration,omitempty"`
 
 	// Ec2KeyPair AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type ComputeEnvironment_ComputeResources struct {
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-launchtemplate
-	LaunchTemplate *ComputeEnvironment_LaunchTemplateSpecification `json:"LaunchTemplate,omitempty"`
+	LaunchTemplate *ComputeEnvironment_LaunchTemplateSpecification[any] `json:"LaunchTemplate,omitempty"`
 
 	// MaxvCpus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-maxvcpus
-	MaxvCpus int `json:"MaxvCpus"`
+	MaxvCpus T `json:"MaxvCpus"`
 
 	// MinvCpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-minvcpus
-	MinvCpus *int `json:"MinvCpus,omitempty"`
+	MinvCpus *T `json:"MinvCpus,omitempty"`
 
 	// PlacementGroup AWS CloudFormation Property
 	// Required: false
@@ -98,7 +98,7 @@ type ComputeEnvironment_ComputeResources struct {
 	// UpdateToLatestImageVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-updatetolatestimageversion
-	UpdateToLatestImageVersion *bool `json:"UpdateToLatestImageVersion,omitempty"`
+	UpdateToLatestImageVersion *T `json:"UpdateToLatestImageVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -117,6 +117,6 @@ type ComputeEnvironment_ComputeResources struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment_ComputeResources) AWSCloudFormationType() string {
+func (r *ComputeEnvironment_ComputeResources[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.ComputeResources"
 }

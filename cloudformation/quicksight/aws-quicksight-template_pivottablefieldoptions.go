@@ -8,17 +8,17 @@ import (
 
 // Template_PivotTableFieldOptions AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableFieldOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldoptions.html
-type Template_PivotTableFieldOptions struct {
+type Template_PivotTableFieldOptions[T any] struct {
 
 	// DataPathOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldoptions.html#cfn-quicksight-template-pivottablefieldoptions-datapathoptions
-	DataPathOptions []Template_PivotTableDataPathOption `json:"DataPathOptions,omitempty"`
+	DataPathOptions []Template_PivotTableDataPathOption[any] `json:"DataPathOptions,omitempty"`
 
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldoptions.html#cfn-quicksight-template-pivottablefieldoptions-selectedfieldoptions
-	SelectedFieldOptions []Template_PivotTableFieldOption `json:"SelectedFieldOptions,omitempty"`
+	SelectedFieldOptions []Template_PivotTableFieldOption[any] `json:"SelectedFieldOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_PivotTableFieldOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableFieldOptions) AWSCloudFormationType() string {
+func (r *Template_PivotTableFieldOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableFieldOptions"
 }

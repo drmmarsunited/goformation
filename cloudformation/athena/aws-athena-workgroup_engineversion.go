@@ -8,7 +8,7 @@ import (
 
 // WorkGroup_EngineVersion AWS CloudFormation Resource (AWS::Athena::WorkGroup.EngineVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html
-type WorkGroup_EngineVersion struct {
+type WorkGroup_EngineVersion[T any] struct {
 
 	// EffectiveEngineVersion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type WorkGroup_EngineVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_EngineVersion) AWSCloudFormationType() string {
+func (r *WorkGroup_EngineVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.EngineVersion"
 }

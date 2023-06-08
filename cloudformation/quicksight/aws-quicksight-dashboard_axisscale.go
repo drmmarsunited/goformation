@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AxisScale AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AxisScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisscale.html
-type Dashboard_AxisScale struct {
+type Dashboard_AxisScale[T any] struct {
 
 	// Linear AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisscale.html#cfn-quicksight-dashboard-axisscale-linear
-	Linear *Dashboard_AxisLinearScale `json:"Linear,omitempty"`
+	Linear *Dashboard_AxisLinearScale[any] `json:"Linear,omitempty"`
 
 	// Logarithmic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisscale.html#cfn-quicksight-dashboard-axisscale-logarithmic
-	Logarithmic *Dashboard_AxisLogarithmicScale `json:"Logarithmic,omitempty"`
+	Logarithmic *Dashboard_AxisLogarithmicScale[any] `json:"Logarithmic,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_AxisScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AxisScale) AWSCloudFormationType() string {
+func (r *Dashboard_AxisScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AxisScale"
 }

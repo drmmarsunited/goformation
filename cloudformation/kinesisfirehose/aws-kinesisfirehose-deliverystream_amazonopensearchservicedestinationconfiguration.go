@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_AmazonopensearchserviceDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html
-type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
+type DeliveryStream_AmazonopensearchserviceDestinationConfiguration[T any] struct {
 
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_AmazonopensearchserviceBufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_AmazonopensearchserviceBufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// ClusterEndpoint AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
 	// DocumentIdOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-documentidoptions
-	DocumentIdOptions *DeliveryStream_DocumentIdOptions `json:"DocumentIdOptions,omitempty"`
+	DocumentIdOptions *DeliveryStream_DocumentIdOptions[any] `json:"DocumentIdOptions,omitempty"`
 
 	// DomainARN AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_AmazonopensearchserviceRetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_AmazonopensearchserviceRetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -68,7 +68,7 @@ type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-vpcconfiguration
-	VpcConfiguration *DeliveryStream_VpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DeliveryStream_VpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -97,6 +97,6 @@ type DeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_AmazonopensearchserviceDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_AmazonopensearchserviceDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceDestinationConfiguration"
 }

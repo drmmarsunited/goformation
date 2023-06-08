@@ -8,12 +8,12 @@ import (
 
 // Bot_SlotPriority AWS CloudFormation Resource (AWS::Lex::Bot.SlotPriority)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotpriority.html
-type Bot_SlotPriority struct {
+type Bot_SlotPriority[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotpriority.html#cfn-lex-bot-slotpriority-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// SlotName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bot_SlotPriority struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotPriority) AWSCloudFormationType() string {
+func (r *Bot_SlotPriority[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotPriority"
 }

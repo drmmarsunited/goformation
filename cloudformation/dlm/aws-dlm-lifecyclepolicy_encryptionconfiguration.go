@@ -8,7 +8,7 @@ import (
 
 // LifecyclePolicy_EncryptionConfiguration AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html
-type LifecyclePolicy_EncryptionConfiguration struct {
+type LifecyclePolicy_EncryptionConfiguration[T any] struct {
 
 	// CmkArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LifecyclePolicy_EncryptionConfiguration struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html#cfn-dlm-lifecyclepolicy-encryptionconfiguration-encrypted
-	Encrypted bool `json:"Encrypted"`
+	Encrypted T `json:"Encrypted"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LifecyclePolicy_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.EncryptionConfiguration"
 }

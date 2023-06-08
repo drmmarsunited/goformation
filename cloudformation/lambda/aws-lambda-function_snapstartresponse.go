@@ -8,7 +8,7 @@ import (
 
 // Function_SnapStartResponse AWS CloudFormation Resource (AWS::Lambda::Function.SnapStartResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html
-type Function_SnapStartResponse struct {
+type Function_SnapStartResponse[T any] struct {
 
 	// ApplyOn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Function_SnapStartResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_SnapStartResponse) AWSCloudFormationType() string {
+func (r *Function_SnapStartResponse[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.SnapStartResponse"
 }

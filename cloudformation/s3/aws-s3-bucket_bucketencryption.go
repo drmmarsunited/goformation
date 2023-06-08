@@ -8,12 +8,12 @@ import (
 
 // Bucket_BucketEncryption AWS CloudFormation Resource (AWS::S3::Bucket.BucketEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html
-type Bucket_BucketEncryption struct {
+type Bucket_BucketEncryption[T any] struct {
 
 	// ServerSideEncryptionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html#cfn-s3-bucket-bucketencryption-serversideencryptionconfiguration
-	ServerSideEncryptionConfiguration []Bucket_ServerSideEncryptionRule `json:"ServerSideEncryptionConfiguration"`
+	ServerSideEncryptionConfiguration []Bucket_ServerSideEncryptionRule[any] `json:"ServerSideEncryptionConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_BucketEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_BucketEncryption) AWSCloudFormationType() string {
+func (r *Bucket_BucketEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.BucketEncryption"
 }

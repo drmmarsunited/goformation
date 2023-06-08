@@ -8,42 +8,42 @@ import (
 
 // ScalingPolicy_PredictiveScalingMetricSpecification AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingMetricSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html
-type ScalingPolicy_PredictiveScalingMetricSpecification struct {
+type ScalingPolicy_PredictiveScalingMetricSpecification[T any] struct {
 
 	// CustomizedCapacityMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-customizedcapacitymetricspecification
-	CustomizedCapacityMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedCapacityMetric `json:"CustomizedCapacityMetricSpecification,omitempty"`
+	CustomizedCapacityMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedCapacityMetric[any] `json:"CustomizedCapacityMetricSpecification,omitempty"`
 
 	// CustomizedLoadMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-customizedloadmetricspecification
-	CustomizedLoadMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedLoadMetric `json:"CustomizedLoadMetricSpecification,omitempty"`
+	CustomizedLoadMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedLoadMetric[any] `json:"CustomizedLoadMetricSpecification,omitempty"`
 
 	// CustomizedScalingMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-customizedscalingmetricspecification
-	CustomizedScalingMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedScalingMetric `json:"CustomizedScalingMetricSpecification,omitempty"`
+	CustomizedScalingMetricSpecification *ScalingPolicy_PredictiveScalingCustomizedScalingMetric[any] `json:"CustomizedScalingMetricSpecification,omitempty"`
 
 	// PredefinedLoadMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedloadmetricspecification
-	PredefinedLoadMetricSpecification *ScalingPolicy_PredictiveScalingPredefinedLoadMetric `json:"PredefinedLoadMetricSpecification,omitempty"`
+	PredefinedLoadMetricSpecification *ScalingPolicy_PredictiveScalingPredefinedLoadMetric[any] `json:"PredefinedLoadMetricSpecification,omitempty"`
 
 	// PredefinedMetricPairSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedmetricpairspecification
-	PredefinedMetricPairSpecification *ScalingPolicy_PredictiveScalingPredefinedMetricPair `json:"PredefinedMetricPairSpecification,omitempty"`
+	PredefinedMetricPairSpecification *ScalingPolicy_PredictiveScalingPredefinedMetricPair[any] `json:"PredefinedMetricPairSpecification,omitempty"`
 
 	// PredefinedScalingMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedscalingmetricspecification
-	PredefinedScalingMetricSpecification *ScalingPolicy_PredictiveScalingPredefinedScalingMetric `json:"PredefinedScalingMetricSpecification,omitempty"`
+	PredefinedScalingMetricSpecification *ScalingPolicy_PredictiveScalingPredefinedScalingMetric[any] `json:"PredefinedScalingMetricSpecification,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-autoscaling-scalingpolicy-predictivescalingmetricspecification-targetvalue
-	TargetValue float64 `json:"TargetValue"`
+	TargetValue T `json:"TargetValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type ScalingPolicy_PredictiveScalingMetricSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_PredictiveScalingMetricSpecification) AWSCloudFormationType() string {
+func (r *ScalingPolicy_PredictiveScalingMetricSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.PredictiveScalingMetricSpecification"
 }

@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_HttpGatewayRouteHeader AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html
-type GatewayRoute_HttpGatewayRouteHeader struct {
+type GatewayRoute_HttpGatewayRouteHeader[T any] struct {
 
 	// Invert AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html#cfn-appmesh-gatewayroute-httpgatewayrouteheader-invert
-	Invert *bool `json:"Invert,omitempty"`
+	Invert *T `json:"Invert,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html#cfn-appmesh-gatewayroute-httpgatewayrouteheader-match
-	Match *GatewayRoute_HttpGatewayRouteHeaderMatch `json:"Match,omitempty"`
+	Match *GatewayRoute_HttpGatewayRouteHeaderMatch[any] `json:"Match,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type GatewayRoute_HttpGatewayRouteHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_HttpGatewayRouteHeader) AWSCloudFormationType() string {
+func (r *GatewayRoute_HttpGatewayRouteHeader[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeader"
 }

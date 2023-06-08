@@ -9,7 +9,7 @@ import (
 
 // LaunchTemplate_LaunchTemplateTagSpecification AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html
-type LaunchTemplate_LaunchTemplateTagSpecification struct {
+type LaunchTemplate_LaunchTemplateTagSpecification[T any] struct {
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
@@ -38,6 +38,6 @@ type LaunchTemplate_LaunchTemplateTagSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_LaunchTemplateTagSpecification) AWSCloudFormationType() string {
+func (r *LaunchTemplate_LaunchTemplateTagSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification"
 }

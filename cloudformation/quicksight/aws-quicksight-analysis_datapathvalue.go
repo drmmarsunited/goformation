@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataPathValue AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataPathValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datapathvalue.html
-type Analysis_DataPathValue struct {
+type Analysis_DataPathValue[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_DataPathValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataPathValue) AWSCloudFormationType() string {
+func (r *Analysis_DataPathValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataPathValue"
 }

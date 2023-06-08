@@ -8,12 +8,12 @@ import (
 
 // Deployment_IoTJobTimeoutConfig AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobTimeoutConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobtimeoutconfig.html
-type Deployment_IoTJobTimeoutConfig struct {
+type Deployment_IoTJobTimeoutConfig[T any] struct {
 
 	// InProgressTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobtimeoutconfig.html#cfn-greengrassv2-deployment-iotjobtimeoutconfig-inprogresstimeoutinminutes
-	InProgressTimeoutInMinutes *int `json:"InProgressTimeoutInMinutes,omitempty"`
+	InProgressTimeoutInMinutes *T `json:"InProgressTimeoutInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Deployment_IoTJobTimeoutConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobTimeoutConfig) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobTimeoutConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobTimeoutConfig"
 }

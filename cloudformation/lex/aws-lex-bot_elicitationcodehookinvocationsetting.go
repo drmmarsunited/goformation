@@ -8,12 +8,12 @@ import (
 
 // Bot_ElicitationCodeHookInvocationSetting AWS CloudFormation Resource (AWS::Lex::Bot.ElicitationCodeHookInvocationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-elicitationcodehookinvocationsetting.html
-type Bot_ElicitationCodeHookInvocationSetting struct {
+type Bot_ElicitationCodeHookInvocationSetting[T any] struct {
 
 	// EnableCodeHookInvocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-elicitationcodehookinvocationsetting.html#cfn-lex-bot-elicitationcodehookinvocationsetting-enablecodehookinvocation
-	EnableCodeHookInvocation bool `json:"EnableCodeHookInvocation"`
+	EnableCodeHookInvocation T `json:"EnableCodeHookInvocation"`
 
 	// InvocationLabel AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bot_ElicitationCodeHookInvocationSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ElicitationCodeHookInvocationSetting) AWSCloudFormationType() string {
+func (r *Bot_ElicitationCodeHookInvocationSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ElicitationCodeHookInvocationSetting"
 }

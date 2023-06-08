@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_ModelQualityAppSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.ModelQualityAppSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html
-type ModelQualityJobDefinition_ModelQualityAppSpecification struct {
+type ModelQualityJobDefinition_ModelQualityAppSpecification[T any] struct {
 
 	// ContainerArguments AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type ModelQualityJobDefinition_ModelQualityAppSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_ModelQualityAppSpecification) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_ModelQualityAppSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityAppSpecification"
 }

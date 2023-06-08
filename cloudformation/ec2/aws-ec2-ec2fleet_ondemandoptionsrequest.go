@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_OnDemandOptionsRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.OnDemandOptionsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html
-type EC2Fleet_OnDemandOptionsRequest struct {
+type EC2Fleet_OnDemandOptionsRequest[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type EC2Fleet_OnDemandOptionsRequest struct {
 	// CapacityReservationOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-capacityreservationoptions
-	CapacityReservationOptions *EC2Fleet_CapacityReservationOptionsRequest `json:"CapacityReservationOptions,omitempty"`
+	CapacityReservationOptions *EC2Fleet_CapacityReservationOptionsRequest[any] `json:"CapacityReservationOptions,omitempty"`
 
 	// MaxTotalPrice AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type EC2Fleet_OnDemandOptionsRequest struct {
 	// MinTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-mintargetcapacity
-	MinTargetCapacity *int `json:"MinTargetCapacity,omitempty"`
+	MinTargetCapacity *T `json:"MinTargetCapacity,omitempty"`
 
 	// SingleAvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleavailabilityzone
-	SingleAvailabilityZone *bool `json:"SingleAvailabilityZone,omitempty"`
+	SingleAvailabilityZone *T `json:"SingleAvailabilityZone,omitempty"`
 
 	// SingleInstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleinstancetype
-	SingleInstanceType *bool `json:"SingleInstanceType,omitempty"`
+	SingleInstanceType *T `json:"SingleInstanceType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type EC2Fleet_OnDemandOptionsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_OnDemandOptionsRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_OnDemandOptionsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.OnDemandOptionsRequest"
 }

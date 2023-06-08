@@ -8,7 +8,7 @@ import (
 
 // GameSessionQueue_PriorityConfiguration AWS CloudFormation Resource (AWS::GameLift::GameSessionQueue.PriorityConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-priorityconfiguration.html
-type GameSessionQueue_PriorityConfiguration struct {
+type GameSessionQueue_PriorityConfiguration[T any] struct {
 
 	// LocationOrder AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GameSessionQueue_PriorityConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameSessionQueue_PriorityConfiguration) AWSCloudFormationType() string {
+func (r *GameSessionQueue_PriorityConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameSessionQueue.PriorityConfiguration"
 }

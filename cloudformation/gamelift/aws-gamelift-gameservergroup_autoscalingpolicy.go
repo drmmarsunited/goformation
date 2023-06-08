@@ -8,17 +8,17 @@ import (
 
 // GameServerGroup_AutoScalingPolicy AWS CloudFormation Resource (AWS::GameLift::GameServerGroup.AutoScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html
-type GameServerGroup_AutoScalingPolicy struct {
+type GameServerGroup_AutoScalingPolicy[T any] struct {
 
 	// EstimatedInstanceWarmup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html#cfn-gamelift-gameservergroup-autoscalingpolicy-estimatedinstancewarmup
-	EstimatedInstanceWarmup *float64 `json:"EstimatedInstanceWarmup,omitempty"`
+	EstimatedInstanceWarmup *T `json:"EstimatedInstanceWarmup,omitempty"`
 
 	// TargetTrackingConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html#cfn-gamelift-gameservergroup-autoscalingpolicy-targettrackingconfiguration
-	TargetTrackingConfiguration *GameServerGroup_TargetTrackingConfiguration `json:"TargetTrackingConfiguration"`
+	TargetTrackingConfiguration *GameServerGroup_TargetTrackingConfiguration[any] `json:"TargetTrackingConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GameServerGroup_AutoScalingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameServerGroup_AutoScalingPolicy) AWSCloudFormationType() string {
+func (r *GameServerGroup_AutoScalingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameServerGroup.AutoScalingPolicy"
 }

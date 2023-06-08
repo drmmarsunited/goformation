@@ -11,7 +11,7 @@ import (
 
 // ResourceUpdateConstraint AWS CloudFormation Resource (AWS::ServiceCatalog::ResourceUpdateConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html
-type ResourceUpdateConstraint struct {
+type ResourceUpdateConstraint[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type ResourceUpdateConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceUpdateConstraint) AWSCloudFormationType() string {
+func (r *ResourceUpdateConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::ResourceUpdateConstraint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceUpdateConstraint) MarshalJSON() ([]byte, error) {
-	type Properties ResourceUpdateConstraint
+func (r ResourceUpdateConstraint[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceUpdateConstraint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r ResourceUpdateConstraint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceUpdateConstraint) UnmarshalJSON(b []byte) error {
-	type Properties ResourceUpdateConstraint
+func (r *ResourceUpdateConstraint[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceUpdateConstraint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *ResourceUpdateConstraint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceUpdateConstraint(*res.Properties)
+		*r = ResourceUpdateConstraint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Model_InferenceExecutionConfig AWS CloudFormation Resource (AWS::SageMaker::Model.InferenceExecutionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-inferenceexecutionconfig.html
-type Model_InferenceExecutionConfig struct {
+type Model_InferenceExecutionConfig[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Model_InferenceExecutionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_InferenceExecutionConfig) AWSCloudFormationType() string {
+func (r *Model_InferenceExecutionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.InferenceExecutionConfig"
 }

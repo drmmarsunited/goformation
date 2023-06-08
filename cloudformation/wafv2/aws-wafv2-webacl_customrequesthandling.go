@@ -8,12 +8,12 @@ import (
 
 // WebACL_CustomRequestHandling AWS CloudFormation Resource (AWS::WAFv2::WebACL.CustomRequestHandling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customrequesthandling.html
-type WebACL_CustomRequestHandling struct {
+type WebACL_CustomRequestHandling[T any] struct {
 
 	// InsertHeaders AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customrequesthandling.html#cfn-wafv2-webacl-customrequesthandling-insertheaders
-	InsertHeaders []WebACL_CustomHTTPHeader `json:"InsertHeaders"`
+	InsertHeaders []WebACL_CustomHTTPHeader[any] `json:"InsertHeaders"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_CustomRequestHandling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_CustomRequestHandling) AWSCloudFormationType() string {
+func (r *WebACL_CustomRequestHandling[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.CustomRequestHandling"
 }

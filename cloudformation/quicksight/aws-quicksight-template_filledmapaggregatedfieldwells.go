@@ -8,17 +8,17 @@ import (
 
 // Template_FilledMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.FilledMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapaggregatedfieldwells.html
-type Template_FilledMapAggregatedFieldWells struct {
+type Template_FilledMapAggregatedFieldWells[T any] struct {
 
 	// Geospatial AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapaggregatedfieldwells.html#cfn-quicksight-template-filledmapaggregatedfieldwells-geospatial
-	Geospatial []Template_DimensionField `json:"Geospatial,omitempty"`
+	Geospatial []Template_DimensionField[any] `json:"Geospatial,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapaggregatedfieldwells.html#cfn-quicksight-template-filledmapaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_FilledMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilledMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_FilledMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilledMapAggregatedFieldWells"
 }

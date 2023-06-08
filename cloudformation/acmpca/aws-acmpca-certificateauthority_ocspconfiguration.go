@@ -8,12 +8,12 @@ import (
 
 // CertificateAuthority_OcspConfiguration AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.OcspConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-ocspconfiguration.html
-type CertificateAuthority_OcspConfiguration struct {
+type CertificateAuthority_OcspConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-ocspconfiguration.html#cfn-acmpca-certificateauthority-ocspconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// OcspCustomCname AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type CertificateAuthority_OcspConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_OcspConfiguration) AWSCloudFormationType() string {
+func (r *CertificateAuthority_OcspConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.OcspConfiguration"
 }

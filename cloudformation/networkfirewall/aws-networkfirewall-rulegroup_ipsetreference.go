@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_IPSetReference AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.IPSetReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ipsetreference.html
-type RuleGroup_IPSetReference struct {
+type RuleGroup_IPSetReference[T any] struct {
 
 	// ReferenceArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RuleGroup_IPSetReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_IPSetReference) AWSCloudFormationType() string {
+func (r *RuleGroup_IPSetReference[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.IPSetReference"
 }

@@ -8,7 +8,7 @@ import (
 
 // Distribution_CacheBehavior AWS CloudFormation Resource (AWS::CloudFront::Distribution.CacheBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html
-type Distribution_CacheBehavior struct {
+type Distribution_CacheBehavior[T any] struct {
 
 	// AllowedMethods AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Distribution_CacheBehavior struct {
 	// Compress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-compress
-	Compress *bool `json:"Compress,omitempty"`
+	Compress *T `json:"Compress,omitempty"`
 
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-defaultttl
-	DefaultTTL *float64 `json:"DefaultTTL,omitempty"`
+	DefaultTTL *T `json:"DefaultTTL,omitempty"`
 
 	// FieldLevelEncryptionId AWS CloudFormation Property
 	// Required: false
@@ -43,27 +43,27 @@ type Distribution_CacheBehavior struct {
 	// ForwardedValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-forwardedvalues
-	ForwardedValues *Distribution_ForwardedValues `json:"ForwardedValues,omitempty"`
+	ForwardedValues *Distribution_ForwardedValues[any] `json:"ForwardedValues,omitempty"`
 
 	// FunctionAssociations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-functionassociations
-	FunctionAssociations []Distribution_FunctionAssociation `json:"FunctionAssociations,omitempty"`
+	FunctionAssociations []Distribution_FunctionAssociation[any] `json:"FunctionAssociations,omitempty"`
 
 	// LambdaFunctionAssociations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-lambdafunctionassociations
-	LambdaFunctionAssociations []Distribution_LambdaFunctionAssociation `json:"LambdaFunctionAssociations,omitempty"`
+	LambdaFunctionAssociations []Distribution_LambdaFunctionAssociation[any] `json:"LambdaFunctionAssociations,omitempty"`
 
 	// MaxTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-maxttl
-	MaxTTL *float64 `json:"MaxTTL,omitempty"`
+	MaxTTL *T `json:"MaxTTL,omitempty"`
 
 	// MinTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-minttl
-	MinTTL *float64 `json:"MinTTL,omitempty"`
+	MinTTL *T `json:"MinTTL,omitempty"`
 
 	// OriginRequestPolicyId AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type Distribution_CacheBehavior struct {
 	// SmoothStreaming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-smoothstreaming
-	SmoothStreaming *bool `json:"SmoothStreaming,omitempty"`
+	SmoothStreaming *T `json:"SmoothStreaming,omitempty"`
 
 	// TargetOriginId AWS CloudFormation Property
 	// Required: true
@@ -127,6 +127,6 @@ type Distribution_CacheBehavior struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CacheBehavior) AWSCloudFormationType() string {
+func (r *Distribution_CacheBehavior[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.CacheBehavior"
 }

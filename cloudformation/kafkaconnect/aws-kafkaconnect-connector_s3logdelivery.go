@@ -8,7 +8,7 @@ import (
 
 // Connector_S3LogDelivery AWS CloudFormation Resource (AWS::KafkaConnect::Connector.S3LogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-s3logdelivery.html
-type Connector_S3LogDelivery struct {
+type Connector_S3LogDelivery[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Connector_S3LogDelivery struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-s3logdelivery.html#cfn-kafkaconnect-connector-s3logdelivery-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Connector_S3LogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_S3LogDelivery) AWSCloudFormationType() string {
+func (r *Connector_S3LogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.S3LogDelivery"
 }

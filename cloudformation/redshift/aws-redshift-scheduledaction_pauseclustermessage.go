@@ -8,7 +8,7 @@ import (
 
 // ScheduledAction_PauseClusterMessage AWS CloudFormation Resource (AWS::Redshift::ScheduledAction.PauseClusterMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-pauseclustermessage.html
-type ScheduledAction_PauseClusterMessage struct {
+type ScheduledAction_PauseClusterMessage[T any] struct {
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ScheduledAction_PauseClusterMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledAction_PauseClusterMessage) AWSCloudFormationType() string {
+func (r *ScheduledAction_PauseClusterMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ScheduledAction.PauseClusterMessage"
 }

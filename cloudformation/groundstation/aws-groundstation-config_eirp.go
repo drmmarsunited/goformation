@@ -8,7 +8,7 @@ import (
 
 // Config_Eirp AWS CloudFormation Resource (AWS::GroundStation::Config.Eirp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-eirp.html
-type Config_Eirp struct {
+type Config_Eirp[T any] struct {
 
 	// Units AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Config_Eirp struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-eirp.html#cfn-groundstation-config-eirp-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Config_Eirp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_Eirp) AWSCloudFormationType() string {
+func (r *Config_Eirp[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.Eirp"
 }

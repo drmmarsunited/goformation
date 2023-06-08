@@ -8,7 +8,7 @@ import (
 
 // DataSource_DataSourceToIndexFieldMapping AWS CloudFormation Resource (AWS::Kendra::DataSource.DataSourceToIndexFieldMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcetoindexfieldmapping.html
-type DataSource_DataSourceToIndexFieldMapping struct {
+type DataSource_DataSourceToIndexFieldMapping[T any] struct {
 
 	// DataSourceFieldName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_DataSourceToIndexFieldMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceToIndexFieldMapping) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceToIndexFieldMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DataSourceToIndexFieldMapping"
 }

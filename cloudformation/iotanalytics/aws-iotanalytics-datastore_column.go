@@ -8,7 +8,7 @@ import (
 
 // Datastore_Column AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.Column)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html
-type Datastore_Column struct {
+type Datastore_Column[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Datastore_Column struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_Column) AWSCloudFormationType() string {
+func (r *Datastore_Column[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.Column"
 }

@@ -8,12 +8,12 @@ import (
 
 // Cluster_VpcConnectivityScram AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivityScram)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html
-type Cluster_VpcConnectivityScram struct {
+type Cluster_VpcConnectivityScram[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html#cfn-msk-cluster-vpcconnectivityscram-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_VpcConnectivityScram struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivityScram) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivityScram[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivityScram"
 }

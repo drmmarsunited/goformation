@@ -8,7 +8,7 @@ import (
 
 // UserProfile_SharingSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.SharingSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-sharingsettings.html
-type UserProfile_SharingSettings struct {
+type UserProfile_SharingSettings[T any] struct {
 
 	// NotebookOutputOption AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserProfile_SharingSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_SharingSettings) AWSCloudFormationType() string {
+func (r *UserProfile_SharingSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.SharingSettings"
 }

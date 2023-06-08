@@ -8,17 +8,17 @@ import (
 
 // Dashboard_PivotTableFieldOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableFieldOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablefieldoptions.html
-type Dashboard_PivotTableFieldOptions struct {
+type Dashboard_PivotTableFieldOptions[T any] struct {
 
 	// DataPathOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablefieldoptions.html#cfn-quicksight-dashboard-pivottablefieldoptions-datapathoptions
-	DataPathOptions []Dashboard_PivotTableDataPathOption `json:"DataPathOptions,omitempty"`
+	DataPathOptions []Dashboard_PivotTableDataPathOption[any] `json:"DataPathOptions,omitempty"`
 
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablefieldoptions.html#cfn-quicksight-dashboard-pivottablefieldoptions-selectedfieldoptions
-	SelectedFieldOptions []Dashboard_PivotTableFieldOption `json:"SelectedFieldOptions,omitempty"`
+	SelectedFieldOptions []Dashboard_PivotTableFieldOption[any] `json:"SelectedFieldOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_PivotTableFieldOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableFieldOptions) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableFieldOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableFieldOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Assessment_AssessmentReportsDestination AWS CloudFormation Resource (AWS::AuditManager::Assessment.AssessmentReportsDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html
-type Assessment_AssessmentReportsDestination struct {
+type Assessment_AssessmentReportsDestination[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Assessment_AssessmentReportsDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Assessment_AssessmentReportsDestination) AWSCloudFormationType() string {
+func (r *Assessment_AssessmentReportsDestination[any]) AWSCloudFormationType() string {
 	return "AWS::AuditManager::Assessment.AssessmentReportsDestination"
 }

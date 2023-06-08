@@ -8,17 +8,17 @@ import (
 
 // ConnectorProfile_SAPODataConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html
-type ConnectorProfile_SAPODataConnectorProfileCredentials struct {
+type ConnectorProfile_SAPODataConnectorProfileCredentials[T any] struct {
 
 	// BasicAuthCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html#cfn-appflow-connectorprofile-sapodataconnectorprofilecredentials-basicauthcredentials
-	BasicAuthCredentials *ConnectorProfile_BasicAuthCredentials `json:"BasicAuthCredentials,omitempty"`
+	BasicAuthCredentials *ConnectorProfile_BasicAuthCredentials[any] `json:"BasicAuthCredentials,omitempty"`
 
 	// OAuthCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html#cfn-appflow-connectorprofile-sapodataconnectorprofilecredentials-oauthcredentials
-	OAuthCredentials *ConnectorProfile_OAuthCredentials `json:"OAuthCredentials,omitempty"`
+	OAuthCredentials *ConnectorProfile_OAuthCredentials[any] `json:"OAuthCredentials,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ConnectorProfile_SAPODataConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SAPODataConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SAPODataConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileCredentials"
 }

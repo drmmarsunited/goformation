@@ -8,17 +8,17 @@ import (
 
 // Dashboard_FreeFormLayoutElement AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormLayoutElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html
-type Dashboard_FreeFormLayoutElement struct {
+type Dashboard_FreeFormLayoutElement[T any] struct {
 
 	// BackgroundStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html#cfn-quicksight-dashboard-freeformlayoutelement-backgroundstyle
-	BackgroundStyle *Dashboard_FreeFormLayoutElementBackgroundStyle `json:"BackgroundStyle,omitempty"`
+	BackgroundStyle *Dashboard_FreeFormLayoutElementBackgroundStyle[any] `json:"BackgroundStyle,omitempty"`
 
 	// BorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html#cfn-quicksight-dashboard-freeformlayoutelement-borderstyle
-	BorderStyle *Dashboard_FreeFormLayoutElementBorderStyle `json:"BorderStyle,omitempty"`
+	BorderStyle *Dashboard_FreeFormLayoutElementBorderStyle[any] `json:"BorderStyle,omitempty"`
 
 	// ElementId AWS CloudFormation Property
 	// Required: true
@@ -38,17 +38,17 @@ type Dashboard_FreeFormLayoutElement struct {
 	// LoadingAnimation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html#cfn-quicksight-dashboard-freeformlayoutelement-loadinganimation
-	LoadingAnimation *Dashboard_LoadingAnimation `json:"LoadingAnimation,omitempty"`
+	LoadingAnimation *Dashboard_LoadingAnimation[any] `json:"LoadingAnimation,omitempty"`
 
 	// RenderingRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html#cfn-quicksight-dashboard-freeformlayoutelement-renderingrules
-	RenderingRules []Dashboard_SheetElementRenderingRule `json:"RenderingRules,omitempty"`
+	RenderingRules []Dashboard_SheetElementRenderingRule[any] `json:"RenderingRules,omitempty"`
 
 	// SelectedBorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelement.html#cfn-quicksight-dashboard-freeformlayoutelement-selectedborderstyle
-	SelectedBorderStyle *Dashboard_FreeFormLayoutElementBorderStyle `json:"SelectedBorderStyle,omitempty"`
+	SelectedBorderStyle *Dashboard_FreeFormLayoutElementBorderStyle[any] `json:"SelectedBorderStyle,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -87,6 +87,6 @@ type Dashboard_FreeFormLayoutElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormLayoutElement) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormLayoutElement[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormLayoutElement"
 }

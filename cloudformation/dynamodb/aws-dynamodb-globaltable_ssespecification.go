@@ -8,12 +8,12 @@ import (
 
 // GlobalTable_SSESpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-ssespecification.html
-type GlobalTable_SSESpecification struct {
+type GlobalTable_SSESpecification[T any] struct {
 
 	// SSEEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-ssespecification.html#cfn-dynamodb-globaltable-ssespecification-sseenabled
-	SSEEnabled bool `json:"SSEEnabled"`
+	SSEEnabled T `json:"SSEEnabled"`
 
 	// SSEType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GlobalTable_SSESpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_SSESpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_SSESpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.SSESpecification"
 }

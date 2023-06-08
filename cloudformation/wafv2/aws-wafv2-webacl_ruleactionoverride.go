@@ -8,12 +8,12 @@ import (
 
 // WebACL_RuleActionOverride AWS CloudFormation Resource (AWS::WAFv2::WebACL.RuleActionOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleactionoverride.html
-type WebACL_RuleActionOverride struct {
+type WebACL_RuleActionOverride[T any] struct {
 
 	// ActionToUse AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleactionoverride.html#cfn-wafv2-webacl-ruleactionoverride-actiontouse
-	ActionToUse *WebACL_RuleAction `json:"ActionToUse"`
+	ActionToUse *WebACL_RuleAction[any] `json:"ActionToUse"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_RuleActionOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_RuleActionOverride) AWSCloudFormationType() string {
+func (r *WebACL_RuleActionOverride[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.RuleActionOverride"
 }

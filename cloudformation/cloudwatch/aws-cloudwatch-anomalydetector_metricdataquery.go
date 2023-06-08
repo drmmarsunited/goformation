@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_MetricDataQuery AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.MetricDataQuery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html
-type AnomalyDetector_MetricDataQuery struct {
+type AnomalyDetector_MetricDataQuery[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type AnomalyDetector_MetricDataQuery struct {
 	// MetricStat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html#cfn-cloudwatch-anomalydetector-metricdataquery-metricstat
-	MetricStat *AnomalyDetector_MetricStat `json:"MetricStat,omitempty"`
+	MetricStat *AnomalyDetector_MetricStat[any] `json:"MetricStat,omitempty"`
 
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html#cfn-cloudwatch-anomalydetector-metricdataquery-period
-	Period *int `json:"Period,omitempty"`
+	Period *T `json:"Period,omitempty"`
 
 	// ReturnData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html#cfn-cloudwatch-anomalydetector-metricdataquery-returndata
-	ReturnData *bool `json:"ReturnData,omitempty"`
+	ReturnData *T `json:"ReturnData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type AnomalyDetector_MetricDataQuery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricDataQuery) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricDataQuery[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.MetricDataQuery"
 }

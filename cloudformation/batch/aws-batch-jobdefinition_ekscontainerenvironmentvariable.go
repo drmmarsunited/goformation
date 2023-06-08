@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksContainerEnvironmentVariable AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksContainerEnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainerenvironmentvariable.html
-type JobDefinition_EksContainerEnvironmentVariable struct {
+type JobDefinition_EksContainerEnvironmentVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type JobDefinition_EksContainerEnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksContainerEnvironmentVariable) AWSCloudFormationType() string {
+func (r *JobDefinition_EksContainerEnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksContainerEnvironmentVariable"
 }

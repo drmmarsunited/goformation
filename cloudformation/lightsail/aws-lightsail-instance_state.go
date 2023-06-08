@@ -8,12 +8,12 @@ import (
 
 // Instance_State AWS CloudFormation Resource (AWS::Lightsail::Instance.State)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-state.html
-type Instance_State struct {
+type Instance_State[T any] struct {
 
 	// Code AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-state.html#cfn-lightsail-instance-state-code
-	Code *int `json:"Code,omitempty"`
+	Code *T `json:"Code,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Instance_State struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_State) AWSCloudFormationType() string {
+func (r *Instance_State[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.State"
 }

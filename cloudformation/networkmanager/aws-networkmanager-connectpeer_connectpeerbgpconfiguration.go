@@ -8,7 +8,7 @@ import (
 
 // ConnectPeer_ConnectPeerBgpConfiguration AWS CloudFormation Resource (AWS::NetworkManager::ConnectPeer.ConnectPeerBgpConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html
-type ConnectPeer_ConnectPeerBgpConfiguration struct {
+type ConnectPeer_ConnectPeerBgpConfiguration[T any] struct {
 
 	// CoreNetworkAddress AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ConnectPeer_ConnectPeerBgpConfiguration struct {
 	// CoreNetworkAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkasn
-	CoreNetworkAsn *float64 `json:"CoreNetworkAsn,omitempty"`
+	CoreNetworkAsn *T `json:"CoreNetworkAsn,omitempty"`
 
 	// PeerAddress AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectPeer_ConnectPeerBgpConfiguration struct {
 	// PeerAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peerasn
-	PeerAsn *float64 `json:"PeerAsn,omitempty"`
+	PeerAsn *T `json:"PeerAsn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ConnectPeer_ConnectPeerBgpConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectPeer_ConnectPeerBgpConfiguration) AWSCloudFormationType() string {
+func (r *ConnectPeer_ConnectPeerBgpConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectPeer.ConnectPeerBgpConfiguration"
 }

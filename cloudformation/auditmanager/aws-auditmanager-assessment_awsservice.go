@@ -8,7 +8,7 @@ import (
 
 // Assessment_AWSService AWS CloudFormation Resource (AWS::AuditManager::Assessment.AWSService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservice.html
-type Assessment_AWSService struct {
+type Assessment_AWSService[T any] struct {
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Assessment_AWSService struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Assessment_AWSService) AWSCloudFormationType() string {
+func (r *Assessment_AWSService[any]) AWSCloudFormationType() string {
 	return "AWS::AuditManager::Assessment.AWSService"
 }

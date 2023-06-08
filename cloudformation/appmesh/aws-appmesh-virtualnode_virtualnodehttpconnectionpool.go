@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_VirtualNodeHttpConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html
-type VirtualNode_VirtualNodeHttpConnectionPool struct {
+type VirtualNode_VirtualNodeHttpConnectionPool[T any] struct {
 
 	// MaxConnections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxconnections
-	MaxConnections int `json:"MaxConnections"`
+	MaxConnections T `json:"MaxConnections"`
 
 	// MaxPendingRequests AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxpendingrequests
-	MaxPendingRequests *int `json:"MaxPendingRequests,omitempty"`
+	MaxPendingRequests *T `json:"MaxPendingRequests,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_VirtualNodeHttpConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_VirtualNodeHttpConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualNode_VirtualNodeHttpConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool"
 }

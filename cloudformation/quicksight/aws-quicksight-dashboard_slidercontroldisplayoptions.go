@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SliderControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SliderControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-slidercontroldisplayoptions.html
-type Dashboard_SliderControlDisplayOptions struct {
+type Dashboard_SliderControlDisplayOptions[T any] struct {
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-slidercontroldisplayoptions.html#cfn-quicksight-dashboard-slidercontroldisplayoptions-titleoptions
-	TitleOptions *Dashboard_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Dashboard_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_SliderControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SliderControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SliderControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SliderControlDisplayOptions"
 }

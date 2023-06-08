@@ -11,7 +11,7 @@ import (
 
 // Nodegroup AWS CloudFormation Resource (AWS::EKS::Nodegroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html
-type Nodegroup struct {
+type Nodegroup[T any] struct {
 
 	// AmiType AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type Nodegroup struct {
 	// DiskSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-disksize
-	DiskSize *int `json:"DiskSize,omitempty"`
+	DiskSize *T `json:"DiskSize,omitempty"`
 
 	// ForceUpdateEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-forceupdateenabled
-	ForceUpdateEnabled *bool `json:"ForceUpdateEnabled,omitempty"`
+	ForceUpdateEnabled *T `json:"ForceUpdateEnabled,omitempty"`
 
 	// InstanceTypes AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type Nodegroup struct {
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-launchtemplate
-	LaunchTemplate *Nodegroup_LaunchTemplateSpecification `json:"LaunchTemplate,omitempty"`
+	LaunchTemplate *Nodegroup_LaunchTemplateSpecification[any] `json:"LaunchTemplate,omitempty"`
 
 	// NodeRole AWS CloudFormation Property
 	// Required: true
@@ -71,12 +71,12 @@ type Nodegroup struct {
 	// RemoteAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-remoteaccess
-	RemoteAccess *Nodegroup_RemoteAccess `json:"RemoteAccess,omitempty"`
+	RemoteAccess *Nodegroup_RemoteAccess[any] `json:"RemoteAccess,omitempty"`
 
 	// ScalingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-scalingconfig
-	ScalingConfig *Nodegroup_ScalingConfig `json:"ScalingConfig,omitempty"`
+	ScalingConfig *Nodegroup_ScalingConfig[any] `json:"ScalingConfig,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: true
@@ -91,12 +91,12 @@ type Nodegroup struct {
 	// Taints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-taints
-	Taints []Nodegroup_Taint `json:"Taints,omitempty"`
+	Taints []Nodegroup_Taint[any] `json:"Taints,omitempty"`
 
 	// UpdateConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-updateconfig
-	UpdateConfig *Nodegroup_UpdateConfig `json:"UpdateConfig,omitempty"`
+	UpdateConfig *Nodegroup_UpdateConfig[any] `json:"UpdateConfig,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -120,14 +120,15 @@ type Nodegroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Nodegroup) AWSCloudFormationType() string {
+func (r *Nodegroup[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Nodegroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Nodegroup) MarshalJSON() ([]byte, error) {
-	type Properties Nodegroup
+func (r Nodegroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties Nodegroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -149,8 +150,9 @@ func (r Nodegroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Nodegroup) UnmarshalJSON(b []byte) error {
-	type Properties Nodegroup
+func (r *Nodegroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties Nodegroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -170,7 +172,7 @@ func (r *Nodegroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Nodegroup(*res.Properties)
+		*r = Nodegroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

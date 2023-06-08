@@ -8,7 +8,7 @@ import (
 
 // TopicRule_KinesisAction AWS CloudFormation Resource (AWS::IoT::TopicRule.KinesisAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html
-type TopicRule_KinesisAction struct {
+type TopicRule_KinesisAction[T any] struct {
 
 	// PartitionKey AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TopicRule_KinesisAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_KinesisAction) AWSCloudFormationType() string {
+func (r *TopicRule_KinesisAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.KinesisAction"
 }

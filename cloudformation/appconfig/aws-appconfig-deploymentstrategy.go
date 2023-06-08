@@ -11,12 +11,12 @@ import (
 
 // DeploymentStrategy AWS CloudFormation Resource (AWS::AppConfig::DeploymentStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html
-type DeploymentStrategy struct {
+type DeploymentStrategy[T any] struct {
 
 	// DeploymentDurationInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-deploymentdurationinminutes
-	DeploymentDurationInMinutes float64 `json:"DeploymentDurationInMinutes"`
+	DeploymentDurationInMinutes T `json:"DeploymentDurationInMinutes"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type DeploymentStrategy struct {
 	// FinalBakeTimeInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-finalbaketimeinminutes
-	FinalBakeTimeInMinutes *float64 `json:"FinalBakeTimeInMinutes,omitempty"`
+	FinalBakeTimeInMinutes *T `json:"FinalBakeTimeInMinutes,omitempty"`
 
 	// GrowthFactor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthfactor
-	GrowthFactor float64 `json:"GrowthFactor"`
+	GrowthFactor T `json:"GrowthFactor"`
 
 	// GrowthType AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type DeploymentStrategy struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-tags
-	Tags []DeploymentStrategy_Tags `json:"Tags,omitempty"`
+	Tags []DeploymentStrategy_Tags[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type DeploymentStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentStrategy) AWSCloudFormationType() string {
+func (r *DeploymentStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::DeploymentStrategy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeploymentStrategy) MarshalJSON() ([]byte, error) {
-	type Properties DeploymentStrategy
+func (r DeploymentStrategy[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeploymentStrategy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r DeploymentStrategy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeploymentStrategy) UnmarshalJSON(b []byte) error {
-	type Properties DeploymentStrategy
+func (r *DeploymentStrategy[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeploymentStrategy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *DeploymentStrategy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeploymentStrategy(*res.Properties)
+		*r = DeploymentStrategy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

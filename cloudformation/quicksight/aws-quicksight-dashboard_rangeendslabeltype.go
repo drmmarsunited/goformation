@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RangeEndsLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RangeEndsLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-rangeendslabeltype.html
-type Dashboard_RangeEndsLabelType struct {
+type Dashboard_RangeEndsLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_RangeEndsLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RangeEndsLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_RangeEndsLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RangeEndsLabelType"
 }

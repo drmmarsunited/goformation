@@ -8,17 +8,17 @@ import (
 
 // Endpoint_DeploymentConfig AWS CloudFormation Resource (AWS::SageMaker::Endpoint.DeploymentConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html
-type Endpoint_DeploymentConfig struct {
+type Endpoint_DeploymentConfig[T any] struct {
 
 	// AutoRollbackConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-autorollbackconfiguration
-	AutoRollbackConfiguration *Endpoint_AutoRollbackConfig `json:"AutoRollbackConfiguration,omitempty"`
+	AutoRollbackConfiguration *Endpoint_AutoRollbackConfig[any] `json:"AutoRollbackConfiguration,omitempty"`
 
 	// BlueGreenUpdatePolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy
-	BlueGreenUpdatePolicy *Endpoint_BlueGreenUpdatePolicy `json:"BlueGreenUpdatePolicy"`
+	BlueGreenUpdatePolicy *Endpoint_BlueGreenUpdatePolicy[any] `json:"BlueGreenUpdatePolicy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Endpoint_DeploymentConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_DeploymentConfig) AWSCloudFormationType() string {
+func (r *Endpoint_DeploymentConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.DeploymentConfig"
 }

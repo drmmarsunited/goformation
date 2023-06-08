@@ -8,7 +8,7 @@ import (
 
 // Datastore_CustomerManagedS3Storage AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.CustomerManagedS3Storage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3storage.html
-type Datastore_CustomerManagedS3Storage struct {
+type Datastore_CustomerManagedS3Storage[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Datastore_CustomerManagedS3Storage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_CustomerManagedS3Storage) AWSCloudFormationType() string {
+func (r *Datastore_CustomerManagedS3Storage[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.CustomerManagedS3Storage"
 }

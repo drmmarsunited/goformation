@@ -8,7 +8,7 @@ import (
 
 // EventInvokeConfig_OnSuccess AWS CloudFormation Resource (AWS::Lambda::EventInvokeConfig.OnSuccess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html
-type EventInvokeConfig_OnSuccess struct {
+type EventInvokeConfig_OnSuccess[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type EventInvokeConfig_OnSuccess struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventInvokeConfig_OnSuccess) AWSCloudFormationType() string {
+func (r *EventInvokeConfig_OnSuccess[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventInvokeConfig.OnSuccess"
 }

@@ -8,7 +8,7 @@ import (
 
 // CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig AWS CloudFormation Resource (AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html
-type CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig struct {
+type CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig struct 
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig) AWSCloudFormationType() string {
+func (r *CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig"
 }

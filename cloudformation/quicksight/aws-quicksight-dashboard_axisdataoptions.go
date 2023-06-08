@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AxisDataOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AxisDataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdataoptions.html
-type Dashboard_AxisDataOptions struct {
+type Dashboard_AxisDataOptions[T any] struct {
 
 	// DateAxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdataoptions.html#cfn-quicksight-dashboard-axisdataoptions-dateaxisoptions
-	DateAxisOptions *Dashboard_DateAxisOptions `json:"DateAxisOptions,omitempty"`
+	DateAxisOptions *Dashboard_DateAxisOptions[any] `json:"DateAxisOptions,omitempty"`
 
 	// NumericAxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdataoptions.html#cfn-quicksight-dashboard-axisdataoptions-numericaxisoptions
-	NumericAxisOptions *Dashboard_NumericAxisOptions `json:"NumericAxisOptions,omitempty"`
+	NumericAxisOptions *Dashboard_NumericAxisOptions[any] `json:"NumericAxisOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_AxisDataOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AxisDataOptions) AWSCloudFormationType() string {
+func (r *Dashboard_AxisDataOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AxisDataOptions"
 }

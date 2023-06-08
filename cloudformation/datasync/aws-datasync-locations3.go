@@ -12,7 +12,7 @@ import (
 
 // LocationS3 AWS CloudFormation Resource (AWS::DataSync::LocationS3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html
-type LocationS3 struct {
+type LocationS3[T any] struct {
 
 	// S3BucketArn AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type LocationS3 struct {
 	// S3Config AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config
-	S3Config *LocationS3_S3Config `json:"S3Config"`
+	S3Config *LocationS3_S3Config[any] `json:"S3Config"`
 
 	// S3StorageClass AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type LocationS3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationS3) AWSCloudFormationType() string {
+func (r *LocationS3[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationS3"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationS3) MarshalJSON() ([]byte, error) {
-	type Properties LocationS3
+func (r LocationS3[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationS3[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r LocationS3) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationS3) UnmarshalJSON(b []byte) error {
-	type Properties LocationS3
+func (r *LocationS3[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationS3[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *LocationS3) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationS3(*res.Properties)
+		*r = LocationS3[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

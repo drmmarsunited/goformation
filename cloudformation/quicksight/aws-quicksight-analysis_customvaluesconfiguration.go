@@ -8,17 +8,17 @@ import (
 
 // Analysis_CustomValuesConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomValuesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customvaluesconfiguration.html
-type Analysis_CustomValuesConfiguration struct {
+type Analysis_CustomValuesConfiguration[T any] struct {
 
 	// CustomValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customvaluesconfiguration.html#cfn-quicksight-analysis-customvaluesconfiguration-customvalues
-	CustomValues *Analysis_CustomParameterValues `json:"CustomValues"`
+	CustomValues *Analysis_CustomParameterValues[any] `json:"CustomValues"`
 
 	// IncludeNullValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customvaluesconfiguration.html#cfn-quicksight-analysis-customvaluesconfiguration-includenullvalue
-	IncludeNullValue *bool `json:"IncludeNullValue,omitempty"`
+	IncludeNullValue *T `json:"IncludeNullValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_CustomValuesConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomValuesConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_CustomValuesConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomValuesConfiguration"
 }

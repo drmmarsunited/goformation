@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_DataQualityBaselineConfig AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.DataQualityBaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html
-type DataQualityJobDefinition_DataQualityBaselineConfig struct {
+type DataQualityJobDefinition_DataQualityBaselineConfig[T any] struct {
 
 	// BaseliningJobName AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type DataQualityJobDefinition_DataQualityBaselineConfig struct {
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-constraintsresource
-	ConstraintsResource *DataQualityJobDefinition_ConstraintsResource `json:"ConstraintsResource,omitempty"`
+	ConstraintsResource *DataQualityJobDefinition_ConstraintsResource[any] `json:"ConstraintsResource,omitempty"`
 
 	// StatisticsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-statisticsresource
-	StatisticsResource *DataQualityJobDefinition_StatisticsResource `json:"StatisticsResource,omitempty"`
+	StatisticsResource *DataQualityJobDefinition_StatisticsResource[any] `json:"StatisticsResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataQualityJobDefinition_DataQualityBaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_DataQualityBaselineConfig) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_DataQualityBaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.DataQualityBaselineConfig"
 }

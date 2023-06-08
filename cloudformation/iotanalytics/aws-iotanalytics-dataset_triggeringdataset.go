@@ -8,7 +8,7 @@ import (
 
 // Dataset_TriggeringDataset AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.TriggeringDataset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-triggeringdataset.html
-type Dataset_TriggeringDataset struct {
+type Dataset_TriggeringDataset[T any] struct {
 
 	// DatasetName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dataset_TriggeringDataset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_TriggeringDataset) AWSCloudFormationType() string {
+func (r *Dataset_TriggeringDataset[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.TriggeringDataset"
 }

@@ -8,22 +8,22 @@ import (
 
 // Solution_HpoConfig AWS CloudFormation Resource (AWS::Personalize::Solution.HpoConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hpoconfig.html
-type Solution_HpoConfig struct {
+type Solution_HpoConfig[T any] struct {
 
 	// AlgorithmHyperParameterRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hpoconfig.html#cfn-personalize-solution-hpoconfig-algorithmhyperparameterranges
-	AlgorithmHyperParameterRanges *Solution_AlgorithmHyperParameterRanges `json:"AlgorithmHyperParameterRanges,omitempty"`
+	AlgorithmHyperParameterRanges *Solution_AlgorithmHyperParameterRanges[any] `json:"AlgorithmHyperParameterRanges,omitempty"`
 
 	// HpoObjective AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hpoconfig.html#cfn-personalize-solution-hpoconfig-hpoobjective
-	HpoObjective *Solution_HpoObjective `json:"HpoObjective,omitempty"`
+	HpoObjective *Solution_HpoObjective[any] `json:"HpoObjective,omitempty"`
 
 	// HpoResourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hpoconfig.html#cfn-personalize-solution-hpoconfig-hporesourceconfig
-	HpoResourceConfig *Solution_HpoResourceConfig `json:"HpoResourceConfig,omitempty"`
+	HpoResourceConfig *Solution_HpoResourceConfig[any] `json:"HpoResourceConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Solution_HpoConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_HpoConfig) AWSCloudFormationType() string {
+func (r *Solution_HpoConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.HpoConfig"
 }

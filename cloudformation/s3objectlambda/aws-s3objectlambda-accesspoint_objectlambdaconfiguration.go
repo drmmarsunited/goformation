@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_ObjectLambdaConfiguration AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.ObjectLambdaConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html
-type AccessPoint_ObjectLambdaConfiguration struct {
+type AccessPoint_ObjectLambdaConfiguration[T any] struct {
 
 	// AllowedFeatures AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type AccessPoint_ObjectLambdaConfiguration struct {
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-cloudwatchmetricsenabled
-	CloudWatchMetricsEnabled *bool `json:"CloudWatchMetricsEnabled,omitempty"`
+	CloudWatchMetricsEnabled *T `json:"CloudWatchMetricsEnabled,omitempty"`
 
 	// SupportingAccessPoint AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AccessPoint_ObjectLambdaConfiguration struct {
 	// TransformationConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-transformationconfigurations
-	TransformationConfigurations []AccessPoint_TransformationConfiguration `json:"TransformationConfigurations"`
+	TransformationConfigurations []AccessPoint_TransformationConfiguration[any] `json:"TransformationConfigurations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type AccessPoint_ObjectLambdaConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_ObjectLambdaConfiguration) AWSCloudFormationType() string {
+func (r *AccessPoint_ObjectLambdaConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPoint.ObjectLambdaConfiguration"
 }

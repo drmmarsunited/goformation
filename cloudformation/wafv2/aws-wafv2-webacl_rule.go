@@ -8,22 +8,22 @@ import (
 
 // WebACL_Rule AWS CloudFormation Resource (AWS::WAFv2::WebACL.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html
-type WebACL_Rule struct {
+type WebACL_Rule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action
-	Action *WebACL_RuleAction `json:"Action,omitempty"`
+	Action *WebACL_RuleAction[any] `json:"Action,omitempty"`
 
 	// CaptchaConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-captchaconfig
-	CaptchaConfig *WebACL_CaptchaConfig `json:"CaptchaConfig,omitempty"`
+	CaptchaConfig *WebACL_CaptchaConfig[any] `json:"CaptchaConfig,omitempty"`
 
 	// ChallengeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-challengeconfig
-	ChallengeConfig *WebACL_ChallengeConfig `json:"ChallengeConfig,omitempty"`
+	ChallengeConfig *WebACL_ChallengeConfig[any] `json:"ChallengeConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,27 +33,27 @@ type WebACL_Rule struct {
 	// OverrideAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-overrideaction
-	OverrideAction *WebACL_OverrideAction `json:"OverrideAction,omitempty"`
+	OverrideAction *WebACL_OverrideAction[any] `json:"OverrideAction,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// RuleLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-rulelabels
-	RuleLabels []WebACL_Label `json:"RuleLabels,omitempty"`
+	RuleLabels []WebACL_Label[any] `json:"RuleLabels,omitempty"`
 
 	// Statement AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-statement
-	Statement *WebACL_Statement `json:"Statement"`
+	Statement *WebACL_Statement[any] `json:"Statement"`
 
 	// VisibilityConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-visibilityconfig
-	VisibilityConfig *WebACL_VisibilityConfig `json:"VisibilityConfig"`
+	VisibilityConfig *WebACL_VisibilityConfig[any] `json:"VisibilityConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type WebACL_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Rule) AWSCloudFormationType() string {
+func (r *WebACL_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.Rule"
 }

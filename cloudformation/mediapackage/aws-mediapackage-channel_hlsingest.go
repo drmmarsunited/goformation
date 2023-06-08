@@ -8,12 +8,12 @@ import (
 
 // Channel_HlsIngest AWS CloudFormation Resource (AWS::MediaPackage::Channel.HlsIngest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-hlsingest.html
-type Channel_HlsIngest struct {
+type Channel_HlsIngest[T any] struct {
 
 	// ingestEndpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-hlsingest.html#cfn-mediapackage-channel-hlsingest-ingestendpoints
-	ingestEndpoints []Channel_IngestEndpoint `json:"ingestEndpoints,omitempty"`
+	ingestEndpoints []Channel_IngestEndpoint[any] `json:"ingestEndpoints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_HlsIngest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsIngest) AWSCloudFormationType() string {
+func (r *Channel_HlsIngest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Channel.HlsIngest"
 }

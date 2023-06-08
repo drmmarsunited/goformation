@@ -8,12 +8,12 @@ import (
 
 // Dataset_Filter AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html
-type Dataset_Filter struct {
+type Dataset_Filter[T any] struct {
 
 	// DeltaTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html#cfn-iotanalytics-dataset-filter-deltatime
-	DeltaTime *Dataset_DeltaTime `json:"DeltaTime,omitempty"`
+	DeltaTime *Dataset_DeltaTime[any] `json:"DeltaTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dataset_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_Filter) AWSCloudFormationType() string {
+func (r *Dataset_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.Filter"
 }

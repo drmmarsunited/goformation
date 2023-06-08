@@ -8,7 +8,7 @@ import (
 
 // Method_Integration AWS CloudFormation Resource (AWS::ApiGateway::Method.Integration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html
-type Method_Integration struct {
+type Method_Integration[T any] struct {
 
 	// CacheKeyParameters AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Method_Integration struct {
 	// IntegrationResponses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationresponses
-	IntegrationResponses []Method_IntegrationResponse `json:"IntegrationResponses,omitempty"`
+	IntegrationResponses []Method_IntegrationResponse[any] `json:"IntegrationResponses,omitempty"`
 
 	// PassthroughBehavior AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type Method_Integration struct {
 	// TimeoutInMillis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-timeoutinmillis
-	TimeoutInMillis *int `json:"TimeoutInMillis,omitempty"`
+	TimeoutInMillis *T `json:"TimeoutInMillis,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -97,6 +97,6 @@ type Method_Integration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Method_Integration) AWSCloudFormationType() string {
+func (r *Method_Integration[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Method.Integration"
 }

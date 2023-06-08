@@ -8,7 +8,7 @@ import (
 
 // ModelCard_AdditionalInformation AWS CloudFormation Resource (AWS::SageMaker::ModelCard.AdditionalInformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html
-type ModelCard_AdditionalInformation struct {
+type ModelCard_AdditionalInformation[T any] struct {
 
 	// CaveatsAndRecommendations AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelCard_AdditionalInformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_AdditionalInformation) AWSCloudFormationType() string {
+func (r *ModelCard_AdditionalInformation[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.AdditionalInformation"
 }

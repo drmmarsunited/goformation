@@ -8,7 +8,7 @@ import (
 
 // Connection_ClientParameters AWS CloudFormation Resource (AWS::Events::Connection.ClientParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html
-type Connection_ClientParameters struct {
+type Connection_ClientParameters[T any] struct {
 
 	// ClientID AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Connection_ClientParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_ClientParameters) AWSCloudFormationType() string {
+func (r *Connection_ClientParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.ClientParameters"
 }

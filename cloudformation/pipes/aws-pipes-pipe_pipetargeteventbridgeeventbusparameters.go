@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetEventBridgeEventBusParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetEventBridgeEventBusParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargeteventbridgeeventbusparameters.html
-type Pipe_PipeTargetEventBridgeEventBusParameters struct {
+type Pipe_PipeTargetEventBridgeEventBusParameters[T any] struct {
 
 	// DetailType AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Pipe_PipeTargetEventBridgeEventBusParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetEventBridgeEventBusParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetEventBridgeEventBusParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetEventBridgeEventBusParameters"
 }

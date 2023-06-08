@@ -8,17 +8,17 @@ import (
 
 // Connector_ProvisionedCapacity AWS CloudFormation Resource (AWS::KafkaConnect::Connector.ProvisionedCapacity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-provisionedcapacity.html
-type Connector_ProvisionedCapacity struct {
+type Connector_ProvisionedCapacity[T any] struct {
 
 	// McuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-provisionedcapacity.html#cfn-kafkaconnect-connector-provisionedcapacity-mcucount
-	McuCount *int `json:"McuCount,omitempty"`
+	McuCount *T `json:"McuCount,omitempty"`
 
 	// WorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-provisionedcapacity.html#cfn-kafkaconnect-connector-provisionedcapacity-workercount
-	WorkerCount int `json:"WorkerCount"`
+	WorkerCount T `json:"WorkerCount"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Connector_ProvisionedCapacity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_ProvisionedCapacity) AWSCloudFormationType() string {
+func (r *Connector_ProvisionedCapacity[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.ProvisionedCapacity"
 }

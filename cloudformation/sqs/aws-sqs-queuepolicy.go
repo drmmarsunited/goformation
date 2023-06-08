@@ -11,7 +11,7 @@ import (
 
 // QueuePolicy AWS CloudFormation Resource (AWS::SQS::QueuePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html
-type QueuePolicy struct {
+type QueuePolicy[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type QueuePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QueuePolicy) AWSCloudFormationType() string {
+func (r *QueuePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::SQS::QueuePolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r QueuePolicy) MarshalJSON() ([]byte, error) {
-	type Properties QueuePolicy
+func (r QueuePolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties QueuePolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r QueuePolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *QueuePolicy) UnmarshalJSON(b []byte) error {
-	type Properties QueuePolicy
+func (r *QueuePolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties QueuePolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *QueuePolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = QueuePolicy(*res.Properties)
+		*r = QueuePolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

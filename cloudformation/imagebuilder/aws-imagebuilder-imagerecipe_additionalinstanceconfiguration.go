@@ -8,12 +8,12 @@ import (
 
 // ImageRecipe_AdditionalInstanceConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ImageRecipe.AdditionalInstanceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-additionalinstanceconfiguration.html
-type ImageRecipe_AdditionalInstanceConfiguration struct {
+type ImageRecipe_AdditionalInstanceConfiguration[T any] struct {
 
 	// SystemsManagerAgent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-additionalinstanceconfiguration.html#cfn-imagebuilder-imagerecipe-additionalinstanceconfiguration-systemsmanageragent
-	SystemsManagerAgent *ImageRecipe_SystemsManagerAgent `json:"SystemsManagerAgent,omitempty"`
+	SystemsManagerAgent *ImageRecipe_SystemsManagerAgent[any] `json:"SystemsManagerAgent,omitempty"`
 
 	// UserDataOverride AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ImageRecipe_AdditionalInstanceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageRecipe_AdditionalInstanceConfiguration) AWSCloudFormationType() string {
+func (r *ImageRecipe_AdditionalInstanceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImageRecipe.AdditionalInstanceConfiguration"
 }

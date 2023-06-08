@@ -8,67 +8,67 @@ import (
 
 // Channel_EncoderSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EncoderSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html
-type Channel_EncoderSettings struct {
+type Channel_EncoderSettings[T any] struct {
 
 	// AudioDescriptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-audiodescriptions
-	AudioDescriptions []Channel_AudioDescription `json:"AudioDescriptions,omitempty"`
+	AudioDescriptions []Channel_AudioDescription[any] `json:"AudioDescriptions,omitempty"`
 
 	// AvailBlanking AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availblanking
-	AvailBlanking *Channel_AvailBlanking `json:"AvailBlanking,omitempty"`
+	AvailBlanking *Channel_AvailBlanking[any] `json:"AvailBlanking,omitempty"`
 
 	// AvailConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availconfiguration
-	AvailConfiguration *Channel_AvailConfiguration `json:"AvailConfiguration,omitempty"`
+	AvailConfiguration *Channel_AvailConfiguration[any] `json:"AvailConfiguration,omitempty"`
 
 	// BlackoutSlate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-blackoutslate
-	BlackoutSlate *Channel_BlackoutSlate `json:"BlackoutSlate,omitempty"`
+	BlackoutSlate *Channel_BlackoutSlate[any] `json:"BlackoutSlate,omitempty"`
 
 	// CaptionDescriptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-captiondescriptions
-	CaptionDescriptions []Channel_CaptionDescription `json:"CaptionDescriptions,omitempty"`
+	CaptionDescriptions []Channel_CaptionDescription[any] `json:"CaptionDescriptions,omitempty"`
 
 	// FeatureActivations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-featureactivations
-	FeatureActivations *Channel_FeatureActivations `json:"FeatureActivations,omitempty"`
+	FeatureActivations *Channel_FeatureActivations[any] `json:"FeatureActivations,omitempty"`
 
 	// GlobalConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-globalconfiguration
-	GlobalConfiguration *Channel_GlobalConfiguration `json:"GlobalConfiguration,omitempty"`
+	GlobalConfiguration *Channel_GlobalConfiguration[any] `json:"GlobalConfiguration,omitempty"`
 
 	// MotionGraphicsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-motiongraphicsconfiguration
-	MotionGraphicsConfiguration *Channel_MotionGraphicsConfiguration `json:"MotionGraphicsConfiguration,omitempty"`
+	MotionGraphicsConfiguration *Channel_MotionGraphicsConfiguration[any] `json:"MotionGraphicsConfiguration,omitempty"`
 
 	// NielsenConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-nielsenconfiguration
-	NielsenConfiguration *Channel_NielsenConfiguration `json:"NielsenConfiguration,omitempty"`
+	NielsenConfiguration *Channel_NielsenConfiguration[any] `json:"NielsenConfiguration,omitempty"`
 
 	// OutputGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-outputgroups
-	OutputGroups []Channel_OutputGroup `json:"OutputGroups,omitempty"`
+	OutputGroups []Channel_OutputGroup[any] `json:"OutputGroups,omitempty"`
 
 	// TimecodeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-timecodeconfig
-	TimecodeConfig *Channel_TimecodeConfig `json:"TimecodeConfig,omitempty"`
+	TimecodeConfig *Channel_TimecodeConfig[any] `json:"TimecodeConfig,omitempty"`
 
 	// VideoDescriptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-videodescriptions
-	VideoDescriptions []Channel_VideoDescription `json:"VideoDescriptions,omitempty"`
+	VideoDescriptions []Channel_VideoDescription[any] `json:"VideoDescriptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -87,6 +87,6 @@ type Channel_EncoderSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_EncoderSettings) AWSCloudFormationType() string {
+func (r *Channel_EncoderSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.EncoderSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // ReplicationConfiguration_RepositoryFilter AWS CloudFormation Resource (AWS::ECR::ReplicationConfiguration.RepositoryFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html
-type ReplicationConfiguration_RepositoryFilter struct {
+type ReplicationConfiguration_RepositoryFilter[T any] struct {
 
 	// Filter AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ReplicationConfiguration_RepositoryFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationConfiguration_RepositoryFilter) AWSCloudFormationType() string {
+func (r *ReplicationConfiguration_RepositoryFilter[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::ReplicationConfiguration.RepositoryFilter"
 }

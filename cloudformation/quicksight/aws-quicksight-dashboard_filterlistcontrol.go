@@ -8,17 +8,17 @@ import (
 
 // Dashboard_FilterListControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterListControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterlistcontrol.html
-type Dashboard_FilterListControl struct {
+type Dashboard_FilterListControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterlistcontrol.html#cfn-quicksight-dashboard-filterlistcontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterlistcontrol.html#cfn-quicksight-dashboard-filterlistcontrol-displayoptions
-	DisplayOptions *Dashboard_ListControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_ListControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_FilterListControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterlistcontrol.html#cfn-quicksight-dashboard-filterlistcontrol-selectablevalues
-	SelectableValues *Dashboard_FilterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Dashboard_FilterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Dashboard_FilterListControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterListControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterListControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterListControl"
 }

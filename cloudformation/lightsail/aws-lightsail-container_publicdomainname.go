@@ -8,7 +8,7 @@ import (
 
 // Container_PublicDomainName AWS CloudFormation Resource (AWS::Lightsail::Container.PublicDomainName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicdomainname.html
-type Container_PublicDomainName struct {
+type Container_PublicDomainName[T any] struct {
 
 	// CertificateName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Container_PublicDomainName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_PublicDomainName) AWSCloudFormationType() string {
+func (r *Container_PublicDomainName[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.PublicDomainName"
 }

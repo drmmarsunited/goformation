@@ -8,7 +8,7 @@ import (
 
 // Form_FormButton AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormButton)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formbutton.html
-type Form_FormButton struct {
+type Form_FormButton[T any] struct {
 
 	// Children AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Form_FormButton struct {
 	// Excluded AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formbutton.html#cfn-amplifyuibuilder-form-formbutton-excluded
-	Excluded *bool `json:"Excluded,omitempty"`
+	Excluded *T `json:"Excluded,omitempty"`
 
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formbutton.html#cfn-amplifyuibuilder-form-formbutton-position
-	Position *Form_FieldPosition `json:"Position,omitempty"`
+	Position *Form_FieldPosition[any] `json:"Position,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Form_FormButton struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormButton) AWSCloudFormationType() string {
+func (r *Form_FormButton[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormButton"
 }

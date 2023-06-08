@@ -8,7 +8,7 @@ import (
 
 // Dashboard_VisualAxisSortOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualAxisSortOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualaxissortoption.html
-type Dashboard_VisualAxisSortOption struct {
+type Dashboard_VisualAxisSortOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_VisualAxisSortOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualAxisSortOption) AWSCloudFormationType() string {
+func (r *Dashboard_VisualAxisSortOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualAxisSortOption"
 }

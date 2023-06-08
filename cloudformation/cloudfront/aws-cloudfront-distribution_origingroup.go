@@ -8,12 +8,12 @@ import (
 
 // Distribution_OriginGroup AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html
-type Distribution_OriginGroup struct {
+type Distribution_OriginGroup[T any] struct {
 
 	// FailoverCriteria AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-failovercriteria
-	FailoverCriteria *Distribution_OriginGroupFailoverCriteria `json:"FailoverCriteria"`
+	FailoverCriteria *Distribution_OriginGroupFailoverCriteria[any] `json:"FailoverCriteria"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Distribution_OriginGroup struct {
 	// Members AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-members
-	Members *Distribution_OriginGroupMembers `json:"Members"`
+	Members *Distribution_OriginGroupMembers[any] `json:"Members"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Distribution_OriginGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginGroup) AWSCloudFormationType() string {
+func (r *Distribution_OriginGroup[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginGroup"
 }

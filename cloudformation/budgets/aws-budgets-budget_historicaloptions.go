@@ -8,12 +8,12 @@ import (
 
 // Budget_HistoricalOptions AWS CloudFormation Resource (AWS::Budgets::Budget.HistoricalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-historicaloptions.html
-type Budget_HistoricalOptions struct {
+type Budget_HistoricalOptions[T any] struct {
 
 	// BudgetAdjustmentPeriod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-historicaloptions.html#cfn-budgets-budget-historicaloptions-budgetadjustmentperiod
-	BudgetAdjustmentPeriod int `json:"BudgetAdjustmentPeriod"`
+	BudgetAdjustmentPeriod T `json:"BudgetAdjustmentPeriod"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Budget_HistoricalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_HistoricalOptions) AWSCloudFormationType() string {
+func (r *Budget_HistoricalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.HistoricalOptions"
 }

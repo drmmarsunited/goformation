@@ -8,7 +8,7 @@ import (
 
 // Rule_WeightedTargetGroup AWS CloudFormation Resource (AWS::VpcLattice::Rule.WeightedTargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-weightedtargetgroup.html
-type Rule_WeightedTargetGroup struct {
+type Rule_WeightedTargetGroup[T any] struct {
 
 	// TargetGroupIdentifier AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Rule_WeightedTargetGroup struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-weightedtargetgroup.html#cfn-vpclattice-rule-weightedtargetgroup-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Rule_WeightedTargetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_WeightedTargetGroup) AWSCloudFormationType() string {
+func (r *Rule_WeightedTargetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.WeightedTargetGroup"
 }

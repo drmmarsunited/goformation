@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DefaultSectionBasedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DefaultSectionBasedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultsectionbasedlayoutconfiguration.html
-type Dashboard_DefaultSectionBasedLayoutConfiguration struct {
+type Dashboard_DefaultSectionBasedLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultsectionbasedlayoutconfiguration.html#cfn-quicksight-dashboard-defaultsectionbasedlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Dashboard_SectionBasedLayoutCanvasSizeOptions `json:"CanvasSizeOptions"`
+	CanvasSizeOptions *Dashboard_SectionBasedLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_DefaultSectionBasedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DefaultSectionBasedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DefaultSectionBasedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DefaultSectionBasedLayoutConfiguration"
 }

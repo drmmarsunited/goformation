@@ -11,7 +11,7 @@ import (
 
 // VPCEndpointConnectionNotification AWS CloudFormation Resource (AWS::EC2::VPCEndpointConnectionNotification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html
-type VPCEndpointConnectionNotification struct {
+type VPCEndpointConnectionNotification[T any] struct {
 
 	// ConnectionEvents AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type VPCEndpointConnectionNotification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCEndpointConnectionNotification) AWSCloudFormationType() string {
+func (r *VPCEndpointConnectionNotification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPCEndpointConnectionNotification"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPCEndpointConnectionNotification) MarshalJSON() ([]byte, error) {
-	type Properties VPCEndpointConnectionNotification
+func (r VPCEndpointConnectionNotification[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPCEndpointConnectionNotification[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r VPCEndpointConnectionNotification) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPCEndpointConnectionNotification) UnmarshalJSON(b []byte) error {
-	type Properties VPCEndpointConnectionNotification
+func (r *VPCEndpointConnectionNotification[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPCEndpointConnectionNotification[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *VPCEndpointConnectionNotification) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPCEndpointConnectionNotification(*res.Properties)
+		*r = VPCEndpointConnectionNotification[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

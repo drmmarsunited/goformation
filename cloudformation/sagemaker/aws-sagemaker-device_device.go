@@ -8,7 +8,7 @@ import (
 
 // Device_Device AWS CloudFormation Resource (AWS::SageMaker::Device.Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html
-type Device_Device struct {
+type Device_Device[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Device_Device struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Device_Device) AWSCloudFormationType() string {
+func (r *Device_Device[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Device.Device"
 }

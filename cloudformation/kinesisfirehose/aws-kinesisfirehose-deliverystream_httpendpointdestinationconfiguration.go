@@ -8,37 +8,37 @@ import (
 
 // DeliveryStream_HttpEndpointDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HttpEndpointDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html
-type DeliveryStream_HttpEndpointDestinationConfiguration struct {
+type DeliveryStream_HttpEndpointDestinationConfiguration[T any] struct {
 
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_BufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_BufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-endpointconfiguration
-	EndpointConfiguration *DeliveryStream_HttpEndpointConfiguration `json:"EndpointConfiguration"`
+	EndpointConfiguration *DeliveryStream_HttpEndpointConfiguration[any] `json:"EndpointConfiguration"`
 
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RequestConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-requestconfiguration
-	RequestConfiguration *DeliveryStream_HttpEndpointRequestConfiguration `json:"RequestConfiguration,omitempty"`
+	RequestConfiguration *DeliveryStream_HttpEndpointRequestConfiguration[any] `json:"RequestConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_RetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_RetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type DeliveryStream_HttpEndpointDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type DeliveryStream_HttpEndpointDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_HttpEndpointDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_HttpEndpointDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.HttpEndpointDestinationConfiguration"
 }

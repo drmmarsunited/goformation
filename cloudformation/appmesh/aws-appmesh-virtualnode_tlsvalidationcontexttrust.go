@@ -8,22 +8,22 @@ import (
 
 // VirtualNode_TlsValidationContextTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TlsValidationContextTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html
-type VirtualNode_TlsValidationContextTrust struct {
+type VirtualNode_TlsValidationContextTrust[T any] struct {
 
 	// ACM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-acm
-	ACM *VirtualNode_TlsValidationContextAcmTrust `json:"ACM,omitempty"`
+	ACM *VirtualNode_TlsValidationContextAcmTrust[any] `json:"ACM,omitempty"`
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-file
-	File *VirtualNode_TlsValidationContextFileTrust `json:"File,omitempty"`
+	File *VirtualNode_TlsValidationContextFileTrust[any] `json:"File,omitempty"`
 
 	// SDS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-sds
-	SDS *VirtualNode_TlsValidationContextSdsTrust `json:"SDS,omitempty"`
+	SDS *VirtualNode_TlsValidationContextSdsTrust[any] `json:"SDS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualNode_TlsValidationContextTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_TlsValidationContextTrust) AWSCloudFormationType() string {
+func (r *VirtualNode_TlsValidationContextTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.TlsValidationContextTrust"
 }

@@ -8,7 +8,7 @@ import (
 
 // DeliveryChannel_ConfigSnapshotDeliveryProperties AWS CloudFormation Resource (AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html
-type DeliveryChannel_ConfigSnapshotDeliveryProperties struct {
+type DeliveryChannel_ConfigSnapshotDeliveryProperties[T any] struct {
 
 	// DeliveryFrequency AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeliveryChannel_ConfigSnapshotDeliveryProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryChannel_ConfigSnapshotDeliveryProperties) AWSCloudFormationType() string {
+func (r *DeliveryChannel_ConfigSnapshotDeliveryProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties"
 }

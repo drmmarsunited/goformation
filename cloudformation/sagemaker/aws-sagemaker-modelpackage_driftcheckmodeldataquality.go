@@ -8,17 +8,17 @@ import (
 
 // ModelPackage_DriftCheckModelDataQuality AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.DriftCheckModelDataQuality)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckmodeldataquality.html
-type ModelPackage_DriftCheckModelDataQuality struct {
+type ModelPackage_DriftCheckModelDataQuality[T any] struct {
 
 	// Constraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckmodeldataquality.html#cfn-sagemaker-modelpackage-driftcheckmodeldataquality-constraints
-	Constraints *ModelPackage_MetricsSource `json:"Constraints,omitempty"`
+	Constraints *ModelPackage_MetricsSource[any] `json:"Constraints,omitempty"`
 
 	// Statistics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckmodeldataquality.html#cfn-sagemaker-modelpackage-driftcheckmodeldataquality-statistics
-	Statistics *ModelPackage_MetricsSource `json:"Statistics,omitempty"`
+	Statistics *ModelPackage_MetricsSource[any] `json:"Statistics,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelPackage_DriftCheckModelDataQuality struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_DriftCheckModelDataQuality) AWSCloudFormationType() string {
+func (r *ModelPackage_DriftCheckModelDataQuality[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.DriftCheckModelDataQuality"
 }

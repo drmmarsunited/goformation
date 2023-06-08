@@ -8,7 +8,7 @@ import (
 
 // Budget_TimePeriod AWS CloudFormation Resource (AWS::Budgets::Budget.TimePeriod)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html
-type Budget_TimePeriod struct {
+type Budget_TimePeriod[T any] struct {
 
 	// End AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Budget_TimePeriod struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_TimePeriod) AWSCloudFormationType() string {
+func (r *Budget_TimePeriod[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.TimePeriod"
 }

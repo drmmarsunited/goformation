@@ -8,7 +8,7 @@ import (
 
 // Permissions_ColumnWildcard AWS CloudFormation Resource (AWS::LakeFormation::Permissions.ColumnWildcard)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-columnwildcard.html
-type Permissions_ColumnWildcard struct {
+type Permissions_ColumnWildcard[T any] struct {
 
 	// ExcludedColumnNames AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Permissions_ColumnWildcard struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions_ColumnWildcard) AWSCloudFormationType() string {
+func (r *Permissions_ColumnWildcard[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions.ColumnWildcard"
 }

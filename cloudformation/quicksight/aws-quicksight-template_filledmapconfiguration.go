@@ -8,37 +8,37 @@ import (
 
 // Template_FilledMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.FilledMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html
-type Template_FilledMapConfiguration struct {
+type Template_FilledMapConfiguration[T any] struct {
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-fieldwells
-	FieldWells *Template_FilledMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_FilledMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-legend
-	Legend *Template_LegendOptions `json:"Legend,omitempty"`
+	Legend *Template_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// MapStyleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-mapstyleoptions
-	MapStyleOptions *Template_GeospatialMapStyleOptions `json:"MapStyleOptions,omitempty"`
+	MapStyleOptions *Template_GeospatialMapStyleOptions[any] `json:"MapStyleOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-sortconfiguration
-	SortConfiguration *Template_FilledMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Template_FilledMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-tooltip
-	Tooltip *Template_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Template_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// WindowOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filledmapconfiguration.html#cfn-quicksight-template-filledmapconfiguration-windowoptions
-	WindowOptions *Template_GeospatialWindowOptions `json:"WindowOptions,omitempty"`
+	WindowOptions *Template_GeospatialWindowOptions[any] `json:"WindowOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_FilledMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilledMapConfiguration) AWSCloudFormationType() string {
+func (r *Template_FilledMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilledMapConfiguration"
 }

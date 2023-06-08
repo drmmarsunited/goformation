@@ -8,7 +8,7 @@ import (
 
 // WebACL_SingleHeader AWS CloudFormation Resource (AWS::WAFv2::WebACL.SingleHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-singleheader.html
-type WebACL_SingleHeader struct {
+type WebACL_SingleHeader[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_SingleHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_SingleHeader) AWSCloudFormationType() string {
+func (r *WebACL_SingleHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.SingleHeader"
 }

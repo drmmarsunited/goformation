@@ -8,22 +8,22 @@ import (
 
 // Component_ComponentProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html
-type Component_ComponentProperty struct {
+type Component_ComponentProperty[T any] struct {
 
 	// BindingProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-bindingproperties
-	BindingProperties *Component_ComponentPropertyBindingProperties `json:"BindingProperties,omitempty"`
+	BindingProperties *Component_ComponentPropertyBindingProperties[any] `json:"BindingProperties,omitempty"`
 
 	// Bindings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-bindings
-	Bindings map[string]Component_FormBindingElement `json:"Bindings,omitempty"`
+	Bindings map[string]Component_FormBindingElement[any] `json:"Bindings,omitempty"`
 
 	// CollectionBindingProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-collectionbindingproperties
-	CollectionBindingProperties *Component_ComponentPropertyBindingProperties `json:"CollectionBindingProperties,omitempty"`
+	CollectionBindingProperties *Component_ComponentPropertyBindingProperties[any] `json:"CollectionBindingProperties,omitempty"`
 
 	// ComponentName AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Component_ComponentProperty struct {
 	// Concat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-concat
-	Concat []Component_ComponentProperty `json:"Concat,omitempty"`
+	Concat []Component_ComponentProperty[any] `json:"Concat,omitempty"`
 
 	// Condition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-condition
-	Condition *Component_ComponentConditionProperty `json:"Condition,omitempty"`
+	Condition *Component_ComponentConditionProperty[any] `json:"Condition,omitempty"`
 
 	// Configured AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-configured
-	Configured *bool `json:"Configured,omitempty"`
+	Configured *T `json:"Configured,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
@@ -102,6 +102,6 @@ type Component_ComponentProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentProperty) AWSCloudFormationType() string {
+func (r *Component_ComponentProperty[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentProperty"
 }

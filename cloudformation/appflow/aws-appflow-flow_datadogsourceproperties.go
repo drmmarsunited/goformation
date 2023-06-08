@@ -8,7 +8,7 @@ import (
 
 // Flow_DatadogSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.DatadogSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-datadogsourceproperties.html
-type Flow_DatadogSourceProperties struct {
+type Flow_DatadogSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_DatadogSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_DatadogSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_DatadogSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.DatadogSourceProperties"
 }

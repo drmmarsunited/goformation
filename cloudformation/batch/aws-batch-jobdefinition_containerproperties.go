@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_ContainerProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.ContainerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html
-type JobDefinition_ContainerProperties struct {
+type JobDefinition_ContainerProperties[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type JobDefinition_ContainerProperties struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-environment
-	Environment []JobDefinition_Environment `json:"Environment,omitempty"`
+	Environment []JobDefinition_Environment[any] `json:"Environment,omitempty"`
 
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-ephemeralstorage
-	EphemeralStorage *JobDefinition_EphemeralStorage `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *JobDefinition_EphemeralStorage[any] `json:"EphemeralStorage,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type JobDefinition_ContainerProperties struct {
 	// FargatePlatformConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration
-	FargatePlatformConfiguration *JobDefinition_FargatePlatformConfiguration `json:"FargatePlatformConfiguration,omitempty"`
+	FargatePlatformConfiguration *JobDefinition_FargatePlatformConfiguration[any] `json:"FargatePlatformConfiguration,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: true
@@ -53,52 +53,52 @@ type JobDefinition_ContainerProperties struct {
 	// LinuxParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-linuxparameters
-	LinuxParameters *JobDefinition_LinuxParameters `json:"LinuxParameters,omitempty"`
+	LinuxParameters *JobDefinition_LinuxParameters[any] `json:"LinuxParameters,omitempty"`
 
 	// LogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-logconfiguration
-	LogConfiguration *JobDefinition_LogConfiguration `json:"LogConfiguration,omitempty"`
+	LogConfiguration *JobDefinition_LogConfiguration[any] `json:"LogConfiguration,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-memory
-	Memory *int `json:"Memory,omitempty"`
+	Memory *T `json:"Memory,omitempty"`
 
 	// MountPoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-mountpoints
-	MountPoints []JobDefinition_MountPoints `json:"MountPoints,omitempty"`
+	MountPoints []JobDefinition_MountPoints[any] `json:"MountPoints,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration
-	NetworkConfiguration *JobDefinition_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *JobDefinition_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// Privileged AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-privileged
-	Privileged *bool `json:"Privileged,omitempty"`
+	Privileged *T `json:"Privileged,omitempty"`
 
 	// ReadonlyRootFilesystem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-readonlyrootfilesystem
-	ReadonlyRootFilesystem *bool `json:"ReadonlyRootFilesystem,omitempty"`
+	ReadonlyRootFilesystem *T `json:"ReadonlyRootFilesystem,omitempty"`
 
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-resourcerequirements
-	ResourceRequirements []JobDefinition_ResourceRequirement `json:"ResourceRequirements,omitempty"`
+	ResourceRequirements []JobDefinition_ResourceRequirement[any] `json:"ResourceRequirements,omitempty"`
 
 	// Secrets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-secrets
-	Secrets []JobDefinition_Secret `json:"Secrets,omitempty"`
+	Secrets []JobDefinition_Secret[any] `json:"Secrets,omitempty"`
 
 	// Ulimits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-ulimits
-	Ulimits []JobDefinition_Ulimit `json:"Ulimits,omitempty"`
+	Ulimits []JobDefinition_Ulimit[any] `json:"Ulimits,omitempty"`
 
 	// User AWS CloudFormation Property
 	// Required: false
@@ -108,12 +108,12 @@ type JobDefinition_ContainerProperties struct {
 	// Vcpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-vcpus
-	Vcpus *int `json:"Vcpus,omitempty"`
+	Vcpus *T `json:"Vcpus,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-volumes
-	Volumes []JobDefinition_Volumes `json:"Volumes,omitempty"`
+	Volumes []JobDefinition_Volumes[any] `json:"Volumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -132,6 +132,6 @@ type JobDefinition_ContainerProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_ContainerProperties) AWSCloudFormationType() string {
+func (r *JobDefinition_ContainerProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.ContainerProperties"
 }

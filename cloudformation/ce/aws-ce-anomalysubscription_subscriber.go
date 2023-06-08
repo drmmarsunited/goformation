@@ -8,7 +8,7 @@ import (
 
 // AnomalySubscription_Subscriber AWS CloudFormation Resource (AWS::CE::AnomalySubscription.Subscriber)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-anomalysubscription-subscriber.html
-type AnomalySubscription_Subscriber struct {
+type AnomalySubscription_Subscriber[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AnomalySubscription_Subscriber struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalySubscription_Subscriber) AWSCloudFormationType() string {
+func (r *AnomalySubscription_Subscriber[any]) AWSCloudFormationType() string {
 	return "AWS::CE::AnomalySubscription.Subscriber"
 }

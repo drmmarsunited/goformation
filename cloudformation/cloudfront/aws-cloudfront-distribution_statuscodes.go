@@ -8,17 +8,17 @@ import (
 
 // Distribution_StatusCodes AWS CloudFormation Resource (AWS::CloudFront::Distribution.StatusCodes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-statuscodes.html
-type Distribution_StatusCodes struct {
+type Distribution_StatusCodes[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-statuscodes.html#cfn-cloudfront-distribution-statuscodes-items
-	Items []int `json:"Items"`
+	Items []T `json:"Items"`
 
 	// Quantity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-statuscodes.html#cfn-cloudfront-distribution-statuscodes-quantity
-	Quantity int `json:"Quantity"`
+	Quantity T `json:"Quantity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Distribution_StatusCodes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_StatusCodes) AWSCloudFormationType() string {
+func (r *Distribution_StatusCodes[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.StatusCodes"
 }

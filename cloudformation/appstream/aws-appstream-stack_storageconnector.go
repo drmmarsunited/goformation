@@ -8,7 +8,7 @@ import (
 
 // Stack_StorageConnector AWS CloudFormation Resource (AWS::AppStream::Stack.StorageConnector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html
-type Stack_StorageConnector struct {
+type Stack_StorageConnector[T any] struct {
 
 	// ConnectorType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Stack_StorageConnector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_StorageConnector) AWSCloudFormationType() string {
+func (r *Stack_StorageConnector[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Stack.StorageConnector"
 }

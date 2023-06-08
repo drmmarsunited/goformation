@@ -11,7 +11,7 @@ import (
 
 // Url AWS CloudFormation Resource (AWS::Lambda::Url)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html
-type Url struct {
+type Url[T any] struct {
 
 	// AuthType AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Url struct {
 	// Cors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-cors
-	Cors *Url_Cors `json:"Cors,omitempty"`
+	Cors *Url_Cors[any] `json:"Cors,omitempty"`
 
 	// InvokeMode AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Url struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Url) AWSCloudFormationType() string {
+func (r *Url[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Url"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Url) MarshalJSON() ([]byte, error) {
-	type Properties Url
+func (r Url[any]) MarshalJSON() ([]byte, error) {
+	type Properties Url[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Url) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Url) UnmarshalJSON(b []byte) error {
-	type Properties Url
+func (r *Url[any]) UnmarshalJSON(b []byte) error {
+	type Properties Url[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Url) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Url(*res.Properties)
+		*r = Url[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

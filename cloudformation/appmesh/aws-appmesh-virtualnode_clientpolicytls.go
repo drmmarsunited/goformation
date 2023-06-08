@@ -8,27 +8,27 @@ import (
 
 // VirtualNode_ClientPolicyTls AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ClientPolicyTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html
-type VirtualNode_ClientPolicyTls struct {
+type VirtualNode_ClientPolicyTls[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-certificate
-	Certificate *VirtualNode_ClientTlsCertificate `json:"Certificate,omitempty"`
+	Certificate *VirtualNode_ClientTlsCertificate[any] `json:"Certificate,omitempty"`
 
 	// Enforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-enforce
-	Enforce *bool `json:"Enforce,omitempty"`
+	Enforce *T `json:"Enforce,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-ports
-	Ports []int `json:"Ports,omitempty"`
+	Ports []T `json:"Ports,omitempty"`
 
 	// Validation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-validation
-	Validation *VirtualNode_TlsValidationContext `json:"Validation"`
+	Validation *VirtualNode_TlsValidationContext[any] `json:"Validation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualNode_ClientPolicyTls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ClientPolicyTls) AWSCloudFormationType() string {
+func (r *VirtualNode_ClientPolicyTls[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ClientPolicyTls"
 }

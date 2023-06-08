@@ -12,27 +12,27 @@ import (
 
 // MissionProfile AWS CloudFormation Resource (AWS::GroundStation::MissionProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html
-type MissionProfile struct {
+type MissionProfile[T any] struct {
 
 	// ContactPostPassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactpostpassdurationseconds
-	ContactPostPassDurationSeconds *int `json:"ContactPostPassDurationSeconds,omitempty"`
+	ContactPostPassDurationSeconds *T `json:"ContactPostPassDurationSeconds,omitempty"`
 
 	// ContactPrePassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactprepassdurationseconds
-	ContactPrePassDurationSeconds *int `json:"ContactPrePassDurationSeconds,omitempty"`
+	ContactPrePassDurationSeconds *T `json:"ContactPrePassDurationSeconds,omitempty"`
 
 	// DataflowEdges AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-dataflowedges
-	DataflowEdges []MissionProfile_DataflowEdge `json:"DataflowEdges"`
+	DataflowEdges []MissionProfile_DataflowEdge[any] `json:"DataflowEdges"`
 
 	// MinimumViableContactDurationSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-minimumviablecontactdurationseconds
-	MinimumViableContactDurationSeconds int `json:"MinimumViableContactDurationSeconds"`
+	MinimumViableContactDurationSeconds T `json:"MinimumViableContactDurationSeconds"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type MissionProfile struct {
 	// StreamsKmsKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmskey
-	StreamsKmsKey *MissionProfile_StreamsKmsKey `json:"StreamsKmsKey,omitempty"`
+	StreamsKmsKey *MissionProfile_StreamsKmsKey[any] `json:"StreamsKmsKey,omitempty"`
 
 	// StreamsKmsRole AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type MissionProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MissionProfile) AWSCloudFormationType() string {
+func (r *MissionProfile[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::MissionProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MissionProfile) MarshalJSON() ([]byte, error) {
-	type Properties MissionProfile
+func (r MissionProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties MissionProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r MissionProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MissionProfile) UnmarshalJSON(b []byte) error {
-	type Properties MissionProfile
+func (r *MissionProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties MissionProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *MissionProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MissionProfile(*res.Properties)
+		*r = MissionProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

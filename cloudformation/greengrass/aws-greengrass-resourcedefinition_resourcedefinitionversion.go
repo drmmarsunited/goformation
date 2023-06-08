@@ -8,12 +8,12 @@ import (
 
 // ResourceDefinition_ResourceDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
-type ResourceDefinition_ResourceDefinitionVersion struct {
+type ResourceDefinition_ResourceDefinitionVersion[T any] struct {
 
 	// Resources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources
-	Resources []ResourceDefinition_ResourceInstance `json:"Resources"`
+	Resources []ResourceDefinition_ResourceInstance[any] `json:"Resources"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResourceDefinition_ResourceDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_ResourceDefinitionVersion) AWSCloudFormationType() string {
+func (r *ResourceDefinition_ResourceDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion"
 }

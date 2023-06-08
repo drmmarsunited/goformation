@@ -8,7 +8,7 @@ import (
 
 // Analysis_SubtotalOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.SubtotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-subtotaloptions.html
-type Analysis_SubtotalOptions struct {
+type Analysis_SubtotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Analysis_SubtotalOptions struct {
 	// FieldLevelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-subtotaloptions.html#cfn-quicksight-analysis-subtotaloptions-fieldleveloptions
-	FieldLevelOptions []Analysis_PivotTableFieldSubtotalOptions `json:"FieldLevelOptions,omitempty"`
+	FieldLevelOptions []Analysis_PivotTableFieldSubtotalOptions[any] `json:"FieldLevelOptions,omitempty"`
 
 	// MetricHeaderCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-subtotaloptions.html#cfn-quicksight-analysis-subtotaloptions-metricheadercellstyle
-	MetricHeaderCellStyle *Analysis_TableCellStyle `json:"MetricHeaderCellStyle,omitempty"`
+	MetricHeaderCellStyle *Analysis_TableCellStyle[any] `json:"MetricHeaderCellStyle,omitempty"`
 
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-subtotaloptions.html#cfn-quicksight-analysis-subtotaloptions-totalcellstyle
-	TotalCellStyle *Analysis_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Analysis_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Analysis_SubtotalOptions struct {
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-subtotaloptions.html#cfn-quicksight-analysis-subtotaloptions-valuecellstyle
-	ValueCellStyle *Analysis_TableCellStyle `json:"ValueCellStyle,omitempty"`
+	ValueCellStyle *Analysis_TableCellStyle[any] `json:"ValueCellStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_SubtotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SubtotalOptions) AWSCloudFormationType() string {
+func (r *Analysis_SubtotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SubtotalOptions"
 }

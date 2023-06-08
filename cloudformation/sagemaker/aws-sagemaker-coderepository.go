@@ -12,7 +12,7 @@ import (
 
 // CodeRepository AWS CloudFormation Resource (AWS::SageMaker::CodeRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html
-type CodeRepository struct {
+type CodeRepository[T any] struct {
 
 	// CodeRepositoryName AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type CodeRepository struct {
 	// GitConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig
-	GitConfig *CodeRepository_GitConfig `json:"GitConfig"`
+	GitConfig *CodeRepository_GitConfig[any] `json:"GitConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type CodeRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CodeRepository) AWSCloudFormationType() string {
+func (r *CodeRepository[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::CodeRepository"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CodeRepository) MarshalJSON() ([]byte, error) {
-	type Properties CodeRepository
+func (r CodeRepository[any]) MarshalJSON() ([]byte, error) {
+	type Properties CodeRepository[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r CodeRepository) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CodeRepository) UnmarshalJSON(b []byte) error {
-	type Properties CodeRepository
+func (r *CodeRepository[any]) UnmarshalJSON(b []byte) error {
+	type Properties CodeRepository[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *CodeRepository) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CodeRepository(*res.Properties)
+		*r = CodeRepository[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

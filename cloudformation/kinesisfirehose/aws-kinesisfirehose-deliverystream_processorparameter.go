@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_ProcessorParameter AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ProcessorParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html
-type DeliveryStream_ProcessorParameter struct {
+type DeliveryStream_ProcessorParameter[T any] struct {
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DeliveryStream_ProcessorParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_ProcessorParameter) AWSCloudFormationType() string {
+func (r *DeliveryStream_ProcessorParameter[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ProcessorParameter"
 }

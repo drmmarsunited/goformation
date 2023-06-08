@@ -11,7 +11,7 @@ import (
 
 // IntegrationAssociation AWS CloudFormation Resource (AWS::Connect::IntegrationAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-integrationassociation.html
-type IntegrationAssociation struct {
+type IntegrationAssociation[T any] struct {
 
 	// InstanceId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type IntegrationAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IntegrationAssociation) AWSCloudFormationType() string {
+func (r *IntegrationAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::IntegrationAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IntegrationAssociation) MarshalJSON() ([]byte, error) {
-	type Properties IntegrationAssociation
+func (r IntegrationAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties IntegrationAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r IntegrationAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IntegrationAssociation) UnmarshalJSON(b []byte) error {
-	type Properties IntegrationAssociation
+func (r *IntegrationAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties IntegrationAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *IntegrationAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IntegrationAssociation(*res.Properties)
+		*r = IntegrationAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

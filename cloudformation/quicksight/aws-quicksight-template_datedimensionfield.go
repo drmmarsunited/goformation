@@ -8,12 +8,12 @@ import (
 
 // Template_DateDimensionField AWS CloudFormation Resource (AWS::QuickSight::Template.DateDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html
-type Template_DateDimensionField struct {
+type Template_DateDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html#cfn-quicksight-template-datedimensionfield-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// DateGranularity AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_DateDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html#cfn-quicksight-template-datedimensionfield-formatconfiguration
-	FormatConfiguration *Template_DateTimeFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Template_DateTimeFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Template_DateDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DateDimensionField) AWSCloudFormationType() string {
+func (r *Template_DateDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DateDimensionField"
 }

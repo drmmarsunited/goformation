@@ -8,7 +8,7 @@ import (
 
 // Database_DatabaseIdentifier AWS CloudFormation Resource (AWS::Glue::Database.DatabaseIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseidentifier.html
-type Database_DatabaseIdentifier struct {
+type Database_DatabaseIdentifier[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Database_DatabaseIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_DatabaseIdentifier) AWSCloudFormationType() string {
+func (r *Database_DatabaseIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.DatabaseIdentifier"
 }

@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_Deserializer AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.Deserializer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html
-type DeliveryStream_Deserializer struct {
+type DeliveryStream_Deserializer[T any] struct {
 
 	// HiveJsonSerDe AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html#cfn-kinesisfirehose-deliverystream-deserializer-hivejsonserde
-	HiveJsonSerDe *DeliveryStream_HiveJsonSerDe `json:"HiveJsonSerDe,omitempty"`
+	HiveJsonSerDe *DeliveryStream_HiveJsonSerDe[any] `json:"HiveJsonSerDe,omitempty"`
 
 	// OpenXJsonSerDe AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html#cfn-kinesisfirehose-deliverystream-deserializer-openxjsonserde
-	OpenXJsonSerDe *DeliveryStream_OpenXJsonSerDe `json:"OpenXJsonSerDe,omitempty"`
+	OpenXJsonSerDe *DeliveryStream_OpenXJsonSerDe[any] `json:"OpenXJsonSerDe,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeliveryStream_Deserializer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_Deserializer) AWSCloudFormationType() string {
+func (r *DeliveryStream_Deserializer[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.Deserializer"
 }

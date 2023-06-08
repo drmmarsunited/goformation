@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableCellImageSizingConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableCellImageSizingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellimagesizingconfiguration.html
-type Analysis_TableCellImageSizingConfiguration struct {
+type Analysis_TableCellImageSizingConfiguration[T any] struct {
 
 	// TableCellImageScalingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_TableCellImageSizingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableCellImageSizingConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TableCellImageSizingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableCellImageSizingConfiguration"
 }

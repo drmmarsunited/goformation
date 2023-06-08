@@ -8,17 +8,17 @@ import (
 
 // DBCluster_ServerlessV2ScalingConfiguration AWS CloudFormation Resource (AWS::RDS::DBCluster.ServerlessV2ScalingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-serverlessv2scalingconfiguration.html
-type DBCluster_ServerlessV2ScalingConfiguration struct {
+type DBCluster_ServerlessV2ScalingConfiguration[T any] struct {
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-serverlessv2scalingconfiguration.html#cfn-rds-dbcluster-serverlessv2scalingconfiguration-maxcapacity
-	MaxCapacity *float64 `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-serverlessv2scalingconfiguration.html#cfn-rds-dbcluster-serverlessv2scalingconfiguration-mincapacity
-	MinCapacity *float64 `json:"MinCapacity,omitempty"`
+	MinCapacity *T `json:"MinCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DBCluster_ServerlessV2ScalingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster_ServerlessV2ScalingConfiguration) AWSCloudFormationType() string {
+func (r *DBCluster_ServerlessV2ScalingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBCluster.ServerlessV2ScalingConfiguration"
 }

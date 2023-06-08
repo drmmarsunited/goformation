@@ -12,24 +12,24 @@ import (
 )
 
 // Function_Properties is a helper struct that can hold either a S3Event, SNSEvent, SQSEvent, KinesisEvent, DynamoDBEvent, ApiEvent, ScheduleEvent, CloudWatchEventEvent, CloudWatchLogsEvent, IoTRuleEvent, AlexaSkillEvent, EventBridgeRuleEvent, HttpApiEvent, or CognitoEvent value
-type Function_Properties struct {
-	S3Event              *Function_S3Event
-	SNSEvent             *Function_SNSEvent
-	SQSEvent             *Function_SQSEvent
-	KinesisEvent         *Function_KinesisEvent
-	DynamoDBEvent        *Function_DynamoDBEvent
-	ApiEvent             *Function_ApiEvent
-	ScheduleEvent        *Function_ScheduleEvent
-	CloudWatchEventEvent *Function_CloudWatchEventEvent
-	CloudWatchLogsEvent  *Function_CloudWatchLogsEvent
-	IoTRuleEvent         *Function_IoTRuleEvent
-	AlexaSkillEvent      *Function_AlexaSkillEvent
-	EventBridgeRuleEvent *Function_EventBridgeRuleEvent
-	HttpApiEvent         *Function_HttpApiEvent
-	CognitoEvent         *Function_CognitoEvent
+type Function_Properties[T any] struct {
+	S3Event              *Function_S3Event[any]
+	SNSEvent             *Function_SNSEvent[any]
+	SQSEvent             *Function_SQSEvent[any]
+	KinesisEvent         *Function_KinesisEvent[any]
+	DynamoDBEvent        *Function_DynamoDBEvent[any]
+	ApiEvent             *Function_ApiEvent[any]
+	ScheduleEvent        *Function_ScheduleEvent[any]
+	CloudWatchEventEvent *Function_CloudWatchEventEvent[any]
+	CloudWatchLogsEvent  *Function_CloudWatchLogsEvent[any]
+	IoTRuleEvent         *Function_IoTRuleEvent[any]
+	AlexaSkillEvent      *Function_AlexaSkillEvent[any]
+	EventBridgeRuleEvent *Function_EventBridgeRuleEvent[any]
+	HttpApiEvent         *Function_HttpApiEvent[any]
+	CognitoEvent         *Function_CognitoEvent[any]
 }
 
-func (r Function_Properties) value() interface{} {
+func (r Function_Properties[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.S3Event != nil {
@@ -96,12 +96,12 @@ func (r Function_Properties) value() interface{} {
 	return nil
 }
 
-func (r Function_Properties) MarshalJSON() ([]byte, error) {
+func (r Function_Properties[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_Properties) UnmarshalJSON(b []byte) error {
+func (r *Function_Properties[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

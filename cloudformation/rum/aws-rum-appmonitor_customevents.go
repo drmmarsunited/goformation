@@ -8,7 +8,7 @@ import (
 
 // AppMonitor_CustomEvents AWS CloudFormation Resource (AWS::RUM::AppMonitor.CustomEvents)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-customevents.html
-type AppMonitor_CustomEvents struct {
+type AppMonitor_CustomEvents[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AppMonitor_CustomEvents struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppMonitor_CustomEvents) AWSCloudFormationType() string {
+func (r *AppMonitor_CustomEvents[any]) AWSCloudFormationType() string {
 	return "AWS::RUM::AppMonitor.CustomEvents"
 }

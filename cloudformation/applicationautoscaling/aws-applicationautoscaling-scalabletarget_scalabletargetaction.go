@@ -8,17 +8,17 @@ import (
 
 // ScalableTarget_ScalableTargetAction AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalableTarget.ScalableTargetAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html
-type ScalableTarget_ScalableTargetAction struct {
+type ScalableTarget_ScalableTargetAction[T any] struct {
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html#cfn-applicationautoscaling-scalabletarget-scalabletargetaction-maxcapacity
-	MaxCapacity *int `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html#cfn-applicationautoscaling-scalabletarget-scalabletargetaction-mincapacity
-	MinCapacity *int `json:"MinCapacity,omitempty"`
+	MinCapacity *T `json:"MinCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ScalableTarget_ScalableTargetAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalableTarget_ScalableTargetAction) AWSCloudFormationType() string {
+func (r *ScalableTarget_ScalableTargetAction[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalableTarget.ScalableTargetAction"
 }

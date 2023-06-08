@@ -8,22 +8,22 @@ import (
 
 // CapacityProvider_ManagedScaling AWS CloudFormation Resource (AWS::ECS::CapacityProvider.ManagedScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html
-type CapacityProvider_ManagedScaling struct {
+type CapacityProvider_ManagedScaling[T any] struct {
 
 	// InstanceWarmupPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html#cfn-ecs-capacityprovider-managedscaling-instancewarmupperiod
-	InstanceWarmupPeriod *int `json:"InstanceWarmupPeriod,omitempty"`
+	InstanceWarmupPeriod *T `json:"InstanceWarmupPeriod,omitempty"`
 
 	// MaximumScalingStepSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html#cfn-ecs-capacityprovider-managedscaling-maximumscalingstepsize
-	MaximumScalingStepSize *int `json:"MaximumScalingStepSize,omitempty"`
+	MaximumScalingStepSize *T `json:"MaximumScalingStepSize,omitempty"`
 
 	// MinimumScalingStepSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html#cfn-ecs-capacityprovider-managedscaling-minimumscalingstepsize
-	MinimumScalingStepSize *int `json:"MinimumScalingStepSize,omitempty"`
+	MinimumScalingStepSize *T `json:"MinimumScalingStepSize,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type CapacityProvider_ManagedScaling struct {
 	// TargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html#cfn-ecs-capacityprovider-managedscaling-targetcapacity
-	TargetCapacity *int `json:"TargetCapacity,omitempty"`
+	TargetCapacity *T `json:"TargetCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type CapacityProvider_ManagedScaling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityProvider_ManagedScaling) AWSCloudFormationType() string {
+func (r *CapacityProvider_ManagedScaling[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::CapacityProvider.ManagedScaling"
 }

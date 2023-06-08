@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DestinationParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DestinationParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-destinationparametervalueconfiguration.html
-type Dashboard_DestinationParameterValueConfiguration struct {
+type Dashboard_DestinationParameterValueConfiguration[T any] struct {
 
 	// CustomValuesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-destinationparametervalueconfiguration.html#cfn-quicksight-dashboard-destinationparametervalueconfiguration-customvaluesconfiguration
-	CustomValuesConfiguration *Dashboard_CustomValuesConfiguration `json:"CustomValuesConfiguration,omitempty"`
+	CustomValuesConfiguration *Dashboard_CustomValuesConfiguration[any] `json:"CustomValuesConfiguration,omitempty"`
 
 	// SelectAllValueOptions AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_DestinationParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DestinationParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DestinationParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DestinationParameterValueConfiguration"
 }

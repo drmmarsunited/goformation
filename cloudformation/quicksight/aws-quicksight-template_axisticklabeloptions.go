@@ -8,17 +8,17 @@ import (
 
 // Template_AxisTickLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Template.AxisTickLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisticklabeloptions.html
-type Template_AxisTickLabelOptions struct {
+type Template_AxisTickLabelOptions[T any] struct {
 
 	// LabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisticklabeloptions.html#cfn-quicksight-template-axisticklabeloptions-labeloptions
-	LabelOptions *Template_LabelOptions `json:"LabelOptions,omitempty"`
+	LabelOptions *Template_LabelOptions[any] `json:"LabelOptions,omitempty"`
 
 	// RotationAngle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axisticklabeloptions.html#cfn-quicksight-template-axisticklabeloptions-rotationangle
-	RotationAngle *float64 `json:"RotationAngle,omitempty"`
+	RotationAngle *T `json:"RotationAngle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_AxisTickLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AxisTickLabelOptions) AWSCloudFormationType() string {
+func (r *Template_AxisTickLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AxisTickLabelOptions"
 }

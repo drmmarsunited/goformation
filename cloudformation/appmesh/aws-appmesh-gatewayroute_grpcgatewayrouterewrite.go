@@ -8,12 +8,12 @@ import (
 
 // GatewayRoute_GrpcGatewayRouteRewrite AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html
-type GatewayRoute_GrpcGatewayRouteRewrite struct {
+type GatewayRoute_GrpcGatewayRouteRewrite[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html#cfn-appmesh-gatewayroute-grpcgatewayrouterewrite-hostname
-	Hostname *GatewayRoute_GatewayRouteHostnameRewrite `json:"Hostname,omitempty"`
+	Hostname *GatewayRoute_GatewayRouteHostnameRewrite[any] `json:"Hostname,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type GatewayRoute_GrpcGatewayRouteRewrite struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GrpcGatewayRouteRewrite) AWSCloudFormationType() string {
+func (r *GatewayRoute_GrpcGatewayRouteRewrite[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite"
 }

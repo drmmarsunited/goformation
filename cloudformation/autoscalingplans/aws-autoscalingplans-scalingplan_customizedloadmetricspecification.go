@@ -8,12 +8,12 @@ import (
 
 // ScalingPlan_CustomizedLoadMetricSpecification AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.CustomizedLoadMetricSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html
-type ScalingPlan_CustomizedLoadMetricSpecification struct {
+type ScalingPlan_CustomizedLoadMetricSpecification[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-dimensions
-	Dimensions []ScalingPlan_MetricDimension `json:"Dimensions,omitempty"`
+	Dimensions []ScalingPlan_MetricDimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ScalingPlan_CustomizedLoadMetricSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_CustomizedLoadMetricSpecification) AWSCloudFormationType() string {
+func (r *ScalingPlan_CustomizedLoadMetricSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.CustomizedLoadMetricSpecification"
 }

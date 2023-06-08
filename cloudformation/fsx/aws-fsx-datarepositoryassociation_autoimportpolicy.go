@@ -8,7 +8,7 @@ import (
 
 // DataRepositoryAssociation_AutoImportPolicy AWS CloudFormation Resource (AWS::FSx::DataRepositoryAssociation.AutoImportPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-datarepositoryassociation-autoimportpolicy.html
-type DataRepositoryAssociation_AutoImportPolicy struct {
+type DataRepositoryAssociation_AutoImportPolicy[T any] struct {
 
 	// Events AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataRepositoryAssociation_AutoImportPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataRepositoryAssociation_AutoImportPolicy) AWSCloudFormationType() string {
+func (r *DataRepositoryAssociation_AutoImportPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::DataRepositoryAssociation.AutoImportPolicy"
 }

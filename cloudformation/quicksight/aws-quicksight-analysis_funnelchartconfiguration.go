@@ -8,42 +8,42 @@ import (
 
 // Analysis_FunnelChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FunnelChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html
-type Analysis_FunnelChartConfiguration struct {
+type Analysis_FunnelChartConfiguration[T any] struct {
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Analysis_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// DataLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-datalabeloptions
-	DataLabelOptions *Analysis_FunnelChartDataLabelOptions `json:"DataLabelOptions,omitempty"`
+	DataLabelOptions *Analysis_FunnelChartDataLabelOptions[any] `json:"DataLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-fieldwells
-	FieldWells *Analysis_FunnelChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_FunnelChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-sortconfiguration
-	SortConfiguration *Analysis_FunnelChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_FunnelChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-tooltip
-	Tooltip *Analysis_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Analysis_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// ValueLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-valuelabeloptions
-	ValueLabelOptions *Analysis_ChartAxisLabelOptions `json:"ValueLabelOptions,omitempty"`
+	ValueLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"ValueLabelOptions,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-visualpalette
-	VisualPalette *Analysis_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Analysis_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_FunnelChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FunnelChartConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FunnelChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FunnelChartConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Monitor_S3Config AWS CloudFormation Resource (AWS::InternetMonitor::Monitor.S3Config)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-s3config.html
-type Monitor_S3Config struct {
+type Monitor_S3Config[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Monitor_S3Config struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Monitor_S3Config) AWSCloudFormationType() string {
+func (r *Monitor_S3Config[any]) AWSCloudFormationType() string {
 	return "AWS::InternetMonitor::Monitor.S3Config"
 }

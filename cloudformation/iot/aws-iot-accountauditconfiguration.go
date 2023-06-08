@@ -11,7 +11,7 @@ import (
 
 // AccountAuditConfiguration AWS CloudFormation Resource (AWS::IoT::AccountAuditConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html
-type AccountAuditConfiguration struct {
+type AccountAuditConfiguration[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: true
@@ -21,12 +21,12 @@ type AccountAuditConfiguration struct {
 	// AuditCheckConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations
-	AuditCheckConfigurations *AccountAuditConfiguration_AuditCheckConfigurations `json:"AuditCheckConfigurations"`
+	AuditCheckConfigurations *AccountAuditConfiguration_AuditCheckConfigurations[any] `json:"AuditCheckConfigurations"`
 
 	// AuditNotificationTargetConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-auditnotificationtargetconfigurations
-	AuditNotificationTargetConfigurations *AccountAuditConfiguration_AuditNotificationTargetConfigurations `json:"AuditNotificationTargetConfigurations,omitempty"`
+	AuditNotificationTargetConfigurations *AccountAuditConfiguration_AuditNotificationTargetConfigurations[any] `json:"AuditNotificationTargetConfigurations,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type AccountAuditConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccountAuditConfiguration) AWSCloudFormationType() string {
+func (r *AccountAuditConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::AccountAuditConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccountAuditConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties AccountAuditConfiguration
+func (r AccountAuditConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccountAuditConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r AccountAuditConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccountAuditConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties AccountAuditConfiguration
+func (r *AccountAuditConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccountAuditConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *AccountAuditConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccountAuditConfiguration(*res.Properties)
+		*r = AccountAuditConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

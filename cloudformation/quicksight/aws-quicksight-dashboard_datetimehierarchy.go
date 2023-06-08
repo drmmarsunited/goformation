@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DateTimeHierarchy AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateTimeHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimehierarchy.html
-type Dashboard_DateTimeHierarchy struct {
+type Dashboard_DateTimeHierarchy[T any] struct {
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimehierarchy.html#cfn-quicksight-dashboard-datetimehierarchy-drilldownfilters
-	DrillDownFilters []Dashboard_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Dashboard_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_DateTimeHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateTimeHierarchy) AWSCloudFormationType() string {
+func (r *Dashboard_DateTimeHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateTimeHierarchy"
 }

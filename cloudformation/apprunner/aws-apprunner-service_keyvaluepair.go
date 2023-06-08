@@ -8,7 +8,7 @@ import (
 
 // Service_KeyValuePair AWS CloudFormation Resource (AWS::AppRunner::Service.KeyValuePair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-keyvaluepair.html
-type Service_KeyValuePair struct {
+type Service_KeyValuePair[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_KeyValuePair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_KeyValuePair) AWSCloudFormationType() string {
+func (r *Service_KeyValuePair[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.KeyValuePair"
 }

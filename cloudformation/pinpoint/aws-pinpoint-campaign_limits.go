@@ -8,32 +8,32 @@ import (
 
 // Campaign_Limits AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Limits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html
-type Campaign_Limits struct {
+type Campaign_Limits[T any] struct {
 
 	// Daily AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-daily
-	Daily *int `json:"Daily,omitempty"`
+	Daily *T `json:"Daily,omitempty"`
 
 	// MaximumDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-maximumduration
-	MaximumDuration *int `json:"MaximumDuration,omitempty"`
+	MaximumDuration *T `json:"MaximumDuration,omitempty"`
 
 	// MessagesPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-messagespersecond
-	MessagesPerSecond *int `json:"MessagesPerSecond,omitempty"`
+	MessagesPerSecond *T `json:"MessagesPerSecond,omitempty"`
 
 	// Session AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-session
-	Session *int `json:"Session,omitempty"`
+	Session *T `json:"Session,omitempty"`
 
 	// Total AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-total
-	Total *int `json:"Total,omitempty"`
+	Total *T `json:"Total,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Campaign_Limits struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_Limits) AWSCloudFormationType() string {
+func (r *Campaign_Limits[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.Limits"
 }

@@ -8,7 +8,7 @@ import (
 
 // ScheduledQuery_SnsConfiguration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.SnsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-snsconfiguration.html
-type ScheduledQuery_SnsConfiguration struct {
+type ScheduledQuery_SnsConfiguration[T any] struct {
 
 	// TopicArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ScheduledQuery_SnsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_SnsConfiguration) AWSCloudFormationType() string {
+func (r *ScheduledQuery_SnsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.SnsConfiguration"
 }

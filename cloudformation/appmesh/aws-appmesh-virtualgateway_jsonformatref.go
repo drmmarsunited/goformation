@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_JsonFormatRef AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.JsonFormatRef)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html
-type VirtualGateway_JsonFormatRef struct {
+type VirtualGateway_JsonFormatRef[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualGateway_JsonFormatRef struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_JsonFormatRef) AWSCloudFormationType() string {
+func (r *VirtualGateway_JsonFormatRef[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.JsonFormatRef"
 }

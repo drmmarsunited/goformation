@@ -12,12 +12,12 @@ import (
 
 // Service AWS CloudFormation Resource (AWS::ECS::Service)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html
-type Service struct {
+type Service[T any] struct {
 
 	// CapacityProviderStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-capacityproviderstrategy
-	CapacityProviderStrategy []Service_CapacityProviderStrategyItem `json:"CapacityProviderStrategy,omitempty"`
+	CapacityProviderStrategy []Service_CapacityProviderStrategyItem[any] `json:"CapacityProviderStrategy,omitempty"`
 
 	// Cluster AWS CloudFormation Property
 	// Required: false
@@ -27,32 +27,32 @@ type Service struct {
 	// DeploymentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration
-	DeploymentConfiguration *Service_DeploymentConfiguration `json:"DeploymentConfiguration,omitempty"`
+	DeploymentConfiguration *Service_DeploymentConfiguration[any] `json:"DeploymentConfiguration,omitempty"`
 
 	// DeploymentController AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller
-	DeploymentController *Service_DeploymentController `json:"DeploymentController,omitempty"`
+	DeploymentController *Service_DeploymentController[any] `json:"DeploymentController,omitempty"`
 
 	// DesiredCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
-	DesiredCount *int `json:"DesiredCount,omitempty"`
+	DesiredCount *T `json:"DesiredCount,omitempty"`
 
 	// EnableECSManagedTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableecsmanagedtags
-	EnableECSManagedTags *bool `json:"EnableECSManagedTags,omitempty"`
+	EnableECSManagedTags *T `json:"EnableECSManagedTags,omitempty"`
 
 	// EnableExecuteCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableexecutecommand
-	EnableExecuteCommand *bool `json:"EnableExecuteCommand,omitempty"`
+	EnableExecuteCommand *T `json:"EnableExecuteCommand,omitempty"`
 
 	// HealthCheckGracePeriodSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
-	HealthCheckGracePeriodSeconds *int `json:"HealthCheckGracePeriodSeconds,omitempty"`
+	HealthCheckGracePeriodSeconds *T `json:"HealthCheckGracePeriodSeconds,omitempty"`
 
 	// LaunchType AWS CloudFormation Property
 	// Required: false
@@ -62,22 +62,22 @@ type Service struct {
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers
-	LoadBalancers []Service_LoadBalancer `json:"LoadBalancers,omitempty"`
+	LoadBalancers []Service_LoadBalancer[any] `json:"LoadBalancers,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration
-	NetworkConfiguration *Service_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Service_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints
-	PlacementConstraints []Service_PlacementConstraint `json:"PlacementConstraints,omitempty"`
+	PlacementConstraints []Service_PlacementConstraint[any] `json:"PlacementConstraints,omitempty"`
 
 	// PlacementStrategies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies
-	PlacementStrategies []Service_PlacementStrategy `json:"PlacementStrategies,omitempty"`
+	PlacementStrategies []Service_PlacementStrategy[any] `json:"PlacementStrategies,omitempty"`
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -102,7 +102,7 @@ type Service struct {
 	// ServiceConnectConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceconnectconfiguration
-	ServiceConnectConfiguration *Service_ServiceConnectConfiguration `json:"ServiceConnectConfiguration,omitempty"`
+	ServiceConnectConfiguration *Service_ServiceConnectConfiguration[any] `json:"ServiceConnectConfiguration,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -112,7 +112,7 @@ type Service struct {
 	// ServiceRegistries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries
-	ServiceRegistries []Service_ServiceRegistry `json:"ServiceRegistries,omitempty"`
+	ServiceRegistries []Service_ServiceRegistry[any] `json:"ServiceRegistries,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -141,14 +141,15 @@ type Service struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service) AWSCloudFormationType() string {
+func (r *Service[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Service) MarshalJSON() ([]byte, error) {
-	type Properties Service
+func (r Service[any]) MarshalJSON() ([]byte, error) {
+	type Properties Service[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -170,8 +171,9 @@ func (r Service) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Service) UnmarshalJSON(b []byte) error {
-	type Properties Service
+func (r *Service[any]) UnmarshalJSON(b []byte) error {
+	type Properties Service[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -191,7 +193,7 @@ func (r *Service) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Service(*res.Properties)
+		*r = Service[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

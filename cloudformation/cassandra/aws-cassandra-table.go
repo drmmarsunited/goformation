@@ -12,32 +12,32 @@ import (
 
 // Table AWS CloudFormation Resource (AWS::Cassandra::Table)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html
-type Table struct {
+type Table[T any] struct {
 
 	// BillingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-billingmode
-	BillingMode *Table_BillingMode `json:"BillingMode,omitempty"`
+	BillingMode *Table_BillingMode[any] `json:"BillingMode,omitempty"`
 
 	// ClientSideTimestampsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-clientsidetimestampsenabled
-	ClientSideTimestampsEnabled *bool `json:"ClientSideTimestampsEnabled,omitempty"`
+	ClientSideTimestampsEnabled *T `json:"ClientSideTimestampsEnabled,omitempty"`
 
 	// ClusteringKeyColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-clusteringkeycolumns
-	ClusteringKeyColumns []Table_ClusteringKeyColumn `json:"ClusteringKeyColumns,omitempty"`
+	ClusteringKeyColumns []Table_ClusteringKeyColumn[any] `json:"ClusteringKeyColumns,omitempty"`
 
 	// DefaultTimeToLive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-defaulttimetolive
-	DefaultTimeToLive *int `json:"DefaultTimeToLive,omitempty"`
+	DefaultTimeToLive *T `json:"DefaultTimeToLive,omitempty"`
 
 	// EncryptionSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-encryptionspecification
-	EncryptionSpecification *Table_EncryptionSpecification `json:"EncryptionSpecification,omitempty"`
+	EncryptionSpecification *Table_EncryptionSpecification[any] `json:"EncryptionSpecification,omitempty"`
 
 	// KeyspaceName AWS CloudFormation Property
 	// Required: true
@@ -47,17 +47,17 @@ type Table struct {
 	// PartitionKeyColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-partitionkeycolumns
-	PartitionKeyColumns []Table_Column `json:"PartitionKeyColumns"`
+	PartitionKeyColumns []Table_Column[any] `json:"PartitionKeyColumns"`
 
 	// PointInTimeRecoveryEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-pointintimerecoveryenabled
-	PointInTimeRecoveryEnabled *bool `json:"PointInTimeRecoveryEnabled,omitempty"`
+	PointInTimeRecoveryEnabled *T `json:"PointInTimeRecoveryEnabled,omitempty"`
 
 	// RegularColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-regularcolumns
-	RegularColumns []Table_Column `json:"RegularColumns,omitempty"`
+	RegularColumns []Table_Column[any] `json:"RegularColumns,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type Table struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table) AWSCloudFormationType() string {
+func (r *Table[any]) AWSCloudFormationType() string {
 	return "AWS::Cassandra::Table"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Table) MarshalJSON() ([]byte, error) {
-	type Properties Table
+func (r Table[any]) MarshalJSON() ([]byte, error) {
+	type Properties Table[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r Table) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Table) UnmarshalJSON(b []byte) error {
-	type Properties Table
+func (r *Table[any]) UnmarshalJSON(b []byte) error {
+	type Properties Table[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *Table) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Table(*res.Properties)
+		*r = Table[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

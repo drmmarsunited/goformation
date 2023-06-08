@@ -8,12 +8,12 @@ import (
 
 // Channel_ArchiveOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.ArchiveOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html
-type Channel_ArchiveOutputSettings struct {
+type Channel_ArchiveOutputSettings[T any] struct {
 
 	// ContainerSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-containersettings
-	ContainerSettings *Channel_ArchiveContainerSettings `json:"ContainerSettings,omitempty"`
+	ContainerSettings *Channel_ArchiveContainerSettings[any] `json:"ContainerSettings,omitempty"`
 
 	// Extension AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_ArchiveOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ArchiveOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_ArchiveOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ArchiveOutputSettings"
 }

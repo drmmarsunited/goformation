@@ -8,7 +8,7 @@ import (
 
 // InferenceScheduler_DataOutputConfiguration AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler.DataOutputConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html
-type InferenceScheduler_DataOutputConfiguration struct {
+type InferenceScheduler_DataOutputConfiguration[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type InferenceScheduler_DataOutputConfiguration struct {
 	// S3OutputConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration-s3outputconfiguration
-	S3OutputConfiguration *InferenceScheduler_S3OutputConfiguration `json:"S3OutputConfiguration"`
+	S3OutputConfiguration *InferenceScheduler_S3OutputConfiguration[any] `json:"S3OutputConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InferenceScheduler_DataOutputConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceScheduler_DataOutputConfiguration) AWSCloudFormationType() string {
+func (r *InferenceScheduler_DataOutputConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutEquipment::InferenceScheduler.DataOutputConfiguration"
 }

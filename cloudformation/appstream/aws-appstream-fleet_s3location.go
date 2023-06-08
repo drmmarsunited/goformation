@@ -8,7 +8,7 @@ import (
 
 // Fleet_S3Location AWS CloudFormation Resource (AWS::AppStream::Fleet.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-s3location.html
-type Fleet_S3Location struct {
+type Fleet_S3Location[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Fleet_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_S3Location) AWSCloudFormationType() string {
+func (r *Fleet_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Fleet.S3Location"
 }

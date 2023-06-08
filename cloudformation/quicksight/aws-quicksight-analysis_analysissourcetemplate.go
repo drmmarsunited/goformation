@@ -8,7 +8,7 @@ import (
 
 // Analysis_AnalysisSourceTemplate AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnalysisSourceTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html
-type Analysis_AnalysisSourceTemplate struct {
+type Analysis_AnalysisSourceTemplate[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_AnalysisSourceTemplate struct {
 	// DataSetReferences AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html#cfn-quicksight-analysis-analysissourcetemplate-datasetreferences
-	DataSetReferences []Analysis_DataSetReference `json:"DataSetReferences"`
+	DataSetReferences []Analysis_DataSetReference[any] `json:"DataSetReferences"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_AnalysisSourceTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AnalysisSourceTemplate) AWSCloudFormationType() string {
+func (r *Analysis_AnalysisSourceTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AnalysisSourceTemplate"
 }

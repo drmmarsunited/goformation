@@ -8,12 +8,12 @@ import (
 
 // Pipe_EcsEphemeralStorage AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsEphemeralStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsephemeralstorage.html
-type Pipe_EcsEphemeralStorage struct {
+type Pipe_EcsEphemeralStorage[T any] struct {
 
 	// SizeInGiB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsephemeralstorage.html#cfn-pipes-pipe-ecsephemeralstorage-sizeingib
-	SizeInGiB int `json:"SizeInGiB"`
+	SizeInGiB T `json:"SizeInGiB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_EcsEphemeralStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsEphemeralStorage) AWSCloudFormationType() string {
+func (r *Pipe_EcsEphemeralStorage[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsEphemeralStorage"
 }

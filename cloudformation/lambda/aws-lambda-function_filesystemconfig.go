@@ -8,7 +8,7 @@ import (
 
 // Function_FileSystemConfig AWS CloudFormation Resource (AWS::Lambda::Function.FileSystemConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html
-type Function_FileSystemConfig struct {
+type Function_FileSystemConfig[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_FileSystemConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_FileSystemConfig) AWSCloudFormationType() string {
+func (r *Function_FileSystemConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.FileSystemConfig"
 }

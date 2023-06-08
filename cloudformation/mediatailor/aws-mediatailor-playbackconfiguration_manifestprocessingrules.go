@@ -8,12 +8,12 @@ import (
 
 // PlaybackConfiguration_ManifestProcessingRules AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.ManifestProcessingRules)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-manifestprocessingrules.html
-type PlaybackConfiguration_ManifestProcessingRules struct {
+type PlaybackConfiguration_ManifestProcessingRules[T any] struct {
 
 	// AdMarkerPassthrough AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-manifestprocessingrules.html#cfn-mediatailor-playbackconfiguration-manifestprocessingrules-admarkerpassthrough
-	AdMarkerPassthrough *PlaybackConfiguration_AdMarkerPassthrough `json:"AdMarkerPassthrough,omitempty"`
+	AdMarkerPassthrough *PlaybackConfiguration_AdMarkerPassthrough[any] `json:"AdMarkerPassthrough,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PlaybackConfiguration_ManifestProcessingRules struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_ManifestProcessingRules) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_ManifestProcessingRules[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.ManifestProcessingRules"
 }

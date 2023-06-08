@@ -8,7 +8,7 @@ import (
 
 // WebACL_OverrideAction AWS CloudFormation Resource (AWS::WAFv2::WebACL.OverrideAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-overrideaction.html
-type WebACL_OverrideAction struct {
+type WebACL_OverrideAction[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type WebACL_OverrideAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_OverrideAction) AWSCloudFormationType() string {
+func (r *WebACL_OverrideAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.OverrideAction"
 }

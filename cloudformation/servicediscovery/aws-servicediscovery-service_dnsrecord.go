@@ -8,12 +8,12 @@ import (
 
 // Service_DnsRecord AWS CloudFormation Resource (AWS::ServiceDiscovery::Service.DnsRecord)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html
-type Service_DnsRecord struct {
+type Service_DnsRecord[T any] struct {
 
 	// TTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html#cfn-servicediscovery-service-dnsrecord-ttl
-	TTL float64 `json:"TTL"`
+	TTL T `json:"TTL"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Service_DnsRecord struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DnsRecord) AWSCloudFormationType() string {
+func (r *Service_DnsRecord[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::Service.DnsRecord"
 }

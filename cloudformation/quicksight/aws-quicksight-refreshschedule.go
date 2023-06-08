@@ -11,7 +11,7 @@ import (
 
 // RefreshSchedule AWS CloudFormation Resource (AWS::QuickSight::RefreshSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-refreshschedule.html
-type RefreshSchedule struct {
+type RefreshSchedule[T any] struct {
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type RefreshSchedule struct {
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-refreshschedule.html#cfn-quicksight-refreshschedule-schedule
-	Schedule *RefreshSchedule_RefreshScheduleMap `json:"Schedule,omitempty"`
+	Schedule *RefreshSchedule_RefreshScheduleMap[any] `json:"Schedule,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type RefreshSchedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RefreshSchedule) AWSCloudFormationType() string {
+func (r *RefreshSchedule[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::RefreshSchedule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RefreshSchedule) MarshalJSON() ([]byte, error) {
-	type Properties RefreshSchedule
+func (r RefreshSchedule[any]) MarshalJSON() ([]byte, error) {
+	type Properties RefreshSchedule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r RefreshSchedule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RefreshSchedule) UnmarshalJSON(b []byte) error {
-	type Properties RefreshSchedule
+func (r *RefreshSchedule[any]) UnmarshalJSON(b []byte) error {
+	type Properties RefreshSchedule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *RefreshSchedule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RefreshSchedule(*res.Properties)
+		*r = RefreshSchedule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

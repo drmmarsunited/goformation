@@ -8,7 +8,7 @@ import (
 
 // AppMonitor_MetricDefinition AWS CloudFormation Resource (AWS::RUM::AppMonitor.MetricDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html
-type AppMonitor_MetricDefinition struct {
+type AppMonitor_MetricDefinition[T any] struct {
 
 	// DimensionKeys AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type AppMonitor_MetricDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppMonitor_MetricDefinition) AWSCloudFormationType() string {
+func (r *AppMonitor_MetricDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::RUM::AppMonitor.MetricDefinition"
 }

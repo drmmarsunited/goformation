@@ -8,7 +8,7 @@ import (
 
 // Api_BodyS3Location AWS CloudFormation Resource (AWS::ApiGatewayV2::Api.BodyS3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html
-type Api_BodyS3Location struct {
+type Api_BodyS3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Api_BodyS3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api_BodyS3Location) AWSCloudFormationType() string {
+func (r *Api_BodyS3Location[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Api.BodyS3Location"
 }

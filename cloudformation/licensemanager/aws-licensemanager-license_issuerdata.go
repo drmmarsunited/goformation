@@ -8,7 +8,7 @@ import (
 
 // License_IssuerData AWS CloudFormation Resource (AWS::LicenseManager::License.IssuerData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-issuerdata.html
-type License_IssuerData struct {
+type License_IssuerData[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type License_IssuerData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_IssuerData) AWSCloudFormationType() string {
+func (r *License_IssuerData[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.IssuerData"
 }

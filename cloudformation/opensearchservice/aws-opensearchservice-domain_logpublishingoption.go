@@ -8,7 +8,7 @@ import (
 
 // Domain_LogPublishingOption AWS CloudFormation Resource (AWS::OpenSearchService::Domain.LogPublishingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html
-type Domain_LogPublishingOption struct {
+type Domain_LogPublishingOption[T any] struct {
 
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Domain_LogPublishingOption struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Domain_LogPublishingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_LogPublishingOption) AWSCloudFormationType() string {
+func (r *Domain_LogPublishingOption[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.LogPublishingOption"
 }

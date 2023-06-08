@@ -8,7 +8,7 @@ import (
 
 // ModelCard_TrainingHyperParameter AWS CloudFormation Resource (AWS::SageMaker::ModelCard.TrainingHyperParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html
-type ModelCard_TrainingHyperParameter struct {
+type ModelCard_TrainingHyperParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelCard_TrainingHyperParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_TrainingHyperParameter) AWSCloudFormationType() string {
+func (r *ModelCard_TrainingHyperParameter[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.TrainingHyperParameter"
 }

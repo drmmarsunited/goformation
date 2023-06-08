@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_TlsValidationContextFileTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextfiletrust.html
-type VirtualNode_TlsValidationContextFileTrust struct {
+type VirtualNode_TlsValidationContextFileTrust[T any] struct {
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualNode_TlsValidationContextFileTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_TlsValidationContextFileTrust) AWSCloudFormationType() string {
+func (r *VirtualNode_TlsValidationContextFileTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust"
 }

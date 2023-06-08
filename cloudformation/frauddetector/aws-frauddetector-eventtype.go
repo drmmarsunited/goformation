@@ -12,7 +12,7 @@ import (
 
 // EventType AWS CloudFormation Resource (AWS::FraudDetector::EventType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html
-type EventType struct {
+type EventType[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,17 +22,17 @@ type EventType struct {
 	// EntityTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-entitytypes
-	EntityTypes []EventType_EntityType `json:"EntityTypes"`
+	EntityTypes []EventType_EntityType[any] `json:"EntityTypes"`
 
 	// EventVariables AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-eventvariables
-	EventVariables []EventType_EventVariable `json:"EventVariables"`
+	EventVariables []EventType_EventVariable[any] `json:"EventVariables"`
 
 	// Labels AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-labels
-	Labels []EventType_Label `json:"Labels"`
+	Labels []EventType_Label[any] `json:"Labels"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type EventType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventType) AWSCloudFormationType() string {
+func (r *EventType[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::EventType"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EventType) MarshalJSON() ([]byte, error) {
-	type Properties EventType
+func (r EventType[any]) MarshalJSON() ([]byte, error) {
+	type Properties EventType[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r EventType) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EventType) UnmarshalJSON(b []byte) error {
-	type Properties EventType
+func (r *EventType[any]) UnmarshalJSON(b []byte) error {
+	type Properties EventType[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *EventType) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EventType(*res.Properties)
+		*r = EventType[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

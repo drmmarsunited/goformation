@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_Resource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.Resource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html
-type PrincipalPermissions_Resource struct {
+type PrincipalPermissions_Resource[T any] struct {
 
 	// Catalog AWS CloudFormation Property
 	// Required: false
@@ -18,37 +18,37 @@ type PrincipalPermissions_Resource struct {
 	// DataCellsFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-datacellsfilter
-	DataCellsFilter *PrincipalPermissions_DataCellsFilterResource `json:"DataCellsFilter,omitempty"`
+	DataCellsFilter *PrincipalPermissions_DataCellsFilterResource[any] `json:"DataCellsFilter,omitempty"`
 
 	// DataLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-datalocation
-	DataLocation *PrincipalPermissions_DataLocationResource `json:"DataLocation,omitempty"`
+	DataLocation *PrincipalPermissions_DataLocationResource[any] `json:"DataLocation,omitempty"`
 
 	// Database AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-database
-	Database *PrincipalPermissions_DatabaseResource `json:"Database,omitempty"`
+	Database *PrincipalPermissions_DatabaseResource[any] `json:"Database,omitempty"`
 
 	// LFTag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-lftag
-	LFTag *PrincipalPermissions_LFTagKeyResource `json:"LFTag,omitempty"`
+	LFTag *PrincipalPermissions_LFTagKeyResource[any] `json:"LFTag,omitempty"`
 
 	// LFTagPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-lftagpolicy
-	LFTagPolicy *PrincipalPermissions_LFTagPolicyResource `json:"LFTagPolicy,omitempty"`
+	LFTagPolicy *PrincipalPermissions_LFTagPolicyResource[any] `json:"LFTagPolicy,omitempty"`
 
 	// Table AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-table
-	Table *PrincipalPermissions_TableResource `json:"Table,omitempty"`
+	Table *PrincipalPermissions_TableResource[any] `json:"Table,omitempty"`
 
 	// TableWithColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-tablewithcolumns
-	TableWithColumns *PrincipalPermissions_TableWithColumnsResource `json:"TableWithColumns,omitempty"`
+	TableWithColumns *PrincipalPermissions_TableWithColumnsResource[any] `json:"TableWithColumns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type PrincipalPermissions_Resource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_Resource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_Resource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.Resource"
 }

@@ -8,12 +8,12 @@ import (
 
 // Function_EphemeralStorage AWS CloudFormation Resource (AWS::Lambda::Function.EphemeralStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-ephemeralstorage.html
-type Function_EphemeralStorage struct {
+type Function_EphemeralStorage[T any] struct {
 
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-ephemeralstorage.html#cfn-lambda-function-ephemeralstorage-size
-	Size int `json:"Size"`
+	Size T `json:"Size"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Function_EphemeralStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EphemeralStorage) AWSCloudFormationType() string {
+func (r *Function_EphemeralStorage[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.EphemeralStorage"
 }

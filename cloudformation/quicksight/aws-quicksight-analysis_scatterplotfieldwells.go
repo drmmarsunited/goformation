@@ -8,17 +8,17 @@ import (
 
 // Analysis_ScatterPlotFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.ScatterPlotFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotfieldwells.html
-type Analysis_ScatterPlotFieldWells struct {
+type Analysis_ScatterPlotFieldWells[T any] struct {
 
 	// ScatterPlotCategoricallyAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotfieldwells.html#cfn-quicksight-analysis-scatterplotfieldwells-scatterplotcategoricallyaggregatedfieldwells
-	ScatterPlotCategoricallyAggregatedFieldWells *Analysis_ScatterPlotCategoricallyAggregatedFieldWells `json:"ScatterPlotCategoricallyAggregatedFieldWells,omitempty"`
+	ScatterPlotCategoricallyAggregatedFieldWells *Analysis_ScatterPlotCategoricallyAggregatedFieldWells[any] `json:"ScatterPlotCategoricallyAggregatedFieldWells,omitempty"`
 
 	// ScatterPlotUnaggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotfieldwells.html#cfn-quicksight-analysis-scatterplotfieldwells-scatterplotunaggregatedfieldwells
-	ScatterPlotUnaggregatedFieldWells *Analysis_ScatterPlotUnaggregatedFieldWells `json:"ScatterPlotUnaggregatedFieldWells,omitempty"`
+	ScatterPlotUnaggregatedFieldWells *Analysis_ScatterPlotUnaggregatedFieldWells[any] `json:"ScatterPlotUnaggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_ScatterPlotFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ScatterPlotFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_ScatterPlotFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ScatterPlotFieldWells"
 }

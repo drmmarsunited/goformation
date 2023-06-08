@@ -8,7 +8,7 @@ import (
 
 // Route_HttpRetryPolicy AWS CloudFormation Resource (AWS::AppMesh::Route.HttpRetryPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html
-type Route_HttpRetryPolicy struct {
+type Route_HttpRetryPolicy[T any] struct {
 
 	// HttpRetryEvents AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Route_HttpRetryPolicy struct {
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-maxretries
-	MaxRetries int `json:"MaxRetries"`
+	MaxRetries T `json:"MaxRetries"`
 
 	// PerRetryTimeout AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-perretrytimeout
-	PerRetryTimeout *Route_Duration `json:"PerRetryTimeout"`
+	PerRetryTimeout *Route_Duration[any] `json:"PerRetryTimeout"`
 
 	// TcpRetryEvents AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Route_HttpRetryPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpRetryPolicy) AWSCloudFormationType() string {
+func (r *Route_HttpRetryPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpRetryPolicy"
 }

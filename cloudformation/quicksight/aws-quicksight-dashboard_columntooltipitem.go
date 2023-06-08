@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ColumnTooltipItem AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColumnTooltipItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columntooltipitem.html
-type Dashboard_ColumnTooltipItem struct {
+type Dashboard_ColumnTooltipItem[T any] struct {
 
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columntooltipitem.html#cfn-quicksight-dashboard-columntooltipitem-aggregation
-	Aggregation *Dashboard_AggregationFunction `json:"Aggregation,omitempty"`
+	Aggregation *Dashboard_AggregationFunction[any] `json:"Aggregation,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columntooltipitem.html#cfn-quicksight-dashboard-columntooltipitem-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// Label AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_ColumnTooltipItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColumnTooltipItem) AWSCloudFormationType() string {
+func (r *Dashboard_ColumnTooltipItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColumnTooltipItem"
 }

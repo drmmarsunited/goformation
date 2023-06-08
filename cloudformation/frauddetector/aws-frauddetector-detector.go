@@ -12,12 +12,12 @@ import (
 
 // Detector AWS CloudFormation Resource (AWS::FraudDetector::Detector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html
-type Detector struct {
+type Detector[T any] struct {
 
 	// AssociatedModels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-associatedmodels
-	AssociatedModels []Detector_Model `json:"AssociatedModels,omitempty"`
+	AssociatedModels []Detector_Model[any] `json:"AssociatedModels,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Detector struct {
 	// EventType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-eventtype
-	EventType *Detector_EventType `json:"EventType"`
+	EventType *Detector_EventType[any] `json:"EventType"`
 
 	// RuleExecutionMode AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Detector struct {
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-rules
-	Rules []Detector_Rule `json:"Rules"`
+	Rules []Detector_Rule[any] `json:"Rules"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Detector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector) AWSCloudFormationType() string {
+func (r *Detector[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Detector) MarshalJSON() ([]byte, error) {
-	type Properties Detector
+func (r Detector[any]) MarshalJSON() ([]byte, error) {
+	type Properties Detector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Detector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Detector) UnmarshalJSON(b []byte) error {
-	type Properties Detector
+func (r *Detector[any]) UnmarshalJSON(b []byte) error {
+	type Properties Detector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Detector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Detector(*res.Properties)
+		*r = Detector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

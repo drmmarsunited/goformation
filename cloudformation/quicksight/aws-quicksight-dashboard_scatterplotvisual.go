@@ -8,32 +8,32 @@ import (
 
 // Dashboard_ScatterPlotVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ScatterPlotVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html
-type Dashboard_ScatterPlotVisual struct {
+type Dashboard_ScatterPlotVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-chartconfiguration
-	ChartConfiguration *Dashboard_ScatterPlotConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_ScatterPlotConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-columnhierarchies
-	ColumnHierarchies []Dashboard_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Dashboard_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_ScatterPlotVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ScatterPlotVisual) AWSCloudFormationType() string {
+func (r *Dashboard_ScatterPlotVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ScatterPlotVisual"
 }

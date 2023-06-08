@@ -12,22 +12,22 @@ import (
 
 // Bot AWS CloudFormation Resource (AWS::Lex::Bot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html
-type Bot struct {
+type Bot[T any] struct {
 
 	// AutoBuildBotLocales AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-autobuildbotlocales
-	AutoBuildBotLocales *bool `json:"AutoBuildBotLocales,omitempty"`
+	AutoBuildBotLocales *T `json:"AutoBuildBotLocales,omitempty"`
 
 	// BotFileS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botfiles3location
-	BotFileS3Location *Bot_S3Location `json:"BotFileS3Location,omitempty"`
+	BotFileS3Location *Bot_S3Location[any] `json:"BotFileS3Location,omitempty"`
 
 	// BotLocales AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botlocales
-	BotLocales []Bot_BotLocale `json:"BotLocales,omitempty"`
+	BotLocales []Bot_BotLocale[any] `json:"BotLocales,omitempty"`
 
 	// BotTags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Bot struct {
 	// DataPrivacy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-dataprivacy
-	DataPrivacy *Bot_DataPrivacy `json:"DataPrivacy"`
+	DataPrivacy *Bot_DataPrivacy[any] `json:"DataPrivacy"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Bot struct {
 	// IdleSessionTTLInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-idlesessionttlinseconds
-	IdleSessionTTLInSeconds int `json:"IdleSessionTTLInSeconds"`
+	IdleSessionTTLInSeconds T `json:"IdleSessionTTLInSeconds"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type Bot struct {
 	// TestBotAliasSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings
-	TestBotAliasSettings *Bot_TestBotAliasSettings `json:"TestBotAliasSettings,omitempty"`
+	TestBotAliasSettings *Bot_TestBotAliasSettings[any] `json:"TestBotAliasSettings,omitempty"`
 
 	// TestBotAliasTags AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type Bot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot) AWSCloudFormationType() string {
+func (r *Bot[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Bot) MarshalJSON() ([]byte, error) {
-	type Properties Bot
+func (r Bot[any]) MarshalJSON() ([]byte, error) {
+	type Properties Bot[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r Bot) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Bot) UnmarshalJSON(b []byte) error {
-	type Properties Bot
+func (r *Bot[any]) UnmarshalJSON(b []byte) error {
+	type Properties Bot[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *Bot) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Bot(*res.Properties)
+		*r = Bot[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

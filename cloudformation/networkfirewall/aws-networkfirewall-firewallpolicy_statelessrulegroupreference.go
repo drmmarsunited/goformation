@@ -8,12 +8,12 @@ import (
 
 // FirewallPolicy_StatelessRuleGroupReference AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.StatelessRuleGroupReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html
-type FirewallPolicy_StatelessRuleGroupReference struct {
+type FirewallPolicy_StatelessRuleGroupReference[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statelessrulegroupreference-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FirewallPolicy_StatelessRuleGroupReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_StatelessRuleGroupReference) AWSCloudFormationType() string {
+func (r *FirewallPolicy_StatelessRuleGroupReference[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.StatelessRuleGroupReference"
 }

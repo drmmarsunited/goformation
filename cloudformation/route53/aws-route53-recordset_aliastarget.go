@@ -8,7 +8,7 @@ import (
 
 // RecordSet_AliasTarget AWS CloudFormation Resource (AWS::Route53::RecordSet.AliasTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
-type RecordSet_AliasTarget struct {
+type RecordSet_AliasTarget[T any] struct {
 
 	// DNSName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type RecordSet_AliasTarget struct {
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth
-	EvaluateTargetHealth *bool `json:"EvaluateTargetHealth,omitempty"`
+	EvaluateTargetHealth *T `json:"EvaluateTargetHealth,omitempty"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RecordSet_AliasTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordSet_AliasTarget) AWSCloudFormationType() string {
+func (r *RecordSet_AliasTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSet.AliasTarget"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_DefaultInteractiveLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DefaultInteractiveLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultinteractivelayoutconfiguration.html
-type Dashboard_DefaultInteractiveLayoutConfiguration struct {
+type Dashboard_DefaultInteractiveLayoutConfiguration[T any] struct {
 
 	// FreeForm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultinteractivelayoutconfiguration.html#cfn-quicksight-dashboard-defaultinteractivelayoutconfiguration-freeform
-	FreeForm *Dashboard_DefaultFreeFormLayoutConfiguration `json:"FreeForm,omitempty"`
+	FreeForm *Dashboard_DefaultFreeFormLayoutConfiguration[any] `json:"FreeForm,omitempty"`
 
 	// Grid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultinteractivelayoutconfiguration.html#cfn-quicksight-dashboard-defaultinteractivelayoutconfiguration-grid
-	Grid *Dashboard_DefaultGridLayoutConfiguration `json:"Grid,omitempty"`
+	Grid *Dashboard_DefaultGridLayoutConfiguration[any] `json:"Grid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DefaultInteractiveLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DefaultInteractiveLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DefaultInteractiveLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DefaultInteractiveLayoutConfiguration"
 }

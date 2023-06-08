@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_EksProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksproperties.html
-type JobDefinition_EksProperties struct {
+type JobDefinition_EksProperties[T any] struct {
 
 	// PodProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksproperties.html#cfn-batch-jobdefinition-eksproperties-podproperties
-	PodProperties *JobDefinition_PodProperties `json:"PodProperties,omitempty"`
+	PodProperties *JobDefinition_PodProperties[any] `json:"PodProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobDefinition_EksProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksProperties) AWSCloudFormationType() string {
+func (r *JobDefinition_EksProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksProperties"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CustomFilterListConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomFilterListConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customfilterlistconfiguration.html
-type Dashboard_CustomFilterListConfiguration struct {
+type Dashboard_CustomFilterListConfiguration[T any] struct {
 
 	// CategoryValues AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_CustomFilterListConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomFilterListConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_CustomFilterListConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomFilterListConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_ChallengeConfig AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.ChallengeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-challengeconfig.html
-type RuleGroup_ChallengeConfig struct {
+type RuleGroup_ChallengeConfig[T any] struct {
 
 	// ImmunityTimeProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-challengeconfig.html#cfn-wafv2-rulegroup-challengeconfig-immunitytimeproperty
-	ImmunityTimeProperty *RuleGroup_ImmunityTimeProperty `json:"ImmunityTimeProperty,omitempty"`
+	ImmunityTimeProperty *RuleGroup_ImmunityTimeProperty[any] `json:"ImmunityTimeProperty,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_ChallengeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_ChallengeConfig) AWSCloudFormationType() string {
+func (r *RuleGroup_ChallengeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.ChallengeConfig"
 }

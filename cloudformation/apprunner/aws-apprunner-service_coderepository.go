@@ -8,12 +8,12 @@ import (
 
 // Service_CodeRepository AWS CloudFormation Resource (AWS::AppRunner::Service.CodeRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html
-type Service_CodeRepository struct {
+type Service_CodeRepository[T any] struct {
 
 	// CodeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-codeconfiguration
-	CodeConfiguration *Service_CodeConfiguration `json:"CodeConfiguration,omitempty"`
+	CodeConfiguration *Service_CodeConfiguration[any] `json:"CodeConfiguration,omitempty"`
 
 	// RepositoryUrl AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Service_CodeRepository struct {
 	// SourceCodeVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-sourcecodeversion
-	SourceCodeVersion *Service_SourceCodeVersion `json:"SourceCodeVersion"`
+	SourceCodeVersion *Service_SourceCodeVersion[any] `json:"SourceCodeVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Service_CodeRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_CodeRepository) AWSCloudFormationType() string {
+func (r *Service_CodeRepository[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.CodeRepository"
 }

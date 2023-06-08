@@ -8,7 +8,7 @@ import (
 
 // Function_StateMachineSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.StateMachineSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_StateMachineSAMPT struct {
+type Function_StateMachineSAMPT[T any] struct {
 
 	// StateMachineName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_StateMachineSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_StateMachineSAMPT) AWSCloudFormationType() string {
+func (r *Function_StateMachineSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.StateMachineSAMPT"
 }

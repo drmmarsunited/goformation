@@ -8,7 +8,7 @@ import (
 
 // Filter_FindingCriteria AWS CloudFormation Resource (AWS::GuardDuty::Filter.FindingCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html
-type Filter_FindingCriteria struct {
+type Filter_FindingCriteria[T any] struct {
 
 	// Criterion AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Filter_FindingCriteria struct {
 	// ItemType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-itemtype
-	ItemType *Filter_Condition `json:"ItemType,omitempty"`
+	ItemType *Filter_Condition[any] `json:"ItemType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Filter_FindingCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter_FindingCriteria) AWSCloudFormationType() string {
+func (r *Filter_FindingCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Filter.FindingCriteria"
 }

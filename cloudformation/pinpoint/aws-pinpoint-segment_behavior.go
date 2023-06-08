@@ -8,12 +8,12 @@ import (
 
 // Segment_Behavior AWS CloudFormation Resource (AWS::Pinpoint::Segment.Behavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html
-type Segment_Behavior struct {
+type Segment_Behavior[T any] struct {
 
 	// Recency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency
-	Recency *Segment_Recency `json:"Recency,omitempty"`
+	Recency *Segment_Recency[any] `json:"Recency,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Segment_Behavior struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_Behavior) AWSCloudFormationType() string {
+func (r *Segment_Behavior[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.Behavior"
 }

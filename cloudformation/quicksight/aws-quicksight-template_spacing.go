@@ -8,7 +8,7 @@ import (
 
 // Template_Spacing AWS CloudFormation Resource (AWS::QuickSight::Template.Spacing)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-spacing.html
-type Template_Spacing struct {
+type Template_Spacing[T any] struct {
 
 	// Bottom AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_Spacing struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Spacing) AWSCloudFormationType() string {
+func (r *Template_Spacing[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Spacing"
 }

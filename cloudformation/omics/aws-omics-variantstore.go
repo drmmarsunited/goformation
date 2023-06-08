@@ -11,7 +11,7 @@ import (
 
 // VariantStore AWS CloudFormation Resource (AWS::Omics::VariantStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-variantstore.html
-type VariantStore struct {
+type VariantStore[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type VariantStore struct {
 	// Reference AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-variantstore.html#cfn-omics-variantstore-reference
-	Reference *VariantStore_ReferenceItem `json:"Reference"`
+	Reference *VariantStore_ReferenceItem[any] `json:"Reference"`
 
 	// SseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-variantstore.html#cfn-omics-variantstore-sseconfig
-	SseConfig *VariantStore_SseConfig `json:"SseConfig,omitempty"`
+	SseConfig *VariantStore_SseConfig[any] `json:"SseConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type VariantStore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VariantStore) AWSCloudFormationType() string {
+func (r *VariantStore[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::VariantStore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VariantStore) MarshalJSON() ([]byte, error) {
-	type Properties VariantStore
+func (r VariantStore[any]) MarshalJSON() ([]byte, error) {
+	type Properties VariantStore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r VariantStore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VariantStore) UnmarshalJSON(b []byte) error {
-	type Properties VariantStore
+func (r *VariantStore[any]) UnmarshalJSON(b []byte) error {
+	type Properties VariantStore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *VariantStore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VariantStore(*res.Properties)
+		*r = VariantStore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

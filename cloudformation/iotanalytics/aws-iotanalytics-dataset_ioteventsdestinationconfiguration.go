@@ -8,7 +8,7 @@ import (
 
 // Dataset_IotEventsDestinationConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html
-type Dataset_IotEventsDestinationConfiguration struct {
+type Dataset_IotEventsDestinationConfiguration[T any] struct {
 
 	// InputName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_IotEventsDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_IotEventsDestinationConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_IotEventsDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration"
 }

@@ -11,7 +11,7 @@ import (
 
 // Link AWS CloudFormation Resource (AWS::Oam::Link)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html
-type Link struct {
+type Link[T any] struct {
 
 	// LabelTemplate AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type Link struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Link) AWSCloudFormationType() string {
+func (r *Link[any]) AWSCloudFormationType() string {
 	return "AWS::Oam::Link"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Link) MarshalJSON() ([]byte, error) {
-	type Properties Link
+func (r Link[any]) MarshalJSON() ([]byte, error) {
+	type Properties Link[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Link) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Link) UnmarshalJSON(b []byte) error {
-	type Properties Link
+func (r *Link[any]) UnmarshalJSON(b []byte) error {
+	type Properties Link[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Link) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Link(*res.Properties)
+		*r = Link[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

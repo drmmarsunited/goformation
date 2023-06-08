@@ -8,22 +8,22 @@ import (
 
 // RuleGroup_Rule AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html
-type RuleGroup_Rule struct {
+type RuleGroup_Rule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-action
-	Action *RuleGroup_RuleAction `json:"Action,omitempty"`
+	Action *RuleGroup_RuleAction[any] `json:"Action,omitempty"`
 
 	// CaptchaConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-captchaconfig
-	CaptchaConfig *RuleGroup_CaptchaConfig `json:"CaptchaConfig,omitempty"`
+	CaptchaConfig *RuleGroup_CaptchaConfig[any] `json:"CaptchaConfig,omitempty"`
 
 	// ChallengeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-challengeconfig
-	ChallengeConfig *RuleGroup_ChallengeConfig `json:"ChallengeConfig,omitempty"`
+	ChallengeConfig *RuleGroup_ChallengeConfig[any] `json:"ChallengeConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,22 +33,22 @@ type RuleGroup_Rule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// RuleLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-rulelabels
-	RuleLabels []RuleGroup_Label `json:"RuleLabels,omitempty"`
+	RuleLabels []RuleGroup_Label[any] `json:"RuleLabels,omitempty"`
 
 	// Statement AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-statement
-	Statement *RuleGroup_Statement `json:"Statement"`
+	Statement *RuleGroup_Statement[any] `json:"Statement"`
 
 	// VisibilityConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-visibilityconfig
-	VisibilityConfig *RuleGroup_VisibilityConfig `json:"VisibilityConfig"`
+	VisibilityConfig *RuleGroup_VisibilityConfig[any] `json:"VisibilityConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type RuleGroup_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Rule) AWSCloudFormationType() string {
+func (r *RuleGroup_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.Rule"
 }

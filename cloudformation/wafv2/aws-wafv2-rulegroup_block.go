@@ -13,7 +13,7 @@ type RuleGroup_Block struct {
 	// CustomResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-block.html#cfn-wafv2-rulegroup-block-customresponse
-	CustomResponse *RuleGroup_CustomResponse `json:"CustomResponse,omitempty"`
+	CustomResponse *RuleGroup_CustomResponse[any] `json:"CustomResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

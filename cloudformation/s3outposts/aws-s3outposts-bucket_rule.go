@@ -8,12 +8,12 @@ import (
 
 // Bucket_Rule AWS CloudFormation Resource (AWS::S3Outposts::Bucket.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html
-type Bucket_Rule struct {
+type Bucket_Rule[T any] struct {
 
 	// AbortIncompleteMultipartUpload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload
-	AbortIncompleteMultipartUpload *Bucket_AbortIncompleteMultipartUpload `json:"AbortIncompleteMultipartUpload,omitempty"`
+	AbortIncompleteMultipartUpload *Bucket_AbortIncompleteMultipartUpload[any] `json:"AbortIncompleteMultipartUpload,omitempty"`
 
 	// ExpirationDate AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Bucket_Rule struct {
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays
-	ExpirationInDays *int `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *T `json:"ExpirationInDays,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter
-	Filter *Bucket_Filter `json:"Filter,omitempty"`
+	Filter *Bucket_Filter[any] `json:"Filter,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Bucket_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Rule) AWSCloudFormationType() string {
+func (r *Bucket_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::S3Outposts::Bucket.Rule"
 }

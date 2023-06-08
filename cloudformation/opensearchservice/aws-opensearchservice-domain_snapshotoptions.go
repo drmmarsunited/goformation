@@ -8,12 +8,12 @@ import (
 
 // Domain_SnapshotOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.SnapshotOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-snapshotoptions.html
-type Domain_SnapshotOptions struct {
+type Domain_SnapshotOptions[T any] struct {
 
 	// AutomatedSnapshotStartHour AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-snapshotoptions.html#cfn-opensearchservice-domain-snapshotoptions-automatedsnapshotstarthour
-	AutomatedSnapshotStartHour *int `json:"AutomatedSnapshotStartHour,omitempty"`
+	AutomatedSnapshotStartHour *T `json:"AutomatedSnapshotStartHour,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_SnapshotOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_SnapshotOptions) AWSCloudFormationType() string {
+func (r *Domain_SnapshotOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.SnapshotOptions"
 }

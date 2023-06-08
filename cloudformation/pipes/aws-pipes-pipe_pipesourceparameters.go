@@ -8,47 +8,47 @@ import (
 
 // Pipe_PipeSourceParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html
-type Pipe_PipeSourceParameters struct {
+type Pipe_PipeSourceParameters[T any] struct {
 
 	// ActiveMQBrokerParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-activemqbrokerparameters
-	ActiveMQBrokerParameters *Pipe_PipeSourceActiveMQBrokerParameters `json:"ActiveMQBrokerParameters,omitempty"`
+	ActiveMQBrokerParameters *Pipe_PipeSourceActiveMQBrokerParameters[any] `json:"ActiveMQBrokerParameters,omitempty"`
 
 	// DynamoDBStreamParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-dynamodbstreamparameters
-	DynamoDBStreamParameters *Pipe_PipeSourceDynamoDBStreamParameters `json:"DynamoDBStreamParameters,omitempty"`
+	DynamoDBStreamParameters *Pipe_PipeSourceDynamoDBStreamParameters[any] `json:"DynamoDBStreamParameters,omitempty"`
 
 	// FilterCriteria AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-filtercriteria
-	FilterCriteria *Pipe_FilterCriteria `json:"FilterCriteria,omitempty"`
+	FilterCriteria *Pipe_FilterCriteria[any] `json:"FilterCriteria,omitempty"`
 
 	// KinesisStreamParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-kinesisstreamparameters
-	KinesisStreamParameters *Pipe_PipeSourceKinesisStreamParameters `json:"KinesisStreamParameters,omitempty"`
+	KinesisStreamParameters *Pipe_PipeSourceKinesisStreamParameters[any] `json:"KinesisStreamParameters,omitempty"`
 
 	// ManagedStreamingKafkaParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-managedstreamingkafkaparameters
-	ManagedStreamingKafkaParameters *Pipe_PipeSourceManagedStreamingKafkaParameters `json:"ManagedStreamingKafkaParameters,omitempty"`
+	ManagedStreamingKafkaParameters *Pipe_PipeSourceManagedStreamingKafkaParameters[any] `json:"ManagedStreamingKafkaParameters,omitempty"`
 
 	// RabbitMQBrokerParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-rabbitmqbrokerparameters
-	RabbitMQBrokerParameters *Pipe_PipeSourceRabbitMQBrokerParameters `json:"RabbitMQBrokerParameters,omitempty"`
+	RabbitMQBrokerParameters *Pipe_PipeSourceRabbitMQBrokerParameters[any] `json:"RabbitMQBrokerParameters,omitempty"`
 
 	// SelfManagedKafkaParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-selfmanagedkafkaparameters
-	SelfManagedKafkaParameters *Pipe_PipeSourceSelfManagedKafkaParameters `json:"SelfManagedKafkaParameters,omitempty"`
+	SelfManagedKafkaParameters *Pipe_PipeSourceSelfManagedKafkaParameters[any] `json:"SelfManagedKafkaParameters,omitempty"`
 
 	// SqsQueueParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-sqsqueueparameters
-	SqsQueueParameters *Pipe_PipeSourceSqsQueueParameters `json:"SqsQueueParameters,omitempty"`
+	SqsQueueParameters *Pipe_PipeSourceSqsQueueParameters[any] `json:"SqsQueueParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Pipe_PipeSourceParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceParameters"
 }

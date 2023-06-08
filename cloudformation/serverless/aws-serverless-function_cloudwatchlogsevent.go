@@ -8,7 +8,7 @@ import (
 
 // Function_CloudWatchLogsEvent AWS CloudFormation Resource (AWS::Serverless::Function.CloudWatchLogsEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
-type Function_CloudWatchLogsEvent struct {
+type Function_CloudWatchLogsEvent[T any] struct {
 
 	// FilterPattern AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_CloudWatchLogsEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_CloudWatchLogsEvent) AWSCloudFormationType() string {
+func (r *Function_CloudWatchLogsEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.CloudWatchLogsEvent"
 }

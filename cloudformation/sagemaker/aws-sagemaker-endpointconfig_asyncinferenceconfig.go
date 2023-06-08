@@ -8,17 +8,17 @@ import (
 
 // EndpointConfig_AsyncInferenceConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.AsyncInferenceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceconfig.html
-type EndpointConfig_AsyncInferenceConfig struct {
+type EndpointConfig_AsyncInferenceConfig[T any] struct {
 
 	// ClientConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig-clientconfig
-	ClientConfig *EndpointConfig_AsyncInferenceClientConfig `json:"ClientConfig,omitempty"`
+	ClientConfig *EndpointConfig_AsyncInferenceClientConfig[any] `json:"ClientConfig,omitempty"`
 
 	// OutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig-outputconfig
-	OutputConfig *EndpointConfig_AsyncInferenceOutputConfig `json:"OutputConfig"`
+	OutputConfig *EndpointConfig_AsyncInferenceOutputConfig[any] `json:"OutputConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EndpointConfig_AsyncInferenceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_AsyncInferenceConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_AsyncInferenceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.AsyncInferenceConfig"
 }

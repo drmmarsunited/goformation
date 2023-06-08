@@ -12,7 +12,12 @@ import (
 
 // Trail AWS CloudFormation Resource (AWS::CloudTrail::Trail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
-type Trail struct {
+type Trail[T any] struct {
+
+	// AdvancedEventSelectors AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-advancedeventselectors
+	AdvancedEventSelectors []Trail_AdvancedEventSelector[any] `json:"AdvancedEventSelectors,omitempty"`
 
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: false
@@ -27,37 +32,37 @@ type Trail struct {
 	// EnableLogFileValidation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation
-	EnableLogFileValidation *bool `json:"EnableLogFileValidation,omitempty"`
+	EnableLogFileValidation *T `json:"EnableLogFileValidation,omitempty"`
 
 	// EventSelectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors
-	EventSelectors []Trail_EventSelector `json:"EventSelectors,omitempty"`
+	EventSelectors []Trail_EventSelector[any] `json:"EventSelectors,omitempty"`
 
 	// IncludeGlobalServiceEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents
-	IncludeGlobalServiceEvents *bool `json:"IncludeGlobalServiceEvents,omitempty"`
+	IncludeGlobalServiceEvents *T `json:"IncludeGlobalServiceEvents,omitempty"`
 
 	// InsightSelectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-insightselectors
-	InsightSelectors []Trail_InsightSelector `json:"InsightSelectors,omitempty"`
+	InsightSelectors []Trail_InsightSelector[any] `json:"InsightSelectors,omitempty"`
 
 	// IsLogging AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
-	IsLogging bool `json:"IsLogging"`
+	IsLogging T `json:"IsLogging"`
 
 	// IsMultiRegionTrail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail
-	IsMultiRegionTrail *bool `json:"IsMultiRegionTrail,omitempty"`
+	IsMultiRegionTrail *T `json:"IsMultiRegionTrail,omitempty"`
 
 	// IsOrganizationTrail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-isorganizationtrail
-	IsOrganizationTrail *bool `json:"IsOrganizationTrail,omitempty"`
+	IsOrganizationTrail *T `json:"IsOrganizationTrail,omitempty"`
 
 	// KMSKeyId AWS CloudFormation Property
 	// Required: false
@@ -106,14 +111,15 @@ type Trail struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trail) AWSCloudFormationType() string {
+func (r *Trail[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Trail"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Trail) MarshalJSON() ([]byte, error) {
-	type Properties Trail
+func (r Trail[any]) MarshalJSON() ([]byte, error) {
+	type Properties Trail[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +141,9 @@ func (r Trail) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Trail) UnmarshalJSON(b []byte) error {
-	type Properties Trail
+func (r *Trail[any]) UnmarshalJSON(b []byte) error {
+	type Properties Trail[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +163,7 @@ func (r *Trail) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Trail(*res.Properties)
+		*r = Trail[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

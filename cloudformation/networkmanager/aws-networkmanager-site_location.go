@@ -8,7 +8,7 @@ import (
 
 // Site_Location AWS CloudFormation Resource (AWS::NetworkManager::Site.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-site-location.html
-type Site_Location struct {
+type Site_Location[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Site_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Site_Location) AWSCloudFormationType() string {
+func (r *Site_Location[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::Site.Location"
 }

@@ -8,12 +8,12 @@ import (
 
 // LaunchTemplate_SpotOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.SpotOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html
-type LaunchTemplate_SpotOptions struct {
+type LaunchTemplate_SpotOptions[T any] struct {
 
 	// BlockDurationMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes
-	BlockDurationMinutes *int `json:"BlockDurationMinutes,omitempty"`
+	BlockDurationMinutes *T `json:"BlockDurationMinutes,omitempty"`
 
 	// InstanceInterruptionBehavior AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type LaunchTemplate_SpotOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_SpotOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_SpotOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.SpotOptions"
 }

@@ -12,12 +12,12 @@ import (
 
 // PlacementGroup AWS CloudFormation Resource (AWS::EC2::PlacementGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html
-type PlacementGroup struct {
+type PlacementGroup[T any] struct {
 
 	// PartitionCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-partitioncount
-	PartitionCount *int `json:"PartitionCount,omitempty"`
+	PartitionCount *T `json:"PartitionCount,omitempty"`
 
 	// SpreadLevel AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type PlacementGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlacementGroup) AWSCloudFormationType() string {
+func (r *PlacementGroup[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::PlacementGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PlacementGroup) MarshalJSON() ([]byte, error) {
-	type Properties PlacementGroup
+func (r PlacementGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties PlacementGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r PlacementGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PlacementGroup) UnmarshalJSON(b []byte) error {
-	type Properties PlacementGroup
+func (r *PlacementGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties PlacementGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *PlacementGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PlacementGroup(*res.Properties)
+		*r = PlacementGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

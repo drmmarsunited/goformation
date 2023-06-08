@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_UpdateWirelessGatewayTaskCreate AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.UpdateWirelessGatewayTaskCreate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html
-type TaskDefinition_UpdateWirelessGatewayTaskCreate struct {
+type TaskDefinition_UpdateWirelessGatewayTaskCreate[T any] struct {
 
 	// LoRaWAN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html#cfn-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate-lorawan
-	LoRaWAN *TaskDefinition_LoRaWANUpdateGatewayTaskCreate `json:"LoRaWAN,omitempty"`
+	LoRaWAN *TaskDefinition_LoRaWANUpdateGatewayTaskCreate[any] `json:"LoRaWAN,omitempty"`
 
 	// UpdateDataRole AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskDefinition_UpdateWirelessGatewayTaskCreate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_UpdateWirelessGatewayTaskCreate) AWSCloudFormationType() string {
+func (r *TaskDefinition_UpdateWirelessGatewayTaskCreate[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::TaskDefinition.UpdateWirelessGatewayTaskCreate"
 }

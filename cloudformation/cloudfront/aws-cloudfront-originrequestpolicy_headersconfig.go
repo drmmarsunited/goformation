@@ -8,7 +8,7 @@ import (
 
 // OriginRequestPolicy_HeadersConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.HeadersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html
-type OriginRequestPolicy_HeadersConfig struct {
+type OriginRequestPolicy_HeadersConfig[T any] struct {
 
 	// HeaderBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type OriginRequestPolicy_HeadersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginRequestPolicy_HeadersConfig) AWSCloudFormationType() string {
+func (r *OriginRequestPolicy_HeadersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
 }

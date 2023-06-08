@@ -8,17 +8,17 @@ import (
 
 // Template_ConditionalFormattingIcon AWS CloudFormation Resource (AWS::QuickSight::Template.ConditionalFormattingIcon)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingicon.html
-type Template_ConditionalFormattingIcon struct {
+type Template_ConditionalFormattingIcon[T any] struct {
 
 	// CustomCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingicon.html#cfn-quicksight-template-conditionalformattingicon-customcondition
-	CustomCondition *Template_ConditionalFormattingCustomIconCondition `json:"CustomCondition,omitempty"`
+	CustomCondition *Template_ConditionalFormattingCustomIconCondition[any] `json:"CustomCondition,omitempty"`
 
 	// IconSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingicon.html#cfn-quicksight-template-conditionalformattingicon-iconset
-	IconSet *Template_ConditionalFormattingIconSet `json:"IconSet,omitempty"`
+	IconSet *Template_ConditionalFormattingIconSet[any] `json:"IconSet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ConditionalFormattingIcon struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ConditionalFormattingIcon) AWSCloudFormationType() string {
+func (r *Template_ConditionalFormattingIcon[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ConditionalFormattingIcon"
 }

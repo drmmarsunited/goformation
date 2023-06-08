@@ -8,17 +8,17 @@ import (
 
 // Dashboard_PredefinedHierarchy AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PredefinedHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-predefinedhierarchy.html
-type Dashboard_PredefinedHierarchy struct {
+type Dashboard_PredefinedHierarchy[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-predefinedhierarchy.html#cfn-quicksight-dashboard-predefinedhierarchy-columns
-	Columns []Dashboard_ColumnIdentifier `json:"Columns"`
+	Columns []Dashboard_ColumnIdentifier[any] `json:"Columns"`
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-predefinedhierarchy.html#cfn-quicksight-dashboard-predefinedhierarchy-drilldownfilters
-	DrillDownFilters []Dashboard_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Dashboard_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_PredefinedHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PredefinedHierarchy) AWSCloudFormationType() string {
+func (r *Dashboard_PredefinedHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PredefinedHierarchy"
 }

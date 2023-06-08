@@ -8,7 +8,7 @@ import (
 
 // UserPool_CustomSMSSender AWS CloudFormation Resource (AWS::Cognito::UserPool.CustomSMSSender)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customsmssender.html
-type UserPool_CustomSMSSender struct {
+type UserPool_CustomSMSSender[T any] struct {
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPool_CustomSMSSender struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_CustomSMSSender) AWSCloudFormationType() string {
+func (r *UserPool_CustomSMSSender[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.CustomSMSSender"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_SnowflakeDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SnowflakeDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html
-type Flow_SnowflakeDestinationProperties struct {
+type Flow_SnowflakeDestinationProperties[T any] struct {
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Flow_SnowflakeDestinationProperties struct {
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IntermediateBucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Flow_SnowflakeDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SnowflakeDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_SnowflakeDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SnowflakeDestinationProperties"
 }

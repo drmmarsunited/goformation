@@ -8,7 +8,7 @@ import (
 
 // Entity_Definition AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.Definition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html
-type Entity_Definition struct {
+type Entity_Definition[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
@@ -18,47 +18,47 @@ type Entity_Definition struct {
 	// DataType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-datatype
-	DataType *Entity_DataType `json:"DataType,omitempty"`
+	DataType *Entity_DataType[any] `json:"DataType,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-defaultvalue
-	DefaultValue *Entity_DataValue `json:"DefaultValue,omitempty"`
+	DefaultValue *Entity_DataValue[any] `json:"DefaultValue,omitempty"`
 
 	// IsExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isexternalid
-	IsExternalId *bool `json:"IsExternalId,omitempty"`
+	IsExternalId *T `json:"IsExternalId,omitempty"`
 
 	// IsFinal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isfinal
-	IsFinal *bool `json:"IsFinal,omitempty"`
+	IsFinal *T `json:"IsFinal,omitempty"`
 
 	// IsImported AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isimported
-	IsImported *bool `json:"IsImported,omitempty"`
+	IsImported *T `json:"IsImported,omitempty"`
 
 	// IsInherited AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isinherited
-	IsInherited *bool `json:"IsInherited,omitempty"`
+	IsInherited *T `json:"IsInherited,omitempty"`
 
 	// IsRequiredInEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isrequiredinentity
-	IsRequiredInEntity *bool `json:"IsRequiredInEntity,omitempty"`
+	IsRequiredInEntity *T `json:"IsRequiredInEntity,omitempty"`
 
 	// IsStoredExternally AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isstoredexternally
-	IsStoredExternally *bool `json:"IsStoredExternally,omitempty"`
+	IsStoredExternally *T `json:"IsStoredExternally,omitempty"`
 
 	// IsTimeSeries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-istimeseries
-	IsTimeSeries *bool `json:"IsTimeSeries,omitempty"`
+	IsTimeSeries *T `json:"IsTimeSeries,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Entity_Definition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_Definition) AWSCloudFormationType() string {
+func (r *Entity_Definition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.Definition"
 }

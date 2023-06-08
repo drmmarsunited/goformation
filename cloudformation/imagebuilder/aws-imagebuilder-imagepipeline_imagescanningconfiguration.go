@@ -8,17 +8,17 @@ import (
 
 // ImagePipeline_ImageScanningConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ImagePipeline.ImageScanningConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html
-type ImagePipeline_ImageScanningConfiguration struct {
+type ImagePipeline_ImageScanningConfiguration[T any] struct {
 
 	// EcrConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-ecrconfiguration
-	EcrConfiguration *ImagePipeline_EcrConfiguration `json:"EcrConfiguration,omitempty"`
+	EcrConfiguration *ImagePipeline_EcrConfiguration[any] `json:"EcrConfiguration,omitempty"`
 
 	// ImageScanningEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-imagescanningenabled
-	ImageScanningEnabled *bool `json:"ImageScanningEnabled,omitempty"`
+	ImageScanningEnabled *T `json:"ImageScanningEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ImagePipeline_ImageScanningConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImagePipeline_ImageScanningConfiguration) AWSCloudFormationType() string {
+func (r *ImagePipeline_ImageScanningConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImagePipeline.ImageScanningConfiguration"
 }

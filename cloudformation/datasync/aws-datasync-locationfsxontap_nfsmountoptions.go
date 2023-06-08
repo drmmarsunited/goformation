@@ -8,7 +8,7 @@ import (
 
 // LocationFSxONTAP_NfsMountOptions AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP.NfsMountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-nfsmountoptions.html
-type LocationFSxONTAP_NfsMountOptions struct {
+type LocationFSxONTAP_NfsMountOptions[T any] struct {
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LocationFSxONTAP_NfsMountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP_NfsMountOptions) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP_NfsMountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP.NfsMountOptions"
 }

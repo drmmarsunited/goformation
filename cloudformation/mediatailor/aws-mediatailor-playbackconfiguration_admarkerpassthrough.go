@@ -8,12 +8,12 @@ import (
 
 // PlaybackConfiguration_AdMarkerPassthrough AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.AdMarkerPassthrough)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-admarkerpassthrough.html
-type PlaybackConfiguration_AdMarkerPassthrough struct {
+type PlaybackConfiguration_AdMarkerPassthrough[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-admarkerpassthrough.html#cfn-mediatailor-playbackconfiguration-admarkerpassthrough-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PlaybackConfiguration_AdMarkerPassthrough struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_AdMarkerPassthrough) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_AdMarkerPassthrough[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.AdMarkerPassthrough"
 }

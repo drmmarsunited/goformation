@@ -9,37 +9,37 @@ import (
 
 // LifecyclePolicy_Schedule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html
-type LifecyclePolicy_Schedule struct {
+type LifecyclePolicy_Schedule[T any] struct {
 
 	// ArchiveRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-archiverule
-	ArchiveRule *LifecyclePolicy_ArchiveRule `json:"ArchiveRule,omitempty"`
+	ArchiveRule *LifecyclePolicy_ArchiveRule[any] `json:"ArchiveRule,omitempty"`
 
 	// CopyTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-copytags
-	CopyTags *bool `json:"CopyTags,omitempty"`
+	CopyTags *T `json:"CopyTags,omitempty"`
 
 	// CreateRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule
-	CreateRule *LifecyclePolicy_CreateRule `json:"CreateRule,omitempty"`
+	CreateRule *LifecyclePolicy_CreateRule[any] `json:"CreateRule,omitempty"`
 
 	// CrossRegionCopyRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-crossregioncopyrules
-	CrossRegionCopyRules []LifecyclePolicy_CrossRegionCopyRule `json:"CrossRegionCopyRules,omitempty"`
+	CrossRegionCopyRules []LifecyclePolicy_CrossRegionCopyRule[any] `json:"CrossRegionCopyRules,omitempty"`
 
 	// DeprecateRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-deprecaterule
-	DeprecateRule *LifecyclePolicy_DeprecateRule `json:"DeprecateRule,omitempty"`
+	DeprecateRule *LifecyclePolicy_DeprecateRule[any] `json:"DeprecateRule,omitempty"`
 
 	// FastRestoreRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-fastrestorerule
-	FastRestoreRule *LifecyclePolicy_FastRestoreRule `json:"FastRestoreRule,omitempty"`
+	FastRestoreRule *LifecyclePolicy_FastRestoreRule[any] `json:"FastRestoreRule,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -49,12 +49,12 @@ type LifecyclePolicy_Schedule struct {
 	// RetainRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-retainrule
-	RetainRule *LifecyclePolicy_RetainRule `json:"RetainRule,omitempty"`
+	RetainRule *LifecyclePolicy_RetainRule[any] `json:"RetainRule,omitempty"`
 
 	// ShareRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-sharerules
-	ShareRules []LifecyclePolicy_ShareRule `json:"ShareRules,omitempty"`
+	ShareRules []LifecyclePolicy_ShareRule[any] `json:"ShareRules,omitempty"`
 
 	// TagsToAdd AWS CloudFormation Property
 	// Required: false
@@ -83,6 +83,6 @@ type LifecyclePolicy_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_Schedule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.Schedule"
 }

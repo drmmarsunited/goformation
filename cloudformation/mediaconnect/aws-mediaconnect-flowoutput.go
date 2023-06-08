@@ -11,7 +11,7 @@ import (
 
 // FlowOutput AWS CloudFormation Resource (AWS::MediaConnect::FlowOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html
-type FlowOutput struct {
+type FlowOutput[T any] struct {
 
 	// CidrAllowList AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type FlowOutput struct {
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-encryption
-	Encryption *FlowOutput_Encryption `json:"Encryption,omitempty"`
+	Encryption *FlowOutput_Encryption[any] `json:"Encryption,omitempty"`
 
 	// FlowArn AWS CloudFormation Property
 	// Required: true
@@ -41,12 +41,12 @@ type FlowOutput struct {
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-maxlatency
-	MaxLatency *int `json:"MaxLatency,omitempty"`
+	MaxLatency *T `json:"MaxLatency,omitempty"`
 
 	// MinLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-minlatency
-	MinLatency *int `json:"MinLatency,omitempty"`
+	MinLatency *T `json:"MinLatency,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type FlowOutput struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -71,7 +71,7 @@ type FlowOutput struct {
 	// SmoothingLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-smoothinglatency
-	SmoothingLatency *int `json:"SmoothingLatency,omitempty"`
+	SmoothingLatency *T `json:"SmoothingLatency,omitempty"`
 
 	// StreamId AWS CloudFormation Property
 	// Required: false
@@ -81,7 +81,7 @@ type FlowOutput struct {
 	// VpcInterfaceAttachment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-vpcinterfaceattachment
-	VpcInterfaceAttachment *FlowOutput_VpcInterfaceAttachment `json:"VpcInterfaceAttachment,omitempty"`
+	VpcInterfaceAttachment *FlowOutput_VpcInterfaceAttachment[any] `json:"VpcInterfaceAttachment,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -100,14 +100,15 @@ type FlowOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowOutput) AWSCloudFormationType() string {
+func (r *FlowOutput[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::FlowOutput"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FlowOutput) MarshalJSON() ([]byte, error) {
-	type Properties FlowOutput
+func (r FlowOutput[any]) MarshalJSON() ([]byte, error) {
+	type Properties FlowOutput[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r FlowOutput) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FlowOutput) UnmarshalJSON(b []byte) error {
-	type Properties FlowOutput
+func (r *FlowOutput[any]) UnmarshalJSON(b []byte) error {
+	type Properties FlowOutput[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *FlowOutput) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FlowOutput(*res.Properties)
+		*r = FlowOutput[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

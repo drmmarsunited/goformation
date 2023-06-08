@@ -8,22 +8,22 @@ import (
 
 // Route_TcpRoute AWS CloudFormation Resource (AWS::AppMesh::Route.TcpRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
-type Route_TcpRoute struct {
+type Route_TcpRoute[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
-	Action *Route_TcpRouteAction `json:"Action"`
+	Action *Route_TcpRouteAction[any] `json:"Action"`
 
 	// Match AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-match
-	Match *Route_TcpRouteMatch `json:"Match,omitempty"`
+	Match *Route_TcpRouteMatch[any] `json:"Match,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout
-	Timeout *Route_TcpTimeout `json:"Timeout,omitempty"`
+	Timeout *Route_TcpTimeout[any] `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Route_TcpRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_TcpRoute) AWSCloudFormationType() string {
+func (r *Route_TcpRoute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.TcpRoute"
 }

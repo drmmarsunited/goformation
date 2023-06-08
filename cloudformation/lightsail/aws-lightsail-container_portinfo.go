@@ -8,7 +8,7 @@ import (
 
 // Container_PortInfo AWS CloudFormation Resource (AWS::Lightsail::Container.PortInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-portinfo.html
-type Container_PortInfo struct {
+type Container_PortInfo[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Container_PortInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_PortInfo) AWSCloudFormationType() string {
+func (r *Container_PortInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.PortInfo"
 }

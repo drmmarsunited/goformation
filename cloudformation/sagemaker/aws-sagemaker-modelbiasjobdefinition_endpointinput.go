@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html
-type ModelBiasJobDefinition_EndpointInput struct {
+type ModelBiasJobDefinition_EndpointInput[T any] struct {
 
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type ModelBiasJobDefinition_EndpointInput struct {
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-probabilitythresholdattribute
-	ProbabilityThresholdAttribute *float64 `json:"ProbabilityThresholdAttribute,omitempty"`
+	ProbabilityThresholdAttribute *T `json:"ProbabilityThresholdAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type ModelBiasJobDefinition_EndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_EndpointInput) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_EndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.EndpointInput"
 }

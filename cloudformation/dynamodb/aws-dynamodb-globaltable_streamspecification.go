@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_StreamSpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.StreamSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-streamspecification.html
-type GlobalTable_StreamSpecification struct {
+type GlobalTable_StreamSpecification[T any] struct {
 
 	// StreamViewType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type GlobalTable_StreamSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_StreamSpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_StreamSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.StreamSpecification"
 }

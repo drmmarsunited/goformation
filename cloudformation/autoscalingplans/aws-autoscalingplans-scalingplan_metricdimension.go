@@ -8,7 +8,7 @@ import (
 
 // ScalingPlan_MetricDimension AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html
-type ScalingPlan_MetricDimension struct {
+type ScalingPlan_MetricDimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPlan_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_MetricDimension) AWSCloudFormationType() string {
+func (r *ScalingPlan_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.MetricDimension"
 }

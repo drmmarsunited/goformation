@@ -8,7 +8,7 @@ import (
 
 // Group_Query AWS CloudFormation Resource (AWS::ResourceGroups::Group.Query)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html
-type Group_Query struct {
+type Group_Query[T any] struct {
 
 	// ResourceTypeFilters AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Group_Query struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html#cfn-resourcegroups-group-query-tagfilters
-	TagFilters []Group_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Group_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Group_Query struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_Query) AWSCloudFormationType() string {
+func (r *Group_Query[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceGroups::Group.Query"
 }

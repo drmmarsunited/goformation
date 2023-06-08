@@ -8,22 +8,22 @@ import (
 
 // JobTemplate_ExponentialRolloutRate AWS CloudFormation Resource (AWS::IoT::JobTemplate.ExponentialRolloutRate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html
-type JobTemplate_ExponentialRolloutRate struct {
+type JobTemplate_ExponentialRolloutRate[T any] struct {
 
 	// BaseRatePerMinute AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-baserateperminute
-	BaseRatePerMinute int `json:"BaseRatePerMinute"`
+	BaseRatePerMinute T `json:"BaseRatePerMinute"`
 
 	// IncrementFactor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-incrementfactor
-	IncrementFactor float64 `json:"IncrementFactor"`
+	IncrementFactor T `json:"IncrementFactor"`
 
 	// RateIncreaseCriteria AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-rateincreasecriteria
-	RateIncreaseCriteria *JobTemplate_RateIncreaseCriteria `json:"RateIncreaseCriteria"`
+	RateIncreaseCriteria *JobTemplate_RateIncreaseCriteria[any] `json:"RateIncreaseCriteria"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobTemplate_ExponentialRolloutRate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_ExponentialRolloutRate) AWSCloudFormationType() string {
+func (r *JobTemplate_ExponentialRolloutRate[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.ExponentialRolloutRate"
 }

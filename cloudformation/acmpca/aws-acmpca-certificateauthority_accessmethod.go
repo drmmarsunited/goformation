@@ -8,7 +8,7 @@ import (
 
 // CertificateAuthority_AccessMethod AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.AccessMethod)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessmethod.html
-type CertificateAuthority_AccessMethod struct {
+type CertificateAuthority_AccessMethod[T any] struct {
 
 	// AccessMethodType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type CertificateAuthority_AccessMethod struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_AccessMethod) AWSCloudFormationType() string {
+func (r *CertificateAuthority_AccessMethod[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.AccessMethod"
 }

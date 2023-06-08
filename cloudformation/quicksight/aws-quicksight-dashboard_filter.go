@@ -8,42 +8,42 @@ import (
 
 // Dashboard_Filter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html
-type Dashboard_Filter struct {
+type Dashboard_Filter[T any] struct {
 
 	// CategoryFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-categoryfilter
-	CategoryFilter *Dashboard_CategoryFilter `json:"CategoryFilter,omitempty"`
+	CategoryFilter *Dashboard_CategoryFilter[any] `json:"CategoryFilter,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-numericequalityfilter
-	NumericEqualityFilter *Dashboard_NumericEqualityFilter `json:"NumericEqualityFilter,omitempty"`
+	NumericEqualityFilter *Dashboard_NumericEqualityFilter[any] `json:"NumericEqualityFilter,omitempty"`
 
 	// NumericRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-numericrangefilter
-	NumericRangeFilter *Dashboard_NumericRangeFilter `json:"NumericRangeFilter,omitempty"`
+	NumericRangeFilter *Dashboard_NumericRangeFilter[any] `json:"NumericRangeFilter,omitempty"`
 
 	// RelativeDatesFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-relativedatesfilter
-	RelativeDatesFilter *Dashboard_RelativeDatesFilter `json:"RelativeDatesFilter,omitempty"`
+	RelativeDatesFilter *Dashboard_RelativeDatesFilter[any] `json:"RelativeDatesFilter,omitempty"`
 
 	// TimeEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-timeequalityfilter
-	TimeEqualityFilter *Dashboard_TimeEqualityFilter `json:"TimeEqualityFilter,omitempty"`
+	TimeEqualityFilter *Dashboard_TimeEqualityFilter[any] `json:"TimeEqualityFilter,omitempty"`
 
 	// TimeRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-timerangefilter
-	TimeRangeFilter *Dashboard_TimeRangeFilter `json:"TimeRangeFilter,omitempty"`
+	TimeRangeFilter *Dashboard_TimeRangeFilter[any] `json:"TimeRangeFilter,omitempty"`
 
 	// TopBottomFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filter.html#cfn-quicksight-dashboard-filter-topbottomfilter
-	TopBottomFilter *Dashboard_TopBottomFilter `json:"TopBottomFilter,omitempty"`
+	TopBottomFilter *Dashboard_TopBottomFilter[any] `json:"TopBottomFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Filter) AWSCloudFormationType() string {
+func (r *Dashboard_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Filter"
 }

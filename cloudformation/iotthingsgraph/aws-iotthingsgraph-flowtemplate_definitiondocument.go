@@ -8,7 +8,7 @@ import (
 
 // FlowTemplate_DefinitionDocument AWS CloudFormation Resource (AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html
-type FlowTemplate_DefinitionDocument struct {
+type FlowTemplate_DefinitionDocument[T any] struct {
 
 	// Language AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FlowTemplate_DefinitionDocument struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowTemplate_DefinitionDocument) AWSCloudFormationType() string {
+func (r *FlowTemplate_DefinitionDocument[any]) AWSCloudFormationType() string {
 	return "AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ArcOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ArcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcoptions.html
-type Dashboard_ArcOptions struct {
+type Dashboard_ArcOptions[T any] struct {
 
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ArcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ArcOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ArcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ArcOptions"
 }

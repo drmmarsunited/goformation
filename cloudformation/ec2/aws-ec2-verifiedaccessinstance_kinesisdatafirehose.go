@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessInstance_KinesisDataFirehose AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance.KinesisDataFirehose)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-kinesisdatafirehose.html
-type VerifiedAccessInstance_KinesisDataFirehose struct {
+type VerifiedAccessInstance_KinesisDataFirehose[T any] struct {
 
 	// DeliveryStream AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type VerifiedAccessInstance_KinesisDataFirehose struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-kinesisdatafirehose.html#cfn-ec2-verifiedaccessinstance-kinesisdatafirehose-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VerifiedAccessInstance_KinesisDataFirehose struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance_KinesisDataFirehose) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance_KinesisDataFirehose[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance.KinesisDataFirehose"
 }

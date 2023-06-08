@@ -8,7 +8,7 @@ import (
 
 // WebACL_JsonBody AWS CloudFormation Resource (AWS::WAFv2::WebACL.JsonBody)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html
-type WebACL_JsonBody struct {
+type WebACL_JsonBody[T any] struct {
 
 	// InvalidFallbackBehavior AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type WebACL_JsonBody struct {
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-matchpattern
-	MatchPattern *WebACL_JsonMatchPattern `json:"MatchPattern"`
+	MatchPattern *WebACL_JsonMatchPattern[any] `json:"MatchPattern"`
 
 	// MatchScope AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type WebACL_JsonBody struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_JsonBody) AWSCloudFormationType() string {
+func (r *WebACL_JsonBody[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.JsonBody"
 }

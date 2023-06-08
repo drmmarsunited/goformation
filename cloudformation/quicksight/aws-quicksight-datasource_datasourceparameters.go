@@ -8,97 +8,97 @@ import (
 
 // DataSource_DataSourceParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.DataSourceParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html
-type DataSource_DataSourceParameters struct {
+type DataSource_DataSourceParameters[T any] struct {
 
 	// AmazonElasticsearchParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-amazonelasticsearchparameters
-	AmazonElasticsearchParameters *DataSource_AmazonElasticsearchParameters `json:"AmazonElasticsearchParameters,omitempty"`
+	AmazonElasticsearchParameters *DataSource_AmazonElasticsearchParameters[any] `json:"AmazonElasticsearchParameters,omitempty"`
 
 	// AmazonOpenSearchParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-amazonopensearchparameters
-	AmazonOpenSearchParameters *DataSource_AmazonOpenSearchParameters `json:"AmazonOpenSearchParameters,omitempty"`
+	AmazonOpenSearchParameters *DataSource_AmazonOpenSearchParameters[any] `json:"AmazonOpenSearchParameters,omitempty"`
 
 	// AthenaParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-athenaparameters
-	AthenaParameters *DataSource_AthenaParameters `json:"AthenaParameters,omitempty"`
+	AthenaParameters *DataSource_AthenaParameters[any] `json:"AthenaParameters,omitempty"`
 
 	// AuroraParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-auroraparameters
-	AuroraParameters *DataSource_AuroraParameters `json:"AuroraParameters,omitempty"`
+	AuroraParameters *DataSource_AuroraParameters[any] `json:"AuroraParameters,omitempty"`
 
 	// AuroraPostgreSqlParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-aurorapostgresqlparameters
-	AuroraPostgreSqlParameters *DataSource_AuroraPostgreSqlParameters `json:"AuroraPostgreSqlParameters,omitempty"`
+	AuroraPostgreSqlParameters *DataSource_AuroraPostgreSqlParameters[any] `json:"AuroraPostgreSqlParameters,omitempty"`
 
 	// DatabricksParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-databricksparameters
-	DatabricksParameters *DataSource_DatabricksParameters `json:"DatabricksParameters,omitempty"`
+	DatabricksParameters *DataSource_DatabricksParameters[any] `json:"DatabricksParameters,omitempty"`
 
 	// MariaDbParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mariadbparameters
-	MariaDbParameters *DataSource_MariaDbParameters `json:"MariaDbParameters,omitempty"`
+	MariaDbParameters *DataSource_MariaDbParameters[any] `json:"MariaDbParameters,omitempty"`
 
 	// MySqlParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mysqlparameters
-	MySqlParameters *DataSource_MySqlParameters `json:"MySqlParameters,omitempty"`
+	MySqlParameters *DataSource_MySqlParameters[any] `json:"MySqlParameters,omitempty"`
 
 	// OracleParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-oracleparameters
-	OracleParameters *DataSource_OracleParameters `json:"OracleParameters,omitempty"`
+	OracleParameters *DataSource_OracleParameters[any] `json:"OracleParameters,omitempty"`
 
 	// PostgreSqlParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-postgresqlparameters
-	PostgreSqlParameters *DataSource_PostgreSqlParameters `json:"PostgreSqlParameters,omitempty"`
+	PostgreSqlParameters *DataSource_PostgreSqlParameters[any] `json:"PostgreSqlParameters,omitempty"`
 
 	// PrestoParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-prestoparameters
-	PrestoParameters *DataSource_PrestoParameters `json:"PrestoParameters,omitempty"`
+	PrestoParameters *DataSource_PrestoParameters[any] `json:"PrestoParameters,omitempty"`
 
 	// RdsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-rdsparameters
-	RdsParameters *DataSource_RdsParameters `json:"RdsParameters,omitempty"`
+	RdsParameters *DataSource_RdsParameters[any] `json:"RdsParameters,omitempty"`
 
 	// RedshiftParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-redshiftparameters
-	RedshiftParameters *DataSource_RedshiftParameters `json:"RedshiftParameters,omitempty"`
+	RedshiftParameters *DataSource_RedshiftParameters[any] `json:"RedshiftParameters,omitempty"`
 
 	// S3Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-s3parameters
-	S3Parameters *DataSource_S3Parameters `json:"S3Parameters,omitempty"`
+	S3Parameters *DataSource_S3Parameters[any] `json:"S3Parameters,omitempty"`
 
 	// SnowflakeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-snowflakeparameters
-	SnowflakeParameters *DataSource_SnowflakeParameters `json:"SnowflakeParameters,omitempty"`
+	SnowflakeParameters *DataSource_SnowflakeParameters[any] `json:"SnowflakeParameters,omitempty"`
 
 	// SparkParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sparkparameters
-	SparkParameters *DataSource_SparkParameters `json:"SparkParameters,omitempty"`
+	SparkParameters *DataSource_SparkParameters[any] `json:"SparkParameters,omitempty"`
 
 	// SqlServerParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sqlserverparameters
-	SqlServerParameters *DataSource_SqlServerParameters `json:"SqlServerParameters,omitempty"`
+	SqlServerParameters *DataSource_SqlServerParameters[any] `json:"SqlServerParameters,omitempty"`
 
 	// TeradataParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-teradataparameters
-	TeradataParameters *DataSource_TeradataParameters `json:"TeradataParameters,omitempty"`
+	TeradataParameters *DataSource_TeradataParameters[any] `json:"TeradataParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -117,6 +117,6 @@ type DataSource_DataSourceParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceParameters) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.DataSourceParameters"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ComboChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ComboChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-combochartfieldwells.html
-type Dashboard_ComboChartFieldWells struct {
+type Dashboard_ComboChartFieldWells[T any] struct {
 
 	// ComboChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-combochartfieldwells.html#cfn-quicksight-dashboard-combochartfieldwells-combochartaggregatedfieldwells
-	ComboChartAggregatedFieldWells *Dashboard_ComboChartAggregatedFieldWells `json:"ComboChartAggregatedFieldWells,omitempty"`
+	ComboChartAggregatedFieldWells *Dashboard_ComboChartAggregatedFieldWells[any] `json:"ComboChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_ComboChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ComboChartFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_ComboChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ComboChartFieldWells"
 }

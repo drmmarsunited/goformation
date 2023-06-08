@@ -11,7 +11,7 @@ import (
 
 // APNSChannel AWS CloudFormation Resource (AWS::Pinpoint::APNSChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html
-type APNSChannel struct {
+type APNSChannel[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type APNSChannel struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type APNSChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *APNSChannel) AWSCloudFormationType() string {
+func (r *APNSChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::APNSChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r APNSChannel) MarshalJSON() ([]byte, error) {
-	type Properties APNSChannel
+func (r APNSChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties APNSChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r APNSChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *APNSChannel) UnmarshalJSON(b []byte) error {
-	type Properties APNSChannel
+func (r *APNSChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties APNSChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *APNSChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = APNSChannel(*res.Properties)
+		*r = APNSChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,32 +8,32 @@ import (
 
 // Dashboard_LineChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LineChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html
-type Dashboard_LineChartSortConfiguration struct {
+type Dashboard_LineChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html#cfn-quicksight-dashboard-linechartsortconfiguration-categoryitemslimitconfiguration
-	CategoryItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"CategoryItemsLimitConfiguration,omitempty"`
+	CategoryItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"CategoryItemsLimitConfiguration,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html#cfn-quicksight-dashboard-linechartsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html#cfn-quicksight-dashboard-linechartsortconfiguration-coloritemslimitconfiguration
-	ColorItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"ColorItemsLimitConfiguration,omitempty"`
+	ColorItemsLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"ColorItemsLimitConfiguration,omitempty"`
 
 	// SmallMultiplesLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html#cfn-quicksight-dashboard-linechartsortconfiguration-smallmultipleslimitconfiguration
-	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"SmallMultiplesLimitConfiguration,omitempty"`
+	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"SmallMultiplesLimitConfiguration,omitempty"`
 
 	// SmallMultiplesSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartsortconfiguration.html#cfn-quicksight-dashboard-linechartsortconfiguration-smallmultiplessort
-	SmallMultiplesSort []Dashboard_FieldSortOptions `json:"SmallMultiplesSort,omitempty"`
+	SmallMultiplesSort []Dashboard_FieldSortOptions[any] `json:"SmallMultiplesSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_LineChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LineChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_LineChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LineChartSortConfiguration"
 }

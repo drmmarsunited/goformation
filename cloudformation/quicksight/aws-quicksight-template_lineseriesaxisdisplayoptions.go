@@ -8,17 +8,17 @@ import (
 
 // Template_LineSeriesAxisDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.LineSeriesAxisDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-lineseriesaxisdisplayoptions.html
-type Template_LineSeriesAxisDisplayOptions struct {
+type Template_LineSeriesAxisDisplayOptions[T any] struct {
 
 	// AxisOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-lineseriesaxisdisplayoptions.html#cfn-quicksight-template-lineseriesaxisdisplayoptions-axisoptions
-	AxisOptions *Template_AxisDisplayOptions `json:"AxisOptions,omitempty"`
+	AxisOptions *Template_AxisDisplayOptions[any] `json:"AxisOptions,omitempty"`
 
 	// MissingDataConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-lineseriesaxisdisplayoptions.html#cfn-quicksight-template-lineseriesaxisdisplayoptions-missingdataconfigurations
-	MissingDataConfigurations []Template_MissingDataConfiguration `json:"MissingDataConfigurations,omitempty"`
+	MissingDataConfigurations []Template_MissingDataConfiguration[any] `json:"MissingDataConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_LineSeriesAxisDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LineSeriesAxisDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_LineSeriesAxisDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LineSeriesAxisDisplayOptions"
 }

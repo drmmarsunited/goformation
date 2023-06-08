@@ -11,12 +11,12 @@ import (
 
 // TypeActivation AWS CloudFormation Resource (AWS::CloudFormation::TypeActivation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html
-type TypeActivation struct {
+type TypeActivation[T any] struct {
 
 	// AutoUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html#cfn-cloudformation-typeactivation-autoupdate
-	AutoUpdate *bool `json:"AutoUpdate,omitempty"`
+	AutoUpdate *T `json:"AutoUpdate,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type TypeActivation struct {
 	// LoggingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html#cfn-cloudformation-typeactivation-loggingconfig
-	LoggingConfig *TypeActivation_LoggingConfig `json:"LoggingConfig,omitempty"`
+	LoggingConfig *TypeActivation_LoggingConfig[any] `json:"LoggingConfig,omitempty"`
 
 	// MajorVersion AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type TypeActivation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TypeActivation) AWSCloudFormationType() string {
+func (r *TypeActivation[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::TypeActivation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TypeActivation) MarshalJSON() ([]byte, error) {
-	type Properties TypeActivation
+func (r TypeActivation[any]) MarshalJSON() ([]byte, error) {
+	type Properties TypeActivation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r TypeActivation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TypeActivation) UnmarshalJSON(b []byte) error {
-	type Properties TypeActivation
+func (r *TypeActivation[any]) UnmarshalJSON(b []byte) error {
+	type Properties TypeActivation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *TypeActivation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TypeActivation(*res.Properties)
+		*r = TypeActivation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

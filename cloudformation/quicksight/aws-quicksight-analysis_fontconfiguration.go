@@ -8,7 +8,7 @@ import (
 
 // Analysis_FontConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FontConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html
-type Analysis_FontConfiguration struct {
+type Analysis_FontConfiguration[T any] struct {
 
 	// FontColor AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_FontConfiguration struct {
 	// FontSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontsize
-	FontSize *Analysis_FontSize `json:"FontSize,omitempty"`
+	FontSize *Analysis_FontSize[any] `json:"FontSize,omitempty"`
 
 	// FontStyle AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Analysis_FontConfiguration struct {
 	// FontWeight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontweight
-	FontWeight *Analysis_FontWeight `json:"FontWeight,omitempty"`
+	FontWeight *Analysis_FontWeight[any] `json:"FontWeight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_FontConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FontConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FontConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FontConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_VirtualGatewayListenerTlsFileCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsFileCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsfilecertificate.html
-type VirtualGateway_VirtualGatewayListenerTlsFileCertificate struct {
+type VirtualGateway_VirtualGatewayListenerTlsFileCertificate[T any] struct {
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualGateway_VirtualGatewayListenerTlsFileCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListenerTlsFileCertificate) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListenerTlsFileCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsFileCertificate"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_ColumnSchema AWS CloudFormation Resource (AWS::QuickSight::Template.ColumnSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html
-type Template_ColumnSchema struct {
+type Template_ColumnSchema[T any] struct {
 
 	// DataType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_ColumnSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColumnSchema) AWSCloudFormationType() string {
+func (r *Template_ColumnSchema[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColumnSchema"
 }

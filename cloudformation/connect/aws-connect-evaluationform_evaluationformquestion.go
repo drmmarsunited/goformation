@@ -8,7 +8,7 @@ import (
 
 // EvaluationForm_EvaluationFormQuestion AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormQuestion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html
-type EvaluationForm_EvaluationFormQuestion struct {
+type EvaluationForm_EvaluationFormQuestion[T any] struct {
 
 	// Instructions AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type EvaluationForm_EvaluationFormQuestion struct {
 	// NotApplicableEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-notapplicableenabled
-	NotApplicableEnabled *bool `json:"NotApplicableEnabled,omitempty"`
+	NotApplicableEnabled *T `json:"NotApplicableEnabled,omitempty"`
 
 	// QuestionType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type EvaluationForm_EvaluationFormQuestion struct {
 	// QuestionTypeProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-questiontypeproperties
-	QuestionTypeProperties *EvaluationForm_EvaluationFormQuestionTypeProperties `json:"QuestionTypeProperties,omitempty"`
+	QuestionTypeProperties *EvaluationForm_EvaluationFormQuestionTypeProperties[any] `json:"QuestionTypeProperties,omitempty"`
 
 	// RefId AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type EvaluationForm_EvaluationFormQuestion struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-weight
-	Weight *float64 `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type EvaluationForm_EvaluationFormQuestion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormQuestion) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormQuestion[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormQuestion"
 }

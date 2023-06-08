@@ -8,7 +8,7 @@ import (
 
 // Template_FilterGroup AWS CloudFormation Resource (AWS::QuickSight::Template.FilterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtergroup.html
-type Template_FilterGroup struct {
+type Template_FilterGroup[T any] struct {
 
 	// CrossDataset AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Template_FilterGroup struct {
 	// Filters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtergroup.html#cfn-quicksight-template-filtergroup-filters
-	Filters []Template_Filter `json:"Filters"`
+	Filters []Template_Filter[any] `json:"Filters"`
 
 	// ScopeConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtergroup.html#cfn-quicksight-template-filtergroup-scopeconfiguration
-	ScopeConfiguration *Template_FilterScopeConfiguration `json:"ScopeConfiguration"`
+	ScopeConfiguration *Template_FilterScopeConfiguration[any] `json:"ScopeConfiguration"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Template_FilterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterGroup) AWSCloudFormationType() string {
+func (r *Template_FilterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterGroup"
 }

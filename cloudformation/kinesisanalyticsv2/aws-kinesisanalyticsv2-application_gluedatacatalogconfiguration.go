@@ -8,7 +8,7 @@ import (
 
 // Application_GlueDataCatalogConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.GlueDataCatalogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-gluedatacatalogconfiguration.html
-type Application_GlueDataCatalogConfiguration struct {
+type Application_GlueDataCatalogConfiguration[T any] struct {
 
 	// DatabaseARN AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Application_GlueDataCatalogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_GlueDataCatalogConfiguration) AWSCloudFormationType() string {
+func (r *Application_GlueDataCatalogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.GlueDataCatalogConfiguration"
 }

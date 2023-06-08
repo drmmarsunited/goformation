@@ -12,7 +12,7 @@ import (
 
 // AccessLogSubscription AWS CloudFormation Resource (AWS::VpcLattice::AccessLogSubscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html
-type AccessLogSubscription struct {
+type AccessLogSubscription[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type AccessLogSubscription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessLogSubscription) AWSCloudFormationType() string {
+func (r *AccessLogSubscription[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::AccessLogSubscription"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccessLogSubscription) MarshalJSON() ([]byte, error) {
-	type Properties AccessLogSubscription
+func (r AccessLogSubscription[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccessLogSubscription[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r AccessLogSubscription) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccessLogSubscription) UnmarshalJSON(b []byte) error {
-	type Properties AccessLogSubscription
+func (r *AccessLogSubscription[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccessLogSubscription[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *AccessLogSubscription) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccessLogSubscription(*res.Properties)
+		*r = AccessLogSubscription[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

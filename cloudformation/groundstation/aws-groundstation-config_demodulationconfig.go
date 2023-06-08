@@ -8,7 +8,7 @@ import (
 
 // Config_DemodulationConfig AWS CloudFormation Resource (AWS::GroundStation::Config.DemodulationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-demodulationconfig.html
-type Config_DemodulationConfig struct {
+type Config_DemodulationConfig[T any] struct {
 
 	// UnvalidatedJSON AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Config_DemodulationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_DemodulationConfig) AWSCloudFormationType() string {
+func (r *Config_DemodulationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.DemodulationConfig"
 }

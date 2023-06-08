@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_HiveJsonSerDe AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-hivejsonserde.html
-type DeliveryStream_HiveJsonSerDe struct {
+type DeliveryStream_HiveJsonSerDe[T any] struct {
 
 	// TimestampFormats AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeliveryStream_HiveJsonSerDe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_HiveJsonSerDe) AWSCloudFormationType() string {
+func (r *DeliveryStream_HiveJsonSerDe[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe"
 }

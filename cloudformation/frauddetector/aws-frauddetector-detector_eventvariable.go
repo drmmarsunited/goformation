@@ -9,7 +9,7 @@ import (
 
 // Detector_EventVariable AWS CloudFormation Resource (AWS::FraudDetector::Detector.EventVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventvariable.html
-type Detector_EventVariable struct {
+type Detector_EventVariable[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -44,7 +44,7 @@ type Detector_EventVariable struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventvariable.html#cfn-frauddetector-detector-eventvariable-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -83,6 +83,6 @@ type Detector_EventVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_EventVariable) AWSCloudFormationType() string {
+func (r *Detector_EventVariable[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.EventVariable"
 }

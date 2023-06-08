@@ -8,22 +8,22 @@ import (
 
 // Analysis_ParameterSliderControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.ParameterSliderControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html
-type Analysis_ParameterSliderControl struct {
+type Analysis_ParameterSliderControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-displayoptions
-	DisplayOptions *Analysis_SliderControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_SliderControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-maximumvalue
-	MaximumValue float64 `json:"MaximumValue"`
+	MaximumValue T `json:"MaximumValue"`
 
 	// MinimumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-minimumvalue
-	MinimumValue float64 `json:"MinimumValue"`
+	MinimumValue T `json:"MinimumValue"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Analysis_ParameterSliderControl struct {
 	// StepSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-stepsize
-	StepSize float64 `json:"StepSize"`
+	StepSize T `json:"StepSize"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Analysis_ParameterSliderControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ParameterSliderControl) AWSCloudFormationType() string {
+func (r *Analysis_ParameterSliderControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ParameterSliderControl"
 }

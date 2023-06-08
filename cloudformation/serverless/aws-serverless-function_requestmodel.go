@@ -8,7 +8,7 @@ import (
 
 // Function_RequestModel AWS CloudFormation Resource (AWS::Serverless::Function.RequestModel)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestmodel.html
-type Function_RequestModel struct {
+type Function_RequestModel[T any] struct {
 
 	// Model AWS CloudFormation Property
 	// Required: true
@@ -18,17 +18,17 @@ type Function_RequestModel struct {
 	// Required AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestmodel.html#sam-function-requestmodel-required
-	Required *bool `json:"Required,omitempty"`
+	Required *T `json:"Required,omitempty"`
 
 	// ValidateBody AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestmodel.html#sam-function-requestmodel-validatebody
-	ValidateBody *bool `json:"ValidateBody,omitempty"`
+	ValidateBody *T `json:"ValidateBody,omitempty"`
 
 	// ValidateParameters AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestmodel.html#sam-function-requestmodel-validateparameters
-	ValidateParameters *bool `json:"ValidateParameters,omitempty"`
+	ValidateParameters *T `json:"ValidateParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Function_RequestModel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_RequestModel) AWSCloudFormationType() string {
+func (r *Function_RequestModel[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.RequestModel"
 }

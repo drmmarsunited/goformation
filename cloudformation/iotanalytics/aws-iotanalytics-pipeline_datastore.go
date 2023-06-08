@@ -8,7 +8,7 @@ import (
 
 // Pipeline_Datastore AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Datastore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html
-type Pipeline_Datastore struct {
+type Pipeline_Datastore[T any] struct {
 
 	// DatastoreName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_Datastore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Datastore) AWSCloudFormationType() string {
+func (r *Pipeline_Datastore[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Datastore"
 }

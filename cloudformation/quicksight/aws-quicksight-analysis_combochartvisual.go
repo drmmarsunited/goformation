@@ -8,32 +8,32 @@ import (
 
 // Analysis_ComboChartVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.ComboChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html
-type Analysis_ComboChartVisual struct {
+type Analysis_ComboChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html#cfn-quicksight-analysis-combochartvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html#cfn-quicksight-analysis-combochartvisual-chartconfiguration
-	ChartConfiguration *Analysis_ComboChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_ComboChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html#cfn-quicksight-analysis-combochartvisual-columnhierarchies
-	ColumnHierarchies []Analysis_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Analysis_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html#cfn-quicksight-analysis-combochartvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartvisual.html#cfn-quicksight-analysis-combochartvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_ComboChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ComboChartVisual) AWSCloudFormationType() string {
+func (r *Analysis_ComboChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ComboChartVisual"
 }

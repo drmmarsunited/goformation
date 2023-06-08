@@ -8,17 +8,17 @@ import (
 
 // WirelessDevice_LoRaWANDevice AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.LoRaWANDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html
-type WirelessDevice_LoRaWANDevice struct {
+type WirelessDevice_LoRaWANDevice[T any] struct {
 
 	// AbpV10x AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv10x
-	AbpV10x *WirelessDevice_AbpV10x `json:"AbpV10x,omitempty"`
+	AbpV10x *WirelessDevice_AbpV10x[any] `json:"AbpV10x,omitempty"`
 
 	// AbpV11 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv11
-	AbpV11 *WirelessDevice_AbpV11 `json:"AbpV11,omitempty"`
+	AbpV11 *WirelessDevice_AbpV11[any] `json:"AbpV11,omitempty"`
 
 	// DevEui AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type WirelessDevice_LoRaWANDevice struct {
 	// OtaaV10x AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav10x
-	OtaaV10x *WirelessDevice_OtaaV10x `json:"OtaaV10x,omitempty"`
+	OtaaV10x *WirelessDevice_OtaaV10x[any] `json:"OtaaV10x,omitempty"`
 
 	// OtaaV11 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav11
-	OtaaV11 *WirelessDevice_OtaaV11 `json:"OtaaV11,omitempty"`
+	OtaaV11 *WirelessDevice_OtaaV11[any] `json:"OtaaV11,omitempty"`
 
 	// ServiceProfileId AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type WirelessDevice_LoRaWANDevice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDevice_LoRaWANDevice) AWSCloudFormationType() string {
+func (r *WirelessDevice_LoRaWANDevice[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDevice.LoRaWANDevice"
 }

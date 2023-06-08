@@ -8,12 +8,12 @@ import (
 
 // Stack_ApplicationSettings AWS CloudFormation Resource (AWS::AppStream::Stack.ApplicationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html
-type Stack_ApplicationSettings struct {
+type Stack_ApplicationSettings[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// SettingsGroup AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Stack_ApplicationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_ApplicationSettings) AWSCloudFormationType() string {
+func (r *Stack_ApplicationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Stack.ApplicationSettings"
 }

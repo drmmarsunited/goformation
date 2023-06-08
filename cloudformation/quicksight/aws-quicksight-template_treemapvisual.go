@@ -8,32 +8,32 @@ import (
 
 // Template_TreeMapVisual AWS CloudFormation Resource (AWS::QuickSight::Template.TreeMapVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html
-type Template_TreeMapVisual struct {
+type Template_TreeMapVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html#cfn-quicksight-template-treemapvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html#cfn-quicksight-template-treemapvisual-chartconfiguration
-	ChartConfiguration *Template_TreeMapConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_TreeMapConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html#cfn-quicksight-template-treemapvisual-columnhierarchies
-	ColumnHierarchies []Template_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Template_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html#cfn-quicksight-template-treemapvisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapvisual.html#cfn-quicksight-template-treemapvisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_TreeMapVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TreeMapVisual) AWSCloudFormationType() string {
+func (r *Template_TreeMapVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TreeMapVisual"
 }

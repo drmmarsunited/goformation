@@ -8,7 +8,7 @@ import (
 
 // StorageSystem_ServerConfiguration AWS CloudFormation Resource (AWS::DataSync::StorageSystem.ServerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-storagesystem-serverconfiguration.html
-type StorageSystem_ServerConfiguration struct {
+type StorageSystem_ServerConfiguration[T any] struct {
 
 	// ServerHostname AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type StorageSystem_ServerConfiguration struct {
 	// ServerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-storagesystem-serverconfiguration.html#cfn-datasync-storagesystem-serverconfiguration-serverport
-	ServerPort *int `json:"ServerPort,omitempty"`
+	ServerPort *T `json:"ServerPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StorageSystem_ServerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageSystem_ServerConfiguration) AWSCloudFormationType() string {
+func (r *StorageSystem_ServerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::StorageSystem.ServerConfiguration"
 }

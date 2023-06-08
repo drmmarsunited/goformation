@@ -8,12 +8,12 @@ import (
 
 // InferenceExperiment_ModelVariantConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.ModelVariantConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-modelvariantconfig.html
-type InferenceExperiment_ModelVariantConfig struct {
+type InferenceExperiment_ModelVariantConfig[T any] struct {
 
 	// InfrastructureConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-modelvariantconfig.html#cfn-sagemaker-inferenceexperiment-modelvariantconfig-infrastructureconfig
-	InfrastructureConfig *InferenceExperiment_ModelInfrastructureConfig `json:"InfrastructureConfig"`
+	InfrastructureConfig *InferenceExperiment_ModelInfrastructureConfig[any] `json:"InfrastructureConfig"`
 
 	// ModelName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type InferenceExperiment_ModelVariantConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_ModelVariantConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_ModelVariantConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.ModelVariantConfig"
 }

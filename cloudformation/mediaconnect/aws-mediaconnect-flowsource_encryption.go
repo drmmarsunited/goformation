@@ -8,7 +8,7 @@ import (
 
 // FlowSource_Encryption AWS CloudFormation Resource (AWS::MediaConnect::FlowSource.Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html
-type FlowSource_Encryption struct {
+type FlowSource_Encryption[T any] struct {
 
 	// Algorithm AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type FlowSource_Encryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowSource_Encryption) AWSCloudFormationType() string {
+func (r *FlowSource_Encryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::FlowSource.Encryption"
 }

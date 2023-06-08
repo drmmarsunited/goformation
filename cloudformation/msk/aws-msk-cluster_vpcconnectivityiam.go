@@ -8,12 +8,12 @@ import (
 
 // Cluster_VpcConnectivityIam AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivityIam)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html
-type Cluster_VpcConnectivityIam struct {
+type Cluster_VpcConnectivityIam[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html#cfn-msk-cluster-vpcconnectivityiam-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_VpcConnectivityIam struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivityIam) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivityIam[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivityIam"
 }

@@ -12,7 +12,7 @@ import (
 
 // LocationSMB AWS CloudFormation Resource (AWS::DataSync::LocationSMB)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html
-type LocationSMB struct {
+type LocationSMB[T any] struct {
 
 	// AgentArns AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type LocationSMB struct {
 	// MountOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-mountoptions
-	MountOptions *LocationSMB_MountOptions `json:"MountOptions,omitempty"`
+	MountOptions *LocationSMB_MountOptions[any] `json:"MountOptions,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type LocationSMB struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationSMB) AWSCloudFormationType() string {
+func (r *LocationSMB[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationSMB"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationSMB) MarshalJSON() ([]byte, error) {
-	type Properties LocationSMB
+func (r LocationSMB[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationSMB[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r LocationSMB) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationSMB) UnmarshalJSON(b []byte) error {
-	type Properties LocationSMB
+func (r *LocationSMB[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationSMB[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *LocationSMB) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationSMB(*res.Properties)
+		*r = LocationSMB[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -9,12 +9,12 @@ import (
 
 // VpcAttachment_ProposedSegmentChange AWS CloudFormation Resource (AWS::NetworkManager::VpcAttachment.ProposedSegmentChange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html
-type VpcAttachment_ProposedSegmentChange struct {
+type VpcAttachment_ProposedSegmentChange[T any] struct {
 
 	// AttachmentPolicyRuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-attachmentpolicyrulenumber
-	AttachmentPolicyRuleNumber *int `json:"AttachmentPolicyRuleNumber,omitempty"`
+	AttachmentPolicyRuleNumber *T `json:"AttachmentPolicyRuleNumber,omitempty"`
 
 	// SegmentName AWS CloudFormation Property
 	// Required: false
@@ -43,6 +43,6 @@ type VpcAttachment_ProposedSegmentChange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VpcAttachment_ProposedSegmentChange) AWSCloudFormationType() string {
+func (r *VpcAttachment_ProposedSegmentChange[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::VpcAttachment.ProposedSegmentChange"
 }

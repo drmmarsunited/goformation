@@ -8,17 +8,17 @@ import (
 
 // Analysis_DecimalDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Analysis.DecimalDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimaldefaultvalues.html
-type Analysis_DecimalDefaultValues struct {
+type Analysis_DecimalDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimaldefaultvalues.html#cfn-quicksight-analysis-decimaldefaultvalues-dynamicvalue
-	DynamicValue *Analysis_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Analysis_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimaldefaultvalues.html#cfn-quicksight-analysis-decimaldefaultvalues-staticvalues
-	StaticValues []float64 `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_DecimalDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DecimalDefaultValues) AWSCloudFormationType() string {
+func (r *Analysis_DecimalDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DecimalDefaultValues"
 }

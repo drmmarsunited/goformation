@@ -8,7 +8,7 @@ import (
 
 // ServerlessCluster_VpcConfig AWS CloudFormation Resource (AWS::MSK::ServerlessCluster.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html
-type ServerlessCluster_VpcConfig struct {
+type ServerlessCluster_VpcConfig[T any] struct {
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ServerlessCluster_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServerlessCluster_VpcConfig) AWSCloudFormationType() string {
+func (r *ServerlessCluster_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::ServerlessCluster.VpcConfig"
 }

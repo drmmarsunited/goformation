@@ -8,32 +8,32 @@ import (
 
 // WebACL_RuleAction AWS CloudFormation Resource (AWS::WAFv2::WebACL.RuleAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html
-type WebACL_RuleAction struct {
+type WebACL_RuleAction[T any] struct {
 
 	// Allow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow
-	Allow *WebACL_AllowAction `json:"Allow,omitempty"`
+	Allow *WebACL_AllowAction[any] `json:"Allow,omitempty"`
 
 	// Block AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block
-	Block *WebACL_BlockAction `json:"Block,omitempty"`
+	Block *WebACL_BlockAction[any] `json:"Block,omitempty"`
 
 	// Captcha AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-captcha
-	Captcha *WebACL_CaptchaAction `json:"Captcha,omitempty"`
+	Captcha *WebACL_CaptchaAction[any] `json:"Captcha,omitempty"`
 
 	// Challenge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-challenge
-	Challenge *WebACL_ChallengeAction `json:"Challenge,omitempty"`
+	Challenge *WebACL_ChallengeAction[any] `json:"Challenge,omitempty"`
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count
-	Count *WebACL_CountAction `json:"Count,omitempty"`
+	Count *WebACL_CountAction[any] `json:"Count,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type WebACL_RuleAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_RuleAction) AWSCloudFormationType() string {
+func (r *WebACL_RuleAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.RuleAction"
 }

@@ -8,7 +8,7 @@ import (
 
 // InsightRule_Tags AWS CloudFormation Resource (AWS::CloudWatch::InsightRule.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-insightrule-tags.html
-type InsightRule_Tags struct {
+type InsightRule_Tags[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type InsightRule_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InsightRule_Tags) AWSCloudFormationType() string {
+func (r *InsightRule_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::InsightRule.Tags"
 }

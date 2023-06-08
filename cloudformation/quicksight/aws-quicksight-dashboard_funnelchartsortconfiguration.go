@@ -8,17 +8,17 @@ import (
 
 // Dashboard_FunnelChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FunnelChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartsortconfiguration.html
-type Dashboard_FunnelChartSortConfiguration struct {
+type Dashboard_FunnelChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartsortconfiguration.html#cfn-quicksight-dashboard-funnelchartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartsortconfiguration.html#cfn-quicksight-dashboard-funnelchartsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_FunnelChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FunnelChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FunnelChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FunnelChartSortConfiguration"
 }

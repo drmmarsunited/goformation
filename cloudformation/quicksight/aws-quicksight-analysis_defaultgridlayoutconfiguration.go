@@ -8,12 +8,12 @@ import (
 
 // Analysis_DefaultGridLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DefaultGridLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultgridlayoutconfiguration.html
-type Analysis_DefaultGridLayoutConfiguration struct {
+type Analysis_DefaultGridLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultgridlayoutconfiguration.html#cfn-quicksight-analysis-defaultgridlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Analysis_GridLayoutCanvasSizeOptions `json:"CanvasSizeOptions"`
+	CanvasSizeOptions *Analysis_GridLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_DefaultGridLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DefaultGridLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_DefaultGridLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DefaultGridLayoutConfiguration"
 }

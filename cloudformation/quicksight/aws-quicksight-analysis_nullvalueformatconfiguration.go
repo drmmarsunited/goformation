@@ -8,7 +8,7 @@ import (
 
 // Analysis_NullValueFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.NullValueFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-nullvalueformatconfiguration.html
-type Analysis_NullValueFormatConfiguration struct {
+type Analysis_NullValueFormatConfiguration[T any] struct {
 
 	// NullString AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Analysis_NullValueFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NullValueFormatConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_NullValueFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NullValueFormatConfiguration"
 }

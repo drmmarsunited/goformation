@@ -12,12 +12,12 @@ import (
 
 // Listener AWS CloudFormation Resource (AWS::VpcLattice::Listener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html
-type Listener struct {
+type Listener[T any] struct {
 
 	// DefaultAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-defaultaction
-	DefaultAction *Listener_DefaultAction `json:"DefaultAction"`
+	DefaultAction *Listener_DefaultAction[any] `json:"DefaultAction"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Listener struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type Listener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener) AWSCloudFormationType() string {
+func (r *Listener[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Listener"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Listener) MarshalJSON() ([]byte, error) {
-	type Properties Listener
+func (r Listener[any]) MarshalJSON() ([]byte, error) {
+	type Properties Listener[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Listener) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Listener) UnmarshalJSON(b []byte) error {
-	type Properties Listener
+func (r *Listener[any]) UnmarshalJSON(b []byte) error {
+	type Properties Listener[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Listener) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Listener(*res.Properties)
+		*r = Listener[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

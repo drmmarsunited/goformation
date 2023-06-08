@@ -8,7 +8,7 @@ import (
 
 // Classifier_GrokClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.GrokClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html
-type Classifier_GrokClassifier struct {
+type Classifier_GrokClassifier[T any] struct {
 
 	// Classification AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Classifier_GrokClassifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Classifier_GrokClassifier) AWSCloudFormationType() string {
+func (r *Classifier_GrokClassifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier.GrokClassifier"
 }

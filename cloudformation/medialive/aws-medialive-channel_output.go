@@ -8,7 +8,7 @@ import (
 
 // Channel_Output AWS CloudFormation Resource (AWS::MediaLive::Channel.Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html
-type Channel_Output struct {
+type Channel_Output[T any] struct {
 
 	// AudioDescriptionNames AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Channel_Output struct {
 	// OutputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-outputsettings
-	OutputSettings *Channel_OutputSettings `json:"OutputSettings,omitempty"`
+	OutputSettings *Channel_OutputSettings[any] `json:"OutputSettings,omitempty"`
 
 	// VideoDescriptionName AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Channel_Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Output) AWSCloudFormationType() string {
+func (r *Channel_Output[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Output"
 }

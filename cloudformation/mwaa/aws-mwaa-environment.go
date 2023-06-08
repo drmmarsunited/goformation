@@ -11,7 +11,7 @@ import (
 
 // Environment AWS CloudFormation Resource (AWS::MWAA::Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html
-type Environment struct {
+type Environment[T any] struct {
 
 	// AirflowConfigurationOptions AWS CloudFormation Property
 	// Required: false
@@ -46,17 +46,17 @@ type Environment struct {
 	// LoggingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-loggingconfiguration
-	LoggingConfiguration *Environment_LoggingConfiguration `json:"LoggingConfiguration,omitempty"`
+	LoggingConfiguration *Environment_LoggingConfiguration[any] `json:"LoggingConfiguration,omitempty"`
 
 	// MaxWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-maxworkers
-	MaxWorkers *int `json:"MaxWorkers,omitempty"`
+	MaxWorkers *T `json:"MaxWorkers,omitempty"`
 
 	// MinWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-minworkers
-	MinWorkers *int `json:"MinWorkers,omitempty"`
+	MinWorkers *T `json:"MinWorkers,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -66,7 +66,7 @@ type Environment struct {
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-networkconfiguration
-	NetworkConfiguration *Environment_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Environment_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// PluginsS3ObjectVersion AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type Environment struct {
 	// Schedulers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-schedulers
-	Schedulers *int `json:"Schedulers,omitempty"`
+	Schedulers *T `json:"Schedulers,omitempty"`
 
 	// SourceBucketArn AWS CloudFormation Property
 	// Required: false
@@ -140,14 +140,15 @@ type Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment) AWSCloudFormationType() string {
+func (r *Environment[any]) AWSCloudFormationType() string {
 	return "AWS::MWAA::Environment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Environment) MarshalJSON() ([]byte, error) {
-	type Properties Environment
+func (r Environment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Environment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -169,8 +170,9 @@ func (r Environment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Environment) UnmarshalJSON(b []byte) error {
-	type Properties Environment
+func (r *Environment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Environment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -190,7 +192,7 @@ func (r *Environment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Environment(*res.Properties)
+		*r = Environment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // UserPool_DeviceConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPool.DeviceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html
-type UserPool_DeviceConfiguration struct {
+type UserPool_DeviceConfiguration[T any] struct {
 
 	// ChallengeRequiredOnNewDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice
-	ChallengeRequiredOnNewDevice *bool `json:"ChallengeRequiredOnNewDevice,omitempty"`
+	ChallengeRequiredOnNewDevice *T `json:"ChallengeRequiredOnNewDevice,omitempty"`
 
 	// DeviceOnlyRememberedOnUserPrompt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt
-	DeviceOnlyRememberedOnUserPrompt *bool `json:"DeviceOnlyRememberedOnUserPrompt,omitempty"`
+	DeviceOnlyRememberedOnUserPrompt *T `json:"DeviceOnlyRememberedOnUserPrompt,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type UserPool_DeviceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_DeviceConfiguration) AWSCloudFormationType() string {
+func (r *UserPool_DeviceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.DeviceConfiguration"
 }

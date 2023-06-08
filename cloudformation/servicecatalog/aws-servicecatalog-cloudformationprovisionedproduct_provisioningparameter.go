@@ -8,7 +8,7 @@ import (
 
 // CloudFormationProvisionedProduct_ProvisioningParameter AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html
-type CloudFormationProvisionedProduct_ProvisioningParameter struct {
+type CloudFormationProvisionedProduct_ProvisioningParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CloudFormationProvisionedProduct_ProvisioningParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProvisionedProduct_ProvisioningParameter) AWSCloudFormationType() string {
+func (r *CloudFormationProvisionedProduct_ProvisioningParameter[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter"
 }

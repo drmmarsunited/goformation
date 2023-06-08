@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_DockerVolumeConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.DockerVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html
-type TaskDefinition_DockerVolumeConfiguration struct {
+type TaskDefinition_DockerVolumeConfiguration[T any] struct {
 
 	// Autoprovision AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-autoprovision
-	Autoprovision *bool `json:"Autoprovision,omitempty"`
+	Autoprovision *T `json:"Autoprovision,omitempty"`
 
 	// Driver AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type TaskDefinition_DockerVolumeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_DockerVolumeConfiguration) AWSCloudFormationType() string {
+func (r *TaskDefinition_DockerVolumeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.DockerVolumeConfiguration"
 }

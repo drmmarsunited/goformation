@@ -8,12 +8,12 @@ import (
 
 // Template_PivotTableDataPathOption AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableDataPathOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottabledatapathoption.html
-type Template_PivotTableDataPathOption struct {
+type Template_PivotTableDataPathOption[T any] struct {
 
 	// DataPathList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottabledatapathoption.html#cfn-quicksight-template-pivottabledatapathoption-datapathlist
-	DataPathList []Template_DataPathValue `json:"DataPathList"`
+	DataPathList []Template_DataPathValue[any] `json:"DataPathList"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_PivotTableDataPathOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableDataPathOption) AWSCloudFormationType() string {
+func (r *Template_PivotTableDataPathOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableDataPathOption"
 }

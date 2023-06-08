@@ -8,17 +8,17 @@ import (
 
 // Bot_BotAliasLocaleSettings AWS CloudFormation Resource (AWS::Lex::Bot.BotAliasLocaleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html
-type Bot_BotAliasLocaleSettings struct {
+type Bot_BotAliasLocaleSettings[T any] struct {
 
 	// CodeHookSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-codehookspecification
-	CodeHookSpecification *Bot_CodeHookSpecification `json:"CodeHookSpecification,omitempty"`
+	CodeHookSpecification *Bot_CodeHookSpecification[any] `json:"CodeHookSpecification,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_BotAliasLocaleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_BotAliasLocaleSettings) AWSCloudFormationType() string {
+func (r *Bot_BotAliasLocaleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.BotAliasLocaleSettings"
 }

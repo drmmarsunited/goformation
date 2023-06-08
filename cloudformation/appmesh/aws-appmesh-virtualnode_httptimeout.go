@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_HttpTimeout AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.HttpTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-httptimeout.html
-type VirtualNode_HttpTimeout struct {
+type VirtualNode_HttpTimeout[T any] struct {
 
 	// Idle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-httptimeout.html#cfn-appmesh-virtualnode-httptimeout-idle
-	Idle *VirtualNode_Duration `json:"Idle,omitempty"`
+	Idle *VirtualNode_Duration[any] `json:"Idle,omitempty"`
 
 	// PerRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-httptimeout.html#cfn-appmesh-virtualnode-httptimeout-perrequest
-	PerRequest *VirtualNode_Duration `json:"PerRequest,omitempty"`
+	PerRequest *VirtualNode_Duration[any] `json:"PerRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_HttpTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_HttpTimeout) AWSCloudFormationType() string {
+func (r *VirtualNode_HttpTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.HttpTimeout"
 }

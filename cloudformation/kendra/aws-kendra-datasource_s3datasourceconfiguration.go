@@ -8,12 +8,12 @@ import (
 
 // DataSource_S3DataSourceConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.S3DataSourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html
-type DataSource_S3DataSourceConfiguration struct {
+type DataSource_S3DataSourceConfiguration[T any] struct {
 
 	// AccessControlListConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-accesscontrollistconfiguration
-	AccessControlListConfiguration *DataSource_AccessControlListConfiguration `json:"AccessControlListConfiguration,omitempty"`
+	AccessControlListConfiguration *DataSource_AccessControlListConfiguration[any] `json:"AccessControlListConfiguration,omitempty"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_S3DataSourceConfiguration struct {
 	// DocumentsMetadataConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-documentsmetadataconfiguration
-	DocumentsMetadataConfiguration *DataSource_DocumentsMetadataConfiguration `json:"DocumentsMetadataConfiguration,omitempty"`
+	DocumentsMetadataConfiguration *DataSource_DocumentsMetadataConfiguration[any] `json:"DocumentsMetadataConfiguration,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DataSource_S3DataSourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_S3DataSourceConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_S3DataSourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.S3DataSourceConfiguration"
 }

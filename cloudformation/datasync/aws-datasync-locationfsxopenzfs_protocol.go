@@ -8,12 +8,12 @@ import (
 
 // LocationFSxOpenZFS_Protocol AWS CloudFormation Resource (AWS::DataSync::LocationFSxOpenZFS.Protocol)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-protocol.html
-type LocationFSxOpenZFS_Protocol struct {
+type LocationFSxOpenZFS_Protocol[T any] struct {
 
 	// NFS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-protocol.html#cfn-datasync-locationfsxopenzfs-protocol-nfs
-	NFS *LocationFSxOpenZFS_NFS `json:"NFS,omitempty"`
+	NFS *LocationFSxOpenZFS_NFS[any] `json:"NFS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LocationFSxOpenZFS_Protocol struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxOpenZFS_Protocol) AWSCloudFormationType() string {
+func (r *LocationFSxOpenZFS_Protocol[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxOpenZFS.Protocol"
 }

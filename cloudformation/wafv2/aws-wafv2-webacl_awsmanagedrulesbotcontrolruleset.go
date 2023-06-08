@@ -8,7 +8,7 @@ import (
 
 // WebACL_AWSManagedRulesBotControlRuleSet AWS CloudFormation Resource (AWS::WAFv2::WebACL.AWSManagedRulesBotControlRuleSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesbotcontrolruleset.html
-type WebACL_AWSManagedRulesBotControlRuleSet struct {
+type WebACL_AWSManagedRulesBotControlRuleSet[T any] struct {
 
 	// InspectionLevel AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_AWSManagedRulesBotControlRuleSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_AWSManagedRulesBotControlRuleSet) AWSCloudFormationType() string {
+func (r *WebACL_AWSManagedRulesBotControlRuleSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.AWSManagedRulesBotControlRuleSet"
 }

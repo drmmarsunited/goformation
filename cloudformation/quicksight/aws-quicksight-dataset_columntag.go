@@ -8,12 +8,12 @@ import (
 
 // DataSet_ColumnTag AWS CloudFormation Resource (AWS::QuickSight::DataSet.ColumnTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html
-type DataSet_ColumnTag struct {
+type DataSet_ColumnTag[T any] struct {
 
 	// ColumnDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columndescription
-	ColumnDescription *DataSet_ColumnDescription `json:"ColumnDescription,omitempty"`
+	ColumnDescription *DataSet_ColumnDescription[any] `json:"ColumnDescription,omitempty"`
 
 	// ColumnGeographicRole AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataSet_ColumnTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ColumnTag) AWSCloudFormationType() string {
+func (r *DataSet_ColumnTag[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ColumnTag"
 }

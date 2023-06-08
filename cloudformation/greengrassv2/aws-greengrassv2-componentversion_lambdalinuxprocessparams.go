@@ -8,12 +8,12 @@ import (
 
 // ComponentVersion_LambdaLinuxProcessParams AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html
-type ComponentVersion_LambdaLinuxProcessParams struct {
+type ComponentVersion_LambdaLinuxProcessParams[T any] struct {
 
 	// ContainerParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-containerparams
-	ContainerParams *ComponentVersion_LambdaContainerParams `json:"ContainerParams,omitempty"`
+	ContainerParams *ComponentVersion_LambdaContainerParams[any] `json:"ContainerParams,omitempty"`
 
 	// IsolationMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentVersion_LambdaLinuxProcessParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaLinuxProcessParams) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaLinuxProcessParams[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams"
 }

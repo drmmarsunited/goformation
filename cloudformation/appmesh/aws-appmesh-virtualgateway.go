@@ -12,7 +12,7 @@ import (
 
 // VirtualGateway AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html
-type VirtualGateway struct {
+type VirtualGateway[T any] struct {
 
 	// MeshName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type VirtualGateway struct {
 	// Spec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-spec
-	Spec *VirtualGateway_VirtualGatewaySpec `json:"Spec"`
+	Spec *VirtualGateway_VirtualGatewaySpec[any] `json:"Spec"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type VirtualGateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway) AWSCloudFormationType() string {
+func (r *VirtualGateway[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VirtualGateway) MarshalJSON() ([]byte, error) {
-	type Properties VirtualGateway
+func (r VirtualGateway[any]) MarshalJSON() ([]byte, error) {
+	type Properties VirtualGateway[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r VirtualGateway) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VirtualGateway) UnmarshalJSON(b []byte) error {
-	type Properties VirtualGateway
+func (r *VirtualGateway[any]) UnmarshalJSON(b []byte) error {
+	type Properties VirtualGateway[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *VirtualGateway) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VirtualGateway(*res.Properties)
+		*r = VirtualGateway[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // InferenceExperiment_InferenceExperimentSchedule AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.InferenceExperimentSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-inferenceexperimentschedule.html
-type InferenceExperiment_InferenceExperimentSchedule struct {
+type InferenceExperiment_InferenceExperimentSchedule[T any] struct {
 
 	// EndTime AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InferenceExperiment_InferenceExperimentSchedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_InferenceExperimentSchedule) AWSCloudFormationType() string {
+func (r *InferenceExperiment_InferenceExperimentSchedule[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.InferenceExperimentSchedule"
 }

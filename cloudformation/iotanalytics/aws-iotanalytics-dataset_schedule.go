@@ -8,7 +8,7 @@ import (
 
 // Dataset_Schedule AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-schedule.html
-type Dataset_Schedule struct {
+type Dataset_Schedule[T any] struct {
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dataset_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_Schedule) AWSCloudFormationType() string {
+func (r *Dataset_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.Schedule"
 }

@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_DataLocationResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.DataLocationResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-datalocationresource.html
-type PrincipalPermissions_DataLocationResource struct {
+type PrincipalPermissions_DataLocationResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type PrincipalPermissions_DataLocationResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_DataLocationResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_DataLocationResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.DataLocationResource"
 }

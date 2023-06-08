@@ -8,17 +8,17 @@ import (
 
 // Environment_StorageConfiguration AWS CloudFormation Resource (AWS::M2::Environment.StorageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-storageconfiguration.html
-type Environment_StorageConfiguration struct {
+type Environment_StorageConfiguration[T any] struct {
 
 	// Efs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-storageconfiguration.html#cfn-m2-environment-storageconfiguration-efs
-	Efs *Environment_EfsStorageConfiguration `json:"Efs,omitempty"`
+	Efs *Environment_EfsStorageConfiguration[any] `json:"Efs,omitempty"`
 
 	// Fsx AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-storageconfiguration.html#cfn-m2-environment-storageconfiguration-fsx
-	Fsx *Environment_FsxStorageConfiguration `json:"Fsx,omitempty"`
+	Fsx *Environment_FsxStorageConfiguration[any] `json:"Fsx,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Environment_StorageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_StorageConfiguration) AWSCloudFormationType() string {
+func (r *Environment_StorageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::M2::Environment.StorageConfiguration"
 }

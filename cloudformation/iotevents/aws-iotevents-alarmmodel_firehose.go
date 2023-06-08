@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_Firehose AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.Firehose)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-firehose.html
-type AlarmModel_Firehose struct {
+type AlarmModel_Firehose[T any] struct {
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type AlarmModel_Firehose struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-firehose.html#cfn-iotevents-alarmmodel-firehose-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// Separator AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type AlarmModel_Firehose struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_Firehose) AWSCloudFormationType() string {
+func (r *AlarmModel_Firehose[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.Firehose"
 }

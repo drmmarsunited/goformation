@@ -8,12 +8,12 @@ import (
 
 // Flow_EventBridgeDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.EventBridgeDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-eventbridgedestinationproperties.html
-type Flow_EventBridgeDestinationProperties struct {
+type Flow_EventBridgeDestinationProperties[T any] struct {
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-eventbridgedestinationproperties.html#cfn-appflow-flow-eventbridgedestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Flow_EventBridgeDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_EventBridgeDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_EventBridgeDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.EventBridgeDestinationProperties"
 }

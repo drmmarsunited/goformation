@@ -8,7 +8,7 @@ import (
 
 // Permissions_TableResource AWS CloudFormation Resource (AWS::LakeFormation::Permissions.TableResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html
-type Permissions_TableResource struct {
+type Permissions_TableResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Permissions_TableResource struct {
 	// TableWildcard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-tablewildcard
-	TableWildcard *Permissions_TableWildcard `json:"TableWildcard,omitempty"`
+	TableWildcard *Permissions_TableWildcard[any] `json:"TableWildcard,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Permissions_TableResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions_TableResource) AWSCloudFormationType() string {
+func (r *Permissions_TableResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions.TableResource"
 }

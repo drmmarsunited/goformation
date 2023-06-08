@@ -8,7 +8,7 @@ import (
 
 // IPAMPool_ProvisionedCidr AWS CloudFormation Resource (AWS::EC2::IPAMPool.ProvisionedCidr)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html
-type IPAMPool_ProvisionedCidr struct {
+type IPAMPool_ProvisionedCidr[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type IPAMPool_ProvisionedCidr struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAMPool_ProvisionedCidr) AWSCloudFormationType() string {
+func (r *IPAMPool_ProvisionedCidr[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAMPool.ProvisionedCidr"
 }

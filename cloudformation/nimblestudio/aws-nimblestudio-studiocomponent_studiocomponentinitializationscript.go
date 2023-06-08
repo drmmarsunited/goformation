@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_StudioComponentInitializationScript AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.StudioComponentInitializationScript)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html
-type StudioComponent_StudioComponentInitializationScript struct {
+type StudioComponent_StudioComponentInitializationScript[T any] struct {
 
 	// LaunchProfileProtocolVersion AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type StudioComponent_StudioComponentInitializationScript struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_StudioComponentInitializationScript) AWSCloudFormationType() string {
+func (r *StudioComponent_StudioComponentInitializationScript[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.StudioComponentInitializationScript"
 }

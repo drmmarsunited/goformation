@@ -8,12 +8,12 @@ import (
 
 // Channel_MediaPackageGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MediaPackageGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagegroupsettings.html
-type Channel_MediaPackageGroupSettings struct {
+type Channel_MediaPackageGroupSettings[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagegroupsettings.html#cfn-medialive-channel-mediapackagegroupsettings-destination
-	Destination *Channel_OutputLocationRef `json:"Destination,omitempty"`
+	Destination *Channel_OutputLocationRef[any] `json:"Destination,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_MediaPackageGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MediaPackageGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_MediaPackageGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MediaPackageGroupSettings"
 }

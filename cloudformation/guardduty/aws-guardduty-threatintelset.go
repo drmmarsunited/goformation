@@ -12,12 +12,12 @@ import (
 
 // ThreatIntelSet AWS CloudFormation Resource (AWS::GuardDuty::ThreatIntelSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html
-type ThreatIntelSet struct {
+type ThreatIntelSet[T any] struct {
 
 	// Activate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-activate
-	Activate bool `json:"Activate"`
+	Activate T `json:"Activate"`
 
 	// DetectorId AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type ThreatIntelSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ThreatIntelSet) AWSCloudFormationType() string {
+func (r *ThreatIntelSet[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::ThreatIntelSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ThreatIntelSet) MarshalJSON() ([]byte, error) {
-	type Properties ThreatIntelSet
+func (r ThreatIntelSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties ThreatIntelSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ThreatIntelSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ThreatIntelSet) UnmarshalJSON(b []byte) error {
-	type Properties ThreatIntelSet
+func (r *ThreatIntelSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties ThreatIntelSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ThreatIntelSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ThreatIntelSet(*res.Properties)
+		*r = ThreatIntelSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Form_FieldConfig AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FieldConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html
-type Form_FieldConfig struct {
+type Form_FieldConfig[T any] struct {
 
 	// Excluded AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html#cfn-amplifyuibuilder-form-fieldconfig-excluded
-	Excluded *bool `json:"Excluded,omitempty"`
+	Excluded *T `json:"Excluded,omitempty"`
 
 	// InputType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html#cfn-amplifyuibuilder-form-fieldconfig-inputtype
-	InputType *Form_FieldInputConfig `json:"InputType,omitempty"`
+	InputType *Form_FieldInputConfig[any] `json:"InputType,omitempty"`
 
 	// Label AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Form_FieldConfig struct {
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html#cfn-amplifyuibuilder-form-fieldconfig-position
-	Position *Form_FieldPosition `json:"Position,omitempty"`
+	Position *Form_FieldPosition[any] `json:"Position,omitempty"`
 
 	// Validations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html#cfn-amplifyuibuilder-form-fieldconfig-validations
-	Validations []Form_FieldValidationConfiguration `json:"Validations,omitempty"`
+	Validations []Form_FieldValidationConfiguration[any] `json:"Validations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Form_FieldConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FieldConfig) AWSCloudFormationType() string {
+func (r *Form_FieldConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FieldConfig"
 }

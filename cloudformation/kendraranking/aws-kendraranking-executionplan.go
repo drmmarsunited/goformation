@@ -12,12 +12,12 @@ import (
 
 // ExecutionPlan AWS CloudFormation Resource (AWS::KendraRanking::ExecutionPlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendraranking-executionplan.html
-type ExecutionPlan struct {
+type ExecutionPlan[T any] struct {
 
 	// CapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendraranking-executionplan.html#cfn-kendraranking-executionplan-capacityunits
-	CapacityUnits *ExecutionPlan_CapacityUnitsConfiguration `json:"CapacityUnits,omitempty"`
+	CapacityUnits *ExecutionPlan_CapacityUnitsConfiguration[any] `json:"CapacityUnits,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type ExecutionPlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExecutionPlan) AWSCloudFormationType() string {
+func (r *ExecutionPlan[any]) AWSCloudFormationType() string {
 	return "AWS::KendraRanking::ExecutionPlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ExecutionPlan) MarshalJSON() ([]byte, error) {
-	type Properties ExecutionPlan
+func (r ExecutionPlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties ExecutionPlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ExecutionPlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ExecutionPlan) UnmarshalJSON(b []byte) error {
-	type Properties ExecutionPlan
+func (r *ExecutionPlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties ExecutionPlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ExecutionPlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ExecutionPlan(*res.Properties)
+		*r = ExecutionPlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

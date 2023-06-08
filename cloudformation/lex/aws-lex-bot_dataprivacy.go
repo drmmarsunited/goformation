@@ -8,12 +8,12 @@ import (
 
 // Bot_DataPrivacy AWS CloudFormation Resource (AWS::Lex::Bot.DataPrivacy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dataprivacy.html
-type Bot_DataPrivacy struct {
+type Bot_DataPrivacy[T any] struct {
 
 	// ChildDirected AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dataprivacy.html#cfn-lex-bot-dataprivacy-childdirected
-	ChildDirected bool `json:"ChildDirected"`
+	ChildDirected T `json:"ChildDirected"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_DataPrivacy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_DataPrivacy) AWSCloudFormationType() string {
+func (r *Bot_DataPrivacy[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.DataPrivacy"
 }

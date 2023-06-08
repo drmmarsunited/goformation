@@ -8,7 +8,7 @@ import (
 
 // Crawler_DeltaTarget AWS CloudFormation Resource (AWS::Glue::Crawler.DeltaTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html
-type Crawler_DeltaTarget struct {
+type Crawler_DeltaTarget[T any] struct {
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Crawler_DeltaTarget struct {
 	// CreateNativeDeltaTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-createnativedeltatable
-	CreateNativeDeltaTable *bool `json:"CreateNativeDeltaTable,omitempty"`
+	CreateNativeDeltaTable *T `json:"CreateNativeDeltaTable,omitempty"`
 
 	// DeltaTables AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Crawler_DeltaTarget struct {
 	// WriteManifest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-writemanifest
-	WriteManifest *bool `json:"WriteManifest,omitempty"`
+	WriteManifest *T `json:"WriteManifest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Crawler_DeltaTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_DeltaTarget) AWSCloudFormationType() string {
+func (r *Crawler_DeltaTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.DeltaTarget"
 }

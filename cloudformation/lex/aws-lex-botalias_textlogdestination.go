@@ -8,12 +8,12 @@ import (
 
 // BotAlias_TextLogDestination AWS CloudFormation Resource (AWS::Lex::BotAlias.TextLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogdestination.html
-type BotAlias_TextLogDestination struct {
+type BotAlias_TextLogDestination[T any] struct {
 
 	// CloudWatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogdestination.html#cfn-lex-botalias-textlogdestination-cloudwatch
-	CloudWatch *BotAlias_CloudWatchLogGroupLogDestination `json:"CloudWatch"`
+	CloudWatch *BotAlias_CloudWatchLogGroupLogDestination[any] `json:"CloudWatch"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type BotAlias_TextLogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias_TextLogDestination) AWSCloudFormationType() string {
+func (r *BotAlias_TextLogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias.TextLogDestination"
 }

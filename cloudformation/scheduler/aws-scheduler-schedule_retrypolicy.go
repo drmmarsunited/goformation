@@ -8,17 +8,17 @@ import (
 
 // Schedule_RetryPolicy AWS CloudFormation Resource (AWS::Scheduler::Schedule.RetryPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-retrypolicy.html
-type Schedule_RetryPolicy struct {
+type Schedule_RetryPolicy[T any] struct {
 
 	// MaximumEventAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-retrypolicy.html#cfn-scheduler-schedule-retrypolicy-maximumeventageinseconds
-	MaximumEventAgeInSeconds *float64 `json:"MaximumEventAgeInSeconds,omitempty"`
+	MaximumEventAgeInSeconds *T `json:"MaximumEventAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-retrypolicy.html#cfn-scheduler-schedule-retrypolicy-maximumretryattempts
-	MaximumRetryAttempts *float64 `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Schedule_RetryPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_RetryPolicy) AWSCloudFormationType() string {
+func (r *Schedule_RetryPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.RetryPolicy"
 }

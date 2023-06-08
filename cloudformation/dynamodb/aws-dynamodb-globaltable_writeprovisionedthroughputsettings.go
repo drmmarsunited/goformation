@@ -8,12 +8,12 @@ import (
 
 // GlobalTable_WriteProvisionedThroughputSettings AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.WriteProvisionedThroughputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-writeprovisionedthroughputsettings.html
-type GlobalTable_WriteProvisionedThroughputSettings struct {
+type GlobalTable_WriteProvisionedThroughputSettings[T any] struct {
 
 	// WriteCapacityAutoScalingSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-writeprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings-writecapacityautoscalingsettings
-	WriteCapacityAutoScalingSettings *GlobalTable_CapacityAutoScalingSettings `json:"WriteCapacityAutoScalingSettings,omitempty"`
+	WriteCapacityAutoScalingSettings *GlobalTable_CapacityAutoScalingSettings[any] `json:"WriteCapacityAutoScalingSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type GlobalTable_WriteProvisionedThroughputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_WriteProvisionedThroughputSettings) AWSCloudFormationType() string {
+func (r *GlobalTable_WriteProvisionedThroughputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.WriteProvisionedThroughputSettings"
 }

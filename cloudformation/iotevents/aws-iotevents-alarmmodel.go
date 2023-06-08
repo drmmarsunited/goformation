@@ -12,17 +12,17 @@ import (
 
 // AlarmModel AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html
-type AlarmModel struct {
+type AlarmModel[T any] struct {
 
 	// AlarmCapabilities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-alarmcapabilities
-	AlarmCapabilities *AlarmModel_AlarmCapabilities `json:"AlarmCapabilities,omitempty"`
+	AlarmCapabilities *AlarmModel_AlarmCapabilities[any] `json:"AlarmCapabilities,omitempty"`
 
 	// AlarmEventActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-alarmeventactions
-	AlarmEventActions *AlarmModel_AlarmEventActions `json:"AlarmEventActions,omitempty"`
+	AlarmEventActions *AlarmModel_AlarmEventActions[any] `json:"AlarmEventActions,omitempty"`
 
 	// AlarmModelDescription AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type AlarmModel struct {
 	// AlarmRule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-alarmrule
-	AlarmRule *AlarmModel_AlarmRule `json:"AlarmRule"`
+	AlarmRule *AlarmModel_AlarmRule[any] `json:"AlarmRule"`
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type AlarmModel struct {
 	// Severity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-severity
-	Severity *int `json:"Severity,omitempty"`
+	Severity *T `json:"Severity,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type AlarmModel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel) AWSCloudFormationType() string {
+func (r *AlarmModel[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AlarmModel) MarshalJSON() ([]byte, error) {
-	type Properties AlarmModel
+func (r AlarmModel[any]) MarshalJSON() ([]byte, error) {
+	type Properties AlarmModel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r AlarmModel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AlarmModel) UnmarshalJSON(b []byte) error {
-	type Properties AlarmModel
+func (r *AlarmModel[any]) UnmarshalJSON(b []byte) error {
+	type Properties AlarmModel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *AlarmModel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AlarmModel(*res.Properties)
+		*r = AlarmModel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

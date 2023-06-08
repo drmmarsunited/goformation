@@ -11,12 +11,12 @@ import (
 
 // CidrCollection AWS CloudFormation Resource (AWS::Route53::CidrCollection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-cidrcollection.html
-type CidrCollection struct {
+type CidrCollection[T any] struct {
 
 	// Locations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-cidrcollection.html#cfn-route53-cidrcollection-locations
-	Locations []CidrCollection_Location `json:"Locations,omitempty"`
+	Locations []CidrCollection_Location[any] `json:"Locations,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type CidrCollection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CidrCollection) AWSCloudFormationType() string {
+func (r *CidrCollection[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::CidrCollection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CidrCollection) MarshalJSON() ([]byte, error) {
-	type Properties CidrCollection
+func (r CidrCollection[any]) MarshalJSON() ([]byte, error) {
+	type Properties CidrCollection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r CidrCollection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CidrCollection) UnmarshalJSON(b []byte) error {
-	type Properties CidrCollection
+func (r *CidrCollection[any]) UnmarshalJSON(b []byte) error {
+	type Properties CidrCollection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *CidrCollection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CidrCollection(*res.Properties)
+		*r = CidrCollection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

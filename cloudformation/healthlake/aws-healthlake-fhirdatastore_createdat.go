@@ -8,12 +8,12 @@ import (
 
 // FHIRDatastore_CreatedAt AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore.CreatedAt)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html
-type FHIRDatastore_CreatedAt struct {
+type FHIRDatastore_CreatedAt[T any] struct {
 
 	// Nanos AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-nanos
-	Nanos int `json:"Nanos"`
+	Nanos T `json:"Nanos"`
 
 	// Seconds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FHIRDatastore_CreatedAt struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FHIRDatastore_CreatedAt) AWSCloudFormationType() string {
+func (r *FHIRDatastore_CreatedAt[any]) AWSCloudFormationType() string {
 	return "AWS::HealthLake::FHIRDatastore.CreatedAt"
 }

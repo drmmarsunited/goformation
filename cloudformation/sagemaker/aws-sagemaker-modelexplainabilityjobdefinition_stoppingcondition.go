@@ -8,12 +8,12 @@ import (
 
 // ModelExplainabilityJobDefinition_StoppingCondition AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.StoppingCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html
-type ModelExplainabilityJobDefinition_StoppingCondition struct {
+type ModelExplainabilityJobDefinition_StoppingCondition[T any] struct {
 
 	// MaxRuntimeInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition-maxruntimeinseconds
-	MaxRuntimeInSeconds int `json:"MaxRuntimeInSeconds"`
+	MaxRuntimeInSeconds T `json:"MaxRuntimeInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelExplainabilityJobDefinition_StoppingCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_StoppingCondition) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_StoppingCondition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.StoppingCondition"
 }

@@ -8,7 +8,7 @@ import (
 
 // GraphQLApi_LogConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.LogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
-type GraphQLApi_LogConfig struct {
+type GraphQLApi_LogConfig[T any] struct {
 
 	// CloudWatchLogsRoleArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type GraphQLApi_LogConfig struct {
 	// ExcludeVerboseContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent
-	ExcludeVerboseContent *bool `json:"ExcludeVerboseContent,omitempty"`
+	ExcludeVerboseContent *T `json:"ExcludeVerboseContent,omitempty"`
 
 	// FieldLogLevel AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type GraphQLApi_LogConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi_LogConfig) AWSCloudFormationType() string {
+func (r *GraphQLApi_LogConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.LogConfig"
 }

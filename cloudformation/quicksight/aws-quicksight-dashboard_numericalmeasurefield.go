@@ -8,17 +8,17 @@ import (
 
 // Dashboard_NumericalMeasureField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericalMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalmeasurefield.html
-type Dashboard_NumericalMeasureField struct {
+type Dashboard_NumericalMeasureField[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalmeasurefield.html#cfn-quicksight-dashboard-numericalmeasurefield-aggregationfunction
-	AggregationFunction *Dashboard_NumericalAggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Dashboard_NumericalAggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalmeasurefield.html#cfn-quicksight-dashboard-numericalmeasurefield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_NumericalMeasureField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalmeasurefield.html#cfn-quicksight-dashboard-numericalmeasurefield-formatconfiguration
-	FormatConfiguration *Dashboard_NumberFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_NumberFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_NumericalMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericalMeasureField) AWSCloudFormationType() string {
+func (r *Dashboard_NumericalMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericalMeasureField"
 }

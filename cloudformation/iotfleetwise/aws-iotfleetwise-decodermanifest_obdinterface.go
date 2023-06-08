@@ -8,7 +8,7 @@ import (
 
 // DecoderManifest_ObdInterface AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.ObdInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html
-type DecoderManifest_ObdInterface struct {
+type DecoderManifest_ObdInterface[T any] struct {
 
 	// DtcRequestIntervalSeconds AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type DecoderManifest_ObdInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_ObdInterface) AWSCloudFormationType() string {
+func (r *DecoderManifest_ObdInterface[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.ObdInterface"
 }

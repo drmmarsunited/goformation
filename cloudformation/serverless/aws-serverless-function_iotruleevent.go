@@ -8,7 +8,7 @@ import (
 
 // Function_IoTRuleEvent AWS CloudFormation Resource (AWS::Serverless::Function.IoTRuleEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#iotrule
-type Function_IoTRuleEvent struct {
+type Function_IoTRuleEvent[T any] struct {
 
 	// AwsIotSqlVersion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Function_IoTRuleEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_IoTRuleEvent) AWSCloudFormationType() string {
+func (r *Function_IoTRuleEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.IoTRuleEvent"
 }

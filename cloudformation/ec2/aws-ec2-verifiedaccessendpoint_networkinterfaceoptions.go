@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessEndpoint_NetworkInterfaceOptions AWS CloudFormation Resource (AWS::EC2::VerifiedAccessEndpoint.NetworkInterfaceOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-networkinterfaceoptions.html
-type VerifiedAccessEndpoint_NetworkInterfaceOptions struct {
+type VerifiedAccessEndpoint_NetworkInterfaceOptions[T any] struct {
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type VerifiedAccessEndpoint_NetworkInterfaceOptions struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-networkinterfaceoptions.html#cfn-ec2-verifiedaccessendpoint-networkinterfaceoptions-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type VerifiedAccessEndpoint_NetworkInterfaceOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessEndpoint_NetworkInterfaceOptions) AWSCloudFormationType() string {
+func (r *VerifiedAccessEndpoint_NetworkInterfaceOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessEndpoint.NetworkInterfaceOptions"
 }

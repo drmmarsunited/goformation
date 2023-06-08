@@ -8,7 +8,7 @@ import (
 
 // Channel_MediaPackageOutputDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html
-type Channel_MediaPackageOutputDestinationSettings struct {
+type Channel_MediaPackageOutputDestinationSettings[T any] struct {
 
 	// ChannelId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_MediaPackageOutputDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MediaPackageOutputDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_MediaPackageOutputDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings"
 }

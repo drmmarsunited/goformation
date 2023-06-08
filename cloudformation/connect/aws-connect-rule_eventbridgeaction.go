@@ -8,7 +8,7 @@ import (
 
 // Rule_EventBridgeAction AWS CloudFormation Resource (AWS::Connect::Rule.EventBridgeAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-eventbridgeaction.html
-type Rule_EventBridgeAction struct {
+type Rule_EventBridgeAction[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Rule_EventBridgeAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_EventBridgeAction) AWSCloudFormationType() string {
+func (r *Rule_EventBridgeAction[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.EventBridgeAction"
 }

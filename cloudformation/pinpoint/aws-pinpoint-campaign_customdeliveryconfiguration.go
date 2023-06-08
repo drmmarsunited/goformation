@@ -8,7 +8,7 @@ import (
 
 // Campaign_CustomDeliveryConfiguration AWS CloudFormation Resource (AWS::Pinpoint::Campaign.CustomDeliveryConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-customdeliveryconfiguration.html
-type Campaign_CustomDeliveryConfiguration struct {
+type Campaign_CustomDeliveryConfiguration[T any] struct {
 
 	// DeliveryUri AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_CustomDeliveryConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CustomDeliveryConfiguration) AWSCloudFormationType() string {
+func (r *Campaign_CustomDeliveryConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.CustomDeliveryConfiguration"
 }

@@ -11,12 +11,12 @@ import (
 
 // ExperimentTemplate AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html
-type ExperimentTemplate struct {
+type ExperimentTemplate[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-actions
-	Actions map[string]ExperimentTemplate_ExperimentTemplateAction `json:"Actions,omitempty"`
+	Actions map[string]ExperimentTemplate_ExperimentTemplateAction[any] `json:"Actions,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type ExperimentTemplate struct {
 	// LogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-logconfiguration
-	LogConfiguration *ExperimentTemplate_ExperimentTemplateLogConfiguration `json:"LogConfiguration,omitempty"`
+	LogConfiguration *ExperimentTemplate_ExperimentTemplateLogConfiguration[any] `json:"LogConfiguration,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type ExperimentTemplate struct {
 	// StopConditions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-stopconditions
-	StopConditions []ExperimentTemplate_ExperimentTemplateStopCondition `json:"StopConditions"`
+	StopConditions []ExperimentTemplate_ExperimentTemplateStopCondition[any] `json:"StopConditions"`
 
 	// Tags AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type ExperimentTemplate struct {
 	// Targets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-targets
-	Targets map[string]ExperimentTemplate_ExperimentTemplateTarget `json:"Targets"`
+	Targets map[string]ExperimentTemplate_ExperimentTemplateTarget[any] `json:"Targets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type ExperimentTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate) AWSCloudFormationType() string {
+func (r *ExperimentTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ExperimentTemplate) MarshalJSON() ([]byte, error) {
-	type Properties ExperimentTemplate
+func (r ExperimentTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties ExperimentTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r ExperimentTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ExperimentTemplate) UnmarshalJSON(b []byte) error {
-	type Properties ExperimentTemplate
+func (r *ExperimentTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties ExperimentTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *ExperimentTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ExperimentTemplate(*res.Properties)
+		*r = ExperimentTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Pipe_MSKAccessCredentials AWS CloudFormation Resource (AWS::Pipes::Pipe.MSKAccessCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-mskaccesscredentials.html
-type Pipe_MSKAccessCredentials struct {
+type Pipe_MSKAccessCredentials[T any] struct {
 
 	// ClientCertificateTlsAuth AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_MSKAccessCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_MSKAccessCredentials) AWSCloudFormationType() string {
+func (r *Pipe_MSKAccessCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.MSKAccessCredentials"
 }

@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ConnectorOAuthRequest AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ConnectorOAuthRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectoroauthrequest.html
-type ConnectorProfile_ConnectorOAuthRequest struct {
+type ConnectorProfile_ConnectorOAuthRequest[T any] struct {
 
 	// AuthCode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConnectorProfile_ConnectorOAuthRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ConnectorOAuthRequest) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ConnectorOAuthRequest[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ConnectorOAuthRequest"
 }

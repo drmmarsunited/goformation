@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_FileSource AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.FileSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-filesource.html
-type ModelPackage_FileSource struct {
+type ModelPackage_FileSource[T any] struct {
 
 	// ContentDigest AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelPackage_FileSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_FileSource) AWSCloudFormationType() string {
+func (r *ModelPackage_FileSource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.FileSource"
 }

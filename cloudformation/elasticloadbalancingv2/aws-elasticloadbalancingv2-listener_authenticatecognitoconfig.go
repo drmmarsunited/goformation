@@ -8,7 +8,7 @@ import (
 
 // Listener_AuthenticateCognitoConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.AuthenticateCognitoConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html
-type Listener_AuthenticateCognitoConfig struct {
+type Listener_AuthenticateCognitoConfig[T any] struct {
 
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Listener_AuthenticateCognitoConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_AuthenticateCognitoConfig) AWSCloudFormationType() string {
+func (r *Listener_AuthenticateCognitoConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::Listener.AuthenticateCognitoConfig"
 }

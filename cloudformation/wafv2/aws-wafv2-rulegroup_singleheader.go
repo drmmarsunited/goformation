@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_SingleHeader AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.SingleHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-singleheader.html
-type RuleGroup_SingleHeader struct {
+type RuleGroup_SingleHeader[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RuleGroup_SingleHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_SingleHeader) AWSCloudFormationType() string {
+func (r *RuleGroup_SingleHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.SingleHeader"
 }

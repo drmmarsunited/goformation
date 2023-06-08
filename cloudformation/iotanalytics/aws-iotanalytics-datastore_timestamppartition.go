@@ -8,7 +8,7 @@ import (
 
 // Datastore_TimestampPartition AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.TimestampPartition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html
-type Datastore_TimestampPartition struct {
+type Datastore_TimestampPartition[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Datastore_TimestampPartition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_TimestampPartition) AWSCloudFormationType() string {
+func (r *Datastore_TimestampPartition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.TimestampPartition"
 }

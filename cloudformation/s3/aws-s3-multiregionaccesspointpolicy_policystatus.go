@@ -8,7 +8,7 @@ import (
 
 // MultiRegionAccessPointPolicy_PolicyStatus AWS CloudFormation Resource (AWS::S3::MultiRegionAccessPointPolicy.PolicyStatus)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspointpolicy-policystatus.html
-type MultiRegionAccessPointPolicy_PolicyStatus struct {
+type MultiRegionAccessPointPolicy_PolicyStatus[T any] struct {
 
 	// IsPublic AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MultiRegionAccessPointPolicy_PolicyStatus struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MultiRegionAccessPointPolicy_PolicyStatus) AWSCloudFormationType() string {
+func (r *MultiRegionAccessPointPolicy_PolicyStatus[any]) AWSCloudFormationType() string {
 	return "AWS::S3::MultiRegionAccessPointPolicy.PolicyStatus"
 }

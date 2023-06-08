@@ -8,7 +8,7 @@ import (
 
 // AssetModel_Metric AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.Metric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html
-type AssetModel_Metric struct {
+type AssetModel_Metric[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type AssetModel_Metric struct {
 	// Variables AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-variables
-	Variables []AssetModel_ExpressionVariable `json:"Variables"`
+	Variables []AssetModel_ExpressionVariable[any] `json:"Variables"`
 
 	// Window AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-window
-	Window *AssetModel_MetricWindow `json:"Window"`
+	Window *AssetModel_MetricWindow[any] `json:"Window"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type AssetModel_Metric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_Metric) AWSCloudFormationType() string {
+func (r *AssetModel_Metric[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.Metric"
 }

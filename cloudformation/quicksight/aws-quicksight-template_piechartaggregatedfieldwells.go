@@ -8,22 +8,22 @@ import (
 
 // Template_PieChartAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.PieChartAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-piechartaggregatedfieldwells.html
-type Template_PieChartAggregatedFieldWells struct {
+type Template_PieChartAggregatedFieldWells[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-piechartaggregatedfieldwells.html#cfn-quicksight-template-piechartaggregatedfieldwells-category
-	Category []Template_DimensionField `json:"Category,omitempty"`
+	Category []Template_DimensionField[any] `json:"Category,omitempty"`
 
 	// SmallMultiples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-piechartaggregatedfieldwells.html#cfn-quicksight-template-piechartaggregatedfieldwells-smallmultiples
-	SmallMultiples []Template_DimensionField `json:"SmallMultiples,omitempty"`
+	SmallMultiples []Template_DimensionField[any] `json:"SmallMultiples,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-piechartaggregatedfieldwells.html#cfn-quicksight-template-piechartaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_PieChartAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PieChartAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_PieChartAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PieChartAggregatedFieldWells"
 }

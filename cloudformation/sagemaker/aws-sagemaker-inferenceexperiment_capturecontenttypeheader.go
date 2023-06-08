@@ -8,7 +8,7 @@ import (
 
 // InferenceExperiment_CaptureContentTypeHeader AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.CaptureContentTypeHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-capturecontenttypeheader.html
-type InferenceExperiment_CaptureContentTypeHeader struct {
+type InferenceExperiment_CaptureContentTypeHeader[T any] struct {
 
 	// CsvContentTypes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InferenceExperiment_CaptureContentTypeHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_CaptureContentTypeHeader) AWSCloudFormationType() string {
+func (r *InferenceExperiment_CaptureContentTypeHeader[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.CaptureContentTypeHeader"
 }

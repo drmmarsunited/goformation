@@ -8,12 +8,12 @@ import (
 
 // Analysis_CustomActionSetParametersOperation AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomActionSetParametersOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionsetparametersoperation.html
-type Analysis_CustomActionSetParametersOperation struct {
+type Analysis_CustomActionSetParametersOperation[T any] struct {
 
 	// ParameterValueConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionsetparametersoperation.html#cfn-quicksight-analysis-customactionsetparametersoperation-parametervalueconfigurations
-	ParameterValueConfigurations []Analysis_SetParameterValueConfiguration `json:"ParameterValueConfigurations"`
+	ParameterValueConfigurations []Analysis_SetParameterValueConfiguration[any] `json:"ParameterValueConfigurations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_CustomActionSetParametersOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomActionSetParametersOperation) AWSCloudFormationType() string {
+func (r *Analysis_CustomActionSetParametersOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomActionSetParametersOperation"
 }

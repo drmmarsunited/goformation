@@ -8,7 +8,7 @@ import (
 
 // PackagingConfiguration_MssManifest AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.MssManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssmanifest.html
-type PackagingConfiguration_MssManifest struct {
+type PackagingConfiguration_MssManifest[T any] struct {
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type PackagingConfiguration_MssManifest struct {
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssmanifest.html#cfn-mediapackage-packagingconfiguration-mssmanifest-streamselection
-	StreamSelection *PackagingConfiguration_StreamSelection `json:"StreamSelection,omitempty"`
+	StreamSelection *PackagingConfiguration_StreamSelection[any] `json:"StreamSelection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type PackagingConfiguration_MssManifest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_MssManifest) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_MssManifest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.MssManifest"
 }

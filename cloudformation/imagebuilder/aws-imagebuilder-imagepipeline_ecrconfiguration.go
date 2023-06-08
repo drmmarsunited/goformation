@@ -8,7 +8,7 @@ import (
 
 // ImagePipeline_EcrConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ImagePipeline.EcrConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html
-type ImagePipeline_EcrConfiguration struct {
+type ImagePipeline_EcrConfiguration[T any] struct {
 
 	// ContainerTags AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ImagePipeline_EcrConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImagePipeline_EcrConfiguration) AWSCloudFormationType() string {
+func (r *ImagePipeline_EcrConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImagePipeline.EcrConfiguration"
 }

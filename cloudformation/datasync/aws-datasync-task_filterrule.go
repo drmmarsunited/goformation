@@ -8,7 +8,7 @@ import (
 
 // Task_FilterRule AWS CloudFormation Resource (AWS::DataSync::Task.FilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-filterrule.html
-type Task_FilterRule struct {
+type Task_FilterRule[T any] struct {
 
 	// FilterType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Task_FilterRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Task_FilterRule) AWSCloudFormationType() string {
+func (r *Task_FilterRule[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::Task.FilterRule"
 }

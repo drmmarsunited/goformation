@@ -8,32 +8,32 @@ import (
 
 // Template_PivotTableVisual AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html
-type Template_PivotTableVisual struct {
+type Template_PivotTableVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html#cfn-quicksight-template-pivottablevisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html#cfn-quicksight-template-pivottablevisual-chartconfiguration
-	ChartConfiguration *Template_PivotTableConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_PivotTableConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html#cfn-quicksight-template-pivottablevisual-conditionalformatting
-	ConditionalFormatting *Template_PivotTableConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Template_PivotTableConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html#cfn-quicksight-template-pivottablevisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablevisual.html#cfn-quicksight-template-pivottablevisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_PivotTableVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableVisual) AWSCloudFormationType() string {
+func (r *Template_PivotTableVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableVisual"
 }

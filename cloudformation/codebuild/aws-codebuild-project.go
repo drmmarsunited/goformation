@@ -12,32 +12,32 @@ import (
 
 // Project AWS CloudFormation Resource (AWS::CodeBuild::Project)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
-type Project struct {
+type Project[T any] struct {
 
 	// Artifacts AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
-	Artifacts *Project_Artifacts `json:"Artifacts"`
+	Artifacts *Project_Artifacts[any] `json:"Artifacts"`
 
 	// BadgeEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
-	BadgeEnabled *bool `json:"BadgeEnabled,omitempty"`
+	BadgeEnabled *T `json:"BadgeEnabled,omitempty"`
 
 	// BuildBatchConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-buildbatchconfig
-	BuildBatchConfig *Project_ProjectBuildBatchConfig `json:"BuildBatchConfig,omitempty"`
+	BuildBatchConfig *Project_ProjectBuildBatchConfig[any] `json:"BuildBatchConfig,omitempty"`
 
 	// Cache AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache
-	Cache *Project_ProjectCache `json:"Cache,omitempty"`
+	Cache *Project_ProjectCache[any] `json:"Cache,omitempty"`
 
 	// ConcurrentBuildLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-concurrentbuildlimit
-	ConcurrentBuildLimit *int `json:"ConcurrentBuildLimit,omitempty"`
+	ConcurrentBuildLimit *T `json:"ConcurrentBuildLimit,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -52,17 +52,17 @@ type Project struct {
 	// Environment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment
-	Environment *Project_Environment `json:"Environment"`
+	Environment *Project_Environment[any] `json:"Environment"`
 
 	// FileSystemLocations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-filesystemlocations
-	FileSystemLocations []Project_ProjectFileSystemLocation `json:"FileSystemLocations,omitempty"`
+	FileSystemLocations []Project_ProjectFileSystemLocation[any] `json:"FileSystemLocations,omitempty"`
 
 	// LogsConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig
-	LogsConfig *Project_LogsConfig `json:"LogsConfig,omitempty"`
+	LogsConfig *Project_LogsConfig[any] `json:"LogsConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Project struct {
 	// QueuedTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes
-	QueuedTimeoutInMinutes *int `json:"QueuedTimeoutInMinutes,omitempty"`
+	QueuedTimeoutInMinutes *T `json:"QueuedTimeoutInMinutes,omitempty"`
 
 	// ResourceAccessRole AWS CloudFormation Property
 	// Required: false
@@ -82,17 +82,17 @@ type Project struct {
 	// SecondaryArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts
-	SecondaryArtifacts []Project_Artifacts `json:"SecondaryArtifacts,omitempty"`
+	SecondaryArtifacts []Project_Artifacts[any] `json:"SecondaryArtifacts,omitempty"`
 
 	// SecondarySourceVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions
-	SecondarySourceVersions []Project_ProjectSourceVersion `json:"SecondarySourceVersions,omitempty"`
+	SecondarySourceVersions []Project_ProjectSourceVersion[any] `json:"SecondarySourceVersions,omitempty"`
 
 	// SecondarySources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources
-	SecondarySources []Project_Source `json:"SecondarySources,omitempty"`
+	SecondarySources []Project_Source[any] `json:"SecondarySources,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
@@ -102,7 +102,7 @@ type Project struct {
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source
-	Source *Project_Source `json:"Source"`
+	Source *Project_Source[any] `json:"Source"`
 
 	// SourceVersion AWS CloudFormation Property
 	// Required: false
@@ -117,12 +117,12 @@ type Project struct {
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes
-	TimeoutInMinutes *int `json:"TimeoutInMinutes,omitempty"`
+	TimeoutInMinutes *T `json:"TimeoutInMinutes,omitempty"`
 
 	// Triggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
-	Triggers *Project_ProjectTriggers `json:"Triggers,omitempty"`
+	Triggers *Project_ProjectTriggers[any] `json:"Triggers,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -132,7 +132,7 @@ type Project struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig
-	VpcConfig *Project_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *Project_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -151,14 +151,15 @@ type Project struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project) AWSCloudFormationType() string {
+func (r *Project[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Project) MarshalJSON() ([]byte, error) {
-	type Properties Project
+func (r Project[any]) MarshalJSON() ([]byte, error) {
+	type Properties Project[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -180,8 +181,9 @@ func (r Project) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Project) UnmarshalJSON(b []byte) error {
-	type Properties Project
+func (r *Project[any]) UnmarshalJSON(b []byte) error {
+	type Properties Project[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -201,7 +203,7 @@ func (r *Project) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Project(*res.Properties)
+		*r = Project[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

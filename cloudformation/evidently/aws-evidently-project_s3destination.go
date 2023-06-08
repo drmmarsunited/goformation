@@ -8,7 +8,7 @@ import (
 
 // Project_S3Destination AWS CloudFormation Resource (AWS::Evidently::Project.S3Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-s3destination.html
-type Project_S3Destination struct {
+type Project_S3Destination[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_S3Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_S3Destination) AWSCloudFormationType() string {
+func (r *Project_S3Destination[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Project.S3Destination"
 }

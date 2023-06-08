@@ -8,7 +8,7 @@ import (
 
 // CidrCollection_Location AWS CloudFormation Resource (AWS::Route53::CidrCollection.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-cidrcollection-location.html
-type CidrCollection_Location struct {
+type CidrCollection_Location[T any] struct {
 
 	// CidrList AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CidrCollection_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CidrCollection_Location) AWSCloudFormationType() string {
+func (r *CidrCollection_Location[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::CidrCollection.Location"
 }

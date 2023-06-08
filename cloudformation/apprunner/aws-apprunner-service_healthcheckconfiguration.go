@@ -8,17 +8,17 @@ import (
 
 // Service_HealthCheckConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.HealthCheckConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html
-type Service_HealthCheckConfiguration struct {
+type Service_HealthCheckConfiguration[T any] struct {
 
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-healthythreshold
-	HealthyThreshold *int `json:"HealthyThreshold,omitempty"`
+	HealthyThreshold *T `json:"HealthyThreshold,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Service_HealthCheckConfiguration struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// UnhealthyThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-unhealthythreshold
-	UnhealthyThreshold *int `json:"UnhealthyThreshold,omitempty"`
+	UnhealthyThreshold *T `json:"UnhealthyThreshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Service_HealthCheckConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_HealthCheckConfiguration) AWSCloudFormationType() string {
+func (r *Service_HealthCheckConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.HealthCheckConfiguration"
 }

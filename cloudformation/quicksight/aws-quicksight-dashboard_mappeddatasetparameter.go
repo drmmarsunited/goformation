@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MappedDataSetParameter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MappedDataSetParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-mappeddatasetparameter.html
-type Dashboard_MappedDataSetParameter struct {
+type Dashboard_MappedDataSetParameter[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_MappedDataSetParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MappedDataSetParameter) AWSCloudFormationType() string {
+func (r *Dashboard_MappedDataSetParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MappedDataSetParameter"
 }

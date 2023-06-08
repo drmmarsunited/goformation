@@ -8,7 +8,7 @@ import (
 
 // Channel_ColorSpacePassthroughSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.ColorSpacePassthroughSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-colorspacepassthroughsettings.html
-type Channel_ColorSpacePassthroughSettings struct {
+type Channel_ColorSpacePassthroughSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_ColorSpacePassthroughSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ColorSpacePassthroughSettings) AWSCloudFormationType() string {
+func (r *Channel_ColorSpacePassthroughSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ColorSpacePassthroughSettings"
 }

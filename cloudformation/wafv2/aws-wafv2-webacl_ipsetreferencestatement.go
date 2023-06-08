@@ -8,7 +8,7 @@ import (
 
 // WebACL_IPSetReferenceStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.IPSetReferenceStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html
-type WebACL_IPSetReferenceStatement struct {
+type WebACL_IPSetReferenceStatement[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type WebACL_IPSetReferenceStatement struct {
 	// IPSetForwardedIPConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html#cfn-wafv2-webacl-ipsetreferencestatement-ipsetforwardedipconfig
-	IPSetForwardedIPConfig *WebACL_IPSetForwardedIPConfiguration `json:"IPSetForwardedIPConfig,omitempty"`
+	IPSetForwardedIPConfig *WebACL_IPSetForwardedIPConfiguration[any] `json:"IPSetForwardedIPConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type WebACL_IPSetReferenceStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_IPSetReferenceStatement) AWSCloudFormationType() string {
+func (r *WebACL_IPSetReferenceStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.IPSetReferenceStatement"
 }

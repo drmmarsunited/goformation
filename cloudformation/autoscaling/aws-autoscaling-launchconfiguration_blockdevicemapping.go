@@ -8,7 +8,7 @@ import (
 
 // LaunchConfiguration_BlockDeviceMapping AWS CloudFormation Resource (AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevicemapping.html
-type LaunchConfiguration_BlockDeviceMapping struct {
+type LaunchConfiguration_BlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type LaunchConfiguration_BlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevicemapping.html#cfn-autoscaling-launchconfiguration-blockdevicemapping-ebs
-	Ebs *LaunchConfiguration_BlockDevice `json:"Ebs,omitempty"`
+	Ebs *LaunchConfiguration_BlockDevice[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevicemapping.html#cfn-autoscaling-launchconfiguration-blockdevicemapping-nodevice
-	NoDevice *bool `json:"NoDevice,omitempty"`
+	NoDevice *T `json:"NoDevice,omitempty"`
 
 	// VirtualName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type LaunchConfiguration_BlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchConfiguration_BlockDeviceMapping) AWSCloudFormationType() string {
+func (r *LaunchConfiguration_BlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping"
 }

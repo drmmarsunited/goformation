@@ -8,12 +8,12 @@ import (
 
 // Dashboard_KPIConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconditionalformatting.html
-type Dashboard_KPIConditionalFormatting struct {
+type Dashboard_KPIConditionalFormatting[T any] struct {
 
 	// ConditionalFormattingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconditionalformatting.html#cfn-quicksight-dashboard-kpiconditionalformatting-conditionalformattingoptions
-	ConditionalFormattingOptions []Dashboard_KPIConditionalFormattingOption `json:"ConditionalFormattingOptions,omitempty"`
+	ConditionalFormattingOptions []Dashboard_KPIConditionalFormattingOption[any] `json:"ConditionalFormattingOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_KPIConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_KPIConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIConditionalFormatting"
 }

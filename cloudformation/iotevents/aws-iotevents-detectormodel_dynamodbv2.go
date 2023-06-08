@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_DynamoDBv2 AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.DynamoDBv2)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html
-type DetectorModel_DynamoDBv2 struct {
+type DetectorModel_DynamoDBv2[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html#cfn-iotevents-detectormodel-dynamodbv2-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DetectorModel_DynamoDBv2 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_DynamoDBv2) AWSCloudFormationType() string {
+func (r *DetectorModel_DynamoDBv2[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.DynamoDBv2"
 }

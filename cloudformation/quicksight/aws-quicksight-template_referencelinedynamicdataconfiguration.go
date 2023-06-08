@@ -8,22 +8,22 @@ import (
 
 // Template_ReferenceLineDynamicDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLineDynamicDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedynamicdataconfiguration.html
-type Template_ReferenceLineDynamicDataConfiguration struct {
+type Template_ReferenceLineDynamicDataConfiguration[T any] struct {
 
 	// Calculation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedynamicdataconfiguration.html#cfn-quicksight-template-referencelinedynamicdataconfiguration-calculation
-	Calculation *Template_NumericalAggregationFunction `json:"Calculation"`
+	Calculation *Template_NumericalAggregationFunction[any] `json:"Calculation"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedynamicdataconfiguration.html#cfn-quicksight-template-referencelinedynamicdataconfiguration-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// MeasureAggregationFunction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedynamicdataconfiguration.html#cfn-quicksight-template-referencelinedynamicdataconfiguration-measureaggregationfunction
-	MeasureAggregationFunction *Template_AggregationFunction `json:"MeasureAggregationFunction"`
+	MeasureAggregationFunction *Template_AggregationFunction[any] `json:"MeasureAggregationFunction"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_ReferenceLineDynamicDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLineDynamicDataConfiguration) AWSCloudFormationType() string {
+func (r *Template_ReferenceLineDynamicDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLineDynamicDataConfiguration"
 }

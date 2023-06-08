@@ -8,7 +8,7 @@ import (
 
 // Dataset_EncryptionConfig AWS CloudFormation Resource (AWS::Forecast::Dataset.EncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html
-type Dataset_EncryptionConfig struct {
+type Dataset_EncryptionConfig[T any] struct {
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dataset_EncryptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_EncryptionConfig) AWSCloudFormationType() string {
+func (r *Dataset_EncryptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Forecast::Dataset.EncryptionConfig"
 }

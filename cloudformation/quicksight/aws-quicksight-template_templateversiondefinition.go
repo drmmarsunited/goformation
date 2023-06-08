@@ -8,42 +8,42 @@ import (
 
 // Template_TemplateVersionDefinition AWS CloudFormation Resource (AWS::QuickSight::Template.TemplateVersionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html
-type Template_TemplateVersionDefinition struct {
+type Template_TemplateVersionDefinition[T any] struct {
 
 	// AnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-analysisdefaults
-	AnalysisDefaults *Template_AnalysisDefaults `json:"AnalysisDefaults,omitempty"`
+	AnalysisDefaults *Template_AnalysisDefaults[any] `json:"AnalysisDefaults,omitempty"`
 
 	// CalculatedFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-calculatedfields
-	CalculatedFields []Template_CalculatedField `json:"CalculatedFields,omitempty"`
+	CalculatedFields []Template_CalculatedField[any] `json:"CalculatedFields,omitempty"`
 
 	// ColumnConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-columnconfigurations
-	ColumnConfigurations []Template_ColumnConfiguration `json:"ColumnConfigurations,omitempty"`
+	ColumnConfigurations []Template_ColumnConfiguration[any] `json:"ColumnConfigurations,omitempty"`
 
 	// DataSetConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-datasetconfigurations
-	DataSetConfigurations []Template_DataSetConfiguration `json:"DataSetConfigurations"`
+	DataSetConfigurations []Template_DataSetConfiguration[any] `json:"DataSetConfigurations"`
 
 	// FilterGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-filtergroups
-	FilterGroups []Template_FilterGroup `json:"FilterGroups,omitempty"`
+	FilterGroups []Template_FilterGroup[any] `json:"FilterGroups,omitempty"`
 
 	// ParameterDeclarations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-parameterdeclarations
-	ParameterDeclarations []Template_ParameterDeclaration `json:"ParameterDeclarations,omitempty"`
+	ParameterDeclarations []Template_ParameterDeclaration[any] `json:"ParameterDeclarations,omitempty"`
 
 	// Sheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversiondefinition.html#cfn-quicksight-template-templateversiondefinition-sheets
-	Sheets []Template_SheetDefinition `json:"Sheets,omitempty"`
+	Sheets []Template_SheetDefinition[any] `json:"Sheets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Template_TemplateVersionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TemplateVersionDefinition) AWSCloudFormationType() string {
+func (r *Template_TemplateVersionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TemplateVersionDefinition"
 }

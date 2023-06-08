@@ -8,7 +8,7 @@ import (
 
 // DataSource_ConfluenceSpaceToIndexFieldMapping AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceSpaceToIndexFieldMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html
-type DataSource_ConfluenceSpaceToIndexFieldMapping struct {
+type DataSource_ConfluenceSpaceToIndexFieldMapping[T any] struct {
 
 	// DataSourceFieldName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_ConfluenceSpaceToIndexFieldMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceSpaceToIndexFieldMapping) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceSpaceToIndexFieldMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceSpaceToIndexFieldMapping"
 }

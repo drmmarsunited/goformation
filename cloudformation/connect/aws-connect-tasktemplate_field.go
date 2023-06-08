@@ -8,7 +8,7 @@ import (
 
 // TaskTemplate_Field AWS CloudFormation Resource (AWS::Connect::TaskTemplate.Field)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-field.html
-type TaskTemplate_Field struct {
+type TaskTemplate_Field[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type TaskTemplate_Field struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-field.html#cfn-connect-tasktemplate-field-id
-	Id *TaskTemplate_FieldIdentifier `json:"Id"`
+	Id *TaskTemplate_FieldIdentifier[any] `json:"Id"`
 
 	// SingleSelectOptions AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type TaskTemplate_Field struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_Field) AWSCloudFormationType() string {
+func (r *TaskTemplate_Field[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.Field"
 }

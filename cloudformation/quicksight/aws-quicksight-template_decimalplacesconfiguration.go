@@ -8,12 +8,12 @@ import (
 
 // Template_DecimalPlacesConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DecimalPlacesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalplacesconfiguration.html
-type Template_DecimalPlacesConfiguration struct {
+type Template_DecimalPlacesConfiguration[T any] struct {
 
 	// DecimalPlaces AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalplacesconfiguration.html#cfn-quicksight-template-decimalplacesconfiguration-decimalplaces
-	DecimalPlaces float64 `json:"DecimalPlaces"`
+	DecimalPlaces T `json:"DecimalPlaces"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_DecimalPlacesConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DecimalPlacesConfiguration) AWSCloudFormationType() string {
+func (r *Template_DecimalPlacesConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DecimalPlacesConfiguration"
 }

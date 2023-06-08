@@ -8,7 +8,7 @@ import (
 
 // Endpoint_Primary AWS CloudFormation Resource (AWS::Events::Endpoint.Primary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-primary.html
-type Endpoint_Primary struct {
+type Endpoint_Primary[T any] struct {
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_Primary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_Primary) AWSCloudFormationType() string {
+func (r *Endpoint_Primary[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.Primary"
 }

@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_FleetLaunchTemplateSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html
-type SpotFleet_FleetLaunchTemplateSpecification struct {
+type SpotFleet_FleetLaunchTemplateSpecification[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type SpotFleet_FleetLaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_FleetLaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *SpotFleet_FleetLaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification"
 }

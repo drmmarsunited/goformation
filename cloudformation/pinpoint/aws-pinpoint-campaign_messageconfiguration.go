@@ -8,52 +8,52 @@ import (
 
 // Campaign_MessageConfiguration AWS CloudFormation Resource (AWS::Pinpoint::Campaign.MessageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html
-type Campaign_MessageConfiguration struct {
+type Campaign_MessageConfiguration[T any] struct {
 
 	// ADMMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-admmessage
-	ADMMessage *Campaign_Message `json:"ADMMessage,omitempty"`
+	ADMMessage *Campaign_Message[any] `json:"ADMMessage,omitempty"`
 
 	// APNSMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage
-	APNSMessage *Campaign_Message `json:"APNSMessage,omitempty"`
+	APNSMessage *Campaign_Message[any] `json:"APNSMessage,omitempty"`
 
 	// BaiduMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-baidumessage
-	BaiduMessage *Campaign_Message `json:"BaiduMessage,omitempty"`
+	BaiduMessage *Campaign_Message[any] `json:"BaiduMessage,omitempty"`
 
 	// CustomMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-custommessage
-	CustomMessage *Campaign_CampaignCustomMessage `json:"CustomMessage,omitempty"`
+	CustomMessage *Campaign_CampaignCustomMessage[any] `json:"CustomMessage,omitempty"`
 
 	// DefaultMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-defaultmessage
-	DefaultMessage *Campaign_Message `json:"DefaultMessage,omitempty"`
+	DefaultMessage *Campaign_Message[any] `json:"DefaultMessage,omitempty"`
 
 	// EmailMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-emailmessage
-	EmailMessage *Campaign_CampaignEmailMessage `json:"EmailMessage,omitempty"`
+	EmailMessage *Campaign_CampaignEmailMessage[any] `json:"EmailMessage,omitempty"`
 
 	// GCMMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-gcmmessage
-	GCMMessage *Campaign_Message `json:"GCMMessage,omitempty"`
+	GCMMessage *Campaign_Message[any] `json:"GCMMessage,omitempty"`
 
 	// InAppMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-inappmessage
-	InAppMessage *Campaign_CampaignInAppMessage `json:"InAppMessage,omitempty"`
+	InAppMessage *Campaign_CampaignInAppMessage[any] `json:"InAppMessage,omitempty"`
 
 	// SMSMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-smsmessage
-	SMSMessage *Campaign_CampaignSmsMessage `json:"SMSMessage,omitempty"`
+	SMSMessage *Campaign_CampaignSmsMessage[any] `json:"SMSMessage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Campaign_MessageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_MessageConfiguration) AWSCloudFormationType() string {
+func (r *Campaign_MessageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.MessageConfiguration"
 }

@@ -11,12 +11,12 @@ import (
 
 // UserPoolRiskConfigurationAttachment AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html
-type UserPoolRiskConfigurationAttachment struct {
+type UserPoolRiskConfigurationAttachment[T any] struct {
 
 	// AccountTakeoverRiskConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfiguration
-	AccountTakeoverRiskConfiguration *UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType `json:"AccountTakeoverRiskConfiguration,omitempty"`
+	AccountTakeoverRiskConfiguration *UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType[any] `json:"AccountTakeoverRiskConfiguration,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type UserPoolRiskConfigurationAttachment struct {
 	// CompromisedCredentialsRiskConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfiguration
-	CompromisedCredentialsRiskConfiguration *UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfigurationType `json:"CompromisedCredentialsRiskConfiguration,omitempty"`
+	CompromisedCredentialsRiskConfiguration *UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfigurationType[any] `json:"CompromisedCredentialsRiskConfiguration,omitempty"`
 
 	// RiskExceptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-riskexceptionconfiguration
-	RiskExceptionConfiguration *UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType `json:"RiskExceptionConfiguration,omitempty"`
+	RiskExceptionConfiguration *UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType[any] `json:"RiskExceptionConfiguration,omitempty"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type UserPoolRiskConfigurationAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolRiskConfigurationAttachment) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolRiskConfigurationAttachment
+func (r UserPoolRiskConfigurationAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolRiskConfigurationAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r UserPoolRiskConfigurationAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolRiskConfigurationAttachment) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolRiskConfigurationAttachment
+func (r *UserPoolRiskConfigurationAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolRiskConfigurationAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *UserPoolRiskConfigurationAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolRiskConfigurationAttachment(*res.Properties)
+		*r = UserPoolRiskConfigurationAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

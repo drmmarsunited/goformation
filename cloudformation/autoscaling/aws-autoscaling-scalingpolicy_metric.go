@@ -8,12 +8,12 @@ import (
 
 // ScalingPolicy_Metric AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.Metric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metric.html
-type ScalingPolicy_Metric struct {
+type ScalingPolicy_Metric[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metric.html#cfn-autoscaling-scalingpolicy-metric-dimensions
-	Dimensions []ScalingPolicy_MetricDimension `json:"Dimensions,omitempty"`
+	Dimensions []ScalingPolicy_MetricDimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ScalingPolicy_Metric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_Metric) AWSCloudFormationType() string {
+func (r *ScalingPolicy_Metric[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.Metric"
 }

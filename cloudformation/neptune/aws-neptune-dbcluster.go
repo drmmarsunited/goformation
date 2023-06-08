@@ -12,12 +12,12 @@ import (
 
 // DBCluster AWS CloudFormation Resource (AWS::Neptune::DBCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
-type DBCluster struct {
+type DBCluster[T any] struct {
 
 	// AssociatedRoles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-associatedroles
-	AssociatedRoles []DBCluster_DBClusterRole `json:"AssociatedRoles,omitempty"`
+	AssociatedRoles []DBCluster_DBClusterRole[any] `json:"AssociatedRoles,omitempty"`
 
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,12 @@ type DBCluster struct {
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod
-	BackupRetentionPeriod *int `json:"BackupRetentionPeriod,omitempty"`
+	BackupRetentionPeriod *T `json:"BackupRetentionPeriod,omitempty"`
+
+	// CopyTagsToSnapshot AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-copytagstosnapshot
+	CopyTagsToSnapshot *T `json:"CopyTagsToSnapshot,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
@@ -39,6 +44,11 @@ type DBCluster struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
 	DBClusterParameterGroupName *string `json:"DBClusterParameterGroupName,omitempty"`
 
+	// DBInstanceParameterGroupName AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbinstanceparametergroupname
+	DBInstanceParameterGroupName *string `json:"DBInstanceParameterGroupName,omitempty"`
+
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
@@ -47,7 +57,7 @@ type DBCluster struct {
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-deletionprotection
-	DeletionProtection *bool `json:"DeletionProtection,omitempty"`
+	DeletionProtection *T `json:"DeletionProtection,omitempty"`
 
 	// EnableCloudwatchLogsExports AWS CloudFormation Property
 	// Required: false
@@ -62,7 +72,7 @@ type DBCluster struct {
 	// IamAuthEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled
-	IamAuthEnabled *bool `json:"IamAuthEnabled,omitempty"`
+	IamAuthEnabled *T `json:"IamAuthEnabled,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -89,6 +99,11 @@ type DBCluster struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-restoretype
 	RestoreType *string `json:"RestoreType,omitempty"`
 
+	// ServerlessScalingConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-serverlessscalingconfiguration
+	ServerlessScalingConfiguration *DBCluster_ServerlessScalingConfiguration[any] `json:"ServerlessScalingConfiguration,omitempty"`
+
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
@@ -102,7 +117,7 @@ type DBCluster struct {
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted
-	StorageEncrypted *bool `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *T `json:"StorageEncrypted,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -112,7 +127,7 @@ type DBCluster struct {
 	// UseLatestRestorableTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-uselatestrestorabletime
-	UseLatestRestorableTime *bool `json:"UseLatestRestorableTime,omitempty"`
+	UseLatestRestorableTime *T `json:"UseLatestRestorableTime,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -136,14 +151,15 @@ type DBCluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster) AWSCloudFormationType() string {
+func (r *DBCluster[any]) AWSCloudFormationType() string {
 	return "AWS::Neptune::DBCluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBCluster) MarshalJSON() ([]byte, error) {
-	type Properties DBCluster
+func (r DBCluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBCluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -165,8 +181,9 @@ func (r DBCluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBCluster) UnmarshalJSON(b []byte) error {
-	type Properties DBCluster
+func (r *DBCluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBCluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -186,7 +203,7 @@ func (r *DBCluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBCluster(*res.Properties)
+		*r = DBCluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

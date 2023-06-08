@@ -8,7 +8,7 @@ import (
 
 // TopicRule_SnsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.SnsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html
-type TopicRule_SnsAction struct {
+type TopicRule_SnsAction[T any] struct {
 
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TopicRule_SnsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_SnsAction) AWSCloudFormationType() string {
+func (r *TopicRule_SnsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.SnsAction"
 }

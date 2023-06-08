@@ -11,7 +11,7 @@ import (
 
 // DataCatalogEncryptionSettings AWS CloudFormation Resource (AWS::Glue::DataCatalogEncryptionSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html
-type DataCatalogEncryptionSettings struct {
+type DataCatalogEncryptionSettings[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type DataCatalogEncryptionSettings struct {
 	// DataCatalogEncryptionSettings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings
-	DataCatalogEncryptionSettings *DataCatalogEncryptionSettings_DataCatalogEncryptionSettings `json:"DataCatalogEncryptionSettings"`
+	DataCatalogEncryptionSettings *DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[any] `json:"DataCatalogEncryptionSettings"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type DataCatalogEncryptionSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCatalogEncryptionSettings) AWSCloudFormationType() string {
+func (r *DataCatalogEncryptionSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::DataCatalogEncryptionSettings"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataCatalogEncryptionSettings) MarshalJSON() ([]byte, error) {
-	type Properties DataCatalogEncryptionSettings
+func (r DataCatalogEncryptionSettings[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataCatalogEncryptionSettings[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r DataCatalogEncryptionSettings) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataCatalogEncryptionSettings) UnmarshalJSON(b []byte) error {
-	type Properties DataCatalogEncryptionSettings
+func (r *DataCatalogEncryptionSettings[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataCatalogEncryptionSettings[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *DataCatalogEncryptionSettings) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataCatalogEncryptionSettings(*res.Properties)
+		*r = DataCatalogEncryptionSettings[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

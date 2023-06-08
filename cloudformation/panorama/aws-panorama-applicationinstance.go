@@ -12,7 +12,7 @@ import (
 
 // ApplicationInstance AWS CloudFormation Resource (AWS::Panorama::ApplicationInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html
-type ApplicationInstance struct {
+type ApplicationInstance[T any] struct {
 
 	// ApplicationInstanceIdToReplace AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type ApplicationInstance struct {
 	// ManifestOverridesPayload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestoverridespayload
-	ManifestOverridesPayload *ApplicationInstance_ManifestOverridesPayload `json:"ManifestOverridesPayload,omitempty"`
+	ManifestOverridesPayload *ApplicationInstance_ManifestOverridesPayload[any] `json:"ManifestOverridesPayload,omitempty"`
 
 	// ManifestPayload AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestpayload
-	ManifestPayload *ApplicationInstance_ManifestPayload `json:"ManifestPayload"`
+	ManifestPayload *ApplicationInstance_ManifestPayload[any] `json:"ManifestPayload"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type ApplicationInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationInstance) AWSCloudFormationType() string {
+func (r *ApplicationInstance[any]) AWSCloudFormationType() string {
 	return "AWS::Panorama::ApplicationInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationInstance) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationInstance
+func (r ApplicationInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r ApplicationInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationInstance) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationInstance
+func (r *ApplicationInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *ApplicationInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationInstance(*res.Properties)
+		*r = ApplicationInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

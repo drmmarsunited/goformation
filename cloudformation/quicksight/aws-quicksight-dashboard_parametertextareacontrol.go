@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ParameterTextAreaControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterTextAreaControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextareacontrol.html
-type Dashboard_ParameterTextAreaControl struct {
+type Dashboard_ParameterTextAreaControl[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_ParameterTextAreaControl struct {
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextareacontrol.html#cfn-quicksight-dashboard-parametertextareacontrol-displayoptions
-	DisplayOptions *Dashboard_TextAreaControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_TextAreaControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Dashboard_ParameterTextAreaControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterTextAreaControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterTextAreaControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterTextAreaControl"
 }

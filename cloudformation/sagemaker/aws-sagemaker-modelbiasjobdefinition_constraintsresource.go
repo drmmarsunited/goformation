@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_ConstraintsResource AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.ConstraintsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-constraintsresource.html
-type ModelBiasJobDefinition_ConstraintsResource struct {
+type ModelBiasJobDefinition_ConstraintsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelBiasJobDefinition_ConstraintsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_ConstraintsResource) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_ConstraintsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.ConstraintsResource"
 }

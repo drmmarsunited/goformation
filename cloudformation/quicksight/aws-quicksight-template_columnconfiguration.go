@@ -8,22 +8,22 @@ import (
 
 // Template_ColumnConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ColumnConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnconfiguration.html
-type Template_ColumnConfiguration struct {
+type Template_ColumnConfiguration[T any] struct {
 
 	// ColorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnconfiguration.html#cfn-quicksight-template-columnconfiguration-colorsconfiguration
-	ColorsConfiguration *Template_ColorsConfiguration `json:"ColorsConfiguration,omitempty"`
+	ColorsConfiguration *Template_ColorsConfiguration[any] `json:"ColorsConfiguration,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnconfiguration.html#cfn-quicksight-template-columnconfiguration-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnconfiguration.html#cfn-quicksight-template-columnconfiguration-formatconfiguration
-	FormatConfiguration *Template_FormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Template_FormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_ColumnConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColumnConfiguration) AWSCloudFormationType() string {
+func (r *Template_ColumnConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColumnConfiguration"
 }

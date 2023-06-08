@@ -8,7 +8,7 @@ import (
 
 // Table_Csv AWS CloudFormation Resource (AWS::DynamoDB::Table.Csv)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-csv.html
-type Table_Csv struct {
+type Table_Csv[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Table_Csv struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_Csv) AWSCloudFormationType() string {
+func (r *Table_Csv[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.Csv"
 }

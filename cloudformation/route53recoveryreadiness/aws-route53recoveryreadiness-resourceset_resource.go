@@ -8,7 +8,7 @@ import (
 
 // ResourceSet_Resource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.Resource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html
-type ResourceSet_Resource struct {
+type ResourceSet_Resource[T any] struct {
 
 	// ComponentId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ResourceSet_Resource struct {
 	// DnsTargetResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-dnstargetresource
-	DnsTargetResource *ResourceSet_DNSTargetResource `json:"DnsTargetResource,omitempty"`
+	DnsTargetResource *ResourceSet_DNSTargetResource[any] `json:"DnsTargetResource,omitempty"`
 
 	// ReadinessScopes AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ResourceSet_Resource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet_Resource) AWSCloudFormationType() string {
+func (r *ResourceSet_Resource[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet.Resource"
 }

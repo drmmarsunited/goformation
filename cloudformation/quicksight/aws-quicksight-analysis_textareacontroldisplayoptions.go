@@ -8,17 +8,17 @@ import (
 
 // Analysis_TextAreaControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TextAreaControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html
-type Analysis_TextAreaControlDisplayOptions struct {
+type Analysis_TextAreaControlDisplayOptions[T any] struct {
 
 	// PlaceholderOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html#cfn-quicksight-analysis-textareacontroldisplayoptions-placeholderoptions
-	PlaceholderOptions *Analysis_TextControlPlaceholderOptions `json:"PlaceholderOptions,omitempty"`
+	PlaceholderOptions *Analysis_TextControlPlaceholderOptions[any] `json:"PlaceholderOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html#cfn-quicksight-analysis-textareacontroldisplayoptions-titleoptions
-	TitleOptions *Analysis_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Analysis_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TextAreaControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TextAreaControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Analysis_TextAreaControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TextAreaControlDisplayOptions"
 }

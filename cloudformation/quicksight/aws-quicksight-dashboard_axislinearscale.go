@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AxisLinearScale AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AxisLinearScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axislinearscale.html
-type Dashboard_AxisLinearScale struct {
+type Dashboard_AxisLinearScale[T any] struct {
 
 	// StepCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axislinearscale.html#cfn-quicksight-dashboard-axislinearscale-stepcount
-	StepCount *float64 `json:"StepCount,omitempty"`
+	StepCount *T `json:"StepCount,omitempty"`
 
 	// StepSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axislinearscale.html#cfn-quicksight-dashboard-axislinearscale-stepsize
-	StepSize *float64 `json:"StepSize,omitempty"`
+	StepSize *T `json:"StepSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_AxisLinearScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AxisLinearScale) AWSCloudFormationType() string {
+func (r *Dashboard_AxisLinearScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AxisLinearScale"
 }

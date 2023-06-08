@@ -8,7 +8,7 @@ import (
 
 // Webhook_WebhookAuthConfiguration AWS CloudFormation Resource (AWS::CodePipeline::Webhook.WebhookAuthConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html
-type Webhook_WebhookAuthConfiguration struct {
+type Webhook_WebhookAuthConfiguration[T any] struct {
 
 	// AllowedIPRange AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Webhook_WebhookAuthConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Webhook_WebhookAuthConfiguration) AWSCloudFormationType() string {
+func (r *Webhook_WebhookAuthConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Webhook.WebhookAuthConfiguration"
 }

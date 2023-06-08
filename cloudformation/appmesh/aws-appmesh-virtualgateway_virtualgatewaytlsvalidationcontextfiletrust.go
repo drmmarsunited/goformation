@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_VirtualGatewayTlsValidationContextFileTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextFileTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextfiletrust.html
-type VirtualGateway_VirtualGatewayTlsValidationContextFileTrust struct {
+type VirtualGateway_VirtualGatewayTlsValidationContextFileTrust[T any] struct {
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayTlsValidationContextFileTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayTlsValidationContextFileTrust) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayTlsValidationContextFileTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextFileTrust"
 }

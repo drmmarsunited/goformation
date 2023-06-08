@@ -8,7 +8,7 @@ import (
 
 // PatchBaseline_PatchFilter AWS CloudFormation Resource (AWS::SSM::PatchBaseline.PatchFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html
-type PatchBaseline_PatchFilter struct {
+type PatchBaseline_PatchFilter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type PatchBaseline_PatchFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_PatchFilter) AWSCloudFormationType() string {
+func (r *PatchBaseline_PatchFilter[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.PatchFilter"
 }

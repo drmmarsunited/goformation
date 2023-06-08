@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_Filter AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filter.html
-type EventSourceMapping_Filter struct {
+type EventSourceMapping_Filter[T any] struct {
 
 	// Pattern AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EventSourceMapping_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_Filter) AWSCloudFormationType() string {
+func (r *EventSourceMapping_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.Filter"
 }

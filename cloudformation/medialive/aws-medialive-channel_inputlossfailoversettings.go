@@ -8,12 +8,12 @@ import (
 
 // Channel_InputLossFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.InputLossFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossfailoversettings.html
-type Channel_InputLossFailoverSettings struct {
+type Channel_InputLossFailoverSettings[T any] struct {
 
 	// InputLossThresholdMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossfailoversettings.html#cfn-medialive-channel-inputlossfailoversettings-inputlossthresholdmsec
-	InputLossThresholdMsec *int `json:"InputLossThresholdMsec,omitempty"`
+	InputLossThresholdMsec *T `json:"InputLossThresholdMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_InputLossFailoverSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputLossFailoverSettings) AWSCloudFormationType() string {
+func (r *Channel_InputLossFailoverSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputLossFailoverSettings"
 }

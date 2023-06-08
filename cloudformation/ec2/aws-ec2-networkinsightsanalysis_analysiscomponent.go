@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisComponent AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html
-type NetworkInsightsAnalysis_AnalysisComponent struct {
+type NetworkInsightsAnalysis_AnalysisComponent[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type NetworkInsightsAnalysis_AnalysisComponent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisComponent) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisComponent[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisComponent"
 }

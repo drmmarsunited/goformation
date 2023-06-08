@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EvaluateOnExit AWS CloudFormation Resource (AWS::Batch::JobDefinition.EvaluateOnExit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html
-type JobDefinition_EvaluateOnExit struct {
+type JobDefinition_EvaluateOnExit[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type JobDefinition_EvaluateOnExit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EvaluateOnExit) AWSCloudFormationType() string {
+func (r *JobDefinition_EvaluateOnExit[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EvaluateOnExit"
 }

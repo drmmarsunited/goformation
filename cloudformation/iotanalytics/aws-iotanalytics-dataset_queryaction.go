@@ -8,12 +8,12 @@ import (
 
 // Dataset_QueryAction AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.QueryAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html
-type Dataset_QueryAction struct {
+type Dataset_QueryAction[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html#cfn-iotanalytics-dataset-queryaction-filters
-	Filters []Dataset_Filter `json:"Filters,omitempty"`
+	Filters []Dataset_Filter[any] `json:"Filters,omitempty"`
 
 	// SqlQuery AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_QueryAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_QueryAction) AWSCloudFormationType() string {
+func (r *Dataset_QueryAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.QueryAction"
 }

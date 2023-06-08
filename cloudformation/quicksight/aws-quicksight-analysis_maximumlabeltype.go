@@ -8,7 +8,7 @@ import (
 
 // Analysis_MaximumLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.MaximumLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-maximumlabeltype.html
-type Analysis_MaximumLabelType struct {
+type Analysis_MaximumLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_MaximumLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_MaximumLabelType) AWSCloudFormationType() string {
+func (r *Analysis_MaximumLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.MaximumLabelType"
 }

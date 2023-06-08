@@ -8,7 +8,7 @@ import (
 
 // Schedule_Target AWS CloudFormation Resource (AWS::Scheduler::Schedule.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html
-type Schedule_Target struct {
+type Schedule_Target[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,17 +18,17 @@ type Schedule_Target struct {
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-deadletterconfig
-	DeadLetterConfig *Schedule_DeadLetterConfig `json:"DeadLetterConfig,omitempty"`
+	DeadLetterConfig *Schedule_DeadLetterConfig[any] `json:"DeadLetterConfig,omitempty"`
 
 	// EcsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-ecsparameters
-	EcsParameters *Schedule_EcsParameters `json:"EcsParameters,omitempty"`
+	EcsParameters *Schedule_EcsParameters[any] `json:"EcsParameters,omitempty"`
 
 	// EventBridgeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-eventbridgeparameters
-	EventBridgeParameters *Schedule_EventBridgeParameters `json:"EventBridgeParameters,omitempty"`
+	EventBridgeParameters *Schedule_EventBridgeParameters[any] `json:"EventBridgeParameters,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Schedule_Target struct {
 	// KinesisParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-kinesisparameters
-	KinesisParameters *Schedule_KinesisParameters `json:"KinesisParameters,omitempty"`
+	KinesisParameters *Schedule_KinesisParameters[any] `json:"KinesisParameters,omitempty"`
 
 	// RetryPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-retrypolicy
-	RetryPolicy *Schedule_RetryPolicy `json:"RetryPolicy,omitempty"`
+	RetryPolicy *Schedule_RetryPolicy[any] `json:"RetryPolicy,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -53,12 +53,12 @@ type Schedule_Target struct {
 	// SageMakerPipelineParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-sagemakerpipelineparameters
-	SageMakerPipelineParameters *Schedule_SageMakerPipelineParameters `json:"SageMakerPipelineParameters,omitempty"`
+	SageMakerPipelineParameters *Schedule_SageMakerPipelineParameters[any] `json:"SageMakerPipelineParameters,omitempty"`
 
 	// SqsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-sqsparameters
-	SqsParameters *Schedule_SqsParameters `json:"SqsParameters,omitempty"`
+	SqsParameters *Schedule_SqsParameters[any] `json:"SqsParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Schedule_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_Target) AWSCloudFormationType() string {
+func (r *Schedule_Target[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.Target"
 }

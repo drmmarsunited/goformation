@@ -8,7 +8,7 @@ import (
 
 // Theme_Font AWS CloudFormation Resource (AWS::QuickSight::Theme.Font)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-font.html
-type Theme_Font struct {
+type Theme_Font[T any] struct {
 
 	// FontFamily AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Theme_Font struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_Font) AWSCloudFormationType() string {
+func (r *Theme_Font[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.Font"
 }

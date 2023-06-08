@@ -12,7 +12,7 @@ import (
 
 // DeviceFleet AWS CloudFormation Resource (AWS::SageMaker::DeviceFleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html
-type DeviceFleet struct {
+type DeviceFleet[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type DeviceFleet struct {
 	// OutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-outputconfig
-	OutputConfig *DeviceFleet_EdgeOutputConfig `json:"OutputConfig"`
+	OutputConfig *DeviceFleet_EdgeOutputConfig[any] `json:"OutputConfig"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type DeviceFleet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeviceFleet) AWSCloudFormationType() string {
+func (r *DeviceFleet[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DeviceFleet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeviceFleet) MarshalJSON() ([]byte, error) {
-	type Properties DeviceFleet
+func (r DeviceFleet[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeviceFleet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r DeviceFleet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeviceFleet) UnmarshalJSON(b []byte) error {
-	type Properties DeviceFleet
+func (r *DeviceFleet[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeviceFleet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *DeviceFleet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeviceFleet(*res.Properties)
+		*r = DeviceFleet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

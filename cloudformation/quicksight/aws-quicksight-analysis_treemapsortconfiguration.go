@@ -8,17 +8,17 @@ import (
 
 // Analysis_TreeMapSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TreeMapSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapsortconfiguration.html
-type Analysis_TreeMapSortConfiguration struct {
+type Analysis_TreeMapSortConfiguration[T any] struct {
 
 	// TreeMapGroupItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapsortconfiguration.html#cfn-quicksight-analysis-treemapsortconfiguration-treemapgroupitemslimitconfiguration
-	TreeMapGroupItemsLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"TreeMapGroupItemsLimitConfiguration,omitempty"`
+	TreeMapGroupItemsLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"TreeMapGroupItemsLimitConfiguration,omitempty"`
 
 	// TreeMapSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapsortconfiguration.html#cfn-quicksight-analysis-treemapsortconfiguration-treemapsort
-	TreeMapSort []Analysis_FieldSortOptions `json:"TreeMapSort,omitempty"`
+	TreeMapSort []Analysis_FieldSortOptions[any] `json:"TreeMapSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TreeMapSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TreeMapSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TreeMapSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TreeMapSortConfiguration"
 }

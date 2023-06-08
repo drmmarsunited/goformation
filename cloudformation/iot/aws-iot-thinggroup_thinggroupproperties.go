@@ -8,12 +8,12 @@ import (
 
 // ThingGroup_ThingGroupProperties AWS CloudFormation Resource (AWS::IoT::ThingGroup.ThingGroupProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thinggroup-thinggroupproperties.html
-type ThingGroup_ThingGroupProperties struct {
+type ThingGroup_ThingGroupProperties[T any] struct {
 
 	// AttributePayload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thinggroup-thinggroupproperties.html#cfn-iot-thinggroup-thinggroupproperties-attributepayload
-	AttributePayload *ThingGroup_AttributePayload `json:"AttributePayload,omitempty"`
+	AttributePayload *ThingGroup_AttributePayload[any] `json:"AttributePayload,omitempty"`
 
 	// ThingGroupDescription AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ThingGroup_ThingGroupProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ThingGroup_ThingGroupProperties) AWSCloudFormationType() string {
+func (r *ThingGroup_ThingGroupProperties[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::ThingGroup.ThingGroupProperties"
 }

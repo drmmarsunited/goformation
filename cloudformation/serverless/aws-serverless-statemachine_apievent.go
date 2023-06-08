@@ -8,7 +8,7 @@ import (
 
 // StateMachine_ApiEvent AWS CloudFormation Resource (AWS::Serverless::StateMachine.ApiEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-type StateMachine_ApiEvent struct {
+type StateMachine_ApiEvent[T any] struct {
 
 	// Method AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type StateMachine_ApiEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_ApiEvent) AWSCloudFormationType() string {
+func (r *StateMachine_ApiEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.ApiEvent"
 }

@@ -8,32 +8,32 @@ import (
 
 // Dashboard_GeospatialMapVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GeospatialMapVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html
-type Dashboard_GeospatialMapVisual struct {
+type Dashboard_GeospatialMapVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-chartconfiguration
-	ChartConfiguration *Dashboard_GeospatialMapConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_GeospatialMapConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-columnhierarchies
-	ColumnHierarchies []Dashboard_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Dashboard_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_GeospatialMapVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GeospatialMapVisual) AWSCloudFormationType() string {
+func (r *Dashboard_GeospatialMapVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GeospatialMapVisual"
 }

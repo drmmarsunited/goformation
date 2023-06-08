@@ -8,22 +8,22 @@ import (
 
 // MonitoringSchedule_DatasetFormat AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.DatasetFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-datasetformat.html
-type MonitoringSchedule_DatasetFormat struct {
+type MonitoringSchedule_DatasetFormat[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-datasetformat.html#cfn-sagemaker-monitoringschedule-datasetformat-csv
-	Csv *MonitoringSchedule_Csv `json:"Csv,omitempty"`
+	Csv *MonitoringSchedule_Csv[any] `json:"Csv,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-datasetformat.html#cfn-sagemaker-monitoringschedule-datasetformat-json
-	Json *MonitoringSchedule_Json `json:"Json,omitempty"`
+	Json *MonitoringSchedule_Json[any] `json:"Json,omitempty"`
 
 	// Parquet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-datasetformat.html#cfn-sagemaker-monitoringschedule-datasetformat-parquet
-	Parquet *bool `json:"Parquet,omitempty"`
+	Parquet *T `json:"Parquet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type MonitoringSchedule_DatasetFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_DatasetFormat) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_DatasetFormat[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.DatasetFormat"
 }

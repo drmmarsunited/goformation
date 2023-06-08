@@ -8,12 +8,12 @@ import (
 
 // Listener_Forward AWS CloudFormation Resource (AWS::VpcLattice::Listener.Forward)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-forward.html
-type Listener_Forward struct {
+type Listener_Forward[T any] struct {
 
 	// TargetGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-forward.html#cfn-vpclattice-listener-forward-targetgroups
-	TargetGroups []Listener_WeightedTargetGroup `json:"TargetGroups"`
+	TargetGroups []Listener_WeightedTargetGroup[any] `json:"TargetGroups"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Listener_Forward struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_Forward) AWSCloudFormationType() string {
+func (r *Listener_Forward[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Listener.Forward"
 }

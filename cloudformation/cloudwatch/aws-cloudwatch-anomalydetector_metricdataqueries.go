@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_MetricDataQueries AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.MetricDataQueries)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataqueries.html
-type AnomalyDetector_MetricDataQueries struct {
+type AnomalyDetector_MetricDataQueries[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type AnomalyDetector_MetricDataQueries struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricDataQueries) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricDataQueries[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.MetricDataQueries"
 }

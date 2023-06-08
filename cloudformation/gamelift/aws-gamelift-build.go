@@ -11,7 +11,7 @@ import (
 
 // Build AWS CloudFormation Resource (AWS::GameLift::Build)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html
-type Build struct {
+type Build[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Build struct {
 	// StorageLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation
-	StorageLocation *Build_StorageLocation `json:"StorageLocation,omitempty"`
+	StorageLocation *Build_StorageLocation[any] `json:"StorageLocation,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Build struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Build) AWSCloudFormationType() string {
+func (r *Build[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Build"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Build) MarshalJSON() ([]byte, error) {
-	type Properties Build
+func (r Build[any]) MarshalJSON() ([]byte, error) {
+	type Properties Build[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Build) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Build) UnmarshalJSON(b []byte) error {
-	type Properties Build
+func (r *Build[any]) UnmarshalJSON(b []byte) error {
+	type Properties Build[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Build) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Build(*res.Properties)
+		*r = Build[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

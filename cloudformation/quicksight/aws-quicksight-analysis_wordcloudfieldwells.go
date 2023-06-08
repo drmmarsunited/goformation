@@ -8,12 +8,12 @@ import (
 
 // Analysis_WordCloudFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.WordCloudFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudfieldwells.html
-type Analysis_WordCloudFieldWells struct {
+type Analysis_WordCloudFieldWells[T any] struct {
 
 	// WordCloudAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudfieldwells.html#cfn-quicksight-analysis-wordcloudfieldwells-wordcloudaggregatedfieldwells
-	WordCloudAggregatedFieldWells *Analysis_WordCloudAggregatedFieldWells `json:"WordCloudAggregatedFieldWells,omitempty"`
+	WordCloudAggregatedFieldWells *Analysis_WordCloudAggregatedFieldWells[any] `json:"WordCloudAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_WordCloudFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WordCloudFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_WordCloudFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WordCloudFieldWells"
 }

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_AuthorizationConfig AWS CloudFormation Resource (AWS::Batch::JobDefinition.AuthorizationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-authorizationconfig.html
-type JobDefinition_AuthorizationConfig struct {
+type JobDefinition_AuthorizationConfig[T any] struct {
 
 	// AccessPointId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobDefinition_AuthorizationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_AuthorizationConfig) AWSCloudFormationType() string {
+func (r *JobDefinition_AuthorizationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.AuthorizationConfig"
 }

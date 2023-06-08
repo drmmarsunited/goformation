@@ -8,12 +8,12 @@ import (
 
 // VirtualRouter_VirtualRouterSpec AWS CloudFormation Resource (AWS::AppMesh::VirtualRouter.VirtualRouterSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
-type VirtualRouter_VirtualRouterSpec struct {
+type VirtualRouter_VirtualRouterSpec[T any] struct {
 
 	// Listeners AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners
-	Listeners []VirtualRouter_VirtualRouterListener `json:"Listeners"`
+	Listeners []VirtualRouter_VirtualRouterListener[any] `json:"Listeners"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualRouter_VirtualRouterSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualRouter_VirtualRouterSpec) AWSCloudFormationType() string {
+func (r *VirtualRouter_VirtualRouterSpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualRouter.VirtualRouterSpec"
 }

@@ -8,7 +8,7 @@ import (
 
 // HostedZone_VPC AWS CloudFormation Resource (AWS::Route53::HostedZone.VPC)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-vpc.html
-type HostedZone_VPC struct {
+type HostedZone_VPC[T any] struct {
 
 	// VPCId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type HostedZone_VPC struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HostedZone_VPC) AWSCloudFormationType() string {
+func (r *HostedZone_VPC[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HostedZone.VPC"
 }

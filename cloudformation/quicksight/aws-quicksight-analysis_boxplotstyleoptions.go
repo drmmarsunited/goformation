@@ -8,7 +8,7 @@ import (
 
 // Analysis_BoxPlotStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.BoxPlotStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotstyleoptions.html
-type Analysis_BoxPlotStyleOptions struct {
+type Analysis_BoxPlotStyleOptions[T any] struct {
 
 	// FillStyle AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_BoxPlotStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_BoxPlotStyleOptions) AWSCloudFormationType() string {
+func (r *Analysis_BoxPlotStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.BoxPlotStyleOptions"
 }

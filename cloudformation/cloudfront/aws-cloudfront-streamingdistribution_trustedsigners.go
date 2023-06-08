@@ -8,7 +8,7 @@ import (
 
 // StreamingDistribution_TrustedSigners AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.TrustedSigners)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
-type StreamingDistribution_TrustedSigners struct {
+type StreamingDistribution_TrustedSigners[T any] struct {
 
 	// AwsAccountNumbers AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type StreamingDistribution_TrustedSigners struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StreamingDistribution_TrustedSigners struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingDistribution_TrustedSigners) AWSCloudFormationType() string {
+func (r *StreamingDistribution_TrustedSigners[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.TrustedSigners"
 }

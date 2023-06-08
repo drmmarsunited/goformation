@@ -8,12 +8,12 @@ import (
 
 // Analysis_ConditionalFormattingGradientColor AWS CloudFormation Resource (AWS::QuickSight::Analysis.ConditionalFormattingGradientColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattinggradientcolor.html
-type Analysis_ConditionalFormattingGradientColor struct {
+type Analysis_ConditionalFormattingGradientColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattinggradientcolor.html#cfn-quicksight-analysis-conditionalformattinggradientcolor-color
-	Color *Analysis_GradientColor `json:"Color"`
+	Color *Analysis_GradientColor[any] `json:"Color"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_ConditionalFormattingGradientColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ConditionalFormattingGradientColor) AWSCloudFormationType() string {
+func (r *Analysis_ConditionalFormattingGradientColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ConditionalFormattingGradientColor"
 }

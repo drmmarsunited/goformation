@@ -8,7 +8,7 @@ import (
 
 // InferenceScheduler_S3InputConfiguration AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler.S3InputConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html
-type InferenceScheduler_S3InputConfiguration struct {
+type InferenceScheduler_S3InputConfiguration[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InferenceScheduler_S3InputConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceScheduler_S3InputConfiguration) AWSCloudFormationType() string {
+func (r *InferenceScheduler_S3InputConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutEquipment::InferenceScheduler.S3InputConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // Config_SpectrumConfig AWS CloudFormation Resource (AWS::GroundStation::Config.SpectrumConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html
-type Config_SpectrumConfig struct {
+type Config_SpectrumConfig[T any] struct {
 
 	// Bandwidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-bandwidth
-	Bandwidth *Config_FrequencyBandwidth `json:"Bandwidth,omitempty"`
+	Bandwidth *Config_FrequencyBandwidth[any] `json:"Bandwidth,omitempty"`
 
 	// CenterFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-centerfrequency
-	CenterFrequency *Config_Frequency `json:"CenterFrequency,omitempty"`
+	CenterFrequency *Config_Frequency[any] `json:"CenterFrequency,omitempty"`
 
 	// Polarization AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Config_SpectrumConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_SpectrumConfig) AWSCloudFormationType() string {
+func (r *Config_SpectrumConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.SpectrumConfig"
 }

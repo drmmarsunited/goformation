@@ -11,12 +11,12 @@ import (
 
 // ReceiptFilter AWS CloudFormation Resource (AWS::SES::ReceiptFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
-type ReceiptFilter struct {
+type ReceiptFilter[T any] struct {
 
 	// Filter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
-	Filter *ReceiptFilter_Filter `json:"Filter"`
+	Filter *ReceiptFilter_Filter[any] `json:"Filter"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type ReceiptFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptFilter) AWSCloudFormationType() string {
+func (r *ReceiptFilter[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptFilter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReceiptFilter) MarshalJSON() ([]byte, error) {
-	type Properties ReceiptFilter
+func (r ReceiptFilter[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReceiptFilter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ReceiptFilter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReceiptFilter) UnmarshalJSON(b []byte) error {
-	type Properties ReceiptFilter
+func (r *ReceiptFilter[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReceiptFilter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ReceiptFilter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReceiptFilter(*res.Properties)
+		*r = ReceiptFilter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Analysis_ResourcePermission AWS CloudFormation Resource (AWS::QuickSight::Analysis.ResourcePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-resourcepermission.html
-type Analysis_ResourcePermission struct {
+type Analysis_ResourcePermission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_ResourcePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ResourcePermission) AWSCloudFormationType() string {
+func (r *Analysis_ResourcePermission[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ResourcePermission"
 }

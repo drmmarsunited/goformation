@@ -8,7 +8,7 @@ import (
 
 // Budget_Subscriber AWS CloudFormation Resource (AWS::Budgets::Budget.Subscriber)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html
-type Budget_Subscriber struct {
+type Budget_Subscriber[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Budget_Subscriber struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_Subscriber) AWSCloudFormationType() string {
+func (r *Budget_Subscriber[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.Subscriber"
 }

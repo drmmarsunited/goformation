@@ -8,7 +8,7 @@ import (
 
 // Stack_Source AWS CloudFormation Resource (AWS::OpsWorks::Stack.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html
-type Stack_Source struct {
+type Stack_Source[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Stack_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_Source) AWSCloudFormationType() string {
+func (r *Stack_Source[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.Source"
 }

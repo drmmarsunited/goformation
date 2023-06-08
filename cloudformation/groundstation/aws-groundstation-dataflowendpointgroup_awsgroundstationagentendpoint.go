@@ -8,7 +8,7 @@ import (
 
 // DataflowEndpointGroup_AwsGroundStationAgentEndpoint AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.AwsGroundStationAgentEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html
-type DataflowEndpointGroup_AwsGroundStationAgentEndpoint struct {
+type DataflowEndpointGroup_AwsGroundStationAgentEndpoint[T any] struct {
 
 	// AgentStatus AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type DataflowEndpointGroup_AwsGroundStationAgentEndpoint struct {
 	// EgressAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-egressaddress
-	EgressAddress *DataflowEndpointGroup_ConnectionDetails `json:"EgressAddress,omitempty"`
+	EgressAddress *DataflowEndpointGroup_ConnectionDetails[any] `json:"EgressAddress,omitempty"`
 
 	// IngressAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-ingressaddress
-	IngressAddress *DataflowEndpointGroup_RangedConnectionDetails `json:"IngressAddress,omitempty"`
+	IngressAddress *DataflowEndpointGroup_RangedConnectionDetails[any] `json:"IngressAddress,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type DataflowEndpointGroup_AwsGroundStationAgentEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_AwsGroundStationAgentEndpoint) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_AwsGroundStationAgentEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.AwsGroundStationAgentEndpoint"
 }

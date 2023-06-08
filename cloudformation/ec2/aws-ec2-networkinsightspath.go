@@ -12,7 +12,7 @@ import (
 
 // NetworkInsightsPath AWS CloudFormation Resource (AWS::EC2::NetworkInsightsPath)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html
-type NetworkInsightsPath struct {
+type NetworkInsightsPath[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
@@ -27,17 +27,17 @@ type NetworkInsightsPath struct {
 	// DestinationPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationport
-	DestinationPort *int `json:"DestinationPort,omitempty"`
+	DestinationPort *T `json:"DestinationPort,omitempty"`
 
 	// FilterAtDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-filteratdestination
-	FilterAtDestination *NetworkInsightsPath_PathFilter `json:"FilterAtDestination,omitempty"`
+	FilterAtDestination *NetworkInsightsPath_PathFilter[any] `json:"FilterAtDestination,omitempty"`
 
 	// FilterAtSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-filteratsource
-	FilterAtSource *NetworkInsightsPath_PathFilter `json:"FilterAtSource,omitempty"`
+	FilterAtSource *NetworkInsightsPath_PathFilter[any] `json:"FilterAtSource,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type NetworkInsightsPath struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsPath) AWSCloudFormationType() string {
+func (r *NetworkInsightsPath[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsPath"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkInsightsPath) MarshalJSON() ([]byte, error) {
-	type Properties NetworkInsightsPath
+func (r NetworkInsightsPath[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkInsightsPath[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r NetworkInsightsPath) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkInsightsPath) UnmarshalJSON(b []byte) error {
-	type Properties NetworkInsightsPath
+func (r *NetworkInsightsPath[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkInsightsPath[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *NetworkInsightsPath) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkInsightsPath(*res.Properties)
+		*r = NetworkInsightsPath[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

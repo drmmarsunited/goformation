@@ -8,7 +8,7 @@ import (
 
 // AccessPolicy_Project AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.Project)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-project.html
-type AccessPolicy_Project struct {
+type AccessPolicy_Project[T any] struct {
 
 	// id AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AccessPolicy_Project struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_Project) AWSCloudFormationType() string {
+func (r *AccessPolicy_Project[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.Project"
 }

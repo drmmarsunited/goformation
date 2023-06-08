@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SubtotalOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SubtotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html
-type Dashboard_SubtotalOptions struct {
+type Dashboard_SubtotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Dashboard_SubtotalOptions struct {
 	// FieldLevelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-fieldleveloptions
-	FieldLevelOptions []Dashboard_PivotTableFieldSubtotalOptions `json:"FieldLevelOptions,omitempty"`
+	FieldLevelOptions []Dashboard_PivotTableFieldSubtotalOptions[any] `json:"FieldLevelOptions,omitempty"`
 
 	// MetricHeaderCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-metricheadercellstyle
-	MetricHeaderCellStyle *Dashboard_TableCellStyle `json:"MetricHeaderCellStyle,omitempty"`
+	MetricHeaderCellStyle *Dashboard_TableCellStyle[any] `json:"MetricHeaderCellStyle,omitempty"`
 
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-totalcellstyle
-	TotalCellStyle *Dashboard_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Dashboard_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Dashboard_SubtotalOptions struct {
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-valuecellstyle
-	ValueCellStyle *Dashboard_TableCellStyle `json:"ValueCellStyle,omitempty"`
+	ValueCellStyle *Dashboard_TableCellStyle[any] `json:"ValueCellStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_SubtotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SubtotalOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SubtotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SubtotalOptions"
 }

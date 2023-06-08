@@ -8,7 +8,7 @@ import (
 
 // WebACL_LabelMatchStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.LabelMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-labelmatchstatement.html
-type WebACL_LabelMatchStatement struct {
+type WebACL_LabelMatchStatement[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_LabelMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_LabelMatchStatement) AWSCloudFormationType() string {
+func (r *WebACL_LabelMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.LabelMatchStatement"
 }

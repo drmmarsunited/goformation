@@ -12,7 +12,7 @@ import (
 
 // Schedule AWS CloudFormation Resource (AWS::DataBrew::Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html
-type Schedule struct {
+type Schedule[T any] struct {
 
 	// CronExpression AWS CloudFormation Property
 	// Required: true
@@ -51,14 +51,15 @@ type Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule) AWSCloudFormationType() string {
+func (r *Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Schedule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Schedule) MarshalJSON() ([]byte, error) {
-	type Properties Schedule
+func (r Schedule[any]) MarshalJSON() ([]byte, error) {
+	type Properties Schedule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Schedule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Schedule) UnmarshalJSON(b []byte) error {
-	type Properties Schedule
+func (r *Schedule[any]) UnmarshalJSON(b []byte) error {
+	type Properties Schedule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Schedule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Schedule(*res.Properties)
+		*r = Schedule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

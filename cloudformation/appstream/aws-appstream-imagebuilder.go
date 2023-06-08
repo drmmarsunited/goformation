@@ -12,12 +12,12 @@ import (
 
 // ImageBuilder AWS CloudFormation Resource (AWS::AppStream::ImageBuilder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html
-type ImageBuilder struct {
+type ImageBuilder[T any] struct {
 
 	// AccessEndpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints
-	AccessEndpoints []ImageBuilder_AccessEndpoint `json:"AccessEndpoints,omitempty"`
+	AccessEndpoints []ImageBuilder_AccessEndpoint[any] `json:"AccessEndpoints,omitempty"`
 
 	// AppstreamAgentVersion AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type ImageBuilder struct {
 	// DomainJoinInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-domainjoininfo
-	DomainJoinInfo *ImageBuilder_DomainJoinInfo `json:"DomainJoinInfo,omitempty"`
+	DomainJoinInfo *ImageBuilder_DomainJoinInfo[any] `json:"DomainJoinInfo,omitempty"`
 
 	// EnableDefaultInternetAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess
-	EnableDefaultInternetAccess *bool `json:"EnableDefaultInternetAccess,omitempty"`
+	EnableDefaultInternetAccess *T `json:"EnableDefaultInternetAccess,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type ImageBuilder struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-vpcconfig
-	VpcConfig *ImageBuilder_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *ImageBuilder_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -96,14 +96,15 @@ type ImageBuilder struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageBuilder) AWSCloudFormationType() string {
+func (r *ImageBuilder[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::ImageBuilder"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ImageBuilder) MarshalJSON() ([]byte, error) {
-	type Properties ImageBuilder
+func (r ImageBuilder[any]) MarshalJSON() ([]byte, error) {
+	type Properties ImageBuilder[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r ImageBuilder) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ImageBuilder) UnmarshalJSON(b []byte) error {
-	type Properties ImageBuilder
+func (r *ImageBuilder[any]) UnmarshalJSON(b []byte) error {
+	type Properties ImageBuilder[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *ImageBuilder) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ImageBuilder(*res.Properties)
+		*r = ImageBuilder[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

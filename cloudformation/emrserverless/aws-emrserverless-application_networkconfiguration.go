@@ -8,7 +8,7 @@ import (
 
 // Application_NetworkConfiguration AWS CloudFormation Resource (AWS::EMRServerless::Application.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-networkconfiguration.html
-type Application_NetworkConfiguration struct {
+type Application_NetworkConfiguration[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Application_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.NetworkConfiguration"
 }

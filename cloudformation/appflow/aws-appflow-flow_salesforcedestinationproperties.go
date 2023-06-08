@@ -8,7 +8,7 @@ import (
 
 // Flow_SalesforceDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SalesforceDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html
-type Flow_SalesforceDestinationProperties struct {
+type Flow_SalesforceDestinationProperties[T any] struct {
 
 	// DataTransferApi AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Flow_SalesforceDestinationProperties struct {
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Flow_SalesforceDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SalesforceDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_SalesforceDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SalesforceDestinationProperties"
 }

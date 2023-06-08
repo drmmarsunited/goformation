@@ -8,7 +8,7 @@ import (
 
 // Analysis_FreeFormLayoutElementBorderStyle AWS CloudFormation Resource (AWS::QuickSight::Analysis.FreeFormLayoutElementBorderStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelementborderstyle.html
-type Analysis_FreeFormLayoutElementBorderStyle struct {
+type Analysis_FreeFormLayoutElementBorderStyle[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_FreeFormLayoutElementBorderStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FreeFormLayoutElementBorderStyle) AWSCloudFormationType() string {
+func (r *Analysis_FreeFormLayoutElementBorderStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FreeFormLayoutElementBorderStyle"
 }

@@ -12,7 +12,7 @@ import (
 
 // DataIntegration AWS CloudFormation Resource (AWS::AppIntegrations::DataIntegration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html
-type DataIntegration struct {
+type DataIntegration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type DataIntegration struct {
 	// FileConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-fileconfiguration
-	FileConfiguration *DataIntegration_FileConfiguration `json:"FileConfiguration,omitempty"`
+	FileConfiguration *DataIntegration_FileConfiguration[any] `json:"FileConfiguration,omitempty"`
 
 	// KmsKey AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type DataIntegration struct {
 	// ScheduleConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-scheduleconfig
-	ScheduleConfig *DataIntegration_ScheduleConfig `json:"ScheduleConfig"`
+	ScheduleConfig *DataIntegration_ScheduleConfig[any] `json:"ScheduleConfig"`
 
 	// SourceURI AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type DataIntegration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataIntegration) AWSCloudFormationType() string {
+func (r *DataIntegration[any]) AWSCloudFormationType() string {
 	return "AWS::AppIntegrations::DataIntegration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataIntegration) MarshalJSON() ([]byte, error) {
-	type Properties DataIntegration
+func (r DataIntegration[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataIntegration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r DataIntegration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataIntegration) UnmarshalJSON(b []byte) error {
-	type Properties DataIntegration
+func (r *DataIntegration[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataIntegration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *DataIntegration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataIntegration(*res.Properties)
+		*r = DataIntegration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

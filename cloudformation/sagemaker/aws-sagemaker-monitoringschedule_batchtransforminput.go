@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_BatchTransformInput AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.BatchTransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-batchtransforminput.html
-type MonitoringSchedule_BatchTransformInput struct {
+type MonitoringSchedule_BatchTransformInput[T any] struct {
 
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type MonitoringSchedule_BatchTransformInput struct {
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-batchtransforminput.html#cfn-sagemaker-monitoringschedule-batchtransforminput-datasetformat
-	DatasetFormat *MonitoringSchedule_DatasetFormat `json:"DatasetFormat"`
+	DatasetFormat *MonitoringSchedule_DatasetFormat[any] `json:"DatasetFormat"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type MonitoringSchedule_BatchTransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_BatchTransformInput) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_BatchTransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.BatchTransformInput"
 }

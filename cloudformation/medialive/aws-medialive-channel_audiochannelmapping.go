@@ -8,17 +8,17 @@ import (
 
 // Channel_AudioChannelMapping AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioChannelMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html
-type Channel_AudioChannelMapping struct {
+type Channel_AudioChannelMapping[T any] struct {
 
 	// InputChannelLevels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html#cfn-medialive-channel-audiochannelmapping-inputchannellevels
-	InputChannelLevels []Channel_InputChannelLevel `json:"InputChannelLevels,omitempty"`
+	InputChannelLevels []Channel_InputChannelLevel[any] `json:"InputChannelLevels,omitempty"`
 
 	// OutputChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html#cfn-medialive-channel-audiochannelmapping-outputchannel
-	OutputChannel *int `json:"OutputChannel,omitempty"`
+	OutputChannel *T `json:"OutputChannel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_AudioChannelMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioChannelMapping) AWSCloudFormationType() string {
+func (r *Channel_AudioChannelMapping[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioChannelMapping"
 }

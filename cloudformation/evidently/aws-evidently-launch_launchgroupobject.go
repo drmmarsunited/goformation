@@ -8,7 +8,7 @@ import (
 
 // Launch_LaunchGroupObject AWS CloudFormation Resource (AWS::Evidently::Launch.LaunchGroupObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-launchgroupobject.html
-type Launch_LaunchGroupObject struct {
+type Launch_LaunchGroupObject[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Launch_LaunchGroupObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_LaunchGroupObject) AWSCloudFormationType() string {
+func (r *Launch_LaunchGroupObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.LaunchGroupObject"
 }

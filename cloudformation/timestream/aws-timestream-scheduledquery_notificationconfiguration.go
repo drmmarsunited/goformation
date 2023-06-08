@@ -8,12 +8,12 @@ import (
 
 // ScheduledQuery_NotificationConfiguration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.NotificationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html
-type ScheduledQuery_NotificationConfiguration struct {
+type ScheduledQuery_NotificationConfiguration[T any] struct {
 
 	// SnsConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html#cfn-timestream-scheduledquery-notificationconfiguration-snsconfiguration
-	SnsConfiguration *ScheduledQuery_SnsConfiguration `json:"SnsConfiguration"`
+	SnsConfiguration *ScheduledQuery_SnsConfiguration[any] `json:"SnsConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ScheduledQuery_NotificationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_NotificationConfiguration) AWSCloudFormationType() string {
+func (r *ScheduledQuery_NotificationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
 }

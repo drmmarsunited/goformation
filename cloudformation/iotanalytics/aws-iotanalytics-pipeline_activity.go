@@ -8,57 +8,57 @@ import (
 
 // Pipeline_Activity AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Activity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html
-type Pipeline_Activity struct {
+type Pipeline_Activity[T any] struct {
 
 	// AddAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-addattributes
-	AddAttributes *Pipeline_AddAttributes `json:"AddAttributes,omitempty"`
+	AddAttributes *Pipeline_AddAttributes[any] `json:"AddAttributes,omitempty"`
 
 	// Channel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-channel
-	Channel *Pipeline_Channel `json:"Channel,omitempty"`
+	Channel *Pipeline_Channel[any] `json:"Channel,omitempty"`
 
 	// Datastore AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-datastore
-	Datastore *Pipeline_Datastore `json:"Datastore,omitempty"`
+	Datastore *Pipeline_Datastore[any] `json:"Datastore,omitempty"`
 
 	// DeviceRegistryEnrich AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceregistryenrich
-	DeviceRegistryEnrich *Pipeline_DeviceRegistryEnrich `json:"DeviceRegistryEnrich,omitempty"`
+	DeviceRegistryEnrich *Pipeline_DeviceRegistryEnrich[any] `json:"DeviceRegistryEnrich,omitempty"`
 
 	// DeviceShadowEnrich AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceshadowenrich
-	DeviceShadowEnrich *Pipeline_DeviceShadowEnrich `json:"DeviceShadowEnrich,omitempty"`
+	DeviceShadowEnrich *Pipeline_DeviceShadowEnrich[any] `json:"DeviceShadowEnrich,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-filter
-	Filter *Pipeline_Filter `json:"Filter,omitempty"`
+	Filter *Pipeline_Filter[any] `json:"Filter,omitempty"`
 
 	// Lambda AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-lambda
-	Lambda *Pipeline_Lambda `json:"Lambda,omitempty"`
+	Lambda *Pipeline_Lambda[any] `json:"Lambda,omitempty"`
 
 	// Math AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-math
-	Math *Pipeline_Math `json:"Math,omitempty"`
+	Math *Pipeline_Math[any] `json:"Math,omitempty"`
 
 	// RemoveAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-removeattributes
-	RemoveAttributes *Pipeline_RemoveAttributes `json:"RemoveAttributes,omitempty"`
+	RemoveAttributes *Pipeline_RemoveAttributes[any] `json:"RemoveAttributes,omitempty"`
 
 	// SelectAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-selectattributes
-	SelectAttributes *Pipeline_SelectAttributes `json:"SelectAttributes,omitempty"`
+	SelectAttributes *Pipeline_SelectAttributes[any] `json:"SelectAttributes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Pipeline_Activity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Activity) AWSCloudFormationType() string {
+func (r *Pipeline_Activity[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Activity"
 }

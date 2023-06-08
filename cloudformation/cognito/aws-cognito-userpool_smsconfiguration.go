@@ -8,7 +8,7 @@ import (
 
 // UserPool_SmsConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPool.SmsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html
-type UserPool_SmsConfiguration struct {
+type UserPool_SmsConfiguration[T any] struct {
 
 	// ExternalId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserPool_SmsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_SmsConfiguration) AWSCloudFormationType() string {
+func (r *UserPool_SmsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.SmsConfiguration"
 }

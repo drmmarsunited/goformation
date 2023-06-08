@@ -8,12 +8,12 @@ import (
 
 // ModelExplainabilityJobDefinition_Csv AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.Csv)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-csv.html
-type ModelExplainabilityJobDefinition_Csv struct {
+type ModelExplainabilityJobDefinition_Csv[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-csv.html#cfn-sagemaker-modelexplainabilityjobdefinition-csv-header
-	Header *bool `json:"Header,omitempty"`
+	Header *T `json:"Header,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelExplainabilityJobDefinition_Csv struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_Csv) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_Csv[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.Csv"
 }

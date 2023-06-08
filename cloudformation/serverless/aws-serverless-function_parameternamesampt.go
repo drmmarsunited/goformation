@@ -8,7 +8,7 @@ import (
 
 // Function_ParameterNameSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.ParameterNameSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_ParameterNameSAMPT struct {
+type Function_ParameterNameSAMPT[T any] struct {
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_ParameterNameSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_ParameterNameSAMPT) AWSCloudFormationType() string {
+func (r *Function_ParameterNameSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.ParameterNameSAMPT"
 }

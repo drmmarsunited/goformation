@@ -8,7 +8,7 @@ import (
 
 // Function_FunctionConfig AWS CloudFormation Resource (AWS::CloudFront::Function.FunctionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html
-type Function_FunctionConfig struct {
+type Function_FunctionConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_FunctionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_FunctionConfig) AWSCloudFormationType() string {
+func (r *Function_FunctionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Function.FunctionConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // ImageBuilder_VpcConfig AWS CloudFormation Resource (AWS::AppStream::ImageBuilder.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html
-type ImageBuilder_VpcConfig struct {
+type ImageBuilder_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ImageBuilder_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageBuilder_VpcConfig) AWSCloudFormationType() string {
+func (r *ImageBuilder_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::ImageBuilder.VpcConfig"
 }

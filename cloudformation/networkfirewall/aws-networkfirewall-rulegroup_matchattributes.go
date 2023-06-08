@@ -8,37 +8,37 @@ import (
 
 // RuleGroup_MatchAttributes AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.MatchAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html
-type RuleGroup_MatchAttributes struct {
+type RuleGroup_MatchAttributes[T any] struct {
 
 	// DestinationPorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-destinationports
-	DestinationPorts []RuleGroup_PortRange `json:"DestinationPorts,omitempty"`
+	DestinationPorts []RuleGroup_PortRange[any] `json:"DestinationPorts,omitempty"`
 
 	// Destinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-destinations
-	Destinations []RuleGroup_Address `json:"Destinations,omitempty"`
+	Destinations []RuleGroup_Address[any] `json:"Destinations,omitempty"`
 
 	// Protocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-protocols
-	Protocols []int `json:"Protocols,omitempty"`
+	Protocols []T `json:"Protocols,omitempty"`
 
 	// SourcePorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-sourceports
-	SourcePorts []RuleGroup_PortRange `json:"SourcePorts,omitempty"`
+	SourcePorts []RuleGroup_PortRange[any] `json:"SourcePorts,omitempty"`
 
 	// Sources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-sources
-	Sources []RuleGroup_Address `json:"Sources,omitempty"`
+	Sources []RuleGroup_Address[any] `json:"Sources,omitempty"`
 
 	// TCPFlags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-tcpflags
-	TCPFlags []RuleGroup_TCPFlagField `json:"TCPFlags,omitempty"`
+	TCPFlags []RuleGroup_TCPFlagField[any] `json:"TCPFlags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type RuleGroup_MatchAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_MatchAttributes) AWSCloudFormationType() string {
+func (r *RuleGroup_MatchAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.MatchAttributes"
 }

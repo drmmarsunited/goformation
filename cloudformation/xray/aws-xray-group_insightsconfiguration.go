@@ -8,17 +8,17 @@ import (
 
 // Group_InsightsConfiguration AWS CloudFormation Resource (AWS::XRay::Group.InsightsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html
-type Group_InsightsConfiguration struct {
+type Group_InsightsConfiguration[T any] struct {
 
 	// InsightsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-insightsenabled
-	InsightsEnabled *bool `json:"InsightsEnabled,omitempty"`
+	InsightsEnabled *T `json:"InsightsEnabled,omitempty"`
 
 	// NotificationsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-notificationsenabled
-	NotificationsEnabled *bool `json:"NotificationsEnabled,omitempty"`
+	NotificationsEnabled *T `json:"NotificationsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Group_InsightsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_InsightsConfiguration) AWSCloudFormationType() string {
+func (r *Group_InsightsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::XRay::Group.InsightsConfiguration"
 }

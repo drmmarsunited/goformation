@@ -8,7 +8,7 @@ import (
 
 // Dataset_DataSource AWS CloudFormation Resource (AWS::Personalize::Dataset.DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasource.html
-type Dataset_DataSource struct {
+type Dataset_DataSource[T any] struct {
 
 	// DataLocation AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dataset_DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DataSource) AWSCloudFormationType() string {
+func (r *Dataset_DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Dataset.DataSource"
 }

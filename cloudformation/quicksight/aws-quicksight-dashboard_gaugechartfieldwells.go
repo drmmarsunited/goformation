@@ -8,17 +8,17 @@ import (
 
 // Dashboard_GaugeChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GaugeChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartfieldwells.html
-type Dashboard_GaugeChartFieldWells struct {
+type Dashboard_GaugeChartFieldWells[T any] struct {
 
 	// TargetValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartfieldwells.html#cfn-quicksight-dashboard-gaugechartfieldwells-targetvalues
-	TargetValues []Dashboard_MeasureField `json:"TargetValues,omitempty"`
+	TargetValues []Dashboard_MeasureField[any] `json:"TargetValues,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartfieldwells.html#cfn-quicksight-dashboard-gaugechartfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_GaugeChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GaugeChartFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_GaugeChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GaugeChartFieldWells"
 }

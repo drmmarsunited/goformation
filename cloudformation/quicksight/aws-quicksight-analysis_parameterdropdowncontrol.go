@@ -8,17 +8,17 @@ import (
 
 // Analysis_ParameterDropDownControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.ParameterDropDownControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html
-type Analysis_ParameterDropDownControl struct {
+type Analysis_ParameterDropDownControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html#cfn-quicksight-analysis-parameterdropdowncontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Analysis_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Analysis_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html#cfn-quicksight-analysis-parameterdropdowncontrol-displayoptions
-	DisplayOptions *Analysis_DropDownControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_DropDownControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_ParameterDropDownControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html#cfn-quicksight-analysis-parameterdropdowncontrol-selectablevalues
-	SelectableValues *Analysis_ParameterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Analysis_ParameterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Analysis_ParameterDropDownControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ParameterDropDownControl) AWSCloudFormationType() string {
+func (r *Analysis_ParameterDropDownControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ParameterDropDownControl"
 }

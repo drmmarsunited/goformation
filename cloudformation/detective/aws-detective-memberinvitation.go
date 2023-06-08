@@ -11,12 +11,12 @@ import (
 
 // MemberInvitation AWS CloudFormation Resource (AWS::Detective::MemberInvitation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html
-type MemberInvitation struct {
+type MemberInvitation[T any] struct {
 
 	// DisableEmailNotification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-disableemailnotification
-	DisableEmailNotification *bool `json:"DisableEmailNotification,omitempty"`
+	DisableEmailNotification *T `json:"DisableEmailNotification,omitempty"`
 
 	// GraphArn AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type MemberInvitation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MemberInvitation) AWSCloudFormationType() string {
+func (r *MemberInvitation[any]) AWSCloudFormationType() string {
 	return "AWS::Detective::MemberInvitation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MemberInvitation) MarshalJSON() ([]byte, error) {
-	type Properties MemberInvitation
+func (r MemberInvitation[any]) MarshalJSON() ([]byte, error) {
+	type Properties MemberInvitation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r MemberInvitation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MemberInvitation) UnmarshalJSON(b []byte) error {
-	type Properties MemberInvitation
+func (r *MemberInvitation[any]) UnmarshalJSON(b []byte) error {
+	type Properties MemberInvitation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *MemberInvitation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MemberInvitation(*res.Properties)
+		*r = MemberInvitation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

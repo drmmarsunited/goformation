@@ -8,22 +8,22 @@ import (
 
 // ModelQualityJobDefinition_ModelQualityJobInput AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.ModelQualityJobInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html
-type ModelQualityJobDefinition_ModelQualityJobInput struct {
+type ModelQualityJobDefinition_ModelQualityJobInput[T any] struct {
 
 	// BatchTransformInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-batchtransforminput
-	BatchTransformInput *ModelQualityJobDefinition_BatchTransformInput `json:"BatchTransformInput,omitempty"`
+	BatchTransformInput *ModelQualityJobDefinition_BatchTransformInput[any] `json:"BatchTransformInput,omitempty"`
 
 	// EndpointInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-endpointinput
-	EndpointInput *ModelQualityJobDefinition_EndpointInput `json:"EndpointInput,omitempty"`
+	EndpointInput *ModelQualityJobDefinition_EndpointInput[any] `json:"EndpointInput,omitempty"`
 
 	// GroundTruthS3Input AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-groundtruths3input
-	GroundTruthS3Input *ModelQualityJobDefinition_MonitoringGroundTruthS3Input `json:"GroundTruthS3Input"`
+	GroundTruthS3Input *ModelQualityJobDefinition_MonitoringGroundTruthS3Input[any] `json:"GroundTruthS3Input"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelQualityJobDefinition_ModelQualityJobInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_ModelQualityJobInput) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_ModelQualityJobInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityJobInput"
 }

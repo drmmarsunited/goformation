@@ -11,7 +11,7 @@ import (
 
 // CapacityReservation AWS CloudFormation Resource (AWS::EC2::CapacityReservation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html
-type CapacityReservation struct {
+type CapacityReservation[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type CapacityReservation struct {
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *T `json:"EbsOptimized,omitempty"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type CapacityReservation struct {
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ephemeralstorage
-	EphemeralStorage *bool `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *T `json:"EphemeralStorage,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceMatchCriteria AWS CloudFormation Property
 	// Required: false
@@ -71,7 +71,7 @@ type CapacityReservation struct {
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-tagspecifications
-	TagSpecifications []CapacityReservation_TagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []CapacityReservation_TagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// Tenancy AWS CloudFormation Property
 	// Required: false
@@ -95,14 +95,15 @@ type CapacityReservation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityReservation) AWSCloudFormationType() string {
+func (r *CapacityReservation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::CapacityReservation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CapacityReservation) MarshalJSON() ([]byte, error) {
-	type Properties CapacityReservation
+func (r CapacityReservation[any]) MarshalJSON() ([]byte, error) {
+	type Properties CapacityReservation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r CapacityReservation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CapacityReservation) UnmarshalJSON(b []byte) error {
-	type Properties CapacityReservation
+func (r *CapacityReservation[any]) UnmarshalJSON(b []byte) error {
+	type Properties CapacityReservation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *CapacityReservation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CapacityReservation(*res.Properties)
+		*r = CapacityReservation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

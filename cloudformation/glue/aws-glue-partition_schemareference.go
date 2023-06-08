@@ -8,12 +8,12 @@ import (
 
 // Partition_SchemaReference AWS CloudFormation Resource (AWS::Glue::Partition.SchemaReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html
-type Partition_SchemaReference struct {
+type Partition_SchemaReference[T any] struct {
 
 	// SchemaId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid
-	SchemaId *Partition_SchemaId `json:"SchemaId,omitempty"`
+	SchemaId *Partition_SchemaId[any] `json:"SchemaId,omitempty"`
 
 	// SchemaVersionId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Partition_SchemaReference struct {
 	// SchemaVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber
-	SchemaVersionNumber *int `json:"SchemaVersionNumber,omitempty"`
+	SchemaVersionNumber *T `json:"SchemaVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Partition_SchemaReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_SchemaReference) AWSCloudFormationType() string {
+func (r *Partition_SchemaReference[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SchemaReference"
 }

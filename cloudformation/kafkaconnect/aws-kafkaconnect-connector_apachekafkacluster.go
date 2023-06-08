@@ -8,7 +8,7 @@ import (
 
 // Connector_ApacheKafkaCluster AWS CloudFormation Resource (AWS::KafkaConnect::Connector.ApacheKafkaCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-apachekafkacluster.html
-type Connector_ApacheKafkaCluster struct {
+type Connector_ApacheKafkaCluster[T any] struct {
 
 	// BootstrapServers AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Connector_ApacheKafkaCluster struct {
 	// Vpc AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-apachekafkacluster.html#cfn-kafkaconnect-connector-apachekafkacluster-vpc
-	Vpc *Connector_Vpc `json:"Vpc"`
+	Vpc *Connector_Vpc[any] `json:"Vpc"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Connector_ApacheKafkaCluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_ApacheKafkaCluster) AWSCloudFormationType() string {
+func (r *Connector_ApacheKafkaCluster[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.ApacheKafkaCluster"
 }

@@ -8,7 +8,7 @@ import (
 
 // Channel_InputLocation AWS CloudFormation Resource (AWS::MediaLive::Channel.InputLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlocation.html
-type Channel_InputLocation struct {
+type Channel_InputLocation[T any] struct {
 
 	// PasswordParam AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_InputLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputLocation) AWSCloudFormationType() string {
+func (r *Channel_InputLocation[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputLocation"
 }

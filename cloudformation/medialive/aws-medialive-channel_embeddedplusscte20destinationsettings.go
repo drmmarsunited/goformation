@@ -8,7 +8,7 @@ import (
 
 // Channel_EmbeddedPlusScte20DestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EmbeddedPlusScte20DestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedplusscte20destinationsettings.html
-type Channel_EmbeddedPlusScte20DestinationSettings struct {
+type Channel_EmbeddedPlusScte20DestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_EmbeddedPlusScte20DestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_EmbeddedPlusScte20DestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_EmbeddedPlusScte20DestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.EmbeddedPlusScte20DestinationSettings"
 }

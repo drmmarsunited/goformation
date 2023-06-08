@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ConditionalFormattingColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ConditionalFormattingColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingcolor.html
-type Dashboard_ConditionalFormattingColor struct {
+type Dashboard_ConditionalFormattingColor[T any] struct {
 
 	// Gradient AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingcolor.html#cfn-quicksight-dashboard-conditionalformattingcolor-gradient
-	Gradient *Dashboard_ConditionalFormattingGradientColor `json:"Gradient,omitempty"`
+	Gradient *Dashboard_ConditionalFormattingGradientColor[any] `json:"Gradient,omitempty"`
 
 	// Solid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingcolor.html#cfn-quicksight-dashboard-conditionalformattingcolor-solid
-	Solid *Dashboard_ConditionalFormattingSolidColor `json:"Solid,omitempty"`
+	Solid *Dashboard_ConditionalFormattingSolidColor[any] `json:"Solid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_ConditionalFormattingColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ConditionalFormattingColor) AWSCloudFormationType() string {
+func (r *Dashboard_ConditionalFormattingColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ConditionalFormattingColor"
 }

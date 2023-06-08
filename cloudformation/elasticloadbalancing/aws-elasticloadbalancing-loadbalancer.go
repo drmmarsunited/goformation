@@ -12,17 +12,17 @@ import (
 
 // LoadBalancer AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
-type LoadBalancer struct {
+type LoadBalancer[T any] struct {
 
 	// AccessLoggingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy
-	AccessLoggingPolicy *LoadBalancer_AccessLoggingPolicy `json:"AccessLoggingPolicy,omitempty"`
+	AccessLoggingPolicy *LoadBalancer_AccessLoggingPolicy[any] `json:"AccessLoggingPolicy,omitempty"`
 
 	// AppCookieStickinessPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy
-	AppCookieStickinessPolicy []LoadBalancer_AppCookieStickinessPolicy `json:"AppCookieStickinessPolicy,omitempty"`
+	AppCookieStickinessPolicy []LoadBalancer_AppCookieStickinessPolicy[any] `json:"AppCookieStickinessPolicy,omitempty"`
 
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
@@ -32,22 +32,22 @@ type LoadBalancer struct {
 	// ConnectionDrainingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy
-	ConnectionDrainingPolicy *LoadBalancer_ConnectionDrainingPolicy `json:"ConnectionDrainingPolicy,omitempty"`
+	ConnectionDrainingPolicy *LoadBalancer_ConnectionDrainingPolicy[any] `json:"ConnectionDrainingPolicy,omitempty"`
 
 	// ConnectionSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings
-	ConnectionSettings *LoadBalancer_ConnectionSettings `json:"ConnectionSettings,omitempty"`
+	ConnectionSettings *LoadBalancer_ConnectionSettings[any] `json:"ConnectionSettings,omitempty"`
 
 	// CrossZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
-	CrossZone *bool `json:"CrossZone,omitempty"`
+	CrossZone *T `json:"CrossZone,omitempty"`
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck
-	HealthCheck *LoadBalancer_HealthCheck `json:"HealthCheck,omitempty"`
+	HealthCheck *LoadBalancer_HealthCheck[any] `json:"HealthCheck,omitempty"`
 
 	// Instances AWS CloudFormation Property
 	// Required: false
@@ -57,12 +57,12 @@ type LoadBalancer struct {
 	// LBCookieStickinessPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy
-	LBCookieStickinessPolicy []LoadBalancer_LBCookieStickinessPolicy `json:"LBCookieStickinessPolicy,omitempty"`
+	LBCookieStickinessPolicy []LoadBalancer_LBCookieStickinessPolicy[any] `json:"LBCookieStickinessPolicy,omitempty"`
 
 	// Listeners AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners
-	Listeners []LoadBalancer_Listeners `json:"Listeners"`
+	Listeners []LoadBalancer_Listeners[any] `json:"Listeners"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type LoadBalancer struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies
-	Policies []LoadBalancer_Policies `json:"Policies,omitempty"`
+	Policies []LoadBalancer_Policies[any] `json:"Policies,omitempty"`
 
 	// Scheme AWS CloudFormation Property
 	// Required: false
@@ -111,14 +111,15 @@ type LoadBalancer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer) AWSCloudFormationType() string {
+func (r *LoadBalancer[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LoadBalancer) MarshalJSON() ([]byte, error) {
-	type Properties LoadBalancer
+func (r LoadBalancer[any]) MarshalJSON() ([]byte, error) {
+	type Properties LoadBalancer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -140,8 +141,9 @@ func (r LoadBalancer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LoadBalancer) UnmarshalJSON(b []byte) error {
-	type Properties LoadBalancer
+func (r *LoadBalancer[any]) UnmarshalJSON(b []byte) error {
+	type Properties LoadBalancer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -161,7 +163,7 @@ func (r *LoadBalancer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LoadBalancer(*res.Properties)
+		*r = LoadBalancer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

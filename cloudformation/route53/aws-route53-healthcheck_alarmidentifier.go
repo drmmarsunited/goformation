@@ -8,7 +8,7 @@ import (
 
 // HealthCheck_AlarmIdentifier AWS CloudFormation Resource (AWS::Route53::HealthCheck.AlarmIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html
-type HealthCheck_AlarmIdentifier struct {
+type HealthCheck_AlarmIdentifier[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type HealthCheck_AlarmIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HealthCheck_AlarmIdentifier) AWSCloudFormationType() string {
+func (r *HealthCheck_AlarmIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HealthCheck.AlarmIdentifier"
 }

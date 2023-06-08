@@ -8,7 +8,7 @@ import (
 
 // Template_PeriodOverPeriodComputation AWS CloudFormation Resource (AWS::QuickSight::Template.PeriodOverPeriodComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodoverperiodcomputation.html
-type Template_PeriodOverPeriodComputation struct {
+type Template_PeriodOverPeriodComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Template_PeriodOverPeriodComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodoverperiodcomputation.html#cfn-quicksight-template-periodoverperiodcomputation-time
-	Time *Template_DimensionField `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodoverperiodcomputation.html#cfn-quicksight-template-periodoverperiodcomputation-value
-	Value *Template_MeasureField `json:"Value,omitempty"`
+	Value *Template_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_PeriodOverPeriodComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PeriodOverPeriodComputation) AWSCloudFormationType() string {
+func (r *Template_PeriodOverPeriodComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PeriodOverPeriodComputation"
 }

@@ -8,7 +8,7 @@ import (
 
 // ExperimentTemplate_S3Configuration AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.S3Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html
-type ExperimentTemplate_S3Configuration struct {
+type ExperimentTemplate_S3Configuration[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ExperimentTemplate_S3Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_S3Configuration) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_S3Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.S3Configuration"
 }

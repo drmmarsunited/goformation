@@ -8,27 +8,27 @@ import (
 
 // Job_ProfileConfiguration AWS CloudFormation Resource (AWS::DataBrew::Job.ProfileConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html
-type Job_ProfileConfiguration struct {
+type Job_ProfileConfiguration[T any] struct {
 
 	// ColumnStatisticsConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-columnstatisticsconfigurations
-	ColumnStatisticsConfigurations []Job_ColumnStatisticsConfiguration `json:"ColumnStatisticsConfigurations,omitempty"`
+	ColumnStatisticsConfigurations []Job_ColumnStatisticsConfiguration[any] `json:"ColumnStatisticsConfigurations,omitempty"`
 
 	// DatasetStatisticsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration
-	DatasetStatisticsConfiguration *Job_StatisticsConfiguration `json:"DatasetStatisticsConfiguration,omitempty"`
+	DatasetStatisticsConfiguration *Job_StatisticsConfiguration[any] `json:"DatasetStatisticsConfiguration,omitempty"`
 
 	// EntityDetectorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration
-	EntityDetectorConfiguration *Job_EntityDetectorConfiguration `json:"EntityDetectorConfiguration,omitempty"`
+	EntityDetectorConfiguration *Job_EntityDetectorConfiguration[any] `json:"EntityDetectorConfiguration,omitempty"`
 
 	// ProfileColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns
-	ProfileColumns []Job_ColumnSelector `json:"ProfileColumns,omitempty"`
+	ProfileColumns []Job_ColumnSelector[any] `json:"ProfileColumns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Job_ProfileConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_ProfileConfiguration) AWSCloudFormationType() string {
+func (r *Job_ProfileConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.ProfileConfiguration"
 }

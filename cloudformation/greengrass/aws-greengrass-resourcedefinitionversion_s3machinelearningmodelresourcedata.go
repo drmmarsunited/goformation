@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinitionVersion_S3MachineLearningModelResourceData AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html
-type ResourceDefinitionVersion_S3MachineLearningModelResourceData struct {
+type ResourceDefinitionVersion_S3MachineLearningModelResourceData[T any] struct {
 
 	// DestinationPath AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResourceDefinitionVersion_S3MachineLearningModelResourceData struct {
 	// OwnerSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
-	OwnerSetting *ResourceDefinitionVersion_ResourceDownloadOwnerSetting `json:"OwnerSetting,omitempty"`
+	OwnerSetting *ResourceDefinitionVersion_ResourceDownloadOwnerSetting[any] `json:"OwnerSetting,omitempty"`
 
 	// S3Uri AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ResourceDefinitionVersion_S3MachineLearningModelResourceData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinitionVersion_S3MachineLearningModelResourceData) AWSCloudFormationType() string {
+func (r *ResourceDefinitionVersion_S3MachineLearningModelResourceData[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData"
 }

@@ -12,7 +12,7 @@ import (
 
 // Branch AWS CloudFormation Resource (AWS::Amplify::Branch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html
-type Branch struct {
+type Branch[T any] struct {
 
 	// AppId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type Branch struct {
 	// BasicAuthConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-basicauthconfig
-	BasicAuthConfig *Branch_BasicAuthConfig `json:"BasicAuthConfig,omitempty"`
+	BasicAuthConfig *Branch_BasicAuthConfig[any] `json:"BasicAuthConfig,omitempty"`
 
 	// BranchName AWS CloudFormation Property
 	// Required: true
@@ -42,22 +42,22 @@ type Branch struct {
 	// EnableAutoBuild AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild
-	EnableAutoBuild *bool `json:"EnableAutoBuild,omitempty"`
+	EnableAutoBuild *T `json:"EnableAutoBuild,omitempty"`
 
 	// EnablePerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableperformancemode
-	EnablePerformanceMode *bool `json:"EnablePerformanceMode,omitempty"`
+	EnablePerformanceMode *T `json:"EnablePerformanceMode,omitempty"`
 
 	// EnablePullRequestPreview AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview
-	EnablePullRequestPreview *bool `json:"EnablePullRequestPreview,omitempty"`
+	EnablePullRequestPreview *T `json:"EnablePullRequestPreview,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-environmentvariables
-	EnvironmentVariables []Branch_EnvironmentVariable `json:"EnvironmentVariables,omitempty"`
+	EnvironmentVariables []Branch_EnvironmentVariable[any] `json:"EnvironmentVariables,omitempty"`
 
 	// Framework AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type Branch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Branch) AWSCloudFormationType() string {
+func (r *Branch[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::Branch"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Branch) MarshalJSON() ([]byte, error) {
-	type Properties Branch
+func (r Branch[any]) MarshalJSON() ([]byte, error) {
+	type Properties Branch[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r Branch) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Branch) UnmarshalJSON(b []byte) error {
-	type Properties Branch
+func (r *Branch[any]) UnmarshalJSON(b []byte) error {
+	type Properties Branch[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *Branch) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Branch(*res.Properties)
+		*r = Branch[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

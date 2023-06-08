@@ -11,7 +11,7 @@ import (
 
 // DistributionConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html
-type DistributionConfiguration struct {
+type DistributionConfiguration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type DistributionConfiguration struct {
 	// Distributions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-distributions
-	Distributions []DistributionConfiguration_Distribution `json:"Distributions"`
+	Distributions []DistributionConfiguration_Distribution[any] `json:"Distributions"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type DistributionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DistributionConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties DistributionConfiguration
+func (r DistributionConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties DistributionConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r DistributionConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DistributionConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties DistributionConfiguration
+func (r *DistributionConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties DistributionConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *DistributionConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DistributionConfiguration(*res.Properties)
+		*r = DistributionConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

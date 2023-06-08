@@ -8,7 +8,7 @@ import (
 
 // Datastore_Partition AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.Partition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-partition.html
-type Datastore_Partition struct {
+type Datastore_Partition[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Datastore_Partition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_Partition) AWSCloudFormationType() string {
+func (r *Datastore_Partition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.Partition"
 }

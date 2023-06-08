@@ -8,12 +8,12 @@ import (
 
 // TopicRule_DynamoDBv2Action AWS CloudFormation Resource (AWS::IoT::TopicRule.DynamoDBv2Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html
-type TopicRule_DynamoDBv2Action struct {
+type TopicRule_DynamoDBv2Action[T any] struct {
 
 	// PutItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-putitem
-	PutItem *TopicRule_PutItemInput `json:"PutItem,omitempty"`
+	PutItem *TopicRule_PutItemInput[any] `json:"PutItem,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TopicRule_DynamoDBv2Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_DynamoDBv2Action) AWSCloudFormationType() string {
+func (r *TopicRule_DynamoDBv2Action[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.DynamoDBv2Action"
 }

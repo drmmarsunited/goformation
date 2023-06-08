@@ -8,22 +8,22 @@ import (
 
 // Analysis_DrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Analysis.DrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-drilldownfilter.html
-type Analysis_DrillDownFilter struct {
+type Analysis_DrillDownFilter[T any] struct {
 
 	// CategoryFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-drilldownfilter.html#cfn-quicksight-analysis-drilldownfilter-categoryfilter
-	CategoryFilter *Analysis_CategoryDrillDownFilter `json:"CategoryFilter,omitempty"`
+	CategoryFilter *Analysis_CategoryDrillDownFilter[any] `json:"CategoryFilter,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-drilldownfilter.html#cfn-quicksight-analysis-drilldownfilter-numericequalityfilter
-	NumericEqualityFilter *Analysis_NumericEqualityDrillDownFilter `json:"NumericEqualityFilter,omitempty"`
+	NumericEqualityFilter *Analysis_NumericEqualityDrillDownFilter[any] `json:"NumericEqualityFilter,omitempty"`
 
 	// TimeRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-drilldownfilter.html#cfn-quicksight-analysis-drilldownfilter-timerangefilter
-	TimeRangeFilter *Analysis_TimeRangeDrillDownFilter `json:"TimeRangeFilter,omitempty"`
+	TimeRangeFilter *Analysis_TimeRangeDrillDownFilter[any] `json:"TimeRangeFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_DrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DrillDownFilter) AWSCloudFormationType() string {
+func (r *Analysis_DrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DrillDownFilter"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetSqsQueueParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetSqsQueueParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetsqsqueueparameters.html
-type Pipe_PipeTargetSqsQueueParameters struct {
+type Pipe_PipeTargetSqsQueueParameters[T any] struct {
 
 	// MessageDeduplicationId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_PipeTargetSqsQueueParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetSqsQueueParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetSqsQueueParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetSqsQueueParameters"
 }

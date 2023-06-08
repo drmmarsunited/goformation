@@ -8,22 +8,22 @@ import (
 
 // Instance_Hardware AWS CloudFormation Resource (AWS::Lightsail::Instance.Hardware)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html
-type Instance_Hardware struct {
+type Instance_Hardware[T any] struct {
 
 	// CpuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-cpucount
-	CpuCount *int `json:"CpuCount,omitempty"`
+	CpuCount *T `json:"CpuCount,omitempty"`
 
 	// Disks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-disks
-	Disks []Instance_Disk `json:"Disks,omitempty"`
+	Disks []Instance_Disk[any] `json:"Disks,omitempty"`
 
 	// RamSizeInGb AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-ramsizeingb
-	RamSizeInGb *int `json:"RamSizeInGb,omitempty"`
+	RamSizeInGb *T `json:"RamSizeInGb,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Instance_Hardware struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Hardware) AWSCloudFormationType() string {
+func (r *Instance_Hardware[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.Hardware"
 }

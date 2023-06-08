@@ -8,7 +8,7 @@ import (
 
 // Component_ComponentVariant AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentvariant.html
-type Component_ComponentVariant struct {
+type Component_ComponentVariant[T any] struct {
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Component_ComponentVariant struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentVariant) AWSCloudFormationType() string {
+func (r *Component_ComponentVariant[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentVariant"
 }

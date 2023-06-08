@@ -11,7 +11,7 @@ import (
 
 // Hub AWS CloudFormation Resource (AWS::SecurityHub::Hub)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html
-type Hub struct {
+type Hub[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type Hub struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Hub) AWSCloudFormationType() string {
+func (r *Hub[any]) AWSCloudFormationType() string {
 	return "AWS::SecurityHub::Hub"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Hub) MarshalJSON() ([]byte, error) {
-	type Properties Hub
+func (r Hub[any]) MarshalJSON() ([]byte, error) {
+	type Properties Hub[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r Hub) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Hub) UnmarshalJSON(b []byte) error {
-	type Properties Hub
+func (r *Hub[any]) UnmarshalJSON(b []byte) error {
+	type Properties Hub[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *Hub) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Hub(*res.Properties)
+		*r = Hub[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

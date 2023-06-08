@@ -8,17 +8,17 @@ import (
 
 // EC2Fleet_FleetLaunchTemplateConfigRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html
-type EC2Fleet_FleetLaunchTemplateConfigRequest struct {
+type EC2Fleet_FleetLaunchTemplateConfigRequest[T any] struct {
 
 	// LaunchTemplateSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-launchtemplatespecification
-	LaunchTemplateSpecification *EC2Fleet_FleetLaunchTemplateSpecificationRequest `json:"LaunchTemplateSpecification,omitempty"`
+	LaunchTemplateSpecification *EC2Fleet_FleetLaunchTemplateSpecificationRequest[any] `json:"LaunchTemplateSpecification,omitempty"`
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-overrides
-	Overrides []EC2Fleet_FleetLaunchTemplateOverridesRequest `json:"Overrides,omitempty"`
+	Overrides []EC2Fleet_FleetLaunchTemplateOverridesRequest[any] `json:"Overrides,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EC2Fleet_FleetLaunchTemplateConfigRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_FleetLaunchTemplateConfigRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_FleetLaunchTemplateConfigRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest"
 }

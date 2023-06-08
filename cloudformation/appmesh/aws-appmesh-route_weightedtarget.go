@@ -8,12 +8,12 @@ import (
 
 // Route_WeightedTarget AWS CloudFormation Resource (AWS::AppMesh::Route.WeightedTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html
-type Route_WeightedTarget struct {
+type Route_WeightedTarget[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// VirtualNode AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Route_WeightedTarget struct {
 	// Weight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-weight
-	Weight int `json:"Weight"`
+	Weight T `json:"Weight"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Route_WeightedTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_WeightedTarget) AWSCloudFormationType() string {
+func (r *Route_WeightedTarget[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.WeightedTarget"
 }

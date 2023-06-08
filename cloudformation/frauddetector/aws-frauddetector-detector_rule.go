@@ -9,7 +9,7 @@ import (
 
 // Detector_Rule AWS CloudFormation Resource (AWS::FraudDetector::Detector.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html
-type Detector_Rule struct {
+type Detector_Rule[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -49,7 +49,7 @@ type Detector_Rule struct {
 	// Outcomes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-outcomes
-	Outcomes []Detector_Outcome `json:"Outcomes,omitempty"`
+	Outcomes []Detector_Outcome[any] `json:"Outcomes,omitempty"`
 
 	// RuleId AWS CloudFormation Property
 	// Required: false
@@ -83,6 +83,6 @@ type Detector_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_Rule) AWSCloudFormationType() string {
+func (r *Detector_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.Rule"
 }

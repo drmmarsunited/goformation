@@ -8,17 +8,17 @@ import (
 
 // Policy_PolicyOption AWS CloudFormation Resource (AWS::FMS::Policy.PolicyOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-policyoption.html
-type Policy_PolicyOption struct {
+type Policy_PolicyOption[T any] struct {
 
 	// NetworkFirewallPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-policyoption.html#cfn-fms-policy-policyoption-networkfirewallpolicy
-	NetworkFirewallPolicy *Policy_NetworkFirewallPolicy `json:"NetworkFirewallPolicy,omitempty"`
+	NetworkFirewallPolicy *Policy_NetworkFirewallPolicy[any] `json:"NetworkFirewallPolicy,omitempty"`
 
 	// ThirdPartyFirewallPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-policyoption.html#cfn-fms-policy-policyoption-thirdpartyfirewallpolicy
-	ThirdPartyFirewallPolicy *Policy_ThirdPartyFirewallPolicy `json:"ThirdPartyFirewallPolicy,omitempty"`
+	ThirdPartyFirewallPolicy *Policy_ThirdPartyFirewallPolicy[any] `json:"ThirdPartyFirewallPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Policy_PolicyOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_PolicyOption) AWSCloudFormationType() string {
+func (r *Policy_PolicyOption[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.PolicyOption"
 }

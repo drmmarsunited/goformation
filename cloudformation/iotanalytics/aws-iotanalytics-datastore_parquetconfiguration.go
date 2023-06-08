@@ -8,12 +8,12 @@ import (
 
 // Datastore_ParquetConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.ParquetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html
-type Datastore_ParquetConfiguration struct {
+type Datastore_ParquetConfiguration[T any] struct {
 
 	// SchemaDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition
-	SchemaDefinition *Datastore_SchemaDefinition `json:"SchemaDefinition,omitempty"`
+	SchemaDefinition *Datastore_SchemaDefinition[any] `json:"SchemaDefinition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Datastore_ParquetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_ParquetConfiguration) AWSCloudFormationType() string {
+func (r *Datastore_ParquetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.ParquetConfiguration"
 }

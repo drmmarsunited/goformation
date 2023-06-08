@@ -8,7 +8,7 @@ import (
 
 // Rule_RedshiftDataParameters AWS CloudFormation Resource (AWS::Events::Rule.RedshiftDataParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html
-type Rule_RedshiftDataParameters struct {
+type Rule_RedshiftDataParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Rule_RedshiftDataParameters struct {
 	// WithEvent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-withevent
-	WithEvent *bool `json:"WithEvent,omitempty"`
+	WithEvent *T `json:"WithEvent,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Rule_RedshiftDataParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_RedshiftDataParameters) AWSCloudFormationType() string {
+func (r *Rule_RedshiftDataParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.RedshiftDataParameters"
 }

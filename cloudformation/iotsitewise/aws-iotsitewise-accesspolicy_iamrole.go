@@ -8,7 +8,7 @@ import (
 
 // AccessPolicy_IamRole AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.IamRole)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-iamrole.html
-type AccessPolicy_IamRole struct {
+type AccessPolicy_IamRole[T any] struct {
 
 	// arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AccessPolicy_IamRole struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_IamRole) AWSCloudFormationType() string {
+func (r *AccessPolicy_IamRole[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.IamRole"
 }

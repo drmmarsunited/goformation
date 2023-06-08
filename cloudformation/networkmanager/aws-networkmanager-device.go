@@ -12,7 +12,7 @@ import (
 
 // Device AWS CloudFormation Resource (AWS::NetworkManager::Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html
-type Device struct {
+type Device[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Device struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-location
-	Location *Device_Location `json:"Location,omitempty"`
+	Location *Device_Location[any] `json:"Location,omitempty"`
 
 	// Model AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type Device struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Device) AWSCloudFormationType() string {
+func (r *Device[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::Device"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Device) MarshalJSON() ([]byte, error) {
-	type Properties Device
+func (r Device[any]) MarshalJSON() ([]byte, error) {
+	type Properties Device[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Device) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Device) UnmarshalJSON(b []byte) error {
-	type Properties Device
+func (r *Device[any]) UnmarshalJSON(b []byte) error {
+	type Properties Device[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Device) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Device(*res.Properties)
+		*r = Device[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

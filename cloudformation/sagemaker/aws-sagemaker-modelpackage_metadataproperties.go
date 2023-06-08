@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_MetadataProperties AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.MetadataProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metadataproperties.html
-type ModelPackage_MetadataProperties struct {
+type ModelPackage_MetadataProperties[T any] struct {
 
 	// CommitId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ModelPackage_MetadataProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_MetadataProperties) AWSCloudFormationType() string {
+func (r *ModelPackage_MetadataProperties[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.MetadataProperties"
 }

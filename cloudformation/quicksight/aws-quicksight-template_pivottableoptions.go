@@ -8,17 +8,17 @@ import (
 
 // Template_PivotTableOptions AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html
-type Template_PivotTableOptions struct {
+type Template_PivotTableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html#cfn-quicksight-template-pivottableoptions-cellstyle
-	CellStyle *Template_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Template_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// ColumnHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html#cfn-quicksight-template-pivottableoptions-columnheaderstyle
-	ColumnHeaderStyle *Template_TableCellStyle `json:"ColumnHeaderStyle,omitempty"`
+	ColumnHeaderStyle *Template_TableCellStyle[any] `json:"ColumnHeaderStyle,omitempty"`
 
 	// ColumnNamesVisibility AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Template_PivotTableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html#cfn-quicksight-template-pivottableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Template_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Template_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// RowFieldNamesStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html#cfn-quicksight-template-pivottableoptions-rowfieldnamesstyle
-	RowFieldNamesStyle *Template_TableCellStyle `json:"RowFieldNamesStyle,omitempty"`
+	RowFieldNamesStyle *Template_TableCellStyle[any] `json:"RowFieldNamesStyle,omitempty"`
 
 	// RowHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableoptions.html#cfn-quicksight-template-pivottableoptions-rowheaderstyle
-	RowHeaderStyle *Template_TableCellStyle `json:"RowHeaderStyle,omitempty"`
+	RowHeaderStyle *Template_TableCellStyle[any] `json:"RowHeaderStyle,omitempty"`
 
 	// SingleMetricVisibility AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Template_PivotTableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableOptions) AWSCloudFormationType() string {
+func (r *Template_PivotTableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableOptions"
 }

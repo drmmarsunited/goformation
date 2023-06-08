@@ -8,7 +8,7 @@ import (
 
 // TopicRuleDestination_HttpUrlDestinationSummary AWS CloudFormation Resource (AWS::IoT::TopicRuleDestination.HttpUrlDestinationSummary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-httpurldestinationsummary.html
-type TopicRuleDestination_HttpUrlDestinationSummary struct {
+type TopicRuleDestination_HttpUrlDestinationSummary[T any] struct {
 
 	// ConfirmationUrl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type TopicRuleDestination_HttpUrlDestinationSummary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRuleDestination_HttpUrlDestinationSummary) AWSCloudFormationType() string {
+func (r *TopicRuleDestination_HttpUrlDestinationSummary[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRuleDestination.HttpUrlDestinationSummary"
 }

@@ -8,22 +8,22 @@ import (
 
 // Template_DynamicDefaultValue AWS CloudFormation Resource (AWS::QuickSight::Template.DynamicDefaultValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dynamicdefaultvalue.html
-type Template_DynamicDefaultValue struct {
+type Template_DynamicDefaultValue[T any] struct {
 
 	// DefaultValueColumn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dynamicdefaultvalue.html#cfn-quicksight-template-dynamicdefaultvalue-defaultvaluecolumn
-	DefaultValueColumn *Template_ColumnIdentifier `json:"DefaultValueColumn"`
+	DefaultValueColumn *Template_ColumnIdentifier[any] `json:"DefaultValueColumn"`
 
 	// GroupNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dynamicdefaultvalue.html#cfn-quicksight-template-dynamicdefaultvalue-groupnamecolumn
-	GroupNameColumn *Template_ColumnIdentifier `json:"GroupNameColumn,omitempty"`
+	GroupNameColumn *Template_ColumnIdentifier[any] `json:"GroupNameColumn,omitempty"`
 
 	// UserNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dynamicdefaultvalue.html#cfn-quicksight-template-dynamicdefaultvalue-usernamecolumn
-	UserNameColumn *Template_ColumnIdentifier `json:"UserNameColumn,omitempty"`
+	UserNameColumn *Template_ColumnIdentifier[any] `json:"UserNameColumn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_DynamicDefaultValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DynamicDefaultValue) AWSCloudFormationType() string {
+func (r *Template_DynamicDefaultValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DynamicDefaultValue"
 }

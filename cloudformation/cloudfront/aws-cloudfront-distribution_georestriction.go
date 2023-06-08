@@ -8,7 +8,7 @@ import (
 
 // Distribution_GeoRestriction AWS CloudFormation Resource (AWS::CloudFront::Distribution.GeoRestriction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html
-type Distribution_GeoRestriction struct {
+type Distribution_GeoRestriction[T any] struct {
 
 	// Locations AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_GeoRestriction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_GeoRestriction) AWSCloudFormationType() string {
+func (r *Distribution_GeoRestriction[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.GeoRestriction"
 }

@@ -8,27 +8,27 @@ import (
 
 // Template_WordCloudChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.WordCloudChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-wordcloudchartconfiguration.html
-type Template_WordCloudChartConfiguration struct {
+type Template_WordCloudChartConfiguration[T any] struct {
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-wordcloudchartconfiguration.html#cfn-quicksight-template-wordcloudchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Template_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Template_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-wordcloudchartconfiguration.html#cfn-quicksight-template-wordcloudchartconfiguration-fieldwells
-	FieldWells *Template_WordCloudFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_WordCloudFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-wordcloudchartconfiguration.html#cfn-quicksight-template-wordcloudchartconfiguration-sortconfiguration
-	SortConfiguration *Template_WordCloudSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Template_WordCloudSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// WordCloudOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-wordcloudchartconfiguration.html#cfn-quicksight-template-wordcloudchartconfiguration-wordcloudoptions
-	WordCloudOptions *Template_WordCloudOptions `json:"WordCloudOptions,omitempty"`
+	WordCloudOptions *Template_WordCloudOptions[any] `json:"WordCloudOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_WordCloudChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_WordCloudChartConfiguration) AWSCloudFormationType() string {
+func (r *Template_WordCloudChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.WordCloudChartConfiguration"
 }

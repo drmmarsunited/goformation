@@ -8,47 +8,47 @@ import (
 
 // Bot_SlotCaptureSetting AWS CloudFormation Resource (AWS::Lex::Bot.SlotCaptureSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html
-type Bot_SlotCaptureSetting struct {
+type Bot_SlotCaptureSetting[T any] struct {
 
 	// CaptureConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-captureconditional
-	CaptureConditional *Bot_ConditionalSpecification `json:"CaptureConditional,omitempty"`
+	CaptureConditional *Bot_ConditionalSpecification[any] `json:"CaptureConditional,omitempty"`
 
 	// CaptureNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-capturenextstep
-	CaptureNextStep *Bot_DialogState `json:"CaptureNextStep,omitempty"`
+	CaptureNextStep *Bot_DialogState[any] `json:"CaptureNextStep,omitempty"`
 
 	// CaptureResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-captureresponse
-	CaptureResponse *Bot_ResponseSpecification `json:"CaptureResponse,omitempty"`
+	CaptureResponse *Bot_ResponseSpecification[any] `json:"CaptureResponse,omitempty"`
 
 	// CodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-codehook
-	CodeHook *Bot_DialogCodeHookInvocationSetting `json:"CodeHook,omitempty"`
+	CodeHook *Bot_DialogCodeHookInvocationSetting[any] `json:"CodeHook,omitempty"`
 
 	// ElicitationCodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-elicitationcodehook
-	ElicitationCodeHook *Bot_ElicitationCodeHookInvocationSetting `json:"ElicitationCodeHook,omitempty"`
+	ElicitationCodeHook *Bot_ElicitationCodeHookInvocationSetting[any] `json:"ElicitationCodeHook,omitempty"`
 
 	// FailureConditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-failureconditional
-	FailureConditional *Bot_ConditionalSpecification `json:"FailureConditional,omitempty"`
+	FailureConditional *Bot_ConditionalSpecification[any] `json:"FailureConditional,omitempty"`
 
 	// FailureNextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-failurenextstep
-	FailureNextStep *Bot_DialogState `json:"FailureNextStep,omitempty"`
+	FailureNextStep *Bot_DialogState[any] `json:"FailureNextStep,omitempty"`
 
 	// FailureResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotcapturesetting.html#cfn-lex-bot-slotcapturesetting-failureresponse
-	FailureResponse *Bot_ResponseSpecification `json:"FailureResponse,omitempty"`
+	FailureResponse *Bot_ResponseSpecification[any] `json:"FailureResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Bot_SlotCaptureSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotCaptureSetting) AWSCloudFormationType() string {
+func (r *Bot_SlotCaptureSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotCaptureSetting"
 }

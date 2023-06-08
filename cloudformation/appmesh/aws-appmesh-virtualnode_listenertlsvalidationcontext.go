@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_ListenerTlsValidationContext AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTlsValidationContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontext.html
-type VirtualNode_ListenerTlsValidationContext struct {
+type VirtualNode_ListenerTlsValidationContext[T any] struct {
 
 	// SubjectAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontext.html#cfn-appmesh-virtualnode-listenertlsvalidationcontext-subjectalternativenames
-	SubjectAlternativeNames *VirtualNode_SubjectAlternativeNames `json:"SubjectAlternativeNames,omitempty"`
+	SubjectAlternativeNames *VirtualNode_SubjectAlternativeNames[any] `json:"SubjectAlternativeNames,omitempty"`
 
 	// Trust AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontext.html#cfn-appmesh-virtualnode-listenertlsvalidationcontext-trust
-	Trust *VirtualNode_ListenerTlsValidationContextTrust `json:"Trust"`
+	Trust *VirtualNode_ListenerTlsValidationContextTrust[any] `json:"Trust"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_ListenerTlsValidationContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTlsValidationContext) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTlsValidationContext[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTlsValidationContext"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_TableFieldOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TableFieldOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoptions.html
-type Template_TableFieldOptions struct {
+type Template_TableFieldOptions[T any] struct {
 
 	// Order AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_TableFieldOptions struct {
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoptions.html#cfn-quicksight-template-tablefieldoptions-selectedfieldoptions
-	SelectedFieldOptions []Template_TableFieldOption `json:"SelectedFieldOptions,omitempty"`
+	SelectedFieldOptions []Template_TableFieldOption[any] `json:"SelectedFieldOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_TableFieldOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableFieldOptions) AWSCloudFormationType() string {
+func (r *Template_TableFieldOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableFieldOptions"
 }

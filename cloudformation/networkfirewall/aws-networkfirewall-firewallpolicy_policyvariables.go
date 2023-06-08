@@ -8,12 +8,12 @@ import (
 
 // FirewallPolicy_PolicyVariables AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.PolicyVariables)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-policyvariables.html
-type FirewallPolicy_PolicyVariables struct {
+type FirewallPolicy_PolicyVariables[T any] struct {
 
 	// RuleVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-policyvariables.html#cfn-networkfirewall-firewallpolicy-policyvariables-rulevariables
-	RuleVariables map[string]FirewallPolicy_IPSet `json:"RuleVariables,omitempty"`
+	RuleVariables map[string]FirewallPolicy_IPSet[any] `json:"RuleVariables,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FirewallPolicy_PolicyVariables struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_PolicyVariables) AWSCloudFormationType() string {
+func (r *FirewallPolicy_PolicyVariables[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.PolicyVariables"
 }

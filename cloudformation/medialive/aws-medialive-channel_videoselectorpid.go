@@ -8,12 +8,12 @@ import (
 
 // Channel_VideoSelectorPid AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoSelectorPid)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html
-type Channel_VideoSelectorPid struct {
+type Channel_VideoSelectorPid[T any] struct {
 
 	// Pid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html#cfn-medialive-channel-videoselectorpid-pid
-	Pid *int `json:"Pid,omitempty"`
+	Pid *T `json:"Pid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_VideoSelectorPid struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VideoSelectorPid) AWSCloudFormationType() string {
+func (r *Channel_VideoSelectorPid[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VideoSelectorPid"
 }

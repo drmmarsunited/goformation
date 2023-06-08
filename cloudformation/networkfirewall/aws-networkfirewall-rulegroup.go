@@ -12,12 +12,12 @@ import (
 
 // RuleGroup AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html
-type RuleGroup struct {
+type RuleGroup[T any] struct {
 
 	// Capacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-capacity
-	Capacity int `json:"Capacity"`
+	Capacity T `json:"Capacity"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type RuleGroup struct {
 	// RuleGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup
-	RuleGroup *RuleGroup_RuleGroup `json:"RuleGroup,omitempty"`
+	RuleGroup *RuleGroup_RuleGroup[any] `json:"RuleGroup,omitempty"`
 
 	// RuleGroupName AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type RuleGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup) AWSCloudFormationType() string {
+func (r *RuleGroup[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RuleGroup) MarshalJSON() ([]byte, error) {
-	type Properties RuleGroup
+func (r RuleGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties RuleGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r RuleGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RuleGroup) UnmarshalJSON(b []byte) error {
-	type Properties RuleGroup
+func (r *RuleGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties RuleGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *RuleGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RuleGroup(*res.Properties)
+		*r = RuleGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

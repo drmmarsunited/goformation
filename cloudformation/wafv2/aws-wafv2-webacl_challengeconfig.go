@@ -8,12 +8,12 @@ import (
 
 // WebACL_ChallengeConfig AWS CloudFormation Resource (AWS::WAFv2::WebACL.ChallengeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-challengeconfig.html
-type WebACL_ChallengeConfig struct {
+type WebACL_ChallengeConfig[T any] struct {
 
 	// ImmunityTimeProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-challengeconfig.html#cfn-wafv2-webacl-challengeconfig-immunitytimeproperty
-	ImmunityTimeProperty *WebACL_ImmunityTimeProperty `json:"ImmunityTimeProperty,omitempty"`
+	ImmunityTimeProperty *WebACL_ImmunityTimeProperty[any] `json:"ImmunityTimeProperty,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_ChallengeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ChallengeConfig) AWSCloudFormationType() string {
+func (r *WebACL_ChallengeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ChallengeConfig"
 }

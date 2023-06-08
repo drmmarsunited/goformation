@@ -8,12 +8,12 @@ import (
 
 // Bot_ImageResponseCard AWS CloudFormation Resource (AWS::Lex::Bot.ImageResponseCard)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html
-type Bot_ImageResponseCard struct {
+type Bot_ImageResponseCard[T any] struct {
 
 	// Buttons AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html#cfn-lex-bot-imageresponsecard-buttons
-	Buttons []Bot_Button `json:"Buttons,omitempty"`
+	Buttons []Bot_Button[any] `json:"Buttons,omitempty"`
 
 	// ImageUrl AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Bot_ImageResponseCard struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ImageResponseCard) AWSCloudFormationType() string {
+func (r *Bot_ImageResponseCard[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ImageResponseCard"
 }

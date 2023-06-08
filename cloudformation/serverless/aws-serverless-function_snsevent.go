@@ -8,7 +8,7 @@ import (
 
 // Function_SNSEvent AWS CloudFormation Resource (AWS::Serverless::Function.SNSEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sns
-type Function_SNSEvent struct {
+type Function_SNSEvent[T any] struct {
 
 	// Topic AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_SNSEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_SNSEvent) AWSCloudFormationType() string {
+func (r *Function_SNSEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.SNSEvent"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_AxisLabelReferenceOptions AWS CloudFormation Resource (AWS::QuickSight::Template.AxisLabelReferenceOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axislabelreferenceoptions.html
-type Template_AxisLabelReferenceOptions struct {
+type Template_AxisLabelReferenceOptions[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axislabelreferenceoptions.html#cfn-quicksight-template-axislabelreferenceoptions-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_AxisLabelReferenceOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AxisLabelReferenceOptions) AWSCloudFormationType() string {
+func (r *Template_AxisLabelReferenceOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AxisLabelReferenceOptions"
 }

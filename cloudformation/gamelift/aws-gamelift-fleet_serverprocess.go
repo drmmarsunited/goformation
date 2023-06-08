@@ -8,12 +8,12 @@ import (
 
 // Fleet_ServerProcess AWS CloudFormation Resource (AWS::GameLift::Fleet.ServerProcess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html
-type Fleet_ServerProcess struct {
+type Fleet_ServerProcess[T any] struct {
 
 	// ConcurrentExecutions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-concurrentexecutions
-	ConcurrentExecutions int `json:"ConcurrentExecutions"`
+	ConcurrentExecutions T `json:"ConcurrentExecutions"`
 
 	// LaunchPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Fleet_ServerProcess struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_ServerProcess) AWSCloudFormationType() string {
+func (r *Fleet_ServerProcess[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.ServerProcess"
 }

@@ -8,7 +8,7 @@ import (
 
 // StreamProcessor_S3Destination AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.S3Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-s3destination.html
-type StreamProcessor_S3Destination struct {
+type StreamProcessor_S3Destination[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StreamProcessor_S3Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_S3Destination) AWSCloudFormationType() string {
+func (r *StreamProcessor_S3Destination[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.S3Destination"
 }

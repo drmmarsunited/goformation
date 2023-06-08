@@ -8,7 +8,7 @@ import (
 
 // Webhook_WebhookFilterRule AWS CloudFormation Resource (AWS::CodePipeline::Webhook.WebhookFilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html
-type Webhook_WebhookFilterRule struct {
+type Webhook_WebhookFilterRule[T any] struct {
 
 	// JsonPath AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Webhook_WebhookFilterRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Webhook_WebhookFilterRule) AWSCloudFormationType() string {
+func (r *Webhook_WebhookFilterRule[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Webhook.WebhookFilterRule"
 }

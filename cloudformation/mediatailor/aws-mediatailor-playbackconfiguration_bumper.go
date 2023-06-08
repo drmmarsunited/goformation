@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_Bumper AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.Bumper)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-bumper.html
-type PlaybackConfiguration_Bumper struct {
+type PlaybackConfiguration_Bumper[T any] struct {
 
 	// EndUrl AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type PlaybackConfiguration_Bumper struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_Bumper) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_Bumper[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.Bumper"
 }

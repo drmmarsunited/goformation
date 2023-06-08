@@ -8,12 +8,12 @@ import (
 
 // Route_HttpRouteAction AWS CloudFormation Resource (AWS::AppMesh::Route.HttpRouteAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html
-type Route_HttpRouteAction struct {
+type Route_HttpRouteAction[T any] struct {
 
 	// WeightedTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html#cfn-appmesh-route-httprouteaction-weightedtargets
-	WeightedTargets []Route_WeightedTarget `json:"WeightedTargets"`
+	WeightedTargets []Route_WeightedTarget[any] `json:"WeightedTargets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Route_HttpRouteAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpRouteAction) AWSCloudFormationType() string {
+func (r *Route_HttpRouteAction[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpRouteAction"
 }

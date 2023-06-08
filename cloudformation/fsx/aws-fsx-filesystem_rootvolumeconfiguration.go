@@ -8,12 +8,12 @@ import (
 
 // FileSystem_RootVolumeConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.RootVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html
-type FileSystem_RootVolumeConfiguration struct {
+type FileSystem_RootVolumeConfiguration[T any] struct {
 
 	// CopyTagsToSnapshots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-copytagstosnapshots
-	CopyTagsToSnapshots *bool `json:"CopyTagsToSnapshots,omitempty"`
+	CopyTagsToSnapshots *T `json:"CopyTagsToSnapshots,omitempty"`
 
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type FileSystem_RootVolumeConfiguration struct {
 	// NfsExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports
-	NfsExports []FileSystem_NfsExports `json:"NfsExports,omitempty"`
+	NfsExports []FileSystem_NfsExports[any] `json:"NfsExports,omitempty"`
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// RecordSizeKiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-recordsizekib
-	RecordSizeKiB *int `json:"RecordSizeKiB,omitempty"`
+	RecordSizeKiB *T `json:"RecordSizeKiB,omitempty"`
 
 	// UserAndGroupQuotas AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas
-	UserAndGroupQuotas []FileSystem_UserAndGroupQuotas `json:"UserAndGroupQuotas,omitempty"`
+	UserAndGroupQuotas []FileSystem_UserAndGroupQuotas[any] `json:"UserAndGroupQuotas,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type FileSystem_RootVolumeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_RootVolumeConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_RootVolumeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.RootVolumeConfiguration"
 }

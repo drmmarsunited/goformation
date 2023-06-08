@@ -8,7 +8,7 @@ import (
 
 // StorageLens_SSEKMS AWS CloudFormation Resource (AWS::S3::StorageLens.SSEKMS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-ssekms.html
-type StorageLens_SSEKMS struct {
+type StorageLens_SSEKMS[T any] struct {
 
 	// KeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type StorageLens_SSEKMS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_SSEKMS) AWSCloudFormationType() string {
+func (r *StorageLens_SSEKMS[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.SSEKMS"
 }

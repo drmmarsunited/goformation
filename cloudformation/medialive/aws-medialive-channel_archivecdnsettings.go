@@ -8,12 +8,12 @@ import (
 
 // Channel_ArchiveCdnSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.ArchiveCdnSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecdnsettings.html
-type Channel_ArchiveCdnSettings struct {
+type Channel_ArchiveCdnSettings[T any] struct {
 
 	// ArchiveS3Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecdnsettings.html#cfn-medialive-channel-archivecdnsettings-archives3settings
-	ArchiveS3Settings *Channel_ArchiveS3Settings `json:"ArchiveS3Settings,omitempty"`
+	ArchiveS3Settings *Channel_ArchiveS3Settings[any] `json:"ArchiveS3Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_ArchiveCdnSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ArchiveCdnSettings) AWSCloudFormationType() string {
+func (r *Channel_ArchiveCdnSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ArchiveCdnSettings"
 }

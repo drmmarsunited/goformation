@@ -8,7 +8,7 @@ import (
 
 // DataSource_PrestoParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.PrestoParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-prestoparameters.html
-type DataSource_PrestoParameters struct {
+type DataSource_PrestoParameters[T any] struct {
 
 	// Catalog AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_PrestoParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-prestoparameters.html#cfn-quicksight-datasource-prestoparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_PrestoParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_PrestoParameters) AWSCloudFormationType() string {
+func (r *DataSource_PrestoParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.PrestoParameters"
 }

@@ -8,32 +8,32 @@ import (
 
 // Template_FunnelChartVisual AWS CloudFormation Resource (AWS::QuickSight::Template.FunnelChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html
-type Template_FunnelChartVisual struct {
+type Template_FunnelChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html#cfn-quicksight-template-funnelchartvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html#cfn-quicksight-template-funnelchartvisual-chartconfiguration
-	ChartConfiguration *Template_FunnelChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_FunnelChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html#cfn-quicksight-template-funnelchartvisual-columnhierarchies
-	ColumnHierarchies []Template_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Template_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html#cfn-quicksight-template-funnelchartvisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartvisual.html#cfn-quicksight-template-funnelchartvisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_FunnelChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FunnelChartVisual) AWSCloudFormationType() string {
+func (r *Template_FunnelChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FunnelChartVisual"
 }

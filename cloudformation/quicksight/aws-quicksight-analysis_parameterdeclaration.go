@@ -8,27 +8,27 @@ import (
 
 // Analysis_ParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdeclaration.html
-type Analysis_ParameterDeclaration struct {
+type Analysis_ParameterDeclaration[T any] struct {
 
 	// DateTimeParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdeclaration.html#cfn-quicksight-analysis-parameterdeclaration-datetimeparameterdeclaration
-	DateTimeParameterDeclaration *Analysis_DateTimeParameterDeclaration `json:"DateTimeParameterDeclaration,omitempty"`
+	DateTimeParameterDeclaration *Analysis_DateTimeParameterDeclaration[any] `json:"DateTimeParameterDeclaration,omitempty"`
 
 	// DecimalParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdeclaration.html#cfn-quicksight-analysis-parameterdeclaration-decimalparameterdeclaration
-	DecimalParameterDeclaration *Analysis_DecimalParameterDeclaration `json:"DecimalParameterDeclaration,omitempty"`
+	DecimalParameterDeclaration *Analysis_DecimalParameterDeclaration[any] `json:"DecimalParameterDeclaration,omitempty"`
 
 	// IntegerParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdeclaration.html#cfn-quicksight-analysis-parameterdeclaration-integerparameterdeclaration
-	IntegerParameterDeclaration *Analysis_IntegerParameterDeclaration `json:"IntegerParameterDeclaration,omitempty"`
+	IntegerParameterDeclaration *Analysis_IntegerParameterDeclaration[any] `json:"IntegerParameterDeclaration,omitempty"`
 
 	// StringParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdeclaration.html#cfn-quicksight-analysis-parameterdeclaration-stringparameterdeclaration
-	StringParameterDeclaration *Analysis_StringParameterDeclaration `json:"StringParameterDeclaration,omitempty"`
+	StringParameterDeclaration *Analysis_StringParameterDeclaration[any] `json:"StringParameterDeclaration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_ParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ParameterDeclaration) AWSCloudFormationType() string {
+func (r *Analysis_ParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ParameterDeclaration"
 }

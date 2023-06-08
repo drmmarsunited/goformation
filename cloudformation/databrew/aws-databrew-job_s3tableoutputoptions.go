@@ -8,12 +8,12 @@ import (
 
 // Job_S3TableOutputOptions AWS CloudFormation Resource (AWS::DataBrew::Job.S3TableOutputOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3tableoutputoptions.html
-type Job_S3TableOutputOptions struct {
+type Job_S3TableOutputOptions[T any] struct {
 
 	// Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3tableoutputoptions.html#cfn-databrew-job-s3tableoutputoptions-location
-	Location *Job_S3Location `json:"Location"`
+	Location *Job_S3Location[any] `json:"Location"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Job_S3TableOutputOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_S3TableOutputOptions) AWSCloudFormationType() string {
+func (r *Job_S3TableOutputOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.S3TableOutputOptions"
 }

@@ -8,17 +8,17 @@ import (
 
 // Domain_SAMLOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.SAMLOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html
-type Domain_SAMLOptions struct {
+type Domain_SAMLOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Idp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-idp
-	Idp *Domain_Idp `json:"Idp,omitempty"`
+	Idp *Domain_Idp[any] `json:"Idp,omitempty"`
 
 	// MasterBackendRole AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Domain_SAMLOptions struct {
 	// SessionTimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-sessiontimeoutminutes
-	SessionTimeoutMinutes *int `json:"SessionTimeoutMinutes,omitempty"`
+	SessionTimeoutMinutes *T `json:"SessionTimeoutMinutes,omitempty"`
 
 	// SubjectKey AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Domain_SAMLOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_SAMLOptions) AWSCloudFormationType() string {
+func (r *Domain_SAMLOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.SAMLOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Rule_InputTransformer AWS CloudFormation Resource (AWS::Events::Rule.InputTransformer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-inputtransformer.html
-type Rule_InputTransformer struct {
+type Rule_InputTransformer[T any] struct {
 
 	// InputPathsMap AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_InputTransformer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_InputTransformer) AWSCloudFormationType() string {
+func (r *Rule_InputTransformer[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.InputTransformer"
 }

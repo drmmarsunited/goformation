@@ -8,7 +8,7 @@ import (
 
 // Workgroup_ConfigParameter AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.ConfigParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-configparameter.html
-type Workgroup_ConfigParameter struct {
+type Workgroup_ConfigParameter[T any] struct {
 
 	// ParameterKey AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workgroup_ConfigParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup_ConfigParameter) AWSCloudFormationType() string {
+func (r *Workgroup_ConfigParameter[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup.ConfigParameter"
 }

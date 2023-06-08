@@ -8,12 +8,12 @@ import (
 
 // Bucket_AccessRules AWS CloudFormation Resource (AWS::Lightsail::Bucket.AccessRules)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html
-type Bucket_AccessRules struct {
+type Bucket_AccessRules[T any] struct {
 
 	// AllowPublicOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html#cfn-lightsail-bucket-accessrules-allowpublicoverrides
-	AllowPublicOverrides *bool `json:"AllowPublicOverrides,omitempty"`
+	AllowPublicOverrides *T `json:"AllowPublicOverrides,omitempty"`
 
 	// GetObject AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bucket_AccessRules struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_AccessRules) AWSCloudFormationType() string {
+func (r *Bucket_AccessRules[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Bucket.AccessRules"
 }

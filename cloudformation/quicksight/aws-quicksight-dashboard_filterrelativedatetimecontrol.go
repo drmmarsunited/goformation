@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilterRelativeDateTimeControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterRelativeDateTimeControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterrelativedatetimecontrol.html
-type Dashboard_FilterRelativeDateTimeControl struct {
+type Dashboard_FilterRelativeDateTimeControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterrelativedatetimecontrol.html#cfn-quicksight-dashboard-filterrelativedatetimecontrol-displayoptions
-	DisplayOptions *Dashboard_RelativeDateTimeControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_RelativeDateTimeControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dashboard_FilterRelativeDateTimeControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterRelativeDateTimeControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterRelativeDateTimeControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterRelativeDateTimeControl"
 }

@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_Tags AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSet.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html
-type ConfigurationSet_Tags struct {
+type ConfigurationSet_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConfigurationSet_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_Tags) AWSCloudFormationType() string {
+func (r *ConfigurationSet_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::ConfigurationSet.Tags"
 }

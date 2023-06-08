@@ -11,7 +11,7 @@ import (
 
 // Crawler AWS CloudFormation Resource (AWS::Glue::Crawler)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html
-type Crawler struct {
+type Crawler[T any] struct {
 
 	// Classifiers AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type Crawler struct {
 	// RecrawlPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-recrawlpolicy
-	RecrawlPolicy *Crawler_RecrawlPolicy `json:"RecrawlPolicy,omitempty"`
+	RecrawlPolicy *Crawler_RecrawlPolicy[any] `json:"RecrawlPolicy,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -56,12 +56,12 @@ type Crawler struct {
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
-	Schedule *Crawler_Schedule `json:"Schedule,omitempty"`
+	Schedule *Crawler_Schedule[any] `json:"Schedule,omitempty"`
 
 	// SchemaChangePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy
-	SchemaChangePolicy *Crawler_SchemaChangePolicy `json:"SchemaChangePolicy,omitempty"`
+	SchemaChangePolicy *Crawler_SchemaChangePolicy[any] `json:"SchemaChangePolicy,omitempty"`
 
 	// TablePrefix AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type Crawler struct {
 	// Targets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
-	Targets *Crawler_Targets `json:"Targets"`
+	Targets *Crawler_Targets[any] `json:"Targets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -95,14 +95,15 @@ type Crawler struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler) AWSCloudFormationType() string {
+func (r *Crawler[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Crawler) MarshalJSON() ([]byte, error) {
-	type Properties Crawler
+func (r Crawler[any]) MarshalJSON() ([]byte, error) {
+	type Properties Crawler[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r Crawler) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Crawler) UnmarshalJSON(b []byte) error {
-	type Properties Crawler
+func (r *Crawler[any]) UnmarshalJSON(b []byte) error {
+	type Properties Crawler[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *Crawler) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Crawler(*res.Properties)
+		*r = Crawler[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

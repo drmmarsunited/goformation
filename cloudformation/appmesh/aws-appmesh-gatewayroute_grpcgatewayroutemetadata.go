@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_GrpcGatewayRouteMetadata AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html
-type GatewayRoute_GrpcGatewayRouteMetadata struct {
+type GatewayRoute_GrpcGatewayRouteMetadata[T any] struct {
 
 	// Invert AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert
-	Invert *bool `json:"Invert,omitempty"`
+	Invert *T `json:"Invert,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-match
-	Match *GatewayRoute_GatewayRouteMetadataMatch `json:"Match,omitempty"`
+	Match *GatewayRoute_GatewayRouteMetadataMatch[any] `json:"Match,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type GatewayRoute_GrpcGatewayRouteMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GrpcGatewayRouteMetadata) AWSCloudFormationType() string {
+func (r *GatewayRoute_GrpcGatewayRouteMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_InferenceSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.InferenceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html
-type ModelPackage_InferenceSpecification struct {
+type ModelPackage_InferenceSpecification[T any] struct {
 
 	// Containers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-containers
-	Containers []ModelPackage_ModelPackageContainerDefinition `json:"Containers"`
+	Containers []ModelPackage_ModelPackageContainerDefinition[any] `json:"Containers"`
 
 	// SupportedContentTypes AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ModelPackage_InferenceSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_InferenceSpecification) AWSCloudFormationType() string {
+func (r *ModelPackage_InferenceSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.InferenceSpecification"
 }

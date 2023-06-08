@@ -8,7 +8,7 @@ import (
 
 // Skill_AuthenticationConfiguration AWS CloudFormation Resource (Alexa::ASK::Skill.AuthenticationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html
-type Skill_AuthenticationConfiguration struct {
+type Skill_AuthenticationConfiguration[T any] struct {
 
 	// ClientId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Skill_AuthenticationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Skill_AuthenticationConfiguration) AWSCloudFormationType() string {
+func (r *Skill_AuthenticationConfiguration[any]) AWSCloudFormationType() string {
 	return "Alexa::ASK::Skill.AuthenticationConfiguration"
 }

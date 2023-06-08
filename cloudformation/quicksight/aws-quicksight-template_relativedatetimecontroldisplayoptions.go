@@ -8,7 +8,7 @@ import (
 
 // Template_RelativeDateTimeControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.RelativeDateTimeControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatetimecontroldisplayoptions.html
-type Template_RelativeDateTimeControlDisplayOptions struct {
+type Template_RelativeDateTimeControlDisplayOptions[T any] struct {
 
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_RelativeDateTimeControlDisplayOptions struct {
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatetimecontroldisplayoptions.html#cfn-quicksight-template-relativedatetimecontroldisplayoptions-titleoptions
-	TitleOptions *Template_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Template_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_RelativeDateTimeControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RelativeDateTimeControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_RelativeDateTimeControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RelativeDateTimeControlDisplayOptions"
 }

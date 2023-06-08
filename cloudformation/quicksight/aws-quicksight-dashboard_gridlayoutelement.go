@@ -8,17 +8,17 @@ import (
 
 // Dashboard_GridLayoutElement AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GridLayoutElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html
-type Dashboard_GridLayoutElement struct {
+type Dashboard_GridLayoutElement[T any] struct {
 
 	// ColumnIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-columnindex
-	ColumnIndex *float64 `json:"ColumnIndex,omitempty"`
+	ColumnIndex *T `json:"ColumnIndex,omitempty"`
 
 	// ColumnSpan AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-columnspan
-	ColumnSpan float64 `json:"ColumnSpan"`
+	ColumnSpan T `json:"ColumnSpan"`
 
 	// ElementId AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type Dashboard_GridLayoutElement struct {
 	// RowIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-rowindex
-	RowIndex *float64 `json:"RowIndex,omitempty"`
+	RowIndex *T `json:"RowIndex,omitempty"`
 
 	// RowSpan AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-rowspan
-	RowSpan float64 `json:"RowSpan"`
+	RowSpan T `json:"RowSpan"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Dashboard_GridLayoutElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GridLayoutElement) AWSCloudFormationType() string {
+func (r *Dashboard_GridLayoutElement[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GridLayoutElement"
 }

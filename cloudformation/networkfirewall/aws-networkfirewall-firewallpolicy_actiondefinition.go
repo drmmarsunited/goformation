@@ -8,12 +8,12 @@ import (
 
 // FirewallPolicy_ActionDefinition AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.ActionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-actiondefinition.html
-type FirewallPolicy_ActionDefinition struct {
+type FirewallPolicy_ActionDefinition[T any] struct {
 
 	// PublishMetricAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-actiondefinition.html#cfn-networkfirewall-firewallpolicy-actiondefinition-publishmetricaction
-	PublishMetricAction *FirewallPolicy_PublishMetricAction `json:"PublishMetricAction,omitempty"`
+	PublishMetricAction *FirewallPolicy_PublishMetricAction[any] `json:"PublishMetricAction,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FirewallPolicy_ActionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_ActionDefinition) AWSCloudFormationType() string {
+func (r *FirewallPolicy_ActionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.ActionDefinition"
 }

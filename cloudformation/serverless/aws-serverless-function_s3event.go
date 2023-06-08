@@ -8,7 +8,7 @@ import (
 
 // Function_S3Event AWS CloudFormation Resource (AWS::Serverless::Function.S3Event)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
-type Function_S3Event struct {
+type Function_S3Event[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Function_S3Event struct {
 	// Events AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
-	Events *Function_Events `json:"Events"`
+	Events *Function_Events[any] `json:"Events"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
-	Filter *Function_S3NotificationFilter `json:"Filter,omitempty"`
+	Filter *Function_S3NotificationFilter[any] `json:"Filter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Function_S3Event struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_S3Event) AWSCloudFormationType() string {
+func (r *Function_S3Event[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.S3Event"
 }

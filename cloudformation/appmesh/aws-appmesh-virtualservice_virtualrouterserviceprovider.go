@@ -8,7 +8,7 @@ import (
 
 // VirtualService_VirtualRouterServiceProvider AWS CloudFormation Resource (AWS::AppMesh::VirtualService.VirtualRouterServiceProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualrouterserviceprovider.html
-type VirtualService_VirtualRouterServiceProvider struct {
+type VirtualService_VirtualRouterServiceProvider[T any] struct {
 
 	// VirtualRouterName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualService_VirtualRouterServiceProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualService_VirtualRouterServiceProvider) AWSCloudFormationType() string {
+func (r *VirtualService_VirtualRouterServiceProvider[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualService.VirtualRouterServiceProvider"
 }

@@ -8,32 +8,32 @@ import (
 
 // Environment_LoggingConfiguration AWS CloudFormation Resource (AWS::MWAA::Environment.LoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html
-type Environment_LoggingConfiguration struct {
+type Environment_LoggingConfiguration[T any] struct {
 
 	// DagProcessingLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-dagprocessinglogs
-	DagProcessingLogs *Environment_ModuleLoggingConfiguration `json:"DagProcessingLogs,omitempty"`
+	DagProcessingLogs *Environment_ModuleLoggingConfiguration[any] `json:"DagProcessingLogs,omitempty"`
 
 	// SchedulerLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-schedulerlogs
-	SchedulerLogs *Environment_ModuleLoggingConfiguration `json:"SchedulerLogs,omitempty"`
+	SchedulerLogs *Environment_ModuleLoggingConfiguration[any] `json:"SchedulerLogs,omitempty"`
 
 	// TaskLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-tasklogs
-	TaskLogs *Environment_ModuleLoggingConfiguration `json:"TaskLogs,omitempty"`
+	TaskLogs *Environment_ModuleLoggingConfiguration[any] `json:"TaskLogs,omitempty"`
 
 	// WebserverLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-webserverlogs
-	WebserverLogs *Environment_ModuleLoggingConfiguration `json:"WebserverLogs,omitempty"`
+	WebserverLogs *Environment_ModuleLoggingConfiguration[any] `json:"WebserverLogs,omitempty"`
 
 	// WorkerLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-workerlogs
-	WorkerLogs *Environment_ModuleLoggingConfiguration `json:"WorkerLogs,omitempty"`
+	WorkerLogs *Environment_ModuleLoggingConfiguration[any] `json:"WorkerLogs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Environment_LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_LoggingConfiguration) AWSCloudFormationType() string {
+func (r *Environment_LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MWAA::Environment.LoggingConfiguration"
 }

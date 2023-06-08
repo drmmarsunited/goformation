@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_ContentSecurityPolicy AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ContentSecurityPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contentsecuritypolicy.html
-type ResponseHeadersPolicy_ContentSecurityPolicy struct {
+type ResponseHeadersPolicy_ContentSecurityPolicy[T any] struct {
 
 	// ContentSecurityPolicy AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResponseHeadersPolicy_ContentSecurityPolicy struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contentsecuritypolicy.html#cfn-cloudfront-responseheaderspolicy-contentsecuritypolicy-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResponseHeadersPolicy_ContentSecurityPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_ContentSecurityPolicy) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_ContentSecurityPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.ContentSecurityPolicy"
 }

@@ -8,17 +8,17 @@ import (
 
 // RuleGroup_StatelessRule AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.StatelessRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrule.html
-type RuleGroup_StatelessRule struct {
+type RuleGroup_StatelessRule[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrule.html#cfn-networkfirewall-rulegroup-statelessrule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// RuleDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrule.html#cfn-networkfirewall-rulegroup-statelessrule-ruledefinition
-	RuleDefinition *RuleGroup_RuleDefinition `json:"RuleDefinition"`
+	RuleDefinition *RuleGroup_RuleDefinition[any] `json:"RuleDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_StatelessRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_StatelessRule) AWSCloudFormationType() string {
+func (r *RuleGroup_StatelessRule[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.StatelessRule"
 }

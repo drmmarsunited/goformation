@@ -11,12 +11,12 @@ import (
 
 // DBProxyTargetGroup AWS CloudFormation Resource (AWS::RDS::DBProxyTargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html
-type DBProxyTargetGroup struct {
+type DBProxyTargetGroup[T any] struct {
 
 	// ConnectionPoolConfigurationInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
-	ConnectionPoolConfigurationInfo *DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat `json:"ConnectionPoolConfigurationInfo,omitempty"`
+	ConnectionPoolConfigurationInfo *DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat[any] `json:"ConnectionPoolConfigurationInfo,omitempty"`
 
 	// DBClusterIdentifiers AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type DBProxyTargetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxyTargetGroup) AWSCloudFormationType() string {
+func (r *DBProxyTargetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxyTargetGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBProxyTargetGroup) MarshalJSON() ([]byte, error) {
-	type Properties DBProxyTargetGroup
+func (r DBProxyTargetGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBProxyTargetGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r DBProxyTargetGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBProxyTargetGroup) UnmarshalJSON(b []byte) error {
-	type Properties DBProxyTargetGroup
+func (r *DBProxyTargetGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBProxyTargetGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *DBProxyTargetGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBProxyTargetGroup(*res.Properties)
+		*r = DBProxyTargetGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // PackagingConfiguration_HlsManifest AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.HlsManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html
-type PackagingConfiguration_HlsManifest struct {
+type PackagingConfiguration_HlsManifest[T any] struct {
 
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type PackagingConfiguration_HlsManifest struct {
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *T `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type PackagingConfiguration_HlsManifest struct {
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-programdatetimeintervalseconds
-	ProgramDateTimeIntervalSeconds *int `json:"ProgramDateTimeIntervalSeconds,omitempty"`
+	ProgramDateTimeIntervalSeconds *T `json:"ProgramDateTimeIntervalSeconds,omitempty"`
 
 	// RepeatExtXKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-repeatextxkey
-	RepeatExtXKey *bool `json:"RepeatExtXKey,omitempty"`
+	RepeatExtXKey *T `json:"RepeatExtXKey,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-streamselection
-	StreamSelection *PackagingConfiguration_StreamSelection `json:"StreamSelection,omitempty"`
+	StreamSelection *PackagingConfiguration_StreamSelection[any] `json:"StreamSelection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type PackagingConfiguration_HlsManifest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_HlsManifest) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_HlsManifest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.HlsManifest"
 }

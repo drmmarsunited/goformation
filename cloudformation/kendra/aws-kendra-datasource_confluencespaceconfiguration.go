@@ -8,17 +8,17 @@ import (
 
 // DataSource_ConfluenceSpaceConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceSpaceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html
-type DataSource_ConfluenceSpaceConfiguration struct {
+type DataSource_ConfluenceSpaceConfiguration[T any] struct {
 
 	// CrawlArchivedSpaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-crawlarchivedspaces
-	CrawlArchivedSpaces *bool `json:"CrawlArchivedSpaces,omitempty"`
+	CrawlArchivedSpaces *T `json:"CrawlArchivedSpaces,omitempty"`
 
 	// CrawlPersonalSpaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-crawlpersonalspaces
-	CrawlPersonalSpaces *bool `json:"CrawlPersonalSpaces,omitempty"`
+	CrawlPersonalSpaces *T `json:"CrawlPersonalSpaces,omitempty"`
 
 	// ExcludeSpaces AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_ConfluenceSpaceConfiguration struct {
 	// SpaceFieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-spacefieldmappings
-	SpaceFieldMappings []DataSource_ConfluenceSpaceToIndexFieldMapping `json:"SpaceFieldMappings,omitempty"`
+	SpaceFieldMappings []DataSource_ConfluenceSpaceToIndexFieldMapping[any] `json:"SpaceFieldMappings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type DataSource_ConfluenceSpaceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceSpaceConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceSpaceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceSpaceConfiguration"
 }

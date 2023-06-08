@@ -8,12 +8,12 @@ import (
 
 // Workflow_DecryptStepDetails AWS CloudFormation Resource (AWS::Transfer::Workflow.DecryptStepDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-decryptstepdetails.html
-type Workflow_DecryptStepDetails struct {
+type Workflow_DecryptStepDetails[T any] struct {
 
 	// DestinationFileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-decryptstepdetails.html#cfn-transfer-workflow-decryptstepdetails-destinationfilelocation
-	DestinationFileLocation *Workflow_InputFileLocation `json:"DestinationFileLocation,omitempty"`
+	DestinationFileLocation *Workflow_InputFileLocation[any] `json:"DestinationFileLocation,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Workflow_DecryptStepDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_DecryptStepDetails) AWSCloudFormationType() string {
+func (r *Workflow_DecryptStepDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.DecryptStepDetails"
 }

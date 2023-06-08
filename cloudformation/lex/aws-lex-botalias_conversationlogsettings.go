@@ -8,17 +8,17 @@ import (
 
 // BotAlias_ConversationLogSettings AWS CloudFormation Resource (AWS::Lex::BotAlias.ConversationLogSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-conversationlogsettings.html
-type BotAlias_ConversationLogSettings struct {
+type BotAlias_ConversationLogSettings[T any] struct {
 
 	// AudioLogSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-conversationlogsettings.html#cfn-lex-botalias-conversationlogsettings-audiologsettings
-	AudioLogSettings []BotAlias_AudioLogSetting `json:"AudioLogSettings,omitempty"`
+	AudioLogSettings []BotAlias_AudioLogSetting[any] `json:"AudioLogSettings,omitempty"`
 
 	// TextLogSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-conversationlogsettings.html#cfn-lex-botalias-conversationlogsettings-textlogsettings
-	TextLogSettings []BotAlias_TextLogSetting `json:"TextLogSettings,omitempty"`
+	TextLogSettings []BotAlias_TextLogSetting[any] `json:"TextLogSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type BotAlias_ConversationLogSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias_ConversationLogSettings) AWSCloudFormationType() string {
+func (r *BotAlias_ConversationLogSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias.ConversationLogSettings"
 }

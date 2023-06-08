@@ -8,12 +8,12 @@ import (
 
 // LaunchTemplate_EnclaveOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.EnclaveOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html
-type LaunchTemplate_EnclaveOptions struct {
+type LaunchTemplate_EnclaveOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LaunchTemplate_EnclaveOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_EnclaveOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_EnclaveOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.EnclaveOptions"
 }

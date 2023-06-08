@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_TargetGroupInfo AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.TargetGroupInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgroupinfo.html
-type DeploymentGroup_TargetGroupInfo struct {
+type DeploymentGroup_TargetGroupInfo[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeploymentGroup_TargetGroupInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_TargetGroupInfo) AWSCloudFormationType() string {
+func (r *DeploymentGroup_TargetGroupInfo[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.TargetGroupInfo"
 }

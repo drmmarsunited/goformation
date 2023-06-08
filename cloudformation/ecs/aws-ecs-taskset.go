@@ -11,7 +11,7 @@ import (
 
 // TaskSet AWS CloudFormation Resource (AWS::ECS::TaskSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html
-type TaskSet struct {
+type TaskSet[T any] struct {
 
 	// Cluster AWS CloudFormation Property
 	// Required: true
@@ -31,12 +31,12 @@ type TaskSet struct {
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-loadbalancers
-	LoadBalancers []TaskSet_LoadBalancer `json:"LoadBalancers,omitempty"`
+	LoadBalancers []TaskSet_LoadBalancer[any] `json:"LoadBalancers,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-networkconfiguration
-	NetworkConfiguration *TaskSet_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *TaskSet_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type TaskSet struct {
 	// Scale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-scale
-	Scale *TaskSet_Scale `json:"Scale,omitempty"`
+	Scale *TaskSet_Scale[any] `json:"Scale,omitempty"`
 
 	// Service AWS CloudFormation Property
 	// Required: true
@@ -56,7 +56,7 @@ type TaskSet struct {
 	// ServiceRegistries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-serviceregistries
-	ServiceRegistries []TaskSet_ServiceRegistry `json:"ServiceRegistries,omitempty"`
+	ServiceRegistries []TaskSet_ServiceRegistry[any] `json:"ServiceRegistries,omitempty"`
 
 	// TaskDefinition AWS CloudFormation Property
 	// Required: true
@@ -80,14 +80,15 @@ type TaskSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskSet) AWSCloudFormationType() string {
+func (r *TaskSet[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TaskSet) MarshalJSON() ([]byte, error) {
-	type Properties TaskSet
+func (r TaskSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties TaskSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r TaskSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TaskSet) UnmarshalJSON(b []byte) error {
-	type Properties TaskSet
+func (r *TaskSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties TaskSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *TaskSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TaskSet(*res.Properties)
+		*r = TaskSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

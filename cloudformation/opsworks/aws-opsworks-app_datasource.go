@@ -8,7 +8,7 @@ import (
 
 // App_DataSource AWS CloudFormation Resource (AWS::OpsWorks::App.DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html
-type App_DataSource struct {
+type App_DataSource[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type App_DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_DataSource) AWSCloudFormationType() string {
+func (r *App_DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App.DataSource"
 }

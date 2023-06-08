@@ -8,7 +8,7 @@ import (
 
 // ApiGatewayManagedOverrides_AccessLogSettings AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides.AccessLogSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-accesslogsettings.html
-type ApiGatewayManagedOverrides_AccessLogSettings struct {
+type ApiGatewayManagedOverrides_AccessLogSettings[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ApiGatewayManagedOverrides_AccessLogSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiGatewayManagedOverrides_AccessLogSettings) AWSCloudFormationType() string {
+func (r *ApiGatewayManagedOverrides_AccessLogSettings[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.AccessLogSettings"
 }

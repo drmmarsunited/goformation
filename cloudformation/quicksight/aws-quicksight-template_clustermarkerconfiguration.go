@@ -8,12 +8,12 @@ import (
 
 // Template_ClusterMarkerConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ClusterMarkerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-clustermarkerconfiguration.html
-type Template_ClusterMarkerConfiguration struct {
+type Template_ClusterMarkerConfiguration[T any] struct {
 
 	// ClusterMarker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-clustermarkerconfiguration.html#cfn-quicksight-template-clustermarkerconfiguration-clustermarker
-	ClusterMarker *Template_ClusterMarker `json:"ClusterMarker,omitempty"`
+	ClusterMarker *Template_ClusterMarker[any] `json:"ClusterMarker,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_ClusterMarkerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ClusterMarkerConfiguration) AWSCloudFormationType() string {
+func (r *Template_ClusterMarkerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ClusterMarkerConfiguration"
 }

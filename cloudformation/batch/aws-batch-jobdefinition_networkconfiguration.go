@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_NetworkConfiguration AWS CloudFormation Resource (AWS::Batch::JobDefinition.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-networkconfiguration.html
-type JobDefinition_NetworkConfiguration struct {
+type JobDefinition_NetworkConfiguration[T any] struct {
 
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type JobDefinition_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *JobDefinition_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.NetworkConfiguration"
 }

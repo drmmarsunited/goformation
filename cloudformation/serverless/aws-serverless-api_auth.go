@@ -8,12 +8,12 @@ import (
 
 // Api_Auth AWS CloudFormation Resource (AWS::Serverless::Api.Auth)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object
-type Api_Auth struct {
+type Api_Auth[T any] struct {
 
 	// AddDefaultAuthorizerToCorsPreflight AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object
-	AddDefaultAuthorizerToCorsPreflight *bool `json:"AddDefaultAuthorizerToCorsPreflight,omitempty"`
+	AddDefaultAuthorizerToCorsPreflight *T `json:"AddDefaultAuthorizerToCorsPreflight,omitempty"`
 
 	// Authorizers AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Api_Auth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api_Auth) AWSCloudFormationType() string {
+func (r *Api_Auth[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Api.Auth"
 }

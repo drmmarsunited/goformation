@@ -8,17 +8,17 @@ import (
 
 // Bot_SlotValueSelectionSetting AWS CloudFormation Resource (AWS::Lex::Bot.SlotValueSelectionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html
-type Bot_SlotValueSelectionSetting struct {
+type Bot_SlotValueSelectionSetting[T any] struct {
 
 	// AdvancedRecognitionSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-advancedrecognitionsetting
-	AdvancedRecognitionSetting *Bot_AdvancedRecognitionSetting `json:"AdvancedRecognitionSetting,omitempty"`
+	AdvancedRecognitionSetting *Bot_AdvancedRecognitionSetting[any] `json:"AdvancedRecognitionSetting,omitempty"`
 
 	// RegexFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter
-	RegexFilter *Bot_SlotValueRegexFilter `json:"RegexFilter,omitempty"`
+	RegexFilter *Bot_SlotValueRegexFilter[any] `json:"RegexFilter,omitempty"`
 
 	// ResolutionStrategy AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Bot_SlotValueSelectionSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotValueSelectionSetting) AWSCloudFormationType() string {
+func (r *Bot_SlotValueSelectionSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotValueSelectionSetting"
 }

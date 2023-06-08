@@ -11,7 +11,7 @@ import (
 
 // Account AWS CloudFormation Resource (AWS::ApiGateway::Account)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html
-type Account struct {
+type Account[T any] struct {
 
 	// CloudWatchRoleArn AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type Account struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Account) AWSCloudFormationType() string {
+func (r *Account[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Account"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Account) MarshalJSON() ([]byte, error) {
-	type Properties Account
+func (r Account[any]) MarshalJSON() ([]byte, error) {
+	type Properties Account[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r Account) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Account) UnmarshalJSON(b []byte) error {
-	type Properties Account
+func (r *Account[any]) UnmarshalJSON(b []byte) error {
+	type Properties Account[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *Account) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Account(*res.Properties)
+		*r = Account[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

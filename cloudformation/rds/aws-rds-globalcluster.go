@@ -11,12 +11,12 @@ import (
 
 // GlobalCluster AWS CloudFormation Resource (AWS::RDS::GlobalCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html
-type GlobalCluster struct {
+type GlobalCluster[T any] struct {
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-deletionprotection
-	DeletionProtection *bool `json:"DeletionProtection,omitempty"`
+	DeletionProtection *T `json:"DeletionProtection,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type GlobalCluster struct {
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-storageencrypted
-	StorageEncrypted *bool `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *T `json:"StorageEncrypted,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type GlobalCluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalCluster) AWSCloudFormationType() string {
+func (r *GlobalCluster[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::GlobalCluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GlobalCluster) MarshalJSON() ([]byte, error) {
-	type Properties GlobalCluster
+func (r GlobalCluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties GlobalCluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r GlobalCluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GlobalCluster) UnmarshalJSON(b []byte) error {
-	type Properties GlobalCluster
+func (r *GlobalCluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties GlobalCluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *GlobalCluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GlobalCluster(*res.Properties)
+		*r = GlobalCluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,22 +12,22 @@ import (
 
 // DBCluster AWS CloudFormation Resource (AWS::RDS::DBCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
-type DBCluster struct {
+type DBCluster[T any] struct {
 
 	// AllocatedStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-allocatedstorage
-	AllocatedStorage *int `json:"AllocatedStorage,omitempty"`
+	AllocatedStorage *T `json:"AllocatedStorage,omitempty"`
 
 	// AssociatedRoles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-associatedroles
-	AssociatedRoles []DBCluster_DBClusterRole `json:"AssociatedRoles,omitempty"`
+	AssociatedRoles []DBCluster_DBClusterRole[any] `json:"AssociatedRoles,omitempty"`
 
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type DBCluster struct {
 	// BacktrackWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backtrackwindow
-	BacktrackWindow *int `json:"BacktrackWindow,omitempty"`
+	BacktrackWindow *T `json:"BacktrackWindow,omitempty"`
 
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backupretentionperiod
-	BackupRetentionPeriod *int `json:"BackupRetentionPeriod,omitempty"`
+	BackupRetentionPeriod *T `json:"BackupRetentionPeriod,omitempty"`
 
 	// CopyTagsToSnapshot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-copytagstosnapshot
-	CopyTagsToSnapshot *bool `json:"CopyTagsToSnapshot,omitempty"`
+	CopyTagsToSnapshot *T `json:"CopyTagsToSnapshot,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
@@ -87,7 +87,7 @@ type DBCluster struct {
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-deletionprotection
-	DeletionProtection *bool `json:"DeletionProtection,omitempty"`
+	DeletionProtection *T `json:"DeletionProtection,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
@@ -107,12 +107,12 @@ type DBCluster struct {
 	// EnableHttpEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablehttpendpoint
-	EnableHttpEndpoint *bool `json:"EnableHttpEndpoint,omitempty"`
+	EnableHttpEndpoint *T `json:"EnableHttpEndpoint,omitempty"`
 
 	// EnableIAMDatabaseAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableiamdatabaseauthentication
-	EnableIAMDatabaseAuthentication *bool `json:"EnableIAMDatabaseAuthentication,omitempty"`
+	EnableIAMDatabaseAuthentication *T `json:"EnableIAMDatabaseAuthentication,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -137,7 +137,7 @@ type DBCluster struct {
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -147,7 +147,7 @@ type DBCluster struct {
 	// ManageMasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-managemasteruserpassword
-	ManageMasterUserPassword *bool `json:"ManageMasterUserPassword,omitempty"`
+	ManageMasterUserPassword *T `json:"ManageMasterUserPassword,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: false
@@ -157,7 +157,7 @@ type DBCluster struct {
 	// MasterUserSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusersecret
-	MasterUserSecret *DBCluster_MasterUserSecret `json:"MasterUserSecret,omitempty"`
+	MasterUserSecret *DBCluster_MasterUserSecret[any] `json:"MasterUserSecret,omitempty"`
 
 	// MasterUsername AWS CloudFormation Property
 	// Required: false
@@ -167,7 +167,7 @@ type DBCluster struct {
 	// MonitoringInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-monitoringinterval
-	MonitoringInterval *int `json:"MonitoringInterval,omitempty"`
+	MonitoringInterval *T `json:"MonitoringInterval,omitempty"`
 
 	// MonitoringRoleArn AWS CloudFormation Property
 	// Required: false
@@ -182,7 +182,7 @@ type DBCluster struct {
 	// PerformanceInsightsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-performanceinsightsenabled
-	PerformanceInsightsEnabled *bool `json:"PerformanceInsightsEnabled,omitempty"`
+	PerformanceInsightsEnabled *T `json:"PerformanceInsightsEnabled,omitempty"`
 
 	// PerformanceInsightsKmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -192,12 +192,12 @@ type DBCluster struct {
 	// PerformanceInsightsRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-performanceinsightsretentionperiod
-	PerformanceInsightsRetentionPeriod *int `json:"PerformanceInsightsRetentionPeriod,omitempty"`
+	PerformanceInsightsRetentionPeriod *T `json:"PerformanceInsightsRetentionPeriod,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
@@ -212,7 +212,7 @@ type DBCluster struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// ReplicationSourceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -232,12 +232,12 @@ type DBCluster struct {
 	// ScalingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-scalingconfiguration
-	ScalingConfiguration *DBCluster_ScalingConfiguration `json:"ScalingConfiguration,omitempty"`
+	ScalingConfiguration *DBCluster_ScalingConfiguration[any] `json:"ScalingConfiguration,omitempty"`
 
 	// ServerlessV2ScalingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-serverlessv2scalingconfiguration
-	ServerlessV2ScalingConfiguration *DBCluster_ServerlessV2ScalingConfiguration `json:"ServerlessV2ScalingConfiguration,omitempty"`
+	ServerlessV2ScalingConfiguration *DBCluster_ServerlessV2ScalingConfiguration[any] `json:"ServerlessV2ScalingConfiguration,omitempty"`
 
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
@@ -257,7 +257,7 @@ type DBCluster struct {
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
-	StorageEncrypted *bool `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *T `json:"StorageEncrypted,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: false
@@ -272,7 +272,7 @@ type DBCluster struct {
 	// UseLatestRestorableTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-uselatestrestorabletime
-	UseLatestRestorableTime *bool `json:"UseLatestRestorableTime,omitempty"`
+	UseLatestRestorableTime *T `json:"UseLatestRestorableTime,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -296,14 +296,15 @@ type DBCluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster) AWSCloudFormationType() string {
+func (r *DBCluster[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBCluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBCluster) MarshalJSON() ([]byte, error) {
-	type Properties DBCluster
+func (r DBCluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBCluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -325,8 +326,9 @@ func (r DBCluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBCluster) UnmarshalJSON(b []byte) error {
-	type Properties DBCluster
+func (r *DBCluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBCluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -346,7 +348,7 @@ func (r *DBCluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBCluster(*res.Properties)
+		*r = DBCluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

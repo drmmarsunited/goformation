@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_SplunkDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html
-type DeliveryStream_SplunkDestinationConfiguration struct {
+type DeliveryStream_SplunkDestinationConfiguration[T any] struct {
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// HECAcknowledgmentTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hecacknowledgmenttimeoutinseconds
-	HECAcknowledgmentTimeoutInSeconds *int `json:"HECAcknowledgmentTimeoutInSeconds,omitempty"`
+	HECAcknowledgmentTimeoutInSeconds *T `json:"HECAcknowledgmentTimeoutInSeconds,omitempty"`
 
 	// HECEndpoint AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type DeliveryStream_SplunkDestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_SplunkRetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_SplunkRetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type DeliveryStream_SplunkDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type DeliveryStream_SplunkDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_SplunkDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_SplunkDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Canary_Schedule AWS CloudFormation Resource (AWS::Synthetics::Canary.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html
-type Canary_Schedule struct {
+type Canary_Schedule[T any] struct {
 
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Canary_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_Schedule) AWSCloudFormationType() string {
+func (r *Canary_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.Schedule"
 }

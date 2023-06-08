@@ -8,32 +8,32 @@ import (
 
 // PackagingConfiguration_HlsPackage AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.HlsPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html
-type PackagingConfiguration_HlsPackage struct {
+type PackagingConfiguration_HlsPackage[T any] struct {
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-encryption
-	Encryption *PackagingConfiguration_HlsEncryption `json:"Encryption,omitempty"`
+	Encryption *PackagingConfiguration_HlsEncryption[any] `json:"Encryption,omitempty"`
 
 	// HlsManifests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-hlsmanifests
-	HlsManifests []PackagingConfiguration_HlsManifest `json:"HlsManifests"`
+	HlsManifests []PackagingConfiguration_HlsManifest[any] `json:"HlsManifests"`
 
 	// IncludeDvbSubtitles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-includedvbsubtitles
-	IncludeDvbSubtitles *bool `json:"IncludeDvbSubtitles,omitempty"`
+	IncludeDvbSubtitles *T `json:"IncludeDvbSubtitles,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// UseAudioRenditionGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-useaudiorenditiongroup
-	UseAudioRenditionGroup *bool `json:"UseAudioRenditionGroup,omitempty"`
+	UseAudioRenditionGroup *T `json:"UseAudioRenditionGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type PackagingConfiguration_HlsPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_HlsPackage) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_HlsPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.HlsPackage"
 }

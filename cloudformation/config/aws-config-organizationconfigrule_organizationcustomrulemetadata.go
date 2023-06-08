@@ -8,7 +8,7 @@ import (
 
 // OrganizationConfigRule_OrganizationCustomRuleMetadata AWS CloudFormation Resource (AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustomrulemetadata.html
-type OrganizationConfigRule_OrganizationCustomRuleMetadata struct {
+type OrganizationConfigRule_OrganizationCustomRuleMetadata[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type OrganizationConfigRule_OrganizationCustomRuleMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OrganizationConfigRule_OrganizationCustomRuleMetadata) AWSCloudFormationType() string {
+func (r *OrganizationConfigRule_OrganizationCustomRuleMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata"
 }

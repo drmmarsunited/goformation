@@ -8,7 +8,7 @@ import (
 
 // BudgetsAction_SsmActionDefinition AWS CloudFormation Resource (AWS::Budgets::BudgetsAction.SsmActionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-ssmactiondefinition.html
-type BudgetsAction_SsmActionDefinition struct {
+type BudgetsAction_SsmActionDefinition[T any] struct {
 
 	// InstanceIds AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type BudgetsAction_SsmActionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction_SsmActionDefinition) AWSCloudFormationType() string {
+func (r *BudgetsAction_SsmActionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction.SsmActionDefinition"
 }

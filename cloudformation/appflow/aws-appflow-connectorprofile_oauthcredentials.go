@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_OAuthCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.OAuthCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html
-type ConnectorProfile_OAuthCredentials struct {
+type ConnectorProfile_OAuthCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_OAuthCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html#cfn-appflow-connectorprofile-oauthcredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ConnectorProfile_OAuthCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_OAuthCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_OAuthCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.OAuthCredentials"
 }

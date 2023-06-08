@@ -12,12 +12,12 @@ import (
 
 // Ledger AWS CloudFormation Resource (AWS::QLDB::Ledger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html
-type Ledger struct {
+type Ledger[T any] struct {
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-deletionprotection
-	DeletionProtection *bool `json:"DeletionProtection,omitempty"`
+	DeletionProtection *T `json:"DeletionProtection,omitempty"`
 
 	// KmsKey AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type Ledger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ledger) AWSCloudFormationType() string {
+func (r *Ledger[any]) AWSCloudFormationType() string {
 	return "AWS::QLDB::Ledger"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Ledger) MarshalJSON() ([]byte, error) {
-	type Properties Ledger
+func (r Ledger[any]) MarshalJSON() ([]byte, error) {
+	type Properties Ledger[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Ledger) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Ledger) UnmarshalJSON(b []byte) error {
-	type Properties Ledger
+func (r *Ledger[any]) UnmarshalJSON(b []byte) error {
+	type Properties Ledger[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Ledger) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Ledger(*res.Properties)
+		*r = Ledger[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

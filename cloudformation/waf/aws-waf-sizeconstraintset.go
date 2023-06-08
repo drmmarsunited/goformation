@@ -11,7 +11,7 @@ import (
 
 // SizeConstraintSet AWS CloudFormation Resource (AWS::WAF::SizeConstraintSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html
-type SizeConstraintSet struct {
+type SizeConstraintSet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type SizeConstraintSet struct {
 	// SizeConstraints AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
-	SizeConstraints []SizeConstraintSet_SizeConstraint `json:"SizeConstraints"`
+	SizeConstraints []SizeConstraintSet_SizeConstraint[any] `json:"SizeConstraints"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type SizeConstraintSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SizeConstraintSet) AWSCloudFormationType() string {
+func (r *SizeConstraintSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::SizeConstraintSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SizeConstraintSet) MarshalJSON() ([]byte, error) {
-	type Properties SizeConstraintSet
+func (r SizeConstraintSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties SizeConstraintSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SizeConstraintSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SizeConstraintSet) UnmarshalJSON(b []byte) error {
-	type Properties SizeConstraintSet
+func (r *SizeConstraintSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties SizeConstraintSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SizeConstraintSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SizeConstraintSet(*res.Properties)
+		*r = SizeConstraintSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

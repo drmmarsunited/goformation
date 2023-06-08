@@ -8,17 +8,17 @@ import (
 
 // ApplicationReferenceDataSource_MappingParameters AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html
-type ApplicationReferenceDataSource_MappingParameters struct {
+type ApplicationReferenceDataSource_MappingParameters[T any] struct {
 
 	// CSVMappingParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters-csvmappingparameters
-	CSVMappingParameters *ApplicationReferenceDataSource_CSVMappingParameters `json:"CSVMappingParameters,omitempty"`
+	CSVMappingParameters *ApplicationReferenceDataSource_CSVMappingParameters[any] `json:"CSVMappingParameters,omitempty"`
 
 	// JSONMappingParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters-jsonmappingparameters
-	JSONMappingParameters *ApplicationReferenceDataSource_JSONMappingParameters `json:"JSONMappingParameters,omitempty"`
+	JSONMappingParameters *ApplicationReferenceDataSource_JSONMappingParameters[any] `json:"JSONMappingParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ApplicationReferenceDataSource_MappingParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource_MappingParameters) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource_MappingParameters[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters"
 }

@@ -8,12 +8,12 @@ import (
 
 // Database_DatabaseInput AWS CloudFormation Resource (AWS::Glue::Database.DatabaseInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html
-type Database_DatabaseInput struct {
+type Database_DatabaseInput[T any] struct {
 
 	// CreateTableDefaultPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-createtabledefaultpermissions
-	CreateTableDefaultPermissions []Database_PrincipalPrivileges `json:"CreateTableDefaultPermissions,omitempty"`
+	CreateTableDefaultPermissions []Database_PrincipalPrivileges[any] `json:"CreateTableDefaultPermissions,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Database_DatabaseInput struct {
 	// FederatedDatabase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-federateddatabase
-	FederatedDatabase *Database_FederatedDatabase `json:"FederatedDatabase,omitempty"`
+	FederatedDatabase *Database_FederatedDatabase[any] `json:"FederatedDatabase,omitempty"`
 
 	// LocationUri AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Database_DatabaseInput struct {
 	// TargetDatabase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-targetdatabase
-	TargetDatabase *Database_DatabaseIdentifier `json:"TargetDatabase,omitempty"`
+	TargetDatabase *Database_DatabaseIdentifier[any] `json:"TargetDatabase,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Database_DatabaseInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_DatabaseInput) AWSCloudFormationType() string {
+func (r *Database_DatabaseInput[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.DatabaseInput"
 }

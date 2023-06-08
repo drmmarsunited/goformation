@@ -8,7 +8,7 @@ import (
 
 // Bucket_Transition AWS CloudFormation Resource (AWS::S3::Bucket.Transition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
-type Bucket_Transition struct {
+type Bucket_Transition[T any] struct {
 
 	// StorageClass AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Bucket_Transition struct {
 	// TransitionInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays
-	TransitionInDays *int `json:"TransitionInDays,omitempty"`
+	TransitionInDays *T `json:"TransitionInDays,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bucket_Transition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Transition) AWSCloudFormationType() string {
+func (r *Bucket_Transition[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Transition"
 }

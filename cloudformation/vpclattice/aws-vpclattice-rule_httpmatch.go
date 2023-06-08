@@ -8,12 +8,12 @@ import (
 
 // Rule_HttpMatch AWS CloudFormation Resource (AWS::VpcLattice::Rule.HttpMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-httpmatch.html
-type Rule_HttpMatch struct {
+type Rule_HttpMatch[T any] struct {
 
 	// HeaderMatches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-httpmatch.html#cfn-vpclattice-rule-httpmatch-headermatches
-	HeaderMatches []Rule_HeaderMatch `json:"HeaderMatches,omitempty"`
+	HeaderMatches []Rule_HeaderMatch[any] `json:"HeaderMatches,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Rule_HttpMatch struct {
 	// PathMatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-httpmatch.html#cfn-vpclattice-rule-httpmatch-pathmatch
-	PathMatch *Rule_PathMatch `json:"PathMatch,omitempty"`
+	PathMatch *Rule_PathMatch[any] `json:"PathMatch,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Rule_HttpMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_HttpMatch) AWSCloudFormationType() string {
+func (r *Rule_HttpMatch[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.HttpMatch"
 }

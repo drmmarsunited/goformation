@@ -8,7 +8,7 @@ import (
 
 // RecordSetGroup_GeoLocation AWS CloudFormation Resource (AWS::Route53::RecordSetGroup.GeoLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html
-type RecordSetGroup_GeoLocation struct {
+type RecordSetGroup_GeoLocation[T any] struct {
 
 	// ContinentCode AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type RecordSetGroup_GeoLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordSetGroup_GeoLocation) AWSCloudFormationType() string {
+func (r *RecordSetGroup_GeoLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSetGroup.GeoLocation"
 }

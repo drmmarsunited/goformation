@@ -8,7 +8,7 @@ import (
 
 // Index_ServerSideEncryptionConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.ServerSideEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-serversideencryptionconfiguration.html
-type Index_ServerSideEncryptionConfiguration struct {
+type Index_ServerSideEncryptionConfiguration[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Index_ServerSideEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_ServerSideEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Index_ServerSideEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.ServerSideEncryptionConfiguration"
 }

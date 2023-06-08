@@ -8,57 +8,57 @@ import (
 
 // Dashboard_WaterfallChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.WaterfallChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html
-type Dashboard_WaterfallChartConfiguration struct {
+type Dashboard_WaterfallChartConfiguration[T any] struct {
 
 	// CategoryAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-categoryaxisdisplayoptions
-	CategoryAxisDisplayOptions *Dashboard_AxisDisplayOptions `json:"CategoryAxisDisplayOptions,omitempty"`
+	CategoryAxisDisplayOptions *Dashboard_AxisDisplayOptions[any] `json:"CategoryAxisDisplayOptions,omitempty"`
 
 	// CategoryAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-categoryaxislabeloptions
-	CategoryAxisLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryAxisLabelOptions,omitempty"`
+	CategoryAxisLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryAxisLabelOptions,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-fieldwells
-	FieldWells *Dashboard_WaterfallChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_WaterfallChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// PrimaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-primaryyaxisdisplayoptions
-	PrimaryYAxisDisplayOptions *Dashboard_AxisDisplayOptions `json:"PrimaryYAxisDisplayOptions,omitempty"`
+	PrimaryYAxisDisplayOptions *Dashboard_AxisDisplayOptions[any] `json:"PrimaryYAxisDisplayOptions,omitempty"`
 
 	// PrimaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-primaryyaxislabeloptions
-	PrimaryYAxisLabelOptions *Dashboard_ChartAxisLabelOptions `json:"PrimaryYAxisLabelOptions,omitempty"`
+	PrimaryYAxisLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"PrimaryYAxisLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_WaterfallChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_WaterfallChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-visualpalette
-	VisualPalette *Dashboard_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Dashboard_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// WaterfallChartOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartconfiguration.html#cfn-quicksight-dashboard-waterfallchartconfiguration-waterfallchartoptions
-	WaterfallChartOptions *Dashboard_WaterfallChartOptions `json:"WaterfallChartOptions,omitempty"`
+	WaterfallChartOptions *Dashboard_WaterfallChartOptions[any] `json:"WaterfallChartOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Dashboard_WaterfallChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_WaterfallChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_WaterfallChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.WaterfallChartConfiguration"
 }

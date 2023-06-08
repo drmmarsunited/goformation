@@ -8,17 +8,17 @@ import (
 
 // HttpApi_RouteSettings AWS CloudFormation Resource (AWS::Serverless::HttpApi.RouteSettings)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html
-type HttpApi_RouteSettings struct {
+type HttpApi_RouteSettings[T any] struct {
 
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-datatraceenabled
-	DataTraceEnabled *bool `json:"DataTraceEnabled,omitempty"`
+	DataTraceEnabled *T `json:"DataTraceEnabled,omitempty"`
 
 	// DetailedMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-detailedmetricsenabled
-	DetailedMetricsEnabled *bool `json:"DetailedMetricsEnabled,omitempty"`
+	DetailedMetricsEnabled *T `json:"DetailedMetricsEnabled,omitempty"`
 
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type HttpApi_RouteSettings struct {
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingburstlimit
-	ThrottlingBurstLimit *int `json:"ThrottlingBurstLimit,omitempty"`
+	ThrottlingBurstLimit *T `json:"ThrottlingBurstLimit,omitempty"`
 
 	// ThrottlingRateLimit AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit
-	ThrottlingRateLimit *float64 `json:"ThrottlingRateLimit,omitempty"`
+	ThrottlingRateLimit *T `json:"ThrottlingRateLimit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type HttpApi_RouteSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_RouteSettings) AWSCloudFormationType() string {
+func (r *HttpApi_RouteSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.RouteSettings"
 }

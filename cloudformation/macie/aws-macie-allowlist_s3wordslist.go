@@ -8,7 +8,7 @@ import (
 
 // AllowList_S3WordsList AWS CloudFormation Resource (AWS::Macie::AllowList.S3WordsList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-s3wordslist.html
-type AllowList_S3WordsList struct {
+type AllowList_S3WordsList[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AllowList_S3WordsList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AllowList_S3WordsList) AWSCloudFormationType() string {
+func (r *AllowList_S3WordsList[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::AllowList.S3WordsList"
 }

@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_RuleDefinition AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RuleDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruledefinition.html
-type RuleGroup_RuleDefinition struct {
+type RuleGroup_RuleDefinition[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type RuleGroup_RuleDefinition struct {
 	// MatchAttributes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruledefinition.html#cfn-networkfirewall-rulegroup-ruledefinition-matchattributes
-	MatchAttributes *RuleGroup_MatchAttributes `json:"MatchAttributes"`
+	MatchAttributes *RuleGroup_MatchAttributes[any] `json:"MatchAttributes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_RuleDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RuleDefinition) AWSCloudFormationType() string {
+func (r *RuleGroup_RuleDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RuleDefinition"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bucket_AccessControlTranslation AWS CloudFormation Resource (AWS::S3::Bucket.AccessControlTranslation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accesscontroltranslation.html
-type Bucket_AccessControlTranslation struct {
+type Bucket_AccessControlTranslation[T any] struct {
 
 	// Owner AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_AccessControlTranslation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_AccessControlTranslation) AWSCloudFormationType() string {
+func (r *Bucket_AccessControlTranslation[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.AccessControlTranslation"
 }

@@ -8,17 +8,17 @@ import (
 
 // JobTemplate_RateIncreaseCriteria AWS CloudFormation Resource (AWS::IoT::JobTemplate.RateIncreaseCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html
-type JobTemplate_RateIncreaseCriteria struct {
+type JobTemplate_RateIncreaseCriteria[T any] struct {
 
 	// NumberOfNotifiedThings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofnotifiedthings
-	NumberOfNotifiedThings *int `json:"NumberOfNotifiedThings,omitempty"`
+	NumberOfNotifiedThings *T `json:"NumberOfNotifiedThings,omitempty"`
 
 	// NumberOfSucceededThings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofsucceededthings
-	NumberOfSucceededThings *int `json:"NumberOfSucceededThings,omitempty"`
+	NumberOfSucceededThings *T `json:"NumberOfSucceededThings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type JobTemplate_RateIncreaseCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_RateIncreaseCriteria) AWSCloudFormationType() string {
+func (r *JobTemplate_RateIncreaseCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.RateIncreaseCriteria"
 }

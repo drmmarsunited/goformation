@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SheetElementRenderingRule AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetElementRenderingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetelementrenderingrule.html
-type Dashboard_SheetElementRenderingRule struct {
+type Dashboard_SheetElementRenderingRule[T any] struct {
 
 	// ConfigurationOverrides AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetelementrenderingrule.html#cfn-quicksight-dashboard-sheetelementrenderingrule-configurationoverrides
-	ConfigurationOverrides *Dashboard_SheetElementConfigurationOverrides `json:"ConfigurationOverrides"`
+	ConfigurationOverrides *Dashboard_SheetElementConfigurationOverrides[any] `json:"ConfigurationOverrides"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_SheetElementRenderingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetElementRenderingRule) AWSCloudFormationType() string {
+func (r *Dashboard_SheetElementRenderingRule[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetElementRenderingRule"
 }

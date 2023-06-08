@@ -8,7 +8,7 @@ import (
 
 // Cluster_OutpostConfig AWS CloudFormation Resource (AWS::EKS::Cluster.OutpostConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-outpostconfig.html
-type Cluster_OutpostConfig struct {
+type Cluster_OutpostConfig[T any] struct {
 
 	// ControlPlaneInstanceType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Cluster_OutpostConfig struct {
 	// ControlPlanePlacement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-outpostconfig.html#cfn-eks-cluster-outpostconfig-controlplaneplacement
-	ControlPlanePlacement *Cluster_ControlPlanePlacement `json:"ControlPlanePlacement,omitempty"`
+	ControlPlanePlacement *Cluster_ControlPlanePlacement[any] `json:"ControlPlanePlacement,omitempty"`
 
 	// OutpostArns AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Cluster_OutpostConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_OutpostConfig) AWSCloudFormationType() string {
+func (r *Cluster_OutpostConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.OutpostConfig"
 }

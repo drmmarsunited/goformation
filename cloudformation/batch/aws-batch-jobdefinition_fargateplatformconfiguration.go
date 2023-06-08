@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_FargatePlatformConfiguration AWS CloudFormation Resource (AWS::Batch::JobDefinition.FargatePlatformConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-fargateplatformconfiguration.html
-type JobDefinition_FargatePlatformConfiguration struct {
+type JobDefinition_FargatePlatformConfiguration[T any] struct {
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type JobDefinition_FargatePlatformConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_FargatePlatformConfiguration) AWSCloudFormationType() string {
+func (r *JobDefinition_FargatePlatformConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.FargatePlatformConfiguration"
 }

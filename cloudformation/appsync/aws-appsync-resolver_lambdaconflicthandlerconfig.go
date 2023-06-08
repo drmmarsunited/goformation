@@ -8,7 +8,7 @@ import (
 
 // Resolver_LambdaConflictHandlerConfig AWS CloudFormation Resource (AWS::AppSync::Resolver.LambdaConflictHandlerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html
-type Resolver_LambdaConflictHandlerConfig struct {
+type Resolver_LambdaConflictHandlerConfig[T any] struct {
 
 	// LambdaConflictHandlerArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Resolver_LambdaConflictHandlerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Resolver_LambdaConflictHandlerConfig) AWSCloudFormationType() string {
+func (r *Resolver_LambdaConflictHandlerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
 }

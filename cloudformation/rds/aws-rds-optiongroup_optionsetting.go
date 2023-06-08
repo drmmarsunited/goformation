@@ -8,7 +8,7 @@ import (
 
 // OptionGroup_OptionSetting AWS CloudFormation Resource (AWS::RDS::OptionGroup.OptionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionsetting.html
-type OptionGroup_OptionSetting struct {
+type OptionGroup_OptionSetting[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type OptionGroup_OptionSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OptionGroup_OptionSetting) AWSCloudFormationType() string {
+func (r *OptionGroup_OptionSetting[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::OptionGroup.OptionSetting"
 }

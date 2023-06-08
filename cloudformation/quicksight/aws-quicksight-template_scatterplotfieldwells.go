@@ -8,17 +8,17 @@ import (
 
 // Template_ScatterPlotFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.ScatterPlotFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotfieldwells.html
-type Template_ScatterPlotFieldWells struct {
+type Template_ScatterPlotFieldWells[T any] struct {
 
 	// ScatterPlotCategoricallyAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotfieldwells.html#cfn-quicksight-template-scatterplotfieldwells-scatterplotcategoricallyaggregatedfieldwells
-	ScatterPlotCategoricallyAggregatedFieldWells *Template_ScatterPlotCategoricallyAggregatedFieldWells `json:"ScatterPlotCategoricallyAggregatedFieldWells,omitempty"`
+	ScatterPlotCategoricallyAggregatedFieldWells *Template_ScatterPlotCategoricallyAggregatedFieldWells[any] `json:"ScatterPlotCategoricallyAggregatedFieldWells,omitempty"`
 
 	// ScatterPlotUnaggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scatterplotfieldwells.html#cfn-quicksight-template-scatterplotfieldwells-scatterplotunaggregatedfieldwells
-	ScatterPlotUnaggregatedFieldWells *Template_ScatterPlotUnaggregatedFieldWells `json:"ScatterPlotUnaggregatedFieldWells,omitempty"`
+	ScatterPlotUnaggregatedFieldWells *Template_ScatterPlotUnaggregatedFieldWells[any] `json:"ScatterPlotUnaggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ScatterPlotFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ScatterPlotFieldWells) AWSCloudFormationType() string {
+func (r *Template_ScatterPlotFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ScatterPlotFieldWells"
 }

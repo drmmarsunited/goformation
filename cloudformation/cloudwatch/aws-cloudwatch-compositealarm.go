@@ -11,12 +11,12 @@ import (
 
 // CompositeAlarm AWS CloudFormation Resource (AWS::CloudWatch::CompositeAlarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html
-type CompositeAlarm struct {
+type CompositeAlarm[T any] struct {
 
 	// ActionsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionsenabled
-	ActionsEnabled *bool `json:"ActionsEnabled,omitempty"`
+	ActionsEnabled *T `json:"ActionsEnabled,omitempty"`
 
 	// ActionsSuppressor AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type CompositeAlarm struct {
 	// ActionsSuppressorExtensionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorextensionperiod
-	ActionsSuppressorExtensionPeriod *int `json:"ActionsSuppressorExtensionPeriod,omitempty"`
+	ActionsSuppressorExtensionPeriod *T `json:"ActionsSuppressorExtensionPeriod,omitempty"`
 
 	// ActionsSuppressorWaitPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorwaitperiod
-	ActionsSuppressorWaitPeriod *int `json:"ActionsSuppressorWaitPeriod,omitempty"`
+	ActionsSuppressorWaitPeriod *T `json:"ActionsSuppressorWaitPeriod,omitempty"`
 
 	// AlarmActions AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type CompositeAlarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CompositeAlarm) AWSCloudFormationType() string {
+func (r *CompositeAlarm[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::CompositeAlarm"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CompositeAlarm) MarshalJSON() ([]byte, error) {
-	type Properties CompositeAlarm
+func (r CompositeAlarm[any]) MarshalJSON() ([]byte, error) {
+	type Properties CompositeAlarm[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r CompositeAlarm) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CompositeAlarm) UnmarshalJSON(b []byte) error {
-	type Properties CompositeAlarm
+func (r *CompositeAlarm[any]) UnmarshalJSON(b []byte) error {
+	type Properties CompositeAlarm[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *CompositeAlarm) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CompositeAlarm(*res.Properties)
+		*r = CompositeAlarm[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // TopicRule_S3Action AWS CloudFormation Resource (AWS::IoT::TopicRule.S3Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html
-type TopicRule_S3Action struct {
+type TopicRule_S3Action[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TopicRule_S3Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_S3Action) AWSCloudFormationType() string {
+func (r *TopicRule_S3Action[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.S3Action"
 }

@@ -8,7 +8,7 @@ import (
 
 // EvaluationForm_NumericQuestionPropertyValueAutomation AWS CloudFormation Resource (AWS::Connect::EvaluationForm.NumericQuestionPropertyValueAutomation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-numericquestionpropertyvalueautomation.html
-type EvaluationForm_NumericQuestionPropertyValueAutomation struct {
+type EvaluationForm_NumericQuestionPropertyValueAutomation[T any] struct {
 
 	// Label AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type EvaluationForm_NumericQuestionPropertyValueAutomation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_NumericQuestionPropertyValueAutomation) AWSCloudFormationType() string {
+func (r *EvaluationForm_NumericQuestionPropertyValueAutomation[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.NumericQuestionPropertyValueAutomation"
 }

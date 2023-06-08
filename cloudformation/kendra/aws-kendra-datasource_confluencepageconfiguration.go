@@ -8,12 +8,12 @@ import (
 
 // DataSource_ConfluencePageConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluencePageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepageconfiguration.html
-type DataSource_ConfluencePageConfiguration struct {
+type DataSource_ConfluencePageConfiguration[T any] struct {
 
 	// PageFieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepageconfiguration.html#cfn-kendra-datasource-confluencepageconfiguration-pagefieldmappings
-	PageFieldMappings []DataSource_ConfluencePageToIndexFieldMapping `json:"PageFieldMappings,omitempty"`
+	PageFieldMappings []DataSource_ConfluencePageToIndexFieldMapping[any] `json:"PageFieldMappings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSource_ConfluencePageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluencePageConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConfluencePageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluencePageConfiguration"
 }

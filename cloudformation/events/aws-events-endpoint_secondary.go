@@ -8,7 +8,7 @@ import (
 
 // Endpoint_Secondary AWS CloudFormation Resource (AWS::Events::Endpoint.Secondary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-secondary.html
-type Endpoint_Secondary struct {
+type Endpoint_Secondary[T any] struct {
 
 	// Route AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_Secondary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_Secondary) AWSCloudFormationType() string {
+func (r *Endpoint_Secondary[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.Secondary"
 }

@@ -8,22 +8,22 @@ import (
 
 // Dashboard_ListControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ListControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontroldisplayoptions.html
-type Dashboard_ListControlDisplayOptions struct {
+type Dashboard_ListControlDisplayOptions[T any] struct {
 
 	// SearchOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontroldisplayoptions.html#cfn-quicksight-dashboard-listcontroldisplayoptions-searchoptions
-	SearchOptions *Dashboard_ListControlSearchOptions `json:"SearchOptions,omitempty"`
+	SearchOptions *Dashboard_ListControlSearchOptions[any] `json:"SearchOptions,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontroldisplayoptions.html#cfn-quicksight-dashboard-listcontroldisplayoptions-selectalloptions
-	SelectAllOptions *Dashboard_ListControlSelectAllOptions `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *Dashboard_ListControlSelectAllOptions[any] `json:"SelectAllOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontroldisplayoptions.html#cfn-quicksight-dashboard-listcontroldisplayoptions-titleoptions
-	TitleOptions *Dashboard_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Dashboard_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ListControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ListControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ListControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ListControlDisplayOptions"
 }

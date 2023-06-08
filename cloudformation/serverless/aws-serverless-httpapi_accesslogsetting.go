@@ -8,7 +8,7 @@ import (
 
 // HttpApi_AccessLogSetting AWS CloudFormation Resource (AWS::Serverless::HttpApi.AccessLogSetting)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
-type HttpApi_AccessLogSetting struct {
+type HttpApi_AccessLogSetting[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type HttpApi_AccessLogSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_AccessLogSetting) AWSCloudFormationType() string {
+func (r *HttpApi_AccessLogSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.AccessLogSetting"
 }

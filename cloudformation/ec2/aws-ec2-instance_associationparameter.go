@@ -8,7 +8,7 @@ import (
 
 // Instance_AssociationParameter AWS CloudFormation Resource (AWS::EC2::Instance.AssociationParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
-type Instance_AssociationParameter struct {
+type Instance_AssociationParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Instance_AssociationParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_AssociationParameter) AWSCloudFormationType() string {
+func (r *Instance_AssociationParameter[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.AssociationParameter"
 }

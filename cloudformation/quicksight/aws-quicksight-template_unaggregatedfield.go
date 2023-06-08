@@ -8,12 +8,12 @@ import (
 
 // Template_UnaggregatedField AWS CloudFormation Resource (AWS::QuickSight::Template.UnaggregatedField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-unaggregatedfield.html
-type Template_UnaggregatedField struct {
+type Template_UnaggregatedField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-unaggregatedfield.html#cfn-quicksight-template-unaggregatedfield-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Template_UnaggregatedField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-unaggregatedfield.html#cfn-quicksight-template-unaggregatedfield-formatconfiguration
-	FormatConfiguration *Template_FormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Template_FormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_UnaggregatedField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_UnaggregatedField) AWSCloudFormationType() string {
+func (r *Template_UnaggregatedField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.UnaggregatedField"
 }

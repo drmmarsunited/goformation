@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ConditionalFormattingSolidColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ConditionalFormattingSolidColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingsolidcolor.html
-type Dashboard_ConditionalFormattingSolidColor struct {
+type Dashboard_ConditionalFormattingSolidColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ConditionalFormattingSolidColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ConditionalFormattingSolidColor) AWSCloudFormationType() string {
+func (r *Dashboard_ConditionalFormattingSolidColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ConditionalFormattingSolidColor"
 }

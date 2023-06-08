@@ -8,7 +8,7 @@ import (
 
 // ResourceCollection_CloudFormationCollectionFilter AWS CloudFormation Resource (AWS::DevOpsGuru::ResourceCollection.CloudFormationCollectionFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-cloudformationcollectionfilter.html
-type ResourceCollection_CloudFormationCollectionFilter struct {
+type ResourceCollection_CloudFormationCollectionFilter[T any] struct {
 
 	// StackNames AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ResourceCollection_CloudFormationCollectionFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceCollection_CloudFormationCollectionFilter) AWSCloudFormationType() string {
+func (r *ResourceCollection_CloudFormationCollectionFilter[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::ResourceCollection.CloudFormationCollectionFilter"
 }

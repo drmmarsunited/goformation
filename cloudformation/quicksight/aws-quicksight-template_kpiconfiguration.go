@@ -8,22 +8,22 @@ import (
 
 // Template_KPIConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.KPIConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconfiguration.html
-type Template_KPIConfiguration struct {
+type Template_KPIConfiguration[T any] struct {
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconfiguration.html#cfn-quicksight-template-kpiconfiguration-fieldwells
-	FieldWells *Template_KPIFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_KPIFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// KPIOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconfiguration.html#cfn-quicksight-template-kpiconfiguration-kpioptions
-	KPIOptions *Template_KPIOptions `json:"KPIOptions,omitempty"`
+	KPIOptions *Template_KPIOptions[any] `json:"KPIOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconfiguration.html#cfn-quicksight-template-kpiconfiguration-sortconfiguration
-	SortConfiguration *Template_KPISortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Template_KPISortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_KPIConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_KPIConfiguration) AWSCloudFormationType() string {
+func (r *Template_KPIConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.KPIConfiguration"
 }

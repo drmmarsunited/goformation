@@ -8,12 +8,12 @@ import (
 
 // EndpointConfig_ExplainerConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ExplainerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-explainerconfig.html
-type EndpointConfig_ExplainerConfig struct {
+type EndpointConfig_ExplainerConfig[T any] struct {
 
 	// ClarifyExplainerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-explainerconfig.html#cfn-sagemaker-endpointconfig-explainerconfig-clarifyexplainerconfig
-	ClarifyExplainerConfig *EndpointConfig_ClarifyExplainerConfig `json:"ClarifyExplainerConfig,omitempty"`
+	ClarifyExplainerConfig *EndpointConfig_ClarifyExplainerConfig[any] `json:"ClarifyExplainerConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EndpointConfig_ExplainerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ExplainerConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ExplainerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ExplainerConfig"
 }

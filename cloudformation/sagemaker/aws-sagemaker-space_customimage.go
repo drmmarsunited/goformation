@@ -8,7 +8,7 @@ import (
 
 // Space_CustomImage AWS CloudFormation Resource (AWS::SageMaker::Space.CustomImage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html
-type Space_CustomImage struct {
+type Space_CustomImage[T any] struct {
 
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Space_CustomImage struct {
 	// ImageVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-imageversionnumber
-	ImageVersionNumber *int `json:"ImageVersionNumber,omitempty"`
+	ImageVersionNumber *T `json:"ImageVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Space_CustomImage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Space_CustomImage) AWSCloudFormationType() string {
+func (r *Space_CustomImage[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Space.CustomImage"
 }

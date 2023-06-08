@@ -8,7 +8,7 @@ import (
 
 // Analysis_GrowthRateComputation AWS CloudFormation Resource (AWS::QuickSight::Analysis.GrowthRateComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-growthratecomputation.html
-type Analysis_GrowthRateComputation struct {
+type Analysis_GrowthRateComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type Analysis_GrowthRateComputation struct {
 	// PeriodSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-growthratecomputation.html#cfn-quicksight-analysis-growthratecomputation-periodsize
-	PeriodSize *float64 `json:"PeriodSize,omitempty"`
+	PeriodSize *T `json:"PeriodSize,omitempty"`
 
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-growthratecomputation.html#cfn-quicksight-analysis-growthratecomputation-time
-	Time *Analysis_DimensionField `json:"Time"`
+	Time *Analysis_DimensionField[any] `json:"Time"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-growthratecomputation.html#cfn-quicksight-analysis-growthratecomputation-value
-	Value *Analysis_MeasureField `json:"Value,omitempty"`
+	Value *Analysis_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_GrowthRateComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GrowthRateComputation) AWSCloudFormationType() string {
+func (r *Analysis_GrowthRateComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GrowthRateComputation"
 }

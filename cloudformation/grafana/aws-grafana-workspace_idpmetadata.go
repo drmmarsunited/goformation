@@ -8,7 +8,7 @@ import (
 
 // Workspace_IdpMetadata AWS CloudFormation Resource (AWS::Grafana::Workspace.IdpMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-idpmetadata.html
-type Workspace_IdpMetadata struct {
+type Workspace_IdpMetadata[T any] struct {
 
 	// Url AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workspace_IdpMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_IdpMetadata) AWSCloudFormationType() string {
+func (r *Workspace_IdpMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.IdpMetadata"
 }

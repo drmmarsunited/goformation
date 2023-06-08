@@ -8,22 +8,22 @@ import (
 
 // Template_SmallMultiplesOptions AWS CloudFormation Resource (AWS::QuickSight::Template.SmallMultiplesOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-smallmultiplesoptions.html
-type Template_SmallMultiplesOptions struct {
+type Template_SmallMultiplesOptions[T any] struct {
 
 	// MaxVisibleColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-smallmultiplesoptions.html#cfn-quicksight-template-smallmultiplesoptions-maxvisiblecolumns
-	MaxVisibleColumns *float64 `json:"MaxVisibleColumns,omitempty"`
+	MaxVisibleColumns *T `json:"MaxVisibleColumns,omitempty"`
 
 	// MaxVisibleRows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-smallmultiplesoptions.html#cfn-quicksight-template-smallmultiplesoptions-maxvisiblerows
-	MaxVisibleRows *float64 `json:"MaxVisibleRows,omitempty"`
+	MaxVisibleRows *T `json:"MaxVisibleRows,omitempty"`
 
 	// PanelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-smallmultiplesoptions.html#cfn-quicksight-template-smallmultiplesoptions-panelconfiguration
-	PanelConfiguration *Template_PanelConfiguration `json:"PanelConfiguration,omitempty"`
+	PanelConfiguration *Template_PanelConfiguration[any] `json:"PanelConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_SmallMultiplesOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SmallMultiplesOptions) AWSCloudFormationType() string {
+func (r *Template_SmallMultiplesOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SmallMultiplesOptions"
 }

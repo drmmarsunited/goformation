@@ -8,12 +8,12 @@ import (
 
 // InstanceStorageConfig_KinesisVideoStreamConfig AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.KinesisVideoStreamConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisvideostreamconfig.html
-type InstanceStorageConfig_KinesisVideoStreamConfig struct {
+type InstanceStorageConfig_KinesisVideoStreamConfig[T any] struct {
 
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisvideostreamconfig.html#cfn-connect-instancestorageconfig-kinesisvideostreamconfig-encryptionconfig
-	EncryptionConfig *InstanceStorageConfig_EncryptionConfig `json:"EncryptionConfig,omitempty"`
+	EncryptionConfig *InstanceStorageConfig_EncryptionConfig[any] `json:"EncryptionConfig,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type InstanceStorageConfig_KinesisVideoStreamConfig struct {
 	// RetentionPeriodHours AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisvideostreamconfig.html#cfn-connect-instancestorageconfig-kinesisvideostreamconfig-retentionperiodhours
-	RetentionPeriodHours float64 `json:"RetentionPeriodHours"`
+	RetentionPeriodHours T `json:"RetentionPeriodHours"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type InstanceStorageConfig_KinesisVideoStreamConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig_KinesisVideoStreamConfig) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig_KinesisVideoStreamConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig.KinesisVideoStreamConfig"
 }

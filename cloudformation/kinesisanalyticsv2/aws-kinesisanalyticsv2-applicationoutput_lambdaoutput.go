@@ -8,7 +8,7 @@ import (
 
 // ApplicationOutput_LambdaOutput AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html
-type ApplicationOutput_LambdaOutput struct {
+type ApplicationOutput_LambdaOutput[T any] struct {
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ApplicationOutput_LambdaOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput_LambdaOutput) AWSCloudFormationType() string {
+func (r *ApplicationOutput_LambdaOutput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput"
 }

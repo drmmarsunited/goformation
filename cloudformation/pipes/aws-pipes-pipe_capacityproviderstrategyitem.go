@@ -8,12 +8,12 @@ import (
 
 // Pipe_CapacityProviderStrategyItem AWS CloudFormation Resource (AWS::Pipes::Pipe.CapacityProviderStrategyItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-capacityproviderstrategyitem.html
-type Pipe_CapacityProviderStrategyItem struct {
+type Pipe_CapacityProviderStrategyItem[T any] struct {
 
 	// Base AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-capacityproviderstrategyitem.html#cfn-pipes-pipe-capacityproviderstrategyitem-base
-	Base *int `json:"Base,omitempty"`
+	Base *T `json:"Base,omitempty"`
 
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Pipe_CapacityProviderStrategyItem struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-capacityproviderstrategyitem.html#cfn-pipes-pipe-capacityproviderstrategyitem-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Pipe_CapacityProviderStrategyItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_CapacityProviderStrategyItem) AWSCloudFormationType() string {
+func (r *Pipe_CapacityProviderStrategyItem[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.CapacityProviderStrategyItem"
 }

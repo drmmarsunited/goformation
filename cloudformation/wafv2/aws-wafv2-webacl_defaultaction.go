@@ -8,17 +8,17 @@ import (
 
 // WebACL_DefaultAction AWS CloudFormation Resource (AWS::WAFv2::WebACL.DefaultAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-defaultaction.html
-type WebACL_DefaultAction struct {
+type WebACL_DefaultAction[T any] struct {
 
 	// Allow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-defaultaction.html#cfn-wafv2-webacl-defaultaction-allow
-	Allow *WebACL_AllowAction `json:"Allow,omitempty"`
+	Allow *WebACL_AllowAction[any] `json:"Allow,omitempty"`
 
 	// Block AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-defaultaction.html#cfn-wafv2-webacl-defaultaction-block
-	Block *WebACL_BlockAction `json:"Block,omitempty"`
+	Block *WebACL_BlockAction[any] `json:"Block,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type WebACL_DefaultAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_DefaultAction) AWSCloudFormationType() string {
+func (r *WebACL_DefaultAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.DefaultAction"
 }

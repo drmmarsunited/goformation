@@ -8,7 +8,7 @@ import (
 
 // UserPoolUser_AttributeType AWS CloudFormation Resource (AWS::Cognito::UserPoolUser.AttributeType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html
-type UserPoolUser_AttributeType struct {
+type UserPoolUser_AttributeType[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPoolUser_AttributeType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolUser_AttributeType) AWSCloudFormationType() string {
+func (r *UserPoolUser_AttributeType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolUser.AttributeType"
 }

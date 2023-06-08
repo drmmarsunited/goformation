@@ -8,7 +8,7 @@ import (
 
 // Canary_VPCConfig AWS CloudFormation Resource (AWS::Synthetics::Canary.VPCConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html
-type Canary_VPCConfig struct {
+type Canary_VPCConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Canary_VPCConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_VPCConfig) AWSCloudFormationType() string {
+func (r *Canary_VPCConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.VPCConfig"
 }

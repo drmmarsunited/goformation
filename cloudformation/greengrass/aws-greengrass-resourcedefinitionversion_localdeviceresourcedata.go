@@ -8,12 +8,12 @@ import (
 
 // ResourceDefinitionVersion_LocalDeviceResourceData AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html
-type ResourceDefinitionVersion_LocalDeviceResourceData struct {
+type ResourceDefinitionVersion_LocalDeviceResourceData[T any] struct {
 
 	// GroupOwnerSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting
-	GroupOwnerSetting *ResourceDefinitionVersion_GroupOwnerSetting `json:"GroupOwnerSetting,omitempty"`
+	GroupOwnerSetting *ResourceDefinitionVersion_GroupOwnerSetting[any] `json:"GroupOwnerSetting,omitempty"`
 
 	// SourcePath AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResourceDefinitionVersion_LocalDeviceResourceData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinitionVersion_LocalDeviceResourceData) AWSCloudFormationType() string {
+func (r *ResourceDefinitionVersion_LocalDeviceResourceData[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData"
 }

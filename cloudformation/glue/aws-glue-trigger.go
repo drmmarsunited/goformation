@@ -11,12 +11,12 @@ import (
 
 // Trigger AWS CloudFormation Resource (AWS::Glue::Trigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
-type Trigger struct {
+type Trigger[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
-	Actions []Trigger_Action `json:"Actions"`
+	Actions []Trigger_Action[any] `json:"Actions"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type Trigger struct {
 	// EventBatchingCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-eventbatchingcondition
-	EventBatchingCondition *Trigger_EventBatchingCondition `json:"EventBatchingCondition,omitempty"`
+	EventBatchingCondition *Trigger_EventBatchingCondition[any] `json:"EventBatchingCondition,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Trigger struct {
 	// Predicate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
-	Predicate *Trigger_Predicate `json:"Predicate,omitempty"`
+	Predicate *Trigger_Predicate[any] `json:"Predicate,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type Trigger struct {
 	// StartOnCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation
-	StartOnCreation *bool `json:"StartOnCreation,omitempty"`
+	StartOnCreation *T `json:"StartOnCreation,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type Trigger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger) AWSCloudFormationType() string {
+func (r *Trigger[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Trigger) MarshalJSON() ([]byte, error) {
-	type Properties Trigger
+func (r Trigger[any]) MarshalJSON() ([]byte, error) {
+	type Properties Trigger[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r Trigger) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Trigger) UnmarshalJSON(b []byte) error {
-	type Properties Trigger
+func (r *Trigger[any]) UnmarshalJSON(b []byte) error {
+	type Properties Trigger[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *Trigger) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Trigger(*res.Properties)
+		*r = Trigger[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

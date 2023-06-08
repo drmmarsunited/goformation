@@ -8,7 +8,7 @@ import (
 
 // RobotApplication_RobotSoftwareSuite AWS CloudFormation Resource (AWS::RoboMaker::RobotApplication.RobotSoftwareSuite)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html
-type RobotApplication_RobotSoftwareSuite struct {
+type RobotApplication_RobotSoftwareSuite[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RobotApplication_RobotSoftwareSuite struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RobotApplication_RobotSoftwareSuite) AWSCloudFormationType() string {
+func (r *RobotApplication_RobotSoftwareSuite[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::RobotApplication.RobotSoftwareSuite"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_CustomContentConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomContentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentconfiguration.html
-type Analysis_CustomContentConfiguration struct {
+type Analysis_CustomContentConfiguration[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_CustomContentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomContentConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_CustomContentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomContentConfiguration"
 }

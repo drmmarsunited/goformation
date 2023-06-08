@@ -8,7 +8,7 @@ import (
 
 // ResourceVersion_LoggingConfig AWS CloudFormation Resource (AWS::CloudFormation::ResourceVersion.LoggingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-resourceversion-loggingconfig.html
-type ResourceVersion_LoggingConfig struct {
+type ResourceVersion_LoggingConfig[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ResourceVersion_LoggingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceVersion_LoggingConfig) AWSCloudFormationType() string {
+func (r *ResourceVersion_LoggingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::ResourceVersion.LoggingConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // GraphQLApi_LambdaAuthorizerConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.LambdaAuthorizerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html
-type GraphQLApi_LambdaAuthorizerConfig struct {
+type GraphQLApi_LambdaAuthorizerConfig[T any] struct {
 
 	// AuthorizerResultTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizerresultttlinseconds
-	AuthorizerResultTtlInSeconds *float64 `json:"AuthorizerResultTtlInSeconds,omitempty"`
+	AuthorizerResultTtlInSeconds *T `json:"AuthorizerResultTtlInSeconds,omitempty"`
 
 	// AuthorizerUri AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type GraphQLApi_LambdaAuthorizerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi_LambdaAuthorizerConfig) AWSCloudFormationType() string {
+func (r *GraphQLApi_LambdaAuthorizerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.LambdaAuthorizerConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // ServerlessCluster_Sasl AWS CloudFormation Resource (AWS::MSK::ServerlessCluster.Sasl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-sasl.html
-type ServerlessCluster_Sasl struct {
+type ServerlessCluster_Sasl[T any] struct {
 
 	// Iam AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-sasl.html#cfn-msk-serverlesscluster-sasl-iam
-	Iam *ServerlessCluster_Iam `json:"Iam"`
+	Iam *ServerlessCluster_Iam[any] `json:"Iam"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ServerlessCluster_Sasl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServerlessCluster_Sasl) AWSCloudFormationType() string {
+func (r *ServerlessCluster_Sasl[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::ServerlessCluster.Sasl"
 }

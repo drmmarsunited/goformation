@@ -8,7 +8,7 @@ import (
 
 // ConfigRule_SourceDetail AWS CloudFormation Resource (AWS::Config::ConfigRule.SourceDetail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html
-type ConfigRule_SourceDetail struct {
+type ConfigRule_SourceDetail[T any] struct {
 
 	// EventSource AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ConfigRule_SourceDetail struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigRule_SourceDetail) AWSCloudFormationType() string {
+func (r *ConfigRule_SourceDetail[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule.SourceDetail"
 }

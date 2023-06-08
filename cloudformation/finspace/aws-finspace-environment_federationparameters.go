@@ -8,7 +8,7 @@ import (
 
 // Environment_FederationParameters AWS CloudFormation Resource (AWS::FinSpace::Environment.FederationParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html
-type Environment_FederationParameters struct {
+type Environment_FederationParameters[T any] struct {
 
 	// ApplicationCallBackURL AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Environment_FederationParameters struct {
 	// AttributeMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-attributemap
-	AttributeMap []Environment_AttributeMapItems `json:"AttributeMap,omitempty"`
+	AttributeMap []Environment_AttributeMapItems[any] `json:"AttributeMap,omitempty"`
 
 	// FederationProviderName AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Environment_FederationParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_FederationParameters) AWSCloudFormationType() string {
+func (r *Environment_FederationParameters[any]) AWSCloudFormationType() string {
 	return "AWS::FinSpace::Environment.FederationParameters"
 }

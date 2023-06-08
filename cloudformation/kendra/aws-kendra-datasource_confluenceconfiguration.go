@@ -8,17 +8,17 @@ import (
 
 // DataSource_ConfluenceConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html
-type DataSource_ConfluenceConfiguration struct {
+type DataSource_ConfluenceConfiguration[T any] struct {
 
 	// AttachmentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-attachmentconfiguration
-	AttachmentConfiguration *DataSource_ConfluenceAttachmentConfiguration `json:"AttachmentConfiguration,omitempty"`
+	AttachmentConfiguration *DataSource_ConfluenceAttachmentConfiguration[any] `json:"AttachmentConfiguration,omitempty"`
 
 	// BlogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-blogconfiguration
-	BlogConfiguration *DataSource_ConfluenceBlogConfiguration `json:"BlogConfiguration,omitempty"`
+	BlogConfiguration *DataSource_ConfluenceBlogConfiguration[any] `json:"BlogConfiguration,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_ConfluenceConfiguration struct {
 	// PageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-pageconfiguration
-	PageConfiguration *DataSource_ConfluencePageConfiguration `json:"PageConfiguration,omitempty"`
+	PageConfiguration *DataSource_ConfluencePageConfiguration[any] `json:"PageConfiguration,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type DataSource_ConfluenceConfiguration struct {
 	// SpaceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-spaceconfiguration
-	SpaceConfiguration *DataSource_ConfluenceSpaceConfiguration `json:"SpaceConfiguration,omitempty"`
+	SpaceConfiguration *DataSource_ConfluenceSpaceConfiguration[any] `json:"SpaceConfiguration,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: true
@@ -58,7 +58,7 @@ type DataSource_ConfluenceConfiguration struct {
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-vpcconfiguration
-	VpcConfiguration *DataSource_DataSourceVpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DataSource_DataSourceVpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type DataSource_ConfluenceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceConfiguration"
 }

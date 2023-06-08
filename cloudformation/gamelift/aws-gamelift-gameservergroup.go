@@ -12,12 +12,12 @@ import (
 
 // GameServerGroup AWS CloudFormation Resource (AWS::GameLift::GameServerGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html
-type GameServerGroup struct {
+type GameServerGroup[T any] struct {
 
 	// AutoScalingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-autoscalingpolicy
-	AutoScalingPolicy *GameServerGroup_AutoScalingPolicy `json:"AutoScalingPolicy,omitempty"`
+	AutoScalingPolicy *GameServerGroup_AutoScalingPolicy[any] `json:"AutoScalingPolicy,omitempty"`
 
 	// BalancingStrategy AWS CloudFormation Property
 	// Required: false
@@ -42,22 +42,22 @@ type GameServerGroup struct {
 	// InstanceDefinitions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-instancedefinitions
-	InstanceDefinitions []GameServerGroup_InstanceDefinition `json:"InstanceDefinitions"`
+	InstanceDefinitions []GameServerGroup_InstanceDefinition[any] `json:"InstanceDefinitions"`
 
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-launchtemplate
-	LaunchTemplate *GameServerGroup_LaunchTemplate `json:"LaunchTemplate,omitempty"`
+	LaunchTemplate *GameServerGroup_LaunchTemplate[any] `json:"LaunchTemplate,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-maxsize
-	MaxSize *float64 `json:"MaxSize,omitempty"`
+	MaxSize *T `json:"MaxSize,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-minsize
-	MinSize *float64 `json:"MinSize,omitempty"`
+	MinSize *T `json:"MinSize,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -91,14 +91,15 @@ type GameServerGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameServerGroup) AWSCloudFormationType() string {
+func (r *GameServerGroup[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameServerGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GameServerGroup) MarshalJSON() ([]byte, error) {
-	type Properties GameServerGroup
+func (r GameServerGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties GameServerGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r GameServerGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GameServerGroup) UnmarshalJSON(b []byte) error {
-	type Properties GameServerGroup
+func (r *GameServerGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties GameServerGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *GameServerGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GameServerGroup(*res.Properties)
+		*r = GameServerGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

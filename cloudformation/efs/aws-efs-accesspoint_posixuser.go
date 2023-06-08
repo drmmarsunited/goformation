@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_PosixUser AWS CloudFormation Resource (AWS::EFS::AccessPoint.PosixUser)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html
-type AccessPoint_PosixUser struct {
+type AccessPoint_PosixUser[T any] struct {
 
 	// Gid AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AccessPoint_PosixUser struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_PosixUser) AWSCloudFormationType() string {
+func (r *AccessPoint_PosixUser[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::AccessPoint.PosixUser"
 }

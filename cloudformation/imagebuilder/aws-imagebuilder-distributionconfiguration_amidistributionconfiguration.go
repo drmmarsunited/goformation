@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_AmiDistributionConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.AmiDistributionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-amidistributionconfiguration.html
-type DistributionConfiguration_AmiDistributionConfiguration struct {
+type DistributionConfiguration_AmiDistributionConfiguration[T any] struct {
 
 	// AmiTags AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DistributionConfiguration_AmiDistributionConfiguration struct {
 	// LaunchPermissionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-amidistributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-amidistributionconfiguration-launchpermissionconfiguration
-	LaunchPermissionConfiguration *DistributionConfiguration_LaunchPermissionConfiguration `json:"LaunchPermissionConfiguration,omitempty"`
+	LaunchPermissionConfiguration *DistributionConfiguration_LaunchPermissionConfiguration[any] `json:"LaunchPermissionConfiguration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DistributionConfiguration_AmiDistributionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_AmiDistributionConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_AmiDistributionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.AmiDistributionConfiguration"
 }

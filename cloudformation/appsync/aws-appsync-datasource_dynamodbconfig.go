@@ -8,7 +8,7 @@ import (
 
 // DataSource_DynamoDBConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.DynamoDBConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
-type DataSource_DynamoDBConfig struct {
+type DataSource_DynamoDBConfig[T any] struct {
 
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSource_DynamoDBConfig struct {
 	// DeltaSyncConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-deltasyncconfig
-	DeltaSyncConfig *DataSource_DeltaSyncConfig `json:"DeltaSyncConfig,omitempty"`
+	DeltaSyncConfig *DataSource_DeltaSyncConfig[any] `json:"DeltaSyncConfig,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type DataSource_DynamoDBConfig struct {
 	// UseCallerCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-usecallercredentials
-	UseCallerCredentials *bool `json:"UseCallerCredentials,omitempty"`
+	UseCallerCredentials *T `json:"UseCallerCredentials,omitempty"`
 
 	// Versioned AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-versioned
-	Versioned *bool `json:"Versioned,omitempty"`
+	Versioned *T `json:"Versioned,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type DataSource_DynamoDBConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DynamoDBConfig) AWSCloudFormationType() string {
+func (r *DataSource_DynamoDBConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.DynamoDBConfig"
 }

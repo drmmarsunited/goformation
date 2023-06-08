@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_SpotCapacityRebalance AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotCapacityRebalance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotcapacityrebalance.html
-type SpotFleet_SpotCapacityRebalance struct {
+type SpotFleet_SpotCapacityRebalance[T any] struct {
 
 	// ReplacementStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type SpotFleet_SpotCapacityRebalance struct {
 	// TerminationDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotcapacityrebalance.html#cfn-ec2-spotfleet-spotcapacityrebalance-terminationdelay
-	TerminationDelay *int `json:"TerminationDelay,omitempty"`
+	TerminationDelay *T `json:"TerminationDelay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_SpotCapacityRebalance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_SpotCapacityRebalance) AWSCloudFormationType() string {
+func (r *SpotFleet_SpotCapacityRebalance[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotCapacityRebalance"
 }

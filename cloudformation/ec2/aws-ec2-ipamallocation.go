@@ -11,7 +11,7 @@ import (
 
 // IPAMAllocation AWS CloudFormation Resource (AWS::EC2::IPAMAllocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html
-type IPAMAllocation struct {
+type IPAMAllocation[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type IPAMAllocation struct {
 	// NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-netmasklength
-	NetmaskLength *int `json:"NetmaskLength,omitempty"`
+	NetmaskLength *T `json:"NetmaskLength,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type IPAMAllocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAMAllocation) AWSCloudFormationType() string {
+func (r *IPAMAllocation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAMAllocation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IPAMAllocation) MarshalJSON() ([]byte, error) {
-	type Properties IPAMAllocation
+func (r IPAMAllocation[any]) MarshalJSON() ([]byte, error) {
+	type Properties IPAMAllocation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r IPAMAllocation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IPAMAllocation) UnmarshalJSON(b []byte) error {
-	type Properties IPAMAllocation
+func (r *IPAMAllocation[any]) UnmarshalJSON(b []byte) error {
+	type Properties IPAMAllocation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *IPAMAllocation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IPAMAllocation(*res.Properties)
+		*r = IPAMAllocation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

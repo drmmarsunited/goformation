@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_HttpGatewayRoute AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.HttpGatewayRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroute.html
-type GatewayRoute_HttpGatewayRoute struct {
+type GatewayRoute_HttpGatewayRoute[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroute.html#cfn-appmesh-gatewayroute-httpgatewayroute-action
-	Action *GatewayRoute_HttpGatewayRouteAction `json:"Action"`
+	Action *GatewayRoute_HttpGatewayRouteAction[any] `json:"Action"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroute.html#cfn-appmesh-gatewayroute-httpgatewayroute-match
-	Match *GatewayRoute_HttpGatewayRouteMatch `json:"Match"`
+	Match *GatewayRoute_HttpGatewayRouteMatch[any] `json:"Match"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GatewayRoute_HttpGatewayRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_HttpGatewayRoute) AWSCloudFormationType() string {
+func (r *GatewayRoute_HttpGatewayRoute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.HttpGatewayRoute"
 }

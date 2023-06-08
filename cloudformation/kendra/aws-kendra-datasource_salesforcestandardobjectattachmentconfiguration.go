@@ -8,7 +8,7 @@ import (
 
 // DataSource_SalesforceStandardObjectAttachmentConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SalesforceStandardObjectAttachmentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectattachmentconfiguration.html
-type DataSource_SalesforceStandardObjectAttachmentConfiguration struct {
+type DataSource_SalesforceStandardObjectAttachmentConfiguration[T any] struct {
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataSource_SalesforceStandardObjectAttachmentConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectattachmentconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectattachmentconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_SalesforceStandardObjectAttachmentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SalesforceStandardObjectAttachmentConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SalesforceStandardObjectAttachmentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SalesforceStandardObjectAttachmentConfiguration"
 }

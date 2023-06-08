@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ReferenceLineStyleConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineStyleConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinestyleconfiguration.html
-type Dashboard_ReferenceLineStyleConfiguration struct {
+type Dashboard_ReferenceLineStyleConfiguration[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ReferenceLineStyleConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineStyleConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineStyleConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineStyleConfiguration"
 }

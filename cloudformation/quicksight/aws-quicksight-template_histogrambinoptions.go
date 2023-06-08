@@ -8,17 +8,17 @@ import (
 
 // Template_HistogramBinOptions AWS CloudFormation Resource (AWS::QuickSight::Template.HistogramBinOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogrambinoptions.html
-type Template_HistogramBinOptions struct {
+type Template_HistogramBinOptions[T any] struct {
 
 	// BinCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogrambinoptions.html#cfn-quicksight-template-histogrambinoptions-bincount
-	BinCount *Template_BinCountOptions `json:"BinCount,omitempty"`
+	BinCount *Template_BinCountOptions[any] `json:"BinCount,omitempty"`
 
 	// BinWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogrambinoptions.html#cfn-quicksight-template-histogrambinoptions-binwidth
-	BinWidth *Template_BinWidthOptions `json:"BinWidth,omitempty"`
+	BinWidth *Template_BinWidthOptions[any] `json:"BinWidth,omitempty"`
 
 	// SelectedBinType AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_HistogramBinOptions struct {
 	// StartValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogrambinoptions.html#cfn-quicksight-template-histogrambinoptions-startvalue
-	StartValue *float64 `json:"StartValue,omitempty"`
+	StartValue *T `json:"StartValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_HistogramBinOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HistogramBinOptions) AWSCloudFormationType() string {
+func (r *Template_HistogramBinOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HistogramBinOptions"
 }

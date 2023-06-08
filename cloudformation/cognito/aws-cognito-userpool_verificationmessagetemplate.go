@@ -8,7 +8,7 @@ import (
 
 // UserPool_VerificationMessageTemplate AWS CloudFormation Resource (AWS::Cognito::UserPool.VerificationMessageTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html
-type UserPool_VerificationMessageTemplate struct {
+type UserPool_VerificationMessageTemplate[T any] struct {
 
 	// DefaultEmailOption AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type UserPool_VerificationMessageTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_VerificationMessageTemplate) AWSCloudFormationType() string {
+func (r *UserPool_VerificationMessageTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.VerificationMessageTemplate"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSource_DocumentAttributeTarget AWS CloudFormation Resource (AWS::Kendra::DataSource.DocumentAttributeTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html
-type DataSource_DocumentAttributeTarget struct {
+type DataSource_DocumentAttributeTarget[T any] struct {
 
 	// TargetDocumentAttributeKey AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type DataSource_DocumentAttributeTarget struct {
 	// TargetDocumentAttributeValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevalue
-	TargetDocumentAttributeValue *DataSource_DocumentAttributeValue `json:"TargetDocumentAttributeValue,omitempty"`
+	TargetDocumentAttributeValue *DataSource_DocumentAttributeValue[any] `json:"TargetDocumentAttributeValue,omitempty"`
 
 	// TargetDocumentAttributeValueDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevaluedeletion
-	TargetDocumentAttributeValueDeletion *bool `json:"TargetDocumentAttributeValueDeletion,omitempty"`
+	TargetDocumentAttributeValueDeletion *T `json:"TargetDocumentAttributeValueDeletion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_DocumentAttributeTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DocumentAttributeTarget) AWSCloudFormationType() string {
+func (r *DataSource_DocumentAttributeTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DocumentAttributeTarget"
 }

@@ -8,22 +8,22 @@ import (
 
 // Connection_ConnectionHttpParameters AWS CloudFormation Resource (AWS::Events::Connection.ConnectionHttpParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html
-type Connection_ConnectionHttpParameters struct {
+type Connection_ConnectionHttpParameters[T any] struct {
 
 	// BodyParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-bodyparameters
-	BodyParameters []Connection_Parameter `json:"BodyParameters,omitempty"`
+	BodyParameters []Connection_Parameter[any] `json:"BodyParameters,omitempty"`
 
 	// HeaderParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-headerparameters
-	HeaderParameters []Connection_Parameter `json:"HeaderParameters,omitempty"`
+	HeaderParameters []Connection_Parameter[any] `json:"HeaderParameters,omitempty"`
 
 	// QueryStringParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-querystringparameters
-	QueryStringParameters []Connection_Parameter `json:"QueryStringParameters,omitempty"`
+	QueryStringParameters []Connection_Parameter[any] `json:"QueryStringParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Connection_ConnectionHttpParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_ConnectionHttpParameters) AWSCloudFormationType() string {
+func (r *Connection_ConnectionHttpParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.ConnectionHttpParameters"
 }

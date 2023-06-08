@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_HostHeaderConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-hostheaderconfig.html
-type ListenerRule_HostHeaderConfig struct {
+type ListenerRule_HostHeaderConfig[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ListenerRule_HostHeaderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_HostHeaderConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_HostHeaderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig"
 }

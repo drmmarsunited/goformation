@@ -8,27 +8,27 @@ import (
 
 // Dashboard_PieChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PieChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartsortconfiguration.html
-type Dashboard_PieChartSortConfiguration struct {
+type Dashboard_PieChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartsortconfiguration.html#cfn-quicksight-dashboard-piechartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartsortconfiguration.html#cfn-quicksight-dashboard-piechartsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// SmallMultiplesLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartsortconfiguration.html#cfn-quicksight-dashboard-piechartsortconfiguration-smallmultipleslimitconfiguration
-	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"SmallMultiplesLimitConfiguration,omitempty"`
+	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"SmallMultiplesLimitConfiguration,omitempty"`
 
 	// SmallMultiplesSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartsortconfiguration.html#cfn-quicksight-dashboard-piechartsortconfiguration-smallmultiplessort
-	SmallMultiplesSort []Dashboard_FieldSortOptions `json:"SmallMultiplesSort,omitempty"`
+	SmallMultiplesSort []Dashboard_FieldSortOptions[any] `json:"SmallMultiplesSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_PieChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PieChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PieChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PieChartSortConfiguration"
 }

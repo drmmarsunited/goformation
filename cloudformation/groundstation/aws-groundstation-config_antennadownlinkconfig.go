@@ -8,12 +8,12 @@ import (
 
 // Config_AntennaDownlinkConfig AWS CloudFormation Resource (AWS::GroundStation::Config.AntennaDownlinkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkconfig.html
-type Config_AntennaDownlinkConfig struct {
+type Config_AntennaDownlinkConfig[T any] struct {
 
 	// SpectrumConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkconfig.html#cfn-groundstation-config-antennadownlinkconfig-spectrumconfig
-	SpectrumConfig *Config_SpectrumConfig `json:"SpectrumConfig,omitempty"`
+	SpectrumConfig *Config_SpectrumConfig[any] `json:"SpectrumConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Config_AntennaDownlinkConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_AntennaDownlinkConfig) AWSCloudFormationType() string {
+func (r *Config_AntennaDownlinkConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.AntennaDownlinkConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Launch_ExecutionStatusObject AWS CloudFormation Resource (AWS::Evidently::Launch.ExecutionStatusObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-executionstatusobject.html
-type Launch_ExecutionStatusObject struct {
+type Launch_ExecutionStatusObject[T any] struct {
 
 	// DesiredState AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Launch_ExecutionStatusObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_ExecutionStatusObject) AWSCloudFormationType() string {
+func (r *Launch_ExecutionStatusObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.ExecutionStatusObject"
 }

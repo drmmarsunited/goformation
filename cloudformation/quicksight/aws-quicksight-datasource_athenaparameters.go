@@ -8,7 +8,12 @@ import (
 
 // DataSource_AthenaParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.AthenaParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-athenaparameters.html
-type DataSource_AthenaParameters struct {
+type DataSource_AthenaParameters[T any] struct {
+
+	// RoleArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-athenaparameters.html#cfn-quicksight-datasource-athenaparameters-rolearn
+	RoleArn *string `json:"RoleArn,omitempty"`
 
 	// WorkGroup AWS CloudFormation Property
 	// Required: false
@@ -32,6 +37,6 @@ type DataSource_AthenaParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AthenaParameters) AWSCloudFormationType() string {
+func (r *DataSource_AthenaParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.AthenaParameters"
 }

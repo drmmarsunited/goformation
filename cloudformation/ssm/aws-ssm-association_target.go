@@ -8,7 +8,7 @@ import (
 
 // Association_Target AWS CloudFormation Resource (AWS::SSM::Association.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html
-type Association_Target struct {
+type Association_Target[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Association_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Association_Target) AWSCloudFormationType() string {
+func (r *Association_Target[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Association.Target"
 }

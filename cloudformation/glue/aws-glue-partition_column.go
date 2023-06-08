@@ -8,7 +8,7 @@ import (
 
 // Partition_Column AWS CloudFormation Resource (AWS::Glue::Partition.Column)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html
-type Partition_Column struct {
+type Partition_Column[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Partition_Column struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_Column) AWSCloudFormationType() string {
+func (r *Partition_Column[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.Column"
 }

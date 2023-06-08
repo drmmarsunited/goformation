@@ -8,82 +8,82 @@ import (
 
 // WebACL_Statement AWS CloudFormation Resource (AWS::WAFv2::WebACL.Statement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html
-type WebACL_Statement struct {
+type WebACL_Statement[T any] struct {
 
 	// AndStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-andstatement
-	AndStatement *WebACL_AndStatement `json:"AndStatement,omitempty"`
+	AndStatement *WebACL_AndStatement[any] `json:"AndStatement,omitempty"`
 
 	// ByteMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-bytematchstatement
-	ByteMatchStatement *WebACL_ByteMatchStatement `json:"ByteMatchStatement,omitempty"`
+	ByteMatchStatement *WebACL_ByteMatchStatement[any] `json:"ByteMatchStatement,omitempty"`
 
 	// GeoMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-geomatchstatement
-	GeoMatchStatement *WebACL_GeoMatchStatement `json:"GeoMatchStatement,omitempty"`
+	GeoMatchStatement *WebACL_GeoMatchStatement[any] `json:"GeoMatchStatement,omitempty"`
 
 	// IPSetReferenceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ipsetreferencestatement
-	IPSetReferenceStatement *WebACL_IPSetReferenceStatement `json:"IPSetReferenceStatement,omitempty"`
+	IPSetReferenceStatement *WebACL_IPSetReferenceStatement[any] `json:"IPSetReferenceStatement,omitempty"`
 
 	// LabelMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-labelmatchstatement
-	LabelMatchStatement *WebACL_LabelMatchStatement `json:"LabelMatchStatement,omitempty"`
+	LabelMatchStatement *WebACL_LabelMatchStatement[any] `json:"LabelMatchStatement,omitempty"`
 
 	// ManagedRuleGroupStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-managedrulegroupstatement
-	ManagedRuleGroupStatement *WebACL_ManagedRuleGroupStatement `json:"ManagedRuleGroupStatement,omitempty"`
+	ManagedRuleGroupStatement *WebACL_ManagedRuleGroupStatement[any] `json:"ManagedRuleGroupStatement,omitempty"`
 
 	// NotStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-notstatement
-	NotStatement *WebACL_NotStatement `json:"NotStatement,omitempty"`
+	NotStatement *WebACL_NotStatement[any] `json:"NotStatement,omitempty"`
 
 	// OrStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-orstatement
-	OrStatement *WebACL_OrStatement `json:"OrStatement,omitempty"`
+	OrStatement *WebACL_OrStatement[any] `json:"OrStatement,omitempty"`
 
 	// RateBasedStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ratebasedstatement
-	RateBasedStatement *WebACL_RateBasedStatement `json:"RateBasedStatement,omitempty"`
+	RateBasedStatement *WebACL_RateBasedStatement[any] `json:"RateBasedStatement,omitempty"`
 
 	// RegexMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexmatchstatement
-	RegexMatchStatement *WebACL_RegexMatchStatement `json:"RegexMatchStatement,omitempty"`
+	RegexMatchStatement *WebACL_RegexMatchStatement[any] `json:"RegexMatchStatement,omitempty"`
 
 	// RegexPatternSetReferenceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexpatternsetreferencestatement
-	RegexPatternSetReferenceStatement *WebACL_RegexPatternSetReferenceStatement `json:"RegexPatternSetReferenceStatement,omitempty"`
+	RegexPatternSetReferenceStatement *WebACL_RegexPatternSetReferenceStatement[any] `json:"RegexPatternSetReferenceStatement,omitempty"`
 
 	// RuleGroupReferenceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-rulegroupreferencestatement
-	RuleGroupReferenceStatement *WebACL_RuleGroupReferenceStatement `json:"RuleGroupReferenceStatement,omitempty"`
+	RuleGroupReferenceStatement *WebACL_RuleGroupReferenceStatement[any] `json:"RuleGroupReferenceStatement,omitempty"`
 
 	// SizeConstraintStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-sizeconstraintstatement
-	SizeConstraintStatement *WebACL_SizeConstraintStatement `json:"SizeConstraintStatement,omitempty"`
+	SizeConstraintStatement *WebACL_SizeConstraintStatement[any] `json:"SizeConstraintStatement,omitempty"`
 
 	// SqliMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-sqlimatchstatement
-	SqliMatchStatement *WebACL_SqliMatchStatement `json:"SqliMatchStatement,omitempty"`
+	SqliMatchStatement *WebACL_SqliMatchStatement[any] `json:"SqliMatchStatement,omitempty"`
 
 	// XssMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-xssmatchstatement
-	XssMatchStatement *WebACL_XssMatchStatement `json:"XssMatchStatement,omitempty"`
+	XssMatchStatement *WebACL_XssMatchStatement[any] `json:"XssMatchStatement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -102,6 +102,6 @@ type WebACL_Statement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Statement) AWSCloudFormationType() string {
+func (r *WebACL_Statement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.Statement"
 }

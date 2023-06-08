@@ -11,7 +11,7 @@ import (
 
 // LifecycleHook AWS CloudFormation Resource (AWS::AutoScaling::LifecycleHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html
-type LifecycleHook struct {
+type LifecycleHook[T any] struct {
 
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type LifecycleHook struct {
 	// HeartbeatTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html#cfn-autoscaling-lifecyclehook-heartbeattimeout
-	HeartbeatTimeout *int `json:"HeartbeatTimeout,omitempty"`
+	HeartbeatTimeout *T `json:"HeartbeatTimeout,omitempty"`
 
 	// LifecycleHookName AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type LifecycleHook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecycleHook) AWSCloudFormationType() string {
+func (r *LifecycleHook[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LifecycleHook"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LifecycleHook) MarshalJSON() ([]byte, error) {
-	type Properties LifecycleHook
+func (r LifecycleHook[any]) MarshalJSON() ([]byte, error) {
+	type Properties LifecycleHook[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r LifecycleHook) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LifecycleHook) UnmarshalJSON(b []byte) error {
-	type Properties LifecycleHook
+func (r *LifecycleHook[any]) UnmarshalJSON(b []byte) error {
+	type Properties LifecycleHook[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *LifecycleHook) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LifecycleHook(*res.Properties)
+		*r = LifecycleHook[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

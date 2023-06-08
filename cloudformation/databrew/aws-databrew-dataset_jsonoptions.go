@@ -8,12 +8,12 @@ import (
 
 // Dataset_JsonOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.JsonOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-jsonoptions.html
-type Dataset_JsonOptions struct {
+type Dataset_JsonOptions[T any] struct {
 
 	// MultiLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-jsonoptions.html#cfn-databrew-dataset-jsonoptions-multiline
-	MultiLine *bool `json:"MultiLine,omitempty"`
+	MultiLine *T `json:"MultiLine,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dataset_JsonOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_JsonOptions) AWSCloudFormationType() string {
+func (r *Dataset_JsonOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.JsonOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // ComponentType_RelationshipValue AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.RelationshipValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html
-type ComponentType_RelationshipValue struct {
+type ComponentType_RelationshipValue[T any] struct {
 
 	// TargetComponentName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentType_RelationshipValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_RelationshipValue) AWSCloudFormationType() string {
+func (r *ComponentType_RelationshipValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.RelationshipValue"
 }

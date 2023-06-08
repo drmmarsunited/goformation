@@ -8,7 +8,7 @@ import (
 
 // Analysis_FilterOperationSelectedFieldsConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterOperationSelectedFieldsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filteroperationselectedfieldsconfiguration.html
-type Analysis_FilterOperationSelectedFieldsConfiguration struct {
+type Analysis_FilterOperationSelectedFieldsConfiguration[T any] struct {
 
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_FilterOperationSelectedFieldsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterOperationSelectedFieldsConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FilterOperationSelectedFieldsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterOperationSelectedFieldsConfiguration"
 }

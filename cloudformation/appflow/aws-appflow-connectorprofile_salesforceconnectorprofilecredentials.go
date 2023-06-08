@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SalesforceConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html
-type ConnectorProfile_SalesforceConnectorProfileCredentials struct {
+type ConnectorProfile_SalesforceConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,17 @@ type ConnectorProfile_SalesforceConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
+
+	// JwtToken AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-jwttoken
+	JwtToken *string `json:"JwtToken,omitempty"`
+
+	// OAuth2GrantType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-oauth2granttype
+	OAuth2GrantType *string `json:"OAuth2GrantType,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
@@ -47,6 +57,6 @@ type ConnectorProfile_SalesforceConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SalesforceConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SalesforceConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileCredentials"
 }

@@ -8,7 +8,7 @@ import (
 
 // Index_DocumentMetadataConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.DocumentMetadataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html
-type Index_DocumentMetadataConfiguration struct {
+type Index_DocumentMetadataConfiguration[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Index_DocumentMetadataConfiguration struct {
 	// Relevance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-relevance
-	Relevance *Index_Relevance `json:"Relevance,omitempty"`
+	Relevance *Index_Relevance[any] `json:"Relevance,omitempty"`
 
 	// Search AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-search
-	Search *Index_Search `json:"Search,omitempty"`
+	Search *Index_Search[any] `json:"Search,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Index_DocumentMetadataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_DocumentMetadataConfiguration) AWSCloudFormationType() string {
+func (r *Index_DocumentMetadataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.DocumentMetadataConfiguration"
 }

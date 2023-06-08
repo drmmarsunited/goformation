@@ -8,7 +8,7 @@ import (
 
 // CacheCluster_KinesisFirehoseDestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster.KinesisFirehoseDestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-kinesisfirehosedestinationdetails.html
-type CacheCluster_KinesisFirehoseDestinationDetails struct {
+type CacheCluster_KinesisFirehoseDestinationDetails[T any] struct {
 
 	// DeliveryStream AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type CacheCluster_KinesisFirehoseDestinationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CacheCluster_KinesisFirehoseDestinationDetails) AWSCloudFormationType() string {
+func (r *CacheCluster_KinesisFirehoseDestinationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::CacheCluster.KinesisFirehoseDestinationDetails"
 }

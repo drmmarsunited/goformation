@@ -8,12 +8,12 @@ import (
 
 // Fleet_IpPermission AWS CloudFormation Resource (AWS::GameLift::Fleet.IpPermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html
-type Fleet_IpPermission struct {
+type Fleet_IpPermission[T any] struct {
 
 	// FromPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-fromport
-	FromPort int `json:"FromPort"`
+	FromPort T `json:"FromPort"`
 
 	// IpRange AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Fleet_IpPermission struct {
 	// ToPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-toport
-	ToPort int `json:"ToPort"`
+	ToPort T `json:"ToPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Fleet_IpPermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_IpPermission) AWSCloudFormationType() string {
+func (r *Fleet_IpPermission[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.IpPermission"
 }

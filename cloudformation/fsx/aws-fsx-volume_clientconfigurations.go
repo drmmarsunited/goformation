@@ -8,7 +8,7 @@ import (
 
 // Volume_ClientConfigurations AWS CloudFormation Resource (AWS::FSx::Volume.ClientConfigurations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations.html
-type Volume_ClientConfigurations struct {
+type Volume_ClientConfigurations[T any] struct {
 
 	// Clients AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Volume_ClientConfigurations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_ClientConfigurations) AWSCloudFormationType() string {
+func (r *Volume_ClientConfigurations[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.ClientConfigurations"
 }

@@ -8,122 +8,122 @@ import (
 
 // Template_Visual AWS CloudFormation Resource (AWS::QuickSight::Template.Visual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html
-type Template_Visual struct {
+type Template_Visual[T any] struct {
 
 	// BarChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-barchartvisual
-	BarChartVisual *Template_BarChartVisual `json:"BarChartVisual,omitempty"`
+	BarChartVisual *Template_BarChartVisual[any] `json:"BarChartVisual,omitempty"`
 
 	// BoxPlotVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-boxplotvisual
-	BoxPlotVisual *Template_BoxPlotVisual `json:"BoxPlotVisual,omitempty"`
+	BoxPlotVisual *Template_BoxPlotVisual[any] `json:"BoxPlotVisual,omitempty"`
 
 	// ComboChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-combochartvisual
-	ComboChartVisual *Template_ComboChartVisual `json:"ComboChartVisual,omitempty"`
+	ComboChartVisual *Template_ComboChartVisual[any] `json:"ComboChartVisual,omitempty"`
 
 	// CustomContentVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-customcontentvisual
-	CustomContentVisual *Template_CustomContentVisual `json:"CustomContentVisual,omitempty"`
+	CustomContentVisual *Template_CustomContentVisual[any] `json:"CustomContentVisual,omitempty"`
 
 	// EmptyVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-emptyvisual
-	EmptyVisual *Template_EmptyVisual `json:"EmptyVisual,omitempty"`
+	EmptyVisual *Template_EmptyVisual[any] `json:"EmptyVisual,omitempty"`
 
 	// FilledMapVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-filledmapvisual
-	FilledMapVisual *Template_FilledMapVisual `json:"FilledMapVisual,omitempty"`
+	FilledMapVisual *Template_FilledMapVisual[any] `json:"FilledMapVisual,omitempty"`
 
 	// FunnelChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-funnelchartvisual
-	FunnelChartVisual *Template_FunnelChartVisual `json:"FunnelChartVisual,omitempty"`
+	FunnelChartVisual *Template_FunnelChartVisual[any] `json:"FunnelChartVisual,omitempty"`
 
 	// GaugeChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-gaugechartvisual
-	GaugeChartVisual *Template_GaugeChartVisual `json:"GaugeChartVisual,omitempty"`
+	GaugeChartVisual *Template_GaugeChartVisual[any] `json:"GaugeChartVisual,omitempty"`
 
 	// GeospatialMapVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-geospatialmapvisual
-	GeospatialMapVisual *Template_GeospatialMapVisual `json:"GeospatialMapVisual,omitempty"`
+	GeospatialMapVisual *Template_GeospatialMapVisual[any] `json:"GeospatialMapVisual,omitempty"`
 
 	// HeatMapVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-heatmapvisual
-	HeatMapVisual *Template_HeatMapVisual `json:"HeatMapVisual,omitempty"`
+	HeatMapVisual *Template_HeatMapVisual[any] `json:"HeatMapVisual,omitempty"`
 
 	// HistogramVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-histogramvisual
-	HistogramVisual *Template_HistogramVisual `json:"HistogramVisual,omitempty"`
+	HistogramVisual *Template_HistogramVisual[any] `json:"HistogramVisual,omitempty"`
 
 	// InsightVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-insightvisual
-	InsightVisual *Template_InsightVisual `json:"InsightVisual,omitempty"`
+	InsightVisual *Template_InsightVisual[any] `json:"InsightVisual,omitempty"`
 
 	// KPIVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-kpivisual
-	KPIVisual *Template_KPIVisual `json:"KPIVisual,omitempty"`
+	KPIVisual *Template_KPIVisual[any] `json:"KPIVisual,omitempty"`
 
 	// LineChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-linechartvisual
-	LineChartVisual *Template_LineChartVisual `json:"LineChartVisual,omitempty"`
+	LineChartVisual *Template_LineChartVisual[any] `json:"LineChartVisual,omitempty"`
 
 	// PieChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-piechartvisual
-	PieChartVisual *Template_PieChartVisual `json:"PieChartVisual,omitempty"`
+	PieChartVisual *Template_PieChartVisual[any] `json:"PieChartVisual,omitempty"`
 
 	// PivotTableVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-pivottablevisual
-	PivotTableVisual *Template_PivotTableVisual `json:"PivotTableVisual,omitempty"`
+	PivotTableVisual *Template_PivotTableVisual[any] `json:"PivotTableVisual,omitempty"`
 
 	// RadarChartVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-radarchartvisual
-	RadarChartVisual *Template_RadarChartVisual `json:"RadarChartVisual,omitempty"`
+	RadarChartVisual *Template_RadarChartVisual[any] `json:"RadarChartVisual,omitempty"`
 
 	// SankeyDiagramVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-sankeydiagramvisual
-	SankeyDiagramVisual *Template_SankeyDiagramVisual `json:"SankeyDiagramVisual,omitempty"`
+	SankeyDiagramVisual *Template_SankeyDiagramVisual[any] `json:"SankeyDiagramVisual,omitempty"`
 
 	// ScatterPlotVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-scatterplotvisual
-	ScatterPlotVisual *Template_ScatterPlotVisual `json:"ScatterPlotVisual,omitempty"`
+	ScatterPlotVisual *Template_ScatterPlotVisual[any] `json:"ScatterPlotVisual,omitempty"`
 
 	// TableVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-tablevisual
-	TableVisual *Template_TableVisual `json:"TableVisual,omitempty"`
+	TableVisual *Template_TableVisual[any] `json:"TableVisual,omitempty"`
 
 	// TreeMapVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-treemapvisual
-	TreeMapVisual *Template_TreeMapVisual `json:"TreeMapVisual,omitempty"`
+	TreeMapVisual *Template_TreeMapVisual[any] `json:"TreeMapVisual,omitempty"`
 
 	// WaterfallVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-waterfallvisual
-	WaterfallVisual *Template_WaterfallVisual `json:"WaterfallVisual,omitempty"`
+	WaterfallVisual *Template_WaterfallVisual[any] `json:"WaterfallVisual,omitempty"`
 
 	// WordCloudVisual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visual.html#cfn-quicksight-template-visual-wordcloudvisual
-	WordCloudVisual *Template_WordCloudVisual `json:"WordCloudVisual,omitempty"`
+	WordCloudVisual *Template_WordCloudVisual[any] `json:"WordCloudVisual,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -142,6 +142,6 @@ type Template_Visual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Visual) AWSCloudFormationType() string {
+func (r *Template_Visual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Visual"
 }

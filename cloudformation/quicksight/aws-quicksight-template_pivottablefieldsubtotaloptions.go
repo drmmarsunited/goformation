@@ -8,7 +8,7 @@ import (
 
 // Template_PivotTableFieldSubtotalOptions AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableFieldSubtotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldsubtotaloptions.html
-type Template_PivotTableFieldSubtotalOptions struct {
+type Template_PivotTableFieldSubtotalOptions[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_PivotTableFieldSubtotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableFieldSubtotalOptions) AWSCloudFormationType() string {
+func (r *Template_PivotTableFieldSubtotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableFieldSubtotalOptions"
 }

@@ -12,7 +12,7 @@ import (
 
 // ConnectAttachment AWS CloudFormation Resource (AWS::NetworkManager::ConnectAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html
-type ConnectAttachment struct {
+type ConnectAttachment[T any] struct {
 
 	// CoreNetworkId AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,12 @@ type ConnectAttachment struct {
 	// Options AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-options
-	Options *ConnectAttachment_ConnectAttachmentOptions `json:"Options"`
+	Options *ConnectAttachment_ConnectAttachmentOptions[any] `json:"Options"`
+
+	// ProposedSegmentChange AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-proposedsegmentchange
+	ProposedSegmentChange *ConnectAttachment_ProposedSegmentChange[any] `json:"ProposedSegmentChange,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +61,15 @@ type ConnectAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectAttachment) AWSCloudFormationType() string {
+func (r *ConnectAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConnectAttachment) MarshalJSON() ([]byte, error) {
-	type Properties ConnectAttachment
+func (r ConnectAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConnectAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +91,9 @@ func (r ConnectAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConnectAttachment) UnmarshalJSON(b []byte) error {
-	type Properties ConnectAttachment
+func (r *ConnectAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConnectAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +113,7 @@ func (r *ConnectAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConnectAttachment(*res.Properties)
+		*r = ConnectAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

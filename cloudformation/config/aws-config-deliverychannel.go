@@ -11,12 +11,12 @@ import (
 
 // DeliveryChannel AWS CloudFormation Resource (AWS::Config::DeliveryChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html
-type DeliveryChannel struct {
+type DeliveryChannel[T any] struct {
 
 	// ConfigSnapshotDeliveryProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties
-	ConfigSnapshotDeliveryProperties *DeliveryChannel_ConfigSnapshotDeliveryProperties `json:"ConfigSnapshotDeliveryProperties,omitempty"`
+	ConfigSnapshotDeliveryProperties *DeliveryChannel_ConfigSnapshotDeliveryProperties[any] `json:"ConfigSnapshotDeliveryProperties,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type DeliveryChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryChannel) AWSCloudFormationType() string {
+func (r *DeliveryChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Config::DeliveryChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeliveryChannel) MarshalJSON() ([]byte, error) {
-	type Properties DeliveryChannel
+func (r DeliveryChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeliveryChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r DeliveryChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeliveryChannel) UnmarshalJSON(b []byte) error {
-	type Properties DeliveryChannel
+func (r *DeliveryChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeliveryChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *DeliveryChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeliveryChannel(*res.Properties)
+		*r = DeliveryChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,32 +8,32 @@ import (
 
 // Analysis_GaugeChartVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.GaugeChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html
-type Analysis_GaugeChartVisual struct {
+type Analysis_GaugeChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html#cfn-quicksight-analysis-gaugechartvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html#cfn-quicksight-analysis-gaugechartvisual-chartconfiguration
-	ChartConfiguration *Analysis_GaugeChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_GaugeChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html#cfn-quicksight-analysis-gaugechartvisual-conditionalformatting
-	ConditionalFormatting *Analysis_GaugeChartConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Analysis_GaugeChartConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html#cfn-quicksight-analysis-gaugechartvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartvisual.html#cfn-quicksight-analysis-gaugechartvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_GaugeChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GaugeChartVisual) AWSCloudFormationType() string {
+func (r *Analysis_GaugeChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GaugeChartVisual"
 }

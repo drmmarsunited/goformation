@@ -8,27 +8,27 @@ import (
 
 // Bot_IntentClosingSetting AWS CloudFormation Resource (AWS::Lex::Bot.IntentClosingSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html
-type Bot_IntentClosingSetting struct {
+type Bot_IntentClosingSetting[T any] struct {
 
 	// ClosingResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-closingresponse
-	ClosingResponse *Bot_ResponseSpecification `json:"ClosingResponse,omitempty"`
+	ClosingResponse *Bot_ResponseSpecification[any] `json:"ClosingResponse,omitempty"`
 
 	// Conditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-conditional
-	Conditional *Bot_ConditionalSpecification `json:"Conditional,omitempty"`
+	Conditional *Bot_ConditionalSpecification[any] `json:"Conditional,omitempty"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-isactive
-	IsActive *bool `json:"IsActive,omitempty"`
+	IsActive *T `json:"IsActive,omitempty"`
 
 	// NextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-nextstep
-	NextStep *Bot_DialogState `json:"NextStep,omitempty"`
+	NextStep *Bot_DialogState[any] `json:"NextStep,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_IntentClosingSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_IntentClosingSetting) AWSCloudFormationType() string {
+func (r *Bot_IntentClosingSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.IntentClosingSetting"
 }

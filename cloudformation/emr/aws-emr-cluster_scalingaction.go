@@ -8,7 +8,7 @@ import (
 
 // Cluster_ScalingAction AWS CloudFormation Resource (AWS::EMR::Cluster.ScalingAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html
-type Cluster_ScalingAction struct {
+type Cluster_ScalingAction[T any] struct {
 
 	// Market AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_ScalingAction struct {
 	// SimpleScalingPolicyConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-simplescalingpolicyconfiguration
-	SimpleScalingPolicyConfiguration *Cluster_SimpleScalingPolicyConfiguration `json:"SimpleScalingPolicyConfiguration"`
+	SimpleScalingPolicyConfiguration *Cluster_SimpleScalingPolicyConfiguration[any] `json:"SimpleScalingPolicyConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_ScalingAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ScalingAction) AWSCloudFormationType() string {
+func (r *Cluster_ScalingAction[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ScalingAction"
 }

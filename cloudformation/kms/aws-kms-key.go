@@ -12,7 +12,7 @@ import (
 
 // Key AWS CloudFormation Resource (AWS::KMS::Key)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html
-type Key struct {
+type Key[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Key struct {
 	// EnableKeyRotation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enablekeyrotation
-	EnableKeyRotation *bool `json:"EnableKeyRotation,omitempty"`
+	EnableKeyRotation *T `json:"EnableKeyRotation,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// KeyPolicy AWS CloudFormation Property
 	// Required: true
@@ -47,12 +47,12 @@ type Key struct {
 	// MultiRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-multiregion
-	MultiRegion *bool `json:"MultiRegion,omitempty"`
+	MultiRegion *T `json:"MultiRegion,omitempty"`
 
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-pendingwindowindays
-	PendingWindowInDays *int `json:"PendingWindowInDays,omitempty"`
+	PendingWindowInDays *T `json:"PendingWindowInDays,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type Key struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Key) AWSCloudFormationType() string {
+func (r *Key[any]) AWSCloudFormationType() string {
 	return "AWS::KMS::Key"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Key) MarshalJSON() ([]byte, error) {
-	type Properties Key
+func (r Key[any]) MarshalJSON() ([]byte, error) {
+	type Properties Key[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Key) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Key) UnmarshalJSON(b []byte) error {
-	type Properties Key
+func (r *Key[any]) UnmarshalJSON(b []byte) error {
+	type Properties Key[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Key) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Key(*res.Properties)
+		*r = Key[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

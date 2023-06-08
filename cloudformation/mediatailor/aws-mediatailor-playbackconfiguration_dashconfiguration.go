@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_DashConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.DashConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-dashconfiguration.html
-type PlaybackConfiguration_DashConfiguration struct {
+type PlaybackConfiguration_DashConfiguration[T any] struct {
 
 	// ManifestEndpointPrefix AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type PlaybackConfiguration_DashConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_DashConfiguration) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_DashConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.DashConfiguration"
 }

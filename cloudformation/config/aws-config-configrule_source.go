@@ -8,12 +8,12 @@ import (
 
 // ConfigRule_Source AWS CloudFormation Resource (AWS::Config::ConfigRule.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
-type ConfigRule_Source struct {
+type ConfigRule_Source[T any] struct {
 
 	// CustomPolicyDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-custompolicydetails
-	CustomPolicyDetails *ConfigRule_CustomPolicyDetails `json:"CustomPolicyDetails,omitempty"`
+	CustomPolicyDetails *ConfigRule_CustomPolicyDetails[any] `json:"CustomPolicyDetails,omitempty"`
 
 	// Owner AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ConfigRule_Source struct {
 	// SourceDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails
-	SourceDetails []ConfigRule_SourceDetail `json:"SourceDetails,omitempty"`
+	SourceDetails []ConfigRule_SourceDetail[any] `json:"SourceDetails,omitempty"`
 
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ConfigRule_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigRule_Source) AWSCloudFormationType() string {
+func (r *ConfigRule_Source[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule.Source"
 }

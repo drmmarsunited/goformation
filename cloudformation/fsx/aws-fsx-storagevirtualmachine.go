@@ -12,12 +12,12 @@ import (
 
 // StorageVirtualMachine AWS CloudFormation Resource (AWS::FSx::StorageVirtualMachine)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html
-type StorageVirtualMachine struct {
+type StorageVirtualMachine[T any] struct {
 
 	// ActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration
-	ActiveDirectoryConfiguration *StorageVirtualMachine_ActiveDirectoryConfiguration `json:"ActiveDirectoryConfiguration,omitempty"`
+	ActiveDirectoryConfiguration *StorageVirtualMachine_ActiveDirectoryConfiguration[any] `json:"ActiveDirectoryConfiguration,omitempty"`
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type StorageVirtualMachine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageVirtualMachine) AWSCloudFormationType() string {
+func (r *StorageVirtualMachine[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::StorageVirtualMachine"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StorageVirtualMachine) MarshalJSON() ([]byte, error) {
-	type Properties StorageVirtualMachine
+func (r StorageVirtualMachine[any]) MarshalJSON() ([]byte, error) {
+	type Properties StorageVirtualMachine[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r StorageVirtualMachine) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StorageVirtualMachine) UnmarshalJSON(b []byte) error {
-	type Properties StorageVirtualMachine
+func (r *StorageVirtualMachine[any]) UnmarshalJSON(b []byte) error {
+	type Properties StorageVirtualMachine[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *StorageVirtualMachine) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StorageVirtualMachine(*res.Properties)
+		*r = StorageVirtualMachine[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

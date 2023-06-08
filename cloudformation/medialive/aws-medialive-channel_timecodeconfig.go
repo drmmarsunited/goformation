@@ -8,7 +8,7 @@ import (
 
 // Channel_TimecodeConfig AWS CloudFormation Resource (AWS::MediaLive::Channel.TimecodeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeconfig.html
-type Channel_TimecodeConfig struct {
+type Channel_TimecodeConfig[T any] struct {
 
 	// Source AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_TimecodeConfig struct {
 	// SyncThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeconfig.html#cfn-medialive-channel-timecodeconfig-syncthreshold
-	SyncThreshold *int `json:"SyncThreshold,omitempty"`
+	SyncThreshold *T `json:"SyncThreshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_TimecodeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TimecodeConfig) AWSCloudFormationType() string {
+func (r *Channel_TimecodeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TimecodeConfig"
 }

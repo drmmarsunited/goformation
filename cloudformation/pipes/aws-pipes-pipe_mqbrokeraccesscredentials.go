@@ -8,7 +8,7 @@ import (
 
 // Pipe_MQBrokerAccessCredentials AWS CloudFormation Resource (AWS::Pipes::Pipe.MQBrokerAccessCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-mqbrokeraccesscredentials.html
-type Pipe_MQBrokerAccessCredentials struct {
+type Pipe_MQBrokerAccessCredentials[T any] struct {
 
 	// BasicAuth AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Pipe_MQBrokerAccessCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_MQBrokerAccessCredentials) AWSCloudFormationType() string {
+func (r *Pipe_MQBrokerAccessCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.MQBrokerAccessCredentials"
 }

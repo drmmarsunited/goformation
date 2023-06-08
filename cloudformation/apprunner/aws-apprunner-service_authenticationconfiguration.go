@@ -8,7 +8,7 @@ import (
 
 // Service_AuthenticationConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.AuthenticationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-authenticationconfiguration.html
-type Service_AuthenticationConfiguration struct {
+type Service_AuthenticationConfiguration[T any] struct {
 
 	// AccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_AuthenticationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_AuthenticationConfiguration) AWSCloudFormationType() string {
+func (r *Service_AuthenticationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.AuthenticationConfiguration"
 }

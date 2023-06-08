@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSetEventDestination_SnsDestination AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html
-type ConfigurationSetEventDestination_SnsDestination struct {
+type ConfigurationSetEventDestination_SnsDestination[T any] struct {
 
 	// TopicArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConfigurationSetEventDestination_SnsDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSetEventDestination_SnsDestination) AWSCloudFormationType() string {
+func (r *ConfigurationSetEventDestination_SnsDestination[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination"
 }

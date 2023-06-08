@@ -8,32 +8,32 @@ import (
 
 // Dashboard_BoxPlotVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BoxPlotVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html
-type Dashboard_BoxPlotVisual struct {
+type Dashboard_BoxPlotVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-chartconfiguration
-	ChartConfiguration *Dashboard_BoxPlotChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_BoxPlotChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-columnhierarchies
-	ColumnHierarchies []Dashboard_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Dashboard_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_BoxPlotVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BoxPlotVisual) AWSCloudFormationType() string {
+func (r *Dashboard_BoxPlotVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BoxPlotVisual"
 }

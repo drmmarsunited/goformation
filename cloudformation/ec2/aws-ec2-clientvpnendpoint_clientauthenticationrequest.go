@@ -8,22 +8,22 @@ import (
 
 // ClientVpnEndpoint_ClientAuthenticationRequest AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html
-type ClientVpnEndpoint_ClientAuthenticationRequest struct {
+type ClientVpnEndpoint_ClientAuthenticationRequest[T any] struct {
 
 	// ActiveDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-activedirectory
-	ActiveDirectory *ClientVpnEndpoint_DirectoryServiceAuthenticationRequest `json:"ActiveDirectory,omitempty"`
+	ActiveDirectory *ClientVpnEndpoint_DirectoryServiceAuthenticationRequest[any] `json:"ActiveDirectory,omitempty"`
 
 	// FederatedAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-federatedauthentication
-	FederatedAuthentication *ClientVpnEndpoint_FederatedAuthenticationRequest `json:"FederatedAuthentication,omitempty"`
+	FederatedAuthentication *ClientVpnEndpoint_FederatedAuthenticationRequest[any] `json:"FederatedAuthentication,omitempty"`
 
 	// MutualAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-mutualauthentication
-	MutualAuthentication *ClientVpnEndpoint_CertificateAuthenticationRequest `json:"MutualAuthentication,omitempty"`
+	MutualAuthentication *ClientVpnEndpoint_CertificateAuthenticationRequest[any] `json:"MutualAuthentication,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ClientVpnEndpoint_ClientAuthenticationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_ClientAuthenticationRequest) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_ClientAuthenticationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest"
 }

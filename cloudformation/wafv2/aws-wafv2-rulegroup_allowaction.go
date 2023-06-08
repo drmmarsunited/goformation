@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_AllowAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.AllowAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-allowaction.html
-type RuleGroup_AllowAction struct {
+type RuleGroup_AllowAction[T any] struct {
 
 	// CustomRequestHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-allowaction.html#cfn-wafv2-rulegroup-allowaction-customrequesthandling
-	CustomRequestHandling *RuleGroup_CustomRequestHandling `json:"CustomRequestHandling,omitempty"`
+	CustomRequestHandling *RuleGroup_CustomRequestHandling[any] `json:"CustomRequestHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_AllowAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_AllowAction) AWSCloudFormationType() string {
+func (r *RuleGroup_AllowAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.AllowAction"
 }

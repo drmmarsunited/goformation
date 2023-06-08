@@ -8,7 +8,7 @@ import (
 
 // Integration_ConnectorOperator AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.ConnectorOperator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html
-type Integration_ConnectorOperator struct {
+type Integration_ConnectorOperator[T any] struct {
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Integration_ConnectorOperator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ConnectorOperator) AWSCloudFormationType() string {
+func (r *Integration_ConnectorOperator[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.ConnectorOperator"
 }

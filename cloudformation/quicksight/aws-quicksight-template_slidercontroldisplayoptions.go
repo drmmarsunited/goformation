@@ -8,12 +8,12 @@ import (
 
 // Template_SliderControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.SliderControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-slidercontroldisplayoptions.html
-type Template_SliderControlDisplayOptions struct {
+type Template_SliderControlDisplayOptions[T any] struct {
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-slidercontroldisplayoptions.html#cfn-quicksight-template-slidercontroldisplayoptions-titleoptions
-	TitleOptions *Template_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Template_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_SliderControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SliderControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_SliderControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SliderControlDisplayOptions"
 }

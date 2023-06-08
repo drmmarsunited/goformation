@@ -8,17 +8,17 @@ import (
 
 // WorkGroup_ResultConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.ResultConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html
-type WorkGroup_ResultConfiguration struct {
+type WorkGroup_ResultConfiguration[T any] struct {
 
 	// AclConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-aclconfiguration
-	AclConfiguration *WorkGroup_AclConfiguration `json:"AclConfiguration,omitempty"`
+	AclConfiguration *WorkGroup_AclConfiguration[any] `json:"AclConfiguration,omitempty"`
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-encryptionconfiguration
-	EncryptionConfiguration *WorkGroup_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *WorkGroup_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// ExpectedBucketOwner AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type WorkGroup_ResultConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_ResultConfiguration) AWSCloudFormationType() string {
+func (r *WorkGroup_ResultConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.ResultConfiguration"
 }

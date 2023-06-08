@@ -8,22 +8,22 @@ import (
 
 // Bot_PromptSpecification AWS CloudFormation Resource (AWS::Lex::Bot.PromptSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html
-type Bot_PromptSpecification struct {
+type Bot_PromptSpecification[T any] struct {
 
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *T `json:"AllowInterrupt,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-maxretries
-	MaxRetries int `json:"MaxRetries"`
+	MaxRetries T `json:"MaxRetries"`
 
 	// MessageGroupsList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messagegroupslist
-	MessageGroupsList []Bot_MessageGroup `json:"MessageGroupsList"`
+	MessageGroupsList []Bot_MessageGroup[any] `json:"MessageGroupsList"`
 
 	// MessageSelectionStrategy AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Bot_PromptSpecification struct {
 	// PromptAttemptsSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-promptattemptsspecification
-	PromptAttemptsSpecification map[string]Bot_PromptAttemptSpecification `json:"PromptAttemptsSpecification,omitempty"`
+	PromptAttemptsSpecification map[string]Bot_PromptAttemptSpecification[any] `json:"PromptAttemptsSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Bot_PromptSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_PromptSpecification) AWSCloudFormationType() string {
+func (r *Bot_PromptSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.PromptSpecification"
 }

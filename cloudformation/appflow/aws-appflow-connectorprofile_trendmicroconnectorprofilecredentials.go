@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_TrendmicroConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.TrendmicroConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-trendmicroconnectorprofilecredentials.html
-type ConnectorProfile_TrendmicroConnectorProfileCredentials struct {
+type ConnectorProfile_TrendmicroConnectorProfileCredentials[T any] struct {
 
 	// ApiSecretKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_TrendmicroConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_TrendmicroConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_TrendmicroConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.TrendmicroConnectorProfileCredentials"
 }

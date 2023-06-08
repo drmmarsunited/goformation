@@ -8,7 +8,7 @@ import (
 
 // Channel_MediaPackageOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MediaPackageOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputsettings.html
-type Channel_MediaPackageOutputSettings struct {
+type Channel_MediaPackageOutputSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_MediaPackageOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MediaPackageOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_MediaPackageOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MediaPackageOutputSettings"
 }

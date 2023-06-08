@@ -11,7 +11,7 @@ import (
 
 // ElasticLoadBalancerAttachment AWS CloudFormation Resource (AWS::OpsWorks::ElasticLoadBalancerAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html
-type ElasticLoadBalancerAttachment struct {
+type ElasticLoadBalancerAttachment[T any] struct {
 
 	// ElasticLoadBalancerName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ElasticLoadBalancerAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ElasticLoadBalancerAttachment) AWSCloudFormationType() string {
+func (r *ElasticLoadBalancerAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::ElasticLoadBalancerAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ElasticLoadBalancerAttachment) MarshalJSON() ([]byte, error) {
-	type Properties ElasticLoadBalancerAttachment
+func (r ElasticLoadBalancerAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties ElasticLoadBalancerAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ElasticLoadBalancerAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ElasticLoadBalancerAttachment) UnmarshalJSON(b []byte) error {
-	type Properties ElasticLoadBalancerAttachment
+func (r *ElasticLoadBalancerAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties ElasticLoadBalancerAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ElasticLoadBalancerAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ElasticLoadBalancerAttachment(*res.Properties)
+		*r = ElasticLoadBalancerAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

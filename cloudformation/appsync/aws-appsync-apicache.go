@@ -11,7 +11,7 @@ import (
 
 // ApiCache AWS CloudFormation Resource (AWS::AppSync::ApiCache)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html
-type ApiCache struct {
+type ApiCache[T any] struct {
 
 	// ApiCachingBehavior AWS CloudFormation Property
 	// Required: true
@@ -26,17 +26,17 @@ type ApiCache struct {
 	// AtRestEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-atrestencryptionenabled
-	AtRestEncryptionEnabled *bool `json:"AtRestEncryptionEnabled,omitempty"`
+	AtRestEncryptionEnabled *T `json:"AtRestEncryptionEnabled,omitempty"`
 
 	// TransitEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-transitencryptionenabled
-	TransitEncryptionEnabled *bool `json:"TransitEncryptionEnabled,omitempty"`
+	TransitEncryptionEnabled *T `json:"TransitEncryptionEnabled,omitempty"`
 
 	// Ttl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-ttl
-	Ttl float64 `json:"Ttl"`
+	Ttl T `json:"Ttl"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type ApiCache struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiCache) AWSCloudFormationType() string {
+func (r *ApiCache[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::ApiCache"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApiCache) MarshalJSON() ([]byte, error) {
-	type Properties ApiCache
+func (r ApiCache[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApiCache[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r ApiCache) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApiCache) UnmarshalJSON(b []byte) error {
-	type Properties ApiCache
+func (r *ApiCache[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApiCache[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *ApiCache) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApiCache(*res.Properties)
+		*r = ApiCache[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

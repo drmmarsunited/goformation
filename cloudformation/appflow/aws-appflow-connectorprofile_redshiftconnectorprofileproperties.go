@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_RedshiftConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html
-type ConnectorProfile_RedshiftConnectorProfileProperties struct {
+type ConnectorProfile_RedshiftConnectorProfileProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type ConnectorProfile_RedshiftConnectorProfileProperties struct {
 	// IsRedshiftServerless AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html#cfn-appflow-connectorprofile-redshiftconnectorprofileproperties-isredshiftserverless
-	IsRedshiftServerless *bool `json:"IsRedshiftServerless,omitempty"`
+	IsRedshiftServerless *T `json:"IsRedshiftServerless,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type ConnectorProfile_RedshiftConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_RedshiftConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_RedshiftConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileProperties"
 }

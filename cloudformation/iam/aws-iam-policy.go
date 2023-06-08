@@ -11,7 +11,7 @@ import (
 
 // Policy AWS CloudFormation Resource (AWS::IAM::Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
-type Policy struct {
+type Policy[T any] struct {
 
 	// Groups AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Policy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy) AWSCloudFormationType() string {
+func (r *Policy[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::Policy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Policy) MarshalJSON() ([]byte, error) {
-	type Properties Policy
+func (r Policy[any]) MarshalJSON() ([]byte, error) {
+	type Properties Policy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Policy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Policy) UnmarshalJSON(b []byte) error {
-	type Properties Policy
+func (r *Policy[any]) UnmarshalJSON(b []byte) error {
+	type Properties Policy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Policy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Policy(*res.Properties)
+		*r = Policy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

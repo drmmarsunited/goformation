@@ -8,27 +8,27 @@ import (
 
 // BackupPlan_BackupRuleResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.BackupRuleResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html
-type BackupPlan_BackupRuleResourceType struct {
+type BackupPlan_BackupRuleResourceType[T any] struct {
 
 	// CompletionWindowMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-completionwindowminutes
-	CompletionWindowMinutes *float64 `json:"CompletionWindowMinutes,omitempty"`
+	CompletionWindowMinutes *T `json:"CompletionWindowMinutes,omitempty"`
 
 	// CopyActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-copyactions
-	CopyActions []BackupPlan_CopyActionResourceType `json:"CopyActions,omitempty"`
+	CopyActions []BackupPlan_CopyActionResourceType[any] `json:"CopyActions,omitempty"`
 
 	// EnableContinuousBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-enablecontinuousbackup
-	EnableContinuousBackup *bool `json:"EnableContinuousBackup,omitempty"`
+	EnableContinuousBackup *T `json:"EnableContinuousBackup,omitempty"`
 
 	// Lifecycle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-lifecycle
-	Lifecycle *BackupPlan_LifecycleResourceType `json:"Lifecycle,omitempty"`
+	Lifecycle *BackupPlan_LifecycleResourceType[any] `json:"Lifecycle,omitempty"`
 
 	// RecoveryPointTags AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type BackupPlan_BackupRuleResourceType struct {
 	// StartWindowMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes
-	StartWindowMinutes *float64 `json:"StartWindowMinutes,omitempty"`
+	StartWindowMinutes *T `json:"StartWindowMinutes,omitempty"`
 
 	// TargetBackupVault AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type BackupPlan_BackupRuleResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupPlan_BackupRuleResourceType) AWSCloudFormationType() string {
+func (r *BackupPlan_BackupRuleResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupPlan.BackupRuleResourceType"
 }

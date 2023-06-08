@@ -8,12 +8,12 @@ import (
 
 // Flow_Task AWS CloudFormation Resource (AWS::AppFlow::Flow.Task)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html
-type Flow_Task struct {
+type Flow_Task[T any] struct {
 
 	// ConnectorOperator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-connectoroperator
-	ConnectorOperator *Flow_ConnectorOperator `json:"ConnectorOperator,omitempty"`
+	ConnectorOperator *Flow_ConnectorOperator[any] `json:"ConnectorOperator,omitempty"`
 
 	// DestinationField AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flow_Task struct {
 	// TaskProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-taskproperties
-	TaskProperties []Flow_TaskPropertiesObject `json:"TaskProperties,omitempty"`
+	TaskProperties []Flow_TaskPropertiesObject[any] `json:"TaskProperties,omitempty"`
 
 	// TaskType AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Flow_Task struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_Task) AWSCloudFormationType() string {
+func (r *Flow_Task[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.Task"
 }

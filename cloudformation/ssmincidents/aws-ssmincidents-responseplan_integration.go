@@ -8,12 +8,12 @@ import (
 
 // ResponsePlan_Integration AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.Integration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-integration.html
-type ResponsePlan_Integration struct {
+type ResponsePlan_Integration[T any] struct {
 
 	// PagerDutyConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-integration.html#cfn-ssmincidents-responseplan-integration-pagerdutyconfiguration
-	PagerDutyConfiguration *ResponsePlan_PagerDutyConfiguration `json:"PagerDutyConfiguration"`
+	PagerDutyConfiguration *ResponsePlan_PagerDutyConfiguration[any] `json:"PagerDutyConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResponsePlan_Integration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_Integration) AWSCloudFormationType() string {
+func (r *ResponsePlan_Integration[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.Integration"
 }

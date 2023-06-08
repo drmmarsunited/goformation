@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_DynamoDBv2 AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.DynamoDBv2)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodbv2.html
-type AlarmModel_DynamoDBv2 struct {
+type AlarmModel_DynamoDBv2[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodbv2.html#cfn-iotevents-alarmmodel-dynamodbv2-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AlarmModel_DynamoDBv2 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_DynamoDBv2) AWSCloudFormationType() string {
+func (r *AlarmModel_DynamoDBv2[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.DynamoDBv2"
 }

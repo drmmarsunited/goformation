@@ -8,12 +8,12 @@ import (
 
 // Pipe_NetworkConfiguration AWS CloudFormation Resource (AWS::Pipes::Pipe.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-networkconfiguration.html
-type Pipe_NetworkConfiguration struct {
+type Pipe_NetworkConfiguration[T any] struct {
 
 	// AwsvpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-networkconfiguration.html#cfn-pipes-pipe-networkconfiguration-awsvpcconfiguration
-	AwsvpcConfiguration *Pipe_AwsVpcConfiguration `json:"AwsvpcConfiguration,omitempty"`
+	AwsvpcConfiguration *Pipe_AwsVpcConfiguration[any] `json:"AwsvpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Pipe_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.NetworkConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_LBCookieStickinessPolicy AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html
-type LoadBalancer_LBCookieStickinessPolicy struct {
+type LoadBalancer_LBCookieStickinessPolicy[T any] struct {
 
 	// CookieExpirationPeriod AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LoadBalancer_LBCookieStickinessPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_LBCookieStickinessPolicy) AWSCloudFormationType() string {
+func (r *LoadBalancer_LBCookieStickinessPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
 }

@@ -8,12 +8,12 @@ import (
 
 // Analysis_SectionLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SectionLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionlayoutconfiguration.html
-type Analysis_SectionLayoutConfiguration struct {
+type Analysis_SectionLayoutConfiguration[T any] struct {
 
 	// FreeFormLayout AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionlayoutconfiguration.html#cfn-quicksight-analysis-sectionlayoutconfiguration-freeformlayout
-	FreeFormLayout *Analysis_FreeFormSectionLayoutConfiguration `json:"FreeFormLayout"`
+	FreeFormLayout *Analysis_FreeFormSectionLayoutConfiguration[any] `json:"FreeFormLayout"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_SectionLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SectionLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SectionLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SectionLayoutConfiguration"
 }

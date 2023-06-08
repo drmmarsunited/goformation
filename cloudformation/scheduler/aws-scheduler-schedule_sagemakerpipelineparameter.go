@@ -8,7 +8,7 @@ import (
 
 // Schedule_SageMakerPipelineParameter AWS CloudFormation Resource (AWS::Scheduler::Schedule.SageMakerPipelineParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-sagemakerpipelineparameter.html
-type Schedule_SageMakerPipelineParameter struct {
+type Schedule_SageMakerPipelineParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Schedule_SageMakerPipelineParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_SageMakerPipelineParameter) AWSCloudFormationType() string {
+func (r *Schedule_SageMakerPipelineParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.SageMakerPipelineParameter"
 }

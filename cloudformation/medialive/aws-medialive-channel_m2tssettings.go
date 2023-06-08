@@ -8,7 +8,7 @@ import (
 
 // Channel_M2tsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.M2tsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html
-type Channel_M2tsSettings struct {
+type Channel_M2tsSettings[T any] struct {
 
 	// AbsentInputAudioBehavior AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_M2tsSettings struct {
 	// AudioFramesPerPes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audioframesperpes
-	AudioFramesPerPes *int `json:"AudioFramesPerPes,omitempty"`
+	AudioFramesPerPes *T `json:"AudioFramesPerPes,omitempty"`
 
 	// AudioPids AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Channel_M2tsSettings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-bitrate
-	Bitrate *int `json:"Bitrate,omitempty"`
+	Bitrate *T `json:"Bitrate,omitempty"`
 
 	// BufferModel AWS CloudFormation Property
 	// Required: false
@@ -68,12 +68,12 @@ type Channel_M2tsSettings struct {
 	// DvbNitSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbnitsettings
-	DvbNitSettings *Channel_DvbNitSettings `json:"DvbNitSettings,omitempty"`
+	DvbNitSettings *Channel_DvbNitSettings[any] `json:"DvbNitSettings,omitempty"`
 
 	// DvbSdtSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbsdtsettings
-	DvbSdtSettings *Channel_DvbSdtSettings `json:"DvbSdtSettings,omitempty"`
+	DvbSdtSettings *Channel_DvbSdtSettings[any] `json:"DvbSdtSettings,omitempty"`
 
 	// DvbSubPids AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type Channel_M2tsSettings struct {
 	// DvbTdtSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbtdtsettings
-	DvbTdtSettings *Channel_DvbTdtSettings `json:"DvbTdtSettings,omitempty"`
+	DvbTdtSettings *Channel_DvbTdtSettings[any] `json:"DvbTdtSettings,omitempty"`
 
 	// DvbTeletextPid AWS CloudFormation Property
 	// Required: false
@@ -103,7 +103,7 @@ type Channel_M2tsSettings struct {
 	// EbpLookaheadMs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebplookaheadms
-	EbpLookaheadMs *int `json:"EbpLookaheadMs,omitempty"`
+	EbpLookaheadMs *T `json:"EbpLookaheadMs,omitempty"`
 
 	// EbpPlacement AWS CloudFormation Property
 	// Required: false
@@ -133,7 +133,7 @@ type Channel_M2tsSettings struct {
 	// FragmentTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-fragmenttime
-	FragmentTime *float64 `json:"FragmentTime,omitempty"`
+	FragmentTime *T `json:"FragmentTime,omitempty"`
 
 	// Klv AWS CloudFormation Property
 	// Required: false
@@ -153,12 +153,12 @@ type Channel_M2tsSettings struct {
 	// NullPacketBitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-nullpacketbitrate
-	NullPacketBitrate *float64 `json:"NullPacketBitrate,omitempty"`
+	NullPacketBitrate *T `json:"NullPacketBitrate,omitempty"`
 
 	// PatInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-patinterval
-	PatInterval *int `json:"PatInterval,omitempty"`
+	PatInterval *T `json:"PatInterval,omitempty"`
 
 	// PcrControl AWS CloudFormation Property
 	// Required: false
@@ -168,7 +168,7 @@ type Channel_M2tsSettings struct {
 	// PcrPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pcrperiod
-	PcrPeriod *int `json:"PcrPeriod,omitempty"`
+	PcrPeriod *T `json:"PcrPeriod,omitempty"`
 
 	// PcrPid AWS CloudFormation Property
 	// Required: false
@@ -178,7 +178,7 @@ type Channel_M2tsSettings struct {
 	// PmtInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pmtinterval
-	PmtInterval *int `json:"PmtInterval,omitempty"`
+	PmtInterval *T `json:"PmtInterval,omitempty"`
 
 	// PmtPid AWS CloudFormation Property
 	// Required: false
@@ -188,7 +188,7 @@ type Channel_M2tsSettings struct {
 	// ProgramNum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-programnum
-	ProgramNum *int `json:"ProgramNum,omitempty"`
+	ProgramNum *T `json:"ProgramNum,omitempty"`
 
 	// RateMode AWS CloudFormation Property
 	// Required: false
@@ -213,7 +213,7 @@ type Channel_M2tsSettings struct {
 	// Scte35PrerollPullupMilliseconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-scte35prerollpullupmilliseconds
-	Scte35PrerollPullupMilliseconds *float64 `json:"Scte35PrerollPullupMilliseconds,omitempty"`
+	Scte35PrerollPullupMilliseconds *T `json:"Scte35PrerollPullupMilliseconds,omitempty"`
 
 	// SegmentationMarkers AWS CloudFormation Property
 	// Required: false
@@ -228,7 +228,7 @@ type Channel_M2tsSettings struct {
 	// SegmentationTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-segmentationtime
-	SegmentationTime *float64 `json:"SegmentationTime,omitempty"`
+	SegmentationTime *T `json:"SegmentationTime,omitempty"`
 
 	// TimedMetadataBehavior AWS CloudFormation Property
 	// Required: false
@@ -243,7 +243,7 @@ type Channel_M2tsSettings struct {
 	// TransportStreamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-transportstreamid
-	TransportStreamId *int `json:"TransportStreamId,omitempty"`
+	TransportStreamId *T `json:"TransportStreamId,omitempty"`
 
 	// VideoPid AWS CloudFormation Property
 	// Required: false
@@ -267,6 +267,6 @@ type Channel_M2tsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_M2tsSettings) AWSCloudFormationType() string {
+func (r *Channel_M2tsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.M2tsSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Table_StreamSpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.StreamSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-streamspecification.html
-type Table_StreamSpecification struct {
+type Table_StreamSpecification[T any] struct {
 
 	// StreamViewType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Table_StreamSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_StreamSpecification) AWSCloudFormationType() string {
+func (r *Table_StreamSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.StreamSpecification"
 }

@@ -8,17 +8,17 @@ import (
 
 // Analysis_InsightConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.InsightConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightconfiguration.html
-type Analysis_InsightConfiguration struct {
+type Analysis_InsightConfiguration[T any] struct {
 
 	// Computations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightconfiguration.html#cfn-quicksight-analysis-insightconfiguration-computations
-	Computations []Analysis_Computation `json:"Computations,omitempty"`
+	Computations []Analysis_Computation[any] `json:"Computations,omitempty"`
 
 	// CustomNarrative AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightconfiguration.html#cfn-quicksight-analysis-insightconfiguration-customnarrative
-	CustomNarrative *Analysis_CustomNarrativeOptions `json:"CustomNarrative,omitempty"`
+	CustomNarrative *Analysis_CustomNarrativeOptions[any] `json:"CustomNarrative,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_InsightConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_InsightConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_InsightConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.InsightConfiguration"
 }

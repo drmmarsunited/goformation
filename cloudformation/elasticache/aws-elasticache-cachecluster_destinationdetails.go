@@ -8,17 +8,17 @@ import (
 
 // CacheCluster_DestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster.DestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html
-type CacheCluster_DestinationDetails struct {
+type CacheCluster_DestinationDetails[T any] struct {
 
 	// CloudWatchLogsDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-cloudwatchlogsdetails
-	CloudWatchLogsDetails *CacheCluster_CloudWatchLogsDestinationDetails `json:"CloudWatchLogsDetails,omitempty"`
+	CloudWatchLogsDetails *CacheCluster_CloudWatchLogsDestinationDetails[any] `json:"CloudWatchLogsDetails,omitempty"`
 
 	// KinesisFirehoseDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-kinesisfirehosedetails
-	KinesisFirehoseDetails *CacheCluster_KinesisFirehoseDestinationDetails `json:"KinesisFirehoseDetails,omitempty"`
+	KinesisFirehoseDetails *CacheCluster_KinesisFirehoseDestinationDetails[any] `json:"KinesisFirehoseDetails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type CacheCluster_DestinationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CacheCluster_DestinationDetails) AWSCloudFormationType() string {
+func (r *CacheCluster_DestinationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::CacheCluster.DestinationDetails"
 }

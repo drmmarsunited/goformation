@@ -8,12 +8,12 @@ import (
 
 // Analysis_ExcludePeriodConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ExcludePeriodConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-excludeperiodconfiguration.html
-type Analysis_ExcludePeriodConfiguration struct {
+type Analysis_ExcludePeriodConfiguration[T any] struct {
 
 	// Amount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-excludeperiodconfiguration.html#cfn-quicksight-analysis-excludeperiodconfiguration-amount
-	Amount float64 `json:"Amount"`
+	Amount T `json:"Amount"`
 
 	// Granularity AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_ExcludePeriodConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ExcludePeriodConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ExcludePeriodConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ExcludePeriodConfiguration"
 }

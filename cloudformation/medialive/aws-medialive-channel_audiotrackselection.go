@@ -8,17 +8,17 @@ import (
 
 // Channel_AudioTrackSelection AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioTrackSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrackselection.html
-type Channel_AudioTrackSelection struct {
+type Channel_AudioTrackSelection[T any] struct {
 
 	// DolbyEDecode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrackselection.html#cfn-medialive-channel-audiotrackselection-dolbyedecode
-	DolbyEDecode *Channel_AudioDolbyEDecode `json:"DolbyEDecode,omitempty"`
+	DolbyEDecode *Channel_AudioDolbyEDecode[any] `json:"DolbyEDecode,omitempty"`
 
 	// Tracks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrackselection.html#cfn-medialive-channel-audiotrackselection-tracks
-	Tracks []Channel_AudioTrack `json:"Tracks,omitempty"`
+	Tracks []Channel_AudioTrack[any] `json:"Tracks,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_AudioTrackSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioTrackSelection) AWSCloudFormationType() string {
+func (r *Channel_AudioTrackSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioTrackSelection"
 }

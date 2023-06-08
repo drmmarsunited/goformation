@@ -12,7 +12,7 @@ import (
 
 // Table AWS CloudFormation Resource (AWS::Timestream::Table)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html
-type Table struct {
+type Table[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,12 @@ type Table struct {
 	// MagneticStoreWriteProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-magneticstorewriteproperties
-	MagneticStoreWriteProperties *Table_MagneticStoreWriteProperties `json:"MagneticStoreWriteProperties,omitempty"`
+	MagneticStoreWriteProperties *Table_MagneticStoreWriteProperties[any] `json:"MagneticStoreWriteProperties,omitempty"`
 
 	// RetentionProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-retentionproperties
-	RetentionProperties *Table_RetentionProperties `json:"RetentionProperties,omitempty"`
+	RetentionProperties *Table_RetentionProperties[any] `json:"RetentionProperties,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type Table struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table) AWSCloudFormationType() string {
+func (r *Table[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::Table"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Table) MarshalJSON() ([]byte, error) {
-	type Properties Table
+func (r Table[any]) MarshalJSON() ([]byte, error) {
+	type Properties Table[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Table) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Table) UnmarshalJSON(b []byte) error {
-	type Properties Table
+func (r *Table[any]) UnmarshalJSON(b []byte) error {
+	type Properties Table[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Table) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Table(*res.Properties)
+		*r = Table[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

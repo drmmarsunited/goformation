@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioNormalizationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioNormalizationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html
-type Channel_AudioNormalizationSettings struct {
+type Channel_AudioNormalizationSettings[T any] struct {
 
 	// Algorithm AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_AudioNormalizationSettings struct {
 	// TargetLkfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-targetlkfs
-	TargetLkfs *float64 `json:"TargetLkfs,omitempty"`
+	TargetLkfs *T `json:"TargetLkfs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_AudioNormalizationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioNormalizationSettings) AWSCloudFormationType() string {
+func (r *Channel_AudioNormalizationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioNormalizationSettings"
 }

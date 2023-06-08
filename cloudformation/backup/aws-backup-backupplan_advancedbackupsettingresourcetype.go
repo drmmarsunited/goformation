@@ -8,7 +8,7 @@ import (
 
 // BackupPlan_AdvancedBackupSettingResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.AdvancedBackupSettingResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-advancedbackupsettingresourcetype.html
-type BackupPlan_AdvancedBackupSettingResourceType struct {
+type BackupPlan_AdvancedBackupSettingResourceType[T any] struct {
 
 	// BackupOptions AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type BackupPlan_AdvancedBackupSettingResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupPlan_AdvancedBackupSettingResourceType) AWSCloudFormationType() string {
+func (r *BackupPlan_AdvancedBackupSettingResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupPlan.AdvancedBackupSettingResourceType"
 }

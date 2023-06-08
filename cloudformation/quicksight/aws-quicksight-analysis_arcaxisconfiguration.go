@@ -8,17 +8,17 @@ import (
 
 // Analysis_ArcAxisConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ArcAxisConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-arcaxisconfiguration.html
-type Analysis_ArcAxisConfiguration struct {
+type Analysis_ArcAxisConfiguration[T any] struct {
 
 	// Range AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-arcaxisconfiguration.html#cfn-quicksight-analysis-arcaxisconfiguration-range
-	Range *Analysis_ArcAxisDisplayRange `json:"Range,omitempty"`
+	Range *Analysis_ArcAxisDisplayRange[any] `json:"Range,omitempty"`
 
 	// ReserveRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-arcaxisconfiguration.html#cfn-quicksight-analysis-arcaxisconfiguration-reserverange
-	ReserveRange *float64 `json:"ReserveRange,omitempty"`
+	ReserveRange *T `json:"ReserveRange,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_ArcAxisConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ArcAxisConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ArcAxisConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ArcAxisConfiguration"
 }

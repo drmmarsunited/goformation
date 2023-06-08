@@ -8,27 +8,27 @@ import (
 
 // Campaign_TemplateConfiguration AWS CloudFormation Resource (AWS::Pinpoint::Campaign.TemplateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-templateconfiguration.html
-type Campaign_TemplateConfiguration struct {
+type Campaign_TemplateConfiguration[T any] struct {
 
 	// EmailTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-templateconfiguration.html#cfn-pinpoint-campaign-templateconfiguration-emailtemplate
-	EmailTemplate *Campaign_Template `json:"EmailTemplate,omitempty"`
+	EmailTemplate *Campaign_Template[any] `json:"EmailTemplate,omitempty"`
 
 	// PushTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-templateconfiguration.html#cfn-pinpoint-campaign-templateconfiguration-pushtemplate
-	PushTemplate *Campaign_Template `json:"PushTemplate,omitempty"`
+	PushTemplate *Campaign_Template[any] `json:"PushTemplate,omitempty"`
 
 	// SMSTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-templateconfiguration.html#cfn-pinpoint-campaign-templateconfiguration-smstemplate
-	SMSTemplate *Campaign_Template `json:"SMSTemplate,omitempty"`
+	SMSTemplate *Campaign_Template[any] `json:"SMSTemplate,omitempty"`
 
 	// VoiceTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-templateconfiguration.html#cfn-pinpoint-campaign-templateconfiguration-voicetemplate
-	VoiceTemplate *Campaign_Template `json:"VoiceTemplate,omitempty"`
+	VoiceTemplate *Campaign_Template[any] `json:"VoiceTemplate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Campaign_TemplateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_TemplateConfiguration) AWSCloudFormationType() string {
+func (r *Campaign_TemplateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.TemplateConfiguration"
 }

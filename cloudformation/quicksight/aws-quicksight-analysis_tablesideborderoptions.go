@@ -8,37 +8,37 @@ import (
 
 // Analysis_TableSideBorderOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableSideBorderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html
-type Analysis_TableSideBorderOptions struct {
+type Analysis_TableSideBorderOptions[T any] struct {
 
 	// Bottom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-bottom
-	Bottom *Analysis_TableBorderOptions `json:"Bottom,omitempty"`
+	Bottom *Analysis_TableBorderOptions[any] `json:"Bottom,omitempty"`
 
 	// InnerHorizontal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-innerhorizontal
-	InnerHorizontal *Analysis_TableBorderOptions `json:"InnerHorizontal,omitempty"`
+	InnerHorizontal *Analysis_TableBorderOptions[any] `json:"InnerHorizontal,omitempty"`
 
 	// InnerVertical AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-innervertical
-	InnerVertical *Analysis_TableBorderOptions `json:"InnerVertical,omitempty"`
+	InnerVertical *Analysis_TableBorderOptions[any] `json:"InnerVertical,omitempty"`
 
 	// Left AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-left
-	Left *Analysis_TableBorderOptions `json:"Left,omitempty"`
+	Left *Analysis_TableBorderOptions[any] `json:"Left,omitempty"`
 
 	// Right AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-right
-	Right *Analysis_TableBorderOptions `json:"Right,omitempty"`
+	Right *Analysis_TableBorderOptions[any] `json:"Right,omitempty"`
 
 	// Top AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesideborderoptions.html#cfn-quicksight-analysis-tablesideborderoptions-top
-	Top *Analysis_TableBorderOptions `json:"Top,omitempty"`
+	Top *Analysis_TableBorderOptions[any] `json:"Top,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Analysis_TableSideBorderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableSideBorderOptions) AWSCloudFormationType() string {
+func (r *Analysis_TableSideBorderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableSideBorderOptions"
 }

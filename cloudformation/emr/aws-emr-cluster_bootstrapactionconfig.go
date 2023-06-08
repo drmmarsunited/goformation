@@ -8,7 +8,7 @@ import (
 
 // Cluster_BootstrapActionConfig AWS CloudFormation Resource (AWS::EMR::Cluster.BootstrapActionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html
-type Cluster_BootstrapActionConfig struct {
+type Cluster_BootstrapActionConfig[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Cluster_BootstrapActionConfig struct {
 	// ScriptBootstrapAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction
-	ScriptBootstrapAction *Cluster_ScriptBootstrapActionConfig `json:"ScriptBootstrapAction"`
+	ScriptBootstrapAction *Cluster_ScriptBootstrapActionConfig[any] `json:"ScriptBootstrapAction"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_BootstrapActionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_BootstrapActionConfig) AWSCloudFormationType() string {
+func (r *Cluster_BootstrapActionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.BootstrapActionConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // GameServerGroup_LaunchTemplate AWS CloudFormation Resource (AWS::GameLift::GameServerGroup.LaunchTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-launchtemplate.html
-type GameServerGroup_LaunchTemplate struct {
+type GameServerGroup_LaunchTemplate[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type GameServerGroup_LaunchTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameServerGroup_LaunchTemplate) AWSCloudFormationType() string {
+func (r *GameServerGroup_LaunchTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameServerGroup.LaunchTemplate"
 }

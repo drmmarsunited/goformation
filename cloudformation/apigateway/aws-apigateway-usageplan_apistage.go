@@ -8,7 +8,7 @@ import (
 
 // UsagePlan_ApiStage AWS CloudFormation Resource (AWS::ApiGateway::UsagePlan.ApiStage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
-type UsagePlan_ApiStage struct {
+type UsagePlan_ApiStage[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type UsagePlan_ApiStage struct {
 	// Throttle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle
-	Throttle map[string]UsagePlan_ThrottleSettings `json:"Throttle,omitempty"`
+	Throttle map[string]UsagePlan_ThrottleSettings[any] `json:"Throttle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type UsagePlan_ApiStage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UsagePlan_ApiStage) AWSCloudFormationType() string {
+func (r *UsagePlan_ApiStage[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::UsagePlan.ApiStage"
 }

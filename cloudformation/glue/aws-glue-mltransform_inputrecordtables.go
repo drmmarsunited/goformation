@@ -8,12 +8,12 @@ import (
 
 // MLTransform_InputRecordTables AWS CloudFormation Resource (AWS::Glue::MLTransform.InputRecordTables)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html
-type MLTransform_InputRecordTables struct {
+type MLTransform_InputRecordTables[T any] struct {
 
 	// GlueTables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html#cfn-glue-mltransform-inputrecordtables-gluetables
-	GlueTables []MLTransform_GlueTables `json:"GlueTables,omitempty"`
+	GlueTables []MLTransform_GlueTables[any] `json:"GlueTables,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type MLTransform_InputRecordTables struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_InputRecordTables) AWSCloudFormationType() string {
+func (r *MLTransform_InputRecordTables[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.InputRecordTables"
 }

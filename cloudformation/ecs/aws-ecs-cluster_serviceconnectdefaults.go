@@ -8,7 +8,7 @@ import (
 
 // Cluster_ServiceConnectDefaults AWS CloudFormation Resource (AWS::ECS::Cluster.ServiceConnectDefaults)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-serviceconnectdefaults.html
-type Cluster_ServiceConnectDefaults struct {
+type Cluster_ServiceConnectDefaults[T any] struct {
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Cluster_ServiceConnectDefaults struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ServiceConnectDefaults) AWSCloudFormationType() string {
+func (r *Cluster_ServiceConnectDefaults[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Cluster.ServiceConnectDefaults"
 }

@@ -8,32 +8,32 @@ import (
 
 // Analysis_ScatterPlotVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.ScatterPlotVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html
-type Analysis_ScatterPlotVisual struct {
+type Analysis_ScatterPlotVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html#cfn-quicksight-analysis-scatterplotvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html#cfn-quicksight-analysis-scatterplotvisual-chartconfiguration
-	ChartConfiguration *Analysis_ScatterPlotConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_ScatterPlotConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html#cfn-quicksight-analysis-scatterplotvisual-columnhierarchies
-	ColumnHierarchies []Analysis_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Analysis_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html#cfn-quicksight-analysis-scatterplotvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotvisual.html#cfn-quicksight-analysis-scatterplotvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_ScatterPlotVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ScatterPlotVisual) AWSCloudFormationType() string {
+func (r *Analysis_ScatterPlotVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ScatterPlotVisual"
 }

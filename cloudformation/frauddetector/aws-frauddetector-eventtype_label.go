@@ -9,7 +9,7 @@ import (
 
 // EventType_Label AWS CloudFormation Resource (AWS::FraudDetector::EventType.Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-eventtype-label.html
-type EventType_Label struct {
+type EventType_Label[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -29,7 +29,7 @@ type EventType_Label struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-eventtype-label.html#cfn-frauddetector-eventtype-label-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -63,6 +63,6 @@ type EventType_Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventType_Label) AWSCloudFormationType() string {
+func (r *EventType_Label[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::EventType.Label"
 }

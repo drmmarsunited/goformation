@@ -8,7 +8,7 @@ import (
 
 // Template_NullValueFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.NullValueFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-nullvalueformatconfiguration.html
-type Template_NullValueFormatConfiguration struct {
+type Template_NullValueFormatConfiguration[T any] struct {
 
 	// NullString AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_NullValueFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NullValueFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_NullValueFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NullValueFormatConfiguration"
 }

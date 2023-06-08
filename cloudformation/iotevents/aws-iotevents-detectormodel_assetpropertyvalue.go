@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_AssetPropertyValue AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.AssetPropertyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html
-type DetectorModel_AssetPropertyValue struct {
+type DetectorModel_AssetPropertyValue[T any] struct {
 
 	// Quality AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type DetectorModel_AssetPropertyValue struct {
 	// Timestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-timestamp
-	Timestamp *DetectorModel_AssetPropertyTimestamp `json:"Timestamp,omitempty"`
+	Timestamp *DetectorModel_AssetPropertyTimestamp[any] `json:"Timestamp,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-value
-	Value *DetectorModel_AssetPropertyVariant `json:"Value"`
+	Value *DetectorModel_AssetPropertyVariant[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DetectorModel_AssetPropertyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_AssetPropertyValue) AWSCloudFormationType() string {
+func (r *DetectorModel_AssetPropertyValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.AssetPropertyValue"
 }

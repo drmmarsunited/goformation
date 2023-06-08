@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_BatchTransformInput AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.BatchTransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html
-type ModelExplainabilityJobDefinition_BatchTransformInput struct {
+type ModelExplainabilityJobDefinition_BatchTransformInput[T any] struct {
 
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ModelExplainabilityJobDefinition_BatchTransformInput struct {
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-datasetformat
-	DatasetFormat *ModelExplainabilityJobDefinition_DatasetFormat `json:"DatasetFormat"`
+	DatasetFormat *ModelExplainabilityJobDefinition_DatasetFormat[any] `json:"DatasetFormat"`
 
 	// FeaturesAttribute AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type ModelExplainabilityJobDefinition_BatchTransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_BatchTransformInput) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_BatchTransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.BatchTransformInput"
 }

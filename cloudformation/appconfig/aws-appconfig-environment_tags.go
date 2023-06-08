@@ -8,7 +8,7 @@ import (
 
 // Environment_Tags AWS CloudFormation Resource (AWS::AppConfig::Environment.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-tags.html
-type Environment_Tags struct {
+type Environment_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Environment_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_Tags) AWSCloudFormationType() string {
+func (r *Environment_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Environment.Tags"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_Layout AWS CloudFormation Resource (AWS::QuickSight::Template.Layout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layout.html
-type Template_Layout struct {
+type Template_Layout[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layout.html#cfn-quicksight-template-layout-configuration
-	Configuration *Template_LayoutConfiguration `json:"Configuration"`
+	Configuration *Template_LayoutConfiguration[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_Layout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Layout) AWSCloudFormationType() string {
+func (r *Template_Layout[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Layout"
 }

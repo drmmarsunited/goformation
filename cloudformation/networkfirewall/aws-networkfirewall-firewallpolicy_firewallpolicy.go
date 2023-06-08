@@ -8,12 +8,12 @@ import (
 
 // FirewallPolicy_FirewallPolicy AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.FirewallPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html
-type FirewallPolicy_FirewallPolicy struct {
+type FirewallPolicy_FirewallPolicy[T any] struct {
 
 	// PolicyVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-policyvariables
-	PolicyVariables *FirewallPolicy_PolicyVariables `json:"PolicyVariables,omitempty"`
+	PolicyVariables *FirewallPolicy_PolicyVariables[any] `json:"PolicyVariables,omitempty"`
 
 	// StatefulDefaultActions AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type FirewallPolicy_FirewallPolicy struct {
 	// StatefulEngineOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statefulengineoptions
-	StatefulEngineOptions *FirewallPolicy_StatefulEngineOptions `json:"StatefulEngineOptions,omitempty"`
+	StatefulEngineOptions *FirewallPolicy_StatefulEngineOptions[any] `json:"StatefulEngineOptions,omitempty"`
 
 	// StatefulRuleGroupReferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statefulrulegroupreferences
-	StatefulRuleGroupReferences []FirewallPolicy_StatefulRuleGroupReference `json:"StatefulRuleGroupReferences,omitempty"`
+	StatefulRuleGroupReferences []FirewallPolicy_StatefulRuleGroupReference[any] `json:"StatefulRuleGroupReferences,omitempty"`
 
 	// StatelessCustomActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelesscustomactions
-	StatelessCustomActions []FirewallPolicy_CustomAction `json:"StatelessCustomActions,omitempty"`
+	StatelessCustomActions []FirewallPolicy_CustomAction[any] `json:"StatelessCustomActions,omitempty"`
 
 	// StatelessDefaultActions AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type FirewallPolicy_FirewallPolicy struct {
 	// StatelessRuleGroupReferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessrulegroupreferences
-	StatelessRuleGroupReferences []FirewallPolicy_StatelessRuleGroupReference `json:"StatelessRuleGroupReferences,omitempty"`
+	StatelessRuleGroupReferences []FirewallPolicy_StatelessRuleGroupReference[any] `json:"StatelessRuleGroupReferences,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type FirewallPolicy_FirewallPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_FirewallPolicy) AWSCloudFormationType() string {
+func (r *FirewallPolicy_FirewallPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.FirewallPolicy"
 }

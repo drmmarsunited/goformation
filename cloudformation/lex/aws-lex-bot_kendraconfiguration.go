@@ -8,7 +8,7 @@ import (
 
 // Bot_KendraConfiguration AWS CloudFormation Resource (AWS::Lex::Bot.KendraConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html
-type Bot_KendraConfiguration struct {
+type Bot_KendraConfiguration[T any] struct {
 
 	// KendraIndex AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Bot_KendraConfiguration struct {
 	// QueryFilterStringEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html#cfn-lex-bot-kendraconfiguration-queryfilterstringenabled
-	QueryFilterStringEnabled *bool `json:"QueryFilterStringEnabled,omitempty"`
+	QueryFilterStringEnabled *T `json:"QueryFilterStringEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_KendraConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_KendraConfiguration) AWSCloudFormationType() string {
+func (r *Bot_KendraConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.KendraConfiguration"
 }

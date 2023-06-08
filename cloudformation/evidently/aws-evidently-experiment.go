@@ -12,7 +12,7 @@ import (
 
 // Experiment AWS CloudFormation Resource (AWS::Evidently::Experiment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html
-type Experiment struct {
+type Experiment[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Experiment struct {
 	// MetricGoals AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-metricgoals
-	MetricGoals []Experiment_MetricGoalObject `json:"MetricGoals"`
+	MetricGoals []Experiment_MetricGoalObject[any] `json:"MetricGoals"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Experiment struct {
 	// OnlineAbConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-onlineabconfig
-	OnlineAbConfig *Experiment_OnlineAbConfigObject `json:"OnlineAbConfig"`
+	OnlineAbConfig *Experiment_OnlineAbConfigObject[any] `json:"OnlineAbConfig"`
 
 	// Project AWS CloudFormation Property
 	// Required: true
@@ -47,17 +47,17 @@ type Experiment struct {
 	// RemoveSegment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-removesegment
-	RemoveSegment *bool `json:"RemoveSegment,omitempty"`
+	RemoveSegment *T `json:"RemoveSegment,omitempty"`
 
 	// RunningStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-runningstatus
-	RunningStatus *Experiment_RunningStatusObject `json:"RunningStatus,omitempty"`
+	RunningStatus *Experiment_RunningStatusObject[any] `json:"RunningStatus,omitempty"`
 
 	// SamplingRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-samplingrate
-	SamplingRate *int `json:"SamplingRate,omitempty"`
+	SamplingRate *T `json:"SamplingRate,omitempty"`
 
 	// Segment AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Experiment struct {
 	// Treatments AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-treatments
-	Treatments []Experiment_TreatmentObject `json:"Treatments"`
+	Treatments []Experiment_TreatmentObject[any] `json:"Treatments"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -91,14 +91,15 @@ type Experiment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment) AWSCloudFormationType() string {
+func (r *Experiment[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Experiment) MarshalJSON() ([]byte, error) {
-	type Properties Experiment
+func (r Experiment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Experiment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Experiment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Experiment) UnmarshalJSON(b []byte) error {
-	type Properties Experiment
+func (r *Experiment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Experiment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Experiment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Experiment(*res.Properties)
+		*r = Experiment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,22 +8,22 @@ import (
 
 // VirtualNode_ListenerTlsCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTlsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html
-type VirtualNode_ListenerTlsCertificate struct {
+type VirtualNode_ListenerTlsCertificate[T any] struct {
 
 	// ACM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-acm
-	ACM *VirtualNode_ListenerTlsAcmCertificate `json:"ACM,omitempty"`
+	ACM *VirtualNode_ListenerTlsAcmCertificate[any] `json:"ACM,omitempty"`
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-file
-	File *VirtualNode_ListenerTlsFileCertificate `json:"File,omitempty"`
+	File *VirtualNode_ListenerTlsFileCertificate[any] `json:"File,omitempty"`
 
 	// SDS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-sds
-	SDS *VirtualNode_ListenerTlsSdsCertificate `json:"SDS,omitempty"`
+	SDS *VirtualNode_ListenerTlsSdsCertificate[any] `json:"SDS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualNode_ListenerTlsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTlsCertificate) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTlsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTlsCertificate"
 }

@@ -8,22 +8,22 @@ import (
 
 // Template_FormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.FormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-formatconfiguration.html
-type Template_FormatConfiguration struct {
+type Template_FormatConfiguration[T any] struct {
 
 	// DateTimeFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-formatconfiguration.html#cfn-quicksight-template-formatconfiguration-datetimeformatconfiguration
-	DateTimeFormatConfiguration *Template_DateTimeFormatConfiguration `json:"DateTimeFormatConfiguration,omitempty"`
+	DateTimeFormatConfiguration *Template_DateTimeFormatConfiguration[any] `json:"DateTimeFormatConfiguration,omitempty"`
 
 	// NumberFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-formatconfiguration.html#cfn-quicksight-template-formatconfiguration-numberformatconfiguration
-	NumberFormatConfiguration *Template_NumberFormatConfiguration `json:"NumberFormatConfiguration,omitempty"`
+	NumberFormatConfiguration *Template_NumberFormatConfiguration[any] `json:"NumberFormatConfiguration,omitempty"`
 
 	// StringFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-formatconfiguration.html#cfn-quicksight-template-formatconfiguration-stringformatconfiguration
-	StringFormatConfiguration *Template_StringFormatConfiguration `json:"StringFormatConfiguration,omitempty"`
+	StringFormatConfiguration *Template_StringFormatConfiguration[any] `json:"StringFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_FormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_FormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FormatConfiguration"
 }

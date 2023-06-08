@@ -8,7 +8,7 @@ import (
 
 // DataSet_LogicalTableSource AWS CloudFormation Resource (AWS::QuickSight::DataSet.LogicalTableSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html
-type DataSet_LogicalTableSource struct {
+type DataSet_LogicalTableSource[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataSet_LogicalTableSource struct {
 	// JoinInstruction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-joininstruction
-	JoinInstruction *DataSet_JoinInstruction `json:"JoinInstruction,omitempty"`
+	JoinInstruction *DataSet_JoinInstruction[any] `json:"JoinInstruction,omitempty"`
 
 	// PhysicalTableId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataSet_LogicalTableSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_LogicalTableSource) AWSCloudFormationType() string {
+func (r *DataSet_LogicalTableSource[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.LogicalTableSource"
 }

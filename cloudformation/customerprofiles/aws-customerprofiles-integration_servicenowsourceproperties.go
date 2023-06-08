@@ -8,7 +8,7 @@ import (
 
 // Integration_ServiceNowSourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.ServiceNowSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-servicenowsourceproperties.html
-type Integration_ServiceNowSourceProperties struct {
+type Integration_ServiceNowSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Integration_ServiceNowSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ServiceNowSourceProperties) AWSCloudFormationType() string {
+func (r *Integration_ServiceNowSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.ServiceNowSourceProperties"
 }

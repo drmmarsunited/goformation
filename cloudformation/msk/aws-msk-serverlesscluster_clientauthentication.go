@@ -8,12 +8,12 @@ import (
 
 // ServerlessCluster_ClientAuthentication AWS CloudFormation Resource (AWS::MSK::ServerlessCluster.ClientAuthentication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html
-type ServerlessCluster_ClientAuthentication struct {
+type ServerlessCluster_ClientAuthentication[T any] struct {
 
 	// Sasl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html#cfn-msk-serverlesscluster-clientauthentication-sasl
-	Sasl *ServerlessCluster_Sasl `json:"Sasl"`
+	Sasl *ServerlessCluster_Sasl[any] `json:"Sasl"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ServerlessCluster_ClientAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServerlessCluster_ClientAuthentication) AWSCloudFormationType() string {
+func (r *ServerlessCluster_ClientAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::ServerlessCluster.ClientAuthentication"
 }

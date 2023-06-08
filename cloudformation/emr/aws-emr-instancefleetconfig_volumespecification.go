@@ -8,17 +8,17 @@ import (
 
 // InstanceFleetConfig_VolumeSpecification AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.VolumeSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html
-type InstanceFleetConfig_VolumeSpecification struct {
+type InstanceFleetConfig_VolumeSpecification[T any] struct {
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// SizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-sizeingb
-	SizeInGB int `json:"SizeInGB"`
+	SizeInGB T `json:"SizeInGB"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type InstanceFleetConfig_VolumeSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_VolumeSpecification) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_VolumeSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.VolumeSpecification"
 }

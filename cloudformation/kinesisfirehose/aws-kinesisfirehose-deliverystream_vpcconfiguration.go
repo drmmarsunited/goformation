@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_VpcConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.VpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-vpcconfiguration.html
-type DeliveryStream_VpcConfiguration struct {
+type DeliveryStream_VpcConfiguration[T any] struct {
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DeliveryStream_VpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_VpcConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_VpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.VpcConfiguration"
 }

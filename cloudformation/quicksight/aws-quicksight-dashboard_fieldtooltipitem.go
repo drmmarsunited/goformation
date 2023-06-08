@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FieldTooltipItem AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FieldTooltipItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldtooltipitem.html
-type Dashboard_FieldTooltipItem struct {
+type Dashboard_FieldTooltipItem[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_FieldTooltipItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FieldTooltipItem) AWSCloudFormationType() string {
+func (r *Dashboard_FieldTooltipItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FieldTooltipItem"
 }

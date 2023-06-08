@@ -8,22 +8,22 @@ import (
 
 // VirtualGateway_VirtualGatewayListenerTlsCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html
-type VirtualGateway_VirtualGatewayListenerTlsCertificate struct {
+type VirtualGateway_VirtualGatewayListenerTlsCertificate[T any] struct {
 
 	// ACM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm
-	ACM *VirtualGateway_VirtualGatewayListenerTlsAcmCertificate `json:"ACM,omitempty"`
+	ACM *VirtualGateway_VirtualGatewayListenerTlsAcmCertificate[any] `json:"ACM,omitempty"`
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file
-	File *VirtualGateway_VirtualGatewayListenerTlsFileCertificate `json:"File,omitempty"`
+	File *VirtualGateway_VirtualGatewayListenerTlsFileCertificate[any] `json:"File,omitempty"`
 
 	// SDS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds
-	SDS *VirtualGateway_VirtualGatewayListenerTlsSdsCertificate `json:"SDS,omitempty"`
+	SDS *VirtualGateway_VirtualGatewayListenerTlsSdsCertificate[any] `json:"SDS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualGateway_VirtualGatewayListenerTlsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListenerTlsCertificate) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListenerTlsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
 }

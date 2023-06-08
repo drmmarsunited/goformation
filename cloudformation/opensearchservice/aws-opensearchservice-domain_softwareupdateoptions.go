@@ -8,12 +8,12 @@ import (
 
 // Domain_SoftwareUpdateOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.SoftwareUpdateOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-softwareupdateoptions.html
-type Domain_SoftwareUpdateOptions struct {
+type Domain_SoftwareUpdateOptions[T any] struct {
 
 	// AutoSoftwareUpdateEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-softwareupdateoptions.html#cfn-opensearchservice-domain-softwareupdateoptions-autosoftwareupdateenabled
-	AutoSoftwareUpdateEnabled *bool `json:"AutoSoftwareUpdateEnabled,omitempty"`
+	AutoSoftwareUpdateEnabled *T `json:"AutoSoftwareUpdateEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_SoftwareUpdateOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_SoftwareUpdateOptions) AWSCloudFormationType() string {
+func (r *Domain_SoftwareUpdateOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.SoftwareUpdateOptions"
 }

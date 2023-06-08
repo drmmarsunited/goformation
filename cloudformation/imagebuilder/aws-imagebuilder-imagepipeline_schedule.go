@@ -8,7 +8,7 @@ import (
 
 // ImagePipeline_Schedule AWS CloudFormation Resource (AWS::ImageBuilder::ImagePipeline.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html
-type ImagePipeline_Schedule struct {
+type ImagePipeline_Schedule[T any] struct {
 
 	// PipelineExecutionStartCondition AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ImagePipeline_Schedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImagePipeline_Schedule) AWSCloudFormationType() string {
+func (r *ImagePipeline_Schedule[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImagePipeline.Schedule"
 }

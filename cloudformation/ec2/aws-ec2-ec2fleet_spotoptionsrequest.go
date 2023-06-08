@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_SpotOptionsRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.SpotOptionsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
-type EC2Fleet_SpotOptionsRequest struct {
+type EC2Fleet_SpotOptionsRequest[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type EC2Fleet_SpotOptionsRequest struct {
 	// InstancePoolsToUseCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount
-	InstancePoolsToUseCount *int `json:"InstancePoolsToUseCount,omitempty"`
+	InstancePoolsToUseCount *T `json:"InstancePoolsToUseCount,omitempty"`
 
 	// MaintenanceStrategies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maintenancestrategies
-	MaintenanceStrategies *EC2Fleet_MaintenanceStrategies `json:"MaintenanceStrategies,omitempty"`
+	MaintenanceStrategies *EC2Fleet_MaintenanceStrategies[any] `json:"MaintenanceStrategies,omitempty"`
 
 	// MaxTotalPrice AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type EC2Fleet_SpotOptionsRequest struct {
 	// MinTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity
-	MinTargetCapacity *int `json:"MinTargetCapacity,omitempty"`
+	MinTargetCapacity *T `json:"MinTargetCapacity,omitempty"`
 
 	// SingleAvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone
-	SingleAvailabilityZone *bool `json:"SingleAvailabilityZone,omitempty"`
+	SingleAvailabilityZone *T `json:"SingleAvailabilityZone,omitempty"`
 
 	// SingleInstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype
-	SingleInstanceType *bool `json:"SingleInstanceType,omitempty"`
+	SingleInstanceType *T `json:"SingleInstanceType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type EC2Fleet_SpotOptionsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_SpotOptionsRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_SpotOptionsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.SpotOptionsRequest"
 }

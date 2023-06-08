@@ -8,7 +8,7 @@ import (
 
 // Template_ForecastComputation AWS CloudFormation Resource (AWS::QuickSight::Template.ForecastComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html
-type Template_ForecastComputation struct {
+type Template_ForecastComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Template_ForecastComputation struct {
 	// CustomSeasonalityValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-customseasonalityvalue
-	CustomSeasonalityValue *float64 `json:"CustomSeasonalityValue,omitempty"`
+	CustomSeasonalityValue *T `json:"CustomSeasonalityValue,omitempty"`
 
 	// LowerBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-lowerboundary
-	LowerBoundary *float64 `json:"LowerBoundary,omitempty"`
+	LowerBoundary *T `json:"LowerBoundary,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Template_ForecastComputation struct {
 	// PeriodsBackward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-periodsbackward
-	PeriodsBackward *float64 `json:"PeriodsBackward,omitempty"`
+	PeriodsBackward *T `json:"PeriodsBackward,omitempty"`
 
 	// PeriodsForward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-periodsforward
-	PeriodsForward *float64 `json:"PeriodsForward,omitempty"`
+	PeriodsForward *T `json:"PeriodsForward,omitempty"`
 
 	// PredictionInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-predictioninterval
-	PredictionInterval *float64 `json:"PredictionInterval,omitempty"`
+	PredictionInterval *T `json:"PredictionInterval,omitempty"`
 
 	// Seasonality AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type Template_ForecastComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-time
-	Time *Template_DimensionField `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time"`
 
 	// UpperBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-upperboundary
-	UpperBoundary *float64 `json:"UpperBoundary,omitempty"`
+	UpperBoundary *T `json:"UpperBoundary,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-value
-	Value *Template_MeasureField `json:"Value,omitempty"`
+	Value *Template_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Template_ForecastComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ForecastComputation) AWSCloudFormationType() string {
+func (r *Template_ForecastComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ForecastComputation"
 }

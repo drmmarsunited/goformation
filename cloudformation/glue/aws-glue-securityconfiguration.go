@@ -11,12 +11,12 @@ import (
 
 // SecurityConfiguration AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html
-type SecurityConfiguration struct {
+type SecurityConfiguration[T any] struct {
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration
-	EncryptionConfiguration *SecurityConfiguration_EncryptionConfiguration `json:"EncryptionConfiguration"`
+	EncryptionConfiguration *SecurityConfiguration_EncryptionConfiguration[any] `json:"EncryptionConfiguration"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type SecurityConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration) AWSCloudFormationType() string {
+func (r *SecurityConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties SecurityConfiguration
+func (r SecurityConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SecurityConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties SecurityConfiguration
+func (r *SecurityConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SecurityConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityConfiguration(*res.Properties)
+		*r = SecurityConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

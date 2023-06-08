@@ -8,7 +8,7 @@ import (
 
 // Fleet_VpcConfig AWS CloudFormation Resource (AWS::AppStream::Fleet.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html
-type Fleet_VpcConfig struct {
+type Fleet_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Fleet_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_VpcConfig) AWSCloudFormationType() string {
+func (r *Fleet_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Fleet.VpcConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // ServiceAction_DefinitionParameter AWS CloudFormation Resource (AWS::ServiceCatalog::ServiceAction.DefinitionParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-serviceaction-definitionparameter.html
-type ServiceAction_DefinitionParameter struct {
+type ServiceAction_DefinitionParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ServiceAction_DefinitionParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceAction_DefinitionParameter) AWSCloudFormationType() string {
+func (r *ServiceAction_DefinitionParameter[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::ServiceAction.DefinitionParameter"
 }

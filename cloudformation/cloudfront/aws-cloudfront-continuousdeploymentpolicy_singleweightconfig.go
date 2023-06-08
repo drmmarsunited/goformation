@@ -8,17 +8,17 @@ import (
 
 // ContinuousDeploymentPolicy_SingleWeightConfig AWS CloudFormation Resource (AWS::CloudFront::ContinuousDeploymentPolicy.SingleWeightConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html
-type ContinuousDeploymentPolicy_SingleWeightConfig struct {
+type ContinuousDeploymentPolicy_SingleWeightConfig[T any] struct {
 
 	// SessionStickinessConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-sessionstickinessconfig
-	SessionStickinessConfig *ContinuousDeploymentPolicy_SessionStickinessConfig `json:"SessionStickinessConfig,omitempty"`
+	SessionStickinessConfig *ContinuousDeploymentPolicy_SessionStickinessConfig[any] `json:"SessionStickinessConfig,omitempty"`
 
 	// Weight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-weight
-	Weight float64 `json:"Weight"`
+	Weight T `json:"Weight"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ContinuousDeploymentPolicy_SingleWeightConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContinuousDeploymentPolicy_SingleWeightConfig) AWSCloudFormationType() string {
+func (r *ContinuousDeploymentPolicy_SingleWeightConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ContinuousDeploymentPolicy.SingleWeightConfig"
 }

@@ -8,32 +8,32 @@ import (
 
 // Template_RadarChartVisual AWS CloudFormation Resource (AWS::QuickSight::Template.RadarChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html
-type Template_RadarChartVisual struct {
+type Template_RadarChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html#cfn-quicksight-template-radarchartvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html#cfn-quicksight-template-radarchartvisual-chartconfiguration
-	ChartConfiguration *Template_RadarChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_RadarChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html#cfn-quicksight-template-radarchartvisual-columnhierarchies
-	ColumnHierarchies []Template_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Template_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html#cfn-quicksight-template-radarchartvisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartvisual.html#cfn-quicksight-template-radarchartvisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_RadarChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RadarChartVisual) AWSCloudFormationType() string {
+func (r *Template_RadarChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RadarChartVisual"
 }

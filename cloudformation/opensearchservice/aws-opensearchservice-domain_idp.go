@@ -8,7 +8,7 @@ import (
 
 // Domain_Idp AWS CloudFormation Resource (AWS::OpenSearchService::Domain.Idp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-idp.html
-type Domain_Idp struct {
+type Domain_Idp[T any] struct {
 
 	// EntityId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Domain_Idp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_Idp) AWSCloudFormationType() string {
+func (r *Domain_Idp[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.Idp"
 }

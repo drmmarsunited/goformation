@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datacolor.html
-type Dashboard_DataColor struct {
+type Dashboard_DataColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_DataColor struct {
 	// DataValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datacolor.html#cfn-quicksight-dashboard-datacolor-datavalue
-	DataValue *float64 `json:"DataValue,omitempty"`
+	DataValue *T `json:"DataValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DataColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataColor) AWSCloudFormationType() string {
+func (r *Dashboard_DataColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataColor"
 }

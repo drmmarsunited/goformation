@@ -8,72 +8,72 @@ import (
 
 // RuleGroup_Statement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Statement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html
-type RuleGroup_Statement struct {
+type RuleGroup_Statement[T any] struct {
 
 	// AndStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-andstatement
-	AndStatement *RuleGroup_AndStatement `json:"AndStatement,omitempty"`
+	AndStatement *RuleGroup_AndStatement[any] `json:"AndStatement,omitempty"`
 
 	// ByteMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-bytematchstatement
-	ByteMatchStatement *RuleGroup_ByteMatchStatement `json:"ByteMatchStatement,omitempty"`
+	ByteMatchStatement *RuleGroup_ByteMatchStatement[any] `json:"ByteMatchStatement,omitempty"`
 
 	// GeoMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-geomatchstatement
-	GeoMatchStatement *RuleGroup_GeoMatchStatement `json:"GeoMatchStatement,omitempty"`
+	GeoMatchStatement *RuleGroup_GeoMatchStatement[any] `json:"GeoMatchStatement,omitempty"`
 
 	// IPSetReferenceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ipsetreferencestatement
-	IPSetReferenceStatement *RuleGroup_IPSetReferenceStatement `json:"IPSetReferenceStatement,omitempty"`
+	IPSetReferenceStatement *RuleGroup_IPSetReferenceStatement[any] `json:"IPSetReferenceStatement,omitempty"`
 
 	// LabelMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-labelmatchstatement
-	LabelMatchStatement *RuleGroup_LabelMatchStatement `json:"LabelMatchStatement,omitempty"`
+	LabelMatchStatement *RuleGroup_LabelMatchStatement[any] `json:"LabelMatchStatement,omitempty"`
 
 	// NotStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-notstatement
-	NotStatement *RuleGroup_NotStatement `json:"NotStatement,omitempty"`
+	NotStatement *RuleGroup_NotStatement[any] `json:"NotStatement,omitempty"`
 
 	// OrStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-orstatement
-	OrStatement *RuleGroup_OrStatement `json:"OrStatement,omitempty"`
+	OrStatement *RuleGroup_OrStatement[any] `json:"OrStatement,omitempty"`
 
 	// RateBasedStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ratebasedstatement
-	RateBasedStatement *RuleGroup_RateBasedStatement `json:"RateBasedStatement,omitempty"`
+	RateBasedStatement *RuleGroup_RateBasedStatement[any] `json:"RateBasedStatement,omitempty"`
 
 	// RegexMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexmatchstatement
-	RegexMatchStatement *RuleGroup_RegexMatchStatement `json:"RegexMatchStatement,omitempty"`
+	RegexMatchStatement *RuleGroup_RegexMatchStatement[any] `json:"RegexMatchStatement,omitempty"`
 
 	// RegexPatternSetReferenceStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexpatternsetreferencestatement
-	RegexPatternSetReferenceStatement *RuleGroup_RegexPatternSetReferenceStatement `json:"RegexPatternSetReferenceStatement,omitempty"`
+	RegexPatternSetReferenceStatement *RuleGroup_RegexPatternSetReferenceStatement[any] `json:"RegexPatternSetReferenceStatement,omitempty"`
 
 	// SizeConstraintStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sizeconstraintstatement
-	SizeConstraintStatement *RuleGroup_SizeConstraintStatement `json:"SizeConstraintStatement,omitempty"`
+	SizeConstraintStatement *RuleGroup_SizeConstraintStatement[any] `json:"SizeConstraintStatement,omitempty"`
 
 	// SqliMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sqlimatchstatement
-	SqliMatchStatement *RuleGroup_SqliMatchStatement `json:"SqliMatchStatement,omitempty"`
+	SqliMatchStatement *RuleGroup_SqliMatchStatement[any] `json:"SqliMatchStatement,omitempty"`
 
 	// XssMatchStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-xssmatchstatement
-	XssMatchStatement *RuleGroup_XssMatchStatement `json:"XssMatchStatement,omitempty"`
+	XssMatchStatement *RuleGroup_XssMatchStatement[any] `json:"XssMatchStatement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -92,6 +92,6 @@ type RuleGroup_Statement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Statement) AWSCloudFormationType() string {
+func (r *RuleGroup_Statement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.Statement"
 }

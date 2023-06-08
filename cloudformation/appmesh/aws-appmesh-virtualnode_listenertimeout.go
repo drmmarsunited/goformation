@@ -8,27 +8,27 @@ import (
 
 // VirtualNode_ListenerTimeout AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html
-type VirtualNode_ListenerTimeout struct {
+type VirtualNode_ListenerTimeout[T any] struct {
 
 	// GRPC AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-grpc
-	GRPC *VirtualNode_GrpcTimeout `json:"GRPC,omitempty"`
+	GRPC *VirtualNode_GrpcTimeout[any] `json:"GRPC,omitempty"`
 
 	// HTTP AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-http
-	HTTP *VirtualNode_HttpTimeout `json:"HTTP,omitempty"`
+	HTTP *VirtualNode_HttpTimeout[any] `json:"HTTP,omitempty"`
 
 	// HTTP2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-http2
-	HTTP2 *VirtualNode_HttpTimeout `json:"HTTP2,omitempty"`
+	HTTP2 *VirtualNode_HttpTimeout[any] `json:"HTTP2,omitempty"`
 
 	// TCP AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-tcp
-	TCP *VirtualNode_TcpTimeout `json:"TCP,omitempty"`
+	TCP *VirtualNode_TcpTimeout[any] `json:"TCP,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualNode_ListenerTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTimeout) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTimeout"
 }

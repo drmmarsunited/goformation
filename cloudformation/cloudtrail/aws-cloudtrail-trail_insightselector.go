@@ -8,7 +8,7 @@ import (
 
 // Trail_InsightSelector AWS CloudFormation Resource (AWS::CloudTrail::Trail.InsightSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-insightselector.html
-type Trail_InsightSelector struct {
+type Trail_InsightSelector[T any] struct {
 
 	// InsightType AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Trail_InsightSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trail_InsightSelector) AWSCloudFormationType() string {
+func (r *Trail_InsightSelector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Trail.InsightSelector"
 }

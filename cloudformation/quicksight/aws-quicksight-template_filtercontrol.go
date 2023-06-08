@@ -8,42 +8,42 @@ import (
 
 // Template_FilterControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html
-type Template_FilterControl struct {
+type Template_FilterControl[T any] struct {
 
 	// DateTimePicker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-datetimepicker
-	DateTimePicker *Template_FilterDateTimePickerControl `json:"DateTimePicker,omitempty"`
+	DateTimePicker *Template_FilterDateTimePickerControl[any] `json:"DateTimePicker,omitempty"`
 
 	// Dropdown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-dropdown
-	Dropdown *Template_FilterDropDownControl `json:"Dropdown,omitempty"`
+	Dropdown *Template_FilterDropDownControl[any] `json:"Dropdown,omitempty"`
 
 	// List AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-list
-	List *Template_FilterListControl `json:"List,omitempty"`
+	List *Template_FilterListControl[any] `json:"List,omitempty"`
 
 	// RelativeDateTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-relativedatetime
-	RelativeDateTime *Template_FilterRelativeDateTimeControl `json:"RelativeDateTime,omitempty"`
+	RelativeDateTime *Template_FilterRelativeDateTimeControl[any] `json:"RelativeDateTime,omitempty"`
 
 	// Slider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-slider
-	Slider *Template_FilterSliderControl `json:"Slider,omitempty"`
+	Slider *Template_FilterSliderControl[any] `json:"Slider,omitempty"`
 
 	// TextArea AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-textarea
-	TextArea *Template_FilterTextAreaControl `json:"TextArea,omitempty"`
+	TextArea *Template_FilterTextAreaControl[any] `json:"TextArea,omitempty"`
 
 	// TextField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtercontrol.html#cfn-quicksight-template-filtercontrol-textfield
-	TextField *Template_FilterTextFieldControl `json:"TextField,omitempty"`
+	TextField *Template_FilterTextFieldControl[any] `json:"TextField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Template_FilterControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterControl) AWSCloudFormationType() string {
+func (r *Template_FilterControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterControl"
 }

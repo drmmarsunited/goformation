@@ -8,7 +8,7 @@ import (
 
 // ThingType_ThingTypeProperties AWS CloudFormation Resource (AWS::IoT::ThingType.ThingTypeProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thingtype-thingtypeproperties.html
-type ThingType_ThingTypeProperties struct {
+type ThingType_ThingTypeProperties[T any] struct {
 
 	// SearchableAttributes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ThingType_ThingTypeProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ThingType_ThingTypeProperties) AWSCloudFormationType() string {
+func (r *ThingType_ThingTypeProperties[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::ThingType.ThingTypeProperties"
 }

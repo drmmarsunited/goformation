@@ -8,7 +8,7 @@ import (
 
 // Analysis_SheetElementConfigurationOverrides AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetElementConfigurationOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetelementconfigurationoverrides.html
-type Analysis_SheetElementConfigurationOverrides struct {
+type Analysis_SheetElementConfigurationOverrides[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_SheetElementConfigurationOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetElementConfigurationOverrides) AWSCloudFormationType() string {
+func (r *Analysis_SheetElementConfigurationOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetElementConfigurationOverrides"
 }

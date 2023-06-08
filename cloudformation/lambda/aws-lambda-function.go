@@ -12,7 +12,7 @@ import (
 
 // Function AWS CloudFormation Resource (AWS::Lambda::Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
-type Function struct {
+type Function[T any] struct {
 
 	// Architectures AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Function struct {
 	// Code AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code
-	Code *Function_Code `json:"Code"`
+	Code *Function_Code[any] `json:"Code"`
 
 	// CodeSigningConfigArn AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Function struct {
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig
-	DeadLetterConfig *Function_DeadLetterConfig `json:"DeadLetterConfig,omitempty"`
+	DeadLetterConfig *Function_DeadLetterConfig[any] `json:"DeadLetterConfig,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,17 +42,17 @@ type Function struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment
-	Environment *Function_Environment `json:"Environment,omitempty"`
+	Environment *Function_Environment[any] `json:"Environment,omitempty"`
 
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage
-	EphemeralStorage *Function_EphemeralStorage `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *Function_EphemeralStorage[any] `json:"EphemeralStorage,omitempty"`
 
 	// FileSystemConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-filesystemconfigs
-	FileSystemConfigs []Function_FileSystemConfig `json:"FileSystemConfigs,omitempty"`
+	FileSystemConfigs []Function_FileSystemConfig[any] `json:"FileSystemConfigs,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type Function struct {
 	// ImageConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig
-	ImageConfig *Function_ImageConfig `json:"ImageConfig,omitempty"`
+	ImageConfig *Function_ImageConfig[any] `json:"ImageConfig,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Function struct {
 	// MemorySize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize
-	MemorySize *int `json:"MemorySize,omitempty"`
+	MemorySize *T `json:"MemorySize,omitempty"`
 
 	// PackageType AWS CloudFormation Property
 	// Required: false
@@ -92,7 +92,7 @@ type Function struct {
 	// ReservedConcurrentExecutions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
-	ReservedConcurrentExecutions *int `json:"ReservedConcurrentExecutions,omitempty"`
+	ReservedConcurrentExecutions *T `json:"ReservedConcurrentExecutions,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -107,12 +107,12 @@ type Function struct {
 	// RuntimeManagementConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtimemanagementconfig
-	RuntimeManagementConfig *Function_RuntimeManagementConfig `json:"RuntimeManagementConfig,omitempty"`
+	RuntimeManagementConfig *Function_RuntimeManagementConfig[any] `json:"RuntimeManagementConfig,omitempty"`
 
 	// SnapStart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-snapstart
-	SnapStart *Function_SnapStart `json:"SnapStart,omitempty"`
+	SnapStart *Function_SnapStart[any] `json:"SnapStart,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -122,17 +122,17 @@ type Function struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// TracingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
-	TracingConfig *Function_TracingConfig `json:"TracingConfig,omitempty"`
+	TracingConfig *Function_TracingConfig[any] `json:"TracingConfig,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
-	VpcConfig *Function_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *Function_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -151,14 +151,15 @@ type Function struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function) AWSCloudFormationType() string {
+func (r *Function[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Function) MarshalJSON() ([]byte, error) {
-	type Properties Function
+func (r Function[any]) MarshalJSON() ([]byte, error) {
+	type Properties Function[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -180,8 +181,9 @@ func (r Function) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Function) UnmarshalJSON(b []byte) error {
-	type Properties Function
+func (r *Function[any]) UnmarshalJSON(b []byte) error {
+	type Properties Function[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -201,7 +203,7 @@ func (r *Function) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Function(*res.Properties)
+		*r = Function[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Analysis_NumericalMeasureField AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumericalMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalmeasurefield.html
-type Analysis_NumericalMeasureField struct {
+type Analysis_NumericalMeasureField[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalmeasurefield.html#cfn-quicksight-analysis-numericalmeasurefield-aggregationfunction
-	AggregationFunction *Analysis_NumericalAggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Analysis_NumericalAggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalmeasurefield.html#cfn-quicksight-analysis-numericalmeasurefield-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_NumericalMeasureField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericalmeasurefield.html#cfn-quicksight-analysis-numericalmeasurefield-formatconfiguration
-	FormatConfiguration *Analysis_NumberFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_NumberFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_NumericalMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumericalMeasureField) AWSCloudFormationType() string {
+func (r *Analysis_NumericalMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumericalMeasureField"
 }

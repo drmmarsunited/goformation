@@ -8,7 +8,7 @@ import (
 
 // DataSet_RenameColumnOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.RenameColumnOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-renamecolumnoperation.html
-type DataSet_RenameColumnOperation struct {
+type DataSet_RenameColumnOperation[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSet_RenameColumnOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_RenameColumnOperation) AWSCloudFormationType() string {
+func (r *DataSet_RenameColumnOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.RenameColumnOperation"
 }

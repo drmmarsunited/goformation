@@ -8,12 +8,12 @@ import (
 
 // StreamProcessor_DataSharingPreference AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.DataSharingPreference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-datasharingpreference.html
-type StreamProcessor_DataSharingPreference struct {
+type StreamProcessor_DataSharingPreference[T any] struct {
 
 	// OptIn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-datasharingpreference.html#cfn-rekognition-streamprocessor-datasharingpreference-optin
-	OptIn bool `json:"OptIn"`
+	OptIn T `json:"OptIn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StreamProcessor_DataSharingPreference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_DataSharingPreference) AWSCloudFormationType() string {
+func (r *StreamProcessor_DataSharingPreference[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.DataSharingPreference"
 }

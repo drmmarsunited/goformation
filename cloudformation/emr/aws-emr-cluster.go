@@ -12,7 +12,7 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::EMR::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// AdditionalInfo AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Cluster struct {
 	// Applications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-applications
-	Applications []Cluster_Application `json:"Applications,omitempty"`
+	Applications []Cluster_Application[any] `json:"Applications,omitempty"`
 
 	// AutoScalingRole AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type Cluster struct {
 	// AutoTerminationPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoterminationpolicy
-	AutoTerminationPolicy *Cluster_AutoTerminationPolicy `json:"AutoTerminationPolicy,omitempty"`
+	AutoTerminationPolicy *Cluster_AutoTerminationPolicy[any] `json:"AutoTerminationPolicy,omitempty"`
 
 	// BootstrapActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-bootstrapactions
-	BootstrapActions []Cluster_BootstrapActionConfig `json:"BootstrapActions,omitempty"`
+	BootstrapActions []Cluster_BootstrapActionConfig[any] `json:"BootstrapActions,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-configurations
-	Configurations []Cluster_Configuration `json:"Configurations,omitempty"`
+	Configurations []Cluster_Configuration[any] `json:"Configurations,omitempty"`
 
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type Cluster struct {
 	// EbsRootVolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
-	EbsRootVolumeSize *int `json:"EbsRootVolumeSize,omitempty"`
+	EbsRootVolumeSize *T `json:"EbsRootVolumeSize,omitempty"`
 
 	// Instances AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances
-	Instances *Cluster_JobFlowInstancesConfig `json:"Instances"`
+	Instances *Cluster_JobFlowInstancesConfig[any] `json:"Instances"`
 
 	// JobFlowRole AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type Cluster struct {
 	// KerberosAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-kerberosattributes
-	KerberosAttributes *Cluster_KerberosAttributes `json:"KerberosAttributes,omitempty"`
+	KerberosAttributes *Cluster_KerberosAttributes[any] `json:"KerberosAttributes,omitempty"`
 
 	// LogEncryptionKmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Cluster struct {
 	// ManagedScalingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-managedscalingpolicy
-	ManagedScalingPolicy *Cluster_ManagedScalingPolicy `json:"ManagedScalingPolicy,omitempty"`
+	ManagedScalingPolicy *Cluster_ManagedScalingPolicy[any] `json:"ManagedScalingPolicy,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -117,12 +117,12 @@ type Cluster struct {
 	// StepConcurrencyLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-stepconcurrencylevel
-	StepConcurrencyLevel *int `json:"StepConcurrencyLevel,omitempty"`
+	StepConcurrencyLevel *T `json:"StepConcurrencyLevel,omitempty"`
 
 	// Steps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-steps
-	Steps []Cluster_StepConfig `json:"Steps,omitempty"`
+	Steps []Cluster_StepConfig[any] `json:"Steps,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -132,7 +132,7 @@ type Cluster struct {
 	// VisibleToAllUsers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
-	VisibleToAllUsers *bool `json:"VisibleToAllUsers,omitempty"`
+	VisibleToAllUsers *T `json:"VisibleToAllUsers,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -151,14 +151,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -180,8 +181,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -201,7 +203,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

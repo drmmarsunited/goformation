@@ -8,7 +8,7 @@ import (
 
 // Service_PlacementConstraint AWS CloudFormation Resource (AWS::ECS::Service.PlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html
-type Service_PlacementConstraint struct {
+type Service_PlacementConstraint[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_PlacementConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_PlacementConstraint) AWSCloudFormationType() string {
+func (r *Service_PlacementConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.PlacementConstraint"
 }

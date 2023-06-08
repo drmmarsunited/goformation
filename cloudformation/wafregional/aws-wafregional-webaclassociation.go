@@ -11,7 +11,7 @@ import (
 
 // WebACLAssociation AWS CloudFormation Resource (AWS::WAFRegional::WebACLAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
-type WebACLAssociation struct {
+type WebACLAssociation[T any] struct {
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type WebACLAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACLAssociation) AWSCloudFormationType() string {
+func (r *WebACLAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::WebACLAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WebACLAssociation) MarshalJSON() ([]byte, error) {
-	type Properties WebACLAssociation
+func (r WebACLAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties WebACLAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r WebACLAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WebACLAssociation) UnmarshalJSON(b []byte) error {
-	type Properties WebACLAssociation
+func (r *WebACLAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties WebACLAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *WebACLAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WebACLAssociation(*res.Properties)
+		*r = WebACLAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

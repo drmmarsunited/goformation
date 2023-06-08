@@ -8,7 +8,7 @@ import (
 
 // Analysis_CalculatedMeasureField AWS CloudFormation Resource (AWS::QuickSight::Analysis.CalculatedMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-calculatedmeasurefield.html
-type Analysis_CalculatedMeasureField struct {
+type Analysis_CalculatedMeasureField[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_CalculatedMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CalculatedMeasureField) AWSCloudFormationType() string {
+func (r *Analysis_CalculatedMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CalculatedMeasureField"
 }

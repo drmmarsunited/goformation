@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_AttributeDefinition AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.AttributeDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-attributedefinition.html
-type GlobalTable_AttributeDefinition struct {
+type GlobalTable_AttributeDefinition[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type GlobalTable_AttributeDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_AttributeDefinition) AWSCloudFormationType() string {
+func (r *GlobalTable_AttributeDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.AttributeDefinition"
 }

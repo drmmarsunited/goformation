@@ -8,7 +8,7 @@ import (
 
 // Job_ColumnSelector AWS CloudFormation Resource (AWS::DataBrew::Job.ColumnSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html
-type Job_ColumnSelector struct {
+type Job_ColumnSelector[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Job_ColumnSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_ColumnSelector) AWSCloudFormationType() string {
+func (r *Job_ColumnSelector[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.ColumnSelector"
 }

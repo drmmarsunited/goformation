@@ -12,7 +12,7 @@ import (
 
 // NetworkInsightsAccessScopeAnalysis AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScopeAnalysis)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html
-type NetworkInsightsAccessScopeAnalysis struct {
+type NetworkInsightsAccessScopeAnalysis[T any] struct {
 
 	// NetworkInsightsAccessScopeId AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type NetworkInsightsAccessScopeAnalysis struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScopeAnalysis) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScopeAnalysis[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScopeAnalysis"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkInsightsAccessScopeAnalysis) MarshalJSON() ([]byte, error) {
-	type Properties NetworkInsightsAccessScopeAnalysis
+func (r NetworkInsightsAccessScopeAnalysis[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkInsightsAccessScopeAnalysis[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r NetworkInsightsAccessScopeAnalysis) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkInsightsAccessScopeAnalysis) UnmarshalJSON(b []byte) error {
-	type Properties NetworkInsightsAccessScopeAnalysis
+func (r *NetworkInsightsAccessScopeAnalysis[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkInsightsAccessScopeAnalysis[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *NetworkInsightsAccessScopeAnalysis) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkInsightsAccessScopeAnalysis(*res.Properties)
+		*r = NetworkInsightsAccessScopeAnalysis[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

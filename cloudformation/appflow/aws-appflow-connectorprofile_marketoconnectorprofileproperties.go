@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_MarketoConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofileproperties.html
-type ConnectorProfile_MarketoConnectorProfileProperties struct {
+type ConnectorProfile_MarketoConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_MarketoConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_MarketoConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_MarketoConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileProperties"
 }

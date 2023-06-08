@@ -8,12 +8,12 @@ import (
 
 // Rule_RunCommandParameters AWS CloudFormation Resource (AWS::Events::Rule.RunCommandParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html
-type Rule_RunCommandParameters struct {
+type Rule_RunCommandParameters[T any] struct {
 
 	// RunCommandTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html#cfn-events-rule-runcommandparameters-runcommandtargets
-	RunCommandTargets []Rule_RunCommandTarget `json:"RunCommandTargets"`
+	RunCommandTargets []Rule_RunCommandTarget[any] `json:"RunCommandTargets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_RunCommandParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_RunCommandParameters) AWSCloudFormationType() string {
+func (r *Rule_RunCommandParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.RunCommandParameters"
 }

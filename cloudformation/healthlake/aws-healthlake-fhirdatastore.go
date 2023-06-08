@@ -12,7 +12,7 @@ import (
 
 // FHIRDatastore AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html
-type FHIRDatastore struct {
+type FHIRDatastore[T any] struct {
 
 	// DatastoreName AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type FHIRDatastore struct {
 	// PreloadDataConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-preloaddataconfig
-	PreloadDataConfig *FHIRDatastore_PreloadDataConfig `json:"PreloadDataConfig,omitempty"`
+	PreloadDataConfig *FHIRDatastore_PreloadDataConfig[any] `json:"PreloadDataConfig,omitempty"`
 
 	// SseConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-sseconfiguration
-	SseConfiguration *FHIRDatastore_SseConfiguration `json:"SseConfiguration,omitempty"`
+	SseConfiguration *FHIRDatastore_SseConfiguration[any] `json:"SseConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type FHIRDatastore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FHIRDatastore) AWSCloudFormationType() string {
+func (r *FHIRDatastore[any]) AWSCloudFormationType() string {
 	return "AWS::HealthLake::FHIRDatastore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FHIRDatastore) MarshalJSON() ([]byte, error) {
-	type Properties FHIRDatastore
+func (r FHIRDatastore[any]) MarshalJSON() ([]byte, error) {
+	type Properties FHIRDatastore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r FHIRDatastore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FHIRDatastore) UnmarshalJSON(b []byte) error {
-	type Properties FHIRDatastore
+func (r *FHIRDatastore[any]) UnmarshalJSON(b []byte) error {
+	type Properties FHIRDatastore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *FHIRDatastore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FHIRDatastore(*res.Properties)
+		*r = FHIRDatastore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

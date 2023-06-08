@@ -8,7 +8,7 @@ import (
 
 // Distribution_InputOrigin AWS CloudFormation Resource (AWS::Lightsail::Distribution.InputOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-inputorigin.html
-type Distribution_InputOrigin struct {
+type Distribution_InputOrigin[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Distribution_InputOrigin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_InputOrigin) AWSCloudFormationType() string {
+func (r *Distribution_InputOrigin[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.InputOrigin"
 }

@@ -8,7 +8,7 @@ import (
 
 // Task_TaskSchedule AWS CloudFormation Resource (AWS::DataSync::Task.TaskSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-taskschedule.html
-type Task_TaskSchedule struct {
+type Task_TaskSchedule[T any] struct {
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Task_TaskSchedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Task_TaskSchedule) AWSCloudFormationType() string {
+func (r *Task_TaskSchedule[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::Task.TaskSchedule"
 }

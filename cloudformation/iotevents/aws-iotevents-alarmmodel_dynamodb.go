@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_DynamoDB AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.DynamoDB)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html
-type AlarmModel_DynamoDB struct {
+type AlarmModel_DynamoDB[T any] struct {
 
 	// HashKeyField AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type AlarmModel_DynamoDB struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// PayloadField AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type AlarmModel_DynamoDB struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_DynamoDB) AWSCloudFormationType() string {
+func (r *AlarmModel_DynamoDB[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.DynamoDB"
 }

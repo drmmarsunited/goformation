@@ -8,7 +8,7 @@ import (
 
 // InstanceFleetConfig_InstanceTypeConfig AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.InstanceTypeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html
-type InstanceFleetConfig_InstanceTypeConfig struct {
+type InstanceFleetConfig_InstanceTypeConfig[T any] struct {
 
 	// BidPrice AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type InstanceFleetConfig_InstanceTypeConfig struct {
 	// BidPriceAsPercentageOfOnDemandPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-bidpriceaspercentageofondemandprice
-	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
+	BidPriceAsPercentageOfOnDemandPrice *T `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-configurations
-	Configurations []InstanceFleetConfig_Configuration `json:"Configurations,omitempty"`
+	Configurations []InstanceFleetConfig_Configuration[any] `json:"Configurations,omitempty"`
 
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type InstanceFleetConfig_InstanceTypeConfig struct {
 	// EbsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-ebsconfiguration
-	EbsConfiguration *InstanceFleetConfig_EbsConfiguration `json:"EbsConfiguration,omitempty"`
+	EbsConfiguration *InstanceFleetConfig_EbsConfiguration[any] `json:"EbsConfiguration,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type InstanceFleetConfig_InstanceTypeConfig struct {
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-weightedcapacity
-	WeightedCapacity *int `json:"WeightedCapacity,omitempty"`
+	WeightedCapacity *T `json:"WeightedCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type InstanceFleetConfig_InstanceTypeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_InstanceTypeConfig) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_InstanceTypeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.InstanceTypeConfig"
 }

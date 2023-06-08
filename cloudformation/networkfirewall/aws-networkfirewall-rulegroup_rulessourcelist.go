@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_RulesSourceList AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RulesSourceList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html
-type RuleGroup_RulesSourceList struct {
+type RuleGroup_RulesSourceList[T any] struct {
 
 	// GeneratedRulesType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RuleGroup_RulesSourceList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RulesSourceList) AWSCloudFormationType() string {
+func (r *RuleGroup_RulesSourceList[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RulesSourceList"
 }

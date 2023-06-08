@@ -8,7 +8,7 @@ import (
 
 // QuickConnect_UserQuickConnectConfig AWS CloudFormation Resource (AWS::Connect::QuickConnect.UserQuickConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-userquickconnectconfig.html
-type QuickConnect_UserQuickConnectConfig struct {
+type QuickConnect_UserQuickConnectConfig[T any] struct {
 
 	// ContactFlowArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type QuickConnect_UserQuickConnectConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QuickConnect_UserQuickConnectConfig) AWSCloudFormationType() string {
+func (r *QuickConnect_UserQuickConnectConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::QuickConnect.UserQuickConnectConfig"
 }

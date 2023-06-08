@@ -8,7 +8,7 @@ import (
 
 // ComponentType_PropertyDefinition AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.PropertyDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html
-type ComponentType_PropertyDefinition struct {
+type ComponentType_PropertyDefinition[T any] struct {
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
@@ -18,32 +18,32 @@ type ComponentType_PropertyDefinition struct {
 	// DataType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-datatype
-	DataType *ComponentType_DataType `json:"DataType,omitempty"`
+	DataType *ComponentType_DataType[any] `json:"DataType,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-defaultvalue
-	DefaultValue *ComponentType_DataValue `json:"DefaultValue,omitempty"`
+	DefaultValue *ComponentType_DataValue[any] `json:"DefaultValue,omitempty"`
 
 	// IsExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isexternalid
-	IsExternalId *bool `json:"IsExternalId,omitempty"`
+	IsExternalId *T `json:"IsExternalId,omitempty"`
 
 	// IsRequiredInEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isrequiredinentity
-	IsRequiredInEntity *bool `json:"IsRequiredInEntity,omitempty"`
+	IsRequiredInEntity *T `json:"IsRequiredInEntity,omitempty"`
 
 	// IsStoredExternally AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isstoredexternally
-	IsStoredExternally *bool `json:"IsStoredExternally,omitempty"`
+	IsStoredExternally *T `json:"IsStoredExternally,omitempty"`
 
 	// IsTimeSeries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-istimeseries
-	IsTimeSeries *bool `json:"IsTimeSeries,omitempty"`
+	IsTimeSeries *T `json:"IsTimeSeries,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type ComponentType_PropertyDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_PropertyDefinition) AWSCloudFormationType() string {
+func (r *ComponentType_PropertyDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.PropertyDefinition"
 }

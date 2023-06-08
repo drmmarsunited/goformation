@@ -8,17 +8,17 @@ import (
 
 // UserProfile_KernelGatewayAppSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.KernelGatewayAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html
-type UserProfile_KernelGatewayAppSettings struct {
+type UserProfile_KernelGatewayAppSettings[T any] struct {
 
 	// CustomImages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-customimages
-	CustomImages []UserProfile_CustomImage `json:"CustomImages,omitempty"`
+	CustomImages []UserProfile_CustomImage[any] `json:"CustomImages,omitempty"`
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-defaultresourcespec
-	DefaultResourceSpec *UserProfile_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *UserProfile_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type UserProfile_KernelGatewayAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_KernelGatewayAppSettings) AWSCloudFormationType() string {
+func (r *UserProfile_KernelGatewayAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.KernelGatewayAppSettings"
 }

@@ -12,12 +12,12 @@ import (
 
 // Disk AWS CloudFormation Resource (AWS::Lightsail::Disk)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html
-type Disk struct {
+type Disk[T any] struct {
 
 	// AddOns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-addons
-	AddOns []Disk_AddOn `json:"AddOns,omitempty"`
+	AddOns []Disk_AddOn[any] `json:"AddOns,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type Disk struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-location
-	Location *Disk_Location `json:"Location,omitempty"`
+	Location *Disk_Location[any] `json:"Location,omitempty"`
 
 	// SizeInGb AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-sizeingb
-	SizeInGb int `json:"SizeInGb"`
+	SizeInGb T `json:"SizeInGb"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Disk struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Disk) AWSCloudFormationType() string {
+func (r *Disk[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Disk"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Disk) MarshalJSON() ([]byte, error) {
-	type Properties Disk
+func (r Disk[any]) MarshalJSON() ([]byte, error) {
+	type Properties Disk[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Disk) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Disk) UnmarshalJSON(b []byte) error {
-	type Properties Disk
+func (r *Disk[any]) UnmarshalJSON(b []byte) error {
+	type Properties Disk[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Disk) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Disk(*res.Properties)
+		*r = Disk[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

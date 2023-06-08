@@ -8,7 +8,7 @@ import (
 
 // KnowledgeBase_RenderingConfiguration AWS CloudFormation Resource (AWS::Wisdom::KnowledgeBase.RenderingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-renderingconfiguration.html
-type KnowledgeBase_RenderingConfiguration struct {
+type KnowledgeBase_RenderingConfiguration[T any] struct {
 
 	// TemplateUri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type KnowledgeBase_RenderingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KnowledgeBase_RenderingConfiguration) AWSCloudFormationType() string {
+func (r *KnowledgeBase_RenderingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::KnowledgeBase.RenderingConfiguration"
 }

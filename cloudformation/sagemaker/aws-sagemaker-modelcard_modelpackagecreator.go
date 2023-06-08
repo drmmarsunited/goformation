@@ -8,7 +8,7 @@ import (
 
 // ModelCard_ModelPackageCreator AWS CloudFormation Resource (AWS::SageMaker::ModelCard.ModelPackageCreator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagecreator.html
-type ModelCard_ModelPackageCreator struct {
+type ModelCard_ModelPackageCreator[T any] struct {
 
 	// UserProfileName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelCard_ModelPackageCreator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_ModelPackageCreator) AWSCloudFormationType() string {
+func (r *ModelCard_ModelPackageCreator[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.ModelPackageCreator"
 }

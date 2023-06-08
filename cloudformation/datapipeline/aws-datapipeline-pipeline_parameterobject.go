@@ -8,12 +8,12 @@ import (
 
 // Pipeline_ParameterObject AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.ParameterObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobject.html
-type Pipeline_ParameterObject struct {
+type Pipeline_ParameterObject[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobject.html#cfn-datapipeline-pipeline-parameterobject-attributes
-	Attributes []Pipeline_ParameterAttribute `json:"Attributes"`
+	Attributes []Pipeline_ParameterAttribute[any] `json:"Attributes"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_ParameterObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ParameterObject) AWSCloudFormationType() string {
+func (r *Pipeline_ParameterObject[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.ParameterObject"
 }

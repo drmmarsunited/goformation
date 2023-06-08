@@ -8,37 +8,37 @@ import (
 
 // Segment_Demographic AWS CloudFormation Resource (AWS::Pinpoint::Segment.Demographic)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html
-type Segment_Demographic struct {
+type Segment_Demographic[T any] struct {
 
 	// AppVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-appversion
-	AppVersion *Segment_SetDimension `json:"AppVersion,omitempty"`
+	AppVersion *Segment_SetDimension[any] `json:"AppVersion,omitempty"`
 
 	// Channel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-channel
-	Channel *Segment_SetDimension `json:"Channel,omitempty"`
+	Channel *Segment_SetDimension[any] `json:"Channel,omitempty"`
 
 	// DeviceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-devicetype
-	DeviceType *Segment_SetDimension `json:"DeviceType,omitempty"`
+	DeviceType *Segment_SetDimension[any] `json:"DeviceType,omitempty"`
 
 	// Make AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-make
-	Make *Segment_SetDimension `json:"Make,omitempty"`
+	Make *Segment_SetDimension[any] `json:"Make,omitempty"`
 
 	// Model AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-model
-	Model *Segment_SetDimension `json:"Model,omitempty"`
+	Model *Segment_SetDimension[any] `json:"Model,omitempty"`
 
 	// Platform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-platform
-	Platform *Segment_SetDimension `json:"Platform,omitempty"`
+	Platform *Segment_SetDimension[any] `json:"Platform,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Segment_Demographic struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_Demographic) AWSCloudFormationType() string {
+func (r *Segment_Demographic[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.Demographic"
 }

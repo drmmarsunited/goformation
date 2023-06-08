@@ -8,7 +8,7 @@ import (
 
 // Dashboard_PanelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PanelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-panelconfiguration.html
-type Dashboard_PanelConfiguration struct {
+type Dashboard_PanelConfiguration[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Dashboard_PanelConfiguration struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-panelconfiguration.html#cfn-quicksight-dashboard-panelconfiguration-title
-	Title *Dashboard_PanelTitleOptions `json:"Title,omitempty"`
+	Title *Dashboard_PanelTitleOptions[any] `json:"Title,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Dashboard_PanelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PanelConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PanelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PanelConfiguration"
 }

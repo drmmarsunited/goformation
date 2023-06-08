@@ -8,7 +8,7 @@ import (
 
 // Cluster_ConfigurationInfo AWS CloudFormation Resource (AWS::MSK::Cluster.ConfigurationInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html
-type Cluster_ConfigurationInfo struct {
+type Cluster_ConfigurationInfo[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Cluster_ConfigurationInfo struct {
 	// Revision AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-revision
-	Revision int `json:"Revision"`
+	Revision T `json:"Revision"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_ConfigurationInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ConfigurationInfo) AWSCloudFormationType() string {
+func (r *Cluster_ConfigurationInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.ConfigurationInfo"
 }

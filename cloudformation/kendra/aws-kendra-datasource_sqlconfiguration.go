@@ -8,7 +8,7 @@ import (
 
 // DataSource_SqlConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SqlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sqlconfiguration.html
-type DataSource_SqlConfiguration struct {
+type DataSource_SqlConfiguration[T any] struct {
 
 	// QueryIdentifiersEnclosingOption AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataSource_SqlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SqlConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SqlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SqlConfiguration"
 }

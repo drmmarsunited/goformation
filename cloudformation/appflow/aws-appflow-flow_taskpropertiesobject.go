@@ -8,7 +8,7 @@ import (
 
 // Flow_TaskPropertiesObject AWS CloudFormation Resource (AWS::AppFlow::Flow.TaskPropertiesObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-taskpropertiesobject.html
-type Flow_TaskPropertiesObject struct {
+type Flow_TaskPropertiesObject[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Flow_TaskPropertiesObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_TaskPropertiesObject) AWSCloudFormationType() string {
+func (r *Flow_TaskPropertiesObject[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.TaskPropertiesObject"
 }

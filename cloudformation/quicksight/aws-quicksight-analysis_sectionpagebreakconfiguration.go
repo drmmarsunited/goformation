@@ -8,12 +8,12 @@ import (
 
 // Analysis_SectionPageBreakConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SectionPageBreakConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionpagebreakconfiguration.html
-type Analysis_SectionPageBreakConfiguration struct {
+type Analysis_SectionPageBreakConfiguration[T any] struct {
 
 	// After AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionpagebreakconfiguration.html#cfn-quicksight-analysis-sectionpagebreakconfiguration-after
-	After *Analysis_SectionAfterPageBreak `json:"After,omitempty"`
+	After *Analysis_SectionAfterPageBreak[any] `json:"After,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_SectionPageBreakConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SectionPageBreakConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SectionPageBreakConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SectionPageBreakConfiguration"
 }

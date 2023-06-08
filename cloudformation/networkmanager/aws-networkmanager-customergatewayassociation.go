@@ -11,7 +11,7 @@ import (
 
 // CustomerGatewayAssociation AWS CloudFormation Resource (AWS::NetworkManager::CustomerGatewayAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html
-type CustomerGatewayAssociation struct {
+type CustomerGatewayAssociation[T any] struct {
 
 	// CustomerGatewayArn AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type CustomerGatewayAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomerGatewayAssociation) AWSCloudFormationType() string {
+func (r *CustomerGatewayAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::CustomerGatewayAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CustomerGatewayAssociation) MarshalJSON() ([]byte, error) {
-	type Properties CustomerGatewayAssociation
+func (r CustomerGatewayAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties CustomerGatewayAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r CustomerGatewayAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CustomerGatewayAssociation) UnmarshalJSON(b []byte) error {
-	type Properties CustomerGatewayAssociation
+func (r *CustomerGatewayAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties CustomerGatewayAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *CustomerGatewayAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CustomerGatewayAssociation(*res.Properties)
+		*r = CustomerGatewayAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

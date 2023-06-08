@@ -8,7 +8,7 @@ import (
 
 // Bot_CloudWatchLogGroupLogDestination AWS CloudFormation Resource (AWS::Lex::Bot.CloudWatchLogGroupLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html
-type Bot_CloudWatchLogGroupLogDestination struct {
+type Bot_CloudWatchLogGroupLogDestination[T any] struct {
 
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bot_CloudWatchLogGroupLogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_CloudWatchLogGroupLogDestination) AWSCloudFormationType() string {
+func (r *Bot_CloudWatchLogGroupLogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.CloudWatchLogGroupLogDestination"
 }

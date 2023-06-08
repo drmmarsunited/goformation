@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_AccessControlExposeHeaders AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.AccessControlExposeHeaders)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolexposeheaders.html
-type ResponseHeadersPolicy_AccessControlExposeHeaders struct {
+type ResponseHeadersPolicy_AccessControlExposeHeaders[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_AccessControlExposeHeaders struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_AccessControlExposeHeaders) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_AccessControlExposeHeaders[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.AccessControlExposeHeaders"
 }

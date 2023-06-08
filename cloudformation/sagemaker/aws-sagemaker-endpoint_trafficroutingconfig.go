@@ -8,17 +8,17 @@ import (
 
 // Endpoint_TrafficRoutingConfig AWS CloudFormation Resource (AWS::SageMaker::Endpoint.TrafficRoutingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html
-type Endpoint_TrafficRoutingConfig struct {
+type Endpoint_TrafficRoutingConfig[T any] struct {
 
 	// CanarySize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-canarysize
-	CanarySize *Endpoint_CapacitySize `json:"CanarySize,omitempty"`
+	CanarySize *Endpoint_CapacitySize[any] `json:"CanarySize,omitempty"`
 
 	// LinearStepSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-linearstepsize
-	LinearStepSize *Endpoint_CapacitySize `json:"LinearStepSize,omitempty"`
+	LinearStepSize *Endpoint_CapacitySize[any] `json:"LinearStepSize,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Endpoint_TrafficRoutingConfig struct {
 	// WaitIntervalInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-waitintervalinseconds
-	WaitIntervalInSeconds *int `json:"WaitIntervalInSeconds,omitempty"`
+	WaitIntervalInSeconds *T `json:"WaitIntervalInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Endpoint_TrafficRoutingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_TrafficRoutingConfig) AWSCloudFormationType() string {
+func (r *Endpoint_TrafficRoutingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.TrafficRoutingConfig"
 }

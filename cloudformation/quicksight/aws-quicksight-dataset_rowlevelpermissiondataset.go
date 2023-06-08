@@ -8,7 +8,7 @@ import (
 
 // DataSet_RowLevelPermissionDataSet AWS CloudFormation Resource (AWS::QuickSight::DataSet.RowLevelPermissionDataSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html
-type DataSet_RowLevelPermissionDataSet struct {
+type DataSet_RowLevelPermissionDataSet[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -30,6 +30,11 @@ type DataSet_RowLevelPermissionDataSet struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-permissionpolicy
 	PermissionPolicy string `json:"PermissionPolicy"`
 
+	// Status AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-status
+	Status *string `json:"Status,omitempty"`
+
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
 
@@ -47,6 +52,6 @@ type DataSet_RowLevelPermissionDataSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_RowLevelPermissionDataSet) AWSCloudFormationType() string {
+func (r *DataSet_RowLevelPermissionDataSet[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.RowLevelPermissionDataSet"
 }

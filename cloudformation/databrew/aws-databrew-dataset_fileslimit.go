@@ -8,12 +8,12 @@ import (
 
 // Dataset_FilesLimit AWS CloudFormation Resource (AWS::DataBrew::Dataset.FilesLimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html
-type Dataset_FilesLimit struct {
+type Dataset_FilesLimit[T any] struct {
 
 	// MaxFiles AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html#cfn-databrew-dataset-fileslimit-maxfiles
-	MaxFiles int `json:"MaxFiles"`
+	MaxFiles T `json:"MaxFiles"`
 
 	// Order AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dataset_FilesLimit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_FilesLimit) AWSCloudFormationType() string {
+func (r *Dataset_FilesLimit[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.FilesLimit"
 }

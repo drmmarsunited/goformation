@@ -8,22 +8,22 @@ import (
 
 // LaunchProfile_VolumeConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.VolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html
-type LaunchProfile_VolumeConfiguration struct {
+type LaunchProfile_VolumeConfiguration[T any] struct {
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-iops
-	Iops *float64 `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-size
-	Size *float64 `json:"Size,omitempty"`
+	Size *T `json:"Size,omitempty"`
 
 	// Throughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-throughput
-	Throughput *float64 `json:"Throughput,omitempty"`
+	Throughput *T `json:"Throughput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type LaunchProfile_VolumeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchProfile_VolumeConfiguration) AWSCloudFormationType() string {
+func (r *LaunchProfile_VolumeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::LaunchProfile.VolumeConfiguration"
 }

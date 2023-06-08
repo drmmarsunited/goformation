@@ -12,12 +12,12 @@ import (
 
 // PatchBaseline AWS CloudFormation Resource (AWS::SSM::PatchBaseline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html
-type PatchBaseline struct {
+type PatchBaseline[T any] struct {
 
 	// ApprovalRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules
-	ApprovalRules *PatchBaseline_RuleGroup `json:"ApprovalRules,omitempty"`
+	ApprovalRules *PatchBaseline_RuleGroup[any] `json:"ApprovalRules,omitempty"`
 
 	// ApprovedPatches AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type PatchBaseline struct {
 	// ApprovedPatchesEnableNonSecurity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
-	ApprovedPatchesEnableNonSecurity *bool `json:"ApprovedPatchesEnableNonSecurity,omitempty"`
+	ApprovedPatchesEnableNonSecurity *T `json:"ApprovedPatchesEnableNonSecurity,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type PatchBaseline struct {
 	// GlobalFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters
-	GlobalFilters *PatchBaseline_PatchFilterGroup `json:"GlobalFilters,omitempty"`
+	GlobalFilters *PatchBaseline_PatchFilterGroup[any] `json:"GlobalFilters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -72,7 +72,7 @@ type PatchBaseline struct {
 	// Sources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources
-	Sources []PatchBaseline_PatchSource `json:"Sources,omitempty"`
+	Sources []PatchBaseline_PatchSource[any] `json:"Sources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type PatchBaseline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline) AWSCloudFormationType() string {
+func (r *PatchBaseline[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PatchBaseline) MarshalJSON() ([]byte, error) {
-	type Properties PatchBaseline
+func (r PatchBaseline[any]) MarshalJSON() ([]byte, error) {
+	type Properties PatchBaseline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r PatchBaseline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PatchBaseline) UnmarshalJSON(b []byte) error {
-	type Properties PatchBaseline
+func (r *PatchBaseline[any]) UnmarshalJSON(b []byte) error {
+	type Properties PatchBaseline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *PatchBaseline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PatchBaseline(*res.Properties)
+		*r = PatchBaseline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

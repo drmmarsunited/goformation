@@ -8,7 +8,7 @@ import (
 
 // Dataset_ContainerAction AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.ContainerAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html
-type Dataset_ContainerAction struct {
+type Dataset_ContainerAction[T any] struct {
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Dataset_ContainerAction struct {
 	// ResourceConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html#cfn-iotanalytics-dataset-containeraction-resourceconfiguration
-	ResourceConfiguration *Dataset_ResourceConfiguration `json:"ResourceConfiguration"`
+	ResourceConfiguration *Dataset_ResourceConfiguration[any] `json:"ResourceConfiguration"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html#cfn-iotanalytics-dataset-containeraction-variables
-	Variables []Dataset_Variable `json:"Variables,omitempty"`
+	Variables []Dataset_Variable[any] `json:"Variables,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dataset_ContainerAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_ContainerAction) AWSCloudFormationType() string {
+func (r *Dataset_ContainerAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.ContainerAction"
 }

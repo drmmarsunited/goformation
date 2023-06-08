@@ -8,12 +8,12 @@ import (
 
 // DeploymentGroup_AutoRollbackConfiguration AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.AutoRollbackConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html
-type DeploymentGroup_AutoRollbackConfiguration struct {
+type DeploymentGroup_AutoRollbackConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Events AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DeploymentGroup_AutoRollbackConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_AutoRollbackConfiguration) AWSCloudFormationType() string {
+func (r *DeploymentGroup_AutoRollbackConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.AutoRollbackConfiguration"
 }

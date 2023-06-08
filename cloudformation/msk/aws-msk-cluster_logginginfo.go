@@ -8,12 +8,12 @@ import (
 
 // Cluster_LoggingInfo AWS CloudFormation Resource (AWS::MSK::Cluster.LoggingInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html
-type Cluster_LoggingInfo struct {
+type Cluster_LoggingInfo[T any] struct {
 
 	// BrokerLogs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs
-	BrokerLogs *Cluster_BrokerLogs `json:"BrokerLogs"`
+	BrokerLogs *Cluster_BrokerLogs[any] `json:"BrokerLogs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_LoggingInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_LoggingInfo) AWSCloudFormationType() string {
+func (r *Cluster_LoggingInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.LoggingInfo"
 }

@@ -8,7 +8,7 @@ import (
 
 // VPNConnection_VpnTunnelOptionsSpecification AWS CloudFormation Resource (AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html
-type VPNConnection_VpnTunnelOptionsSpecification struct {
+type VPNConnection_VpnTunnelOptionsSpecification[T any] struct {
 
 	// PreSharedKey AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type VPNConnection_VpnTunnelOptionsSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPNConnection_VpnTunnelOptionsSpecification) AWSCloudFormationType() string {
+func (r *VPNConnection_VpnTunnelOptionsSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification"
 }

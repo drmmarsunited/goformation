@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ZendeskConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html
-type ConnectorProfile_ZendeskConnectorProfileCredentials struct {
+type ConnectorProfile_ZendeskConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_ZendeskConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ConnectorProfile_ZendeskConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ZendeskConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ZendeskConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileCredentials"
 }

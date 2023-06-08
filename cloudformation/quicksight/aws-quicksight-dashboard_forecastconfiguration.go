@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ForecastConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ForecastConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastconfiguration.html
-type Dashboard_ForecastConfiguration struct {
+type Dashboard_ForecastConfiguration[T any] struct {
 
 	// ForecastProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastconfiguration.html#cfn-quicksight-dashboard-forecastconfiguration-forecastproperties
-	ForecastProperties *Dashboard_TimeBasedForecastProperties `json:"ForecastProperties,omitempty"`
+	ForecastProperties *Dashboard_TimeBasedForecastProperties[any] `json:"ForecastProperties,omitempty"`
 
 	// Scenario AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastconfiguration.html#cfn-quicksight-dashboard-forecastconfiguration-scenario
-	Scenario *Dashboard_ForecastScenario `json:"Scenario,omitempty"`
+	Scenario *Dashboard_ForecastScenario[any] `json:"Scenario,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_ForecastConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ForecastConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ForecastConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ForecastConfiguration"
 }

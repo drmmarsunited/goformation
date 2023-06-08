@@ -8,17 +8,17 @@ import (
 
 // Layer_ShutdownEventConfiguration AWS CloudFormation Resource (AWS::OpsWorks::Layer.ShutdownEventConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html
-type Layer_ShutdownEventConfiguration struct {
+type Layer_ShutdownEventConfiguration[T any] struct {
 
 	// DelayUntilElbConnectionsDrained AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained
-	DelayUntilElbConnectionsDrained *bool `json:"DelayUntilElbConnectionsDrained,omitempty"`
+	DelayUntilElbConnectionsDrained *T `json:"DelayUntilElbConnectionsDrained,omitempty"`
 
 	// ExecutionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout
-	ExecutionTimeout *int `json:"ExecutionTimeout,omitempty"`
+	ExecutionTimeout *T `json:"ExecutionTimeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Layer_ShutdownEventConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Layer_ShutdownEventConfiguration) AWSCloudFormationType() string {
+func (r *Layer_ShutdownEventConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.ShutdownEventConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SlackConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SlackConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofileproperties.html
-type ConnectorProfile_SlackConnectorProfileProperties struct {
+type ConnectorProfile_SlackConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_SlackConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SlackConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SlackConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SlackConnectorProfileProperties"
 }

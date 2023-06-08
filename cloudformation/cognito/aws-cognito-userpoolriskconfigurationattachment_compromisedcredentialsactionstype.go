@@ -8,7 +8,7 @@ import (
 
 // UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.CompromisedCredentialsActionsType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsactionstype.html
-type UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType struct {
+type UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType[T any] struct {
 
 	// EventAction AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType struc
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_CompromisedCredentialsActionsType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.CompromisedCredentialsActionsType"
 }

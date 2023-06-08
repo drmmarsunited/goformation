@@ -8,12 +8,12 @@ import (
 
 // PricingRule_FreeTier AWS CloudFormation Resource (AWS::BillingConductor::PricingRule.FreeTier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-freetier.html
-type PricingRule_FreeTier struct {
+type PricingRule_FreeTier[T any] struct {
 
 	// Activated AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-freetier.html#cfn-billingconductor-pricingrule-freetier-activated
-	Activated bool `json:"Activated"`
+	Activated T `json:"Activated"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PricingRule_FreeTier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PricingRule_FreeTier) AWSCloudFormationType() string {
+func (r *PricingRule_FreeTier[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::PricingRule.FreeTier"
 }

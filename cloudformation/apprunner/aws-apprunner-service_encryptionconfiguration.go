@@ -8,7 +8,7 @@ import (
 
 // Service_EncryptionConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-encryptionconfiguration.html
-type Service_EncryptionConfiguration struct {
+type Service_EncryptionConfiguration[T any] struct {
 
 	// KmsKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Service_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Service_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.EncryptionConfiguration"
 }

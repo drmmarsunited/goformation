@@ -8,7 +8,7 @@ import (
 
 // Analysis_WhatIfPointScenario AWS CloudFormation Resource (AWS::QuickSight::Analysis.WhatIfPointScenario)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-whatifpointscenario.html
-type Analysis_WhatIfPointScenario struct {
+type Analysis_WhatIfPointScenario[T any] struct {
 
 	// Date AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_WhatIfPointScenario struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-whatifpointscenario.html#cfn-quicksight-analysis-whatifpointscenario-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_WhatIfPointScenario struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WhatIfPointScenario) AWSCloudFormationType() string {
+func (r *Analysis_WhatIfPointScenario[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WhatIfPointScenario"
 }

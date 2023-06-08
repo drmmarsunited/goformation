@@ -8,12 +8,12 @@ import (
 
 // Dashboard_CategoricalDimensionField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CategoricalDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricaldimensionfield.html
-type Dashboard_CategoricalDimensionField struct {
+type Dashboard_CategoricalDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricaldimensionfield.html#cfn-quicksight-dashboard-categoricaldimensionfield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_CategoricalDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricaldimensionfield.html#cfn-quicksight-dashboard-categoricaldimensionfield-formatconfiguration
-	FormatConfiguration *Dashboard_StringFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_StringFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_CategoricalDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CategoricalDimensionField) AWSCloudFormationType() string {
+func (r *Dashboard_CategoricalDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CategoricalDimensionField"
 }

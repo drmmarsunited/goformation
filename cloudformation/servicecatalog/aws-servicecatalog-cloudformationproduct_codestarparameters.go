@@ -8,7 +8,7 @@ import (
 
 // CloudFormationProduct_CodeStarParameters AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.CodeStarParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html
-type CloudFormationProduct_CodeStarParameters struct {
+type CloudFormationProduct_CodeStarParameters[T any] struct {
 
 	// ArtifactPath AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type CloudFormationProduct_CodeStarParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProduct_CodeStarParameters) AWSCloudFormationType() string {
+func (r *CloudFormationProduct_CodeStarParameters[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct.CodeStarParameters"
 }

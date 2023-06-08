@@ -8,17 +8,17 @@ import (
 
 // Channel_AutomaticInputFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AutomaticInputFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html
-type Channel_AutomaticInputFailoverSettings struct {
+type Channel_AutomaticInputFailoverSettings[T any] struct {
 
 	// ErrorClearTimeMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-errorcleartimemsec
-	ErrorClearTimeMsec *int `json:"ErrorClearTimeMsec,omitempty"`
+	ErrorClearTimeMsec *T `json:"ErrorClearTimeMsec,omitempty"`
 
 	// FailoverConditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-failoverconditions
-	FailoverConditions []Channel_FailoverCondition `json:"FailoverConditions,omitempty"`
+	FailoverConditions []Channel_FailoverCondition[any] `json:"FailoverConditions,omitempty"`
 
 	// InputPreference AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Channel_AutomaticInputFailoverSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AutomaticInputFailoverSettings) AWSCloudFormationType() string {
+func (r *Channel_AutomaticInputFailoverSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AutomaticInputFailoverSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // PublicRepository_RepositoryCatalogData AWS CloudFormation Resource (AWS::ECR::PublicRepository.RepositoryCatalogData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html
-type PublicRepository_RepositoryCatalogData struct {
+type PublicRepository_RepositoryCatalogData[T any] struct {
 
 	// AboutText AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type PublicRepository_RepositoryCatalogData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PublicRepository_RepositoryCatalogData) AWSCloudFormationType() string {
+func (r *PublicRepository_RepositoryCatalogData[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::PublicRepository.RepositoryCatalogData"
 }

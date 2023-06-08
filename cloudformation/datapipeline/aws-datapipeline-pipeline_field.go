@@ -8,7 +8,7 @@ import (
 
 // Pipeline_Field AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.Field)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-field.html
-type Pipeline_Field struct {
+type Pipeline_Field[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_Field struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Field) AWSCloudFormationType() string {
+func (r *Pipeline_Field[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.Field"
 }

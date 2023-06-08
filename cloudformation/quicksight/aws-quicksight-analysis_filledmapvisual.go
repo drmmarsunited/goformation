@@ -8,37 +8,37 @@ import (
 
 // Analysis_FilledMapVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilledMapVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html
-type Analysis_FilledMapVisual struct {
+type Analysis_FilledMapVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-chartconfiguration
-	ChartConfiguration *Analysis_FilledMapConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_FilledMapConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-columnhierarchies
-	ColumnHierarchies []Analysis_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Analysis_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-conditionalformatting
-	ConditionalFormatting *Analysis_FilledMapConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Analysis_FilledMapConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapvisual.html#cfn-quicksight-analysis-filledmapvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Analysis_FilledMapVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilledMapVisual) AWSCloudFormationType() string {
+func (r *Analysis_FilledMapVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilledMapVisual"
 }

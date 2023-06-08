@@ -8,17 +8,17 @@ import (
 
 // DeploymentConfig_TrafficRoutingConfig AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.TrafficRoutingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html
-type DeploymentConfig_TrafficRoutingConfig struct {
+type DeploymentConfig_TrafficRoutingConfig[T any] struct {
 
 	// TimeBasedCanary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary
-	TimeBasedCanary *DeploymentConfig_TimeBasedCanary `json:"TimeBasedCanary,omitempty"`
+	TimeBasedCanary *DeploymentConfig_TimeBasedCanary[any] `json:"TimeBasedCanary,omitempty"`
 
 	// TimeBasedLinear AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear
-	TimeBasedLinear *DeploymentConfig_TimeBasedLinear `json:"TimeBasedLinear,omitempty"`
+	TimeBasedLinear *DeploymentConfig_TimeBasedLinear[any] `json:"TimeBasedLinear,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DeploymentConfig_TrafficRoutingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentConfig_TrafficRoutingConfig) AWSCloudFormationType() string {
+func (r *DeploymentConfig_TrafficRoutingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentConfig.TrafficRoutingConfig"
 }

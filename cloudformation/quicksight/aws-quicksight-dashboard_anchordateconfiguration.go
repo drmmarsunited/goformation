@@ -8,7 +8,7 @@ import (
 
 // Dashboard_AnchorDateConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AnchorDateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-anchordateconfiguration.html
-type Dashboard_AnchorDateConfiguration struct {
+type Dashboard_AnchorDateConfiguration[T any] struct {
 
 	// AnchorOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_AnchorDateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AnchorDateConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_AnchorDateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AnchorDateConfiguration"
 }

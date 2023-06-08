@@ -8,7 +8,7 @@ import (
 
 // Endpoint_MongoDbSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.MongoDbSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html
-type Endpoint_MongoDbSettings struct {
+type Endpoint_MongoDbSettings[T any] struct {
 
 	// AuthMechanism AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Endpoint_MongoDbSettings struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type Endpoint_MongoDbSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_MongoDbSettings) AWSCloudFormationType() string {
+func (r *Endpoint_MongoDbSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.MongoDbSettings"
 }

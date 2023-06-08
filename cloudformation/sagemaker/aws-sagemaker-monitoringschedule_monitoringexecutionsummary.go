@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_MonitoringExecutionSummary AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringExecutionSummary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html
-type MonitoringSchedule_MonitoringExecutionSummary struct {
+type MonitoringSchedule_MonitoringExecutionSummary[T any] struct {
 
 	// CreationTime AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type MonitoringSchedule_MonitoringExecutionSummary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringExecutionSummary) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringExecutionSummary[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringExecutionSummary"
 }

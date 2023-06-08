@@ -8,7 +8,7 @@ import (
 
 // DecoderManifest_ObdSignal AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.ObdSignal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html
-type DecoderManifest_ObdSignal struct {
+type DecoderManifest_ObdSignal[T any] struct {
 
 	// BitMaskLength AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type DecoderManifest_ObdSignal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_ObdSignal) AWSCloudFormationType() string {
+func (r *DecoderManifest_ObdSignal[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.ObdSignal"
 }

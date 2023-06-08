@@ -8,7 +8,7 @@ import (
 
 // Channel_Rec709Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Rec709Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rec709settings.html
-type Channel_Rec709Settings struct {
+type Channel_Rec709Settings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_Rec709Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Rec709Settings) AWSCloudFormationType() string {
+func (r *Channel_Rec709Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Rec709Settings"
 }

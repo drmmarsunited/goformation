@@ -8,7 +8,7 @@ import (
 
 // FileSystem_ClientConfigurations AWS CloudFormation Resource (AWS::FSx::FileSystem.ClientConfigurations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports-clientconfigurations.html
-type FileSystem_ClientConfigurations struct {
+type FileSystem_ClientConfigurations[T any] struct {
 
 	// Clients AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FileSystem_ClientConfigurations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_ClientConfigurations) AWSCloudFormationType() string {
+func (r *FileSystem_ClientConfigurations[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.ClientConfigurations"
 }

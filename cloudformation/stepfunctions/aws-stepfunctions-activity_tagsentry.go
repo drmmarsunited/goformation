@@ -8,7 +8,7 @@ import (
 
 // Activity_TagsEntry AWS CloudFormation Resource (AWS::StepFunctions::Activity.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html
-type Activity_TagsEntry struct {
+type Activity_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Activity_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Activity_TagsEntry) AWSCloudFormationType() string {
+func (r *Activity_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::StepFunctions::Activity.TagsEntry"
 }

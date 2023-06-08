@@ -8,7 +8,7 @@ import (
 
 // Table_SerdeInfo AWS CloudFormation Resource (AWS::Glue::Table.SerdeInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html
-type Table_SerdeInfo struct {
+type Table_SerdeInfo[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_SerdeInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_SerdeInfo) AWSCloudFormationType() string {
+func (r *Table_SerdeInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.SerdeInfo"
 }

@@ -8,7 +8,7 @@ import (
 
 // TagAssociation_LFTagPair AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation.LFTagPair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-lftagpair.html
-type TagAssociation_LFTagPair struct {
+type TagAssociation_LFTagPair[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type TagAssociation_LFTagPair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TagAssociation_LFTagPair) AWSCloudFormationType() string {
+func (r *TagAssociation_LFTagPair[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::TagAssociation.LFTagPair"
 }

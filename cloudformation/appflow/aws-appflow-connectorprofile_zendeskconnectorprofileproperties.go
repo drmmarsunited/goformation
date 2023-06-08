@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ZendeskConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofileproperties.html
-type ConnectorProfile_ZendeskConnectorProfileProperties struct {
+type ConnectorProfile_ZendeskConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_ZendeskConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ZendeskConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ZendeskConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileProperties"
 }

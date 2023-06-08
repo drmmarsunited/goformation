@@ -11,7 +11,7 @@ import (
 
 // RouteResponse AWS CloudFormation Resource (AWS::ApiGatewayV2::RouteResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html
-type RouteResponse struct {
+type RouteResponse[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type RouteResponse struct {
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-responseparameters
-	ResponseParameters interface{} `json:"ResponseParameters,omitempty"`
+	ResponseParameters map[string]RouteResponse_ParameterConstraints[any] `json:"ResponseParameters,omitempty"`
 
 	// RouteId AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type RouteResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RouteResponse) AWSCloudFormationType() string {
+func (r *RouteResponse[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::RouteResponse"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RouteResponse) MarshalJSON() ([]byte, error) {
-	type Properties RouteResponse
+func (r RouteResponse[any]) MarshalJSON() ([]byte, error) {
+	type Properties RouteResponse[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r RouteResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RouteResponse) UnmarshalJSON(b []byte) error {
-	type Properties RouteResponse
+func (r *RouteResponse[any]) UnmarshalJSON(b []byte) error {
+	type Properties RouteResponse[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *RouteResponse) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RouteResponse(*res.Properties)
+		*r = RouteResponse[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

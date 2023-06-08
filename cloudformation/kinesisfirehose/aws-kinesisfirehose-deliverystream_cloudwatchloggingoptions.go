@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_CloudWatchLoggingOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
-type DeliveryStream_CloudWatchLoggingOptions struct {
+type DeliveryStream_CloudWatchLoggingOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DeliveryStream_CloudWatchLoggingOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_CloudWatchLoggingOptions) AWSCloudFormationType() string {
+func (r *DeliveryStream_CloudWatchLoggingOptions[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions"
 }

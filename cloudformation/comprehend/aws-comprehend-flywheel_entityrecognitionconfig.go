@@ -8,12 +8,12 @@ import (
 
 // Flywheel_EntityRecognitionConfig AWS CloudFormation Resource (AWS::Comprehend::Flywheel.EntityRecognitionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-entityrecognitionconfig.html
-type Flywheel_EntityRecognitionConfig struct {
+type Flywheel_EntityRecognitionConfig[T any] struct {
 
 	// EntityTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-entityrecognitionconfig.html#cfn-comprehend-flywheel-entityrecognitionconfig-entitytypes
-	EntityTypes []Flywheel_EntityTypesListItem `json:"EntityTypes,omitempty"`
+	EntityTypes []Flywheel_EntityTypesListItem[any] `json:"EntityTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Flywheel_EntityRecognitionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_EntityRecognitionConfig) AWSCloudFormationType() string {
+func (r *Flywheel_EntityRecognitionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.EntityRecognitionConfig"
 }

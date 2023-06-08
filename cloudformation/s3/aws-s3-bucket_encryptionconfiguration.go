@@ -8,7 +8,7 @@ import (
 
 // Bucket_EncryptionConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html
-type Bucket_EncryptionConfiguration struct {
+type Bucket_EncryptionConfiguration[T any] struct {
 
 	// ReplicaKmsKeyID AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.EncryptionConfiguration"
 }

@@ -12,7 +12,7 @@ import (
 
 // Room AWS CloudFormation Resource (AWS::IVSChat::Room)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html
-type Room struct {
+type Room[T any] struct {
 
 	// LoggingConfigurationIdentifiers AWS CloudFormation Property
 	// Required: false
@@ -22,17 +22,17 @@ type Room struct {
 	// MaximumMessageLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-maximummessagelength
-	MaximumMessageLength *int `json:"MaximumMessageLength,omitempty"`
+	MaximumMessageLength *T `json:"MaximumMessageLength,omitempty"`
 
 	// MaximumMessageRatePerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-maximummessageratepersecond
-	MaximumMessageRatePerSecond *int `json:"MaximumMessageRatePerSecond,omitempty"`
+	MaximumMessageRatePerSecond *T `json:"MaximumMessageRatePerSecond,omitempty"`
 
 	// MessageReviewHandler AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-messagereviewhandler
-	MessageReviewHandler *Room_MessageReviewHandler `json:"MessageReviewHandler,omitempty"`
+	MessageReviewHandler *Room_MessageReviewHandler[any] `json:"MessageReviewHandler,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Room struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Room) AWSCloudFormationType() string {
+func (r *Room[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::Room"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Room) MarshalJSON() ([]byte, error) {
-	type Properties Room
+func (r Room[any]) MarshalJSON() ([]byte, error) {
+	type Properties Room[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Room) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Room) UnmarshalJSON(b []byte) error {
-	type Properties Room
+func (r *Room[any]) UnmarshalJSON(b []byte) error {
+	type Properties Room[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Room) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Room(*res.Properties)
+		*r = Room[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

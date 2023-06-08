@@ -8,7 +8,7 @@ import (
 
 // FunctionDefinition_ResourceAccessPolicy AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html
-type FunctionDefinition_ResourceAccessPolicy struct {
+type FunctionDefinition_ResourceAccessPolicy[T any] struct {
 
 	// Permission AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FunctionDefinition_ResourceAccessPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinition_ResourceAccessPolicy) AWSCloudFormationType() string {
+func (r *FunctionDefinition_ResourceAccessPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy"
 }

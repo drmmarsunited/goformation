@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_MonitoringGroundTruthS3Input AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.MonitoringGroundTruthS3Input)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input.html
-type ModelQualityJobDefinition_MonitoringGroundTruthS3Input struct {
+type ModelQualityJobDefinition_MonitoringGroundTruthS3Input[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ModelQualityJobDefinition_MonitoringGroundTruthS3Input struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_MonitoringGroundTruthS3Input) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_MonitoringGroundTruthS3Input[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.MonitoringGroundTruthS3Input"
 }

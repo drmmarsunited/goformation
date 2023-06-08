@@ -8,7 +8,7 @@ import (
 
 // Analysis_FilterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterselectablevalues.html
-type Analysis_FilterSelectableValues struct {
+type Analysis_FilterSelectableValues[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_FilterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterSelectableValues) AWSCloudFormationType() string {
+func (r *Analysis_FilterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterSelectableValues"
 }

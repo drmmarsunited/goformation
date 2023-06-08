@@ -8,7 +8,7 @@ import (
 
 // Listener_TargetGroupTuple AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.TargetGroupTuple)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgrouptuple.html
-type Listener_TargetGroupTuple struct {
+type Listener_TargetGroupTuple[T any] struct {
 
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Listener_TargetGroupTuple struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgrouptuple.html#cfn-elasticloadbalancingv2-listener-targetgrouptuple-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Listener_TargetGroupTuple struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_TargetGroupTuple) AWSCloudFormationType() string {
+func (r *Listener_TargetGroupTuple[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::Listener.TargetGroupTuple"
 }

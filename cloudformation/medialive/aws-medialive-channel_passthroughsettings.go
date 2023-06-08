@@ -8,7 +8,7 @@ import (
 
 // Channel_PassThroughSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.PassThroughSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-passthroughsettings.html
-type Channel_PassThroughSettings struct {
+type Channel_PassThroughSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_PassThroughSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_PassThroughSettings) AWSCloudFormationType() string {
+func (r *Channel_PassThroughSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.PassThroughSettings"
 }

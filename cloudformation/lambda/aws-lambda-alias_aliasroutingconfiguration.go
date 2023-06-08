@@ -8,12 +8,12 @@ import (
 
 // Alias_AliasRoutingConfiguration AWS CloudFormation Resource (AWS::Lambda::Alias.AliasRoutingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html
-type Alias_AliasRoutingConfiguration struct {
+type Alias_AliasRoutingConfiguration[T any] struct {
 
 	// AdditionalVersionWeights AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights
-	AdditionalVersionWeights []Alias_VersionWeight `json:"AdditionalVersionWeights"`
+	AdditionalVersionWeights []Alias_VersionWeight[any] `json:"AdditionalVersionWeights"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Alias_AliasRoutingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alias_AliasRoutingConfiguration) AWSCloudFormationType() string {
+func (r *Alias_AliasRoutingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Alias.AliasRoutingConfiguration"
 }

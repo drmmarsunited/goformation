@@ -11,17 +11,17 @@ import (
 
 // LaunchConfiguration AWS CloudFormation Resource (AWS::AutoScaling::LaunchConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html
-type LaunchConfiguration struct {
+type LaunchConfiguration[T any] struct {
 
 	// AssociatePublicIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-associatepublicipaddress
-	AssociatePublicIpAddress *bool `json:"AssociatePublicIpAddress,omitempty"`
+	AssociatePublicIpAddress *T `json:"AssociatePublicIpAddress,omitempty"`
 
 	// BlockDeviceMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-blockdevicemappings
-	BlockDeviceMappings []LaunchConfiguration_BlockDeviceMapping `json:"BlockDeviceMappings,omitempty"`
+	BlockDeviceMappings []LaunchConfiguration_BlockDeviceMapping[any] `json:"BlockDeviceMappings,omitempty"`
 
 	// ClassicLinkVPCId AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type LaunchConfiguration struct {
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *T `json:"EbsOptimized,omitempty"`
 
 	// IamInstanceProfile AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type LaunchConfiguration struct {
 	// InstanceMonitoring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-instancemonitoring
-	InstanceMonitoring *bool `json:"InstanceMonitoring,omitempty"`
+	InstanceMonitoring *T `json:"InstanceMonitoring,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -81,7 +81,7 @@ type LaunchConfiguration struct {
 	// MetadataOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-metadataoptions
-	MetadataOptions *LaunchConfiguration_MetadataOptions `json:"MetadataOptions,omitempty"`
+	MetadataOptions *LaunchConfiguration_MetadataOptions[any] `json:"MetadataOptions,omitempty"`
 
 	// PlacementTenancy AWS CloudFormation Property
 	// Required: false
@@ -125,14 +125,15 @@ type LaunchConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchConfiguration) AWSCloudFormationType() string {
+func (r *LaunchConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LaunchConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LaunchConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties LaunchConfiguration
+func (r LaunchConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties LaunchConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -154,8 +155,9 @@ func (r LaunchConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LaunchConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties LaunchConfiguration
+func (r *LaunchConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties LaunchConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -175,7 +177,7 @@ func (r *LaunchConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LaunchConfiguration(*res.Properties)
+		*r = LaunchConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

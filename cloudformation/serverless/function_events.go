@@ -12,13 +12,13 @@ import (
 )
 
 // Function_Events is a helper struct that can hold either a String or String value
-type Function_Events struct {
+type Function_Events[T any] struct {
 	String *string
 
 	StringArray *[]string
 }
 
-func (r Function_Events) value() interface{} {
+func (r Function_Events[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r Function_Events) value() interface{} {
 	return nil
 }
 
-func (r Function_Events) MarshalJSON() ([]byte, error) {
+func (r Function_Events[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_Events) UnmarshalJSON(b []byte) error {
+func (r *Function_Events[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

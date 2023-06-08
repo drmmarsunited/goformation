@@ -8,7 +8,7 @@ import (
 
 // WebACL_RuleGroupReferenceStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.RuleGroupReferenceStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html
-type WebACL_RuleGroupReferenceStatement struct {
+type WebACL_RuleGroupReferenceStatement[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type WebACL_RuleGroupReferenceStatement struct {
 	// ExcludedRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-excludedrules
-	ExcludedRules []WebACL_ExcludedRule `json:"ExcludedRules,omitempty"`
+	ExcludedRules []WebACL_ExcludedRule[any] `json:"ExcludedRules,omitempty"`
 
 	// RuleActionOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-ruleactionoverrides
-	RuleActionOverrides []WebACL_RuleActionOverride `json:"RuleActionOverrides,omitempty"`
+	RuleActionOverrides []WebACL_RuleActionOverride[any] `json:"RuleActionOverrides,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_RuleGroupReferenceStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_RuleGroupReferenceStatement) AWSCloudFormationType() string {
+func (r *WebACL_RuleGroupReferenceStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.RuleGroupReferenceStatement"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_KPISortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.KPISortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpisortconfiguration.html
-type Template_KPISortConfiguration struct {
+type Template_KPISortConfiguration[T any] struct {
 
 	// TrendGroupSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpisortconfiguration.html#cfn-quicksight-template-kpisortconfiguration-trendgroupsort
-	TrendGroupSort []Template_FieldSortOptions `json:"TrendGroupSort,omitempty"`
+	TrendGroupSort []Template_FieldSortOptions[any] `json:"TrendGroupSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_KPISortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_KPISortConfiguration) AWSCloudFormationType() string {
+func (r *Template_KPISortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.KPISortConfiguration"
 }

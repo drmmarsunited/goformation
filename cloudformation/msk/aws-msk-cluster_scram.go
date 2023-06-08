@@ -8,12 +8,12 @@ import (
 
 // Cluster_Scram AWS CloudFormation Resource (AWS::MSK::Cluster.Scram)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-scram.html
-type Cluster_Scram struct {
+type Cluster_Scram[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-scram.html#cfn-msk-cluster-scram-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_Scram struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Scram) AWSCloudFormationType() string {
+func (r *Cluster_Scram[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Scram"
 }

@@ -8,17 +8,17 @@ import (
 
 // AccessPolicy_AccessPolicyResource AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.AccessPolicyResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html
-type AccessPolicy_AccessPolicyResource struct {
+type AccessPolicy_AccessPolicyResource[T any] struct {
 
 	// Portal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-portal
-	Portal *AccessPolicy_Portal `json:"Portal,omitempty"`
+	Portal *AccessPolicy_Portal[any] `json:"Portal,omitempty"`
 
 	// Project AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-project
-	Project *AccessPolicy_Project `json:"Project,omitempty"`
+	Project *AccessPolicy_Project[any] `json:"Project,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AccessPolicy_AccessPolicyResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_AccessPolicyResource) AWSCloudFormationType() string {
+func (r *AccessPolicy_AccessPolicyResource[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.AccessPolicyResource"
 }

@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_DynamicSsmParameterValue AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.DynamicSsmParameterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-dynamicssmparametervalue.html
-type ResponsePlan_DynamicSsmParameterValue struct {
+type ResponsePlan_DynamicSsmParameterValue[T any] struct {
 
 	// Variable AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ResponsePlan_DynamicSsmParameterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_DynamicSsmParameterValue) AWSCloudFormationType() string {
+func (r *ResponsePlan_DynamicSsmParameterValue[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.DynamicSsmParameterValue"
 }

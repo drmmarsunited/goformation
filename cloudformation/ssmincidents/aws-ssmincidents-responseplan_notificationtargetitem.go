@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_NotificationTargetItem AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.NotificationTargetItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-notificationtargetitem.html
-type ResponsePlan_NotificationTargetItem struct {
+type ResponsePlan_NotificationTargetItem[T any] struct {
 
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ResponsePlan_NotificationTargetItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_NotificationTargetItem) AWSCloudFormationType() string {
+func (r *ResponsePlan_NotificationTargetItem[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.NotificationTargetItem"
 }

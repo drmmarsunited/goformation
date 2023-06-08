@@ -8,12 +8,12 @@ import (
 
 // Stream_KinesisConfiguration AWS CloudFormation Resource (AWS::QLDB::Stream.KinesisConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qldb-stream-kinesisconfiguration.html
-type Stream_KinesisConfiguration struct {
+type Stream_KinesisConfiguration[T any] struct {
 
 	// AggregationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qldb-stream-kinesisconfiguration.html#cfn-qldb-stream-kinesisconfiguration-aggregationenabled
-	AggregationEnabled *bool `json:"AggregationEnabled,omitempty"`
+	AggregationEnabled *T `json:"AggregationEnabled,omitempty"`
 
 	// StreamArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Stream_KinesisConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stream_KinesisConfiguration) AWSCloudFormationType() string {
+func (r *Stream_KinesisConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QLDB::Stream.KinesisConfiguration"
 }

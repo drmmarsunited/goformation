@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MaximumMinimumComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MaximumMinimumComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-maximumminimumcomputation.html
-type Dashboard_MaximumMinimumComputation struct {
+type Dashboard_MaximumMinimumComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_MaximumMinimumComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-maximumminimumcomputation.html#cfn-quicksight-dashboard-maximumminimumcomputation-time
-	Time *Dashboard_DimensionField `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_MaximumMinimumComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-maximumminimumcomputation.html#cfn-quicksight-dashboard-maximumminimumcomputation-value
-	Value *Dashboard_MeasureField `json:"Value,omitempty"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_MaximumMinimumComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MaximumMinimumComputation) AWSCloudFormationType() string {
+func (r *Dashboard_MaximumMinimumComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MaximumMinimumComputation"
 }

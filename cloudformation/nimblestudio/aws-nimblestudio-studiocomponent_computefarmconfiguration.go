@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_ComputeFarmConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.ComputeFarmConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-computefarmconfiguration.html
-type StudioComponent_ComputeFarmConfiguration struct {
+type StudioComponent_ComputeFarmConfiguration[T any] struct {
 
 	// ActiveDirectoryUser AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StudioComponent_ComputeFarmConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_ComputeFarmConfiguration) AWSCloudFormationType() string {
+func (r *StudioComponent_ComputeFarmConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.ComputeFarmConfiguration"
 }

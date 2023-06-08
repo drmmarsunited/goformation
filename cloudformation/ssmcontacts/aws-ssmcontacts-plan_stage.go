@@ -8,17 +8,17 @@ import (
 
 // Plan_Stage AWS CloudFormation Resource (AWS::SSMContacts::Plan.Stage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-stage.html
-type Plan_Stage struct {
+type Plan_Stage[T any] struct {
 
 	// DurationInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-stage.html#cfn-ssmcontacts-plan-stage-durationinminutes
-	DurationInMinutes int `json:"DurationInMinutes"`
+	DurationInMinutes T `json:"DurationInMinutes"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-stage.html#cfn-ssmcontacts-plan-stage-targets
-	Targets []Plan_Targets `json:"Targets,omitempty"`
+	Targets []Plan_Targets[any] `json:"Targets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Plan_Stage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Plan_Stage) AWSCloudFormationType() string {
+func (r *Plan_Stage[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Plan.Stage"
 }

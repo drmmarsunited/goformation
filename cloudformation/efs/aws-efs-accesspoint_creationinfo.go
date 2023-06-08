@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_CreationInfo AWS CloudFormation Resource (AWS::EFS::AccessPoint.CreationInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html
-type AccessPoint_CreationInfo struct {
+type AccessPoint_CreationInfo[T any] struct {
 
 	// OwnerGid AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AccessPoint_CreationInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_CreationInfo) AWSCloudFormationType() string {
+func (r *AccessPoint_CreationInfo[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::AccessPoint.CreationInfo"
 }

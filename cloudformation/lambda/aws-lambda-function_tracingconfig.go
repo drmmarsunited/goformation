@@ -8,7 +8,7 @@ import (
 
 // Function_TracingConfig AWS CloudFormation Resource (AWS::Lambda::Function.TracingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html
-type Function_TracingConfig struct {
+type Function_TracingConfig[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Function_TracingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_TracingConfig) AWSCloudFormationType() string {
+func (r *Function_TracingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.TracingConfig"
 }

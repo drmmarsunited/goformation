@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SnowflakeConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html
-type ConnectorProfile_SnowflakeConnectorProfileProperties struct {
+type ConnectorProfile_SnowflakeConnectorProfileProperties[T any] struct {
 
 	// AccountName AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type ConnectorProfile_SnowflakeConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SnowflakeConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SnowflakeConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileProperties"
 }

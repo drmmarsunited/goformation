@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_InforNexusConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofileproperties.html
-type ConnectorProfile_InforNexusConnectorProfileProperties struct {
+type ConnectorProfile_InforNexusConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_InforNexusConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_InforNexusConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_InforNexusConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileProperties"
 }

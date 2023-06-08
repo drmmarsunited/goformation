@@ -8,12 +8,12 @@ import (
 
 // Dashboard_NumberFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumberFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numberformatconfiguration.html
-type Dashboard_NumberFormatConfiguration struct {
+type Dashboard_NumberFormatConfiguration[T any] struct {
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numberformatconfiguration.html#cfn-quicksight-dashboard-numberformatconfiguration-formatconfiguration
-	FormatConfiguration *Dashboard_NumericFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_NumericFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_NumberFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumberFormatConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_NumberFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumberFormatConfiguration"
 }

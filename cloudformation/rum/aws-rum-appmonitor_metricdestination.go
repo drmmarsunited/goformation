@@ -8,7 +8,7 @@ import (
 
 // AppMonitor_MetricDestination AWS CloudFormation Resource (AWS::RUM::AppMonitor.MetricDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdestination.html
-type AppMonitor_MetricDestination struct {
+type AppMonitor_MetricDestination[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AppMonitor_MetricDestination struct {
 	// MetricDefinitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdestination.html#cfn-rum-appmonitor-metricdestination-metricdefinitions
-	MetricDefinitions []AppMonitor_MetricDefinition `json:"MetricDefinitions,omitempty"`
+	MetricDefinitions []AppMonitor_MetricDefinition[any] `json:"MetricDefinitions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type AppMonitor_MetricDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppMonitor_MetricDestination) AWSCloudFormationType() string {
+func (r *AppMonitor_MetricDestination[any]) AWSCloudFormationType() string {
 	return "AWS::RUM::AppMonitor.MetricDestination"
 }

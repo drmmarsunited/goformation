@@ -8,7 +8,7 @@ import (
 
 // Nodegroup_LaunchTemplateSpecification AWS CloudFormation Resource (AWS::EKS::Nodegroup.LaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-launchtemplatespecification.html
-type Nodegroup_LaunchTemplateSpecification struct {
+type Nodegroup_LaunchTemplateSpecification[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Nodegroup_LaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Nodegroup_LaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *Nodegroup_LaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Nodegroup.LaunchTemplateSpecification"
 }

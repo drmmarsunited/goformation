@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisLoadBalancerTarget AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html
-type NetworkInsightsAnalysis_AnalysisLoadBalancerTarget struct {
+type NetworkInsightsAnalysis_AnalysisLoadBalancerTarget[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type NetworkInsightsAnalysis_AnalysisLoadBalancerTarget struct {
 	// Instance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance
-	Instance *NetworkInsightsAnalysis_AnalysisComponent `json:"Instance,omitempty"`
+	Instance *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"Instance,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type NetworkInsightsAnalysis_AnalysisLoadBalancerTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisLoadBalancerTarget) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisLoadBalancerTarget[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget"
 }

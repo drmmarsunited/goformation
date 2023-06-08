@@ -11,12 +11,12 @@ import (
 
 // NotificationChannel AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html
-type NotificationChannel struct {
+type NotificationChannel[T any] struct {
 
 	// Config AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html#cfn-devopsguru-notificationchannel-config
-	Config *NotificationChannel_NotificationChannelConfig `json:"Config"`
+	Config *NotificationChannel_NotificationChannelConfig[any] `json:"Config"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type NotificationChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationChannel) AWSCloudFormationType() string {
+func (r *NotificationChannel[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::NotificationChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NotificationChannel) MarshalJSON() ([]byte, error) {
-	type Properties NotificationChannel
+func (r NotificationChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties NotificationChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r NotificationChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NotificationChannel) UnmarshalJSON(b []byte) error {
-	type Properties NotificationChannel
+func (r *NotificationChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties NotificationChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *NotificationChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NotificationChannel(*res.Properties)
+		*r = NotificationChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

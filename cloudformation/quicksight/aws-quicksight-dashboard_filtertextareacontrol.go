@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FilterTextAreaControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterTextAreaControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtertextareacontrol.html
-type Dashboard_FilterTextAreaControl struct {
+type Dashboard_FilterTextAreaControl[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_FilterTextAreaControl struct {
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtertextareacontrol.html#cfn-quicksight-dashboard-filtertextareacontrol-displayoptions
-	DisplayOptions *Dashboard_TextAreaControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_TextAreaControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Dashboard_FilterTextAreaControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterTextAreaControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterTextAreaControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterTextAreaControl"
 }

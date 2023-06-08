@@ -8,7 +8,7 @@ import (
 
 // VdmAttributes_DashboardAttributes AWS CloudFormation Resource (AWS::SES::VdmAttributes.DashboardAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-vdmattributes-dashboardattributes.html
-type VdmAttributes_DashboardAttributes struct {
+type VdmAttributes_DashboardAttributes[T any] struct {
 
 	// EngagementMetrics AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type VdmAttributes_DashboardAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VdmAttributes_DashboardAttributes) AWSCloudFormationType() string {
+func (r *VdmAttributes_DashboardAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::VdmAttributes.DashboardAttributes"
 }

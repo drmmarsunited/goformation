@@ -8,7 +8,7 @@ import (
 
 // Template_LocalNavigationConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.LocalNavigationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-localnavigationconfiguration.html
-type Template_LocalNavigationConfiguration struct {
+type Template_LocalNavigationConfiguration[T any] struct {
 
 	// TargetSheetId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_LocalNavigationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LocalNavigationConfiguration) AWSCloudFormationType() string {
+func (r *Template_LocalNavigationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LocalNavigationConfiguration"
 }

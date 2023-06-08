@@ -12,22 +12,22 @@ import (
 
 // Assessment AWS CloudFormation Resource (AWS::AuditManager::Assessment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html
-type Assessment struct {
+type Assessment[T any] struct {
 
 	// AssessmentReportsDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-assessmentreportsdestination
-	AssessmentReportsDestination *Assessment_AssessmentReportsDestination `json:"AssessmentReportsDestination,omitempty"`
+	AssessmentReportsDestination *Assessment_AssessmentReportsDestination[any] `json:"AssessmentReportsDestination,omitempty"`
 
 	// AwsAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-awsaccount
-	AwsAccount *Assessment_AWSAccount `json:"AwsAccount,omitempty"`
+	AwsAccount *Assessment_AWSAccount[any] `json:"AwsAccount,omitempty"`
 
 	// Delegations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-delegations
-	Delegations []Assessment_Delegation `json:"Delegations,omitempty"`
+	Delegations []Assessment_Delegation[any] `json:"Delegations,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Assessment struct {
 	// Roles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-roles
-	Roles []Assessment_Role `json:"Roles,omitempty"`
+	Roles []Assessment_Role[any] `json:"Roles,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-scope
-	Scope *Assessment_Scope `json:"Scope,omitempty"`
+	Scope *Assessment_Scope[any] `json:"Scope,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Assessment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Assessment) AWSCloudFormationType() string {
+func (r *Assessment[any]) AWSCloudFormationType() string {
 	return "AWS::AuditManager::Assessment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Assessment) MarshalJSON() ([]byte, error) {
-	type Properties Assessment
+func (r Assessment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Assessment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Assessment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Assessment) UnmarshalJSON(b []byte) error {
-	type Properties Assessment
+func (r *Assessment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Assessment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Assessment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Assessment(*res.Properties)
+		*r = Assessment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

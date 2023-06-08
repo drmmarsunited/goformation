@@ -8,42 +8,42 @@ import (
 
 // Application_ApplicationConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html
-type Application_ApplicationConfiguration struct {
+type Application_ApplicationConfiguration[T any] struct {
 
 	// ApplicationCodeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationcodeconfiguration
-	ApplicationCodeConfiguration *Application_ApplicationCodeConfiguration `json:"ApplicationCodeConfiguration,omitempty"`
+	ApplicationCodeConfiguration *Application_ApplicationCodeConfiguration[any] `json:"ApplicationCodeConfiguration,omitempty"`
 
 	// ApplicationSnapshotConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationsnapshotconfiguration
-	ApplicationSnapshotConfiguration *Application_ApplicationSnapshotConfiguration `json:"ApplicationSnapshotConfiguration,omitempty"`
+	ApplicationSnapshotConfiguration *Application_ApplicationSnapshotConfiguration[any] `json:"ApplicationSnapshotConfiguration,omitempty"`
 
 	// EnvironmentProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-environmentproperties
-	EnvironmentProperties *Application_EnvironmentProperties `json:"EnvironmentProperties,omitempty"`
+	EnvironmentProperties *Application_EnvironmentProperties[any] `json:"EnvironmentProperties,omitempty"`
 
 	// FlinkApplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-flinkapplicationconfiguration
-	FlinkApplicationConfiguration *Application_FlinkApplicationConfiguration `json:"FlinkApplicationConfiguration,omitempty"`
+	FlinkApplicationConfiguration *Application_FlinkApplicationConfiguration[any] `json:"FlinkApplicationConfiguration,omitempty"`
 
 	// SqlApplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-sqlapplicationconfiguration
-	SqlApplicationConfiguration *Application_SqlApplicationConfiguration `json:"SqlApplicationConfiguration,omitempty"`
+	SqlApplicationConfiguration *Application_SqlApplicationConfiguration[any] `json:"SqlApplicationConfiguration,omitempty"`
 
 	// VpcConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-vpcconfigurations
-	VpcConfigurations []Application_VpcConfiguration `json:"VpcConfigurations,omitempty"`
+	VpcConfigurations []Application_VpcConfiguration[any] `json:"VpcConfigurations,omitempty"`
 
 	// ZeppelinApplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-zeppelinapplicationconfiguration
-	ZeppelinApplicationConfiguration *Application_ZeppelinApplicationConfiguration `json:"ZeppelinApplicationConfiguration,omitempty"`
+	ZeppelinApplicationConfiguration *Application_ZeppelinApplicationConfiguration[any] `json:"ZeppelinApplicationConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Application_ApplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationConfiguration) AWSCloudFormationType() string {
+func (r *Application_ApplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration"
 }

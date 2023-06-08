@@ -8,32 +8,32 @@ import (
 
 // Template_TableVisual AWS CloudFormation Resource (AWS::QuickSight::Template.TableVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html
-type Template_TableVisual struct {
+type Template_TableVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-chartconfiguration
-	ChartConfiguration *Template_TableConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_TableConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-conditionalformatting
-	ConditionalFormatting *Template_TableConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Template_TableConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Template_TableVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableVisual) AWSCloudFormationType() string {
+func (r *Template_TableVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableVisual"
 }

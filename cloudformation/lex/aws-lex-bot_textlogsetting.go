@@ -8,17 +8,17 @@ import (
 
 // Bot_TextLogSetting AWS CloudFormation Resource (AWS::Lex::Bot.TextLogSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html
-type Bot_TextLogSetting struct {
+type Bot_TextLogSetting[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-destination
-	Destination *Bot_TextLogDestination `json:"Destination"`
+	Destination *Bot_TextLogDestination[any] `json:"Destination"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_TextLogSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_TextLogSetting) AWSCloudFormationType() string {
+func (r *Bot_TextLogSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.TextLogSetting"
 }

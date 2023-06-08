@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ArcAxisDisplayRange AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ArcAxisDisplayRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcaxisdisplayrange.html
-type Dashboard_ArcAxisDisplayRange struct {
+type Dashboard_ArcAxisDisplayRange[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcaxisdisplayrange.html#cfn-quicksight-dashboard-arcaxisdisplayrange-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcaxisdisplayrange.html#cfn-quicksight-dashboard-arcaxisdisplayrange-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_ArcAxisDisplayRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ArcAxisDisplayRange) AWSCloudFormationType() string {
+func (r *Dashboard_ArcAxisDisplayRange[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ArcAxisDisplayRange"
 }

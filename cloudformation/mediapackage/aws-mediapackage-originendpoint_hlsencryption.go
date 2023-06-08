@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_HlsEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html
-type OriginEndpoint_HlsEncryption struct {
+type OriginEndpoint_HlsEncryption[T any] struct {
 
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type OriginEndpoint_HlsEncryption struct {
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-keyrotationintervalseconds
-	KeyRotationIntervalSeconds *int `json:"KeyRotationIntervalSeconds,omitempty"`
+	KeyRotationIntervalSeconds *T `json:"KeyRotationIntervalSeconds,omitempty"`
 
 	// RepeatExtXKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-repeatextxkey
-	RepeatExtXKey *bool `json:"RepeatExtXKey,omitempty"`
+	RepeatExtXKey *T `json:"RepeatExtXKey,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-spekekeyprovider
-	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type OriginEndpoint_HlsEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_HlsEncryption) AWSCloudFormationType() string {
+func (r *OriginEndpoint_HlsEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.HlsEncryption"
 }

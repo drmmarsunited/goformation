@@ -11,22 +11,22 @@ import (
 
 // RunGroup AWS CloudFormation Resource (AWS::Omics::RunGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-rungroup.html
-type RunGroup struct {
+type RunGroup[T any] struct {
 
 	// MaxCpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-rungroup.html#cfn-omics-rungroup-maxcpus
-	MaxCpus *float64 `json:"MaxCpus,omitempty"`
+	MaxCpus *T `json:"MaxCpus,omitempty"`
 
 	// MaxDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-rungroup.html#cfn-omics-rungroup-maxduration
-	MaxDuration *float64 `json:"MaxDuration,omitempty"`
+	MaxDuration *T `json:"MaxDuration,omitempty"`
 
 	// MaxRuns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-rungroup.html#cfn-omics-rungroup-maxruns
-	MaxRuns *float64 `json:"MaxRuns,omitempty"`
+	MaxRuns *T `json:"MaxRuns,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type RunGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RunGroup) AWSCloudFormationType() string {
+func (r *RunGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::RunGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RunGroup) MarshalJSON() ([]byte, error) {
-	type Properties RunGroup
+func (r RunGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties RunGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r RunGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RunGroup) UnmarshalJSON(b []byte) error {
-	type Properties RunGroup
+func (r *RunGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties RunGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *RunGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RunGroup(*res.Properties)
+		*r = RunGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

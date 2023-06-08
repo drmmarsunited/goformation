@@ -11,12 +11,12 @@ import (
 
 // Fleet AWS CloudFormation Resource (AWS::GameLift::Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html
-type Fleet struct {
+type Fleet[T any] struct {
 
 	// AnywhereConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-anywhereconfiguration
-	AnywhereConfiguration *Fleet_AnywhereConfiguration `json:"AnywhereConfiguration,omitempty"`
+	AnywhereConfiguration *Fleet_AnywhereConfiguration[any] `json:"AnywhereConfiguration,omitempty"`
 
 	// BuildId AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type Fleet struct {
 	// CertificateConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration
-	CertificateConfiguration *Fleet_CertificateConfiguration `json:"CertificateConfiguration,omitempty"`
+	CertificateConfiguration *Fleet_CertificateConfiguration[any] `json:"CertificateConfiguration,omitempty"`
 
 	// ComputeType AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type Fleet struct {
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
-	DesiredEC2Instances *int `json:"DesiredEC2Instances,omitempty"`
+	DesiredEC2Instances *T `json:"DesiredEC2Instances,omitempty"`
 
 	// EC2InboundPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions
-	EC2InboundPermissions []Fleet_IpPermission `json:"EC2InboundPermissions,omitempty"`
+	EC2InboundPermissions []Fleet_IpPermission[any] `json:"EC2InboundPermissions,omitempty"`
 
 	// EC2InstanceType AWS CloudFormation Property
 	// Required: false
@@ -66,12 +66,12 @@ type Fleet struct {
 	// Locations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-locations
-	Locations []Fleet_LocationConfiguration `json:"Locations,omitempty"`
+	Locations []Fleet_LocationConfiguration[any] `json:"Locations,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
-	MaxSize *int `json:"MaxSize,omitempty"`
+	MaxSize *T `json:"MaxSize,omitempty"`
 
 	// MetricGroups AWS CloudFormation Property
 	// Required: false
@@ -81,7 +81,7 @@ type Fleet struct {
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
-	MinSize *int `json:"MinSize,omitempty"`
+	MinSize *T `json:"MinSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -106,12 +106,12 @@ type Fleet struct {
 	// ResourceCreationLimitPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-resourcecreationlimitpolicy
-	ResourceCreationLimitPolicy *Fleet_ResourceCreationLimitPolicy `json:"ResourceCreationLimitPolicy,omitempty"`
+	ResourceCreationLimitPolicy *Fleet_ResourceCreationLimitPolicy[any] `json:"ResourceCreationLimitPolicy,omitempty"`
 
 	// RuntimeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration
-	RuntimeConfiguration *Fleet_RuntimeConfiguration `json:"RuntimeConfiguration,omitempty"`
+	RuntimeConfiguration *Fleet_RuntimeConfiguration[any] `json:"RuntimeConfiguration,omitempty"`
 
 	// ScriptId AWS CloudFormation Property
 	// Required: false
@@ -135,14 +135,15 @@ type Fleet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet) AWSCloudFormationType() string {
+func (r *Fleet[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Fleet) MarshalJSON() ([]byte, error) {
-	type Properties Fleet
+func (r Fleet[any]) MarshalJSON() ([]byte, error) {
+	type Properties Fleet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -164,8 +165,9 @@ func (r Fleet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Fleet) UnmarshalJSON(b []byte) error {
-	type Properties Fleet
+func (r *Fleet[any]) UnmarshalJSON(b []byte) error {
+	type Properties Fleet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -185,7 +187,7 @@ func (r *Fleet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Fleet(*res.Properties)
+		*r = Fleet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

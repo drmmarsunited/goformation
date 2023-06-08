@@ -8,32 +8,32 @@ import (
 
 // Analysis_DataLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html
-type Analysis_DataLabelType struct {
+type Analysis_DataLabelType[T any] struct {
 
 	// DataPathLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html#cfn-quicksight-analysis-datalabeltype-datapathlabeltype
-	DataPathLabelType *Analysis_DataPathLabelType `json:"DataPathLabelType,omitempty"`
+	DataPathLabelType *Analysis_DataPathLabelType[any] `json:"DataPathLabelType,omitempty"`
 
 	// FieldLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html#cfn-quicksight-analysis-datalabeltype-fieldlabeltype
-	FieldLabelType *Analysis_FieldLabelType `json:"FieldLabelType,omitempty"`
+	FieldLabelType *Analysis_FieldLabelType[any] `json:"FieldLabelType,omitempty"`
 
 	// MaximumLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html#cfn-quicksight-analysis-datalabeltype-maximumlabeltype
-	MaximumLabelType *Analysis_MaximumLabelType `json:"MaximumLabelType,omitempty"`
+	MaximumLabelType *Analysis_MaximumLabelType[any] `json:"MaximumLabelType,omitempty"`
 
 	// MinimumLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html#cfn-quicksight-analysis-datalabeltype-minimumlabeltype
-	MinimumLabelType *Analysis_MinimumLabelType `json:"MinimumLabelType,omitempty"`
+	MinimumLabelType *Analysis_MinimumLabelType[any] `json:"MinimumLabelType,omitempty"`
 
 	// RangeEndsLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datalabeltype.html#cfn-quicksight-analysis-datalabeltype-rangeendslabeltype
-	RangeEndsLabelType *Analysis_RangeEndsLabelType `json:"RangeEndsLabelType,omitempty"`
+	RangeEndsLabelType *Analysis_RangeEndsLabelType[any] `json:"RangeEndsLabelType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_DataLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataLabelType) AWSCloudFormationType() string {
+func (r *Analysis_DataLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataLabelType"
 }

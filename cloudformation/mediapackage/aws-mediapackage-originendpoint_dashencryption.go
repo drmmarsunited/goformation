@@ -8,17 +8,17 @@ import (
 
 // OriginEndpoint_DashEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.DashEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html
-type OriginEndpoint_DashEncryption struct {
+type OriginEndpoint_DashEncryption[T any] struct {
 
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html#cfn-mediapackage-originendpoint-dashencryption-keyrotationintervalseconds
-	KeyRotationIntervalSeconds *int `json:"KeyRotationIntervalSeconds,omitempty"`
+	KeyRotationIntervalSeconds *T `json:"KeyRotationIntervalSeconds,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html#cfn-mediapackage-originendpoint-dashencryption-spekekeyprovider
-	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type OriginEndpoint_DashEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_DashEncryption) AWSCloudFormationType() string {
+func (r *OriginEndpoint_DashEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.DashEncryption"
 }

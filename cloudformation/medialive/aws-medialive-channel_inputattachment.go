@@ -8,12 +8,12 @@ import (
 
 // Channel_InputAttachment AWS CloudFormation Resource (AWS::MediaLive::Channel.InputAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html
-type Channel_InputAttachment struct {
+type Channel_InputAttachment[T any] struct {
 
 	// AutomaticInputFailoverSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-automaticinputfailoversettings
-	AutomaticInputFailoverSettings *Channel_AutomaticInputFailoverSettings `json:"AutomaticInputFailoverSettings,omitempty"`
+	AutomaticInputFailoverSettings *Channel_AutomaticInputFailoverSettings[any] `json:"AutomaticInputFailoverSettings,omitempty"`
 
 	// InputAttachmentName AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Channel_InputAttachment struct {
 	// InputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings
-	InputSettings *Channel_InputSettings `json:"InputSettings,omitempty"`
+	InputSettings *Channel_InputSettings[any] `json:"InputSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_InputAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputAttachment) AWSCloudFormationType() string {
+func (r *Channel_InputAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputAttachment"
 }

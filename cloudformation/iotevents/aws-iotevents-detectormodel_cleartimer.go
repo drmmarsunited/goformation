@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_ClearTimer AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.ClearTimer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-cleartimer.html
-type DetectorModel_ClearTimer struct {
+type DetectorModel_ClearTimer[T any] struct {
 
 	// TimerName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DetectorModel_ClearTimer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_ClearTimer) AWSCloudFormationType() string {
+func (r *DetectorModel_ClearTimer[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.ClearTimer"
 }

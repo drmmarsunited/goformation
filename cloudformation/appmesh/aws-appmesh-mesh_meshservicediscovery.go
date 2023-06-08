@@ -8,7 +8,7 @@ import (
 
 // Mesh_MeshServiceDiscovery AWS CloudFormation Resource (AWS::AppMesh::Mesh.MeshServiceDiscovery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html
-type Mesh_MeshServiceDiscovery struct {
+type Mesh_MeshServiceDiscovery[T any] struct {
 
 	// IpPreference AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Mesh_MeshServiceDiscovery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Mesh_MeshServiceDiscovery) AWSCloudFormationType() string {
+func (r *Mesh_MeshServiceDiscovery[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Mesh.MeshServiceDiscovery"
 }

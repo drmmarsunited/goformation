@@ -8,7 +8,7 @@ import (
 
 // Asset_EgressEndpoint AWS CloudFormation Resource (AWS::MediaPackage::Asset.EgressEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-asset-egressendpoint.html
-type Asset_EgressEndpoint struct {
+type Asset_EgressEndpoint[T any] struct {
 
 	// PackagingConfigurationId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Asset_EgressEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Asset_EgressEndpoint) AWSCloudFormationType() string {
+func (r *Asset_EgressEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Asset.EgressEndpoint"
 }

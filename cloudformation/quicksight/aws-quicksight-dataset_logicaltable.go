@@ -8,7 +8,7 @@ import (
 
 // DataSet_LogicalTable AWS CloudFormation Resource (AWS::QuickSight::DataSet.LogicalTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html
-type DataSet_LogicalTable struct {
+type DataSet_LogicalTable[T any] struct {
 
 	// Alias AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type DataSet_LogicalTable struct {
 	// DataTransforms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-datatransforms
-	DataTransforms []DataSet_TransformOperation `json:"DataTransforms,omitempty"`
+	DataTransforms []DataSet_TransformOperation[any] `json:"DataTransforms,omitempty"`
 
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-source
-	Source *DataSet_LogicalTableSource `json:"Source"`
+	Source *DataSet_LogicalTableSource[any] `json:"Source"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSet_LogicalTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_LogicalTable) AWSCloudFormationType() string {
+func (r *DataSet_LogicalTable[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.LogicalTable"
 }

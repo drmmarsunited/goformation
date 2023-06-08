@@ -8,17 +8,17 @@ import (
 
 // Route_MatchRange AWS CloudFormation Resource (AWS::AppMesh::Route.MatchRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html
-type Route_MatchRange struct {
+type Route_MatchRange[T any] struct {
 
 	// End AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-end
-	End int `json:"End"`
+	End T `json:"End"`
 
 	// Start AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-start
-	Start int `json:"Start"`
+	Start T `json:"Start"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Route_MatchRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_MatchRange) AWSCloudFormationType() string {
+func (r *Route_MatchRange[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.MatchRange"
 }

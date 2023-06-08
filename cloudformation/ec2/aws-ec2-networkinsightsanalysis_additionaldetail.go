@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AdditionalDetail AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AdditionalDetail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html
-type NetworkInsightsAnalysis_AdditionalDetail struct {
+type NetworkInsightsAnalysis_AdditionalDetail[T any] struct {
 
 	// AdditionalDetailType AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type NetworkInsightsAnalysis_AdditionalDetail struct {
 	// Component AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-component
-	Component *NetworkInsightsAnalysis_AnalysisComponent `json:"Component,omitempty"`
+	Component *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"Component,omitempty"`
 
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-loadbalancers
-	LoadBalancers []NetworkInsightsAnalysis_AnalysisComponent `json:"LoadBalancers,omitempty"`
+	LoadBalancers []NetworkInsightsAnalysis_AnalysisComponent[any] `json:"LoadBalancers,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type NetworkInsightsAnalysis_AdditionalDetail struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AdditionalDetail) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AdditionalDetail[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AdditionalDetail"
 }

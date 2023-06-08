@@ -8,7 +8,7 @@ import (
 
 // Method_MethodResponse AWS CloudFormation Resource (AWS::ApiGateway::Method.MethodResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html
-type Method_MethodResponse struct {
+type Method_MethodResponse[T any] struct {
 
 	// ResponseModels AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Method_MethodResponse struct {
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responseparameters
-	ResponseParameters map[string]bool `json:"ResponseParameters,omitempty"`
+	ResponseParameters map[string]T `json:"ResponseParameters,omitempty"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Method_MethodResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Method_MethodResponse) AWSCloudFormationType() string {
+func (r *Method_MethodResponse[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Method.MethodResponse"
 }

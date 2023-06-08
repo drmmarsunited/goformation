@@ -8,7 +8,7 @@ import (
 
 // Flow_DynatraceSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.DynatraceSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-dynatracesourceproperties.html
-type Flow_DynatraceSourceProperties struct {
+type Flow_DynatraceSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_DynatraceSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_DynatraceSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_DynatraceSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.DynatraceSourceProperties"
 }

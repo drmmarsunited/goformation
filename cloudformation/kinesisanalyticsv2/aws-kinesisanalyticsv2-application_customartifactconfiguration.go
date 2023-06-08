@@ -8,7 +8,7 @@ import (
 
 // Application_CustomArtifactConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CustomArtifactConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-customartifactconfiguration.html
-type Application_CustomArtifactConfiguration struct {
+type Application_CustomArtifactConfiguration[T any] struct {
 
 	// ArtifactType AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Application_CustomArtifactConfiguration struct {
 	// MavenReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-customartifactconfiguration.html#cfn-kinesisanalyticsv2-application-customartifactconfiguration-mavenreference
-	MavenReference *Application_MavenReference `json:"MavenReference,omitempty"`
+	MavenReference *Application_MavenReference[any] `json:"MavenReference,omitempty"`
 
 	// S3ContentLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-customartifactconfiguration.html#cfn-kinesisanalyticsv2-application-customartifactconfiguration-s3contentlocation
-	S3ContentLocation *Application_S3ContentLocation `json:"S3ContentLocation,omitempty"`
+	S3ContentLocation *Application_S3ContentLocation[any] `json:"S3ContentLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Application_CustomArtifactConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_CustomArtifactConfiguration) AWSCloudFormationType() string {
+func (r *Application_CustomArtifactConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.CustomArtifactConfiguration"
 }

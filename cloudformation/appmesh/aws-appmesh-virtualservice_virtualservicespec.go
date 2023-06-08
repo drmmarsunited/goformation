@@ -8,12 +8,12 @@ import (
 
 // VirtualService_VirtualServiceSpec AWS CloudFormation Resource (AWS::AppMesh::VirtualService.VirtualServiceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html
-type VirtualService_VirtualServiceSpec struct {
+type VirtualService_VirtualServiceSpec[T any] struct {
 
 	// Provider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html#cfn-appmesh-virtualservice-virtualservicespec-provider
-	Provider *VirtualService_VirtualServiceProvider `json:"Provider,omitempty"`
+	Provider *VirtualService_VirtualServiceProvider[any] `json:"Provider,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualService_VirtualServiceSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualService_VirtualServiceSpec) AWSCloudFormationType() string {
+func (r *VirtualService_VirtualServiceSpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualService.VirtualServiceSpec"
 }

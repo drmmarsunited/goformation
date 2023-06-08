@@ -12,7 +12,7 @@ import (
 
 // NotebookInstance AWS CloudFormation Resource (AWS::SageMaker::NotebookInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html
-type NotebookInstance struct {
+type NotebookInstance[T any] struct {
 
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type NotebookInstance struct {
 	// InstanceMetadataServiceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancemetadataserviceconfiguration
-	InstanceMetadataServiceConfiguration *NotebookInstance_InstanceMetadataServiceConfiguration `json:"InstanceMetadataServiceConfiguration,omitempty"`
+	InstanceMetadataServiceConfiguration *NotebookInstance_InstanceMetadataServiceConfiguration[any] `json:"InstanceMetadataServiceConfiguration,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -92,7 +92,7 @@ type NotebookInstance struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-volumesizeingb
-	VolumeSizeInGB *int `json:"VolumeSizeInGB,omitempty"`
+	VolumeSizeInGB *T `json:"VolumeSizeInGB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -111,14 +111,15 @@ type NotebookInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotebookInstance) AWSCloudFormationType() string {
+func (r *NotebookInstance[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::NotebookInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NotebookInstance) MarshalJSON() ([]byte, error) {
-	type Properties NotebookInstance
+func (r NotebookInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties NotebookInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -140,8 +141,9 @@ func (r NotebookInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NotebookInstance) UnmarshalJSON(b []byte) error {
-	type Properties NotebookInstance
+func (r *NotebookInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties NotebookInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -161,7 +163,7 @@ func (r *NotebookInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NotebookInstance(*res.Properties)
+		*r = NotebookInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

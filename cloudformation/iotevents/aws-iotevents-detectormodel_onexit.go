@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_OnExit AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.OnExit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html
-type DetectorModel_OnExit struct {
+type DetectorModel_OnExit[T any] struct {
 
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html#cfn-iotevents-detectormodel-onexit-events
-	Events []DetectorModel_Event `json:"Events,omitempty"`
+	Events []DetectorModel_Event[any] `json:"Events,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DetectorModel_OnExit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_OnExit) AWSCloudFormationType() string {
+func (r *DetectorModel_OnExit[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.OnExit"
 }

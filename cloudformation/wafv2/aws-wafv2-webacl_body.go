@@ -8,7 +8,7 @@ import (
 
 // WebACL_Body AWS CloudFormation Resource (AWS::WAFv2::WebACL.Body)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-body.html
-type WebACL_Body struct {
+type WebACL_Body[T any] struct {
 
 	// OversizeHandling AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type WebACL_Body struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Body) AWSCloudFormationType() string {
+func (r *WebACL_Body[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.Body"
 }

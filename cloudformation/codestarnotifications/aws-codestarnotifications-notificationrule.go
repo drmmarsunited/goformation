@@ -11,7 +11,7 @@ import (
 
 // NotificationRule AWS CloudFormation Resource (AWS::CodeStarNotifications::NotificationRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html
-type NotificationRule struct {
+type NotificationRule[T any] struct {
 
 	// CreatedBy AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type NotificationRule struct {
 	// Targets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targets
-	Targets []NotificationRule_Target `json:"Targets"`
+	Targets []NotificationRule_Target[any] `json:"Targets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -80,14 +80,15 @@ type NotificationRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationRule) AWSCloudFormationType() string {
+func (r *NotificationRule[any]) AWSCloudFormationType() string {
 	return "AWS::CodeStarNotifications::NotificationRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NotificationRule) MarshalJSON() ([]byte, error) {
-	type Properties NotificationRule
+func (r NotificationRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties NotificationRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r NotificationRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NotificationRule) UnmarshalJSON(b []byte) error {
-	type Properties NotificationRule
+func (r *NotificationRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties NotificationRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *NotificationRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NotificationRule(*res.Properties)
+		*r = NotificationRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

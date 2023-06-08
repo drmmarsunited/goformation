@@ -11,7 +11,7 @@ import (
 
 // LayerVersion AWS CloudFormation Resource (AWS::Lambda::LayerVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html
-type LayerVersion struct {
+type LayerVersion[T any] struct {
 
 	// CompatibleArchitectures AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type LayerVersion struct {
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content
-	Content *LayerVersion_Content `json:"Content"`
+	Content *LayerVersion_Content[any] `json:"Content"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type LayerVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LayerVersion) AWSCloudFormationType() string {
+func (r *LayerVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::LayerVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LayerVersion) MarshalJSON() ([]byte, error) {
-	type Properties LayerVersion
+func (r LayerVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties LayerVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r LayerVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LayerVersion) UnmarshalJSON(b []byte) error {
-	type Properties LayerVersion
+func (r *LayerVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties LayerVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *LayerVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LayerVersion(*res.Properties)
+		*r = LayerVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

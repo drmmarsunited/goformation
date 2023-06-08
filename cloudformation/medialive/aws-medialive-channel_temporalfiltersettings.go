@@ -8,7 +8,7 @@ import (
 
 // Channel_TemporalFilterSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.TemporalFilterSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-temporalfiltersettings.html
-type Channel_TemporalFilterSettings struct {
+type Channel_TemporalFilterSettings[T any] struct {
 
 	// PostFilterSharpening AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_TemporalFilterSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TemporalFilterSettings) AWSCloudFormationType() string {
+func (r *Channel_TemporalFilterSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TemporalFilterSettings"
 }

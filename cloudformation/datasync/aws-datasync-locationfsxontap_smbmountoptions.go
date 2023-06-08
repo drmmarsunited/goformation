@@ -8,7 +8,7 @@ import (
 
 // LocationFSxONTAP_SmbMountOptions AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP.SmbMountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smbmountoptions.html
-type LocationFSxONTAP_SmbMountOptions struct {
+type LocationFSxONTAP_SmbMountOptions[T any] struct {
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LocationFSxONTAP_SmbMountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP_SmbMountOptions) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP_SmbMountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP.SmbMountOptions"
 }

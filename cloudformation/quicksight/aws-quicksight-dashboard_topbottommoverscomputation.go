@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TopBottomMoversComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TopBottomMoversComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottommoverscomputation.html
-type Dashboard_TopBottomMoversComputation struct {
+type Dashboard_TopBottomMoversComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottommoverscomputation.html#cfn-quicksight-dashboard-topbottommoverscomputation-category
-	Category *Dashboard_DimensionField `json:"Category"`
+	Category *Dashboard_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_TopBottomMoversComputation struct {
 	// MoverSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottommoverscomputation.html#cfn-quicksight-dashboard-topbottommoverscomputation-moversize
-	MoverSize *float64 `json:"MoverSize,omitempty"`
+	MoverSize *T `json:"MoverSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Dashboard_TopBottomMoversComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottommoverscomputation.html#cfn-quicksight-dashboard-topbottommoverscomputation-time
-	Time *Dashboard_DimensionField `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type Dashboard_TopBottomMoversComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottommoverscomputation.html#cfn-quicksight-dashboard-topbottommoverscomputation-value
-	Value *Dashboard_MeasureField `json:"Value,omitempty"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Dashboard_TopBottomMoversComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TopBottomMoversComputation) AWSCloudFormationType() string {
+func (r *Dashboard_TopBottomMoversComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TopBottomMoversComputation"
 }

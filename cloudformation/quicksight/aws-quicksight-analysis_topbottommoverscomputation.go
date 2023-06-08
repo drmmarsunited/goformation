@@ -8,12 +8,12 @@ import (
 
 // Analysis_TopBottomMoversComputation AWS CloudFormation Resource (AWS::QuickSight::Analysis.TopBottomMoversComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottommoverscomputation.html
-type Analysis_TopBottomMoversComputation struct {
+type Analysis_TopBottomMoversComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottommoverscomputation.html#cfn-quicksight-analysis-topbottommoverscomputation-category
-	Category *Analysis_DimensionField `json:"Category"`
+	Category *Analysis_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_TopBottomMoversComputation struct {
 	// MoverSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottommoverscomputation.html#cfn-quicksight-analysis-topbottommoverscomputation-moversize
-	MoverSize *float64 `json:"MoverSize,omitempty"`
+	MoverSize *T `json:"MoverSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Analysis_TopBottomMoversComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottommoverscomputation.html#cfn-quicksight-analysis-topbottommoverscomputation-time
-	Time *Analysis_DimensionField `json:"Time"`
+	Time *Analysis_DimensionField[any] `json:"Time"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type Analysis_TopBottomMoversComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottommoverscomputation.html#cfn-quicksight-analysis-topbottommoverscomputation-value
-	Value *Analysis_MeasureField `json:"Value,omitempty"`
+	Value *Analysis_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Analysis_TopBottomMoversComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TopBottomMoversComputation) AWSCloudFormationType() string {
+func (r *Analysis_TopBottomMoversComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TopBottomMoversComputation"
 }

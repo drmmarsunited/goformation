@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FreeFormLayoutElementBackgroundStyle AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormLayoutElementBackgroundStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutelementbackgroundstyle.html
-type Dashboard_FreeFormLayoutElementBackgroundStyle struct {
+type Dashboard_FreeFormLayoutElementBackgroundStyle[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_FreeFormLayoutElementBackgroundStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormLayoutElementBackgroundStyle) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormLayoutElementBackgroundStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormLayoutElementBackgroundStyle"
 }

@@ -8,17 +8,17 @@ import (
 
 // Solution_IntegerHyperParameterRange AWS CloudFormation Resource (AWS::Personalize::Solution.IntegerHyperParameterRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-integerhyperparameterrange.html
-type Solution_IntegerHyperParameterRange struct {
+type Solution_IntegerHyperParameterRange[T any] struct {
 
 	// MaxValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-integerhyperparameterrange.html#cfn-personalize-solution-integerhyperparameterrange-maxvalue
-	MaxValue *int `json:"MaxValue,omitempty"`
+	MaxValue *T `json:"MaxValue,omitempty"`
 
 	// MinValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-integerhyperparameterrange.html#cfn-personalize-solution-integerhyperparameterrange-minvalue
-	MinValue *int `json:"MinValue,omitempty"`
+	MinValue *T `json:"MinValue,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Solution_IntegerHyperParameterRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_IntegerHyperParameterRange) AWSCloudFormationType() string {
+func (r *Solution_IntegerHyperParameterRange[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.IntegerHyperParameterRange"
 }

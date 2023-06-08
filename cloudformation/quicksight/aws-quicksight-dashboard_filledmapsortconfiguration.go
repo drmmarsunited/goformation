@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilledMapSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilledMapSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapsortconfiguration.html
-type Dashboard_FilledMapSortConfiguration struct {
+type Dashboard_FilledMapSortConfiguration[T any] struct {
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapsortconfiguration.html#cfn-quicksight-dashboard-filledmapsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_FilledMapSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilledMapSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FilledMapSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilledMapSortConfiguration"
 }

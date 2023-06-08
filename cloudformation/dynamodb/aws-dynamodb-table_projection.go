@@ -8,7 +8,7 @@ import (
 
 // Table_Projection AWS CloudFormation Resource (AWS::DynamoDB::Table.Projection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-projection.html
-type Table_Projection struct {
+type Table_Projection[T any] struct {
 
 	// NonKeyAttributes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Table_Projection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_Projection) AWSCloudFormationType() string {
+func (r *Table_Projection[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.Projection"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSource_SalesforceChatterFeedConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SalesforceChatterFeedConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html
-type DataSource_SalesforceChatterFeedConfiguration struct {
+type DataSource_SalesforceChatterFeedConfiguration[T any] struct {
 
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_SalesforceChatterFeedConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// IncludeFilterTypes AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DataSource_SalesforceChatterFeedConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SalesforceChatterFeedConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SalesforceChatterFeedConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SalesforceChatterFeedConfiguration"
 }

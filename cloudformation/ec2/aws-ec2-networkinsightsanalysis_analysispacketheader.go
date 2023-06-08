@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisPacketHeader AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html
-type NetworkInsightsAnalysis_AnalysisPacketHeader struct {
+type NetworkInsightsAnalysis_AnalysisPacketHeader[T any] struct {
 
 	// DestinationAddresses AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type NetworkInsightsAnalysis_AnalysisPacketHeader struct {
 	// DestinationPortRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges
-	DestinationPortRanges []NetworkInsightsAnalysis_PortRange `json:"DestinationPortRanges,omitempty"`
+	DestinationPortRanges []NetworkInsightsAnalysis_PortRange[any] `json:"DestinationPortRanges,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type NetworkInsightsAnalysis_AnalysisPacketHeader struct {
 	// SourcePortRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges
-	SourcePortRanges []NetworkInsightsAnalysis_PortRange `json:"SourcePortRanges,omitempty"`
+	SourcePortRanges []NetworkInsightsAnalysis_PortRange[any] `json:"SourcePortRanges,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type NetworkInsightsAnalysis_AnalysisPacketHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisPacketHeader) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisPacketHeader[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader"
 }

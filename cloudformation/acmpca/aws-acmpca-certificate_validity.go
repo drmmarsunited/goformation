@@ -8,7 +8,7 @@ import (
 
 // Certificate_Validity AWS CloudFormation Resource (AWS::ACMPCA::Certificate.Validity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html
-type Certificate_Validity struct {
+type Certificate_Validity[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Certificate_Validity struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Certificate_Validity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_Validity) AWSCloudFormationType() string {
+func (r *Certificate_Validity[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.Validity"
 }

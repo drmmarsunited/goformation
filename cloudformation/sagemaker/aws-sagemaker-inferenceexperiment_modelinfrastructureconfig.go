@@ -8,7 +8,7 @@ import (
 
 // InferenceExperiment_ModelInfrastructureConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.ModelInfrastructureConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-modelinfrastructureconfig.html
-type InferenceExperiment_ModelInfrastructureConfig struct {
+type InferenceExperiment_ModelInfrastructureConfig[T any] struct {
 
 	// InfrastructureType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type InferenceExperiment_ModelInfrastructureConfig struct {
 	// RealTimeInferenceConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-modelinfrastructureconfig.html#cfn-sagemaker-inferenceexperiment-modelinfrastructureconfig-realtimeinferenceconfig
-	RealTimeInferenceConfig *InferenceExperiment_RealTimeInferenceConfig `json:"RealTimeInferenceConfig"`
+	RealTimeInferenceConfig *InferenceExperiment_RealTimeInferenceConfig[any] `json:"RealTimeInferenceConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InferenceExperiment_ModelInfrastructureConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_ModelInfrastructureConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_ModelInfrastructureConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.ModelInfrastructureConfig"
 }

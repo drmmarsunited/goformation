@@ -8,7 +8,7 @@ import (
 
 // RecordingConfiguration_ThumbnailConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration.ThumbnailConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html
-type RecordingConfiguration_ThumbnailConfiguration struct {
+type RecordingConfiguration_ThumbnailConfiguration[T any] struct {
 
 	// RecordingMode AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type RecordingConfiguration_ThumbnailConfiguration struct {
 	// TargetIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-targetintervalseconds
-	TargetIntervalSeconds *int `json:"TargetIntervalSeconds,omitempty"`
+	TargetIntervalSeconds *T `json:"TargetIntervalSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RecordingConfiguration_ThumbnailConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordingConfiguration_ThumbnailConfiguration) AWSCloudFormationType() string {
+func (r *RecordingConfiguration_ThumbnailConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVS::RecordingConfiguration.ThumbnailConfiguration"
 }

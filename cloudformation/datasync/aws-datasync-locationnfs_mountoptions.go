@@ -8,7 +8,7 @@ import (
 
 // LocationNFS_MountOptions AWS CloudFormation Resource (AWS::DataSync::LocationNFS.MountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationnfs-mountoptions.html
-type LocationNFS_MountOptions struct {
+type LocationNFS_MountOptions[T any] struct {
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LocationNFS_MountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationNFS_MountOptions) AWSCloudFormationType() string {
+func (r *LocationNFS_MountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationNFS.MountOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_MetricComparisonComputation AWS CloudFormation Resource (AWS::QuickSight::Template.MetricComparisonComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html
-type Template_MetricComparisonComputation struct {
+type Template_MetricComparisonComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_MetricComparisonComputation struct {
 	// FromValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-fromvalue
-	FromValue *Template_MeasureField `json:"FromValue"`
+	FromValue *Template_MeasureField[any] `json:"FromValue"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Template_MetricComparisonComputation struct {
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-targetvalue
-	TargetValue *Template_MeasureField `json:"TargetValue"`
+	TargetValue *Template_MeasureField[any] `json:"TargetValue"`
 
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-time
-	Time *Template_DimensionField `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Template_MetricComparisonComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_MetricComparisonComputation) AWSCloudFormationType() string {
+func (r *Template_MetricComparisonComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.MetricComparisonComputation"
 }

@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_AssetPropertyValue AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AssetPropertyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvalue.html
-type AlarmModel_AssetPropertyValue struct {
+type AlarmModel_AssetPropertyValue[T any] struct {
 
 	// Quality AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type AlarmModel_AssetPropertyValue struct {
 	// Timestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvalue.html#cfn-iotevents-alarmmodel-assetpropertyvalue-timestamp
-	Timestamp *AlarmModel_AssetPropertyTimestamp `json:"Timestamp,omitempty"`
+	Timestamp *AlarmModel_AssetPropertyTimestamp[any] `json:"Timestamp,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvalue.html#cfn-iotevents-alarmmodel-assetpropertyvalue-value
-	Value *AlarmModel_AssetPropertyVariant `json:"Value"`
+	Value *AlarmModel_AssetPropertyVariant[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type AlarmModel_AssetPropertyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AssetPropertyValue) AWSCloudFormationType() string {
+func (r *AlarmModel_AssetPropertyValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AssetPropertyValue"
 }

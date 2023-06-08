@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TimeEqualityFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TimeEqualityFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timeequalityfilter.html
-type Dashboard_TimeEqualityFilter struct {
+type Dashboard_TimeEqualityFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timeequalityfilter.html#cfn-quicksight-dashboard-timeequalityfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Dashboard_TimeEqualityFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TimeEqualityFilter) AWSCloudFormationType() string {
+func (r *Dashboard_TimeEqualityFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TimeEqualityFilter"
 }

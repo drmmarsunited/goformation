@@ -8,7 +8,7 @@ import (
 
 // DataSource_GoogleDriveConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.GoogleDriveConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html
-type DataSource_GoogleDriveConfiguration struct {
+type DataSource_GoogleDriveConfiguration[T any] struct {
 
 	// ExcludeMimeTypes AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_GoogleDriveConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type DataSource_GoogleDriveConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_GoogleDriveConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_GoogleDriveConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.GoogleDriveConfiguration"
 }

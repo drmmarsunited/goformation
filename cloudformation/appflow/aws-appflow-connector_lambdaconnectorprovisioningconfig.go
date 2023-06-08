@@ -8,7 +8,7 @@ import (
 
 // Connector_LambdaConnectorProvisioningConfig AWS CloudFormation Resource (AWS::AppFlow::Connector.LambdaConnectorProvisioningConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connector-lambdaconnectorprovisioningconfig.html
-type Connector_LambdaConnectorProvisioningConfig struct {
+type Connector_LambdaConnectorProvisioningConfig[T any] struct {
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Connector_LambdaConnectorProvisioningConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_LambdaConnectorProvisioningConfig) AWSCloudFormationType() string {
+func (r *Connector_LambdaConnectorProvisioningConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Connector.LambdaConnectorProvisioningConfig"
 }

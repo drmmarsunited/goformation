@@ -8,7 +8,7 @@ import (
 
 // TopicRule_StepFunctionsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.StepFunctionsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-stepfunctionsaction.html
-type TopicRule_StepFunctionsAction struct {
+type TopicRule_StepFunctionsAction[T any] struct {
 
 	// ExecutionNamePrefix AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TopicRule_StepFunctionsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_StepFunctionsAction) AWSCloudFormationType() string {
+func (r *TopicRule_StepFunctionsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.StepFunctionsAction"
 }

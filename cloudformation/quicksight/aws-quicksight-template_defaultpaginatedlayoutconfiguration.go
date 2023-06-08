@@ -8,12 +8,12 @@ import (
 
 // Template_DefaultPaginatedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DefaultPaginatedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultpaginatedlayoutconfiguration.html
-type Template_DefaultPaginatedLayoutConfiguration struct {
+type Template_DefaultPaginatedLayoutConfiguration[T any] struct {
 
 	// SectionBased AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultpaginatedlayoutconfiguration.html#cfn-quicksight-template-defaultpaginatedlayoutconfiguration-sectionbased
-	SectionBased *Template_DefaultSectionBasedLayoutConfiguration `json:"SectionBased,omitempty"`
+	SectionBased *Template_DefaultSectionBasedLayoutConfiguration[any] `json:"SectionBased,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_DefaultPaginatedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DefaultPaginatedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_DefaultPaginatedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DefaultPaginatedLayoutConfiguration"
 }

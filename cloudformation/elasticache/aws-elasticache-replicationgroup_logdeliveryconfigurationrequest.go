@@ -8,12 +8,12 @@ import (
 
 // ReplicationGroup_LogDeliveryConfigurationRequest AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.LogDeliveryConfigurationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html
-type ReplicationGroup_LogDeliveryConfigurationRequest struct {
+type ReplicationGroup_LogDeliveryConfigurationRequest[T any] struct {
 
 	// DestinationDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-destinationdetails
-	DestinationDetails *ReplicationGroup_DestinationDetails `json:"DestinationDetails"`
+	DestinationDetails *ReplicationGroup_DestinationDetails[any] `json:"DestinationDetails"`
 
 	// DestinationType AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ReplicationGroup_LogDeliveryConfigurationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationGroup_LogDeliveryConfigurationRequest) AWSCloudFormationType() string {
+func (r *ReplicationGroup_LogDeliveryConfigurationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::ReplicationGroup.LogDeliveryConfigurationRequest"
 }

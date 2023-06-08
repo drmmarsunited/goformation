@@ -8,7 +8,7 @@ import (
 
 // Route_DefaultRouteInput AWS CloudFormation Resource (AWS::RefactorSpaces::Route.DefaultRouteInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-defaultrouteinput.html
-type Route_DefaultRouteInput struct {
+type Route_DefaultRouteInput[T any] struct {
 
 	// ActivationState AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Route_DefaultRouteInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_DefaultRouteInput) AWSCloudFormationType() string {
+func (r *Route_DefaultRouteInput[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Route.DefaultRouteInput"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSource_DeltaSyncConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.DeltaSyncConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html
-type DataSource_DeltaSyncConfig struct {
+type DataSource_DeltaSyncConfig[T any] struct {
 
 	// BaseTableTTL AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_DeltaSyncConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DeltaSyncConfig) AWSCloudFormationType() string {
+func (r *DataSource_DeltaSyncConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.DeltaSyncConfig"
 }

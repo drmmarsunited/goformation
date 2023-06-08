@@ -8,12 +8,12 @@ import (
 
 // MonitoringSubscription_MonitoringSubscription AWS CloudFormation Resource (AWS::CloudFront::MonitoringSubscription.MonitoringSubscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-monitoringsubscription.html
-type MonitoringSubscription_MonitoringSubscription struct {
+type MonitoringSubscription_MonitoringSubscription[T any] struct {
 
 	// RealtimeMetricsSubscriptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-monitoringsubscription-realtimemetricssubscriptionconfig
-	RealtimeMetricsSubscriptionConfig *MonitoringSubscription_RealtimeMetricsSubscriptionConfig `json:"RealtimeMetricsSubscriptionConfig,omitempty"`
+	RealtimeMetricsSubscriptionConfig *MonitoringSubscription_RealtimeMetricsSubscriptionConfig[any] `json:"RealtimeMetricsSubscriptionConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type MonitoringSubscription_MonitoringSubscription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSubscription_MonitoringSubscription) AWSCloudFormationType() string {
+func (r *MonitoringSubscription_MonitoringSubscription[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::MonitoringSubscription.MonitoringSubscription"
 }

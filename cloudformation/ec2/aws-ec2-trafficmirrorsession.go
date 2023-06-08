@@ -12,7 +12,7 @@ import (
 
 // TrafficMirrorSession AWS CloudFormation Resource (AWS::EC2::TrafficMirrorSession)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html
-type TrafficMirrorSession struct {
+type TrafficMirrorSession[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type TrafficMirrorSession struct {
 	// PacketLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-packetlength
-	PacketLength *int `json:"PacketLength,omitempty"`
+	PacketLength *T `json:"PacketLength,omitempty"`
 
 	// SessionNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-sessionnumber
-	SessionNumber int `json:"SessionNumber"`
+	SessionNumber T `json:"SessionNumber"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type TrafficMirrorSession struct {
 	// VirtualNetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-virtualnetworkid
-	VirtualNetworkId *int `json:"VirtualNetworkId,omitempty"`
+	VirtualNetworkId *T `json:"VirtualNetworkId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type TrafficMirrorSession struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TrafficMirrorSession) AWSCloudFormationType() string {
+func (r *TrafficMirrorSession[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TrafficMirrorSession"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TrafficMirrorSession) MarshalJSON() ([]byte, error) {
-	type Properties TrafficMirrorSession
+func (r TrafficMirrorSession[any]) MarshalJSON() ([]byte, error) {
+	type Properties TrafficMirrorSession[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r TrafficMirrorSession) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TrafficMirrorSession) UnmarshalJSON(b []byte) error {
-	type Properties TrafficMirrorSession
+func (r *TrafficMirrorSession[any]) UnmarshalJSON(b []byte) error {
+	type Properties TrafficMirrorSession[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *TrafficMirrorSession) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TrafficMirrorSession(*res.Properties)
+		*r = TrafficMirrorSession[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // AttributeGroupAssociation AWS CloudFormation Resource (AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroupassociation.html
-type AttributeGroupAssociation struct {
+type AttributeGroupAssociation[T any] struct {
 
 	// Application AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type AttributeGroupAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AttributeGroupAssociation) AWSCloudFormationType() string {
+func (r *AttributeGroupAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AttributeGroupAssociation) MarshalJSON() ([]byte, error) {
-	type Properties AttributeGroupAssociation
+func (r AttributeGroupAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties AttributeGroupAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r AttributeGroupAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AttributeGroupAssociation) UnmarshalJSON(b []byte) error {
-	type Properties AttributeGroupAssociation
+func (r *AttributeGroupAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties AttributeGroupAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *AttributeGroupAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AttributeGroupAssociation(*res.Properties)
+		*r = AttributeGroupAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

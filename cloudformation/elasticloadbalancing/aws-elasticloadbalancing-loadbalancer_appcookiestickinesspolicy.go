@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_AppCookieStickinessPolicy AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html
-type LoadBalancer_AppCookieStickinessPolicy struct {
+type LoadBalancer_AppCookieStickinessPolicy[T any] struct {
 
 	// CookieName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LoadBalancer_AppCookieStickinessPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_AppCookieStickinessPolicy) AWSCloudFormationType() string {
+func (r *LoadBalancer_AppCookieStickinessPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
 }

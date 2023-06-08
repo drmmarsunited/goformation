@@ -8,7 +8,7 @@ import (
 
 // Application_ComponentMonitoringSetting AWS CloudFormation Resource (AWS::ApplicationInsights::Application.ComponentMonitoringSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html
-type Application_ComponentMonitoringSetting struct {
+type Application_ComponentMonitoringSetting[T any] struct {
 
 	// ComponentARN AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Application_ComponentMonitoringSetting struct {
 	// CustomComponentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html#cfn-applicationinsights-application-componentmonitoringsetting-customcomponentconfiguration
-	CustomComponentConfiguration *Application_ComponentConfiguration `json:"CustomComponentConfiguration,omitempty"`
+	CustomComponentConfiguration *Application_ComponentConfiguration[any] `json:"CustomComponentConfiguration,omitempty"`
 
 	// DefaultOverwriteComponentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html#cfn-applicationinsights-application-componentmonitoringsetting-defaultoverwritecomponentconfiguration
-	DefaultOverwriteComponentConfiguration *Application_ComponentConfiguration `json:"DefaultOverwriteComponentConfiguration,omitempty"`
+	DefaultOverwriteComponentConfiguration *Application_ComponentConfiguration[any] `json:"DefaultOverwriteComponentConfiguration,omitempty"`
 
 	// Tier AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Application_ComponentMonitoringSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ComponentMonitoringSetting) AWSCloudFormationType() string {
+func (r *Application_ComponentMonitoringSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.ComponentMonitoringSetting"
 }

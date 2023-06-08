@@ -8,7 +8,7 @@ import (
 
 // DBCluster_ReadEndpoint AWS CloudFormation Resource (AWS::RDS::DBCluster.ReadEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-readendpoint.html
-type DBCluster_ReadEndpoint struct {
+type DBCluster_ReadEndpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DBCluster_ReadEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster_ReadEndpoint) AWSCloudFormationType() string {
+func (r *DBCluster_ReadEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBCluster.ReadEndpoint"
 }

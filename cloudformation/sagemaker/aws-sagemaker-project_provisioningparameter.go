@@ -8,7 +8,7 @@ import (
 
 // Project_ProvisioningParameter AWS CloudFormation Resource (AWS::SageMaker::Project.ProvisioningParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html
-type Project_ProvisioningParameter struct {
+type Project_ProvisioningParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_ProvisioningParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProvisioningParameter) AWSCloudFormationType() string {
+func (r *Project_ProvisioningParameter[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Project.ProvisioningParameter"
 }

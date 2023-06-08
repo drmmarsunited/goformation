@@ -8,22 +8,22 @@ import (
 
 // Deployment_IoTJobExponentialRolloutRate AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobExponentialRolloutRate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexponentialrolloutrate.html
-type Deployment_IoTJobExponentialRolloutRate struct {
+type Deployment_IoTJobExponentialRolloutRate[T any] struct {
 
 	// BaseRatePerMinute AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexponentialrolloutrate.html#cfn-greengrassv2-deployment-iotjobexponentialrolloutrate-baserateperminute
-	BaseRatePerMinute int `json:"BaseRatePerMinute"`
+	BaseRatePerMinute T `json:"BaseRatePerMinute"`
 
 	// IncrementFactor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexponentialrolloutrate.html#cfn-greengrassv2-deployment-iotjobexponentialrolloutrate-incrementfactor
-	IncrementFactor float64 `json:"IncrementFactor"`
+	IncrementFactor T `json:"IncrementFactor"`
 
 	// RateIncreaseCriteria AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexponentialrolloutrate.html#cfn-greengrassv2-deployment-iotjobexponentialrolloutrate-rateincreasecriteria
-	RateIncreaseCriteria *Deployment_IoTJobRateIncreaseCriteria `json:"RateIncreaseCriteria"`
+	RateIncreaseCriteria *Deployment_IoTJobRateIncreaseCriteria[any] `json:"RateIncreaseCriteria"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Deployment_IoTJobExponentialRolloutRate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobExponentialRolloutRate) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobExponentialRolloutRate[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobExponentialRolloutRate"
 }

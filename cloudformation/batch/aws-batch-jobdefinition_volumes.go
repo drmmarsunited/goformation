@@ -8,17 +8,17 @@ import (
 
 // JobDefinition_Volumes AWS CloudFormation Resource (AWS::Batch::JobDefinition.Volumes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html
-type JobDefinition_Volumes struct {
+type JobDefinition_Volumes[T any] struct {
 
 	// EfsVolumeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-efsvolumeconfiguration
-	EfsVolumeConfiguration *JobDefinition_EfsVolumeConfiguration `json:"EfsVolumeConfiguration,omitempty"`
+	EfsVolumeConfiguration *JobDefinition_EfsVolumeConfiguration[any] `json:"EfsVolumeConfiguration,omitempty"`
 
 	// Host AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-host
-	Host *JobDefinition_VolumesHost `json:"Host,omitempty"`
+	Host *JobDefinition_VolumesHost[any] `json:"Host,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type JobDefinition_Volumes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Volumes) AWSCloudFormationType() string {
+func (r *JobDefinition_Volumes[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Volumes"
 }

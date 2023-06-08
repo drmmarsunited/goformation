@@ -8,7 +8,7 @@ import (
 
 // Instance_LicenseSpecification AWS CloudFormation Resource (AWS::EC2::Instance.LicenseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-licensespecification.html
-type Instance_LicenseSpecification struct {
+type Instance_LicenseSpecification[T any] struct {
 
 	// LicenseConfigurationArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Instance_LicenseSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_LicenseSpecification) AWSCloudFormationType() string {
+func (r *Instance_LicenseSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.LicenseSpecification"
 }

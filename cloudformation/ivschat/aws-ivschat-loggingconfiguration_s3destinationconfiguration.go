@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_S3DestinationConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration.S3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-s3destinationconfiguration.html
-type LoggingConfiguration_S3DestinationConfiguration struct {
+type LoggingConfiguration_S3DestinationConfiguration[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_S3DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_S3DestinationConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_S3DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::LoggingConfiguration.S3DestinationConfiguration"
 }

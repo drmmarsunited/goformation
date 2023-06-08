@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_SubjectAlternativeNames AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.SubjectAlternativeNames)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenames.html
-type VirtualNode_SubjectAlternativeNames struct {
+type VirtualNode_SubjectAlternativeNames[T any] struct {
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenames.html#cfn-appmesh-virtualnode-subjectalternativenames-match
-	Match *VirtualNode_SubjectAlternativeNameMatchers `json:"Match"`
+	Match *VirtualNode_SubjectAlternativeNameMatchers[any] `json:"Match"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_SubjectAlternativeNames struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_SubjectAlternativeNames) AWSCloudFormationType() string {
+func (r *VirtualNode_SubjectAlternativeNames[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.SubjectAlternativeNames"
 }

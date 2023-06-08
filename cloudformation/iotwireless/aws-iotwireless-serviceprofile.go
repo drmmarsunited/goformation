@@ -12,12 +12,12 @@ import (
 
 // ServiceProfile AWS CloudFormation Resource (AWS::IoTWireless::ServiceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html
-type ServiceProfile struct {
+type ServiceProfile[T any] struct {
 
 	// LoRaWAN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawan
-	LoRaWAN *ServiceProfile_LoRaWANServiceProfile `json:"LoRaWAN,omitempty"`
+	LoRaWAN *ServiceProfile_LoRaWANServiceProfile[any] `json:"LoRaWAN,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type ServiceProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceProfile) AWSCloudFormationType() string {
+func (r *ServiceProfile[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::ServiceProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceProfile) MarshalJSON() ([]byte, error) {
-	type Properties ServiceProfile
+func (r ServiceProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r ServiceProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceProfile) UnmarshalJSON(b []byte) error {
-	type Properties ServiceProfile
+func (r *ServiceProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *ServiceProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceProfile(*res.Properties)
+		*r = ServiceProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

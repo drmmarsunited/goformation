@@ -8,7 +8,7 @@ import (
 
 // Rule_PathMatchType AWS CloudFormation Resource (AWS::VpcLattice::Rule.PathMatchType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-pathmatchtype.html
-type Rule_PathMatchType struct {
+type Rule_PathMatchType[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_PathMatchType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_PathMatchType) AWSCloudFormationType() string {
+func (r *Rule_PathMatchType[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.PathMatchType"
 }

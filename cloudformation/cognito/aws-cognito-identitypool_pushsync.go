@@ -8,7 +8,7 @@ import (
 
 // IdentityPool_PushSync AWS CloudFormation Resource (AWS::Cognito::IdentityPool.PushSync)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
-type IdentityPool_PushSync struct {
+type IdentityPool_PushSync[T any] struct {
 
 	// ApplicationArns AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type IdentityPool_PushSync struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPool_PushSync) AWSCloudFormationType() string {
+func (r *IdentityPool_PushSync[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.PushSync"
 }

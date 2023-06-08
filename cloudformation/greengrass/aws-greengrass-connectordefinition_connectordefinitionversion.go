@@ -8,12 +8,12 @@ import (
 
 // ConnectorDefinition_ConnectorDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::ConnectorDefinition.ConnectorDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html
-type ConnectorDefinition_ConnectorDefinitionVersion struct {
+type ConnectorDefinition_ConnectorDefinitionVersion[T any] struct {
 
 	// Connectors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html#cfn-greengrass-connectordefinition-connectordefinitionversion-connectors
-	Connectors []ConnectorDefinition_Connector `json:"Connectors"`
+	Connectors []ConnectorDefinition_Connector[any] `json:"Connectors"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ConnectorDefinition_ConnectorDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorDefinition_ConnectorDefinitionVersion) AWSCloudFormationType() string {
+func (r *ConnectorDefinition_ConnectorDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ConnectorDefinition.ConnectorDefinitionVersion"
 }

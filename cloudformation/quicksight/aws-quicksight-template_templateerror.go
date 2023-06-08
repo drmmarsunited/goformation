@@ -8,7 +8,7 @@ import (
 
 // Template_TemplateError AWS CloudFormation Resource (AWS::QuickSight::Template.TemplateError)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html
-type Template_TemplateError struct {
+type Template_TemplateError[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_TemplateError struct {
 	// ViolatedEntities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html#cfn-quicksight-template-templateerror-violatedentities
-	ViolatedEntities []Template_Entity `json:"ViolatedEntities,omitempty"`
+	ViolatedEntities []Template_Entity[any] `json:"ViolatedEntities,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_TemplateError struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TemplateError) AWSCloudFormationType() string {
+func (r *Template_TemplateError[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TemplateError"
 }

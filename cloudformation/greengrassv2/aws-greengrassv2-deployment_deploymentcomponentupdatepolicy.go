@@ -8,7 +8,7 @@ import (
 
 // Deployment_DeploymentComponentUpdatePolicy AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.DeploymentComponentUpdatePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentcomponentupdatepolicy.html
-type Deployment_DeploymentComponentUpdatePolicy struct {
+type Deployment_DeploymentComponentUpdatePolicy[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Deployment_DeploymentComponentUpdatePolicy struct {
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentcomponentupdatepolicy.html#cfn-greengrassv2-deployment-deploymentcomponentupdatepolicy-timeoutinseconds
-	TimeoutInSeconds *int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *T `json:"TimeoutInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Deployment_DeploymentComponentUpdatePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_DeploymentComponentUpdatePolicy) AWSCloudFormationType() string {
+func (r *Deployment_DeploymentComponentUpdatePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.DeploymentComponentUpdatePolicy"
 }

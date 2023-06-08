@@ -8,7 +8,7 @@ import (
 
 // Entity_PropertyGroup AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.PropertyGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-propertygroup.html
-type Entity_PropertyGroup struct {
+type Entity_PropertyGroup[T any] struct {
 
 	// GroupType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Entity_PropertyGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_PropertyGroup) AWSCloudFormationType() string {
+func (r *Entity_PropertyGroup[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.PropertyGroup"
 }

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksContainerVolumeMount AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksContainerVolumeMount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainervolumemount.html
-type JobDefinition_EksContainerVolumeMount struct {
+type JobDefinition_EksContainerVolumeMount[T any] struct {
 
 	// MountPath AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type JobDefinition_EksContainerVolumeMount struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainervolumemount.html#cfn-batch-jobdefinition-ekscontainervolumemount-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobDefinition_EksContainerVolumeMount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksContainerVolumeMount) AWSCloudFormationType() string {
+func (r *JobDefinition_EksContainerVolumeMount[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksContainerVolumeMount"
 }

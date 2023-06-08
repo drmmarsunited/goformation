@@ -8,7 +8,7 @@ import (
 
 // Cluster_StepConfig AWS CloudFormation Resource (AWS::EMR::Cluster.StepConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html
-type Cluster_StepConfig struct {
+type Cluster_StepConfig[T any] struct {
 
 	// ActionOnFailure AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_StepConfig struct {
 	// HadoopJarStep AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-hadoopjarstep
-	HadoopJarStep *Cluster_HadoopJarStepConfig `json:"HadoopJarStep"`
+	HadoopJarStep *Cluster_HadoopJarStepConfig[any] `json:"HadoopJarStep"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Cluster_StepConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_StepConfig) AWSCloudFormationType() string {
+func (r *Cluster_StepConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.StepConfig"
 }

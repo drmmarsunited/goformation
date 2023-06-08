@@ -8,37 +8,37 @@ import (
 
 // ListenerRule_Action AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html
-type ListenerRule_Action struct {
+type ListenerRule_Action[T any] struct {
 
 	// AuthenticateCognitoConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticatecognitoconfig
-	AuthenticateCognitoConfig *ListenerRule_AuthenticateCognitoConfig `json:"AuthenticateCognitoConfig,omitempty"`
+	AuthenticateCognitoConfig *ListenerRule_AuthenticateCognitoConfig[any] `json:"AuthenticateCognitoConfig,omitempty"`
 
 	// AuthenticateOidcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticateoidcconfig
-	AuthenticateOidcConfig *ListenerRule_AuthenticateOidcConfig `json:"AuthenticateOidcConfig,omitempty"`
+	AuthenticateOidcConfig *ListenerRule_AuthenticateOidcConfig[any] `json:"AuthenticateOidcConfig,omitempty"`
 
 	// FixedResponseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-fixedresponseconfig
-	FixedResponseConfig *ListenerRule_FixedResponseConfig `json:"FixedResponseConfig,omitempty"`
+	FixedResponseConfig *ListenerRule_FixedResponseConfig[any] `json:"FixedResponseConfig,omitempty"`
 
 	// ForwardConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-forwardconfig
-	ForwardConfig *ListenerRule_ForwardConfig `json:"ForwardConfig,omitempty"`
+	ForwardConfig *ListenerRule_ForwardConfig[any] `json:"ForwardConfig,omitempty"`
 
 	// Order AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-order
-	Order *int `json:"Order,omitempty"`
+	Order *T `json:"Order,omitempty"`
 
 	// RedirectConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-redirectconfig
-	RedirectConfig *ListenerRule_RedirectConfig `json:"RedirectConfig,omitempty"`
+	RedirectConfig *ListenerRule_RedirectConfig[any] `json:"RedirectConfig,omitempty"`
 
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type ListenerRule_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_Action) AWSCloudFormationType() string {
+func (r *ListenerRule_Action[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.Action"
 }

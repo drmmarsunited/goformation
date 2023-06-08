@@ -8,7 +8,7 @@ import (
 
 // Function_S3KeyFilterRule AWS CloudFormation Resource (AWS::Serverless::Function.S3KeyFilterRule)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
-type Function_S3KeyFilterRule struct {
+type Function_S3KeyFilterRule[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_S3KeyFilterRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_S3KeyFilterRule) AWSCloudFormationType() string {
+func (r *Function_S3KeyFilterRule[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.S3KeyFilterRule"
 }

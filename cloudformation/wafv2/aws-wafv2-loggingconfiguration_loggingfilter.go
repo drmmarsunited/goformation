@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_LoggingFilter AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.LoggingFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-loggingfilter.html
-type LoggingConfiguration_LoggingFilter struct {
+type LoggingConfiguration_LoggingFilter[T any] struct {
 
 	// DefaultBehavior AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type LoggingConfiguration_LoggingFilter struct {
 	// Filters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-loggingfilter.html#cfn-wafv2-loggingconfiguration-loggingfilter-filters
-	Filters []LoggingConfiguration_Filter `json:"Filters"`
+	Filters []LoggingConfiguration_Filter[any] `json:"Filters"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LoggingConfiguration_LoggingFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_LoggingFilter) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_LoggingFilter[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.LoggingFilter"
 }

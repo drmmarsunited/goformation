@@ -8,17 +8,17 @@ import (
 
 // Fleet_ResourceCreationLimitPolicy AWS CloudFormation Resource (AWS::GameLift::Fleet.ResourceCreationLimitPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-resourcecreationlimitpolicy.html
-type Fleet_ResourceCreationLimitPolicy struct {
+type Fleet_ResourceCreationLimitPolicy[T any] struct {
 
 	// NewGameSessionsPerCreator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-resourcecreationlimitpolicy.html#cfn-gamelift-fleet-resourcecreationlimitpolicy-newgamesessionspercreator
-	NewGameSessionsPerCreator *int `json:"NewGameSessionsPerCreator,omitempty"`
+	NewGameSessionsPerCreator *T `json:"NewGameSessionsPerCreator,omitempty"`
 
 	// PolicyPeriodInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-resourcecreationlimitpolicy.html#cfn-gamelift-fleet-resourcecreationlimitpolicy-policyperiodinminutes
-	PolicyPeriodInMinutes *int `json:"PolicyPeriodInMinutes,omitempty"`
+	PolicyPeriodInMinutes *T `json:"PolicyPeriodInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Fleet_ResourceCreationLimitPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_ResourceCreationLimitPolicy) AWSCloudFormationType() string {
+func (r *Fleet_ResourceCreationLimitPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.ResourceCreationLimitPolicy"
 }

@@ -8,22 +8,22 @@ import (
 
 // DataSource_CustomDocumentEnrichmentConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.CustomDocumentEnrichmentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html
-type DataSource_CustomDocumentEnrichmentConfiguration struct {
+type DataSource_CustomDocumentEnrichmentConfiguration[T any] struct {
 
 	// InlineConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-inlineconfigurations
-	InlineConfigurations []DataSource_InlineCustomDocumentEnrichmentConfiguration `json:"InlineConfigurations,omitempty"`
+	InlineConfigurations []DataSource_InlineCustomDocumentEnrichmentConfiguration[any] `json:"InlineConfigurations,omitempty"`
 
 	// PostExtractionHookConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-postextractionhookconfiguration
-	PostExtractionHookConfiguration *DataSource_HookConfiguration `json:"PostExtractionHookConfiguration,omitempty"`
+	PostExtractionHookConfiguration *DataSource_HookConfiguration[any] `json:"PostExtractionHookConfiguration,omitempty"`
 
 	// PreExtractionHookConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-preextractionhookconfiguration
-	PreExtractionHookConfiguration *DataSource_HookConfiguration `json:"PreExtractionHookConfiguration,omitempty"`
+	PreExtractionHookConfiguration *DataSource_HookConfiguration[any] `json:"PreExtractionHookConfiguration,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DataSource_CustomDocumentEnrichmentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_CustomDocumentEnrichmentConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_CustomDocumentEnrichmentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.CustomDocumentEnrichmentConfiguration"
 }

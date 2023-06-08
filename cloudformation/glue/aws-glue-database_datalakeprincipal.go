@@ -8,7 +8,7 @@ import (
 
 // Database_DataLakePrincipal AWS CloudFormation Resource (AWS::Glue::Database.DataLakePrincipal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-datalakeprincipal.html
-type Database_DataLakePrincipal struct {
+type Database_DataLakePrincipal[T any] struct {
 
 	// DataLakePrincipalIdentifier AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Database_DataLakePrincipal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_DataLakePrincipal) AWSCloudFormationType() string {
+func (r *Database_DataLakePrincipal[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.DataLakePrincipal"
 }

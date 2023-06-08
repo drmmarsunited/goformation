@@ -8,12 +8,12 @@ import (
 
 // Trail_EventSelector AWS CloudFormation Resource (AWS::CloudTrail::Trail.EventSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
-type Trail_EventSelector struct {
+type Trail_EventSelector[T any] struct {
 
 	// DataResources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-dataresources
-	DataResources []Trail_DataResource `json:"DataResources,omitempty"`
+	DataResources []Trail_DataResource[any] `json:"DataResources,omitempty"`
 
 	// ExcludeManagementEventSources AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Trail_EventSelector struct {
 	// IncludeManagementEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-includemanagementevents
-	IncludeManagementEvents *bool `json:"IncludeManagementEvents,omitempty"`
+	IncludeManagementEvents *T `json:"IncludeManagementEvents,omitempty"`
 
 	// ReadWriteType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Trail_EventSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trail_EventSelector) AWSCloudFormationType() string {
+func (r *Trail_EventSelector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Trail.EventSelector"
 }

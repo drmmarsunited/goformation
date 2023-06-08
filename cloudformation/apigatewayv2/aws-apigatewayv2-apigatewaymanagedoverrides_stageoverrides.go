@@ -8,22 +8,22 @@ import (
 
 // ApiGatewayManagedOverrides_StageOverrides AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides.StageOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html
-type ApiGatewayManagedOverrides_StageOverrides struct {
+type ApiGatewayManagedOverrides_StageOverrides[T any] struct {
 
 	// AccessLogSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-accesslogsettings
-	AccessLogSettings *ApiGatewayManagedOverrides_AccessLogSettings `json:"AccessLogSettings,omitempty"`
+	AccessLogSettings *ApiGatewayManagedOverrides_AccessLogSettings[any] `json:"AccessLogSettings,omitempty"`
 
 	// AutoDeploy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-autodeploy
-	AutoDeploy *bool `json:"AutoDeploy,omitempty"`
+	AutoDeploy *T `json:"AutoDeploy,omitempty"`
 
 	// DefaultRouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-defaultroutesettings
-	DefaultRouteSettings *ApiGatewayManagedOverrides_RouteSettings `json:"DefaultRouteSettings,omitempty"`
+	DefaultRouteSettings *ApiGatewayManagedOverrides_RouteSettings[any] `json:"DefaultRouteSettings,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ApiGatewayManagedOverrides_StageOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiGatewayManagedOverrides_StageOverrides) AWSCloudFormationType() string {
+func (r *ApiGatewayManagedOverrides_StageOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.StageOverrides"
 }

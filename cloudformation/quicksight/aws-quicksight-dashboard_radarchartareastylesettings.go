@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RadarChartAreaStyleSettings AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RadarChartAreaStyleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartareastylesettings.html
-type Dashboard_RadarChartAreaStyleSettings struct {
+type Dashboard_RadarChartAreaStyleSettings[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_RadarChartAreaStyleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RadarChartAreaStyleSettings) AWSCloudFormationType() string {
+func (r *Dashboard_RadarChartAreaStyleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RadarChartAreaStyleSettings"
 }

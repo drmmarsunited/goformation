@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LongFormatText AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LongFormatText)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-longformattext.html
-type Dashboard_LongFormatText struct {
+type Dashboard_LongFormatText[T any] struct {
 
 	// PlainText AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_LongFormatText struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LongFormatText) AWSCloudFormationType() string {
+func (r *Dashboard_LongFormatText[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LongFormatText"
 }

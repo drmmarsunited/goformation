@@ -8,7 +8,7 @@ import (
 
 // Application_PropertyGroup AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.PropertyGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-propertygroup.html
-type Application_PropertyGroup struct {
+type Application_PropertyGroup[T any] struct {
 
 	// PropertyGroupId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_PropertyGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_PropertyGroup) AWSCloudFormationType() string {
+func (r *Application_PropertyGroup[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.PropertyGroup"
 }

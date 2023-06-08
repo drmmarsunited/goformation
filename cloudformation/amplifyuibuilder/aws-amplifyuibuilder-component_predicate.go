@@ -8,12 +8,12 @@ import (
 
 // Component_Predicate AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html
-type Component_Predicate struct {
+type Component_Predicate[T any] struct {
 
 	// And AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-and
-	And []Component_Predicate `json:"And,omitempty"`
+	And []Component_Predicate[any] `json:"And,omitempty"`
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Component_Predicate struct {
 	// Or AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-predicate.html#cfn-amplifyuibuilder-component-predicate-or
-	Or []Component_Predicate `json:"Or,omitempty"`
+	Or []Component_Predicate[any] `json:"Or,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Component_Predicate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_Predicate) AWSCloudFormationType() string {
+func (r *Component_Predicate[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.Predicate"
 }

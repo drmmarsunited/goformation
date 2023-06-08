@@ -8,17 +8,17 @@ import (
 
 // Dashboard_NumericEqualityDrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericEqualityDrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalitydrilldownfilter.html
-type Dashboard_NumericEqualityDrillDownFilter struct {
+type Dashboard_NumericEqualityDrillDownFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalitydrilldownfilter.html#cfn-quicksight-dashboard-numericequalitydrilldownfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalitydrilldownfilter.html#cfn-quicksight-dashboard-numericequalitydrilldownfilter-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_NumericEqualityDrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericEqualityDrillDownFilter) AWSCloudFormationType() string {
+func (r *Dashboard_NumericEqualityDrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericEqualityDrillDownFilter"
 }

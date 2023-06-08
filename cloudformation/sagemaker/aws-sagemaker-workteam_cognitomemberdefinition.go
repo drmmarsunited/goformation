@@ -8,7 +8,7 @@ import (
 
 // Workteam_CognitoMemberDefinition AWS CloudFormation Resource (AWS::SageMaker::Workteam.CognitoMemberDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html
-type Workteam_CognitoMemberDefinition struct {
+type Workteam_CognitoMemberDefinition[T any] struct {
 
 	// CognitoClientId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Workteam_CognitoMemberDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workteam_CognitoMemberDefinition) AWSCloudFormationType() string {
+func (r *Workteam_CognitoMemberDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Workteam.CognitoMemberDefinition"
 }

@@ -8,12 +8,12 @@ import (
 
 // Distribution_QueryStringObject AWS CloudFormation Resource (AWS::Lightsail::Distribution.QueryStringObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-querystringobject.html
-type Distribution_QueryStringObject struct {
+type Distribution_QueryStringObject[T any] struct {
 
 	// Option AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-querystringobject.html#cfn-lightsail-distribution-querystringobject-option
-	Option *bool `json:"Option,omitempty"`
+	Option *T `json:"Option,omitempty"`
 
 	// QueryStringsAllowList AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_QueryStringObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_QueryStringObject) AWSCloudFormationType() string {
+func (r *Distribution_QueryStringObject[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.QueryStringObject"
 }

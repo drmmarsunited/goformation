@@ -8,7 +8,7 @@ import (
 
 // Solution_CategoricalHyperParameterRange AWS CloudFormation Resource (AWS::Personalize::Solution.CategoricalHyperParameterRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-categoricalhyperparameterrange.html
-type Solution_CategoricalHyperParameterRange struct {
+type Solution_CategoricalHyperParameterRange[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Solution_CategoricalHyperParameterRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_CategoricalHyperParameterRange) AWSCloudFormationType() string {
+func (r *Solution_CategoricalHyperParameterRange[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.CategoricalHyperParameterRange"
 }

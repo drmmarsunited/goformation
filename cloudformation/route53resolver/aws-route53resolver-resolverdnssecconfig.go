@@ -11,7 +11,7 @@ import (
 
 // ResolverDNSSECConfig AWS CloudFormation Resource (AWS::Route53Resolver::ResolverDNSSECConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverdnssecconfig.html
-type ResolverDNSSECConfig struct {
+type ResolverDNSSECConfig[T any] struct {
 
 	// ResourceId AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type ResolverDNSSECConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverDNSSECConfig) AWSCloudFormationType() string {
+func (r *ResolverDNSSECConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverDNSSECConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverDNSSECConfig) MarshalJSON() ([]byte, error) {
-	type Properties ResolverDNSSECConfig
+func (r ResolverDNSSECConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverDNSSECConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ResolverDNSSECConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverDNSSECConfig) UnmarshalJSON(b []byte) error {
-	type Properties ResolverDNSSECConfig
+func (r *ResolverDNSSECConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverDNSSECConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ResolverDNSSECConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverDNSSECConfig(*res.Properties)
+		*r = ResolverDNSSECConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

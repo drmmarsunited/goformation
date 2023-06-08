@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_PublishMetricAction AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.PublishMetricAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-publishmetricaction.html
-type RuleGroup_PublishMetricAction struct {
+type RuleGroup_PublishMetricAction[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-publishmetricaction.html#cfn-networkfirewall-rulegroup-publishmetricaction-dimensions
-	Dimensions []RuleGroup_Dimension `json:"Dimensions"`
+	Dimensions []RuleGroup_Dimension[any] `json:"Dimensions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_PublishMetricAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_PublishMetricAction) AWSCloudFormationType() string {
+func (r *RuleGroup_PublishMetricAction[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.PublishMetricAction"
 }

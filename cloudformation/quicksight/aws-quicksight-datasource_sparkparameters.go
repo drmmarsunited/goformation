@@ -8,7 +8,7 @@ import (
 
 // DataSource_SparkParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.SparkParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sparkparameters.html
-type DataSource_SparkParameters struct {
+type DataSource_SparkParameters[T any] struct {
 
 	// Host AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSource_SparkParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sparkparameters.html#cfn-quicksight-datasource-sparkparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_SparkParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SparkParameters) AWSCloudFormationType() string {
+func (r *DataSource_SparkParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.SparkParameters"
 }

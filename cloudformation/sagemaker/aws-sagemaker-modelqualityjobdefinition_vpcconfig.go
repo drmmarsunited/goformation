@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html
-type ModelQualityJobDefinition_VpcConfig struct {
+type ModelQualityJobDefinition_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelQualityJobDefinition_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_VpcConfig) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.VpcConfig"
 }

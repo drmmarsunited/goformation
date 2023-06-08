@@ -8,12 +8,12 @@ import (
 
 // Detector_CFNScanEc2InstanceWithFindingsConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNScanEc2InstanceWithFindingsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnscanec2instancewithfindingsconfiguration.html
-type Detector_CFNScanEc2InstanceWithFindingsConfiguration struct {
+type Detector_CFNScanEc2InstanceWithFindingsConfiguration[T any] struct {
 
 	// EbsVolumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnscanec2instancewithfindingsconfiguration.html#cfn-guardduty-detector-cfnscanec2instancewithfindingsconfiguration-ebsvolumes
-	EbsVolumes *bool `json:"EbsVolumes,omitempty"`
+	EbsVolumes *T `json:"EbsVolumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Detector_CFNScanEc2InstanceWithFindingsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_CFNScanEc2InstanceWithFindingsConfiguration) AWSCloudFormationType() string {
+func (r *Detector_CFNScanEc2InstanceWithFindingsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector.CFNScanEc2InstanceWithFindingsConfiguration"
 }

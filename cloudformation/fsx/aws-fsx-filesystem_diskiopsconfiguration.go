@@ -8,12 +8,12 @@ import (
 
 // FileSystem_DiskIopsConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.DiskIopsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration.html
-type FileSystem_DiskIopsConfiguration struct {
+type FileSystem_DiskIopsConfiguration[T any] struct {
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FileSystem_DiskIopsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_DiskIopsConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_DiskIopsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.DiskIopsConfiguration"
 }

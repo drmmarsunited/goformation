@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_DataLakePrincipal AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.DataLakePrincipal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-datalakeprincipal.html
-type PrincipalPermissions_DataLakePrincipal struct {
+type PrincipalPermissions_DataLakePrincipal[T any] struct {
 
 	// DataLakePrincipalIdentifier AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type PrincipalPermissions_DataLakePrincipal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_DataLakePrincipal) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_DataLakePrincipal[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.DataLakePrincipal"
 }

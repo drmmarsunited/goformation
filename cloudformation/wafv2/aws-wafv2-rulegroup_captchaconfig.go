@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_CaptchaConfig AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CaptchaConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaconfig.html
-type RuleGroup_CaptchaConfig struct {
+type RuleGroup_CaptchaConfig[T any] struct {
 
 	// ImmunityTimeProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaconfig.html#cfn-wafv2-rulegroup-captchaconfig-immunitytimeproperty
-	ImmunityTimeProperty *RuleGroup_ImmunityTimeProperty `json:"ImmunityTimeProperty,omitempty"`
+	ImmunityTimeProperty *RuleGroup_ImmunityTimeProperty[any] `json:"ImmunityTimeProperty,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_CaptchaConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CaptchaConfig) AWSCloudFormationType() string {
+func (r *RuleGroup_CaptchaConfig[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CaptchaConfig"
 }

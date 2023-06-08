@@ -8,12 +8,12 @@ import (
 
 // Analysis_KPIOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.KPIOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html
-type Analysis_KPIOptions struct {
+type Analysis_KPIOptions[T any] struct {
 
 	// Comparison AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-comparison
-	Comparison *Analysis_ComparisonConfiguration `json:"Comparison,omitempty"`
+	Comparison *Analysis_ComparisonConfiguration[any] `json:"Comparison,omitempty"`
 
 	// PrimaryValueDisplayType AWS CloudFormation Property
 	// Required: false
@@ -23,27 +23,27 @@ type Analysis_KPIOptions struct {
 	// PrimaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-primaryvaluefontconfiguration
-	PrimaryValueFontConfiguration *Analysis_FontConfiguration `json:"PrimaryValueFontConfiguration,omitempty"`
+	PrimaryValueFontConfiguration *Analysis_FontConfiguration[any] `json:"PrimaryValueFontConfiguration,omitempty"`
 
 	// ProgressBar AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-progressbar
-	ProgressBar *Analysis_ProgressBarOptions `json:"ProgressBar,omitempty"`
+	ProgressBar *Analysis_ProgressBarOptions[any] `json:"ProgressBar,omitempty"`
 
 	// SecondaryValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-secondaryvalue
-	SecondaryValue *Analysis_SecondaryValueOptions `json:"SecondaryValue,omitempty"`
+	SecondaryValue *Analysis_SecondaryValueOptions[any] `json:"SecondaryValue,omitempty"`
 
 	// SecondaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-secondaryvaluefontconfiguration
-	SecondaryValueFontConfiguration *Analysis_FontConfiguration `json:"SecondaryValueFontConfiguration,omitempty"`
+	SecondaryValueFontConfiguration *Analysis_FontConfiguration[any] `json:"SecondaryValueFontConfiguration,omitempty"`
 
 	// TrendArrows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpioptions.html#cfn-quicksight-analysis-kpioptions-trendarrows
-	TrendArrows *Analysis_TrendArrowOptions `json:"TrendArrows,omitempty"`
+	TrendArrows *Analysis_TrendArrowOptions[any] `json:"TrendArrows,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_KPIOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_KPIOptions) AWSCloudFormationType() string {
+func (r *Analysis_KPIOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.KPIOptions"
 }

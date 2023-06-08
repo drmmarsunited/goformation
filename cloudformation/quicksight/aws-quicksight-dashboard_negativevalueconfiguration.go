@@ -8,7 +8,7 @@ import (
 
 // Dashboard_NegativeValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NegativeValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-negativevalueconfiguration.html
-type Dashboard_NegativeValueConfiguration struct {
+type Dashboard_NegativeValueConfiguration[T any] struct {
 
 	// DisplayMode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_NegativeValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NegativeValueConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_NegativeValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NegativeValueConfiguration"
 }

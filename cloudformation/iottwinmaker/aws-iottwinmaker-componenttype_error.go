@@ -8,7 +8,7 @@ import (
 
 // ComponentType_Error AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.Error)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html
-type ComponentType_Error struct {
+type ComponentType_Error[T any] struct {
 
 	// Code AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentType_Error struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_Error) AWSCloudFormationType() string {
+func (r *ComponentType_Error[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.Error"
 }

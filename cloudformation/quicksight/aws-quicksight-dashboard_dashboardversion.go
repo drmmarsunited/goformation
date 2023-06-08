@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DashboardVersion AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DashboardVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html
-type Dashboard_DashboardVersion struct {
+type Dashboard_DashboardVersion[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Dashboard_DashboardVersion struct {
 	// Errors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-errors
-	Errors []Dashboard_DashboardError `json:"Errors,omitempty"`
+	Errors []Dashboard_DashboardError[any] `json:"Errors,omitempty"`
 
 	// Sheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-sheets
-	Sheets []Dashboard_Sheet `json:"Sheets,omitempty"`
+	Sheets []Dashboard_Sheet[any] `json:"Sheets,omitempty"`
 
 	// SourceEntityArn AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Dashboard_DashboardVersion struct {
 	// VersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-versionnumber
-	VersionNumber *float64 `json:"VersionNumber,omitempty"`
+	VersionNumber *T `json:"VersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Dashboard_DashboardVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DashboardVersion) AWSCloudFormationType() string {
+func (r *Dashboard_DashboardVersion[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DashboardVersion"
 }

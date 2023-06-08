@@ -8,7 +8,7 @@ import (
 
 // Policy_IEMap AWS CloudFormation Resource (AWS::FMS::Policy.IEMap)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-iemap.html
-type Policy_IEMap struct {
+type Policy_IEMap[T any] struct {
 
 	// ACCOUNT AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Policy_IEMap struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_IEMap) AWSCloudFormationType() string {
+func (r *Policy_IEMap[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.IEMap"
 }

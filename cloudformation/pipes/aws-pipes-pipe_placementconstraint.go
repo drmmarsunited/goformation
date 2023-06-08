@@ -8,7 +8,7 @@ import (
 
 // Pipe_PlacementConstraint AWS CloudFormation Resource (AWS::Pipes::Pipe.PlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-placementconstraint.html
-type Pipe_PlacementConstraint struct {
+type Pipe_PlacementConstraint[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_PlacementConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PlacementConstraint) AWSCloudFormationType() string {
+func (r *Pipe_PlacementConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PlacementConstraint"
 }

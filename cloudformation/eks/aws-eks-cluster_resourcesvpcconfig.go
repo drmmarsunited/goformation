@@ -8,17 +8,17 @@ import (
 
 // Cluster_ResourcesVpcConfig AWS CloudFormation Resource (AWS::EKS::Cluster.ResourcesVpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html
-type Cluster_ResourcesVpcConfig struct {
+type Cluster_ResourcesVpcConfig[T any] struct {
 
 	// EndpointPrivateAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-endpointprivateaccess
-	EndpointPrivateAccess *bool `json:"EndpointPrivateAccess,omitempty"`
+	EndpointPrivateAccess *T `json:"EndpointPrivateAccess,omitempty"`
 
 	// EndpointPublicAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-endpointpublicaccess
-	EndpointPublicAccess *bool `json:"EndpointPublicAccess,omitempty"`
+	EndpointPublicAccess *T `json:"EndpointPublicAccess,omitempty"`
 
 	// PublicAccessCidrs AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Cluster_ResourcesVpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ResourcesVpcConfig) AWSCloudFormationType() string {
+func (r *Cluster_ResourcesVpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.ResourcesVpcConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // ScalingPolicy_PredictiveScalingPredefinedLoadMetric AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingPredefinedLoadMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingpredefinedloadmetric.html
-type ScalingPolicy_PredictiveScalingPredefinedLoadMetric struct {
+type ScalingPolicy_PredictiveScalingPredefinedLoadMetric[T any] struct {
 
 	// PredefinedMetricType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPolicy_PredictiveScalingPredefinedLoadMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_PredictiveScalingPredefinedLoadMetric) AWSCloudFormationType() string {
+func (r *ScalingPolicy_PredictiveScalingPredefinedLoadMetric[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.PredictiveScalingPredefinedLoadMetric"
 }

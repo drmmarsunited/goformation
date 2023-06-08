@@ -8,7 +8,7 @@ import (
 
 // Listener_WeightedTargetGroup AWS CloudFormation Resource (AWS::VpcLattice::Listener.WeightedTargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-weightedtargetgroup.html
-type Listener_WeightedTargetGroup struct {
+type Listener_WeightedTargetGroup[T any] struct {
 
 	// TargetGroupIdentifier AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Listener_WeightedTargetGroup struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-weightedtargetgroup.html#cfn-vpclattice-listener-weightedtargetgroup-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Listener_WeightedTargetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_WeightedTargetGroup) AWSCloudFormationType() string {
+func (r *Listener_WeightedTargetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Listener.WeightedTargetGroup"
 }

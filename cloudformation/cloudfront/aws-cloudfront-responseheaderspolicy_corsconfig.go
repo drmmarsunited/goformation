@@ -8,42 +8,42 @@ import (
 
 // ResponseHeadersPolicy_CorsConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.CorsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html
-type ResponseHeadersPolicy_CorsConfig struct {
+type ResponseHeadersPolicy_CorsConfig[T any] struct {
 
 	// AccessControlAllowCredentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials
-	AccessControlAllowCredentials bool `json:"AccessControlAllowCredentials"`
+	AccessControlAllowCredentials T `json:"AccessControlAllowCredentials"`
 
 	// AccessControlAllowHeaders AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowheaders
-	AccessControlAllowHeaders *ResponseHeadersPolicy_AccessControlAllowHeaders `json:"AccessControlAllowHeaders"`
+	AccessControlAllowHeaders *ResponseHeadersPolicy_AccessControlAllowHeaders[any] `json:"AccessControlAllowHeaders"`
 
 	// AccessControlAllowMethods AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowmethods
-	AccessControlAllowMethods *ResponseHeadersPolicy_AccessControlAllowMethods `json:"AccessControlAllowMethods"`
+	AccessControlAllowMethods *ResponseHeadersPolicy_AccessControlAllowMethods[any] `json:"AccessControlAllowMethods"`
 
 	// AccessControlAllowOrigins AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolalloworigins
-	AccessControlAllowOrigins *ResponseHeadersPolicy_AccessControlAllowOrigins `json:"AccessControlAllowOrigins"`
+	AccessControlAllowOrigins *ResponseHeadersPolicy_AccessControlAllowOrigins[any] `json:"AccessControlAllowOrigins"`
 
 	// AccessControlExposeHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolexposeheaders
-	AccessControlExposeHeaders *ResponseHeadersPolicy_AccessControlExposeHeaders `json:"AccessControlExposeHeaders,omitempty"`
+	AccessControlExposeHeaders *ResponseHeadersPolicy_AccessControlExposeHeaders[any] `json:"AccessControlExposeHeaders,omitempty"`
 
 	// AccessControlMaxAgeSec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec
-	AccessControlMaxAgeSec *int `json:"AccessControlMaxAgeSec,omitempty"`
+	AccessControlMaxAgeSec *T `json:"AccessControlMaxAgeSec,omitempty"`
 
 	// OriginOverride AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride
-	OriginOverride bool `json:"OriginOverride"`
+	OriginOverride T `json:"OriginOverride"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type ResponseHeadersPolicy_CorsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_CorsConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_CorsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.CorsConfig"
 }

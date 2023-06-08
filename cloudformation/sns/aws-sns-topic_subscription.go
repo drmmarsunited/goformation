@@ -8,7 +8,7 @@ import (
 
 // Topic_Subscription AWS CloudFormation Resource (AWS::SNS::Topic.Subscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic-subscription.html
-type Topic_Subscription struct {
+type Topic_Subscription[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Topic_Subscription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Topic_Subscription) AWSCloudFormationType() string {
+func (r *Topic_Subscription[any]) AWSCloudFormationType() string {
 	return "AWS::SNS::Topic.Subscription"
 }

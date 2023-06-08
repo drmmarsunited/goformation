@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SankeyDiagramFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SankeyDiagramFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramfieldwells.html
-type Dashboard_SankeyDiagramFieldWells struct {
+type Dashboard_SankeyDiagramFieldWells[T any] struct {
 
 	// SankeyDiagramAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramfieldwells.html#cfn-quicksight-dashboard-sankeydiagramfieldwells-sankeydiagramaggregatedfieldwells
-	SankeyDiagramAggregatedFieldWells *Dashboard_SankeyDiagramAggregatedFieldWells `json:"SankeyDiagramAggregatedFieldWells,omitempty"`
+	SankeyDiagramAggregatedFieldWells *Dashboard_SankeyDiagramAggregatedFieldWells[any] `json:"SankeyDiagramAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_SankeyDiagramFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SankeyDiagramFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_SankeyDiagramFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SankeyDiagramFieldWells"
 }

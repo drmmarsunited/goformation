@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_TCPFlagField AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.TCPFlagField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-tcpflagfield.html
-type RuleGroup_TCPFlagField struct {
+type RuleGroup_TCPFlagField[T any] struct {
 
 	// Flags AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_TCPFlagField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_TCPFlagField) AWSCloudFormationType() string {
+func (r *RuleGroup_TCPFlagField[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.TCPFlagField"
 }

@@ -11,7 +11,7 @@ import (
 
 // UserPoolUICustomizationAttachment AWS CloudFormation Resource (AWS::Cognito::UserPoolUICustomizationAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html
-type UserPoolUICustomizationAttachment struct {
+type UserPoolUICustomizationAttachment[T any] struct {
 
 	// CSS AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type UserPoolUICustomizationAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolUICustomizationAttachment) AWSCloudFormationType() string {
+func (r *UserPoolUICustomizationAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolUICustomizationAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolUICustomizationAttachment) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolUICustomizationAttachment
+func (r UserPoolUICustomizationAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolUICustomizationAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r UserPoolUICustomizationAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolUICustomizationAttachment) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolUICustomizationAttachment
+func (r *UserPoolUICustomizationAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolUICustomizationAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *UserPoolUICustomizationAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolUICustomizationAttachment(*res.Properties)
+		*r = UserPoolUICustomizationAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

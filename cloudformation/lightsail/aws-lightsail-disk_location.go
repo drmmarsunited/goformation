@@ -8,7 +8,7 @@ import (
 
 // Disk_Location AWS CloudFormation Resource (AWS::Lightsail::Disk.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html
-type Disk_Location struct {
+type Disk_Location[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Disk_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Disk_Location) AWSCloudFormationType() string {
+func (r *Disk_Location[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Disk.Location"
 }

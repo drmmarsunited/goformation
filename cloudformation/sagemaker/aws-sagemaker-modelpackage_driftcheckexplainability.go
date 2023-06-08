@@ -8,17 +8,17 @@ import (
 
 // ModelPackage_DriftCheckExplainability AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.DriftCheckExplainability)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckexplainability.html
-type ModelPackage_DriftCheckExplainability struct {
+type ModelPackage_DriftCheckExplainability[T any] struct {
 
 	// ConfigFile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckexplainability.html#cfn-sagemaker-modelpackage-driftcheckexplainability-configfile
-	ConfigFile *ModelPackage_FileSource `json:"ConfigFile,omitempty"`
+	ConfigFile *ModelPackage_FileSource[any] `json:"ConfigFile,omitempty"`
 
 	// Constraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckexplainability.html#cfn-sagemaker-modelpackage-driftcheckexplainability-constraints
-	Constraints *ModelPackage_MetricsSource `json:"Constraints,omitempty"`
+	Constraints *ModelPackage_MetricsSource[any] `json:"Constraints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelPackage_DriftCheckExplainability struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_DriftCheckExplainability) AWSCloudFormationType() string {
+func (r *ModelPackage_DriftCheckExplainability[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.DriftCheckExplainability"
 }

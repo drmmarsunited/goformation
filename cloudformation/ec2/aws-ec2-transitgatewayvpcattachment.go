@@ -12,7 +12,7 @@ import (
 
 // TransitGatewayVpcAttachment AWS CloudFormation Resource (AWS::EC2::TransitGatewayVpcAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html
-type TransitGatewayVpcAttachment struct {
+type TransitGatewayVpcAttachment[T any] struct {
 
 	// AddSubnetIds AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type TransitGatewayVpcAttachment struct {
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-options
-	Options *TransitGatewayVpcAttachment_Options `json:"Options,omitempty"`
+	Options *TransitGatewayVpcAttachment_Options[any] `json:"Options,omitempty"`
 
 	// RemoveSubnetIds AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type TransitGatewayVpcAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayVpcAttachment) AWSCloudFormationType() string {
+func (r *TransitGatewayVpcAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayVpcAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayVpcAttachment) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayVpcAttachment
+func (r TransitGatewayVpcAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayVpcAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r TransitGatewayVpcAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayVpcAttachment) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayVpcAttachment
+func (r *TransitGatewayVpcAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayVpcAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *TransitGatewayVpcAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayVpcAttachment(*res.Properties)
+		*r = TransitGatewayVpcAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

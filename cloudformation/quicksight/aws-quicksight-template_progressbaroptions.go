@@ -8,7 +8,7 @@ import (
 
 // Template_ProgressBarOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ProgressBarOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-progressbaroptions.html
-type Template_ProgressBarOptions struct {
+type Template_ProgressBarOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_ProgressBarOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ProgressBarOptions) AWSCloudFormationType() string {
+func (r *Template_ProgressBarOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ProgressBarOptions"
 }

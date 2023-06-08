@@ -8,12 +8,12 @@ import (
 
 // Form_ValueMappings AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.ValueMappings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-valuemappings.html
-type Form_ValueMappings struct {
+type Form_ValueMappings[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-valuemappings.html#cfn-amplifyuibuilder-form-valuemappings-values
-	Values []Form_ValueMapping `json:"Values"`
+	Values []Form_ValueMapping[any] `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Form_ValueMappings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_ValueMappings) AWSCloudFormationType() string {
+func (r *Form_ValueMappings[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.ValueMappings"
 }

@@ -8,7 +8,7 @@ import (
 
 // AccessPolicy_User AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-user.html
-type AccessPolicy_User struct {
+type AccessPolicy_User[T any] struct {
 
 	// id AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type AccessPolicy_User struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_User) AWSCloudFormationType() string {
+func (r *AccessPolicy_User[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.User"
 }

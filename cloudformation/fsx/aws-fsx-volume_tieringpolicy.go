@@ -8,12 +8,12 @@ import (
 
 // Volume_TieringPolicy AWS CloudFormation Resource (AWS::FSx::Volume.TieringPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html
-type Volume_TieringPolicy struct {
+type Volume_TieringPolicy[T any] struct {
 
 	// CoolingPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy-coolingperiod
-	CoolingPeriod *int `json:"CoolingPeriod,omitempty"`
+	CoolingPeriod *T `json:"CoolingPeriod,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Volume_TieringPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_TieringPolicy) AWSCloudFormationType() string {
+func (r *Volume_TieringPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.TieringPolicy"
 }

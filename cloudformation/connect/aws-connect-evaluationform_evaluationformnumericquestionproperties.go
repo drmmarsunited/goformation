@@ -8,27 +8,27 @@ import (
 
 // EvaluationForm_EvaluationFormNumericQuestionProperties AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormNumericQuestionProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformnumericquestionproperties.html
-type EvaluationForm_EvaluationFormNumericQuestionProperties struct {
+type EvaluationForm_EvaluationFormNumericQuestionProperties[T any] struct {
 
 	// Automation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformnumericquestionproperties.html#cfn-connect-evaluationform-evaluationformnumericquestionproperties-automation
-	Automation *EvaluationForm_EvaluationFormNumericQuestionAutomation `json:"Automation,omitempty"`
+	Automation *EvaluationForm_EvaluationFormNumericQuestionAutomation[any] `json:"Automation,omitempty"`
 
 	// MaxValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformnumericquestionproperties.html#cfn-connect-evaluationform-evaluationformnumericquestionproperties-maxvalue
-	MaxValue int `json:"MaxValue"`
+	MaxValue T `json:"MaxValue"`
 
 	// MinValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformnumericquestionproperties.html#cfn-connect-evaluationform-evaluationformnumericquestionproperties-minvalue
-	MinValue int `json:"MinValue"`
+	MinValue T `json:"MinValue"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformnumericquestionproperties.html#cfn-connect-evaluationform-evaluationformnumericquestionproperties-options
-	Options []EvaluationForm_EvaluationFormNumericQuestionOption `json:"Options,omitempty"`
+	Options []EvaluationForm_EvaluationFormNumericQuestionOption[any] `json:"Options,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type EvaluationForm_EvaluationFormNumericQuestionProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormNumericQuestionProperties) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormNumericQuestionProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormNumericQuestionProperties"
 }

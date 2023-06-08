@@ -8,17 +8,17 @@ import (
 
 // ResourceDataSync_SyncSource AWS CloudFormation Resource (AWS::SSM::ResourceDataSync.SyncSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html
-type ResourceDataSync_SyncSource struct {
+type ResourceDataSync_SyncSource[T any] struct {
 
 	// AwsOrganizationsSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-awsorganizationssource
-	AwsOrganizationsSource *ResourceDataSync_AwsOrganizationsSource `json:"AwsOrganizationsSource,omitempty"`
+	AwsOrganizationsSource *ResourceDataSync_AwsOrganizationsSource[any] `json:"AwsOrganizationsSource,omitempty"`
 
 	// IncludeFutureRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-includefutureregions
-	IncludeFutureRegions *bool `json:"IncludeFutureRegions,omitempty"`
+	IncludeFutureRegions *T `json:"IncludeFutureRegions,omitempty"`
 
 	// SourceRegions AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ResourceDataSync_SyncSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDataSync_SyncSource) AWSCloudFormationType() string {
+func (r *ResourceDataSync_SyncSource[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::ResourceDataSync.SyncSource"
 }

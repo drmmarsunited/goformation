@@ -8,17 +8,17 @@ import (
 
 // AnomalyDetector_FileFormatDescriptor AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.FileFormatDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-fileformatdescriptor.html
-type AnomalyDetector_FileFormatDescriptor struct {
+type AnomalyDetector_FileFormatDescriptor[T any] struct {
 
 	// CsvFormatDescriptor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-fileformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-fileformatdescriptor-csvformatdescriptor
-	CsvFormatDescriptor *AnomalyDetector_CsvFormatDescriptor `json:"CsvFormatDescriptor,omitempty"`
+	CsvFormatDescriptor *AnomalyDetector_CsvFormatDescriptor[any] `json:"CsvFormatDescriptor,omitempty"`
 
 	// JsonFormatDescriptor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-fileformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-fileformatdescriptor-jsonformatdescriptor
-	JsonFormatDescriptor *AnomalyDetector_JsonFormatDescriptor `json:"JsonFormatDescriptor,omitempty"`
+	JsonFormatDescriptor *AnomalyDetector_JsonFormatDescriptor[any] `json:"JsonFormatDescriptor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AnomalyDetector_FileFormatDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_FileFormatDescriptor) AWSCloudFormationType() string {
+func (r *AnomalyDetector_FileFormatDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.FileFormatDescriptor"
 }

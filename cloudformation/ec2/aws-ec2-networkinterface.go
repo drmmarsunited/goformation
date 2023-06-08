@@ -12,7 +12,7 @@ import (
 
 // NetworkInterface AWS CloudFormation Resource (AWS::EC2::NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html
-type NetworkInterface struct {
+type NetworkInterface[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type NetworkInterface struct {
 	// Ipv6AddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresscount
-	Ipv6AddressCount *int `json:"Ipv6AddressCount,omitempty"`
+	Ipv6AddressCount *T `json:"Ipv6AddressCount,omitempty"`
 
 	// Ipv6Addresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresses
-	Ipv6Addresses []NetworkInterface_InstanceIpv6Address `json:"Ipv6Addresses,omitempty"`
+	Ipv6Addresses []NetworkInterface_InstanceIpv6Address[any] `json:"Ipv6Addresses,omitempty"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
@@ -47,17 +47,17 @@ type NetworkInterface struct {
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddresses
-	PrivateIpAddresses []NetworkInterface_PrivateIpAddressSpecification `json:"PrivateIpAddresses,omitempty"`
+	PrivateIpAddresses []NetworkInterface_PrivateIpAddressSpecification[any] `json:"PrivateIpAddresses,omitempty"`
 
 	// SecondaryPrivateIpAddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-secondaryprivateipaddresscount
-	SecondaryPrivateIpAddressCount *int `json:"SecondaryPrivateIpAddressCount,omitempty"`
+	SecondaryPrivateIpAddressCount *T `json:"SecondaryPrivateIpAddressCount,omitempty"`
 
 	// SourceDestCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-sourcedestcheck
-	SourceDestCheck *bool `json:"SourceDestCheck,omitempty"`
+	SourceDestCheck *T `json:"SourceDestCheck,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: true
@@ -86,14 +86,15 @@ type NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInterface) AWSCloudFormationType() string {
+func (r *NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInterface"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkInterface) MarshalJSON() ([]byte, error) {
-	type Properties NetworkInterface
+func (r NetworkInterface[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkInterface[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r NetworkInterface) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkInterface) UnmarshalJSON(b []byte) error {
-	type Properties NetworkInterface
+func (r *NetworkInterface[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkInterface[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *NetworkInterface) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkInterface(*res.Properties)
+		*r = NetworkInterface[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

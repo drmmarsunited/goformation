@@ -8,12 +8,12 @@ import (
 
 // SimpleTable_SSESpecification AWS CloudFormation Resource (AWS::Serverless::SimpleTable.SSESpecification)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
-type SimpleTable_SSESpecification struct {
+type SimpleTable_SSESpecification[T any] struct {
 
 	// SSEEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
-	SSEEnabled *bool `json:"SSEEnabled,omitempty"`
+	SSEEnabled *T `json:"SSEEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type SimpleTable_SSESpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleTable_SSESpecification) AWSCloudFormationType() string {
+func (r *SimpleTable_SSESpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::SimpleTable.SSESpecification"
 }

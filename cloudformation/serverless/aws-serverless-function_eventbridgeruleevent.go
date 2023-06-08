@@ -8,7 +8,7 @@ import (
 
 // Function_EventBridgeRuleEvent AWS CloudFormation Resource (AWS::Serverless::Function.EventBridgeRuleEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule
-type Function_EventBridgeRuleEvent struct {
+type Function_EventBridgeRuleEvent[T any] struct {
 
 	// EventBusName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Function_EventBridgeRuleEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EventBridgeRuleEvent) AWSCloudFormationType() string {
+func (r *Function_EventBridgeRuleEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.EventBridgeRuleEvent"
 }

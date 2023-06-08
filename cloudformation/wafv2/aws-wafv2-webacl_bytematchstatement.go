@@ -8,12 +8,12 @@ import (
 
 // WebACL_ByteMatchStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.ByteMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html
-type WebACL_ByteMatchStatement struct {
+type WebACL_ByteMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-fieldtomatch
-	FieldToMatch *WebACL_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *WebACL_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// PositionalConstraint AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type WebACL_ByteMatchStatement struct {
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-texttransformations
-	TextTransformations []WebACL_TextTransformation `json:"TextTransformations"`
+	TextTransformations []WebACL_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type WebACL_ByteMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ByteMatchStatement) AWSCloudFormationType() string {
+func (r *WebACL_ByteMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ByteMatchStatement"
 }

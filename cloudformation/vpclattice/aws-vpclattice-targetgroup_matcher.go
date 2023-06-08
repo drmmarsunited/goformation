@@ -8,7 +8,7 @@ import (
 
 // TargetGroup_Matcher AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup.Matcher)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-matcher.html
-type TargetGroup_Matcher struct {
+type TargetGroup_Matcher[T any] struct {
 
 	// HttpCode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type TargetGroup_Matcher struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_Matcher) AWSCloudFormationType() string {
+func (r *TargetGroup_Matcher[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::TargetGroup.Matcher"
 }

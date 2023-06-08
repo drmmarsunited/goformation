@@ -11,12 +11,12 @@ import (
 
 // GeoMatchSet AWS CloudFormation Resource (AWS::WAFRegional::GeoMatchSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html
-type GeoMatchSet struct {
+type GeoMatchSet[T any] struct {
 
 	// GeoMatchConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-geomatchconstraints
-	GeoMatchConstraints []GeoMatchSet_GeoMatchConstraint `json:"GeoMatchConstraints,omitempty"`
+	GeoMatchConstraints []GeoMatchSet_GeoMatchConstraint[any] `json:"GeoMatchConstraints,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type GeoMatchSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GeoMatchSet) AWSCloudFormationType() string {
+func (r *GeoMatchSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::GeoMatchSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GeoMatchSet) MarshalJSON() ([]byte, error) {
-	type Properties GeoMatchSet
+func (r GeoMatchSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties GeoMatchSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r GeoMatchSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GeoMatchSet) UnmarshalJSON(b []byte) error {
-	type Properties GeoMatchSet
+func (r *GeoMatchSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties GeoMatchSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *GeoMatchSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GeoMatchSet(*res.Properties)
+		*r = GeoMatchSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // Branch_BasicAuthConfig AWS CloudFormation Resource (AWS::Amplify::Branch.BasicAuthConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html
-type Branch_BasicAuthConfig struct {
+type Branch_BasicAuthConfig[T any] struct {
 
 	// EnableBasicAuth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth
-	EnableBasicAuth *bool `json:"EnableBasicAuth,omitempty"`
+	EnableBasicAuth *T `json:"EnableBasicAuth,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Branch_BasicAuthConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Branch_BasicAuthConfig) AWSCloudFormationType() string {
+func (r *Branch_BasicAuthConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::Branch.BasicAuthConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Function_EmptySAMPT AWS CloudFormation Resource (AWS::Serverless::Function.EmptySAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_EmptySAMPT struct {
+type Function_EmptySAMPT[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Function_EmptySAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EmptySAMPT) AWSCloudFormationType() string {
+func (r *Function_EmptySAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.EmptySAMPT"
 }

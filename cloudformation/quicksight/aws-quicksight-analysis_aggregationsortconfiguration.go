@@ -8,17 +8,17 @@ import (
 
 // Analysis_AggregationSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.AggregationSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationsortconfiguration.html
-type Analysis_AggregationSortConfiguration struct {
+type Analysis_AggregationSortConfiguration[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationsortconfiguration.html#cfn-quicksight-analysis-aggregationsortconfiguration-aggregationfunction
-	AggregationFunction *Analysis_AggregationFunction `json:"AggregationFunction"`
+	AggregationFunction *Analysis_AggregationFunction[any] `json:"AggregationFunction"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationsortconfiguration.html#cfn-quicksight-analysis-aggregationsortconfiguration-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// SortDirection AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_AggregationSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AggregationSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_AggregationSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AggregationSortConfiguration"
 }

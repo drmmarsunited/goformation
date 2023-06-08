@@ -8,17 +8,17 @@ import (
 
 // DataSource_SalesforceConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SalesforceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html
-type DataSource_SalesforceConfiguration struct {
+type DataSource_SalesforceConfiguration[T any] struct {
 
 	// ChatterFeedConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-chatterfeedconfiguration
-	ChatterFeedConfiguration *DataSource_SalesforceChatterFeedConfiguration `json:"ChatterFeedConfiguration,omitempty"`
+	ChatterFeedConfiguration *DataSource_SalesforceChatterFeedConfiguration[any] `json:"ChatterFeedConfiguration,omitempty"`
 
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *T `json:"CrawlAttachments,omitempty"`
 
 	// ExcludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_SalesforceConfiguration struct {
 	// KnowledgeArticleConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-knowledgearticleconfiguration
-	KnowledgeArticleConfiguration *DataSource_SalesforceKnowledgeArticleConfiguration `json:"KnowledgeArticleConfiguration,omitempty"`
+	KnowledgeArticleConfiguration *DataSource_SalesforceKnowledgeArticleConfiguration[any] `json:"KnowledgeArticleConfiguration,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
@@ -48,12 +48,12 @@ type DataSource_SalesforceConfiguration struct {
 	// StandardObjectAttachmentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectattachmentconfiguration
-	StandardObjectAttachmentConfiguration *DataSource_SalesforceStandardObjectAttachmentConfiguration `json:"StandardObjectAttachmentConfiguration,omitempty"`
+	StandardObjectAttachmentConfiguration *DataSource_SalesforceStandardObjectAttachmentConfiguration[any] `json:"StandardObjectAttachmentConfiguration,omitempty"`
 
 	// StandardObjectConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectconfigurations
-	StandardObjectConfigurations []DataSource_SalesforceStandardObjectConfiguration `json:"StandardObjectConfigurations,omitempty"`
+	StandardObjectConfigurations []DataSource_SalesforceStandardObjectConfiguration[any] `json:"StandardObjectConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type DataSource_SalesforceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SalesforceConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SalesforceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SalesforceConfiguration"
 }

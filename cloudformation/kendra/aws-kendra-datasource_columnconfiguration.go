@@ -8,7 +8,7 @@ import (
 
 // DataSource_ColumnConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ColumnConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html
-type DataSource_ColumnConfiguration struct {
+type DataSource_ColumnConfiguration[T any] struct {
 
 	// ChangeDetectingColumns AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type DataSource_ColumnConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type DataSource_ColumnConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ColumnConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ColumnConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ColumnConfiguration"
 }

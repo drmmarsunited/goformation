@@ -8,7 +8,7 @@ import (
 
 // Analysis_AxisDisplayRange AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisDisplayRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayrange.html
-type Analysis_AxisDisplayRange struct {
+type Analysis_AxisDisplayRange[T any] struct {
 
 	// DataDriven AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_AxisDisplayRange struct {
 	// MinMax AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayrange.html#cfn-quicksight-analysis-axisdisplayrange-minmax
-	MinMax *Analysis_AxisDisplayMinMaxRange `json:"MinMax,omitempty"`
+	MinMax *Analysis_AxisDisplayMinMaxRange[any] `json:"MinMax,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_AxisDisplayRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisDisplayRange) AWSCloudFormationType() string {
+func (r *Analysis_AxisDisplayRange[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisDisplayRange"
 }

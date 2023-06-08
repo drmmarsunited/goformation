@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TimeRangeFilterValue AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TimeRangeFilterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefiltervalue.html
-type Dashboard_TimeRangeFilterValue struct {
+type Dashboard_TimeRangeFilterValue[T any] struct {
 
 	// Parameter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_TimeRangeFilterValue struct {
 	// RollingDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefiltervalue.html#cfn-quicksight-dashboard-timerangefiltervalue-rollingdate
-	RollingDate *Dashboard_RollingDateConfiguration `json:"RollingDate,omitempty"`
+	RollingDate *Dashboard_RollingDateConfiguration[any] `json:"RollingDate,omitempty"`
 
 	// StaticValue AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_TimeRangeFilterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TimeRangeFilterValue) AWSCloudFormationType() string {
+func (r *Dashboard_TimeRangeFilterValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TimeRangeFilterValue"
 }

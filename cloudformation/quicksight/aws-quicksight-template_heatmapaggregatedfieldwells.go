@@ -8,22 +8,22 @@ import (
 
 // Template_HeatMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.HeatMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapaggregatedfieldwells.html
-type Template_HeatMapAggregatedFieldWells struct {
+type Template_HeatMapAggregatedFieldWells[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapaggregatedfieldwells.html#cfn-quicksight-template-heatmapaggregatedfieldwells-columns
-	Columns []Template_DimensionField `json:"Columns,omitempty"`
+	Columns []Template_DimensionField[any] `json:"Columns,omitempty"`
 
 	// Rows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapaggregatedfieldwells.html#cfn-quicksight-template-heatmapaggregatedfieldwells-rows
-	Rows []Template_DimensionField `json:"Rows,omitempty"`
+	Rows []Template_DimensionField[any] `json:"Rows,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapaggregatedfieldwells.html#cfn-quicksight-template-heatmapaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_HeatMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HeatMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_HeatMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HeatMapAggregatedFieldWells"
 }

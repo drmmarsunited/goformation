@@ -8,22 +8,22 @@ import (
 
 // User_PosixProfile AWS CloudFormation Resource (AWS::Transfer::User.PosixProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html
-type User_PosixProfile struct {
+type User_PosixProfile[T any] struct {
 
 	// Gid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-gid
-	Gid float64 `json:"Gid"`
+	Gid T `json:"Gid"`
 
 	// SecondaryGids AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-secondarygids
-	SecondaryGids []float64 `json:"SecondaryGids,omitempty"`
+	SecondaryGids []T `json:"SecondaryGids,omitempty"`
 
 	// Uid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-uid
-	Uid float64 `json:"Uid"`
+	Uid T `json:"Uid"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type User_PosixProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_PosixProfile) AWSCloudFormationType() string {
+func (r *User_PosixProfile[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::User.PosixProfile"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AxisDisplayMinMaxRange AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AxisDisplayMinMaxRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdisplayminmaxrange.html
-type Dashboard_AxisDisplayMinMaxRange struct {
+type Dashboard_AxisDisplayMinMaxRange[T any] struct {
 
 	// Maximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdisplayminmaxrange.html#cfn-quicksight-dashboard-axisdisplayminmaxrange-maximum
-	Maximum *float64 `json:"Maximum,omitempty"`
+	Maximum *T `json:"Maximum,omitempty"`
 
 	// Minimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisdisplayminmaxrange.html#cfn-quicksight-dashboard-axisdisplayminmaxrange-minimum
-	Minimum *float64 `json:"Minimum,omitempty"`
+	Minimum *T `json:"Minimum,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_AxisDisplayMinMaxRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AxisDisplayMinMaxRange) AWSCloudFormationType() string {
+func (r *Dashboard_AxisDisplayMinMaxRange[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AxisDisplayMinMaxRange"
 }

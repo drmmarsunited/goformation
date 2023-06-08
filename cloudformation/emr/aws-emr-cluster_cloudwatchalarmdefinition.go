@@ -8,7 +8,7 @@ import (
 
 // Cluster_CloudWatchAlarmDefinition AWS CloudFormation Resource (AWS::EMR::Cluster.CloudWatchAlarmDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html
-type Cluster_CloudWatchAlarmDefinition struct {
+type Cluster_CloudWatchAlarmDefinition[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Cluster_CloudWatchAlarmDefinition struct {
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions
-	Dimensions []Cluster_MetricDimension `json:"Dimensions,omitempty"`
+	Dimensions []Cluster_MetricDimension[any] `json:"Dimensions,omitempty"`
 
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
-	EvaluationPeriods *int `json:"EvaluationPeriods,omitempty"`
+	EvaluationPeriods *T `json:"EvaluationPeriods,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Cluster_CloudWatchAlarmDefinition struct {
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-period
-	Period int `json:"Period"`
+	Period T `json:"Period"`
 
 	// Statistic AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Cluster_CloudWatchAlarmDefinition struct {
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold
-	Threshold float64 `json:"Threshold"`
+	Threshold T `json:"Threshold"`
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Cluster_CloudWatchAlarmDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_CloudWatchAlarmDefinition) AWSCloudFormationType() string {
+func (r *Cluster_CloudWatchAlarmDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.CloudWatchAlarmDefinition"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_ListControlSearchOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ListControlSearchOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontrolsearchoptions.html
-type Template_ListControlSearchOptions struct {
+type Template_ListControlSearchOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_ListControlSearchOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ListControlSearchOptions) AWSCloudFormationType() string {
+func (r *Template_ListControlSearchOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ListControlSearchOptions"
 }

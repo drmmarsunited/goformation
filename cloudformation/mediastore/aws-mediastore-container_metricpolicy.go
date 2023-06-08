@@ -8,7 +8,7 @@ import (
 
 // Container_MetricPolicy AWS CloudFormation Resource (AWS::MediaStore::Container.MetricPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicy.html
-type Container_MetricPolicy struct {
+type Container_MetricPolicy[T any] struct {
 
 	// ContainerLevelMetrics AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Container_MetricPolicy struct {
 	// MetricPolicyRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicy.html#cfn-mediastore-container-metricpolicy-metricpolicyrules
-	MetricPolicyRules []Container_MetricPolicyRule `json:"MetricPolicyRules,omitempty"`
+	MetricPolicyRules []Container_MetricPolicyRule[any] `json:"MetricPolicyRules,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Container_MetricPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_MetricPolicy) AWSCloudFormationType() string {
+func (r *Container_MetricPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::MediaStore::Container.MetricPolicy"
 }

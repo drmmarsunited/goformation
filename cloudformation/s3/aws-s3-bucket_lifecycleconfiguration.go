@@ -8,12 +8,12 @@ import (
 
 // Bucket_LifecycleConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.LifecycleConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig.html
-type Bucket_LifecycleConfiguration struct {
+type Bucket_LifecycleConfiguration[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig.html#cfn-s3-bucket-lifecycleconfig-rules
-	Rules []Bucket_Rule `json:"Rules"`
+	Rules []Bucket_Rule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_LifecycleConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_LifecycleConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_LifecycleConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.LifecycleConfiguration"
 }

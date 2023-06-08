@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_CountAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CountAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-countaction.html
-type RuleGroup_CountAction struct {
+type RuleGroup_CountAction[T any] struct {
 
 	// CustomRequestHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-countaction.html#cfn-wafv2-rulegroup-countaction-customrequesthandling
-	CustomRequestHandling *RuleGroup_CustomRequestHandling `json:"CustomRequestHandling,omitempty"`
+	CustomRequestHandling *RuleGroup_CustomRequestHandling[any] `json:"CustomRequestHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_CountAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CountAction) AWSCloudFormationType() string {
+func (r *RuleGroup_CountAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CountAction"
 }

@@ -12,7 +12,7 @@ import (
 
 // StackSet AWS CloudFormation Resource (AWS::CloudFormation::StackSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html
-type StackSet struct {
+type StackSet[T any] struct {
 
 	// AdministrationRoleARN AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type StackSet struct {
 	// AutoDeployment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-autodeployment
-	AutoDeployment *StackSet_AutoDeployment `json:"AutoDeployment,omitempty"`
+	AutoDeployment *StackSet_AutoDeployment[any] `json:"AutoDeployment,omitempty"`
 
 	// CallAs AWS CloudFormation Property
 	// Required: false
@@ -47,17 +47,17 @@ type StackSet struct {
 	// ManagedExecution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-managedexecution
-	ManagedExecution *StackSet_ManagedExecution `json:"ManagedExecution,omitempty"`
+	ManagedExecution *StackSet_ManagedExecution[any] `json:"ManagedExecution,omitempty"`
 
 	// OperationPreferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-operationpreferences
-	OperationPreferences *StackSet_OperationPreferences `json:"OperationPreferences,omitempty"`
+	OperationPreferences *StackSet_OperationPreferences[any] `json:"OperationPreferences,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-parameters
-	Parameters []StackSet_Parameter `json:"Parameters,omitempty"`
+	Parameters []StackSet_Parameter[any] `json:"Parameters,omitempty"`
 
 	// PermissionModel AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type StackSet struct {
 	// StackInstancesGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-stackinstancesgroup
-	StackInstancesGroup []StackSet_StackInstances `json:"StackInstancesGroup,omitempty"`
+	StackInstancesGroup []StackSet_StackInstances[any] `json:"StackInstancesGroup,omitempty"`
 
 	// StackSetName AWS CloudFormation Property
 	// Required: true
@@ -106,14 +106,15 @@ type StackSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet) AWSCloudFormationType() string {
+func (r *StackSet[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StackSet) MarshalJSON() ([]byte, error) {
-	type Properties StackSet
+func (r StackSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties StackSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r StackSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StackSet) UnmarshalJSON(b []byte) error {
-	type Properties StackSet
+func (r *StackSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties StackSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *StackSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StackSet(*res.Properties)
+		*r = StackSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

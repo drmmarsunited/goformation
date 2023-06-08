@@ -8,7 +8,7 @@ import (
 
 // User_Policy AWS CloudFormation Resource (AWS::IAM::User.Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
-type User_Policy struct {
+type User_Policy[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type User_Policy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_Policy) AWSCloudFormationType() string {
+func (r *User_Policy[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::User.Policy"
 }

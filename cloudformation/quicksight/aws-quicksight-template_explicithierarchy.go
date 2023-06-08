@@ -8,17 +8,17 @@ import (
 
 // Template_ExplicitHierarchy AWS CloudFormation Resource (AWS::QuickSight::Template.ExplicitHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-explicithierarchy.html
-type Template_ExplicitHierarchy struct {
+type Template_ExplicitHierarchy[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-explicithierarchy.html#cfn-quicksight-template-explicithierarchy-columns
-	Columns []Template_ColumnIdentifier `json:"Columns"`
+	Columns []Template_ColumnIdentifier[any] `json:"Columns"`
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-explicithierarchy.html#cfn-quicksight-template-explicithierarchy-drilldownfilters
-	DrillDownFilters []Template_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Template_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_ExplicitHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ExplicitHierarchy) AWSCloudFormationType() string {
+func (r *Template_ExplicitHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ExplicitHierarchy"
 }

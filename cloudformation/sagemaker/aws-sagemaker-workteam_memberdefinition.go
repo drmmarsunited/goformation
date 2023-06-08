@@ -8,17 +8,17 @@ import (
 
 // Workteam_MemberDefinition AWS CloudFormation Resource (AWS::SageMaker::Workteam.MemberDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html
-type Workteam_MemberDefinition struct {
+type Workteam_MemberDefinition[T any] struct {
 
 	// CognitoMemberDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-cognitomemberdefinition
-	CognitoMemberDefinition *Workteam_CognitoMemberDefinition `json:"CognitoMemberDefinition,omitempty"`
+	CognitoMemberDefinition *Workteam_CognitoMemberDefinition[any] `json:"CognitoMemberDefinition,omitempty"`
 
 	// OidcMemberDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-oidcmemberdefinition
-	OidcMemberDefinition *Workteam_OidcMemberDefinition `json:"OidcMemberDefinition,omitempty"`
+	OidcMemberDefinition *Workteam_OidcMemberDefinition[any] `json:"OidcMemberDefinition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Workteam_MemberDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workteam_MemberDefinition) AWSCloudFormationType() string {
+func (r *Workteam_MemberDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Workteam.MemberDefinition"
 }

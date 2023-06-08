@@ -8,22 +8,22 @@ import (
 
 // Form_FormStyle AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formstyle.html
-type Form_FormStyle struct {
+type Form_FormStyle[T any] struct {
 
 	// HorizontalGap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formstyle.html#cfn-amplifyuibuilder-form-formstyle-horizontalgap
-	HorizontalGap *Form_FormStyleConfig `json:"HorizontalGap,omitempty"`
+	HorizontalGap *Form_FormStyleConfig[any] `json:"HorizontalGap,omitempty"`
 
 	// OuterPadding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formstyle.html#cfn-amplifyuibuilder-form-formstyle-outerpadding
-	OuterPadding *Form_FormStyleConfig `json:"OuterPadding,omitempty"`
+	OuterPadding *Form_FormStyleConfig[any] `json:"OuterPadding,omitempty"`
 
 	// VerticalGap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formstyle.html#cfn-amplifyuibuilder-form-formstyle-verticalgap
-	VerticalGap *Form_FormStyleConfig `json:"VerticalGap,omitempty"`
+	VerticalGap *Form_FormStyleConfig[any] `json:"VerticalGap,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Form_FormStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormStyle) AWSCloudFormationType() string {
+func (r *Form_FormStyle[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormStyle"
 }

@@ -11,7 +11,7 @@ import (
 
 // VPNGatewayRoutePropagation AWS CloudFormation Resource (AWS::EC2::VPNGatewayRoutePropagation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngatewayroutepropagation.html
-type VPNGatewayRoutePropagation struct {
+type VPNGatewayRoutePropagation[T any] struct {
 
 	// RouteTableIds AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type VPNGatewayRoutePropagation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPNGatewayRoutePropagation) AWSCloudFormationType() string {
+func (r *VPNGatewayRoutePropagation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPNGatewayRoutePropagation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPNGatewayRoutePropagation) MarshalJSON() ([]byte, error) {
-	type Properties VPNGatewayRoutePropagation
+func (r VPNGatewayRoutePropagation[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPNGatewayRoutePropagation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r VPNGatewayRoutePropagation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPNGatewayRoutePropagation) UnmarshalJSON(b []byte) error {
-	type Properties VPNGatewayRoutePropagation
+func (r *VPNGatewayRoutePropagation[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPNGatewayRoutePropagation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *VPNGatewayRoutePropagation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPNGatewayRoutePropagation(*res.Properties)
+		*r = VPNGatewayRoutePropagation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

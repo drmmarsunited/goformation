@@ -8,7 +8,7 @@ import (
 
 // Bot_DTMFSpecification AWS CloudFormation Resource (AWS::Lex::Bot.DTMFSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html
-type Bot_DTMFSpecification struct {
+type Bot_DTMFSpecification[T any] struct {
 
 	// DeletionCharacter AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Bot_DTMFSpecification struct {
 	// EndTimeoutMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endtimeoutms
-	EndTimeoutMs int `json:"EndTimeoutMs"`
+	EndTimeoutMs T `json:"EndTimeoutMs"`
 
 	// MaxLength AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-maxlength
-	MaxLength int `json:"MaxLength"`
+	MaxLength T `json:"MaxLength"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_DTMFSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_DTMFSpecification) AWSCloudFormationType() string {
+func (r *Bot_DTMFSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.DTMFSpecification"
 }

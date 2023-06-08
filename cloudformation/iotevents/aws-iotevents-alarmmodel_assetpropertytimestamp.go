@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_AssetPropertyTimestamp AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AssetPropertyTimestamp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertytimestamp.html
-type AlarmModel_AssetPropertyTimestamp struct {
+type AlarmModel_AssetPropertyTimestamp[T any] struct {
 
 	// OffsetInNanos AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AlarmModel_AssetPropertyTimestamp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AssetPropertyTimestamp) AWSCloudFormationType() string {
+func (r *AlarmModel_AssetPropertyTimestamp[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AssetPropertyTimestamp"
 }

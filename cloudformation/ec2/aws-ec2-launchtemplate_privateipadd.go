@@ -8,12 +8,12 @@ import (
 
 // LaunchTemplate_PrivateIpAdd AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.PrivateIpAdd)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html
-type LaunchTemplate_PrivateIpAdd struct {
+type LaunchTemplate_PrivateIpAdd[T any] struct {
 
 	// Primary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-primary
-	Primary *bool `json:"Primary,omitempty"`
+	Primary *T `json:"Primary,omitempty"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LaunchTemplate_PrivateIpAdd struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_PrivateIpAdd) AWSCloudFormationType() string {
+func (r *LaunchTemplate_PrivateIpAdd[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.PrivateIpAdd"
 }

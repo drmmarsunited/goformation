@@ -8,7 +8,7 @@ import (
 
 // Dataset_FilterValue AWS CloudFormation Resource (AWS::DataBrew::Dataset.FilterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html
-type Dataset_FilterValue struct {
+type Dataset_FilterValue[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_FilterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_FilterValue) AWSCloudFormationType() string {
+func (r *Dataset_FilterValue[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.FilterValue"
 }

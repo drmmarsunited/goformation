@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataPathLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataPathLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datapathlabeltype.html
-type Analysis_DataPathLabelType struct {
+type Analysis_DataPathLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_DataPathLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataPathLabelType) AWSCloudFormationType() string {
+func (r *Analysis_DataPathLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataPathLabelType"
 }

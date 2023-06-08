@@ -11,12 +11,12 @@ import (
 
 // Connector AWS CloudFormation Resource (AWS::KafkaConnect::Connector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html
-type Connector struct {
+type Connector[T any] struct {
 
 	// Capacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-capacity
-	Capacity *Connector_Capacity `json:"Capacity"`
+	Capacity *Connector_Capacity[any] `json:"Capacity"`
 
 	// ConnectorConfiguration AWS CloudFormation Property
 	// Required: true
@@ -36,17 +36,17 @@ type Connector struct {
 	// KafkaCluster AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkacluster
-	KafkaCluster *Connector_KafkaCluster `json:"KafkaCluster"`
+	KafkaCluster *Connector_KafkaCluster[any] `json:"KafkaCluster"`
 
 	// KafkaClusterClientAuthentication AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterclientauthentication
-	KafkaClusterClientAuthentication *Connector_KafkaClusterClientAuthentication `json:"KafkaClusterClientAuthentication"`
+	KafkaClusterClientAuthentication *Connector_KafkaClusterClientAuthentication[any] `json:"KafkaClusterClientAuthentication"`
 
 	// KafkaClusterEncryptionInTransit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterencryptionintransit
-	KafkaClusterEncryptionInTransit *Connector_KafkaClusterEncryptionInTransit `json:"KafkaClusterEncryptionInTransit"`
+	KafkaClusterEncryptionInTransit *Connector_KafkaClusterEncryptionInTransit[any] `json:"KafkaClusterEncryptionInTransit"`
 
 	// KafkaConnectVersion AWS CloudFormation Property
 	// Required: true
@@ -56,12 +56,12 @@ type Connector struct {
 	// LogDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-logdelivery
-	LogDelivery *Connector_LogDelivery `json:"LogDelivery,omitempty"`
+	LogDelivery *Connector_LogDelivery[any] `json:"LogDelivery,omitempty"`
 
 	// Plugins AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-plugins
-	Plugins []Connector_Plugin `json:"Plugins"`
+	Plugins []Connector_Plugin[any] `json:"Plugins"`
 
 	// ServiceExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -71,7 +71,7 @@ type Connector struct {
 	// WorkerConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-workerconfiguration
-	WorkerConfiguration *Connector_WorkerConfiguration `json:"WorkerConfiguration,omitempty"`
+	WorkerConfiguration *Connector_WorkerConfiguration[any] `json:"WorkerConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -90,14 +90,15 @@ type Connector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector) AWSCloudFormationType() string {
+func (r *Connector[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Connector) MarshalJSON() ([]byte, error) {
-	type Properties Connector
+func (r Connector[any]) MarshalJSON() ([]byte, error) {
+	type Properties Connector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r Connector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Connector) UnmarshalJSON(b []byte) error {
-	type Properties Connector
+func (r *Connector[any]) UnmarshalJSON(b []byte) error {
+	type Properties Connector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *Connector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Connector(*res.Properties)
+		*r = Connector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

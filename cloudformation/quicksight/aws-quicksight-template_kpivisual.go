@@ -8,37 +8,37 @@ import (
 
 // Template_KPIVisual AWS CloudFormation Resource (AWS::QuickSight::Template.KPIVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html
-type Template_KPIVisual struct {
+type Template_KPIVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-chartconfiguration
-	ChartConfiguration *Template_KPIConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_KPIConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-columnhierarchies
-	ColumnHierarchies []Template_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Template_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-conditionalformatting
-	ConditionalFormatting *Template_KPIConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Template_KPIConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpivisual.html#cfn-quicksight-template-kpivisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_KPIVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_KPIVisual) AWSCloudFormationType() string {
+func (r *Template_KPIVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.KPIVisual"
 }

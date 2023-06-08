@@ -8,7 +8,7 @@ import (
 
 // Container_PublicEndpoint AWS CloudFormation Resource (AWS::Lightsail::Container.PublicEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html
-type Container_PublicEndpoint struct {
+type Container_PublicEndpoint[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Container_PublicEndpoint struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// HealthCheckConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-healthcheckconfig
-	HealthCheckConfig *Container_HealthCheckConfig `json:"HealthCheckConfig,omitempty"`
+	HealthCheckConfig *Container_HealthCheckConfig[any] `json:"HealthCheckConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Container_PublicEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_PublicEndpoint) AWSCloudFormationType() string {
+func (r *Container_PublicEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.PublicEndpoint"
 }

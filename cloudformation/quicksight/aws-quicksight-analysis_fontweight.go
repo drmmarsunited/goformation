@@ -8,7 +8,7 @@ import (
 
 // Analysis_FontWeight AWS CloudFormation Resource (AWS::QuickSight::Analysis.FontWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontweight.html
-type Analysis_FontWeight struct {
+type Analysis_FontWeight[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_FontWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FontWeight) AWSCloudFormationType() string {
+func (r *Analysis_FontWeight[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FontWeight"
 }

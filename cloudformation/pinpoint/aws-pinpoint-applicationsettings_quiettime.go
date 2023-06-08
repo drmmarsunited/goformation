@@ -8,7 +8,7 @@ import (
 
 // ApplicationSettings_QuietTime AWS CloudFormation Resource (AWS::Pinpoint::ApplicationSettings.QuietTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-quiettime.html
-type ApplicationSettings_QuietTime struct {
+type ApplicationSettings_QuietTime[T any] struct {
 
 	// End AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ApplicationSettings_QuietTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationSettings_QuietTime) AWSCloudFormationType() string {
+func (r *ApplicationSettings_QuietTime[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::ApplicationSettings.QuietTime"
 }

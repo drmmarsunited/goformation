@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AxisTickLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AxisTickLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisticklabeloptions.html
-type Dashboard_AxisTickLabelOptions struct {
+type Dashboard_AxisTickLabelOptions[T any] struct {
 
 	// LabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisticklabeloptions.html#cfn-quicksight-dashboard-axisticklabeloptions-labeloptions
-	LabelOptions *Dashboard_LabelOptions `json:"LabelOptions,omitempty"`
+	LabelOptions *Dashboard_LabelOptions[any] `json:"LabelOptions,omitempty"`
 
 	// RotationAngle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-axisticklabeloptions.html#cfn-quicksight-dashboard-axisticklabeloptions-rotationangle
-	RotationAngle *float64 `json:"RotationAngle,omitempty"`
+	RotationAngle *T `json:"RotationAngle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_AxisTickLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AxisTickLabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_AxisTickLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AxisTickLabelOptions"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_ParameterTextFieldControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterTextFieldControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametertextfieldcontrol.html
-type Template_ParameterTextFieldControl struct {
+type Template_ParameterTextFieldControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametertextfieldcontrol.html#cfn-quicksight-template-parametertextfieldcontrol-displayoptions
-	DisplayOptions *Template_TextFieldControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_TextFieldControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Template_ParameterTextFieldControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterTextFieldControl) AWSCloudFormationType() string {
+func (r *Template_ParameterTextFieldControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterTextFieldControl"
 }

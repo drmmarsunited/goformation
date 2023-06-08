@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_ResponseHeadersPolicyConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html
-type ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
+type ResponseHeadersPolicy_ResponseHeadersPolicyConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
 	// CorsConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig
-	CorsConfig *ResponseHeadersPolicy_CorsConfig `json:"CorsConfig,omitempty"`
+	CorsConfig *ResponseHeadersPolicy_CorsConfig[any] `json:"CorsConfig,omitempty"`
 
 	// CustomHeadersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig
-	CustomHeadersConfig *ResponseHeadersPolicy_CustomHeadersConfig `json:"CustomHeadersConfig,omitempty"`
+	CustomHeadersConfig *ResponseHeadersPolicy_CustomHeadersConfig[any] `json:"CustomHeadersConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,17 +33,17 @@ type ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
 	// RemoveHeadersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-removeheadersconfig
-	RemoveHeadersConfig *ResponseHeadersPolicy_RemoveHeadersConfig `json:"RemoveHeadersConfig,omitempty"`
+	RemoveHeadersConfig *ResponseHeadersPolicy_RemoveHeadersConfig[any] `json:"RemoveHeadersConfig,omitempty"`
 
 	// SecurityHeadersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig
-	SecurityHeadersConfig *ResponseHeadersPolicy_SecurityHeadersConfig `json:"SecurityHeadersConfig,omitempty"`
+	SecurityHeadersConfig *ResponseHeadersPolicy_SecurityHeadersConfig[any] `json:"SecurityHeadersConfig,omitempty"`
 
 	// ServerTimingHeadersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-servertimingheadersconfig
-	ServerTimingHeadersConfig *ResponseHeadersPolicy_ServerTimingHeadersConfig `json:"ServerTimingHeadersConfig,omitempty"`
+	ServerTimingHeadersConfig *ResponseHeadersPolicy_ServerTimingHeadersConfig[any] `json:"ServerTimingHeadersConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_ResponseHeadersPolicyConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_ResponseHeadersPolicyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig"
 }

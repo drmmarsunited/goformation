@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_TotalLocalStorageGB AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.TotalLocalStorageGB)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html
-type LaunchTemplate_TotalLocalStorageGB struct {
+type LaunchTemplate_TotalLocalStorageGB[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_TotalLocalStorageGB struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_TotalLocalStorageGB) AWSCloudFormationType() string {
+func (r *LaunchTemplate_TotalLocalStorageGB[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.TotalLocalStorageGB"
 }

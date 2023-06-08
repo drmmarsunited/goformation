@@ -8,7 +8,7 @@ import (
 
 // Analysis_LongFormatText AWS CloudFormation Resource (AWS::QuickSight::Analysis.LongFormatText)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-longformattext.html
-type Analysis_LongFormatText struct {
+type Analysis_LongFormatText[T any] struct {
 
 	// PlainText AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_LongFormatText struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LongFormatText) AWSCloudFormationType() string {
+func (r *Analysis_LongFormatText[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LongFormatText"
 }

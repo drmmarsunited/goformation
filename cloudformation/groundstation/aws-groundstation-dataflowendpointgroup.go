@@ -12,22 +12,22 @@ import (
 
 // DataflowEndpointGroup AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html
-type DataflowEndpointGroup struct {
+type DataflowEndpointGroup[T any] struct {
 
 	// ContactPostPassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactpostpassdurationseconds
-	ContactPostPassDurationSeconds *int `json:"ContactPostPassDurationSeconds,omitempty"`
+	ContactPostPassDurationSeconds *T `json:"ContactPostPassDurationSeconds,omitempty"`
 
 	// ContactPrePassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactprepassdurationseconds
-	ContactPrePassDurationSeconds *int `json:"ContactPrePassDurationSeconds,omitempty"`
+	ContactPrePassDurationSeconds *T `json:"ContactPrePassDurationSeconds,omitempty"`
 
 	// EndpointDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails
-	EndpointDetails []DataflowEndpointGroup_EndpointDetails `json:"EndpointDetails"`
+	EndpointDetails []DataflowEndpointGroup_EndpointDetails[any] `json:"EndpointDetails"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type DataflowEndpointGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataflowEndpointGroup) MarshalJSON() ([]byte, error) {
-	type Properties DataflowEndpointGroup
+func (r DataflowEndpointGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataflowEndpointGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r DataflowEndpointGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataflowEndpointGroup) UnmarshalJSON(b []byte) error {
-	type Properties DataflowEndpointGroup
+func (r *DataflowEndpointGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataflowEndpointGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *DataflowEndpointGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataflowEndpointGroup(*res.Properties)
+		*r = DataflowEndpointGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

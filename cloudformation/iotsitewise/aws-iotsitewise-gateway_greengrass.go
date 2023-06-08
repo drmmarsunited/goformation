@@ -8,7 +8,7 @@ import (
 
 // Gateway_Greengrass AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway.Greengrass)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrass.html
-type Gateway_Greengrass struct {
+type Gateway_Greengrass[T any] struct {
 
 	// GroupArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Gateway_Greengrass struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Gateway_Greengrass) AWSCloudFormationType() string {
+func (r *Gateway_Greengrass[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Gateway.Greengrass"
 }

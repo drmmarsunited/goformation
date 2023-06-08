@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinition_LocalVolumeResourceData AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html
-type ResourceDefinition_LocalVolumeResourceData struct {
+type ResourceDefinition_LocalVolumeResourceData[T any] struct {
 
 	// DestinationPath AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResourceDefinition_LocalVolumeResourceData struct {
 	// GroupOwnerSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting
-	GroupOwnerSetting *ResourceDefinition_GroupOwnerSetting `json:"GroupOwnerSetting,omitempty"`
+	GroupOwnerSetting *ResourceDefinition_GroupOwnerSetting[any] `json:"GroupOwnerSetting,omitempty"`
 
 	// SourcePath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ResourceDefinition_LocalVolumeResourceData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_LocalVolumeResourceData) AWSCloudFormationType() string {
+func (r *ResourceDefinition_LocalVolumeResourceData[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData"
 }

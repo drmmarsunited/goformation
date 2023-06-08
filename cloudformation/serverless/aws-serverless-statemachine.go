@@ -11,7 +11,7 @@ import (
 
 // StateMachine AWS CloudFormation Resource (AWS::Serverless::StateMachine)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-type StateMachine struct {
+type StateMachine[T any] struct {
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -26,17 +26,17 @@ type StateMachine struct {
 	// DefinitionUri AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	DefinitionUri *StateMachine_DefinitionUri `json:"DefinitionUri,omitempty"`
+	DefinitionUri *StateMachine_DefinitionUri[any] `json:"DefinitionUri,omitempty"`
 
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Events map[string]StateMachine_EventSource `json:"Events,omitempty"`
+	Events map[string]StateMachine_EventSource[any] `json:"Events,omitempty"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Logging *StateMachine_LoggingConfiguration `json:"Logging,omitempty"`
+	Logging *StateMachine_LoggingConfiguration[any] `json:"Logging,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type StateMachine struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Policies *StateMachine_Policies `json:"Policies,omitempty"`
+	Policies *StateMachine_Policies[any] `json:"Policies,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type StateMachine struct {
 	// Tracing AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html#sam-statemachine-tracing
-	Tracing *StateMachine_TracingConfiguration `json:"Tracing,omitempty"`
+	Tracing *StateMachine_TracingConfiguration[any] `json:"Tracing,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -90,14 +90,15 @@ type StateMachine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine) AWSCloudFormationType() string {
+func (r *StateMachine[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StateMachine) MarshalJSON() ([]byte, error) {
-	type Properties StateMachine
+func (r StateMachine[any]) MarshalJSON() ([]byte, error) {
+	type Properties StateMachine[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r StateMachine) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StateMachine) UnmarshalJSON(b []byte) error {
-	type Properties StateMachine
+func (r *StateMachine[any]) UnmarshalJSON(b []byte) error {
+	type Properties StateMachine[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *StateMachine) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StateMachine(*res.Properties)
+		*r = StateMachine[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

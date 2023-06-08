@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_IotTopicPublish AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.IotTopicPublish)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html
-type DetectorModel_IotTopicPublish struct {
+type DetectorModel_IotTopicPublish[T any] struct {
 
 	// MqttTopic AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DetectorModel_IotTopicPublish struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DetectorModel_IotTopicPublish struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_IotTopicPublish) AWSCloudFormationType() string {
+func (r *DetectorModel_IotTopicPublish[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.IotTopicPublish"
 }

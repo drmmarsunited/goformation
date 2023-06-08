@@ -8,7 +8,7 @@ import (
 
 // Identity_Tags AWS CloudFormation Resource (AWS::PinpointEmail::Identity.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html
-type Identity_Tags struct {
+type Identity_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Identity_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Identity_Tags) AWSCloudFormationType() string {
+func (r *Identity_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::Identity.Tags"
 }

@@ -8,7 +8,7 @@ import (
 
 // TopicRule_AssetPropertyVariant AWS CloudFormation Resource (AWS::IoT::TopicRule.AssetPropertyVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html
-type TopicRule_AssetPropertyVariant struct {
+type TopicRule_AssetPropertyVariant[T any] struct {
 
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type TopicRule_AssetPropertyVariant struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_AssetPropertyVariant) AWSCloudFormationType() string {
+func (r *TopicRule_AssetPropertyVariant[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.AssetPropertyVariant"
 }

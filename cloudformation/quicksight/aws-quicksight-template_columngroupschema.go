@@ -8,12 +8,12 @@ import (
 
 // Template_ColumnGroupSchema AWS CloudFormation Resource (AWS::QuickSight::Template.ColumnGroupSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html
-type Template_ColumnGroupSchema struct {
+type Template_ColumnGroupSchema[T any] struct {
 
 	// ColumnGroupColumnSchemaList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html#cfn-quicksight-template-columngroupschema-columngroupcolumnschemalist
-	ColumnGroupColumnSchemaList []Template_ColumnGroupColumnSchema `json:"ColumnGroupColumnSchemaList,omitempty"`
+	ColumnGroupColumnSchemaList []Template_ColumnGroupColumnSchema[any] `json:"ColumnGroupColumnSchemaList,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_ColumnGroupSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColumnGroupSchema) AWSCloudFormationType() string {
+func (r *Template_ColumnGroupSchema[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColumnGroupSchema"
 }

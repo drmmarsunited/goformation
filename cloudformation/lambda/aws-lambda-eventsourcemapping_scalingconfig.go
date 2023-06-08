@@ -8,12 +8,12 @@ import (
 
 // EventSourceMapping_ScalingConfig AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.ScalingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html
-type EventSourceMapping_ScalingConfig struct {
+type EventSourceMapping_ScalingConfig[T any] struct {
 
 	// MaximumConcurrency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html#cfn-lambda-eventsourcemapping-scalingconfig-maximumconcurrency
-	MaximumConcurrency *int `json:"MaximumConcurrency,omitempty"`
+	MaximumConcurrency *T `json:"MaximumConcurrency,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EventSourceMapping_ScalingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_ScalingConfig) AWSCloudFormationType() string {
+func (r *EventSourceMapping_ScalingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.ScalingConfig"
 }

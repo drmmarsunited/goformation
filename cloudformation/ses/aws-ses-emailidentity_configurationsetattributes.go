@@ -8,7 +8,7 @@ import (
 
 // EmailIdentity_ConfigurationSetAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.ConfigurationSetAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-configurationsetattributes.html
-type EmailIdentity_ConfigurationSetAttributes struct {
+type EmailIdentity_ConfigurationSetAttributes[T any] struct {
 
 	// ConfigurationSetName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EmailIdentity_ConfigurationSetAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailIdentity_ConfigurationSetAttributes) AWSCloudFormationType() string {
+func (r *EmailIdentity_ConfigurationSetAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::EmailIdentity.ConfigurationSetAttributes"
 }

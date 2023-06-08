@@ -12,7 +12,7 @@ import (
 
 // ServerCertificate AWS CloudFormation Resource (AWS::IAM::ServerCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html
-type ServerCertificate struct {
+type ServerCertificate[T any] struct {
 
 	// CertificateBody AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type ServerCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServerCertificate) AWSCloudFormationType() string {
+func (r *ServerCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::ServerCertificate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServerCertificate) MarshalJSON() ([]byte, error) {
-	type Properties ServerCertificate
+func (r ServerCertificate[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServerCertificate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ServerCertificate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServerCertificate) UnmarshalJSON(b []byte) error {
-	type Properties ServerCertificate
+func (r *ServerCertificate[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServerCertificate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ServerCertificate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServerCertificate(*res.Properties)
+		*r = ServerCertificate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,13 +12,13 @@ import (
 )
 
 // Api_Cors is a helper struct that can hold either a String or CorsConfiguration value
-type Api_Cors struct {
+type Api_Cors[T any] struct {
 	String *string
 
-	CorsConfiguration *Api_CorsConfiguration
+	CorsConfiguration *Api_CorsConfiguration[any]
 }
 
-func (r Api_Cors) value() interface{} {
+func (r Api_Cors[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r Api_Cors) value() interface{} {
 	return nil
 }
 
-func (r Api_Cors) MarshalJSON() ([]byte, error) {
+func (r Api_Cors[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Api_Cors) UnmarshalJSON(b []byte) error {
+func (r *Api_Cors[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

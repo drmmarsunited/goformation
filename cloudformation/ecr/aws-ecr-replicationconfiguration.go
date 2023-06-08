@@ -11,12 +11,12 @@ import (
 
 // ReplicationConfiguration AWS CloudFormation Resource (AWS::ECR::ReplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html
-type ReplicationConfiguration struct {
+type ReplicationConfiguration[T any] struct {
 
 	// ReplicationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration
-	ReplicationConfiguration *ReplicationConfiguration_ReplicationConfiguration `json:"ReplicationConfiguration"`
+	ReplicationConfiguration *ReplicationConfiguration_ReplicationConfiguration[any] `json:"ReplicationConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type ReplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationConfiguration) AWSCloudFormationType() string {
+func (r *ReplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::ReplicationConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReplicationConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties ReplicationConfiguration
+func (r ReplicationConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReplicationConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ReplicationConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReplicationConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties ReplicationConfiguration
+func (r *ReplicationConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReplicationConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ReplicationConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReplicationConfiguration(*res.Properties)
+		*r = ReplicationConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

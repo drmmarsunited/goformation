@@ -8,17 +8,17 @@ import (
 
 // ApiGatewayManagedOverrides_RouteSettings AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html
-type ApiGatewayManagedOverrides_RouteSettings struct {
+type ApiGatewayManagedOverrides_RouteSettings[T any] struct {
 
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-datatraceenabled
-	DataTraceEnabled *bool `json:"DataTraceEnabled,omitempty"`
+	DataTraceEnabled *T `json:"DataTraceEnabled,omitempty"`
 
 	// DetailedMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-detailedmetricsenabled
-	DetailedMetricsEnabled *bool `json:"DetailedMetricsEnabled,omitempty"`
+	DetailedMetricsEnabled *T `json:"DetailedMetricsEnabled,omitempty"`
 
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type ApiGatewayManagedOverrides_RouteSettings struct {
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-throttlingburstlimit
-	ThrottlingBurstLimit *int `json:"ThrottlingBurstLimit,omitempty"`
+	ThrottlingBurstLimit *T `json:"ThrottlingBurstLimit,omitempty"`
 
 	// ThrottlingRateLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-throttlingratelimit
-	ThrottlingRateLimit *float64 `json:"ThrottlingRateLimit,omitempty"`
+	ThrottlingRateLimit *T `json:"ThrottlingRateLimit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ApiGatewayManagedOverrides_RouteSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiGatewayManagedOverrides_RouteSettings) AWSCloudFormationType() string {
+func (r *ApiGatewayManagedOverrides_RouteSettings[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteSettings"
 }

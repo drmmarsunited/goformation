@@ -8,7 +8,7 @@ import (
 
 // FileSystem_ElasticFileSystemTag AWS CloudFormation Resource (AWS::EFS::FileSystem.ElasticFileSystemTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-elasticfilesystemtag.html
-type FileSystem_ElasticFileSystemTag struct {
+type FileSystem_ElasticFileSystemTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FileSystem_ElasticFileSystemTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_ElasticFileSystemTag) AWSCloudFormationType() string {
+func (r *FileSystem_ElasticFileSystemTag[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::FileSystem.ElasticFileSystemTag"
 }

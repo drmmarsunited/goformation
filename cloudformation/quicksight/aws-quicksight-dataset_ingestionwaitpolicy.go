@@ -8,17 +8,17 @@ import (
 
 // DataSet_IngestionWaitPolicy AWS CloudFormation Resource (AWS::QuickSight::DataSet.IngestionWaitPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-ingestionwaitpolicy.html
-type DataSet_IngestionWaitPolicy struct {
+type DataSet_IngestionWaitPolicy[T any] struct {
 
 	// IngestionWaitTimeInHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-ingestionwaitpolicy.html#cfn-quicksight-dataset-ingestionwaitpolicy-ingestionwaittimeinhours
-	IngestionWaitTimeInHours *float64 `json:"IngestionWaitTimeInHours,omitempty"`
+	IngestionWaitTimeInHours *T `json:"IngestionWaitTimeInHours,omitempty"`
 
 	// WaitForSpiceIngestion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-ingestionwaitpolicy.html#cfn-quicksight-dataset-ingestionwaitpolicy-waitforspiceingestion
-	WaitForSpiceIngestion *bool `json:"WaitForSpiceIngestion,omitempty"`
+	WaitForSpiceIngestion *T `json:"WaitForSpiceIngestion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSet_IngestionWaitPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_IngestionWaitPolicy) AWSCloudFormationType() string {
+func (r *DataSet_IngestionWaitPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.IngestionWaitPolicy"
 }

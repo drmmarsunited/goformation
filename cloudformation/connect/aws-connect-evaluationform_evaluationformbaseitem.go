@@ -8,12 +8,12 @@ import (
 
 // EvaluationForm_EvaluationFormBaseItem AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormBaseItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformbaseitem.html
-type EvaluationForm_EvaluationFormBaseItem struct {
+type EvaluationForm_EvaluationFormBaseItem[T any] struct {
 
 	// Section AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformbaseitem.html#cfn-connect-evaluationform-evaluationformbaseitem-section
-	Section *EvaluationForm_EvaluationFormSection `json:"Section"`
+	Section *EvaluationForm_EvaluationFormSection[any] `json:"Section"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EvaluationForm_EvaluationFormBaseItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormBaseItem) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormBaseItem[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormBaseItem"
 }

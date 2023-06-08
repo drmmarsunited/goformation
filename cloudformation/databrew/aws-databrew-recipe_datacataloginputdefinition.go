@@ -8,7 +8,7 @@ import (
 
 // Recipe_DataCatalogInputDefinition AWS CloudFormation Resource (AWS::DataBrew::Recipe.DataCatalogInputDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html
-type Recipe_DataCatalogInputDefinition struct {
+type Recipe_DataCatalogInputDefinition[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Recipe_DataCatalogInputDefinition struct {
 	// TempDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tempdirectory
-	TempDirectory *Recipe_S3Location `json:"TempDirectory,omitempty"`
+	TempDirectory *Recipe_S3Location[any] `json:"TempDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Recipe_DataCatalogInputDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe_DataCatalogInputDefinition) AWSCloudFormationType() string {
+func (r *Recipe_DataCatalogInputDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe.DataCatalogInputDefinition"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_LineChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LineChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartfieldwells.html
-type Dashboard_LineChartFieldWells struct {
+type Dashboard_LineChartFieldWells[T any] struct {
 
 	// LineChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartfieldwells.html#cfn-quicksight-dashboard-linechartfieldwells-linechartaggregatedfieldwells
-	LineChartAggregatedFieldWells *Dashboard_LineChartAggregatedFieldWells `json:"LineChartAggregatedFieldWells,omitempty"`
+	LineChartAggregatedFieldWells *Dashboard_LineChartAggregatedFieldWells[any] `json:"LineChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_LineChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LineChartFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_LineChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LineChartFieldWells"
 }

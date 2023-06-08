@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataBarsOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataBarsOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-databarsoptions.html
-type Dashboard_DataBarsOptions struct {
+type Dashboard_DataBarsOptions[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_DataBarsOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataBarsOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DataBarsOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataBarsOptions"
 }

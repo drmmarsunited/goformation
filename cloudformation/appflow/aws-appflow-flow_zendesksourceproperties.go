@@ -8,7 +8,7 @@ import (
 
 // Flow_ZendeskSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ZendeskSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendesksourceproperties.html
-type Flow_ZendeskSourceProperties struct {
+type Flow_ZendeskSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_ZendeskSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ZendeskSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_ZendeskSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ZendeskSourceProperties"
 }

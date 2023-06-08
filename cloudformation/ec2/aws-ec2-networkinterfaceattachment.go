@@ -11,12 +11,12 @@ import (
 
 // NetworkInterfaceAttachment AWS CloudFormation Resource (AWS::EC2::NetworkInterfaceAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html
-type NetworkInterfaceAttachment struct {
+type NetworkInterfaceAttachment[T any] struct {
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// DeviceIndex AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type NetworkInterfaceAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInterfaceAttachment) AWSCloudFormationType() string {
+func (r *NetworkInterfaceAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInterfaceAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkInterfaceAttachment) MarshalJSON() ([]byte, error) {
-	type Properties NetworkInterfaceAttachment
+func (r NetworkInterfaceAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkInterfaceAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r NetworkInterfaceAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkInterfaceAttachment) UnmarshalJSON(b []byte) error {
-	type Properties NetworkInterfaceAttachment
+func (r *NetworkInterfaceAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkInterfaceAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *NetworkInterfaceAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkInterfaceAttachment(*res.Properties)
+		*r = NetworkInterfaceAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // ModelCard_IntendedUses AWS CloudFormation Resource (AWS::SageMaker::ModelCard.IntendedUses)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html
-type ModelCard_IntendedUses struct {
+type ModelCard_IntendedUses[T any] struct {
 
 	// ExplanationsForRiskRating AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ModelCard_IntendedUses struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_IntendedUses) AWSCloudFormationType() string {
+func (r *ModelCard_IntendedUses[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.IntendedUses"
 }

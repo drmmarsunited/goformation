@@ -8,7 +8,7 @@ import (
 
 // Flywheel_DocumentClassificationConfig AWS CloudFormation Resource (AWS::Comprehend::Flywheel.DocumentClassificationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-documentclassificationconfig.html
-type Flywheel_DocumentClassificationConfig struct {
+type Flywheel_DocumentClassificationConfig[T any] struct {
 
 	// Labels AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Flywheel_DocumentClassificationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_DocumentClassificationConfig) AWSCloudFormationType() string {
+func (r *Flywheel_DocumentClassificationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.DocumentClassificationConfig"
 }

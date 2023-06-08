@@ -8,7 +8,7 @@ import (
 
 // Role_Policy AWS CloudFormation Resource (AWS::IAM::Role.Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
-type Role_Policy struct {
+type Role_Policy[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Role_Policy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Role_Policy) AWSCloudFormationType() string {
+func (r *Role_Policy[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::Role.Policy"
 }

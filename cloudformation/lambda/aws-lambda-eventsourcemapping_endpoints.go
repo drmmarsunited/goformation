@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_Endpoints AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.Endpoints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-endpoints.html
-type EventSourceMapping_Endpoints struct {
+type EventSourceMapping_Endpoints[T any] struct {
 
 	// KafkaBootstrapServers AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EventSourceMapping_Endpoints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_Endpoints) AWSCloudFormationType() string {
+func (r *EventSourceMapping_Endpoints[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.Endpoints"
 }

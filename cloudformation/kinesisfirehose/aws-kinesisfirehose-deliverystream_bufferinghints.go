@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_BufferingHints AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.BufferingHints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
-type DeliveryStream_BufferingHints struct {
+type DeliveryStream_BufferingHints[T any] struct {
 
 	// IntervalInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-intervalinseconds
-	IntervalInSeconds *int `json:"IntervalInSeconds,omitempty"`
+	IntervalInSeconds *T `json:"IntervalInSeconds,omitempty"`
 
 	// SizeInMBs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs
-	SizeInMBs *int `json:"SizeInMBs,omitempty"`
+	SizeInMBs *T `json:"SizeInMBs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeliveryStream_BufferingHints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_BufferingHints) AWSCloudFormationType() string {
+func (r *DeliveryStream_BufferingHints[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.BufferingHints"
 }

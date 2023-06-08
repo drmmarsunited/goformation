@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSetEventDestination_KinesisFirehoseDestination AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html
-type ConfigurationSetEventDestination_KinesisFirehoseDestination struct {
+type ConfigurationSetEventDestination_KinesisFirehoseDestination[T any] struct {
 
 	// DeliveryStreamArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConfigurationSetEventDestination_KinesisFirehoseDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSetEventDestination_KinesisFirehoseDestination) AWSCloudFormationType() string {
+func (r *ConfigurationSetEventDestination_KinesisFirehoseDestination[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination"
 }

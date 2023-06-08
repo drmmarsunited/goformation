@@ -12,12 +12,12 @@ import (
 
 // LocationFSxONTAP AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html
-type LocationFSxONTAP struct {
+type LocationFSxONTAP[T any] struct {
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol
-	Protocol *LocationFSxONTAP_Protocol `json:"Protocol,omitempty"`
+	Protocol *LocationFSxONTAP_Protocol[any] `json:"Protocol,omitempty"`
 
 	// SecurityGroupArns AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type LocationFSxONTAP struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationFSxONTAP) MarshalJSON() ([]byte, error) {
-	type Properties LocationFSxONTAP
+func (r LocationFSxONTAP[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationFSxONTAP[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r LocationFSxONTAP) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationFSxONTAP) UnmarshalJSON(b []byte) error {
-	type Properties LocationFSxONTAP
+func (r *LocationFSxONTAP[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationFSxONTAP[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *LocationFSxONTAP) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationFSxONTAP(*res.Properties)
+		*r = LocationFSxONTAP[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

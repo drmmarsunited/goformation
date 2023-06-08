@@ -8,12 +8,12 @@ import (
 
 // Analysis_FilterTextFieldControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterTextFieldControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filtertextfieldcontrol.html
-type Analysis_FilterTextFieldControl struct {
+type Analysis_FilterTextFieldControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filtertextfieldcontrol.html#cfn-quicksight-analysis-filtertextfieldcontrol-displayoptions
-	DisplayOptions *Analysis_TextFieldControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_TextFieldControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Analysis_FilterTextFieldControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterTextFieldControl) AWSCloudFormationType() string {
+func (r *Analysis_FilterTextFieldControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterTextFieldControl"
 }

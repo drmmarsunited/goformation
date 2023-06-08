@@ -12,27 +12,27 @@ import (
 
 // Application AWS CloudFormation Resource (AWS::ApplicationInsights::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html
-type Application struct {
+type Application[T any] struct {
 
 	// AutoConfigurationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-autoconfigurationenabled
-	AutoConfigurationEnabled *bool `json:"AutoConfigurationEnabled,omitempty"`
+	AutoConfigurationEnabled *T `json:"AutoConfigurationEnabled,omitempty"`
 
 	// CWEMonitorEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-cwemonitorenabled
-	CWEMonitorEnabled *bool `json:"CWEMonitorEnabled,omitempty"`
+	CWEMonitorEnabled *T `json:"CWEMonitorEnabled,omitempty"`
 
 	// ComponentMonitoringSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-componentmonitoringsettings
-	ComponentMonitoringSettings []Application_ComponentMonitoringSetting `json:"ComponentMonitoringSettings,omitempty"`
+	ComponentMonitoringSettings []Application_ComponentMonitoringSetting[any] `json:"ComponentMonitoringSettings,omitempty"`
 
 	// CustomComponents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-customcomponents
-	CustomComponents []Application_CustomComponent `json:"CustomComponents,omitempty"`
+	CustomComponents []Application_CustomComponent[any] `json:"CustomComponents,omitempty"`
 
 	// GroupingType AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type Application struct {
 	// LogPatternSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-logpatternsets
-	LogPatternSets []Application_LogPatternSet `json:"LogPatternSets,omitempty"`
+	LogPatternSets []Application_LogPatternSet[any] `json:"LogPatternSets,omitempty"`
 
 	// OpsCenterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-opscenterenabled
-	OpsCenterEnabled *bool `json:"OpsCenterEnabled,omitempty"`
+	OpsCenterEnabled *T `json:"OpsCenterEnabled,omitempty"`
 
 	// OpsItemSNSTopicArn AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Application struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application) AWSCloudFormationType() string {
+func (r *Application[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Application) MarshalJSON() ([]byte, error) {
-	type Properties Application
+func (r Application[any]) MarshalJSON() ([]byte, error) {
+	type Properties Application[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Application) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Application) UnmarshalJSON(b []byte) error {
-	type Properties Application
+func (r *Application[any]) UnmarshalJSON(b []byte) error {
+	type Properties Application[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Application) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Application(*res.Properties)
+		*r = Application[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

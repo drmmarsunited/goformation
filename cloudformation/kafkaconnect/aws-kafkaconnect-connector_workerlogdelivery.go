@@ -8,22 +8,22 @@ import (
 
 // Connector_WorkerLogDelivery AWS CloudFormation Resource (AWS::KafkaConnect::Connector.WorkerLogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html
-type Connector_WorkerLogDelivery struct {
+type Connector_WorkerLogDelivery[T any] struct {
 
 	// CloudWatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-cloudwatchlogs
-	CloudWatchLogs *Connector_CloudWatchLogsLogDelivery `json:"CloudWatchLogs,omitempty"`
+	CloudWatchLogs *Connector_CloudWatchLogsLogDelivery[any] `json:"CloudWatchLogs,omitempty"`
 
 	// Firehose AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose
-	Firehose *Connector_FirehoseLogDelivery `json:"Firehose,omitempty"`
+	Firehose *Connector_FirehoseLogDelivery[any] `json:"Firehose,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3
-	S3 *Connector_S3LogDelivery `json:"S3,omitempty"`
+	S3 *Connector_S3LogDelivery[any] `json:"S3,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Connector_WorkerLogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_WorkerLogDelivery) AWSCloudFormationType() string {
+func (r *Connector_WorkerLogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.WorkerLogDelivery"
 }

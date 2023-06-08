@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_PathPatternConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-pathpatternconfig.html
-type ListenerRule_PathPatternConfig struct {
+type ListenerRule_PathPatternConfig[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ListenerRule_PathPatternConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_PathPatternConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_PathPatternConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig"
 }

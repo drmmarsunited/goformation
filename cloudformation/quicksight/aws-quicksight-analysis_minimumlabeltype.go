@@ -8,7 +8,7 @@ import (
 
 // Analysis_MinimumLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.MinimumLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-minimumlabeltype.html
-type Analysis_MinimumLabelType struct {
+type Analysis_MinimumLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_MinimumLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_MinimumLabelType) AWSCloudFormationType() string {
+func (r *Analysis_MinimumLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.MinimumLabelType"
 }

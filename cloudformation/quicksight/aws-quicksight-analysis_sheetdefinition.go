@@ -8,7 +8,7 @@ import (
 
 // Analysis_SheetDefinition AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html
-type Analysis_SheetDefinition struct {
+type Analysis_SheetDefinition[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Analysis_SheetDefinition struct {
 	// FilterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-filtercontrols
-	FilterControls []Analysis_FilterControl `json:"FilterControls,omitempty"`
+	FilterControls []Analysis_FilterControl[any] `json:"FilterControls,omitempty"`
 
 	// Layouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-layouts
-	Layouts []Analysis_Layout `json:"Layouts,omitempty"`
+	Layouts []Analysis_Layout[any] `json:"Layouts,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Analysis_SheetDefinition struct {
 	// ParameterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-parametercontrols
-	ParameterControls []Analysis_ParameterControl `json:"ParameterControls,omitempty"`
+	ParameterControls []Analysis_ParameterControl[any] `json:"ParameterControls,omitempty"`
 
 	// SheetControlLayouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-sheetcontrollayouts
-	SheetControlLayouts []Analysis_SheetControlLayout `json:"SheetControlLayouts,omitempty"`
+	SheetControlLayouts []Analysis_SheetControlLayout[any] `json:"SheetControlLayouts,omitempty"`
 
 	// SheetId AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Analysis_SheetDefinition struct {
 	// TextBoxes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-textboxes
-	TextBoxes []Analysis_SheetTextBox `json:"TextBoxes,omitempty"`
+	TextBoxes []Analysis_SheetTextBox[any] `json:"TextBoxes,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Analysis_SheetDefinition struct {
 	// Visuals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-visuals
-	Visuals []Analysis_Visual `json:"Visuals,omitempty"`
+	Visuals []Analysis_Visual[any] `json:"Visuals,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Analysis_SheetDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetDefinition) AWSCloudFormationType() string {
+func (r *Analysis_SheetDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetDefinition"
 }

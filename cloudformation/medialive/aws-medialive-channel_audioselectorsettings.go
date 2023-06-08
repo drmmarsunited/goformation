@@ -8,27 +8,27 @@ import (
 
 // Channel_AudioSelectorSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioSelectorSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html
-type Channel_AudioSelectorSettings struct {
+type Channel_AudioSelectorSettings[T any] struct {
 
 	// AudioHlsRenditionSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiohlsrenditionselection
-	AudioHlsRenditionSelection *Channel_AudioHlsRenditionSelection `json:"AudioHlsRenditionSelection,omitempty"`
+	AudioHlsRenditionSelection *Channel_AudioHlsRenditionSelection[any] `json:"AudioHlsRenditionSelection,omitempty"`
 
 	// AudioLanguageSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection
-	AudioLanguageSelection *Channel_AudioLanguageSelection `json:"AudioLanguageSelection,omitempty"`
+	AudioLanguageSelection *Channel_AudioLanguageSelection[any] `json:"AudioLanguageSelection,omitempty"`
 
 	// AudioPidSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection
-	AudioPidSelection *Channel_AudioPidSelection `json:"AudioPidSelection,omitempty"`
+	AudioPidSelection *Channel_AudioPidSelection[any] `json:"AudioPidSelection,omitempty"`
 
 	// AudioTrackSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiotrackselection
-	AudioTrackSelection *Channel_AudioTrackSelection `json:"AudioTrackSelection,omitempty"`
+	AudioTrackSelection *Channel_AudioTrackSelection[any] `json:"AudioTrackSelection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_AudioSelectorSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioSelectorSettings) AWSCloudFormationType() string {
+func (r *Channel_AudioSelectorSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioSelectorSettings"
 }

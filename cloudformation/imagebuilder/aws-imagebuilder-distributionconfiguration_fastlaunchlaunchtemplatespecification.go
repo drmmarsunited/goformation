@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_FastLaunchLaunchTemplateSpecification AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.FastLaunchLaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification.html
-type DistributionConfiguration_FastLaunchLaunchTemplateSpecification struct {
+type DistributionConfiguration_FastLaunchLaunchTemplateSpecification[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DistributionConfiguration_FastLaunchLaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_FastLaunchLaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_FastLaunchLaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.FastLaunchLaunchTemplateSpecification"
 }

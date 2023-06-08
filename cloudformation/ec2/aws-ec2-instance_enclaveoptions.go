@@ -8,12 +8,12 @@ import (
 
 // Instance_EnclaveOptions AWS CloudFormation Resource (AWS::EC2::Instance.EnclaveOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html
-type Instance_EnclaveOptions struct {
+type Instance_EnclaveOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Instance_EnclaveOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_EnclaveOptions) AWSCloudFormationType() string {
+func (r *Instance_EnclaveOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.EnclaveOptions"
 }

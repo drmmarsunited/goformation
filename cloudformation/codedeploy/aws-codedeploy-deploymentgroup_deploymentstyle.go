@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_DeploymentStyle AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.DeploymentStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html
-type DeploymentGroup_DeploymentStyle struct {
+type DeploymentGroup_DeploymentStyle[T any] struct {
 
 	// DeploymentOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DeploymentGroup_DeploymentStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_DeploymentStyle) AWSCloudFormationType() string {
+func (r *DeploymentGroup_DeploymentStyle[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.DeploymentStyle"
 }

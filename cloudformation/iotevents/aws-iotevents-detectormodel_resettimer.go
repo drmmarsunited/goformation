@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_ResetTimer AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.ResetTimer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html
-type DetectorModel_ResetTimer struct {
+type DetectorModel_ResetTimer[T any] struct {
 
 	// TimerName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DetectorModel_ResetTimer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_ResetTimer) AWSCloudFormationType() string {
+func (r *DetectorModel_ResetTimer[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.ResetTimer"
 }

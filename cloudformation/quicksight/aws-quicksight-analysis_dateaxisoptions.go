@@ -8,7 +8,7 @@ import (
 
 // Analysis_DateAxisOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateAxisOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dateaxisoptions.html
-type Analysis_DateAxisOptions struct {
+type Analysis_DateAxisOptions[T any] struct {
 
 	// MissingDateVisibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_DateAxisOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateAxisOptions) AWSCloudFormationType() string {
+func (r *Analysis_DateAxisOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateAxisOptions"
 }

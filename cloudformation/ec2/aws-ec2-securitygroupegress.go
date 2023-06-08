@@ -11,7 +11,7 @@ import (
 
 // SecurityGroupEgress AWS CloudFormation Resource (AWS::EC2::SecurityGroupEgress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
-type SecurityGroupEgress struct {
+type SecurityGroupEgress[T any] struct {
 
 	// CidrIp AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type SecurityGroupEgress struct {
 	// FromPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
-	FromPort *int `json:"FromPort,omitempty"`
+	FromPort *T `json:"FromPort,omitempty"`
 
 	// GroupId AWS CloudFormation Property
 	// Required: true
@@ -56,7 +56,7 @@ type SecurityGroupEgress struct {
 	// ToPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
-	ToPort *int `json:"ToPort,omitempty"`
+	ToPort *T `json:"ToPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -75,14 +75,15 @@ type SecurityGroupEgress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityGroupEgress) AWSCloudFormationType() string {
+func (r *SecurityGroupEgress[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SecurityGroupEgress"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityGroupEgress) MarshalJSON() ([]byte, error) {
-	type Properties SecurityGroupEgress
+func (r SecurityGroupEgress[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityGroupEgress[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r SecurityGroupEgress) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityGroupEgress) UnmarshalJSON(b []byte) error {
-	type Properties SecurityGroupEgress
+func (r *SecurityGroupEgress[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityGroupEgress[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *SecurityGroupEgress) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityGroupEgress(*res.Properties)
+		*r = SecurityGroupEgress[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

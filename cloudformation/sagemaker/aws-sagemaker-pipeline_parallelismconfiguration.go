@@ -8,12 +8,12 @@ import (
 
 // Pipeline_ParallelismConfiguration AWS CloudFormation Resource (AWS::SageMaker::Pipeline.ParallelismConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-parallelismconfiguration.html
-type Pipeline_ParallelismConfiguration struct {
+type Pipeline_ParallelismConfiguration[T any] struct {
 
 	// MaxParallelExecutionSteps AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-parallelismconfiguration.html#cfn-sagemaker-pipeline-parallelismconfiguration-maxparallelexecutionsteps
-	MaxParallelExecutionSteps int `json:"MaxParallelExecutionSteps"`
+	MaxParallelExecutionSteps T `json:"MaxParallelExecutionSteps"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipeline_ParallelismConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ParallelismConfiguration) AWSCloudFormationType() string {
+func (r *Pipeline_ParallelismConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Pipeline.ParallelismConfiguration"
 }

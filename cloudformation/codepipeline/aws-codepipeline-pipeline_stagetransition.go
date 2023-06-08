@@ -8,7 +8,7 @@ import (
 
 // Pipeline_StageTransition AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.StageTransition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
-type Pipeline_StageTransition struct {
+type Pipeline_StageTransition[T any] struct {
 
 	// Reason AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_StageTransition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_StageTransition) AWSCloudFormationType() string {
+func (r *Pipeline_StageTransition[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.StageTransition"
 }

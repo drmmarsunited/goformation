@@ -8,7 +8,7 @@ import (
 
 // DomainConfiguration_ServerCertificateSummary AWS CloudFormation Resource (AWS::IoT::DomainConfiguration.ServerCertificateSummary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificatesummary.html
-type DomainConfiguration_ServerCertificateSummary struct {
+type DomainConfiguration_ServerCertificateSummary[T any] struct {
 
 	// ServerCertificateArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DomainConfiguration_ServerCertificateSummary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainConfiguration_ServerCertificateSummary) AWSCloudFormationType() string {
+func (r *DomainConfiguration_ServerCertificateSummary[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::DomainConfiguration.ServerCertificateSummary"
 }

@@ -8,17 +8,17 @@ import (
 
 // DataflowEndpointGroup_DataflowEndpoint AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.DataflowEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html
-type DataflowEndpointGroup_DataflowEndpoint struct {
+type DataflowEndpointGroup_DataflowEndpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-address
-	Address *DataflowEndpointGroup_SocketAddress `json:"Address,omitempty"`
+	Address *DataflowEndpointGroup_SocketAddress[any] `json:"Address,omitempty"`
 
 	// Mtu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-mtu
-	Mtu *int `json:"Mtu,omitempty"`
+	Mtu *T `json:"Mtu,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataflowEndpointGroup_DataflowEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_DataflowEndpoint) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_DataflowEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.DataflowEndpoint"
 }

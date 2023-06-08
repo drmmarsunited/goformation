@@ -8,7 +8,7 @@ import (
 
 // MissionProfile_StreamsKmsKey AWS CloudFormation Resource (AWS::GroundStation::MissionProfile.StreamsKmsKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-streamskmskey.html
-type MissionProfile_StreamsKmsKey struct {
+type MissionProfile_StreamsKmsKey[T any] struct {
 
 	// KmsAliasArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MissionProfile_StreamsKmsKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MissionProfile_StreamsKmsKey) AWSCloudFormationType() string {
+func (r *MissionProfile_StreamsKmsKey[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::MissionProfile.StreamsKmsKey"
 }

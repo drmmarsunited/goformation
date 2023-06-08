@@ -8,17 +8,17 @@ import (
 
 // Template_NumericAxisOptions AWS CloudFormation Resource (AWS::QuickSight::Template.NumericAxisOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaxisoptions.html
-type Template_NumericAxisOptions struct {
+type Template_NumericAxisOptions[T any] struct {
 
 	// Range AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaxisoptions.html#cfn-quicksight-template-numericaxisoptions-range
-	Range *Template_AxisDisplayRange `json:"Range,omitempty"`
+	Range *Template_AxisDisplayRange[any] `json:"Range,omitempty"`
 
 	// Scale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaxisoptions.html#cfn-quicksight-template-numericaxisoptions-scale
-	Scale *Template_AxisScale `json:"Scale,omitempty"`
+	Scale *Template_AxisScale[any] `json:"Scale,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_NumericAxisOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumericAxisOptions) AWSCloudFormationType() string {
+func (r *Template_NumericAxisOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumericAxisOptions"
 }

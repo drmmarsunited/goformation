@@ -8,12 +8,12 @@ import (
 
 // Bot_CustomVocabulary AWS CloudFormation Resource (AWS::Lex::Bot.CustomVocabulary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabulary.html
-type Bot_CustomVocabulary struct {
+type Bot_CustomVocabulary[T any] struct {
 
 	// CustomVocabularyItems AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabulary.html#cfn-lex-bot-customvocabulary-customvocabularyitems
-	CustomVocabularyItems []Bot_CustomVocabularyItem `json:"CustomVocabularyItems"`
+	CustomVocabularyItems []Bot_CustomVocabularyItem[any] `json:"CustomVocabularyItems"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_CustomVocabulary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_CustomVocabulary) AWSCloudFormationType() string {
+func (r *Bot_CustomVocabulary[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.CustomVocabulary"
 }

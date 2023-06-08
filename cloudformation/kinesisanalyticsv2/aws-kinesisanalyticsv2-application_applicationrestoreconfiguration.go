@@ -8,7 +8,7 @@ import (
 
 // Application_ApplicationRestoreConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ApplicationRestoreConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationrestoreconfiguration.html
-type Application_ApplicationRestoreConfiguration struct {
+type Application_ApplicationRestoreConfiguration[T any] struct {
 
 	// ApplicationRestoreType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_ApplicationRestoreConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationRestoreConfiguration) AWSCloudFormationType() string {
+func (r *Application_ApplicationRestoreConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ApplicationRestoreConfiguration"
 }

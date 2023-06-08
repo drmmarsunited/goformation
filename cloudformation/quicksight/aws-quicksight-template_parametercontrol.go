@@ -8,37 +8,37 @@ import (
 
 // Template_ParameterControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html
-type Template_ParameterControl struct {
+type Template_ParameterControl[T any] struct {
 
 	// DateTimePicker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-datetimepicker
-	DateTimePicker *Template_ParameterDateTimePickerControl `json:"DateTimePicker,omitempty"`
+	DateTimePicker *Template_ParameterDateTimePickerControl[any] `json:"DateTimePicker,omitempty"`
 
 	// Dropdown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-dropdown
-	Dropdown *Template_ParameterDropDownControl `json:"Dropdown,omitempty"`
+	Dropdown *Template_ParameterDropDownControl[any] `json:"Dropdown,omitempty"`
 
 	// List AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-list
-	List *Template_ParameterListControl `json:"List,omitempty"`
+	List *Template_ParameterListControl[any] `json:"List,omitempty"`
 
 	// Slider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-slider
-	Slider *Template_ParameterSliderControl `json:"Slider,omitempty"`
+	Slider *Template_ParameterSliderControl[any] `json:"Slider,omitempty"`
 
 	// TextArea AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-textarea
-	TextArea *Template_ParameterTextAreaControl `json:"TextArea,omitempty"`
+	TextArea *Template_ParameterTextAreaControl[any] `json:"TextArea,omitempty"`
 
 	// TextField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parametercontrol.html#cfn-quicksight-template-parametercontrol-textfield
-	TextField *Template_ParameterTextFieldControl `json:"TextField,omitempty"`
+	TextField *Template_ParameterTextFieldControl[any] `json:"TextField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_ParameterControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterControl) AWSCloudFormationType() string {
+func (r *Template_ParameterControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterControl"
 }

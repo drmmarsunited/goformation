@@ -12,13 +12,13 @@ import (
 )
 
 // HttpApi_DefinitionUri is a helper struct that can hold either a String or S3Location value
-type HttpApi_DefinitionUri struct {
+type HttpApi_DefinitionUri[T any] struct {
 	String *string
 
-	S3Location *HttpApi_S3Location
+	S3Location *HttpApi_S3Location[any]
 }
 
-func (r HttpApi_DefinitionUri) value() interface{} {
+func (r HttpApi_DefinitionUri[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r HttpApi_DefinitionUri) value() interface{} {
 	return nil
 }
 
-func (r HttpApi_DefinitionUri) MarshalJSON() ([]byte, error) {
+func (r HttpApi_DefinitionUri[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *HttpApi_DefinitionUri) UnmarshalJSON(b []byte) error {
+func (r *HttpApi_DefinitionUri[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

@@ -8,22 +8,22 @@ import (
 
 // FeatureGroup_OfflineStoreConfig AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.OfflineStoreConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html
-type FeatureGroup_OfflineStoreConfig struct {
+type FeatureGroup_OfflineStoreConfig[T any] struct {
 
 	// DataCatalogConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-datacatalogconfig
-	DataCatalogConfig *FeatureGroup_DataCatalogConfig `json:"DataCatalogConfig,omitempty"`
+	DataCatalogConfig *FeatureGroup_DataCatalogConfig[any] `json:"DataCatalogConfig,omitempty"`
 
 	// DisableGlueTableCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-disablegluetablecreation
-	DisableGlueTableCreation *bool `json:"DisableGlueTableCreation,omitempty"`
+	DisableGlueTableCreation *T `json:"DisableGlueTableCreation,omitempty"`
 
 	// S3StorageConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-s3storageconfig
-	S3StorageConfig *FeatureGroup_S3StorageConfig `json:"S3StorageConfig"`
+	S3StorageConfig *FeatureGroup_S3StorageConfig[any] `json:"S3StorageConfig"`
 
 	// TableFormat AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type FeatureGroup_OfflineStoreConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_OfflineStoreConfig) AWSCloudFormationType() string {
+func (r *FeatureGroup_OfflineStoreConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.OfflineStoreConfig"
 }

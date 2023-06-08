@@ -12,7 +12,7 @@ import (
 
 // Ruleset AWS CloudFormation Resource (AWS::DataBrew::Ruleset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html
-type Ruleset struct {
+type Ruleset[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Ruleset struct {
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-rules
-	Rules []Ruleset_Rule `json:"Rules"`
+	Rules []Ruleset_Rule[any] `json:"Rules"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type Ruleset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ruleset) AWSCloudFormationType() string {
+func (r *Ruleset[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Ruleset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Ruleset) MarshalJSON() ([]byte, error) {
-	type Properties Ruleset
+func (r Ruleset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Ruleset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Ruleset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Ruleset) UnmarshalJSON(b []byte) error {
-	type Properties Ruleset
+func (r *Ruleset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Ruleset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Ruleset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Ruleset(*res.Properties)
+		*r = Ruleset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

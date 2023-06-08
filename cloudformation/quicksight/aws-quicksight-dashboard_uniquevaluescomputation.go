@@ -8,12 +8,12 @@ import (
 
 // Dashboard_UniqueValuesComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.UniqueValuesComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-uniquevaluescomputation.html
-type Dashboard_UniqueValuesComputation struct {
+type Dashboard_UniqueValuesComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-uniquevaluescomputation.html#cfn-quicksight-dashboard-uniquevaluescomputation-category
-	Category *Dashboard_DimensionField `json:"Category"`
+	Category *Dashboard_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_UniqueValuesComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_UniqueValuesComputation) AWSCloudFormationType() string {
+func (r *Dashboard_UniqueValuesComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.UniqueValuesComputation"
 }

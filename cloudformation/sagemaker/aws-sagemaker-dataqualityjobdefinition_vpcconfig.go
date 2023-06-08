@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html
-type DataQualityJobDefinition_VpcConfig struct {
+type DataQualityJobDefinition_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataQualityJobDefinition_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_VpcConfig) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.VpcConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bot_SlotValue AWS CloudFormation Resource (AWS::Lex::Bot.SlotValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalue.html
-type Bot_SlotValue struct {
+type Bot_SlotValue[T any] struct {
 
 	// InterpretedValue AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Bot_SlotValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotValue) AWSCloudFormationType() string {
+func (r *Bot_SlotValue[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotValue"
 }

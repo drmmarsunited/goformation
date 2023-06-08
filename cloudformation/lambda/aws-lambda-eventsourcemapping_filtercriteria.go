@@ -8,12 +8,12 @@ import (
 
 // EventSourceMapping_FilterCriteria AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.FilterCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html
-type EventSourceMapping_FilterCriteria struct {
+type EventSourceMapping_FilterCriteria[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html#cfn-lambda-eventsourcemapping-filtercriteria-filters
-	Filters []EventSourceMapping_Filter `json:"Filters,omitempty"`
+	Filters []EventSourceMapping_Filter[any] `json:"Filters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EventSourceMapping_FilterCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_FilterCriteria) AWSCloudFormationType() string {
+func (r *EventSourceMapping_FilterCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.FilterCriteria"
 }

@@ -8,7 +8,7 @@ import (
 
 // WirelessDevice_OtaaV11 AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.OtaaV11)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html
-type WirelessDevice_OtaaV11 struct {
+type WirelessDevice_OtaaV11[T any] struct {
 
 	// AppKey AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WirelessDevice_OtaaV11 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDevice_OtaaV11) AWSCloudFormationType() string {
+func (r *WirelessDevice_OtaaV11[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDevice.OtaaV11"
 }

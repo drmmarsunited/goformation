@@ -8,27 +8,27 @@ import (
 
 // Deployment_MethodSetting AWS CloudFormation Resource (AWS::ApiGateway::Deployment.MethodSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html
-type Deployment_MethodSetting struct {
+type Deployment_MethodSetting[T any] struct {
 
 	// CacheDataEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-cachedataencrypted
-	CacheDataEncrypted *bool `json:"CacheDataEncrypted,omitempty"`
+	CacheDataEncrypted *T `json:"CacheDataEncrypted,omitempty"`
 
 	// CacheTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-cachettlinseconds
-	CacheTtlInSeconds *int `json:"CacheTtlInSeconds,omitempty"`
+	CacheTtlInSeconds *T `json:"CacheTtlInSeconds,omitempty"`
 
 	// CachingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-cachingenabled
-	CachingEnabled *bool `json:"CachingEnabled,omitempty"`
+	CachingEnabled *T `json:"CachingEnabled,omitempty"`
 
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-datatraceenabled
-	DataTraceEnabled *bool `json:"DataTraceEnabled,omitempty"`
+	DataTraceEnabled *T `json:"DataTraceEnabled,omitempty"`
 
 	// HttpMethod AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Deployment_MethodSetting struct {
 	// MetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-metricsenabled
-	MetricsEnabled *bool `json:"MetricsEnabled,omitempty"`
+	MetricsEnabled *T `json:"MetricsEnabled,omitempty"`
 
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Deployment_MethodSetting struct {
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-throttlingburstlimit
-	ThrottlingBurstLimit *int `json:"ThrottlingBurstLimit,omitempty"`
+	ThrottlingBurstLimit *T `json:"ThrottlingBurstLimit,omitempty"`
 
 	// ThrottlingRateLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-throttlingratelimit
-	ThrottlingRateLimit *float64 `json:"ThrottlingRateLimit,omitempty"`
+	ThrottlingRateLimit *T `json:"ThrottlingRateLimit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Deployment_MethodSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_MethodSetting) AWSCloudFormationType() string {
+func (r *Deployment_MethodSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Deployment.MethodSetting"
 }

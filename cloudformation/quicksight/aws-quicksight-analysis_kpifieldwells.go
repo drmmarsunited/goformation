@@ -8,22 +8,22 @@ import (
 
 // Analysis_KPIFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.KPIFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpifieldwells.html
-type Analysis_KPIFieldWells struct {
+type Analysis_KPIFieldWells[T any] struct {
 
 	// TargetValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpifieldwells.html#cfn-quicksight-analysis-kpifieldwells-targetvalues
-	TargetValues []Analysis_MeasureField `json:"TargetValues,omitempty"`
+	TargetValues []Analysis_MeasureField[any] `json:"TargetValues,omitempty"`
 
 	// TrendGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpifieldwells.html#cfn-quicksight-analysis-kpifieldwells-trendgroups
-	TrendGroups []Analysis_DimensionField `json:"TrendGroups,omitempty"`
+	TrendGroups []Analysis_DimensionField[any] `json:"TrendGroups,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpifieldwells.html#cfn-quicksight-analysis-kpifieldwells-values
-	Values []Analysis_MeasureField `json:"Values,omitempty"`
+	Values []Analysis_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_KPIFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_KPIFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_KPIFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.KPIFieldWells"
 }

@@ -12,7 +12,7 @@ import (
 
 // Asset AWS CloudFormation Resource (AWS::IoTSiteWise::Asset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html
-type Asset struct {
+type Asset[T any] struct {
 
 	// AssetDescription AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Asset struct {
 	// AssetHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assethierarchies
-	AssetHierarchies []Asset_AssetHierarchy `json:"AssetHierarchies,omitempty"`
+	AssetHierarchies []Asset_AssetHierarchy[any] `json:"AssetHierarchies,omitempty"`
 
 	// AssetModelId AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Asset struct {
 	// AssetProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetproperties
-	AssetProperties []Asset_AssetProperty `json:"AssetProperties,omitempty"`
+	AssetProperties []Asset_AssetProperty[any] `json:"AssetProperties,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Asset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Asset) AWSCloudFormationType() string {
+func (r *Asset[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Asset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Asset) MarshalJSON() ([]byte, error) {
-	type Properties Asset
+func (r Asset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Asset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Asset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Asset) UnmarshalJSON(b []byte) error {
-	type Properties Asset
+func (r *Asset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Asset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Asset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Asset(*res.Properties)
+		*r = Asset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

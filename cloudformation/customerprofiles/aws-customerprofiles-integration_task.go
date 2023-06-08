@@ -8,12 +8,12 @@ import (
 
 // Integration_Task AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.Task)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html
-type Integration_Task struct {
+type Integration_Task[T any] struct {
 
 	// ConnectorOperator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-connectoroperator
-	ConnectorOperator *Integration_ConnectorOperator `json:"ConnectorOperator,omitempty"`
+	ConnectorOperator *Integration_ConnectorOperator[any] `json:"ConnectorOperator,omitempty"`
 
 	// DestinationField AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Integration_Task struct {
 	// TaskProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-taskproperties
-	TaskProperties []Integration_TaskPropertiesMap `json:"TaskProperties,omitempty"`
+	TaskProperties []Integration_TaskPropertiesMap[any] `json:"TaskProperties,omitempty"`
 
 	// TaskType AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Integration_Task struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_Task) AWSCloudFormationType() string {
+func (r *Integration_Task[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.Task"
 }

@@ -8,17 +8,17 @@ import (
 
 // CertificateAuthority_AccessDescription AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.AccessDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html
-type CertificateAuthority_AccessDescription struct {
+type CertificateAuthority_AccessDescription[T any] struct {
 
 	// AccessLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html#cfn-acmpca-certificateauthority-accessdescription-accesslocation
-	AccessLocation *CertificateAuthority_GeneralName `json:"AccessLocation"`
+	AccessLocation *CertificateAuthority_GeneralName[any] `json:"AccessLocation"`
 
 	// AccessMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html#cfn-acmpca-certificateauthority-accessdescription-accessmethod
-	AccessMethod *CertificateAuthority_AccessMethod `json:"AccessMethod"`
+	AccessMethod *CertificateAuthority_AccessMethod[any] `json:"AccessMethod"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type CertificateAuthority_AccessDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_AccessDescription) AWSCloudFormationType() string {
+func (r *CertificateAuthority_AccessDescription[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.AccessDescription"
 }

@@ -8,12 +8,12 @@ import (
 
 // Cluster_VpcConnectivity AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html
-type Cluster_VpcConnectivity struct {
+type Cluster_VpcConnectivity[T any] struct {
 
 	// ClientAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html#cfn-msk-cluster-vpcconnectivity-clientauthentication
-	ClientAuthentication *Cluster_VpcConnectivityClientAuthentication `json:"ClientAuthentication,omitempty"`
+	ClientAuthentication *Cluster_VpcConnectivityClientAuthentication[any] `json:"ClientAuthentication,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_VpcConnectivity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivity) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivity[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivity"
 }

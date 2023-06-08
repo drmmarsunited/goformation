@@ -8,7 +8,7 @@ import (
 
 // TopicRule_DynamoDBAction AWS CloudFormation Resource (AWS::IoT::TopicRule.DynamoDBAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html
-type TopicRule_DynamoDBAction struct {
+type TopicRule_DynamoDBAction[T any] struct {
 
 	// HashKeyField AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type TopicRule_DynamoDBAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_DynamoDBAction) AWSCloudFormationType() string {
+func (r *TopicRule_DynamoDBAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.DynamoDBAction"
 }

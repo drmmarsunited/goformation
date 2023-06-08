@@ -8,7 +8,7 @@ import (
 
 // Rule_SendNotificationAction AWS CloudFormation Resource (AWS::Connect::Rule.SendNotificationAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html
-type Rule_SendNotificationAction struct {
+type Rule_SendNotificationAction[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Rule_SendNotificationAction struct {
 	// Recipient AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-recipient
-	Recipient *Rule_NotificationRecipientType `json:"Recipient"`
+	Recipient *Rule_NotificationRecipientType[any] `json:"Recipient"`
 
 	// Subject AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Rule_SendNotificationAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_SendNotificationAction) AWSCloudFormationType() string {
+func (r *Rule_SendNotificationAction[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.SendNotificationAction"
 }

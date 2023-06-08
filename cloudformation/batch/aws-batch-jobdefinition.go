@@ -11,17 +11,17 @@ import (
 
 // JobDefinition AWS CloudFormation Resource (AWS::Batch::JobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html
-type JobDefinition struct {
+type JobDefinition[T any] struct {
 
 	// ContainerProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-containerproperties
-	ContainerProperties *JobDefinition_ContainerProperties `json:"ContainerProperties,omitempty"`
+	ContainerProperties *JobDefinition_ContainerProperties[any] `json:"ContainerProperties,omitempty"`
 
 	// EksProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-eksproperties
-	EksProperties *JobDefinition_EksProperties `json:"EksProperties,omitempty"`
+	EksProperties *JobDefinition_EksProperties[any] `json:"EksProperties,omitempty"`
 
 	// JobDefinitionName AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type JobDefinition struct {
 	// NodeProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-nodeproperties
-	NodeProperties *JobDefinition_NodeProperties `json:"NodeProperties,omitempty"`
+	NodeProperties *JobDefinition_NodeProperties[any] `json:"NodeProperties,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -46,17 +46,17 @@ type JobDefinition struct {
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-propagatetags
-	PropagateTags *bool `json:"PropagateTags,omitempty"`
+	PropagateTags *T `json:"PropagateTags,omitempty"`
 
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-retrystrategy
-	RetryStrategy *JobDefinition_RetryStrategy `json:"RetryStrategy,omitempty"`
+	RetryStrategy *JobDefinition_RetryStrategy[any] `json:"RetryStrategy,omitempty"`
 
 	// SchedulingPriority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-schedulingpriority
-	SchedulingPriority *int `json:"SchedulingPriority,omitempty"`
+	SchedulingPriority *T `json:"SchedulingPriority,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type JobDefinition struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout
-	Timeout *JobDefinition_Timeout `json:"Timeout,omitempty"`
+	Timeout *JobDefinition_Timeout[any] `json:"Timeout,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -90,14 +90,15 @@ type JobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition) AWSCloudFormationType() string {
+func (r *JobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r JobDefinition) MarshalJSON() ([]byte, error) {
-	type Properties JobDefinition
+func (r JobDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties JobDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r JobDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *JobDefinition) UnmarshalJSON(b []byte) error {
-	type Properties JobDefinition
+func (r *JobDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties JobDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *JobDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = JobDefinition(*res.Properties)
+		*r = JobDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,52 +8,52 @@ import (
 
 // Analysis_TreeMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TreeMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html
-type Analysis_TreeMapConfiguration struct {
+type Analysis_TreeMapConfiguration[T any] struct {
 
 	// ColorLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-colorlabeloptions
-	ColorLabelOptions *Analysis_ChartAxisLabelOptions `json:"ColorLabelOptions,omitempty"`
+	ColorLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"ColorLabelOptions,omitempty"`
 
 	// ColorScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-colorscale
-	ColorScale *Analysis_ColorScale `json:"ColorScale,omitempty"`
+	ColorScale *Analysis_ColorScale[any] `json:"ColorScale,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-datalabels
-	DataLabels *Analysis_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Analysis_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-fieldwells
-	FieldWells *Analysis_TreeMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_TreeMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// GroupLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-grouplabeloptions
-	GroupLabelOptions *Analysis_ChartAxisLabelOptions `json:"GroupLabelOptions,omitempty"`
+	GroupLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"GroupLabelOptions,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-legend
-	Legend *Analysis_LegendOptions `json:"Legend,omitempty"`
+	Legend *Analysis_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// SizeLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-sizelabeloptions
-	SizeLabelOptions *Analysis_ChartAxisLabelOptions `json:"SizeLabelOptions,omitempty"`
+	SizeLabelOptions *Analysis_ChartAxisLabelOptions[any] `json:"SizeLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-sortconfiguration
-	SortConfiguration *Analysis_TreeMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_TreeMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-tooltip
-	Tooltip *Analysis_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Analysis_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Analysis_TreeMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TreeMapConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TreeMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TreeMapConfiguration"
 }

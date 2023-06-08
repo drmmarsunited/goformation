@@ -11,7 +11,7 @@ import (
 
 // TopicPolicy AWS CloudFormation Resource (AWS::SNS::TopicPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html
-type TopicPolicy struct {
+type TopicPolicy[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type TopicPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicPolicy) AWSCloudFormationType() string {
+func (r *TopicPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::SNS::TopicPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TopicPolicy) MarshalJSON() ([]byte, error) {
-	type Properties TopicPolicy
+func (r TopicPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties TopicPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r TopicPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TopicPolicy) UnmarshalJSON(b []byte) error {
-	type Properties TopicPolicy
+func (r *TopicPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties TopicPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *TopicPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TopicPolicy(*res.Properties)
+		*r = TopicPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

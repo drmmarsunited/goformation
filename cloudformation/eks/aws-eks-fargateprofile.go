@@ -12,7 +12,7 @@ import (
 
 // FargateProfile AWS CloudFormation Resource (AWS::EKS::FargateProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html
-type FargateProfile struct {
+type FargateProfile[T any] struct {
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type FargateProfile struct {
 	// Selectors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-selectors
-	Selectors []FargateProfile_Selector `json:"Selectors"`
+	Selectors []FargateProfile_Selector[any] `json:"Selectors"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type FargateProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FargateProfile) AWSCloudFormationType() string {
+func (r *FargateProfile[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::FargateProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FargateProfile) MarshalJSON() ([]byte, error) {
-	type Properties FargateProfile
+func (r FargateProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties FargateProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r FargateProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FargateProfile) UnmarshalJSON(b []byte) error {
-	type Properties FargateProfile
+func (r *FargateProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties FargateProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *FargateProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FargateProfile(*res.Properties)
+		*r = FargateProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

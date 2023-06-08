@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_Json AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.Json)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-json.html
-type MonitoringSchedule_Json struct {
+type MonitoringSchedule_Json[T any] struct {
 
 	// Line AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-json.html#cfn-sagemaker-monitoringschedule-json-line
-	Line *bool `json:"Line,omitempty"`
+	Line *T `json:"Line,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type MonitoringSchedule_Json struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_Json) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_Json[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.Json"
 }

@@ -8,7 +8,7 @@ import (
 
 // TagAssociation_TableWithColumnsResource AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation.TableWithColumnsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tablewithcolumnsresource.html
-type TagAssociation_TableWithColumnsResource struct {
+type TagAssociation_TableWithColumnsResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TagAssociation_TableWithColumnsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TagAssociation_TableWithColumnsResource) AWSCloudFormationType() string {
+func (r *TagAssociation_TableWithColumnsResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::TagAssociation.TableWithColumnsResource"
 }

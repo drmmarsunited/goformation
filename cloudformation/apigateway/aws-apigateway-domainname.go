@@ -12,7 +12,7 @@ import (
 
 // DomainName AWS CloudFormation Resource (AWS::ApiGateway::DomainName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
-type DomainName struct {
+type DomainName[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type DomainName struct {
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration
-	EndpointConfiguration *DomainName_EndpointConfiguration `json:"EndpointConfiguration,omitempty"`
+	EndpointConfiguration *DomainName_EndpointConfiguration[any] `json:"EndpointConfiguration,omitempty"`
 
 	// MutualTlsAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication
-	MutualTlsAuthentication *DomainName_MutualTlsAuthentication `json:"MutualTlsAuthentication,omitempty"`
+	MutualTlsAuthentication *DomainName_MutualTlsAuthentication[any] `json:"MutualTlsAuthentication,omitempty"`
 
 	// OwnershipVerificationCertificateArn AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type DomainName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainName) AWSCloudFormationType() string {
+func (r *DomainName[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DomainName"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DomainName) MarshalJSON() ([]byte, error) {
-	type Properties DomainName
+func (r DomainName[any]) MarshalJSON() ([]byte, error) {
+	type Properties DomainName[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r DomainName) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DomainName) UnmarshalJSON(b []byte) error {
-	type Properties DomainName
+func (r *DomainName[any]) UnmarshalJSON(b []byte) error {
+	type Properties DomainName[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *DomainName) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DomainName(*res.Properties)
+		*r = DomainName[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

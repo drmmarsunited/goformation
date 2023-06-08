@@ -8,7 +8,7 @@ import (
 
 // Analysis_ListControlSearchOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ListControlSearchOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontrolsearchoptions.html
-type Analysis_ListControlSearchOptions struct {
+type Analysis_ListControlSearchOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_ListControlSearchOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ListControlSearchOptions) AWSCloudFormationType() string {
+func (r *Analysis_ListControlSearchOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ListControlSearchOptions"
 }

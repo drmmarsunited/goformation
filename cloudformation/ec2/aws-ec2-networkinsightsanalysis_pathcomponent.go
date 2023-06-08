@@ -8,62 +8,62 @@ import (
 
 // NetworkInsightsAnalysis_PathComponent AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.PathComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html
-type NetworkInsightsAnalysis_PathComponent struct {
+type NetworkInsightsAnalysis_PathComponent[T any] struct {
 
 	// AclRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule
-	AclRule *NetworkInsightsAnalysis_AnalysisAclRule `json:"AclRule,omitempty"`
+	AclRule *NetworkInsightsAnalysis_AnalysisAclRule[any] `json:"AclRule,omitempty"`
 
 	// AdditionalDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-additionaldetails
-	AdditionalDetails []NetworkInsightsAnalysis_AdditionalDetail `json:"AdditionalDetails,omitempty"`
+	AdditionalDetails []NetworkInsightsAnalysis_AdditionalDetail[any] `json:"AdditionalDetails,omitempty"`
 
 	// Component AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component
-	Component *NetworkInsightsAnalysis_AnalysisComponent `json:"Component,omitempty"`
+	Component *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"Component,omitempty"`
 
 	// DestinationVpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc
-	DestinationVpc *NetworkInsightsAnalysis_AnalysisComponent `json:"DestinationVpc,omitempty"`
+	DestinationVpc *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"DestinationVpc,omitempty"`
 
 	// ElasticLoadBalancerListener AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-elasticloadbalancerlistener
-	ElasticLoadBalancerListener *NetworkInsightsAnalysis_AnalysisComponent `json:"ElasticLoadBalancerListener,omitempty"`
+	ElasticLoadBalancerListener *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"ElasticLoadBalancerListener,omitempty"`
 
 	// Explanations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-explanations
-	Explanations []NetworkInsightsAnalysis_Explanation `json:"Explanations,omitempty"`
+	Explanations []NetworkInsightsAnalysis_Explanation[any] `json:"Explanations,omitempty"`
 
 	// InboundHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader
-	InboundHeader *NetworkInsightsAnalysis_AnalysisPacketHeader `json:"InboundHeader,omitempty"`
+	InboundHeader *NetworkInsightsAnalysis_AnalysisPacketHeader[any] `json:"InboundHeader,omitempty"`
 
 	// OutboundHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader
-	OutboundHeader *NetworkInsightsAnalysis_AnalysisPacketHeader `json:"OutboundHeader,omitempty"`
+	OutboundHeader *NetworkInsightsAnalysis_AnalysisPacketHeader[any] `json:"OutboundHeader,omitempty"`
 
 	// RouteTableRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute
-	RouteTableRoute *NetworkInsightsAnalysis_AnalysisRouteTableRoute `json:"RouteTableRoute,omitempty"`
+	RouteTableRoute *NetworkInsightsAnalysis_AnalysisRouteTableRoute[any] `json:"RouteTableRoute,omitempty"`
 
 	// SecurityGroupRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule
-	SecurityGroupRule *NetworkInsightsAnalysis_AnalysisSecurityGroupRule `json:"SecurityGroupRule,omitempty"`
+	SecurityGroupRule *NetworkInsightsAnalysis_AnalysisSecurityGroupRule[any] `json:"SecurityGroupRule,omitempty"`
 
 	// SequenceNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
-	SequenceNumber *int `json:"SequenceNumber,omitempty"`
+	SequenceNumber *T `json:"SequenceNumber,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -73,27 +73,27 @@ type NetworkInsightsAnalysis_PathComponent struct {
 	// SourceVpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc
-	SourceVpc *NetworkInsightsAnalysis_AnalysisComponent `json:"SourceVpc,omitempty"`
+	SourceVpc *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"SourceVpc,omitempty"`
 
 	// Subnet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet
-	Subnet *NetworkInsightsAnalysis_AnalysisComponent `json:"Subnet,omitempty"`
+	Subnet *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"Subnet,omitempty"`
 
 	// TransitGateway AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway
-	TransitGateway *NetworkInsightsAnalysis_AnalysisComponent `json:"TransitGateway,omitempty"`
+	TransitGateway *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"TransitGateway,omitempty"`
 
 	// TransitGatewayRouteTableRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewayroutetableroute
-	TransitGatewayRouteTableRoute *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute `json:"TransitGatewayRouteTableRoute,omitempty"`
+	TransitGatewayRouteTableRoute *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute[any] `json:"TransitGatewayRouteTableRoute,omitempty"`
 
 	// Vpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc
-	Vpc *NetworkInsightsAnalysis_AnalysisComponent `json:"Vpc,omitempty"`
+	Vpc *NetworkInsightsAnalysis_AnalysisComponent[any] `json:"Vpc,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -112,6 +112,6 @@ type NetworkInsightsAnalysis_PathComponent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_PathComponent) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_PathComponent[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.PathComponent"
 }

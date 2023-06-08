@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ExportToCSVOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ExportToCSVOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-exporttocsvoption.html
-type Dashboard_ExportToCSVOption struct {
+type Dashboard_ExportToCSVOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ExportToCSVOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ExportToCSVOption) AWSCloudFormationType() string {
+func (r *Dashboard_ExportToCSVOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ExportToCSVOption"
 }

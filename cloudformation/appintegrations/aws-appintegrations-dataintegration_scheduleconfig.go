@@ -8,7 +8,7 @@ import (
 
 // DataIntegration_ScheduleConfig AWS CloudFormation Resource (AWS::AppIntegrations::DataIntegration.ScheduleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html
-type DataIntegration_ScheduleConfig struct {
+type DataIntegration_ScheduleConfig[T any] struct {
 
 	// FirstExecutionFrom AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataIntegration_ScheduleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataIntegration_ScheduleConfig) AWSCloudFormationType() string {
+func (r *DataIntegration_ScheduleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppIntegrations::DataIntegration.ScheduleConfig"
 }

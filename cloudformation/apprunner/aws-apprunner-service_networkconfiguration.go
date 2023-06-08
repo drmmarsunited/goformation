@@ -8,17 +8,17 @@ import (
 
 // Service_NetworkConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-networkconfiguration.html
-type Service_NetworkConfiguration struct {
+type Service_NetworkConfiguration[T any] struct {
 
 	// EgressConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-networkconfiguration.html#cfn-apprunner-service-networkconfiguration-egressconfiguration
-	EgressConfiguration *Service_EgressConfiguration `json:"EgressConfiguration,omitempty"`
+	EgressConfiguration *Service_EgressConfiguration[any] `json:"EgressConfiguration,omitempty"`
 
 	// IngressConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-networkconfiguration.html#cfn-apprunner-service-networkconfiguration-ingressconfiguration
-	IngressConfiguration *Service_IngressConfiguration `json:"IngressConfiguration,omitempty"`
+	IngressConfiguration *Service_IngressConfiguration[any] `json:"IngressConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Service_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Service_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.NetworkConfiguration"
 }

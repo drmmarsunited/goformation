@@ -8,7 +8,7 @@ import (
 
 // Bucket_ReplicationTime AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtime.html
-type Bucket_ReplicationTime struct {
+type Bucket_ReplicationTime[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Bucket_ReplicationTime struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtime.html#cfn-s3-bucket-replicationtime-time
-	Time *Bucket_ReplicationTimeValue `json:"Time"`
+	Time *Bucket_ReplicationTimeValue[any] `json:"Time"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_ReplicationTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ReplicationTime) AWSCloudFormationType() string {
+func (r *Bucket_ReplicationTime[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicationTime"
 }

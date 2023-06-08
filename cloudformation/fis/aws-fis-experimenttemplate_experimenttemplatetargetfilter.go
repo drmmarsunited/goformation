@@ -8,7 +8,7 @@ import (
 
 // ExperimentTemplate_ExperimentTemplateTargetFilter AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html
-type ExperimentTemplate_ExperimentTemplateTargetFilter struct {
+type ExperimentTemplate_ExperimentTemplateTargetFilter[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ExperimentTemplate_ExperimentTemplateTargetFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_ExperimentTemplateTargetFilter) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_ExperimentTemplateTargetFilter[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
 }

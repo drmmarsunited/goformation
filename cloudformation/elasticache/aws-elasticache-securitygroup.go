@@ -12,7 +12,7 @@ import (
 
 // SecurityGroup AWS CloudFormation Resource (AWS::ElastiCache::SecurityGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html
-type SecurityGroup struct {
+type SecurityGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type SecurityGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityGroup) AWSCloudFormationType() string {
+func (r *SecurityGroup[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::SecurityGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityGroup) MarshalJSON() ([]byte, error) {
-	type Properties SecurityGroup
+func (r SecurityGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r SecurityGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityGroup) UnmarshalJSON(b []byte) error {
-	type Properties SecurityGroup
+func (r *SecurityGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *SecurityGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityGroup(*res.Properties)
+		*r = SecurityGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

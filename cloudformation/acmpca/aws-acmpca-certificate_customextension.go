@@ -8,12 +8,12 @@ import (
 
 // Certificate_CustomExtension AWS CloudFormation Resource (AWS::ACMPCA::Certificate.CustomExtension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html
-type Certificate_CustomExtension struct {
+type Certificate_CustomExtension[T any] struct {
 
 	// Critical AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html#cfn-acmpca-certificate-customextension-critical
-	Critical *bool `json:"Critical,omitempty"`
+	Critical *T `json:"Critical,omitempty"`
 
 	// ObjectIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Certificate_CustomExtension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_CustomExtension) AWSCloudFormationType() string {
+func (r *Certificate_CustomExtension[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.CustomExtension"
 }

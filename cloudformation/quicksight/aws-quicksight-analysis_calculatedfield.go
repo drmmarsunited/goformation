@@ -8,7 +8,7 @@ import (
 
 // Analysis_CalculatedField AWS CloudFormation Resource (AWS::QuickSight::Analysis.CalculatedField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-calculatedfield.html
-type Analysis_CalculatedField struct {
+type Analysis_CalculatedField[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_CalculatedField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CalculatedField) AWSCloudFormationType() string {
+func (r *Analysis_CalculatedField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CalculatedField"
 }

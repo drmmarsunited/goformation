@@ -12,17 +12,17 @@ import (
 
 // Pipeline AWS CloudFormation Resource (AWS::SageMaker::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html
-type Pipeline struct {
+type Pipeline[T any] struct {
 
 	// ParallelismConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-parallelismconfiguration
-	ParallelismConfiguration *Pipeline_ParallelismConfiguration `json:"ParallelismConfiguration,omitempty"`
+	ParallelismConfiguration *Pipeline_ParallelismConfiguration[any] `json:"ParallelismConfiguration,omitempty"`
 
 	// PipelineDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedefinition
-	PipelineDefinition *Pipeline_PipelineDefinition `json:"PipelineDefinition"`
+	PipelineDefinition *Pipeline_PipelineDefinition[any] `json:"PipelineDefinition"`
 
 	// PipelineDescription AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Pipeline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline) AWSCloudFormationType() string {
+func (r *Pipeline[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Pipeline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Pipeline) MarshalJSON() ([]byte, error) {
-	type Properties Pipeline
+func (r Pipeline[any]) MarshalJSON() ([]byte, error) {
+	type Properties Pipeline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Pipeline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Pipeline) UnmarshalJSON(b []byte) error {
-	type Properties Pipeline
+func (r *Pipeline[any]) UnmarshalJSON(b []byte) error {
+	type Properties Pipeline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Pipeline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Pipeline(*res.Properties)
+		*r = Pipeline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

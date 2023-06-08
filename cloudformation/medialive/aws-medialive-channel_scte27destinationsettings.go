@@ -8,7 +8,7 @@ import (
 
 // Channel_Scte27DestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte27DestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27destinationsettings.html
-type Channel_Scte27DestinationSettings struct {
+type Channel_Scte27DestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_Scte27DestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Scte27DestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_Scte27DestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Scte27DestinationSettings"
 }

@@ -12,7 +12,7 @@ import (
 
 // ServiceNetworkVpcAssociation AWS CloudFormation Resource (AWS::VpcLattice::ServiceNetworkVpcAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkvpcassociation.html
-type ServiceNetworkVpcAssociation struct {
+type ServiceNetworkVpcAssociation[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type ServiceNetworkVpcAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceNetworkVpcAssociation) AWSCloudFormationType() string {
+func (r *ServiceNetworkVpcAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::ServiceNetworkVpcAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceNetworkVpcAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ServiceNetworkVpcAssociation
+func (r ServiceNetworkVpcAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceNetworkVpcAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ServiceNetworkVpcAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceNetworkVpcAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ServiceNetworkVpcAssociation
+func (r *ServiceNetworkVpcAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceNetworkVpcAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ServiceNetworkVpcAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceNetworkVpcAssociation(*res.Properties)
+		*r = ServiceNetworkVpcAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DataSource_RdsParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.RdsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-rdsparameters.html
-type DataSource_RdsParameters struct {
+type DataSource_RdsParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_RdsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_RdsParameters) AWSCloudFormationType() string {
+func (r *DataSource_RdsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.RdsParameters"
 }

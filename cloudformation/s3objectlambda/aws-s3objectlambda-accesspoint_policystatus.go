@@ -8,12 +8,12 @@ import (
 
 // AccessPoint_PolicyStatus AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.PolicyStatus)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-policystatus.html
-type AccessPoint_PolicyStatus struct {
+type AccessPoint_PolicyStatus[T any] struct {
 
 	// IsPublic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-policystatus.html#cfn-s3objectlambda-accesspoint-policystatus-ispublic
-	IsPublic *bool `json:"IsPublic,omitempty"`
+	IsPublic *T `json:"IsPublic,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AccessPoint_PolicyStatus struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_PolicyStatus) AWSCloudFormationType() string {
+func (r *AccessPoint_PolicyStatus[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPoint.PolicyStatus"
 }

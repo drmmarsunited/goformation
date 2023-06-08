@@ -8,12 +8,12 @@ import (
 
 // DeploymentGroup_OnPremisesTagSet AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html
-type DeploymentGroup_OnPremisesTagSet struct {
+type DeploymentGroup_OnPremisesTagSet[T any] struct {
 
 	// OnPremisesTagSetList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html#cfn-codedeploy-deploymentgroup-onpremisestagset-onpremisestagsetlist
-	OnPremisesTagSetList []DeploymentGroup_OnPremisesTagSetListObject `json:"OnPremisesTagSetList,omitempty"`
+	OnPremisesTagSetList []DeploymentGroup_OnPremisesTagSetListObject[any] `json:"OnPremisesTagSetList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeploymentGroup_OnPremisesTagSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_OnPremisesTagSet) AWSCloudFormationType() string {
+func (r *DeploymentGroup_OnPremisesTagSet[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSet"
 }

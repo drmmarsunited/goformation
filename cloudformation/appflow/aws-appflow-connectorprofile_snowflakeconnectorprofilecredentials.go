@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SnowflakeConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofilecredentials.html
-type ConnectorProfile_SnowflakeConnectorProfileCredentials struct {
+type ConnectorProfile_SnowflakeConnectorProfileCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_SnowflakeConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SnowflakeConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SnowflakeConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileCredentials"
 }

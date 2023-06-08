@@ -8,12 +8,12 @@ import (
 
 // Analysis_VisualCustomAction AWS CloudFormation Resource (AWS::QuickSight::Analysis.VisualCustomAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html
-type Analysis_VisualCustomAction struct {
+type Analysis_VisualCustomAction[T any] struct {
 
 	// ActionOperations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html#cfn-quicksight-analysis-visualcustomaction-actionoperations
-	ActionOperations []Analysis_VisualCustomActionOperation `json:"ActionOperations"`
+	ActionOperations []Analysis_VisualCustomActionOperation[any] `json:"ActionOperations"`
 
 	// CustomActionId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Analysis_VisualCustomAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_VisualCustomAction) AWSCloudFormationType() string {
+func (r *Analysis_VisualCustomAction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.VisualCustomAction"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ListControlSearchOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ListControlSearchOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontrolsearchoptions.html
-type Dashboard_ListControlSearchOptions struct {
+type Dashboard_ListControlSearchOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ListControlSearchOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ListControlSearchOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ListControlSearchOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ListControlSearchOptions"
 }

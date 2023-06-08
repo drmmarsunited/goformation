@@ -8,22 +8,22 @@ import (
 
 // Dashboard_TextConditionalFormat AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TextConditionalFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textconditionalformat.html
-type Dashboard_TextConditionalFormat struct {
+type Dashboard_TextConditionalFormat[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textconditionalformat.html#cfn-quicksight-dashboard-textconditionalformat-backgroundcolor
-	BackgroundColor *Dashboard_ConditionalFormattingColor `json:"BackgroundColor,omitempty"`
+	BackgroundColor *Dashboard_ConditionalFormattingColor[any] `json:"BackgroundColor,omitempty"`
 
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textconditionalformat.html#cfn-quicksight-dashboard-textconditionalformat-icon
-	Icon *Dashboard_ConditionalFormattingIcon `json:"Icon,omitempty"`
+	Icon *Dashboard_ConditionalFormattingIcon[any] `json:"Icon,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-textconditionalformat.html#cfn-quicksight-dashboard-textconditionalformat-textcolor
-	TextColor *Dashboard_ConditionalFormattingColor `json:"TextColor,omitempty"`
+	TextColor *Dashboard_ConditionalFormattingColor[any] `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_TextConditionalFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TextConditionalFormat) AWSCloudFormationType() string {
+func (r *Dashboard_TextConditionalFormat[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TextConditionalFormat"
 }

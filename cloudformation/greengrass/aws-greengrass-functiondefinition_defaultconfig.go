@@ -8,12 +8,12 @@ import (
 
 // FunctionDefinition_DefaultConfig AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.DefaultConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html
-type FunctionDefinition_DefaultConfig struct {
+type FunctionDefinition_DefaultConfig[T any] struct {
 
 	// Execution AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution
-	Execution *FunctionDefinition_Execution `json:"Execution"`
+	Execution *FunctionDefinition_Execution[any] `json:"Execution"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FunctionDefinition_DefaultConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinition_DefaultConfig) AWSCloudFormationType() string {
+func (r *FunctionDefinition_DefaultConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinition.DefaultConfig"
 }

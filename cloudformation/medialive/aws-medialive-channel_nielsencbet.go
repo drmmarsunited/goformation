@@ -8,7 +8,7 @@ import (
 
 // Channel_NielsenCBET AWS CloudFormation Resource (AWS::MediaLive::Channel.NielsenCBET)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html
-type Channel_NielsenCBET struct {
+type Channel_NielsenCBET[T any] struct {
 
 	// CbetCheckDigitString AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_NielsenCBET struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_NielsenCBET) AWSCloudFormationType() string {
+func (r *Channel_NielsenCBET[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.NielsenCBET"
 }

@@ -8,42 +8,42 @@ import (
 
 // Instance_Attributes AWS CloudFormation Resource (AWS::Connect::Instance.Attributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html
-type Instance_Attributes struct {
+type Instance_Attributes[T any] struct {
 
 	// AutoResolveBestVoices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-autoresolvebestvoices
-	AutoResolveBestVoices *bool `json:"AutoResolveBestVoices,omitempty"`
+	AutoResolveBestVoices *T `json:"AutoResolveBestVoices,omitempty"`
 
 	// ContactLens AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-contactlens
-	ContactLens *bool `json:"ContactLens,omitempty"`
+	ContactLens *T `json:"ContactLens,omitempty"`
 
 	// ContactflowLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-contactflowlogs
-	ContactflowLogs *bool `json:"ContactflowLogs,omitempty"`
+	ContactflowLogs *T `json:"ContactflowLogs,omitempty"`
 
 	// EarlyMedia AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-earlymedia
-	EarlyMedia *bool `json:"EarlyMedia,omitempty"`
+	EarlyMedia *T `json:"EarlyMedia,omitempty"`
 
 	// InboundCalls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-inboundcalls
-	InboundCalls bool `json:"InboundCalls"`
+	InboundCalls T `json:"InboundCalls"`
 
 	// OutboundCalls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-outboundcalls
-	OutboundCalls bool `json:"OutboundCalls"`
+	OutboundCalls T `json:"OutboundCalls"`
 
 	// UseCustomTTSVoices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-usecustomttsvoices
-	UseCustomTTSVoices *bool `json:"UseCustomTTSVoices,omitempty"`
+	UseCustomTTSVoices *T `json:"UseCustomTTSVoices,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Instance_Attributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Attributes) AWSCloudFormationType() string {
+func (r *Instance_Attributes[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Instance.Attributes"
 }

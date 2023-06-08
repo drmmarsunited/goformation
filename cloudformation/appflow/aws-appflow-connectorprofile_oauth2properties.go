@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_OAuth2Properties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.OAuth2Properties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2properties.html
-type ConnectorProfile_OAuth2Properties struct {
+type ConnectorProfile_OAuth2Properties[T any] struct {
 
 	// OAuth2GrantType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ConnectorProfile_OAuth2Properties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_OAuth2Properties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_OAuth2Properties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.OAuth2Properties"
 }

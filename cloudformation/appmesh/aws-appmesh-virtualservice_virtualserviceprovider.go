@@ -8,17 +8,17 @@ import (
 
 // VirtualService_VirtualServiceProvider AWS CloudFormation Resource (AWS::AppMesh::VirtualService.VirtualServiceProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html
-type VirtualService_VirtualServiceProvider struct {
+type VirtualService_VirtualServiceProvider[T any] struct {
 
 	// VirtualNode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode
-	VirtualNode *VirtualService_VirtualNodeServiceProvider `json:"VirtualNode,omitempty"`
+	VirtualNode *VirtualService_VirtualNodeServiceProvider[any] `json:"VirtualNode,omitempty"`
 
 	// VirtualRouter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter
-	VirtualRouter *VirtualService_VirtualRouterServiceProvider `json:"VirtualRouter,omitempty"`
+	VirtualRouter *VirtualService_VirtualRouterServiceProvider[any] `json:"VirtualRouter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualService_VirtualServiceProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualService_VirtualServiceProvider) AWSCloudFormationType() string {
+func (r *VirtualService_VirtualServiceProvider[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualService.VirtualServiceProvider"
 }

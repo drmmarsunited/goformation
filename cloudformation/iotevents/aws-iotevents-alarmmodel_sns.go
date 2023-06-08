@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_Sns AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.Sns)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sns.html
-type AlarmModel_Sns struct {
+type AlarmModel_Sns[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sns.html#cfn-iotevents-alarmmodel-sns-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AlarmModel_Sns struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_Sns) AWSCloudFormationType() string {
+func (r *AlarmModel_Sns[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.Sns"
 }

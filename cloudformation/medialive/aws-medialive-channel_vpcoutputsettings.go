@@ -8,7 +8,7 @@ import (
 
 // Channel_VpcOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.VpcOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-vpcoutputsettings.html
-type Channel_VpcOutputSettings struct {
+type Channel_VpcOutputSettings[T any] struct {
 
 	// PublicAddressAllocationIds AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_VpcOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VpcOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_VpcOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VpcOutputSettings"
 }

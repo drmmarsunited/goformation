@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_SelfManagedKafkaEventSourceConfig AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.SelfManagedKafkaEventSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig.html
-type EventSourceMapping_SelfManagedKafkaEventSourceConfig struct {
+type EventSourceMapping_SelfManagedKafkaEventSourceConfig[T any] struct {
 
 	// ConsumerGroupId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EventSourceMapping_SelfManagedKafkaEventSourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_SelfManagedKafkaEventSourceConfig) AWSCloudFormationType() string {
+func (r *EventSourceMapping_SelfManagedKafkaEventSourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.SelfManagedKafkaEventSourceConfig"
 }

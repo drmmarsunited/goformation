@@ -8,7 +8,7 @@ import (
 
 // WebACL_FieldToMatch AWS CloudFormation Resource (AWS::WAFv2::WebACL.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html
-type WebACL_FieldToMatch struct {
+type WebACL_FieldToMatch[T any] struct {
 
 	// AllQueryArguments AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type WebACL_FieldToMatch struct {
 	// Body AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-body
-	Body *WebACL_Body `json:"Body,omitempty"`
+	Body *WebACL_Body[any] `json:"Body,omitempty"`
 
 	// Cookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-cookies
-	Cookies *WebACL_Cookies `json:"Cookies,omitempty"`
+	Cookies *WebACL_Cookies[any] `json:"Cookies,omitempty"`
 
 	// Headers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-headers
-	Headers *WebACL_Headers `json:"Headers,omitempty"`
+	Headers *WebACL_Headers[any] `json:"Headers,omitempty"`
 
 	// JsonBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-jsonbody
-	JsonBody *WebACL_JsonBody `json:"JsonBody,omitempty"`
+	JsonBody *WebACL_JsonBody[any] `json:"JsonBody,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type WebACL_FieldToMatch struct {
 	// SingleHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-singleheader
-	SingleHeader *WebACL_SingleHeader `json:"SingleHeader,omitempty"`
+	SingleHeader *WebACL_SingleHeader[any] `json:"SingleHeader,omitempty"`
 
 	// SingleQueryArgument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-singlequeryargument
-	SingleQueryArgument *WebACL_SingleQueryArgument `json:"SingleQueryArgument,omitempty"`
+	SingleQueryArgument *WebACL_SingleQueryArgument[any] `json:"SingleQueryArgument,omitempty"`
 
 	// UriPath AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type WebACL_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_FieldToMatch) AWSCloudFormationType() string {
+func (r *WebACL_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.FieldToMatch"
 }

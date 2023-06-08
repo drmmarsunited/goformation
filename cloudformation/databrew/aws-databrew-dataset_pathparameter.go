@@ -8,12 +8,12 @@ import (
 
 // Dataset_PathParameter AWS CloudFormation Resource (AWS::DataBrew::Dataset.PathParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html
-type Dataset_PathParameter struct {
+type Dataset_PathParameter[T any] struct {
 
 	// DatasetParameter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter
-	DatasetParameter *Dataset_DatasetParameter `json:"DatasetParameter"`
+	DatasetParameter *Dataset_DatasetParameter[any] `json:"DatasetParameter"`
 
 	// PathParameterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_PathParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_PathParameter) AWSCloudFormationType() string {
+func (r *Dataset_PathParameter[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.PathParameter"
 }

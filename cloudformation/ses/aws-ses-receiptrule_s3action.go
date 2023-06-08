@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_S3Action AWS CloudFormation Resource (AWS::SES::ReceiptRule.S3Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html
-type ReceiptRule_S3Action struct {
+type ReceiptRule_S3Action[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ReceiptRule_S3Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_S3Action) AWSCloudFormationType() string {
+func (r *ReceiptRule_S3Action[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.S3Action"
 }

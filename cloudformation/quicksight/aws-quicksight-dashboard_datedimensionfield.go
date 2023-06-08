@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DateDimensionField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datedimensionfield.html
-type Dashboard_DateDimensionField struct {
+type Dashboard_DateDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datedimensionfield.html#cfn-quicksight-dashboard-datedimensionfield-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// DateGranularity AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_DateDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datedimensionfield.html#cfn-quicksight-dashboard-datedimensionfield-formatconfiguration
-	FormatConfiguration *Dashboard_DateTimeFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_DateTimeFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dashboard_DateDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateDimensionField) AWSCloudFormationType() string {
+func (r *Dashboard_DateDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateDimensionField"
 }

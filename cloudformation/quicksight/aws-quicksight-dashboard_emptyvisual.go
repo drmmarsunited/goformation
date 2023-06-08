@@ -8,12 +8,12 @@ import (
 
 // Dashboard_EmptyVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.EmptyVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-emptyvisual.html
-type Dashboard_EmptyVisual struct {
+type Dashboard_EmptyVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-emptyvisual.html#cfn-quicksight-dashboard-emptyvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_EmptyVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_EmptyVisual) AWSCloudFormationType() string {
+func (r *Dashboard_EmptyVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.EmptyVisual"
 }

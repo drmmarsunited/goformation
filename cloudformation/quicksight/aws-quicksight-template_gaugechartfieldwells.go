@@ -8,17 +8,17 @@ import (
 
 // Template_GaugeChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.GaugeChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartfieldwells.html
-type Template_GaugeChartFieldWells struct {
+type Template_GaugeChartFieldWells[T any] struct {
 
 	// TargetValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartfieldwells.html#cfn-quicksight-template-gaugechartfieldwells-targetvalues
-	TargetValues []Template_MeasureField `json:"TargetValues,omitempty"`
+	TargetValues []Template_MeasureField[any] `json:"TargetValues,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartfieldwells.html#cfn-quicksight-template-gaugechartfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_GaugeChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GaugeChartFieldWells) AWSCloudFormationType() string {
+func (r *Template_GaugeChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GaugeChartFieldWells"
 }

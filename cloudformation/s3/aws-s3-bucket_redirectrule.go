@@ -8,7 +8,7 @@ import (
 
 // Bucket_RedirectRule AWS CloudFormation Resource (AWS::S3::Bucket.RedirectRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html
-type Bucket_RedirectRule struct {
+type Bucket_RedirectRule[T any] struct {
 
 	// HostName AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Bucket_RedirectRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_RedirectRule) AWSCloudFormationType() string {
+func (r *Bucket_RedirectRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.RedirectRule"
 }

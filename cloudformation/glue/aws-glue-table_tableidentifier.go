@@ -8,7 +8,7 @@ import (
 
 // Table_TableIdentifier AWS CloudFormation Resource (AWS::Glue::Table.TableIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableidentifier.html
-type Table_TableIdentifier struct {
+type Table_TableIdentifier[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_TableIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_TableIdentifier) AWSCloudFormationType() string {
+func (r *Table_TableIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.TableIdentifier"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bucket_CorsRule AWS CloudFormation Resource (AWS::S3::Bucket.CorsRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html
-type Bucket_CorsRule struct {
+type Bucket_CorsRule[T any] struct {
 
 	// AllowedHeaders AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Bucket_CorsRule struct {
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-maxage
-	MaxAge *int `json:"MaxAge,omitempty"`
+	MaxAge *T `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Bucket_CorsRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_CorsRule) AWSCloudFormationType() string {
+func (r *Bucket_CorsRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.CorsRule"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_GeospatialMapStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Template.GeospatialMapStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialmapstyleoptions.html
-type Template_GeospatialMapStyleOptions struct {
+type Template_GeospatialMapStyleOptions[T any] struct {
 
 	// BaseMapStyle AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_GeospatialMapStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GeospatialMapStyleOptions) AWSCloudFormationType() string {
+func (r *Template_GeospatialMapStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GeospatialMapStyleOptions"
 }

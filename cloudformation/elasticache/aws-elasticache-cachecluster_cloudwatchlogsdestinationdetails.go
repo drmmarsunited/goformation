@@ -8,7 +8,7 @@ import (
 
 // CacheCluster_CloudWatchLogsDestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster.CloudWatchLogsDestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-cloudwatchlogsdestinationdetails.html
-type CacheCluster_CloudWatchLogsDestinationDetails struct {
+type CacheCluster_CloudWatchLogsDestinationDetails[T any] struct {
 
 	// LogGroup AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type CacheCluster_CloudWatchLogsDestinationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CacheCluster_CloudWatchLogsDestinationDetails) AWSCloudFormationType() string {
+func (r *CacheCluster_CloudWatchLogsDestinationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::CacheCluster.CloudWatchLogsDestinationDetails"
 }

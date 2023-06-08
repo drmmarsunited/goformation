@@ -8,7 +8,7 @@ import (
 
 // Flow_TrendmicroSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.TrendmicroSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-trendmicrosourceproperties.html
-type Flow_TrendmicroSourceProperties struct {
+type Flow_TrendmicroSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_TrendmicroSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_TrendmicroSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_TrendmicroSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.TrendmicroSourceProperties"
 }

@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_ElasticsearchDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html
-type DeliveryStream_ElasticsearchDestinationConfiguration struct {
+type DeliveryStream_ElasticsearchDestinationConfiguration[T any] struct {
 
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_ElasticsearchBufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_ElasticsearchBufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// ClusterEndpoint AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DeliveryStream_ElasticsearchDestinationConfiguration struct {
 	// DocumentIdOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-documentidoptions
-	DocumentIdOptions *DeliveryStream_DocumentIdOptions `json:"DocumentIdOptions,omitempty"`
+	DocumentIdOptions *DeliveryStream_DocumentIdOptions[any] `json:"DocumentIdOptions,omitempty"`
 
 	// DomainARN AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type DeliveryStream_ElasticsearchDestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_ElasticsearchRetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_ElasticsearchRetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -68,7 +68,7 @@ type DeliveryStream_ElasticsearchDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type DeliveryStream_ElasticsearchDestinationConfiguration struct {
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-vpcconfiguration
-	VpcConfiguration *DeliveryStream_VpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DeliveryStream_VpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -97,6 +97,6 @@ type DeliveryStream_ElasticsearchDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_ElasticsearchDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_ElasticsearchDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // FileSystem_BackupPolicy AWS CloudFormation Resource (AWS::EFS::FileSystem.BackupPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-backuppolicy.html
-type FileSystem_BackupPolicy struct {
+type FileSystem_BackupPolicy[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type FileSystem_BackupPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_BackupPolicy) AWSCloudFormationType() string {
+func (r *FileSystem_BackupPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::FileSystem.BackupPolicy"
 }

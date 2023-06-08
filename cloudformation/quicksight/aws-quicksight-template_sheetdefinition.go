@@ -8,7 +8,7 @@ import (
 
 // Template_SheetDefinition AWS CloudFormation Resource (AWS::QuickSight::Template.SheetDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html
-type Template_SheetDefinition struct {
+type Template_SheetDefinition[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Template_SheetDefinition struct {
 	// FilterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-filtercontrols
-	FilterControls []Template_FilterControl `json:"FilterControls,omitempty"`
+	FilterControls []Template_FilterControl[any] `json:"FilterControls,omitempty"`
 
 	// Layouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-layouts
-	Layouts []Template_Layout `json:"Layouts,omitempty"`
+	Layouts []Template_Layout[any] `json:"Layouts,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Template_SheetDefinition struct {
 	// ParameterControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-parametercontrols
-	ParameterControls []Template_ParameterControl `json:"ParameterControls,omitempty"`
+	ParameterControls []Template_ParameterControl[any] `json:"ParameterControls,omitempty"`
 
 	// SheetControlLayouts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-sheetcontrollayouts
-	SheetControlLayouts []Template_SheetControlLayout `json:"SheetControlLayouts,omitempty"`
+	SheetControlLayouts []Template_SheetControlLayout[any] `json:"SheetControlLayouts,omitempty"`
 
 	// SheetId AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Template_SheetDefinition struct {
 	// TextBoxes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-textboxes
-	TextBoxes []Template_SheetTextBox `json:"TextBoxes,omitempty"`
+	TextBoxes []Template_SheetTextBox[any] `json:"TextBoxes,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Template_SheetDefinition struct {
 	// Visuals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-visuals
-	Visuals []Template_Visual `json:"Visuals,omitempty"`
+	Visuals []Template_Visual[any] `json:"Visuals,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Template_SheetDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SheetDefinition) AWSCloudFormationType() string {
+func (r *Template_SheetDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SheetDefinition"
 }

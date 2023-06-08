@@ -11,17 +11,17 @@ import (
 
 // TagAssociation AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tagassociation.html
-type TagAssociation struct {
+type TagAssociation[T any] struct {
 
 	// LFTags AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tagassociation.html#cfn-lakeformation-tagassociation-lftags
-	LFTags []TagAssociation_LFTagPair `json:"LFTags"`
+	LFTags []TagAssociation_LFTagPair[any] `json:"LFTags"`
 
 	// Resource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tagassociation.html#cfn-lakeformation-tagassociation-resource
-	Resource *TagAssociation_Resource `json:"Resource"`
+	Resource *TagAssociation_Resource[any] `json:"Resource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type TagAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TagAssociation) AWSCloudFormationType() string {
+func (r *TagAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::TagAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TagAssociation) MarshalJSON() ([]byte, error) {
-	type Properties TagAssociation
+func (r TagAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties TagAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r TagAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TagAssociation) UnmarshalJSON(b []byte) error {
-	type Properties TagAssociation
+func (r *TagAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties TagAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *TagAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TagAssociation(*res.Properties)
+		*r = TagAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

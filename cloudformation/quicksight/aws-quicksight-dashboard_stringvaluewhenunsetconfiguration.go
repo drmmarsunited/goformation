@@ -8,7 +8,7 @@ import (
 
 // Dashboard_StringValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.StringValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringvaluewhenunsetconfiguration.html
-type Dashboard_StringValueWhenUnsetConfiguration struct {
+type Dashboard_StringValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_StringValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_StringValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_StringValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.StringValueWhenUnsetConfiguration"
 }

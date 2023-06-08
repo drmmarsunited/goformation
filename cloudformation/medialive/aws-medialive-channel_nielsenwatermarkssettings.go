@@ -8,12 +8,12 @@ import (
 
 // Channel_NielsenWatermarksSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.NielsenWatermarksSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html
-type Channel_NielsenWatermarksSettings struct {
+type Channel_NielsenWatermarksSettings[T any] struct {
 
 	// NielsenCbetSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsencbetsettings
-	NielsenCbetSettings *Channel_NielsenCBET `json:"NielsenCbetSettings,omitempty"`
+	NielsenCbetSettings *Channel_NielsenCBET[any] `json:"NielsenCbetSettings,omitempty"`
 
 	// NielsenDistributionType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_NielsenWatermarksSettings struct {
 	// NielsenNaesIiNwSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsennaesiinwsettings
-	NielsenNaesIiNwSettings *Channel_NielsenNaesIiNw `json:"NielsenNaesIiNwSettings,omitempty"`
+	NielsenNaesIiNwSettings *Channel_NielsenNaesIiNw[any] `json:"NielsenNaesIiNwSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_NielsenWatermarksSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_NielsenWatermarksSettings) AWSCloudFormationType() string {
+func (r *Channel_NielsenWatermarksSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.NielsenWatermarksSettings"
 }

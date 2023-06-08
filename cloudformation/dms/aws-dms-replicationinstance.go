@@ -12,22 +12,22 @@ import (
 
 // ReplicationInstance AWS CloudFormation Resource (AWS::DMS::ReplicationInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html
-type ReplicationInstance struct {
+type ReplicationInstance[T any] struct {
 
 	// AllocatedStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage
-	AllocatedStorage *int `json:"AllocatedStorage,omitempty"`
+	AllocatedStorage *T `json:"AllocatedStorage,omitempty"`
 
 	// AllowMajorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
-	AllowMajorVersionUpgrade *bool `json:"AllowMajorVersionUpgrade,omitempty"`
+	AllowMajorVersionUpgrade *T `json:"AllowMajorVersionUpgrade,omitempty"`
 
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type ReplicationInstance struct {
 	// MultiAZ AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
-	MultiAZ *bool `json:"MultiAZ,omitempty"`
+	MultiAZ *T `json:"MultiAZ,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type ReplicationInstance struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// ReplicationInstanceClass AWS CloudFormation Property
 	// Required: true
@@ -106,14 +106,15 @@ type ReplicationInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationInstance) AWSCloudFormationType() string {
+func (r *ReplicationInstance[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::ReplicationInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReplicationInstance) MarshalJSON() ([]byte, error) {
-	type Properties ReplicationInstance
+func (r ReplicationInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReplicationInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r ReplicationInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReplicationInstance) UnmarshalJSON(b []byte) error {
-	type Properties ReplicationInstance
+func (r *ReplicationInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReplicationInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *ReplicationInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReplicationInstance(*res.Properties)
+		*r = ReplicationInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

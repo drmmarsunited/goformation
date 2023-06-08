@@ -12,12 +12,12 @@ import (
 
 // RecordingConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html
-type RecordingConfiguration struct {
+type RecordingConfiguration[T any] struct {
 
 	// DestinationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-destinationconfiguration
-	DestinationConfiguration *RecordingConfiguration_DestinationConfiguration `json:"DestinationConfiguration"`
+	DestinationConfiguration *RecordingConfiguration_DestinationConfiguration[any] `json:"DestinationConfiguration"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type RecordingConfiguration struct {
 	// RecordingReconnectWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-recordingreconnectwindowseconds
-	RecordingReconnectWindowSeconds *int `json:"RecordingReconnectWindowSeconds,omitempty"`
+	RecordingReconnectWindowSeconds *T `json:"RecordingReconnectWindowSeconds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type RecordingConfiguration struct {
 	// ThumbnailConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration
-	ThumbnailConfiguration *RecordingConfiguration_ThumbnailConfiguration `json:"ThumbnailConfiguration,omitempty"`
+	ThumbnailConfiguration *RecordingConfiguration_ThumbnailConfiguration[any] `json:"ThumbnailConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -56,14 +56,15 @@ type RecordingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordingConfiguration) AWSCloudFormationType() string {
+func (r *RecordingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVS::RecordingConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RecordingConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties RecordingConfiguration
+func (r RecordingConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties RecordingConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r RecordingConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RecordingConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties RecordingConfiguration
+func (r *RecordingConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties RecordingConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *RecordingConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RecordingConfiguration(*res.Properties)
+		*r = RecordingConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

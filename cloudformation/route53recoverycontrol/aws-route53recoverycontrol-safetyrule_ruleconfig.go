@@ -8,17 +8,17 @@ import (
 
 // SafetyRule_RuleConfig AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.RuleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html
-type SafetyRule_RuleConfig struct {
+type SafetyRule_RuleConfig[T any] struct {
 
 	// Inverted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-inverted
-	Inverted bool `json:"Inverted"`
+	Inverted T `json:"Inverted"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-threshold
-	Threshold int `json:"Threshold"`
+	Threshold T `json:"Threshold"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type SafetyRule_RuleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SafetyRule_RuleConfig) AWSCloudFormationType() string {
+func (r *SafetyRule_RuleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::SafetyRule.RuleConfig"
 }

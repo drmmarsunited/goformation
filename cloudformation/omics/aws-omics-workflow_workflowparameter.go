@@ -8,7 +8,7 @@ import (
 
 // Workflow_WorkflowParameter AWS CloudFormation Resource (AWS::Omics::Workflow.WorkflowParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-workflow-workflowparameter.html
-type Workflow_WorkflowParameter struct {
+type Workflow_WorkflowParameter[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Workflow_WorkflowParameter struct {
 	// Optional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-workflow-workflowparameter.html#cfn-omics-workflow-workflowparameter-optional
-	Optional *bool `json:"Optional,omitempty"`
+	Optional *T `json:"Optional,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Workflow_WorkflowParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_WorkflowParameter) AWSCloudFormationType() string {
+func (r *Workflow_WorkflowParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::Workflow.WorkflowParameter"
 }

@@ -8,15 +8,15 @@ import (
 
 // SimpleTable AWS CloudFormation Resource (SimpleTable)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
-type SimpleTable struct {
+type SimpleTable[T any] struct {
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
-	SSESpecification *serverless.SimpleTable_SSESpecification `json:"SSESpecification,omitempty"`
+	SSESpecification *serverless.SimpleTable_SSESpecification[any] `json:"SSESpecification,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleTable) AWSCloudFormationType() string {
+func (r *SimpleTable[any]) AWSCloudFormationType() string {
 	return "SimpleTable"
 }

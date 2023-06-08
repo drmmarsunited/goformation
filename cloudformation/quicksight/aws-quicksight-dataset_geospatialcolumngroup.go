@@ -8,7 +8,7 @@ import (
 
 // DataSet_GeoSpatialColumnGroup AWS CloudFormation Resource (AWS::QuickSight::DataSet.GeoSpatialColumnGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-geospatialcolumngroup.html
-type DataSet_GeoSpatialColumnGroup struct {
+type DataSet_GeoSpatialColumnGroup[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSet_GeoSpatialColumnGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_GeoSpatialColumnGroup) AWSCloudFormationType() string {
+func (r *DataSet_GeoSpatialColumnGroup[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.GeoSpatialColumnGroup"
 }

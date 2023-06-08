@@ -8,7 +8,7 @@ import (
 
 // Flow_PardotSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.PardotSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-pardotsourceproperties.html
-type Flow_PardotSourceProperties struct {
+type Flow_PardotSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_PardotSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_PardotSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_PardotSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.PardotSourceProperties"
 }

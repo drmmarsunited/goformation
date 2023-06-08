@@ -12,7 +12,7 @@ import (
 
 // SigningProfile AWS CloudFormation Resource (AWS::Signer::SigningProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html
-type SigningProfile struct {
+type SigningProfile[T any] struct {
 
 	// PlatformId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type SigningProfile struct {
 	// SignatureValidityPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-signaturevalidityperiod
-	SignatureValidityPeriod *SigningProfile_SignatureValidityPeriod `json:"SignatureValidityPeriod,omitempty"`
+	SignatureValidityPeriod *SigningProfile_SignatureValidityPeriod[any] `json:"SignatureValidityPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type SigningProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SigningProfile) AWSCloudFormationType() string {
+func (r *SigningProfile[any]) AWSCloudFormationType() string {
 	return "AWS::Signer::SigningProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SigningProfile) MarshalJSON() ([]byte, error) {
-	type Properties SigningProfile
+func (r SigningProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties SigningProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r SigningProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SigningProfile) UnmarshalJSON(b []byte) error {
-	type Properties SigningProfile
+func (r *SigningProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties SigningProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *SigningProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SigningProfile(*res.Properties)
+		*r = SigningProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

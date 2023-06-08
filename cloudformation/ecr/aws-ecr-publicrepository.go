@@ -12,12 +12,12 @@ import (
 
 // PublicRepository AWS CloudFormation Resource (AWS::ECR::PublicRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html
-type PublicRepository struct {
+type PublicRepository[T any] struct {
 
 	// RepositoryCatalogData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata
-	RepositoryCatalogData *PublicRepository_RepositoryCatalogData `json:"RepositoryCatalogData,omitempty"`
+	RepositoryCatalogData *PublicRepository_RepositoryCatalogData[any] `json:"RepositoryCatalogData,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type PublicRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PublicRepository) AWSCloudFormationType() string {
+func (r *PublicRepository[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::PublicRepository"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PublicRepository) MarshalJSON() ([]byte, error) {
-	type Properties PublicRepository
+func (r PublicRepository[any]) MarshalJSON() ([]byte, error) {
+	type Properties PublicRepository[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r PublicRepository) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PublicRepository) UnmarshalJSON(b []byte) error {
-	type Properties PublicRepository
+func (r *PublicRepository[any]) UnmarshalJSON(b []byte) error {
+	type Properties PublicRepository[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *PublicRepository) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PublicRepository(*res.Properties)
+		*r = PublicRepository[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

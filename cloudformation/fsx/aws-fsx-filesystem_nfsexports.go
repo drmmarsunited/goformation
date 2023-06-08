@@ -8,12 +8,12 @@ import (
 
 // FileSystem_NfsExports AWS CloudFormation Resource (AWS::FSx::FileSystem.NfsExports)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports.html
-type FileSystem_NfsExports struct {
+type FileSystem_NfsExports[T any] struct {
 
 	// ClientConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-nfsexports-clientconfigurations
-	ClientConfigurations []FileSystem_ClientConfigurations `json:"ClientConfigurations,omitempty"`
+	ClientConfigurations []FileSystem_ClientConfigurations[any] `json:"ClientConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type FileSystem_NfsExports struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_NfsExports) AWSCloudFormationType() string {
+func (r *FileSystem_NfsExports[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.NfsExports"
 }

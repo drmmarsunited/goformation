@@ -8,7 +8,7 @@ import (
 
 // Stack_StackConfigurationManager AWS CloudFormation Resource (AWS::OpsWorks::Stack.StackConfigurationManager)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html
-type Stack_StackConfigurationManager struct {
+type Stack_StackConfigurationManager[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Stack_StackConfigurationManager struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_StackConfigurationManager) AWSCloudFormationType() string {
+func (r *Stack_StackConfigurationManager[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.StackConfigurationManager"
 }

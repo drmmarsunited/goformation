@@ -8,7 +8,7 @@ import (
 
 // StateMachine_EventBridgeRuleEvent AWS CloudFormation Resource (AWS::Serverless::StateMachine.EventBridgeRuleEvent)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html
-type StateMachine_EventBridgeRuleEvent struct {
+type StateMachine_EventBridgeRuleEvent[T any] struct {
 
 	// EventBusName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type StateMachine_EventBridgeRuleEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_EventBridgeRuleEvent) AWSCloudFormationType() string {
+func (r *StateMachine_EventBridgeRuleEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.EventBridgeRuleEvent"
 }

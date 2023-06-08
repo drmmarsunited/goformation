@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetVisualScopingConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetVisualScopingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetvisualscopingconfiguration.html
-type Dashboard_SheetVisualScopingConfiguration struct {
+type Dashboard_SheetVisualScopingConfiguration[T any] struct {
 
 	// Scope AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_SheetVisualScopingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetVisualScopingConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SheetVisualScopingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetVisualScopingConfiguration"
 }

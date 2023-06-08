@@ -8,7 +8,7 @@ import (
 
 // TargetGroup_Target AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-target.html
-type TargetGroup_Target struct {
+type TargetGroup_Target[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type TargetGroup_Target struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-target.html#cfn-vpclattice-targetgroup-target-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type TargetGroup_Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_Target) AWSCloudFormationType() string {
+func (r *TargetGroup_Target[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::TargetGroup.Target"
 }

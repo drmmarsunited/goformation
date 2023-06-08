@@ -8,7 +8,7 @@ import (
 
 // StackSet_DeploymentTargets AWS CloudFormation Resource (AWS::CloudFormation::StackSet.DeploymentTargets)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html
-type StackSet_DeploymentTargets struct {
+type StackSet_DeploymentTargets[T any] struct {
 
 	// AccountFilterType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type StackSet_DeploymentTargets struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet_DeploymentTargets) AWSCloudFormationType() string {
+func (r *StackSet_DeploymentTargets[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet.DeploymentTargets"
 }

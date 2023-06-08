@@ -8,12 +8,12 @@ import (
 
 // Cluster_ClusterConfiguration AWS CloudFormation Resource (AWS::ECS::Cluster.ClusterConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-clusterconfiguration.html
-type Cluster_ClusterConfiguration struct {
+type Cluster_ClusterConfiguration[T any] struct {
 
 	// ExecuteCommandConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-clusterconfiguration.html#cfn-ecs-cluster-clusterconfiguration-executecommandconfiguration
-	ExecuteCommandConfiguration *Cluster_ExecuteCommandConfiguration `json:"ExecuteCommandConfiguration,omitempty"`
+	ExecuteCommandConfiguration *Cluster_ExecuteCommandConfiguration[any] `json:"ExecuteCommandConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_ClusterConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ClusterConfiguration) AWSCloudFormationType() string {
+func (r *Cluster_ClusterConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Cluster.ClusterConfiguration"
 }

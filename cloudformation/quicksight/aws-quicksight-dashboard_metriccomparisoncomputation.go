@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MetricComparisonComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MetricComparisonComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-metriccomparisoncomputation.html
-type Dashboard_MetricComparisonComputation struct {
+type Dashboard_MetricComparisonComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_MetricComparisonComputation struct {
 	// FromValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-metriccomparisoncomputation.html#cfn-quicksight-dashboard-metriccomparisoncomputation-fromvalue
-	FromValue *Dashboard_MeasureField `json:"FromValue"`
+	FromValue *Dashboard_MeasureField[any] `json:"FromValue"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Dashboard_MetricComparisonComputation struct {
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-metriccomparisoncomputation.html#cfn-quicksight-dashboard-metriccomparisoncomputation-targetvalue
-	TargetValue *Dashboard_MeasureField `json:"TargetValue"`
+	TargetValue *Dashboard_MeasureField[any] `json:"TargetValue"`
 
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-metriccomparisoncomputation.html#cfn-quicksight-dashboard-metriccomparisoncomputation-time
-	Time *Dashboard_DimensionField `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_MetricComparisonComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MetricComparisonComputation) AWSCloudFormationType() string {
+func (r *Dashboard_MetricComparisonComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MetricComparisonComputation"
 }

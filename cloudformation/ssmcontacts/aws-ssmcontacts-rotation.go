@@ -12,7 +12,7 @@ import (
 
 // Rotation AWS CloudFormation Resource (AWS::SSMContacts::Rotation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html
-type Rotation struct {
+type Rotation[T any] struct {
 
 	// ContactIds AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Rotation struct {
 	// Recurrence AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-recurrence
-	Recurrence *Rotation_RecurrenceSettings `json:"Recurrence"`
+	Recurrence *Rotation_RecurrenceSettings[any] `json:"Recurrence"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type Rotation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation) AWSCloudFormationType() string {
+func (r *Rotation[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Rotation) MarshalJSON() ([]byte, error) {
-	type Properties Rotation
+func (r Rotation[any]) MarshalJSON() ([]byte, error) {
+	type Properties Rotation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Rotation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Rotation) UnmarshalJSON(b []byte) error {
-	type Properties Rotation
+func (r *Rotation[any]) UnmarshalJSON(b []byte) error {
+	type Properties Rotation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Rotation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Rotation(*res.Properties)
+		*r = Rotation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

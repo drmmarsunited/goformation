@@ -8,7 +8,7 @@ import (
 
 // Function_KeySAMPT AWS CloudFormation Resource (AWS::Serverless::Function.KeySAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_KeySAMPT struct {
+type Function_KeySAMPT[T any] struct {
 
 	// KeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_KeySAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_KeySAMPT) AWSCloudFormationType() string {
+func (r *Function_KeySAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.KeySAMPT"
 }

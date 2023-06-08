@@ -8,12 +8,12 @@ import (
 
 // Component_ComponentConditionProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentConditionProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html
-type Component_ComponentConditionProperty struct {
+type Component_ComponentConditionProperty[T any] struct {
 
 	// Else AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-else
-	Else *Component_ComponentProperty `json:"Else,omitempty"`
+	Else *Component_ComponentProperty[any] `json:"Else,omitempty"`
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Component_ComponentConditionProperty struct {
 	// Then AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html#cfn-amplifyuibuilder-component-componentconditionproperty-then
-	Then *Component_ComponentProperty `json:"Then,omitempty"`
+	Then *Component_ComponentProperty[any] `json:"Then,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Component_ComponentConditionProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentConditionProperty) AWSCloudFormationType() string {
+func (r *Component_ComponentConditionProperty[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentConditionProperty"
 }

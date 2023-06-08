@@ -11,7 +11,7 @@ import (
 
 // HostedConfigurationVersion AWS CloudFormation Resource (AWS::AppConfig::HostedConfigurationVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html
-type HostedConfigurationVersion struct {
+type HostedConfigurationVersion[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type HostedConfigurationVersion struct {
 	// LatestVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-latestversionnumber
-	LatestVersionNumber *float64 `json:"LatestVersionNumber,omitempty"`
+	LatestVersionNumber *T `json:"LatestVersionNumber,omitempty"`
 
 	// VersionLabel AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type HostedConfigurationVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HostedConfigurationVersion) AWSCloudFormationType() string {
+func (r *HostedConfigurationVersion[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::HostedConfigurationVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HostedConfigurationVersion) MarshalJSON() ([]byte, error) {
-	type Properties HostedConfigurationVersion
+func (r HostedConfigurationVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties HostedConfigurationVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r HostedConfigurationVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HostedConfigurationVersion) UnmarshalJSON(b []byte) error {
-	type Properties HostedConfigurationVersion
+func (r *HostedConfigurationVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties HostedConfigurationVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *HostedConfigurationVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HostedConfigurationVersion(*res.Properties)
+		*r = HostedConfigurationVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

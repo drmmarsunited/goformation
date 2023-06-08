@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_Ulimit AWS CloudFormation Resource (AWS::Batch::JobDefinition.Ulimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html
-type JobDefinition_Ulimit struct {
+type JobDefinition_Ulimit[T any] struct {
 
 	// HardLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-hardlimit
-	HardLimit int `json:"HardLimit"`
+	HardLimit T `json:"HardLimit"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type JobDefinition_Ulimit struct {
 	// SoftLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-softlimit
-	SoftLimit int `json:"SoftLimit"`
+	SoftLimit T `json:"SoftLimit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobDefinition_Ulimit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Ulimit) AWSCloudFormationType() string {
+func (r *JobDefinition_Ulimit[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Ulimit"
 }

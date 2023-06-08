@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_MarketoConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html
-type ConnectorProfile_MarketoConnectorProfileCredentials struct {
+type ConnectorProfile_MarketoConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_MarketoConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ConnectorProfile_MarketoConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_MarketoConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_MarketoConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileCredentials"
 }

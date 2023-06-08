@@ -8,7 +8,7 @@ import (
 
 // MitigationAction_PublishFindingToSnsParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.PublishFindingToSnsParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-publishfindingtosnsparams.html
-type MitigationAction_PublishFindingToSnsParams struct {
+type MitigationAction_PublishFindingToSnsParams[T any] struct {
 
 	// TopicArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MitigationAction_PublishFindingToSnsParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_PublishFindingToSnsParams) AWSCloudFormationType() string {
+func (r *MitigationAction_PublishFindingToSnsParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.PublishFindingToSnsParams"
 }

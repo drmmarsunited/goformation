@@ -11,17 +11,17 @@ import (
 
 // FlowTemplate AWS CloudFormation Resource (AWS::IoTThingsGraph::FlowTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html
-type FlowTemplate struct {
+type FlowTemplate[T any] struct {
 
 	// CompatibleNamespaceVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-compatiblenamespaceversion
-	CompatibleNamespaceVersion *float64 `json:"CompatibleNamespaceVersion,omitempty"`
+	CompatibleNamespaceVersion *T `json:"CompatibleNamespaceVersion,omitempty"`
 
 	// Definition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition
-	Definition *FlowTemplate_DefinitionDocument `json:"Definition"`
+	Definition *FlowTemplate_DefinitionDocument[any] `json:"Definition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type FlowTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowTemplate) AWSCloudFormationType() string {
+func (r *FlowTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::IoTThingsGraph::FlowTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FlowTemplate) MarshalJSON() ([]byte, error) {
-	type Properties FlowTemplate
+func (r FlowTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties FlowTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r FlowTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FlowTemplate) UnmarshalJSON(b []byte) error {
-	type Properties FlowTemplate
+func (r *FlowTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties FlowTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *FlowTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FlowTemplate(*res.Properties)
+		*r = FlowTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

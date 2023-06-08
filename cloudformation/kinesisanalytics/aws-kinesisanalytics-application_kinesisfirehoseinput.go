@@ -8,7 +8,7 @@ import (
 
 // Application_KinesisFirehoseInput AWS CloudFormation Resource (AWS::KinesisAnalytics::Application.KinesisFirehoseInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
-type Application_KinesisFirehoseInput struct {
+type Application_KinesisFirehoseInput[T any] struct {
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_KinesisFirehoseInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_KinesisFirehoseInput) AWSCloudFormationType() string {
+func (r *Application_KinesisFirehoseInput[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::Application.KinesisFirehoseInput"
 }

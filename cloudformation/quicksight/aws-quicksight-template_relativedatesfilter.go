@@ -8,22 +8,22 @@ import (
 
 // Template_RelativeDatesFilter AWS CloudFormation Resource (AWS::QuickSight::Template.RelativeDatesFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatesfilter.html
-type Template_RelativeDatesFilter struct {
+type Template_RelativeDatesFilter[T any] struct {
 
 	// AnchorDateConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatesfilter.html#cfn-quicksight-template-relativedatesfilter-anchordateconfiguration
-	AnchorDateConfiguration *Template_AnchorDateConfiguration `json:"AnchorDateConfiguration"`
+	AnchorDateConfiguration *Template_AnchorDateConfiguration[any] `json:"AnchorDateConfiguration"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatesfilter.html#cfn-quicksight-template-relativedatesfilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// ExcludePeriodConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatesfilter.html#cfn-quicksight-template-relativedatesfilter-excludeperiodconfiguration
-	ExcludePeriodConfiguration *Template_ExcludePeriodConfiguration `json:"ExcludePeriodConfiguration,omitempty"`
+	ExcludePeriodConfiguration *Template_ExcludePeriodConfiguration[any] `json:"ExcludePeriodConfiguration,omitempty"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Template_RelativeDatesFilter struct {
 	// RelativeDateValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-relativedatesfilter.html#cfn-quicksight-template-relativedatesfilter-relativedatevalue
-	RelativeDateValue *float64 `json:"RelativeDateValue,omitempty"`
+	RelativeDateValue *T `json:"RelativeDateValue,omitempty"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: true
@@ -77,6 +77,6 @@ type Template_RelativeDatesFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RelativeDatesFilter) AWSCloudFormationType() string {
+func (r *Template_RelativeDatesFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RelativeDatesFilter"
 }

@@ -12,7 +12,7 @@ import (
 
 // Feature AWS CloudFormation Resource (AWS::Evidently::Feature)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html
-type Feature struct {
+type Feature[T any] struct {
 
 	// DefaultVariation AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Feature struct {
 	// EntityOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-entityoverrides
-	EntityOverrides []Feature_EntityOverride `json:"EntityOverrides,omitempty"`
+	EntityOverrides []Feature_EntityOverride[any] `json:"EntityOverrides,omitempty"`
 
 	// EvaluationStrategy AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Feature struct {
 	// Variations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-variations
-	Variations []Feature_VariationObject `json:"Variations"`
+	Variations []Feature_VariationObject[any] `json:"Variations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type Feature struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Feature) AWSCloudFormationType() string {
+func (r *Feature[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Feature"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Feature) MarshalJSON() ([]byte, error) {
-	type Properties Feature
+func (r Feature[any]) MarshalJSON() ([]byte, error) {
+	type Properties Feature[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Feature) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Feature) UnmarshalJSON(b []byte) error {
-	type Properties Feature
+func (r *Feature[any]) UnmarshalJSON(b []byte) error {
+	type Properties Feature[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Feature) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Feature(*res.Properties)
+		*r = Feature[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

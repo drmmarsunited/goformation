@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_StatisticsResource AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.StatisticsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-statisticsresource.html
-type DataQualityJobDefinition_StatisticsResource struct {
+type DataQualityJobDefinition_StatisticsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataQualityJobDefinition_StatisticsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_StatisticsResource) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_StatisticsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.StatisticsResource"
 }

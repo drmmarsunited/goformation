@@ -8,12 +8,12 @@ import (
 
 // Function_DestinationConfig AWS CloudFormation Resource (AWS::Serverless::Function.DestinationConfig)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object
-type Function_DestinationConfig struct {
+type Function_DestinationConfig[T any] struct {
 
 	// OnFailure AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object
-	OnFailure *Function_Destination `json:"OnFailure"`
+	OnFailure *Function_Destination[any] `json:"OnFailure"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Function_DestinationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DestinationConfig) AWSCloudFormationType() string {
+func (r *Function_DestinationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DestinationConfig"
 }

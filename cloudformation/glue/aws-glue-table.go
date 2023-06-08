@@ -11,7 +11,7 @@ import (
 
 // Table AWS CloudFormation Resource (AWS::Glue::Table)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html
-type Table struct {
+type Table[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Table struct {
 	// TableInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput
-	TableInput *Table_TableInput `json:"TableInput"`
+	TableInput *Table_TableInput[any] `json:"TableInput"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type Table struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table) AWSCloudFormationType() string {
+func (r *Table[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Table) MarshalJSON() ([]byte, error) {
-	type Properties Table
+func (r Table[any]) MarshalJSON() ([]byte, error) {
+	type Properties Table[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Table) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Table) UnmarshalJSON(b []byte) error {
-	type Properties Table
+func (r *Table[any]) UnmarshalJSON(b []byte) error {
+	type Properties Table[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Table) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Table(*res.Properties)
+		*r = Table[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

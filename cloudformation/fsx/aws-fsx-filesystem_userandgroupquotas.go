@@ -8,17 +8,17 @@ import (
 
 // FileSystem_UserAndGroupQuotas AWS CloudFormation Resource (AWS::FSx::FileSystem.UserAndGroupQuotas)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas.html
-type FileSystem_UserAndGroupQuotas struct {
+type FileSystem_UserAndGroupQuotas[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas-id
-	Id *int `json:"Id,omitempty"`
+	Id *T `json:"Id,omitempty"`
 
 	// StorageCapacityQuotaGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-userandgroupquotas-storagecapacityquotagib
-	StorageCapacityQuotaGiB *int `json:"StorageCapacityQuotaGiB,omitempty"`
+	StorageCapacityQuotaGiB *T `json:"StorageCapacityQuotaGiB,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type FileSystem_UserAndGroupQuotas struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_UserAndGroupQuotas) AWSCloudFormationType() string {
+func (r *FileSystem_UserAndGroupQuotas[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.UserAndGroupQuotas"
 }

@@ -8,7 +8,7 @@ import (
 
 // Disk_AddOn AWS CloudFormation Resource (AWS::Lightsail::Disk.AddOn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-addon.html
-type Disk_AddOn struct {
+type Disk_AddOn[T any] struct {
 
 	// AddOnType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Disk_AddOn struct {
 	// AutoSnapshotAddOnRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-addon.html#cfn-lightsail-disk-addon-autosnapshotaddonrequest
-	AutoSnapshotAddOnRequest *Disk_AutoSnapshotAddOn `json:"AutoSnapshotAddOnRequest,omitempty"`
+	AutoSnapshotAddOnRequest *Disk_AutoSnapshotAddOn[any] `json:"AutoSnapshotAddOnRequest,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Disk_AddOn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Disk_AddOn) AWSCloudFormationType() string {
+func (r *Disk_AddOn[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Disk.AddOn"
 }

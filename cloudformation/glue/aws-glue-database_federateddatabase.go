@@ -8,7 +8,7 @@ import (
 
 // Database_FederatedDatabase AWS CloudFormation Resource (AWS::Glue::Database.FederatedDatabase)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput-federateddatabase.html
-type Database_FederatedDatabase struct {
+type Database_FederatedDatabase[T any] struct {
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Database_FederatedDatabase struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_FederatedDatabase) AWSCloudFormationType() string {
+func (r *Database_FederatedDatabase[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.FederatedDatabase"
 }

@@ -8,7 +8,7 @@ import (
 
 // Certificate_CustomAttribute AWS CloudFormation Resource (AWS::ACMPCA::Certificate.CustomAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customattribute.html
-type Certificate_CustomAttribute struct {
+type Certificate_CustomAttribute[T any] struct {
 
 	// ObjectIdentifier AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Certificate_CustomAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_CustomAttribute) AWSCloudFormationType() string {
+func (r *Certificate_CustomAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.CustomAttribute"
 }

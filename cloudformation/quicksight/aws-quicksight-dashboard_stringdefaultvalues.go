@@ -8,12 +8,12 @@ import (
 
 // Dashboard_StringDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.StringDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringdefaultvalues.html
-type Dashboard_StringDefaultValues struct {
+type Dashboard_StringDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringdefaultvalues.html#cfn-quicksight-dashboard-stringdefaultvalues-dynamicvalue
-	DynamicValue *Dashboard_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Dashboard_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_StringDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_StringDefaultValues) AWSCloudFormationType() string {
+func (r *Dashboard_StringDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.StringDefaultValues"
 }

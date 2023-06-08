@@ -12,7 +12,7 @@ import (
 
 // NetworkAcl AWS CloudFormation Resource (AWS::EC2::NetworkAcl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkacl.html
-type NetworkAcl struct {
+type NetworkAcl[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type NetworkAcl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAcl) AWSCloudFormationType() string {
+func (r *NetworkAcl[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkAcl"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkAcl) MarshalJSON() ([]byte, error) {
-	type Properties NetworkAcl
+func (r NetworkAcl[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkAcl[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r NetworkAcl) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkAcl) UnmarshalJSON(b []byte) error {
-	type Properties NetworkAcl
+func (r *NetworkAcl[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkAcl[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *NetworkAcl) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkAcl(*res.Properties)
+		*r = NetworkAcl[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

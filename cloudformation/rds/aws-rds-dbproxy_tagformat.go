@@ -8,7 +8,7 @@ import (
 
 // DBProxy_TagFormat AWS CloudFormation Resource (AWS::RDS::DBProxy.TagFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-tagformat.html
-type DBProxy_TagFormat struct {
+type DBProxy_TagFormat[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBProxy_TagFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxy_TagFormat) AWSCloudFormationType() string {
+func (r *DBProxy_TagFormat[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxy.TagFormat"
 }

@@ -8,7 +8,7 @@ import (
 
 // DecoderManifest_CanInterface AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.CanInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-caninterface.html
-type DecoderManifest_CanInterface struct {
+type DecoderManifest_CanInterface[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DecoderManifest_CanInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_CanInterface) AWSCloudFormationType() string {
+func (r *DecoderManifest_CanInterface[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.CanInterface"
 }

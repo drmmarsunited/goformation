@@ -8,17 +8,17 @@ import (
 
 // Dataset_Trigger AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.Trigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html
-type Dataset_Trigger struct {
+type Dataset_Trigger[T any] struct {
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-schedule
-	Schedule *Dataset_Schedule `json:"Schedule,omitempty"`
+	Schedule *Dataset_Schedule[any] `json:"Schedule,omitempty"`
 
 	// TriggeringDataset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-triggeringdataset
-	TriggeringDataset *Dataset_TriggeringDataset `json:"TriggeringDataset,omitempty"`
+	TriggeringDataset *Dataset_TriggeringDataset[any] `json:"TriggeringDataset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dataset_Trigger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_Trigger) AWSCloudFormationType() string {
+func (r *Dataset_Trigger[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.Trigger"
 }

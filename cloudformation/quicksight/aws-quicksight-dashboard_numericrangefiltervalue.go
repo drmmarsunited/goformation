@@ -8,7 +8,7 @@ import (
 
 // Dashboard_NumericRangeFilterValue AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericRangeFilterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefiltervalue.html
-type Dashboard_NumericRangeFilterValue struct {
+type Dashboard_NumericRangeFilterValue[T any] struct {
 
 	// Parameter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_NumericRangeFilterValue struct {
 	// StaticValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefiltervalue.html#cfn-quicksight-dashboard-numericrangefiltervalue-staticvalue
-	StaticValue *float64 `json:"StaticValue,omitempty"`
+	StaticValue *T `json:"StaticValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_NumericRangeFilterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericRangeFilterValue) AWSCloudFormationType() string {
+func (r *Dashboard_NumericRangeFilterValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericRangeFilterValue"
 }

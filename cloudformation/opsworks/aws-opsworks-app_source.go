@@ -8,7 +8,7 @@ import (
 
 // App_Source AWS CloudFormation Resource (AWS::OpsWorks::App.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html
-type App_Source struct {
+type App_Source[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type App_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_Source) AWSCloudFormationType() string {
+func (r *App_Source[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App.Source"
 }

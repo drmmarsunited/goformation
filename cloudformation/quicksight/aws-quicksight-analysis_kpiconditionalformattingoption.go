@@ -8,17 +8,17 @@ import (
 
 // Analysis_KPIConditionalFormattingOption AWS CloudFormation Resource (AWS::QuickSight::Analysis.KPIConditionalFormattingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconditionalformattingoption.html
-type Analysis_KPIConditionalFormattingOption struct {
+type Analysis_KPIConditionalFormattingOption[T any] struct {
 
 	// PrimaryValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconditionalformattingoption.html#cfn-quicksight-analysis-kpiconditionalformattingoption-primaryvalue
-	PrimaryValue *Analysis_KPIPrimaryValueConditionalFormatting `json:"PrimaryValue,omitempty"`
+	PrimaryValue *Analysis_KPIPrimaryValueConditionalFormatting[any] `json:"PrimaryValue,omitempty"`
 
 	// ProgressBar AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconditionalformattingoption.html#cfn-quicksight-analysis-kpiconditionalformattingoption-progressbar
-	ProgressBar *Analysis_KPIProgressBarConditionalFormatting `json:"ProgressBar,omitempty"`
+	ProgressBar *Analysis_KPIProgressBarConditionalFormatting[any] `json:"ProgressBar,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_KPIConditionalFormattingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_KPIConditionalFormattingOption) AWSCloudFormationType() string {
+func (r *Analysis_KPIConditionalFormattingOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.KPIConditionalFormattingOption"
 }

@@ -8,12 +8,12 @@ import (
 
 // ComponentType_Function AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-function.html
-type ComponentType_Function struct {
+type ComponentType_Function[T any] struct {
 
 	// ImplementedBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-function.html#cfn-iottwinmaker-componenttype-function-implementedby
-	ImplementedBy *ComponentType_DataConnector `json:"ImplementedBy,omitempty"`
+	ImplementedBy *ComponentType_DataConnector[any] `json:"ImplementedBy,omitempty"`
 
 	// RequiredProperties AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ComponentType_Function struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_Function) AWSCloudFormationType() string {
+func (r *ComponentType_Function[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.Function"
 }

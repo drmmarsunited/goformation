@@ -11,7 +11,7 @@ import (
 
 // ReportDefinition AWS CloudFormation Resource (AWS::CUR::ReportDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html
-type ReportDefinition struct {
+type ReportDefinition[T any] struct {
 
 	// AdditionalArtifacts AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type ReportDefinition struct {
 	// RefreshClosedReports AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-refreshclosedreports
-	RefreshClosedReports bool `json:"RefreshClosedReports"`
+	RefreshClosedReports T `json:"RefreshClosedReports"`
 
 	// ReportName AWS CloudFormation Property
 	// Required: true
@@ -90,14 +90,15 @@ type ReportDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportDefinition) AWSCloudFormationType() string {
+func (r *ReportDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::CUR::ReportDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReportDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ReportDefinition
+func (r ReportDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReportDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r ReportDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReportDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ReportDefinition
+func (r *ReportDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReportDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *ReportDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReportDefinition(*res.Properties)
+		*r = ReportDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

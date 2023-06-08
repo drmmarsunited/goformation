@@ -8,12 +8,12 @@ import (
 
 // DataSource_OneDriveConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.OneDriveConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html
-type DataSource_OneDriveConfiguration struct {
+type DataSource_OneDriveConfiguration[T any] struct {
 
 	// DisableLocalGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-disablelocalgroups
-	DisableLocalGroups *bool `json:"DisableLocalGroups,omitempty"`
+	DisableLocalGroups *T `json:"DisableLocalGroups,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSource_OneDriveConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_OneDriveConfiguration struct {
 	// OneDriveUsers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-onedriveusers
-	OneDriveUsers *DataSource_OneDriveUsers `json:"OneDriveUsers"`
+	OneDriveUsers *DataSource_OneDriveUsers[any] `json:"OneDriveUsers"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type DataSource_OneDriveConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_OneDriveConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_OneDriveConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.OneDriveConfiguration"
 }

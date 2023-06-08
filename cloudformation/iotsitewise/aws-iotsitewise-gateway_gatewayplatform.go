@@ -8,17 +8,17 @@ import (
 
 // Gateway_GatewayPlatform AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway.GatewayPlatform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html
-type Gateway_GatewayPlatform struct {
+type Gateway_GatewayPlatform[T any] struct {
 
 	// Greengrass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass
-	Greengrass *Gateway_Greengrass `json:"Greengrass,omitempty"`
+	Greengrass *Gateway_Greengrass[any] `json:"Greengrass,omitempty"`
 
 	// GreengrassV2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrassv2
-	GreengrassV2 *Gateway_GreengrassV2 `json:"GreengrassV2,omitempty"`
+	GreengrassV2 *Gateway_GreengrassV2[any] `json:"GreengrassV2,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Gateway_GatewayPlatform struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Gateway_GatewayPlatform) AWSCloudFormationType() string {
+func (r *Gateway_GatewayPlatform[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Gateway.GatewayPlatform"
 }

@@ -8,7 +8,7 @@ import (
 
 // Model_ContainerDefinition AWS CloudFormation Resource (AWS::SageMaker::Model.ContainerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html
-type Model_ContainerDefinition struct {
+type Model_ContainerDefinition[T any] struct {
 
 	// ContainerHostname AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Model_ContainerDefinition struct {
 	// ImageConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-imageconfig
-	ImageConfig *Model_ImageConfig `json:"ImageConfig,omitempty"`
+	ImageConfig *Model_ImageConfig[any] `json:"ImageConfig,omitempty"`
 
 	// InferenceSpecificationName AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Model_ContainerDefinition struct {
 	// MultiModelConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-multimodelconfig
-	MultiModelConfig *Model_MultiModelConfig `json:"MultiModelConfig,omitempty"`
+	MultiModelConfig *Model_MultiModelConfig[any] `json:"MultiModelConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Model_ContainerDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_ContainerDefinition) AWSCloudFormationType() string {
+func (r *Model_ContainerDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.ContainerDefinition"
 }

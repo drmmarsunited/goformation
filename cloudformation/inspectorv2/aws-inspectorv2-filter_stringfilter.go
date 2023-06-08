@@ -8,7 +8,7 @@ import (
 
 // Filter_StringFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.StringFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html
-type Filter_StringFilter struct {
+type Filter_StringFilter[T any] struct {
 
 	// Comparison AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Filter_StringFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter_StringFilter) AWSCloudFormationType() string {
+func (r *Filter_StringFilter[any]) AWSCloudFormationType() string {
 	return "AWS::InspectorV2::Filter.StringFilter"
 }

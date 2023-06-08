@@ -8,7 +8,7 @@ import (
 
 // WebACL_AWSManagedRulesATPRuleSet AWS CloudFormation Resource (AWS::WAFv2::WebACL.AWSManagedRulesATPRuleSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesatpruleset.html
-type WebACL_AWSManagedRulesATPRuleSet struct {
+type WebACL_AWSManagedRulesATPRuleSet[T any] struct {
 
 	// LoginPath AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type WebACL_AWSManagedRulesATPRuleSet struct {
 	// RequestInspection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesatpruleset.html#cfn-wafv2-webacl-awsmanagedrulesatpruleset-requestinspection
-	RequestInspection *WebACL_RequestInspection `json:"RequestInspection,omitempty"`
+	RequestInspection *WebACL_RequestInspection[any] `json:"RequestInspection,omitempty"`
 
 	// ResponseInspection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesatpruleset.html#cfn-wafv2-webacl-awsmanagedrulesatpruleset-responseinspection
-	ResponseInspection *WebACL_ResponseInspection `json:"ResponseInspection,omitempty"`
+	ResponseInspection *WebACL_ResponseInspection[any] `json:"ResponseInspection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type WebACL_AWSManagedRulesATPRuleSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_AWSManagedRulesATPRuleSet) AWSCloudFormationType() string {
+func (r *WebACL_AWSManagedRulesATPRuleSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.AWSManagedRulesATPRuleSet"
 }

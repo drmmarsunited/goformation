@@ -8,12 +8,12 @@ import (
 
 // Connector_WorkerConfiguration AWS CloudFormation Resource (AWS::KafkaConnect::Connector.WorkerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html
-type Connector_WorkerConfiguration struct {
+type Connector_WorkerConfiguration[T any] struct {
 
 	// Revision AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
-	Revision int `json:"Revision"`
+	Revision T `json:"Revision"`
 
 	// WorkerConfigurationArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Connector_WorkerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_WorkerConfiguration) AWSCloudFormationType() string {
+func (r *Connector_WorkerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.WorkerConfiguration"
 }

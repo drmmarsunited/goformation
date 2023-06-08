@@ -8,17 +8,17 @@ import (
 
 // AnomalyDetector_MetricStat AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.MetricStat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricstat.html
-type AnomalyDetector_MetricStat struct {
+type AnomalyDetector_MetricStat[T any] struct {
 
 	// Metric AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricstat.html#cfn-cloudwatch-anomalydetector-metricstat-metric
-	Metric *AnomalyDetector_Metric `json:"Metric"`
+	Metric *AnomalyDetector_Metric[any] `json:"Metric"`
 
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricstat.html#cfn-cloudwatch-anomalydetector-metricstat-period
-	Period int `json:"Period"`
+	Period T `json:"Period"`
 
 	// Stat AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type AnomalyDetector_MetricStat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricStat) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricStat[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.MetricStat"
 }

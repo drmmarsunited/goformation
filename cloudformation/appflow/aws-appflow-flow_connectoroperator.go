@@ -8,7 +8,7 @@ import (
 
 // Flow_ConnectorOperator AWS CloudFormation Resource (AWS::AppFlow::Flow.ConnectorOperator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html
-type Flow_ConnectorOperator struct {
+type Flow_ConnectorOperator[T any] struct {
 
 	// Amplitude AWS CloudFormation Property
 	// Required: false
@@ -112,6 +112,6 @@ type Flow_ConnectorOperator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ConnectorOperator) AWSCloudFormationType() string {
+func (r *Flow_ConnectorOperator[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ConnectorOperator"
 }

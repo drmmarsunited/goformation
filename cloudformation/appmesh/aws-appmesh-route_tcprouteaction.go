@@ -8,12 +8,12 @@ import (
 
 // Route_TcpRouteAction AWS CloudFormation Resource (AWS::AppMesh::Route.TcpRouteAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html
-type Route_TcpRouteAction struct {
+type Route_TcpRouteAction[T any] struct {
 
 	// WeightedTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets
-	WeightedTargets []Route_WeightedTarget `json:"WeightedTargets"`
+	WeightedTargets []Route_WeightedTarget[any] `json:"WeightedTargets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Route_TcpRouteAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_TcpRouteAction) AWSCloudFormationType() string {
+func (r *Route_TcpRouteAction[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.TcpRouteAction"
 }

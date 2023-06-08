@@ -8,7 +8,7 @@ import (
 
 // Campaign_Template AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Template)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-template.html
-type Campaign_Template struct {
+type Campaign_Template[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_Template struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_Template) AWSCloudFormationType() string {
+func (r *Campaign_Template[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.Template"
 }

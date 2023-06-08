@@ -11,7 +11,7 @@ import (
 
 // XssMatchSet AWS CloudFormation Resource (AWS::WAF::XssMatchSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html
-type XssMatchSet struct {
+type XssMatchSet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type XssMatchSet struct {
 	// XssMatchTuples AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples
-	XssMatchTuples []XssMatchSet_XssMatchTuple `json:"XssMatchTuples"`
+	XssMatchTuples []XssMatchSet_XssMatchTuple[any] `json:"XssMatchTuples"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type XssMatchSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *XssMatchSet) AWSCloudFormationType() string {
+func (r *XssMatchSet[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::XssMatchSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r XssMatchSet) MarshalJSON() ([]byte, error) {
-	type Properties XssMatchSet
+func (r XssMatchSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties XssMatchSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r XssMatchSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *XssMatchSet) UnmarshalJSON(b []byte) error {
-	type Properties XssMatchSet
+func (r *XssMatchSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties XssMatchSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *XssMatchSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = XssMatchSet(*res.Properties)
+		*r = XssMatchSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

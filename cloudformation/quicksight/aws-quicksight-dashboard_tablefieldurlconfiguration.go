@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TableFieldURLConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldURLConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldurlconfiguration.html
-type Dashboard_TableFieldURLConfiguration struct {
+type Dashboard_TableFieldURLConfiguration[T any] struct {
 
 	// ImageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldurlconfiguration.html#cfn-quicksight-dashboard-tablefieldurlconfiguration-imageconfiguration
-	ImageConfiguration *Dashboard_TableFieldImageConfiguration `json:"ImageConfiguration,omitempty"`
+	ImageConfiguration *Dashboard_TableFieldImageConfiguration[any] `json:"ImageConfiguration,omitempty"`
 
 	// LinkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldurlconfiguration.html#cfn-quicksight-dashboard-tablefieldurlconfiguration-linkconfiguration
-	LinkConfiguration *Dashboard_TableFieldLinkConfiguration `json:"LinkConfiguration,omitempty"`
+	LinkConfiguration *Dashboard_TableFieldLinkConfiguration[any] `json:"LinkConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_TableFieldURLConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldURLConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldURLConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldURLConfiguration"
 }

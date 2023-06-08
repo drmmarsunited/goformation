@@ -8,7 +8,7 @@ import (
 
 // Template_TablePaginatedReportOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TablePaginatedReportOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablepaginatedreportoptions.html
-type Template_TablePaginatedReportOptions struct {
+type Template_TablePaginatedReportOptions[T any] struct {
 
 	// OverflowColumnHeaderVisibility AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_TablePaginatedReportOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TablePaginatedReportOptions) AWSCloudFormationType() string {
+func (r *Template_TablePaginatedReportOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TablePaginatedReportOptions"
 }

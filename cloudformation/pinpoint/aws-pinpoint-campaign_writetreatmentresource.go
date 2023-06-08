@@ -8,32 +8,32 @@ import (
 
 // Campaign_WriteTreatmentResource AWS CloudFormation Resource (AWS::Pinpoint::Campaign.WriteTreatmentResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html
-type Campaign_WriteTreatmentResource struct {
+type Campaign_WriteTreatmentResource[T any] struct {
 
 	// CustomDeliveryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-customdeliveryconfiguration
-	CustomDeliveryConfiguration *Campaign_CustomDeliveryConfiguration `json:"CustomDeliveryConfiguration,omitempty"`
+	CustomDeliveryConfiguration *Campaign_CustomDeliveryConfiguration[any] `json:"CustomDeliveryConfiguration,omitempty"`
 
 	// MessageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-messageconfiguration
-	MessageConfiguration *Campaign_MessageConfiguration `json:"MessageConfiguration,omitempty"`
+	MessageConfiguration *Campaign_MessageConfiguration[any] `json:"MessageConfiguration,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-schedule
-	Schedule *Campaign_Schedule `json:"Schedule,omitempty"`
+	Schedule *Campaign_Schedule[any] `json:"Schedule,omitempty"`
 
 	// SizePercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-sizepercent
-	SizePercent *int `json:"SizePercent,omitempty"`
+	SizePercent *T `json:"SizePercent,omitempty"`
 
 	// TemplateConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-templateconfiguration
-	TemplateConfiguration *Campaign_TemplateConfiguration `json:"TemplateConfiguration,omitempty"`
+	TemplateConfiguration *Campaign_TemplateConfiguration[any] `json:"TemplateConfiguration,omitempty"`
 
 	// TreatmentDescription AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Campaign_WriteTreatmentResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_WriteTreatmentResource) AWSCloudFormationType() string {
+func (r *Campaign_WriteTreatmentResource[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.WriteTreatmentResource"
 }

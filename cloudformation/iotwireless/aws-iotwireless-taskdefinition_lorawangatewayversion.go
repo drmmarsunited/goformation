@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_LoRaWANGatewayVersion AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.LoRaWANGatewayVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawangatewayversion.html
-type TaskDefinition_LoRaWANGatewayVersion struct {
+type TaskDefinition_LoRaWANGatewayVersion[T any] struct {
 
 	// Model AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskDefinition_LoRaWANGatewayVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_LoRaWANGatewayVersion) AWSCloudFormationType() string {
+func (r *TaskDefinition_LoRaWANGatewayVersion[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::TaskDefinition.LoRaWANGatewayVersion"
 }

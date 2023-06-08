@@ -8,7 +8,7 @@ import (
 
 // Connector_Vpc AWS CloudFormation Resource (AWS::KafkaConnect::Connector.Vpc)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-vpc.html
-type Connector_Vpc struct {
+type Connector_Vpc[T any] struct {
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Connector_Vpc struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_Vpc) AWSCloudFormationType() string {
+func (r *Connector_Vpc[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.Vpc"
 }

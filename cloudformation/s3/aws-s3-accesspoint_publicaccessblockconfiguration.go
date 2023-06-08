@@ -8,27 +8,27 @@ import (
 
 // AccessPoint_PublicAccessBlockConfiguration AWS CloudFormation Resource (AWS::S3::AccessPoint.PublicAccessBlockConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html
-type AccessPoint_PublicAccessBlockConfiguration struct {
+type AccessPoint_PublicAccessBlockConfiguration[T any] struct {
 
 	// BlockPublicAcls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-blockpublicacls
-	BlockPublicAcls *bool `json:"BlockPublicAcls,omitempty"`
+	BlockPublicAcls *T `json:"BlockPublicAcls,omitempty"`
 
 	// BlockPublicPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-blockpublicpolicy
-	BlockPublicPolicy *bool `json:"BlockPublicPolicy,omitempty"`
+	BlockPublicPolicy *T `json:"BlockPublicPolicy,omitempty"`
 
 	// IgnorePublicAcls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-ignorepublicacls
-	IgnorePublicAcls *bool `json:"IgnorePublicAcls,omitempty"`
+	IgnorePublicAcls *T `json:"IgnorePublicAcls,omitempty"`
 
 	// RestrictPublicBuckets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-restrictpublicbuckets
-	RestrictPublicBuckets *bool `json:"RestrictPublicBuckets,omitempty"`
+	RestrictPublicBuckets *T `json:"RestrictPublicBuckets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type AccessPoint_PublicAccessBlockConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_PublicAccessBlockConfiguration) AWSCloudFormationType() string {
+func (r *AccessPoint_PublicAccessBlockConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::AccessPoint.PublicAccessBlockConfiguration"
 }

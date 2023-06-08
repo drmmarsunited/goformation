@@ -12,7 +12,7 @@ import (
 
 // DBSubnetGroup AWS CloudFormation Resource (AWS::RDS::DBSubnetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnetgroup.html
-type DBSubnetGroup struct {
+type DBSubnetGroup[T any] struct {
 
 	// DBSubnetGroupDescription AWS CloudFormation Property
 	// Required: true
@@ -51,14 +51,15 @@ type DBSubnetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBSubnetGroup) AWSCloudFormationType() string {
+func (r *DBSubnetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBSubnetGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBSubnetGroup) MarshalJSON() ([]byte, error) {
-	type Properties DBSubnetGroup
+func (r DBSubnetGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBSubnetGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r DBSubnetGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBSubnetGroup) UnmarshalJSON(b []byte) error {
-	type Properties DBSubnetGroup
+func (r *DBSubnetGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBSubnetGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *DBSubnetGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBSubnetGroup(*res.Properties)
+		*r = DBSubnetGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

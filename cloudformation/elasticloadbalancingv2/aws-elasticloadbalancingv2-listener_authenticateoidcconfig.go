@@ -8,7 +8,7 @@ import (
 
 // Listener_AuthenticateOidcConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html
-type Listener_AuthenticateOidcConfig struct {
+type Listener_AuthenticateOidcConfig[T any] struct {
 
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Listener_AuthenticateOidcConfig struct {
 	// UseExistingClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-useexistingclientsecret
-	UseExistingClientSecret *bool `json:"UseExistingClientSecret,omitempty"`
+	UseExistingClientSecret *T `json:"UseExistingClientSecret,omitempty"`
 
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: true
@@ -87,6 +87,6 @@ type Listener_AuthenticateOidcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_AuthenticateOidcConfig) AWSCloudFormationType() string {
+func (r *Listener_AuthenticateOidcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig"
 }

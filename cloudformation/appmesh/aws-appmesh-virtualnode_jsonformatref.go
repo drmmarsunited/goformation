@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_JsonFormatRef AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.JsonFormatRef)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html
-type VirtualNode_JsonFormatRef struct {
+type VirtualNode_JsonFormatRef[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_JsonFormatRef struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_JsonFormatRef) AWSCloudFormationType() string {
+func (r *VirtualNode_JsonFormatRef[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.JsonFormatRef"
 }

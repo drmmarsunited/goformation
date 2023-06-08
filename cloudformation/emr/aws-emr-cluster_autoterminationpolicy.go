@@ -8,12 +8,12 @@ import (
 
 // Cluster_AutoTerminationPolicy AWS CloudFormation Resource (AWS::EMR::Cluster.AutoTerminationPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoterminationpolicy.html
-type Cluster_AutoTerminationPolicy struct {
+type Cluster_AutoTerminationPolicy[T any] struct {
 
 	// IdleTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoterminationpolicy.html#cfn-elasticmapreduce-cluster-autoterminationpolicy-idletimeout
-	IdleTimeout *int64 `json:"IdleTimeout,omitempty"`
+	IdleTimeout *T `json:"IdleTimeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_AutoTerminationPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_AutoTerminationPolicy) AWSCloudFormationType() string {
+func (r *Cluster_AutoTerminationPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.AutoTerminationPolicy"
 }

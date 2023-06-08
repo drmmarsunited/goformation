@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_DynatraceConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-dynatraceconnectorprofileproperties.html
-type ConnectorProfile_DynatraceConnectorProfileProperties struct {
+type ConnectorProfile_DynatraceConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_DynatraceConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_DynatraceConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_DynatraceConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileProperties"
 }

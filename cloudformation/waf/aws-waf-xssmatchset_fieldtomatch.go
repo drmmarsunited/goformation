@@ -8,7 +8,7 @@ import (
 
 // XssMatchSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::XssMatchSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple-fieldtomatch.html
-type XssMatchSet_FieldToMatch struct {
+type XssMatchSet_FieldToMatch[T any] struct {
 
 	// Data AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type XssMatchSet_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *XssMatchSet_FieldToMatch) AWSCloudFormationType() string {
+func (r *XssMatchSet_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::XssMatchSet.FieldToMatch"
 }

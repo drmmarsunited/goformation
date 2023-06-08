@@ -12,7 +12,7 @@ import (
 
 // LifecyclePolicy AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html
-type LifecyclePolicy struct {
+type LifecyclePolicy[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type LifecyclePolicy struct {
 	// PolicyDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-policydetails
-	PolicyDetails *LifecyclePolicy_PolicyDetails `json:"PolicyDetails,omitempty"`
+	PolicyDetails *LifecyclePolicy_PolicyDetails[any] `json:"PolicyDetails,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type LifecyclePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy) AWSCloudFormationType() string {
+func (r *LifecyclePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LifecyclePolicy) MarshalJSON() ([]byte, error) {
-	type Properties LifecyclePolicy
+func (r LifecyclePolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties LifecyclePolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r LifecyclePolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LifecyclePolicy) UnmarshalJSON(b []byte) error {
-	type Properties LifecyclePolicy
+func (r *LifecyclePolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties LifecyclePolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *LifecyclePolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LifecyclePolicy(*res.Properties)
+		*r = LifecyclePolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

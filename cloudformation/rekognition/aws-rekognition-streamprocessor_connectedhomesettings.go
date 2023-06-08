@@ -8,7 +8,7 @@ import (
 
 // StreamProcessor_ConnectedHomeSettings AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.ConnectedHomeSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-connectedhomesettings.html
-type StreamProcessor_ConnectedHomeSettings struct {
+type StreamProcessor_ConnectedHomeSettings[T any] struct {
 
 	// Labels AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type StreamProcessor_ConnectedHomeSettings struct {
 	// MinConfidence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-connectedhomesettings.html#cfn-rekognition-streamprocessor-connectedhomesettings-minconfidence
-	MinConfidence *float64 `json:"MinConfidence,omitempty"`
+	MinConfidence *T `json:"MinConfidence,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StreamProcessor_ConnectedHomeSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_ConnectedHomeSettings) AWSCloudFormationType() string {
+func (r *StreamProcessor_ConnectedHomeSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.ConnectedHomeSettings"
 }

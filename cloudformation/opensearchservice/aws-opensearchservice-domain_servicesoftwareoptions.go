@@ -8,7 +8,7 @@ import (
 
 // Domain_ServiceSoftwareOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.ServiceSoftwareOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html
-type Domain_ServiceSoftwareOptions struct {
+type Domain_ServiceSoftwareOptions[T any] struct {
 
 	// AutomatedUpdateDate AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Domain_ServiceSoftwareOptions struct {
 	// Cancellable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-cancellable
-	Cancellable *bool `json:"Cancellable,omitempty"`
+	Cancellable *T `json:"Cancellable,omitempty"`
 
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Domain_ServiceSoftwareOptions struct {
 	// OptionalDeployment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-optionaldeployment
-	OptionalDeployment *bool `json:"OptionalDeployment,omitempty"`
+	OptionalDeployment *T `json:"OptionalDeployment,omitempty"`
 
 	// UpdateAvailable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-updateavailable
-	UpdateAvailable *bool `json:"UpdateAvailable,omitempty"`
+	UpdateAvailable *T `json:"UpdateAvailable,omitempty"`
 
 	// UpdateStatus AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Domain_ServiceSoftwareOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_ServiceSoftwareOptions) AWSCloudFormationType() string {
+func (r *Domain_ServiceSoftwareOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.ServiceSoftwareOptions"
 }

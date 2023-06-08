@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_VolumeFrom AWS CloudFormation Resource (AWS::ECS::TaskDefinition.VolumeFrom)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumefrom.html
-type TaskDefinition_VolumeFrom struct {
+type TaskDefinition_VolumeFrom[T any] struct {
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumefrom.html#cfn-ecs-taskdefinition-volumefrom-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// SourceContainer AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_VolumeFrom struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_VolumeFrom) AWSCloudFormationType() string {
+func (r *TaskDefinition_VolumeFrom[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.VolumeFrom"
 }

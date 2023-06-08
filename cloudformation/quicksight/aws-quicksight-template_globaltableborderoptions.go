@@ -8,17 +8,17 @@ import (
 
 // Template_GlobalTableBorderOptions AWS CloudFormation Resource (AWS::QuickSight::Template.GlobalTableBorderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-globaltableborderoptions.html
-type Template_GlobalTableBorderOptions struct {
+type Template_GlobalTableBorderOptions[T any] struct {
 
 	// SideSpecificBorder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-globaltableborderoptions.html#cfn-quicksight-template-globaltableborderoptions-sidespecificborder
-	SideSpecificBorder *Template_TableSideBorderOptions `json:"SideSpecificBorder,omitempty"`
+	SideSpecificBorder *Template_TableSideBorderOptions[any] `json:"SideSpecificBorder,omitempty"`
 
 	// UniformBorder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-globaltableborderoptions.html#cfn-quicksight-template-globaltableborderoptions-uniformborder
-	UniformBorder *Template_TableBorderOptions `json:"UniformBorder,omitempty"`
+	UniformBorder *Template_TableBorderOptions[any] `json:"UniformBorder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_GlobalTableBorderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GlobalTableBorderOptions) AWSCloudFormationType() string {
+func (r *Template_GlobalTableBorderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GlobalTableBorderOptions"
 }

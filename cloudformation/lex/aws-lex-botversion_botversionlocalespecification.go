@@ -8,12 +8,12 @@ import (
 
 // BotVersion_BotVersionLocaleSpecification AWS CloudFormation Resource (AWS::Lex::BotVersion.BotVersionLocaleSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html
-type BotVersion_BotVersionLocaleSpecification struct {
+type BotVersion_BotVersionLocaleSpecification[T any] struct {
 
 	// BotVersionLocaleDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-botversionlocaledetails
-	BotVersionLocaleDetails *BotVersion_BotVersionLocaleDetails `json:"BotVersionLocaleDetails"`
+	BotVersionLocaleDetails *BotVersion_BotVersionLocaleDetails[any] `json:"BotVersionLocaleDetails"`
 
 	// LocaleId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type BotVersion_BotVersionLocaleSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotVersion_BotVersionLocaleSpecification) AWSCloudFormationType() string {
+func (r *BotVersion_BotVersionLocaleSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotVersion.BotVersionLocaleSpecification"
 }

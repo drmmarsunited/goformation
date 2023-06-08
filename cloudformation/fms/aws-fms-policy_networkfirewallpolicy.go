@@ -8,7 +8,7 @@ import (
 
 // Policy_NetworkFirewallPolicy AWS CloudFormation Resource (AWS::FMS::Policy.NetworkFirewallPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-networkfirewallpolicy.html
-type Policy_NetworkFirewallPolicy struct {
+type Policy_NetworkFirewallPolicy[T any] struct {
 
 	// FirewallDeploymentModel AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Policy_NetworkFirewallPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_NetworkFirewallPolicy) AWSCloudFormationType() string {
+func (r *Policy_NetworkFirewallPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.NetworkFirewallPolicy"
 }

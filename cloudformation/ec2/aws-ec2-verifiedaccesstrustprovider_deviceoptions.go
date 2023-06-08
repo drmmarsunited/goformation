@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessTrustProvider_DeviceOptions AWS CloudFormation Resource (AWS::EC2::VerifiedAccessTrustProvider.DeviceOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-deviceoptions.html
-type VerifiedAccessTrustProvider_DeviceOptions struct {
+type VerifiedAccessTrustProvider_DeviceOptions[T any] struct {
 
 	// TenantId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type VerifiedAccessTrustProvider_DeviceOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessTrustProvider_DeviceOptions) AWSCloudFormationType() string {
+func (r *VerifiedAccessTrustProvider_DeviceOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessTrustProvider.DeviceOptions"
 }

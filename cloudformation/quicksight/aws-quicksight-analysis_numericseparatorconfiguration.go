@@ -8,7 +8,7 @@ import (
 
 // Analysis_NumericSeparatorConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumericSeparatorConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericseparatorconfiguration.html
-type Analysis_NumericSeparatorConfiguration struct {
+type Analysis_NumericSeparatorConfiguration[T any] struct {
 
 	// DecimalSeparator AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_NumericSeparatorConfiguration struct {
 	// ThousandsSeparator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericseparatorconfiguration.html#cfn-quicksight-analysis-numericseparatorconfiguration-thousandsseparator
-	ThousandsSeparator *Analysis_ThousandSeparatorOptions `json:"ThousandsSeparator,omitempty"`
+	ThousandsSeparator *Analysis_ThousandSeparatorOptions[any] `json:"ThousandsSeparator,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_NumericSeparatorConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumericSeparatorConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_NumericSeparatorConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumericSeparatorConfiguration"
 }

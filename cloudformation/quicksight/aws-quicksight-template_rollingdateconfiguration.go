@@ -8,7 +8,7 @@ import (
 
 // Template_RollingDateConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.RollingDateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-rollingdateconfiguration.html
-type Template_RollingDateConfiguration struct {
+type Template_RollingDateConfiguration[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_RollingDateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RollingDateConfiguration) AWSCloudFormationType() string {
+func (r *Template_RollingDateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RollingDateConfiguration"
 }

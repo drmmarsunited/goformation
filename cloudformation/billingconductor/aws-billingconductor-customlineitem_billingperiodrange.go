@@ -8,7 +8,7 @@ import (
 
 // CustomLineItem_BillingPeriodRange AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem.BillingPeriodRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-billingperiodrange.html
-type CustomLineItem_BillingPeriodRange struct {
+type CustomLineItem_BillingPeriodRange[T any] struct {
 
 	// ExclusiveEndBillingPeriod AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type CustomLineItem_BillingPeriodRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomLineItem_BillingPeriodRange) AWSCloudFormationType() string {
+func (r *CustomLineItem_BillingPeriodRange[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::CustomLineItem.BillingPeriodRange"
 }

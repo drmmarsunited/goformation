@@ -8,12 +8,12 @@ import (
 
 // PermissionSet_PermissionsBoundary AWS CloudFormation Resource (AWS::SSO::PermissionSet.PermissionsBoundary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html
-type PermissionSet_PermissionsBoundary struct {
+type PermissionSet_PermissionsBoundary[T any] struct {
 
 	// CustomerManagedPolicyReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-customermanagedpolicyreference
-	CustomerManagedPolicyReference *PermissionSet_CustomerManagedPolicyReference `json:"CustomerManagedPolicyReference,omitempty"`
+	CustomerManagedPolicyReference *PermissionSet_CustomerManagedPolicyReference[any] `json:"CustomerManagedPolicyReference,omitempty"`
 
 	// ManagedPolicyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type PermissionSet_PermissionsBoundary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PermissionSet_PermissionsBoundary) AWSCloudFormationType() string {
+func (r *PermissionSet_PermissionsBoundary[any]) AWSCloudFormationType() string {
 	return "AWS::SSO::PermissionSet.PermissionsBoundary"
 }

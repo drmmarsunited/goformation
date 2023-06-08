@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_PardotConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.PardotConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofileproperties.html
-type ConnectorProfile_PardotConnectorProfileProperties struct {
+type ConnectorProfile_PardotConnectorProfileProperties[T any] struct {
 
 	// BusinessUnitId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ConnectorProfile_PardotConnectorProfileProperties struct {
 	// IsSandboxEnvironment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofileproperties.html#cfn-appflow-connectorprofile-pardotconnectorprofileproperties-issandboxenvironment
-	IsSandboxEnvironment *bool `json:"IsSandboxEnvironment,omitempty"`
+	IsSandboxEnvironment *T `json:"IsSandboxEnvironment,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ConnectorProfile_PardotConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_PardotConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_PardotConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.PardotConnectorProfileProperties"
 }

@@ -8,22 +8,22 @@ import (
 
 // ScalableTarget_SuspendedState AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html
-type ScalableTarget_SuspendedState struct {
+type ScalableTarget_SuspendedState[T any] struct {
 
 	// DynamicScalingInSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-dynamicscalinginsuspended
-	DynamicScalingInSuspended *bool `json:"DynamicScalingInSuspended,omitempty"`
+	DynamicScalingInSuspended *T `json:"DynamicScalingInSuspended,omitempty"`
 
 	// DynamicScalingOutSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-dynamicscalingoutsuspended
-	DynamicScalingOutSuspended *bool `json:"DynamicScalingOutSuspended,omitempty"`
+	DynamicScalingOutSuspended *T `json:"DynamicScalingOutSuspended,omitempty"`
 
 	// ScheduledScalingSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-scheduledscalingsuspended
-	ScheduledScalingSuspended *bool `json:"ScheduledScalingSuspended,omitempty"`
+	ScheduledScalingSuspended *T `json:"ScheduledScalingSuspended,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ScalableTarget_SuspendedState struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalableTarget_SuspendedState) AWSCloudFormationType() string {
+func (r *ScalableTarget_SuspendedState[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState"
 }

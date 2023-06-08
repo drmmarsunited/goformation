@@ -8,7 +8,7 @@ import (
 
 // Device_Location AWS CloudFormation Resource (AWS::NetworkManager::Device.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-device-location.html
-type Device_Location struct {
+type Device_Location[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Device_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Device_Location) AWSCloudFormationType() string {
+func (r *Device_Location[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::Device.Location"
 }

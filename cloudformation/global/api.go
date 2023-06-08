@@ -8,17 +8,17 @@ import (
 
 // Api AWS CloudFormation Resource (Api)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-type Api struct {
+type Api[T any] struct {
 
 	// AccessLogSetting AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	AccessLogSetting *serverless.Api_AccessLogSetting `json:"AccessLogSetting,omitempty"`
+	AccessLogSetting *serverless.Api_AccessLogSetting[any] `json:"AccessLogSetting,omitempty"`
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	Auth *serverless.Api_Auth `json:"Auth,omitempty"`
+	Auth *serverless.Api_Auth[any] `json:"Auth,omitempty"`
 
 	// BinaryMediaTypes AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Api struct {
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	CacheClusterEnabled *bool `json:"CacheClusterEnabled,omitempty"`
+	CacheClusterEnabled *T `json:"CacheClusterEnabled,omitempty"`
 
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Api struct {
 	// CanarySetting AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-canarysetting
-	CanarySetting *serverless.Api_CanarySetting `json:"CanarySetting,omitempty"`
+	CanarySetting *serverless.Api_CanarySetting[any] `json:"CanarySetting,omitempty"`
 
 	// Cors AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	Cors *serverless.Api_Cors `json:"Cors,omitempty"`
+	Cors *serverless.Api_Cors[any] `json:"Cors,omitempty"`
 
 	// DefinitionUri AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	DefinitionUri *serverless.Api_DefinitionUri `json:"DefinitionUri,omitempty"`
+	DefinitionUri *serverless.Api_DefinitionUri[any] `json:"DefinitionUri,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -58,17 +58,17 @@ type Api struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *T `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-domain
-	Domain *serverless.Api_DomainConfiguration `json:"Domain,omitempty"`
+	Domain *serverless.Api_DomainConfiguration[any] `json:"Domain,omitempty"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	EndpointConfiguration *serverless.Api_EndpointConfiguration `json:"EndpointConfiguration,omitempty"`
+	EndpointConfiguration *serverless.Api_EndpointConfiguration[any] `json:"EndpointConfiguration,omitempty"`
 
 	// GatewayResponses AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type Api struct {
 	// MinimumCompressionSize AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-minimumcompressionsize
-	MinimumCompressionSize *int `json:"MinimumCompressionSize,omitempty"`
+	MinimumCompressionSize *T `json:"MinimumCompressionSize,omitempty"`
 
 	// Models AWS CloudFormation Property
 	// Required: false
@@ -108,7 +108,7 @@ type Api struct {
 	// TracingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	TracingEnabled *bool `json:"TracingEnabled,omitempty"`
+	TracingEnabled *T `json:"TracingEnabled,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
@@ -117,6 +117,6 @@ type Api struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api) AWSCloudFormationType() string {
+func (r *Api[any]) AWSCloudFormationType() string {
 	return "Api"
 }

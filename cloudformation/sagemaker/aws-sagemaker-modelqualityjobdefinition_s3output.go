@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_S3Output AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.S3Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html
-type ModelQualityJobDefinition_S3Output struct {
+type ModelQualityJobDefinition_S3Output[T any] struct {
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelQualityJobDefinition_S3Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_S3Output) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_S3Output[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.S3Output"
 }

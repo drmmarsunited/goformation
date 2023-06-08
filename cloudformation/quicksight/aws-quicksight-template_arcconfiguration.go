@@ -8,12 +8,12 @@ import (
 
 // Template_ArcConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ArcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcconfiguration.html
-type Template_ArcConfiguration struct {
+type Template_ArcConfiguration[T any] struct {
 
 	// ArcAngle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcconfiguration.html#cfn-quicksight-template-arcconfiguration-arcangle
-	ArcAngle *float64 `json:"ArcAngle,omitempty"`
+	ArcAngle *T `json:"ArcAngle,omitempty"`
 
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_ArcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ArcConfiguration) AWSCloudFormationType() string {
+func (r *Template_ArcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ArcConfiguration"
 }

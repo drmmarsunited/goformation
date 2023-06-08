@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_Alarm AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html
-type DeploymentGroup_Alarm struct {
+type DeploymentGroup_Alarm[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeploymentGroup_Alarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_Alarm) AWSCloudFormationType() string {
+func (r *DeploymentGroup_Alarm[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.Alarm"
 }

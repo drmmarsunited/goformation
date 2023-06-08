@@ -8,17 +8,17 @@ import (
 
 // Dashboard_NumericAxisOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericAxisOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaxisoptions.html
-type Dashboard_NumericAxisOptions struct {
+type Dashboard_NumericAxisOptions[T any] struct {
 
 	// Range AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaxisoptions.html#cfn-quicksight-dashboard-numericaxisoptions-range
-	Range *Dashboard_AxisDisplayRange `json:"Range,omitempty"`
+	Range *Dashboard_AxisDisplayRange[any] `json:"Range,omitempty"`
 
 	// Scale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericaxisoptions.html#cfn-quicksight-dashboard-numericaxisoptions-scale
-	Scale *Dashboard_AxisScale `json:"Scale,omitempty"`
+	Scale *Dashboard_AxisScale[any] `json:"Scale,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_NumericAxisOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericAxisOptions) AWSCloudFormationType() string {
+func (r *Dashboard_NumericAxisOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericAxisOptions"
 }

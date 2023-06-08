@@ -8,7 +8,7 @@ import (
 
 // Function_QueueSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.QueueSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_QueueSAMPT struct {
+type Function_QueueSAMPT[T any] struct {
 
 	// QueueName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_QueueSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_QueueSAMPT) AWSCloudFormationType() string {
+func (r *Function_QueueSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.QueueSAMPT"
 }

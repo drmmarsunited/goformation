@@ -8,12 +8,12 @@ import (
 
 // Channel_AncillarySourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AncillarySourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ancillarysourcesettings.html
-type Channel_AncillarySourceSettings struct {
+type Channel_AncillarySourceSettings[T any] struct {
 
 	// SourceAncillaryChannelNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ancillarysourcesettings.html#cfn-medialive-channel-ancillarysourcesettings-sourceancillarychannelnumber
-	SourceAncillaryChannelNumber *int `json:"SourceAncillaryChannelNumber,omitempty"`
+	SourceAncillaryChannelNumber *T `json:"SourceAncillaryChannelNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_AncillarySourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AncillarySourceSettings) AWSCloudFormationType() string {
+func (r *Channel_AncillarySourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AncillarySourceSettings"
 }

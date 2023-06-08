@@ -8,7 +8,7 @@ import (
 
 // ProfilingGroup_AgentPermissions AWS CloudFormation Resource (AWS::CodeGuruProfiler::ProfilingGroup.AgentPermissions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codeguruprofiler-profilinggroup-agentpermissions.html
-type ProfilingGroup_AgentPermissions struct {
+type ProfilingGroup_AgentPermissions[T any] struct {
 
 	// Principals AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ProfilingGroup_AgentPermissions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ProfilingGroup_AgentPermissions) AWSCloudFormationType() string {
+func (r *ProfilingGroup_AgentPermissions[any]) AWSCloudFormationType() string {
 	return "AWS::CodeGuruProfiler::ProfilingGroup.AgentPermissions"
 }

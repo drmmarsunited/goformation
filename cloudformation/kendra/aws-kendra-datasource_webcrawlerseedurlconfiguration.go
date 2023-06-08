@@ -8,7 +8,7 @@ import (
 
 // DataSource_WebCrawlerSeedUrlConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerSeedUrlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerseedurlconfiguration.html
-type DataSource_WebCrawlerSeedUrlConfiguration struct {
+type DataSource_WebCrawlerSeedUrlConfiguration[T any] struct {
 
 	// SeedUrls AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_WebCrawlerSeedUrlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_WebCrawlerSeedUrlConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_WebCrawlerSeedUrlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.WebCrawlerSeedUrlConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Function_CognitoEvent AWS CloudFormation Resource (AWS::Serverless::Function.CognitoEvent)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito
-type Function_CognitoEvent struct {
+type Function_CognitoEvent[T any] struct {
 
 	// Trigger AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito
-	Trigger *Function_Trigger `json:"Trigger"`
+	Trigger *Function_Trigger[any] `json:"Trigger"`
 
 	// UserPool AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_CognitoEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_CognitoEvent) AWSCloudFormationType() string {
+func (r *Function_CognitoEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.CognitoEvent"
 }

@@ -8,7 +8,7 @@ import (
 
 // HealthCheck_HealthCheckTag AWS CloudFormation Resource (AWS::Route53::HealthCheck.HealthCheckTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthchecktag.html
-type HealthCheck_HealthCheckTag struct {
+type HealthCheck_HealthCheckTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type HealthCheck_HealthCheckTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HealthCheck_HealthCheckTag) AWSCloudFormationType() string {
+func (r *HealthCheck_HealthCheckTag[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HealthCheck.HealthCheckTag"
 }

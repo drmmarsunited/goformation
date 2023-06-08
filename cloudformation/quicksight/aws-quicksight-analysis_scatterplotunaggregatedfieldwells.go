@@ -8,22 +8,22 @@ import (
 
 // Analysis_ScatterPlotUnaggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.ScatterPlotUnaggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotunaggregatedfieldwells.html
-type Analysis_ScatterPlotUnaggregatedFieldWells struct {
+type Analysis_ScatterPlotUnaggregatedFieldWells[T any] struct {
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotunaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotunaggregatedfieldwells-size
-	Size []Analysis_MeasureField `json:"Size,omitempty"`
+	Size []Analysis_MeasureField[any] `json:"Size,omitempty"`
 
 	// XAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotunaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotunaggregatedfieldwells-xaxis
-	XAxis []Analysis_DimensionField `json:"XAxis,omitempty"`
+	XAxis []Analysis_DimensionField[any] `json:"XAxis,omitempty"`
 
 	// YAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotunaggregatedfieldwells.html#cfn-quicksight-analysis-scatterplotunaggregatedfieldwells-yaxis
-	YAxis []Analysis_DimensionField `json:"YAxis,omitempty"`
+	YAxis []Analysis_DimensionField[any] `json:"YAxis,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ScatterPlotUnaggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ScatterPlotUnaggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_ScatterPlotUnaggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ScatterPlotUnaggregatedFieldWells"
 }

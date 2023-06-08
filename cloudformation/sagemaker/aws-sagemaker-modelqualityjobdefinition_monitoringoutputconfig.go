@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_MonitoringOutputConfig AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html
-type ModelQualityJobDefinition_MonitoringOutputConfig struct {
+type ModelQualityJobDefinition_MonitoringOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelQualityJobDefinition_MonitoringOutputConfig struct {
 	// MonitoringOutputs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-monitoringoutputs
-	MonitoringOutputs []ModelQualityJobDefinition_MonitoringOutput `json:"MonitoringOutputs"`
+	MonitoringOutputs []ModelQualityJobDefinition_MonitoringOutput[any] `json:"MonitoringOutputs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelQualityJobDefinition_MonitoringOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_MonitoringOutputConfig) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_MonitoringOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutputConfig"
 }

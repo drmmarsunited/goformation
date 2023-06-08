@@ -8,7 +8,7 @@ import (
 
 // MatchmakingConfiguration_GameProperty AWS CloudFormation Resource (AWS::GameLift::MatchmakingConfiguration.GameProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-matchmakingconfiguration-gameproperty.html
-type MatchmakingConfiguration_GameProperty struct {
+type MatchmakingConfiguration_GameProperty[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MatchmakingConfiguration_GameProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MatchmakingConfiguration_GameProperty) AWSCloudFormationType() string {
+func (r *MatchmakingConfiguration_GameProperty[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::MatchmakingConfiguration.GameProperty"
 }

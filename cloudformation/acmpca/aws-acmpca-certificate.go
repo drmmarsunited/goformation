@@ -11,12 +11,12 @@ import (
 
 // Certificate AWS CloudFormation Resource (AWS::ACMPCA::Certificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html
-type Certificate struct {
+type Certificate[T any] struct {
 
 	// ApiPassthrough AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-apipassthrough
-	ApiPassthrough *Certificate_ApiPassthrough `json:"ApiPassthrough,omitempty"`
+	ApiPassthrough *Certificate_ApiPassthrough[any] `json:"ApiPassthrough,omitempty"`
 
 	// CertificateAuthorityArn AWS CloudFormation Property
 	// Required: true
@@ -41,12 +41,12 @@ type Certificate struct {
 	// Validity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validity
-	Validity *Certificate_Validity `json:"Validity"`
+	Validity *Certificate_Validity[any] `json:"Validity"`
 
 	// ValidityNotBefore AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validitynotbefore
-	ValidityNotBefore *Certificate_Validity `json:"ValidityNotBefore,omitempty"`
+	ValidityNotBefore *Certificate_Validity[any] `json:"ValidityNotBefore,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type Certificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate) AWSCloudFormationType() string {
+func (r *Certificate[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Certificate) MarshalJSON() ([]byte, error) {
-	type Properties Certificate
+func (r Certificate[any]) MarshalJSON() ([]byte, error) {
+	type Properties Certificate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r Certificate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Certificate) UnmarshalJSON(b []byte) error {
-	type Properties Certificate
+func (r *Certificate[any]) UnmarshalJSON(b []byte) error {
+	type Properties Certificate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *Certificate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Certificate(*res.Properties)
+		*r = Certificate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

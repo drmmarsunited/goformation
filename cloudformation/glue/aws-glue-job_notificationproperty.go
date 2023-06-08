@@ -8,12 +8,12 @@ import (
 
 // Job_NotificationProperty AWS CloudFormation Resource (AWS::Glue::Job.NotificationProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html
-type Job_NotificationProperty struct {
+type Job_NotificationProperty[T any] struct {
 
 	// NotifyDelayAfter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html#cfn-glue-job-notificationproperty-notifydelayafter
-	NotifyDelayAfter *int `json:"NotifyDelayAfter,omitempty"`
+	NotifyDelayAfter *T `json:"NotifyDelayAfter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Job_NotificationProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_NotificationProperty) AWSCloudFormationType() string {
+func (r *Job_NotificationProperty[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Job.NotificationProperty"
 }

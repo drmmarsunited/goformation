@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPointDrillUpDownOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPointDrillUpDownOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapointdrillupdownoption.html
-type Dashboard_DataPointDrillUpDownOption struct {
+type Dashboard_DataPointDrillUpDownOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_DataPointDrillUpDownOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPointDrillUpDownOption) AWSCloudFormationType() string {
+func (r *Dashboard_DataPointDrillUpDownOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPointDrillUpDownOption"
 }

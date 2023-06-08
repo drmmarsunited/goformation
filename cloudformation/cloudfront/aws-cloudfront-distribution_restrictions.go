@@ -8,12 +8,12 @@ import (
 
 // Distribution_Restrictions AWS CloudFormation Resource (AWS::CloudFront::Distribution.Restrictions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
-type Distribution_Restrictions struct {
+type Distribution_Restrictions[T any] struct {
 
 	// GeoRestriction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction
-	GeoRestriction *Distribution_GeoRestriction `json:"GeoRestriction"`
+	GeoRestriction *Distribution_GeoRestriction[any] `json:"GeoRestriction"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Distribution_Restrictions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_Restrictions) AWSCloudFormationType() string {
+func (r *Distribution_Restrictions[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.Restrictions"
 }

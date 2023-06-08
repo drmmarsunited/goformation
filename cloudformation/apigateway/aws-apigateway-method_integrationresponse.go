@@ -8,7 +8,7 @@ import (
 
 // Method_IntegrationResponse AWS CloudFormation Resource (AWS::ApiGateway::Method.IntegrationResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html
-type Method_IntegrationResponse struct {
+type Method_IntegrationResponse[T any] struct {
 
 	// ContentHandling AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Method_IntegrationResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Method_IntegrationResponse) AWSCloudFormationType() string {
+func (r *Method_IntegrationResponse[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Method.IntegrationResponse"
 }

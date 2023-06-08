@@ -8,12 +8,12 @@ import (
 
 // Channel_Ac3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Ac3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html
-type Channel_Ac3Settings struct {
+type Channel_Ac3Settings[T any] struct {
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-bitrate
-	Bitrate *float64 `json:"Bitrate,omitempty"`
+	Bitrate *T `json:"Bitrate,omitempty"`
 
 	// BitstreamMode AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Channel_Ac3Settings struct {
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-dialnorm
-	Dialnorm *int `json:"Dialnorm,omitempty"`
+	Dialnorm *T `json:"Dialnorm,omitempty"`
 
 	// DrcProfile AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Channel_Ac3Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Ac3Settings) AWSCloudFormationType() string {
+func (r *Channel_Ac3Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Ac3Settings"
 }

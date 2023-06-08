@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_Duration AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.Duration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html
-type VirtualNode_Duration struct {
+type VirtualNode_Duration[T any] struct {
 
 	// Unit AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type VirtualNode_Duration struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-value
-	Value int `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_Duration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_Duration) AWSCloudFormationType() string {
+func (r *VirtualNode_Duration[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.Duration"
 }

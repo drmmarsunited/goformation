@@ -8,12 +8,12 @@ import (
 
 // Cluster_Logging AWS CloudFormation Resource (AWS::EKS::Cluster.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-logging.html
-type Cluster_Logging struct {
+type Cluster_Logging[T any] struct {
 
 	// ClusterLogging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-logging.html#cfn-eks-cluster-logging-clusterlogging
-	ClusterLogging *Cluster_ClusterLogging `json:"ClusterLogging,omitempty"`
+	ClusterLogging *Cluster_ClusterLogging[any] `json:"ClusterLogging,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_Logging struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Logging) AWSCloudFormationType() string {
+func (r *Cluster_Logging[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.Logging"
 }

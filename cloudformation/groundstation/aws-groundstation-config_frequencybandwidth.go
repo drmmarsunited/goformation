@@ -8,7 +8,7 @@ import (
 
 // Config_FrequencyBandwidth AWS CloudFormation Resource (AWS::GroundStation::Config.FrequencyBandwidth)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequencybandwidth.html
-type Config_FrequencyBandwidth struct {
+type Config_FrequencyBandwidth[T any] struct {
 
 	// Units AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Config_FrequencyBandwidth struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequencybandwidth.html#cfn-groundstation-config-frequencybandwidth-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Config_FrequencyBandwidth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_FrequencyBandwidth) AWSCloudFormationType() string {
+func (r *Config_FrequencyBandwidth[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.FrequencyBandwidth"
 }

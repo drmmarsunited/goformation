@@ -8,7 +8,7 @@ import (
 
 // GatewayRoute_GatewayRouteHostnameRewrite AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html
-type GatewayRoute_GatewayRouteHostnameRewrite struct {
+type GatewayRoute_GatewayRouteHostnameRewrite[T any] struct {
 
 	// DefaultTargetHostname AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type GatewayRoute_GatewayRouteHostnameRewrite struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteHostnameRewrite) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteHostnameRewrite[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite"
 }

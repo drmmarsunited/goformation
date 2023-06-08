@@ -8,12 +8,12 @@ import (
 
 // Dashboard_GeospatialMapFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GeospatialMapFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapfieldwells.html
-type Dashboard_GeospatialMapFieldWells struct {
+type Dashboard_GeospatialMapFieldWells[T any] struct {
 
 	// GeospatialMapAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapfieldwells.html#cfn-quicksight-dashboard-geospatialmapfieldwells-geospatialmapaggregatedfieldwells
-	GeospatialMapAggregatedFieldWells *Dashboard_GeospatialMapAggregatedFieldWells `json:"GeospatialMapAggregatedFieldWells,omitempty"`
+	GeospatialMapAggregatedFieldWells *Dashboard_GeospatialMapAggregatedFieldWells[any] `json:"GeospatialMapAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_GeospatialMapFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GeospatialMapFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_GeospatialMapFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GeospatialMapFieldWells"
 }

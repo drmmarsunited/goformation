@@ -8,22 +8,22 @@ import (
 
 // Analysis_PercentageDisplayFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.PercentageDisplayFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html
-type Analysis_PercentageDisplayFormatConfiguration struct {
+type Analysis_PercentageDisplayFormatConfiguration[T any] struct {
 
 	// DecimalPlacesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-decimalplacesconfiguration
-	DecimalPlacesConfiguration *Analysis_DecimalPlacesConfiguration `json:"DecimalPlacesConfiguration,omitempty"`
+	DecimalPlacesConfiguration *Analysis_DecimalPlacesConfiguration[any] `json:"DecimalPlacesConfiguration,omitempty"`
 
 	// NegativeValueConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-negativevalueconfiguration
-	NegativeValueConfiguration *Analysis_NegativeValueConfiguration `json:"NegativeValueConfiguration,omitempty"`
+	NegativeValueConfiguration *Analysis_NegativeValueConfiguration[any] `json:"NegativeValueConfiguration,omitempty"`
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Analysis_PercentageDisplayFormatConfiguration struct {
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-separatorconfiguration
-	SeparatorConfiguration *Analysis_NumericSeparatorConfiguration `json:"SeparatorConfiguration,omitempty"`
+	SeparatorConfiguration *Analysis_NumericSeparatorConfiguration[any] `json:"SeparatorConfiguration,omitempty"`
 
 	// Suffix AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Analysis_PercentageDisplayFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PercentageDisplayFormatConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_PercentageDisplayFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PercentageDisplayFormatConfiguration"
 }

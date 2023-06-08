@@ -8,7 +8,7 @@ import (
 
 // Channel_IngestEndpoint AWS CloudFormation Resource (AWS::MediaPackage::Channel.IngestEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-ingestendpoint.html
-type Channel_IngestEndpoint struct {
+type Channel_IngestEndpoint[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Channel_IngestEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_IngestEndpoint) AWSCloudFormationType() string {
+func (r *Channel_IngestEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Channel.IngestEndpoint"
 }

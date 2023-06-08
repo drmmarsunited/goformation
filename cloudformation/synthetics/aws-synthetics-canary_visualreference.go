@@ -8,7 +8,7 @@ import (
 
 // Canary_VisualReference AWS CloudFormation Resource (AWS::Synthetics::Canary.VisualReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html
-type Canary_VisualReference struct {
+type Canary_VisualReference[T any] struct {
 
 	// BaseCanaryRunId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Canary_VisualReference struct {
 	// BaseScreenshots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basescreenshots
-	BaseScreenshots []Canary_BaseScreenshot `json:"BaseScreenshots,omitempty"`
+	BaseScreenshots []Canary_BaseScreenshot[any] `json:"BaseScreenshots,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Canary_VisualReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_VisualReference) AWSCloudFormationType() string {
+func (r *Canary_VisualReference[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.VisualReference"
 }

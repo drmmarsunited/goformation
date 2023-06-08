@@ -8,7 +8,7 @@ import (
 
 // Index_ValueImportanceItem AWS CloudFormation Resource (AWS::Kendra::Index.ValueImportanceItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-valueimportanceitem.html
-type Index_ValueImportanceItem struct {
+type Index_ValueImportanceItem[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Index_ValueImportanceItem struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-valueimportanceitem.html#cfn-kendra-index-valueimportanceitem-value
-	Value *int `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Index_ValueImportanceItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_ValueImportanceItem) AWSCloudFormationType() string {
+func (r *Index_ValueImportanceItem[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.ValueImportanceItem"
 }

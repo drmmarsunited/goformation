@@ -8,7 +8,7 @@ import (
 
 // Canary_Code AWS CloudFormation Resource (AWS::Synthetics::Canary.Code)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html
-type Canary_Code struct {
+type Canary_Code[T any] struct {
 
 	// Handler AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Canary_Code struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_Code) AWSCloudFormationType() string {
+func (r *Canary_Code[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.Code"
 }

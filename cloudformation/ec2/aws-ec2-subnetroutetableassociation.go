@@ -11,7 +11,7 @@ import (
 
 // SubnetRouteTableAssociation AWS CloudFormation Resource (AWS::EC2::SubnetRouteTableAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetroutetableassociation.html
-type SubnetRouteTableAssociation struct {
+type SubnetRouteTableAssociation[T any] struct {
 
 	// RouteTableId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type SubnetRouteTableAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubnetRouteTableAssociation) AWSCloudFormationType() string {
+func (r *SubnetRouteTableAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SubnetRouteTableAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubnetRouteTableAssociation) MarshalJSON() ([]byte, error) {
-	type Properties SubnetRouteTableAssociation
+func (r SubnetRouteTableAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubnetRouteTableAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SubnetRouteTableAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubnetRouteTableAssociation) UnmarshalJSON(b []byte) error {
-	type Properties SubnetRouteTableAssociation
+func (r *SubnetRouteTableAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubnetRouteTableAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SubnetRouteTableAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubnetRouteTableAssociation(*res.Properties)
+		*r = SubnetRouteTableAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // StorageLens_Encryption AWS CloudFormation Resource (AWS::S3::StorageLens.Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-encryption.html
-type StorageLens_Encryption struct {
+type StorageLens_Encryption[T any] struct {
 
 	// SSEKMS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-encryption.html#cfn-s3-storagelens-encryption-ssekms
-	SSEKMS *StorageLens_SSEKMS `json:"SSEKMS,omitempty"`
+	SSEKMS *StorageLens_SSEKMS[any] `json:"SSEKMS,omitempty"`
 
 	// SSES3 AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StorageLens_Encryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_Encryption) AWSCloudFormationType() string {
+func (r *StorageLens_Encryption[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.Encryption"
 }

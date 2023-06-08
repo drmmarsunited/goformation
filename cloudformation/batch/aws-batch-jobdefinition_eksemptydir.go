@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksEmptyDir AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksEmptyDir)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksemptydir.html
-type JobDefinition_EksEmptyDir struct {
+type JobDefinition_EksEmptyDir[T any] struct {
 
 	// Medium AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobDefinition_EksEmptyDir struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksEmptyDir) AWSCloudFormationType() string {
+func (r *JobDefinition_EksEmptyDir[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksEmptyDir"
 }

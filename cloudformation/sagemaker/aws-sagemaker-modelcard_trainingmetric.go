@@ -8,7 +8,7 @@ import (
 
 // ModelCard_TrainingMetric AWS CloudFormation Resource (AWS::SageMaker::ModelCard.TrainingMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html
-type ModelCard_TrainingMetric struct {
+type ModelCard_TrainingMetric[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ModelCard_TrainingMetric struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelCard_TrainingMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_TrainingMetric) AWSCloudFormationType() string {
+func (r *ModelCard_TrainingMetric[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.TrainingMetric"
 }

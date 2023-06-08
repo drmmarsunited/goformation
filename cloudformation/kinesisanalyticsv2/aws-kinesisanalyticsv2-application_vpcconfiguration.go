@@ -8,7 +8,7 @@ import (
 
 // Application_VpcConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.VpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-vpcconfiguration.html
-type Application_VpcConfiguration struct {
+type Application_VpcConfiguration[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_VpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_VpcConfiguration) AWSCloudFormationType() string {
+func (r *Application_VpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.VpcConfiguration"
 }

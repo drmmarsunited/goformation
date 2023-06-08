@@ -8,12 +8,12 @@ import (
 
 // Analysis_Layout AWS CloudFormation Resource (AWS::QuickSight::Analysis.Layout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layout.html
-type Analysis_Layout struct {
+type Analysis_Layout[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layout.html#cfn-quicksight-analysis-layout-configuration
-	Configuration *Analysis_LayoutConfiguration `json:"Configuration"`
+	Configuration *Analysis_LayoutConfiguration[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_Layout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_Layout) AWSCloudFormationType() string {
+func (r *Analysis_Layout[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.Layout"
 }

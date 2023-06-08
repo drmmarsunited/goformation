@@ -8,7 +8,7 @@ import (
 
 // DataLakeSettings_Permissions AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings.Permissions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-permissions.html
-type DataLakeSettings_Permissions struct {
+type DataLakeSettings_Permissions[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type DataLakeSettings_Permissions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings_Permissions) AWSCloudFormationType() string {
+func (r *DataLakeSettings_Permissions[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings.Permissions"
 }

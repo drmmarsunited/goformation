@@ -8,22 +8,22 @@ import (
 
 // Template_NumberDisplayFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.NumberDisplayFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html
-type Template_NumberDisplayFormatConfiguration struct {
+type Template_NumberDisplayFormatConfiguration[T any] struct {
 
 	// DecimalPlacesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-decimalplacesconfiguration
-	DecimalPlacesConfiguration *Template_DecimalPlacesConfiguration `json:"DecimalPlacesConfiguration,omitempty"`
+	DecimalPlacesConfiguration *Template_DecimalPlacesConfiguration[any] `json:"DecimalPlacesConfiguration,omitempty"`
 
 	// NegativeValueConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-negativevalueconfiguration
-	NegativeValueConfiguration *Template_NegativeValueConfiguration `json:"NegativeValueConfiguration,omitempty"`
+	NegativeValueConfiguration *Template_NegativeValueConfiguration[any] `json:"NegativeValueConfiguration,omitempty"`
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Template_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Template_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// NumberScale AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Template_NumberDisplayFormatConfiguration struct {
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-separatorconfiguration
-	SeparatorConfiguration *Template_NumericSeparatorConfiguration `json:"SeparatorConfiguration,omitempty"`
+	SeparatorConfiguration *Template_NumericSeparatorConfiguration[any] `json:"SeparatorConfiguration,omitempty"`
 
 	// Suffix AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Template_NumberDisplayFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumberDisplayFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_NumberDisplayFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumberDisplayFormatConfiguration"
 }

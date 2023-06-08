@@ -8,12 +8,12 @@ import (
 
 // PatchBaseline_RuleGroup AWS CloudFormation Resource (AWS::SSM::PatchBaseline.RuleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html
-type PatchBaseline_RuleGroup struct {
+type PatchBaseline_RuleGroup[T any] struct {
 
 	// PatchRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
-	PatchRules []PatchBaseline_Rule `json:"PatchRules,omitempty"`
+	PatchRules []PatchBaseline_Rule[any] `json:"PatchRules,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PatchBaseline_RuleGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_RuleGroup) AWSCloudFormationType() string {
+func (r *PatchBaseline_RuleGroup[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.RuleGroup"
 }

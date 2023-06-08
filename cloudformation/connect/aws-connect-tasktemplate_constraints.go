@@ -8,22 +8,22 @@ import (
 
 // TaskTemplate_Constraints AWS CloudFormation Resource (AWS::Connect::TaskTemplate.Constraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-constraints.html
-type TaskTemplate_Constraints struct {
+type TaskTemplate_Constraints[T any] struct {
 
 	// InvisibleFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-constraints.html#cfn-connect-tasktemplate-constraints-invisiblefields
-	InvisibleFields []TaskTemplate_InvisibleFieldInfo `json:"InvisibleFields,omitempty"`
+	InvisibleFields []TaskTemplate_InvisibleFieldInfo[any] `json:"InvisibleFields,omitempty"`
 
 	// ReadOnlyFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-constraints.html#cfn-connect-tasktemplate-constraints-readonlyfields
-	ReadOnlyFields []TaskTemplate_ReadOnlyFieldInfo `json:"ReadOnlyFields,omitempty"`
+	ReadOnlyFields []TaskTemplate_ReadOnlyFieldInfo[any] `json:"ReadOnlyFields,omitempty"`
 
 	// RequiredFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-constraints.html#cfn-connect-tasktemplate-constraints-requiredfields
-	RequiredFields []TaskTemplate_RequiredFieldInfo `json:"RequiredFields,omitempty"`
+	RequiredFields []TaskTemplate_RequiredFieldInfo[any] `json:"RequiredFields,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TaskTemplate_Constraints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_Constraints) AWSCloudFormationType() string {
+func (r *TaskTemplate_Constraints[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.Constraints"
 }

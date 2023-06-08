@@ -8,12 +8,12 @@ import (
 
 // GlobalTable_ReplicaGlobalSecondaryIndexSpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReplicaGlobalSecondaryIndexSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html
-type GlobalTable_ReplicaGlobalSecondaryIndexSpecification struct {
+type GlobalTable_ReplicaGlobalSecondaryIndexSpecification[T any] struct {
 
 	// ContributorInsightsSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-contributorinsightsspecification
-	ContributorInsightsSpecification *GlobalTable_ContributorInsightsSpecification `json:"ContributorInsightsSpecification,omitempty"`
+	ContributorInsightsSpecification *GlobalTable_ContributorInsightsSpecification[any] `json:"ContributorInsightsSpecification,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type GlobalTable_ReplicaGlobalSecondaryIndexSpecification struct {
 	// ReadProvisionedThroughputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-readprovisionedthroughputsettings
-	ReadProvisionedThroughputSettings *GlobalTable_ReadProvisionedThroughputSettings `json:"ReadProvisionedThroughputSettings,omitempty"`
+	ReadProvisionedThroughputSettings *GlobalTable_ReadProvisionedThroughputSettings[any] `json:"ReadProvisionedThroughputSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type GlobalTable_ReplicaGlobalSecondaryIndexSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_ReplicaGlobalSecondaryIndexSpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_ReplicaGlobalSecondaryIndexSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.ReplicaGlobalSecondaryIndexSpecification"
 }

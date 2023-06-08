@@ -8,7 +8,7 @@ import (
 
 // GeoMatchSet_GeoMatchConstraint AWS CloudFormation Resource (AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html
-type GeoMatchSet_GeoMatchConstraint struct {
+type GeoMatchSet_GeoMatchConstraint[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type GeoMatchSet_GeoMatchConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GeoMatchSet_GeoMatchConstraint) AWSCloudFormationType() string {
+func (r *GeoMatchSet_GeoMatchConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint"
 }

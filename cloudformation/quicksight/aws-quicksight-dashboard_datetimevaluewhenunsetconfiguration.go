@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DateTimeValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateTimeValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimevaluewhenunsetconfiguration.html
-type Dashboard_DateTimeValueWhenUnsetConfiguration struct {
+type Dashboard_DateTimeValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_DateTimeValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateTimeValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DateTimeValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateTimeValueWhenUnsetConfiguration"
 }

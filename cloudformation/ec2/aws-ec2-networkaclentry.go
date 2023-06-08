@@ -11,7 +11,7 @@ import (
 
 // NetworkAclEntry AWS CloudFormation Resource (AWS::EC2::NetworkAclEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html
-type NetworkAclEntry struct {
+type NetworkAclEntry[T any] struct {
 
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -21,12 +21,12 @@ type NetworkAclEntry struct {
 	// Egress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-egress
-	Egress *bool `json:"Egress,omitempty"`
+	Egress *T `json:"Egress,omitempty"`
 
 	// Icmp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-icmp
-	Icmp *NetworkAclEntry_Icmp `json:"Icmp,omitempty"`
+	Icmp *NetworkAclEntry_Icmp[any] `json:"Icmp,omitempty"`
 
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type NetworkAclEntry struct {
 	// PortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-portrange
-	PortRange *NetworkAclEntry_PortRange `json:"PortRange,omitempty"`
+	PortRange *NetworkAclEntry_PortRange[any] `json:"PortRange,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-protocol
-	Protocol int `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// RuleAction AWS CloudFormation Property
 	// Required: true
@@ -56,7 +56,7 @@ type NetworkAclEntry struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-rulenumber
-	RuleNumber int `json:"RuleNumber"`
+	RuleNumber T `json:"RuleNumber"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -75,14 +75,15 @@ type NetworkAclEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAclEntry) AWSCloudFormationType() string {
+func (r *NetworkAclEntry[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkAclEntry"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkAclEntry) MarshalJSON() ([]byte, error) {
-	type Properties NetworkAclEntry
+func (r NetworkAclEntry[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkAclEntry[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r NetworkAclEntry) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkAclEntry) UnmarshalJSON(b []byte) error {
-	type Properties NetworkAclEntry
+func (r *NetworkAclEntry[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkAclEntry[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *NetworkAclEntry) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkAclEntry(*res.Properties)
+		*r = NetworkAclEntry[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // WebACL_CustomHTTPHeader AWS CloudFormation Resource (AWS::WAFv2::WebACL.CustomHTTPHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customhttpheader.html
-type WebACL_CustomHTTPHeader struct {
+type WebACL_CustomHTTPHeader[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_CustomHTTPHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_CustomHTTPHeader) AWSCloudFormationType() string {
+func (r *WebACL_CustomHTTPHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.CustomHTTPHeader"
 }

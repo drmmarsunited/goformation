@@ -8,7 +8,7 @@ import (
 
 // Service_EgressConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.EgressConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-egressconfiguration.html
-type Service_EgressConfiguration struct {
+type Service_EgressConfiguration[T any] struct {
 
 	// EgressType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Service_EgressConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_EgressConfiguration) AWSCloudFormationType() string {
+func (r *Service_EgressConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.EgressConfiguration"
 }

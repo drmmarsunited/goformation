@@ -8,12 +8,12 @@ import (
 
 // Contact_Stage AWS CloudFormation Resource (AWS::SSMContacts::Contact.Stage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html
-type Contact_Stage struct {
+type Contact_Stage[T any] struct {
 
 	// DurationInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-durationinminutes
-	DurationInMinutes *int `json:"DurationInMinutes,omitempty"`
+	DurationInMinutes *T `json:"DurationInMinutes,omitempty"`
 
 	// RotationIds AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Contact_Stage struct {
 	// Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-targets
-	Targets []Contact_Targets `json:"Targets,omitempty"`
+	Targets []Contact_Targets[any] `json:"Targets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Contact_Stage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Contact_Stage) AWSCloudFormationType() string {
+func (r *Contact_Stage[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Contact.Stage"
 }

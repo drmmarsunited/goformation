@@ -8,62 +8,62 @@ import (
 
 // Dashboard_PieChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PieChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html
-type Dashboard_PieChartConfiguration struct {
+type Dashboard_PieChartConfiguration[T any] struct {
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// ContributionAnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-contributionanalysisdefaults
-	ContributionAnalysisDefaults []Dashboard_ContributionAnalysisDefault `json:"ContributionAnalysisDefaults,omitempty"`
+	ContributionAnalysisDefaults []Dashboard_ContributionAnalysisDefault[any] `json:"ContributionAnalysisDefaults,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// DonutOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-donutoptions
-	DonutOptions *Dashboard_DonutOptions `json:"DonutOptions,omitempty"`
+	DonutOptions *Dashboard_DonutOptions[any] `json:"DonutOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-fieldwells
-	FieldWells *Dashboard_PieChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_PieChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// SmallMultiplesOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-smallmultiplesoptions
-	SmallMultiplesOptions *Dashboard_SmallMultiplesOptions `json:"SmallMultiplesOptions,omitempty"`
+	SmallMultiplesOptions *Dashboard_SmallMultiplesOptions[any] `json:"SmallMultiplesOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_PieChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_PieChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// ValueLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-valuelabeloptions
-	ValueLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ValueLabelOptions,omitempty"`
+	ValueLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ValueLabelOptions,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartconfiguration.html#cfn-quicksight-dashboard-piechartconfiguration-visualpalette
-	VisualPalette *Dashboard_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Dashboard_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Dashboard_PieChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PieChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PieChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PieChartConfiguration"
 }

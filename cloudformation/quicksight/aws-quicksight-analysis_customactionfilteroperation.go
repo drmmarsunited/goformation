@@ -8,17 +8,17 @@ import (
 
 // Analysis_CustomActionFilterOperation AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomActionFilterOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionfilteroperation.html
-type Analysis_CustomActionFilterOperation struct {
+type Analysis_CustomActionFilterOperation[T any] struct {
 
 	// SelectedFieldsConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionfilteroperation.html#cfn-quicksight-analysis-customactionfilteroperation-selectedfieldsconfiguration
-	SelectedFieldsConfiguration *Analysis_FilterOperationSelectedFieldsConfiguration `json:"SelectedFieldsConfiguration"`
+	SelectedFieldsConfiguration *Analysis_FilterOperationSelectedFieldsConfiguration[any] `json:"SelectedFieldsConfiguration"`
 
 	// TargetVisualsConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionfilteroperation.html#cfn-quicksight-analysis-customactionfilteroperation-targetvisualsconfiguration
-	TargetVisualsConfiguration *Analysis_FilterOperationTargetVisualsConfiguration `json:"TargetVisualsConfiguration"`
+	TargetVisualsConfiguration *Analysis_FilterOperationTargetVisualsConfiguration[any] `json:"TargetVisualsConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_CustomActionFilterOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomActionFilterOperation) AWSCloudFormationType() string {
+func (r *Analysis_CustomActionFilterOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomActionFilterOperation"
 }

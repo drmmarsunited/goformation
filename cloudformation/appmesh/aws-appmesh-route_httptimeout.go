@@ -8,17 +8,17 @@ import (
 
 // Route_HttpTimeout AWS CloudFormation Resource (AWS::AppMesh::Route.HttpTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httptimeout.html
-type Route_HttpTimeout struct {
+type Route_HttpTimeout[T any] struct {
 
 	// Idle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httptimeout.html#cfn-appmesh-route-httptimeout-idle
-	Idle *Route_Duration `json:"Idle,omitempty"`
+	Idle *Route_Duration[any] `json:"Idle,omitempty"`
 
 	// PerRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httptimeout.html#cfn-appmesh-route-httptimeout-perrequest
-	PerRequest *Route_Duration `json:"PerRequest,omitempty"`
+	PerRequest *Route_Duration[any] `json:"PerRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Route_HttpTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpTimeout) AWSCloudFormationType() string {
+func (r *Route_HttpTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpTimeout"
 }

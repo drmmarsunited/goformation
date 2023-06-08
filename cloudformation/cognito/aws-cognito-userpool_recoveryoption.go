@@ -8,7 +8,7 @@ import (
 
 // UserPool_RecoveryOption AWS CloudFormation Resource (AWS::Cognito::UserPool.RecoveryOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html
-type UserPool_RecoveryOption struct {
+type UserPool_RecoveryOption[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type UserPool_RecoveryOption struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html#cfn-cognito-userpool-recoveryoption-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type UserPool_RecoveryOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_RecoveryOption) AWSCloudFormationType() string {
+func (r *UserPool_RecoveryOption[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.RecoveryOption"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_DataColor AWS CloudFormation Resource (AWS::QuickSight::Template.DataColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datacolor.html
-type Template_DataColor struct {
+type Template_DataColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_DataColor struct {
 	// DataValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datacolor.html#cfn-quicksight-template-datacolor-datavalue
-	DataValue *float64 `json:"DataValue,omitempty"`
+	DataValue *T `json:"DataValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_DataColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataColor) AWSCloudFormationType() string {
+func (r *Template_DataColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataColor"
 }

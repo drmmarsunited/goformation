@@ -8,12 +8,12 @@ import (
 
 // Cluster_OpenMonitoring AWS CloudFormation Resource (AWS::MSK::Cluster.OpenMonitoring)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html
-type Cluster_OpenMonitoring struct {
+type Cluster_OpenMonitoring[T any] struct {
 
 	// Prometheus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html#cfn-msk-cluster-openmonitoring-prometheus
-	Prometheus *Cluster_Prometheus `json:"Prometheus"`
+	Prometheus *Cluster_Prometheus[any] `json:"Prometheus"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_OpenMonitoring struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_OpenMonitoring) AWSCloudFormationType() string {
+func (r *Cluster_OpenMonitoring[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.OpenMonitoring"
 }

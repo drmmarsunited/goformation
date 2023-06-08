@@ -8,12 +8,12 @@ import (
 
 // Dashboard_HistogramAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HistogramAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogramaggregatedfieldwells.html
-type Dashboard_HistogramAggregatedFieldWells struct {
+type Dashboard_HistogramAggregatedFieldWells[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogramaggregatedfieldwells.html#cfn-quicksight-dashboard-histogramaggregatedfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_HistogramAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HistogramAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_HistogramAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HistogramAggregatedFieldWells"
 }

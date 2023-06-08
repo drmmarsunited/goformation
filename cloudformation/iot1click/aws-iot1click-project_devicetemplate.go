@@ -8,7 +8,7 @@ import (
 
 // Project_DeviceTemplate AWS CloudFormation Resource (AWS::IoT1Click::Project.DeviceTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html
-type Project_DeviceTemplate struct {
+type Project_DeviceTemplate[T any] struct {
 
 	// CallbackOverrides AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Project_DeviceTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_DeviceTemplate) AWSCloudFormationType() string {
+func (r *Project_DeviceTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::IoT1Click::Project.DeviceTemplate"
 }

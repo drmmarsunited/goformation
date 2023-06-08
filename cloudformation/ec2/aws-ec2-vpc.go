@@ -12,7 +12,7 @@ import (
 
 // VPC AWS CloudFormation Resource (AWS::EC2::VPC)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
-type VPC struct {
+type VPC[T any] struct {
 
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type VPC struct {
 	// EnableDnsHostnames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednshostnames
-	EnableDnsHostnames *bool `json:"EnableDnsHostnames,omitempty"`
+	EnableDnsHostnames *T `json:"EnableDnsHostnames,omitempty"`
 
 	// EnableDnsSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednssupport
-	EnableDnsSupport *bool `json:"EnableDnsSupport,omitempty"`
+	EnableDnsSupport *T `json:"EnableDnsSupport,omitempty"`
 
 	// InstanceTenancy AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type VPC struct {
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4netmasklength
-	Ipv4NetmaskLength *int `json:"Ipv4NetmaskLength,omitempty"`
+	Ipv4NetmaskLength *T `json:"Ipv4NetmaskLength,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type VPC struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPC) AWSCloudFormationType() string {
+func (r *VPC[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPC"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPC) MarshalJSON() ([]byte, error) {
-	type Properties VPC
+func (r VPC[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPC[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r VPC) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPC) UnmarshalJSON(b []byte) error {
-	type Properties VPC
+func (r *VPC[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPC[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *VPC) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPC(*res.Properties)
+		*r = VPC[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

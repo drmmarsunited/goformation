@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_Header AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.Header)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-header.html
-type RuleGroup_Header struct {
+type RuleGroup_Header[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type RuleGroup_Header struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Header) AWSCloudFormationType() string {
+func (r *RuleGroup_Header[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.Header"
 }

@@ -8,37 +8,37 @@ import (
 
 // Endpoint_OracleSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.OracleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html
-type Endpoint_OracleSettings struct {
+type Endpoint_OracleSettings[T any] struct {
 
 	// AccessAlternateDirectly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-accessalternatedirectly
-	AccessAlternateDirectly *bool `json:"AccessAlternateDirectly,omitempty"`
+	AccessAlternateDirectly *T `json:"AccessAlternateDirectly,omitempty"`
 
 	// AddSupplementalLogging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-addsupplementallogging
-	AddSupplementalLogging *bool `json:"AddSupplementalLogging,omitempty"`
+	AddSupplementalLogging *T `json:"AddSupplementalLogging,omitempty"`
 
 	// AdditionalArchivedLogDestId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-additionalarchivedlogdestid
-	AdditionalArchivedLogDestId *int `json:"AdditionalArchivedLogDestId,omitempty"`
+	AdditionalArchivedLogDestId *T `json:"AdditionalArchivedLogDestId,omitempty"`
 
 	// AllowSelectNestedTables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-allowselectnestedtables
-	AllowSelectNestedTables *bool `json:"AllowSelectNestedTables,omitempty"`
+	AllowSelectNestedTables *T `json:"AllowSelectNestedTables,omitempty"`
 
 	// ArchivedLogDestId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-archivedlogdestid
-	ArchivedLogDestId *int `json:"ArchivedLogDestId,omitempty"`
+	ArchivedLogDestId *T `json:"ArchivedLogDestId,omitempty"`
 
 	// ArchivedLogsOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-archivedlogsonly
-	ArchivedLogsOnly *bool `json:"ArchivedLogsOnly,omitempty"`
+	ArchivedLogsOnly *T `json:"ArchivedLogsOnly,omitempty"`
 
 	// AsmPassword AWS CloudFormation Property
 	// Required: false
@@ -63,32 +63,32 @@ type Endpoint_OracleSettings struct {
 	// DirectPathNoLog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-directpathnolog
-	DirectPathNoLog *bool `json:"DirectPathNoLog,omitempty"`
+	DirectPathNoLog *T `json:"DirectPathNoLog,omitempty"`
 
 	// DirectPathParallelLoad AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-directpathparallelload
-	DirectPathParallelLoad *bool `json:"DirectPathParallelLoad,omitempty"`
+	DirectPathParallelLoad *T `json:"DirectPathParallelLoad,omitempty"`
 
 	// EnableHomogenousTablespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-enablehomogenoustablespace
-	EnableHomogenousTablespace *bool `json:"EnableHomogenousTablespace,omitempty"`
+	EnableHomogenousTablespace *T `json:"EnableHomogenousTablespace,omitempty"`
 
 	// ExtraArchivedLogDestIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-extraarchivedlogdestids
-	ExtraArchivedLogDestIds []int `json:"ExtraArchivedLogDestIds,omitempty"`
+	ExtraArchivedLogDestIds []T `json:"ExtraArchivedLogDestIds,omitempty"`
 
 	// FailTasksOnLobTruncation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-failtasksonlobtruncation
-	FailTasksOnLobTruncation *bool `json:"FailTasksOnLobTruncation,omitempty"`
+	FailTasksOnLobTruncation *T `json:"FailTasksOnLobTruncation,omitempty"`
 
 	// NumberDatatypeScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-numberdatatypescale
-	NumberDatatypeScale *int `json:"NumberDatatypeScale,omitempty"`
+	NumberDatatypeScale *T `json:"NumberDatatypeScale,omitempty"`
 
 	// OraclePathPrefix AWS CloudFormation Property
 	// Required: false
@@ -98,27 +98,27 @@ type Endpoint_OracleSettings struct {
 	// ParallelAsmReadThreads AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-parallelasmreadthreads
-	ParallelAsmReadThreads *int `json:"ParallelAsmReadThreads,omitempty"`
+	ParallelAsmReadThreads *T `json:"ParallelAsmReadThreads,omitempty"`
 
 	// ReadAheadBlocks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-readaheadblocks
-	ReadAheadBlocks *int `json:"ReadAheadBlocks,omitempty"`
+	ReadAheadBlocks *T `json:"ReadAheadBlocks,omitempty"`
 
 	// ReadTableSpaceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-readtablespacename
-	ReadTableSpaceName *bool `json:"ReadTableSpaceName,omitempty"`
+	ReadTableSpaceName *T `json:"ReadTableSpaceName,omitempty"`
 
 	// ReplacePathPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-replacepathprefix
-	ReplacePathPrefix *bool `json:"ReplacePathPrefix,omitempty"`
+	ReplacePathPrefix *T `json:"ReplacePathPrefix,omitempty"`
 
 	// RetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-retryinterval
-	RetryInterval *int `json:"RetryInterval,omitempty"`
+	RetryInterval *T `json:"RetryInterval,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -158,27 +158,27 @@ type Endpoint_OracleSettings struct {
 	// StandbyDelayTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-standbydelaytime
-	StandbyDelayTime *int `json:"StandbyDelayTime,omitempty"`
+	StandbyDelayTime *T `json:"StandbyDelayTime,omitempty"`
 
 	// UseAlternateFolderForOnline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usealternatefolderforonline
-	UseAlternateFolderForOnline *bool `json:"UseAlternateFolderForOnline,omitempty"`
+	UseAlternateFolderForOnline *T `json:"UseAlternateFolderForOnline,omitempty"`
 
 	// UseBFile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usebfile
-	UseBFile *bool `json:"UseBFile,omitempty"`
+	UseBFile *T `json:"UseBFile,omitempty"`
 
 	// UseDirectPathFullLoad AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usedirectpathfullload
-	UseDirectPathFullLoad *bool `json:"UseDirectPathFullLoad,omitempty"`
+	UseDirectPathFullLoad *T `json:"UseDirectPathFullLoad,omitempty"`
 
 	// UseLogminerReader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-uselogminerreader
-	UseLogminerReader *bool `json:"UseLogminerReader,omitempty"`
+	UseLogminerReader *T `json:"UseLogminerReader,omitempty"`
 
 	// UsePathPrefix AWS CloudFormation Property
 	// Required: false
@@ -202,6 +202,6 @@ type Endpoint_OracleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_OracleSettings) AWSCloudFormationType() string {
+func (r *Endpoint_OracleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.OracleSettings"
 }

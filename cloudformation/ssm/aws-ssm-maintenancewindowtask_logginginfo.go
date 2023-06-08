@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_LoggingInfo AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.LoggingInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html
-type MaintenanceWindowTask_LoggingInfo struct {
+type MaintenanceWindowTask_LoggingInfo[T any] struct {
 
 	// Region AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type MaintenanceWindowTask_LoggingInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_LoggingInfo) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_LoggingInfo[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.LoggingInfo"
 }

@@ -8,17 +8,17 @@ import (
 
 // VirtualGateway_VirtualGatewayHealthCheckPolicy AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html
-type VirtualGateway_VirtualGatewayHealthCheckPolicy struct {
+type VirtualGateway_VirtualGatewayHealthCheckPolicy[T any] struct {
 
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-healthythreshold
-	HealthyThreshold int `json:"HealthyThreshold"`
+	HealthyThreshold T `json:"HealthyThreshold"`
 
 	// IntervalMillis AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-intervalmillis
-	IntervalMillis int `json:"IntervalMillis"`
+	IntervalMillis T `json:"IntervalMillis"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type VirtualGateway_VirtualGatewayHealthCheckPolicy struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type VirtualGateway_VirtualGatewayHealthCheckPolicy struct {
 	// TimeoutMillis AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-timeoutmillis
-	TimeoutMillis int `json:"TimeoutMillis"`
+	TimeoutMillis T `json:"TimeoutMillis"`
 
 	// UnhealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-unhealthythreshold
-	UnhealthyThreshold int `json:"UnhealthyThreshold"`
+	UnhealthyThreshold T `json:"UnhealthyThreshold"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type VirtualGateway_VirtualGatewayHealthCheckPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayHealthCheckPolicy) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayHealthCheckPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy"
 }

@@ -9,22 +9,22 @@ import (
 
 // Rule_EcsParameters AWS CloudFormation Resource (AWS::Events::Rule.EcsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html
-type Rule_EcsParameters struct {
+type Rule_EcsParameters[T any] struct {
 
 	// CapacityProviderStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-capacityproviderstrategy
-	CapacityProviderStrategy []Rule_CapacityProviderStrategyItem `json:"CapacityProviderStrategy,omitempty"`
+	CapacityProviderStrategy []Rule_CapacityProviderStrategyItem[any] `json:"CapacityProviderStrategy,omitempty"`
 
 	// EnableECSManagedTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-enableecsmanagedtags
-	EnableECSManagedTags *bool `json:"EnableECSManagedTags,omitempty"`
+	EnableECSManagedTags *T `json:"EnableECSManagedTags,omitempty"`
 
 	// EnableExecuteCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-enableexecutecommand
-	EnableExecuteCommand *bool `json:"EnableExecuteCommand,omitempty"`
+	EnableExecuteCommand *T `json:"EnableExecuteCommand,omitempty"`
 
 	// Group AWS CloudFormation Property
 	// Required: false
@@ -39,17 +39,17 @@ type Rule_EcsParameters struct {
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-networkconfiguration
-	NetworkConfiguration *Rule_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Rule_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-placementconstraints
-	PlacementConstraints []Rule_PlacementConstraint `json:"PlacementConstraints,omitempty"`
+	PlacementConstraints []Rule_PlacementConstraint[any] `json:"PlacementConstraints,omitempty"`
 
 	// PlacementStrategies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-placementstrategies
-	PlacementStrategies []Rule_PlacementStrategy `json:"PlacementStrategies,omitempty"`
+	PlacementStrategies []Rule_PlacementStrategy[any] `json:"PlacementStrategies,omitempty"`
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -74,7 +74,7 @@ type Rule_EcsParameters struct {
 	// TaskCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount
-	TaskCount *int `json:"TaskCount,omitempty"`
+	TaskCount *T `json:"TaskCount,omitempty"`
 
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
@@ -98,6 +98,6 @@ type Rule_EcsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_EcsParameters) AWSCloudFormationType() string {
+func (r *Rule_EcsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.EcsParameters"
 }

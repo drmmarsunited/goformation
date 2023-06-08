@@ -11,7 +11,7 @@ import (
 
 // Api AWS CloudFormation Resource (AWS::ApiGatewayV2::Api)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html
-type Api struct {
+type Api[T any] struct {
 
 	// ApiKeySelectionExpression AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type Api struct {
 	// BodyS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location
-	BodyS3Location *Api_BodyS3Location `json:"BodyS3Location,omitempty"`
+	BodyS3Location *Api_BodyS3Location[any] `json:"BodyS3Location,omitempty"`
 
 	// CorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-corsconfiguration
-	CorsConfiguration *Api_Cors `json:"CorsConfiguration,omitempty"`
+	CorsConfiguration *Api_Cors[any] `json:"CorsConfiguration,omitempty"`
 
 	// CredentialsArn AWS CloudFormation Property
 	// Required: false
@@ -51,17 +51,17 @@ type Api struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *T `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// DisableSchemaValidation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation
-	DisableSchemaValidation *bool `json:"DisableSchemaValidation,omitempty"`
+	DisableSchemaValidation *T `json:"DisableSchemaValidation,omitempty"`
 
 	// FailOnWarnings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
-	FailOnWarnings *bool `json:"FailOnWarnings,omitempty"`
+	FailOnWarnings *T `json:"FailOnWarnings,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -115,14 +115,15 @@ type Api struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api) AWSCloudFormationType() string {
+func (r *Api[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Api"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Api) MarshalJSON() ([]byte, error) {
-	type Properties Api
+func (r Api[any]) MarshalJSON() ([]byte, error) {
+	type Properties Api[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -144,8 +145,9 @@ func (r Api) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Api) UnmarshalJSON(b []byte) error {
-	type Properties Api
+func (r *Api[any]) UnmarshalJSON(b []byte) error {
+	type Properties Api[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -165,7 +167,7 @@ func (r *Api) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Api(*res.Properties)
+		*r = Api[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

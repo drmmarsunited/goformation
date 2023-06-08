@@ -8,17 +8,17 @@ import (
 
 // ListenerRule_TargetGroupStickinessConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.TargetGroupStickinessConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig.html
-type ListenerRule_TargetGroupStickinessConfig struct {
+type ListenerRule_TargetGroupStickinessConfig[T any] struct {
 
 	// DurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig-durationseconds
-	DurationSeconds *int `json:"DurationSeconds,omitempty"`
+	DurationSeconds *T `json:"DurationSeconds,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ListenerRule_TargetGroupStickinessConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_TargetGroupStickinessConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_TargetGroupStickinessConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.TargetGroupStickinessConfig"
 }

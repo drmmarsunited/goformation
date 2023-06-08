@@ -12,12 +12,12 @@ import (
 
 // Canary AWS CloudFormation Resource (AWS::Synthetics::Canary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html
-type Canary struct {
+type Canary[T any] struct {
 
 	// ArtifactConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig
-	ArtifactConfig *Canary_ArtifactConfig `json:"ArtifactConfig,omitempty"`
+	ArtifactConfig *Canary_ArtifactConfig[any] `json:"ArtifactConfig,omitempty"`
 
 	// ArtifactS3Location AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Canary struct {
 	// Code AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-code
-	Code *Canary_Code `json:"Code"`
+	Code *Canary_Code[any] `json:"Code"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Canary struct {
 	// FailureRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
-	FailureRetentionPeriod *int `json:"FailureRetentionPeriod,omitempty"`
+	FailureRetentionPeriod *T `json:"FailureRetentionPeriod,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -47,7 +47,7 @@ type Canary struct {
 	// RunConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig
-	RunConfig *Canary_RunConfig `json:"RunConfig,omitempty"`
+	RunConfig *Canary_RunConfig[any] `json:"RunConfig,omitempty"`
 
 	// RuntimeVersion AWS CloudFormation Property
 	// Required: true
@@ -57,17 +57,17 @@ type Canary struct {
 	// Schedule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule
-	Schedule *Canary_Schedule `json:"Schedule"`
+	Schedule *Canary_Schedule[any] `json:"Schedule"`
 
 	// StartCanaryAfterCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
-	StartCanaryAfterCreation *bool `json:"StartCanaryAfterCreation,omitempty"`
+	StartCanaryAfterCreation *T `json:"StartCanaryAfterCreation,omitempty"`
 
 	// SuccessRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod
-	SuccessRetentionPeriod *int `json:"SuccessRetentionPeriod,omitempty"`
+	SuccessRetentionPeriod *T `json:"SuccessRetentionPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -77,12 +77,12 @@ type Canary struct {
 	// VPCConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig
-	VPCConfig *Canary_VPCConfig `json:"VPCConfig,omitempty"`
+	VPCConfig *Canary_VPCConfig[any] `json:"VPCConfig,omitempty"`
 
 	// VisualReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference
-	VisualReference *Canary_VisualReference `json:"VisualReference,omitempty"`
+	VisualReference *Canary_VisualReference[any] `json:"VisualReference,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -101,14 +101,15 @@ type Canary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary) AWSCloudFormationType() string {
+func (r *Canary[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Canary) MarshalJSON() ([]byte, error) {
-	type Properties Canary
+func (r Canary[any]) MarshalJSON() ([]byte, error) {
+	type Properties Canary[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -130,8 +131,9 @@ func (r Canary) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Canary) UnmarshalJSON(b []byte) error {
-	type Properties Canary
+func (r *Canary[any]) UnmarshalJSON(b []byte) error {
+	type Properties Canary[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -151,7 +153,7 @@ func (r *Canary) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Canary(*res.Properties)
+		*r = Canary[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // User_UserPhoneConfig AWS CloudFormation Resource (AWS::Connect::User.UserPhoneConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html
-type User_UserPhoneConfig struct {
+type User_UserPhoneConfig[T any] struct {
 
 	// AfterContactWorkTimeLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-aftercontactworktimelimit
-	AfterContactWorkTimeLimit *int `json:"AfterContactWorkTimeLimit,omitempty"`
+	AfterContactWorkTimeLimit *T `json:"AfterContactWorkTimeLimit,omitempty"`
 
 	// AutoAccept AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-autoaccept
-	AutoAccept *bool `json:"AutoAccept,omitempty"`
+	AutoAccept *T `json:"AutoAccept,omitempty"`
 
 	// DeskPhoneNumber AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type User_UserPhoneConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_UserPhoneConfig) AWSCloudFormationType() string {
+func (r *User_UserPhoneConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::User.UserPhoneConfig"
 }

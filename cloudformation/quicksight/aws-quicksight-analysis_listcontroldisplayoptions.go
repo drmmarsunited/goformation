@@ -8,22 +8,22 @@ import (
 
 // Analysis_ListControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ListControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html
-type Analysis_ListControlDisplayOptions struct {
+type Analysis_ListControlDisplayOptions[T any] struct {
 
 	// SearchOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-searchoptions
-	SearchOptions *Analysis_ListControlSearchOptions `json:"SearchOptions,omitempty"`
+	SearchOptions *Analysis_ListControlSearchOptions[any] `json:"SearchOptions,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-selectalloptions
-	SelectAllOptions *Analysis_ListControlSelectAllOptions `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *Analysis_ListControlSelectAllOptions[any] `json:"SelectAllOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-titleoptions
-	TitleOptions *Analysis_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Analysis_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ListControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ListControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Analysis_ListControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ListControlDisplayOptions"
 }

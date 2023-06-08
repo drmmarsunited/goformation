@@ -8,7 +8,7 @@ import (
 
 // PublicKey_PublicKeyConfig AWS CloudFormation Resource (AWS::CloudFront::PublicKey.PublicKeyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-publickey-publickeyconfig.html
-type PublicKey_PublicKeyConfig struct {
+type PublicKey_PublicKeyConfig[T any] struct {
 
 	// CallerReference AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type PublicKey_PublicKeyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PublicKey_PublicKeyConfig) AWSCloudFormationType() string {
+func (r *PublicKey_PublicKeyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::PublicKey.PublicKeyConfig"
 }

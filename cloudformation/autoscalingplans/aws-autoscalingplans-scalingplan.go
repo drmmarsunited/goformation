@@ -11,17 +11,17 @@ import (
 
 // ScalingPlan AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
-type ScalingPlan struct {
+type ScalingPlan[T any] struct {
 
 	// ApplicationSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource
-	ApplicationSource *ScalingPlan_ApplicationSource `json:"ApplicationSource"`
+	ApplicationSource *ScalingPlan_ApplicationSource[any] `json:"ApplicationSource"`
 
 	// ScalingInstructions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions
-	ScalingInstructions []ScalingPlan_ScalingInstruction `json:"ScalingInstructions"`
+	ScalingInstructions []ScalingPlan_ScalingInstruction[any] `json:"ScalingInstructions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ScalingPlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan) AWSCloudFormationType() string {
+func (r *ScalingPlan[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScalingPlan) MarshalJSON() ([]byte, error) {
-	type Properties ScalingPlan
+func (r ScalingPlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScalingPlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ScalingPlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScalingPlan) UnmarshalJSON(b []byte) error {
-	type Properties ScalingPlan
+func (r *ScalingPlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScalingPlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ScalingPlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScalingPlan(*res.Properties)
+		*r = ScalingPlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

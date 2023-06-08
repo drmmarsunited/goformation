@@ -11,7 +11,7 @@ import (
 
 // AnomalySubscription AWS CloudFormation Resource (AWS::CE::AnomalySubscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html
-type AnomalySubscription struct {
+type AnomalySubscription[T any] struct {
 
 	// Frequency AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type AnomalySubscription struct {
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-resourcetags
-	ResourceTags []AnomalySubscription_ResourceTag `json:"ResourceTags,omitempty"`
+	ResourceTags []AnomalySubscription_ResourceTag[any] `json:"ResourceTags,omitempty"`
 
 	// Subscribers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscribers
-	Subscribers []AnomalySubscription_Subscriber `json:"Subscribers"`
+	Subscribers []AnomalySubscription_Subscriber[any] `json:"Subscribers"`
 
 	// SubscriptionName AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type AnomalySubscription struct {
 	// Threshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold
-	Threshold *float64 `json:"Threshold,omitempty"`
+	Threshold *T `json:"Threshold,omitempty"`
 
 	// ThresholdExpression AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type AnomalySubscription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalySubscription) AWSCloudFormationType() string {
+func (r *AnomalySubscription[any]) AWSCloudFormationType() string {
 	return "AWS::CE::AnomalySubscription"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AnomalySubscription) MarshalJSON() ([]byte, error) {
-	type Properties AnomalySubscription
+func (r AnomalySubscription[any]) MarshalJSON() ([]byte, error) {
+	type Properties AnomalySubscription[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r AnomalySubscription) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AnomalySubscription) UnmarshalJSON(b []byte) error {
-	type Properties AnomalySubscription
+func (r *AnomalySubscription[any]) UnmarshalJSON(b []byte) error {
+	type Properties AnomalySubscription[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *AnomalySubscription) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AnomalySubscription(*res.Properties)
+		*r = AnomalySubscription[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

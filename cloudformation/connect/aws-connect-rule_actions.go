@@ -8,7 +8,7 @@ import (
 
 // Rule_Actions AWS CloudFormation Resource (AWS::Connect::Rule.Actions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html
-type Rule_Actions struct {
+type Rule_Actions[T any] struct {
 
 	// AssignContactCategoryActions AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Rule_Actions struct {
 	// EventBridgeActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-eventbridgeactions
-	EventBridgeActions []Rule_EventBridgeAction `json:"EventBridgeActions,omitempty"`
+	EventBridgeActions []Rule_EventBridgeAction[any] `json:"EventBridgeActions,omitempty"`
 
 	// SendNotificationActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-sendnotificationactions
-	SendNotificationActions []Rule_SendNotificationAction `json:"SendNotificationActions,omitempty"`
+	SendNotificationActions []Rule_SendNotificationAction[any] `json:"SendNotificationActions,omitempty"`
 
 	// TaskActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-taskactions
-	TaskActions []Rule_TaskAction `json:"TaskActions,omitempty"`
+	TaskActions []Rule_TaskAction[any] `json:"TaskActions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Rule_Actions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Actions) AWSCloudFormationType() string {
+func (r *Rule_Actions[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.Actions"
 }

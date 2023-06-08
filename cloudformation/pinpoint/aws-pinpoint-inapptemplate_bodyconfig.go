@@ -8,7 +8,7 @@ import (
 
 // InAppTemplate_BodyConfig AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.BodyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-bodyconfig.html
-type InAppTemplate_BodyConfig struct {
+type InAppTemplate_BodyConfig[T any] struct {
 
 	// Alignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type InAppTemplate_BodyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InAppTemplate_BodyConfig) AWSCloudFormationType() string {
+func (r *InAppTemplate_BodyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::InAppTemplate.BodyConfig"
 }

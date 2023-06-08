@@ -8,7 +8,7 @@ import (
 
 // DataCellsFilter_RowFilter AWS CloudFormation Resource (AWS::LakeFormation::DataCellsFilter.RowFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-rowfilter.html
-type DataCellsFilter_RowFilter struct {
+type DataCellsFilter_RowFilter[T any] struct {
 
 	// AllRowsWildcard AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataCellsFilter_RowFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCellsFilter_RowFilter) AWSCloudFormationType() string {
+func (r *DataCellsFilter_RowFilter[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataCellsFilter.RowFilter"
 }

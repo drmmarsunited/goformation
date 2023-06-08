@@ -8,27 +8,27 @@ import (
 
 // Channel_HlsBasicPutSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsBasicPutSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html
-type Channel_HlsBasicPutSettings struct {
+type Channel_HlsBasicPutSettings[T any] struct {
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-connectionretryinterval
-	ConnectionRetryInterval *int `json:"ConnectionRetryInterval,omitempty"`
+	ConnectionRetryInterval *T `json:"ConnectionRetryInterval,omitempty"`
 
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-filecacheduration
-	FilecacheDuration *int `json:"FilecacheDuration,omitempty"`
+	FilecacheDuration *T `json:"FilecacheDuration,omitempty"`
 
 	// NumRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-numretries
-	NumRetries *int `json:"NumRetries,omitempty"`
+	NumRetries *T `json:"NumRetries,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-restartdelay
-	RestartDelay *int `json:"RestartDelay,omitempty"`
+	RestartDelay *T `json:"RestartDelay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_HlsBasicPutSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsBasicPutSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsBasicPutSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsBasicPutSettings"
 }

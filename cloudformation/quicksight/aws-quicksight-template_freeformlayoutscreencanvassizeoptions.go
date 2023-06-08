@@ -8,7 +8,7 @@ import (
 
 // Template_FreeFormLayoutScreenCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Template.FreeFormLayoutScreenCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutscreencanvassizeoptions.html
-type Template_FreeFormLayoutScreenCanvasSizeOptions struct {
+type Template_FreeFormLayoutScreenCanvasSizeOptions[T any] struct {
 
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_FreeFormLayoutScreenCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FreeFormLayoutScreenCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Template_FreeFormLayoutScreenCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FreeFormLayoutScreenCanvasSizeOptions"
 }

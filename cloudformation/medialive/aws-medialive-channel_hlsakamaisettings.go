@@ -8,17 +8,17 @@ import (
 
 // Channel_HlsAkamaiSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsAkamaiSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html
-type Channel_HlsAkamaiSettings struct {
+type Channel_HlsAkamaiSettings[T any] struct {
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-connectionretryinterval
-	ConnectionRetryInterval *int `json:"ConnectionRetryInterval,omitempty"`
+	ConnectionRetryInterval *T `json:"ConnectionRetryInterval,omitempty"`
 
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-filecacheduration
-	FilecacheDuration *int `json:"FilecacheDuration,omitempty"`
+	FilecacheDuration *T `json:"FilecacheDuration,omitempty"`
 
 	// HttpTransferMode AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_HlsAkamaiSettings struct {
 	// NumRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-numretries
-	NumRetries *int `json:"NumRetries,omitempty"`
+	NumRetries *T `json:"NumRetries,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-restartdelay
-	RestartDelay *int `json:"RestartDelay,omitempty"`
+	RestartDelay *T `json:"RestartDelay,omitempty"`
 
 	// Salt AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Channel_HlsAkamaiSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsAkamaiSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsAkamaiSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsAkamaiSettings"
 }

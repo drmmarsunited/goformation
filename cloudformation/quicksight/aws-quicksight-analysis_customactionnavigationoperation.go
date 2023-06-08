@@ -8,12 +8,12 @@ import (
 
 // Analysis_CustomActionNavigationOperation AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomActionNavigationOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionnavigationoperation.html
-type Analysis_CustomActionNavigationOperation struct {
+type Analysis_CustomActionNavigationOperation[T any] struct {
 
 	// LocalNavigationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customactionnavigationoperation.html#cfn-quicksight-analysis-customactionnavigationoperation-localnavigationconfiguration
-	LocalNavigationConfiguration *Analysis_LocalNavigationConfiguration `json:"LocalNavigationConfiguration,omitempty"`
+	LocalNavigationConfiguration *Analysis_LocalNavigationConfiguration[any] `json:"LocalNavigationConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_CustomActionNavigationOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomActionNavigationOperation) AWSCloudFormationType() string {
+func (r *Analysis_CustomActionNavigationOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomActionNavigationOperation"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_SourceAuth AWS CloudFormation Resource (AWS::CodeBuild::Project.SourceAuth)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html
-type Project_SourceAuth struct {
+type Project_SourceAuth[T any] struct {
 
 	// Resource AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Project_SourceAuth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_SourceAuth) AWSCloudFormationType() string {
+func (r *Project_SourceAuth[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.SourceAuth"
 }

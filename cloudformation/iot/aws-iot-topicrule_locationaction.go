@@ -8,7 +8,7 @@ import (
 
 // TopicRule_LocationAction AWS CloudFormation Resource (AWS::IoT::TopicRule.LocationAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-locationaction.html
-type TopicRule_LocationAction struct {
+type TopicRule_LocationAction[T any] struct {
 
 	// DeviceId AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type TopicRule_LocationAction struct {
 	// Timestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-locationaction.html#cfn-iot-topicrule-locationaction-timestamp
-	Timestamp *TopicRule_Timestamp `json:"Timestamp,omitempty"`
+	Timestamp *TopicRule_Timestamp[any] `json:"Timestamp,omitempty"`
 
 	// TrackerName AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type TopicRule_LocationAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_LocationAction) AWSCloudFormationType() string {
+func (r *TopicRule_LocationAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.LocationAction"
 }

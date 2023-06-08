@@ -8,7 +8,7 @@ import (
 
 // Component_ComponentBindingPropertiesValueProperties AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentBindingPropertiesValueProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html
-type Component_ComponentBindingPropertiesValueProperties struct {
+type Component_ComponentBindingPropertiesValueProperties[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Component_ComponentBindingPropertiesValueProperties struct {
 	// Predicates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentbindingpropertiesvalueproperties.html#cfn-amplifyuibuilder-component-componentbindingpropertiesvalueproperties-predicates
-	Predicates []Component_Predicate `json:"Predicates,omitempty"`
+	Predicates []Component_Predicate[any] `json:"Predicates,omitempty"`
 
 	// UserAttribute AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Component_ComponentBindingPropertiesValueProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentBindingPropertiesValueProperties) AWSCloudFormationType() string {
+func (r *Component_ComponentBindingPropertiesValueProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentBindingPropertiesValueProperties"
 }

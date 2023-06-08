@@ -8,7 +8,7 @@ import (
 
 // Endpoint_CapacitySize AWS CloudFormation Resource (AWS::SageMaker::Endpoint.CapacitySize)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html
-type Endpoint_CapacitySize struct {
+type Endpoint_CapacitySize[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Endpoint_CapacitySize struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value
-	Value int `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Endpoint_CapacitySize struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_CapacitySize) AWSCloudFormationType() string {
+func (r *Endpoint_CapacitySize[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.CapacitySize"
 }

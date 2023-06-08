@@ -8,7 +8,7 @@ import (
 
 // Segment_SourceSegments AWS CloudFormation Resource (AWS::Pinpoint::Segment.SourceSegments)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html
-type Segment_SourceSegments struct {
+type Segment_SourceSegments[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Segment_SourceSegments struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-version
-	Version *int `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Segment_SourceSegments struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_SourceSegments) AWSCloudFormationType() string {
+func (r *Segment_SourceSegments[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.SourceSegments"
 }

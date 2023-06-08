@@ -8,7 +8,7 @@ import (
 
 // Document_AttachmentsSource AWS CloudFormation Resource (AWS::SSM::Document.AttachmentsSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-document-attachmentssource.html
-type Document_AttachmentsSource struct {
+type Document_AttachmentsSource[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Document_AttachmentsSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Document_AttachmentsSource) AWSCloudFormationType() string {
+func (r *Document_AttachmentsSource[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Document.AttachmentsSource"
 }

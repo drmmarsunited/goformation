@@ -8,12 +8,12 @@ import (
 
 // Dashboard_VisualCustomAction AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualCustomAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomaction.html
-type Dashboard_VisualCustomAction struct {
+type Dashboard_VisualCustomAction[T any] struct {
 
 	// ActionOperations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomaction.html#cfn-quicksight-dashboard-visualcustomaction-actionoperations
-	ActionOperations []Dashboard_VisualCustomActionOperation `json:"ActionOperations"`
+	ActionOperations []Dashboard_VisualCustomActionOperation[any] `json:"ActionOperations"`
 
 	// CustomActionId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Dashboard_VisualCustomAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualCustomAction) AWSCloudFormationType() string {
+func (r *Dashboard_VisualCustomAction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualCustomAction"
 }

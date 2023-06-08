@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_DataCellsFilterResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.DataCellsFilterResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-datacellsfilterresource.html
-type PrincipalPermissions_DataCellsFilterResource struct {
+type PrincipalPermissions_DataCellsFilterResource[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type PrincipalPermissions_DataCellsFilterResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_DataCellsFilterResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_DataCellsFilterResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.DataCellsFilterResource"
 }

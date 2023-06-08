@@ -8,7 +8,7 @@ import (
 
 // DataSet_ColumnDescription AWS CloudFormation Resource (AWS::QuickSight::DataSet.ColumnDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columndescription.html
-type DataSet_ColumnDescription struct {
+type DataSet_ColumnDescription[T any] struct {
 
 	// Text AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataSet_ColumnDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ColumnDescription) AWSCloudFormationType() string {
+func (r *DataSet_ColumnDescription[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ColumnDescription"
 }

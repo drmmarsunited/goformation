@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_AsyncInferenceOutputConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.AsyncInferenceOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html
-type EndpointConfig_AsyncInferenceOutputConfig struct {
+type EndpointConfig_AsyncInferenceOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type EndpointConfig_AsyncInferenceOutputConfig struct {
 	// NotificationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-notificationconfig
-	NotificationConfig *EndpointConfig_AsyncInferenceNotificationConfig `json:"NotificationConfig,omitempty"`
+	NotificationConfig *EndpointConfig_AsyncInferenceNotificationConfig[any] `json:"NotificationConfig,omitempty"`
 
 	// S3FailurePath AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type EndpointConfig_AsyncInferenceOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_AsyncInferenceOutputConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_AsyncInferenceOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.AsyncInferenceOutputConfig"
 }

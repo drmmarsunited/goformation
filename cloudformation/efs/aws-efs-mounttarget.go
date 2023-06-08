@@ -11,7 +11,7 @@ import (
 
 // MountTarget AWS CloudFormation Resource (AWS::EFS::MountTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
-type MountTarget struct {
+type MountTarget[T any] struct {
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type MountTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MountTarget) AWSCloudFormationType() string {
+func (r *MountTarget[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::MountTarget"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MountTarget) MarshalJSON() ([]byte, error) {
-	type Properties MountTarget
+func (r MountTarget[any]) MarshalJSON() ([]byte, error) {
+	type Properties MountTarget[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r MountTarget) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MountTarget) UnmarshalJSON(b []byte) error {
-	type Properties MountTarget
+func (r *MountTarget[any]) UnmarshalJSON(b []byte) error {
+	type Properties MountTarget[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *MountTarget) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MountTarget(*res.Properties)
+		*r = MountTarget[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

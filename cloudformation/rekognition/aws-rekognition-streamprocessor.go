@@ -12,37 +12,37 @@ import (
 
 // StreamProcessor AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html
-type StreamProcessor struct {
+type StreamProcessor[T any] struct {
 
 	// BoundingBoxRegionsOfInterest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-boundingboxregionsofinterest
-	BoundingBoxRegionsOfInterest []StreamProcessor_BoundingBox `json:"BoundingBoxRegionsOfInterest,omitempty"`
+	BoundingBoxRegionsOfInterest []StreamProcessor_BoundingBox[any] `json:"BoundingBoxRegionsOfInterest,omitempty"`
 
 	// ConnectedHomeSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-connectedhomesettings
-	ConnectedHomeSettings *StreamProcessor_ConnectedHomeSettings `json:"ConnectedHomeSettings,omitempty"`
+	ConnectedHomeSettings *StreamProcessor_ConnectedHomeSettings[any] `json:"ConnectedHomeSettings,omitempty"`
 
 	// DataSharingPreference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-datasharingpreference
-	DataSharingPreference *StreamProcessor_DataSharingPreference `json:"DataSharingPreference,omitempty"`
+	DataSharingPreference *StreamProcessor_DataSharingPreference[any] `json:"DataSharingPreference,omitempty"`
 
 	// FaceSearchSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-facesearchsettings
-	FaceSearchSettings *StreamProcessor_FaceSearchSettings `json:"FaceSearchSettings,omitempty"`
+	FaceSearchSettings *StreamProcessor_FaceSearchSettings[any] `json:"FaceSearchSettings,omitempty"`
 
 	// KinesisDataStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-kinesisdatastream
-	KinesisDataStream *StreamProcessor_KinesisDataStream `json:"KinesisDataStream,omitempty"`
+	KinesisDataStream *StreamProcessor_KinesisDataStream[any] `json:"KinesisDataStream,omitempty"`
 
 	// KinesisVideoStream AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-kinesisvideostream
-	KinesisVideoStream *StreamProcessor_KinesisVideoStream `json:"KinesisVideoStream"`
+	KinesisVideoStream *StreamProcessor_KinesisVideoStream[any] `json:"KinesisVideoStream"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type StreamProcessor struct {
 	// NotificationChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-notificationchannel
-	NotificationChannel *StreamProcessor_NotificationChannel `json:"NotificationChannel,omitempty"`
+	NotificationChannel *StreamProcessor_NotificationChannel[any] `json:"NotificationChannel,omitempty"`
 
 	// PolygonRegionsOfInterest AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type StreamProcessor struct {
 	// S3Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-s3destination
-	S3Destination *StreamProcessor_S3Destination `json:"S3Destination,omitempty"`
+	S3Destination *StreamProcessor_S3Destination[any] `json:"S3Destination,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type StreamProcessor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor) AWSCloudFormationType() string {
+func (r *StreamProcessor[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StreamProcessor) MarshalJSON() ([]byte, error) {
-	type Properties StreamProcessor
+func (r StreamProcessor[any]) MarshalJSON() ([]byte, error) {
+	type Properties StreamProcessor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r StreamProcessor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StreamProcessor) UnmarshalJSON(b []byte) error {
-	type Properties StreamProcessor
+func (r *StreamProcessor[any]) UnmarshalJSON(b []byte) error {
+	type Properties StreamProcessor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *StreamProcessor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StreamProcessor(*res.Properties)
+		*r = StreamProcessor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

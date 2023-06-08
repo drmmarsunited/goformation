@@ -12,7 +12,7 @@ import (
 
 // HttpNamespace AWS CloudFormation Resource (AWS::ServiceDiscovery::HttpNamespace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html
-type HttpNamespace struct {
+type HttpNamespace[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type HttpNamespace struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpNamespace) AWSCloudFormationType() string {
+func (r *HttpNamespace[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::HttpNamespace"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HttpNamespace) MarshalJSON() ([]byte, error) {
-	type Properties HttpNamespace
+func (r HttpNamespace[any]) MarshalJSON() ([]byte, error) {
+	type Properties HttpNamespace[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r HttpNamespace) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HttpNamespace) UnmarshalJSON(b []byte) error {
-	type Properties HttpNamespace
+func (r *HttpNamespace[any]) UnmarshalJSON(b []byte) error {
+	type Properties HttpNamespace[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *HttpNamespace) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HttpNamespace(*res.Properties)
+		*r = HttpNamespace[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

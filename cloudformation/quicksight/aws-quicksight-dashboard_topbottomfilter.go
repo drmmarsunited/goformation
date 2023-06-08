@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TopBottomFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TopBottomFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html
-type Dashboard_TopBottomFilter struct {
+type Dashboard_TopBottomFilter[T any] struct {
 
 	// AggregationSortConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-aggregationsortconfigurations
-	AggregationSortConfigurations []Dashboard_AggregationSortConfiguration `json:"AggregationSortConfigurations"`
+	AggregationSortConfigurations []Dashboard_AggregationSortConfiguration[any] `json:"AggregationSortConfigurations"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_TopBottomFilter struct {
 	// Limit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-limit
-	Limit *float64 `json:"Limit,omitempty"`
+	Limit *T `json:"Limit,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Dashboard_TopBottomFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TopBottomFilter) AWSCloudFormationType() string {
+func (r *Dashboard_TopBottomFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TopBottomFilter"
 }

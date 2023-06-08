@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_CustomRequestHandling AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CustomRequestHandling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customrequesthandling.html
-type RuleGroup_CustomRequestHandling struct {
+type RuleGroup_CustomRequestHandling[T any] struct {
 
 	// InsertHeaders AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customrequesthandling.html#cfn-wafv2-rulegroup-customrequesthandling-insertheaders
-	InsertHeaders []RuleGroup_CustomHTTPHeader `json:"InsertHeaders"`
+	InsertHeaders []RuleGroup_CustomHTTPHeader[any] `json:"InsertHeaders"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_CustomRequestHandling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CustomRequestHandling) AWSCloudFormationType() string {
+func (r *RuleGroup_CustomRequestHandling[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CustomRequestHandling"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_ProjectCache AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectCache)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html
-type Project_ProjectCache struct {
+type Project_ProjectCache[T any] struct {
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Project_ProjectCache struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProjectCache) AWSCloudFormationType() string {
+func (r *Project_ProjectCache[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectCache"
 }

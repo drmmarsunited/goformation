@@ -12,12 +12,12 @@ import (
 
 // Instance AWS CloudFormation Resource (AWS::Lightsail::Instance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html
-type Instance struct {
+type Instance[T any] struct {
 
 	// AddOns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-addons
-	AddOns []Instance_AddOn `json:"AddOns,omitempty"`
+	AddOns []Instance_AddOn[any] `json:"AddOns,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Instance struct {
 	// Hardware AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-hardware
-	Hardware *Instance_Hardware `json:"Hardware,omitempty"`
+	Hardware *Instance_Hardware[any] `json:"Hardware,omitempty"`
 
 	// InstanceName AWS CloudFormation Property
 	// Required: true
@@ -52,17 +52,17 @@ type Instance struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-location
-	Location *Instance_Location `json:"Location,omitempty"`
+	Location *Instance_Location[any] `json:"Location,omitempty"`
 
 	// Networking AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-networking
-	Networking *Instance_Networking `json:"Networking,omitempty"`
+	Networking *Instance_Networking[any] `json:"Networking,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-state
-	State *Instance_State `json:"State,omitempty"`
+	State *Instance_State[any] `json:"State,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type Instance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance) AWSCloudFormationType() string {
+func (r *Instance[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Instance) MarshalJSON() ([]byte, error) {
-	type Properties Instance
+func (r Instance[any]) MarshalJSON() ([]byte, error) {
+	type Properties Instance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Instance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Instance) UnmarshalJSON(b []byte) error {
-	type Properties Instance
+func (r *Instance[any]) UnmarshalJSON(b []byte) error {
+	type Properties Instance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Instance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Instance(*res.Properties)
+		*r = Instance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

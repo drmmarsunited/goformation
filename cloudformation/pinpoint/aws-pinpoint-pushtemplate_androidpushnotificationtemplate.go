@@ -8,7 +8,7 @@ import (
 
 // PushTemplate_AndroidPushNotificationTemplate AWS CloudFormation Resource (AWS::Pinpoint::PushTemplate.AndroidPushNotificationTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html
-type PushTemplate_AndroidPushNotificationTemplate struct {
+type PushTemplate_AndroidPushNotificationTemplate[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type PushTemplate_AndroidPushNotificationTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PushTemplate_AndroidPushNotificationTemplate) AWSCloudFormationType() string {
+func (r *PushTemplate_AndroidPushNotificationTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::PushTemplate.AndroidPushNotificationTemplate"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LoadingAnimation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LoadingAnimation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-loadinganimation.html
-type Dashboard_LoadingAnimation struct {
+type Dashboard_LoadingAnimation[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_LoadingAnimation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LoadingAnimation) AWSCloudFormationType() string {
+func (r *Dashboard_LoadingAnimation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LoadingAnimation"
 }

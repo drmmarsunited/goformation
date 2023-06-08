@@ -8,12 +8,12 @@ import (
 
 // Analysis_ParameterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Analysis.ParameterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterselectablevalues.html
-type Analysis_ParameterSelectableValues struct {
+type Analysis_ParameterSelectableValues[T any] struct {
 
 	// LinkToDataSetColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterselectablevalues.html#cfn-quicksight-analysis-parameterselectablevalues-linktodatasetcolumn
-	LinkToDataSetColumn *Analysis_ColumnIdentifier `json:"LinkToDataSetColumn,omitempty"`
+	LinkToDataSetColumn *Analysis_ColumnIdentifier[any] `json:"LinkToDataSetColumn,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ParameterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ParameterSelectableValues) AWSCloudFormationType() string {
+func (r *Analysis_ParameterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ParameterSelectableValues"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataSetIdentifierDeclaration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataSetIdentifierDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datasetidentifierdeclaration.html
-type Analysis_DataSetIdentifierDeclaration struct {
+type Analysis_DataSetIdentifierDeclaration[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_DataSetIdentifierDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataSetIdentifierDeclaration) AWSCloudFormationType() string {
+func (r *Analysis_DataSetIdentifierDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataSetIdentifierDeclaration"
 }

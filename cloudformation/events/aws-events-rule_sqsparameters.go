@@ -8,7 +8,7 @@ import (
 
 // Rule_SqsParameters AWS CloudFormation Resource (AWS::Events::Rule.SqsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sqsparameters.html
-type Rule_SqsParameters struct {
+type Rule_SqsParameters[T any] struct {
 
 	// MessageGroupId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Rule_SqsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_SqsParameters) AWSCloudFormationType() string {
+func (r *Rule_SqsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.SqsParameters"
 }

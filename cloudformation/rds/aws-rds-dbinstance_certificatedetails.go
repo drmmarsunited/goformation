@@ -8,7 +8,7 @@ import (
 
 // DBInstance_CertificateDetails AWS CloudFormation Resource (AWS::RDS::DBInstance.CertificateDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html
-type DBInstance_CertificateDetails struct {
+type DBInstance_CertificateDetails[T any] struct {
 
 	// CAIdentifier AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBInstance_CertificateDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance_CertificateDetails) AWSCloudFormationType() string {
+func (r *DBInstance_CertificateDetails[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance.CertificateDetails"
 }

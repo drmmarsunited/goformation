@@ -8,7 +8,7 @@ import (
 
 // Bucket_IntelligentTieringConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.IntelligentTieringConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html
-type Bucket_IntelligentTieringConfiguration struct {
+type Bucket_IntelligentTieringConfiguration[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Bucket_IntelligentTieringConfiguration struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-tagfilters
-	TagFilters []Bucket_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Bucket_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// Tierings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-tierings
-	Tierings []Bucket_Tiering `json:"Tierings"`
+	Tierings []Bucket_Tiering[any] `json:"Tierings"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Bucket_IntelligentTieringConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_IntelligentTieringConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_IntelligentTieringConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.IntelligentTieringConfiguration"
 }

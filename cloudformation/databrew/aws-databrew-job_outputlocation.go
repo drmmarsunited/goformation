@@ -8,7 +8,7 @@ import (
 
 // Job_OutputLocation AWS CloudFormation Resource (AWS::DataBrew::Job.OutputLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputlocation.html
-type Job_OutputLocation struct {
+type Job_OutputLocation[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Job_OutputLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_OutputLocation) AWSCloudFormationType() string {
+func (r *Job_OutputLocation[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.OutputLocation"
 }

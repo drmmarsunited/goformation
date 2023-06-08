@@ -8,7 +8,7 @@ import (
 
 // Instance_NoDevice AWS CloudFormation Resource (AWS::EC2::Instance.NoDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-nodevice.html
-type Instance_NoDevice struct {
+type Instance_NoDevice[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Instance_NoDevice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_NoDevice) AWSCloudFormationType() string {
+func (r *Instance_NoDevice[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.NoDevice"
 }

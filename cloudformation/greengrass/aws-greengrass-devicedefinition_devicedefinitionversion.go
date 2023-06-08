@@ -8,12 +8,12 @@ import (
 
 // DeviceDefinition_DeviceDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html
-type DeviceDefinition_DeviceDefinitionVersion struct {
+type DeviceDefinition_DeviceDefinitionVersion[T any] struct {
 
 	// Devices AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html#cfn-greengrass-devicedefinition-devicedefinitionversion-devices
-	Devices []DeviceDefinition_Device `json:"Devices"`
+	Devices []DeviceDefinition_Device[any] `json:"Devices"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeviceDefinition_DeviceDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeviceDefinition_DeviceDefinitionVersion) AWSCloudFormationType() string {
+func (r *DeviceDefinition_DeviceDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion"
 }

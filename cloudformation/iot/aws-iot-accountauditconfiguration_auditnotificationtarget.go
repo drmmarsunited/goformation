@@ -8,12 +8,12 @@ import (
 
 // AccountAuditConfiguration_AuditNotificationTarget AWS CloudFormation Resource (AWS::IoT::AccountAuditConfiguration.AuditNotificationTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtarget.html
-type AccountAuditConfiguration_AuditNotificationTarget struct {
+type AccountAuditConfiguration_AuditNotificationTarget[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtarget.html#cfn-iot-accountauditconfiguration-auditnotificationtarget-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type AccountAuditConfiguration_AuditNotificationTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccountAuditConfiguration_AuditNotificationTarget) AWSCloudFormationType() string {
+func (r *AccountAuditConfiguration_AuditNotificationTarget[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::AccountAuditConfiguration.AuditNotificationTarget"
 }

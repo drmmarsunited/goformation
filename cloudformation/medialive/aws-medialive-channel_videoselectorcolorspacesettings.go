@@ -8,12 +8,12 @@ import (
 
 // Channel_VideoSelectorColorSpaceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoSelectorColorSpaceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorcolorspacesettings.html
-type Channel_VideoSelectorColorSpaceSettings struct {
+type Channel_VideoSelectorColorSpaceSettings[T any] struct {
 
 	// Hdr10Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorcolorspacesettings.html#cfn-medialive-channel-videoselectorcolorspacesettings-hdr10settings
-	Hdr10Settings *Channel_Hdr10Settings `json:"Hdr10Settings,omitempty"`
+	Hdr10Settings *Channel_Hdr10Settings[any] `json:"Hdr10Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_VideoSelectorColorSpaceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VideoSelectorColorSpaceSettings) AWSCloudFormationType() string {
+func (r *Channel_VideoSelectorColorSpaceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VideoSelectorColorSpaceSettings"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_NumericalDimensionField AWS CloudFormation Resource (AWS::QuickSight::Template.NumericalDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaldimensionfield.html
-type Template_NumericalDimensionField struct {
+type Template_NumericalDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaldimensionfield.html#cfn-quicksight-template-numericaldimensionfield-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Template_NumericalDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaldimensionfield.html#cfn-quicksight-template-numericaldimensionfield-formatconfiguration
-	FormatConfiguration *Template_NumberFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Template_NumberFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_NumericalDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumericalDimensionField) AWSCloudFormationType() string {
+func (r *Template_NumericalDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumericalDimensionField"
 }

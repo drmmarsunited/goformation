@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilterTextFieldControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterTextFieldControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtertextfieldcontrol.html
-type Dashboard_FilterTextFieldControl struct {
+type Dashboard_FilterTextFieldControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtertextfieldcontrol.html#cfn-quicksight-dashboard-filtertextfieldcontrol-displayoptions
-	DisplayOptions *Dashboard_TextFieldControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_TextFieldControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dashboard_FilterTextFieldControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterTextFieldControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterTextFieldControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterTextFieldControl"
 }

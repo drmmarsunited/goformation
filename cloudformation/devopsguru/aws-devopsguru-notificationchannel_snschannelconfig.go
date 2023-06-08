@@ -8,7 +8,7 @@ import (
 
 // NotificationChannel_SnsChannelConfig AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel.SnsChannelConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-snschannelconfig.html
-type NotificationChannel_SnsChannelConfig struct {
+type NotificationChannel_SnsChannelConfig[T any] struct {
 
 	// TopicArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type NotificationChannel_SnsChannelConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationChannel_SnsChannelConfig) AWSCloudFormationType() string {
+func (r *NotificationChannel_SnsChannelConfig[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::NotificationChannel.SnsChannelConfig"
 }

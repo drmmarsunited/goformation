@@ -8,7 +8,7 @@ import (
 
 // AssetModel_VariableValue AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.VariableValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-variablevalue.html
-type AssetModel_VariableValue struct {
+type AssetModel_VariableValue[T any] struct {
 
 	// HierarchyLogicalId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AssetModel_VariableValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_VariableValue) AWSCloudFormationType() string {
+func (r *AssetModel_VariableValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.VariableValue"
 }

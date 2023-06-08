@@ -8,22 +8,22 @@ import (
 
 // Distribution_CustomOriginConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.CustomOriginConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
-type Distribution_CustomOriginConfig struct {
+type Distribution_CustomOriginConfig[T any] struct {
 
 	// HTTPPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport
-	HTTPPort *int `json:"HTTPPort,omitempty"`
+	HTTPPort *T `json:"HTTPPort,omitempty"`
 
 	// HTTPSPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport
-	HTTPSPort *int `json:"HTTPSPort,omitempty"`
+	HTTPSPort *T `json:"HTTPSPort,omitempty"`
 
 	// OriginKeepaliveTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout
-	OriginKeepaliveTimeout *int `json:"OriginKeepaliveTimeout,omitempty"`
+	OriginKeepaliveTimeout *T `json:"OriginKeepaliveTimeout,omitempty"`
 
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Distribution_CustomOriginConfig struct {
 	// OriginReadTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout
-	OriginReadTimeout *int `json:"OriginReadTimeout,omitempty"`
+	OriginReadTimeout *T `json:"OriginReadTimeout,omitempty"`
 
 	// OriginSSLProtocols AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Distribution_CustomOriginConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CustomOriginConfig) AWSCloudFormationType() string {
+func (r *Distribution_CustomOriginConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.CustomOriginConfig"
 }

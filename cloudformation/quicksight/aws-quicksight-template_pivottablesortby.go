@@ -8,22 +8,22 @@ import (
 
 // Template_PivotTableSortBy AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableSortBy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablesortby.html
-type Template_PivotTableSortBy struct {
+type Template_PivotTableSortBy[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablesortby.html#cfn-quicksight-template-pivottablesortby-column
-	Column *Template_ColumnSort `json:"Column,omitempty"`
+	Column *Template_ColumnSort[any] `json:"Column,omitempty"`
 
 	// DataPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablesortby.html#cfn-quicksight-template-pivottablesortby-datapath
-	DataPath *Template_DataPathSort `json:"DataPath,omitempty"`
+	DataPath *Template_DataPathSort[any] `json:"DataPath,omitempty"`
 
 	// Field AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablesortby.html#cfn-quicksight-template-pivottablesortby-field
-	Field *Template_FieldSort `json:"Field,omitempty"`
+	Field *Template_FieldSort[any] `json:"Field,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_PivotTableSortBy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableSortBy) AWSCloudFormationType() string {
+func (r *Template_PivotTableSortBy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableSortBy"
 }

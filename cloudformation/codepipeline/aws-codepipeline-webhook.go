@@ -11,7 +11,7 @@ import (
 
 // Webhook AWS CloudFormation Resource (AWS::CodePipeline::Webhook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html
-type Webhook struct {
+type Webhook[T any] struct {
 
 	// Authentication AWS CloudFormation Property
 	// Required: true
@@ -21,12 +21,12 @@ type Webhook struct {
 	// AuthenticationConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authenticationconfiguration
-	AuthenticationConfiguration *Webhook_WebhookAuthConfiguration `json:"AuthenticationConfiguration"`
+	AuthenticationConfiguration *Webhook_WebhookAuthConfiguration[any] `json:"AuthenticationConfiguration"`
 
 	// Filters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters
-	Filters []Webhook_WebhookFilterRule `json:"Filters"`
+	Filters []Webhook_WebhookFilterRule[any] `json:"Filters"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Webhook struct {
 	// RegisterWithThirdParty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-registerwiththirdparty
-	RegisterWithThirdParty *bool `json:"RegisterWithThirdParty,omitempty"`
+	RegisterWithThirdParty *T `json:"RegisterWithThirdParty,omitempty"`
 
 	// TargetAction AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type Webhook struct {
 	// TargetPipelineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion
-	TargetPipelineVersion int `json:"TargetPipelineVersion"`
+	TargetPipelineVersion T `json:"TargetPipelineVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type Webhook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Webhook) AWSCloudFormationType() string {
+func (r *Webhook[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Webhook"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Webhook) MarshalJSON() ([]byte, error) {
-	type Properties Webhook
+func (r Webhook[any]) MarshalJSON() ([]byte, error) {
+	type Properties Webhook[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r Webhook) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Webhook) UnmarshalJSON(b []byte) error {
-	type Properties Webhook
+func (r *Webhook[any]) UnmarshalJSON(b []byte) error {
+	type Properties Webhook[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *Webhook) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Webhook(*res.Properties)
+		*r = Webhook[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

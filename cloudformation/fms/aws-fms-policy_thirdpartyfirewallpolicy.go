@@ -8,7 +8,7 @@ import (
 
 // Policy_ThirdPartyFirewallPolicy AWS CloudFormation Resource (AWS::FMS::Policy.ThirdPartyFirewallPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-thirdpartyfirewallpolicy.html
-type Policy_ThirdPartyFirewallPolicy struct {
+type Policy_ThirdPartyFirewallPolicy[T any] struct {
 
 	// FirewallDeploymentModel AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Policy_ThirdPartyFirewallPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_ThirdPartyFirewallPolicy) AWSCloudFormationType() string {
+func (r *Policy_ThirdPartyFirewallPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.ThirdPartyFirewallPolicy"
 }

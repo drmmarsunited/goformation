@@ -8,7 +8,7 @@ import (
 
 // Pipeline_RemoveAttributes AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.RemoveAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-removeattributes.html
-type Pipeline_RemoveAttributes struct {
+type Pipeline_RemoveAttributes[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_RemoveAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_RemoveAttributes) AWSCloudFormationType() string {
+func (r *Pipeline_RemoveAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.RemoveAttributes"
 }

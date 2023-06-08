@@ -8,12 +8,12 @@ import (
 
 // InstanceGroupConfig_ScalingRule AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.ScalingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html
-type InstanceGroupConfig_ScalingRule struct {
+type InstanceGroupConfig_ScalingRule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-action
-	Action *InstanceGroupConfig_ScalingAction `json:"Action"`
+	Action *InstanceGroupConfig_ScalingAction[any] `json:"Action"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type InstanceGroupConfig_ScalingRule struct {
 	// Trigger AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-trigger
-	Trigger *InstanceGroupConfig_ScalingTrigger `json:"Trigger"`
+	Trigger *InstanceGroupConfig_ScalingTrigger[any] `json:"Trigger"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type InstanceGroupConfig_ScalingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_ScalingRule) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_ScalingRule[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.ScalingRule"
 }

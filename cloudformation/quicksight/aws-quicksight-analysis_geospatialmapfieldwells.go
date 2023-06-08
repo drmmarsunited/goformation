@@ -8,12 +8,12 @@ import (
 
 // Analysis_GeospatialMapFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.GeospatialMapFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapfieldwells.html
-type Analysis_GeospatialMapFieldWells struct {
+type Analysis_GeospatialMapFieldWells[T any] struct {
 
 	// GeospatialMapAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapfieldwells.html#cfn-quicksight-analysis-geospatialmapfieldwells-geospatialmapaggregatedfieldwells
-	GeospatialMapAggregatedFieldWells *Analysis_GeospatialMapAggregatedFieldWells `json:"GeospatialMapAggregatedFieldWells,omitempty"`
+	GeospatialMapAggregatedFieldWells *Analysis_GeospatialMapAggregatedFieldWells[any] `json:"GeospatialMapAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_GeospatialMapFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GeospatialMapFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_GeospatialMapFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GeospatialMapFieldWells"
 }

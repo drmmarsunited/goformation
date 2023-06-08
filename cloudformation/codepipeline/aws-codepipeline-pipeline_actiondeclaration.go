@@ -8,12 +8,12 @@ import (
 
 // Pipeline_ActionDeclaration AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ActionDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
-type Pipeline_ActionDeclaration struct {
+type Pipeline_ActionDeclaration[T any] struct {
 
 	// ActionTypeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid
-	ActionTypeId *Pipeline_ActionTypeId `json:"ActionTypeId"`
+	ActionTypeId *Pipeline_ActionTypeId[any] `json:"ActionTypeId"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Pipeline_ActionDeclaration struct {
 	// InputArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts
-	InputArtifacts []Pipeline_InputArtifact `json:"InputArtifacts,omitempty"`
+	InputArtifacts []Pipeline_InputArtifact[any] `json:"InputArtifacts,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Pipeline_ActionDeclaration struct {
 	// OutputArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts
-	OutputArtifacts []Pipeline_OutputArtifact `json:"OutputArtifacts,omitempty"`
+	OutputArtifacts []Pipeline_OutputArtifact[any] `json:"OutputArtifacts,omitempty"`
 
 	// Region AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Pipeline_ActionDeclaration struct {
 	// RunOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder
-	RunOrder *int `json:"RunOrder,omitempty"`
+	RunOrder *T `json:"RunOrder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Pipeline_ActionDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ActionDeclaration) AWSCloudFormationType() string {
+func (r *Pipeline_ActionDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ActionDeclaration"
 }

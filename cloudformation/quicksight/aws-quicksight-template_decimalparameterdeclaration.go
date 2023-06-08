@@ -8,17 +8,17 @@ import (
 
 // Template_DecimalParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Template.DecimalParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalparameterdeclaration.html
-type Template_DecimalParameterDeclaration struct {
+type Template_DecimalParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalparameterdeclaration.html#cfn-quicksight-template-decimalparameterdeclaration-defaultvalues
-	DefaultValues *Template_DecimalDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Template_DecimalDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalparameterdeclaration.html#cfn-quicksight-template-decimalparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Template_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Template_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Template_DecimalParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalparameterdeclaration.html#cfn-quicksight-template-decimalparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Template_DecimalValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Template_DecimalValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Template_DecimalParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DecimalParameterDeclaration) AWSCloudFormationType() string {
+func (r *Template_DecimalParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DecimalParameterDeclaration"
 }

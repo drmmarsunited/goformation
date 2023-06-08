@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetTextBox AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetTextBox)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheettextbox.html
-type Dashboard_SheetTextBox struct {
+type Dashboard_SheetTextBox[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_SheetTextBox struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetTextBox) AWSCloudFormationType() string {
+func (r *Dashboard_SheetTextBox[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetTextBox"
 }

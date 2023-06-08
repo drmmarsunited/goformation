@@ -8,12 +8,12 @@ import (
 
 // EventSourceMapping_DestinationConfig AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.DestinationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html
-type EventSourceMapping_DestinationConfig struct {
+type EventSourceMapping_DestinationConfig[T any] struct {
 
 	// OnFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html#cfn-lambda-eventsourcemapping-destinationconfig-onfailure
-	OnFailure *EventSourceMapping_OnFailure `json:"OnFailure,omitempty"`
+	OnFailure *EventSourceMapping_OnFailure[any] `json:"OnFailure,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EventSourceMapping_DestinationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_DestinationConfig) AWSCloudFormationType() string {
+func (r *EventSourceMapping_DestinationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.DestinationConfig"
 }

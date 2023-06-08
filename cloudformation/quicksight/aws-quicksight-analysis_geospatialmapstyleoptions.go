@@ -8,7 +8,7 @@ import (
 
 // Analysis_GeospatialMapStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.GeospatialMapStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapstyleoptions.html
-type Analysis_GeospatialMapStyleOptions struct {
+type Analysis_GeospatialMapStyleOptions[T any] struct {
 
 	// BaseMapStyle AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_GeospatialMapStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GeospatialMapStyleOptions) AWSCloudFormationType() string {
+func (r *Analysis_GeospatialMapStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GeospatialMapStyleOptions"
 }

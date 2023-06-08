@@ -8,17 +8,17 @@ import (
 
 // Analysis_CategoryFilter AWS CloudFormation Resource (AWS::QuickSight::Analysis.CategoryFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoryfilter.html
-type Analysis_CategoryFilter struct {
+type Analysis_CategoryFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoryfilter.html#cfn-quicksight-analysis-categoryfilter-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoryfilter.html#cfn-quicksight-analysis-categoryfilter-configuration
-	Configuration *Analysis_CategoryFilterConfiguration `json:"Configuration"`
+	Configuration *Analysis_CategoryFilterConfiguration[any] `json:"Configuration"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_CategoryFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CategoryFilter) AWSCloudFormationType() string {
+func (r *Analysis_CategoryFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CategoryFilter"
 }

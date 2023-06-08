@@ -12,17 +12,17 @@ import (
 
 // BillingGroup AWS CloudFormation Resource (AWS::BillingConductor::BillingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html
-type BillingGroup struct {
+type BillingGroup[T any] struct {
 
 	// AccountGrouping AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-accountgrouping
-	AccountGrouping *BillingGroup_AccountGrouping `json:"AccountGrouping"`
+	AccountGrouping *BillingGroup_AccountGrouping[any] `json:"AccountGrouping"`
 
 	// ComputationPreference AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-computationpreference
-	ComputationPreference *BillingGroup_ComputationPreference `json:"ComputationPreference"`
+	ComputationPreference *BillingGroup_ComputationPreference[any] `json:"ComputationPreference"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type BillingGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BillingGroup) AWSCloudFormationType() string {
+func (r *BillingGroup[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::BillingGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BillingGroup) MarshalJSON() ([]byte, error) {
-	type Properties BillingGroup
+func (r BillingGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties BillingGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r BillingGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BillingGroup) UnmarshalJSON(b []byte) error {
-	type Properties BillingGroup
+func (r *BillingGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties BillingGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *BillingGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BillingGroup(*res.Properties)
+		*r = BillingGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

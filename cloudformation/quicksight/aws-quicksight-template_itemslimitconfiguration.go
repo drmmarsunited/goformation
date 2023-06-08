@@ -8,12 +8,12 @@ import (
 
 // Template_ItemsLimitConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ItemsLimitConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-itemslimitconfiguration.html
-type Template_ItemsLimitConfiguration struct {
+type Template_ItemsLimitConfiguration[T any] struct {
 
 	// ItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-itemslimitconfiguration.html#cfn-quicksight-template-itemslimitconfiguration-itemslimit
-	ItemsLimit *float64 `json:"ItemsLimit,omitempty"`
+	ItemsLimit *T `json:"ItemsLimit,omitempty"`
 
 	// OtherCategories AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_ItemsLimitConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ItemsLimitConfiguration) AWSCloudFormationType() string {
+func (r *Template_ItemsLimitConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ItemsLimitConfiguration"
 }

@@ -12,7 +12,7 @@ import (
 
 // CRL AWS CloudFormation Resource (AWS::RolesAnywhere::CRL)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html
-type CRL struct {
+type CRL[T any] struct {
 
 	// CrlData AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type CRL struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type CRL struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CRL) AWSCloudFormationType() string {
+func (r *CRL[any]) AWSCloudFormationType() string {
 	return "AWS::RolesAnywhere::CRL"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CRL) MarshalJSON() ([]byte, error) {
-	type Properties CRL
+func (r CRL[any]) MarshalJSON() ([]byte, error) {
+	type Properties CRL[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r CRL) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CRL) UnmarshalJSON(b []byte) error {
-	type Properties CRL
+func (r *CRL[any]) UnmarshalJSON(b []byte) error {
+	type Properties CRL[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *CRL) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CRL(*res.Properties)
+		*r = CRL[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

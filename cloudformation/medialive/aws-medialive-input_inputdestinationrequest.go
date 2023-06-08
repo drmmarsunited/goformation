@@ -8,7 +8,7 @@ import (
 
 // Input_InputDestinationRequest AWS CloudFormation Resource (AWS::MediaLive::Input.InputDestinationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html
-type Input_InputDestinationRequest struct {
+type Input_InputDestinationRequest[T any] struct {
 
 	// StreamName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Input_InputDestinationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_InputDestinationRequest) AWSCloudFormationType() string {
+func (r *Input_InputDestinationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input.InputDestinationRequest"
 }

@@ -8,7 +8,7 @@ import (
 
 // SecurityConfiguration_CloudWatchEncryption AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration.CloudWatchEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html
-type SecurityConfiguration_CloudWatchEncryption struct {
+type SecurityConfiguration_CloudWatchEncryption[T any] struct {
 
 	// CloudWatchEncryptionMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SecurityConfiguration_CloudWatchEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration_CloudWatchEncryption) AWSCloudFormationType() string {
+func (r *SecurityConfiguration_CloudWatchEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration.CloudWatchEncryption"
 }

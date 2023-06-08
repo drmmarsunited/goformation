@@ -8,32 +8,32 @@ import (
 
 // CachePolicy_ParametersInCacheKeyAndForwardedToOrigin AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html
-type CachePolicy_ParametersInCacheKeyAndForwardedToOrigin struct {
+type CachePolicy_ParametersInCacheKeyAndForwardedToOrigin[T any] struct {
 
 	// CookiesConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-cookiesconfig
-	CookiesConfig *CachePolicy_CookiesConfig `json:"CookiesConfig"`
+	CookiesConfig *CachePolicy_CookiesConfig[any] `json:"CookiesConfig"`
 
 	// EnableAcceptEncodingBrotli AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodingbrotli
-	EnableAcceptEncodingBrotli *bool `json:"EnableAcceptEncodingBrotli,omitempty"`
+	EnableAcceptEncodingBrotli *T `json:"EnableAcceptEncodingBrotli,omitempty"`
 
 	// EnableAcceptEncodingGzip AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodinggzip
-	EnableAcceptEncodingGzip bool `json:"EnableAcceptEncodingGzip"`
+	EnableAcceptEncodingGzip T `json:"EnableAcceptEncodingGzip"`
 
 	// HeadersConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-headersconfig
-	HeadersConfig *CachePolicy_HeadersConfig `json:"HeadersConfig"`
+	HeadersConfig *CachePolicy_HeadersConfig[any] `json:"HeadersConfig"`
 
 	// QueryStringsConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-querystringsconfig
-	QueryStringsConfig *CachePolicy_QueryStringsConfig `json:"QueryStringsConfig"`
+	QueryStringsConfig *CachePolicy_QueryStringsConfig[any] `json:"QueryStringsConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type CachePolicy_ParametersInCacheKeyAndForwardedToOrigin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CachePolicy_ParametersInCacheKeyAndForwardedToOrigin) AWSCloudFormationType() string {
+func (r *CachePolicy_ParametersInCacheKeyAndForwardedToOrigin[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin"
 }

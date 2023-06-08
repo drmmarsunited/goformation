@@ -8,7 +8,7 @@ import (
 
 // CACertificate_RegistrationConfig AWS CloudFormation Resource (AWS::IoT::CACertificate.RegistrationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cacertificate-registrationconfig.html
-type CACertificate_RegistrationConfig struct {
+type CACertificate_RegistrationConfig[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type CACertificate_RegistrationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CACertificate_RegistrationConfig) AWSCloudFormationType() string {
+func (r *CACertificate_RegistrationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::CACertificate.RegistrationConfig"
 }

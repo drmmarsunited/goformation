@@ -12,22 +12,22 @@ import (
 
 // Pipeline AWS CloudFormation Resource (AWS::CodePipeline::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
-type Pipeline struct {
+type Pipeline[T any] struct {
 
 	// ArtifactStore AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore
-	ArtifactStore *Pipeline_ArtifactStore `json:"ArtifactStore,omitempty"`
+	ArtifactStore *Pipeline_ArtifactStore[any] `json:"ArtifactStore,omitempty"`
 
 	// ArtifactStores AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores
-	ArtifactStores []Pipeline_ArtifactStoreMap `json:"ArtifactStores,omitempty"`
+	ArtifactStores []Pipeline_ArtifactStoreMap[any] `json:"ArtifactStores,omitempty"`
 
 	// DisableInboundStageTransitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions
-	DisableInboundStageTransitions []Pipeline_StageTransition `json:"DisableInboundStageTransitions,omitempty"`
+	DisableInboundStageTransitions []Pipeline_StageTransition[any] `json:"DisableInboundStageTransitions,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Pipeline struct {
 	// RestartExecutionOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
-	RestartExecutionOnUpdate *bool `json:"RestartExecutionOnUpdate,omitempty"`
+	RestartExecutionOnUpdate *T `json:"RestartExecutionOnUpdate,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -47,7 +47,7 @@ type Pipeline struct {
 	// Stages AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages
-	Stages []Pipeline_StageDeclaration `json:"Stages"`
+	Stages []Pipeline_StageDeclaration[any] `json:"Stages"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Pipeline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline) AWSCloudFormationType() string {
+func (r *Pipeline[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Pipeline) MarshalJSON() ([]byte, error) {
-	type Properties Pipeline
+func (r Pipeline[any]) MarshalJSON() ([]byte, error) {
+	type Properties Pipeline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Pipeline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Pipeline) UnmarshalJSON(b []byte) error {
-	type Properties Pipeline
+func (r *Pipeline[any]) UnmarshalJSON(b []byte) error {
+	type Properties Pipeline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Pipeline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Pipeline(*res.Properties)
+		*r = Pipeline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

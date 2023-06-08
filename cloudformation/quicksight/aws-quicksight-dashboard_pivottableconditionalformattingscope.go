@@ -8,7 +8,7 @@ import (
 
 // Dashboard_PivotTableConditionalFormattingScope AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableConditionalFormattingScope)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconditionalformattingscope.html
-type Dashboard_PivotTableConditionalFormattingScope struct {
+type Dashboard_PivotTableConditionalFormattingScope[T any] struct {
 
 	// Role AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_PivotTableConditionalFormattingScope struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableConditionalFormattingScope) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableConditionalFormattingScope[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableConditionalFormattingScope"
 }

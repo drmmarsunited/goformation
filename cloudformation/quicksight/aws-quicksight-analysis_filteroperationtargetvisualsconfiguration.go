@@ -8,12 +8,12 @@ import (
 
 // Analysis_FilterOperationTargetVisualsConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterOperationTargetVisualsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filteroperationtargetvisualsconfiguration.html
-type Analysis_FilterOperationTargetVisualsConfiguration struct {
+type Analysis_FilterOperationTargetVisualsConfiguration[T any] struct {
 
 	// SameSheetTargetVisualConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filteroperationtargetvisualsconfiguration.html#cfn-quicksight-analysis-filteroperationtargetvisualsconfiguration-samesheettargetvisualconfiguration
-	SameSheetTargetVisualConfiguration *Analysis_SameSheetTargetVisualConfiguration `json:"SameSheetTargetVisualConfiguration,omitempty"`
+	SameSheetTargetVisualConfiguration *Analysis_SameSheetTargetVisualConfiguration[any] `json:"SameSheetTargetVisualConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_FilterOperationTargetVisualsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterOperationTargetVisualsConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FilterOperationTargetVisualsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterOperationTargetVisualsConfiguration"
 }

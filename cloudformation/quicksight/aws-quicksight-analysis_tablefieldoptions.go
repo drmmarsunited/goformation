@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableFieldOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableFieldOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoptions.html
-type Analysis_TableFieldOptions struct {
+type Analysis_TableFieldOptions[T any] struct {
 
 	// Order AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_TableFieldOptions struct {
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoptions.html#cfn-quicksight-analysis-tablefieldoptions-selectedfieldoptions
-	SelectedFieldOptions []Analysis_TableFieldOption `json:"SelectedFieldOptions,omitempty"`
+	SelectedFieldOptions []Analysis_TableFieldOption[any] `json:"SelectedFieldOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TableFieldOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableFieldOptions) AWSCloudFormationType() string {
+func (r *Analysis_TableFieldOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableFieldOptions"
 }

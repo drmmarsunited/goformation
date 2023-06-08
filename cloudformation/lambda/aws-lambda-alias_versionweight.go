@@ -8,7 +8,7 @@ import (
 
 // Alias_VersionWeight AWS CloudFormation Resource (AWS::Lambda::Alias.VersionWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html
-type Alias_VersionWeight struct {
+type Alias_VersionWeight[T any] struct {
 
 	// FunctionVersion AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Alias_VersionWeight struct {
 	// FunctionWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight
-	FunctionWeight float64 `json:"FunctionWeight"`
+	FunctionWeight T `json:"FunctionWeight"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Alias_VersionWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alias_VersionWeight) AWSCloudFormationType() string {
+func (r *Alias_VersionWeight[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Alias.VersionWeight"
 }

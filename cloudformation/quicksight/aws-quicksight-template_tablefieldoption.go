@@ -8,7 +8,7 @@ import (
 
 // Template_TableFieldOption AWS CloudFormation Resource (AWS::QuickSight::Template.TableFieldOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoption.html
-type Template_TableFieldOption struct {
+type Template_TableFieldOption[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_TableFieldOption struct {
 	// URLStyling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoption.html#cfn-quicksight-template-tablefieldoption-urlstyling
-	URLStyling *Template_TableFieldURLConfiguration `json:"URLStyling,omitempty"`
+	URLStyling *Template_TableFieldURLConfiguration[any] `json:"URLStyling,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Template_TableFieldOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableFieldOption) AWSCloudFormationType() string {
+func (r *Template_TableFieldOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableFieldOption"
 }

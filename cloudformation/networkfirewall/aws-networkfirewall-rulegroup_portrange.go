@@ -8,17 +8,17 @@ import (
 
 // RuleGroup_PortRange AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.PortRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html
-type RuleGroup_PortRange struct {
+type RuleGroup_PortRange[T any] struct {
 
 	// FromPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-fromport
-	FromPort int `json:"FromPort"`
+	FromPort T `json:"FromPort"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-toport
-	ToPort int `json:"ToPort"`
+	ToPort T `json:"ToPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_PortRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_PortRange) AWSCloudFormationType() string {
+func (r *RuleGroup_PortRange[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.PortRange"
 }

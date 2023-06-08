@@ -8,7 +8,7 @@ import (
 
 // DataSet_ProjectOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.ProjectOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-projectoperation.html
-type DataSet_ProjectOperation struct {
+type DataSet_ProjectOperation[T any] struct {
 
 	// ProjectedColumns AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSet_ProjectOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ProjectOperation) AWSCloudFormationType() string {
+func (r *DataSet_ProjectOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ProjectOperation"
 }

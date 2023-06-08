@@ -8,7 +8,7 @@ import (
 
 // App_CustomRule AWS CloudFormation Resource (AWS::Amplify::App.CustomRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html
-type App_CustomRule struct {
+type App_CustomRule[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type App_CustomRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_CustomRule) AWSCloudFormationType() string {
+func (r *App_CustomRule[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::App.CustomRule"
 }

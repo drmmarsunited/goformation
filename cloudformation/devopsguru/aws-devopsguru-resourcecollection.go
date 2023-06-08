@@ -11,12 +11,12 @@ import (
 
 // ResourceCollection AWS CloudFormation Resource (AWS::DevOpsGuru::ResourceCollection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html
-type ResourceCollection struct {
+type ResourceCollection[T any] struct {
 
 	// ResourceCollectionFilter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter
-	ResourceCollectionFilter *ResourceCollection_ResourceCollectionFilter `json:"ResourceCollectionFilter"`
+	ResourceCollectionFilter *ResourceCollection_ResourceCollectionFilter[any] `json:"ResourceCollectionFilter"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type ResourceCollection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceCollection) AWSCloudFormationType() string {
+func (r *ResourceCollection[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::ResourceCollection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceCollection) MarshalJSON() ([]byte, error) {
-	type Properties ResourceCollection
+func (r ResourceCollection[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceCollection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ResourceCollection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceCollection) UnmarshalJSON(b []byte) error {
-	type Properties ResourceCollection
+func (r *ResourceCollection[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceCollection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ResourceCollection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceCollection(*res.Properties)
+		*r = ResourceCollection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // AnomalyMonitor AWS CloudFormation Resource (AWS::CE::AnomalyMonitor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html
-type AnomalyMonitor struct {
+type AnomalyMonitor[T any] struct {
 
 	// MonitorDimension AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type AnomalyMonitor struct {
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#cfn-ce-anomalymonitor-resourcetags
-	ResourceTags []AnomalyMonitor_ResourceTag `json:"ResourceTags,omitempty"`
+	ResourceTags []AnomalyMonitor_ResourceTag[any] `json:"ResourceTags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type AnomalyMonitor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyMonitor) AWSCloudFormationType() string {
+func (r *AnomalyMonitor[any]) AWSCloudFormationType() string {
 	return "AWS::CE::AnomalyMonitor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AnomalyMonitor) MarshalJSON() ([]byte, error) {
-	type Properties AnomalyMonitor
+func (r AnomalyMonitor[any]) MarshalJSON() ([]byte, error) {
+	type Properties AnomalyMonitor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r AnomalyMonitor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AnomalyMonitor) UnmarshalJSON(b []byte) error {
-	type Properties AnomalyMonitor
+func (r *AnomalyMonitor[any]) UnmarshalJSON(b []byte) error {
+	type Properties AnomalyMonitor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *AnomalyMonitor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AnomalyMonitor(*res.Properties)
+		*r = AnomalyMonitor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

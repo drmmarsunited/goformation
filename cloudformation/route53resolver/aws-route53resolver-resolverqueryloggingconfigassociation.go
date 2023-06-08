@@ -11,7 +11,7 @@ import (
 
 // ResolverQueryLoggingConfigAssociation AWS CloudFormation Resource (AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html
-type ResolverQueryLoggingConfigAssociation struct {
+type ResolverQueryLoggingConfigAssociation[T any] struct {
 
 	// ResolverQueryLogConfigId AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type ResolverQueryLoggingConfigAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverQueryLoggingConfigAssociation) AWSCloudFormationType() string {
+func (r *ResolverQueryLoggingConfigAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverQueryLoggingConfigAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ResolverQueryLoggingConfigAssociation
+func (r ResolverQueryLoggingConfigAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverQueryLoggingConfigAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ResolverQueryLoggingConfigAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverQueryLoggingConfigAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ResolverQueryLoggingConfigAssociation
+func (r *ResolverQueryLoggingConfigAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverQueryLoggingConfigAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ResolverQueryLoggingConfigAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverQueryLoggingConfigAssociation(*res.Properties)
+		*r = ResolverQueryLoggingConfigAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

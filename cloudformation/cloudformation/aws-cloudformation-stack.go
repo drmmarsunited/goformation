@@ -12,7 +12,7 @@ import (
 
 // Stack AWS CloudFormation Resource (AWS::CloudFormation::Stack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
-type Stack struct {
+type Stack[T any] struct {
 
 	// NotificationARNs AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Stack struct {
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
-	TimeoutInMinutes *int `json:"TimeoutInMinutes,omitempty"`
+	TimeoutInMinutes *T `json:"TimeoutInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -56,14 +56,15 @@ type Stack struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack) AWSCloudFormationType() string {
+func (r *Stack[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::Stack"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Stack) MarshalJSON() ([]byte, error) {
-	type Properties Stack
+func (r Stack[any]) MarshalJSON() ([]byte, error) {
+	type Properties Stack[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Stack) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Stack) UnmarshalJSON(b []byte) error {
-	type Properties Stack
+func (r *Stack[any]) UnmarshalJSON(b []byte) error {
+	type Properties Stack[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Stack) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Stack(*res.Properties)
+		*r = Stack[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

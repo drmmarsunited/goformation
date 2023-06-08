@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataFieldSeriesItem AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataFieldSeriesItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datafieldseriesitem.html
-type Analysis_DataFieldSeriesItem struct {
+type Analysis_DataFieldSeriesItem[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_DataFieldSeriesItem struct {
 	// Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datafieldseriesitem.html#cfn-quicksight-analysis-datafieldseriesitem-settings
-	Settings *Analysis_LineChartSeriesSettings `json:"Settings,omitempty"`
+	Settings *Analysis_LineChartSeriesSettings[any] `json:"Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_DataFieldSeriesItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataFieldSeriesItem) AWSCloudFormationType() string {
+func (r *Analysis_DataFieldSeriesItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataFieldSeriesItem"
 }

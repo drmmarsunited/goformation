@@ -8,12 +8,12 @@ import (
 
 // Domain_EncryptionAtRestOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.EncryptionAtRestOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html
-type Domain_EncryptionAtRestOptions struct {
+type Domain_EncryptionAtRestOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Domain_EncryptionAtRestOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_EncryptionAtRestOptions) AWSCloudFormationType() string {
+func (r *Domain_EncryptionAtRestOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.EncryptionAtRestOptions"
 }

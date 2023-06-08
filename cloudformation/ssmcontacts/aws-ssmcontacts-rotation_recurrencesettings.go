@@ -8,7 +8,7 @@ import (
 
 // Rotation_RecurrenceSettings AWS CloudFormation Resource (AWS::SSMContacts::Rotation.RecurrenceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html
-type Rotation_RecurrenceSettings struct {
+type Rotation_RecurrenceSettings[T any] struct {
 
 	// DailySettings AWS CloudFormation Property
 	// Required: false
@@ -18,27 +18,27 @@ type Rotation_RecurrenceSettings struct {
 	// MonthlySettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-monthlysettings
-	MonthlySettings []Rotation_MonthlySetting `json:"MonthlySettings,omitempty"`
+	MonthlySettings []Rotation_MonthlySetting[any] `json:"MonthlySettings,omitempty"`
 
 	// NumberOfOnCalls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-numberofoncalls
-	NumberOfOnCalls int `json:"NumberOfOnCalls"`
+	NumberOfOnCalls T `json:"NumberOfOnCalls"`
 
 	// RecurrenceMultiplier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-recurrencemultiplier
-	RecurrenceMultiplier int `json:"RecurrenceMultiplier"`
+	RecurrenceMultiplier T `json:"RecurrenceMultiplier"`
 
 	// ShiftCoverages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-shiftcoverages
-	ShiftCoverages []Rotation_ShiftCoverage `json:"ShiftCoverages,omitempty"`
+	ShiftCoverages []Rotation_ShiftCoverage[any] `json:"ShiftCoverages,omitempty"`
 
 	// WeeklySettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-weeklysettings
-	WeeklySettings []Rotation_WeeklySetting `json:"WeeklySettings,omitempty"`
+	WeeklySettings []Rotation_WeeklySetting[any] `json:"WeeklySettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Rotation_RecurrenceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation_RecurrenceSettings) AWSCloudFormationType() string {
+func (r *Rotation_RecurrenceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation.RecurrenceSettings"
 }

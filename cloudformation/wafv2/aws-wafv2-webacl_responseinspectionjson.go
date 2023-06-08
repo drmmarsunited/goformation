@@ -8,7 +8,7 @@ import (
 
 // WebACL_ResponseInspectionJson AWS CloudFormation Resource (AWS::WAFv2::WebACL.ResponseInspectionJson)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionjson.html
-type WebACL_ResponseInspectionJson struct {
+type WebACL_ResponseInspectionJson[T any] struct {
 
 	// FailureValues AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WebACL_ResponseInspectionJson struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ResponseInspectionJson) AWSCloudFormationType() string {
+func (r *WebACL_ResponseInspectionJson[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ResponseInspectionJson"
 }

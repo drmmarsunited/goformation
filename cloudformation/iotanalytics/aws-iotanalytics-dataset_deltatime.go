@@ -8,12 +8,12 @@ import (
 
 // Dataset_DeltaTime AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.DeltaTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html
-type Dataset_DeltaTime struct {
+type Dataset_DeltaTime[T any] struct {
 
 	// OffsetSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-offsetseconds
-	OffsetSeconds int `json:"OffsetSeconds"`
+	OffsetSeconds T `json:"OffsetSeconds"`
 
 	// TimeExpression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_DeltaTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DeltaTime) AWSCloudFormationType() string {
+func (r *Dataset_DeltaTime[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.DeltaTime"
 }

@@ -11,7 +11,7 @@ import (
 
 // QueryDefinition AWS CloudFormation Resource (AWS::Logs::QueryDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html
-type QueryDefinition struct {
+type QueryDefinition[T any] struct {
 
 	// LogGroupNames AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type QueryDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QueryDefinition) AWSCloudFormationType() string {
+func (r *QueryDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::QueryDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r QueryDefinition) MarshalJSON() ([]byte, error) {
-	type Properties QueryDefinition
+func (r QueryDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties QueryDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r QueryDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *QueryDefinition) UnmarshalJSON(b []byte) error {
-	type Properties QueryDefinition
+func (r *QueryDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties QueryDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *QueryDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = QueryDefinition(*res.Properties)
+		*r = QueryDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

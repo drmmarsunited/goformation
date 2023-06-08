@@ -11,7 +11,7 @@ import (
 
 // ApplicationCloudWatchLoggingOption AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html
-type ApplicationCloudWatchLoggingOption struct {
+type ApplicationCloudWatchLoggingOption[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ApplicationCloudWatchLoggingOption struct {
 	// CloudWatchLoggingOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption
-	CloudWatchLoggingOption *ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption `json:"CloudWatchLoggingOption"`
+	CloudWatchLoggingOption *ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption[any] `json:"CloudWatchLoggingOption"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ApplicationCloudWatchLoggingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationCloudWatchLoggingOption) AWSCloudFormationType() string {
+func (r *ApplicationCloudWatchLoggingOption[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationCloudWatchLoggingOption) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationCloudWatchLoggingOption
+func (r ApplicationCloudWatchLoggingOption[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationCloudWatchLoggingOption[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ApplicationCloudWatchLoggingOption) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationCloudWatchLoggingOption) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationCloudWatchLoggingOption
+func (r *ApplicationCloudWatchLoggingOption[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationCloudWatchLoggingOption[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ApplicationCloudWatchLoggingOption) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationCloudWatchLoggingOption(*res.Properties)
+		*r = ApplicationCloudWatchLoggingOption[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

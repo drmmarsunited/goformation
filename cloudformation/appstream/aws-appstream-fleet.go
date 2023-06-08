@@ -12,12 +12,12 @@ import (
 
 // Fleet AWS CloudFormation Resource (AWS::AppStream::Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html
-type Fleet struct {
+type Fleet[T any] struct {
 
 	// ComputeCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-computecapacity
-	ComputeCapacity *Fleet_ComputeCapacity `json:"ComputeCapacity,omitempty"`
+	ComputeCapacity *Fleet_ComputeCapacity[any] `json:"ComputeCapacity,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Fleet struct {
 	// DisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-disconnecttimeoutinseconds
-	DisconnectTimeoutInSeconds *int `json:"DisconnectTimeoutInSeconds,omitempty"`
+	DisconnectTimeoutInSeconds *T `json:"DisconnectTimeoutInSeconds,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Fleet struct {
 	// DomainJoinInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-domainjoininfo
-	DomainJoinInfo *Fleet_DomainJoinInfo `json:"DomainJoinInfo,omitempty"`
+	DomainJoinInfo *Fleet_DomainJoinInfo[any] `json:"DomainJoinInfo,omitempty"`
 
 	// EnableDefaultInternetAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-enabledefaultinternetaccess
-	EnableDefaultInternetAccess *bool `json:"EnableDefaultInternetAccess,omitempty"`
+	EnableDefaultInternetAccess *T `json:"EnableDefaultInternetAccess,omitempty"`
 
 	// FleetType AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Fleet struct {
 	// IdleDisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-idledisconnecttimeoutinseconds
-	IdleDisconnectTimeoutInSeconds *int `json:"IdleDisconnectTimeoutInSeconds,omitempty"`
+	IdleDisconnectTimeoutInSeconds *T `json:"IdleDisconnectTimeoutInSeconds,omitempty"`
 
 	// ImageArn AWS CloudFormation Property
 	// Required: false
@@ -77,12 +77,12 @@ type Fleet struct {
 	// MaxConcurrentSessions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxconcurrentsessions
-	MaxConcurrentSessions *int `json:"MaxConcurrentSessions,omitempty"`
+	MaxConcurrentSessions *T `json:"MaxConcurrentSessions,omitempty"`
 
 	// MaxUserDurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds
-	MaxUserDurationInSeconds *int `json:"MaxUserDurationInSeconds,omitempty"`
+	MaxUserDurationInSeconds *T `json:"MaxUserDurationInSeconds,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -97,7 +97,7 @@ type Fleet struct {
 	// SessionScriptS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-sessionscripts3location
-	SessionScriptS3Location *Fleet_S3Location `json:"SessionScriptS3Location,omitempty"`
+	SessionScriptS3Location *Fleet_S3Location[any] `json:"SessionScriptS3Location,omitempty"`
 
 	// StreamView AWS CloudFormation Property
 	// Required: false
@@ -117,7 +117,7 @@ type Fleet struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-vpcconfig
-	VpcConfig *Fleet_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *Fleet_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationUpdatePolicy represents a CloudFormation UpdatePolicy
 	AWSCloudFormationUpdatePolicy *policies.UpdatePolicy `json:"-"`
@@ -142,14 +142,15 @@ type Fleet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet) AWSCloudFormationType() string {
+func (r *Fleet[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Fleet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Fleet) MarshalJSON() ([]byte, error) {
-	type Properties Fleet
+func (r Fleet[any]) MarshalJSON() ([]byte, error) {
+	type Properties Fleet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -175,8 +176,9 @@ func (r Fleet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Fleet) UnmarshalJSON(b []byte) error {
-	type Properties Fleet
+func (r *Fleet[any]) UnmarshalJSON(b []byte) error {
+	type Properties Fleet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -198,7 +200,7 @@ func (r *Fleet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Fleet(*res.Properties)
+		*r = Fleet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

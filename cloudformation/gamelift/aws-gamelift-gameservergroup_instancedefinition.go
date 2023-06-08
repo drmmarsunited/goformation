@@ -8,7 +8,7 @@ import (
 
 // GameServerGroup_InstanceDefinition AWS CloudFormation Resource (AWS::GameLift::GameServerGroup.InstanceDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-instancedefinition.html
-type GameServerGroup_InstanceDefinition struct {
+type GameServerGroup_InstanceDefinition[T any] struct {
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type GameServerGroup_InstanceDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameServerGroup_InstanceDefinition) AWSCloudFormationType() string {
+func (r *GameServerGroup_InstanceDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameServerGroup.InstanceDefinition"
 }

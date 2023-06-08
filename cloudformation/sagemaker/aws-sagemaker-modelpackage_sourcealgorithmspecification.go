@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_SourceAlgorithmSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.SourceAlgorithmSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-sourcealgorithmspecification.html
-type ModelPackage_SourceAlgorithmSpecification struct {
+type ModelPackage_SourceAlgorithmSpecification[T any] struct {
 
 	// SourceAlgorithms AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-sourcealgorithmspecification.html#cfn-sagemaker-modelpackage-sourcealgorithmspecification-sourcealgorithms
-	SourceAlgorithms []ModelPackage_SourceAlgorithm `json:"SourceAlgorithms"`
+	SourceAlgorithms []ModelPackage_SourceAlgorithm[any] `json:"SourceAlgorithms"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelPackage_SourceAlgorithmSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_SourceAlgorithmSpecification) AWSCloudFormationType() string {
+func (r *ModelPackage_SourceAlgorithmSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.SourceAlgorithmSpecification"
 }

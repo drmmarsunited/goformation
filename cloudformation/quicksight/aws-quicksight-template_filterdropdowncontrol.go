@@ -8,17 +8,17 @@ import (
 
 // Template_FilterDropDownControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterDropDownControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterdropdowncontrol.html
-type Template_FilterDropDownControl struct {
+type Template_FilterDropDownControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterdropdowncontrol.html#cfn-quicksight-template-filterdropdowncontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Template_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Template_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterdropdowncontrol.html#cfn-quicksight-template-filterdropdowncontrol-displayoptions
-	DisplayOptions *Template_DropDownControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_DropDownControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_FilterDropDownControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterdropdowncontrol.html#cfn-quicksight-template-filterdropdowncontrol-selectablevalues
-	SelectableValues *Template_FilterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Template_FilterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_FilterDropDownControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterDropDownControl) AWSCloudFormationType() string {
+func (r *Template_FilterDropDownControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterDropDownControl"
 }

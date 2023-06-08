@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioSelector AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html
-type Channel_AudioSelector struct {
+type Channel_AudioSelector[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_AudioSelector struct {
 	// SelectorSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-selectorsettings
-	SelectorSettings *Channel_AudioSelectorSettings `json:"SelectorSettings,omitempty"`
+	SelectorSettings *Channel_AudioSelectorSettings[any] `json:"SelectorSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_AudioSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioSelector) AWSCloudFormationType() string {
+func (r *Channel_AudioSelector[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioSelector"
 }

@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_GrpcTimeout AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.GrpcTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-grpctimeout.html
-type VirtualNode_GrpcTimeout struct {
+type VirtualNode_GrpcTimeout[T any] struct {
 
 	// Idle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-grpctimeout.html#cfn-appmesh-virtualnode-grpctimeout-idle
-	Idle *VirtualNode_Duration `json:"Idle,omitempty"`
+	Idle *VirtualNode_Duration[any] `json:"Idle,omitempty"`
 
 	// PerRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-grpctimeout.html#cfn-appmesh-virtualnode-grpctimeout-perrequest
-	PerRequest *VirtualNode_Duration `json:"PerRequest,omitempty"`
+	PerRequest *VirtualNode_Duration[any] `json:"PerRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_GrpcTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_GrpcTimeout) AWSCloudFormationType() string {
+func (r *VirtualNode_GrpcTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.GrpcTimeout"
 }

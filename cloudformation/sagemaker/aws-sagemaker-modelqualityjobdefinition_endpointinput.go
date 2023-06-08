@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html
-type ModelQualityJobDefinition_EndpointInput struct {
+type ModelQualityJobDefinition_EndpointInput[T any] struct {
 
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type ModelQualityJobDefinition_EndpointInput struct {
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilitythresholdattribute
-	ProbabilityThresholdAttribute *float64 `json:"ProbabilityThresholdAttribute,omitempty"`
+	ProbabilityThresholdAttribute *T `json:"ProbabilityThresholdAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type ModelQualityJobDefinition_EndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_EndpointInput) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_EndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.EndpointInput"
 }

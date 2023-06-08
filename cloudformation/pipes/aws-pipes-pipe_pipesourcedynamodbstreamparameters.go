@@ -8,32 +8,32 @@ import (
 
 // Pipe_PipeSourceDynamoDBStreamParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceDynamoDBStreamParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html
-type Pipe_PipeSourceDynamoDBStreamParameters struct {
+type Pipe_PipeSourceDynamoDBStreamParameters[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-deadletterconfig
-	DeadLetterConfig *Pipe_DeadLetterConfig `json:"DeadLetterConfig,omitempty"`
+	DeadLetterConfig *Pipe_DeadLetterConfig[any] `json:"DeadLetterConfig,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// MaximumRecordAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-maximumrecordageinseconds
-	MaximumRecordAgeInSeconds *int `json:"MaximumRecordAgeInSeconds,omitempty"`
+	MaximumRecordAgeInSeconds *T `json:"MaximumRecordAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-maximumretryattempts
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// OnPartialBatchItemFailure AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Pipe_PipeSourceDynamoDBStreamParameters struct {
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-parallelizationfactor
-	ParallelizationFactor *int `json:"ParallelizationFactor,omitempty"`
+	ParallelizationFactor *T `json:"ParallelizationFactor,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type Pipe_PipeSourceDynamoDBStreamParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceDynamoDBStreamParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceDynamoDBStreamParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceDynamoDBStreamParameters"
 }

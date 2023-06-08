@@ -8,12 +8,12 @@ import (
 
 // Application_LogPatternSet AWS CloudFormation Resource (AWS::ApplicationInsights::Application.LogPatternSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpatternset.html
-type Application_LogPatternSet struct {
+type Application_LogPatternSet[T any] struct {
 
 	// LogPatterns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpatternset.html#cfn-applicationinsights-application-logpatternset-logpatterns
-	LogPatterns []Application_LogPattern `json:"LogPatterns"`
+	LogPatterns []Application_LogPattern[any] `json:"LogPatterns"`
 
 	// PatternSetName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_LogPatternSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_LogPatternSet) AWSCloudFormationType() string {
+func (r *Application_LogPatternSet[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.LogPatternSet"
 }

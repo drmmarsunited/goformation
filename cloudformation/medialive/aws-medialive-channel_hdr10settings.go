@@ -8,17 +8,17 @@ import (
 
 // Channel_Hdr10Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Hdr10Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hdr10settings.html
-type Channel_Hdr10Settings struct {
+type Channel_Hdr10Settings[T any] struct {
 
 	// MaxCll AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hdr10settings.html#cfn-medialive-channel-hdr10settings-maxcll
-	MaxCll *int `json:"MaxCll,omitempty"`
+	MaxCll *T `json:"MaxCll,omitempty"`
 
 	// MaxFall AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hdr10settings.html#cfn-medialive-channel-hdr10settings-maxfall
-	MaxFall *int `json:"MaxFall,omitempty"`
+	MaxFall *T `json:"MaxFall,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_Hdr10Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Hdr10Settings) AWSCloudFormationType() string {
+func (r *Channel_Hdr10Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Hdr10Settings"
 }

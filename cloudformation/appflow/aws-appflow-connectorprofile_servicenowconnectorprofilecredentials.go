@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ServiceNowConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-servicenowconnectorprofilecredentials.html
-type ConnectorProfile_ServiceNowConnectorProfileCredentials struct {
+type ConnectorProfile_ServiceNowConnectorProfileCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_ServiceNowConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ServiceNowConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ServiceNowConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileCredentials"
 }

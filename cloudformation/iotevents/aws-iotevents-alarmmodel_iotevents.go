@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_IotEvents AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.IotEvents)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotevents.html
-type AlarmModel_IotEvents struct {
+type AlarmModel_IotEvents[T any] struct {
 
 	// InputName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type AlarmModel_IotEvents struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotevents.html#cfn-iotevents-alarmmodel-iotevents-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AlarmModel_IotEvents struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_IotEvents) AWSCloudFormationType() string {
+func (r *AlarmModel_IotEvents[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.IotEvents"
 }

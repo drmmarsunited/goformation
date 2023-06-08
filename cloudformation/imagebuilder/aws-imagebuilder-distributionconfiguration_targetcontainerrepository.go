@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_TargetContainerRepository AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.TargetContainerRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-targetcontainerrepository.html
-type DistributionConfiguration_TargetContainerRepository struct {
+type DistributionConfiguration_TargetContainerRepository[T any] struct {
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DistributionConfiguration_TargetContainerRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_TargetContainerRepository) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_TargetContainerRepository[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.TargetContainerRepository"
 }

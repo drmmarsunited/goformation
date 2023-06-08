@@ -12,7 +12,7 @@ import (
 
 // Vehicle AWS CloudFormation Resource (AWS::IoTFleetWise::Vehicle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html
-type Vehicle struct {
+type Vehicle[T any] struct {
 
 	// AssociationBehavior AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Vehicle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Vehicle) AWSCloudFormationType() string {
+func (r *Vehicle[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Vehicle"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Vehicle) MarshalJSON() ([]byte, error) {
-	type Properties Vehicle
+func (r Vehicle[any]) MarshalJSON() ([]byte, error) {
+	type Properties Vehicle[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Vehicle) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Vehicle) UnmarshalJSON(b []byte) error {
-	type Properties Vehicle
+func (r *Vehicle[any]) UnmarshalJSON(b []byte) error {
+	type Properties Vehicle[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Vehicle) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Vehicle(*res.Properties)
+		*r = Vehicle[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

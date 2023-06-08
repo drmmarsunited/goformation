@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_MetadataOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.MetadataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-metadataoptions.html
-type LaunchTemplate_MetadataOptions struct {
+type LaunchTemplate_MetadataOptions[T any] struct {
 
 	// HttpEndpoint AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type LaunchTemplate_MetadataOptions struct {
 	// HttpPutResponseHopLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-metadataoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions-httpputresponsehoplimit
-	HttpPutResponseHopLimit *int `json:"HttpPutResponseHopLimit,omitempty"`
+	HttpPutResponseHopLimit *T `json:"HttpPutResponseHopLimit,omitempty"`
 
 	// HttpTokens AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type LaunchTemplate_MetadataOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_MetadataOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_MetadataOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.MetadataOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // HttpApi_HttpApiDomainConfiguration AWS CloudFormation Resource (AWS::Serverless::HttpApi.HttpApiDomainConfiguration)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-type HttpApi_HttpApiDomainConfiguration struct {
+type HttpApi_HttpApiDomainConfiguration[T any] struct {
 
 	// BasePath AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type HttpApi_HttpApiDomainConfiguration struct {
 	// MutualTlsAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-httpapidomainconfiguration.html#sam-httpapi-httpapidomainconfiguration-mutualtlsauthentication
-	MutualTlsAuthentication *HttpApi_MutualTlsAuthentication `json:"MutualTlsAuthentication,omitempty"`
+	MutualTlsAuthentication *HttpApi_MutualTlsAuthentication[any] `json:"MutualTlsAuthentication,omitempty"`
 
 	// Route53 AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	Route53 *HttpApi_Route53Configuration `json:"Route53,omitempty"`
+	Route53 *HttpApi_Route53Configuration[any] `json:"Route53,omitempty"`
 
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type HttpApi_HttpApiDomainConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_HttpApiDomainConfiguration) AWSCloudFormationType() string {
+func (r *HttpApi_HttpApiDomainConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.HttpApiDomainConfiguration"
 }

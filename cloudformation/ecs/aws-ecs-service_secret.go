@@ -8,7 +8,7 @@ import (
 
 // Service_Secret AWS CloudFormation Resource (AWS::ECS::Service.Secret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-secret.html
-type Service_Secret struct {
+type Service_Secret[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Service_Secret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_Secret) AWSCloudFormationType() string {
+func (r *Service_Secret[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.Secret"
 }

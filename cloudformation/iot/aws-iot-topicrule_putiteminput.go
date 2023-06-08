@@ -8,7 +8,7 @@ import (
 
 // TopicRule_PutItemInput AWS CloudFormation Resource (AWS::IoT::TopicRule.PutItemInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html
-type TopicRule_PutItemInput struct {
+type TopicRule_PutItemInput[T any] struct {
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type TopicRule_PutItemInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_PutItemInput) AWSCloudFormationType() string {
+func (r *TopicRule_PutItemInput[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.PutItemInput"
 }

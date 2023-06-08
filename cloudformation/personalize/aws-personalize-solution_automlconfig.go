@@ -8,7 +8,7 @@ import (
 
 // Solution_AutoMLConfig AWS CloudFormation Resource (AWS::Personalize::Solution.AutoMLConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-automlconfig.html
-type Solution_AutoMLConfig struct {
+type Solution_AutoMLConfig[T any] struct {
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Solution_AutoMLConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_AutoMLConfig) AWSCloudFormationType() string {
+func (r *Solution_AutoMLConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.AutoMLConfig"
 }

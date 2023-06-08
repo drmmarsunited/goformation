@@ -8,27 +8,27 @@ import (
 
 // Application_ZeppelinApplicationConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ZeppelinApplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html
-type Application_ZeppelinApplicationConfiguration struct {
+type Application_ZeppelinApplicationConfiguration[T any] struct {
 
 	// CatalogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-catalogconfiguration
-	CatalogConfiguration *Application_CatalogConfiguration `json:"CatalogConfiguration,omitempty"`
+	CatalogConfiguration *Application_CatalogConfiguration[any] `json:"CatalogConfiguration,omitempty"`
 
 	// CustomArtifactsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-customartifactsconfiguration
-	CustomArtifactsConfiguration []Application_CustomArtifactConfiguration `json:"CustomArtifactsConfiguration,omitempty"`
+	CustomArtifactsConfiguration []Application_CustomArtifactConfiguration[any] `json:"CustomArtifactsConfiguration,omitempty"`
 
 	// DeployAsApplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-deployasapplicationconfiguration
-	DeployAsApplicationConfiguration *Application_DeployAsApplicationConfiguration `json:"DeployAsApplicationConfiguration,omitempty"`
+	DeployAsApplicationConfiguration *Application_DeployAsApplicationConfiguration[any] `json:"DeployAsApplicationConfiguration,omitempty"`
 
 	// MonitoringConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-monitoringconfiguration
-	MonitoringConfiguration *Application_ZeppelinMonitoringConfiguration `json:"MonitoringConfiguration,omitempty"`
+	MonitoringConfiguration *Application_ZeppelinMonitoringConfiguration[any] `json:"MonitoringConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Application_ZeppelinApplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ZeppelinApplicationConfiguration) AWSCloudFormationType() string {
+func (r *Application_ZeppelinApplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ZeppelinApplicationConfiguration"
 }

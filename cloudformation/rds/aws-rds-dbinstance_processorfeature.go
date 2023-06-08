@@ -8,7 +8,7 @@ import (
 
 // DBInstance_ProcessorFeature AWS CloudFormation Resource (AWS::RDS::DBInstance.ProcessorFeature)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html
-type DBInstance_ProcessorFeature struct {
+type DBInstance_ProcessorFeature[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBInstance_ProcessorFeature struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance_ProcessorFeature) AWSCloudFormationType() string {
+func (r *DBInstance_ProcessorFeature[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance.ProcessorFeature"
 }

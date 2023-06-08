@@ -8,12 +8,12 @@ import (
 
 // Template_ExcludePeriodConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ExcludePeriodConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-excludeperiodconfiguration.html
-type Template_ExcludePeriodConfiguration struct {
+type Template_ExcludePeriodConfiguration[T any] struct {
 
 	// Amount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-excludeperiodconfiguration.html#cfn-quicksight-template-excludeperiodconfiguration-amount
-	Amount float64 `json:"Amount"`
+	Amount T `json:"Amount"`
 
 	// Granularity AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_ExcludePeriodConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ExcludePeriodConfiguration) AWSCloudFormationType() string {
+func (r *Template_ExcludePeriodConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ExcludePeriodConfiguration"
 }

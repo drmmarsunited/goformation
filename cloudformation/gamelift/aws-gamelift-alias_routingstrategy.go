@@ -8,7 +8,7 @@ import (
 
 // Alias_RoutingStrategy AWS CloudFormation Resource (AWS::GameLift::Alias.RoutingStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html
-type Alias_RoutingStrategy struct {
+type Alias_RoutingStrategy[T any] struct {
 
 	// FleetId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Alias_RoutingStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alias_RoutingStrategy) AWSCloudFormationType() string {
+func (r *Alias_RoutingStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Alias.RoutingStrategy"
 }

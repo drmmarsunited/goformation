@@ -11,7 +11,7 @@ import (
 
 // PolicyPrincipalAttachment AWS CloudFormation Resource (AWS::IoT::PolicyPrincipalAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html
-type PolicyPrincipalAttachment struct {
+type PolicyPrincipalAttachment[T any] struct {
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type PolicyPrincipalAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PolicyPrincipalAttachment) AWSCloudFormationType() string {
+func (r *PolicyPrincipalAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::PolicyPrincipalAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PolicyPrincipalAttachment) MarshalJSON() ([]byte, error) {
-	type Properties PolicyPrincipalAttachment
+func (r PolicyPrincipalAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties PolicyPrincipalAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r PolicyPrincipalAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PolicyPrincipalAttachment) UnmarshalJSON(b []byte) error {
-	type Properties PolicyPrincipalAttachment
+func (r *PolicyPrincipalAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties PolicyPrincipalAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *PolicyPrincipalAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PolicyPrincipalAttachment(*res.Properties)
+		*r = PolicyPrincipalAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

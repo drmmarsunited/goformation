@@ -8,7 +8,7 @@ import (
 
 // SignalCatalog_Sensor AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.Sensor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-sensor.html
-type SignalCatalog_Sensor struct {
+type SignalCatalog_Sensor[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type SignalCatalog_Sensor struct {
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-sensor.html#cfn-iotfleetwise-signalcatalog-sensor-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-sensor.html#cfn-iotfleetwise-signalcatalog-sensor-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type SignalCatalog_Sensor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_Sensor) AWSCloudFormationType() string {
+func (r *SignalCatalog_Sensor[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.Sensor"
 }

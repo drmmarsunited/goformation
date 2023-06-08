@@ -8,12 +8,12 @@ import (
 
 // Analysis_DestinationParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DestinationParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-destinationparametervalueconfiguration.html
-type Analysis_DestinationParameterValueConfiguration struct {
+type Analysis_DestinationParameterValueConfiguration[T any] struct {
 
 	// CustomValuesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-destinationparametervalueconfiguration.html#cfn-quicksight-analysis-destinationparametervalueconfiguration-customvaluesconfiguration
-	CustomValuesConfiguration *Analysis_CustomValuesConfiguration `json:"CustomValuesConfiguration,omitempty"`
+	CustomValuesConfiguration *Analysis_CustomValuesConfiguration[any] `json:"CustomValuesConfiguration,omitempty"`
 
 	// SelectAllValueOptions AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Analysis_DestinationParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DestinationParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_DestinationParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DestinationParameterValueConfiguration"
 }

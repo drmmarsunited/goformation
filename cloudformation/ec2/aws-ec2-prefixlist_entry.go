@@ -8,7 +8,7 @@ import (
 
 // PrefixList_Entry AWS CloudFormation Resource (AWS::EC2::PrefixList.Entry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html
-type PrefixList_Entry struct {
+type PrefixList_Entry[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type PrefixList_Entry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrefixList_Entry) AWSCloudFormationType() string {
+func (r *PrefixList_Entry[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::PrefixList.Entry"
 }

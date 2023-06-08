@@ -11,7 +11,7 @@ import (
 
 // ApplicationSettings AWS CloudFormation Resource (AWS::Pinpoint::ApplicationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html
-type ApplicationSettings struct {
+type ApplicationSettings[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -21,22 +21,22 @@ type ApplicationSettings struct {
 	// CampaignHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-campaignhook
-	CampaignHook *ApplicationSettings_CampaignHook `json:"CampaignHook,omitempty"`
+	CampaignHook *ApplicationSettings_CampaignHook[any] `json:"CampaignHook,omitempty"`
 
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-cloudwatchmetricsenabled
-	CloudWatchMetricsEnabled *bool `json:"CloudWatchMetricsEnabled,omitempty"`
+	CloudWatchMetricsEnabled *T `json:"CloudWatchMetricsEnabled,omitempty"`
 
 	// Limits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-limits
-	Limits *ApplicationSettings_Limits `json:"Limits,omitempty"`
+	Limits *ApplicationSettings_Limits[any] `json:"Limits,omitempty"`
 
 	// QuietTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime
-	QuietTime *ApplicationSettings_QuietTime `json:"QuietTime,omitempty"`
+	QuietTime *ApplicationSettings_QuietTime[any] `json:"QuietTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type ApplicationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationSettings) AWSCloudFormationType() string {
+func (r *ApplicationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::ApplicationSettings"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationSettings) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationSettings
+func (r ApplicationSettings[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationSettings[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r ApplicationSettings) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationSettings) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationSettings
+func (r *ApplicationSettings[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationSettings[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *ApplicationSettings) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationSettings(*res.Properties)
+		*r = ApplicationSettings[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

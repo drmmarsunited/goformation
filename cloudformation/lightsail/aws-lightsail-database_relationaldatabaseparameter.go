@@ -8,7 +8,7 @@ import (
 
 // Database_RelationalDatabaseParameter AWS CloudFormation Resource (AWS::Lightsail::Database.RelationalDatabaseParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html
-type Database_RelationalDatabaseParameter struct {
+type Database_RelationalDatabaseParameter[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Database_RelationalDatabaseParameter struct {
 	// IsModifiable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-ismodifiable
-	IsModifiable *bool `json:"IsModifiable,omitempty"`
+	IsModifiable *T `json:"IsModifiable,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Database_RelationalDatabaseParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database_RelationalDatabaseParameter) AWSCloudFormationType() string {
+func (r *Database_RelationalDatabaseParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Database.RelationalDatabaseParameter"
 }

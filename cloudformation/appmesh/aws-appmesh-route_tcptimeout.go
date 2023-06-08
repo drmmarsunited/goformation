@@ -8,12 +8,12 @@ import (
 
 // Route_TcpTimeout AWS CloudFormation Resource (AWS::AppMesh::Route.TcpTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html
-type Route_TcpTimeout struct {
+type Route_TcpTimeout[T any] struct {
 
 	// Idle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html#cfn-appmesh-route-tcptimeout-idle
-	Idle *Route_Duration `json:"Idle,omitempty"`
+	Idle *Route_Duration[any] `json:"Idle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Route_TcpTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_TcpTimeout) AWSCloudFormationType() string {
+func (r *Route_TcpTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.TcpTimeout"
 }

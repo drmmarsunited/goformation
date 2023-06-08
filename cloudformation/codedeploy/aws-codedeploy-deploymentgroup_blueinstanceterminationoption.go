@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_BlueInstanceTerminationOption AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.BlueInstanceTerminationOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html
-type DeploymentGroup_BlueInstanceTerminationOption struct {
+type DeploymentGroup_BlueInstanceTerminationOption[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DeploymentGroup_BlueInstanceTerminationOption struct {
 	// TerminationWaitTimeInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes
-	TerminationWaitTimeInMinutes *int `json:"TerminationWaitTimeInMinutes,omitempty"`
+	TerminationWaitTimeInMinutes *T `json:"TerminationWaitTimeInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeploymentGroup_BlueInstanceTerminationOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_BlueInstanceTerminationOption) AWSCloudFormationType() string {
+func (r *DeploymentGroup_BlueInstanceTerminationOption[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.BlueInstanceTerminationOption"
 }

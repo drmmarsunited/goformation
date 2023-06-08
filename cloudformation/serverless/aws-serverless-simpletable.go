@@ -11,22 +11,22 @@ import (
 
 // SimpleTable AWS CloudFormation Resource (AWS::Serverless::SimpleTable)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
-type SimpleTable struct {
+type SimpleTable[T any] struct {
 
 	// PrimaryKey AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#primary-key-object
-	PrimaryKey *SimpleTable_PrimaryKey `json:"PrimaryKey,omitempty"`
+	PrimaryKey *SimpleTable_PrimaryKey[any] `json:"PrimaryKey,omitempty"`
 
 	// ProvisionedThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
-	ProvisionedThroughput *SimpleTable_ProvisionedThroughput `json:"ProvisionedThroughput,omitempty"`
+	ProvisionedThroughput *SimpleTable_ProvisionedThroughput[any] `json:"ProvisionedThroughput,omitempty"`
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
-	SSESpecification *SimpleTable_SSESpecification `json:"SSESpecification,omitempty"`
+	SSESpecification *SimpleTable_SSESpecification[any] `json:"SSESpecification,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type SimpleTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleTable) AWSCloudFormationType() string {
+func (r *SimpleTable[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::SimpleTable"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SimpleTable) MarshalJSON() ([]byte, error) {
-	type Properties SimpleTable
+func (r SimpleTable[any]) MarshalJSON() ([]byte, error) {
+	type Properties SimpleTable[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r SimpleTable) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SimpleTable) UnmarshalJSON(b []byte) error {
-	type Properties SimpleTable
+func (r *SimpleTable[any]) UnmarshalJSON(b []byte) error {
+	type Properties SimpleTable[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *SimpleTable) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SimpleTable(*res.Properties)
+		*r = SimpleTable[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

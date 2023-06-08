@@ -8,7 +8,7 @@ import (
 
 // ClientVpnEndpoint_CertificateAuthenticationRequest AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html
-type ClientVpnEndpoint_CertificateAuthenticationRequest struct {
+type ClientVpnEndpoint_CertificateAuthenticationRequest[T any] struct {
 
 	// ClientRootCertificateChainArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ClientVpnEndpoint_CertificateAuthenticationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_CertificateAuthenticationRequest) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_CertificateAuthenticationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest"
 }

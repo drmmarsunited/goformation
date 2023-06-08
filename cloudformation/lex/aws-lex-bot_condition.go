@@ -8,7 +8,7 @@ import (
 
 // Bot_Condition AWS CloudFormation Resource (AWS::Lex::Bot.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-condition.html
-type Bot_Condition struct {
+type Bot_Condition[T any] struct {
 
 	// ExpressionString AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_Condition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_Condition) AWSCloudFormationType() string {
+func (r *Bot_Condition[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.Condition"
 }

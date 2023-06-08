@@ -8,7 +8,7 @@ import (
 
 // DataCellsFilter_ColumnWildcard AWS CloudFormation Resource (AWS::LakeFormation::DataCellsFilter.ColumnWildcard)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-columnwildcard.html
-type DataCellsFilter_ColumnWildcard struct {
+type DataCellsFilter_ColumnWildcard[T any] struct {
 
 	// ExcludedColumnNames AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataCellsFilter_ColumnWildcard struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCellsFilter_ColumnWildcard) AWSCloudFormationType() string {
+func (r *DataCellsFilter_ColumnWildcard[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataCellsFilter.ColumnWildcard"
 }

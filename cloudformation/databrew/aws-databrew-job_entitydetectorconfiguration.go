@@ -8,12 +8,12 @@ import (
 
 // Job_EntityDetectorConfiguration AWS CloudFormation Resource (AWS::DataBrew::Job.EntityDetectorConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html
-type Job_EntityDetectorConfiguration struct {
+type Job_EntityDetectorConfiguration[T any] struct {
 
 	// AllowedStatistics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-allowedstatistics
-	AllowedStatistics *Job_AllowedStatistics `json:"AllowedStatistics,omitempty"`
+	AllowedStatistics *Job_AllowedStatistics[any] `json:"AllowedStatistics,omitempty"`
 
 	// EntityTypes AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Job_EntityDetectorConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_EntityDetectorConfiguration) AWSCloudFormationType() string {
+func (r *Job_EntityDetectorConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.EntityDetectorConfiguration"
 }

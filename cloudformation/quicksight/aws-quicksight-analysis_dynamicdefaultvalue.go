@@ -8,22 +8,22 @@ import (
 
 // Analysis_DynamicDefaultValue AWS CloudFormation Resource (AWS::QuickSight::Analysis.DynamicDefaultValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dynamicdefaultvalue.html
-type Analysis_DynamicDefaultValue struct {
+type Analysis_DynamicDefaultValue[T any] struct {
 
 	// DefaultValueColumn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dynamicdefaultvalue.html#cfn-quicksight-analysis-dynamicdefaultvalue-defaultvaluecolumn
-	DefaultValueColumn *Analysis_ColumnIdentifier `json:"DefaultValueColumn"`
+	DefaultValueColumn *Analysis_ColumnIdentifier[any] `json:"DefaultValueColumn"`
 
 	// GroupNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dynamicdefaultvalue.html#cfn-quicksight-analysis-dynamicdefaultvalue-groupnamecolumn
-	GroupNameColumn *Analysis_ColumnIdentifier `json:"GroupNameColumn,omitempty"`
+	GroupNameColumn *Analysis_ColumnIdentifier[any] `json:"GroupNameColumn,omitempty"`
 
 	// UserNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dynamicdefaultvalue.html#cfn-quicksight-analysis-dynamicdefaultvalue-usernamecolumn
-	UserNameColumn *Analysis_ColumnIdentifier `json:"UserNameColumn,omitempty"`
+	UserNameColumn *Analysis_ColumnIdentifier[any] `json:"UserNameColumn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_DynamicDefaultValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DynamicDefaultValue) AWSCloudFormationType() string {
+func (r *Analysis_DynamicDefaultValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DynamicDefaultValue"
 }

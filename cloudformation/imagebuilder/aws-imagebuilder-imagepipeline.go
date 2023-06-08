@@ -11,7 +11,7 @@ import (
 
 // ImagePipeline AWS CloudFormation Resource (AWS::ImageBuilder::ImagePipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html
-type ImagePipeline struct {
+type ImagePipeline[T any] struct {
 
 	// ContainerRecipeArn AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type ImagePipeline struct {
 	// EnhancedImageMetadataEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-enhancedimagemetadataenabled
-	EnhancedImageMetadataEnabled *bool `json:"EnhancedImageMetadataEnabled,omitempty"`
+	EnhancedImageMetadataEnabled *T `json:"EnhancedImageMetadataEnabled,omitempty"`
 
 	// ImageRecipeArn AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type ImagePipeline struct {
 	// ImageScanningConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration
-	ImageScanningConfiguration *ImagePipeline_ImageScanningConfiguration `json:"ImageScanningConfiguration,omitempty"`
+	ImageScanningConfiguration *ImagePipeline_ImageScanningConfiguration[any] `json:"ImageScanningConfiguration,omitempty"`
 
 	// ImageTestsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration
-	ImageTestsConfiguration *ImagePipeline_ImageTestsConfiguration `json:"ImageTestsConfiguration,omitempty"`
+	ImageTestsConfiguration *ImagePipeline_ImageTestsConfiguration[any] `json:"ImageTestsConfiguration,omitempty"`
 
 	// InfrastructureConfigurationArn AWS CloudFormation Property
 	// Required: true
@@ -61,7 +61,7 @@ type ImagePipeline struct {
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-schedule
-	Schedule *ImagePipeline_Schedule `json:"Schedule,omitempty"`
+	Schedule *ImagePipeline_Schedule[any] `json:"Schedule,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -90,14 +90,15 @@ type ImagePipeline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImagePipeline) AWSCloudFormationType() string {
+func (r *ImagePipeline[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImagePipeline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ImagePipeline) MarshalJSON() ([]byte, error) {
-	type Properties ImagePipeline
+func (r ImagePipeline[any]) MarshalJSON() ([]byte, error) {
+	type Properties ImagePipeline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r ImagePipeline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ImagePipeline) UnmarshalJSON(b []byte) error {
-	type Properties ImagePipeline
+func (r *ImagePipeline[any]) UnmarshalJSON(b []byte) error {
+	type Properties ImagePipeline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *ImagePipeline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ImagePipeline(*res.Properties)
+		*r = ImagePipeline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

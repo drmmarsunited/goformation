@@ -8,12 +8,12 @@ import (
 
 // ConfigurationSet_SendingOptions AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSet.SendingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html
-type ConfigurationSet_SendingOptions struct {
+type ConfigurationSet_SendingOptions[T any] struct {
 
 	// SendingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html#cfn-pinpointemail-configurationset-sendingoptions-sendingenabled
-	SendingEnabled *bool `json:"SendingEnabled,omitempty"`
+	SendingEnabled *T `json:"SendingEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ConfigurationSet_SendingOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_SendingOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_SendingOptions[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::ConfigurationSet.SendingOptions"
 }

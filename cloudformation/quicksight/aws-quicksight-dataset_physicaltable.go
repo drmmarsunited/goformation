@@ -8,22 +8,22 @@ import (
 
 // DataSet_PhysicalTable AWS CloudFormation Resource (AWS::QuickSight::DataSet.PhysicalTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html
-type DataSet_PhysicalTable struct {
+type DataSet_PhysicalTable[T any] struct {
 
 	// CustomSql AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-customsql
-	CustomSql *DataSet_CustomSql `json:"CustomSql,omitempty"`
+	CustomSql *DataSet_CustomSql[any] `json:"CustomSql,omitempty"`
 
 	// RelationalTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-relationaltable
-	RelationalTable *DataSet_RelationalTable `json:"RelationalTable,omitempty"`
+	RelationalTable *DataSet_RelationalTable[any] `json:"RelationalTable,omitempty"`
 
 	// S3Source AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-s3source
-	S3Source *DataSet_S3Source `json:"S3Source,omitempty"`
+	S3Source *DataSet_S3Source[any] `json:"S3Source,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSet_PhysicalTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_PhysicalTable) AWSCloudFormationType() string {
+func (r *DataSet_PhysicalTable[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.PhysicalTable"
 }

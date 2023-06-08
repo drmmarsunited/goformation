@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_TransformJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html
-type ModelPackage_TransformJobDefinition struct {
+type ModelPackage_TransformJobDefinition[T any] struct {
 
 	// BatchStrategy AWS CloudFormation Property
 	// Required: false
@@ -23,27 +23,27 @@ type ModelPackage_TransformJobDefinition struct {
 	// MaxConcurrentTransforms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-maxconcurrenttransforms
-	MaxConcurrentTransforms *int `json:"MaxConcurrentTransforms,omitempty"`
+	MaxConcurrentTransforms *T `json:"MaxConcurrentTransforms,omitempty"`
 
 	// MaxPayloadInMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-maxpayloadinmb
-	MaxPayloadInMB *int `json:"MaxPayloadInMB,omitempty"`
+	MaxPayloadInMB *T `json:"MaxPayloadInMB,omitempty"`
 
 	// TransformInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-transforminput
-	TransformInput *ModelPackage_TransformInput `json:"TransformInput"`
+	TransformInput *ModelPackage_TransformInput[any] `json:"TransformInput"`
 
 	// TransformOutput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-transformoutput
-	TransformOutput *ModelPackage_TransformOutput `json:"TransformOutput"`
+	TransformOutput *ModelPackage_TransformOutput[any] `json:"TransformOutput"`
 
 	// TransformResources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-transformresources
-	TransformResources *ModelPackage_TransformResources `json:"TransformResources"`
+	TransformResources *ModelPackage_TransformResources[any] `json:"TransformResources"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type ModelPackage_TransformJobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_TransformJobDefinition) AWSCloudFormationType() string {
+func (r *ModelPackage_TransformJobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.TransformJobDefinition"
 }

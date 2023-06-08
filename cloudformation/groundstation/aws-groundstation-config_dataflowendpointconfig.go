@@ -8,7 +8,7 @@ import (
 
 // Config_DataflowEndpointConfig AWS CloudFormation Resource (AWS::GroundStation::Config.DataflowEndpointConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-dataflowendpointconfig.html
-type Config_DataflowEndpointConfig struct {
+type Config_DataflowEndpointConfig[T any] struct {
 
 	// DataflowEndpointName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Config_DataflowEndpointConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_DataflowEndpointConfig) AWSCloudFormationType() string {
+func (r *Config_DataflowEndpointConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.DataflowEndpointConfig"
 }

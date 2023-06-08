@@ -8,7 +8,7 @@ import (
 
 // Bucket_ReplicaModifications AWS CloudFormation Resource (AWS::S3::Bucket.ReplicaModifications)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicamodifications.html
-type Bucket_ReplicaModifications struct {
+type Bucket_ReplicaModifications[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_ReplicaModifications struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ReplicaModifications) AWSCloudFormationType() string {
+func (r *Bucket_ReplicaModifications[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicaModifications"
 }

@@ -8,12 +8,12 @@ import (
 
 // VirtualCluster_ContainerInfo AWS CloudFormation Resource (AWS::EMRContainers::VirtualCluster.ContainerInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerinfo.html
-type VirtualCluster_ContainerInfo struct {
+type VirtualCluster_ContainerInfo[T any] struct {
 
 	// EksInfo AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerinfo.html#cfn-emrcontainers-virtualcluster-containerinfo-eksinfo
-	EksInfo *VirtualCluster_EksInfo `json:"EksInfo"`
+	EksInfo *VirtualCluster_EksInfo[any] `json:"EksInfo"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualCluster_ContainerInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualCluster_ContainerInfo) AWSCloudFormationType() string {
+func (r *VirtualCluster_ContainerInfo[any]) AWSCloudFormationType() string {
 	return "AWS::EMRContainers::VirtualCluster.ContainerInfo"
 }

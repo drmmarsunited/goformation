@@ -12,12 +12,12 @@ import (
 
 // Server AWS CloudFormation Resource (AWS::OpsWorksCM::Server)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html
-type Server struct {
+type Server[T any] struct {
 
 	// AssociatePublicIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-associatepublicipaddress
-	AssociatePublicIpAddress *bool `json:"AssociatePublicIpAddress,omitempty"`
+	AssociatePublicIpAddress *T `json:"AssociatePublicIpAddress,omitempty"`
 
 	// BackupId AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Server struct {
 	// BackupRetentionCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-backupretentioncount
-	BackupRetentionCount *int `json:"BackupRetentionCount,omitempty"`
+	BackupRetentionCount *T `json:"BackupRetentionCount,omitempty"`
 
 	// CustomCertificate AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Server struct {
 	// DisableAutomatedBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-disableautomatedbackup
-	DisableAutomatedBackup *bool `json:"DisableAutomatedBackup,omitempty"`
+	DisableAutomatedBackup *T `json:"DisableAutomatedBackup,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Server struct {
 	// EngineAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engineattributes
-	EngineAttributes []Server_EngineAttribute `json:"EngineAttributes,omitempty"`
+	EngineAttributes []Server_EngineAttribute[any] `json:"EngineAttributes,omitempty"`
 
 	// EngineModel AWS CloudFormation Property
 	// Required: false
@@ -131,14 +131,15 @@ type Server struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server) AWSCloudFormationType() string {
+func (r *Server[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorksCM::Server"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Server) MarshalJSON() ([]byte, error) {
-	type Properties Server
+func (r Server[any]) MarshalJSON() ([]byte, error) {
+	type Properties Server[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -160,8 +161,9 @@ func (r Server) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Server) UnmarshalJSON(b []byte) error {
-	type Properties Server
+func (r *Server[any]) UnmarshalJSON(b []byte) error {
+	type Properties Server[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -181,7 +183,7 @@ func (r *Server) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Server(*res.Properties)
+		*r = Server[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

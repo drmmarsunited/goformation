@@ -8,22 +8,22 @@ import (
 
 // FunctionDefinition_Environment AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html
-type FunctionDefinition_Environment struct {
+type FunctionDefinition_Environment[T any] struct {
 
 	// AccessSysfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs
-	AccessSysfs *bool `json:"AccessSysfs,omitempty"`
+	AccessSysfs *T `json:"AccessSysfs,omitempty"`
 
 	// Execution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution
-	Execution *FunctionDefinition_Execution `json:"Execution,omitempty"`
+	Execution *FunctionDefinition_Execution[any] `json:"Execution,omitempty"`
 
 	// ResourceAccessPolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies
-	ResourceAccessPolicies []FunctionDefinition_ResourceAccessPolicy `json:"ResourceAccessPolicies,omitempty"`
+	ResourceAccessPolicies []FunctionDefinition_ResourceAccessPolicy[any] `json:"ResourceAccessPolicies,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type FunctionDefinition_Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinition_Environment) AWSCloudFormationType() string {
+func (r *FunctionDefinition_Environment[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinition.Environment"
 }

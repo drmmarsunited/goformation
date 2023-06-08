@@ -8,17 +8,17 @@ import (
 
 // Alarm_MetricStat AWS CloudFormation Resource (AWS::CloudWatch::Alarm.MetricStat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html
-type Alarm_MetricStat struct {
+type Alarm_MetricStat[T any] struct {
 
 	// Metric AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-metric
-	Metric *Alarm_Metric `json:"Metric"`
+	Metric *Alarm_Metric[any] `json:"Metric"`
 
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-period
-	Period int `json:"Period"`
+	Period T `json:"Period"`
 
 	// Stat AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Alarm_MetricStat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm_MetricStat) AWSCloudFormationType() string {
+func (r *Alarm_MetricStat[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::Alarm.MetricStat"
 }

@@ -8,7 +8,7 @@ import (
 
 // Cluster_Tls AWS CloudFormation Resource (AWS::MSK::Cluster.Tls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html
-type Cluster_Tls struct {
+type Cluster_Tls[T any] struct {
 
 	// CertificateAuthorityArnList AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_Tls struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_Tls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Tls) AWSCloudFormationType() string {
+func (r *Cluster_Tls[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Tls"
 }

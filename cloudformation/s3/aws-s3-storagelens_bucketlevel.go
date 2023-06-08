@@ -8,32 +8,32 @@ import (
 
 // StorageLens_BucketLevel AWS CloudFormation Resource (AWS::S3::StorageLens.BucketLevel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html
-type StorageLens_BucketLevel struct {
+type StorageLens_BucketLevel[T any] struct {
 
 	// ActivityMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-activitymetrics
-	ActivityMetrics *StorageLens_ActivityMetrics `json:"ActivityMetrics,omitempty"`
+	ActivityMetrics *StorageLens_ActivityMetrics[any] `json:"ActivityMetrics,omitempty"`
 
 	// AdvancedCostOptimizationMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-advancedcostoptimizationmetrics
-	AdvancedCostOptimizationMetrics *StorageLens_AdvancedCostOptimizationMetrics `json:"AdvancedCostOptimizationMetrics,omitempty"`
+	AdvancedCostOptimizationMetrics *StorageLens_AdvancedCostOptimizationMetrics[any] `json:"AdvancedCostOptimizationMetrics,omitempty"`
 
 	// AdvancedDataProtectionMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-advanceddataprotectionmetrics
-	AdvancedDataProtectionMetrics *StorageLens_AdvancedDataProtectionMetrics `json:"AdvancedDataProtectionMetrics,omitempty"`
+	AdvancedDataProtectionMetrics *StorageLens_AdvancedDataProtectionMetrics[any] `json:"AdvancedDataProtectionMetrics,omitempty"`
 
 	// DetailedStatusCodesMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-detailedstatuscodesmetrics
-	DetailedStatusCodesMetrics *StorageLens_DetailedStatusCodesMetrics `json:"DetailedStatusCodesMetrics,omitempty"`
+	DetailedStatusCodesMetrics *StorageLens_DetailedStatusCodesMetrics[any] `json:"DetailedStatusCodesMetrics,omitempty"`
 
 	// PrefixLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-prefixlevel
-	PrefixLevel *StorageLens_PrefixLevel `json:"PrefixLevel,omitempty"`
+	PrefixLevel *StorageLens_PrefixLevel[any] `json:"PrefixLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type StorageLens_BucketLevel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_BucketLevel) AWSCloudFormationType() string {
+func (r *StorageLens_BucketLevel[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.BucketLevel"
 }

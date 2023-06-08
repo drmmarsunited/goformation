@@ -8,7 +8,7 @@ import (
 
 // Flow_VeevaSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.VeevaSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html
-type Flow_VeevaSourceProperties struct {
+type Flow_VeevaSourceProperties[T any] struct {
 
 	// DocumentType AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Flow_VeevaSourceProperties struct {
 	// IncludeAllVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includeallversions
-	IncludeAllVersions *bool `json:"IncludeAllVersions,omitempty"`
+	IncludeAllVersions *T `json:"IncludeAllVersions,omitempty"`
 
 	// IncludeRenditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includerenditions
-	IncludeRenditions *bool `json:"IncludeRenditions,omitempty"`
+	IncludeRenditions *T `json:"IncludeRenditions,omitempty"`
 
 	// IncludeSourceFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includesourcefiles
-	IncludeSourceFiles *bool `json:"IncludeSourceFiles,omitempty"`
+	IncludeSourceFiles *T `json:"IncludeSourceFiles,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Flow_VeevaSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_VeevaSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_VeevaSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.VeevaSourceProperties"
 }

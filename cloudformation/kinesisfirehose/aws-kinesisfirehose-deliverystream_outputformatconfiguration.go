@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_OutputFormatConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-outputformatconfiguration.html
-type DeliveryStream_OutputFormatConfiguration struct {
+type DeliveryStream_OutputFormatConfiguration[T any] struct {
 
 	// Serializer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-outputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-outputformatconfiguration-serializer
-	Serializer *DeliveryStream_Serializer `json:"Serializer,omitempty"`
+	Serializer *DeliveryStream_Serializer[any] `json:"Serializer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeliveryStream_OutputFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_OutputFormatConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_OutputFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration"
 }

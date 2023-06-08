@@ -8,7 +8,7 @@ import (
 
 // ScalableTarget_ScheduledAction AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html
-type ScalableTarget_ScheduledAction struct {
+type ScalableTarget_ScheduledAction[T any] struct {
 
 	// EndTime AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ScalableTarget_ScheduledAction struct {
 	// ScalableTargetAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction
-	ScalableTargetAction *ScalableTarget_ScalableTargetAction `json:"ScalableTargetAction,omitempty"`
+	ScalableTargetAction *ScalableTarget_ScalableTargetAction[any] `json:"ScalableTargetAction,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type ScalableTarget_ScheduledAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalableTarget_ScheduledAction) AWSCloudFormationType() string {
+func (r *ScalableTarget_ScheduledAction[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction"
 }

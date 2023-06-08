@@ -8,12 +8,12 @@ import (
 
 // EventDataStore_AdvancedEventSelector AWS CloudFormation Resource (AWS::CloudTrail::EventDataStore.AdvancedEventSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-eventdatastore-advancedeventselector.html
-type EventDataStore_AdvancedEventSelector struct {
+type EventDataStore_AdvancedEventSelector[T any] struct {
 
 	// FieldSelectors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-eventdatastore-advancedeventselector.html#cfn-cloudtrail-eventdatastore-advancedeventselector-fieldselectors
-	FieldSelectors []EventDataStore_AdvancedFieldSelector `json:"FieldSelectors"`
+	FieldSelectors []EventDataStore_AdvancedFieldSelector[any] `json:"FieldSelectors"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type EventDataStore_AdvancedEventSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventDataStore_AdvancedEventSelector) AWSCloudFormationType() string {
+func (r *EventDataStore_AdvancedEventSelector[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::EventDataStore.AdvancedEventSelector"
 }

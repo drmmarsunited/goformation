@@ -8,7 +8,7 @@ import (
 
 // Function_IdentitySAMPT AWS CloudFormation Resource (AWS::Serverless::Function.IdentitySAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_IdentitySAMPT struct {
+type Function_IdentitySAMPT[T any] struct {
 
 	// IdentityName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_IdentitySAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_IdentitySAMPT) AWSCloudFormationType() string {
+func (r *Function_IdentitySAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.IdentitySAMPT"
 }

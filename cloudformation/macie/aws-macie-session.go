@@ -11,7 +11,7 @@ import (
 
 // Session AWS CloudFormation Resource (AWS::Macie::Session)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html
-type Session struct {
+type Session[T any] struct {
 
 	// FindingPublishingFrequency AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type Session struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Session) AWSCloudFormationType() string {
+func (r *Session[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::Session"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Session) MarshalJSON() ([]byte, error) {
-	type Properties Session
+func (r Session[any]) MarshalJSON() ([]byte, error) {
+	type Properties Session[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Session) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Session) UnmarshalJSON(b []byte) error {
-	type Properties Session
+func (r *Session[any]) UnmarshalJSON(b []byte) error {
+	type Properties Session[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Session) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Session(*res.Properties)
+		*r = Session[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

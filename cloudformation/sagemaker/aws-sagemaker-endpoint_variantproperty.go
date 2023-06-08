@@ -8,7 +8,7 @@ import (
 
 // Endpoint_VariantProperty AWS CloudFormation Resource (AWS::SageMaker::Endpoint.VariantProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html
-type Endpoint_VariantProperty struct {
+type Endpoint_VariantProperty[T any] struct {
 
 	// VariantPropertyType AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Endpoint_VariantProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_VariantProperty) AWSCloudFormationType() string {
+func (r *Endpoint_VariantProperty[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.VariantProperty"
 }

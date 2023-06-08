@@ -8,12 +8,12 @@ import (
 
 // Trigger_Predicate AWS CloudFormation Resource (AWS::Glue::Trigger.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
-type Trigger_Predicate struct {
+type Trigger_Predicate[T any] struct {
 
 	// Conditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions
-	Conditions []Trigger_Condition `json:"Conditions,omitempty"`
+	Conditions []Trigger_Condition[any] `json:"Conditions,omitempty"`
 
 	// Logical AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Trigger_Predicate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger_Predicate) AWSCloudFormationType() string {
+func (r *Trigger_Predicate[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Predicate"
 }

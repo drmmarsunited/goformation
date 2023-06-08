@@ -8,7 +8,7 @@ import (
 
 // ScalingPlan_TagFilter AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html
-type ScalingPlan_TagFilter struct {
+type ScalingPlan_TagFilter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPlan_TagFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_TagFilter) AWSCloudFormationType() string {
+func (r *ScalingPlan_TagFilter[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.TagFilter"
 }

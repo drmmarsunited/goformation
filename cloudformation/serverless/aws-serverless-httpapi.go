@@ -11,27 +11,27 @@ import (
 
 // HttpApi AWS CloudFormation Resource (AWS::Serverless::HttpApi)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-type HttpApi struct {
+type HttpApi[T any] struct {
 
 	// AccessLogSetting AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	AccessLogSetting *HttpApi_AccessLogSetting `json:"AccessLogSetting,omitempty"`
+	AccessLogSetting *HttpApi_AccessLogSetting[any] `json:"AccessLogSetting,omitempty"`
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Auth *HttpApi_HttpApiAuth `json:"Auth,omitempty"`
+	Auth *HttpApi_HttpApiAuth[any] `json:"Auth,omitempty"`
 
 	// CorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	CorsConfiguration *HttpApi_CorsConfiguration `json:"CorsConfiguration,omitempty"`
+	CorsConfiguration *HttpApi_CorsConfiguration[any] `json:"CorsConfiguration,omitempty"`
 
 	// DefaultRouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	DefaultRouteSettings *HttpApi_RouteSettings `json:"DefaultRouteSettings,omitempty"`
+	DefaultRouteSettings *HttpApi_RouteSettings[any] `json:"DefaultRouteSettings,omitempty"`
 
 	// DefinitionBody AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type HttpApi struct {
 	// DefinitionUri AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	DefinitionUri *HttpApi_DefinitionUri `json:"DefinitionUri,omitempty"`
+	DefinitionUri *HttpApi_DefinitionUri[any] `json:"DefinitionUri,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -51,22 +51,22 @@ type HttpApi struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-httpapi.html#sam-httpapi-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *T `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Domain *HttpApi_HttpApiDomainConfiguration `json:"Domain,omitempty"`
+	Domain *HttpApi_HttpApiDomainConfiguration[any] `json:"Domain,omitempty"`
 
 	// FailOnWarnings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	FailOnWarnings *bool `json:"FailOnWarnings,omitempty"`
+	FailOnWarnings *T `json:"FailOnWarnings,omitempty"`
 
 	// RouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	RouteSettings *HttpApi_RouteSettings `json:"RouteSettings,omitempty"`
+	RouteSettings *HttpApi_RouteSettings[any] `json:"RouteSettings,omitempty"`
 
 	// StageName AWS CloudFormation Property
 	// Required: false
@@ -100,14 +100,15 @@ type HttpApi struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi) AWSCloudFormationType() string {
+func (r *HttpApi[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HttpApi) MarshalJSON() ([]byte, error) {
-	type Properties HttpApi
+func (r HttpApi[any]) MarshalJSON() ([]byte, error) {
+	type Properties HttpApi[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r HttpApi) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HttpApi) UnmarshalJSON(b []byte) error {
-	type Properties HttpApi
+func (r *HttpApi[any]) UnmarshalJSON(b []byte) error {
+	type Properties HttpApi[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *HttpApi) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HttpApi(*res.Properties)
+		*r = HttpApi[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,12 +12,12 @@ import (
 
 // OriginEndpoint AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html
-type OriginEndpoint struct {
+type OriginEndpoint[T any] struct {
 
 	// Authorization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-authorization
-	Authorization *OriginEndpoint_Authorization `json:"Authorization,omitempty"`
+	Authorization *OriginEndpoint_Authorization[any] `json:"Authorization,omitempty"`
 
 	// ChannelId AWS CloudFormation Property
 	// Required: true
@@ -27,12 +27,12 @@ type OriginEndpoint struct {
 	// CmafPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-cmafpackage
-	CmafPackage *OriginEndpoint_CmafPackage `json:"CmafPackage,omitempty"`
+	CmafPackage *OriginEndpoint_CmafPackage[any] `json:"CmafPackage,omitempty"`
 
 	// DashPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-dashpackage
-	DashPackage *OriginEndpoint_DashPackage `json:"DashPackage,omitempty"`
+	DashPackage *OriginEndpoint_DashPackage[any] `json:"DashPackage,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type OriginEndpoint struct {
 	// HlsPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-hlspackage
-	HlsPackage *OriginEndpoint_HlsPackage `json:"HlsPackage,omitempty"`
+	HlsPackage *OriginEndpoint_HlsPackage[any] `json:"HlsPackage,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -57,7 +57,7 @@ type OriginEndpoint struct {
 	// MssPackage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-msspackage
-	MssPackage *OriginEndpoint_MssPackage `json:"MssPackage,omitempty"`
+	MssPackage *OriginEndpoint_MssPackage[any] `json:"MssPackage,omitempty"`
 
 	// Origination AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type OriginEndpoint struct {
 	// StartoverWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-startoverwindowseconds
-	StartoverWindowSeconds *int `json:"StartoverWindowSeconds,omitempty"`
+	StartoverWindowSeconds *T `json:"StartoverWindowSeconds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type OriginEndpoint struct {
 	// TimeDelaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-timedelayseconds
-	TimeDelaySeconds *int `json:"TimeDelaySeconds,omitempty"`
+	TimeDelaySeconds *T `json:"TimeDelaySeconds,omitempty"`
 
 	// Whitelist AWS CloudFormation Property
 	// Required: false
@@ -101,14 +101,15 @@ type OriginEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint) AWSCloudFormationType() string {
+func (r *OriginEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r OriginEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties OriginEndpoint
+func (r OriginEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties OriginEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -130,8 +131,9 @@ func (r OriginEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *OriginEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties OriginEndpoint
+func (r *OriginEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties OriginEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -151,7 +153,7 @@ func (r *OriginEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = OriginEndpoint(*res.Properties)
+		*r = OriginEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

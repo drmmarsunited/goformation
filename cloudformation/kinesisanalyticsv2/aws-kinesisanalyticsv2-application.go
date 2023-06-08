@@ -12,12 +12,12 @@ import (
 
 // Application AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html
-type Application struct {
+type Application[T any] struct {
 
 	// ApplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-applicationconfiguration
-	ApplicationConfiguration *Application_ApplicationConfiguration `json:"ApplicationConfiguration,omitempty"`
+	ApplicationConfiguration *Application_ApplicationConfiguration[any] `json:"ApplicationConfiguration,omitempty"`
 
 	// ApplicationDescription AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Application struct {
 	// ApplicationMaintenanceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-applicationmaintenanceconfiguration
-	ApplicationMaintenanceConfiguration *Application_ApplicationMaintenanceConfiguration `json:"ApplicationMaintenanceConfiguration,omitempty"`
+	ApplicationMaintenanceConfiguration *Application_ApplicationMaintenanceConfiguration[any] `json:"ApplicationMaintenanceConfiguration,omitempty"`
 
 	// ApplicationMode AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Application struct {
 	// RunConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-runconfiguration
-	RunConfiguration *Application_RunConfiguration `json:"RunConfiguration,omitempty"`
+	RunConfiguration *Application_RunConfiguration[any] `json:"RunConfiguration,omitempty"`
 
 	// RuntimeEnvironment AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type Application struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application) AWSCloudFormationType() string {
+func (r *Application[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Application) MarshalJSON() ([]byte, error) {
-	type Properties Application
+func (r Application[any]) MarshalJSON() ([]byte, error) {
+	type Properties Application[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Application) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Application) UnmarshalJSON(b []byte) error {
-	type Properties Application
+func (r *Application[any]) UnmarshalJSON(b []byte) error {
+	type Properties Application[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Application) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Application(*res.Properties)
+		*r = Application[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

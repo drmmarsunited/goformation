@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ReferenceLineDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html
-type Dashboard_ReferenceLineDataConfiguration struct {
+type Dashboard_ReferenceLineDataConfiguration[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Dashboard_ReferenceLineDataConfiguration struct {
 	// DynamicConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html#cfn-quicksight-dashboard-referencelinedataconfiguration-dynamicconfiguration
-	DynamicConfiguration *Dashboard_ReferenceLineDynamicDataConfiguration `json:"DynamicConfiguration,omitempty"`
+	DynamicConfiguration *Dashboard_ReferenceLineDynamicDataConfiguration[any] `json:"DynamicConfiguration,omitempty"`
 
 	// StaticConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html#cfn-quicksight-dashboard-referencelinedataconfiguration-staticconfiguration
-	StaticConfiguration *Dashboard_ReferenceLineStaticDataConfiguration `json:"StaticConfiguration,omitempty"`
+	StaticConfiguration *Dashboard_ReferenceLineStaticDataConfiguration[any] `json:"StaticConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ReferenceLineDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineDataConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineDataConfiguration"
 }

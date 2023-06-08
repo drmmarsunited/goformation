@@ -8,7 +8,7 @@ import (
 
 // Channel_MultiplexGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MultiplexGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexgroupsettings.html
-type Channel_MultiplexGroupSettings struct {
+type Channel_MultiplexGroupSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_MultiplexGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MultiplexGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_MultiplexGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MultiplexGroupSettings"
 }

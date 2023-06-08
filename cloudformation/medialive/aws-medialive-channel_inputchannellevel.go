@@ -8,17 +8,17 @@ import (
 
 // Channel_InputChannelLevel AWS CloudFormation Resource (AWS::MediaLive::Channel.InputChannelLevel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputchannellevel.html
-type Channel_InputChannelLevel struct {
+type Channel_InputChannelLevel[T any] struct {
 
 	// Gain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputchannellevel.html#cfn-medialive-channel-inputchannellevel-gain
-	Gain *int `json:"Gain,omitempty"`
+	Gain *T `json:"Gain,omitempty"`
 
 	// InputChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputchannellevel.html#cfn-medialive-channel-inputchannellevel-inputchannel
-	InputChannel *int `json:"InputChannel,omitempty"`
+	InputChannel *T `json:"InputChannel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_InputChannelLevel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputChannelLevel) AWSCloudFormationType() string {
+func (r *Channel_InputChannelLevel[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputChannelLevel"
 }

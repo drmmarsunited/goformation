@@ -8,17 +8,17 @@ import (
 
 // Template_PredefinedHierarchy AWS CloudFormation Resource (AWS::QuickSight::Template.PredefinedHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-predefinedhierarchy.html
-type Template_PredefinedHierarchy struct {
+type Template_PredefinedHierarchy[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-predefinedhierarchy.html#cfn-quicksight-template-predefinedhierarchy-columns
-	Columns []Template_ColumnIdentifier `json:"Columns"`
+	Columns []Template_ColumnIdentifier[any] `json:"Columns"`
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-predefinedhierarchy.html#cfn-quicksight-template-predefinedhierarchy-drilldownfilters
-	DrillDownFilters []Template_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Template_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_PredefinedHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PredefinedHierarchy) AWSCloudFormationType() string {
+func (r *Template_PredefinedHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PredefinedHierarchy"
 }

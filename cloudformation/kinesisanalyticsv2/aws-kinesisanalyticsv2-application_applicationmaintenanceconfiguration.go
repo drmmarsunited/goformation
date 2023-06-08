@@ -8,7 +8,7 @@ import (
 
 // Application_ApplicationMaintenanceConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ApplicationMaintenanceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationmaintenanceconfiguration.html
-type Application_ApplicationMaintenanceConfiguration struct {
+type Application_ApplicationMaintenanceConfiguration[T any] struct {
 
 	// ApplicationMaintenanceWindowStartTime AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Application_ApplicationMaintenanceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationMaintenanceConfiguration) AWSCloudFormationType() string {
+func (r *Application_ApplicationMaintenanceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ApplicationMaintenanceConfiguration"
 }

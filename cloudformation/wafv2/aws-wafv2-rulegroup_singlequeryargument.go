@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_SingleQueryArgument AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.SingleQueryArgument)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-singlequeryargument.html
-type RuleGroup_SingleQueryArgument struct {
+type RuleGroup_SingleQueryArgument[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RuleGroup_SingleQueryArgument struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_SingleQueryArgument) AWSCloudFormationType() string {
+func (r *RuleGroup_SingleQueryArgument[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.SingleQueryArgument"
 }

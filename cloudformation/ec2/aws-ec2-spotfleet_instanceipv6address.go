@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_InstanceIpv6Address AWS CloudFormation Resource (AWS::EC2::SpotFleet.InstanceIpv6Address)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html
-type SpotFleet_InstanceIpv6Address struct {
+type SpotFleet_InstanceIpv6Address[T any] struct {
 
 	// Ipv6Address AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type SpotFleet_InstanceIpv6Address struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_InstanceIpv6Address) AWSCloudFormationType() string {
+func (r *SpotFleet_InstanceIpv6Address[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.InstanceIpv6Address"
 }

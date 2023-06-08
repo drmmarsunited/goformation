@@ -8,7 +8,7 @@ import (
 
 // Template_DateTimeFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DateTimeFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeformatconfiguration.html
-type Template_DateTimeFormatConfiguration struct {
+type Template_DateTimeFormatConfiguration[T any] struct {
 
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Template_DateTimeFormatConfiguration struct {
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeformatconfiguration.html#cfn-quicksight-template-datetimeformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Template_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Template_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// NumericFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeformatconfiguration.html#cfn-quicksight-template-datetimeformatconfiguration-numericformatconfiguration
-	NumericFormatConfiguration *Template_NumericFormatConfiguration `json:"NumericFormatConfiguration,omitempty"`
+	NumericFormatConfiguration *Template_NumericFormatConfiguration[any] `json:"NumericFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_DateTimeFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DateTimeFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_DateTimeFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DateTimeFormatConfiguration"
 }

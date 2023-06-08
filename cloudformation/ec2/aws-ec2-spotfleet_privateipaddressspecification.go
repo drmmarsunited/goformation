@@ -8,12 +8,12 @@ import (
 
 // SpotFleet_PrivateIpAddressSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.PrivateIpAddressSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-privateipaddressspecification.html
-type SpotFleet_PrivateIpAddressSpecification struct {
+type SpotFleet_PrivateIpAddressSpecification[T any] struct {
 
 	// Primary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-privateipaddressspecification.html#cfn-ec2-spotfleet-privateipaddressspecification-primary
-	Primary *bool `json:"Primary,omitempty"`
+	Primary *T `json:"Primary,omitempty"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SpotFleet_PrivateIpAddressSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_PrivateIpAddressSpecification) AWSCloudFormationType() string {
+func (r *SpotFleet_PrivateIpAddressSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.PrivateIpAddressSpecification"
 }

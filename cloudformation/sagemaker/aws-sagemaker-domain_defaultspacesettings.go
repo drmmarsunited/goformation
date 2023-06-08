@@ -8,7 +8,7 @@ import (
 
 // Domain_DefaultSpaceSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.DefaultSpaceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html
-type Domain_DefaultSpaceSettings struct {
+type Domain_DefaultSpaceSettings[T any] struct {
 
 	// ExecutionRole AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Domain_DefaultSpaceSettings struct {
 	// JupyterServerAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-jupyterserverappsettings
-	JupyterServerAppSettings *Domain_JupyterServerAppSettings `json:"JupyterServerAppSettings,omitempty"`
+	JupyterServerAppSettings *Domain_JupyterServerAppSettings[any] `json:"JupyterServerAppSettings,omitempty"`
 
 	// KernelGatewayAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-kernelgatewayappsettings
-	KernelGatewayAppSettings *Domain_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+	KernelGatewayAppSettings *Domain_KernelGatewayAppSettings[any] `json:"KernelGatewayAppSettings,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Domain_DefaultSpaceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_DefaultSpaceSettings) AWSCloudFormationType() string {
+func (r *Domain_DefaultSpaceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.DefaultSpaceSettings"
 }

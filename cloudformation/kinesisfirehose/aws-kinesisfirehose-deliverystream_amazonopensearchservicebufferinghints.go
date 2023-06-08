@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_AmazonopensearchserviceBufferingHints AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceBufferingHints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html
-type DeliveryStream_AmazonopensearchserviceBufferingHints struct {
+type DeliveryStream_AmazonopensearchserviceBufferingHints[T any] struct {
 
 	// IntervalInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-intervalinseconds
-	IntervalInSeconds *int `json:"IntervalInSeconds,omitempty"`
+	IntervalInSeconds *T `json:"IntervalInSeconds,omitempty"`
 
 	// SizeInMBs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-sizeinmbs
-	SizeInMBs *int `json:"SizeInMBs,omitempty"`
+	SizeInMBs *T `json:"SizeInMBs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeliveryStream_AmazonopensearchserviceBufferingHints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_AmazonopensearchserviceBufferingHints) AWSCloudFormationType() string {
+func (r *DeliveryStream_AmazonopensearchserviceBufferingHints[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceBufferingHints"
 }

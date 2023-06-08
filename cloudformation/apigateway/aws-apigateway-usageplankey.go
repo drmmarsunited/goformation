@@ -11,7 +11,7 @@ import (
 
 // UsagePlanKey AWS CloudFormation Resource (AWS::ApiGateway::UsagePlanKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
-type UsagePlanKey struct {
+type UsagePlanKey[T any] struct {
 
 	// KeyId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type UsagePlanKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UsagePlanKey) AWSCloudFormationType() string {
+func (r *UsagePlanKey[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::UsagePlanKey"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UsagePlanKey) MarshalJSON() ([]byte, error) {
-	type Properties UsagePlanKey
+func (r UsagePlanKey[any]) MarshalJSON() ([]byte, error) {
+	type Properties UsagePlanKey[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r UsagePlanKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UsagePlanKey) UnmarshalJSON(b []byte) error {
-	type Properties UsagePlanKey
+func (r *UsagePlanKey[any]) UnmarshalJSON(b []byte) error {
+	type Properties UsagePlanKey[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *UsagePlanKey) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UsagePlanKey(*res.Properties)
+		*r = UsagePlanKey[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

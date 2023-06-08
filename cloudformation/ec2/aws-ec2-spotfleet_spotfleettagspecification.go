@@ -9,7 +9,7 @@ import (
 
 // SpotFleet_SpotFleetTagSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotFleetTagSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleettagspecification.html
-type SpotFleet_SpotFleetTagSpecification struct {
+type SpotFleet_SpotFleetTagSpecification[T any] struct {
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
@@ -38,6 +38,6 @@ type SpotFleet_SpotFleetTagSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_SpotFleetTagSpecification) AWSCloudFormationType() string {
+func (r *SpotFleet_SpotFleetTagSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotFleetTagSpecification"
 }

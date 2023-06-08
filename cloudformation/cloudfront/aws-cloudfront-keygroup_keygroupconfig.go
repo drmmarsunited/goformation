@@ -8,7 +8,7 @@ import (
 
 // KeyGroup_KeyGroupConfig AWS CloudFormation Resource (AWS::CloudFront::KeyGroup.KeyGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-keygroup-keygroupconfig.html
-type KeyGroup_KeyGroupConfig struct {
+type KeyGroup_KeyGroupConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type KeyGroup_KeyGroupConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KeyGroup_KeyGroupConfig) AWSCloudFormationType() string {
+func (r *KeyGroup_KeyGroupConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::KeyGroup.KeyGroupConfig"
 }

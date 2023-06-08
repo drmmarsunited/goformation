@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_TargetCapacitySpecificationRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html
-type EC2Fleet_TargetCapacitySpecificationRequest struct {
+type EC2Fleet_TargetCapacitySpecificationRequest[T any] struct {
 
 	// DefaultTargetCapacityType AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type EC2Fleet_TargetCapacitySpecificationRequest struct {
 	// OnDemandTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity
-	OnDemandTargetCapacity *int `json:"OnDemandTargetCapacity,omitempty"`
+	OnDemandTargetCapacity *T `json:"OnDemandTargetCapacity,omitempty"`
 
 	// SpotTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity
-	SpotTargetCapacity *int `json:"SpotTargetCapacity,omitempty"`
+	SpotTargetCapacity *T `json:"SpotTargetCapacity,omitempty"`
 
 	// TargetCapacityUnitType AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type EC2Fleet_TargetCapacitySpecificationRequest struct {
 	// TotalTargetCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity
-	TotalTargetCapacity int `json:"TotalTargetCapacity"`
+	TotalTargetCapacity T `json:"TotalTargetCapacity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type EC2Fleet_TargetCapacitySpecificationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_TargetCapacitySpecificationRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_TargetCapacitySpecificationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest"
 }

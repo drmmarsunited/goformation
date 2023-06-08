@@ -8,7 +8,7 @@ import (
 
 // ComputeEnvironment_EksConfiguration AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.EksConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-eksconfiguration.html
-type ComputeEnvironment_EksConfiguration struct {
+type ComputeEnvironment_EksConfiguration[T any] struct {
 
 	// EksClusterArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ComputeEnvironment_EksConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment_EksConfiguration) AWSCloudFormationType() string {
+func (r *ComputeEnvironment_EksConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.EksConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Function_SecretArnSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.SecretArnSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_SecretArnSAMPT struct {
+type Function_SecretArnSAMPT[T any] struct {
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_SecretArnSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_SecretArnSAMPT) AWSCloudFormationType() string {
+func (r *Function_SecretArnSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.SecretArnSAMPT"
 }

@@ -8,7 +8,7 @@ import (
 
 // LocationEFS_Ec2Config AWS CloudFormation Resource (AWS::DataSync::LocationEFS.Ec2Config)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationefs-ec2config.html
-type LocationEFS_Ec2Config struct {
+type LocationEFS_Ec2Config[T any] struct {
 
 	// SecurityGroupArns AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LocationEFS_Ec2Config struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationEFS_Ec2Config) AWSCloudFormationType() string {
+func (r *LocationEFS_Ec2Config[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationEFS.Ec2Config"
 }

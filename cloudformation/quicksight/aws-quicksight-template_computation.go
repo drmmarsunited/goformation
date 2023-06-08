@@ -8,57 +8,57 @@ import (
 
 // Template_Computation AWS CloudFormation Resource (AWS::QuickSight::Template.Computation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html
-type Template_Computation struct {
+type Template_Computation[T any] struct {
 
 	// Forecast AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-forecast
-	Forecast *Template_ForecastComputation `json:"Forecast,omitempty"`
+	Forecast *Template_ForecastComputation[any] `json:"Forecast,omitempty"`
 
 	// GrowthRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-growthrate
-	GrowthRate *Template_GrowthRateComputation `json:"GrowthRate,omitempty"`
+	GrowthRate *Template_GrowthRateComputation[any] `json:"GrowthRate,omitempty"`
 
 	// MaximumMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-maximumminimum
-	MaximumMinimum *Template_MaximumMinimumComputation `json:"MaximumMinimum,omitempty"`
+	MaximumMinimum *Template_MaximumMinimumComputation[any] `json:"MaximumMinimum,omitempty"`
 
 	// MetricComparison AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-metriccomparison
-	MetricComparison *Template_MetricComparisonComputation `json:"MetricComparison,omitempty"`
+	MetricComparison *Template_MetricComparisonComputation[any] `json:"MetricComparison,omitempty"`
 
 	// PeriodOverPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-periodoverperiod
-	PeriodOverPeriod *Template_PeriodOverPeriodComputation `json:"PeriodOverPeriod,omitempty"`
+	PeriodOverPeriod *Template_PeriodOverPeriodComputation[any] `json:"PeriodOverPeriod,omitempty"`
 
 	// PeriodToDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-periodtodate
-	PeriodToDate *Template_PeriodToDateComputation `json:"PeriodToDate,omitempty"`
+	PeriodToDate *Template_PeriodToDateComputation[any] `json:"PeriodToDate,omitempty"`
 
 	// TopBottomMovers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-topbottommovers
-	TopBottomMovers *Template_TopBottomMoversComputation `json:"TopBottomMovers,omitempty"`
+	TopBottomMovers *Template_TopBottomMoversComputation[any] `json:"TopBottomMovers,omitempty"`
 
 	// TopBottomRanked AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-topbottomranked
-	TopBottomRanked *Template_TopBottomRankedComputation `json:"TopBottomRanked,omitempty"`
+	TopBottomRanked *Template_TopBottomRankedComputation[any] `json:"TopBottomRanked,omitempty"`
 
 	// TotalAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-totalaggregation
-	TotalAggregation *Template_TotalAggregationComputation `json:"TotalAggregation,omitempty"`
+	TotalAggregation *Template_TotalAggregationComputation[any] `json:"TotalAggregation,omitempty"`
 
 	// UniqueValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-computation.html#cfn-quicksight-template-computation-uniquevalues
-	UniqueValues *Template_UniqueValuesComputation `json:"UniqueValues,omitempty"`
+	UniqueValues *Template_UniqueValuesComputation[any] `json:"UniqueValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Template_Computation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Computation) AWSCloudFormationType() string {
+func (r *Template_Computation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.Computation"
 }

@@ -8,27 +8,27 @@ import (
 
 // StackSet_OperationPreferences AWS CloudFormation Resource (AWS::CloudFormation::StackSet.OperationPreferences)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html
-type StackSet_OperationPreferences struct {
+type StackSet_OperationPreferences[T any] struct {
 
 	// FailureToleranceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-failuretolerancecount
-	FailureToleranceCount *int `json:"FailureToleranceCount,omitempty"`
+	FailureToleranceCount *T `json:"FailureToleranceCount,omitempty"`
 
 	// FailureTolerancePercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-failuretolerancepercentage
-	FailureTolerancePercentage *int `json:"FailureTolerancePercentage,omitempty"`
+	FailureTolerancePercentage *T `json:"FailureTolerancePercentage,omitempty"`
 
 	// MaxConcurrentCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-maxconcurrentcount
-	MaxConcurrentCount *int `json:"MaxConcurrentCount,omitempty"`
+	MaxConcurrentCount *T `json:"MaxConcurrentCount,omitempty"`
 
 	// MaxConcurrentPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-maxconcurrentpercentage
-	MaxConcurrentPercentage *int `json:"MaxConcurrentPercentage,omitempty"`
+	MaxConcurrentPercentage *T `json:"MaxConcurrentPercentage,omitempty"`
 
 	// RegionConcurrencyType AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type StackSet_OperationPreferences struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet_OperationPreferences) AWSCloudFormationType() string {
+func (r *StackSet_OperationPreferences[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet.OperationPreferences"
 }

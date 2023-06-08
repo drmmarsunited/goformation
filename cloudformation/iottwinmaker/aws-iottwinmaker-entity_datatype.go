@@ -8,22 +8,22 @@ import (
 
 // Entity_DataType AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.DataType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html
-type Entity_DataType struct {
+type Entity_DataType[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-allowedvalues
-	AllowedValues []Entity_DataValue `json:"AllowedValues,omitempty"`
+	AllowedValues []Entity_DataValue[any] `json:"AllowedValues,omitempty"`
 
 	// NestedType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-nestedtype
-	NestedType *Entity_DataType `json:"NestedType,omitempty"`
+	NestedType *Entity_DataType[any] `json:"NestedType,omitempty"`
 
 	// Relationship AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-relationship
-	Relationship *Entity_Relationship `json:"Relationship,omitempty"`
+	Relationship *Entity_Relationship[any] `json:"Relationship,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Entity_DataType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_DataType) AWSCloudFormationType() string {
+func (r *Entity_DataType[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.DataType"
 }

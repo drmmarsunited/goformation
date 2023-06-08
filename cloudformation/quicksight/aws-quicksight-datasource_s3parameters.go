@@ -8,12 +8,17 @@ import (
 
 // DataSource_S3Parameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.S3Parameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-s3parameters.html
-type DataSource_S3Parameters struct {
+type DataSource_S3Parameters[T any] struct {
 
 	// ManifestFileLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-s3parameters.html#cfn-quicksight-datasource-s3parameters-manifestfilelocation
-	ManifestFileLocation *DataSource_ManifestFileLocation `json:"ManifestFileLocation"`
+	ManifestFileLocation *DataSource_ManifestFileLocation[any] `json:"ManifestFileLocation"`
+
+	// RoleArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-s3parameters.html#cfn-quicksight-datasource-s3parameters-rolearn
+	RoleArn *string `json:"RoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +37,6 @@ type DataSource_S3Parameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_S3Parameters) AWSCloudFormationType() string {
+func (r *DataSource_S3Parameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.S3Parameters"
 }

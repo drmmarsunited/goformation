@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayLogging AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayLogging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html
-type VirtualGateway_VirtualGatewayLogging struct {
+type VirtualGateway_VirtualGatewayLogging[T any] struct {
 
 	// AccessLog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html#cfn-appmesh-virtualgateway-virtualgatewaylogging-accesslog
-	AccessLog *VirtualGateway_VirtualGatewayAccessLog `json:"AccessLog,omitempty"`
+	AccessLog *VirtualGateway_VirtualGatewayAccessLog[any] `json:"AccessLog,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayLogging struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayLogging) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayLogging[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayLogging"
 }

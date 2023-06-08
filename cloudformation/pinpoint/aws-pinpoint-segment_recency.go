@@ -8,7 +8,7 @@ import (
 
 // Segment_Recency AWS CloudFormation Resource (AWS::Pinpoint::Segment.Recency)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior-recency.html
-type Segment_Recency struct {
+type Segment_Recency[T any] struct {
 
 	// Duration AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Segment_Recency struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_Recency) AWSCloudFormationType() string {
+func (r *Segment_Recency[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.Recency"
 }

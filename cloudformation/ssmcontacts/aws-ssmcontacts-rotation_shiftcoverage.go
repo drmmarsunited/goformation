@@ -8,12 +8,12 @@ import (
 
 // Rotation_ShiftCoverage AWS CloudFormation Resource (AWS::SSMContacts::Rotation.ShiftCoverage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-shiftcoverage.html
-type Rotation_ShiftCoverage struct {
+type Rotation_ShiftCoverage[T any] struct {
 
 	// CoverageTimes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-shiftcoverage.html#cfn-ssmcontacts-rotation-shiftcoverage-coveragetimes
-	CoverageTimes []Rotation_CoverageTime `json:"CoverageTimes"`
+	CoverageTimes []Rotation_CoverageTime[any] `json:"CoverageTimes"`
 
 	// DayOfWeek AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rotation_ShiftCoverage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation_ShiftCoverage) AWSCloudFormationType() string {
+func (r *Rotation_ShiftCoverage[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation.ShiftCoverage"
 }

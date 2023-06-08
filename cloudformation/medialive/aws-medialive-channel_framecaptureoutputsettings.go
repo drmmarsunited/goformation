@@ -8,7 +8,7 @@ import (
 
 // Channel_FrameCaptureOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptureoutputsettings.html
-type Channel_FrameCaptureOutputSettings struct {
+type Channel_FrameCaptureOutputSettings[T any] struct {
 
 	// NameModifier AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_FrameCaptureOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FrameCaptureOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_FrameCaptureOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FrameCaptureOutputSettings"
 }

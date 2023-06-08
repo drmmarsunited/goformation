@@ -8,7 +8,7 @@ import (
 
 // ObservabilityConfiguration_TraceConfiguration AWS CloudFormation Resource (AWS::AppRunner::ObservabilityConfiguration.TraceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-observabilityconfiguration-traceconfiguration.html
-type ObservabilityConfiguration_TraceConfiguration struct {
+type ObservabilityConfiguration_TraceConfiguration[T any] struct {
 
 	// Vendor AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ObservabilityConfiguration_TraceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ObservabilityConfiguration_TraceConfiguration) AWSCloudFormationType() string {
+func (r *ObservabilityConfiguration_TraceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::ObservabilityConfiguration.TraceConfiguration"
 }

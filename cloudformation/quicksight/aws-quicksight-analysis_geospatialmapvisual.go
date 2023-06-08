@@ -8,32 +8,32 @@ import (
 
 // Analysis_GeospatialMapVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.GeospatialMapVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html
-type Analysis_GeospatialMapVisual struct {
+type Analysis_GeospatialMapVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html#cfn-quicksight-analysis-geospatialmapvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html#cfn-quicksight-analysis-geospatialmapvisual-chartconfiguration
-	ChartConfiguration *Analysis_GeospatialMapConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_GeospatialMapConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ColumnHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html#cfn-quicksight-analysis-geospatialmapvisual-columnhierarchies
-	ColumnHierarchies []Analysis_ColumnHierarchy `json:"ColumnHierarchies,omitempty"`
+	ColumnHierarchies []Analysis_ColumnHierarchy[any] `json:"ColumnHierarchies,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html#cfn-quicksight-analysis-geospatialmapvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapvisual.html#cfn-quicksight-analysis-geospatialmapvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_GeospatialMapVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GeospatialMapVisual) AWSCloudFormationType() string {
+func (r *Analysis_GeospatialMapVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GeospatialMapVisual"
 }

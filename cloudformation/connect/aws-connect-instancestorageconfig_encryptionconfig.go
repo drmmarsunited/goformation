@@ -8,7 +8,7 @@ import (
 
 // InstanceStorageConfig_EncryptionConfig AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.EncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-encryptionconfig.html
-type InstanceStorageConfig_EncryptionConfig struct {
+type InstanceStorageConfig_EncryptionConfig[T any] struct {
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InstanceStorageConfig_EncryptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig_EncryptionConfig) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig_EncryptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig.EncryptionConfig"
 }

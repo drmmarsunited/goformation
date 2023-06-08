@@ -8,7 +8,7 @@ import (
 
 // FeatureGroup_OnlineStoreSecurityConfig AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.OnlineStoreSecurityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoresecurityconfig.html
-type FeatureGroup_OnlineStoreSecurityConfig struct {
+type FeatureGroup_OnlineStoreSecurityConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type FeatureGroup_OnlineStoreSecurityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_OnlineStoreSecurityConfig) AWSCloudFormationType() string {
+func (r *FeatureGroup_OnlineStoreSecurityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.OnlineStoreSecurityConfig"
 }

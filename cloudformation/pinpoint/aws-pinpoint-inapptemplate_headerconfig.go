@@ -8,7 +8,7 @@ import (
 
 // InAppTemplate_HeaderConfig AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.HeaderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-headerconfig.html
-type InAppTemplate_HeaderConfig struct {
+type InAppTemplate_HeaderConfig[T any] struct {
 
 	// Alignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type InAppTemplate_HeaderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InAppTemplate_HeaderConfig) AWSCloudFormationType() string {
+func (r *InAppTemplate_HeaderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::InAppTemplate.HeaderConfig"
 }

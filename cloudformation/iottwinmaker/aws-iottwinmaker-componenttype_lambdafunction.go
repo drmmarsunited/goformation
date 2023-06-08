@@ -8,7 +8,7 @@ import (
 
 // ComponentType_LambdaFunction AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.LambdaFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-lambdafunction.html
-type ComponentType_LambdaFunction struct {
+type ComponentType_LambdaFunction[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ComponentType_LambdaFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_LambdaFunction) AWSCloudFormationType() string {
+func (r *ComponentType_LambdaFunction[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.LambdaFunction"
 }

@@ -8,12 +8,12 @@ import (
 
 // Channel_AudioPidSelection AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioPidSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html
-type Channel_AudioPidSelection struct {
+type Channel_AudioPidSelection[T any] struct {
 
 	// Pid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html#cfn-medialive-channel-audiopidselection-pid
-	Pid *int `json:"Pid,omitempty"`
+	Pid *T `json:"Pid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_AudioPidSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioPidSelection) AWSCloudFormationType() string {
+func (r *Channel_AudioPidSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioPidSelection"
 }

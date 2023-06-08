@@ -8,22 +8,22 @@ import (
 
 // Application_FlinkApplicationConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html
-type Application_FlinkApplicationConfiguration struct {
+type Application_FlinkApplicationConfiguration[T any] struct {
 
 	// CheckpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-flinkapplicationconfiguration-checkpointconfiguration
-	CheckpointConfiguration *Application_CheckpointConfiguration `json:"CheckpointConfiguration,omitempty"`
+	CheckpointConfiguration *Application_CheckpointConfiguration[any] `json:"CheckpointConfiguration,omitempty"`
 
 	// MonitoringConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-flinkapplicationconfiguration-monitoringconfiguration
-	MonitoringConfiguration *Application_MonitoringConfiguration `json:"MonitoringConfiguration,omitempty"`
+	MonitoringConfiguration *Application_MonitoringConfiguration[any] `json:"MonitoringConfiguration,omitempty"`
 
 	// ParallelismConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-flinkapplicationconfiguration-parallelismconfiguration
-	ParallelismConfiguration *Application_ParallelismConfiguration `json:"ParallelismConfiguration,omitempty"`
+	ParallelismConfiguration *Application_ParallelismConfiguration[any] `json:"ParallelismConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Application_FlinkApplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_FlinkApplicationConfiguration) AWSCloudFormationType() string {
+func (r *Application_FlinkApplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration"
 }

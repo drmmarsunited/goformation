@@ -8,7 +8,7 @@ import (
 
 // IPSet_IPSetDescriptor AWS CloudFormation Resource (AWS::WAFRegional::IPSet.IPSetDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html
-type IPSet_IPSetDescriptor struct {
+type IPSet_IPSetDescriptor[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type IPSet_IPSetDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPSet_IPSetDescriptor) AWSCloudFormationType() string {
+func (r *IPSet_IPSetDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::IPSet.IPSetDescriptor"
 }

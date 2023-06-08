@@ -8,17 +8,17 @@ import (
 
 // Subnet_PrivateDnsNameOptionsOnLaunch AWS CloudFormation Resource (AWS::EC2::Subnet.PrivateDnsNameOptionsOnLaunch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html
-type Subnet_PrivateDnsNameOptionsOnLaunch struct {
+type Subnet_PrivateDnsNameOptionsOnLaunch[T any] struct {
 
 	// EnableResourceNameDnsAAAARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsaaaarecord
-	EnableResourceNameDnsAAAARecord *bool `json:"EnableResourceNameDnsAAAARecord,omitempty"`
+	EnableResourceNameDnsAAAARecord *T `json:"EnableResourceNameDnsAAAARecord,omitempty"`
 
 	// EnableResourceNameDnsARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsarecord
-	EnableResourceNameDnsARecord *bool `json:"EnableResourceNameDnsARecord,omitempty"`
+	EnableResourceNameDnsARecord *T `json:"EnableResourceNameDnsARecord,omitempty"`
 
 	// HostnameType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Subnet_PrivateDnsNameOptionsOnLaunch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Subnet_PrivateDnsNameOptionsOnLaunch) AWSCloudFormationType() string {
+func (r *Subnet_PrivateDnsNameOptionsOnLaunch[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Subnet.PrivateDnsNameOptionsOnLaunch"
 }

@@ -8,12 +8,12 @@ import (
 
 // DeploymentGroup_RevisionLocation AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.RevisionLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html
-type DeploymentGroup_RevisionLocation struct {
+type DeploymentGroup_RevisionLocation[T any] struct {
 
 	// GitHubLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation
-	GitHubLocation *DeploymentGroup_GitHubLocation `json:"GitHubLocation,omitempty"`
+	GitHubLocation *DeploymentGroup_GitHubLocation[any] `json:"GitHubLocation,omitempty"`
 
 	// RevisionType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DeploymentGroup_RevisionLocation struct {
 	// S3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location
-	S3Location *DeploymentGroup_S3Location `json:"S3Location,omitempty"`
+	S3Location *DeploymentGroup_S3Location[any] `json:"S3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DeploymentGroup_RevisionLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_RevisionLocation) AWSCloudFormationType() string {
+func (r *DeploymentGroup_RevisionLocation[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.RevisionLocation"
 }

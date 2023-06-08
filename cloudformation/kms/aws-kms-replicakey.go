@@ -12,7 +12,7 @@ import (
 
 // ReplicaKey AWS CloudFormation Resource (AWS::KMS::ReplicaKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html
-type ReplicaKey struct {
+type ReplicaKey[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type ReplicaKey struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// KeyPolicy AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type ReplicaKey struct {
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-pendingwindowindays
-	PendingWindowInDays *int `json:"PendingWindowInDays,omitempty"`
+	PendingWindowInDays *T `json:"PendingWindowInDays,omitempty"`
 
 	// PrimaryKeyArn AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type ReplicaKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicaKey) AWSCloudFormationType() string {
+func (r *ReplicaKey[any]) AWSCloudFormationType() string {
 	return "AWS::KMS::ReplicaKey"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReplicaKey) MarshalJSON() ([]byte, error) {
-	type Properties ReplicaKey
+func (r ReplicaKey[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReplicaKey[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ReplicaKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReplicaKey) UnmarshalJSON(b []byte) error {
-	type Properties ReplicaKey
+func (r *ReplicaKey[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReplicaKey[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ReplicaKey) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReplicaKey(*res.Properties)
+		*r = ReplicaKey[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

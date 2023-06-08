@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_SourceAccessConfiguration AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.SourceAccessConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html
-type EventSourceMapping_SourceAccessConfiguration struct {
+type EventSourceMapping_SourceAccessConfiguration[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type EventSourceMapping_SourceAccessConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_SourceAccessConfiguration) AWSCloudFormationType() string {
+func (r *EventSourceMapping_SourceAccessConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.SourceAccessConfiguration"
 }

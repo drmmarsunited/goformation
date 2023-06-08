@@ -8,22 +8,22 @@ import (
 
 // MLTransform_FindMatchesParameters AWS CloudFormation Resource (AWS::Glue::MLTransform.FindMatchesParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html
-type MLTransform_FindMatchesParameters struct {
+type MLTransform_FindMatchesParameters[T any] struct {
 
 	// AccuracyCostTradeoff AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-accuracycosttradeoff
-	AccuracyCostTradeoff *float64 `json:"AccuracyCostTradeoff,omitempty"`
+	AccuracyCostTradeoff *T `json:"AccuracyCostTradeoff,omitempty"`
 
 	// EnforceProvidedLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-enforceprovidedlabels
-	EnforceProvidedLabels *bool `json:"EnforceProvidedLabels,omitempty"`
+	EnforceProvidedLabels *T `json:"EnforceProvidedLabels,omitempty"`
 
 	// PrecisionRecallTradeoff AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-precisionrecalltradeoff
-	PrecisionRecallTradeoff *float64 `json:"PrecisionRecallTradeoff,omitempty"`
+	PrecisionRecallTradeoff *T `json:"PrecisionRecallTradeoff,omitempty"`
 
 	// PrimaryKeyColumnName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type MLTransform_FindMatchesParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_FindMatchesParameters) AWSCloudFormationType() string {
+func (r *MLTransform_FindMatchesParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.FindMatchesParameters"
 }

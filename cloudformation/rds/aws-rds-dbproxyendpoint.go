@@ -11,7 +11,7 @@ import (
 
 // DBProxyEndpoint AWS CloudFormation Resource (AWS::RDS::DBProxyEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html
-type DBProxyEndpoint struct {
+type DBProxyEndpoint[T any] struct {
 
 	// DBProxyEndpointName AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type DBProxyEndpoint struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-tags
-	Tags []DBProxyEndpoint_TagFormat `json:"Tags,omitempty"`
+	Tags []DBProxyEndpoint_TagFormat[any] `json:"Tags,omitempty"`
 
 	// TargetRole AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type DBProxyEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxyEndpoint) AWSCloudFormationType() string {
+func (r *DBProxyEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxyEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBProxyEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties DBProxyEndpoint
+func (r DBProxyEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBProxyEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r DBProxyEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBProxyEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties DBProxyEndpoint
+func (r *DBProxyEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBProxyEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *DBProxyEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBProxyEndpoint(*res.Properties)
+		*r = DBProxyEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

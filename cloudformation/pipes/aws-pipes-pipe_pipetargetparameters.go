@@ -8,32 +8,32 @@ import (
 
 // Pipe_PipeTargetParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html
-type Pipe_PipeTargetParameters struct {
+type Pipe_PipeTargetParameters[T any] struct {
 
 	// BatchJobParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-batchjobparameters
-	BatchJobParameters *Pipe_PipeTargetBatchJobParameters `json:"BatchJobParameters,omitempty"`
+	BatchJobParameters *Pipe_PipeTargetBatchJobParameters[any] `json:"BatchJobParameters,omitempty"`
 
 	// CloudWatchLogsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-cloudwatchlogsparameters
-	CloudWatchLogsParameters *Pipe_PipeTargetCloudWatchLogsParameters `json:"CloudWatchLogsParameters,omitempty"`
+	CloudWatchLogsParameters *Pipe_PipeTargetCloudWatchLogsParameters[any] `json:"CloudWatchLogsParameters,omitempty"`
 
 	// EcsTaskParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-ecstaskparameters
-	EcsTaskParameters *Pipe_PipeTargetEcsTaskParameters `json:"EcsTaskParameters,omitempty"`
+	EcsTaskParameters *Pipe_PipeTargetEcsTaskParameters[any] `json:"EcsTaskParameters,omitempty"`
 
 	// EventBridgeEventBusParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-eventbridgeeventbusparameters
-	EventBridgeEventBusParameters *Pipe_PipeTargetEventBridgeEventBusParameters `json:"EventBridgeEventBusParameters,omitempty"`
+	EventBridgeEventBusParameters *Pipe_PipeTargetEventBridgeEventBusParameters[any] `json:"EventBridgeEventBusParameters,omitempty"`
 
 	// HttpParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-httpparameters
-	HttpParameters *Pipe_PipeTargetHttpParameters `json:"HttpParameters,omitempty"`
+	HttpParameters *Pipe_PipeTargetHttpParameters[any] `json:"HttpParameters,omitempty"`
 
 	// InputTemplate AWS CloudFormation Property
 	// Required: false
@@ -43,32 +43,32 @@ type Pipe_PipeTargetParameters struct {
 	// KinesisStreamParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-kinesisstreamparameters
-	KinesisStreamParameters *Pipe_PipeTargetKinesisStreamParameters `json:"KinesisStreamParameters,omitempty"`
+	KinesisStreamParameters *Pipe_PipeTargetKinesisStreamParameters[any] `json:"KinesisStreamParameters,omitempty"`
 
 	// LambdaFunctionParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-lambdafunctionparameters
-	LambdaFunctionParameters *Pipe_PipeTargetLambdaFunctionParameters `json:"LambdaFunctionParameters,omitempty"`
+	LambdaFunctionParameters *Pipe_PipeTargetLambdaFunctionParameters[any] `json:"LambdaFunctionParameters,omitempty"`
 
 	// RedshiftDataParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-redshiftdataparameters
-	RedshiftDataParameters *Pipe_PipeTargetRedshiftDataParameters `json:"RedshiftDataParameters,omitempty"`
+	RedshiftDataParameters *Pipe_PipeTargetRedshiftDataParameters[any] `json:"RedshiftDataParameters,omitempty"`
 
 	// SageMakerPipelineParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-sagemakerpipelineparameters
-	SageMakerPipelineParameters *Pipe_PipeTargetSageMakerPipelineParameters `json:"SageMakerPipelineParameters,omitempty"`
+	SageMakerPipelineParameters *Pipe_PipeTargetSageMakerPipelineParameters[any] `json:"SageMakerPipelineParameters,omitempty"`
 
 	// SqsQueueParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-sqsqueueparameters
-	SqsQueueParameters *Pipe_PipeTargetSqsQueueParameters `json:"SqsQueueParameters,omitempty"`
+	SqsQueueParameters *Pipe_PipeTargetSqsQueueParameters[any] `json:"SqsQueueParameters,omitempty"`
 
 	// StepFunctionStateMachineParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-stepfunctionstatemachineparameters
-	StepFunctionStateMachineParameters *Pipe_PipeTargetStateMachineParameters `json:"StepFunctionStateMachineParameters,omitempty"`
+	StepFunctionStateMachineParameters *Pipe_PipeTargetStateMachineParameters[any] `json:"StepFunctionStateMachineParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -87,6 +87,6 @@ type Pipe_PipeTargetParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetParameters"
 }

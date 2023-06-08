@@ -11,7 +11,7 @@ import (
 
 // SlackWorkspaceConfiguration AWS CloudFormation Resource (AWS::SupportApp::SlackWorkspaceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackworkspaceconfiguration.html
-type SlackWorkspaceConfiguration struct {
+type SlackWorkspaceConfiguration[T any] struct {
 
 	// TeamId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type SlackWorkspaceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SlackWorkspaceConfiguration) AWSCloudFormationType() string {
+func (r *SlackWorkspaceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SupportApp::SlackWorkspaceConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SlackWorkspaceConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties SlackWorkspaceConfiguration
+func (r SlackWorkspaceConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties SlackWorkspaceConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SlackWorkspaceConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SlackWorkspaceConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties SlackWorkspaceConfiguration
+func (r *SlackWorkspaceConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties SlackWorkspaceConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SlackWorkspaceConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SlackWorkspaceConfiguration(*res.Properties)
+		*r = SlackWorkspaceConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

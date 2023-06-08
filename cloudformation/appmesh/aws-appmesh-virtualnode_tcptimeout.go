@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_TcpTimeout AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TcpTimeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html
-type VirtualNode_TcpTimeout struct {
+type VirtualNode_TcpTimeout[T any] struct {
 
 	// Idle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html#cfn-appmesh-virtualnode-tcptimeout-idle
-	Idle *VirtualNode_Duration `json:"Idle,omitempty"`
+	Idle *VirtualNode_Duration[any] `json:"Idle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_TcpTimeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_TcpTimeout) AWSCloudFormationType() string {
+func (r *VirtualNode_TcpTimeout[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.TcpTimeout"
 }

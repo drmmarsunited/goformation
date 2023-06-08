@@ -11,17 +11,17 @@ import (
 
 // ScalableTarget AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalableTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
-type ScalableTarget struct {
+type ScalableTarget[T any] struct {
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity T `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity T `json:"MinCapacity"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type ScalableTarget struct {
 	// ScheduledActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
-	ScheduledActions []ScalableTarget_ScheduledAction `json:"ScheduledActions,omitempty"`
+	ScheduledActions []ScalableTarget_ScheduledAction[any] `json:"ScheduledActions,omitempty"`
 
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type ScalableTarget struct {
 	// SuspendedState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate
-	SuspendedState *ScalableTarget_SuspendedState `json:"SuspendedState,omitempty"`
+	SuspendedState *ScalableTarget_SuspendedState[any] `json:"SuspendedState,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type ScalableTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalableTarget) AWSCloudFormationType() string {
+func (r *ScalableTarget[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalableTarget"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScalableTarget) MarshalJSON() ([]byte, error) {
-	type Properties ScalableTarget
+func (r ScalableTarget[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScalableTarget[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r ScalableTarget) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScalableTarget) UnmarshalJSON(b []byte) error {
-	type Properties ScalableTarget
+func (r *ScalableTarget[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScalableTarget[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *ScalableTarget) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScalableTarget(*res.Properties)
+		*r = ScalableTarget[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Channel_FrameCaptureS3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureS3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptures3settings.html
-type Channel_FrameCaptureS3Settings struct {
+type Channel_FrameCaptureS3Settings[T any] struct {
 
 	// CannedAcl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_FrameCaptureS3Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FrameCaptureS3Settings) AWSCloudFormationType() string {
+func (r *Channel_FrameCaptureS3Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FrameCaptureS3Settings"
 }

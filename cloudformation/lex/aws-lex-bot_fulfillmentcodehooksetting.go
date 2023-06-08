@@ -8,27 +8,27 @@ import (
 
 // Bot_FulfillmentCodeHookSetting AWS CloudFormation Resource (AWS::Lex::Bot.FulfillmentCodeHookSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html
-type Bot_FulfillmentCodeHookSetting struct {
+type Bot_FulfillmentCodeHookSetting[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// FulfillmentUpdatesSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification
-	FulfillmentUpdatesSpecification *Bot_FulfillmentUpdatesSpecification `json:"FulfillmentUpdatesSpecification,omitempty"`
+	FulfillmentUpdatesSpecification *Bot_FulfillmentUpdatesSpecification[any] `json:"FulfillmentUpdatesSpecification,omitempty"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-isactive
-	IsActive *bool `json:"IsActive,omitempty"`
+	IsActive *T `json:"IsActive,omitempty"`
 
 	// PostFulfillmentStatusSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification
-	PostFulfillmentStatusSpecification *Bot_PostFulfillmentStatusSpecification `json:"PostFulfillmentStatusSpecification,omitempty"`
+	PostFulfillmentStatusSpecification *Bot_PostFulfillmentStatusSpecification[any] `json:"PostFulfillmentStatusSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_FulfillmentCodeHookSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_FulfillmentCodeHookSetting) AWSCloudFormationType() string {
+func (r *Bot_FulfillmentCodeHookSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.FulfillmentCodeHookSetting"
 }

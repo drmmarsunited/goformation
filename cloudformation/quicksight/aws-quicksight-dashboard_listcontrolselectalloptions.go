@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ListControlSelectAllOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ListControlSelectAllOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-listcontrolselectalloptions.html
-type Dashboard_ListControlSelectAllOptions struct {
+type Dashboard_ListControlSelectAllOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ListControlSelectAllOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ListControlSelectAllOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ListControlSelectAllOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ListControlSelectAllOptions"
 }

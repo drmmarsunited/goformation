@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilterScopeConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterScopeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterscopeconfiguration.html
-type Dashboard_FilterScopeConfiguration struct {
+type Dashboard_FilterScopeConfiguration[T any] struct {
 
 	// SelectedSheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterscopeconfiguration.html#cfn-quicksight-dashboard-filterscopeconfiguration-selectedsheets
-	SelectedSheets *Dashboard_SelectedSheetsFilterScopeConfiguration `json:"SelectedSheets,omitempty"`
+	SelectedSheets *Dashboard_SelectedSheetsFilterScopeConfiguration[any] `json:"SelectedSheets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_FilterScopeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterScopeConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FilterScopeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterScopeConfiguration"
 }

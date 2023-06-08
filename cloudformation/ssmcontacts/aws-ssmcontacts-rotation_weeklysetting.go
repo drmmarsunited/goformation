@@ -8,7 +8,7 @@ import (
 
 // Rotation_WeeklySetting AWS CloudFormation Resource (AWS::SSMContacts::Rotation.WeeklySetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-weeklysetting.html
-type Rotation_WeeklySetting struct {
+type Rotation_WeeklySetting[T any] struct {
 
 	// DayOfWeek AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rotation_WeeklySetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation_WeeklySetting) AWSCloudFormationType() string {
+func (r *Rotation_WeeklySetting[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation.WeeklySetting"
 }

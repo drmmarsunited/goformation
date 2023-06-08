@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetKinesisStreamParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetKinesisStreamParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetkinesisstreamparameters.html
-type Pipe_PipeTargetKinesisStreamParameters struct {
+type Pipe_PipeTargetKinesisStreamParameters[T any] struct {
 
 	// PartitionKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Pipe_PipeTargetKinesisStreamParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetKinesisStreamParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetKinesisStreamParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetKinesisStreamParameters"
 }

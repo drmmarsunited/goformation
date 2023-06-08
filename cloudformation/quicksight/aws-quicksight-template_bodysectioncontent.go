@@ -8,12 +8,12 @@ import (
 
 // Template_BodySectionContent AWS CloudFormation Resource (AWS::QuickSight::Template.BodySectionContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectioncontent.html
-type Template_BodySectionContent struct {
+type Template_BodySectionContent[T any] struct {
 
 	// Layout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectioncontent.html#cfn-quicksight-template-bodysectioncontent-layout
-	Layout *Template_SectionLayoutConfiguration `json:"Layout,omitempty"`
+	Layout *Template_SectionLayoutConfiguration[any] `json:"Layout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_BodySectionContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BodySectionContent) AWSCloudFormationType() string {
+func (r *Template_BodySectionContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BodySectionContent"
 }

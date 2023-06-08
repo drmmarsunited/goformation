@@ -8,22 +8,22 @@ import (
 
 // Template_ListControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ListControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontroldisplayoptions.html
-type Template_ListControlDisplayOptions struct {
+type Template_ListControlDisplayOptions[T any] struct {
 
 	// SearchOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontroldisplayoptions.html#cfn-quicksight-template-listcontroldisplayoptions-searchoptions
-	SearchOptions *Template_ListControlSearchOptions `json:"SearchOptions,omitempty"`
+	SearchOptions *Template_ListControlSearchOptions[any] `json:"SearchOptions,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontroldisplayoptions.html#cfn-quicksight-template-listcontroldisplayoptions-selectalloptions
-	SelectAllOptions *Template_ListControlSelectAllOptions `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *Template_ListControlSelectAllOptions[any] `json:"SelectAllOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontroldisplayoptions.html#cfn-quicksight-template-listcontroldisplayoptions-titleoptions
-	TitleOptions *Template_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Template_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_ListControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ListControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_ListControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ListControlDisplayOptions"
 }

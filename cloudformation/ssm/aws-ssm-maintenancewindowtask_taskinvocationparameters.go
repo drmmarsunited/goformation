@@ -8,27 +8,27 @@ import (
 
 // MaintenanceWindowTask_TaskInvocationParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html
-type MaintenanceWindowTask_TaskInvocationParameters struct {
+type MaintenanceWindowTask_TaskInvocationParameters[T any] struct {
 
 	// MaintenanceWindowAutomationParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowautomationparameters
-	MaintenanceWindowAutomationParameters *MaintenanceWindowTask_MaintenanceWindowAutomationParameters `json:"MaintenanceWindowAutomationParameters,omitempty"`
+	MaintenanceWindowAutomationParameters *MaintenanceWindowTask_MaintenanceWindowAutomationParameters[any] `json:"MaintenanceWindowAutomationParameters,omitempty"`
 
 	// MaintenanceWindowLambdaParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowlambdaparameters
-	MaintenanceWindowLambdaParameters *MaintenanceWindowTask_MaintenanceWindowLambdaParameters `json:"MaintenanceWindowLambdaParameters,omitempty"`
+	MaintenanceWindowLambdaParameters *MaintenanceWindowTask_MaintenanceWindowLambdaParameters[any] `json:"MaintenanceWindowLambdaParameters,omitempty"`
 
 	// MaintenanceWindowRunCommandParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowruncommandparameters
-	MaintenanceWindowRunCommandParameters *MaintenanceWindowTask_MaintenanceWindowRunCommandParameters `json:"MaintenanceWindowRunCommandParameters,omitempty"`
+	MaintenanceWindowRunCommandParameters *MaintenanceWindowTask_MaintenanceWindowRunCommandParameters[any] `json:"MaintenanceWindowRunCommandParameters,omitempty"`
 
 	// MaintenanceWindowStepFunctionsParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowstepfunctionsparameters
-	MaintenanceWindowStepFunctionsParameters *MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters `json:"MaintenanceWindowStepFunctionsParameters,omitempty"`
+	MaintenanceWindowStepFunctionsParameters *MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters[any] `json:"MaintenanceWindowStepFunctionsParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type MaintenanceWindowTask_TaskInvocationParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_TaskInvocationParameters) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_TaskInvocationParameters[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters"
 }

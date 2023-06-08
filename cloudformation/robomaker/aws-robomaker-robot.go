@@ -11,7 +11,7 @@ import (
 
 // Robot AWS CloudFormation Resource (AWS::RoboMaker::Robot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html
-type Robot struct {
+type Robot[T any] struct {
 
 	// Architecture AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type Robot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Robot) AWSCloudFormationType() string {
+func (r *Robot[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::Robot"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Robot) MarshalJSON() ([]byte, error) {
-	type Properties Robot
+func (r Robot[any]) MarshalJSON() ([]byte, error) {
+	type Properties Robot[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Robot) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Robot) UnmarshalJSON(b []byte) error {
-	type Properties Robot
+func (r *Robot[any]) UnmarshalJSON(b []byte) error {
+	type Properties Robot[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Robot) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Robot(*res.Properties)
+		*r = Robot[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

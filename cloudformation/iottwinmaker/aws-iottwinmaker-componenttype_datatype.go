@@ -8,22 +8,22 @@ import (
 
 // ComponentType_DataType AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.DataType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html
-type ComponentType_DataType struct {
+type ComponentType_DataType[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-allowedvalues
-	AllowedValues []ComponentType_DataValue `json:"AllowedValues,omitempty"`
+	AllowedValues []ComponentType_DataValue[any] `json:"AllowedValues,omitempty"`
 
 	// NestedType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-nestedtype
-	NestedType *ComponentType_DataType `json:"NestedType,omitempty"`
+	NestedType *ComponentType_DataType[any] `json:"NestedType,omitempty"`
 
 	// Relationship AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-relationship
-	Relationship *ComponentType_Relationship `json:"Relationship,omitempty"`
+	Relationship *ComponentType_Relationship[any] `json:"Relationship,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ComponentType_DataType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_DataType) AWSCloudFormationType() string {
+func (r *ComponentType_DataType[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.DataType"
 }

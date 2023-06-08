@@ -11,7 +11,7 @@ import (
 
 // InstanceStorageConfig AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html
-type InstanceStorageConfig struct {
+type InstanceStorageConfig[T any] struct {
 
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
@@ -21,17 +21,17 @@ type InstanceStorageConfig struct {
 	// KinesisFirehoseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-kinesisfirehoseconfig
-	KinesisFirehoseConfig *InstanceStorageConfig_KinesisFirehoseConfig `json:"KinesisFirehoseConfig,omitempty"`
+	KinesisFirehoseConfig *InstanceStorageConfig_KinesisFirehoseConfig[any] `json:"KinesisFirehoseConfig,omitempty"`
 
 	// KinesisStreamConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-kinesisstreamconfig
-	KinesisStreamConfig *InstanceStorageConfig_KinesisStreamConfig `json:"KinesisStreamConfig,omitempty"`
+	KinesisStreamConfig *InstanceStorageConfig_KinesisStreamConfig[any] `json:"KinesisStreamConfig,omitempty"`
 
 	// KinesisVideoStreamConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-kinesisvideostreamconfig
-	KinesisVideoStreamConfig *InstanceStorageConfig_KinesisVideoStreamConfig `json:"KinesisVideoStreamConfig,omitempty"`
+	KinesisVideoStreamConfig *InstanceStorageConfig_KinesisVideoStreamConfig[any] `json:"KinesisVideoStreamConfig,omitempty"`
 
 	// ResourceType AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type InstanceStorageConfig struct {
 	// S3Config AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-s3config
-	S3Config *InstanceStorageConfig_S3Config `json:"S3Config,omitempty"`
+	S3Config *InstanceStorageConfig_S3Config[any] `json:"S3Config,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: true
@@ -65,14 +65,15 @@ type InstanceStorageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InstanceStorageConfig) MarshalJSON() ([]byte, error) {
-	type Properties InstanceStorageConfig
+func (r InstanceStorageConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties InstanceStorageConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r InstanceStorageConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InstanceStorageConfig) UnmarshalJSON(b []byte) error {
-	type Properties InstanceStorageConfig
+func (r *InstanceStorageConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties InstanceStorageConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *InstanceStorageConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InstanceStorageConfig(*res.Properties)
+		*r = InstanceStorageConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

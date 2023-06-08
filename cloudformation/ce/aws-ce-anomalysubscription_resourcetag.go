@@ -8,7 +8,7 @@ import (
 
 // AnomalySubscription_ResourceTag AWS CloudFormation Resource (AWS::CE::AnomalySubscription.ResourceTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-anomalysubscription-resourcetag.html
-type AnomalySubscription_ResourceTag struct {
+type AnomalySubscription_ResourceTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalySubscription_ResourceTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalySubscription_ResourceTag) AWSCloudFormationType() string {
+func (r *AnomalySubscription_ResourceTag[any]) AWSCloudFormationType() string {
 	return "AWS::CE::AnomalySubscription.ResourceTag"
 }

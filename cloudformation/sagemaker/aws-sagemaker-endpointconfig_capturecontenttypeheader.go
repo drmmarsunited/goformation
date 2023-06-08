@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_CaptureContentTypeHeader AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.CaptureContentTypeHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html
-type EndpointConfig_CaptureContentTypeHeader struct {
+type EndpointConfig_CaptureContentTypeHeader[T any] struct {
 
 	// CsvContentTypes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type EndpointConfig_CaptureContentTypeHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_CaptureContentTypeHeader) AWSCloudFormationType() string {
+func (r *EndpointConfig_CaptureContentTypeHeader[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.CaptureContentTypeHeader"
 }

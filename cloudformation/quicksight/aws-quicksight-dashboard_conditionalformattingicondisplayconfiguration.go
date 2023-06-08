@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ConditionalFormattingIconDisplayConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ConditionalFormattingIconDisplayConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingicondisplayconfiguration.html
-type Dashboard_ConditionalFormattingIconDisplayConfiguration struct {
+type Dashboard_ConditionalFormattingIconDisplayConfiguration[T any] struct {
 
 	// IconDisplayOption AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ConditionalFormattingIconDisplayConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ConditionalFormattingIconDisplayConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ConditionalFormattingIconDisplayConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ConditionalFormattingIconDisplayConfiguration"
 }

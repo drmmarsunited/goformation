@@ -8,7 +8,7 @@ import (
 
 // Theme_DataColorPalette AWS CloudFormation Resource (AWS::QuickSight::Theme.DataColorPalette)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-datacolorpalette.html
-type Theme_DataColorPalette struct {
+type Theme_DataColorPalette[T any] struct {
 
 	// Colors AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Theme_DataColorPalette struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_DataColorPalette) AWSCloudFormationType() string {
+func (r *Theme_DataColorPalette[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.DataColorPalette"
 }

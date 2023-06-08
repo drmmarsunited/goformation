@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TableCellImageSizingConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableCellImageSizingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellimagesizingconfiguration.html
-type Dashboard_TableCellImageSizingConfiguration struct {
+type Dashboard_TableCellImageSizingConfiguration[T any] struct {
 
 	// TableCellImageScalingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_TableCellImageSizingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableCellImageSizingConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TableCellImageSizingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableCellImageSizingConfiguration"
 }

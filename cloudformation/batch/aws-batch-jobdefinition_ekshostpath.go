@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksHostPath AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksHostPath)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekshostpath.html
-type JobDefinition_EksHostPath struct {
+type JobDefinition_EksHostPath[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type JobDefinition_EksHostPath struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksHostPath) AWSCloudFormationType() string {
+func (r *JobDefinition_EksHostPath[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksHostPath"
 }

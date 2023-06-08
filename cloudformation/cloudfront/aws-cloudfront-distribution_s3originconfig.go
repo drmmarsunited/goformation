@@ -8,7 +8,7 @@ import (
 
 // Distribution_S3OriginConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.S3OriginConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html
-type Distribution_S3OriginConfig struct {
+type Distribution_S3OriginConfig[T any] struct {
 
 	// OriginAccessIdentity AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Distribution_S3OriginConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_S3OriginConfig) AWSCloudFormationType() string {
+func (r *Distribution_S3OriginConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.S3OriginConfig"
 }

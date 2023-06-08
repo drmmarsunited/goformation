@@ -8,7 +8,7 @@ import (
 
 // Template_DataPathValue AWS CloudFormation Resource (AWS::QuickSight::Template.DataPathValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathvalue.html
-type Template_DataPathValue struct {
+type Template_DataPathValue[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_DataPathValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataPathValue) AWSCloudFormationType() string {
+func (r *Template_DataPathValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataPathValue"
 }

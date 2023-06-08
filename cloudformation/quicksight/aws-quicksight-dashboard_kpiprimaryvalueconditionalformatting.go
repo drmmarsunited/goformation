@@ -8,17 +8,17 @@ import (
 
 // Dashboard_KPIPrimaryValueConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIPrimaryValueConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiprimaryvalueconditionalformatting.html
-type Dashboard_KPIPrimaryValueConditionalFormatting struct {
+type Dashboard_KPIPrimaryValueConditionalFormatting[T any] struct {
 
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiprimaryvalueconditionalformatting.html#cfn-quicksight-dashboard-kpiprimaryvalueconditionalformatting-icon
-	Icon *Dashboard_ConditionalFormattingIcon `json:"Icon,omitempty"`
+	Icon *Dashboard_ConditionalFormattingIcon[any] `json:"Icon,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiprimaryvalueconditionalformatting.html#cfn-quicksight-dashboard-kpiprimaryvalueconditionalformatting-textcolor
-	TextColor *Dashboard_ConditionalFormattingColor `json:"TextColor,omitempty"`
+	TextColor *Dashboard_ConditionalFormattingColor[any] `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_KPIPrimaryValueConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIPrimaryValueConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_KPIPrimaryValueConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIPrimaryValueConditionalFormatting"
 }

@@ -8,17 +8,17 @@ import (
 
 // Cluster_AutoScalingPolicy AWS CloudFormation Resource (AWS::EMR::Cluster.AutoScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html
-type Cluster_AutoScalingPolicy struct {
+type Cluster_AutoScalingPolicy[T any] struct {
 
 	// Constraints AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-constraints
-	Constraints *Cluster_ScalingConstraints `json:"Constraints"`
+	Constraints *Cluster_ScalingConstraints[any] `json:"Constraints"`
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-rules
-	Rules []Cluster_ScalingRule `json:"Rules"`
+	Rules []Cluster_ScalingRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_AutoScalingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_AutoScalingPolicy) AWSCloudFormationType() string {
+func (r *Cluster_AutoScalingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.AutoScalingPolicy"
 }

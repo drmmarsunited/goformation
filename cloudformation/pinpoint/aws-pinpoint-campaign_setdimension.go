@@ -8,7 +8,7 @@ import (
 
 // Campaign_SetDimension AWS CloudFormation Resource (AWS::Pinpoint::Campaign.SetDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html
-type Campaign_SetDimension struct {
+type Campaign_SetDimension[T any] struct {
 
 	// DimensionType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_SetDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_SetDimension) AWSCloudFormationType() string {
+func (r *Campaign_SetDimension[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.SetDimension"
 }

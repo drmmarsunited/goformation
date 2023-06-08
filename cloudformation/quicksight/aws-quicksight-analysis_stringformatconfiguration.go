@@ -8,17 +8,17 @@ import (
 
 // Analysis_StringFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.StringFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringformatconfiguration.html
-type Analysis_StringFormatConfiguration struct {
+type Analysis_StringFormatConfiguration[T any] struct {
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringformatconfiguration.html#cfn-quicksight-analysis-stringformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// NumericFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringformatconfiguration.html#cfn-quicksight-analysis-stringformatconfiguration-numericformatconfiguration
-	NumericFormatConfiguration *Analysis_NumericFormatConfiguration `json:"NumericFormatConfiguration,omitempty"`
+	NumericFormatConfiguration *Analysis_NumericFormatConfiguration[any] `json:"NumericFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_StringFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_StringFormatConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_StringFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.StringFormatConfiguration"
 }

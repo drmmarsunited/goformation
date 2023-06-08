@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_Backend AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.Backend)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html
-type VirtualNode_Backend struct {
+type VirtualNode_Backend[T any] struct {
 
 	// VirtualService AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html#cfn-appmesh-virtualnode-backend-virtualservice
-	VirtualService *VirtualNode_VirtualServiceBackend `json:"VirtualService,omitempty"`
+	VirtualService *VirtualNode_VirtualServiceBackend[any] `json:"VirtualService,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_Backend struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_Backend) AWSCloudFormationType() string {
+func (r *VirtualNode_Backend[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.Backend"
 }

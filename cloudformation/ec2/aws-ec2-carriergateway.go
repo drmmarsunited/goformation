@@ -12,7 +12,7 @@ import (
 
 // CarrierGateway AWS CloudFormation Resource (AWS::EC2::CarrierGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-carriergateway.html
-type CarrierGateway struct {
+type CarrierGateway[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type CarrierGateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CarrierGateway) AWSCloudFormationType() string {
+func (r *CarrierGateway[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::CarrierGateway"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CarrierGateway) MarshalJSON() ([]byte, error) {
-	type Properties CarrierGateway
+func (r CarrierGateway[any]) MarshalJSON() ([]byte, error) {
+	type Properties CarrierGateway[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r CarrierGateway) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CarrierGateway) UnmarshalJSON(b []byte) error {
-	type Properties CarrierGateway
+func (r *CarrierGateway[any]) UnmarshalJSON(b []byte) error {
+	type Properties CarrierGateway[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *CarrierGateway) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CarrierGateway(*res.Properties)
+		*r = CarrierGateway[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

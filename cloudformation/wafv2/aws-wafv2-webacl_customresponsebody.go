@@ -8,7 +8,7 @@ import (
 
 // WebACL_CustomResponseBody AWS CloudFormation Resource (AWS::WAFv2::WebACL.CustomResponseBody)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponsebody.html
-type WebACL_CustomResponseBody struct {
+type WebACL_CustomResponseBody[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_CustomResponseBody struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_CustomResponseBody) AWSCloudFormationType() string {
+func (r *WebACL_CustomResponseBody[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.CustomResponseBody"
 }

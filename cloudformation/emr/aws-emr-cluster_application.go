@@ -8,7 +8,7 @@ import (
 
 // Cluster_Application AWS CloudFormation Resource (AWS::EMR::Cluster.Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html
-type Cluster_Application struct {
+type Cluster_Application[T any] struct {
 
 	// AdditionalInfo AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Cluster_Application struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Application) AWSCloudFormationType() string {
+func (r *Cluster_Application[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.Application"
 }

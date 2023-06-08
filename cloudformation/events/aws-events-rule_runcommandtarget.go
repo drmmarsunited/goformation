@@ -8,7 +8,7 @@ import (
 
 // Rule_RunCommandTarget AWS CloudFormation Resource (AWS::Events::Rule.RunCommandTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html
-type Rule_RunCommandTarget struct {
+type Rule_RunCommandTarget[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rule_RunCommandTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_RunCommandTarget) AWSCloudFormationType() string {
+func (r *Rule_RunCommandTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.RunCommandTarget"
 }

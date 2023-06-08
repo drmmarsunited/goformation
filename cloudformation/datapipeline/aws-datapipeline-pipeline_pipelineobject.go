@@ -8,12 +8,12 @@ import (
 
 // Pipeline_PipelineObject AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.PipelineObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobject.html
-type Pipeline_PipelineObject struct {
+type Pipeline_PipelineObject[T any] struct {
 
 	// Fields AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobject.html#cfn-datapipeline-pipeline-pipelineobject-fields
-	Fields []Pipeline_Field `json:"Fields"`
+	Fields []Pipeline_Field[any] `json:"Fields"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_PipelineObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_PipelineObject) AWSCloudFormationType() string {
+func (r *Pipeline_PipelineObject[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.PipelineObject"
 }

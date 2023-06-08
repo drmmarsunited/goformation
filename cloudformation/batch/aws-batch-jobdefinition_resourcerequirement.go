@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_ResourceRequirement AWS CloudFormation Resource (AWS::Batch::JobDefinition.ResourceRequirement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html
-type JobDefinition_ResourceRequirement struct {
+type JobDefinition_ResourceRequirement[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobDefinition_ResourceRequirement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_ResourceRequirement) AWSCloudFormationType() string {
+func (r *JobDefinition_ResourceRequirement[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.ResourceRequirement"
 }

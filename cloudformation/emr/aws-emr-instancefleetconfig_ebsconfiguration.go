@@ -8,17 +8,17 @@ import (
 
 // InstanceFleetConfig_EbsConfiguration AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.EbsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html
-type InstanceFleetConfig_EbsConfiguration struct {
+type InstanceFleetConfig_EbsConfiguration[T any] struct {
 
 	// EbsBlockDeviceConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsblockdeviceconfigs
-	EbsBlockDeviceConfigs []InstanceFleetConfig_EbsBlockDeviceConfig `json:"EbsBlockDeviceConfigs,omitempty"`
+	EbsBlockDeviceConfigs []InstanceFleetConfig_EbsBlockDeviceConfig[any] `json:"EbsBlockDeviceConfigs,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *T `json:"EbsOptimized,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceFleetConfig_EbsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_EbsConfiguration) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_EbsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.EbsConfiguration"
 }

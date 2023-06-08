@@ -8,17 +8,17 @@ import (
 
 // VirtualGateway_VirtualGatewayHttpConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayHttpConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttpconnectionpool.html
-type VirtualGateway_VirtualGatewayHttpConnectionPool struct {
+type VirtualGateway_VirtualGatewayHttpConnectionPool[T any] struct {
 
 	// MaxConnections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttpconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayhttpconnectionpool-maxconnections
-	MaxConnections int `json:"MaxConnections"`
+	MaxConnections T `json:"MaxConnections"`
 
 	// MaxPendingRequests AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttpconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayhttpconnectionpool-maxpendingrequests
-	MaxPendingRequests *int `json:"MaxPendingRequests,omitempty"`
+	MaxPendingRequests *T `json:"MaxPendingRequests,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualGateway_VirtualGatewayHttpConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayHttpConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayHttpConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayHttpConnectionPool"
 }

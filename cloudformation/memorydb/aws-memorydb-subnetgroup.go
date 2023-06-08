@@ -12,7 +12,7 @@ import (
 
 // SubnetGroup AWS CloudFormation Resource (AWS::MemoryDB::SubnetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html
-type SubnetGroup struct {
+type SubnetGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type SubnetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubnetGroup) AWSCloudFormationType() string {
+func (r *SubnetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::MemoryDB::SubnetGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubnetGroup) MarshalJSON() ([]byte, error) {
-	type Properties SubnetGroup
+func (r SubnetGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubnetGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r SubnetGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubnetGroup) UnmarshalJSON(b []byte) error {
-	type Properties SubnetGroup
+func (r *SubnetGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubnetGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *SubnetGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubnetGroup(*res.Properties)
+		*r = SubnetGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

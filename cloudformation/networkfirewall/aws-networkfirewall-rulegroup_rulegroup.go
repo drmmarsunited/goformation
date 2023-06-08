@@ -8,27 +8,27 @@ import (
 
 // RuleGroup_RuleGroup AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RuleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html
-type RuleGroup_RuleGroup struct {
+type RuleGroup_RuleGroup[T any] struct {
 
 	// ReferenceSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-referencesets
-	ReferenceSets *RuleGroup_ReferenceSets `json:"ReferenceSets,omitempty"`
+	ReferenceSets *RuleGroup_ReferenceSets[any] `json:"ReferenceSets,omitempty"`
 
 	// RuleVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulevariables
-	RuleVariables *RuleGroup_RuleVariables `json:"RuleVariables,omitempty"`
+	RuleVariables *RuleGroup_RuleVariables[any] `json:"RuleVariables,omitempty"`
 
 	// RulesSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulessource
-	RulesSource *RuleGroup_RulesSource `json:"RulesSource"`
+	RulesSource *RuleGroup_RulesSource[any] `json:"RulesSource"`
 
 	// StatefulRuleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-statefulruleoptions
-	StatefulRuleOptions *RuleGroup_StatefulRuleOptions `json:"StatefulRuleOptions,omitempty"`
+	StatefulRuleOptions *RuleGroup_StatefulRuleOptions[any] `json:"StatefulRuleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type RuleGroup_RuleGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RuleGroup) AWSCloudFormationType() string {
+func (r *RuleGroup_RuleGroup[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RuleGroup"
 }

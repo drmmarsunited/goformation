@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ChartAxisLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ChartAxisLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-chartaxislabeloptions.html
-type Dashboard_ChartAxisLabelOptions struct {
+type Dashboard_ChartAxisLabelOptions[T any] struct {
 
 	// AxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-chartaxislabeloptions.html#cfn-quicksight-dashboard-chartaxislabeloptions-axislabeloptions
-	AxisLabelOptions []Dashboard_AxisLabelOptions `json:"AxisLabelOptions,omitempty"`
+	AxisLabelOptions []Dashboard_AxisLabelOptions[any] `json:"AxisLabelOptions,omitempty"`
 
 	// SortIconVisibility AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_ChartAxisLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ChartAxisLabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ChartAxisLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ChartAxisLabelOptions"
 }

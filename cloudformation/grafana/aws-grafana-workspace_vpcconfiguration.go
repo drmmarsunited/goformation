@@ -8,7 +8,7 @@ import (
 
 // Workspace_VpcConfiguration AWS CloudFormation Resource (AWS::Grafana::Workspace.VpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-vpcconfiguration.html
-type Workspace_VpcConfiguration struct {
+type Workspace_VpcConfiguration[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Workspace_VpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_VpcConfiguration) AWSCloudFormationType() string {
+func (r *Workspace_VpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.VpcConfiguration"
 }

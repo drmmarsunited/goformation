@@ -8,17 +8,17 @@ import (
 
 // Bucket_NoncurrentVersionExpiration AWS CloudFormation Resource (AWS::S3::Bucket.NoncurrentVersionExpiration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html
-type Bucket_NoncurrentVersionExpiration struct {
+type Bucket_NoncurrentVersionExpiration[T any] struct {
 
 	// NewerNoncurrentVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-newernoncurrentversions
-	NewerNoncurrentVersions *int `json:"NewerNoncurrentVersions,omitempty"`
+	NewerNoncurrentVersions *T `json:"NewerNoncurrentVersions,omitempty"`
 
 	// NoncurrentDays AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-noncurrentdays
-	NoncurrentDays int `json:"NoncurrentDays"`
+	NoncurrentDays T `json:"NoncurrentDays"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_NoncurrentVersionExpiration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_NoncurrentVersionExpiration) AWSCloudFormationType() string {
+func (r *Bucket_NoncurrentVersionExpiration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.NoncurrentVersionExpiration"
 }

@@ -8,7 +8,7 @@ import (
 
 // IPAM_IpamOperatingRegion AWS CloudFormation Resource (AWS::EC2::IPAM.IpamOperatingRegion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html
-type IPAM_IpamOperatingRegion struct {
+type IPAM_IpamOperatingRegion[T any] struct {
 
 	// RegionName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type IPAM_IpamOperatingRegion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAM_IpamOperatingRegion) AWSCloudFormationType() string {
+func (r *IPAM_IpamOperatingRegion[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAM.IpamOperatingRegion"
 }

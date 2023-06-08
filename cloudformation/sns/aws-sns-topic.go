@@ -12,12 +12,12 @@ import (
 
 // Topic AWS CloudFormation Resource (AWS::SNS::Topic)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html
-type Topic struct {
+type Topic[T any] struct {
 
 	// ContentBasedDeduplication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-contentbaseddeduplication
-	ContentBasedDeduplication *bool `json:"ContentBasedDeduplication,omitempty"`
+	ContentBasedDeduplication *T `json:"ContentBasedDeduplication,omitempty"`
 
 	// DataProtectionPolicy AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Topic struct {
 	// FifoTopic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-fifotopic
-	FifoTopic *bool `json:"FifoTopic,omitempty"`
+	FifoTopic *T `json:"FifoTopic,omitempty"`
 
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Topic struct {
 	// Subscription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-subscription
-	Subscription []Topic_Subscription `json:"Subscription,omitempty"`
+	Subscription []Topic_Subscription[any] `json:"Subscription,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Topic struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Topic) AWSCloudFormationType() string {
+func (r *Topic[any]) AWSCloudFormationType() string {
 	return "AWS::SNS::Topic"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Topic) MarshalJSON() ([]byte, error) {
-	type Properties Topic
+func (r Topic[any]) MarshalJSON() ([]byte, error) {
+	type Properties Topic[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Topic) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Topic) UnmarshalJSON(b []byte) error {
-	type Properties Topic
+func (r *Topic[any]) UnmarshalJSON(b []byte) error {
+	type Properties Topic[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Topic) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Topic(*res.Properties)
+		*r = Topic[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

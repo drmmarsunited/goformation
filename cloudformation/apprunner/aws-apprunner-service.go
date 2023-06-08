@@ -12,7 +12,7 @@ import (
 
 // Service AWS CloudFormation Resource (AWS::AppRunner::Service)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html
-type Service struct {
+type Service[T any] struct {
 
 	// AutoScalingConfigurationArn AWS CloudFormation Property
 	// Required: false
@@ -22,27 +22,27 @@ type Service struct {
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-encryptionconfiguration
-	EncryptionConfiguration *Service_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *Service_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// HealthCheckConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-healthcheckconfiguration
-	HealthCheckConfiguration *Service_HealthCheckConfiguration `json:"HealthCheckConfiguration,omitempty"`
+	HealthCheckConfiguration *Service_HealthCheckConfiguration[any] `json:"HealthCheckConfiguration,omitempty"`
 
 	// InstanceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-instanceconfiguration
-	InstanceConfiguration *Service_InstanceConfiguration `json:"InstanceConfiguration,omitempty"`
+	InstanceConfiguration *Service_InstanceConfiguration[any] `json:"InstanceConfiguration,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-networkconfiguration
-	NetworkConfiguration *Service_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Service_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// ObservabilityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-observabilityconfiguration
-	ObservabilityConfiguration *Service_ServiceObservabilityConfiguration `json:"ObservabilityConfiguration,omitempty"`
+	ObservabilityConfiguration *Service_ServiceObservabilityConfiguration[any] `json:"ObservabilityConfiguration,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Service struct {
 	// SourceConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-sourceconfiguration
-	SourceConfiguration *Service_SourceConfiguration `json:"SourceConfiguration"`
+	SourceConfiguration *Service_SourceConfiguration[any] `json:"SourceConfiguration"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type Service struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service) AWSCloudFormationType() string {
+func (r *Service[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Service) MarshalJSON() ([]byte, error) {
-	type Properties Service
+func (r Service[any]) MarshalJSON() ([]byte, error) {
+	type Properties Service[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Service) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Service) UnmarshalJSON(b []byte) error {
-	type Properties Service
+func (r *Service[any]) UnmarshalJSON(b []byte) error {
+	type Properties Service[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Service) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Service(*res.Properties)
+		*r = Service[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

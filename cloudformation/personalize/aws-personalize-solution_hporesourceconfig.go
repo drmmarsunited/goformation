@@ -8,7 +8,7 @@ import (
 
 // Solution_HpoResourceConfig AWS CloudFormation Resource (AWS::Personalize::Solution.HpoResourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hporesourceconfig.html
-type Solution_HpoResourceConfig struct {
+type Solution_HpoResourceConfig[T any] struct {
 
 	// MaxNumberOfTrainingJobs AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Solution_HpoResourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_HpoResourceConfig) AWSCloudFormationType() string {
+func (r *Solution_HpoResourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.HpoResourceConfig"
 }

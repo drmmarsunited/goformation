@@ -12,7 +12,7 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::MemoryDB::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// ACLName AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,12 @@ type Cluster struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// ClusterEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-clusterendpoint
-	ClusterEndpoint *Cluster_Endpoint `json:"ClusterEndpoint,omitempty"`
+	ClusterEndpoint *Cluster_Endpoint[any] `json:"ClusterEndpoint,omitempty"`
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
@@ -72,12 +72,12 @@ type Cluster struct {
 	// NumReplicasPerShard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-numreplicaspershard
-	NumReplicasPerShard *int `json:"NumReplicasPerShard,omitempty"`
+	NumReplicasPerShard *T `json:"NumReplicasPerShard,omitempty"`
 
 	// NumShards AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-numshards
-	NumShards *int `json:"NumShards,omitempty"`
+	NumShards *T `json:"NumShards,omitempty"`
 
 	// ParameterGroupName AWS CloudFormation Property
 	// Required: false
@@ -87,7 +87,7 @@ type Cluster struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type Cluster struct {
 	// SnapshotRetentionLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-snapshotretentionlimit
-	SnapshotRetentionLimit *int `json:"SnapshotRetentionLimit,omitempty"`
+	SnapshotRetentionLimit *T `json:"SnapshotRetentionLimit,omitempty"`
 
 	// SnapshotWindow AWS CloudFormation Property
 	// Required: false
@@ -132,7 +132,7 @@ type Cluster struct {
 	// TLSEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-tlsenabled
-	TLSEnabled *bool `json:"TLSEnabled,omitempty"`
+	TLSEnabled *T `json:"TLSEnabled,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -156,14 +156,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::MemoryDB::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -185,8 +186,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -206,7 +208,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

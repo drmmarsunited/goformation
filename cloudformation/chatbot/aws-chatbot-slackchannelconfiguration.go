@@ -11,7 +11,7 @@ import (
 
 // SlackChannelConfiguration AWS CloudFormation Resource (AWS::Chatbot::SlackChannelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html
-type SlackChannelConfiguration struct {
+type SlackChannelConfiguration[T any] struct {
 
 	// ConfigurationName AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type SlackChannelConfiguration struct {
 	// UserRoleRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-userrolerequired
-	UserRoleRequired *bool `json:"UserRoleRequired,omitempty"`
+	UserRoleRequired *T `json:"UserRoleRequired,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type SlackChannelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SlackChannelConfiguration) AWSCloudFormationType() string {
+func (r *SlackChannelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Chatbot::SlackChannelConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SlackChannelConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties SlackChannelConfiguration
+func (r SlackChannelConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties SlackChannelConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r SlackChannelConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SlackChannelConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties SlackChannelConfiguration
+func (r *SlackChannelConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties SlackChannelConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *SlackChannelConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SlackChannelConfiguration(*res.Properties)
+		*r = SlackChannelConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

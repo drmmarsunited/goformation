@@ -8,7 +8,7 @@ import (
 
 // Endpoint_DynamoDbSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.DynamoDbSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html
-type Endpoint_DynamoDbSettings struct {
+type Endpoint_DynamoDbSettings[T any] struct {
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Endpoint_DynamoDbSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_DynamoDbSettings) AWSCloudFormationType() string {
+func (r *Endpoint_DynamoDbSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.DynamoDbSettings"
 }

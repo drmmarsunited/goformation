@@ -8,7 +8,7 @@ import (
 
 // EventSourceMapping_OnFailure AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.OnFailure)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html
-type EventSourceMapping_OnFailure struct {
+type EventSourceMapping_OnFailure[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type EventSourceMapping_OnFailure struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping_OnFailure) AWSCloudFormationType() string {
+func (r *EventSourceMapping_OnFailure[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping.OnFailure"
 }

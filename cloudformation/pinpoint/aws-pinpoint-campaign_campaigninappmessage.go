@@ -8,12 +8,12 @@ import (
 
 // Campaign_CampaignInAppMessage AWS CloudFormation Resource (AWS::Pinpoint::Campaign.CampaignInAppMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigninappmessage.html
-type Campaign_CampaignInAppMessage struct {
+type Campaign_CampaignInAppMessage[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigninappmessage.html#cfn-pinpoint-campaign-campaigninappmessage-content
-	Content []Campaign_InAppMessageContent `json:"Content,omitempty"`
+	Content []Campaign_InAppMessageContent[any] `json:"Content,omitempty"`
 
 	// CustomConfig AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Campaign_CampaignInAppMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CampaignInAppMessage) AWSCloudFormationType() string {
+func (r *Campaign_CampaignInAppMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.CampaignInAppMessage"
 }

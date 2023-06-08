@@ -8,17 +8,17 @@ import (
 
 // Instance_EbsBlockDevice AWS CloudFormation Resource (AWS::OpsWorks::Instance.EbsBlockDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html
-type Instance_EbsBlockDevice struct {
+type Instance_EbsBlockDevice[T any] struct {
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-deleteontermination
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Instance_EbsBlockDevice struct {
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Instance_EbsBlockDevice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_EbsBlockDevice) AWSCloudFormationType() string {
+func (r *Instance_EbsBlockDevice[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.EbsBlockDevice"
 }

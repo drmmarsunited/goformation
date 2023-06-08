@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FreeFormLayoutScreenCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormLayoutScreenCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutscreencanvassizeoptions.html
-type Dashboard_FreeFormLayoutScreenCanvasSizeOptions struct {
+type Dashboard_FreeFormLayoutScreenCanvasSizeOptions[T any] struct {
 
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_FreeFormLayoutScreenCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormLayoutScreenCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormLayoutScreenCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormLayoutScreenCanvasSizeOptions"
 }

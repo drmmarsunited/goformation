@@ -8,17 +8,17 @@ import (
 
 // Bot_DefaultConditionalBranch AWS CloudFormation Resource (AWS::Lex::Bot.DefaultConditionalBranch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-defaultconditionalbranch.html
-type Bot_DefaultConditionalBranch struct {
+type Bot_DefaultConditionalBranch[T any] struct {
 
 	// NextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-defaultconditionalbranch.html#cfn-lex-bot-defaultconditionalbranch-nextstep
-	NextStep *Bot_DialogState `json:"NextStep,omitempty"`
+	NextStep *Bot_DialogState[any] `json:"NextStep,omitempty"`
 
 	// Response AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-defaultconditionalbranch.html#cfn-lex-bot-defaultconditionalbranch-response
-	Response *Bot_ResponseSpecification `json:"Response,omitempty"`
+	Response *Bot_ResponseSpecification[any] `json:"Response,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_DefaultConditionalBranch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_DefaultConditionalBranch) AWSCloudFormationType() string {
+func (r *Bot_DefaultConditionalBranch[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.DefaultConditionalBranch"
 }

@@ -8,12 +8,12 @@ import (
 
 // LaunchTemplate_InstanceRequirements AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.InstanceRequirements)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html
-type LaunchTemplate_InstanceRequirements struct {
+type LaunchTemplate_InstanceRequirements[T any] struct {
 
 	// AcceleratorCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratorcount
-	AcceleratorCount *LaunchTemplate_AcceleratorCount `json:"AcceleratorCount,omitempty"`
+	AcceleratorCount *LaunchTemplate_AcceleratorCount[any] `json:"AcceleratorCount,omitempty"`
 
 	// AcceleratorManufacturers AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type LaunchTemplate_InstanceRequirements struct {
 	// AcceleratorTotalMemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratortotalmemorymib
-	AcceleratorTotalMemoryMiB *LaunchTemplate_AcceleratorTotalMemoryMiB `json:"AcceleratorTotalMemoryMiB,omitempty"`
+	AcceleratorTotalMemoryMiB *LaunchTemplate_AcceleratorTotalMemoryMiB[any] `json:"AcceleratorTotalMemoryMiB,omitempty"`
 
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type LaunchTemplate_InstanceRequirements struct {
 	// BaselineEbsBandwidthMbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-baselineebsbandwidthmbps
-	BaselineEbsBandwidthMbps *LaunchTemplate_BaselineEbsBandwidthMbps `json:"BaselineEbsBandwidthMbps,omitempty"`
+	BaselineEbsBandwidthMbps *LaunchTemplate_BaselineEbsBandwidthMbps[any] `json:"BaselineEbsBandwidthMbps,omitempty"`
 
 	// BurstablePerformance AWS CloudFormation Property
 	// Required: false
@@ -83,47 +83,47 @@ type LaunchTemplate_InstanceRequirements struct {
 	// MemoryGiBPerVCpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-memorygibpervcpu
-	MemoryGiBPerVCpu *LaunchTemplate_MemoryGiBPerVCpu `json:"MemoryGiBPerVCpu,omitempty"`
+	MemoryGiBPerVCpu *LaunchTemplate_MemoryGiBPerVCpu[any] `json:"MemoryGiBPerVCpu,omitempty"`
 
 	// MemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-memorymib
-	MemoryMiB *LaunchTemplate_MemoryMiB `json:"MemoryMiB,omitempty"`
+	MemoryMiB *LaunchTemplate_MemoryMiB[any] `json:"MemoryMiB,omitempty"`
 
 	// NetworkBandwidthGbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-networkbandwidthgbps
-	NetworkBandwidthGbps *LaunchTemplate_NetworkBandwidthGbps `json:"NetworkBandwidthGbps,omitempty"`
+	NetworkBandwidthGbps *LaunchTemplate_NetworkBandwidthGbps[any] `json:"NetworkBandwidthGbps,omitempty"`
 
 	// NetworkInterfaceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-networkinterfacecount
-	NetworkInterfaceCount *LaunchTemplate_NetworkInterfaceCount `json:"NetworkInterfaceCount,omitempty"`
+	NetworkInterfaceCount *LaunchTemplate_NetworkInterfaceCount[any] `json:"NetworkInterfaceCount,omitempty"`
 
 	// OnDemandMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-ondemandmaxpricepercentageoverlowestprice
-	OnDemandMaxPricePercentageOverLowestPrice *int `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
+	OnDemandMaxPricePercentageOverLowestPrice *T `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// RequireHibernateSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-requirehibernatesupport
-	RequireHibernateSupport *bool `json:"RequireHibernateSupport,omitempty"`
+	RequireHibernateSupport *T `json:"RequireHibernateSupport,omitempty"`
 
 	// SpotMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-spotmaxpricepercentageoverlowestprice
-	SpotMaxPricePercentageOverLowestPrice *int `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
+	SpotMaxPricePercentageOverLowestPrice *T `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// TotalLocalStorageGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-totallocalstoragegb
-	TotalLocalStorageGB *LaunchTemplate_TotalLocalStorageGB `json:"TotalLocalStorageGB,omitempty"`
+	TotalLocalStorageGB *LaunchTemplate_TotalLocalStorageGB[any] `json:"TotalLocalStorageGB,omitempty"`
 
 	// VCpuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-vcpucount
-	VCpuCount *LaunchTemplate_VCpuCount `json:"VCpuCount,omitempty"`
+	VCpuCount *LaunchTemplate_VCpuCount[any] `json:"VCpuCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -142,6 +142,6 @@ type LaunchTemplate_InstanceRequirements struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_InstanceRequirements) AWSCloudFormationType() string {
+func (r *LaunchTemplate_InstanceRequirements[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.InstanceRequirements"
 }

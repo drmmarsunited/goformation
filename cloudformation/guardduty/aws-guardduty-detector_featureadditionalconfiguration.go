@@ -8,7 +8,7 @@ import (
 
 // Detector_FeatureAdditionalConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.FeatureAdditionalConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-featureadditionalconfiguration.html
-type Detector_FeatureAdditionalConfiguration struct {
+type Detector_FeatureAdditionalConfiguration[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Detector_FeatureAdditionalConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_FeatureAdditionalConfiguration) AWSCloudFormationType() string {
+func (r *Detector_FeatureAdditionalConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector.FeatureAdditionalConfiguration"
 }

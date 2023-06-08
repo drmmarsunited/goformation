@@ -8,7 +8,7 @@ import (
 
 // Container_EnvironmentVariable AWS CloudFormation Resource (AWS::Lightsail::Container.EnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-environmentvariable.html
-type Container_EnvironmentVariable struct {
+type Container_EnvironmentVariable[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Container_EnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_EnvironmentVariable) AWSCloudFormationType() string {
+func (r *Container_EnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.EnvironmentVariable"
 }

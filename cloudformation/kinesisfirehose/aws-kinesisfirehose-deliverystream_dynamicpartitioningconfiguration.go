@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_DynamicPartitioningConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.DynamicPartitioningConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html
-type DeliveryStream_DynamicPartitioningConfiguration struct {
+type DeliveryStream_DynamicPartitioningConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-retryoptions
-	RetryOptions *DeliveryStream_RetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_RetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeliveryStream_DynamicPartitioningConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_DynamicPartitioningConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_DynamicPartitioningConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.DynamicPartitioningConfiguration"
 }

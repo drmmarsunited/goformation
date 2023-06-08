@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SectionBasedLayoutPaperCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SectionBasedLayoutPaperCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions.html
-type Dashboard_SectionBasedLayoutPaperCanvasSizeOptions struct {
+type Dashboard_SectionBasedLayoutPaperCanvasSizeOptions[T any] struct {
 
 	// PaperMargin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions.html#cfn-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions-papermargin
-	PaperMargin *Dashboard_Spacing `json:"PaperMargin,omitempty"`
+	PaperMargin *Dashboard_Spacing[any] `json:"PaperMargin,omitempty"`
 
 	// PaperOrientation AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_SectionBasedLayoutPaperCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SectionBasedLayoutPaperCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SectionBasedLayoutPaperCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SectionBasedLayoutPaperCanvasSizeOptions"
 }

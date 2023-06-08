@@ -8,12 +8,12 @@ import (
 
 // Job_DatabaseOutput AWS CloudFormation Resource (AWS::DataBrew::Job.DatabaseOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html
-type Job_DatabaseOutput struct {
+type Job_DatabaseOutput[T any] struct {
 
 	// DatabaseOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoptions
-	DatabaseOptions *Job_DatabaseTableOutputOptions `json:"DatabaseOptions"`
+	DatabaseOptions *Job_DatabaseTableOutputOptions[any] `json:"DatabaseOptions"`
 
 	// DatabaseOutputMode AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Job_DatabaseOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_DatabaseOutput) AWSCloudFormationType() string {
+func (r *Job_DatabaseOutput[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.DatabaseOutput"
 }

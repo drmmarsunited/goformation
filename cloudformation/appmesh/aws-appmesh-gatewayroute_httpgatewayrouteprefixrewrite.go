@@ -8,7 +8,7 @@ import (
 
 // GatewayRoute_HttpGatewayRoutePrefixRewrite AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html
-type GatewayRoute_HttpGatewayRoutePrefixRewrite struct {
+type GatewayRoute_HttpGatewayRoutePrefixRewrite[T any] struct {
 
 	// DefaultPrefix AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GatewayRoute_HttpGatewayRoutePrefixRewrite struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_HttpGatewayRoutePrefixRewrite) AWSCloudFormationType() string {
+func (r *GatewayRoute_HttpGatewayRoutePrefixRewrite[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite"
 }

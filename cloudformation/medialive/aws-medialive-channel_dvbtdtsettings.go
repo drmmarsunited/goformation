@@ -8,12 +8,12 @@ import (
 
 // Channel_DvbTdtSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.DvbTdtSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbtdtsettings.html
-type Channel_DvbTdtSettings struct {
+type Channel_DvbTdtSettings[T any] struct {
 
 	// RepInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbtdtsettings.html#cfn-medialive-channel-dvbtdtsettings-repinterval
-	RepInterval *int `json:"RepInterval,omitempty"`
+	RepInterval *T `json:"RepInterval,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_DvbTdtSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_DvbTdtSettings) AWSCloudFormationType() string {
+func (r *Channel_DvbTdtSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.DvbTdtSettings"
 }

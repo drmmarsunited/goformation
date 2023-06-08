@@ -8,7 +8,7 @@ import (
 
 // Distribution_CacheSettings AWS CloudFormation Resource (AWS::Lightsail::Distribution.CacheSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html
-type Distribution_CacheSettings struct {
+type Distribution_CacheSettings[T any] struct {
 
 	// AllowedHTTPMethods AWS CloudFormation Property
 	// Required: false
@@ -23,32 +23,32 @@ type Distribution_CacheSettings struct {
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-defaultttl
-	DefaultTTL *int `json:"DefaultTTL,omitempty"`
+	DefaultTTL *T `json:"DefaultTTL,omitempty"`
 
 	// ForwardedCookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedcookies
-	ForwardedCookies *Distribution_CookieObject `json:"ForwardedCookies,omitempty"`
+	ForwardedCookies *Distribution_CookieObject[any] `json:"ForwardedCookies,omitempty"`
 
 	// ForwardedHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedheaders
-	ForwardedHeaders *Distribution_HeaderObject `json:"ForwardedHeaders,omitempty"`
+	ForwardedHeaders *Distribution_HeaderObject[any] `json:"ForwardedHeaders,omitempty"`
 
 	// ForwardedQueryStrings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-forwardedquerystrings
-	ForwardedQueryStrings *Distribution_QueryStringObject `json:"ForwardedQueryStrings,omitempty"`
+	ForwardedQueryStrings *Distribution_QueryStringObject[any] `json:"ForwardedQueryStrings,omitempty"`
 
 	// MaximumTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-maximumttl
-	MaximumTTL *int `json:"MaximumTTL,omitempty"`
+	MaximumTTL *T `json:"MaximumTTL,omitempty"`
 
 	// MinimumTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-minimumttl
-	MinimumTTL *int `json:"MinimumTTL,omitempty"`
+	MinimumTTL *T `json:"MinimumTTL,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Distribution_CacheSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CacheSettings) AWSCloudFormationType() string {
+func (r *Distribution_CacheSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.CacheSettings"
 }

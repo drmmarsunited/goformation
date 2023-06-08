@@ -8,17 +8,17 @@ import (
 
 // EndpointGroup_PortOverride AWS CloudFormation Resource (AWS::GlobalAccelerator::EndpointGroup.PortOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html
-type EndpointGroup_PortOverride struct {
+type EndpointGroup_PortOverride[T any] struct {
 
 	// EndpointPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html#cfn-globalaccelerator-endpointgroup-portoverride-endpointport
-	EndpointPort int `json:"EndpointPort"`
+	EndpointPort T `json:"EndpointPort"`
 
 	// ListenerPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html#cfn-globalaccelerator-endpointgroup-portoverride-listenerport
-	ListenerPort int `json:"ListenerPort"`
+	ListenerPort T `json:"ListenerPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EndpointGroup_PortOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointGroup_PortOverride) AWSCloudFormationType() string {
+func (r *EndpointGroup_PortOverride[any]) AWSCloudFormationType() string {
 	return "AWS::GlobalAccelerator::EndpointGroup.PortOverride"
 }

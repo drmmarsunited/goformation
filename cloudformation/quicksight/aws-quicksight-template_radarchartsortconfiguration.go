@@ -8,27 +8,27 @@ import (
 
 // Template_RadarChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.RadarChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartsortconfiguration.html
-type Template_RadarChartSortConfiguration struct {
+type Template_RadarChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartsortconfiguration.html#cfn-quicksight-template-radarchartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Template_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Template_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartsortconfiguration.html#cfn-quicksight-template-radarchartsortconfiguration-categorysort
-	CategorySort []Template_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Template_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartsortconfiguration.html#cfn-quicksight-template-radarchartsortconfiguration-coloritemslimit
-	ColorItemsLimit *Template_ItemsLimitConfiguration `json:"ColorItemsLimit,omitempty"`
+	ColorItemsLimit *Template_ItemsLimitConfiguration[any] `json:"ColorItemsLimit,omitempty"`
 
 	// ColorSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartsortconfiguration.html#cfn-quicksight-template-radarchartsortconfiguration-colorsort
-	ColorSort []Template_FieldSortOptions `json:"ColorSort,omitempty"`
+	ColorSort []Template_FieldSortOptions[any] `json:"ColorSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_RadarChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RadarChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Template_RadarChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RadarChartSortConfiguration"
 }

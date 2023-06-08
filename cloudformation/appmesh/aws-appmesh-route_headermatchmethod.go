@@ -8,7 +8,7 @@ import (
 
 // Route_HeaderMatchMethod AWS CloudFormation Resource (AWS::AppMesh::Route.HeaderMatchMethod)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html
-type Route_HeaderMatchMethod struct {
+type Route_HeaderMatchMethod[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Route_HeaderMatchMethod struct {
 	// Range AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range
-	Range *Route_MatchRange `json:"Range,omitempty"`
+	Range *Route_MatchRange[any] `json:"Range,omitempty"`
 
 	// Regex AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Route_HeaderMatchMethod struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HeaderMatchMethod) AWSCloudFormationType() string {
+func (r *Route_HeaderMatchMethod[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HeaderMatchMethod"
 }

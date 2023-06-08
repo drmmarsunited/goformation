@@ -8,22 +8,22 @@ import (
 
 // Endpoint_BlueGreenUpdatePolicy AWS CloudFormation Resource (AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html
-type Endpoint_BlueGreenUpdatePolicy struct {
+type Endpoint_BlueGreenUpdatePolicy[T any] struct {
 
 	// MaximumExecutionTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-maximumexecutiontimeoutinseconds
-	MaximumExecutionTimeoutInSeconds *int `json:"MaximumExecutionTimeoutInSeconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *T `json:"MaximumExecutionTimeoutInSeconds,omitempty"`
 
 	// TerminationWaitInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds
-	TerminationWaitInSeconds *int `json:"TerminationWaitInSeconds,omitempty"`
+	TerminationWaitInSeconds *T `json:"TerminationWaitInSeconds,omitempty"`
 
 	// TrafficRoutingConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-trafficroutingconfiguration
-	TrafficRoutingConfiguration *Endpoint_TrafficRoutingConfig `json:"TrafficRoutingConfiguration"`
+	TrafficRoutingConfiguration *Endpoint_TrafficRoutingConfig[any] `json:"TrafficRoutingConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Endpoint_BlueGreenUpdatePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_BlueGreenUpdatePolicy) AWSCloudFormationType() string {
+func (r *Endpoint_BlueGreenUpdatePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy"
 }

@@ -11,12 +11,12 @@ import (
 
 // Alert AWS CloudFormation Resource (AWS::LookoutMetrics::Alert)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html
-type Alert struct {
+type Alert[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-action
-	Action *Alert_Action `json:"Action"`
+	Action *Alert_Action[any] `json:"Action"`
 
 	// AlertDescription AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Alert struct {
 	// AlertSensitivityThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-alertsensitivitythreshold
-	AlertSensitivityThreshold int `json:"AlertSensitivityThreshold"`
+	AlertSensitivityThreshold T `json:"AlertSensitivityThreshold"`
 
 	// AnomalyDetectorArn AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type Alert struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alert) AWSCloudFormationType() string {
+func (r *Alert[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::Alert"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Alert) MarshalJSON() ([]byte, error) {
-	type Properties Alert
+func (r Alert[any]) MarshalJSON() ([]byte, error) {
+	type Properties Alert[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Alert) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Alert) UnmarshalJSON(b []byte) error {
-	type Properties Alert
+func (r *Alert[any]) UnmarshalJSON(b []byte) error {
+	type Properties Alert[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Alert) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Alert(*res.Properties)
+		*r = Alert[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

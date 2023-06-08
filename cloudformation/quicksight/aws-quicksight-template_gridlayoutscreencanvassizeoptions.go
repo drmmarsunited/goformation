@@ -8,7 +8,7 @@ import (
 
 // Template_GridLayoutScreenCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Template.GridLayoutScreenCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutscreencanvassizeoptions.html
-type Template_GridLayoutScreenCanvasSizeOptions struct {
+type Template_GridLayoutScreenCanvasSizeOptions[T any] struct {
 
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_GridLayoutScreenCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GridLayoutScreenCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Template_GridLayoutScreenCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GridLayoutScreenCanvasSizeOptions"
 }

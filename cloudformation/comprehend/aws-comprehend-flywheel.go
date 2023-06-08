@@ -12,7 +12,7 @@ import (
 
 // Flywheel AWS CloudFormation Resource (AWS::Comprehend::Flywheel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html
-type Flywheel struct {
+type Flywheel[T any] struct {
 
 	// ActiveModelArn AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Flywheel struct {
 	// DataSecurityConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-datasecurityconfig
-	DataSecurityConfig *Flywheel_DataSecurityConfig `json:"DataSecurityConfig,omitempty"`
+	DataSecurityConfig *Flywheel_DataSecurityConfig[any] `json:"DataSecurityConfig,omitempty"`
 
 	// FlywheelName AWS CloudFormation Property
 	// Required: true
@@ -52,7 +52,7 @@ type Flywheel struct {
 	// TaskConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-taskconfig
-	TaskConfig *Flywheel_TaskConfig `json:"TaskConfig,omitempty"`
+	TaskConfig *Flywheel_TaskConfig[any] `json:"TaskConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type Flywheel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel) AWSCloudFormationType() string {
+func (r *Flywheel[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Flywheel) MarshalJSON() ([]byte, error) {
-	type Properties Flywheel
+func (r Flywheel[any]) MarshalJSON() ([]byte, error) {
+	type Properties Flywheel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Flywheel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Flywheel) UnmarshalJSON(b []byte) error {
-	type Properties Flywheel
+func (r *Flywheel[any]) UnmarshalJSON(b []byte) error {
+	type Properties Flywheel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Flywheel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Flywheel(*res.Properties)
+		*r = Flywheel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DataSource_ConfluenceBlogToIndexFieldMapping AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluenceBlogToIndexFieldMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html
-type DataSource_ConfluenceBlogToIndexFieldMapping struct {
+type DataSource_ConfluenceBlogToIndexFieldMapping[T any] struct {
 
 	// DataSourceFieldName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_ConfluenceBlogToIndexFieldMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluenceBlogToIndexFieldMapping) AWSCloudFormationType() string {
+func (r *DataSource_ConfluenceBlogToIndexFieldMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluenceBlogToIndexFieldMapping"
 }

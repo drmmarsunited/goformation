@@ -8,7 +8,7 @@ import (
 
 // Template_MissingDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.MissingDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-missingdataconfiguration.html
-type Template_MissingDataConfiguration struct {
+type Template_MissingDataConfiguration[T any] struct {
 
 	// TreatmentOption AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_MissingDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_MissingDataConfiguration) AWSCloudFormationType() string {
+func (r *Template_MissingDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.MissingDataConfiguration"
 }

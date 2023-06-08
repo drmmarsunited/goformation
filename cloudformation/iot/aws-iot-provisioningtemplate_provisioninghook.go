@@ -8,7 +8,7 @@ import (
 
 // ProvisioningTemplate_ProvisioningHook AWS CloudFormation Resource (AWS::IoT::ProvisioningTemplate.ProvisioningHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-provisioningtemplate-provisioninghook.html
-type ProvisioningTemplate_ProvisioningHook struct {
+type ProvisioningTemplate_ProvisioningHook[T any] struct {
 
 	// PayloadVersion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ProvisioningTemplate_ProvisioningHook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ProvisioningTemplate_ProvisioningHook) AWSCloudFormationType() string {
+func (r *ProvisioningTemplate_ProvisioningHook[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::ProvisioningTemplate.ProvisioningHook"
 }

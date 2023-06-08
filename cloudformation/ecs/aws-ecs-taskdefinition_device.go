@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_Device AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html
-type TaskDefinition_Device struct {
+type TaskDefinition_Device[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskDefinition_Device struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_Device) AWSCloudFormationType() string {
+func (r *TaskDefinition_Device[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Device"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_BatchRestrictions AWS CloudFormation Resource (AWS::CodeBuild::Project.BatchRestrictions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html
-type Project_BatchRestrictions struct {
+type Project_BatchRestrictions[T any] struct {
 
 	// ComputeTypesAllowed AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Project_BatchRestrictions struct {
 	// MaximumBuildsAllowed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html#cfn-codebuild-project-batchrestrictions-maximumbuildsallowed
-	MaximumBuildsAllowed *int `json:"MaximumBuildsAllowed,omitempty"`
+	MaximumBuildsAllowed *T `json:"MaximumBuildsAllowed,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Project_BatchRestrictions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_BatchRestrictions) AWSCloudFormationType() string {
+func (r *Project_BatchRestrictions[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.BatchRestrictions"
 }

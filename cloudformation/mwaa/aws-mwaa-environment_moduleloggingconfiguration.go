@@ -8,7 +8,7 @@ import (
 
 // Environment_ModuleLoggingConfiguration AWS CloudFormation Resource (AWS::MWAA::Environment.ModuleLoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html
-type Environment_ModuleLoggingConfiguration struct {
+type Environment_ModuleLoggingConfiguration[T any] struct {
 
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Environment_ModuleLoggingConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Environment_ModuleLoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_ModuleLoggingConfiguration) AWSCloudFormationType() string {
+func (r *Environment_ModuleLoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MWAA::Environment.ModuleLoggingConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Campaign_EventDimensions AWS CloudFormation Resource (AWS::Pinpoint::Campaign.EventDimensions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html
-type Campaign_EventDimensions struct {
+type Campaign_EventDimensions[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Campaign_EventDimensions struct {
 	// EventType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-eventtype
-	EventType *Campaign_SetDimension `json:"EventType,omitempty"`
+	EventType *Campaign_SetDimension[any] `json:"EventType,omitempty"`
 
 	// Metrics AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Campaign_EventDimensions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_EventDimensions) AWSCloudFormationType() string {
+func (r *Campaign_EventDimensions[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.EventDimensions"
 }

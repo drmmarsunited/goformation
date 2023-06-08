@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPathColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPathColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathcolor.html
-type Dashboard_DataPathColor struct {
+type Dashboard_DataPathColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_DataPathColor struct {
 	// Element AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathcolor.html#cfn-quicksight-dashboard-datapathcolor-element
-	Element *Dashboard_DataPathValue `json:"Element"`
+	Element *Dashboard_DataPathValue[any] `json:"Element"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_DataPathColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPathColor) AWSCloudFormationType() string {
+func (r *Dashboard_DataPathColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPathColor"
 }

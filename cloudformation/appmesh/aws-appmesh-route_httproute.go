@@ -8,27 +8,27 @@ import (
 
 // Route_HttpRoute AWS CloudFormation Resource (AWS::AppMesh::Route.HttpRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
-type Route_HttpRoute struct {
+type Route_HttpRoute[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
-	Action *Route_HttpRouteAction `json:"Action"`
+	Action *Route_HttpRouteAction[any] `json:"Action"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match
-	Match *Route_HttpRouteMatch `json:"Match"`
+	Match *Route_HttpRouteMatch[any] `json:"Match"`
 
 	// RetryPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-retrypolicy
-	RetryPolicy *Route_HttpRetryPolicy `json:"RetryPolicy,omitempty"`
+	RetryPolicy *Route_HttpRetryPolicy[any] `json:"RetryPolicy,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-timeout
-	Timeout *Route_HttpTimeout `json:"Timeout,omitempty"`
+	Timeout *Route_HttpTimeout[any] `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Route_HttpRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpRoute) AWSCloudFormationType() string {
+func (r *Route_HttpRoute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpRoute"
 }

@@ -8,7 +8,7 @@ import (
 
 // Service_AwsVpcConfiguration AWS CloudFormation Resource (AWS::ECS::Service.AwsVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
-type Service_AwsVpcConfiguration struct {
+type Service_AwsVpcConfiguration[T any] struct {
 
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Service_AwsVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_AwsVpcConfiguration) AWSCloudFormationType() string {
+func (r *Service_AwsVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.AwsVpcConfiguration"
 }

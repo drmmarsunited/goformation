@@ -8,7 +8,7 @@ import (
 
 // DomainName_EndpointConfiguration AWS CloudFormation Resource (AWS::ApiGateway::DomainName.EndpointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html
-type DomainName_EndpointConfiguration struct {
+type DomainName_EndpointConfiguration[T any] struct {
 
 	// Types AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DomainName_EndpointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainName_EndpointConfiguration) AWSCloudFormationType() string {
+func (r *DomainName_EndpointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DomainName.EndpointConfiguration"
 }

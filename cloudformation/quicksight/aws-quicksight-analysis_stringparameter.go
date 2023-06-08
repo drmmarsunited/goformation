@@ -8,7 +8,7 @@ import (
 
 // Analysis_StringParameter AWS CloudFormation Resource (AWS::QuickSight::Analysis.StringParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringparameter.html
-type Analysis_StringParameter struct {
+type Analysis_StringParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_StringParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_StringParameter) AWSCloudFormationType() string {
+func (r *Analysis_StringParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.StringParameter"
 }

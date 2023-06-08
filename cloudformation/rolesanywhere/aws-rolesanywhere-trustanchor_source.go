@@ -8,12 +8,12 @@ import (
 
 // TrustAnchor_Source AWS CloudFormation Resource (AWS::RolesAnywhere::TrustAnchor.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-source.html
-type TrustAnchor_Source struct {
+type TrustAnchor_Source[T any] struct {
 
 	// SourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-source.html#cfn-rolesanywhere-trustanchor-source-sourcedata
-	SourceData *TrustAnchor_SourceData `json:"SourceData,omitempty"`
+	SourceData *TrustAnchor_SourceData[any] `json:"SourceData,omitempty"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TrustAnchor_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TrustAnchor_Source) AWSCloudFormationType() string {
+func (r *TrustAnchor_Source[any]) AWSCloudFormationType() string {
 	return "AWS::RolesAnywhere::TrustAnchor.Source"
 }

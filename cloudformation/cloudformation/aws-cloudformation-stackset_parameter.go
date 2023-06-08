@@ -8,7 +8,7 @@ import (
 
 // StackSet_Parameter AWS CloudFormation Resource (AWS::CloudFormation::StackSet.Parameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-parameter.html
-type StackSet_Parameter struct {
+type StackSet_Parameter[T any] struct {
 
 	// ParameterKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StackSet_Parameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet_Parameter) AWSCloudFormationType() string {
+func (r *StackSet_Parameter[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet.Parameter"
 }

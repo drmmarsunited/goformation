@@ -8,12 +8,12 @@ import (
 
 // StackSet_ManagedExecution AWS CloudFormation Resource (AWS::CloudFormation::StackSet.ManagedExecution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-managedexecution.html
-type StackSet_ManagedExecution struct {
+type StackSet_ManagedExecution[T any] struct {
 
 	// Active AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-managedexecution.html#cfn-cloudformation-stackset-managedexecution-active
-	Active *bool `json:"Active,omitempty"`
+	Active *T `json:"Active,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StackSet_ManagedExecution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackSet_ManagedExecution) AWSCloudFormationType() string {
+func (r *StackSet_ManagedExecution[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::StackSet.ManagedExecution"
 }

@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_SetVariable AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.SetVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html
-type DetectorModel_SetVariable struct {
+type DetectorModel_SetVariable[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DetectorModel_SetVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_SetVariable) AWSCloudFormationType() string {
+func (r *DetectorModel_SetVariable[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.SetVariable"
 }

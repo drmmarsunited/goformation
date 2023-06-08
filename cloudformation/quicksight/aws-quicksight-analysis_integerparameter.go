@@ -8,7 +8,7 @@ import (
 
 // Analysis_IntegerParameter AWS CloudFormation Resource (AWS::QuickSight::Analysis.IntegerParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameter.html
-type Analysis_IntegerParameter struct {
+type Analysis_IntegerParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_IntegerParameter struct {
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameter.html#cfn-quicksight-analysis-integerparameter-values
-	Values []float64 `json:"Values"`
+	Values []T `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_IntegerParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_IntegerParameter) AWSCloudFormationType() string {
+func (r *Analysis_IntegerParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.IntegerParameter"
 }

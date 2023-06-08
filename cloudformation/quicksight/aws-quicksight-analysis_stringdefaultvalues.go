@@ -8,12 +8,12 @@ import (
 
 // Analysis_StringDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Analysis.StringDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringdefaultvalues.html
-type Analysis_StringDefaultValues struct {
+type Analysis_StringDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringdefaultvalues.html#cfn-quicksight-analysis-stringdefaultvalues-dynamicvalue
-	DynamicValue *Analysis_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Analysis_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_StringDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_StringDefaultValues) AWSCloudFormationType() string {
+func (r *Analysis_StringDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.StringDefaultValues"
 }

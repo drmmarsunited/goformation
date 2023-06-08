@@ -8,7 +8,7 @@ import (
 
 // Template_DataPathSort AWS CloudFormation Resource (AWS::QuickSight::Template.DataPathSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathsort.html
-type Template_DataPathSort struct {
+type Template_DataPathSort[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_DataPathSort struct {
 	// SortPaths AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathsort.html#cfn-quicksight-template-datapathsort-sortpaths
-	SortPaths []Template_DataPathValue `json:"SortPaths"`
+	SortPaths []Template_DataPathValue[any] `json:"SortPaths"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_DataPathSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataPathSort) AWSCloudFormationType() string {
+func (r *Template_DataPathSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataPathSort"
 }

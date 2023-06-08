@@ -8,7 +8,7 @@ import (
 
 // Pipeline_PipelineDefinition AWS CloudFormation Resource (AWS::SageMaker::Pipeline.PipelineDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html
-type Pipeline_PipelineDefinition struct {
+type Pipeline_PipelineDefinition[T any] struct {
 
 	// PipelineDefinitionBody AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Pipeline_PipelineDefinition struct {
 	// PipelineDefinitionS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitions3location
-	PipelineDefinitionS3Location *Pipeline_S3Location `json:"PipelineDefinitionS3Location,omitempty"`
+	PipelineDefinitionS3Location *Pipeline_S3Location[any] `json:"PipelineDefinitionS3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Pipeline_PipelineDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_PipelineDefinition) AWSCloudFormationType() string {
+func (r *Pipeline_PipelineDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Pipeline.PipelineDefinition"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_DestinationParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DestinationParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-destinationparametervalueconfiguration.html
-type Template_DestinationParameterValueConfiguration struct {
+type Template_DestinationParameterValueConfiguration[T any] struct {
 
 	// CustomValuesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-destinationparametervalueconfiguration.html#cfn-quicksight-template-destinationparametervalueconfiguration-customvaluesconfiguration
-	CustomValuesConfiguration *Template_CustomValuesConfiguration `json:"CustomValuesConfiguration,omitempty"`
+	CustomValuesConfiguration *Template_CustomValuesConfiguration[any] `json:"CustomValuesConfiguration,omitempty"`
 
 	// SelectAllValueOptions AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_DestinationParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DestinationParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Template_DestinationParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DestinationParameterValueConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // CloudFormationProduct_SourceConnection AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.SourceConnection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html
-type CloudFormationProduct_SourceConnection struct {
+type CloudFormationProduct_SourceConnection[T any] struct {
 
 	// ConnectionParameters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters
-	ConnectionParameters *CloudFormationProduct_ConnectionParameters `json:"ConnectionParameters"`
+	ConnectionParameters *CloudFormationProduct_ConnectionParameters[any] `json:"ConnectionParameters"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CloudFormationProduct_SourceConnection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProduct_SourceConnection) AWSCloudFormationType() string {
+func (r *CloudFormationProduct_SourceConnection[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct.SourceConnection"
 }

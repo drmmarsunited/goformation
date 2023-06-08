@@ -8,7 +8,7 @@ import (
 
 // SizeConstraintSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::SizeConstraintSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html
-type SizeConstraintSet_FieldToMatch struct {
+type SizeConstraintSet_FieldToMatch[T any] struct {
 
 	// Data AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SizeConstraintSet_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SizeConstraintSet_FieldToMatch) AWSCloudFormationType() string {
+func (r *SizeConstraintSet_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::SizeConstraintSet.FieldToMatch"
 }

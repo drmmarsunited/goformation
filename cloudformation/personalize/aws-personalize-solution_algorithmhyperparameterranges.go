@@ -8,22 +8,22 @@ import (
 
 // Solution_AlgorithmHyperParameterRanges AWS CloudFormation Resource (AWS::Personalize::Solution.AlgorithmHyperParameterRanges)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-algorithmhyperparameterranges.html
-type Solution_AlgorithmHyperParameterRanges struct {
+type Solution_AlgorithmHyperParameterRanges[T any] struct {
 
 	// CategoricalHyperParameterRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-algorithmhyperparameterranges.html#cfn-personalize-solution-algorithmhyperparameterranges-categoricalhyperparameterranges
-	CategoricalHyperParameterRanges []Solution_CategoricalHyperParameterRange `json:"CategoricalHyperParameterRanges,omitempty"`
+	CategoricalHyperParameterRanges []Solution_CategoricalHyperParameterRange[any] `json:"CategoricalHyperParameterRanges,omitempty"`
 
 	// ContinuousHyperParameterRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-algorithmhyperparameterranges.html#cfn-personalize-solution-algorithmhyperparameterranges-continuoushyperparameterranges
-	ContinuousHyperParameterRanges []Solution_ContinuousHyperParameterRange `json:"ContinuousHyperParameterRanges,omitempty"`
+	ContinuousHyperParameterRanges []Solution_ContinuousHyperParameterRange[any] `json:"ContinuousHyperParameterRanges,omitempty"`
 
 	// IntegerHyperParameterRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-algorithmhyperparameterranges.html#cfn-personalize-solution-algorithmhyperparameterranges-integerhyperparameterranges
-	IntegerHyperParameterRanges []Solution_IntegerHyperParameterRange `json:"IntegerHyperParameterRanges,omitempty"`
+	IntegerHyperParameterRanges []Solution_IntegerHyperParameterRange[any] `json:"IntegerHyperParameterRanges,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Solution_AlgorithmHyperParameterRanges struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_AlgorithmHyperParameterRanges) AWSCloudFormationType() string {
+func (r *Solution_AlgorithmHyperParameterRanges[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.AlgorithmHyperParameterRanges"
 }

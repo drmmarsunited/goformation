@@ -8,7 +8,7 @@ import (
 
 // Campaign_OverrideButtonConfiguration AWS CloudFormation Resource (AWS::Pinpoint::Campaign.OverrideButtonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-overridebuttonconfiguration.html
-type Campaign_OverrideButtonConfiguration struct {
+type Campaign_OverrideButtonConfiguration[T any] struct {
 
 	// ButtonAction AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_OverrideButtonConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_OverrideButtonConfiguration) AWSCloudFormationType() string {
+func (r *Campaign_OverrideButtonConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.OverrideButtonConfiguration"
 }

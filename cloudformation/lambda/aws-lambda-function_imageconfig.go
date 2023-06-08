@@ -8,7 +8,7 @@ import (
 
 // Function_ImageConfig AWS CloudFormation Resource (AWS::Lambda::Function.ImageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html
-type Function_ImageConfig struct {
+type Function_ImageConfig[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Function_ImageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_ImageConfig) AWSCloudFormationType() string {
+func (r *Function_ImageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.ImageConfig"
 }

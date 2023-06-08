@@ -8,17 +8,17 @@ import (
 
 // Contact_Targets AWS CloudFormation Resource (AWS::SSMContacts::Contact.Targets)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html
-type Contact_Targets struct {
+type Contact_Targets[T any] struct {
 
 	// ChannelTargetInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html#cfn-ssmcontacts-contact-targets-channeltargetinfo
-	ChannelTargetInfo *Contact_ChannelTargetInfo `json:"ChannelTargetInfo,omitempty"`
+	ChannelTargetInfo *Contact_ChannelTargetInfo[any] `json:"ChannelTargetInfo,omitempty"`
 
 	// ContactTargetInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html#cfn-ssmcontacts-contact-targets-contacttargetinfo
-	ContactTargetInfo *Contact_ContactTargetInfo `json:"ContactTargetInfo,omitempty"`
+	ContactTargetInfo *Contact_ContactTargetInfo[any] `json:"ContactTargetInfo,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Contact_Targets struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Contact_Targets) AWSCloudFormationType() string {
+func (r *Contact_Targets[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Contact.Targets"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_TransformResources AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformresources.html
-type ModelPackage_TransformResources struct {
+type ModelPackage_TransformResources[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformresources.html#cfn-sagemaker-modelpackage-transformresources-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelPackage_TransformResources struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_TransformResources) AWSCloudFormationType() string {
+func (r *ModelPackage_TransformResources[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.TransformResources"
 }

@@ -8,7 +8,7 @@ import (
 
 // Secret_ReplicaRegion AWS CloudFormation Resource (AWS::SecretsManager::Secret.ReplicaRegion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-replicaregion.html
-type Secret_ReplicaRegion struct {
+type Secret_ReplicaRegion[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Secret_ReplicaRegion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Secret_ReplicaRegion) AWSCloudFormationType() string {
+func (r *Secret_ReplicaRegion[any]) AWSCloudFormationType() string {
 	return "AWS::SecretsManager::Secret.ReplicaRegion"
 }

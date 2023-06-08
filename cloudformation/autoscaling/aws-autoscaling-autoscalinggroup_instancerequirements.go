@@ -8,12 +8,12 @@ import (
 
 // AutoScalingGroup_InstanceRequirements AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.InstanceRequirements)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html
-type AutoScalingGroup_InstanceRequirements struct {
+type AutoScalingGroup_InstanceRequirements[T any] struct {
 
 	// AcceleratorCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratorcount
-	AcceleratorCount *AutoScalingGroup_AcceleratorCountRequest `json:"AcceleratorCount,omitempty"`
+	AcceleratorCount *AutoScalingGroup_AcceleratorCountRequest[any] `json:"AcceleratorCount,omitempty"`
 
 	// AcceleratorManufacturers AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AutoScalingGroup_InstanceRequirements struct {
 	// AcceleratorTotalMemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortotalmemorymib
-	AcceleratorTotalMemoryMiB *AutoScalingGroup_AcceleratorTotalMemoryMiBRequest `json:"AcceleratorTotalMemoryMiB,omitempty"`
+	AcceleratorTotalMemoryMiB *AutoScalingGroup_AcceleratorTotalMemoryMiBRequest[any] `json:"AcceleratorTotalMemoryMiB,omitempty"`
 
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type AutoScalingGroup_InstanceRequirements struct {
 	// BaselineEbsBandwidthMbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baselineebsbandwidthmbps
-	BaselineEbsBandwidthMbps *AutoScalingGroup_BaselineEbsBandwidthMbpsRequest `json:"BaselineEbsBandwidthMbps,omitempty"`
+	BaselineEbsBandwidthMbps *AutoScalingGroup_BaselineEbsBandwidthMbpsRequest[any] `json:"BaselineEbsBandwidthMbps,omitempty"`
 
 	// BurstablePerformance AWS CloudFormation Property
 	// Required: false
@@ -83,47 +83,47 @@ type AutoScalingGroup_InstanceRequirements struct {
 	// MemoryGiBPerVCpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorygibpervcpu
-	MemoryGiBPerVCpu *AutoScalingGroup_MemoryGiBPerVCpuRequest `json:"MemoryGiBPerVCpu,omitempty"`
+	MemoryGiBPerVCpu *AutoScalingGroup_MemoryGiBPerVCpuRequest[any] `json:"MemoryGiBPerVCpu,omitempty"`
 
 	// MemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorymib
-	MemoryMiB *AutoScalingGroup_MemoryMiBRequest `json:"MemoryMiB,omitempty"`
+	MemoryMiB *AutoScalingGroup_MemoryMiBRequest[any] `json:"MemoryMiB,omitempty"`
 
 	// NetworkBandwidthGbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkbandwidthgbps
-	NetworkBandwidthGbps *AutoScalingGroup_NetworkBandwidthGbpsRequest `json:"NetworkBandwidthGbps,omitempty"`
+	NetworkBandwidthGbps *AutoScalingGroup_NetworkBandwidthGbpsRequest[any] `json:"NetworkBandwidthGbps,omitempty"`
 
 	// NetworkInterfaceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkinterfacecount
-	NetworkInterfaceCount *AutoScalingGroup_NetworkInterfaceCountRequest `json:"NetworkInterfaceCount,omitempty"`
+	NetworkInterfaceCount *AutoScalingGroup_NetworkInterfaceCountRequest[any] `json:"NetworkInterfaceCount,omitempty"`
 
 	// OnDemandMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-ondemandmaxpricepercentageoverlowestprice
-	OnDemandMaxPricePercentageOverLowestPrice *int `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
+	OnDemandMaxPricePercentageOverLowestPrice *T `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// RequireHibernateSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-requirehibernatesupport
-	RequireHibernateSupport *bool `json:"RequireHibernateSupport,omitempty"`
+	RequireHibernateSupport *T `json:"RequireHibernateSupport,omitempty"`
 
 	// SpotMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-spotmaxpricepercentageoverlowestprice
-	SpotMaxPricePercentageOverLowestPrice *int `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
+	SpotMaxPricePercentageOverLowestPrice *T `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// TotalLocalStorageGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-totallocalstoragegb
-	TotalLocalStorageGB *AutoScalingGroup_TotalLocalStorageGBRequest `json:"TotalLocalStorageGB,omitempty"`
+	TotalLocalStorageGB *AutoScalingGroup_TotalLocalStorageGBRequest[any] `json:"TotalLocalStorageGB,omitempty"`
 
 	// VCpuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-vcpucount
-	VCpuCount *AutoScalingGroup_VCpuCountRequest `json:"VCpuCount,omitempty"`
+	VCpuCount *AutoScalingGroup_VCpuCountRequest[any] `json:"VCpuCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -142,6 +142,6 @@ type AutoScalingGroup_InstanceRequirements struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_InstanceRequirements) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_InstanceRequirements[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.InstanceRequirements"
 }

@@ -8,17 +8,17 @@ import (
 
 // WebACL_Rule AWS CloudFormation Resource (AWS::WAFRegional::WebACL.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html
-type WebACL_Rule struct {
+type WebACL_Rule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-action
-	Action *WebACL_Action `json:"Action"`
+	Action *WebACL_Action[any] `json:"Action"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// RuleId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WebACL_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Rule) AWSCloudFormationType() string {
+func (r *WebACL_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::WebACL.Rule"
 }

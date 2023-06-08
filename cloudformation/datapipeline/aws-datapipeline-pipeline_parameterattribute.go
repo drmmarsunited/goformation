@@ -8,7 +8,7 @@ import (
 
 // Pipeline_ParameterAttribute AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.ParameterAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterattribute.html
-type Pipeline_ParameterAttribute struct {
+type Pipeline_ParameterAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_ParameterAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ParameterAttribute) AWSCloudFormationType() string {
+func (r *Pipeline_ParameterAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.ParameterAttribute"
 }

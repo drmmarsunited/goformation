@@ -8,12 +8,12 @@ import (
 
 // ModelQualityJobDefinition_MonitoringResources AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.MonitoringResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringresources.html
-type ModelQualityJobDefinition_MonitoringResources struct {
+type ModelQualityJobDefinition_MonitoringResources[T any] struct {
 
 	// ClusterConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringresources.html#cfn-sagemaker-modelqualityjobdefinition-monitoringresources-clusterconfig
-	ClusterConfig *ModelQualityJobDefinition_ClusterConfig `json:"ClusterConfig"`
+	ClusterConfig *ModelQualityJobDefinition_ClusterConfig[any] `json:"ClusterConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelQualityJobDefinition_MonitoringResources struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_MonitoringResources) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_MonitoringResources[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.MonitoringResources"
 }

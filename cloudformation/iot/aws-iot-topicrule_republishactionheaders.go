@@ -8,7 +8,7 @@ import (
 
 // TopicRule_RepublishActionHeaders AWS CloudFormation Resource (AWS::IoT::TopicRule.RepublishActionHeaders)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html
-type TopicRule_RepublishActionHeaders struct {
+type TopicRule_RepublishActionHeaders[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type TopicRule_RepublishActionHeaders struct {
 	// UserProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-userproperties
-	UserProperties []TopicRule_UserProperty `json:"UserProperties,omitempty"`
+	UserProperties []TopicRule_UserProperty[any] `json:"UserProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type TopicRule_RepublishActionHeaders struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_RepublishActionHeaders) AWSCloudFormationType() string {
+func (r *TopicRule_RepublishActionHeaders[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.RepublishActionHeaders"
 }

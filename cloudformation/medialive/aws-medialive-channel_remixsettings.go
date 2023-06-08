@@ -8,22 +8,22 @@ import (
 
 // Channel_RemixSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.RemixSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html
-type Channel_RemixSettings struct {
+type Channel_RemixSettings[T any] struct {
 
 	// ChannelMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelmappings
-	ChannelMappings []Channel_AudioChannelMapping `json:"ChannelMappings,omitempty"`
+	ChannelMappings []Channel_AudioChannelMapping[any] `json:"ChannelMappings,omitempty"`
 
 	// ChannelsIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelsin
-	ChannelsIn *int `json:"ChannelsIn,omitempty"`
+	ChannelsIn *T `json:"ChannelsIn,omitempty"`
 
 	// ChannelsOut AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelsout
-	ChannelsOut *int `json:"ChannelsOut,omitempty"`
+	ChannelsOut *T `json:"ChannelsOut,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_RemixSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_RemixSettings) AWSCloudFormationType() string {
+func (r *Channel_RemixSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.RemixSettings"
 }

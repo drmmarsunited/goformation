@@ -8,7 +8,7 @@ import (
 
 // TransitGatewayConnect_TransitGatewayConnectOptions AWS CloudFormation Resource (AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html
-type TransitGatewayConnect_TransitGatewayConnectOptions struct {
+type TransitGatewayConnect_TransitGatewayConnectOptions[T any] struct {
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type TransitGatewayConnect_TransitGatewayConnectOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayConnect_TransitGatewayConnectOptions) AWSCloudFormationType() string {
+func (r *TransitGatewayConnect_TransitGatewayConnectOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions"
 }

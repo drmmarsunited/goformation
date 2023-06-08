@@ -8,17 +8,17 @@ import (
 
 // Rule_HeaderMatch AWS CloudFormation Resource (AWS::VpcLattice::Rule.HeaderMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-headermatch.html
-type Rule_HeaderMatch struct {
+type Rule_HeaderMatch[T any] struct {
 
 	// CaseSensitive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-headermatch.html#cfn-vpclattice-rule-headermatch-casesensitive
-	CaseSensitive *bool `json:"CaseSensitive,omitempty"`
+	CaseSensitive *T `json:"CaseSensitive,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-headermatch.html#cfn-vpclattice-rule-headermatch-match
-	Match *Rule_HeaderMatchType `json:"Match"`
+	Match *Rule_HeaderMatchType[any] `json:"Match"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Rule_HeaderMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_HeaderMatch) AWSCloudFormationType() string {
+func (r *Rule_HeaderMatch[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.HeaderMatch"
 }

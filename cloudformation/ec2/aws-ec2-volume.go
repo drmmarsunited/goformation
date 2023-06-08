@@ -12,12 +12,12 @@ import (
 
 // Volume AWS CloudFormation Resource (AWS::EC2::Volume)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html
-type Volume struct {
+type Volume[T any] struct {
 
 	// AutoEnableIO AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-autoenableio
-	AutoEnableIO *bool `json:"AutoEnableIO,omitempty"`
+	AutoEnableIO *T `json:"AutoEnableIO,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
@@ -27,12 +27,12 @@ type Volume struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Volume struct {
 	// MultiAttachEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-multiattachenabled
-	MultiAttachEnabled *bool `json:"MultiAttachEnabled,omitempty"`
+	MultiAttachEnabled *T `json:"MultiAttachEnabled,omitempty"`
 
 	// OutpostArn AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Volume struct {
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-size
-	Size *int `json:"Size,omitempty"`
+	Size *T `json:"Size,omitempty"`
 
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type Volume struct {
 	// Throughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-throughput
-	Throughput *int `json:"Throughput,omitempty"`
+	Throughput *T `json:"Throughput,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type Volume struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume) AWSCloudFormationType() string {
+func (r *Volume[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Volume"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Volume) MarshalJSON() ([]byte, error) {
-	type Properties Volume
+func (r Volume[any]) MarshalJSON() ([]byte, error) {
+	type Properties Volume[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Volume) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Volume) UnmarshalJSON(b []byte) error {
-	type Properties Volume
+func (r *Volume[any]) UnmarshalJSON(b []byte) error {
+	type Properties Volume[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Volume) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Volume(*res.Properties)
+		*r = Volume[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

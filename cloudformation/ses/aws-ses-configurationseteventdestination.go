@@ -11,7 +11,7 @@ import (
 
 // ConfigurationSetEventDestination AWS CloudFormation Resource (AWS::SES::ConfigurationSetEventDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
-type ConfigurationSetEventDestination struct {
+type ConfigurationSetEventDestination[T any] struct {
 
 	// ConfigurationSetName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ConfigurationSetEventDestination struct {
 	// EventDestination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
-	EventDestination *ConfigurationSetEventDestination_EventDestination `json:"EventDestination"`
+	EventDestination *ConfigurationSetEventDestination_EventDestination[any] `json:"EventDestination"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ConfigurationSetEventDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSetEventDestination) AWSCloudFormationType() string {
+func (r *ConfigurationSetEventDestination[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSetEventDestination"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigurationSetEventDestination) MarshalJSON() ([]byte, error) {
-	type Properties ConfigurationSetEventDestination
+func (r ConfigurationSetEventDestination[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigurationSetEventDestination[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ConfigurationSetEventDestination) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigurationSetEventDestination) UnmarshalJSON(b []byte) error {
-	type Properties ConfigurationSetEventDestination
+func (r *ConfigurationSetEventDestination[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigurationSetEventDestination[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ConfigurationSetEventDestination) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigurationSetEventDestination(*res.Properties)
+		*r = ConfigurationSetEventDestination[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksContainerResourceRequirements AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksContainerResourceRequirements)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainerresourcerequirements.html
-type JobDefinition_EksContainerResourceRequirements struct {
+type JobDefinition_EksContainerResourceRequirements[T any] struct {
 
 	// Limits AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobDefinition_EksContainerResourceRequirements struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksContainerResourceRequirements) AWSCloudFormationType() string {
+func (r *JobDefinition_EksContainerResourceRequirements[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksContainerResourceRequirements"
 }

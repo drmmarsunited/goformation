@@ -9,12 +9,12 @@ import (
 
 // ConnectAttachment_ProposedSegmentChange AWS CloudFormation Resource (AWS::NetworkManager::ConnectAttachment.ProposedSegmentChange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html
-type ConnectAttachment_ProposedSegmentChange struct {
+type ConnectAttachment_ProposedSegmentChange[T any] struct {
 
 	// AttachmentPolicyRuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-attachmentpolicyrulenumber
-	AttachmentPolicyRuleNumber *int `json:"AttachmentPolicyRuleNumber,omitempty"`
+	AttachmentPolicyRuleNumber *T `json:"AttachmentPolicyRuleNumber,omitempty"`
 
 	// SegmentName AWS CloudFormation Property
 	// Required: false
@@ -43,6 +43,6 @@ type ConnectAttachment_ProposedSegmentChange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectAttachment_ProposedSegmentChange) AWSCloudFormationType() string {
+func (r *ConnectAttachment_ProposedSegmentChange[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectAttachment.ProposedSegmentChange"
 }

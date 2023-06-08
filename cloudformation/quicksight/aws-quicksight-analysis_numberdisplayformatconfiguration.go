@@ -8,22 +8,22 @@ import (
 
 // Analysis_NumberDisplayFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumberDisplayFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numberdisplayformatconfiguration.html
-type Analysis_NumberDisplayFormatConfiguration struct {
+type Analysis_NumberDisplayFormatConfiguration[T any] struct {
 
 	// DecimalPlacesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numberdisplayformatconfiguration.html#cfn-quicksight-analysis-numberdisplayformatconfiguration-decimalplacesconfiguration
-	DecimalPlacesConfiguration *Analysis_DecimalPlacesConfiguration `json:"DecimalPlacesConfiguration,omitempty"`
+	DecimalPlacesConfiguration *Analysis_DecimalPlacesConfiguration[any] `json:"DecimalPlacesConfiguration,omitempty"`
 
 	// NegativeValueConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numberdisplayformatconfiguration.html#cfn-quicksight-analysis-numberdisplayformatconfiguration-negativevalueconfiguration
-	NegativeValueConfiguration *Analysis_NegativeValueConfiguration `json:"NegativeValueConfiguration,omitempty"`
+	NegativeValueConfiguration *Analysis_NegativeValueConfiguration[any] `json:"NegativeValueConfiguration,omitempty"`
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numberdisplayformatconfiguration.html#cfn-quicksight-analysis-numberdisplayformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Analysis_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// NumberScale AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Analysis_NumberDisplayFormatConfiguration struct {
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numberdisplayformatconfiguration.html#cfn-quicksight-analysis-numberdisplayformatconfiguration-separatorconfiguration
-	SeparatorConfiguration *Analysis_NumericSeparatorConfiguration `json:"SeparatorConfiguration,omitempty"`
+	SeparatorConfiguration *Analysis_NumericSeparatorConfiguration[any] `json:"SeparatorConfiguration,omitempty"`
 
 	// Suffix AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Analysis_NumberDisplayFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumberDisplayFormatConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_NumberDisplayFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumberDisplayFormatConfiguration"
 }

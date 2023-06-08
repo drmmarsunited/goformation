@@ -8,27 +8,27 @@ import (
 
 // ModelPackage_ModelMetrics AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelmetrics.html
-type ModelPackage_ModelMetrics struct {
+type ModelPackage_ModelMetrics[T any] struct {
 
 	// Bias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelmetrics.html#cfn-sagemaker-modelpackage-modelmetrics-bias
-	Bias *ModelPackage_Bias `json:"Bias,omitempty"`
+	Bias *ModelPackage_Bias[any] `json:"Bias,omitempty"`
 
 	// Explainability AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelmetrics.html#cfn-sagemaker-modelpackage-modelmetrics-explainability
-	Explainability *ModelPackage_Explainability `json:"Explainability,omitempty"`
+	Explainability *ModelPackage_Explainability[any] `json:"Explainability,omitempty"`
 
 	// ModelDataQuality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelmetrics.html#cfn-sagemaker-modelpackage-modelmetrics-modeldataquality
-	ModelDataQuality *ModelPackage_ModelDataQuality `json:"ModelDataQuality,omitempty"`
+	ModelDataQuality *ModelPackage_ModelDataQuality[any] `json:"ModelDataQuality,omitempty"`
 
 	// ModelQuality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelmetrics.html#cfn-sagemaker-modelpackage-modelmetrics-modelquality
-	ModelQuality *ModelPackage_ModelQuality `json:"ModelQuality,omitempty"`
+	ModelQuality *ModelPackage_ModelQuality[any] `json:"ModelQuality,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ModelPackage_ModelMetrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelMetrics) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelMetrics[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelMetrics"
 }

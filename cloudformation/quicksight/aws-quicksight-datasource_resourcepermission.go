@@ -8,7 +8,7 @@ import (
 
 // DataSource_ResourcePermission AWS CloudFormation Resource (AWS::QuickSight::DataSource.ResourcePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-resourcepermission.html
-type DataSource_ResourcePermission struct {
+type DataSource_ResourcePermission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_ResourcePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ResourcePermission) AWSCloudFormationType() string {
+func (r *DataSource_ResourcePermission[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.ResourcePermission"
 }

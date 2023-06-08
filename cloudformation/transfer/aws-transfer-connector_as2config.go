@@ -8,7 +8,7 @@ import (
 
 // Connector_As2Config AWS CloudFormation Resource (AWS::Transfer::Connector.As2Config)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html
-type Connector_As2Config struct {
+type Connector_As2Config[T any] struct {
 
 	// Compression AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Connector_As2Config struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_As2Config) AWSCloudFormationType() string {
+func (r *Connector_As2Config[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Connector.As2Config"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_CloudWatchLogsConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.CloudWatchLogsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html
-type Project_CloudWatchLogsConfig struct {
+type Project_CloudWatchLogsConfig[T any] struct {
 
 	// GroupName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Project_CloudWatchLogsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_CloudWatchLogsConfig) AWSCloudFormationType() string {
+func (r *Project_CloudWatchLogsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.CloudWatchLogsConfig"
 }

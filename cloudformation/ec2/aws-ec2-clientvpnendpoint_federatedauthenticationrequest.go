@@ -8,7 +8,7 @@ import (
 
 // ClientVpnEndpoint_FederatedAuthenticationRequest AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html
-type ClientVpnEndpoint_FederatedAuthenticationRequest struct {
+type ClientVpnEndpoint_FederatedAuthenticationRequest[T any] struct {
 
 	// SAMLProviderArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ClientVpnEndpoint_FederatedAuthenticationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_FederatedAuthenticationRequest) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_FederatedAuthenticationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest"
 }

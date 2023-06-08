@@ -8,7 +8,7 @@ import (
 
 // ModelCard_EvaluationDetail AWS CloudFormation Resource (AWS::SageMaker::ModelCard.EvaluationDetail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html
-type ModelCard_EvaluationDetail struct {
+type ModelCard_EvaluationDetail[T any] struct {
 
 	// Datasets AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ModelCard_EvaluationDetail struct {
 	// MetricGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metricgroups
-	MetricGroups []ModelCard_MetricGroup `json:"MetricGroups,omitempty"`
+	MetricGroups []ModelCard_MetricGroup[any] `json:"MetricGroups,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type ModelCard_EvaluationDetail struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_EvaluationDetail) AWSCloudFormationType() string {
+func (r *ModelCard_EvaluationDetail[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.EvaluationDetail"
 }

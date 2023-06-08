@@ -8,7 +8,7 @@ import (
 
 // Table_LocalSecondaryIndex AWS CloudFormation Resource (AWS::DynamoDB::Table.LocalSecondaryIndex)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-localsecondaryindex.html
-type Table_LocalSecondaryIndex struct {
+type Table_LocalSecondaryIndex[T any] struct {
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Table_LocalSecondaryIndex struct {
 	// KeySchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-localsecondaryindex.html#cfn-dynamodb-table-localsecondaryindex-keyschema
-	KeySchema []Table_KeySchema `json:"KeySchema"`
+	KeySchema []Table_KeySchema[any] `json:"KeySchema"`
 
 	// Projection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-localsecondaryindex.html#cfn-dynamodb-table-localsecondaryindex-projection
-	Projection *Table_Projection `json:"Projection"`
+	Projection *Table_Projection[any] `json:"Projection"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Table_LocalSecondaryIndex struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_LocalSecondaryIndex) AWSCloudFormationType() string {
+func (r *Table_LocalSecondaryIndex[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.LocalSecondaryIndex"
 }

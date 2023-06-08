@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_LogDestinationConfig AWS CloudFormation Resource (AWS::NetworkFirewall::LoggingConfiguration.LogDestinationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-loggingconfiguration-logdestinationconfig.html
-type LoggingConfiguration_LogDestinationConfig struct {
+type LoggingConfiguration_LogDestinationConfig[T any] struct {
 
 	// LogDestination AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type LoggingConfiguration_LogDestinationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_LogDestinationConfig) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_LogDestinationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::LoggingConfiguration.LogDestinationConfig"
 }

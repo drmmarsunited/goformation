@@ -8,7 +8,7 @@ import (
 
 // ApplicationReferenceDataSource_CSVMappingParameters AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationReferenceDataSource.CSVMappingParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html
-type ApplicationReferenceDataSource_CSVMappingParameters struct {
+type ApplicationReferenceDataSource_CSVMappingParameters[T any] struct {
 
 	// RecordColumnDelimiter AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ApplicationReferenceDataSource_CSVMappingParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource_CSVMappingParameters) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource_CSVMappingParameters[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationReferenceDataSource.CSVMappingParameters"
 }

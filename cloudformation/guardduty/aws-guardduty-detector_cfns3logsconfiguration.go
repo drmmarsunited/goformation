@@ -8,12 +8,12 @@ import (
 
 // Detector_CFNS3LogsConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNS3LogsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfns3logsconfiguration.html
-type Detector_CFNS3LogsConfiguration struct {
+type Detector_CFNS3LogsConfiguration[T any] struct {
 
 	// Enable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfns3logsconfiguration.html#cfn-guardduty-detector-cfns3logsconfiguration-enable
-	Enable *bool `json:"Enable,omitempty"`
+	Enable *T `json:"Enable,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Detector_CFNS3LogsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_CFNS3LogsConfiguration) AWSCloudFormationType() string {
+func (r *Detector_CFNS3LogsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector.CFNS3LogsConfiguration"
 }

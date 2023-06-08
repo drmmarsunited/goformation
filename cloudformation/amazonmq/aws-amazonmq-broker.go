@@ -11,7 +11,7 @@ import (
 
 // Broker AWS CloudFormation Resource (AWS::AmazonMQ::Broker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html
-type Broker struct {
+type Broker[T any] struct {
 
 	// AuthenticationStrategy AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type Broker struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade
-	AutoMinorVersionUpgrade bool `json:"AutoMinorVersionUpgrade"`
+	AutoMinorVersionUpgrade T `json:"AutoMinorVersionUpgrade"`
 
 	// BrokerName AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Broker struct {
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration
-	Configuration *Broker_ConfigurationId `json:"Configuration,omitempty"`
+	Configuration *Broker_ConfigurationId[any] `json:"Configuration,omitempty"`
 
 	// DeploymentMode AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type Broker struct {
 	// EncryptionOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-encryptionoptions
-	EncryptionOptions *Broker_EncryptionOptions `json:"EncryptionOptions,omitempty"`
+	EncryptionOptions *Broker_EncryptionOptions[any] `json:"EncryptionOptions,omitempty"`
 
 	// EngineType AWS CloudFormation Property
 	// Required: true
@@ -61,22 +61,22 @@ type Broker struct {
 	// LdapServerMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-ldapservermetadata
-	LdapServerMetadata *Broker_LdapServerMetadata `json:"LdapServerMetadata,omitempty"`
+	LdapServerMetadata *Broker_LdapServerMetadata[any] `json:"LdapServerMetadata,omitempty"`
 
 	// Logs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-logs
-	Logs *Broker_LogList `json:"Logs,omitempty"`
+	Logs *Broker_LogList[any] `json:"Logs,omitempty"`
 
 	// MaintenanceWindowStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-maintenancewindowstarttime
-	MaintenanceWindowStartTime *Broker_MaintenanceWindow `json:"MaintenanceWindowStartTime,omitempty"`
+	MaintenanceWindowStartTime *Broker_MaintenanceWindow[any] `json:"MaintenanceWindowStartTime,omitempty"`
 
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible
-	PubliclyAccessible bool `json:"PubliclyAccessible"`
+	PubliclyAccessible T `json:"PubliclyAccessible"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -96,12 +96,12 @@ type Broker struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-tags
-	Tags []Broker_TagsEntry `json:"Tags,omitempty"`
+	Tags []Broker_TagsEntry[any] `json:"Tags,omitempty"`
 
 	// Users AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users
-	Users []Broker_User `json:"Users"`
+	Users []Broker_User[any] `json:"Users"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -120,14 +120,15 @@ type Broker struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker) AWSCloudFormationType() string {
+func (r *Broker[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Broker) MarshalJSON() ([]byte, error) {
-	type Properties Broker
+func (r Broker[any]) MarshalJSON() ([]byte, error) {
+	type Properties Broker[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -149,8 +150,9 @@ func (r Broker) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Broker) UnmarshalJSON(b []byte) error {
-	type Properties Broker
+func (r *Broker[any]) UnmarshalJSON(b []byte) error {
+	type Properties Broker[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -170,7 +172,7 @@ func (r *Broker) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Broker(*res.Properties)
+		*r = Broker[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

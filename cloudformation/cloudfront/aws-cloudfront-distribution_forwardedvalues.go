@@ -8,12 +8,12 @@ import (
 
 // Distribution_ForwardedValues AWS CloudFormation Resource (AWS::CloudFront::Distribution.ForwardedValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html
-type Distribution_ForwardedValues struct {
+type Distribution_ForwardedValues[T any] struct {
 
 	// Cookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-cookies
-	Cookies *Distribution_Cookies `json:"Cookies,omitempty"`
+	Cookies *Distribution_Cookies[any] `json:"Cookies,omitempty"`
 
 	// Headers AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Distribution_ForwardedValues struct {
 	// QueryString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-querystring
-	QueryString bool `json:"QueryString"`
+	QueryString T `json:"QueryString"`
 
 	// QueryStringCacheKeys AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Distribution_ForwardedValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_ForwardedValues) AWSCloudFormationType() string {
+func (r *Distribution_ForwardedValues[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.ForwardedValues"
 }

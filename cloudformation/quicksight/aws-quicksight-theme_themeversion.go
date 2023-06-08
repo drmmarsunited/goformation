@@ -8,7 +8,7 @@ import (
 
 // Theme_ThemeVersion AWS CloudFormation Resource (AWS::QuickSight::Theme.ThemeVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html
-type Theme_ThemeVersion struct {
+type Theme_ThemeVersion[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Theme_ThemeVersion struct {
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-configuration
-	Configuration *Theme_ThemeConfiguration `json:"Configuration,omitempty"`
+	Configuration *Theme_ThemeConfiguration[any] `json:"Configuration,omitempty"`
 
 	// CreatedTime AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Theme_ThemeVersion struct {
 	// Errors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-errors
-	Errors []Theme_ThemeError `json:"Errors,omitempty"`
+	Errors []Theme_ThemeError[any] `json:"Errors,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Theme_ThemeVersion struct {
 	// VersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-versionnumber
-	VersionNumber *float64 `json:"VersionNumber,omitempty"`
+	VersionNumber *T `json:"VersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Theme_ThemeVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_ThemeVersion) AWSCloudFormationType() string {
+func (r *Theme_ThemeVersion[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.ThemeVersion"
 }

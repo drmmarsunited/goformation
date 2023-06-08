@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisAclRule AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisAclRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html
-type NetworkInsightsAnalysis_AnalysisAclRule struct {
+type NetworkInsightsAnalysis_AnalysisAclRule[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type NetworkInsightsAnalysis_AnalysisAclRule struct {
 	// Egress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-egress
-	Egress *bool `json:"Egress,omitempty"`
+	Egress *T `json:"Egress,omitempty"`
 
 	// PortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-portrange
-	PortRange *NetworkInsightsAnalysis_PortRange `json:"PortRange,omitempty"`
+	PortRange *NetworkInsightsAnalysis_PortRange[any] `json:"PortRange,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type NetworkInsightsAnalysis_AnalysisAclRule struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-rulenumber
-	RuleNumber *int `json:"RuleNumber,omitempty"`
+	RuleNumber *T `json:"RuleNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type NetworkInsightsAnalysis_AnalysisAclRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisAclRule) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisAclRule[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisAclRule"
 }

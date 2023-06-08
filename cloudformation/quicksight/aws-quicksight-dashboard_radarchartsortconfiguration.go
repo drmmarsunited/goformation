@@ -8,27 +8,27 @@ import (
 
 // Dashboard_RadarChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RadarChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartsortconfiguration.html
-type Dashboard_RadarChartSortConfiguration struct {
+type Dashboard_RadarChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartsortconfiguration.html#cfn-quicksight-dashboard-radarchartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartsortconfiguration.html#cfn-quicksight-dashboard-radarchartsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartsortconfiguration.html#cfn-quicksight-dashboard-radarchartsortconfiguration-coloritemslimit
-	ColorItemsLimit *Dashboard_ItemsLimitConfiguration `json:"ColorItemsLimit,omitempty"`
+	ColorItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"ColorItemsLimit,omitempty"`
 
 	// ColorSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartsortconfiguration.html#cfn-quicksight-dashboard-radarchartsortconfiguration-colorsort
-	ColorSort []Dashboard_FieldSortOptions `json:"ColorSort,omitempty"`
+	ColorSort []Dashboard_FieldSortOptions[any] `json:"ColorSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_RadarChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RadarChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_RadarChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RadarChartSortConfiguration"
 }

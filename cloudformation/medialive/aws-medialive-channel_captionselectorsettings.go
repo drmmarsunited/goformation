@@ -8,42 +8,42 @@ import (
 
 // Channel_CaptionSelectorSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionSelectorSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html
-type Channel_CaptionSelectorSettings struct {
+type Channel_CaptionSelectorSettings[T any] struct {
 
 	// AncillarySourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-ancillarysourcesettings
-	AncillarySourceSettings *Channel_AncillarySourceSettings `json:"AncillarySourceSettings,omitempty"`
+	AncillarySourceSettings *Channel_AncillarySourceSettings[any] `json:"AncillarySourceSettings,omitempty"`
 
 	// AribSourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings
-	AribSourceSettings *Channel_AribSourceSettings `json:"AribSourceSettings,omitempty"`
+	AribSourceSettings *Channel_AribSourceSettings[any] `json:"AribSourceSettings,omitempty"`
 
 	// DvbSubSourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings
-	DvbSubSourceSettings *Channel_DvbSubSourceSettings `json:"DvbSubSourceSettings,omitempty"`
+	DvbSubSourceSettings *Channel_DvbSubSourceSettings[any] `json:"DvbSubSourceSettings,omitempty"`
 
 	// EmbeddedSourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings
-	EmbeddedSourceSettings *Channel_EmbeddedSourceSettings `json:"EmbeddedSourceSettings,omitempty"`
+	EmbeddedSourceSettings *Channel_EmbeddedSourceSettings[any] `json:"EmbeddedSourceSettings,omitempty"`
 
 	// Scte20SourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings
-	Scte20SourceSettings *Channel_Scte20SourceSettings `json:"Scte20SourceSettings,omitempty"`
+	Scte20SourceSettings *Channel_Scte20SourceSettings[any] `json:"Scte20SourceSettings,omitempty"`
 
 	// Scte27SourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings
-	Scte27SourceSettings *Channel_Scte27SourceSettings `json:"Scte27SourceSettings,omitempty"`
+	Scte27SourceSettings *Channel_Scte27SourceSettings[any] `json:"Scte27SourceSettings,omitempty"`
 
 	// TeletextSourceSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings
-	TeletextSourceSettings *Channel_TeletextSourceSettings `json:"TeletextSourceSettings,omitempty"`
+	TeletextSourceSettings *Channel_TeletextSourceSettings[any] `json:"TeletextSourceSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Channel_CaptionSelectorSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CaptionSelectorSettings) AWSCloudFormationType() string {
+func (r *Channel_CaptionSelectorSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CaptionSelectorSettings"
 }

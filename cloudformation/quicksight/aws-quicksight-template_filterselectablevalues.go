@@ -8,7 +8,7 @@ import (
 
 // Template_FilterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Template.FilterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterselectablevalues.html
-type Template_FilterSelectableValues struct {
+type Template_FilterSelectableValues[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_FilterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterSelectableValues) AWSCloudFormationType() string {
+func (r *Template_FilterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterSelectableValues"
 }

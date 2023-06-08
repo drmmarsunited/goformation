@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CustomNarrativeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomNarrativeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customnarrativeoptions.html
-type Dashboard_CustomNarrativeOptions struct {
+type Dashboard_CustomNarrativeOptions[T any] struct {
 
 	// Narrative AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_CustomNarrativeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomNarrativeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_CustomNarrativeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomNarrativeOptions"
 }

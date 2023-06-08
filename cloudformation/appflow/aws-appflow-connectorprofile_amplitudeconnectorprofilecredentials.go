@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_AmplitudeConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.AmplitudeConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-amplitudeconnectorprofilecredentials.html
-type ConnectorProfile_AmplitudeConnectorProfileCredentials struct {
+type ConnectorProfile_AmplitudeConnectorProfileCredentials[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_AmplitudeConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_AmplitudeConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_AmplitudeConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.AmplitudeConnectorProfileCredentials"
 }

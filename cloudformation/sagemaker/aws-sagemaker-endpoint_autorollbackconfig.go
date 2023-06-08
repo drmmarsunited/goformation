@@ -8,12 +8,12 @@ import (
 
 // Endpoint_AutoRollbackConfig AWS CloudFormation Resource (AWS::SageMaker::Endpoint.AutoRollbackConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html
-type Endpoint_AutoRollbackConfig struct {
+type Endpoint_AutoRollbackConfig[T any] struct {
 
 	// Alarms AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html#cfn-sagemaker-endpoint-autorollbackconfig-alarms
-	Alarms []Endpoint_Alarm `json:"Alarms"`
+	Alarms []Endpoint_Alarm[any] `json:"Alarms"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Endpoint_AutoRollbackConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_AutoRollbackConfig) AWSCloudFormationType() string {
+func (r *Endpoint_AutoRollbackConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.AutoRollbackConfig"
 }

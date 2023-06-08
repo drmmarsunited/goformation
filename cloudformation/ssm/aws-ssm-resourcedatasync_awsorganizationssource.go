@@ -8,7 +8,7 @@ import (
 
 // ResourceDataSync_AwsOrganizationsSource AWS CloudFormation Resource (AWS::SSM::ResourceDataSync.AwsOrganizationsSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html
-type ResourceDataSync_AwsOrganizationsSource struct {
+type ResourceDataSync_AwsOrganizationsSource[T any] struct {
 
 	// OrganizationSourceType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResourceDataSync_AwsOrganizationsSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDataSync_AwsOrganizationsSource) AWSCloudFormationType() string {
+func (r *ResourceDataSync_AwsOrganizationsSource[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::ResourceDataSync.AwsOrganizationsSource"
 }

@@ -8,17 +8,17 @@ import (
 
 // Channel_HlsWebdavSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsWebdavSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html
-type Channel_HlsWebdavSettings struct {
+type Channel_HlsWebdavSettings[T any] struct {
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-connectionretryinterval
-	ConnectionRetryInterval *int `json:"ConnectionRetryInterval,omitempty"`
+	ConnectionRetryInterval *T `json:"ConnectionRetryInterval,omitempty"`
 
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-filecacheduration
-	FilecacheDuration *int `json:"FilecacheDuration,omitempty"`
+	FilecacheDuration *T `json:"FilecacheDuration,omitempty"`
 
 	// HttpTransferMode AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_HlsWebdavSettings struct {
 	// NumRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-numretries
-	NumRetries *int `json:"NumRetries,omitempty"`
+	NumRetries *T `json:"NumRetries,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-restartdelay
-	RestartDelay *int `json:"RestartDelay,omitempty"`
+	RestartDelay *T `json:"RestartDelay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Channel_HlsWebdavSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsWebdavSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsWebdavSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsWebdavSettings"
 }

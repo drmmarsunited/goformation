@@ -8,7 +8,7 @@ import (
 
 // Instance_Disk AWS CloudFormation Resource (AWS::Lightsail::Instance.Disk)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html
-type Instance_Disk struct {
+type Instance_Disk[T any] struct {
 
 	// AttachedTo AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Instance_Disk struct {
 	// IOPS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-iops
-	IOPS *int `json:"IOPS,omitempty"`
+	IOPS *T `json:"IOPS,omitempty"`
 
 	// IsSystemDisk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-issystemdisk
-	IsSystemDisk *bool `json:"IsSystemDisk,omitempty"`
+	IsSystemDisk *T `json:"IsSystemDisk,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Instance_Disk struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Disk) AWSCloudFormationType() string {
+func (r *Instance_Disk[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.Disk"
 }

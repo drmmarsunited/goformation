@@ -8,62 +8,62 @@ import (
 
 // Flow_DestinationConnectorProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.DestinationConnectorProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html
-type Flow_DestinationConnectorProperties struct {
+type Flow_DestinationConnectorProperties[T any] struct {
 
 	// CustomConnector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-customconnector
-	CustomConnector *Flow_CustomConnectorDestinationProperties `json:"CustomConnector,omitempty"`
+	CustomConnector *Flow_CustomConnectorDestinationProperties[any] `json:"CustomConnector,omitempty"`
 
 	// EventBridge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-eventbridge
-	EventBridge *Flow_EventBridgeDestinationProperties `json:"EventBridge,omitempty"`
+	EventBridge *Flow_EventBridgeDestinationProperties[any] `json:"EventBridge,omitempty"`
 
 	// LookoutMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-lookoutmetrics
-	LookoutMetrics *Flow_LookoutMetricsDestinationProperties `json:"LookoutMetrics,omitempty"`
+	LookoutMetrics *Flow_LookoutMetricsDestinationProperties[any] `json:"LookoutMetrics,omitempty"`
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-marketo
-	Marketo *Flow_MarketoDestinationProperties `json:"Marketo,omitempty"`
+	Marketo *Flow_MarketoDestinationProperties[any] `json:"Marketo,omitempty"`
 
 	// Redshift AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-redshift
-	Redshift *Flow_RedshiftDestinationProperties `json:"Redshift,omitempty"`
+	Redshift *Flow_RedshiftDestinationProperties[any] `json:"Redshift,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-s3
-	S3 *Flow_S3DestinationProperties `json:"S3,omitempty"`
+	S3 *Flow_S3DestinationProperties[any] `json:"S3,omitempty"`
 
 	// SAPOData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-sapodata
-	SAPOData *Flow_SAPODataDestinationProperties `json:"SAPOData,omitempty"`
+	SAPOData *Flow_SAPODataDestinationProperties[any] `json:"SAPOData,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-salesforce
-	Salesforce *Flow_SalesforceDestinationProperties `json:"Salesforce,omitempty"`
+	Salesforce *Flow_SalesforceDestinationProperties[any] `json:"Salesforce,omitempty"`
 
 	// Snowflake AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-snowflake
-	Snowflake *Flow_SnowflakeDestinationProperties `json:"Snowflake,omitempty"`
+	Snowflake *Flow_SnowflakeDestinationProperties[any] `json:"Snowflake,omitempty"`
 
 	// Upsolver AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-upsolver
-	Upsolver *Flow_UpsolverDestinationProperties `json:"Upsolver,omitempty"`
+	Upsolver *Flow_UpsolverDestinationProperties[any] `json:"Upsolver,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-zendesk
-	Zendesk *Flow_ZendeskDestinationProperties `json:"Zendesk,omitempty"`
+	Zendesk *Flow_ZendeskDestinationProperties[any] `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Flow_DestinationConnectorProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_DestinationConnectorProperties) AWSCloudFormationType() string {
+func (r *Flow_DestinationConnectorProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.DestinationConnectorProperties"
 }

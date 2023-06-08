@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_Payload AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.Payload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-payload.html
-type DetectorModel_Payload struct {
+type DetectorModel_Payload[T any] struct {
 
 	// ContentExpression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DetectorModel_Payload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_Payload) AWSCloudFormationType() string {
+func (r *DetectorModel_Payload[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.Payload"
 }

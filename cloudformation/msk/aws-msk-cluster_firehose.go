@@ -8,7 +8,7 @@ import (
 
 // Cluster_Firehose AWS CloudFormation Resource (AWS::MSK::Cluster.Firehose)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html
-type Cluster_Firehose struct {
+type Cluster_Firehose[T any] struct {
 
 	// DeliveryStream AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_Firehose struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_Firehose struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Firehose) AWSCloudFormationType() string {
+func (r *Cluster_Firehose[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Firehose"
 }

@@ -8,22 +8,22 @@ import (
 
 // DeploymentGroup_TargetGroupPairInfo AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.TargetGroupPairInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html
-type DeploymentGroup_TargetGroupPairInfo struct {
+type DeploymentGroup_TargetGroupPairInfo[T any] struct {
 
 	// ProdTrafficRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-prodtrafficroute
-	ProdTrafficRoute *DeploymentGroup_TrafficRoute `json:"ProdTrafficRoute,omitempty"`
+	ProdTrafficRoute *DeploymentGroup_TrafficRoute[any] `json:"ProdTrafficRoute,omitempty"`
 
 	// TargetGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-targetgroups
-	TargetGroups []DeploymentGroup_TargetGroupInfo `json:"TargetGroups,omitempty"`
+	TargetGroups []DeploymentGroup_TargetGroupInfo[any] `json:"TargetGroups,omitempty"`
 
 	// TestTrafficRoute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute
-	TestTrafficRoute *DeploymentGroup_TrafficRoute `json:"TestTrafficRoute,omitempty"`
+	TestTrafficRoute *DeploymentGroup_TrafficRoute[any] `json:"TestTrafficRoute,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DeploymentGroup_TargetGroupPairInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_TargetGroupPairInfo) AWSCloudFormationType() string {
+func (r *DeploymentGroup_TargetGroupPairInfo[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.TargetGroupPairInfo"
 }

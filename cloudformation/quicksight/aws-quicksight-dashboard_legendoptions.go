@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LegendOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LegendOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-legendoptions.html
-type Dashboard_LegendOptions struct {
+type Dashboard_LegendOptions[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_LegendOptions struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-legendoptions.html#cfn-quicksight-dashboard-legendoptions-title
-	Title *Dashboard_LabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_LabelOptions[any] `json:"Title,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dashboard_LegendOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LegendOptions) AWSCloudFormationType() string {
+func (r *Dashboard_LegendOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LegendOptions"
 }

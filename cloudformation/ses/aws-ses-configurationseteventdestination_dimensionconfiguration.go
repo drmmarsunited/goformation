@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSetEventDestination_DimensionConfiguration AWS CloudFormation Resource (AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html
-type ConfigurationSetEventDestination_DimensionConfiguration struct {
+type ConfigurationSetEventDestination_DimensionConfiguration[T any] struct {
 
 	// DefaultDimensionValue AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ConfigurationSetEventDestination_DimensionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSetEventDestination_DimensionConfiguration) AWSCloudFormationType() string {
+func (r *ConfigurationSetEventDestination_DimensionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration"
 }

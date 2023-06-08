@@ -8,12 +8,12 @@ import (
 
 // Campaign_OutboundCallConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.OutboundCallConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html
-type Campaign_OutboundCallConfig struct {
+type Campaign_OutboundCallConfig[T any] struct {
 
 	// AnswerMachineDetectionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-answermachinedetectionconfig
-	AnswerMachineDetectionConfig *Campaign_AnswerMachineDetectionConfig `json:"AnswerMachineDetectionConfig,omitempty"`
+	AnswerMachineDetectionConfig *Campaign_AnswerMachineDetectionConfig[any] `json:"AnswerMachineDetectionConfig,omitempty"`
 
 	// ConnectContactFlowArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Campaign_OutboundCallConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_OutboundCallConfig) AWSCloudFormationType() string {
+func (r *Campaign_OutboundCallConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign.OutboundCallConfig"
 }

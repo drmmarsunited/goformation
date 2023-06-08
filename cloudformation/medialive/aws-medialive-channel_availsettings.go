@@ -8,22 +8,22 @@ import (
 
 // Channel_AvailSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AvailSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html
-type Channel_AvailSettings struct {
+type Channel_AvailSettings[T any] struct {
 
 	// Esam AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-esam
-	Esam *Channel_Esam `json:"Esam,omitempty"`
+	Esam *Channel_Esam[any] `json:"Esam,omitempty"`
 
 	// Scte35SpliceInsert AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-scte35spliceinsert
-	Scte35SpliceInsert *Channel_Scte35SpliceInsert `json:"Scte35SpliceInsert,omitempty"`
+	Scte35SpliceInsert *Channel_Scte35SpliceInsert[any] `json:"Scte35SpliceInsert,omitempty"`
 
 	// Scte35TimeSignalApos AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-scte35timesignalapos
-	Scte35TimeSignalApos *Channel_Scte35TimeSignalApos `json:"Scte35TimeSignalApos,omitempty"`
+	Scte35TimeSignalApos *Channel_Scte35TimeSignalApos[any] `json:"Scte35TimeSignalApos,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_AvailSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AvailSettings) AWSCloudFormationType() string {
+func (r *Channel_AvailSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AvailSettings"
 }

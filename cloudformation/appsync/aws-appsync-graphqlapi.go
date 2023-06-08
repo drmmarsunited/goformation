@@ -12,12 +12,17 @@ import (
 
 // GraphQLApi AWS CloudFormation Resource (AWS::AppSync::GraphQLApi)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html
-type GraphQLApi struct {
+type GraphQLApi[T any] struct {
 
 	// AdditionalAuthenticationProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders
-	AdditionalAuthenticationProviders []GraphQLApi_AdditionalAuthenticationProvider `json:"AdditionalAuthenticationProviders,omitempty"`
+	AdditionalAuthenticationProviders []GraphQLApi_AdditionalAuthenticationProvider[any] `json:"AdditionalAuthenticationProviders,omitempty"`
+
+	// ApiType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-apitype
+	ApiType *string `json:"ApiType,omitempty"`
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
@@ -27,12 +32,17 @@ type GraphQLApi struct {
 	// LambdaAuthorizerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig
-	LambdaAuthorizerConfig *GraphQLApi_LambdaAuthorizerConfig `json:"LambdaAuthorizerConfig,omitempty"`
+	LambdaAuthorizerConfig *GraphQLApi_LambdaAuthorizerConfig[any] `json:"LambdaAuthorizerConfig,omitempty"`
 
 	// LogConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig
-	LogConfig *GraphQLApi_LogConfig `json:"LogConfig,omitempty"`
+	LogConfig *GraphQLApi_LogConfig[any] `json:"LogConfig,omitempty"`
+
+	// MergedApiExecutionRoleArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
+	MergedApiExecutionRoleArn *string `json:"MergedApiExecutionRoleArn,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,7 +52,12 @@ type GraphQLApi struct {
 	// OpenIDConnectConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig
-	OpenIDConnectConfig *GraphQLApi_OpenIDConnectConfig `json:"OpenIDConnectConfig,omitempty"`
+	OpenIDConnectConfig *GraphQLApi_OpenIDConnectConfig[any] `json:"OpenIDConnectConfig,omitempty"`
+
+	// OwnerContact AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-ownercontact
+	OwnerContact *string `json:"OwnerContact,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +67,7 @@ type GraphQLApi struct {
 	// UserPoolConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig
-	UserPoolConfig *GraphQLApi_UserPoolConfig `json:"UserPoolConfig,omitempty"`
+	UserPoolConfig *GraphQLApi_UserPoolConfig[any] `json:"UserPoolConfig,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -62,7 +77,7 @@ type GraphQLApi struct {
 	// XrayEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-xrayenabled
-	XrayEnabled *bool `json:"XrayEnabled,omitempty"`
+	XrayEnabled *T `json:"XrayEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -81,14 +96,15 @@ type GraphQLApi struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi) AWSCloudFormationType() string {
+func (r *GraphQLApi[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GraphQLApi) MarshalJSON() ([]byte, error) {
-	type Properties GraphQLApi
+func (r GraphQLApi[any]) MarshalJSON() ([]byte, error) {
+	type Properties GraphQLApi[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +126,9 @@ func (r GraphQLApi) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GraphQLApi) UnmarshalJSON(b []byte) error {
-	type Properties GraphQLApi
+func (r *GraphQLApi[any]) UnmarshalJSON(b []byte) error {
+	type Properties GraphQLApi[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +148,7 @@ func (r *GraphQLApi) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GraphQLApi(*res.Properties)
+		*r = GraphQLApi[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

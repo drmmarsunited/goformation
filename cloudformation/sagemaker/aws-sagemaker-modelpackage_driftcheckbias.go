@@ -8,22 +8,22 @@ import (
 
 // ModelPackage_DriftCheckBias AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.DriftCheckBias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbias.html
-type ModelPackage_DriftCheckBias struct {
+type ModelPackage_DriftCheckBias[T any] struct {
 
 	// ConfigFile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbias.html#cfn-sagemaker-modelpackage-driftcheckbias-configfile
-	ConfigFile *ModelPackage_FileSource `json:"ConfigFile,omitempty"`
+	ConfigFile *ModelPackage_FileSource[any] `json:"ConfigFile,omitempty"`
 
 	// PostTrainingConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbias.html#cfn-sagemaker-modelpackage-driftcheckbias-posttrainingconstraints
-	PostTrainingConstraints *ModelPackage_MetricsSource `json:"PostTrainingConstraints,omitempty"`
+	PostTrainingConstraints *ModelPackage_MetricsSource[any] `json:"PostTrainingConstraints,omitempty"`
 
 	// PreTrainingConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbias.html#cfn-sagemaker-modelpackage-driftcheckbias-pretrainingconstraints
-	PreTrainingConstraints *ModelPackage_MetricsSource `json:"PreTrainingConstraints,omitempty"`
+	PreTrainingConstraints *ModelPackage_MetricsSource[any] `json:"PreTrainingConstraints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelPackage_DriftCheckBias struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_DriftCheckBias) AWSCloudFormationType() string {
+func (r *ModelPackage_DriftCheckBias[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.DriftCheckBias"
 }

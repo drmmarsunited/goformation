@@ -8,7 +8,7 @@ import (
 
 // StreamingDistribution_Logging AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html
-type StreamingDistribution_Logging struct {
+type StreamingDistribution_Logging[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type StreamingDistribution_Logging struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type StreamingDistribution_Logging struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamingDistribution_Logging) AWSCloudFormationType() string {
+func (r *StreamingDistribution_Logging[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.Logging"
 }

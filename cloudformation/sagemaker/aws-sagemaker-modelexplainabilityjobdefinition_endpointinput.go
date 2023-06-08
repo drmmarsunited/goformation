@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html
-type ModelExplainabilityJobDefinition_EndpointInput struct {
+type ModelExplainabilityJobDefinition_EndpointInput[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type ModelExplainabilityJobDefinition_EndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_EndpointInput) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_EndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.EndpointInput"
 }

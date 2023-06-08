@@ -8,7 +8,7 @@ import (
 
 // Environment_NetworkConfiguration AWS CloudFormation Resource (AWS::MWAA::Environment.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html
-type Environment_NetworkConfiguration struct {
+type Environment_NetworkConfiguration[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Environment_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Environment_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MWAA::Environment.NetworkConfiguration"
 }

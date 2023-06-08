@@ -11,7 +11,7 @@ import (
 
 // RegistryPolicy AWS CloudFormation Resource (AWS::ECR::RegistryPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html
-type RegistryPolicy struct {
+type RegistryPolicy[T any] struct {
 
 	// PolicyText AWS CloudFormation Property
 	// Required: true
@@ -35,14 +35,15 @@ type RegistryPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RegistryPolicy) AWSCloudFormationType() string {
+func (r *RegistryPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::RegistryPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RegistryPolicy) MarshalJSON() ([]byte, error) {
-	type Properties RegistryPolicy
+func (r RegistryPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties RegistryPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r RegistryPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RegistryPolicy) UnmarshalJSON(b []byte) error {
-	type Properties RegistryPolicy
+func (r *RegistryPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties RegistryPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *RegistryPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RegistryPolicy(*res.Properties)
+		*r = RegistryPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

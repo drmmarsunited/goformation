@@ -8,7 +8,7 @@ import (
 
 // WebACL_ResponseInspectionBodyContains AWS CloudFormation Resource (AWS::WAFv2::WebACL.ResponseInspectionBodyContains)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionbodycontains.html
-type WebACL_ResponseInspectionBodyContains struct {
+type WebACL_ResponseInspectionBodyContains[T any] struct {
 
 	// FailureStrings AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_ResponseInspectionBodyContains struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ResponseInspectionBodyContains) AWSCloudFormationType() string {
+func (r *WebACL_ResponseInspectionBodyContains[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ResponseInspectionBodyContains"
 }

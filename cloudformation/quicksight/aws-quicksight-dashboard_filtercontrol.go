@@ -8,42 +8,42 @@ import (
 
 // Dashboard_FilterControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html
-type Dashboard_FilterControl struct {
+type Dashboard_FilterControl[T any] struct {
 
 	// DateTimePicker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-datetimepicker
-	DateTimePicker *Dashboard_FilterDateTimePickerControl `json:"DateTimePicker,omitempty"`
+	DateTimePicker *Dashboard_FilterDateTimePickerControl[any] `json:"DateTimePicker,omitempty"`
 
 	// Dropdown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-dropdown
-	Dropdown *Dashboard_FilterDropDownControl `json:"Dropdown,omitempty"`
+	Dropdown *Dashboard_FilterDropDownControl[any] `json:"Dropdown,omitempty"`
 
 	// List AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-list
-	List *Dashboard_FilterListControl `json:"List,omitempty"`
+	List *Dashboard_FilterListControl[any] `json:"List,omitempty"`
 
 	// RelativeDateTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-relativedatetime
-	RelativeDateTime *Dashboard_FilterRelativeDateTimeControl `json:"RelativeDateTime,omitempty"`
+	RelativeDateTime *Dashboard_FilterRelativeDateTimeControl[any] `json:"RelativeDateTime,omitempty"`
 
 	// Slider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-slider
-	Slider *Dashboard_FilterSliderControl `json:"Slider,omitempty"`
+	Slider *Dashboard_FilterSliderControl[any] `json:"Slider,omitempty"`
 
 	// TextArea AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-textarea
-	TextArea *Dashboard_FilterTextAreaControl `json:"TextArea,omitempty"`
+	TextArea *Dashboard_FilterTextAreaControl[any] `json:"TextArea,omitempty"`
 
 	// TextField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtercontrol.html#cfn-quicksight-dashboard-filtercontrol-textfield
-	TextField *Dashboard_FilterTextFieldControl `json:"TextField,omitempty"`
+	TextField *Dashboard_FilterTextFieldControl[any] `json:"TextField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_FilterControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterControl"
 }

@@ -8,17 +8,17 @@ import (
 
 // TaskDefinition_LoRaWANUpdateGatewayTaskCreate AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskCreate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html
-type TaskDefinition_LoRaWANUpdateGatewayTaskCreate struct {
+type TaskDefinition_LoRaWANUpdateGatewayTaskCreate[T any] struct {
 
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-currentversion
-	CurrentVersion *TaskDefinition_LoRaWANGatewayVersion `json:"CurrentVersion,omitempty"`
+	CurrentVersion *TaskDefinition_LoRaWANGatewayVersion[any] `json:"CurrentVersion,omitempty"`
 
 	// SigKeyCrc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-sigkeycrc
-	SigKeyCrc *int `json:"SigKeyCrc,omitempty"`
+	SigKeyCrc *T `json:"SigKeyCrc,omitempty"`
 
 	// UpdateSignature AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type TaskDefinition_LoRaWANUpdateGatewayTaskCreate struct {
 	// UpdateVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-updateversion
-	UpdateVersion *TaskDefinition_LoRaWANGatewayVersion `json:"UpdateVersion,omitempty"`
+	UpdateVersion *TaskDefinition_LoRaWANGatewayVersion[any] `json:"UpdateVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type TaskDefinition_LoRaWANUpdateGatewayTaskCreate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_LoRaWANUpdateGatewayTaskCreate) AWSCloudFormationType() string {
+func (r *TaskDefinition_LoRaWANUpdateGatewayTaskCreate[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskCreate"
 }

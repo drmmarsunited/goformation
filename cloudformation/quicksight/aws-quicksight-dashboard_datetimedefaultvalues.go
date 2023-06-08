@@ -8,17 +8,17 @@ import (
 
 // Dashboard_DateTimeDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateTimeDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimedefaultvalues.html
-type Dashboard_DateTimeDefaultValues struct {
+type Dashboard_DateTimeDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimedefaultvalues.html#cfn-quicksight-dashboard-datetimedefaultvalues-dynamicvalue
-	DynamicValue *Dashboard_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Dashboard_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// RollingDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimedefaultvalues.html#cfn-quicksight-dashboard-datetimedefaultvalues-rollingdate
-	RollingDate *Dashboard_RollingDateConfiguration `json:"RollingDate,omitempty"`
+	RollingDate *Dashboard_RollingDateConfiguration[any] `json:"RollingDate,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_DateTimeDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateTimeDefaultValues) AWSCloudFormationType() string {
+func (r *Dashboard_DateTimeDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateTimeDefaultValues"
 }

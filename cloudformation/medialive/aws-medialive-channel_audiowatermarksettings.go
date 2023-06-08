@@ -8,12 +8,12 @@ import (
 
 // Channel_AudioWatermarkSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioWatermarkSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiowatermarksettings.html
-type Channel_AudioWatermarkSettings struct {
+type Channel_AudioWatermarkSettings[T any] struct {
 
 	// NielsenWatermarksSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiowatermarksettings.html#cfn-medialive-channel-audiowatermarksettings-nielsenwatermarkssettings
-	NielsenWatermarksSettings *Channel_NielsenWatermarksSettings `json:"NielsenWatermarksSettings,omitempty"`
+	NielsenWatermarksSettings *Channel_NielsenWatermarksSettings[any] `json:"NielsenWatermarksSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_AudioWatermarkSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioWatermarkSettings) AWSCloudFormationType() string {
+func (r *Channel_AudioWatermarkSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioWatermarkSettings"
 }

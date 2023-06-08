@@ -8,7 +8,7 @@ import (
 
 // Job_S3Location AWS CloudFormation Resource (AWS::DataBrew::Job.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3location.html
-type Job_S3Location struct {
+type Job_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Job_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_S3Location) AWSCloudFormationType() string {
+func (r *Job_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.S3Location"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dataset_LateDataRuleConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html
-type Dataset_LateDataRuleConfiguration struct {
+type Dataset_LateDataRuleConfiguration[T any] struct {
 
 	// DeltaTimeSessionWindowConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html#cfn-iotanalytics-dataset-latedataruleconfiguration-deltatimesessionwindowconfiguration
-	DeltaTimeSessionWindowConfiguration *Dataset_DeltaTimeSessionWindowConfiguration `json:"DeltaTimeSessionWindowConfiguration,omitempty"`
+	DeltaTimeSessionWindowConfiguration *Dataset_DeltaTimeSessionWindowConfiguration[any] `json:"DeltaTimeSessionWindowConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dataset_LateDataRuleConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_LateDataRuleConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_LateDataRuleConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration"
 }

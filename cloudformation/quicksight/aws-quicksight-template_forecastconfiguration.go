@@ -8,17 +8,17 @@ import (
 
 // Template_ForecastConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ForecastConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastconfiguration.html
-type Template_ForecastConfiguration struct {
+type Template_ForecastConfiguration[T any] struct {
 
 	// ForecastProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastconfiguration.html#cfn-quicksight-template-forecastconfiguration-forecastproperties
-	ForecastProperties *Template_TimeBasedForecastProperties `json:"ForecastProperties,omitempty"`
+	ForecastProperties *Template_TimeBasedForecastProperties[any] `json:"ForecastProperties,omitempty"`
 
 	// Scenario AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastconfiguration.html#cfn-quicksight-template-forecastconfiguration-scenario
-	Scenario *Template_ForecastScenario `json:"Scenario,omitempty"`
+	Scenario *Template_ForecastScenario[any] `json:"Scenario,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ForecastConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ForecastConfiguration) AWSCloudFormationType() string {
+func (r *Template_ForecastConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ForecastConfiguration"
 }

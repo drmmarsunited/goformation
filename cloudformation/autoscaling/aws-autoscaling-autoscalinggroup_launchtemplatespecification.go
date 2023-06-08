@@ -8,7 +8,7 @@ import (
 
 // AutoScalingGroup_LaunchTemplateSpecification AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html
-type AutoScalingGroup_LaunchTemplateSpecification struct {
+type AutoScalingGroup_LaunchTemplateSpecification[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type AutoScalingGroup_LaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_LaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_LaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification"
 }

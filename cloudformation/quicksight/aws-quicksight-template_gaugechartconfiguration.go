@@ -8,32 +8,32 @@ import (
 
 // Template_GaugeChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.GaugeChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html
-type Template_GaugeChartConfiguration struct {
+type Template_GaugeChartConfiguration[T any] struct {
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html#cfn-quicksight-template-gaugechartconfiguration-datalabels
-	DataLabels *Template_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Template_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html#cfn-quicksight-template-gaugechartconfiguration-fieldwells
-	FieldWells *Template_GaugeChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_GaugeChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// GaugeChartOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html#cfn-quicksight-template-gaugechartconfiguration-gaugechartoptions
-	GaugeChartOptions *Template_GaugeChartOptions `json:"GaugeChartOptions,omitempty"`
+	GaugeChartOptions *Template_GaugeChartOptions[any] `json:"GaugeChartOptions,omitempty"`
 
 	// TooltipOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html#cfn-quicksight-template-gaugechartconfiguration-tooltipoptions
-	TooltipOptions *Template_TooltipOptions `json:"TooltipOptions,omitempty"`
+	TooltipOptions *Template_TooltipOptions[any] `json:"TooltipOptions,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconfiguration.html#cfn-quicksight-template-gaugechartconfiguration-visualpalette
-	VisualPalette *Template_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Template_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Template_GaugeChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GaugeChartConfiguration) AWSCloudFormationType() string {
+func (r *Template_GaugeChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GaugeChartConfiguration"
 }

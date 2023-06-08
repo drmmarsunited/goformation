@@ -8,7 +8,7 @@ import (
 
 // Flow_S3DestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.S3DestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html
-type Flow_S3DestinationProperties struct {
+type Flow_S3DestinationProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Flow_S3DestinationProperties struct {
 	// S3OutputFormatConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html#cfn-appflow-flow-s3destinationproperties-s3outputformatconfig
-	S3OutputFormatConfig *Flow_S3OutputFormatConfig `json:"S3OutputFormatConfig,omitempty"`
+	S3OutputFormatConfig *Flow_S3OutputFormatConfig[any] `json:"S3OutputFormatConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Flow_S3DestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_S3DestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_S3DestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.S3DestinationProperties"
 }

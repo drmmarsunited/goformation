@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_BlockDeviceMapping AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html
-type LaunchTemplate_BlockDeviceMapping struct {
+type LaunchTemplate_BlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LaunchTemplate_BlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs
-	Ebs *LaunchTemplate_Ebs `json:"Ebs,omitempty"`
+	Ebs *LaunchTemplate_Ebs[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type LaunchTemplate_BlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_BlockDeviceMapping) AWSCloudFormationType() string {
+func (r *LaunchTemplate_BlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.BlockDeviceMapping"
 }

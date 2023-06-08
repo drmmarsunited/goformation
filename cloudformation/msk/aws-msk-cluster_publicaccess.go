@@ -8,7 +8,7 @@ import (
 
 // Cluster_PublicAccess AWS CloudFormation Resource (AWS::MSK::Cluster.PublicAccess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-publicaccess.html
-type Cluster_PublicAccess struct {
+type Cluster_PublicAccess[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Cluster_PublicAccess struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_PublicAccess) AWSCloudFormationType() string {
+func (r *Cluster_PublicAccess[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.PublicAccess"
 }

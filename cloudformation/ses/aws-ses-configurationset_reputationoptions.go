@@ -8,12 +8,12 @@ import (
 
 // ConfigurationSet_ReputationOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.ReputationOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-reputationoptions.html
-type ConfigurationSet_ReputationOptions struct {
+type ConfigurationSet_ReputationOptions[T any] struct {
 
 	// ReputationMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-reputationoptions.html#cfn-ses-configurationset-reputationoptions-reputationmetricsenabled
-	ReputationMetricsEnabled *bool `json:"ReputationMetricsEnabled,omitempty"`
+	ReputationMetricsEnabled *T `json:"ReputationMetricsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ConfigurationSet_ReputationOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_ReputationOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_ReputationOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.ReputationOptions"
 }

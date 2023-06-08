@@ -8,7 +8,7 @@ import (
 
 // Cluster_KerberosAttributes AWS CloudFormation Resource (AWS::EMR::Cluster.KerberosAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html
-type Cluster_KerberosAttributes struct {
+type Cluster_KerberosAttributes[T any] struct {
 
 	// ADDomainJoinPassword AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Cluster_KerberosAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_KerberosAttributes) AWSCloudFormationType() string {
+func (r *Cluster_KerberosAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.KerberosAttributes"
 }

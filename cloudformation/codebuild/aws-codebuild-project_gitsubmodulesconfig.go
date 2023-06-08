@@ -8,12 +8,12 @@ import (
 
 // Project_GitSubmodulesConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.GitSubmodulesConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html
-type Project_GitSubmodulesConfig struct {
+type Project_GitSubmodulesConfig[T any] struct {
 
 	// FetchSubmodules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html#cfn-codebuild-project-gitsubmodulesconfig-fetchsubmodules
-	FetchSubmodules bool `json:"FetchSubmodules"`
+	FetchSubmodules T `json:"FetchSubmodules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Project_GitSubmodulesConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_GitSubmodulesConfig) AWSCloudFormationType() string {
+func (r *Project_GitSubmodulesConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.GitSubmodulesConfig"
 }

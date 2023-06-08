@@ -8,12 +8,12 @@ import (
 
 // DeploymentGroup_EC2TagSet AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.EC2TagSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html
-type DeploymentGroup_EC2TagSet struct {
+type DeploymentGroup_EC2TagSet[T any] struct {
 
 	// Ec2TagSetList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html#cfn-codedeploy-deploymentgroup-ec2tagset-ec2tagsetlist
-	Ec2TagSetList []DeploymentGroup_EC2TagSetListObject `json:"Ec2TagSetList,omitempty"`
+	Ec2TagSetList []DeploymentGroup_EC2TagSetListObject[any] `json:"Ec2TagSetList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeploymentGroup_EC2TagSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_EC2TagSet) AWSCloudFormationType() string {
+func (r *DeploymentGroup_EC2TagSet[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.EC2TagSet"
 }

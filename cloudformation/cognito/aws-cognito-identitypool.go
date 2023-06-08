@@ -11,17 +11,17 @@ import (
 
 // IdentityPool AWS CloudFormation Resource (AWS::Cognito::IdentityPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
-type IdentityPool struct {
+type IdentityPool[T any] struct {
 
 	// AllowClassicFlow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
-	AllowClassicFlow *bool `json:"AllowClassicFlow,omitempty"`
+	AllowClassicFlow *T `json:"AllowClassicFlow,omitempty"`
 
 	// AllowUnauthenticatedIdentities AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
-	AllowUnauthenticatedIdentities bool `json:"AllowUnauthenticatedIdentities"`
+	AllowUnauthenticatedIdentities T `json:"AllowUnauthenticatedIdentities"`
 
 	// CognitoEvents AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type IdentityPool struct {
 	// CognitoIdentityProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
-	CognitoIdentityProviders []IdentityPool_CognitoIdentityProvider `json:"CognitoIdentityProviders,omitempty"`
+	CognitoIdentityProviders []IdentityPool_CognitoIdentityProvider[any] `json:"CognitoIdentityProviders,omitempty"`
 
 	// CognitoStreams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
-	CognitoStreams *IdentityPool_CognitoStreams `json:"CognitoStreams,omitempty"`
+	CognitoStreams *IdentityPool_CognitoStreams[any] `json:"CognitoStreams,omitempty"`
 
 	// DeveloperProviderName AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type IdentityPool struct {
 	// PushSync AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
-	PushSync *IdentityPool_PushSync `json:"PushSync,omitempty"`
+	PushSync *IdentityPool_PushSync[any] `json:"PushSync,omitempty"`
 
 	// SamlProviderARNs AWS CloudFormation Property
 	// Required: false
@@ -85,14 +85,15 @@ type IdentityPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPool) AWSCloudFormationType() string {
+func (r *IdentityPool[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IdentityPool) MarshalJSON() ([]byte, error) {
-	type Properties IdentityPool
+func (r IdentityPool[any]) MarshalJSON() ([]byte, error) {
+	type Properties IdentityPool[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r IdentityPool) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IdentityPool) UnmarshalJSON(b []byte) error {
-	type Properties IdentityPool
+func (r *IdentityPool[any]) UnmarshalJSON(b []byte) error {
+	type Properties IdentityPool[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *IdentityPool) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IdentityPool(*res.Properties)
+		*r = IdentityPool[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

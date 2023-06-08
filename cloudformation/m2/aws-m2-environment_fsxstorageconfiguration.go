@@ -8,7 +8,7 @@ import (
 
 // Environment_FsxStorageConfiguration AWS CloudFormation Resource (AWS::M2::Environment.FsxStorageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-fsxstorageconfiguration.html
-type Environment_FsxStorageConfiguration struct {
+type Environment_FsxStorageConfiguration[T any] struct {
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Environment_FsxStorageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_FsxStorageConfiguration) AWSCloudFormationType() string {
+func (r *Environment_FsxStorageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::M2::Environment.FsxStorageConfiguration"
 }

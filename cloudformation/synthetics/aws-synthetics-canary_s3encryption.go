@@ -8,7 +8,7 @@ import (
 
 // Canary_S3Encryption AWS CloudFormation Resource (AWS::Synthetics::Canary.S3Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html
-type Canary_S3Encryption struct {
+type Canary_S3Encryption[T any] struct {
 
 	// EncryptionMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Canary_S3Encryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_S3Encryption) AWSCloudFormationType() string {
+func (r *Canary_S3Encryption[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.S3Encryption"
 }

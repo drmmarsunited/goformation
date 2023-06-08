@@ -8,7 +8,7 @@ import (
 
 // GatewayRoute_GatewayRouteMetadataMatch AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteMetadataMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html
-type GatewayRoute_GatewayRouteMetadataMatch struct {
+type GatewayRoute_GatewayRouteMetadataMatch[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type GatewayRoute_GatewayRouteMetadataMatch struct {
 	// Range AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html#cfn-appmesh-gatewayroute-gatewayroutemetadatamatch-range
-	Range *GatewayRoute_GatewayRouteRangeMatch `json:"Range,omitempty"`
+	Range *GatewayRoute_GatewayRouteRangeMatch[any] `json:"Range,omitempty"`
 
 	// Regex AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type GatewayRoute_GatewayRouteMetadataMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteMetadataMatch) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteMetadataMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteMetadataMatch"
 }

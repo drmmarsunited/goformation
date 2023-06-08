@@ -8,7 +8,7 @@ import (
 
 // Deployment_ComponentConfigurationUpdate AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.ComponentConfigurationUpdate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentconfigurationupdate.html
-type Deployment_ComponentConfigurationUpdate struct {
+type Deployment_ComponentConfigurationUpdate[T any] struct {
 
 	// Merge AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Deployment_ComponentConfigurationUpdate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_ComponentConfigurationUpdate) AWSCloudFormationType() string {
+func (r *Deployment_ComponentConfigurationUpdate[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.ComponentConfigurationUpdate"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipeline_CloudWatchLogDestination AWS CloudFormation Resource (AWS::OSIS::Pipeline.CloudWatchLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-cloudwatchlogdestination.html
-type Pipeline_CloudWatchLogDestination struct {
+type Pipeline_CloudWatchLogDestination[T any] struct {
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Pipeline_CloudWatchLogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_CloudWatchLogDestination) AWSCloudFormationType() string {
+func (r *Pipeline_CloudWatchLogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::OSIS::Pipeline.CloudWatchLogDestination"
 }

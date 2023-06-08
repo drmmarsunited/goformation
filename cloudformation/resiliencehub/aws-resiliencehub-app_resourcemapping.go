@@ -8,7 +8,12 @@ import (
 
 // App_ResourceMapping AWS CloudFormation Resource (AWS::ResilienceHub::App.ResourceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html
-type App_ResourceMapping struct {
+type App_ResourceMapping[T any] struct {
+
+	// EksSourceName AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-ekssourcename
+	EksSourceName *string `json:"EksSourceName,omitempty"`
 
 	// LogicalStackName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +28,7 @@ type App_ResourceMapping struct {
 	// PhysicalResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-physicalresourceid
-	PhysicalResourceId *App_PhysicalResourceId `json:"PhysicalResourceId"`
+	PhysicalResourceId *App_PhysicalResourceId[any] `json:"PhysicalResourceId"`
 
 	// ResourceName AWS CloudFormation Property
 	// Required: false
@@ -52,6 +57,6 @@ type App_ResourceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_ResourceMapping) AWSCloudFormationType() string {
+func (r *App_ResourceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::ResilienceHub::App.ResourceMapping"
 }

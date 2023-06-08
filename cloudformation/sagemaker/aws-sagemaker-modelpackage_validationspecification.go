@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_ValidationSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ValidationSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationspecification.html
-type ModelPackage_ValidationSpecification struct {
+type ModelPackage_ValidationSpecification[T any] struct {
 
 	// ValidationProfiles AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationspecification.html#cfn-sagemaker-modelpackage-validationspecification-validationprofiles
-	ValidationProfiles []ModelPackage_ValidationProfile `json:"ValidationProfiles"`
+	ValidationProfiles []ModelPackage_ValidationProfile[any] `json:"ValidationProfiles"`
 
 	// ValidationRole AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelPackage_ValidationSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ValidationSpecification) AWSCloudFormationType() string {
+func (r *ModelPackage_ValidationSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ValidationSpecification"
 }

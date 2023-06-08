@@ -8,12 +8,12 @@ import (
 
 // Channel_TeletextSourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.TeletextSourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html
-type Channel_TeletextSourceSettings struct {
+type Channel_TeletextSourceSettings[T any] struct {
 
 	// OutputRectangle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html#cfn-medialive-channel-teletextsourcesettings-outputrectangle
-	OutputRectangle *Channel_CaptionRectangle `json:"OutputRectangle,omitempty"`
+	OutputRectangle *Channel_CaptionRectangle[any] `json:"OutputRectangle,omitempty"`
 
 	// PageNumber AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_TeletextSourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TeletextSourceSettings) AWSCloudFormationType() string {
+func (r *Channel_TeletextSourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TeletextSourceSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_SAPODataSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SAPODataSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatasourceproperties.html
-type Flow_SAPODataSourceProperties struct {
+type Flow_SAPODataSourceProperties[T any] struct {
 
 	// ObjectPath AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_SAPODataSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SAPODataSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_SAPODataSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SAPODataSourceProperties"
 }

@@ -8,37 +8,37 @@ import (
 
 // MitigationAction_ActionParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.ActionParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html
-type MitigationAction_ActionParams struct {
+type MitigationAction_ActionParams[T any] struct {
 
 	// AddThingsToThingGroupParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-addthingstothinggroupparams
-	AddThingsToThingGroupParams *MitigationAction_AddThingsToThingGroupParams `json:"AddThingsToThingGroupParams,omitempty"`
+	AddThingsToThingGroupParams *MitigationAction_AddThingsToThingGroupParams[any] `json:"AddThingsToThingGroupParams,omitempty"`
 
 	// EnableIoTLoggingParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-enableiotloggingparams
-	EnableIoTLoggingParams *MitigationAction_EnableIoTLoggingParams `json:"EnableIoTLoggingParams,omitempty"`
+	EnableIoTLoggingParams *MitigationAction_EnableIoTLoggingParams[any] `json:"EnableIoTLoggingParams,omitempty"`
 
 	// PublishFindingToSnsParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-publishfindingtosnsparams
-	PublishFindingToSnsParams *MitigationAction_PublishFindingToSnsParams `json:"PublishFindingToSnsParams,omitempty"`
+	PublishFindingToSnsParams *MitigationAction_PublishFindingToSnsParams[any] `json:"PublishFindingToSnsParams,omitempty"`
 
 	// ReplaceDefaultPolicyVersionParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-replacedefaultpolicyversionparams
-	ReplaceDefaultPolicyVersionParams *MitigationAction_ReplaceDefaultPolicyVersionParams `json:"ReplaceDefaultPolicyVersionParams,omitempty"`
+	ReplaceDefaultPolicyVersionParams *MitigationAction_ReplaceDefaultPolicyVersionParams[any] `json:"ReplaceDefaultPolicyVersionParams,omitempty"`
 
 	// UpdateCACertificateParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-updatecacertificateparams
-	UpdateCACertificateParams *MitigationAction_UpdateCACertificateParams `json:"UpdateCACertificateParams,omitempty"`
+	UpdateCACertificateParams *MitigationAction_UpdateCACertificateParams[any] `json:"UpdateCACertificateParams,omitempty"`
 
 	// UpdateDeviceCertificateParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-updatedevicecertificateparams
-	UpdateDeviceCertificateParams *MitigationAction_UpdateDeviceCertificateParams `json:"UpdateDeviceCertificateParams,omitempty"`
+	UpdateDeviceCertificateParams *MitigationAction_UpdateDeviceCertificateParams[any] `json:"UpdateDeviceCertificateParams,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type MitigationAction_ActionParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_ActionParams) AWSCloudFormationType() string {
+func (r *MitigationAction_ActionParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.ActionParams"
 }

@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_Sqs AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.Sqs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html
-type DetectorModel_Sqs struct {
+type DetectorModel_Sqs[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// QueueUrl AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DetectorModel_Sqs struct {
 	// UseBase64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-usebase64
-	UseBase64 *bool `json:"UseBase64,omitempty"`
+	UseBase64 *T `json:"UseBase64,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DetectorModel_Sqs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_Sqs) AWSCloudFormationType() string {
+func (r *DetectorModel_Sqs[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.Sqs"
 }

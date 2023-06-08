@@ -8,7 +8,7 @@ import (
 
 // Template_AggregationFunction AWS CloudFormation Resource (AWS::QuickSight::Template.AggregationFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-aggregationfunction.html
-type Template_AggregationFunction struct {
+type Template_AggregationFunction[T any] struct {
 
 	// CategoricalAggregationFunction AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_AggregationFunction struct {
 	// NumericalAggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-aggregationfunction.html#cfn-quicksight-template-aggregationfunction-numericalaggregationfunction
-	NumericalAggregationFunction *Template_NumericalAggregationFunction `json:"NumericalAggregationFunction,omitempty"`
+	NumericalAggregationFunction *Template_NumericalAggregationFunction[any] `json:"NumericalAggregationFunction,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_AggregationFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AggregationFunction) AWSCloudFormationType() string {
+func (r *Template_AggregationFunction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AggregationFunction"
 }

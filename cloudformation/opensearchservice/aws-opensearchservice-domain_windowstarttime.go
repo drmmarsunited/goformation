@@ -8,17 +8,17 @@ import (
 
 // Domain_WindowStartTime AWS CloudFormation Resource (AWS::OpenSearchService::Domain.WindowStartTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-windowstarttime.html
-type Domain_WindowStartTime struct {
+type Domain_WindowStartTime[T any] struct {
 
 	// Hours AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-windowstarttime.html#cfn-opensearchservice-domain-windowstarttime-hours
-	Hours int `json:"Hours"`
+	Hours T `json:"Hours"`
 
 	// Minutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-windowstarttime.html#cfn-opensearchservice-domain-windowstarttime-minutes
-	Minutes int `json:"Minutes"`
+	Minutes T `json:"Minutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Domain_WindowStartTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_WindowStartTime) AWSCloudFormationType() string {
+func (r *Domain_WindowStartTime[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.WindowStartTime"
 }

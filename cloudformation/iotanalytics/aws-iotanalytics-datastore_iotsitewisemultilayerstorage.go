@@ -8,12 +8,12 @@ import (
 
 // Datastore_IotSiteWiseMultiLayerStorage AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.IotSiteWiseMultiLayerStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-iotsitewisemultilayerstorage.html
-type Datastore_IotSiteWiseMultiLayerStorage struct {
+type Datastore_IotSiteWiseMultiLayerStorage[T any] struct {
 
 	// CustomerManagedS3Storage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-iotsitewisemultilayerstorage.html#cfn-iotanalytics-datastore-iotsitewisemultilayerstorage-customermanageds3storage
-	CustomerManagedS3Storage *Datastore_CustomerManagedS3Storage `json:"CustomerManagedS3Storage,omitempty"`
+	CustomerManagedS3Storage *Datastore_CustomerManagedS3Storage[any] `json:"CustomerManagedS3Storage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Datastore_IotSiteWiseMultiLayerStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_IotSiteWiseMultiLayerStorage) AWSCloudFormationType() string {
+func (r *Datastore_IotSiteWiseMultiLayerStorage[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.IotSiteWiseMultiLayerStorage"
 }

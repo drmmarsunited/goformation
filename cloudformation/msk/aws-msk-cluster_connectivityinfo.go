@@ -8,17 +8,17 @@ import (
 
 // Cluster_ConnectivityInfo AWS CloudFormation Resource (AWS::MSK::Cluster.ConnectivityInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html
-type Cluster_ConnectivityInfo struct {
+type Cluster_ConnectivityInfo[T any] struct {
 
 	// PublicAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess
-	PublicAccess *Cluster_PublicAccess `json:"PublicAccess,omitempty"`
+	PublicAccess *Cluster_PublicAccess[any] `json:"PublicAccess,omitempty"`
 
 	// VpcConnectivity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-vpcconnectivity
-	VpcConnectivity *Cluster_VpcConnectivity `json:"VpcConnectivity,omitempty"`
+	VpcConnectivity *Cluster_VpcConnectivity[any] `json:"VpcConnectivity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_ConnectivityInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ConnectivityInfo) AWSCloudFormationType() string {
+func (r *Cluster_ConnectivityInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.ConnectivityInfo"
 }

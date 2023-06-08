@@ -8,22 +8,22 @@ import (
 
 // Analysis_SankeyDiagramChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SankeyDiagramChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramchartconfiguration.html
-type Analysis_SankeyDiagramChartConfiguration struct {
+type Analysis_SankeyDiagramChartConfiguration[T any] struct {
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramchartconfiguration.html#cfn-quicksight-analysis-sankeydiagramchartconfiguration-datalabels
-	DataLabels *Analysis_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Analysis_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramchartconfiguration.html#cfn-quicksight-analysis-sankeydiagramchartconfiguration-fieldwells
-	FieldWells *Analysis_SankeyDiagramFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_SankeyDiagramFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramchartconfiguration.html#cfn-quicksight-analysis-sankeydiagramchartconfiguration-sortconfiguration
-	SortConfiguration *Analysis_SankeyDiagramSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_SankeyDiagramSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_SankeyDiagramChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SankeyDiagramChartConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SankeyDiagramChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SankeyDiagramChartConfiguration"
 }

@@ -8,27 +8,27 @@ import (
 
 // WebACL_ResponseInspection AWS CloudFormation Resource (AWS::WAFv2::WebACL.ResponseInspection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html
-type WebACL_ResponseInspection struct {
+type WebACL_ResponseInspection[T any] struct {
 
 	// BodyContains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-bodycontains
-	BodyContains *WebACL_ResponseInspectionBodyContains `json:"BodyContains,omitempty"`
+	BodyContains *WebACL_ResponseInspectionBodyContains[any] `json:"BodyContains,omitempty"`
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-header
-	Header *WebACL_ResponseInspectionHeader `json:"Header,omitempty"`
+	Header *WebACL_ResponseInspectionHeader[any] `json:"Header,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-json
-	Json *WebACL_ResponseInspectionJson `json:"Json,omitempty"`
+	Json *WebACL_ResponseInspectionJson[any] `json:"Json,omitempty"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-statuscode
-	StatusCode *WebACL_ResponseInspectionStatusCode `json:"StatusCode,omitempty"`
+	StatusCode *WebACL_ResponseInspectionStatusCode[any] `json:"StatusCode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type WebACL_ResponseInspection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ResponseInspection) AWSCloudFormationType() string {
+func (r *WebACL_ResponseInspection[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ResponseInspection"
 }

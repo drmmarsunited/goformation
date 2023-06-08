@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_LambdaAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.LambdaAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html
-type ReceiptRule_LambdaAction struct {
+type ReceiptRule_LambdaAction[T any] struct {
 
 	// FunctionArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ReceiptRule_LambdaAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_LambdaAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_LambdaAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.LambdaAction"
 }

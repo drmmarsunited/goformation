@@ -8,12 +8,12 @@ import (
 
 // Monitor_InternetMeasurementsLogDelivery AWS CloudFormation Resource (AWS::InternetMonitor::Monitor.InternetMeasurementsLogDelivery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-internetmeasurementslogdelivery.html
-type Monitor_InternetMeasurementsLogDelivery struct {
+type Monitor_InternetMeasurementsLogDelivery[T any] struct {
 
 	// S3Config AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-internetmeasurementslogdelivery.html#cfn-internetmonitor-monitor-internetmeasurementslogdelivery-s3config
-	S3Config *Monitor_S3Config `json:"S3Config,omitempty"`
+	S3Config *Monitor_S3Config[any] `json:"S3Config,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Monitor_InternetMeasurementsLogDelivery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Monitor_InternetMeasurementsLogDelivery) AWSCloudFormationType() string {
+func (r *Monitor_InternetMeasurementsLogDelivery[any]) AWSCloudFormationType() string {
 	return "AWS::InternetMonitor::Monitor.InternetMeasurementsLogDelivery"
 }

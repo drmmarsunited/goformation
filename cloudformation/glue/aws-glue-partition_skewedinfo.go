@@ -8,7 +8,7 @@ import (
 
 // Partition_SkewedInfo AWS CloudFormation Resource (AWS::Glue::Partition.SkewedInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-skewedinfo.html
-type Partition_SkewedInfo struct {
+type Partition_SkewedInfo[T any] struct {
 
 	// SkewedColumnNames AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Partition_SkewedInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_SkewedInfo) AWSCloudFormationType() string {
+func (r *Partition_SkewedInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SkewedInfo"
 }

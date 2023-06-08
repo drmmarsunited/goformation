@@ -8,7 +8,7 @@ import (
 
 // Campaign_QuietTime AWS CloudFormation Resource (AWS::Pinpoint::Campaign.QuietTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule-quiettime.html
-type Campaign_QuietTime struct {
+type Campaign_QuietTime[T any] struct {
 
 	// End AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Campaign_QuietTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_QuietTime) AWSCloudFormationType() string {
+func (r *Campaign_QuietTime[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.QuietTime"
 }

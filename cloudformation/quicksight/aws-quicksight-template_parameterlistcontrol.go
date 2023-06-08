@@ -8,17 +8,17 @@ import (
 
 // Template_ParameterListControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterListControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html
-type Template_ParameterListControl struct {
+type Template_ParameterListControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Template_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Template_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-displayoptions
-	DisplayOptions *Template_ListControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_ListControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_ParameterListControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-selectablevalues
-	SelectableValues *Template_ParameterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Template_ParameterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_ParameterListControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterListControl) AWSCloudFormationType() string {
+func (r *Template_ParameterListControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterListControl"
 }

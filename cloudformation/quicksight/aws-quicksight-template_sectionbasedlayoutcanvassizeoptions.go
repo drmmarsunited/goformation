@@ -8,12 +8,12 @@ import (
 
 // Template_SectionBasedLayoutCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Template.SectionBasedLayoutCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutcanvassizeoptions.html
-type Template_SectionBasedLayoutCanvasSizeOptions struct {
+type Template_SectionBasedLayoutCanvasSizeOptions[T any] struct {
 
 	// PaperCanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutcanvassizeoptions.html#cfn-quicksight-template-sectionbasedlayoutcanvassizeoptions-papercanvassizeoptions
-	PaperCanvasSizeOptions *Template_SectionBasedLayoutPaperCanvasSizeOptions `json:"PaperCanvasSizeOptions,omitempty"`
+	PaperCanvasSizeOptions *Template_SectionBasedLayoutPaperCanvasSizeOptions[any] `json:"PaperCanvasSizeOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_SectionBasedLayoutCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SectionBasedLayoutCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Template_SectionBasedLayoutCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SectionBasedLayoutCanvasSizeOptions"
 }

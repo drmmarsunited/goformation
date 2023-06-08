@@ -8,17 +8,17 @@ import (
 
 // Analysis_TableOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableoptions.html
-type Analysis_TableOptions struct {
+type Analysis_TableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableoptions.html#cfn-quicksight-analysis-tableoptions-cellstyle
-	CellStyle *Analysis_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Analysis_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// HeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableoptions.html#cfn-quicksight-analysis-tableoptions-headerstyle
-	HeaderStyle *Analysis_TableCellStyle `json:"HeaderStyle,omitempty"`
+	HeaderStyle *Analysis_TableCellStyle[any] `json:"HeaderStyle,omitempty"`
 
 	// Orientation AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Analysis_TableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableoptions.html#cfn-quicksight-analysis-tableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Analysis_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Analysis_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_TableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableOptions) AWSCloudFormationType() string {
+func (r *Analysis_TableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableOptions"
 }

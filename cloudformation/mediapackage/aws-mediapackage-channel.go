@@ -12,7 +12,7 @@ import (
 
 // Channel AWS CloudFormation Resource (AWS::MediaPackage::Channel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html
-type Channel struct {
+type Channel[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Channel struct {
 	// EgressAccessLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs
-	EgressAccessLogs *Channel_LogConfiguration `json:"EgressAccessLogs,omitempty"`
+	EgressAccessLogs *Channel_LogConfiguration[any] `json:"EgressAccessLogs,omitempty"`
 
 	// HlsIngest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-hlsingest
-	HlsIngest *Channel_HlsIngest `json:"HlsIngest,omitempty"`
+	HlsIngest *Channel_HlsIngest[any] `json:"HlsIngest,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Channel struct {
 	// IngressAccessLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs
-	IngressAccessLogs *Channel_LogConfiguration `json:"IngressAccessLogs,omitempty"`
+	IngressAccessLogs *Channel_LogConfiguration[any] `json:"IngressAccessLogs,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Channel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel) AWSCloudFormationType() string {
+func (r *Channel[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Channel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Channel) MarshalJSON() ([]byte, error) {
-	type Properties Channel
+func (r Channel[any]) MarshalJSON() ([]byte, error) {
+	type Properties Channel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Channel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Channel) UnmarshalJSON(b []byte) error {
-	type Properties Channel
+func (r *Channel[any]) UnmarshalJSON(b []byte) error {
+	type Properties Channel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Channel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Channel(*res.Properties)
+		*r = Channel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,42 +8,42 @@ import (
 
 // Analysis_TableConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html
-type Analysis_TableConfiguration struct {
+type Analysis_TableConfiguration[T any] struct {
 
 	// FieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-fieldoptions
-	FieldOptions *Analysis_TableFieldOptions `json:"FieldOptions,omitempty"`
+	FieldOptions *Analysis_TableFieldOptions[any] `json:"FieldOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-fieldwells
-	FieldWells *Analysis_TableFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_TableFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// PaginatedReportOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-paginatedreportoptions
-	PaginatedReportOptions *Analysis_TablePaginatedReportOptions `json:"PaginatedReportOptions,omitempty"`
+	PaginatedReportOptions *Analysis_TablePaginatedReportOptions[any] `json:"PaginatedReportOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-sortconfiguration
-	SortConfiguration *Analysis_TableSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_TableSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// TableInlineVisualizations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-tableinlinevisualizations
-	TableInlineVisualizations []Analysis_TableInlineVisualization `json:"TableInlineVisualizations,omitempty"`
+	TableInlineVisualizations []Analysis_TableInlineVisualization[any] `json:"TableInlineVisualizations,omitempty"`
 
 	// TableOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-tableoptions
-	TableOptions *Analysis_TableOptions `json:"TableOptions,omitempty"`
+	TableOptions *Analysis_TableOptions[any] `json:"TableOptions,omitempty"`
 
 	// TotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-totaloptions
-	TotalOptions *Analysis_TotalOptions `json:"TotalOptions,omitempty"`
+	TotalOptions *Analysis_TotalOptions[any] `json:"TotalOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_TableConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TableConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableConfiguration"
 }

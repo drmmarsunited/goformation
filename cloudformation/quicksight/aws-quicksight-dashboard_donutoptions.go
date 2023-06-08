@@ -8,17 +8,17 @@ import (
 
 // Dashboard_DonutOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DonutOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-donutoptions.html
-type Dashboard_DonutOptions struct {
+type Dashboard_DonutOptions[T any] struct {
 
 	// ArcOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-donutoptions.html#cfn-quicksight-dashboard-donutoptions-arcoptions
-	ArcOptions *Dashboard_ArcOptions `json:"ArcOptions,omitempty"`
+	ArcOptions *Dashboard_ArcOptions[any] `json:"ArcOptions,omitempty"`
 
 	// DonutCenterOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-donutoptions.html#cfn-quicksight-dashboard-donutoptions-donutcenteroptions
-	DonutCenterOptions *Dashboard_DonutCenterOptions `json:"DonutCenterOptions,omitempty"`
+	DonutCenterOptions *Dashboard_DonutCenterOptions[any] `json:"DonutCenterOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DonutOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DonutOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DonutOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DonutOptions"
 }

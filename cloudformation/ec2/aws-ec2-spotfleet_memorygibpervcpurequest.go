@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_MemoryGiBPerVCpuRequest AWS CloudFormation Resource (AWS::EC2::SpotFleet.MemoryGiBPerVCpuRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-memorygibpervcpurequest.html
-type SpotFleet_MemoryGiBPerVCpuRequest struct {
+type SpotFleet_MemoryGiBPerVCpuRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-memorygibpervcpurequest.html#cfn-ec2-spotfleet-memorygibpervcpurequest-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-memorygibpervcpurequest.html#cfn-ec2-spotfleet-memorygibpervcpurequest-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_MemoryGiBPerVCpuRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_MemoryGiBPerVCpuRequest) AWSCloudFormationType() string {
+func (r *SpotFleet_MemoryGiBPerVCpuRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.MemoryGiBPerVCpuRequest"
 }

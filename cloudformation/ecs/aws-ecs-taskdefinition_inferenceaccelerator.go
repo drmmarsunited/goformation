@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_InferenceAccelerator AWS CloudFormation Resource (AWS::ECS::TaskDefinition.InferenceAccelerator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html
-type TaskDefinition_InferenceAccelerator struct {
+type TaskDefinition_InferenceAccelerator[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_InferenceAccelerator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_InferenceAccelerator) AWSCloudFormationType() string {
+func (r *TaskDefinition_InferenceAccelerator[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.InferenceAccelerator"
 }

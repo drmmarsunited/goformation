@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_ConstraintsResource AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.ConstraintsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-constraintsresource.html
-type MonitoringSchedule_ConstraintsResource struct {
+type MonitoringSchedule_ConstraintsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type MonitoringSchedule_ConstraintsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_ConstraintsResource) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_ConstraintsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.ConstraintsResource"
 }

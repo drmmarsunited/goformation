@@ -8,7 +8,7 @@ import (
 
 // Theme_UIColorPalette AWS CloudFormation Resource (AWS::QuickSight::Theme.UIColorPalette)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html
-type Theme_UIColorPalette struct {
+type Theme_UIColorPalette[T any] struct {
 
 	// Accent AWS CloudFormation Property
 	// Required: false
@@ -107,6 +107,6 @@ type Theme_UIColorPalette struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_UIColorPalette) AWSCloudFormationType() string {
+func (r *Theme_UIColorPalette[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.UIColorPalette"
 }

@@ -12,12 +12,12 @@ import (
 
 // Container AWS CloudFormation Resource (AWS::MediaStore::Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html
-type Container struct {
+type Container[T any] struct {
 
 	// AccessLoggingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-accessloggingenabled
-	AccessLoggingEnabled *bool `json:"AccessLoggingEnabled,omitempty"`
+	AccessLoggingEnabled *T `json:"AccessLoggingEnabled,omitempty"`
 
 	// ContainerName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Container struct {
 	// CorsPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-corspolicy
-	CorsPolicy []Container_CorsRule `json:"CorsPolicy,omitempty"`
+	CorsPolicy []Container_CorsRule[any] `json:"CorsPolicy,omitempty"`
 
 	// LifecyclePolicy AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Container struct {
 	// MetricPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-metricpolicy
-	MetricPolicy *Container_MetricPolicy `json:"MetricPolicy,omitempty"`
+	MetricPolicy *Container_MetricPolicy[any] `json:"MetricPolicy,omitempty"`
 
 	// Policy AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Container struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container) AWSCloudFormationType() string {
+func (r *Container[any]) AWSCloudFormationType() string {
 	return "AWS::MediaStore::Container"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Container) MarshalJSON() ([]byte, error) {
-	type Properties Container
+func (r Container[any]) MarshalJSON() ([]byte, error) {
+	type Properties Container[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Container) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Container) UnmarshalJSON(b []byte) error {
-	type Properties Container
+func (r *Container[any]) UnmarshalJSON(b []byte) error {
+	type Properties Container[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Container) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Container(*res.Properties)
+		*r = Container[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

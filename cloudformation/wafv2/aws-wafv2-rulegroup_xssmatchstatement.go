@@ -8,17 +8,17 @@ import (
 
 // RuleGroup_XssMatchStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.XssMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-xssmatchstatement.html
-type RuleGroup_XssMatchStatement struct {
+type RuleGroup_XssMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-xssmatchstatement.html#cfn-wafv2-rulegroup-xssmatchstatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-xssmatchstatement.html#cfn-wafv2-rulegroup-xssmatchstatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_XssMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_XssMatchStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_XssMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.XssMatchStatement"
 }

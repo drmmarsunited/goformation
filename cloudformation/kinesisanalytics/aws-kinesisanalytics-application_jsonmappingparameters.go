@@ -8,7 +8,7 @@ import (
 
 // Application_JSONMappingParameters AWS CloudFormation Resource (AWS::KinesisAnalytics::Application.JSONMappingParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-jsonmappingparameters.html
-type Application_JSONMappingParameters struct {
+type Application_JSONMappingParameters[T any] struct {
 
 	// RecordRowPath AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Application_JSONMappingParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_JSONMappingParameters) AWSCloudFormationType() string {
+func (r *Application_JSONMappingParameters[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::Application.JSONMappingParameters"
 }

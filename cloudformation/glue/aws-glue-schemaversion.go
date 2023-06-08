@@ -11,12 +11,12 @@ import (
 
 // SchemaVersion AWS CloudFormation Resource (AWS::Glue::SchemaVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html
-type SchemaVersion struct {
+type SchemaVersion[T any] struct {
 
 	// Schema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html#cfn-glue-schemaversion-schema
-	Schema *SchemaVersion_Schema `json:"Schema"`
+	Schema *SchemaVersion_Schema[any] `json:"Schema"`
 
 	// SchemaDefinition AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type SchemaVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SchemaVersion) AWSCloudFormationType() string {
+func (r *SchemaVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SchemaVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SchemaVersion) MarshalJSON() ([]byte, error) {
-	type Properties SchemaVersion
+func (r SchemaVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties SchemaVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SchemaVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SchemaVersion) UnmarshalJSON(b []byte) error {
-	type Properties SchemaVersion
+func (r *SchemaVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties SchemaVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SchemaVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SchemaVersion(*res.Properties)
+		*r = SchemaVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

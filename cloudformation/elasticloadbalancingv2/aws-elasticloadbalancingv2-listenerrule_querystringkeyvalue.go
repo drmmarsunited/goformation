@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_QueryStringKeyValue AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html
-type ListenerRule_QueryStringKeyValue struct {
+type ListenerRule_QueryStringKeyValue[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ListenerRule_QueryStringKeyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_QueryStringKeyValue) AWSCloudFormationType() string {
+func (r *ListenerRule_QueryStringKeyValue[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue"
 }

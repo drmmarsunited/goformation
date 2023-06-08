@@ -8,7 +8,7 @@ import (
 
 // ContactList_Topic AWS CloudFormation Resource (AWS::SES::ContactList.Topic)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-contactlist-topic.html
-type ContactList_Topic struct {
+type ContactList_Topic[T any] struct {
 
 	// DefaultSubscriptionStatus AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ContactList_Topic struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContactList_Topic) AWSCloudFormationType() string {
+func (r *ContactList_Topic[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ContactList.Topic"
 }

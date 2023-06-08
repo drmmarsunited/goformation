@@ -11,12 +11,12 @@ import (
 
 // EventInvokeConfig AWS CloudFormation Resource (AWS::Lambda::EventInvokeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html
-type EventInvokeConfig struct {
+type EventInvokeConfig[T any] struct {
 
 	// DestinationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig
-	DestinationConfig *EventInvokeConfig_DestinationConfig `json:"DestinationConfig,omitempty"`
+	DestinationConfig *EventInvokeConfig_DestinationConfig[any] `json:"DestinationConfig,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type EventInvokeConfig struct {
 	// MaximumEventAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds
-	MaximumEventAgeInSeconds *int `json:"MaximumEventAgeInSeconds,omitempty"`
+	MaximumEventAgeInSeconds *T `json:"MaximumEventAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// Qualifier AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type EventInvokeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventInvokeConfig) AWSCloudFormationType() string {
+func (r *EventInvokeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventInvokeConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EventInvokeConfig) MarshalJSON() ([]byte, error) {
-	type Properties EventInvokeConfig
+func (r EventInvokeConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties EventInvokeConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r EventInvokeConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EventInvokeConfig) UnmarshalJSON(b []byte) error {
-	type Properties EventInvokeConfig
+func (r *EventInvokeConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties EventInvokeConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *EventInvokeConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EventInvokeConfig(*res.Properties)
+		*r = EventInvokeConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

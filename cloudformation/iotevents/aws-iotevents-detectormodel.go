@@ -12,12 +12,12 @@ import (
 
 // DetectorModel AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html
-type DetectorModel struct {
+type DetectorModel[T any] struct {
 
 	// DetectorModelDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldefinition
-	DetectorModelDefinition *DetectorModel_DetectorModelDefinition `json:"DetectorModelDefinition"`
+	DetectorModelDefinition *DetectorModel_DetectorModelDefinition[any] `json:"DetectorModelDefinition"`
 
 	// DetectorModelDescription AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type DetectorModel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel) AWSCloudFormationType() string {
+func (r *DetectorModel[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DetectorModel) MarshalJSON() ([]byte, error) {
-	type Properties DetectorModel
+func (r DetectorModel[any]) MarshalJSON() ([]byte, error) {
+	type Properties DetectorModel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r DetectorModel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DetectorModel) UnmarshalJSON(b []byte) error {
-	type Properties DetectorModel
+func (r *DetectorModel[any]) UnmarshalJSON(b []byte) error {
+	type Properties DetectorModel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *DetectorModel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DetectorModel(*res.Properties)
+		*r = DetectorModel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

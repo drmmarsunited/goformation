@@ -8,7 +8,7 @@ import (
 
 // Connection_ApiKeyAuthParameters AWS CloudFormation Resource (AWS::Events::Connection.ApiKeyAuthParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html
-type Connection_ApiKeyAuthParameters struct {
+type Connection_ApiKeyAuthParameters[T any] struct {
 
 	// ApiKeyName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Connection_ApiKeyAuthParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_ApiKeyAuthParameters) AWSCloudFormationType() string {
+func (r *Connection_ApiKeyAuthParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.ApiKeyAuthParameters"
 }

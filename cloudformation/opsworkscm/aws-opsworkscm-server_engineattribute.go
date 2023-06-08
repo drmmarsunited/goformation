@@ -8,7 +8,7 @@ import (
 
 // Server_EngineAttribute AWS CloudFormation Resource (AWS::OpsWorksCM::Server.EngineAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworkscm-server-engineattribute.html
-type Server_EngineAttribute struct {
+type Server_EngineAttribute[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Server_EngineAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_EngineAttribute) AWSCloudFormationType() string {
+func (r *Server_EngineAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorksCM::Server.EngineAttribute"
 }

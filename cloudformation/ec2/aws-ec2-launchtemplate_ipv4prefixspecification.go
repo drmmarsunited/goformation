@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_Ipv4PrefixSpecification AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.Ipv4PrefixSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html
-type LaunchTemplate_Ipv4PrefixSpecification struct {
+type LaunchTemplate_Ipv4PrefixSpecification[T any] struct {
 
 	// Ipv4Prefix AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_Ipv4PrefixSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_Ipv4PrefixSpecification) AWSCloudFormationType() string {
+func (r *LaunchTemplate_Ipv4PrefixSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.Ipv4PrefixSpecification"
 }

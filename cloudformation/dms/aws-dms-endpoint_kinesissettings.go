@@ -8,32 +8,32 @@ import (
 
 // Endpoint_KinesisSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.KinesisSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html
-type Endpoint_KinesisSettings struct {
+type Endpoint_KinesisSettings[T any] struct {
 
 	// IncludeControlDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-includecontroldetails
-	IncludeControlDetails *bool `json:"IncludeControlDetails,omitempty"`
+	IncludeControlDetails *T `json:"IncludeControlDetails,omitempty"`
 
 	// IncludeNullAndEmpty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-includenullandempty
-	IncludeNullAndEmpty *bool `json:"IncludeNullAndEmpty,omitempty"`
+	IncludeNullAndEmpty *T `json:"IncludeNullAndEmpty,omitempty"`
 
 	// IncludePartitionValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-includepartitionvalue
-	IncludePartitionValue *bool `json:"IncludePartitionValue,omitempty"`
+	IncludePartitionValue *T `json:"IncludePartitionValue,omitempty"`
 
 	// IncludeTableAlterOperations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-includetablealteroperations
-	IncludeTableAlterOperations *bool `json:"IncludeTableAlterOperations,omitempty"`
+	IncludeTableAlterOperations *T `json:"IncludeTableAlterOperations,omitempty"`
 
 	// IncludeTransactionDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-includetransactiondetails
-	IncludeTransactionDetails *bool `json:"IncludeTransactionDetails,omitempty"`
+	IncludeTransactionDetails *T `json:"IncludeTransactionDetails,omitempty"`
 
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type Endpoint_KinesisSettings struct {
 	// NoHexPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-nohexprefix
-	NoHexPrefix *bool `json:"NoHexPrefix,omitempty"`
+	NoHexPrefix *T `json:"NoHexPrefix,omitempty"`
 
 	// PartitionIncludeSchemaTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-partitionincludeschematable
-	PartitionIncludeSchemaTable *bool `json:"PartitionIncludeSchemaTable,omitempty"`
+	PartitionIncludeSchemaTable *T `json:"PartitionIncludeSchemaTable,omitempty"`
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type Endpoint_KinesisSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_KinesisSettings) AWSCloudFormationType() string {
+func (r *Endpoint_KinesisSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.KinesisSettings"
 }

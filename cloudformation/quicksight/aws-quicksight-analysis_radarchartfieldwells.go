@@ -8,12 +8,12 @@ import (
 
 // Analysis_RadarChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.RadarChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-radarchartfieldwells.html
-type Analysis_RadarChartFieldWells struct {
+type Analysis_RadarChartFieldWells[T any] struct {
 
 	// RadarChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-radarchartfieldwells.html#cfn-quicksight-analysis-radarchartfieldwells-radarchartaggregatedfieldwells
-	RadarChartAggregatedFieldWells *Analysis_RadarChartAggregatedFieldWells `json:"RadarChartAggregatedFieldWells,omitempty"`
+	RadarChartAggregatedFieldWells *Analysis_RadarChartAggregatedFieldWells[any] `json:"RadarChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_RadarChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_RadarChartFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_RadarChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.RadarChartFieldWells"
 }

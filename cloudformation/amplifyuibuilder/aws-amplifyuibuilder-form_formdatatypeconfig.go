@@ -8,7 +8,7 @@ import (
 
 // Form_FormDataTypeConfig AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormDataTypeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formdatatypeconfig.html
-type Form_FormDataTypeConfig struct {
+type Form_FormDataTypeConfig[T any] struct {
 
 	// DataSourceType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Form_FormDataTypeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormDataTypeConfig) AWSCloudFormationType() string {
+func (r *Form_FormDataTypeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormDataTypeConfig"
 }

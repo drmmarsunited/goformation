@@ -8,17 +8,17 @@ import (
 
 // Service_ServiceConnectConfiguration AWS CloudFormation Resource (AWS::ECS::Service.ServiceConnectConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html
-type Service_ServiceConnectConfiguration struct {
+type Service_ServiceConnectConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// LogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-logconfiguration
-	LogConfiguration *Service_LogConfiguration `json:"LogConfiguration,omitempty"`
+	LogConfiguration *Service_LogConfiguration[any] `json:"LogConfiguration,omitempty"`
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Service_ServiceConnectConfiguration struct {
 	// Services AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-services
-	Services []Service_ServiceConnectService `json:"Services,omitempty"`
+	Services []Service_ServiceConnectService[any] `json:"Services,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Service_ServiceConnectConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ServiceConnectConfiguration) AWSCloudFormationType() string {
+func (r *Service_ServiceConnectConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.ServiceConnectConfiguration"
 }

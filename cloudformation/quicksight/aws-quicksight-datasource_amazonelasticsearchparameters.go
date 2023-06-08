@@ -8,7 +8,7 @@ import (
 
 // DataSource_AmazonElasticsearchParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.AmazonElasticsearchParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-amazonelasticsearchparameters.html
-type DataSource_AmazonElasticsearchParameters struct {
+type DataSource_AmazonElasticsearchParameters[T any] struct {
 
 	// Domain AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_AmazonElasticsearchParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AmazonElasticsearchParameters) AWSCloudFormationType() string {
+func (r *DataSource_AmazonElasticsearchParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.AmazonElasticsearchParameters"
 }

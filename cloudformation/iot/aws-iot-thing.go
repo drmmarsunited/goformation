@@ -11,12 +11,12 @@ import (
 
 // Thing AWS CloudFormation Resource (AWS::IoT::Thing)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html
-type Thing struct {
+type Thing[T any] struct {
 
 	// AttributePayload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload
-	AttributePayload *Thing_AttributePayload `json:"AttributePayload,omitempty"`
+	AttributePayload *Thing_AttributePayload[any] `json:"AttributePayload,omitempty"`
 
 	// ThingName AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type Thing struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Thing) AWSCloudFormationType() string {
+func (r *Thing[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::Thing"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Thing) MarshalJSON() ([]byte, error) {
-	type Properties Thing
+func (r Thing[any]) MarshalJSON() ([]byte, error) {
+	type Properties Thing[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Thing) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Thing) UnmarshalJSON(b []byte) error {
-	type Properties Thing
+func (r *Thing[any]) UnmarshalJSON(b []byte) error {
+	type Properties Thing[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Thing) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Thing(*res.Properties)
+		*r = Thing[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

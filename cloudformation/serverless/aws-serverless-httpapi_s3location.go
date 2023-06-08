@@ -8,7 +8,7 @@ import (
 
 // HttpApi_S3Location AWS CloudFormation Resource (AWS::Serverless::HttpApi.S3Location)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-type HttpApi_S3Location struct {
+type HttpApi_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type HttpApi_S3Location struct {
 	// Version AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-	Version int `json:"Version"`
+	Version T `json:"Version"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type HttpApi_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_S3Location) AWSCloudFormationType() string {
+func (r *HttpApi_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.S3Location"
 }

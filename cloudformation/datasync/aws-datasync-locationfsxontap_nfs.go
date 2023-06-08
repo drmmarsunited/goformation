@@ -8,12 +8,12 @@ import (
 
 // LocationFSxONTAP_NFS AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP.NFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-nfs.html
-type LocationFSxONTAP_NFS struct {
+type LocationFSxONTAP_NFS[T any] struct {
 
 	// MountOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-nfs.html#cfn-datasync-locationfsxontap-nfs-mountoptions
-	MountOptions *LocationFSxONTAP_NfsMountOptions `json:"MountOptions"`
+	MountOptions *LocationFSxONTAP_NfsMountOptions[any] `json:"MountOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LocationFSxONTAP_NFS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP_NFS) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP_NFS[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP.NFS"
 }

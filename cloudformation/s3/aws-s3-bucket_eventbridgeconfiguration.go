@@ -8,12 +8,12 @@ import (
 
 // Bucket_EventBridgeConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.EventBridgeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-eventbridgeconfig.html
-type Bucket_EventBridgeConfiguration struct {
+type Bucket_EventBridgeConfiguration[T any] struct {
 
 	// EventBridgeEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-eventbridgeconfig.html#cfn-s3-bucket-eventbridgeconfiguration-eventbridgeenabled
-	EventBridgeEnabled *bool `json:"EventBridgeEnabled,omitempty"`
+	EventBridgeEnabled *T `json:"EventBridgeEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_EventBridgeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_EventBridgeConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_EventBridgeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.EventBridgeConfiguration"
 }

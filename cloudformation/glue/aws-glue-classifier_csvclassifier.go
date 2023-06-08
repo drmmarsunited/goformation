@@ -8,12 +8,12 @@ import (
 
 // Classifier_CsvClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.CsvClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html
-type Classifier_CsvClassifier struct {
+type Classifier_CsvClassifier[T any] struct {
 
 	// AllowSingleColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-allowsinglecolumn
-	AllowSingleColumn *bool `json:"AllowSingleColumn,omitempty"`
+	AllowSingleColumn *T `json:"AllowSingleColumn,omitempty"`
 
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Classifier_CsvClassifier struct {
 	// DisableValueTrimming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-disablevaluetrimming
-	DisableValueTrimming *bool `json:"DisableValueTrimming,omitempty"`
+	DisableValueTrimming *T `json:"DisableValueTrimming,omitempty"`
 
 	// Header AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Classifier_CsvClassifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Classifier_CsvClassifier) AWSCloudFormationType() string {
+func (r *Classifier_CsvClassifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier.CsvClassifier"
 }

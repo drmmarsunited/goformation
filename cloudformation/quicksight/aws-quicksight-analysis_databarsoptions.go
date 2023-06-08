@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataBarsOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataBarsOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-databarsoptions.html
-type Analysis_DataBarsOptions struct {
+type Analysis_DataBarsOptions[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_DataBarsOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataBarsOptions) AWSCloudFormationType() string {
+func (r *Analysis_DataBarsOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataBarsOptions"
 }

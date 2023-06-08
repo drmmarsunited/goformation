@@ -8,17 +8,17 @@ import (
 
 // MetricFilter_MetricTransformation AWS CloudFormation Resource (AWS::Logs::MetricFilter.MetricTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
-type MetricFilter_MetricTransformation struct {
+type MetricFilter_MetricTransformation[T any] struct {
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-logs-metricfilter-metrictransformation-defaultvalue
-	DefaultValue *float64 `json:"DefaultValue,omitempty"`
+	DefaultValue *T `json:"DefaultValue,omitempty"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-logs-metricfilter-metrictransformation-dimensions
-	Dimensions []MetricFilter_Dimension `json:"Dimensions,omitempty"`
+	Dimensions []MetricFilter_Dimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type MetricFilter_MetricTransformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MetricFilter_MetricTransformation) AWSCloudFormationType() string {
+func (r *MetricFilter_MetricTransformation[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::MetricFilter.MetricTransformation"
 }

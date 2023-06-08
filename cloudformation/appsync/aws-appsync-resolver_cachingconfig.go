@@ -8,7 +8,7 @@ import (
 
 // Resolver_CachingConfig AWS CloudFormation Resource (AWS::AppSync::Resolver.CachingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-cachingconfig.html
-type Resolver_CachingConfig struct {
+type Resolver_CachingConfig[T any] struct {
 
 	// CachingKeys AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Resolver_CachingConfig struct {
 	// Ttl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-cachingconfig.html#cfn-appsync-resolver-cachingconfig-ttl
-	Ttl float64 `json:"Ttl"`
+	Ttl T `json:"Ttl"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Resolver_CachingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Resolver_CachingConfig) AWSCloudFormationType() string {
+func (r *Resolver_CachingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::Resolver.CachingConfig"
 }

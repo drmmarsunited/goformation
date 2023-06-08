@@ -8,32 +8,32 @@ import (
 
 // Dashboard_GaugeChartVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GaugeChartVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html
-type Dashboard_GaugeChartVisual struct {
+type Dashboard_GaugeChartVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-chartconfiguration
-	ChartConfiguration *Dashboard_GaugeChartConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_GaugeChartConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-conditionalformatting
-	ConditionalFormatting *Dashboard_GaugeChartConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Dashboard_GaugeChartConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_GaugeChartVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GaugeChartVisual) AWSCloudFormationType() string {
+func (r *Dashboard_GaugeChartVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GaugeChartVisual"
 }

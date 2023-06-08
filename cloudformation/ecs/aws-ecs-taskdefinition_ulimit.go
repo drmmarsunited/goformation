@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_Ulimit AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Ulimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ulimit.html
-type TaskDefinition_Ulimit struct {
+type TaskDefinition_Ulimit[T any] struct {
 
 	// HardLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ulimit.html#cfn-ecs-taskdefinition-ulimit-hardlimit
-	HardLimit int `json:"HardLimit"`
+	HardLimit T `json:"HardLimit"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type TaskDefinition_Ulimit struct {
 	// SoftLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ulimit.html#cfn-ecs-taskdefinition-ulimit-softlimit
-	SoftLimit int `json:"SoftLimit"`
+	SoftLimit T `json:"SoftLimit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TaskDefinition_Ulimit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_Ulimit) AWSCloudFormationType() string {
+func (r *TaskDefinition_Ulimit[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Ulimit"
 }

@@ -12,7 +12,7 @@ import (
 
 // Faq AWS CloudFormation Resource (AWS::Kendra::Faq)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html
-type Faq struct {
+type Faq[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Faq struct {
 	// S3Path AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-s3path
-	S3Path *Faq_S3Path `json:"S3Path"`
+	S3Path *Faq_S3Path[any] `json:"S3Path"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Faq struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Faq) AWSCloudFormationType() string {
+func (r *Faq[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Faq"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Faq) MarshalJSON() ([]byte, error) {
-	type Properties Faq
+func (r Faq[any]) MarshalJSON() ([]byte, error) {
+	type Properties Faq[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Faq) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Faq) UnmarshalJSON(b []byte) error {
-	type Properties Faq
+func (r *Faq[any]) UnmarshalJSON(b []byte) error {
+	type Properties Faq[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Faq) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Faq(*res.Properties)
+		*r = Faq[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // InstanceFleetConfig_EbsBlockDeviceConfig AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html
-type InstanceFleetConfig_EbsBlockDeviceConfig struct {
+type InstanceFleetConfig_EbsBlockDeviceConfig[T any] struct {
 
 	// VolumeSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumespecification
-	VolumeSpecification *InstanceFleetConfig_VolumeSpecification `json:"VolumeSpecification"`
+	VolumeSpecification *InstanceFleetConfig_VolumeSpecification[any] `json:"VolumeSpecification"`
 
 	// VolumesPerInstance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumesperinstance
-	VolumesPerInstance *int `json:"VolumesPerInstance,omitempty"`
+	VolumesPerInstance *T `json:"VolumesPerInstance,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceFleetConfig_EbsBlockDeviceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_EbsBlockDeviceConfig) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_EbsBlockDeviceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig"
 }

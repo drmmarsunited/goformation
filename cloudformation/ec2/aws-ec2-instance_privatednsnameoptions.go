@@ -8,17 +8,17 @@ import (
 
 // Instance_PrivateDnsNameOptions AWS CloudFormation Resource (AWS::EC2::Instance.PrivateDnsNameOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html
-type Instance_PrivateDnsNameOptions struct {
+type Instance_PrivateDnsNameOptions[T any] struct {
 
 	// EnableResourceNameDnsAAAARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsaaaarecord
-	EnableResourceNameDnsAAAARecord *bool `json:"EnableResourceNameDnsAAAARecord,omitempty"`
+	EnableResourceNameDnsAAAARecord *T `json:"EnableResourceNameDnsAAAARecord,omitempty"`
 
 	// EnableResourceNameDnsARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsarecord
-	EnableResourceNameDnsARecord *bool `json:"EnableResourceNameDnsARecord,omitempty"`
+	EnableResourceNameDnsARecord *T `json:"EnableResourceNameDnsARecord,omitempty"`
 
 	// HostnameType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Instance_PrivateDnsNameOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_PrivateDnsNameOptions) AWSCloudFormationType() string {
+func (r *Instance_PrivateDnsNameOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.PrivateDnsNameOptions"
 }

@@ -8,27 +8,27 @@ import (
 
 // Dashboard_MeasureField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-measurefield.html
-type Dashboard_MeasureField struct {
+type Dashboard_MeasureField[T any] struct {
 
 	// CalculatedMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-measurefield.html#cfn-quicksight-dashboard-measurefield-calculatedmeasurefield
-	CalculatedMeasureField *Dashboard_CalculatedMeasureField `json:"CalculatedMeasureField,omitempty"`
+	CalculatedMeasureField *Dashboard_CalculatedMeasureField[any] `json:"CalculatedMeasureField,omitempty"`
 
 	// CategoricalMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-measurefield.html#cfn-quicksight-dashboard-measurefield-categoricalmeasurefield
-	CategoricalMeasureField *Dashboard_CategoricalMeasureField `json:"CategoricalMeasureField,omitempty"`
+	CategoricalMeasureField *Dashboard_CategoricalMeasureField[any] `json:"CategoricalMeasureField,omitempty"`
 
 	// DateMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-measurefield.html#cfn-quicksight-dashboard-measurefield-datemeasurefield
-	DateMeasureField *Dashboard_DateMeasureField `json:"DateMeasureField,omitempty"`
+	DateMeasureField *Dashboard_DateMeasureField[any] `json:"DateMeasureField,omitempty"`
 
 	// NumericalMeasureField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-measurefield.html#cfn-quicksight-dashboard-measurefield-numericalmeasurefield
-	NumericalMeasureField *Dashboard_NumericalMeasureField `json:"NumericalMeasureField,omitempty"`
+	NumericalMeasureField *Dashboard_NumericalMeasureField[any] `json:"NumericalMeasureField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_MeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MeasureField) AWSCloudFormationType() string {
+func (r *Dashboard_MeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MeasureField"
 }

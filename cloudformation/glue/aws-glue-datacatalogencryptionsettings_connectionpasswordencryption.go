@@ -8,7 +8,7 @@ import (
 
 // DataCatalogEncryptionSettings_ConnectionPasswordEncryption AWS CloudFormation Resource (AWS::Glue::DataCatalogEncryptionSettings.ConnectionPasswordEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html
-type DataCatalogEncryptionSettings_ConnectionPasswordEncryption struct {
+type DataCatalogEncryptionSettings_ConnectionPasswordEncryption[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataCatalogEncryptionSettings_ConnectionPasswordEncryption struct {
 	// ReturnConnectionPasswordEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html#cfn-glue-datacatalogencryptionsettings-connectionpasswordencryption-returnconnectionpasswordencrypted
-	ReturnConnectionPasswordEncrypted *bool `json:"ReturnConnectionPasswordEncrypted,omitempty"`
+	ReturnConnectionPasswordEncrypted *T `json:"ReturnConnectionPasswordEncrypted,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataCatalogEncryptionSettings_ConnectionPasswordEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCatalogEncryptionSettings_ConnectionPasswordEncryption) AWSCloudFormationType() string {
+func (r *DataCatalogEncryptionSettings_ConnectionPasswordEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::DataCatalogEncryptionSettings.ConnectionPasswordEncryption"
 }

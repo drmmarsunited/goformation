@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataFieldSeriesItem AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataFieldSeriesItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datafieldseriesitem.html
-type Dashboard_DataFieldSeriesItem struct {
+type Dashboard_DataFieldSeriesItem[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_DataFieldSeriesItem struct {
 	// Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datafieldseriesitem.html#cfn-quicksight-dashboard-datafieldseriesitem-settings
-	Settings *Dashboard_LineChartSeriesSettings `json:"Settings,omitempty"`
+	Settings *Dashboard_LineChartSeriesSettings[any] `json:"Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_DataFieldSeriesItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataFieldSeriesItem) AWSCloudFormationType() string {
+func (r *Dashboard_DataFieldSeriesItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataFieldSeriesItem"
 }

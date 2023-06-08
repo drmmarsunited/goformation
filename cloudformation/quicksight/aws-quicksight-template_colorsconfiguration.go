@@ -8,12 +8,12 @@ import (
 
 // Template_ColorsConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ColorsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-colorsconfiguration.html
-type Template_ColorsConfiguration struct {
+type Template_ColorsConfiguration[T any] struct {
 
 	// CustomColors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-colorsconfiguration.html#cfn-quicksight-template-colorsconfiguration-customcolors
-	CustomColors []Template_CustomColor `json:"CustomColors,omitempty"`
+	CustomColors []Template_CustomColor[any] `json:"CustomColors,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_ColorsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColorsConfiguration) AWSCloudFormationType() string {
+func (r *Template_ColorsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColorsConfiguration"
 }

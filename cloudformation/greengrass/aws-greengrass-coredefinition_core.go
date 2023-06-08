@@ -8,7 +8,7 @@ import (
 
 // CoreDefinition_Core AWS CloudFormation Resource (AWS::Greengrass::CoreDefinition.Core)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html
-type CoreDefinition_Core struct {
+type CoreDefinition_Core[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type CoreDefinition_Core struct {
 	// SyncShadow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-syncshadow
-	SyncShadow *bool `json:"SyncShadow,omitempty"`
+	SyncShadow *T `json:"SyncShadow,omitempty"`
 
 	// ThingArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type CoreDefinition_Core struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreDefinition_Core) AWSCloudFormationType() string {
+func (r *CoreDefinition_Core[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::CoreDefinition.Core"
 }

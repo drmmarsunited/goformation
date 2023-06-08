@@ -11,7 +11,7 @@ import (
 
 // SequenceStore AWS CloudFormation Resource (AWS::Omics::SequenceStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-sequencestore.html
-type SequenceStore struct {
+type SequenceStore[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type SequenceStore struct {
 	// SseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-sequencestore.html#cfn-omics-sequencestore-sseconfig
-	SseConfig *SequenceStore_SseConfig `json:"SseConfig,omitempty"`
+	SseConfig *SequenceStore_SseConfig[any] `json:"SseConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type SequenceStore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SequenceStore) AWSCloudFormationType() string {
+func (r *SequenceStore[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::SequenceStore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SequenceStore) MarshalJSON() ([]byte, error) {
-	type Properties SequenceStore
+func (r SequenceStore[any]) MarshalJSON() ([]byte, error) {
+	type Properties SequenceStore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r SequenceStore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SequenceStore) UnmarshalJSON(b []byte) error {
-	type Properties SequenceStore
+func (r *SequenceStore[any]) UnmarshalJSON(b []byte) error {
+	type Properties SequenceStore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *SequenceStore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SequenceStore(*res.Properties)
+		*r = SequenceStore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

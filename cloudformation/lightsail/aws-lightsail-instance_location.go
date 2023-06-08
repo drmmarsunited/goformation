@@ -8,7 +8,7 @@ import (
 
 // Instance_Location AWS CloudFormation Resource (AWS::Lightsail::Instance.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-location.html
-type Instance_Location struct {
+type Instance_Location[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Instance_Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Location) AWSCloudFormationType() string {
+func (r *Instance_Location[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.Location"
 }

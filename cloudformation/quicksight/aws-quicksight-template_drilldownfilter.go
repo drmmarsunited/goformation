@@ -8,22 +8,22 @@ import (
 
 // Template_DrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Template.DrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-drilldownfilter.html
-type Template_DrillDownFilter struct {
+type Template_DrillDownFilter[T any] struct {
 
 	// CategoryFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-drilldownfilter.html#cfn-quicksight-template-drilldownfilter-categoryfilter
-	CategoryFilter *Template_CategoryDrillDownFilter `json:"CategoryFilter,omitempty"`
+	CategoryFilter *Template_CategoryDrillDownFilter[any] `json:"CategoryFilter,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-drilldownfilter.html#cfn-quicksight-template-drilldownfilter-numericequalityfilter
-	NumericEqualityFilter *Template_NumericEqualityDrillDownFilter `json:"NumericEqualityFilter,omitempty"`
+	NumericEqualityFilter *Template_NumericEqualityDrillDownFilter[any] `json:"NumericEqualityFilter,omitempty"`
 
 	// TimeRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-drilldownfilter.html#cfn-quicksight-template-drilldownfilter-timerangefilter
-	TimeRangeFilter *Template_TimeRangeDrillDownFilter `json:"TimeRangeFilter,omitempty"`
+	TimeRangeFilter *Template_TimeRangeDrillDownFilter[any] `json:"TimeRangeFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_DrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DrillDownFilter) AWSCloudFormationType() string {
+func (r *Template_DrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DrillDownFilter"
 }

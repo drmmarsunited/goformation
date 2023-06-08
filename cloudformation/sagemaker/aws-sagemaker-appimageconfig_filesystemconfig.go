@@ -8,17 +8,17 @@ import (
 
 // AppImageConfig_FileSystemConfig AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig.FileSystemConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html
-type AppImageConfig_FileSystemConfig struct {
+type AppImageConfig_FileSystemConfig[T any] struct {
 
 	// DefaultGid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-defaultgid
-	DefaultGid *int `json:"DefaultGid,omitempty"`
+	DefaultGid *T `json:"DefaultGid,omitempty"`
 
 	// DefaultUid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-defaultuid
-	DefaultUid *int `json:"DefaultUid,omitempty"`
+	DefaultUid *T `json:"DefaultUid,omitempty"`
 
 	// MountPath AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type AppImageConfig_FileSystemConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppImageConfig_FileSystemConfig) AWSCloudFormationType() string {
+func (r *AppImageConfig_FileSystemConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::AppImageConfig.FileSystemConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // Channel_H265FilterSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.H265FilterSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265filtersettings.html
-type Channel_H265FilterSettings struct {
+type Channel_H265FilterSettings[T any] struct {
 
 	// TemporalFilterSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265filtersettings.html#cfn-medialive-channel-h265filtersettings-temporalfiltersettings
-	TemporalFilterSettings *Channel_TemporalFilterSettings `json:"TemporalFilterSettings,omitempty"`
+	TemporalFilterSettings *Channel_TemporalFilterSettings[any] `json:"TemporalFilterSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_H265FilterSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_H265FilterSettings) AWSCloudFormationType() string {
+func (r *Channel_H265FilterSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.H265FilterSettings"
 }

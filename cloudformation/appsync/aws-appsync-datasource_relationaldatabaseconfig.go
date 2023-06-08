@@ -8,12 +8,12 @@ import (
 
 // DataSource_RelationalDatabaseConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.RelationalDatabaseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html
-type DataSource_RelationalDatabaseConfig struct {
+type DataSource_RelationalDatabaseConfig[T any] struct {
 
 	// RdsHttpEndpointConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html#cfn-appsync-datasource-relationaldatabaseconfig-rdshttpendpointconfig
-	RdsHttpEndpointConfig *DataSource_RdsHttpEndpointConfig `json:"RdsHttpEndpointConfig,omitempty"`
+	RdsHttpEndpointConfig *DataSource_RdsHttpEndpointConfig[any] `json:"RdsHttpEndpointConfig,omitempty"`
 
 	// RelationalDatabaseSourceType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_RelationalDatabaseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_RelationalDatabaseConfig) AWSCloudFormationType() string {
+func (r *DataSource_RelationalDatabaseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.RelationalDatabaseConfig"
 }

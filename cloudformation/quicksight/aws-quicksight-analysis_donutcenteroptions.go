@@ -8,7 +8,7 @@ import (
 
 // Analysis_DonutCenterOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.DonutCenterOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-donutcenteroptions.html
-type Analysis_DonutCenterOptions struct {
+type Analysis_DonutCenterOptions[T any] struct {
 
 	// LabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_DonutCenterOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DonutCenterOptions) AWSCloudFormationType() string {
+func (r *Analysis_DonutCenterOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DonutCenterOptions"
 }

@@ -9,37 +9,37 @@ import (
 
 // GlobalTable_ReplicaSpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReplicaSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html
-type GlobalTable_ReplicaSpecification struct {
+type GlobalTable_ReplicaSpecification[T any] struct {
 
 	// ContributorInsightsSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-contributorinsightsspecification
-	ContributorInsightsSpecification *GlobalTable_ContributorInsightsSpecification `json:"ContributorInsightsSpecification,omitempty"`
+	ContributorInsightsSpecification *GlobalTable_ContributorInsightsSpecification[any] `json:"ContributorInsightsSpecification,omitempty"`
 
 	// DeletionProtectionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-deletionprotectionenabled
-	DeletionProtectionEnabled *bool `json:"DeletionProtectionEnabled,omitempty"`
+	DeletionProtectionEnabled *T `json:"DeletionProtectionEnabled,omitempty"`
 
 	// GlobalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globalsecondaryindexes
-	GlobalSecondaryIndexes []GlobalTable_ReplicaGlobalSecondaryIndexSpecification `json:"GlobalSecondaryIndexes,omitempty"`
+	GlobalSecondaryIndexes []GlobalTable_ReplicaGlobalSecondaryIndexSpecification[any] `json:"GlobalSecondaryIndexes,omitempty"`
 
 	// KinesisStreamSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-kinesisstreamspecification
-	KinesisStreamSpecification *GlobalTable_KinesisStreamSpecification `json:"KinesisStreamSpecification,omitempty"`
+	KinesisStreamSpecification *GlobalTable_KinesisStreamSpecification[any] `json:"KinesisStreamSpecification,omitempty"`
 
 	// PointInTimeRecoverySpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-pointintimerecoveryspecification
-	PointInTimeRecoverySpecification *GlobalTable_PointInTimeRecoverySpecification `json:"PointInTimeRecoverySpecification,omitempty"`
+	PointInTimeRecoverySpecification *GlobalTable_PointInTimeRecoverySpecification[any] `json:"PointInTimeRecoverySpecification,omitempty"`
 
 	// ReadProvisionedThroughputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-readprovisionedthroughputsettings
-	ReadProvisionedThroughputSettings *GlobalTable_ReadProvisionedThroughputSettings `json:"ReadProvisionedThroughputSettings,omitempty"`
+	ReadProvisionedThroughputSettings *GlobalTable_ReadProvisionedThroughputSettings[any] `json:"ReadProvisionedThroughputSettings,omitempty"`
 
 	// Region AWS CloudFormation Property
 	// Required: true
@@ -49,7 +49,7 @@ type GlobalTable_ReplicaSpecification struct {
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-ssespecification
-	SSESpecification *GlobalTable_ReplicaSSESpecification `json:"SSESpecification,omitempty"`
+	SSESpecification *GlobalTable_ReplicaSSESpecification[any] `json:"SSESpecification,omitempty"`
 
 	// TableClass AWS CloudFormation Property
 	// Required: false
@@ -78,6 +78,6 @@ type GlobalTable_ReplicaSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_ReplicaSpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_ReplicaSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.ReplicaSpecification"
 }

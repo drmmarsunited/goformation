@@ -8,12 +8,12 @@ import (
 
 // Analysis_BarChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.BarChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartfieldwells.html
-type Analysis_BarChartFieldWells struct {
+type Analysis_BarChartFieldWells[T any] struct {
 
 	// BarChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartfieldwells.html#cfn-quicksight-analysis-barchartfieldwells-barchartaggregatedfieldwells
-	BarChartAggregatedFieldWells *Analysis_BarChartAggregatedFieldWells `json:"BarChartAggregatedFieldWells,omitempty"`
+	BarChartAggregatedFieldWells *Analysis_BarChartAggregatedFieldWells[any] `json:"BarChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_BarChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_BarChartFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_BarChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.BarChartFieldWells"
 }

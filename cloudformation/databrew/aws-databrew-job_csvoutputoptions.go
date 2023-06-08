@@ -8,7 +8,7 @@ import (
 
 // Job_CsvOutputOptions AWS CloudFormation Resource (AWS::DataBrew::Job.CsvOutputOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html
-type Job_CsvOutputOptions struct {
+type Job_CsvOutputOptions[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Job_CsvOutputOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_CsvOutputOptions) AWSCloudFormationType() string {
+func (r *Job_CsvOutputOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.CsvOutputOptions"
 }

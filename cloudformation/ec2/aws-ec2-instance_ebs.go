@@ -8,22 +8,22 @@ import (
 
 // Instance_Ebs AWS CloudFormation Resource (AWS::EC2::Instance.Ebs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html
-type Instance_Ebs struct {
+type Instance_Ebs[T any] struct {
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-deleteontermination
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Instance_Ebs struct {
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Instance_Ebs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Ebs) AWSCloudFormationType() string {
+func (r *Instance_Ebs[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.Ebs"
 }

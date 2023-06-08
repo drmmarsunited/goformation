@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_KeySchema AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.KeySchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-keyschema.html
-type GlobalTable_KeySchema struct {
+type GlobalTable_KeySchema[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type GlobalTable_KeySchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_KeySchema) AWSCloudFormationType() string {
+func (r *GlobalTable_KeySchema[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.KeySchema"
 }

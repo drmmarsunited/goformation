@@ -11,7 +11,7 @@ import (
 
 // MaintenanceWindowTask AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
-type MaintenanceWindowTask struct {
+type MaintenanceWindowTask[T any] struct {
 
 	// CutoffBehavior AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type MaintenanceWindowTask struct {
 	// LoggingInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo
-	LoggingInfo *MaintenanceWindowTask_LoggingInfo `json:"LoggingInfo,omitempty"`
+	LoggingInfo *MaintenanceWindowTask_LoggingInfo[any] `json:"LoggingInfo,omitempty"`
 
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type MaintenanceWindowTask struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type MaintenanceWindowTask struct {
 	// Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets
-	Targets []MaintenanceWindowTask_Target `json:"Targets,omitempty"`
+	Targets []MaintenanceWindowTask_Target[any] `json:"Targets,omitempty"`
 
 	// TaskArn AWS CloudFormation Property
 	// Required: true
@@ -66,7 +66,7 @@ type MaintenanceWindowTask struct {
 	// TaskInvocationParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters
-	TaskInvocationParameters *MaintenanceWindowTask_TaskInvocationParameters `json:"TaskInvocationParameters,omitempty"`
+	TaskInvocationParameters *MaintenanceWindowTask_TaskInvocationParameters[any] `json:"TaskInvocationParameters,omitempty"`
 
 	// TaskParameters AWS CloudFormation Property
 	// Required: false
@@ -100,14 +100,15 @@ type MaintenanceWindowTask struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MaintenanceWindowTask) MarshalJSON() ([]byte, error) {
-	type Properties MaintenanceWindowTask
+func (r MaintenanceWindowTask[any]) MarshalJSON() ([]byte, error) {
+	type Properties MaintenanceWindowTask[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r MaintenanceWindowTask) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MaintenanceWindowTask) UnmarshalJSON(b []byte) error {
-	type Properties MaintenanceWindowTask
+func (r *MaintenanceWindowTask[any]) UnmarshalJSON(b []byte) error {
+	type Properties MaintenanceWindowTask[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *MaintenanceWindowTask) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MaintenanceWindowTask(*res.Properties)
+		*r = MaintenanceWindowTask[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

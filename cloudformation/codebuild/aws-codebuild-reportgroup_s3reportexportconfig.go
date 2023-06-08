@@ -8,7 +8,7 @@ import (
 
 // ReportGroup_S3ReportExportConfig AWS CloudFormation Resource (AWS::CodeBuild::ReportGroup.S3ReportExportConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html
-type ReportGroup_S3ReportExportConfig struct {
+type ReportGroup_S3ReportExportConfig[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ReportGroup_S3ReportExportConfig struct {
 	// EncryptionDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-encryptiondisabled
-	EncryptionDisabled *bool `json:"EncryptionDisabled,omitempty"`
+	EncryptionDisabled *T `json:"EncryptionDisabled,omitempty"`
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ReportGroup_S3ReportExportConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportGroup_S3ReportExportConfig) AWSCloudFormationType() string {
+func (r *ReportGroup_S3ReportExportConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::ReportGroup.S3ReportExportConfig"
 }

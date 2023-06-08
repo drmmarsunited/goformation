@@ -12,17 +12,17 @@ import (
 
 // Model AWS CloudFormation Resource (AWS::SageMaker::Model)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html
-type Model struct {
+type Model[T any] struct {
 
 	// Containers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-containers
-	Containers []Model_ContainerDefinition `json:"Containers,omitempty"`
+	Containers []Model_ContainerDefinition[any] `json:"Containers,omitempty"`
 
 	// EnableNetworkIsolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-enablenetworkisolation
-	EnableNetworkIsolation *bool `json:"EnableNetworkIsolation,omitempty"`
+	EnableNetworkIsolation *T `json:"EnableNetworkIsolation,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Model struct {
 	// InferenceExecutionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-inferenceexecutionconfig
-	InferenceExecutionConfig *Model_InferenceExecutionConfig `json:"InferenceExecutionConfig,omitempty"`
+	InferenceExecutionConfig *Model_InferenceExecutionConfig[any] `json:"InferenceExecutionConfig,omitempty"`
 
 	// ModelName AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Model struct {
 	// PrimaryContainer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer
-	PrimaryContainer *Model_ContainerDefinition `json:"PrimaryContainer,omitempty"`
+	PrimaryContainer *Model_ContainerDefinition[any] `json:"PrimaryContainer,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Model struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig
-	VpcConfig *Model_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *Model_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type Model struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model) AWSCloudFormationType() string {
+func (r *Model[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Model) MarshalJSON() ([]byte, error) {
-	type Properties Model
+func (r Model[any]) MarshalJSON() ([]byte, error) {
+	type Properties Model[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Model) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Model) UnmarshalJSON(b []byte) error {
-	type Properties Model
+func (r *Model[any]) UnmarshalJSON(b []byte) error {
+	type Properties Model[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Model) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Model(*res.Properties)
+		*r = Model[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

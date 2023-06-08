@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_TargetGroup AWS CloudFormation Resource (AWS::EC2::SpotFleet.TargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html
-type SpotFleet_TargetGroup struct {
+type SpotFleet_TargetGroup[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type SpotFleet_TargetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_TargetGroup) AWSCloudFormationType() string {
+func (r *SpotFleet_TargetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.TargetGroup"
 }

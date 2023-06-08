@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_MetricsSource AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.MetricsSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metricssource.html
-type ModelPackage_MetricsSource struct {
+type ModelPackage_MetricsSource[T any] struct {
 
 	// ContentDigest AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelPackage_MetricsSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_MetricsSource) AWSCloudFormationType() string {
+func (r *ModelPackage_MetricsSource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.MetricsSource"
 }

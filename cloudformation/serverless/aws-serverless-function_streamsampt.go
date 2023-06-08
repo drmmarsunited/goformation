@@ -8,7 +8,7 @@ import (
 
 // Function_StreamSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.StreamSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_StreamSAMPT struct {
+type Function_StreamSAMPT[T any] struct {
 
 	// StreamName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_StreamSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_StreamSAMPT) AWSCloudFormationType() string {
+func (r *Function_StreamSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.StreamSAMPT"
 }

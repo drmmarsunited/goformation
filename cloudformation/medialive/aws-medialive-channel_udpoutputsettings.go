@@ -8,27 +8,27 @@ import (
 
 // Channel_UdpOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.UdpOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html
-type Channel_UdpOutputSettings struct {
+type Channel_UdpOutputSettings[T any] struct {
 
 	// BufferMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-buffermsec
-	BufferMsec *int `json:"BufferMsec,omitempty"`
+	BufferMsec *T `json:"BufferMsec,omitempty"`
 
 	// ContainerSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-containersettings
-	ContainerSettings *Channel_UdpContainerSettings `json:"ContainerSettings,omitempty"`
+	ContainerSettings *Channel_UdpContainerSettings[any] `json:"ContainerSettings,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-destination
-	Destination *Channel_OutputLocationRef `json:"Destination,omitempty"`
+	Destination *Channel_OutputLocationRef[any] `json:"Destination,omitempty"`
 
 	// FecOutputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-fecoutputsettings
-	FecOutputSettings *Channel_FecOutputSettings `json:"FecOutputSettings,omitempty"`
+	FecOutputSettings *Channel_FecOutputSettings[any] `json:"FecOutputSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_UdpOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_UdpOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_UdpOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.UdpOutputSettings"
 }

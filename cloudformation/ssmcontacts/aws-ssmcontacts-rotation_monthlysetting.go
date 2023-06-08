@@ -8,12 +8,12 @@ import (
 
 // Rotation_MonthlySetting AWS CloudFormation Resource (AWS::SSMContacts::Rotation.MonthlySetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-monthlysetting.html
-type Rotation_MonthlySetting struct {
+type Rotation_MonthlySetting[T any] struct {
 
 	// DayOfMonth AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-monthlysetting.html#cfn-ssmcontacts-rotation-monthlysetting-dayofmonth
-	DayOfMonth int `json:"DayOfMonth"`
+	DayOfMonth T `json:"DayOfMonth"`
 
 	// HandOffTime AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rotation_MonthlySetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation_MonthlySetting) AWSCloudFormationType() string {
+func (r *Rotation_MonthlySetting[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation.MonthlySetting"
 }

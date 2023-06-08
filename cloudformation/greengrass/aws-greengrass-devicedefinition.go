@@ -11,12 +11,12 @@ import (
 
 // DeviceDefinition AWS CloudFormation Resource (AWS::Greengrass::DeviceDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html
-type DeviceDefinition struct {
+type DeviceDefinition[T any] struct {
 
 	// InitialVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-initialversion
-	InitialVersion *DeviceDefinition_DeviceDefinitionVersion `json:"InitialVersion,omitempty"`
+	InitialVersion *DeviceDefinition_DeviceDefinitionVersion[any] `json:"InitialVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type DeviceDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeviceDefinition) AWSCloudFormationType() string {
+func (r *DeviceDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::DeviceDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeviceDefinition) MarshalJSON() ([]byte, error) {
-	type Properties DeviceDefinition
+func (r DeviceDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeviceDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r DeviceDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeviceDefinition) UnmarshalJSON(b []byte) error {
-	type Properties DeviceDefinition
+func (r *DeviceDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeviceDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *DeviceDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeviceDefinition(*res.Properties)
+		*r = DeviceDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

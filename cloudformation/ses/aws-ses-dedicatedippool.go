@@ -11,7 +11,7 @@ import (
 
 // DedicatedIpPool AWS CloudFormation Resource (AWS::SES::DedicatedIpPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-dedicatedippool.html
-type DedicatedIpPool struct {
+type DedicatedIpPool[T any] struct {
 
 	// PoolName AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type DedicatedIpPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DedicatedIpPool) AWSCloudFormationType() string {
+func (r *DedicatedIpPool[any]) AWSCloudFormationType() string {
 	return "AWS::SES::DedicatedIpPool"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DedicatedIpPool) MarshalJSON() ([]byte, error) {
-	type Properties DedicatedIpPool
+func (r DedicatedIpPool[any]) MarshalJSON() ([]byte, error) {
+	type Properties DedicatedIpPool[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r DedicatedIpPool) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DedicatedIpPool) UnmarshalJSON(b []byte) error {
-	type Properties DedicatedIpPool
+func (r *DedicatedIpPool[any]) UnmarshalJSON(b []byte) error {
+	type Properties DedicatedIpPool[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *DedicatedIpPool) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DedicatedIpPool(*res.Properties)
+		*r = DedicatedIpPool[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

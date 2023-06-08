@@ -8,32 +8,32 @@ import (
 
 // EndpointConfig_ClarifyShapConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyShapConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html
-type EndpointConfig_ClarifyShapConfig struct {
+type EndpointConfig_ClarifyShapConfig[T any] struct {
 
 	// NumberOfSamples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-numberofsamples
-	NumberOfSamples *int `json:"NumberOfSamples,omitempty"`
+	NumberOfSamples *T `json:"NumberOfSamples,omitempty"`
 
 	// Seed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-seed
-	Seed *int `json:"Seed,omitempty"`
+	Seed *T `json:"Seed,omitempty"`
 
 	// ShapBaselineConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-shapbaselineconfig
-	ShapBaselineConfig *EndpointConfig_ClarifyShapBaselineConfig `json:"ShapBaselineConfig"`
+	ShapBaselineConfig *EndpointConfig_ClarifyShapBaselineConfig[any] `json:"ShapBaselineConfig"`
 
 	// TextConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-textconfig
-	TextConfig *EndpointConfig_ClarifyTextConfig `json:"TextConfig,omitempty"`
+	TextConfig *EndpointConfig_ClarifyTextConfig[any] `json:"TextConfig,omitempty"`
 
 	// UseLogit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-uselogit
-	UseLogit *bool `json:"UseLogit,omitempty"`
+	UseLogit *T `json:"UseLogit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type EndpointConfig_ClarifyShapConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyShapConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyShapConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyShapConfig"
 }

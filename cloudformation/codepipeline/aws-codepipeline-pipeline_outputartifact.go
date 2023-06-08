@@ -8,7 +8,7 @@ import (
 
 // Pipeline_OutputArtifact AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.OutputArtifact)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
-type Pipeline_OutputArtifact struct {
+type Pipeline_OutputArtifact[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Pipeline_OutputArtifact struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_OutputArtifact) AWSCloudFormationType() string {
+func (r *Pipeline_OutputArtifact[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.OutputArtifact"
 }

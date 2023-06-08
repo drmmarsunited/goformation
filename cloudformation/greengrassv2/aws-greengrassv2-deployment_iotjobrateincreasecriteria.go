@@ -8,17 +8,17 @@ import (
 
 // Deployment_IoTJobRateIncreaseCriteria AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobRateIncreaseCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobrateincreasecriteria.html
-type Deployment_IoTJobRateIncreaseCriteria struct {
+type Deployment_IoTJobRateIncreaseCriteria[T any] struct {
 
 	// NumberOfNotifiedThings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobrateincreasecriteria.html#cfn-greengrassv2-deployment-iotjobrateincreasecriteria-numberofnotifiedthings
-	NumberOfNotifiedThings *int `json:"NumberOfNotifiedThings,omitempty"`
+	NumberOfNotifiedThings *T `json:"NumberOfNotifiedThings,omitempty"`
 
 	// NumberOfSucceededThings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobrateincreasecriteria.html#cfn-greengrassv2-deployment-iotjobrateincreasecriteria-numberofsucceededthings
-	NumberOfSucceededThings *int `json:"NumberOfSucceededThings,omitempty"`
+	NumberOfSucceededThings *T `json:"NumberOfSucceededThings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Deployment_IoTJobRateIncreaseCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobRateIncreaseCriteria) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobRateIncreaseCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobRateIncreaseCriteria"
 }

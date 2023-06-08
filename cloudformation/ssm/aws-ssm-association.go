@@ -11,12 +11,12 @@ import (
 
 // Association AWS CloudFormation Resource (AWS::SSM::Association)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
-type Association struct {
+type Association[T any] struct {
 
 	// ApplyOnlyAtCronInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-applyonlyatcroninterval
-	ApplyOnlyAtCronInterval *bool `json:"ApplyOnlyAtCronInterval,omitempty"`
+	ApplyOnlyAtCronInterval *T `json:"ApplyOnlyAtCronInterval,omitempty"`
 
 	// AssociationName AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type Association struct {
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
-	OutputLocation *Association_InstanceAssociationOutputLocation `json:"OutputLocation,omitempty"`
+	OutputLocation *Association_InstanceAssociationOutputLocation[any] `json:"OutputLocation,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -81,7 +81,7 @@ type Association struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleoffset
-	ScheduleOffset *int `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *T `json:"ScheduleOffset,omitempty"`
 
 	// SyncCompliance AWS CloudFormation Property
 	// Required: false
@@ -91,12 +91,12 @@ type Association struct {
 	// Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
-	Targets []Association_Target `json:"Targets,omitempty"`
+	Targets []Association_Target[any] `json:"Targets,omitempty"`
 
 	// WaitForSuccessTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-waitforsuccesstimeoutseconds
-	WaitForSuccessTimeoutSeconds *int `json:"WaitForSuccessTimeoutSeconds,omitempty"`
+	WaitForSuccessTimeoutSeconds *T `json:"WaitForSuccessTimeoutSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -115,14 +115,15 @@ type Association struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Association) AWSCloudFormationType() string {
+func (r *Association[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Association"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Association) MarshalJSON() ([]byte, error) {
-	type Properties Association
+func (r Association[any]) MarshalJSON() ([]byte, error) {
+	type Properties Association[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -144,8 +145,9 @@ func (r Association) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Association) UnmarshalJSON(b []byte) error {
-	type Properties Association
+func (r *Association[any]) UnmarshalJSON(b []byte) error {
+	type Properties Association[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -165,7 +167,7 @@ func (r *Association) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Association(*res.Properties)
+		*r = Association[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

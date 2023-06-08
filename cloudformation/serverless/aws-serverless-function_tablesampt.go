@@ -8,7 +8,7 @@ import (
 
 // Function_TableSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.TableSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_TableSAMPT struct {
+type Function_TableSAMPT[T any] struct {
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_TableSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_TableSAMPT) AWSCloudFormationType() string {
+func (r *Function_TableSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.TableSAMPT"
 }

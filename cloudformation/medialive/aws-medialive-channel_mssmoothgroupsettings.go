@@ -8,7 +8,7 @@ import (
 
 // Channel_MsSmoothGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MsSmoothGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html
-type Channel_MsSmoothGroupSettings struct {
+type Channel_MsSmoothGroupSettings[T any] struct {
 
 	// AcquisitionPointId AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_MsSmoothGroupSettings struct {
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-connectionretryinterval
-	ConnectionRetryInterval *int `json:"ConnectionRetryInterval,omitempty"`
+	ConnectionRetryInterval *T `json:"ConnectionRetryInterval,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-destination
-	Destination *Channel_OutputLocationRef `json:"Destination,omitempty"`
+	Destination *Channel_OutputLocationRef[any] `json:"Destination,omitempty"`
 
 	// EventId AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Channel_MsSmoothGroupSettings struct {
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-filecacheduration
-	FilecacheDuration *int `json:"FilecacheDuration,omitempty"`
+	FilecacheDuration *T `json:"FilecacheDuration,omitempty"`
 
 	// FragmentLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-fragmentlength
-	FragmentLength *int `json:"FragmentLength,omitempty"`
+	FragmentLength *T `json:"FragmentLength,omitempty"`
 
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
@@ -68,12 +68,12 @@ type Channel_MsSmoothGroupSettings struct {
 	// NumRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-numretries
-	NumRetries *int `json:"NumRetries,omitempty"`
+	NumRetries *T `json:"NumRetries,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-restartdelay
-	RestartDelay *int `json:"RestartDelay,omitempty"`
+	RestartDelay *T `json:"RestartDelay,omitempty"`
 
 	// SegmentationMode AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type Channel_MsSmoothGroupSettings struct {
 	// SendDelayMs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-senddelayms
-	SendDelayMs *int `json:"SendDelayMs,omitempty"`
+	SendDelayMs *T `json:"SendDelayMs,omitempty"`
 
 	// SparseTrackType AWS CloudFormation Property
 	// Required: false
@@ -122,6 +122,6 @@ type Channel_MsSmoothGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MsSmoothGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_MsSmoothGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MsSmoothGroupSettings"
 }

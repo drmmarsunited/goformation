@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SimpleClusterMarker AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SimpleClusterMarker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-simpleclustermarker.html
-type Dashboard_SimpleClusterMarker struct {
+type Dashboard_SimpleClusterMarker[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SimpleClusterMarker struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SimpleClusterMarker) AWSCloudFormationType() string {
+func (r *Dashboard_SimpleClusterMarker[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SimpleClusterMarker"
 }

@@ -8,17 +8,17 @@ import (
 
 // PackagingConfiguration_StreamSelection AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.StreamSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html
-type PackagingConfiguration_StreamSelection struct {
+type PackagingConfiguration_StreamSelection[T any] struct {
 
 	// MaxVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-maxvideobitspersecond
-	MaxVideoBitsPerSecond *int `json:"MaxVideoBitsPerSecond,omitempty"`
+	MaxVideoBitsPerSecond *T `json:"MaxVideoBitsPerSecond,omitempty"`
 
 	// MinVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-minvideobitspersecond
-	MinVideoBitsPerSecond *int `json:"MinVideoBitsPerSecond,omitempty"`
+	MinVideoBitsPerSecond *T `json:"MinVideoBitsPerSecond,omitempty"`
 
 	// StreamOrder AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type PackagingConfiguration_StreamSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_StreamSelection) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_StreamSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.StreamSelection"
 }

@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_MachineLearningDetectionConfig AWS CloudFormation Resource (AWS::IoT::SecurityProfile.MachineLearningDetectionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-machinelearningdetectionconfig.html
-type SecurityProfile_MachineLearningDetectionConfig struct {
+type SecurityProfile_MachineLearningDetectionConfig[T any] struct {
 
 	// ConfidenceLevel AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type SecurityProfile_MachineLearningDetectionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_MachineLearningDetectionConfig) AWSCloudFormationType() string {
+func (r *SecurityProfile_MachineLearningDetectionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.MachineLearningDetectionConfig"
 }

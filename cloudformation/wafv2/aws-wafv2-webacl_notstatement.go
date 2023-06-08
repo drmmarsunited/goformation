@@ -8,12 +8,12 @@ import (
 
 // WebACL_NotStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.NotStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-notstatement.html
-type WebACL_NotStatement struct {
+type WebACL_NotStatement[T any] struct {
 
 	// Statement AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-notstatement.html#cfn-wafv2-webacl-notstatement-statement
-	Statement *WebACL_Statement `json:"Statement"`
+	Statement *WebACL_Statement[any] `json:"Statement"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_NotStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_NotStatement) AWSCloudFormationType() string {
+func (r *WebACL_NotStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.NotStatement"
 }

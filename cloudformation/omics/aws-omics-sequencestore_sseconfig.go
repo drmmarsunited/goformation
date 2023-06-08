@@ -8,7 +8,7 @@ import (
 
 // SequenceStore_SseConfig AWS CloudFormation Resource (AWS::Omics::SequenceStore.SseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-sequencestore-sseconfig.html
-type SequenceStore_SseConfig struct {
+type SequenceStore_SseConfig[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SequenceStore_SseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SequenceStore_SseConfig) AWSCloudFormationType() string {
+func (r *SequenceStore_SseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::SequenceStore.SseConfig"
 }

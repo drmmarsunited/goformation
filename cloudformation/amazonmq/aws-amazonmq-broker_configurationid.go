@@ -8,7 +8,7 @@ import (
 
 // Broker_ConfigurationId AWS CloudFormation Resource (AWS::AmazonMQ::Broker.ConfigurationId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html
-type Broker_ConfigurationId struct {
+type Broker_ConfigurationId[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Broker_ConfigurationId struct {
 	// Revision AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html#cfn-amazonmq-broker-configurationid-revision
-	Revision int `json:"Revision"`
+	Revision T `json:"Revision"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Broker_ConfigurationId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_ConfigurationId) AWSCloudFormationType() string {
+func (r *Broker_ConfigurationId[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.ConfigurationId"
 }

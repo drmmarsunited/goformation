@@ -8,12 +8,12 @@ import (
 
 // Bucket_DataExport AWS CloudFormation Resource (AWS::S3::Bucket.DataExport)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html
-type Bucket_DataExport struct {
+type Bucket_DataExport[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-destination
-	Destination *Bucket_Destination `json:"Destination"`
+	Destination *Bucket_Destination[any] `json:"Destination"`
 
 	// OutputSchemaVersion AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_DataExport struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_DataExport) AWSCloudFormationType() string {
+func (r *Bucket_DataExport[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.DataExport"
 }

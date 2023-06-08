@@ -8,7 +8,7 @@ import (
 
 // Resolver_PipelineConfig AWS CloudFormation Resource (AWS::AppSync::Resolver.PipelineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html
-type Resolver_PipelineConfig struct {
+type Resolver_PipelineConfig[T any] struct {
 
 	// Functions AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Resolver_PipelineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Resolver_PipelineConfig) AWSCloudFormationType() string {
+func (r *Resolver_PipelineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::Resolver.PipelineConfig"
 }

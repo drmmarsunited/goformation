@@ -8,7 +8,7 @@ import (
 
 // Flow_MarketoSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.MarketoSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-marketosourceproperties.html
-type Flow_MarketoSourceProperties struct {
+type Flow_MarketoSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_MarketoSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_MarketoSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_MarketoSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.MarketoSourceProperties"
 }

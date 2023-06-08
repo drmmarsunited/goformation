@@ -8,7 +8,7 @@ import (
 
 // DBSecurityGroup_Ingress AWS CloudFormation Resource (AWS::RDS::DBSecurityGroup.Ingress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html
-type DBSecurityGroup_Ingress struct {
+type DBSecurityGroup_Ingress[T any] struct {
 
 	// CIDRIP AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DBSecurityGroup_Ingress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBSecurityGroup_Ingress) AWSCloudFormationType() string {
+func (r *DBSecurityGroup_Ingress[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBSecurityGroup.Ingress"
 }

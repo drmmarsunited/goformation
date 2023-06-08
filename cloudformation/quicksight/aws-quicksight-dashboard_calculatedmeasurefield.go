@@ -8,7 +8,7 @@ import (
 
 // Dashboard_CalculatedMeasureField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CalculatedMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-calculatedmeasurefield.html
-type Dashboard_CalculatedMeasureField struct {
+type Dashboard_CalculatedMeasureField[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_CalculatedMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CalculatedMeasureField) AWSCloudFormationType() string {
+func (r *Dashboard_CalculatedMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CalculatedMeasureField"
 }

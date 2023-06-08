@@ -8,67 +8,67 @@ import (
 
 // LaunchTemplate_LaunchTemplateData AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.LaunchTemplateData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
-type LaunchTemplate_LaunchTemplateData struct {
+type LaunchTemplate_LaunchTemplateData[T any] struct {
 
 	// BlockDeviceMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings
-	BlockDeviceMappings []LaunchTemplate_BlockDeviceMapping `json:"BlockDeviceMappings,omitempty"`
+	BlockDeviceMappings []LaunchTemplate_BlockDeviceMapping[any] `json:"BlockDeviceMappings,omitempty"`
 
 	// CapacityReservationSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification
-	CapacityReservationSpecification *LaunchTemplate_CapacityReservationSpecification `json:"CapacityReservationSpecification,omitempty"`
+	CapacityReservationSpecification *LaunchTemplate_CapacityReservationSpecification[any] `json:"CapacityReservationSpecification,omitempty"`
 
 	// CpuOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions
-	CpuOptions *LaunchTemplate_CpuOptions `json:"CpuOptions,omitempty"`
+	CpuOptions *LaunchTemplate_CpuOptions[any] `json:"CpuOptions,omitempty"`
 
 	// CreditSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification
-	CreditSpecification *LaunchTemplate_CreditSpecification `json:"CreditSpecification,omitempty"`
+	CreditSpecification *LaunchTemplate_CreditSpecification[any] `json:"CreditSpecification,omitempty"`
 
 	// DisableApiStop AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapistop
-	DisableApiStop *bool `json:"DisableApiStop,omitempty"`
+	DisableApiStop *T `json:"DisableApiStop,omitempty"`
 
 	// DisableApiTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
-	DisableApiTermination *bool `json:"DisableApiTermination,omitempty"`
+	DisableApiTermination *T `json:"DisableApiTermination,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *T `json:"EbsOptimized,omitempty"`
 
 	// ElasticGpuSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
-	ElasticGpuSpecifications []LaunchTemplate_ElasticGpuSpecification `json:"ElasticGpuSpecifications,omitempty"`
+	ElasticGpuSpecifications []LaunchTemplate_ElasticGpuSpecification[any] `json:"ElasticGpuSpecifications,omitempty"`
 
 	// ElasticInferenceAccelerators AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators
-	ElasticInferenceAccelerators []LaunchTemplate_LaunchTemplateElasticInferenceAccelerator `json:"ElasticInferenceAccelerators,omitempty"`
+	ElasticInferenceAccelerators []LaunchTemplate_LaunchTemplateElasticInferenceAccelerator[any] `json:"ElasticInferenceAccelerators,omitempty"`
 
 	// EnclaveOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions
-	EnclaveOptions *LaunchTemplate_EnclaveOptions `json:"EnclaveOptions,omitempty"`
+	EnclaveOptions *LaunchTemplate_EnclaveOptions[any] `json:"EnclaveOptions,omitempty"`
 
 	// HibernationOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
-	HibernationOptions *LaunchTemplate_HibernationOptions `json:"HibernationOptions,omitempty"`
+	HibernationOptions *LaunchTemplate_HibernationOptions[any] `json:"HibernationOptions,omitempty"`
 
 	// IamInstanceProfile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile
-	IamInstanceProfile *LaunchTemplate_IamInstanceProfile `json:"IamInstanceProfile,omitempty"`
+	IamInstanceProfile *LaunchTemplate_IamInstanceProfile[any] `json:"IamInstanceProfile,omitempty"`
 
 	// ImageId AWS CloudFormation Property
 	// Required: false
@@ -83,12 +83,12 @@ type LaunchTemplate_LaunchTemplateData struct {
 	// InstanceMarketOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions
-	InstanceMarketOptions *LaunchTemplate_InstanceMarketOptions `json:"InstanceMarketOptions,omitempty"`
+	InstanceMarketOptions *LaunchTemplate_InstanceMarketOptions[any] `json:"InstanceMarketOptions,omitempty"`
 
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements
-	InstanceRequirements *LaunchTemplate_InstanceRequirements `json:"InstanceRequirements,omitempty"`
+	InstanceRequirements *LaunchTemplate_InstanceRequirements[any] `json:"InstanceRequirements,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -108,37 +108,37 @@ type LaunchTemplate_LaunchTemplateData struct {
 	// LicenseSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications
-	LicenseSpecifications []LaunchTemplate_LicenseSpecification `json:"LicenseSpecifications,omitempty"`
+	LicenseSpecifications []LaunchTemplate_LicenseSpecification[any] `json:"LicenseSpecifications,omitempty"`
 
 	// MaintenanceOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions
-	MaintenanceOptions *LaunchTemplate_MaintenanceOptions `json:"MaintenanceOptions,omitempty"`
+	MaintenanceOptions *LaunchTemplate_MaintenanceOptions[any] `json:"MaintenanceOptions,omitempty"`
 
 	// MetadataOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
-	MetadataOptions *LaunchTemplate_MetadataOptions `json:"MetadataOptions,omitempty"`
+	MetadataOptions *LaunchTemplate_MetadataOptions[any] `json:"MetadataOptions,omitempty"`
 
 	// Monitoring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring
-	Monitoring *LaunchTemplate_Monitoring `json:"Monitoring,omitempty"`
+	Monitoring *LaunchTemplate_Monitoring[any] `json:"Monitoring,omitempty"`
 
 	// NetworkInterfaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
-	NetworkInterfaces []LaunchTemplate_NetworkInterface `json:"NetworkInterfaces,omitempty"`
+	NetworkInterfaces []LaunchTemplate_NetworkInterface[any] `json:"NetworkInterfaces,omitempty"`
 
 	// Placement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
-	Placement *LaunchTemplate_Placement `json:"Placement,omitempty"`
+	Placement *LaunchTemplate_Placement[any] `json:"Placement,omitempty"`
 
 	// PrivateDnsNameOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions
-	PrivateDnsNameOptions *LaunchTemplate_PrivateDnsNameOptions `json:"PrivateDnsNameOptions,omitempty"`
+	PrivateDnsNameOptions *LaunchTemplate_PrivateDnsNameOptions[any] `json:"PrivateDnsNameOptions,omitempty"`
 
 	// RamDiskId AWS CloudFormation Property
 	// Required: false
@@ -158,7 +158,7 @@ type LaunchTemplate_LaunchTemplateData struct {
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
-	TagSpecifications []LaunchTemplate_TagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []LaunchTemplate_TagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// UserData AWS CloudFormation Property
 	// Required: false
@@ -182,6 +182,6 @@ type LaunchTemplate_LaunchTemplateData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_LaunchTemplateData) AWSCloudFormationType() string {
+func (r *LaunchTemplate_LaunchTemplateData[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.LaunchTemplateData"
 }

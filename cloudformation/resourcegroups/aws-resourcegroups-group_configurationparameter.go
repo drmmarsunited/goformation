@@ -8,7 +8,7 @@ import (
 
 // Group_ConfigurationParameter AWS CloudFormation Resource (AWS::ResourceGroups::Group.ConfigurationParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationparameter.html
-type Group_ConfigurationParameter struct {
+type Group_ConfigurationParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Group_ConfigurationParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_ConfigurationParameter) AWSCloudFormationType() string {
+func (r *Group_ConfigurationParameter[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceGroups::Group.ConfigurationParameter"
 }

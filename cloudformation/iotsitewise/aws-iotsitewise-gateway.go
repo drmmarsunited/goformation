@@ -12,12 +12,12 @@ import (
 
 // Gateway AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html
-type Gateway struct {
+type Gateway[T any] struct {
 
 	// GatewayCapabilitySummaries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewaycapabilitysummaries
-	GatewayCapabilitySummaries []Gateway_GatewayCapabilitySummary `json:"GatewayCapabilitySummaries,omitempty"`
+	GatewayCapabilitySummaries []Gateway_GatewayCapabilitySummary[any] `json:"GatewayCapabilitySummaries,omitempty"`
 
 	// GatewayName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Gateway struct {
 	// GatewayPlatform AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayplatform
-	GatewayPlatform *Gateway_GatewayPlatform `json:"GatewayPlatform"`
+	GatewayPlatform *Gateway_GatewayPlatform[any] `json:"GatewayPlatform"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Gateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Gateway) AWSCloudFormationType() string {
+func (r *Gateway[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Gateway"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Gateway) MarshalJSON() ([]byte, error) {
-	type Properties Gateway
+func (r Gateway[any]) MarshalJSON() ([]byte, error) {
+	type Properties Gateway[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Gateway) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Gateway) UnmarshalJSON(b []byte) error {
-	type Properties Gateway
+func (r *Gateway[any]) UnmarshalJSON(b []byte) error {
+	type Properties Gateway[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Gateway) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Gateway(*res.Properties)
+		*r = Gateway[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

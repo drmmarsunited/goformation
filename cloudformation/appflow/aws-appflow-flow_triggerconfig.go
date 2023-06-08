@@ -8,17 +8,12 @@ import (
 
 // Flow_TriggerConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.TriggerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html
-type Flow_TriggerConfig struct {
-
-	// ActivateFlowOnCreate AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-activateflowoncreate
-	ActivateFlowOnCreate *bool `json:"ActivateFlowOnCreate,omitempty"`
+type Flow_TriggerConfig[T any] struct {
 
 	// TriggerProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-triggerproperties
-	TriggerProperties *Flow_ScheduledTriggerProperties `json:"TriggerProperties,omitempty"`
+	TriggerProperties *Flow_ScheduledTriggerProperties[any] `json:"TriggerProperties,omitempty"`
 
 	// TriggerType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +37,6 @@ type Flow_TriggerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_TriggerConfig) AWSCloudFormationType() string {
+func (r *Flow_TriggerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.TriggerConfig"
 }

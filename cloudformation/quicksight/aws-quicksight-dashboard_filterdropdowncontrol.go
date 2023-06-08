@@ -8,17 +8,17 @@ import (
 
 // Dashboard_FilterDropDownControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterDropDownControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html
-type Dashboard_FilterDropDownControl struct {
+type Dashboard_FilterDropDownControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-displayoptions
-	DisplayOptions *Dashboard_DropDownControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_DropDownControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_FilterDropDownControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-selectablevalues
-	SelectableValues *Dashboard_FilterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Dashboard_FilterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Dashboard_FilterDropDownControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterDropDownControl) AWSCloudFormationType() string {
+func (r *Dashboard_FilterDropDownControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterDropDownControl"
 }

@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_AwsCloudMapServiceDiscovery AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html
-type VirtualNode_AwsCloudMapServiceDiscovery struct {
+type VirtualNode_AwsCloudMapServiceDiscovery[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-attributes
-	Attributes []VirtualNode_AwsCloudMapInstanceAttribute `json:"Attributes,omitempty"`
+	Attributes []VirtualNode_AwsCloudMapInstanceAttribute[any] `json:"Attributes,omitempty"`
 
 	// IpPreference AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type VirtualNode_AwsCloudMapServiceDiscovery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_AwsCloudMapServiceDiscovery) AWSCloudFormationType() string {
+func (r *VirtualNode_AwsCloudMapServiceDiscovery[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery"
 }

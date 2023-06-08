@@ -8,22 +8,22 @@ import (
 
 // LaunchConfiguration_BlockDevice AWS CloudFormation Resource (AWS::AutoScaling::LaunchConfiguration.BlockDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html
-type LaunchConfiguration_BlockDevice struct {
+type LaunchConfiguration_BlockDevice[T any] struct {
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-deleteontermination
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type LaunchConfiguration_BlockDevice struct {
 	// Throughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-throughput
-	Throughput *int `json:"Throughput,omitempty"`
+	Throughput *T `json:"Throughput,omitempty"`
 
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type LaunchConfiguration_BlockDevice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchConfiguration_BlockDevice) AWSCloudFormationType() string {
+func (r *LaunchConfiguration_BlockDevice[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LaunchConfiguration.BlockDevice"
 }

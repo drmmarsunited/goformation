@@ -8,17 +8,17 @@ import (
 
 // Datastore_DatastorePartition AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.DatastorePartition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html
-type Datastore_DatastorePartition struct {
+type Datastore_DatastorePartition[T any] struct {
 
 	// Partition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-partition
-	Partition *Datastore_Partition `json:"Partition,omitempty"`
+	Partition *Datastore_Partition[any] `json:"Partition,omitempty"`
 
 	// TimestampPartition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-timestamppartition
-	TimestampPartition *Datastore_TimestampPartition `json:"TimestampPartition,omitempty"`
+	TimestampPartition *Datastore_TimestampPartition[any] `json:"TimestampPartition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Datastore_DatastorePartition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_DatastorePartition) AWSCloudFormationType() string {
+func (r *Datastore_DatastorePartition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.DatastorePartition"
 }

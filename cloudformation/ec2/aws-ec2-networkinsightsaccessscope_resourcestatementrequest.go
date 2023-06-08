@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAccessScope_ResourceStatementRequest AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html
-type NetworkInsightsAccessScope_ResourceStatementRequest struct {
+type NetworkInsightsAccessScope_ResourceStatementRequest[T any] struct {
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type NetworkInsightsAccessScope_ResourceStatementRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScope_ResourceStatementRequest) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScope_ResourceStatementRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest"
 }

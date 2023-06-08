@@ -8,12 +8,12 @@ import (
 
 // Workflow_S3FileLocation AWS CloudFormation Resource (AWS::Transfer::Workflow.S3FileLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3filelocation.html
-type Workflow_S3FileLocation struct {
+type Workflow_S3FileLocation[T any] struct {
 
 	// S3FileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3filelocation.html#cfn-transfer-workflow-s3filelocation-s3filelocation
-	S3FileLocation *Workflow_S3InputFileLocation `json:"S3FileLocation,omitempty"`
+	S3FileLocation *Workflow_S3InputFileLocation[any] `json:"S3FileLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Workflow_S3FileLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_S3FileLocation) AWSCloudFormationType() string {
+func (r *Workflow_S3FileLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.S3FileLocation"
 }

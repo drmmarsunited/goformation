@@ -8,7 +8,7 @@ import (
 
 // UserProfile_CustomImage AWS CloudFormation Resource (AWS::SageMaker::UserProfile.CustomImage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html
-type UserProfile_CustomImage struct {
+type UserProfile_CustomImage[T any] struct {
 
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type UserProfile_CustomImage struct {
 	// ImageVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-imageversionnumber
-	ImageVersionNumber *int `json:"ImageVersionNumber,omitempty"`
+	ImageVersionNumber *T `json:"ImageVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type UserProfile_CustomImage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_CustomImage) AWSCloudFormationType() string {
+func (r *UserProfile_CustomImage[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.CustomImage"
 }

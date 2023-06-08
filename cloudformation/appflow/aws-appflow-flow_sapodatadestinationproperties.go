@@ -8,12 +8,12 @@ import (
 
 // Flow_SAPODataDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SAPODataDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html
-type Flow_SAPODataDestinationProperties struct {
+type Flow_SAPODataDestinationProperties[T any] struct {
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flow_SAPODataDestinationProperties struct {
 	// SuccessResponseHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatadestinationproperties.html#cfn-appflow-flow-sapodatadestinationproperties-successresponsehandlingconfig
-	SuccessResponseHandlingConfig *Flow_SuccessResponseHandlingConfig `json:"SuccessResponseHandlingConfig,omitempty"`
+	SuccessResponseHandlingConfig *Flow_SuccessResponseHandlingConfig[any] `json:"SuccessResponseHandlingConfig,omitempty"`
 
 	// WriteOperationType AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Flow_SAPODataDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SAPODataDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_SAPODataDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SAPODataDestinationProperties"
 }

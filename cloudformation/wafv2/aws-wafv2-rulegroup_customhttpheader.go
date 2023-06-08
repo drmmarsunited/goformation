@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_CustomHTTPHeader AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CustomHTTPHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customhttpheader.html
-type RuleGroup_CustomHTTPHeader struct {
+type RuleGroup_CustomHTTPHeader[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_CustomHTTPHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CustomHTTPHeader) AWSCloudFormationType() string {
+func (r *RuleGroup_CustomHTTPHeader[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CustomHTTPHeader"
 }

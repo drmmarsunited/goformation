@@ -8,7 +8,7 @@ import (
 
 // Cluster_Configuration AWS CloudFormation Resource (AWS::EMR::Cluster.Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html
-type Cluster_Configuration struct {
+type Cluster_Configuration[T any] struct {
 
 	// Classification AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Cluster_Configuration struct {
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurations
-	Configurations []Cluster_Configuration `json:"Configurations,omitempty"`
+	Configurations []Cluster_Configuration[any] `json:"Configurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Cluster_Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Configuration) AWSCloudFormationType() string {
+func (r *Cluster_Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.Configuration"
 }

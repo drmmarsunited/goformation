@@ -8,7 +8,7 @@ import (
 
 // ComponentVersion_LambdaEventSource AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaEventSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html
-type ComponentVersion_LambdaEventSource struct {
+type ComponentVersion_LambdaEventSource[T any] struct {
 
 	// Topic AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentVersion_LambdaEventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaEventSource) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaEventSource[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaEventSource"
 }

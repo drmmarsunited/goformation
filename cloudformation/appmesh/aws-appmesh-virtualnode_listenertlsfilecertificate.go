@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_ListenerTlsFileCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html
-type VirtualNode_ListenerTlsFileCertificate struct {
+type VirtualNode_ListenerTlsFileCertificate[T any] struct {
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_ListenerTlsFileCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTlsFileCertificate) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTlsFileCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate"
 }

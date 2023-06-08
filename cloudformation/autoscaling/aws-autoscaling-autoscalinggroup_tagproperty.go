@@ -8,7 +8,7 @@ import (
 
 // AutoScalingGroup_TagProperty AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.TagProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
-type AutoScalingGroup_TagProperty struct {
+type AutoScalingGroup_TagProperty[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type AutoScalingGroup_TagProperty struct {
 	// PropagateAtLaunch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch
-	PropagateAtLaunch bool `json:"PropagateAtLaunch"`
+	PropagateAtLaunch T `json:"PropagateAtLaunch"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AutoScalingGroup_TagProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_TagProperty) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_TagProperty[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.TagProperty"
 }

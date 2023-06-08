@@ -8,22 +8,22 @@ import (
 
 // UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html
-type UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType struct {
+type UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType[T any] struct {
 
 	// HighAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-highaction
-	HighAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType `json:"HighAction,omitempty"`
+	HighAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType[any] `json:"HighAction,omitempty"`
 
 	// LowAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-lowaction
-	LowAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType `json:"LowAction,omitempty"`
+	LowAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType[any] `json:"LowAction,omitempty"`
 
 	// MediumAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-mediumaction
-	MediumAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType `json:"MediumAction,omitempty"`
+	MediumAction *UserPoolRiskConfigurationAttachment_AccountTakeoverActionType[any] `json:"MediumAction,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType"
 }

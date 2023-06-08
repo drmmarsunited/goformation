@@ -8,17 +8,17 @@ import (
 
 // Application_CheckpointConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CheckpointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html
-type Application_CheckpointConfiguration struct {
+type Application_CheckpointConfiguration[T any] struct {
 
 	// CheckpointInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-checkpointinterval
-	CheckpointInterval *int `json:"CheckpointInterval,omitempty"`
+	CheckpointInterval *T `json:"CheckpointInterval,omitempty"`
 
 	// CheckpointingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-checkpointingenabled
-	CheckpointingEnabled *bool `json:"CheckpointingEnabled,omitempty"`
+	CheckpointingEnabled *T `json:"CheckpointingEnabled,omitempty"`
 
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Application_CheckpointConfiguration struct {
 	// MinPauseBetweenCheckpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-minpausebetweencheckpoints
-	MinPauseBetweenCheckpoints *int `json:"MinPauseBetweenCheckpoints,omitempty"`
+	MinPauseBetweenCheckpoints *T `json:"MinPauseBetweenCheckpoints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Application_CheckpointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_CheckpointConfiguration) AWSCloudFormationType() string {
+func (r *Application_CheckpointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.CheckpointConfiguration"
 }

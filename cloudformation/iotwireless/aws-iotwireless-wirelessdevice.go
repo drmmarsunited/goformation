@@ -12,7 +12,7 @@ import (
 
 // WirelessDevice AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html
-type WirelessDevice struct {
+type WirelessDevice[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type WirelessDevice struct {
 	// LoRaWAN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-lorawan
-	LoRaWAN *WirelessDevice_LoRaWANDevice `json:"LoRaWAN,omitempty"`
+	LoRaWAN *WirelessDevice_LoRaWANDevice[any] `json:"LoRaWAN,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type WirelessDevice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDevice) AWSCloudFormationType() string {
+func (r *WirelessDevice[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDevice"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WirelessDevice) MarshalJSON() ([]byte, error) {
-	type Properties WirelessDevice
+func (r WirelessDevice[any]) MarshalJSON() ([]byte, error) {
+	type Properties WirelessDevice[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r WirelessDevice) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WirelessDevice) UnmarshalJSON(b []byte) error {
-	type Properties WirelessDevice
+func (r *WirelessDevice[any]) UnmarshalJSON(b []byte) error {
+	type Properties WirelessDevice[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *WirelessDevice) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WirelessDevice(*res.Properties)
+		*r = WirelessDevice[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

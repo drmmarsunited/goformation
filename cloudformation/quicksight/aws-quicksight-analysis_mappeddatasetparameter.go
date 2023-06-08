@@ -8,7 +8,7 @@ import (
 
 // Analysis_MappedDataSetParameter AWS CloudFormation Resource (AWS::QuickSight::Analysis.MappedDataSetParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-mappeddatasetparameter.html
-type Analysis_MappedDataSetParameter struct {
+type Analysis_MappedDataSetParameter[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_MappedDataSetParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_MappedDataSetParameter) AWSCloudFormationType() string {
+func (r *Analysis_MappedDataSetParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.MappedDataSetParameter"
 }

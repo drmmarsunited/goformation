@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SlackConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SlackConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html
-type ConnectorProfile_SlackConnectorProfileCredentials struct {
+type ConnectorProfile_SlackConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_SlackConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ConnectorProfile_SlackConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SlackConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SlackConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SlackConnectorProfileCredentials"
 }

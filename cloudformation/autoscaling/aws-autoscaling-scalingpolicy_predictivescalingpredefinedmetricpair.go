@@ -8,7 +8,7 @@ import (
 
 // ScalingPolicy_PredictiveScalingPredefinedMetricPair AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingPredefinedMetricPair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingpredefinedmetricpair.html
-type ScalingPolicy_PredictiveScalingPredefinedMetricPair struct {
+type ScalingPolicy_PredictiveScalingPredefinedMetricPair[T any] struct {
 
 	// PredefinedMetricType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPolicy_PredictiveScalingPredefinedMetricPair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_PredictiveScalingPredefinedMetricPair) AWSCloudFormationType() string {
+func (r *ScalingPolicy_PredictiveScalingPredefinedMetricPair[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.PredictiveScalingPredefinedMetricPair"
 }

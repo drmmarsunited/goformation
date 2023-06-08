@@ -8,12 +8,12 @@ import (
 
 // Dataset_Schema AWS CloudFormation Resource (AWS::Forecast::Dataset.Schema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-schema.html
-type Dataset_Schema struct {
+type Dataset_Schema[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-schema.html#cfn-forecast-dataset-schema-attributes
-	Attributes []Dataset_AttributesItems `json:"Attributes,omitempty"`
+	Attributes []Dataset_AttributesItems[any] `json:"Attributes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dataset_Schema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_Schema) AWSCloudFormationType() string {
+func (r *Dataset_Schema[any]) AWSCloudFormationType() string {
 	return "AWS::Forecast::Dataset.Schema"
 }

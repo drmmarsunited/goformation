@@ -8,7 +8,7 @@ import (
 
 // Function_LogGroupSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.LogGroupSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_LogGroupSAMPT struct {
+type Function_LogGroupSAMPT[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_LogGroupSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_LogGroupSAMPT) AWSCloudFormationType() string {
+func (r *Function_LogGroupSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.LogGroupSAMPT"
 }

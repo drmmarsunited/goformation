@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_MetricDimension AWS CloudFormation Resource (AWS::IoT::SecurityProfile.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricdimension.html
-type SecurityProfile_MetricDimension struct {
+type SecurityProfile_MetricDimension[T any] struct {
 
 	// DimensionName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SecurityProfile_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_MetricDimension) AWSCloudFormationType() string {
+func (r *SecurityProfile_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.MetricDimension"
 }

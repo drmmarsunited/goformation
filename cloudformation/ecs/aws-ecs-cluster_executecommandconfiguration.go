@@ -8,7 +8,7 @@ import (
 
 // Cluster_ExecuteCommandConfiguration AWS CloudFormation Resource (AWS::ECS::Cluster.ExecuteCommandConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html
-type Cluster_ExecuteCommandConfiguration struct {
+type Cluster_ExecuteCommandConfiguration[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_ExecuteCommandConfiguration struct {
 	// LogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html#cfn-ecs-cluster-executecommandconfiguration-logconfiguration
-	LogConfiguration *Cluster_ExecuteCommandLogConfiguration `json:"LogConfiguration,omitempty"`
+	LogConfiguration *Cluster_ExecuteCommandLogConfiguration[any] `json:"LogConfiguration,omitempty"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Cluster_ExecuteCommandConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ExecuteCommandConfiguration) AWSCloudFormationType() string {
+func (r *Cluster_ExecuteCommandConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Cluster.ExecuteCommandConfiguration"
 }

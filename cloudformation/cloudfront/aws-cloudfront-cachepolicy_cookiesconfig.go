@@ -8,7 +8,7 @@ import (
 
 // CachePolicy_CookiesConfig AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.CookiesConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cookiesconfig.html
-type CachePolicy_CookiesConfig struct {
+type CachePolicy_CookiesConfig[T any] struct {
 
 	// CookieBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CachePolicy_CookiesConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CachePolicy_CookiesConfig) AWSCloudFormationType() string {
+func (r *CachePolicy_CookiesConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CachePolicy.CookiesConfig"
 }

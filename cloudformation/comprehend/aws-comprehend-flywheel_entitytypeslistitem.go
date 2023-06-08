@@ -8,7 +8,7 @@ import (
 
 // Flywheel_EntityTypesListItem AWS CloudFormation Resource (AWS::Comprehend::Flywheel.EntityTypesListItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-entitytypeslistitem.html
-type Flywheel_EntityTypesListItem struct {
+type Flywheel_EntityTypesListItem[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flywheel_EntityTypesListItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_EntityTypesListItem) AWSCloudFormationType() string {
+func (r *Flywheel_EntityTypesListItem[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.EntityTypesListItem"
 }

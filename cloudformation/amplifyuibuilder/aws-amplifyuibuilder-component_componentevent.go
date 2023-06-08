@@ -8,7 +8,7 @@ import (
 
 // Component_ComponentEvent AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentEvent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html
-type Component_ComponentEvent struct {
+type Component_ComponentEvent[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Component_ComponentEvent struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-parameters
-	Parameters *Component_ActionParameters `json:"Parameters,omitempty"`
+	Parameters *Component_ActionParameters[any] `json:"Parameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Component_ComponentEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentEvent) AWSCloudFormationType() string {
+func (r *Component_ComponentEvent[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentEvent"
 }

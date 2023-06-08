@@ -8,7 +8,7 @@ import (
 
 // Workgroup_NetworkInterface AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-networkinterface.html
-type Workgroup_NetworkInterface struct {
+type Workgroup_NetworkInterface[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Workgroup_NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup_NetworkInterface) AWSCloudFormationType() string {
+func (r *Workgroup_NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup.NetworkInterface"
 }

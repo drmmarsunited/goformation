@@ -8,12 +8,12 @@ import (
 
 // ConnectorProfile_CustomConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.CustomConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html
-type ConnectorProfile_CustomConnectorProfileCredentials struct {
+type ConnectorProfile_CustomConnectorProfileCredentials[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html#cfn-appflow-connectorprofile-customconnectorprofilecredentials-apikey
-	ApiKey *ConnectorProfile_ApiKeyCredentials `json:"ApiKey,omitempty"`
+	ApiKey *ConnectorProfile_ApiKeyCredentials[any] `json:"ApiKey,omitempty"`
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type ConnectorProfile_CustomConnectorProfileCredentials struct {
 	// Basic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html#cfn-appflow-connectorprofile-customconnectorprofilecredentials-basic
-	Basic *ConnectorProfile_BasicAuthCredentials `json:"Basic,omitempty"`
+	Basic *ConnectorProfile_BasicAuthCredentials[any] `json:"Basic,omitempty"`
 
 	// Custom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html#cfn-appflow-connectorprofile-customconnectorprofilecredentials-custom
-	Custom *ConnectorProfile_CustomAuthCredentials `json:"Custom,omitempty"`
+	Custom *ConnectorProfile_CustomAuthCredentials[any] `json:"Custom,omitempty"`
 
 	// Oauth2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html#cfn-appflow-connectorprofile-customconnectorprofilecredentials-oauth2
-	Oauth2 *ConnectorProfile_OAuth2Credentials `json:"Oauth2,omitempty"`
+	Oauth2 *ConnectorProfile_OAuth2Credentials[any] `json:"Oauth2,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ConnectorProfile_CustomConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_CustomConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_CustomConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.CustomConnectorProfileCredentials"
 }

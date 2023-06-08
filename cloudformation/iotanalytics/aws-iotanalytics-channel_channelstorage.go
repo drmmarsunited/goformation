@@ -8,12 +8,12 @@ import (
 
 // Channel_ChannelStorage AWS CloudFormation Resource (AWS::IoTAnalytics::Channel.ChannelStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
-type Channel_ChannelStorage struct {
+type Channel_ChannelStorage[T any] struct {
 
 	// CustomerManagedS3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
-	CustomerManagedS3 *Channel_CustomerManagedS3 `json:"CustomerManagedS3,omitempty"`
+	CustomerManagedS3 *Channel_CustomerManagedS3[any] `json:"CustomerManagedS3,omitempty"`
 
 	// ServiceManagedS3 AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_ChannelStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ChannelStorage) AWSCloudFormationType() string {
+func (r *Channel_ChannelStorage[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Channel.ChannelStorage"
 }

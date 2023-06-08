@@ -11,7 +11,7 @@ import (
 
 // ConnectorDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::ConnectorDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html
-type ConnectorDefinitionVersion struct {
+type ConnectorDefinitionVersion[T any] struct {
 
 	// ConnectorDefinitionId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ConnectorDefinitionVersion struct {
 	// Connectors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectors
-	Connectors []ConnectorDefinitionVersion_Connector `json:"Connectors"`
+	Connectors []ConnectorDefinitionVersion_Connector[any] `json:"Connectors"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ConnectorDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorDefinitionVersion) AWSCloudFormationType() string {
+func (r *ConnectorDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ConnectorDefinitionVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConnectorDefinitionVersion) MarshalJSON() ([]byte, error) {
-	type Properties ConnectorDefinitionVersion
+func (r ConnectorDefinitionVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConnectorDefinitionVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ConnectorDefinitionVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConnectorDefinitionVersion) UnmarshalJSON(b []byte) error {
-	type Properties ConnectorDefinitionVersion
+func (r *ConnectorDefinitionVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConnectorDefinitionVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ConnectorDefinitionVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConnectorDefinitionVersion(*res.Properties)
+		*r = ConnectorDefinitionVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // ModelExplainabilityJobDefinition_Json AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.Json)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-json.html
-type ModelExplainabilityJobDefinition_Json struct {
+type ModelExplainabilityJobDefinition_Json[T any] struct {
 
 	// Line AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-json.html#cfn-sagemaker-modelexplainabilityjobdefinition-json-line
-	Line *bool `json:"Line,omitempty"`
+	Line *T `json:"Line,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelExplainabilityJobDefinition_Json struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_Json) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_Json[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.Json"
 }

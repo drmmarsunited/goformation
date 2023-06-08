@@ -8,7 +8,7 @@ import (
 
 // Channel_TeletextDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.TeletextDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextdestinationsettings.html
-type Channel_TeletextDestinationSettings struct {
+type Channel_TeletextDestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_TeletextDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TeletextDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_TeletextDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TeletextDestinationSettings"
 }

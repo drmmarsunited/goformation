@@ -8,7 +8,7 @@ import (
 
 // Flywheel_DataSecurityConfig AWS CloudFormation Resource (AWS::Comprehend::Flywheel.DataSecurityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-datasecurityconfig.html
-type Flywheel_DataSecurityConfig struct {
+type Flywheel_DataSecurityConfig[T any] struct {
 
 	// DataLakeKmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flywheel_DataSecurityConfig struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-datasecurityconfig.html#cfn-comprehend-flywheel-datasecurityconfig-vpcconfig
-	VpcConfig *Flywheel_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *Flywheel_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Flywheel_DataSecurityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_DataSecurityConfig) AWSCloudFormationType() string {
+func (r *Flywheel_DataSecurityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.DataSecurityConfig"
 }

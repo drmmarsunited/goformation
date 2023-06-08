@@ -8,17 +8,17 @@ import (
 
 // Filter_DateFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.DateFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html
-type Filter_DateFilter struct {
+type Filter_DateFilter[T any] struct {
 
 	// EndInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-endinclusive
-	EndInclusive *int `json:"EndInclusive,omitempty"`
+	EndInclusive *T `json:"EndInclusive,omitempty"`
 
 	// StartInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-startinclusive
-	StartInclusive *int `json:"StartInclusive,omitempty"`
+	StartInclusive *T `json:"StartInclusive,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Filter_DateFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter_DateFilter) AWSCloudFormationType() string {
+func (r *Filter_DateFilter[any]) AWSCloudFormationType() string {
 	return "AWS::InspectorV2::Filter.DateFilter"
 }

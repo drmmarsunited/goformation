@@ -8,12 +8,12 @@ import (
 
 // Trigger_NotificationProperty AWS CloudFormation Resource (AWS::Glue::Trigger.NotificationProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html
-type Trigger_NotificationProperty struct {
+type Trigger_NotificationProperty[T any] struct {
 
 	// NotifyDelayAfter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html#cfn-glue-trigger-notificationproperty-notifydelayafter
-	NotifyDelayAfter *int `json:"NotifyDelayAfter,omitempty"`
+	NotifyDelayAfter *T `json:"NotifyDelayAfter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Trigger_NotificationProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger_NotificationProperty) AWSCloudFormationType() string {
+func (r *Trigger_NotificationProperty[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.NotificationProperty"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_DateTimePickerControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimePickerControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html
-type Analysis_DateTimePickerControlDisplayOptions struct {
+type Analysis_DateTimePickerControlDisplayOptions[T any] struct {
 
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_DateTimePickerControlDisplayOptions struct {
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-titleoptions
-	TitleOptions *Analysis_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Analysis_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_DateTimePickerControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimePickerControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Analysis_DateTimePickerControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimePickerControlDisplayOptions"
 }

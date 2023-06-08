@@ -8,7 +8,7 @@ import (
 
 // Alert_LambdaConfiguration AWS CloudFormation Resource (AWS::LookoutMetrics::Alert.LambdaConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html
-type Alert_LambdaConfiguration struct {
+type Alert_LambdaConfiguration[T any] struct {
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Alert_LambdaConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alert_LambdaConfiguration) AWSCloudFormationType() string {
+func (r *Alert_LambdaConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::Alert.LambdaConfiguration"
 }

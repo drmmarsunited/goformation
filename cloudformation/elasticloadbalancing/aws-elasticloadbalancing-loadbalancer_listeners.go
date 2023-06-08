@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_Listeners AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.Listeners)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html
-type LoadBalancer_Listeners struct {
+type LoadBalancer_Listeners[T any] struct {
 
 	// InstancePort AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type LoadBalancer_Listeners struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_Listeners) AWSCloudFormationType() string {
+func (r *LoadBalancer_Listeners[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.Listeners"
 }

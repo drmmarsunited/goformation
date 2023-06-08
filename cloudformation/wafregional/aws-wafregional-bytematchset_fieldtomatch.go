@@ -8,7 +8,7 @@ import (
 
 // ByteMatchSet_FieldToMatch AWS CloudFormation Resource (AWS::WAFRegional::ByteMatchSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html
-type ByteMatchSet_FieldToMatch struct {
+type ByteMatchSet_FieldToMatch[T any] struct {
 
 	// Data AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ByteMatchSet_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ByteMatchSet_FieldToMatch) AWSCloudFormationType() string {
+func (r *ByteMatchSet_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::ByteMatchSet.FieldToMatch"
 }

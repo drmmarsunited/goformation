@@ -8,7 +8,7 @@ import (
 
 // Flow_S3InputFormatConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.S3InputFormatConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3inputformatconfig.html
-type Flow_S3InputFormatConfig struct {
+type Flow_S3InputFormatConfig[T any] struct {
 
 	// S3InputFileType AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Flow_S3InputFormatConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_S3InputFormatConfig) AWSCloudFormationType() string {
+func (r *Flow_S3InputFormatConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.S3InputFormatConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // TopicRule_HttpActionHeader AWS CloudFormation Resource (AWS::IoT::TopicRule.HttpActionHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpactionheader.html
-type TopicRule_HttpActionHeader struct {
+type TopicRule_HttpActionHeader[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TopicRule_HttpActionHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_HttpActionHeader) AWSCloudFormationType() string {
+func (r *TopicRule_HttpActionHeader[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.HttpActionHeader"
 }

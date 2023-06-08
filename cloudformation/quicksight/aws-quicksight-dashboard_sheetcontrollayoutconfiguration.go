@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SheetControlLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetControlLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetcontrollayoutconfiguration.html
-type Dashboard_SheetControlLayoutConfiguration struct {
+type Dashboard_SheetControlLayoutConfiguration[T any] struct {
 
 	// GridLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetcontrollayoutconfiguration.html#cfn-quicksight-dashboard-sheetcontrollayoutconfiguration-gridlayout
-	GridLayout *Dashboard_GridLayoutConfiguration `json:"GridLayout,omitempty"`
+	GridLayout *Dashboard_GridLayoutConfiguration[any] `json:"GridLayout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_SheetControlLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetControlLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SheetControlLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetControlLayoutConfiguration"
 }

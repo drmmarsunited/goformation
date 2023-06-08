@@ -8,17 +8,17 @@ import (
 
 // NotificationChannel_NotificationChannelConfig AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html
-type NotificationChannel_NotificationChannelConfig struct {
+type NotificationChannel_NotificationChannelConfig[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-filters
-	Filters *NotificationChannel_NotificationFilterConfig `json:"Filters,omitempty"`
+	Filters *NotificationChannel_NotificationFilterConfig[any] `json:"Filters,omitempty"`
 
 	// Sns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-sns
-	Sns *NotificationChannel_SnsChannelConfig `json:"Sns,omitempty"`
+	Sns *NotificationChannel_SnsChannelConfig[any] `json:"Sns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NotificationChannel_NotificationChannelConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotificationChannel_NotificationChannelConfig) AWSCloudFormationType() string {
+func (r *NotificationChannel_NotificationChannelConfig[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig"
 }

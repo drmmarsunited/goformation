@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableCellConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableCellConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellconditionalformatting.html
-type Analysis_TableCellConditionalFormatting struct {
+type Analysis_TableCellConditionalFormatting[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_TableCellConditionalFormatting struct {
 	// TextFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellconditionalformatting.html#cfn-quicksight-analysis-tablecellconditionalformatting-textformat
-	TextFormat *Analysis_TextConditionalFormat `json:"TextFormat,omitempty"`
+	TextFormat *Analysis_TextConditionalFormat[any] `json:"TextFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TableCellConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableCellConditionalFormatting) AWSCloudFormationType() string {
+func (r *Analysis_TableCellConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableCellConditionalFormatting"
 }

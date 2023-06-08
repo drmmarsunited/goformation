@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_VirtualNodeGrpcConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html
-type VirtualNode_VirtualNodeGrpcConnectionPool struct {
+type VirtualNode_VirtualNodeGrpcConnectionPool[T any] struct {
 
 	// MaxRequests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html#cfn-appmesh-virtualnode-virtualnodegrpcconnectionpool-maxrequests
-	MaxRequests int `json:"MaxRequests"`
+	MaxRequests T `json:"MaxRequests"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_VirtualNodeGrpcConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_VirtualNodeGrpcConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualNode_VirtualNodeGrpcConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool"
 }

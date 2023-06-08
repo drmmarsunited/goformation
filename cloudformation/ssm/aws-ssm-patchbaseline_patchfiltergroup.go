@@ -8,12 +8,12 @@ import (
 
 // PatchBaseline_PatchFilterGroup AWS CloudFormation Resource (AWS::SSM::PatchBaseline.PatchFilterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html
-type PatchBaseline_PatchFilterGroup struct {
+type PatchBaseline_PatchFilterGroup[T any] struct {
 
 	// PatchFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters
-	PatchFilters []PatchBaseline_PatchFilter `json:"PatchFilters,omitempty"`
+	PatchFilters []PatchBaseline_PatchFilter[any] `json:"PatchFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PatchBaseline_PatchFilterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_PatchFilterGroup) AWSCloudFormationType() string {
+func (r *PatchBaseline_PatchFilterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.PatchFilterGroup"
 }

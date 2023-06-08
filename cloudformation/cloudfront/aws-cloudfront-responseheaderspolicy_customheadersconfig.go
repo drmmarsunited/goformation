@@ -8,12 +8,12 @@ import (
 
 // ResponseHeadersPolicy_CustomHeadersConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html
-type ResponseHeadersPolicy_CustomHeadersConfig struct {
+type ResponseHeadersPolicy_CustomHeadersConfig[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html#cfn-cloudfront-responseheaderspolicy-customheadersconfig-items
-	Items []ResponseHeadersPolicy_CustomHeader `json:"Items"`
+	Items []ResponseHeadersPolicy_CustomHeader[any] `json:"Items"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_CustomHeadersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_CustomHeadersConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_CustomHeadersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig"
 }

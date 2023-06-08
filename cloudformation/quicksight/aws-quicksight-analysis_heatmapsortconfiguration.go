@@ -8,27 +8,27 @@ import (
 
 // Analysis_HeatMapSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.HeatMapSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapsortconfiguration.html
-type Analysis_HeatMapSortConfiguration struct {
+type Analysis_HeatMapSortConfiguration[T any] struct {
 
 	// HeatMapColumnItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapsortconfiguration.html#cfn-quicksight-analysis-heatmapsortconfiguration-heatmapcolumnitemslimitconfiguration
-	HeatMapColumnItemsLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"HeatMapColumnItemsLimitConfiguration,omitempty"`
+	HeatMapColumnItemsLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"HeatMapColumnItemsLimitConfiguration,omitempty"`
 
 	// HeatMapColumnSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapsortconfiguration.html#cfn-quicksight-analysis-heatmapsortconfiguration-heatmapcolumnsort
-	HeatMapColumnSort []Analysis_FieldSortOptions `json:"HeatMapColumnSort,omitempty"`
+	HeatMapColumnSort []Analysis_FieldSortOptions[any] `json:"HeatMapColumnSort,omitempty"`
 
 	// HeatMapRowItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapsortconfiguration.html#cfn-quicksight-analysis-heatmapsortconfiguration-heatmaprowitemslimitconfiguration
-	HeatMapRowItemsLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"HeatMapRowItemsLimitConfiguration,omitempty"`
+	HeatMapRowItemsLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"HeatMapRowItemsLimitConfiguration,omitempty"`
 
 	// HeatMapRowSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapsortconfiguration.html#cfn-quicksight-analysis-heatmapsortconfiguration-heatmaprowsort
-	HeatMapRowSort []Analysis_FieldSortOptions `json:"HeatMapRowSort,omitempty"`
+	HeatMapRowSort []Analysis_FieldSortOptions[any] `json:"HeatMapRowSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_HeatMapSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_HeatMapSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_HeatMapSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.HeatMapSortConfiguration"
 }

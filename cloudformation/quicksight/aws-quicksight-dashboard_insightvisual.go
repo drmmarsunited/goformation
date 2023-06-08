@@ -8,12 +8,12 @@ import (
 
 // Dashboard_InsightVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.InsightVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html
-type Dashboard_InsightVisual struct {
+type Dashboard_InsightVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html#cfn-quicksight-dashboard-insightvisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type Dashboard_InsightVisual struct {
 	// InsightConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html#cfn-quicksight-dashboard-insightvisual-insightconfiguration
-	InsightConfiguration *Dashboard_InsightConfiguration `json:"InsightConfiguration,omitempty"`
+	InsightConfiguration *Dashboard_InsightConfiguration[any] `json:"InsightConfiguration,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html#cfn-quicksight-dashboard-insightvisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html#cfn-quicksight-dashboard-insightvisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_InsightVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_InsightVisual) AWSCloudFormationType() string {
+func (r *Dashboard_InsightVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.InsightVisual"
 }

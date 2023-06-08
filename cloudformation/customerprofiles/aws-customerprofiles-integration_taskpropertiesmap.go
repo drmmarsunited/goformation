@@ -8,7 +8,7 @@ import (
 
 // Integration_TaskPropertiesMap AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.TaskPropertiesMap)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-taskpropertiesmap.html
-type Integration_TaskPropertiesMap struct {
+type Integration_TaskPropertiesMap[T any] struct {
 
 	// OperatorPropertyKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Integration_TaskPropertiesMap struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_TaskPropertiesMap) AWSCloudFormationType() string {
+func (r *Integration_TaskPropertiesMap[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.TaskPropertiesMap"
 }

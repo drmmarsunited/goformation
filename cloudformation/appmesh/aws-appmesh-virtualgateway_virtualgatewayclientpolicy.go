@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayClientPolicy AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicy.html
-type VirtualGateway_VirtualGatewayClientPolicy struct {
+type VirtualGateway_VirtualGatewayClientPolicy[T any] struct {
 
 	// TLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicy-tls
-	TLS *VirtualGateway_VirtualGatewayClientPolicyTls `json:"TLS,omitempty"`
+	TLS *VirtualGateway_VirtualGatewayClientPolicyTls[any] `json:"TLS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayClientPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayClientPolicy) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayClientPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicy"
 }

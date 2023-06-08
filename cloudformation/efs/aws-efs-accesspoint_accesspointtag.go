@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_AccessPointTag AWS CloudFormation Resource (AWS::EFS::AccessPoint.AccessPointTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-accesspointtag.html
-type AccessPoint_AccessPointTag struct {
+type AccessPoint_AccessPointTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AccessPoint_AccessPointTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_AccessPointTag) AWSCloudFormationType() string {
+func (r *AccessPoint_AccessPointTag[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::AccessPoint.AccessPointTag"
 }

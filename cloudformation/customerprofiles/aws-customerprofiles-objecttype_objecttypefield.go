@@ -8,7 +8,7 @@ import (
 
 // ObjectType_ObjectTypeField AWS CloudFormation Resource (AWS::CustomerProfiles::ObjectType.ObjectTypeField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-objecttypefield.html
-type ObjectType_ObjectTypeField struct {
+type ObjectType_ObjectTypeField[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ObjectType_ObjectTypeField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ObjectType_ObjectTypeField) AWSCloudFormationType() string {
+func (r *ObjectType_ObjectTypeField[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::ObjectType.ObjectTypeField"
 }

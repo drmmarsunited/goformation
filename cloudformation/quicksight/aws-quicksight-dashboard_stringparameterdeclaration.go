@@ -8,17 +8,17 @@ import (
 
 // Dashboard_StringParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.StringParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameterdeclaration.html
-type Dashboard_StringParameterDeclaration struct {
+type Dashboard_StringParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameterdeclaration.html#cfn-quicksight-dashboard-stringparameterdeclaration-defaultvalues
-	DefaultValues *Dashboard_StringDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Dashboard_StringDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameterdeclaration.html#cfn-quicksight-dashboard-stringparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Dashboard_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Dashboard_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_StringParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameterdeclaration.html#cfn-quicksight-dashboard-stringparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Dashboard_StringValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Dashboard_StringValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_StringParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_StringParameterDeclaration) AWSCloudFormationType() string {
+func (r *Dashboard_StringParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.StringParameterDeclaration"
 }

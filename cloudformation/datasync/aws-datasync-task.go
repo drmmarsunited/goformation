@@ -12,7 +12,7 @@ import (
 
 // Task AWS CloudFormation Resource (AWS::DataSync::Task)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html
-type Task struct {
+type Task[T any] struct {
 
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type Task struct {
 	// Excludes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-excludes
-	Excludes []Task_FilterRule `json:"Excludes,omitempty"`
+	Excludes []Task_FilterRule[any] `json:"Excludes,omitempty"`
 
 	// Includes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-includes
-	Includes []Task_FilterRule `json:"Includes,omitempty"`
+	Includes []Task_FilterRule[any] `json:"Includes,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type Task struct {
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-options
-	Options *Task_Options `json:"Options,omitempty"`
+	Options *Task_Options[any] `json:"Options,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-schedule
-	Schedule *Task_TaskSchedule `json:"Schedule,omitempty"`
+	Schedule *Task_TaskSchedule[any] `json:"Schedule,omitempty"`
 
 	// SourceLocationArn AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type Task struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Task) AWSCloudFormationType() string {
+func (r *Task[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::Task"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Task) MarshalJSON() ([]byte, error) {
-	type Properties Task
+func (r Task[any]) MarshalJSON() ([]byte, error) {
+	type Properties Task[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Task) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Task) UnmarshalJSON(b []byte) error {
-	type Properties Task
+func (r *Task[any]) UnmarshalJSON(b []byte) error {
+	type Properties Task[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Task) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Task(*res.Properties)
+		*r = Task[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

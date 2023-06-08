@@ -8,12 +8,12 @@ import (
 
 // PackagingConfiguration_CmafEncryption AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.CmafEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html
-type PackagingConfiguration_CmafEncryption struct {
+type PackagingConfiguration_CmafEncryption[T any] struct {
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html#cfn-mediapackage-packagingconfiguration-cmafencryption-spekekeyprovider
-	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PackagingConfiguration_CmafEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_CmafEncryption) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_CmafEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.CmafEncryption"
 }

@@ -8,7 +8,7 @@ import (
 
 // Job_AllowedStatistics AWS CloudFormation Resource (AWS::DataBrew::Job.AllowedStatistics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-allowedstatistics.html
-type Job_AllowedStatistics struct {
+type Job_AllowedStatistics[T any] struct {
 
 	// Statistics AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Job_AllowedStatistics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_AllowedStatistics) AWSCloudFormationType() string {
+func (r *Job_AllowedStatistics[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.AllowedStatistics"
 }

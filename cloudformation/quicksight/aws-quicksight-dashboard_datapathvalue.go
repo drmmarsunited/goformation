@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPathValue AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPathValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathvalue.html
-type Dashboard_DataPathValue struct {
+type Dashboard_DataPathValue[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_DataPathValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPathValue) AWSCloudFormationType() string {
+func (r *Dashboard_DataPathValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPathValue"
 }

@@ -8,7 +8,7 @@ import (
 
 // ModelCard_MetricDataItems AWS CloudFormation Resource (AWS::SageMaker::ModelCard.MetricDataItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html
-type ModelCard_MetricDataItems struct {
+type ModelCard_MetricDataItems[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type ModelCard_MetricDataItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_MetricDataItems) AWSCloudFormationType() string {
+func (r *ModelCard_MetricDataItems[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.MetricDataItems"
 }

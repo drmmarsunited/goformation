@@ -8,12 +8,12 @@ import (
 
 // Route_HttpRouteMatch AWS CloudFormation Resource (AWS::AppMesh::Route.HttpRouteMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html
-type Route_HttpRouteMatch struct {
+type Route_HttpRouteMatch[T any] struct {
 
 	// Headers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers
-	Headers []Route_HttpRouteHeader `json:"Headers,omitempty"`
+	Headers []Route_HttpRouteHeader[any] `json:"Headers,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Route_HttpRouteMatch struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-path
-	Path *Route_HttpPathMatch `json:"Path,omitempty"`
+	Path *Route_HttpPathMatch[any] `json:"Path,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Route_HttpRouteMatch struct {
 	// QueryParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-queryparameters
-	QueryParameters []Route_QueryParameter `json:"QueryParameters,omitempty"`
+	QueryParameters []Route_QueryParameter[any] `json:"QueryParameters,omitempty"`
 
 	// Scheme AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Route_HttpRouteMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpRouteMatch) AWSCloudFormationType() string {
+func (r *Route_HttpRouteMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpRouteMatch"
 }

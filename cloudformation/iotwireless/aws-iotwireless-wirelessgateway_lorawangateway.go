@@ -8,7 +8,7 @@ import (
 
 // WirelessGateway_LoRaWANGateway AWS CloudFormation Resource (AWS::IoTWireless::WirelessGateway.LoRaWANGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessgateway-lorawangateway.html
-type WirelessGateway_LoRaWANGateway struct {
+type WirelessGateway_LoRaWANGateway[T any] struct {
 
 	// GatewayEui AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WirelessGateway_LoRaWANGateway struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessGateway_LoRaWANGateway) AWSCloudFormationType() string {
+func (r *WirelessGateway_LoRaWANGateway[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessGateway.LoRaWANGateway"
 }

@@ -11,7 +11,7 @@ import (
 
 // Component AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html
-type Component struct {
+type Component[T any] struct {
 
 	// AppId AWS CloudFormation Property
 	// Required: false
@@ -21,17 +21,17 @@ type Component struct {
 	// BindingProperties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-bindingproperties
-	BindingProperties map[string]Component_ComponentBindingPropertiesValue `json:"BindingProperties"`
+	BindingProperties map[string]Component_ComponentBindingPropertiesValue[any] `json:"BindingProperties"`
 
 	// Children AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-children
-	Children []Component_ComponentChild `json:"Children,omitempty"`
+	Children []Component_ComponentChild[any] `json:"Children,omitempty"`
 
 	// CollectionProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-collectionproperties
-	CollectionProperties map[string]Component_ComponentDataConfiguration `json:"CollectionProperties,omitempty"`
+	CollectionProperties map[string]Component_ComponentDataConfiguration[any] `json:"CollectionProperties,omitempty"`
 
 	// ComponentType AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type Component struct {
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-events
-	Events map[string]Component_ComponentEvent `json:"Events,omitempty"`
+	Events map[string]Component_ComponentEvent[any] `json:"Events,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -61,7 +61,7 @@ type Component struct {
 	// Properties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-properties
-	Properties map[string]Component_ComponentProperty `json:"Properties"`
+	Properties map[string]Component_ComponentProperty[any] `json:"Properties"`
 
 	// SchemaVersion AWS CloudFormation Property
 	// Required: false
@@ -81,7 +81,7 @@ type Component struct {
 	// Variants AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-variants
-	Variants []Component_ComponentVariant `json:"Variants"`
+	Variants []Component_ComponentVariant[any] `json:"Variants"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -100,14 +100,15 @@ type Component struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component) AWSCloudFormationType() string {
+func (r *Component[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Component) MarshalJSON() ([]byte, error) {
-	type Properties Component
+func (r Component[any]) MarshalJSON() ([]byte, error) {
+	type Properties Component[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -129,8 +130,9 @@ func (r Component) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Component) UnmarshalJSON(b []byte) error {
-	type Properties Component
+func (r *Component[any]) UnmarshalJSON(b []byte) error {
+	type Properties Component[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -150,7 +152,7 @@ func (r *Component) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Component(*res.Properties)
+		*r = Component[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

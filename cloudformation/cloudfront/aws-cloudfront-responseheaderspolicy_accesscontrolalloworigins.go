@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_AccessControlAllowOrigins AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowOrigins)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolalloworigins.html
-type ResponseHeadersPolicy_AccessControlAllowOrigins struct {
+type ResponseHeadersPolicy_AccessControlAllowOrigins[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_AccessControlAllowOrigins struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_AccessControlAllowOrigins) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_AccessControlAllowOrigins[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowOrigins"
 }

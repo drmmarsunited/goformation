@@ -8,12 +8,12 @@ import (
 
 // ModelCard_ObjectiveFunction AWS CloudFormation Resource (AWS::SageMaker::ModelCard.ObjectiveFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html
-type ModelCard_ObjectiveFunction struct {
+type ModelCard_ObjectiveFunction[T any] struct {
 
 	// Function AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html#cfn-sagemaker-modelcard-objectivefunction-function
-	Function *ModelCard_Function `json:"Function,omitempty"`
+	Function *ModelCard_Function[any] `json:"Function,omitempty"`
 
 	// Notes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ModelCard_ObjectiveFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_ObjectiveFunction) AWSCloudFormationType() string {
+func (r *ModelCard_ObjectiveFunction[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.ObjectiveFunction"
 }

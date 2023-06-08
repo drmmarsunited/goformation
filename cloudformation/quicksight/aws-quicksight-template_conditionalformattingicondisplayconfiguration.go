@@ -8,7 +8,7 @@ import (
 
 // Template_ConditionalFormattingIconDisplayConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ConditionalFormattingIconDisplayConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingicondisplayconfiguration.html
-type Template_ConditionalFormattingIconDisplayConfiguration struct {
+type Template_ConditionalFormattingIconDisplayConfiguration[T any] struct {
 
 	// IconDisplayOption AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_ConditionalFormattingIconDisplayConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ConditionalFormattingIconDisplayConfiguration) AWSCloudFormationType() string {
+func (r *Template_ConditionalFormattingIconDisplayConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ConditionalFormattingIconDisplayConfiguration"
 }

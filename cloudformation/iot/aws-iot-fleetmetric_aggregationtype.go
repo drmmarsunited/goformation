@@ -8,7 +8,7 @@ import (
 
 // FleetMetric_AggregationType AWS CloudFormation Resource (AWS::IoT::FleetMetric.AggregationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-fleetmetric-aggregationtype.html
-type FleetMetric_AggregationType struct {
+type FleetMetric_AggregationType[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FleetMetric_AggregationType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FleetMetric_AggregationType) AWSCloudFormationType() string {
+func (r *FleetMetric_AggregationType[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::FleetMetric.AggregationType"
 }

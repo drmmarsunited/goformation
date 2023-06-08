@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_SplunkRetryOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkretryoptions.html
-type DeliveryStream_SplunkRetryOptions struct {
+type DeliveryStream_SplunkRetryOptions[T any] struct {
 
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkretryoptions.html#cfn-kinesisfirehose-deliverystream-splunkretryoptions-durationinseconds
-	DurationInSeconds *int `json:"DurationInSeconds,omitempty"`
+	DurationInSeconds *T `json:"DurationInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeliveryStream_SplunkRetryOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_SplunkRetryOptions) AWSCloudFormationType() string {
+func (r *DeliveryStream_SplunkRetryOptions[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions"
 }

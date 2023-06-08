@@ -11,12 +11,12 @@ import (
 
 // PublicKey AWS CloudFormation Resource (AWS::CloudFront::PublicKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-publickey.html
-type PublicKey struct {
+type PublicKey[T any] struct {
 
 	// PublicKeyConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-publickey.html#cfn-cloudfront-publickey-publickeyconfig
-	PublicKeyConfig *PublicKey_PublicKeyConfig `json:"PublicKeyConfig"`
+	PublicKeyConfig *PublicKey_PublicKeyConfig[any] `json:"PublicKeyConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type PublicKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PublicKey) AWSCloudFormationType() string {
+func (r *PublicKey[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::PublicKey"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PublicKey) MarshalJSON() ([]byte, error) {
-	type Properties PublicKey
+func (r PublicKey[any]) MarshalJSON() ([]byte, error) {
+	type Properties PublicKey[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r PublicKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PublicKey) UnmarshalJSON(b []byte) error {
-	type Properties PublicKey
+func (r *PublicKey[any]) UnmarshalJSON(b []byte) error {
+	type Properties PublicKey[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *PublicKey) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PublicKey(*res.Properties)
+		*r = PublicKey[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

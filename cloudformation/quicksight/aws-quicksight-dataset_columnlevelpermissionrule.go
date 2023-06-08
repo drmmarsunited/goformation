@@ -8,7 +8,7 @@ import (
 
 // DataSet_ColumnLevelPermissionRule AWS CloudFormation Resource (AWS::QuickSight::DataSet.ColumnLevelPermissionRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columnlevelpermissionrule.html
-type DataSet_ColumnLevelPermissionRule struct {
+type DataSet_ColumnLevelPermissionRule[T any] struct {
 
 	// ColumnNames AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataSet_ColumnLevelPermissionRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ColumnLevelPermissionRule) AWSCloudFormationType() string {
+func (r *DataSet_ColumnLevelPermissionRule[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ColumnLevelPermissionRule"
 }

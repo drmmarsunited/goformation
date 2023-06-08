@@ -8,12 +8,12 @@ import (
 
 // Schedule_FlexibleTimeWindow AWS CloudFormation Resource (AWS::Scheduler::Schedule.FlexibleTimeWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-flexibletimewindow.html
-type Schedule_FlexibleTimeWindow struct {
+type Schedule_FlexibleTimeWindow[T any] struct {
 
 	// MaximumWindowInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-flexibletimewindow.html#cfn-scheduler-schedule-flexibletimewindow-maximumwindowinminutes
-	MaximumWindowInMinutes *float64 `json:"MaximumWindowInMinutes,omitempty"`
+	MaximumWindowInMinutes *T `json:"MaximumWindowInMinutes,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Schedule_FlexibleTimeWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_FlexibleTimeWindow) AWSCloudFormationType() string {
+func (r *Schedule_FlexibleTimeWindow[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.FlexibleTimeWindow"
 }

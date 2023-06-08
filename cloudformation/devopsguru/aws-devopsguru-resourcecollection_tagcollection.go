@@ -8,7 +8,7 @@ import (
 
 // ResourceCollection_TagCollection AWS CloudFormation Resource (AWS::DevOpsGuru::ResourceCollection.TagCollection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html
-type ResourceCollection_TagCollection struct {
+type ResourceCollection_TagCollection[T any] struct {
 
 	// AppBoundaryKey AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ResourceCollection_TagCollection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceCollection_TagCollection) AWSCloudFormationType() string {
+func (r *ResourceCollection_TagCollection[any]) AWSCloudFormationType() string {
 	return "AWS::DevOpsGuru::ResourceCollection.TagCollection"
 }

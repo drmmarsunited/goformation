@@ -8,7 +8,7 @@ import (
 
 // ApiGatewayManagedOverrides_RouteOverrides AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routeoverrides.html
-type ApiGatewayManagedOverrides_RouteOverrides struct {
+type ApiGatewayManagedOverrides_RouteOverrides[T any] struct {
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ApiGatewayManagedOverrides_RouteOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiGatewayManagedOverrides_RouteOverrides) AWSCloudFormationType() string {
+func (r *ApiGatewayManagedOverrides_RouteOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteOverrides"
 }

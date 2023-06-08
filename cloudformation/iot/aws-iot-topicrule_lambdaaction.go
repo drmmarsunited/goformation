@@ -8,7 +8,7 @@ import (
 
 // TopicRule_LambdaAction AWS CloudFormation Resource (AWS::IoT::TopicRule.LambdaAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html
-type TopicRule_LambdaAction struct {
+type TopicRule_LambdaAction[T any] struct {
 
 	// FunctionArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type TopicRule_LambdaAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_LambdaAction) AWSCloudFormationType() string {
+func (r *TopicRule_LambdaAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.LambdaAction"
 }

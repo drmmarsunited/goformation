@@ -8,12 +8,12 @@ import (
 
 // Template_AnalysisDefaults AWS CloudFormation Resource (AWS::QuickSight::Template.AnalysisDefaults)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-analysisdefaults.html
-type Template_AnalysisDefaults struct {
+type Template_AnalysisDefaults[T any] struct {
 
 	// DefaultNewSheetConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-analysisdefaults.html#cfn-quicksight-template-analysisdefaults-defaultnewsheetconfiguration
-	DefaultNewSheetConfiguration *Template_DefaultNewSheetConfiguration `json:"DefaultNewSheetConfiguration"`
+	DefaultNewSheetConfiguration *Template_DefaultNewSheetConfiguration[any] `json:"DefaultNewSheetConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_AnalysisDefaults struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_AnalysisDefaults) AWSCloudFormationType() string {
+func (r *Template_AnalysisDefaults[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.AnalysisDefaults"
 }

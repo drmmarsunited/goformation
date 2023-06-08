@@ -12,7 +12,7 @@ import (
 
 // VirtualService AWS CloudFormation Resource (AWS::AppMesh::VirtualService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html
-type VirtualService struct {
+type VirtualService[T any] struct {
 
 	// MeshName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type VirtualService struct {
 	// Spec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-spec
-	Spec *VirtualService_VirtualServiceSpec `json:"Spec"`
+	Spec *VirtualService_VirtualServiceSpec[any] `json:"Spec"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type VirtualService struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualService) AWSCloudFormationType() string {
+func (r *VirtualService[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualService"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VirtualService) MarshalJSON() ([]byte, error) {
-	type Properties VirtualService
+func (r VirtualService[any]) MarshalJSON() ([]byte, error) {
+	type Properties VirtualService[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r VirtualService) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VirtualService) UnmarshalJSON(b []byte) error {
-	type Properties VirtualService
+func (r *VirtualService[any]) UnmarshalJSON(b []byte) error {
+	type Properties VirtualService[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *VirtualService) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VirtualService(*res.Properties)
+		*r = VirtualService[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

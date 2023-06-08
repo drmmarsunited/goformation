@@ -8,7 +8,7 @@ import (
 
 // Workspace_AssertionAttributes AWS CloudFormation Resource (AWS::Grafana::Workspace.AssertionAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-assertionattributes.html
-type Workspace_AssertionAttributes struct {
+type Workspace_AssertionAttributes[T any] struct {
 
 	// Email AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Workspace_AssertionAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_AssertionAttributes) AWSCloudFormationType() string {
+func (r *Workspace_AssertionAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.AssertionAttributes"
 }

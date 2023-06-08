@@ -8,7 +8,7 @@ import (
 
 // AssetModel_Transform AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.Transform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-transform.html
-type AssetModel_Transform struct {
+type AssetModel_Transform[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type AssetModel_Transform struct {
 	// Variables AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-transform.html#cfn-iotsitewise-assetmodel-transform-variables
-	Variables []AssetModel_ExpressionVariable `json:"Variables"`
+	Variables []AssetModel_ExpressionVariable[any] `json:"Variables"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AssetModel_Transform struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_Transform) AWSCloudFormationType() string {
+func (r *AssetModel_Transform[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.Transform"
 }

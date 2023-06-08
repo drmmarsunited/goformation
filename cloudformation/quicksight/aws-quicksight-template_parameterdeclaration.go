@@ -8,27 +8,27 @@ import (
 
 // Template_ParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdeclaration.html
-type Template_ParameterDeclaration struct {
+type Template_ParameterDeclaration[T any] struct {
 
 	// DateTimeParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdeclaration.html#cfn-quicksight-template-parameterdeclaration-datetimeparameterdeclaration
-	DateTimeParameterDeclaration *Template_DateTimeParameterDeclaration `json:"DateTimeParameterDeclaration,omitempty"`
+	DateTimeParameterDeclaration *Template_DateTimeParameterDeclaration[any] `json:"DateTimeParameterDeclaration,omitempty"`
 
 	// DecimalParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdeclaration.html#cfn-quicksight-template-parameterdeclaration-decimalparameterdeclaration
-	DecimalParameterDeclaration *Template_DecimalParameterDeclaration `json:"DecimalParameterDeclaration,omitempty"`
+	DecimalParameterDeclaration *Template_DecimalParameterDeclaration[any] `json:"DecimalParameterDeclaration,omitempty"`
 
 	// IntegerParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdeclaration.html#cfn-quicksight-template-parameterdeclaration-integerparameterdeclaration
-	IntegerParameterDeclaration *Template_IntegerParameterDeclaration `json:"IntegerParameterDeclaration,omitempty"`
+	IntegerParameterDeclaration *Template_IntegerParameterDeclaration[any] `json:"IntegerParameterDeclaration,omitempty"`
 
 	// StringParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdeclaration.html#cfn-quicksight-template-parameterdeclaration-stringparameterdeclaration
-	StringParameterDeclaration *Template_StringParameterDeclaration `json:"StringParameterDeclaration,omitempty"`
+	StringParameterDeclaration *Template_StringParameterDeclaration[any] `json:"StringParameterDeclaration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_ParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterDeclaration) AWSCloudFormationType() string {
+func (r *Template_ParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterDeclaration"
 }

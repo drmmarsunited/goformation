@@ -8,7 +8,7 @@ import (
 
 // Campaign_DefaultButtonConfiguration AWS CloudFormation Resource (AWS::Pinpoint::Campaign.DefaultButtonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html
-type Campaign_DefaultButtonConfiguration struct {
+type Campaign_DefaultButtonConfiguration[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Campaign_DefaultButtonConfiguration struct {
 	// BorderRadius AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-defaultbuttonconfiguration.html#cfn-pinpoint-campaign-defaultbuttonconfiguration-borderradius
-	BorderRadius *int `json:"BorderRadius,omitempty"`
+	BorderRadius *T `json:"BorderRadius,omitempty"`
 
 	// ButtonAction AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Campaign_DefaultButtonConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_DefaultButtonConfiguration) AWSCloudFormationType() string {
+func (r *Campaign_DefaultButtonConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.DefaultButtonConfiguration"
 }

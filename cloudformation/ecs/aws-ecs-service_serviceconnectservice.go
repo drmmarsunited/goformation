@@ -8,12 +8,12 @@ import (
 
 // Service_ServiceConnectService AWS CloudFormation Resource (AWS::ECS::Service.ServiceConnectService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectservice.html
-type Service_ServiceConnectService struct {
+type Service_ServiceConnectService[T any] struct {
 
 	// ClientAliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectservice.html#cfn-ecs-service-serviceconnectservice-clientaliases
-	ClientAliases []Service_ServiceConnectClientAlias `json:"ClientAliases,omitempty"`
+	ClientAliases []Service_ServiceConnectClientAlias[any] `json:"ClientAliases,omitempty"`
 
 	// DiscoveryName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Service_ServiceConnectService struct {
 	// IngressPortOverride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectservice.html#cfn-ecs-service-serviceconnectservice-ingressportoverride
-	IngressPortOverride *int `json:"IngressPortOverride,omitempty"`
+	IngressPortOverride *T `json:"IngressPortOverride,omitempty"`
 
 	// PortName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Service_ServiceConnectService struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ServiceConnectService) AWSCloudFormationType() string {
+func (r *Service_ServiceConnectService[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.ServiceConnectService"
 }

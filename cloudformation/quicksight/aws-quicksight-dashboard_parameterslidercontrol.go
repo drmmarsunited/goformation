@@ -8,22 +8,22 @@ import (
 
 // Dashboard_ParameterSliderControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterSliderControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterslidercontrol.html
-type Dashboard_ParameterSliderControl struct {
+type Dashboard_ParameterSliderControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterslidercontrol.html#cfn-quicksight-dashboard-parameterslidercontrol-displayoptions
-	DisplayOptions *Dashboard_SliderControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_SliderControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterslidercontrol.html#cfn-quicksight-dashboard-parameterslidercontrol-maximumvalue
-	MaximumValue float64 `json:"MaximumValue"`
+	MaximumValue T `json:"MaximumValue"`
 
 	// MinimumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterslidercontrol.html#cfn-quicksight-dashboard-parameterslidercontrol-minimumvalue
-	MinimumValue float64 `json:"MinimumValue"`
+	MinimumValue T `json:"MinimumValue"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Dashboard_ParameterSliderControl struct {
 	// StepSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterslidercontrol.html#cfn-quicksight-dashboard-parameterslidercontrol-stepsize
-	StepSize float64 `json:"StepSize"`
+	StepSize T `json:"StepSize"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Dashboard_ParameterSliderControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterSliderControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterSliderControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterSliderControl"
 }

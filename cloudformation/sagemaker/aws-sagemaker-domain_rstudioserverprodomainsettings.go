@@ -8,12 +8,12 @@ import (
 
 // Domain_RStudioServerProDomainSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.RStudioServerProDomainSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html
-type Domain_RStudioServerProDomainSettings struct {
+type Domain_RStudioServerProDomainSettings[T any] struct {
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-defaultresourcespec
-	DefaultResourceSpec *Domain_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Domain_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// DomainExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Domain_RStudioServerProDomainSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_RStudioServerProDomainSettings) AWSCloudFormationType() string {
+func (r *Domain_RStudioServerProDomainSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.RStudioServerProDomainSettings"
 }

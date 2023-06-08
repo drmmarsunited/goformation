@@ -8,17 +8,17 @@ import (
 
 // Dashboard_NumericRangeFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericRangeFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html
-type Dashboard_NumericRangeFilter struct {
+type Dashboard_NumericRangeFilter[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-aggregationfunction
-	AggregationFunction *Dashboard_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Dashboard_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Dashboard_NumericRangeFilter struct {
 	// IncludeMaximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-includemaximum
-	IncludeMaximum *bool `json:"IncludeMaximum,omitempty"`
+	IncludeMaximum *T `json:"IncludeMaximum,omitempty"`
 
 	// IncludeMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-includeminimum
-	IncludeMinimum *bool `json:"IncludeMinimum,omitempty"`
+	IncludeMinimum *T `json:"IncludeMinimum,omitempty"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
@@ -43,12 +43,12 @@ type Dashboard_NumericRangeFilter struct {
 	// RangeMaximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-rangemaximum
-	RangeMaximum *Dashboard_NumericRangeFilterValue `json:"RangeMaximum,omitempty"`
+	RangeMaximum *Dashboard_NumericRangeFilterValue[any] `json:"RangeMaximum,omitempty"`
 
 	// RangeMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefilter.html#cfn-quicksight-dashboard-numericrangefilter-rangeminimum
-	RangeMinimum *Dashboard_NumericRangeFilterValue `json:"RangeMinimum,omitempty"`
+	RangeMinimum *Dashboard_NumericRangeFilterValue[any] `json:"RangeMinimum,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Dashboard_NumericRangeFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericRangeFilter) AWSCloudFormationType() string {
+func (r *Dashboard_NumericRangeFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericRangeFilter"
 }

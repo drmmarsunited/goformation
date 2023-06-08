@@ -8,32 +8,32 @@ import (
 
 // Analysis_TableVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html
-type Analysis_TableVisual struct {
+type Analysis_TableVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html#cfn-quicksight-analysis-tablevisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html#cfn-quicksight-analysis-tablevisual-chartconfiguration
-	ChartConfiguration *Analysis_TableConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_TableConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html#cfn-quicksight-analysis-tablevisual-conditionalformatting
-	ConditionalFormatting *Analysis_TableConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Analysis_TableConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html#cfn-quicksight-analysis-tablevisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablevisual.html#cfn-quicksight-analysis-tablevisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_TableVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableVisual) AWSCloudFormationType() string {
+func (r *Analysis_TableVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableVisual"
 }

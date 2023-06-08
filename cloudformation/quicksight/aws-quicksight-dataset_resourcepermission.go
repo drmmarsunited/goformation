@@ -8,7 +8,7 @@ import (
 
 // DataSet_ResourcePermission AWS CloudFormation Resource (AWS::QuickSight::DataSet.ResourcePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-resourcepermission.html
-type DataSet_ResourcePermission struct {
+type DataSet_ResourcePermission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSet_ResourcePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ResourcePermission) AWSCloudFormationType() string {
+func (r *DataSet_ResourcePermission[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ResourcePermission"
 }

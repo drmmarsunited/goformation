@@ -8,22 +8,22 @@ import (
 
 // BudgetsAction_Definition AWS CloudFormation Resource (AWS::Budgets::BudgetsAction.Definition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html
-type BudgetsAction_Definition struct {
+type BudgetsAction_Definition[T any] struct {
 
 	// IamActionDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-iamactiondefinition
-	IamActionDefinition *BudgetsAction_IamActionDefinition `json:"IamActionDefinition,omitempty"`
+	IamActionDefinition *BudgetsAction_IamActionDefinition[any] `json:"IamActionDefinition,omitempty"`
 
 	// ScpActionDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-scpactiondefinition
-	ScpActionDefinition *BudgetsAction_ScpActionDefinition `json:"ScpActionDefinition,omitempty"`
+	ScpActionDefinition *BudgetsAction_ScpActionDefinition[any] `json:"ScpActionDefinition,omitempty"`
 
 	// SsmActionDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-ssmactiondefinition
-	SsmActionDefinition *BudgetsAction_SsmActionDefinition `json:"SsmActionDefinition,omitempty"`
+	SsmActionDefinition *BudgetsAction_SsmActionDefinition[any] `json:"SsmActionDefinition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type BudgetsAction_Definition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction_Definition) AWSCloudFormationType() string {
+func (r *BudgetsAction_Definition[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction.Definition"
 }

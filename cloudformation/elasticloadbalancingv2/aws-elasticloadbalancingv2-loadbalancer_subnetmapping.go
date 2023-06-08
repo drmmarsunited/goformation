@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_SubnetMapping AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html
-type LoadBalancer_SubnetMapping struct {
+type LoadBalancer_SubnetMapping[T any] struct {
 
 	// AllocationId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type LoadBalancer_SubnetMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_SubnetMapping) AWSCloudFormationType() string {
+func (r *LoadBalancer_SubnetMapping[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping"
 }

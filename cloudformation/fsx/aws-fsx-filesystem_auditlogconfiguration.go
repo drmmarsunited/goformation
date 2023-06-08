@@ -8,7 +8,7 @@ import (
 
 // FileSystem_AuditLogConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.AuditLogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-auditlogconfiguration.html
-type FileSystem_AuditLogConfiguration struct {
+type FileSystem_AuditLogConfiguration[T any] struct {
 
 	// AuditLogDestination AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type FileSystem_AuditLogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_AuditLogConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_AuditLogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.AuditLogConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // AccessPoint_ContentTransformation AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.ContentTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-contenttransformation.html
-type AccessPoint_ContentTransformation struct {
+type AccessPoint_ContentTransformation[T any] struct {
 
 	// AwsLambda AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-contenttransformation.html#cfn-s3objectlambda-accesspoint-contenttransformation-awslambda
-	AwsLambda *AccessPoint_AwsLambda `json:"AwsLambda"`
+	AwsLambda *AccessPoint_AwsLambda[any] `json:"AwsLambda"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AccessPoint_ContentTransformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_ContentTransformation) AWSCloudFormationType() string {
+func (r *AccessPoint_ContentTransformation[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPoint.ContentTransformation"
 }

@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_ElasticGpuSpecification AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.ElasticGpuSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-elasticgpuspecification.html
-type LaunchTemplate_ElasticGpuSpecification struct {
+type LaunchTemplate_ElasticGpuSpecification[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_ElasticGpuSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_ElasticGpuSpecification) AWSCloudFormationType() string {
+func (r *LaunchTemplate_ElasticGpuSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.ElasticGpuSpecification"
 }

@@ -12,7 +12,7 @@ import (
 
 // VPNConnection AWS CloudFormation Resource (AWS::EC2::VPNConnection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html
-type VPNConnection struct {
+type VPNConnection[T any] struct {
 
 	// CustomerGatewayId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type VPNConnection struct {
 	// StaticRoutesOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-staticroutesonly
-	StaticRoutesOnly *bool `json:"StaticRoutesOnly,omitempty"`
+	StaticRoutesOnly *T `json:"StaticRoutesOnly,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type VPNConnection struct {
 	// VpnTunnelOptionsSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
-	VpnTunnelOptionsSpecifications []VPNConnection_VpnTunnelOptionsSpecification `json:"VpnTunnelOptionsSpecifications,omitempty"`
+	VpnTunnelOptionsSpecifications []VPNConnection_VpnTunnelOptionsSpecification[any] `json:"VpnTunnelOptionsSpecifications,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -66,14 +66,15 @@ type VPNConnection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPNConnection) AWSCloudFormationType() string {
+func (r *VPNConnection[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPNConnection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPNConnection) MarshalJSON() ([]byte, error) {
-	type Properties VPNConnection
+func (r VPNConnection[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPNConnection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r VPNConnection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPNConnection) UnmarshalJSON(b []byte) error {
-	type Properties VPNConnection
+func (r *VPNConnection[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPNConnection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *VPNConnection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPNConnection(*res.Properties)
+		*r = VPNConnection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

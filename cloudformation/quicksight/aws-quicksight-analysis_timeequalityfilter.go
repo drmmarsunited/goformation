@@ -8,12 +8,12 @@ import (
 
 // Analysis_TimeEqualityFilter AWS CloudFormation Resource (AWS::QuickSight::Analysis.TimeEqualityFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timeequalityfilter.html
-type Analysis_TimeEqualityFilter struct {
+type Analysis_TimeEqualityFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timeequalityfilter.html#cfn-quicksight-analysis-timeequalityfilter-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Analysis_TimeEqualityFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TimeEqualityFilter) AWSCloudFormationType() string {
+func (r *Analysis_TimeEqualityFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TimeEqualityFilter"
 }

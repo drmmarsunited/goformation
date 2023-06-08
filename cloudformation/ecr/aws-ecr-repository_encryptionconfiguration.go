@@ -8,7 +8,7 @@ import (
 
 // Repository_EncryptionConfiguration AWS CloudFormation Resource (AWS::ECR::Repository.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html
-type Repository_EncryptionConfiguration struct {
+type Repository_EncryptionConfiguration[T any] struct {
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Repository_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Repository_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::Repository.EncryptionConfiguration"
 }

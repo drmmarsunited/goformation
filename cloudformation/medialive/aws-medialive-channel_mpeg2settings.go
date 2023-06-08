@@ -8,7 +8,7 @@ import (
 
 // Channel_Mpeg2Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Mpeg2Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html
-type Channel_Mpeg2Settings struct {
+type Channel_Mpeg2Settings[T any] struct {
 
 	// AdaptiveQuantization AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_Mpeg2Settings struct {
 	// FilterSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-filtersettings
-	FilterSettings *Channel_Mpeg2FilterSettings `json:"FilterSettings,omitempty"`
+	FilterSettings *Channel_Mpeg2FilterSettings[any] `json:"FilterSettings,omitempty"`
 
 	// FixedAfd AWS CloudFormation Property
 	// Required: false
@@ -48,27 +48,27 @@ type Channel_Mpeg2Settings struct {
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratedenominator
-	FramerateDenominator *int `json:"FramerateDenominator,omitempty"`
+	FramerateDenominator *T `json:"FramerateDenominator,omitempty"`
 
 	// FramerateNumerator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratenumerator
-	FramerateNumerator *int `json:"FramerateNumerator,omitempty"`
+	FramerateNumerator *T `json:"FramerateNumerator,omitempty"`
 
 	// GopClosedCadence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopclosedcadence
-	GopClosedCadence *int `json:"GopClosedCadence,omitempty"`
+	GopClosedCadence *T `json:"GopClosedCadence,omitempty"`
 
 	// GopNumBFrames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopnumbframes
-	GopNumBFrames *int `json:"GopNumBFrames,omitempty"`
+	GopNumBFrames *T `json:"GopNumBFrames,omitempty"`
 
 	// GopSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopsize
-	GopSize *float64 `json:"GopSize,omitempty"`
+	GopSize *T `json:"GopSize,omitempty"`
 
 	// GopSizeUnits AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type Channel_Mpeg2Settings struct {
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-timecodeburninsettings
-	TimecodeBurninSettings *Channel_TimecodeBurninSettings `json:"TimecodeBurninSettings,omitempty"`
+	TimecodeBurninSettings *Channel_TimecodeBurninSettings[any] `json:"TimecodeBurninSettings,omitempty"`
 
 	// TimecodeInsertion AWS CloudFormation Property
 	// Required: false
@@ -112,6 +112,6 @@ type Channel_Mpeg2Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Mpeg2Settings) AWSCloudFormationType() string {
+func (r *Channel_Mpeg2Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Mpeg2Settings"
 }

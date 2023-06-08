@@ -8,12 +8,12 @@ import (
 
 // InferenceExperiment_ShadowModelVariantConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.ShadowModelVariantConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-shadowmodelvariantconfig.html
-type InferenceExperiment_ShadowModelVariantConfig struct {
+type InferenceExperiment_ShadowModelVariantConfig[T any] struct {
 
 	// SamplingPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-shadowmodelvariantconfig.html#cfn-sagemaker-inferenceexperiment-shadowmodelvariantconfig-samplingpercentage
-	SamplingPercentage int `json:"SamplingPercentage"`
+	SamplingPercentage T `json:"SamplingPercentage"`
 
 	// ShadowModelVariantName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InferenceExperiment_ShadowModelVariantConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_ShadowModelVariantConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_ShadowModelVariantConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.ShadowModelVariantConfig"
 }

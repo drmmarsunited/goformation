@@ -12,7 +12,7 @@ import (
 
 // ModelQualityJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html
-type ModelQualityJobDefinition struct {
+type ModelQualityJobDefinition[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
@@ -27,32 +27,32 @@ type ModelQualityJobDefinition struct {
 	// JobResources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobresources
-	JobResources *ModelQualityJobDefinition_MonitoringResources `json:"JobResources"`
+	JobResources *ModelQualityJobDefinition_MonitoringResources[any] `json:"JobResources"`
 
 	// ModelQualityAppSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification
-	ModelQualityAppSpecification *ModelQualityJobDefinition_ModelQualityAppSpecification `json:"ModelQualityAppSpecification"`
+	ModelQualityAppSpecification *ModelQualityJobDefinition_ModelQualityAppSpecification[any] `json:"ModelQualityAppSpecification"`
 
 	// ModelQualityBaselineConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig
-	ModelQualityBaselineConfig *ModelQualityJobDefinition_ModelQualityBaselineConfig `json:"ModelQualityBaselineConfig,omitempty"`
+	ModelQualityBaselineConfig *ModelQualityJobDefinition_ModelQualityBaselineConfig[any] `json:"ModelQualityBaselineConfig,omitempty"`
 
 	// ModelQualityJobInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput
-	ModelQualityJobInput *ModelQualityJobDefinition_ModelQualityJobInput `json:"ModelQualityJobInput"`
+	ModelQualityJobInput *ModelQualityJobDefinition_ModelQualityJobInput[any] `json:"ModelQualityJobInput"`
 
 	// ModelQualityJobOutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjoboutputconfig
-	ModelQualityJobOutputConfig *ModelQualityJobDefinition_MonitoringOutputConfig `json:"ModelQualityJobOutputConfig"`
+	ModelQualityJobOutputConfig *ModelQualityJobDefinition_MonitoringOutputConfig[any] `json:"ModelQualityJobOutputConfig"`
 
 	// NetworkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig
-	NetworkConfig *ModelQualityJobDefinition_NetworkConfig `json:"NetworkConfig,omitempty"`
+	NetworkConfig *ModelQualityJobDefinition_NetworkConfig[any] `json:"NetworkConfig,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type ModelQualityJobDefinition struct {
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition
-	StoppingCondition *ModelQualityJobDefinition_StoppingCondition `json:"StoppingCondition,omitempty"`
+	StoppingCondition *ModelQualityJobDefinition_StoppingCondition[any] `json:"StoppingCondition,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type ModelQualityJobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModelQualityJobDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ModelQualityJobDefinition
+func (r ModelQualityJobDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModelQualityJobDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r ModelQualityJobDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModelQualityJobDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ModelQualityJobDefinition
+func (r *ModelQualityJobDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModelQualityJobDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *ModelQualityJobDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModelQualityJobDefinition(*res.Properties)
+		*r = ModelQualityJobDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

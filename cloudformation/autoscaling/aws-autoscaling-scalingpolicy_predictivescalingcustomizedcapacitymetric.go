@@ -8,12 +8,12 @@ import (
 
 // ScalingPolicy_PredictiveScalingCustomizedCapacityMetric AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingCustomizedCapacityMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingcustomizedcapacitymetric.html
-type ScalingPolicy_PredictiveScalingCustomizedCapacityMetric struct {
+type ScalingPolicy_PredictiveScalingCustomizedCapacityMetric[T any] struct {
 
 	// MetricDataQueries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingcustomizedcapacitymetric.html#cfn-autoscaling-scalingpolicy-predictivescalingcustomizedcapacitymetric-metricdataqueries
-	MetricDataQueries []ScalingPolicy_MetricDataQuery `json:"MetricDataQueries"`
+	MetricDataQueries []ScalingPolicy_MetricDataQuery[any] `json:"MetricDataQueries"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ScalingPolicy_PredictiveScalingCustomizedCapacityMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_PredictiveScalingCustomizedCapacityMetric) AWSCloudFormationType() string {
+func (r *ScalingPolicy_PredictiveScalingCustomizedCapacityMetric[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.PredictiveScalingCustomizedCapacityMetric"
 }

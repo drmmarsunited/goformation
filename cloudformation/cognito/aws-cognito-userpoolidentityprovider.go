@@ -11,7 +11,7 @@ import (
 
 // UserPoolIdentityProvider AWS CloudFormation Resource (AWS::Cognito::UserPoolIdentityProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html
-type UserPoolIdentityProvider struct {
+type UserPoolIdentityProvider[T any] struct {
 
 	// AttributeMapping AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type UserPoolIdentityProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolIdentityProvider) AWSCloudFormationType() string {
+func (r *UserPoolIdentityProvider[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolIdentityProvider"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolIdentityProvider) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolIdentityProvider
+func (r UserPoolIdentityProvider[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolIdentityProvider[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r UserPoolIdentityProvider) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolIdentityProvider) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolIdentityProvider
+func (r *UserPoolIdentityProvider[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolIdentityProvider[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *UserPoolIdentityProvider) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolIdentityProvider(*res.Properties)
+		*r = UserPoolIdentityProvider[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

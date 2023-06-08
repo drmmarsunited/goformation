@@ -8,12 +8,12 @@ import (
 
 // SubscriptionDefinition_SubscriptionDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html
-type SubscriptionDefinition_SubscriptionDefinitionVersion struct {
+type SubscriptionDefinition_SubscriptionDefinitionVersion[T any] struct {
 
 	// Subscriptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions
-	Subscriptions []SubscriptionDefinition_Subscription `json:"Subscriptions"`
+	Subscriptions []SubscriptionDefinition_Subscription[any] `json:"Subscriptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type SubscriptionDefinition_SubscriptionDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubscriptionDefinition_SubscriptionDefinitionVersion) AWSCloudFormationType() string {
+func (r *SubscriptionDefinition_SubscriptionDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion"
 }

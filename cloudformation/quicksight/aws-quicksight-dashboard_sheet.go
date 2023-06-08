@@ -8,7 +8,7 @@ import (
 
 // Dashboard_Sheet AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Sheet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html
-type Dashboard_Sheet struct {
+type Dashboard_Sheet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_Sheet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Sheet) AWSCloudFormationType() string {
+func (r *Dashboard_Sheet[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Sheet"
 }

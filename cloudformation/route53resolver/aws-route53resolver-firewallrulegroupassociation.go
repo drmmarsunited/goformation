@@ -12,7 +12,7 @@ import (
 
 // FirewallRuleGroupAssociation AWS CloudFormation Resource (AWS::Route53Resolver::FirewallRuleGroupAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html
-type FirewallRuleGroupAssociation struct {
+type FirewallRuleGroupAssociation[T any] struct {
 
 	// FirewallRuleGroupId AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type FirewallRuleGroupAssociation struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#cfn-route53resolver-firewallrulegroupassociation-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type FirewallRuleGroupAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallRuleGroupAssociation) AWSCloudFormationType() string {
+func (r *FirewallRuleGroupAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::FirewallRuleGroupAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FirewallRuleGroupAssociation) MarshalJSON() ([]byte, error) {
-	type Properties FirewallRuleGroupAssociation
+func (r FirewallRuleGroupAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties FirewallRuleGroupAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r FirewallRuleGroupAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FirewallRuleGroupAssociation) UnmarshalJSON(b []byte) error {
-	type Properties FirewallRuleGroupAssociation
+func (r *FirewallRuleGroupAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties FirewallRuleGroupAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *FirewallRuleGroupAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FirewallRuleGroupAssociation(*res.Properties)
+		*r = FirewallRuleGroupAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

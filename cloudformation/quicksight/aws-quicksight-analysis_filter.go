@@ -8,42 +8,42 @@ import (
 
 // Analysis_Filter AWS CloudFormation Resource (AWS::QuickSight::Analysis.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html
-type Analysis_Filter struct {
+type Analysis_Filter[T any] struct {
 
 	// CategoryFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-categoryfilter
-	CategoryFilter *Analysis_CategoryFilter `json:"CategoryFilter,omitempty"`
+	CategoryFilter *Analysis_CategoryFilter[any] `json:"CategoryFilter,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-numericequalityfilter
-	NumericEqualityFilter *Analysis_NumericEqualityFilter `json:"NumericEqualityFilter,omitempty"`
+	NumericEqualityFilter *Analysis_NumericEqualityFilter[any] `json:"NumericEqualityFilter,omitempty"`
 
 	// NumericRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-numericrangefilter
-	NumericRangeFilter *Analysis_NumericRangeFilter `json:"NumericRangeFilter,omitempty"`
+	NumericRangeFilter *Analysis_NumericRangeFilter[any] `json:"NumericRangeFilter,omitempty"`
 
 	// RelativeDatesFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-relativedatesfilter
-	RelativeDatesFilter *Analysis_RelativeDatesFilter `json:"RelativeDatesFilter,omitempty"`
+	RelativeDatesFilter *Analysis_RelativeDatesFilter[any] `json:"RelativeDatesFilter,omitempty"`
 
 	// TimeEqualityFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-timeequalityfilter
-	TimeEqualityFilter *Analysis_TimeEqualityFilter `json:"TimeEqualityFilter,omitempty"`
+	TimeEqualityFilter *Analysis_TimeEqualityFilter[any] `json:"TimeEqualityFilter,omitempty"`
 
 	// TimeRangeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-timerangefilter
-	TimeRangeFilter *Analysis_TimeRangeFilter `json:"TimeRangeFilter,omitempty"`
+	TimeRangeFilter *Analysis_TimeRangeFilter[any] `json:"TimeRangeFilter,omitempty"`
 
 	// TopBottomFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filter.html#cfn-quicksight-analysis-filter-topbottomfilter
-	TopBottomFilter *Analysis_TopBottomFilter `json:"TopBottomFilter,omitempty"`
+	TopBottomFilter *Analysis_TopBottomFilter[any] `json:"TopBottomFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_Filter) AWSCloudFormationType() string {
+func (r *Analysis_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.Filter"
 }

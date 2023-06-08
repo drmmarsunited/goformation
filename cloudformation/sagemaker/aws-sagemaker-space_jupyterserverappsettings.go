@@ -8,12 +8,12 @@ import (
 
 // Space_JupyterServerAppSettings AWS CloudFormation Resource (AWS::SageMaker::Space.JupyterServerAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html
-type Space_JupyterServerAppSettings struct {
+type Space_JupyterServerAppSettings[T any] struct {
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html#cfn-sagemaker-space-jupyterserverappsettings-defaultresourcespec
-	DefaultResourceSpec *Space_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Space_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Space_JupyterServerAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Space_JupyterServerAppSettings) AWSCloudFormationType() string {
+func (r *Space_JupyterServerAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Space.JupyterServerAppSettings"
 }

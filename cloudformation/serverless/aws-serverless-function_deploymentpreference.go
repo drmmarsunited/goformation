@@ -8,7 +8,7 @@ import (
 
 // Function_DeploymentPreference AWS CloudFormation Resource (AWS::Serverless::Function.DeploymentPreference)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#deploymentpreference-object
-type Function_DeploymentPreference struct {
+type Function_DeploymentPreference[T any] struct {
 
 	// Alarms AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Function_DeploymentPreference struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#deploymentpreference-object
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Hooks AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Function_DeploymentPreference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DeploymentPreference) AWSCloudFormationType() string {
+func (r *Function_DeploymentPreference[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DeploymentPreference"
 }

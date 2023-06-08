@@ -11,7 +11,7 @@ import (
 
 // Index AWS CloudFormation Resource (AWS::ResourceExplorer2::Index)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-index.html
-type Index struct {
+type Index[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type Index struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index) AWSCloudFormationType() string {
+func (r *Index[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceExplorer2::Index"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Index) MarshalJSON() ([]byte, error) {
-	type Properties Index
+func (r Index[any]) MarshalJSON() ([]byte, error) {
+	type Properties Index[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Index) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Index) UnmarshalJSON(b []byte) error {
-	type Properties Index
+func (r *Index[any]) UnmarshalJSON(b []byte) error {
+	type Properties Index[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Index) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Index(*res.Properties)
+		*r = Index[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

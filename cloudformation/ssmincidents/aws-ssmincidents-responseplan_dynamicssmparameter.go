@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_DynamicSsmParameter AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.DynamicSsmParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-dynamicssmparameter.html
-type ResponsePlan_DynamicSsmParameter struct {
+type ResponsePlan_DynamicSsmParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResponsePlan_DynamicSsmParameter struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-dynamicssmparameter.html#cfn-ssmincidents-responseplan-dynamicssmparameter-value
-	Value *ResponsePlan_DynamicSsmParameterValue `json:"Value"`
+	Value *ResponsePlan_DynamicSsmParameterValue[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResponsePlan_DynamicSsmParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_DynamicSsmParameter) AWSCloudFormationType() string {
+func (r *ResponsePlan_DynamicSsmParameter[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.DynamicSsmParameter"
 }

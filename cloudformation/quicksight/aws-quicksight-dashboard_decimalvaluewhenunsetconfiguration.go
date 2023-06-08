@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DecimalValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DecimalValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalvaluewhenunsetconfiguration.html
-type Dashboard_DecimalValueWhenUnsetConfiguration struct {
+type Dashboard_DecimalValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalvaluewhenunsetconfiguration.html#cfn-quicksight-dashboard-decimalvaluewhenunsetconfiguration-customvalue
-	CustomValue *float64 `json:"CustomValue,omitempty"`
+	CustomValue *T `json:"CustomValue,omitempty"`
 
 	// ValueWhenUnsetOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_DecimalValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DecimalValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DecimalValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DecimalValueWhenUnsetConfiguration"
 }

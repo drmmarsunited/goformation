@@ -8,7 +8,7 @@ import (
 
 // Api_EndpointConfiguration AWS CloudFormation Resource (AWS::Serverless::Api.EndpointConfiguration)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-endpointconfiguration.html
-type Api_EndpointConfiguration struct {
+type Api_EndpointConfiguration[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Api_EndpointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api_EndpointConfiguration) AWSCloudFormationType() string {
+func (r *Api_EndpointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Api.EndpointConfiguration"
 }

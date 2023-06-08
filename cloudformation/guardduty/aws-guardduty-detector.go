@@ -12,22 +12,22 @@ import (
 
 // Detector AWS CloudFormation Resource (AWS::GuardDuty::Detector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html
-type Detector struct {
+type Detector[T any] struct {
 
 	// DataSources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-datasources
-	DataSources *Detector_CFNDataSourceConfigurations `json:"DataSources,omitempty"`
+	DataSources *Detector_CFNDataSourceConfigurations[any] `json:"DataSources,omitempty"`
 
 	// Enable AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable
-	Enable bool `json:"Enable"`
+	Enable T `json:"Enable"`
 
 	// Features AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-features
-	Features []Detector_FeatureConfigurations `json:"Features,omitempty"`
+	Features []Detector_FeatureConfigurations[any] `json:"Features,omitempty"`
 
 	// FindingPublishingFrequency AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type Detector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector) AWSCloudFormationType() string {
+func (r *Detector[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Detector) MarshalJSON() ([]byte, error) {
-	type Properties Detector
+func (r Detector[any]) MarshalJSON() ([]byte, error) {
+	type Properties Detector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Detector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Detector) UnmarshalJSON(b []byte) error {
-	type Properties Detector
+func (r *Detector[any]) UnmarshalJSON(b []byte) error {
+	type Properties Detector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Detector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Detector(*res.Properties)
+		*r = Detector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

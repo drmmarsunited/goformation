@@ -8,12 +8,12 @@ import (
 
 // Template_EmptyVisual AWS CloudFormation Resource (AWS::QuickSight::Template.EmptyVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-emptyvisual.html
-type Template_EmptyVisual struct {
+type Template_EmptyVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-emptyvisual.html#cfn-quicksight-template-emptyvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_EmptyVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_EmptyVisual) AWSCloudFormationType() string {
+func (r *Template_EmptyVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.EmptyVisual"
 }

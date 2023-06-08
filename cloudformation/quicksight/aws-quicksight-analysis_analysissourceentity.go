@@ -8,12 +8,12 @@ import (
 
 // Analysis_AnalysisSourceEntity AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnalysisSourceEntity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourceentity.html
-type Analysis_AnalysisSourceEntity struct {
+type Analysis_AnalysisSourceEntity[T any] struct {
 
 	// SourceTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourceentity.html#cfn-quicksight-analysis-analysissourceentity-sourcetemplate
-	SourceTemplate *Analysis_AnalysisSourceTemplate `json:"SourceTemplate,omitempty"`
+	SourceTemplate *Analysis_AnalysisSourceTemplate[any] `json:"SourceTemplate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_AnalysisSourceEntity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AnalysisSourceEntity) AWSCloudFormationType() string {
+func (r *Analysis_AnalysisSourceEntity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AnalysisSourceEntity"
 }

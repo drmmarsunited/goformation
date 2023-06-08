@@ -8,7 +8,7 @@ import (
 
 // DBInstance_MasterUserSecret AWS CloudFormation Resource (AWS::RDS::DBInstance.MasterUserSecret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html
-type DBInstance_MasterUserSecret struct {
+type DBInstance_MasterUserSecret[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBInstance_MasterUserSecret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance_MasterUserSecret) AWSCloudFormationType() string {
+func (r *DBInstance_MasterUserSecret[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance.MasterUserSecret"
 }

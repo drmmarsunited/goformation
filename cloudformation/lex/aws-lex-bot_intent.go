@@ -8,7 +8,7 @@ import (
 
 // Bot_Intent AWS CloudFormation Resource (AWS::Lex::Bot.Intent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html
-type Bot_Intent struct {
+type Bot_Intent[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,37 +18,37 @@ type Bot_Intent struct {
 	// DialogCodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-dialogcodehook
-	DialogCodeHook *Bot_DialogCodeHookSetting `json:"DialogCodeHook,omitempty"`
+	DialogCodeHook *Bot_DialogCodeHookSetting[any] `json:"DialogCodeHook,omitempty"`
 
 	// FulfillmentCodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-fulfillmentcodehook
-	FulfillmentCodeHook *Bot_FulfillmentCodeHookSetting `json:"FulfillmentCodeHook,omitempty"`
+	FulfillmentCodeHook *Bot_FulfillmentCodeHookSetting[any] `json:"FulfillmentCodeHook,omitempty"`
 
 	// InitialResponseSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-initialresponsesetting
-	InitialResponseSetting *Bot_InitialResponseSetting `json:"InitialResponseSetting,omitempty"`
+	InitialResponseSetting *Bot_InitialResponseSetting[any] `json:"InitialResponseSetting,omitempty"`
 
 	// InputContexts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-inputcontexts
-	InputContexts []Bot_InputContext `json:"InputContexts,omitempty"`
+	InputContexts []Bot_InputContext[any] `json:"InputContexts,omitempty"`
 
 	// IntentClosingSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-intentclosingsetting
-	IntentClosingSetting *Bot_IntentClosingSetting `json:"IntentClosingSetting,omitempty"`
+	IntentClosingSetting *Bot_IntentClosingSetting[any] `json:"IntentClosingSetting,omitempty"`
 
 	// IntentConfirmationSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-intentconfirmationsetting
-	IntentConfirmationSetting *Bot_IntentConfirmationSetting `json:"IntentConfirmationSetting,omitempty"`
+	IntentConfirmationSetting *Bot_IntentConfirmationSetting[any] `json:"IntentConfirmationSetting,omitempty"`
 
 	// KendraConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-kendraconfiguration
-	KendraConfiguration *Bot_KendraConfiguration `json:"KendraConfiguration,omitempty"`
+	KendraConfiguration *Bot_KendraConfiguration[any] `json:"KendraConfiguration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -58,7 +58,7 @@ type Bot_Intent struct {
 	// OutputContexts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-outputcontexts
-	OutputContexts []Bot_OutputContext `json:"OutputContexts,omitempty"`
+	OutputContexts []Bot_OutputContext[any] `json:"OutputContexts,omitempty"`
 
 	// ParentIntentSignature AWS CloudFormation Property
 	// Required: false
@@ -68,17 +68,17 @@ type Bot_Intent struct {
 	// SampleUtterances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-sampleutterances
-	SampleUtterances []Bot_SampleUtterance `json:"SampleUtterances,omitempty"`
+	SampleUtterances []Bot_SampleUtterance[any] `json:"SampleUtterances,omitempty"`
 
 	// SlotPriorities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-slotpriorities
-	SlotPriorities []Bot_SlotPriority `json:"SlotPriorities,omitempty"`
+	SlotPriorities []Bot_SlotPriority[any] `json:"SlotPriorities,omitempty"`
 
 	// Slots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-slots
-	Slots []Bot_Slot `json:"Slots,omitempty"`
+	Slots []Bot_Slot[any] `json:"Slots,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -97,6 +97,6 @@ type Bot_Intent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_Intent) AWSCloudFormationType() string {
+func (r *Bot_Intent[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.Intent"
 }

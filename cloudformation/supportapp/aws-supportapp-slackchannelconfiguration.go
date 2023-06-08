@@ -11,7 +11,7 @@ import (
 
 // SlackChannelConfiguration AWS CloudFormation Resource (AWS::SupportApp::SlackChannelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html
-type SlackChannelConfiguration struct {
+type SlackChannelConfiguration[T any] struct {
 
 	// ChannelId AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type SlackChannelConfiguration struct {
 	// NotifyOnAddCorrespondenceToCase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-notifyonaddcorrespondencetocase
-	NotifyOnAddCorrespondenceToCase *bool `json:"NotifyOnAddCorrespondenceToCase,omitempty"`
+	NotifyOnAddCorrespondenceToCase *T `json:"NotifyOnAddCorrespondenceToCase,omitempty"`
 
 	// NotifyOnCaseSeverity AWS CloudFormation Property
 	// Required: true
@@ -41,12 +41,12 @@ type SlackChannelConfiguration struct {
 	// NotifyOnCreateOrReopenCase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-notifyoncreateorreopencase
-	NotifyOnCreateOrReopenCase *bool `json:"NotifyOnCreateOrReopenCase,omitempty"`
+	NotifyOnCreateOrReopenCase *T `json:"NotifyOnCreateOrReopenCase,omitempty"`
 
 	// NotifyOnResolveCase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-notifyonresolvecase
-	NotifyOnResolveCase *bool `json:"NotifyOnResolveCase,omitempty"`
+	NotifyOnResolveCase *T `json:"NotifyOnResolveCase,omitempty"`
 
 	// TeamId AWS CloudFormation Property
 	// Required: true
@@ -70,14 +70,15 @@ type SlackChannelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SlackChannelConfiguration) AWSCloudFormationType() string {
+func (r *SlackChannelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SupportApp::SlackChannelConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SlackChannelConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties SlackChannelConfiguration
+func (r SlackChannelConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties SlackChannelConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r SlackChannelConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SlackChannelConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties SlackChannelConfiguration
+func (r *SlackChannelConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties SlackChannelConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *SlackChannelConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SlackChannelConfiguration(*res.Properties)
+		*r = SlackChannelConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

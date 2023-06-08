@@ -8,7 +8,7 @@ import (
 
 // Function_DeadLetterQueue AWS CloudFormation Resource (AWS::Serverless::Function.DeadLetterQueue)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#deadletterqueue-object
-type Function_DeadLetterQueue struct {
+type Function_DeadLetterQueue[T any] struct {
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_DeadLetterQueue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_DeadLetterQueue) AWSCloudFormationType() string {
+func (r *Function_DeadLetterQueue[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DeadLetterQueue"
 }

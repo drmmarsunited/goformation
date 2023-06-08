@@ -11,7 +11,7 @@ import (
 
 // LaunchNotificationConstraint AWS CloudFormation Resource (AWS::ServiceCatalog::LaunchNotificationConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
-type LaunchNotificationConstraint struct {
+type LaunchNotificationConstraint[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type LaunchNotificationConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchNotificationConstraint) AWSCloudFormationType() string {
+func (r *LaunchNotificationConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::LaunchNotificationConstraint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LaunchNotificationConstraint) MarshalJSON() ([]byte, error) {
-	type Properties LaunchNotificationConstraint
+func (r LaunchNotificationConstraint[any]) MarshalJSON() ([]byte, error) {
+	type Properties LaunchNotificationConstraint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r LaunchNotificationConstraint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LaunchNotificationConstraint) UnmarshalJSON(b []byte) error {
-	type Properties LaunchNotificationConstraint
+func (r *LaunchNotificationConstraint[any]) UnmarshalJSON(b []byte) error {
+	type Properties LaunchNotificationConstraint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *LaunchNotificationConstraint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LaunchNotificationConstraint(*res.Properties)
+		*r = LaunchNotificationConstraint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

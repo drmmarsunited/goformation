@@ -8,12 +8,12 @@ import (
 
 // Dataset_DeltaTimeSessionWindowConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html
-type Dataset_DeltaTimeSessionWindowConfiguration struct {
+type Dataset_DeltaTimeSessionWindowConfiguration[T any] struct {
 
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes
-	TimeoutInMinutes int `json:"TimeoutInMinutes"`
+	TimeoutInMinutes T `json:"TimeoutInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dataset_DeltaTimeSessionWindowConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DeltaTimeSessionWindowConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_DeltaTimeSessionWindowConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration"
 }

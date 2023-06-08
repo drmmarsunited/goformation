@@ -8,7 +8,7 @@ import (
 
 // Campaign_CampaignCustomMessage AWS CloudFormation Resource (AWS::Pinpoint::Campaign.CampaignCustomMessage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigncustommessage.html
-type Campaign_CampaignCustomMessage struct {
+type Campaign_CampaignCustomMessage[T any] struct {
 
 	// Data AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Campaign_CampaignCustomMessage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CampaignCustomMessage) AWSCloudFormationType() string {
+func (r *Campaign_CampaignCustomMessage[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.CampaignCustomMessage"
 }

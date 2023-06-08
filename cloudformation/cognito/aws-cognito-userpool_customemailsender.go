@@ -8,7 +8,7 @@ import (
 
 // UserPool_CustomEmailSender AWS CloudFormation Resource (AWS::Cognito::UserPool.CustomEmailSender)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customemailsender.html
-type UserPool_CustomEmailSender struct {
+type UserPool_CustomEmailSender[T any] struct {
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPool_CustomEmailSender struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_CustomEmailSender) AWSCloudFormationType() string {
+func (r *UserPool_CustomEmailSender[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.CustomEmailSender"
 }

@@ -12,12 +12,12 @@ import (
 
 // TrustAnchor AWS CloudFormation Resource (AWS::RolesAnywhere::TrustAnchor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html
-type TrustAnchor struct {
+type TrustAnchor[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type TrustAnchor struct {
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-source
-	Source *TrustAnchor_Source `json:"Source"`
+	Source *TrustAnchor_Source[any] `json:"Source"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type TrustAnchor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TrustAnchor) AWSCloudFormationType() string {
+func (r *TrustAnchor[any]) AWSCloudFormationType() string {
 	return "AWS::RolesAnywhere::TrustAnchor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TrustAnchor) MarshalJSON() ([]byte, error) {
-	type Properties TrustAnchor
+func (r TrustAnchor[any]) MarshalJSON() ([]byte, error) {
+	type Properties TrustAnchor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r TrustAnchor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TrustAnchor) UnmarshalJSON(b []byte) error {
-	type Properties TrustAnchor
+func (r *TrustAnchor[any]) UnmarshalJSON(b []byte) error {
+	type Properties TrustAnchor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *TrustAnchor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TrustAnchor(*res.Properties)
+		*r = TrustAnchor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

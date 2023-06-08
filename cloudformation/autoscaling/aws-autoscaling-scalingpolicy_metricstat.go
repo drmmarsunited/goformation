@@ -8,12 +8,12 @@ import (
 
 // ScalingPolicy_MetricStat AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.MetricStat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricstat.html
-type ScalingPolicy_MetricStat struct {
+type ScalingPolicy_MetricStat[T any] struct {
 
 	// Metric AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricstat.html#cfn-autoscaling-scalingpolicy-metricstat-metric
-	Metric *ScalingPolicy_Metric `json:"Metric"`
+	Metric *ScalingPolicy_Metric[any] `json:"Metric"`
 
 	// Stat AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ScalingPolicy_MetricStat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_MetricStat) AWSCloudFormationType() string {
+func (r *ScalingPolicy_MetricStat[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.MetricStat"
 }

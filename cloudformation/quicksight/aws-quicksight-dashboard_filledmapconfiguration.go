@@ -8,37 +8,37 @@ import (
 
 // Dashboard_FilledMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilledMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html
-type Dashboard_FilledMapConfiguration struct {
+type Dashboard_FilledMapConfiguration[T any] struct {
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-fieldwells
-	FieldWells *Dashboard_FilledMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_FilledMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// MapStyleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-mapstyleoptions
-	MapStyleOptions *Dashboard_GeospatialMapStyleOptions `json:"MapStyleOptions,omitempty"`
+	MapStyleOptions *Dashboard_GeospatialMapStyleOptions[any] `json:"MapStyleOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_FilledMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_FilledMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// WindowOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconfiguration.html#cfn-quicksight-dashboard-filledmapconfiguration-windowoptions
-	WindowOptions *Dashboard_GeospatialWindowOptions `json:"WindowOptions,omitempty"`
+	WindowOptions *Dashboard_GeospatialWindowOptions[any] `json:"WindowOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Dashboard_FilledMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilledMapConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FilledMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilledMapConfiguration"
 }

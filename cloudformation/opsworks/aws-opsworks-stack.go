@@ -12,7 +12,7 @@ import (
 
 // Stack AWS CloudFormation Resource (AWS::OpsWorks::Stack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
-type Stack struct {
+type Stack[T any] struct {
 
 	// AgentVersion AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Stack struct {
 	// ChefConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-chefconfiguration
-	ChefConfiguration *Stack_ChefConfiguration `json:"ChefConfiguration,omitempty"`
+	ChefConfiguration *Stack_ChefConfiguration[any] `json:"ChefConfiguration,omitempty"`
 
 	// CloneAppIds AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type Stack struct {
 	// ClonePermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
-	ClonePermissions *bool `json:"ClonePermissions,omitempty"`
+	ClonePermissions *T `json:"ClonePermissions,omitempty"`
 
 	// ConfigurationManager AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-configmanager
-	ConfigurationManager *Stack_StackConfigurationManager `json:"ConfigurationManager,omitempty"`
+	ConfigurationManager *Stack_StackConfigurationManager[any] `json:"ConfigurationManager,omitempty"`
 
 	// CustomCookbooksSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custcookbooksource
-	CustomCookbooksSource *Stack_Source `json:"CustomCookbooksSource,omitempty"`
+	CustomCookbooksSource *Stack_Source[any] `json:"CustomCookbooksSource,omitempty"`
 
 	// CustomJson AWS CloudFormation Property
 	// Required: false
@@ -92,7 +92,7 @@ type Stack struct {
 	// ElasticIps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-elasticips
-	ElasticIps []Stack_ElasticIp `json:"ElasticIps,omitempty"`
+	ElasticIps []Stack_ElasticIp[any] `json:"ElasticIps,omitempty"`
 
 	// HostnameTheme AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type Stack struct {
 	// RdsDbInstances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-rdsdbinstances
-	RdsDbInstances []Stack_RdsDbInstance `json:"RdsDbInstances,omitempty"`
+	RdsDbInstances []Stack_RdsDbInstance[any] `json:"RdsDbInstances,omitempty"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
@@ -127,12 +127,12 @@ type Stack struct {
 	// UseCustomCookbooks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks
-	UseCustomCookbooks *bool `json:"UseCustomCookbooks,omitempty"`
+	UseCustomCookbooks *T `json:"UseCustomCookbooks,omitempty"`
 
 	// UseOpsworksSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
-	UseOpsworksSecurityGroups *bool `json:"UseOpsworksSecurityGroups,omitempty"`
+	UseOpsworksSecurityGroups *T `json:"UseOpsworksSecurityGroups,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
@@ -156,14 +156,15 @@ type Stack struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack) AWSCloudFormationType() string {
+func (r *Stack[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Stack) MarshalJSON() ([]byte, error) {
-	type Properties Stack
+func (r Stack[any]) MarshalJSON() ([]byte, error) {
+	type Properties Stack[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -185,8 +186,9 @@ func (r Stack) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Stack) UnmarshalJSON(b []byte) error {
-	type Properties Stack
+func (r *Stack[any]) UnmarshalJSON(b []byte) error {
+	type Properties Stack[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -206,7 +208,7 @@ func (r *Stack) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Stack(*res.Properties)
+		*r = Stack[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

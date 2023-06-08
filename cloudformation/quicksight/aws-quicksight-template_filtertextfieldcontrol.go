@@ -8,12 +8,12 @@ import (
 
 // Template_FilterTextFieldControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterTextFieldControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtertextfieldcontrol.html
-type Template_FilterTextFieldControl struct {
+type Template_FilterTextFieldControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtertextfieldcontrol.html#cfn-quicksight-template-filtertextfieldcontrol-displayoptions
-	DisplayOptions *Template_TextFieldControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_TextFieldControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Template_FilterTextFieldControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterTextFieldControl) AWSCloudFormationType() string {
+func (r *Template_FilterTextFieldControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterTextFieldControl"
 }

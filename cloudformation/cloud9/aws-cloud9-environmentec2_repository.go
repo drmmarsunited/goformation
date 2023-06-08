@@ -8,7 +8,7 @@ import (
 
 // EnvironmentEC2_Repository AWS CloudFormation Resource (AWS::Cloud9::EnvironmentEC2.Repository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html
-type EnvironmentEC2_Repository struct {
+type EnvironmentEC2_Repository[T any] struct {
 
 	// PathComponent AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type EnvironmentEC2_Repository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EnvironmentEC2_Repository) AWSCloudFormationType() string {
+func (r *EnvironmentEC2_Repository[any]) AWSCloudFormationType() string {
 	return "AWS::Cloud9::EnvironmentEC2.Repository"
 }

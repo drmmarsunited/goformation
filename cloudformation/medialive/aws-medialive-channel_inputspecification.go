@@ -8,7 +8,7 @@ import (
 
 // Channel_InputSpecification AWS CloudFormation Resource (AWS::MediaLive::Channel.InputSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html
-type Channel_InputSpecification struct {
+type Channel_InputSpecification[T any] struct {
 
 	// Codec AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_InputSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_InputSpecification) AWSCloudFormationType() string {
+func (r *Channel_InputSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.InputSpecification"
 }

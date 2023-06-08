@@ -8,17 +8,17 @@ import (
 
 // Analysis_DropDownControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.DropDownControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html
-type Analysis_DropDownControlDisplayOptions struct {
+type Analysis_DropDownControlDisplayOptions[T any] struct {
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html#cfn-quicksight-analysis-dropdowncontroldisplayoptions-selectalloptions
-	SelectAllOptions *Analysis_ListControlSelectAllOptions `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *Analysis_ListControlSelectAllOptions[any] `json:"SelectAllOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html#cfn-quicksight-analysis-dropdowncontroldisplayoptions-titleoptions
-	TitleOptions *Analysis_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Analysis_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_DropDownControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DropDownControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Analysis_DropDownControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DropDownControlDisplayOptions"
 }

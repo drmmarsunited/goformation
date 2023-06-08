@@ -8,7 +8,7 @@ import (
 
 // ConformancePack_ConformancePackInputParameter AWS CloudFormation Resource (AWS::Config::ConformancePack.ConformancePackInputParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html
-type ConformancePack_ConformancePackInputParameter struct {
+type ConformancePack_ConformancePackInputParameter[T any] struct {
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConformancePack_ConformancePackInputParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConformancePack_ConformancePackInputParameter) AWSCloudFormationType() string {
+func (r *ConformancePack_ConformancePackInputParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConformancePack.ConformancePackInputParameter"
 }

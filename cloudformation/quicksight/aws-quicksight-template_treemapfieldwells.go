@@ -8,12 +8,12 @@ import (
 
 // Template_TreeMapFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.TreeMapFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapfieldwells.html
-type Template_TreeMapFieldWells struct {
+type Template_TreeMapFieldWells[T any] struct {
 
 	// TreeMapAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapfieldwells.html#cfn-quicksight-template-treemapfieldwells-treemapaggregatedfieldwells
-	TreeMapAggregatedFieldWells *Template_TreeMapAggregatedFieldWells `json:"TreeMapAggregatedFieldWells,omitempty"`
+	TreeMapAggregatedFieldWells *Template_TreeMapAggregatedFieldWells[any] `json:"TreeMapAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_TreeMapFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TreeMapFieldWells) AWSCloudFormationType() string {
+func (r *Template_TreeMapFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TreeMapFieldWells"
 }

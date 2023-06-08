@@ -8,7 +8,7 @@ import (
 
 // TaskSet_AwsVpcConfiguration AWS CloudFormation Resource (AWS::ECS::TaskSet.AwsVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html
-type TaskSet_AwsVpcConfiguration struct {
+type TaskSet_AwsVpcConfiguration[T any] struct {
 
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskSet_AwsVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskSet_AwsVpcConfiguration) AWSCloudFormationType() string {
+func (r *TaskSet_AwsVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskSet.AwsVpcConfiguration"
 }

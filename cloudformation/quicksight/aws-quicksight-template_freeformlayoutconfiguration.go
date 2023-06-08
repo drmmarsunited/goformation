@@ -8,17 +8,17 @@ import (
 
 // Template_FreeFormLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.FreeFormLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutconfiguration.html
-type Template_FreeFormLayoutConfiguration struct {
+type Template_FreeFormLayoutConfiguration[T any] struct {
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutconfiguration.html#cfn-quicksight-template-freeformlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Template_FreeFormLayoutCanvasSizeOptions `json:"CanvasSizeOptions,omitempty"`
+	CanvasSizeOptions *Template_FreeFormLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions,omitempty"`
 
 	// Elements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutconfiguration.html#cfn-quicksight-template-freeformlayoutconfiguration-elements
-	Elements []Template_FreeFormLayoutElement `json:"Elements"`
+	Elements []Template_FreeFormLayoutElement[any] `json:"Elements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_FreeFormLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FreeFormLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_FreeFormLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FreeFormLayoutConfiguration"
 }

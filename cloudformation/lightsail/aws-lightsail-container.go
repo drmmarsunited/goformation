@@ -12,17 +12,17 @@ import (
 
 // Container AWS CloudFormation Resource (AWS::Lightsail::Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html
-type Container struct {
+type Container[T any] struct {
 
 	// ContainerServiceDeployment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-containerservicedeployment
-	ContainerServiceDeployment *Container_ContainerServiceDeployment `json:"ContainerServiceDeployment,omitempty"`
+	ContainerServiceDeployment *Container_ContainerServiceDeployment[any] `json:"ContainerServiceDeployment,omitempty"`
 
 	// IsDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-isdisabled
-	IsDisabled *bool `json:"IsDisabled,omitempty"`
+	IsDisabled *T `json:"IsDisabled,omitempty"`
 
 	// Power AWS CloudFormation Property
 	// Required: true
@@ -32,12 +32,12 @@ type Container struct {
 	// PublicDomainNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-publicdomainnames
-	PublicDomainNames []Container_PublicDomainName `json:"PublicDomainNames,omitempty"`
+	PublicDomainNames []Container_PublicDomainName[any] `json:"PublicDomainNames,omitempty"`
 
 	// Scale AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-scale
-	Scale int `json:"Scale"`
+	Scale T `json:"Scale"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type Container struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container) AWSCloudFormationType() string {
+func (r *Container[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Container) MarshalJSON() ([]byte, error) {
-	type Properties Container
+func (r Container[any]) MarshalJSON() ([]byte, error) {
+	type Properties Container[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Container) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Container) UnmarshalJSON(b []byte) error {
-	type Properties Container
+func (r *Container[any]) UnmarshalJSON(b []byte) error {
+	type Properties Container[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Container) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Container(*res.Properties)
+		*r = Container[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

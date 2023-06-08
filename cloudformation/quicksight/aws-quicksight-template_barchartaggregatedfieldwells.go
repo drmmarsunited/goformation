@@ -8,27 +8,27 @@ import (
 
 // Template_BarChartAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.BarChartAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartaggregatedfieldwells.html
-type Template_BarChartAggregatedFieldWells struct {
+type Template_BarChartAggregatedFieldWells[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartaggregatedfieldwells.html#cfn-quicksight-template-barchartaggregatedfieldwells-category
-	Category []Template_DimensionField `json:"Category,omitempty"`
+	Category []Template_DimensionField[any] `json:"Category,omitempty"`
 
 	// Colors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartaggregatedfieldwells.html#cfn-quicksight-template-barchartaggregatedfieldwells-colors
-	Colors []Template_DimensionField `json:"Colors,omitempty"`
+	Colors []Template_DimensionField[any] `json:"Colors,omitempty"`
 
 	// SmallMultiples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartaggregatedfieldwells.html#cfn-quicksight-template-barchartaggregatedfieldwells-smallmultiples
-	SmallMultiples []Template_DimensionField `json:"SmallMultiples,omitempty"`
+	SmallMultiples []Template_DimensionField[any] `json:"SmallMultiples,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartaggregatedfieldwells.html#cfn-quicksight-template-barchartaggregatedfieldwells-values
-	Values []Template_MeasureField `json:"Values,omitempty"`
+	Values []Template_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_BarChartAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BarChartAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_BarChartAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BarChartAggregatedFieldWells"
 }

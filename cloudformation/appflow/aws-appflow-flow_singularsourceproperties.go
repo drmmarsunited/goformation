@@ -8,7 +8,7 @@ import (
 
 // Flow_SingularSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SingularSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-singularsourceproperties.html
-type Flow_SingularSourceProperties struct {
+type Flow_SingularSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_SingularSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SingularSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_SingularSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SingularSourceProperties"
 }

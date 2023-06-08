@@ -8,7 +8,7 @@ import (
 
 // Cluster_S3 AWS CloudFormation Resource (AWS::MSK::Cluster.S3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html
-type Cluster_S3 struct {
+type Cluster_S3[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_S3 struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Cluster_S3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_S3) AWSCloudFormationType() string {
+func (r *Cluster_S3[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.S3"
 }

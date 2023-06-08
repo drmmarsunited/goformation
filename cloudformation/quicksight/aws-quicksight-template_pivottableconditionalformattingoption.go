@@ -8,12 +8,12 @@ import (
 
 // Template_PivotTableConditionalFormattingOption AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableConditionalFormattingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableconditionalformattingoption.html
-type Template_PivotTableConditionalFormattingOption struct {
+type Template_PivotTableConditionalFormattingOption[T any] struct {
 
 	// Cell AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottableconditionalformattingoption.html#cfn-quicksight-template-pivottableconditionalformattingoption-cell
-	Cell *Template_PivotTableCellConditionalFormatting `json:"Cell,omitempty"`
+	Cell *Template_PivotTableCellConditionalFormatting[any] `json:"Cell,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_PivotTableConditionalFormattingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableConditionalFormattingOption) AWSCloudFormationType() string {
+func (r *Template_PivotTableConditionalFormattingOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableConditionalFormattingOption"
 }

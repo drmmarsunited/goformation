@@ -8,7 +8,7 @@ import (
 
 // Server_WorkflowDetail AWS CloudFormation Resource (AWS::Transfer::Server.WorkflowDetail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html
-type Server_WorkflowDetail struct {
+type Server_WorkflowDetail[T any] struct {
 
 	// ExecutionRole AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Server_WorkflowDetail struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_WorkflowDetail) AWSCloudFormationType() string {
+func (r *Server_WorkflowDetail[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.WorkflowDetail"
 }

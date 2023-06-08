@@ -8,7 +8,7 @@ import (
 
 // Channel_Fmp4HlsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Fmp4HlsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html
-type Channel_Fmp4HlsSettings struct {
+type Channel_Fmp4HlsSettings[T any] struct {
 
 	// AudioRenditionSets AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_Fmp4HlsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Fmp4HlsSettings) AWSCloudFormationType() string {
+func (r *Channel_Fmp4HlsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Fmp4HlsSettings"
 }

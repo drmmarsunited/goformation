@@ -8,32 +8,32 @@ import (
 
 // Dashboard_DataLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html
-type Dashboard_DataLabelType struct {
+type Dashboard_DataLabelType[T any] struct {
 
 	// DataPathLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html#cfn-quicksight-dashboard-datalabeltype-datapathlabeltype
-	DataPathLabelType *Dashboard_DataPathLabelType `json:"DataPathLabelType,omitempty"`
+	DataPathLabelType *Dashboard_DataPathLabelType[any] `json:"DataPathLabelType,omitempty"`
 
 	// FieldLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html#cfn-quicksight-dashboard-datalabeltype-fieldlabeltype
-	FieldLabelType *Dashboard_FieldLabelType `json:"FieldLabelType,omitempty"`
+	FieldLabelType *Dashboard_FieldLabelType[any] `json:"FieldLabelType,omitempty"`
 
 	// MaximumLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html#cfn-quicksight-dashboard-datalabeltype-maximumlabeltype
-	MaximumLabelType *Dashboard_MaximumLabelType `json:"MaximumLabelType,omitempty"`
+	MaximumLabelType *Dashboard_MaximumLabelType[any] `json:"MaximumLabelType,omitempty"`
 
 	// MinimumLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html#cfn-quicksight-dashboard-datalabeltype-minimumlabeltype
-	MinimumLabelType *Dashboard_MinimumLabelType `json:"MinimumLabelType,omitempty"`
+	MinimumLabelType *Dashboard_MinimumLabelType[any] `json:"MinimumLabelType,omitempty"`
 
 	// RangeEndsLabelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeltype.html#cfn-quicksight-dashboard-datalabeltype-rangeendslabeltype
-	RangeEndsLabelType *Dashboard_RangeEndsLabelType `json:"RangeEndsLabelType,omitempty"`
+	RangeEndsLabelType *Dashboard_RangeEndsLabelType[any] `json:"RangeEndsLabelType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_DataLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_DataLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataLabelType"
 }

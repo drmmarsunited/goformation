@@ -8,7 +8,7 @@ import (
 
 // Pipe_BatchContainerOverrides AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchContainerOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchcontaineroverrides.html
-type Pipe_BatchContainerOverrides struct {
+type Pipe_BatchContainerOverrides[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Pipe_BatchContainerOverrides struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchcontaineroverrides.html#cfn-pipes-pipe-batchcontaineroverrides-environment
-	Environment []Pipe_BatchEnvironmentVariable `json:"Environment,omitempty"`
+	Environment []Pipe_BatchEnvironmentVariable[any] `json:"Environment,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Pipe_BatchContainerOverrides struct {
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchcontaineroverrides.html#cfn-pipes-pipe-batchcontaineroverrides-resourcerequirements
-	ResourceRequirements []Pipe_BatchResourceRequirement `json:"ResourceRequirements,omitempty"`
+	ResourceRequirements []Pipe_BatchResourceRequirement[any] `json:"ResourceRequirements,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Pipe_BatchContainerOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchContainerOverrides) AWSCloudFormationType() string {
+func (r *Pipe_BatchContainerOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchContainerOverrides"
 }

@@ -8,12 +8,12 @@ import (
 
 // Distribution_OriginShield AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginShield)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originshield.html
-type Distribution_OriginShield struct {
+type Distribution_OriginShield[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originshield.html#cfn-cloudfront-distribution-originshield-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// OriginShieldRegion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_OriginShield struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginShield) AWSCloudFormationType() string {
+func (r *Distribution_OriginShield[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginShield"
 }

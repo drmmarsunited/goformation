@@ -8,12 +8,12 @@ import (
 
 // RotationSchedule_RotationRules AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule.RotationRules)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html
-type RotationSchedule_RotationRules struct {
+type RotationSchedule_RotationRules[T any] struct {
 
 	// AutomaticallyAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-automaticallyafterdays
-	AutomaticallyAfterDays *int `json:"AutomaticallyAfterDays,omitempty"`
+	AutomaticallyAfterDays *T `json:"AutomaticallyAfterDays,omitempty"`
 
 	// Duration AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type RotationSchedule_RotationRules struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RotationSchedule_RotationRules) AWSCloudFormationType() string {
+func (r *RotationSchedule_RotationRules[any]) AWSCloudFormationType() string {
 	return "AWS::SecretsManager::RotationSchedule.RotationRules"
 }

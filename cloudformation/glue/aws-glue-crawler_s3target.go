@@ -8,7 +8,7 @@ import (
 
 // Crawler_S3Target AWS CloudFormation Resource (AWS::Glue::Crawler.S3Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
-type Crawler_S3Target struct {
+type Crawler_S3Target[T any] struct {
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Crawler_S3Target struct {
 	// SampleSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize
-	SampleSize *int `json:"SampleSize,omitempty"`
+	SampleSize *T `json:"SampleSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Crawler_S3Target struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_S3Target) AWSCloudFormationType() string {
+func (r *Crawler_S3Target[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.S3Target"
 }

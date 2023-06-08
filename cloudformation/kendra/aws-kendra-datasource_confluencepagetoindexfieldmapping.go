@@ -8,7 +8,7 @@ import (
 
 // DataSource_ConfluencePageToIndexFieldMapping AWS CloudFormation Resource (AWS::Kendra::DataSource.ConfluencePageToIndexFieldMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html
-type DataSource_ConfluencePageToIndexFieldMapping struct {
+type DataSource_ConfluencePageToIndexFieldMapping[T any] struct {
 
 	// DataSourceFieldName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_ConfluencePageToIndexFieldMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConfluencePageToIndexFieldMapping) AWSCloudFormationType() string {
+func (r *DataSource_ConfluencePageToIndexFieldMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConfluencePageToIndexFieldMapping"
 }

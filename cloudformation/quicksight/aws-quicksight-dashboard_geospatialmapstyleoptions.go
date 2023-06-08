@@ -8,7 +8,7 @@ import (
 
 // Dashboard_GeospatialMapStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GeospatialMapStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstyleoptions.html
-type Dashboard_GeospatialMapStyleOptions struct {
+type Dashboard_GeospatialMapStyleOptions[T any] struct {
 
 	// BaseMapStyle AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_GeospatialMapStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GeospatialMapStyleOptions) AWSCloudFormationType() string {
+func (r *Dashboard_GeospatialMapStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GeospatialMapStyleOptions"
 }

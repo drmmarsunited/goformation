@@ -11,12 +11,12 @@ import (
 
 // BudgetsAction AWS CloudFormation Resource (AWS::Budgets::BudgetsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html
-type BudgetsAction struct {
+type BudgetsAction[T any] struct {
 
 	// ActionThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actionthreshold
-	ActionThreshold *BudgetsAction_ActionThreshold `json:"ActionThreshold"`
+	ActionThreshold *BudgetsAction_ActionThreshold[any] `json:"ActionThreshold"`
 
 	// ActionType AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type BudgetsAction struct {
 	// Definition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-definition
-	Definition *BudgetsAction_Definition `json:"Definition"`
+	Definition *BudgetsAction_Definition[any] `json:"Definition"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type BudgetsAction struct {
 	// Subscribers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-subscribers
-	Subscribers []BudgetsAction_Subscriber `json:"Subscribers"`
+	Subscribers []BudgetsAction_Subscriber[any] `json:"Subscribers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type BudgetsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction) AWSCloudFormationType() string {
+func (r *BudgetsAction[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BudgetsAction) MarshalJSON() ([]byte, error) {
-	type Properties BudgetsAction
+func (r BudgetsAction[any]) MarshalJSON() ([]byte, error) {
+	type Properties BudgetsAction[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r BudgetsAction) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BudgetsAction) UnmarshalJSON(b []byte) error {
-	type Properties BudgetsAction
+func (r *BudgetsAction[any]) UnmarshalJSON(b []byte) error {
+	type Properties BudgetsAction[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *BudgetsAction) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BudgetsAction(*res.Properties)
+		*r = BudgetsAction[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

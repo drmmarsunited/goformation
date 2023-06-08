@@ -8,17 +8,17 @@ import (
 
 // Analysis_AxisScale AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisscale.html
-type Analysis_AxisScale struct {
+type Analysis_AxisScale[T any] struct {
 
 	// Linear AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisscale.html#cfn-quicksight-analysis-axisscale-linear
-	Linear *Analysis_AxisLinearScale `json:"Linear,omitempty"`
+	Linear *Analysis_AxisLinearScale[any] `json:"Linear,omitempty"`
 
 	// Logarithmic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisscale.html#cfn-quicksight-analysis-axisscale-logarithmic
-	Logarithmic *Analysis_AxisLogarithmicScale `json:"Logarithmic,omitempty"`
+	Logarithmic *Analysis_AxisLogarithmicScale[any] `json:"Logarithmic,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_AxisScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisScale) AWSCloudFormationType() string {
+func (r *Analysis_AxisScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisScale"
 }

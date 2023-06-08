@@ -8,7 +8,7 @@ import (
 
 // Function_Code AWS CloudFormation Resource (AWS::Lambda::Function.Code)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html
-type Function_Code struct {
+type Function_Code[T any] struct {
 
 	// ImageUri AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Function_Code struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_Code) AWSCloudFormationType() string {
+func (r *Function_Code[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.Code"
 }

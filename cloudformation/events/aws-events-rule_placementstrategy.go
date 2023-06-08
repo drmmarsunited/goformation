@@ -8,7 +8,7 @@ import (
 
 // Rule_PlacementStrategy AWS CloudFormation Resource (AWS::Events::Rule.PlacementStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-placementstrategy.html
-type Rule_PlacementStrategy struct {
+type Rule_PlacementStrategy[T any] struct {
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_PlacementStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_PlacementStrategy) AWSCloudFormationType() string {
+func (r *Rule_PlacementStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.PlacementStrategy"
 }

@@ -8,12 +8,12 @@ import (
 
 // InferenceExperiment_ShadowModeConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.ShadowModeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-shadowmodeconfig.html
-type InferenceExperiment_ShadowModeConfig struct {
+type InferenceExperiment_ShadowModeConfig[T any] struct {
 
 	// ShadowModelVariants AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-shadowmodeconfig.html#cfn-sagemaker-inferenceexperiment-shadowmodeconfig-shadowmodelvariants
-	ShadowModelVariants []InferenceExperiment_ShadowModelVariantConfig `json:"ShadowModelVariants"`
+	ShadowModelVariants []InferenceExperiment_ShadowModelVariantConfig[any] `json:"ShadowModelVariants"`
 
 	// SourceModelVariantName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InferenceExperiment_ShadowModeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_ShadowModeConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_ShadowModeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.ShadowModeConfig"
 }

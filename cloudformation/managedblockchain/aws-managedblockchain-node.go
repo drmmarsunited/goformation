@@ -11,7 +11,7 @@ import (
 
 // Node AWS CloudFormation Resource (AWS::ManagedBlockchain::Node)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html
-type Node struct {
+type Node[T any] struct {
 
 	// MemberId AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type Node struct {
 	// NodeConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration
-	NodeConfiguration *Node_NodeConfiguration `json:"NodeConfiguration"`
+	NodeConfiguration *Node_NodeConfiguration[any] `json:"NodeConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type Node struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Node) AWSCloudFormationType() string {
+func (r *Node[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Node"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Node) MarshalJSON() ([]byte, error) {
-	type Properties Node
+func (r Node[any]) MarshalJSON() ([]byte, error) {
+	type Properties Node[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Node) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Node) UnmarshalJSON(b []byte) error {
-	type Properties Node
+func (r *Node[any]) UnmarshalJSON(b []byte) error {
+	type Properties Node[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Node) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Node(*res.Properties)
+		*r = Node[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

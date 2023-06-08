@@ -8,17 +8,17 @@ import (
 
 // Analysis_DefaultNewSheetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DefaultNewSheetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultnewsheetconfiguration.html
-type Analysis_DefaultNewSheetConfiguration struct {
+type Analysis_DefaultNewSheetConfiguration[T any] struct {
 
 	// InteractiveLayoutConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultnewsheetconfiguration.html#cfn-quicksight-analysis-defaultnewsheetconfiguration-interactivelayoutconfiguration
-	InteractiveLayoutConfiguration *Analysis_DefaultInteractiveLayoutConfiguration `json:"InteractiveLayoutConfiguration,omitempty"`
+	InteractiveLayoutConfiguration *Analysis_DefaultInteractiveLayoutConfiguration[any] `json:"InteractiveLayoutConfiguration,omitempty"`
 
 	// PaginatedLayoutConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultnewsheetconfiguration.html#cfn-quicksight-analysis-defaultnewsheetconfiguration-paginatedlayoutconfiguration
-	PaginatedLayoutConfiguration *Analysis_DefaultPaginatedLayoutConfiguration `json:"PaginatedLayoutConfiguration,omitempty"`
+	PaginatedLayoutConfiguration *Analysis_DefaultPaginatedLayoutConfiguration[any] `json:"PaginatedLayoutConfiguration,omitempty"`
 
 	// SheetContentType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_DefaultNewSheetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DefaultNewSheetConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_DefaultNewSheetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DefaultNewSheetConfiguration"
 }

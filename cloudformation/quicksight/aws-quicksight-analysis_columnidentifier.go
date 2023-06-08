@@ -8,7 +8,7 @@ import (
 
 // Analysis_ColumnIdentifier AWS CloudFormation Resource (AWS::QuickSight::Analysis.ColumnIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnidentifier.html
-type Analysis_ColumnIdentifier struct {
+type Analysis_ColumnIdentifier[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_ColumnIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ColumnIdentifier) AWSCloudFormationType() string {
+func (r *Analysis_ColumnIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ColumnIdentifier"
 }

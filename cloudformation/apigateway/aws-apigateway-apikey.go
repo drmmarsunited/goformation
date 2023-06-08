@@ -12,7 +12,7 @@ import (
 
 // ApiKey AWS CloudFormation Resource (AWS::ApiGateway::ApiKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
-type ApiKey struct {
+type ApiKey[T any] struct {
 
 	// CustomerId AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type ApiKey struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// GenerateDistinctId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
-	GenerateDistinctId *bool `json:"GenerateDistinctId,omitempty"`
+	GenerateDistinctId *T `json:"GenerateDistinctId,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type ApiKey struct {
 	// StageKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys
-	StageKeys []ApiKey_StageKey `json:"StageKeys,omitempty"`
+	StageKeys []ApiKey_StageKey[any] `json:"StageKeys,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type ApiKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiKey) AWSCloudFormationType() string {
+func (r *ApiKey[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::ApiKey"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApiKey) MarshalJSON() ([]byte, error) {
-	type Properties ApiKey
+func (r ApiKey[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApiKey[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r ApiKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApiKey) UnmarshalJSON(b []byte) error {
-	type Properties ApiKey
+func (r *ApiKey[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApiKey[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *ApiKey) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApiKey(*res.Properties)
+		*r = ApiKey[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

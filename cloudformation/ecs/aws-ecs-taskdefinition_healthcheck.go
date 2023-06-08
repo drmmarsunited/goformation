@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_HealthCheck AWS CloudFormation Resource (AWS::ECS::TaskDefinition.HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html
-type TaskDefinition_HealthCheck struct {
+type TaskDefinition_HealthCheck[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type TaskDefinition_HealthCheck struct {
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html#cfn-ecs-taskdefinition-healthcheck-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// Retries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html#cfn-ecs-taskdefinition-healthcheck-retries
-	Retries *int `json:"Retries,omitempty"`
+	Retries *T `json:"Retries,omitempty"`
 
 	// StartPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html#cfn-ecs-taskdefinition-healthcheck-startperiod
-	StartPeriod *int `json:"StartPeriod,omitempty"`
+	StartPeriod *T `json:"StartPeriod,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html#cfn-ecs-taskdefinition-healthcheck-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type TaskDefinition_HealthCheck struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_HealthCheck) AWSCloudFormationType() string {
+func (r *TaskDefinition_HealthCheck[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.HealthCheck"
 }

@@ -11,7 +11,7 @@ import (
 
 // Tag AWS CloudFormation Resource (AWS::LakeFormation::Tag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tag.html
-type Tag struct {
+type Tag[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type Tag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Tag) AWSCloudFormationType() string {
+func (r *Tag[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Tag"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Tag) MarshalJSON() ([]byte, error) {
-	type Properties Tag
+func (r Tag[any]) MarshalJSON() ([]byte, error) {
+	type Properties Tag[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Tag) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Tag) UnmarshalJSON(b []byte) error {
-	type Properties Tag
+func (r *Tag[any]) UnmarshalJSON(b []byte) error {
+	type Properties Tag[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Tag) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Tag(*res.Properties)
+		*r = Tag[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

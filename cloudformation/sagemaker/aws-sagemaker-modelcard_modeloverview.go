@@ -8,7 +8,7 @@ import (
 
 // ModelCard_ModelOverview AWS CloudFormation Resource (AWS::SageMaker::ModelCard.ModelOverview)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html
-type ModelCard_ModelOverview struct {
+type ModelCard_ModelOverview[T any] struct {
 
 	// AlgorithmType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelCard_ModelOverview struct {
 	// InferenceEnvironment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-inferenceenvironment
-	InferenceEnvironment *ModelCard_InferenceEnvironment `json:"InferenceEnvironment,omitempty"`
+	InferenceEnvironment *ModelCard_InferenceEnvironment[any] `json:"InferenceEnvironment,omitempty"`
 
 	// ModelArtifact AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type ModelCard_ModelOverview struct {
 	// ModelVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelversion
-	ModelVersion *float64 `json:"ModelVersion,omitempty"`
+	ModelVersion *T `json:"ModelVersion,omitempty"`
 
 	// ProblemType AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type ModelCard_ModelOverview struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_ModelOverview) AWSCloudFormationType() string {
+func (r *ModelCard_ModelOverview[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.ModelOverview"
 }

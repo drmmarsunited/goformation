@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_NotificationConfig AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.NotificationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html
-type MaintenanceWindowTask_NotificationConfig struct {
+type MaintenanceWindowTask_NotificationConfig[T any] struct {
 
 	// NotificationArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type MaintenanceWindowTask_NotificationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_NotificationConfig) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_NotificationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.NotificationConfig"
 }

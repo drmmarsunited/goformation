@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_NetworkBandwidthGbps AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.NetworkBandwidthGbps)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html
-type LaunchTemplate_NetworkBandwidthGbps struct {
+type LaunchTemplate_NetworkBandwidthGbps[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_NetworkBandwidthGbps struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_NetworkBandwidthGbps) AWSCloudFormationType() string {
+func (r *LaunchTemplate_NetworkBandwidthGbps[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.NetworkBandwidthGbps"
 }

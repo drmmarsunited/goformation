@@ -8,7 +8,7 @@ import (
 
 // AssetModel_ExpressionVariable AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.ExpressionVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-expressionvariable.html
-type AssetModel_ExpressionVariable struct {
+type AssetModel_ExpressionVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type AssetModel_ExpressionVariable struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-expressionvariable.html#cfn-iotsitewise-assetmodel-expressionvariable-value
-	Value *AssetModel_VariableValue `json:"Value"`
+	Value *AssetModel_VariableValue[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AssetModel_ExpressionVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_ExpressionVariable) AWSCloudFormationType() string {
+func (r *AssetModel_ExpressionVariable[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.ExpressionVariable"
 }

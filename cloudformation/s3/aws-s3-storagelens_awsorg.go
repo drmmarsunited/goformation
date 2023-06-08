@@ -8,7 +8,7 @@ import (
 
 // StorageLens_AwsOrg AWS CloudFormation Resource (AWS::S3::StorageLens.AwsOrg)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-awsorg.html
-type StorageLens_AwsOrg struct {
+type StorageLens_AwsOrg[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type StorageLens_AwsOrg struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_AwsOrg) AWSCloudFormationType() string {
+func (r *StorageLens_AwsOrg[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.AwsOrg"
 }

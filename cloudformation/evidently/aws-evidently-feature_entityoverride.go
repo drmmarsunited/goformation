@@ -8,7 +8,7 @@ import (
 
 // Feature_EntityOverride AWS CloudFormation Resource (AWS::Evidently::Feature.EntityOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-entityoverride.html
-type Feature_EntityOverride struct {
+type Feature_EntityOverride[T any] struct {
 
 	// EntityId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Feature_EntityOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Feature_EntityOverride) AWSCloudFormationType() string {
+func (r *Feature_EntityOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Feature.EntityOverride"
 }

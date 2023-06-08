@@ -8,12 +8,12 @@ import (
 
 // Analysis_SectionBasedLayoutCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.SectionBasedLayoutCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionbasedlayoutcanvassizeoptions.html
-type Analysis_SectionBasedLayoutCanvasSizeOptions struct {
+type Analysis_SectionBasedLayoutCanvasSizeOptions[T any] struct {
 
 	// PaperCanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionbasedlayoutcanvassizeoptions.html#cfn-quicksight-analysis-sectionbasedlayoutcanvassizeoptions-papercanvassizeoptions
-	PaperCanvasSizeOptions *Analysis_SectionBasedLayoutPaperCanvasSizeOptions `json:"PaperCanvasSizeOptions,omitempty"`
+	PaperCanvasSizeOptions *Analysis_SectionBasedLayoutPaperCanvasSizeOptions[any] `json:"PaperCanvasSizeOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_SectionBasedLayoutCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SectionBasedLayoutCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Analysis_SectionBasedLayoutCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SectionBasedLayoutCanvasSizeOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_Metadata AWS CloudFormation Resource (AWS::Batch::JobDefinition.Metadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties-metadata.html
-type JobDefinition_Metadata struct {
+type JobDefinition_Metadata[T any] struct {
 
 	// Labels AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type JobDefinition_Metadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Metadata) AWSCloudFormationType() string {
+func (r *JobDefinition_Metadata[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Metadata"
 }

@@ -8,7 +8,7 @@ import (
 
 // Member_MemberConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.MemberConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html
-type Member_MemberConfiguration struct {
+type Member_MemberConfiguration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Member_MemberConfiguration struct {
 	// MemberFrameworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-memberframeworkconfiguration
-	MemberFrameworkConfiguration *Member_MemberFrameworkConfiguration `json:"MemberFrameworkConfiguration,omitempty"`
+	MemberFrameworkConfiguration *Member_MemberFrameworkConfiguration[any] `json:"MemberFrameworkConfiguration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Member_MemberConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_MemberConfiguration) AWSCloudFormationType() string {
+func (r *Member_MemberConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.MemberConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Bucket_Metrics AWS CloudFormation Resource (AWS::S3::Bucket.Metrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metrics.html
-type Bucket_Metrics struct {
+type Bucket_Metrics[T any] struct {
 
 	// EventThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metrics.html#cfn-s3-bucket-metrics-eventthreshold
-	EventThreshold *Bucket_ReplicationTimeValue `json:"EventThreshold,omitempty"`
+	EventThreshold *Bucket_ReplicationTimeValue[any] `json:"EventThreshold,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_Metrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Metrics) AWSCloudFormationType() string {
+func (r *Bucket_Metrics[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Metrics"
 }

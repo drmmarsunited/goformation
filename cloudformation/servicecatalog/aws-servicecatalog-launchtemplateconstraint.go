@@ -11,7 +11,7 @@ import (
 
 // LaunchTemplateConstraint AWS CloudFormation Resource (AWS::ServiceCatalog::LaunchTemplateConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html
-type LaunchTemplateConstraint struct {
+type LaunchTemplateConstraint[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type LaunchTemplateConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplateConstraint) AWSCloudFormationType() string {
+func (r *LaunchTemplateConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::LaunchTemplateConstraint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LaunchTemplateConstraint) MarshalJSON() ([]byte, error) {
-	type Properties LaunchTemplateConstraint
+func (r LaunchTemplateConstraint[any]) MarshalJSON() ([]byte, error) {
+	type Properties LaunchTemplateConstraint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r LaunchTemplateConstraint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LaunchTemplateConstraint) UnmarshalJSON(b []byte) error {
-	type Properties LaunchTemplateConstraint
+func (r *LaunchTemplateConstraint[any]) UnmarshalJSON(b []byte) error {
+	type Properties LaunchTemplateConstraint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *LaunchTemplateConstraint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LaunchTemplateConstraint(*res.Properties)
+		*r = LaunchTemplateConstraint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

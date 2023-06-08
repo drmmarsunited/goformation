@@ -8,7 +8,7 @@ import (
 
 // FeatureGroup_S3StorageConfig AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.S3StorageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html
-type FeatureGroup_S3StorageConfig struct {
+type FeatureGroup_S3StorageConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FeatureGroup_S3StorageConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_S3StorageConfig) AWSCloudFormationType() string {
+func (r *FeatureGroup_S3StorageConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.S3StorageConfig"
 }

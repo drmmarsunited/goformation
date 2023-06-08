@@ -12,7 +12,7 @@ import (
 
 // Agreement AWS CloudFormation Resource (AWS::Transfer::Agreement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html
-type Agreement struct {
+type Agreement[T any] struct {
 
 	// AccessRole AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type Agreement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Agreement) AWSCloudFormationType() string {
+func (r *Agreement[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Agreement"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Agreement) MarshalJSON() ([]byte, error) {
-	type Properties Agreement
+func (r Agreement[any]) MarshalJSON() ([]byte, error) {
+	type Properties Agreement[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Agreement) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Agreement) UnmarshalJSON(b []byte) error {
-	type Properties Agreement
+func (r *Agreement[any]) UnmarshalJSON(b []byte) error {
+	type Properties Agreement[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Agreement) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Agreement(*res.Properties)
+		*r = Agreement[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

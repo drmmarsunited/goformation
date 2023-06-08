@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPathSort AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPathSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathsort.html
-type Dashboard_DataPathSort struct {
+type Dashboard_DataPathSort[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_DataPathSort struct {
 	// SortPaths AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathsort.html#cfn-quicksight-dashboard-datapathsort-sortpaths
-	SortPaths []Dashboard_DataPathValue `json:"SortPaths"`
+	SortPaths []Dashboard_DataPathValue[any] `json:"SortPaths"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DataPathSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPathSort) AWSCloudFormationType() string {
+func (r *Dashboard_DataPathSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPathSort"
 }

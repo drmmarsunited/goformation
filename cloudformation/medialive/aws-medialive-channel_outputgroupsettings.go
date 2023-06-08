@@ -8,47 +8,47 @@ import (
 
 // Channel_OutputGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.OutputGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html
-type Channel_OutputGroupSettings struct {
+type Channel_OutputGroupSettings[T any] struct {
 
 	// ArchiveGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-archivegroupsettings
-	ArchiveGroupSettings *Channel_ArchiveGroupSettings `json:"ArchiveGroupSettings,omitempty"`
+	ArchiveGroupSettings *Channel_ArchiveGroupSettings[any] `json:"ArchiveGroupSettings,omitempty"`
 
 	// FrameCaptureGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-framecapturegroupsettings
-	FrameCaptureGroupSettings *Channel_FrameCaptureGroupSettings `json:"FrameCaptureGroupSettings,omitempty"`
+	FrameCaptureGroupSettings *Channel_FrameCaptureGroupSettings[any] `json:"FrameCaptureGroupSettings,omitempty"`
 
 	// HlsGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-hlsgroupsettings
-	HlsGroupSettings *Channel_HlsGroupSettings `json:"HlsGroupSettings,omitempty"`
+	HlsGroupSettings *Channel_HlsGroupSettings[any] `json:"HlsGroupSettings,omitempty"`
 
 	// MediaPackageGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mediapackagegroupsettings
-	MediaPackageGroupSettings *Channel_MediaPackageGroupSettings `json:"MediaPackageGroupSettings,omitempty"`
+	MediaPackageGroupSettings *Channel_MediaPackageGroupSettings[any] `json:"MediaPackageGroupSettings,omitempty"`
 
 	// MsSmoothGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mssmoothgroupsettings
-	MsSmoothGroupSettings *Channel_MsSmoothGroupSettings `json:"MsSmoothGroupSettings,omitempty"`
+	MsSmoothGroupSettings *Channel_MsSmoothGroupSettings[any] `json:"MsSmoothGroupSettings,omitempty"`
 
 	// MultiplexGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-multiplexgroupsettings
-	MultiplexGroupSettings *Channel_MultiplexGroupSettings `json:"MultiplexGroupSettings,omitempty"`
+	MultiplexGroupSettings *Channel_MultiplexGroupSettings[any] `json:"MultiplexGroupSettings,omitempty"`
 
 	// RtmpGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-rtmpgroupsettings
-	RtmpGroupSettings *Channel_RtmpGroupSettings `json:"RtmpGroupSettings,omitempty"`
+	RtmpGroupSettings *Channel_RtmpGroupSettings[any] `json:"RtmpGroupSettings,omitempty"`
 
 	// UdpGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-udpgroupsettings
-	UdpGroupSettings *Channel_UdpGroupSettings `json:"UdpGroupSettings,omitempty"`
+	UdpGroupSettings *Channel_UdpGroupSettings[any] `json:"UdpGroupSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Channel_OutputGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_OutputGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_OutputGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.OutputGroupSettings"
 }

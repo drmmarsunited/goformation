@@ -8,17 +8,17 @@ import (
 
 // FunctionDefinition_FunctionDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.FunctionDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html
-type FunctionDefinition_FunctionDefinitionVersion struct {
+type FunctionDefinition_FunctionDefinitionVersion[T any] struct {
 
 	// DefaultConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-defaultconfig
-	DefaultConfig *FunctionDefinition_DefaultConfig `json:"DefaultConfig,omitempty"`
+	DefaultConfig *FunctionDefinition_DefaultConfig[any] `json:"DefaultConfig,omitempty"`
 
 	// Functions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-functions
-	Functions []FunctionDefinition_Function `json:"Functions"`
+	Functions []FunctionDefinition_Function[any] `json:"Functions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type FunctionDefinition_FunctionDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinition_FunctionDefinitionVersion) AWSCloudFormationType() string {
+func (r *FunctionDefinition_FunctionDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinition.FunctionDefinitionVersion"
 }

@@ -8,22 +8,22 @@ import (
 
 // Cluster_ClientAuthentication AWS CloudFormation Resource (AWS::MSK::Cluster.ClientAuthentication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html
-type Cluster_ClientAuthentication struct {
+type Cluster_ClientAuthentication[T any] struct {
 
 	// Sasl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-sasl
-	Sasl *Cluster_Sasl `json:"Sasl,omitempty"`
+	Sasl *Cluster_Sasl[any] `json:"Sasl,omitempty"`
 
 	// Tls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
-	Tls *Cluster_Tls `json:"Tls,omitempty"`
+	Tls *Cluster_Tls[any] `json:"Tls,omitempty"`
 
 	// Unauthenticated AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-unauthenticated
-	Unauthenticated *Cluster_Unauthenticated `json:"Unauthenticated,omitempty"`
+	Unauthenticated *Cluster_Unauthenticated[any] `json:"Unauthenticated,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Cluster_ClientAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ClientAuthentication) AWSCloudFormationType() string {
+func (r *Cluster_ClientAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.ClientAuthentication"
 }

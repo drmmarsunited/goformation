@@ -8,37 +8,37 @@ import (
 
 // Crawler_Targets AWS CloudFormation Resource (AWS::Glue::Crawler.Targets)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
-type Crawler_Targets struct {
+type Crawler_Targets[T any] struct {
 
 	// CatalogTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
-	CatalogTargets []Crawler_CatalogTarget `json:"CatalogTargets,omitempty"`
+	CatalogTargets []Crawler_CatalogTarget[any] `json:"CatalogTargets,omitempty"`
 
 	// DeltaTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-deltatargets
-	DeltaTargets []Crawler_DeltaTarget `json:"DeltaTargets,omitempty"`
+	DeltaTargets []Crawler_DeltaTarget[any] `json:"DeltaTargets,omitempty"`
 
 	// DynamoDBTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
-	DynamoDBTargets []Crawler_DynamoDBTarget `json:"DynamoDBTargets,omitempty"`
+	DynamoDBTargets []Crawler_DynamoDBTarget[any] `json:"DynamoDBTargets,omitempty"`
 
 	// JdbcTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
-	JdbcTargets []Crawler_JdbcTarget `json:"JdbcTargets,omitempty"`
+	JdbcTargets []Crawler_JdbcTarget[any] `json:"JdbcTargets,omitempty"`
 
 	// MongoDBTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets
-	MongoDBTargets []Crawler_MongoDBTarget `json:"MongoDBTargets,omitempty"`
+	MongoDBTargets []Crawler_MongoDBTarget[any] `json:"MongoDBTargets,omitempty"`
 
 	// S3Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
-	S3Targets []Crawler_S3Target `json:"S3Targets,omitempty"`
+	S3Targets []Crawler_S3Target[any] `json:"S3Targets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Crawler_Targets struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_Targets) AWSCloudFormationType() string {
+func (r *Crawler_Targets[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.Targets"
 }

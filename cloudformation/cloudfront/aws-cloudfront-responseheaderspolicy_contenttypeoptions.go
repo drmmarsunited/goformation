@@ -8,12 +8,12 @@ import (
 
 // ResponseHeadersPolicy_ContentTypeOptions AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ContentTypeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contenttypeoptions.html
-type ResponseHeadersPolicy_ContentTypeOptions struct {
+type ResponseHeadersPolicy_ContentTypeOptions[T any] struct {
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contenttypeoptions.html#cfn-cloudfront-responseheaderspolicy-contenttypeoptions-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_ContentTypeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_ContentTypeOptions) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_ContentTypeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.ContentTypeOptions"
 }

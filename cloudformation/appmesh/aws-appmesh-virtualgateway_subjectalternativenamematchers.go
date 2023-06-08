@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_SubjectAlternativeNameMatchers AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html
-type VirtualGateway_SubjectAlternativeNameMatchers struct {
+type VirtualGateway_SubjectAlternativeNameMatchers[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type VirtualGateway_SubjectAlternativeNameMatchers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_SubjectAlternativeNameMatchers) AWSCloudFormationType() string {
+func (r *VirtualGateway_SubjectAlternativeNameMatchers[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers"
 }

@@ -8,7 +8,7 @@ import (
 
 // CloudFormationProvisionedProduct_ProvisioningPreferences AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html
-type CloudFormationProvisionedProduct_ProvisioningPreferences struct {
+type CloudFormationProvisionedProduct_ProvisioningPreferences[T any] struct {
 
 	// StackSetAccounts AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type CloudFormationProvisionedProduct_ProvisioningPreferences struct {
 	// StackSetFailureToleranceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancecount
-	StackSetFailureToleranceCount *int `json:"StackSetFailureToleranceCount,omitempty"`
+	StackSetFailureToleranceCount *T `json:"StackSetFailureToleranceCount,omitempty"`
 
 	// StackSetFailureTolerancePercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancepercentage
-	StackSetFailureTolerancePercentage *int `json:"StackSetFailureTolerancePercentage,omitempty"`
+	StackSetFailureTolerancePercentage *T `json:"StackSetFailureTolerancePercentage,omitempty"`
 
 	// StackSetMaxConcurrencyCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencycount
-	StackSetMaxConcurrencyCount *int `json:"StackSetMaxConcurrencyCount,omitempty"`
+	StackSetMaxConcurrencyCount *T `json:"StackSetMaxConcurrencyCount,omitempty"`
 
 	// StackSetMaxConcurrencyPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencypercentage
-	StackSetMaxConcurrencyPercentage *int `json:"StackSetMaxConcurrencyPercentage,omitempty"`
+	StackSetMaxConcurrencyPercentage *T `json:"StackSetMaxConcurrencyPercentage,omitempty"`
 
 	// StackSetOperationType AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type CloudFormationProvisionedProduct_ProvisioningPreferences struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProvisionedProduct_ProvisioningPreferences) AWSCloudFormationType() string {
+func (r *CloudFormationProvisionedProduct_ProvisioningPreferences[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences"
 }

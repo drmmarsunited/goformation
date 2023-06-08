@@ -8,12 +8,12 @@ import (
 
 // ApplicationReferenceDataSource_ReferenceSchema AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html
-type ApplicationReferenceDataSource_ReferenceSchema struct {
+type ApplicationReferenceDataSource_ReferenceSchema[T any] struct {
 
 	// RecordColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordcolumns
-	RecordColumns []ApplicationReferenceDataSource_RecordColumn `json:"RecordColumns"`
+	RecordColumns []ApplicationReferenceDataSource_RecordColumn[any] `json:"RecordColumns"`
 
 	// RecordEncoding AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ApplicationReferenceDataSource_ReferenceSchema struct {
 	// RecordFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordformat
-	RecordFormat *ApplicationReferenceDataSource_RecordFormat `json:"RecordFormat"`
+	RecordFormat *ApplicationReferenceDataSource_RecordFormat[any] `json:"RecordFormat"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ApplicationReferenceDataSource_ReferenceSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource_ReferenceSchema) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource_ReferenceSchema[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceSchema"
 }

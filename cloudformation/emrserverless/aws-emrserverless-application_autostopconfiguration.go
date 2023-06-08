@@ -8,17 +8,17 @@ import (
 
 // Application_AutoStopConfiguration AWS CloudFormation Resource (AWS::EMRServerless::Application.AutoStopConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-autostopconfiguration.html
-type Application_AutoStopConfiguration struct {
+type Application_AutoStopConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-autostopconfiguration.html#cfn-emrserverless-application-autostopconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// IdleTimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-autostopconfiguration.html#cfn-emrserverless-application-autostopconfiguration-idletimeoutminutes
-	IdleTimeoutMinutes *int `json:"IdleTimeoutMinutes,omitempty"`
+	IdleTimeoutMinutes *T `json:"IdleTimeoutMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_AutoStopConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_AutoStopConfiguration) AWSCloudFormationType() string {
+func (r *Application_AutoStopConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.AutoStopConfiguration"
 }

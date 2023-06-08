@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_DynatraceConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-dynatraceconnectorprofilecredentials.html
-type ConnectorProfile_DynatraceConnectorProfileCredentials struct {
+type ConnectorProfile_DynatraceConnectorProfileCredentials[T any] struct {
 
 	// ApiToken AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_DynatraceConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_DynatraceConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_DynatraceConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileCredentials"
 }

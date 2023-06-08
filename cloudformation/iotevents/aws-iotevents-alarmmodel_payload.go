@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_Payload AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.Payload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-payload.html
-type AlarmModel_Payload struct {
+type AlarmModel_Payload[T any] struct {
 
 	// ContentExpression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AlarmModel_Payload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_Payload) AWSCloudFormationType() string {
+func (r *AlarmModel_Payload[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.Payload"
 }

@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_CapacityReservationTarget AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.CapacityReservationTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html
-type LaunchTemplate_CapacityReservationTarget struct {
+type LaunchTemplate_CapacityReservationTarget[T any] struct {
 
 	// CapacityReservationId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LaunchTemplate_CapacityReservationTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_CapacityReservationTarget) AWSCloudFormationType() string {
+func (r *LaunchTemplate_CapacityReservationTarget[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.CapacityReservationTarget"
 }

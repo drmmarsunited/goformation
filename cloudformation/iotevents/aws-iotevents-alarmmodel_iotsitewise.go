@@ -8,7 +8,7 @@ import (
 
 // AlarmModel_IotSiteWise AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.IotSiteWise)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html
-type AlarmModel_IotSiteWise struct {
+type AlarmModel_IotSiteWise[T any] struct {
 
 	// AssetId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AlarmModel_IotSiteWise struct {
 	// PropertyValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html#cfn-iotevents-alarmmodel-iotsitewise-propertyvalue
-	PropertyValue *AlarmModel_AssetPropertyValue `json:"PropertyValue,omitempty"`
+	PropertyValue *AlarmModel_AssetPropertyValue[any] `json:"PropertyValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type AlarmModel_IotSiteWise struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_IotSiteWise) AWSCloudFormationType() string {
+func (r *AlarmModel_IotSiteWise[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.IotSiteWise"
 }

@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_RegexMatchStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.RegexMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html
-type RuleGroup_RegexMatchStatement struct {
+type RuleGroup_RegexMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// RegexString AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type RuleGroup_RegexMatchStatement struct {
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type RuleGroup_RegexMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RegexMatchStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_RegexMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.RegexMatchStatement"
 }

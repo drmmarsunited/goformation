@@ -8,7 +8,7 @@ import (
 
 // EvaluationForm_SingleSelectQuestionRuleCategoryAutomation AWS CloudFormation Resource (AWS::Connect::EvaluationForm.SingleSelectQuestionRuleCategoryAutomation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-singleselectquestionrulecategoryautomation.html
-type EvaluationForm_SingleSelectQuestionRuleCategoryAutomation struct {
+type EvaluationForm_SingleSelectQuestionRuleCategoryAutomation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type EvaluationForm_SingleSelectQuestionRuleCategoryAutomation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_SingleSelectQuestionRuleCategoryAutomation) AWSCloudFormationType() string {
+func (r *EvaluationForm_SingleSelectQuestionRuleCategoryAutomation[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.SingleSelectQuestionRuleCategoryAutomation"
 }

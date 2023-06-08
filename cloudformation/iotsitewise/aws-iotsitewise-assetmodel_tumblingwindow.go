@@ -8,7 +8,7 @@ import (
 
 // AssetModel_TumblingWindow AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.TumblingWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-tumblingwindow.html
-type AssetModel_TumblingWindow struct {
+type AssetModel_TumblingWindow[T any] struct {
 
 	// Interval AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AssetModel_TumblingWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_TumblingWindow) AWSCloudFormationType() string {
+func (r *AssetModel_TumblingWindow[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.TumblingWindow"
 }

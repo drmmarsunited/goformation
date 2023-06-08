@@ -8,12 +8,12 @@ import (
 
 // VerifiedAccessInstance_CloudWatchLogs AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance.CloudWatchLogs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-cloudwatchlogs.html
-type VerifiedAccessInstance_CloudWatchLogs struct {
+type VerifiedAccessInstance_CloudWatchLogs[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-cloudwatchlogs.html#cfn-ec2-verifiedaccessinstance-cloudwatchlogs-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type VerifiedAccessInstance_CloudWatchLogs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance_CloudWatchLogs) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance_CloudWatchLogs[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance.CloudWatchLogs"
 }

@@ -8,32 +8,32 @@ import (
 
 // TargetGroup_HealthCheckConfig AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup.HealthCheckConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html
-type TargetGroup_HealthCheckConfig struct {
+type TargetGroup_HealthCheckConfig[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// HealthCheckIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-healthcheckintervalseconds
-	HealthCheckIntervalSeconds *int `json:"HealthCheckIntervalSeconds,omitempty"`
+	HealthCheckIntervalSeconds *T `json:"HealthCheckIntervalSeconds,omitempty"`
 
 	// HealthCheckTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-healthchecktimeoutseconds
-	HealthCheckTimeoutSeconds *int `json:"HealthCheckTimeoutSeconds,omitempty"`
+	HealthCheckTimeoutSeconds *T `json:"HealthCheckTimeoutSeconds,omitempty"`
 
 	// HealthyThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-healthythresholdcount
-	HealthyThresholdCount *int `json:"HealthyThresholdCount,omitempty"`
+	HealthyThresholdCount *T `json:"HealthyThresholdCount,omitempty"`
 
 	// Matcher AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-matcher
-	Matcher *TargetGroup_Matcher `json:"Matcher,omitempty"`
+	Matcher *TargetGroup_Matcher[any] `json:"Matcher,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type TargetGroup_HealthCheckConfig struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type TargetGroup_HealthCheckConfig struct {
 	// UnhealthyThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-healthcheckconfig.html#cfn-vpclattice-targetgroup-healthcheckconfig-unhealthythresholdcount
-	UnhealthyThresholdCount *int `json:"UnhealthyThresholdCount,omitempty"`
+	UnhealthyThresholdCount *T `json:"UnhealthyThresholdCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type TargetGroup_HealthCheckConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_HealthCheckConfig) AWSCloudFormationType() string {
+func (r *TargetGroup_HealthCheckConfig[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::TargetGroup.HealthCheckConfig"
 }

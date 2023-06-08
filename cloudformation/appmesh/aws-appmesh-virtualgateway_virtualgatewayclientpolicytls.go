@@ -8,27 +8,27 @@ import (
 
 // VirtualGateway_VirtualGatewayClientPolicyTls AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicyTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html
-type VirtualGateway_VirtualGatewayClientPolicyTls struct {
+type VirtualGateway_VirtualGatewayClientPolicyTls[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-certificate
-	Certificate *VirtualGateway_VirtualGatewayClientTlsCertificate `json:"Certificate,omitempty"`
+	Certificate *VirtualGateway_VirtualGatewayClientTlsCertificate[any] `json:"Certificate,omitempty"`
 
 	// Enforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-enforce
-	Enforce *bool `json:"Enforce,omitempty"`
+	Enforce *T `json:"Enforce,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-ports
-	Ports []int `json:"Ports,omitempty"`
+	Ports []T `json:"Ports,omitempty"`
 
 	// Validation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-validation
-	Validation *VirtualGateway_VirtualGatewayTlsValidationContext `json:"Validation"`
+	Validation *VirtualGateway_VirtualGatewayTlsValidationContext[any] `json:"Validation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualGateway_VirtualGatewayClientPolicyTls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayClientPolicyTls) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayClientPolicyTls[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicyTls"
 }

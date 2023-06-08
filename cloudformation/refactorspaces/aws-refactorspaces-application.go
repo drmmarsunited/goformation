@@ -12,12 +12,12 @@ import (
 
 // Application AWS CloudFormation Resource (AWS::RefactorSpaces::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html
-type Application struct {
+type Application[T any] struct {
 
 	// ApiGatewayProxy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-apigatewayproxy
-	ApiGatewayProxy *Application_ApiGatewayProxyInput `json:"ApiGatewayProxy,omitempty"`
+	ApiGatewayProxy *Application_ApiGatewayProxyInput[any] `json:"ApiGatewayProxy,omitempty"`
 
 	// EnvironmentIdentifier AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type Application struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application) AWSCloudFormationType() string {
+func (r *Application[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Application"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Application) MarshalJSON() ([]byte, error) {
-	type Properties Application
+func (r Application[any]) MarshalJSON() ([]byte, error) {
+	type Properties Application[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Application) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Application) UnmarshalJSON(b []byte) error {
-	type Properties Application
+func (r *Application[any]) UnmarshalJSON(b []byte) error {
+	type Properties Application[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Application) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Application(*res.Properties)
+		*r = Application[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

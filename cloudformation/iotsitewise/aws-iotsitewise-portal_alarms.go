@@ -8,7 +8,7 @@ import (
 
 // Portal_Alarms AWS CloudFormation Resource (AWS::IoTSiteWise::Portal.Alarms)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html
-type Portal_Alarms struct {
+type Portal_Alarms[T any] struct {
 
 	// AlarmRoleArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Portal_Alarms struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Portal_Alarms) AWSCloudFormationType() string {
+func (r *Portal_Alarms[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Portal.Alarms"
 }

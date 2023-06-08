@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_LFTagKeyResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.LFTagKeyResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-lftagkeyresource.html
-type PrincipalPermissions_LFTagKeyResource struct {
+type PrincipalPermissions_LFTagKeyResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type PrincipalPermissions_LFTagKeyResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_LFTagKeyResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_LFTagKeyResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.LFTagKeyResource"
 }

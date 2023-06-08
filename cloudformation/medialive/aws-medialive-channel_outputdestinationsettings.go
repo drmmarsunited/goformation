@@ -8,7 +8,7 @@ import (
 
 // Channel_OutputDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.OutputDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html
-type Channel_OutputDestinationSettings struct {
+type Channel_OutputDestinationSettings[T any] struct {
 
 	// PasswordParam AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Channel_OutputDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_OutputDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_OutputDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.OutputDestinationSettings"
 }

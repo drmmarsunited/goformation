@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_StatefulRuleOptions AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.StatefulRuleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulruleoptions.html
-type RuleGroup_StatefulRuleOptions struct {
+type RuleGroup_StatefulRuleOptions[T any] struct {
 
 	// RuleOrder AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RuleGroup_StatefulRuleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_StatefulRuleOptions) AWSCloudFormationType() string {
+func (r *RuleGroup_StatefulRuleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.StatefulRuleOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_FrameOptions AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.FrameOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-frameoptions.html
-type ResponseHeadersPolicy_FrameOptions struct {
+type ResponseHeadersPolicy_FrameOptions[T any] struct {
 
 	// FrameOption AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResponseHeadersPolicy_FrameOptions struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-frameoptions.html#cfn-cloudfront-responseheaderspolicy-frameoptions-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResponseHeadersPolicy_FrameOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_FrameOptions) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_FrameOptions[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.FrameOptions"
 }

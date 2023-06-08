@@ -8,7 +8,7 @@ import (
 
 // NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook AWS CloudFormation Resource (AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecyclehook.html
-type NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook struct {
+type NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook) AWSCloudFormationType() string {
+func (r *NotebookInstanceLifecycleConfig_NotebookInstanceLifecycleHook[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook"
 }

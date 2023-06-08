@@ -8,7 +8,7 @@ import (
 
 // Analysis_LegendOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.LegendOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html
-type Analysis_LegendOptions struct {
+type Analysis_LegendOptions[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_LegendOptions struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-title
-	Title *Analysis_LabelOptions `json:"Title,omitempty"`
+	Title *Analysis_LabelOptions[any] `json:"Title,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analysis_LegendOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LegendOptions) AWSCloudFormationType() string {
+func (r *Analysis_LegendOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LegendOptions"
 }

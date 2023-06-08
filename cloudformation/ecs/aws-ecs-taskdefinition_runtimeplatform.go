@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_RuntimePlatform AWS CloudFormation Resource (AWS::ECS::TaskDefinition.RuntimePlatform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-runtimeplatform.html
-type TaskDefinition_RuntimePlatform struct {
+type TaskDefinition_RuntimePlatform[T any] struct {
 
 	// CpuArchitecture AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_RuntimePlatform struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_RuntimePlatform) AWSCloudFormationType() string {
+func (r *TaskDefinition_RuntimePlatform[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.RuntimePlatform"
 }

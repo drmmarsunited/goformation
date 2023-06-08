@@ -8,7 +8,7 @@ import (
 
 // DataflowEndpointGroup_SecurityDetails AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.SecurityDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-securitydetails.html
-type DataflowEndpointGroup_SecurityDetails struct {
+type DataflowEndpointGroup_SecurityDetails[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataflowEndpointGroup_SecurityDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_SecurityDetails) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_SecurityDetails[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.SecurityDetails"
 }

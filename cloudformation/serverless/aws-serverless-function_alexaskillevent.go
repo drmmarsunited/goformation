@@ -8,7 +8,7 @@ import (
 
 // Function_AlexaSkillEvent AWS CloudFormation Resource (AWS::Serverless::Function.AlexaSkillEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#alexaskill
-type Function_AlexaSkillEvent struct {
+type Function_AlexaSkillEvent[T any] struct {
 
 	// Variables AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Function_AlexaSkillEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_AlexaSkillEvent) AWSCloudFormationType() string {
+func (r *Function_AlexaSkillEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.AlexaSkillEvent"
 }

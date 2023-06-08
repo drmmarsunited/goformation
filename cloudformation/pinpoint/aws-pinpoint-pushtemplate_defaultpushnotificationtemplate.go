@@ -8,7 +8,7 @@ import (
 
 // PushTemplate_DefaultPushNotificationTemplate AWS CloudFormation Resource (AWS::Pinpoint::PushTemplate.DefaultPushNotificationTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html
-type PushTemplate_DefaultPushNotificationTemplate struct {
+type PushTemplate_DefaultPushNotificationTemplate[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type PushTemplate_DefaultPushNotificationTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PushTemplate_DefaultPushNotificationTemplate) AWSCloudFormationType() string {
+func (r *PushTemplate_DefaultPushNotificationTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::PushTemplate.DefaultPushNotificationTemplate"
 }

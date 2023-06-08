@@ -8,7 +8,7 @@ import (
 
 // Rule_HttpParameters AWS CloudFormation Resource (AWS::Events::Rule.HttpParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-httpparameters.html
-type Rule_HttpParameters struct {
+type Rule_HttpParameters[T any] struct {
 
 	// HeaderParameters AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Rule_HttpParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_HttpParameters) AWSCloudFormationType() string {
+func (r *Rule_HttpParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.HttpParameters"
 }

@@ -8,7 +8,7 @@ import (
 
 // Partition_SchemaId AWS CloudFormation Resource (AWS::Glue::Partition.SchemaId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html
-type Partition_SchemaId struct {
+type Partition_SchemaId[T any] struct {
 
 	// RegistryName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Partition_SchemaId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_SchemaId) AWSCloudFormationType() string {
+func (r *Partition_SchemaId[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SchemaId"
 }

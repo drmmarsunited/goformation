@@ -8,7 +8,7 @@ import (
 
 // Domain_CustomImage AWS CloudFormation Resource (AWS::SageMaker::Domain.CustomImage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html
-type Domain_CustomImage struct {
+type Domain_CustomImage[T any] struct {
 
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Domain_CustomImage struct {
 	// ImageVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-imageversionnumber
-	ImageVersionNumber *int `json:"ImageVersionNumber,omitempty"`
+	ImageVersionNumber *T `json:"ImageVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Domain_CustomImage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_CustomImage) AWSCloudFormationType() string {
+func (r *Domain_CustomImage[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.CustomImage"
 }

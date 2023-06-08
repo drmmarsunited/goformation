@@ -8,7 +8,7 @@ import (
 
 // TopicRule_SigV4Authorization AWS CloudFormation Resource (AWS::IoT::TopicRule.SigV4Authorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sigv4authorization.html
-type TopicRule_SigV4Authorization struct {
+type TopicRule_SigV4Authorization[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type TopicRule_SigV4Authorization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_SigV4Authorization) AWSCloudFormationType() string {
+func (r *TopicRule_SigV4Authorization[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.SigV4Authorization"
 }

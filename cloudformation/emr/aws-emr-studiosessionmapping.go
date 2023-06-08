@@ -11,7 +11,7 @@ import (
 
 // StudioSessionMapping AWS CloudFormation Resource (AWS::EMR::StudioSessionMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studiosessionmapping.html
-type StudioSessionMapping struct {
+type StudioSessionMapping[T any] struct {
 
 	// IdentityName AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type StudioSessionMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioSessionMapping) AWSCloudFormationType() string {
+func (r *StudioSessionMapping[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::StudioSessionMapping"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StudioSessionMapping) MarshalJSON() ([]byte, error) {
-	type Properties StudioSessionMapping
+func (r StudioSessionMapping[any]) MarshalJSON() ([]byte, error) {
+	type Properties StudioSessionMapping[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r StudioSessionMapping) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StudioSessionMapping) UnmarshalJSON(b []byte) error {
-	type Properties StudioSessionMapping
+func (r *StudioSessionMapping[any]) UnmarshalJSON(b []byte) error {
+	type Properties StudioSessionMapping[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *StudioSessionMapping) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StudioSessionMapping(*res.Properties)
+		*r = StudioSessionMapping[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

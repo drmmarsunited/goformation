@@ -8,12 +8,12 @@ import (
 
 // Analysis_ReferenceLineLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ReferenceLineLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinelabelconfiguration.html
-type Analysis_ReferenceLineLabelConfiguration struct {
+type Analysis_ReferenceLineLabelConfiguration[T any] struct {
 
 	// CustomLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinelabelconfiguration.html#cfn-quicksight-analysis-referencelinelabelconfiguration-customlabelconfiguration
-	CustomLabelConfiguration *Analysis_ReferenceLineCustomLabelConfiguration `json:"CustomLabelConfiguration,omitempty"`
+	CustomLabelConfiguration *Analysis_ReferenceLineCustomLabelConfiguration[any] `json:"CustomLabelConfiguration,omitempty"`
 
 	// FontColor AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_ReferenceLineLabelConfiguration struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinelabelconfiguration.html#cfn-quicksight-analysis-referencelinelabelconfiguration-fontconfiguration
-	FontConfiguration *Analysis_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Analysis_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// HorizontalPosition AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Analysis_ReferenceLineLabelConfiguration struct {
 	// ValueLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinelabelconfiguration.html#cfn-quicksight-analysis-referencelinelabelconfiguration-valuelabelconfiguration
-	ValueLabelConfiguration *Analysis_ReferenceLineValueLabelConfiguration `json:"ValueLabelConfiguration,omitempty"`
+	ValueLabelConfiguration *Analysis_ReferenceLineValueLabelConfiguration[any] `json:"ValueLabelConfiguration,omitempty"`
 
 	// VerticalPosition AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Analysis_ReferenceLineLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ReferenceLineLabelConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ReferenceLineLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ReferenceLineLabelConfiguration"
 }

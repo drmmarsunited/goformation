@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetElementConfigurationOverrides AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetElementConfigurationOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetelementconfigurationoverrides.html
-type Dashboard_SheetElementConfigurationOverrides struct {
+type Dashboard_SheetElementConfigurationOverrides[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SheetElementConfigurationOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetElementConfigurationOverrides) AWSCloudFormationType() string {
+func (r *Dashboard_SheetElementConfigurationOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetElementConfigurationOverrides"
 }

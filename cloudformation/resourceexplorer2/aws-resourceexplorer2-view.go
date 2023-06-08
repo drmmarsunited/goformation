@@ -11,17 +11,17 @@ import (
 
 // View AWS CloudFormation Resource (AWS::ResourceExplorer2::View)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html
-type View struct {
+type View[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-filters
-	Filters *View_Filters `json:"Filters,omitempty"`
+	Filters *View_Filters[any] `json:"Filters,omitempty"`
 
 	// IncludedProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-includedproperties
-	IncludedProperties []View_IncludedProperty `json:"IncludedProperties,omitempty"`
+	IncludedProperties []View_IncludedProperty[any] `json:"IncludedProperties,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type View struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *View) AWSCloudFormationType() string {
+func (r *View[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceExplorer2::View"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r View) MarshalJSON() ([]byte, error) {
-	type Properties View
+func (r View[any]) MarshalJSON() ([]byte, error) {
+	type Properties View[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r View) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *View) UnmarshalJSON(b []byte) error {
-	type Properties View
+func (r *View[any]) UnmarshalJSON(b []byte) error {
+	type Properties View[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *View) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = View(*res.Properties)
+		*r = View[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

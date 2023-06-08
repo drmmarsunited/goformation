@@ -8,7 +8,7 @@ import (
 
 // HttpApi_Route53Configuration AWS CloudFormation Resource (AWS::Serverless::HttpApi.Route53Configuration)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html
-type HttpApi_Route53Configuration struct {
+type HttpApi_Route53Configuration[T any] struct {
 
 	// DistributedDomainName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type HttpApi_Route53Configuration struct {
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html#sam-httpapi-route53configuration-evaluatetargethealth
-	EvaluateTargetHealth *bool `json:"EvaluateTargetHealth,omitempty"`
+	EvaluateTargetHealth *T `json:"EvaluateTargetHealth,omitempty"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type HttpApi_Route53Configuration struct {
 	// IpV6 AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html#sam-httpapi-route53configuration-ipv6
-	IpV6 *bool `json:"IpV6,omitempty"`
+	IpV6 *T `json:"IpV6,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type HttpApi_Route53Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_Route53Configuration) AWSCloudFormationType() string {
+func (r *HttpApi_Route53Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.Route53Configuration"
 }

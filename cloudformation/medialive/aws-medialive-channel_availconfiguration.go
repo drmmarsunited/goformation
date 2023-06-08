@@ -8,12 +8,12 @@ import (
 
 // Channel_AvailConfiguration AWS CloudFormation Resource (AWS::MediaLive::Channel.AvailConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availconfiguration.html
-type Channel_AvailConfiguration struct {
+type Channel_AvailConfiguration[T any] struct {
 
 	// AvailSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availconfiguration.html#cfn-medialive-channel-availconfiguration-availsettings
-	AvailSettings *Channel_AvailSettings `json:"AvailSettings,omitempty"`
+	AvailSettings *Channel_AvailSettings[any] `json:"AvailSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_AvailConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AvailConfiguration) AWSCloudFormationType() string {
+func (r *Channel_AvailConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AvailConfiguration"
 }

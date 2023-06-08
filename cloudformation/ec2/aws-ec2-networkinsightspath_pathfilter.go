@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsPath_PathFilter AWS CloudFormation Resource (AWS::EC2::NetworkInsightsPath.PathFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-pathfilter.html
-type NetworkInsightsPath_PathFilter struct {
+type NetworkInsightsPath_PathFilter[T any] struct {
 
 	// DestinationAddress AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type NetworkInsightsPath_PathFilter struct {
 	// DestinationPortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-pathfilter.html#cfn-ec2-networkinsightspath-pathfilter-destinationportrange
-	DestinationPortRange *NetworkInsightsPath_FilterPortRange `json:"DestinationPortRange,omitempty"`
+	DestinationPortRange *NetworkInsightsPath_FilterPortRange[any] `json:"DestinationPortRange,omitempty"`
 
 	// SourceAddress AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type NetworkInsightsPath_PathFilter struct {
 	// SourcePortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-pathfilter.html#cfn-ec2-networkinsightspath-pathfilter-sourceportrange
-	SourcePortRange *NetworkInsightsPath_FilterPortRange `json:"SourcePortRange,omitempty"`
+	SourcePortRange *NetworkInsightsPath_FilterPortRange[any] `json:"SourcePortRange,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type NetworkInsightsPath_PathFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsPath_PathFilter) AWSCloudFormationType() string {
+func (r *NetworkInsightsPath_PathFilter[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsPath.PathFilter"
 }

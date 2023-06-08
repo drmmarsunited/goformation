@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_SpotPlacement AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotPlacement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotplacement.html
-type SpotFleet_SpotPlacement struct {
+type SpotFleet_SpotPlacement[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type SpotFleet_SpotPlacement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_SpotPlacement) AWSCloudFormationType() string {
+func (r *SpotFleet_SpotPlacement[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotPlacement"
 }

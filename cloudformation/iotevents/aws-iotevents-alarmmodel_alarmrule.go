@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_AlarmRule AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AlarmRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmrule.html
-type AlarmModel_AlarmRule struct {
+type AlarmModel_AlarmRule[T any] struct {
 
 	// SimpleRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmrule.html#cfn-iotevents-alarmmodel-alarmrule-simplerule
-	SimpleRule *AlarmModel_SimpleRule `json:"SimpleRule,omitempty"`
+	SimpleRule *AlarmModel_SimpleRule[any] `json:"SimpleRule,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AlarmModel_AlarmRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AlarmRule) AWSCloudFormationType() string {
+func (r *AlarmModel_AlarmRule[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AlarmRule"
 }

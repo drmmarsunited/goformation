@@ -8,7 +8,7 @@ import (
 
 // Analysis_Sheet AWS CloudFormation Resource (AWS::QuickSight::Analysis.Sheet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheet.html
-type Analysis_Sheet struct {
+type Analysis_Sheet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_Sheet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_Sheet) AWSCloudFormationType() string {
+func (r *Analysis_Sheet[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.Sheet"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataSource_OracleParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.OracleParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oracleparameters.html
-type DataSource_OracleParameters struct {
+type DataSource_OracleParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_OracleParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oracleparameters.html#cfn-quicksight-datasource-oracleparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_OracleParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_OracleParameters) AWSCloudFormationType() string {
+func (r *DataSource_OracleParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.OracleParameters"
 }

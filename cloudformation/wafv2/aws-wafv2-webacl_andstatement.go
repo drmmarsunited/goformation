@@ -8,12 +8,12 @@ import (
 
 // WebACL_AndStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.AndStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatement.html
-type WebACL_AndStatement struct {
+type WebACL_AndStatement[T any] struct {
 
 	// Statements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatement.html#cfn-wafv2-webacl-andstatement-statements
-	Statements []WebACL_Statement `json:"Statements"`
+	Statements []WebACL_Statement[any] `json:"Statements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_AndStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_AndStatement) AWSCloudFormationType() string {
+func (r *WebACL_AndStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.AndStatement"
 }

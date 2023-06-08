@@ -8,12 +8,12 @@ import (
 
 // ByteMatchSet_ByteMatchTuple AWS CloudFormation Resource (AWS::WAFRegional::ByteMatchSet.ByteMatchTuple)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html
-type ByteMatchSet_ByteMatchTuple struct {
+type ByteMatchSet_ByteMatchTuple[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-fieldtomatch
-	FieldToMatch *ByteMatchSet_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *ByteMatchSet_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// PositionalConstraint AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ByteMatchSet_ByteMatchTuple struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ByteMatchSet_ByteMatchTuple) AWSCloudFormationType() string {
+func (r *ByteMatchSet_ByteMatchTuple[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::ByteMatchSet.ByteMatchTuple"
 }

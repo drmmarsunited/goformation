@@ -8,32 +8,32 @@ import (
 
 // ResourceDefinition_ResourceDataContainer AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.ResourceDataContainer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html
-type ResourceDefinition_ResourceDataContainer struct {
+type ResourceDefinition_ResourceDataContainer[T any] struct {
 
 	// LocalDeviceResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localdeviceresourcedata
-	LocalDeviceResourceData *ResourceDefinition_LocalDeviceResourceData `json:"LocalDeviceResourceData,omitempty"`
+	LocalDeviceResourceData *ResourceDefinition_LocalDeviceResourceData[any] `json:"LocalDeviceResourceData,omitempty"`
 
 	// LocalVolumeResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localvolumeresourcedata
-	LocalVolumeResourceData *ResourceDefinition_LocalVolumeResourceData `json:"LocalVolumeResourceData,omitempty"`
+	LocalVolumeResourceData *ResourceDefinition_LocalVolumeResourceData[any] `json:"LocalVolumeResourceData,omitempty"`
 
 	// S3MachineLearningModelResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-s3machinelearningmodelresourcedata
-	S3MachineLearningModelResourceData *ResourceDefinition_S3MachineLearningModelResourceData `json:"S3MachineLearningModelResourceData,omitempty"`
+	S3MachineLearningModelResourceData *ResourceDefinition_S3MachineLearningModelResourceData[any] `json:"S3MachineLearningModelResourceData,omitempty"`
 
 	// SageMakerMachineLearningModelResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
-	SageMakerMachineLearningModelResourceData *ResourceDefinition_SageMakerMachineLearningModelResourceData `json:"SageMakerMachineLearningModelResourceData,omitempty"`
+	SageMakerMachineLearningModelResourceData *ResourceDefinition_SageMakerMachineLearningModelResourceData[any] `json:"SageMakerMachineLearningModelResourceData,omitempty"`
 
 	// SecretsManagerSecretResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-secretsmanagersecretresourcedata
-	SecretsManagerSecretResourceData *ResourceDefinition_SecretsManagerSecretResourceData `json:"SecretsManagerSecretResourceData,omitempty"`
+	SecretsManagerSecretResourceData *ResourceDefinition_SecretsManagerSecretResourceData[any] `json:"SecretsManagerSecretResourceData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ResourceDefinition_ResourceDataContainer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_ResourceDataContainer) AWSCloudFormationType() string {
+func (r *ResourceDefinition_ResourceDataContainer[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.ResourceDataContainer"
 }

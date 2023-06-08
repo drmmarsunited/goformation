@@ -8,7 +8,7 @@ import (
 
 // InfrastructureConfiguration_S3Logs AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration.S3Logs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-s3logs.html
-type InfrastructureConfiguration_S3Logs struct {
+type InfrastructureConfiguration_S3Logs[T any] struct {
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InfrastructureConfiguration_S3Logs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InfrastructureConfiguration_S3Logs) AWSCloudFormationType() string {
+func (r *InfrastructureConfiguration_S3Logs[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::InfrastructureConfiguration.S3Logs"
 }

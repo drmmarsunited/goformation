@@ -8,7 +8,7 @@ import (
 
 // ProfilingGroup_Channel AWS CloudFormation Resource (AWS::CodeGuruProfiler::ProfilingGroup.Channel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codeguruprofiler-profilinggroup-channel.html
-type ProfilingGroup_Channel struct {
+type ProfilingGroup_Channel[T any] struct {
 
 	// channelId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ProfilingGroup_Channel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ProfilingGroup_Channel) AWSCloudFormationType() string {
+func (r *ProfilingGroup_Channel[any]) AWSCloudFormationType() string {
 	return "AWS::CodeGuruProfiler::ProfilingGroup.Channel"
 }

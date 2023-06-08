@@ -8,17 +8,17 @@ import (
 
 // Cluster_InstanceFleetProvisioningSpecifications AWS CloudFormation Resource (AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html
-type Cluster_InstanceFleetProvisioningSpecifications struct {
+type Cluster_InstanceFleetProvisioningSpecifications[T any] struct {
 
 	// OnDemandSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-ondemandspecification
-	OnDemandSpecification *Cluster_OnDemandProvisioningSpecification `json:"OnDemandSpecification,omitempty"`
+	OnDemandSpecification *Cluster_OnDemandProvisioningSpecification[any] `json:"OnDemandSpecification,omitempty"`
 
 	// SpotSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification
-	SpotSpecification *Cluster_SpotProvisioningSpecification `json:"SpotSpecification,omitempty"`
+	SpotSpecification *Cluster_SpotProvisioningSpecification[any] `json:"SpotSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_InstanceFleetProvisioningSpecifications struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_InstanceFleetProvisioningSpecifications) AWSCloudFormationType() string {
+func (r *Cluster_InstanceFleetProvisioningSpecifications[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications"
 }

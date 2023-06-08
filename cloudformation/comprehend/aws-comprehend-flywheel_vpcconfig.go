@@ -8,7 +8,7 @@ import (
 
 // Flywheel_VpcConfig AWS CloudFormation Resource (AWS::Comprehend::Flywheel.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-vpcconfig.html
-type Flywheel_VpcConfig struct {
+type Flywheel_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Flywheel_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flywheel_VpcConfig) AWSCloudFormationType() string {
+func (r *Flywheel_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Comprehend::Flywheel.VpcConfig"
 }

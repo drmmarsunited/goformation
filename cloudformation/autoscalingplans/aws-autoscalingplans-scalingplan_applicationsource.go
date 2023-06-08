@@ -8,7 +8,7 @@ import (
 
 // ScalingPlan_ApplicationSource AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.ApplicationSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html
-type ScalingPlan_ApplicationSource struct {
+type ScalingPlan_ApplicationSource[T any] struct {
 
 	// CloudFormationStackARN AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ScalingPlan_ApplicationSource struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-tagfilters
-	TagFilters []ScalingPlan_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []ScalingPlan_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ScalingPlan_ApplicationSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_ApplicationSource) AWSCloudFormationType() string {
+func (r *ScalingPlan_ApplicationSource[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.ApplicationSource"
 }

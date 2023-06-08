@@ -8,22 +8,22 @@ import (
 
 // ModelBiasJobDefinition_DatasetFormat AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.DatasetFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-datasetformat.html
-type ModelBiasJobDefinition_DatasetFormat struct {
+type ModelBiasJobDefinition_DatasetFormat[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-datasetformat.html#cfn-sagemaker-modelbiasjobdefinition-datasetformat-csv
-	Csv *ModelBiasJobDefinition_Csv `json:"Csv,omitempty"`
+	Csv *ModelBiasJobDefinition_Csv[any] `json:"Csv,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-datasetformat.html#cfn-sagemaker-modelbiasjobdefinition-datasetformat-json
-	Json *ModelBiasJobDefinition_Json `json:"Json,omitempty"`
+	Json *ModelBiasJobDefinition_Json[any] `json:"Json,omitempty"`
 
 	// Parquet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-datasetformat.html#cfn-sagemaker-modelbiasjobdefinition-datasetformat-parquet
-	Parquet *bool `json:"Parquet,omitempty"`
+	Parquet *T `json:"Parquet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelBiasJobDefinition_DatasetFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_DatasetFormat) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_DatasetFormat[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.DatasetFormat"
 }

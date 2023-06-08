@@ -8,17 +8,17 @@ import (
 
 // Analysis_AxisLinearScale AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisLinearScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislinearscale.html
-type Analysis_AxisLinearScale struct {
+type Analysis_AxisLinearScale[T any] struct {
 
 	// StepCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislinearscale.html#cfn-quicksight-analysis-axislinearscale-stepcount
-	StepCount *float64 `json:"StepCount,omitempty"`
+	StepCount *T `json:"StepCount,omitempty"`
 
 	// StepSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislinearscale.html#cfn-quicksight-analysis-axislinearscale-stepsize
-	StepSize *float64 `json:"StepSize,omitempty"`
+	StepSize *T `json:"StepSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_AxisLinearScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisLinearScale) AWSCloudFormationType() string {
+func (r *Analysis_AxisLinearScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisLinearScale"
 }

@@ -8,27 +8,27 @@ import (
 
 // ResponseHeadersPolicy_StrictTransportSecurity AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.StrictTransportSecurity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html
-type ResponseHeadersPolicy_StrictTransportSecurity struct {
+type ResponseHeadersPolicy_StrictTransportSecurity[T any] struct {
 
 	// AccessControlMaxAgeSec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-accesscontrolmaxagesec
-	AccessControlMaxAgeSec int `json:"AccessControlMaxAgeSec"`
+	AccessControlMaxAgeSec T `json:"AccessControlMaxAgeSec"`
 
 	// IncludeSubdomains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-includesubdomains
-	IncludeSubdomains *bool `json:"IncludeSubdomains,omitempty"`
+	IncludeSubdomains *T `json:"IncludeSubdomains,omitempty"`
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// Preload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-preload
-	Preload *bool `json:"Preload,omitempty"`
+	Preload *T `json:"Preload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ResponseHeadersPolicy_StrictTransportSecurity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_StrictTransportSecurity) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_StrictTransportSecurity[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.StrictTransportSecurity"
 }

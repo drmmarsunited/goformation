@@ -8,7 +8,7 @@ import (
 
 // Cluster_PlacementType AWS CloudFormation Resource (AWS::EMR::Cluster.PlacementType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html
-type Cluster_PlacementType struct {
+type Cluster_PlacementType[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Cluster_PlacementType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_PlacementType) AWSCloudFormationType() string {
+func (r *Cluster_PlacementType[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.PlacementType"
 }

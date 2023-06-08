@@ -8,7 +8,7 @@ import (
 
 // LocationNFS_OnPremConfig AWS CloudFormation Resource (AWS::DataSync::LocationNFS.OnPremConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationnfs-onpremconfig.html
-type LocationNFS_OnPremConfig struct {
+type LocationNFS_OnPremConfig[T any] struct {
 
 	// AgentArns AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LocationNFS_OnPremConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationNFS_OnPremConfig) AWSCloudFormationType() string {
+func (r *LocationNFS_OnPremConfig[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationNFS.OnPremConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_ContainerDependency AWS CloudFormation Resource (AWS::ECS::TaskDefinition.ContainerDependency)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html
-type TaskDefinition_ContainerDependency struct {
+type TaskDefinition_ContainerDependency[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_ContainerDependency struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_ContainerDependency) AWSCloudFormationType() string {
+func (r *TaskDefinition_ContainerDependency[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.ContainerDependency"
 }

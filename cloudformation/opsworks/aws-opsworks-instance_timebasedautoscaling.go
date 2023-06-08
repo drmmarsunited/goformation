@@ -8,7 +8,7 @@ import (
 
 // Instance_TimeBasedAutoScaling AWS CloudFormation Resource (AWS::OpsWorks::Instance.TimeBasedAutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html
-type Instance_TimeBasedAutoScaling struct {
+type Instance_TimeBasedAutoScaling[T any] struct {
 
 	// Friday AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Instance_TimeBasedAutoScaling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_TimeBasedAutoScaling) AWSCloudFormationType() string {
+func (r *Instance_TimeBasedAutoScaling[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.TimeBasedAutoScaling"
 }

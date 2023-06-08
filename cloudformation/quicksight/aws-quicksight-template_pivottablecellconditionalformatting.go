@@ -8,7 +8,7 @@ import (
 
 // Template_PivotTableCellConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableCellConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablecellconditionalformatting.html
-type Template_PivotTableCellConditionalFormatting struct {
+type Template_PivotTableCellConditionalFormatting[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Template_PivotTableCellConditionalFormatting struct {
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablecellconditionalformatting.html#cfn-quicksight-template-pivottablecellconditionalformatting-scope
-	Scope *Template_PivotTableConditionalFormattingScope `json:"Scope,omitempty"`
+	Scope *Template_PivotTableConditionalFormattingScope[any] `json:"Scope,omitempty"`
 
 	// TextFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablecellconditionalformatting.html#cfn-quicksight-template-pivottablecellconditionalformatting-textformat
-	TextFormat *Template_TextConditionalFormat `json:"TextFormat,omitempty"`
+	TextFormat *Template_TextConditionalFormat[any] `json:"TextFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_PivotTableCellConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableCellConditionalFormatting) AWSCloudFormationType() string {
+func (r *Template_PivotTableCellConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableCellConditionalFormatting"
 }

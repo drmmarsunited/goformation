@@ -11,7 +11,7 @@ import (
 
 // ServiceLinkedRole AWS CloudFormation Resource (AWS::IAM::ServiceLinkedRole)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html
-type ServiceLinkedRole struct {
+type ServiceLinkedRole[T any] struct {
 
 	// AWSServiceName AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type ServiceLinkedRole struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceLinkedRole) AWSCloudFormationType() string {
+func (r *ServiceLinkedRole[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::ServiceLinkedRole"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceLinkedRole) MarshalJSON() ([]byte, error) {
-	type Properties ServiceLinkedRole
+func (r ServiceLinkedRole[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceLinkedRole[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ServiceLinkedRole) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceLinkedRole) UnmarshalJSON(b []byte) error {
-	type Properties ServiceLinkedRole
+func (r *ServiceLinkedRole[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceLinkedRole[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ServiceLinkedRole) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceLinkedRole(*res.Properties)
+		*r = ServiceLinkedRole[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

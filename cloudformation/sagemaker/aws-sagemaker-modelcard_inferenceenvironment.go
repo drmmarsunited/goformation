@@ -8,7 +8,7 @@ import (
 
 // ModelCard_InferenceEnvironment AWS CloudFormation Resource (AWS::SageMaker::ModelCard.InferenceEnvironment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferenceenvironment.html
-type ModelCard_InferenceEnvironment struct {
+type ModelCard_InferenceEnvironment[T any] struct {
 
 	// ContainerImage AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelCard_InferenceEnvironment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_InferenceEnvironment) AWSCloudFormationType() string {
+func (r *ModelCard_InferenceEnvironment[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.InferenceEnvironment"
 }

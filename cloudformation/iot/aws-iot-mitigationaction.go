@@ -12,7 +12,7 @@ import (
 
 // MitigationAction AWS CloudFormation Resource (AWS::IoT::MitigationAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html
-type MitigationAction struct {
+type MitigationAction[T any] struct {
 
 	// ActionName AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type MitigationAction struct {
 	// ActionParams AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-actionparams
-	ActionParams *MitigationAction_ActionParams `json:"ActionParams"`
+	ActionParams *MitigationAction_ActionParams[any] `json:"ActionParams"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -51,14 +51,15 @@ type MitigationAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction) AWSCloudFormationType() string {
+func (r *MitigationAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MitigationAction) MarshalJSON() ([]byte, error) {
-	type Properties MitigationAction
+func (r MitigationAction[any]) MarshalJSON() ([]byte, error) {
+	type Properties MitigationAction[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r MitigationAction) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MitigationAction) UnmarshalJSON(b []byte) error {
-	type Properties MitigationAction
+func (r *MitigationAction[any]) UnmarshalJSON(b []byte) error {
+	type Properties MitigationAction[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *MitigationAction) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MitigationAction(*res.Properties)
+		*r = MitigationAction[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

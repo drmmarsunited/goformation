@@ -12,12 +12,12 @@ import (
 
 // Subnet AWS CloudFormation Resource (AWS::EC2::Subnet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
-type Subnet struct {
+type Subnet[T any] struct {
 
 	// AssignIpv6AddressOnCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
-	AssignIpv6AddressOnCreation *bool `json:"AssignIpv6AddressOnCreation,omitempty"`
+	AssignIpv6AddressOnCreation *T `json:"AssignIpv6AddressOnCreation,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Subnet struct {
 	// EnableDns64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-enabledns64
-	EnableDns64 *bool `json:"EnableDns64,omitempty"`
+	EnableDns64 *T `json:"EnableDns64,omitempty"`
 
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Subnet struct {
 	// Ipv6Native AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6native
-	Ipv6Native *bool `json:"Ipv6Native,omitempty"`
+	Ipv6Native *T `json:"Ipv6Native,omitempty"`
 
 	// MapPublicIpOnLaunch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
-	MapPublicIpOnLaunch *bool `json:"MapPublicIpOnLaunch,omitempty"`
+	MapPublicIpOnLaunch *T `json:"MapPublicIpOnLaunch,omitempty"`
 
 	// OutpostArn AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Subnet struct {
 	// PrivateDnsNameOptionsOnLaunch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch
-	PrivateDnsNameOptionsOnLaunch *Subnet_PrivateDnsNameOptionsOnLaunch `json:"PrivateDnsNameOptionsOnLaunch,omitempty"`
+	PrivateDnsNameOptionsOnLaunch *Subnet_PrivateDnsNameOptionsOnLaunch[any] `json:"PrivateDnsNameOptionsOnLaunch,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type Subnet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Subnet) AWSCloudFormationType() string {
+func (r *Subnet[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Subnet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Subnet) MarshalJSON() ([]byte, error) {
-	type Properties Subnet
+func (r Subnet[any]) MarshalJSON() ([]byte, error) {
+	type Properties Subnet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Subnet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Subnet) UnmarshalJSON(b []byte) error {
-	type Properties Subnet
+func (r *Subnet[any]) UnmarshalJSON(b []byte) error {
+	type Properties Subnet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Subnet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Subnet(*res.Properties)
+		*r = Subnet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

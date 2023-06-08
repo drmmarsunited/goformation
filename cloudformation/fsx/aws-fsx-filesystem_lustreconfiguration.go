@@ -8,7 +8,7 @@ import (
 
 // FileSystem_LustreConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.LustreConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html
-type FileSystem_LustreConfiguration struct {
+type FileSystem_LustreConfiguration[T any] struct {
 
 	// AutoImportPolicy AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type FileSystem_LustreConfiguration struct {
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays *int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *T `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-copytagstobackups
-	CopyTagsToBackups *bool `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *T `json:"CopyTagsToBackups,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type FileSystem_LustreConfiguration struct {
 	// ImportedFileChunkSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importedfilechunksize
-	ImportedFileChunkSize *int `json:"ImportedFileChunkSize,omitempty"`
+	ImportedFileChunkSize *T `json:"ImportedFileChunkSize,omitempty"`
 
 	// PerUnitStorageThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-perunitstoragethroughput
-	PerUnitStorageThroughput *int `json:"PerUnitStorageThroughput,omitempty"`
+	PerUnitStorageThroughput *T `json:"PerUnitStorageThroughput,omitempty"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
@@ -87,6 +87,6 @@ type FileSystem_LustreConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_LustreConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_LustreConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.LustreConfiguration"
 }

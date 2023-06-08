@@ -8,7 +8,7 @@ import (
 
 // Certificate_DomainValidationOption AWS CloudFormation Resource (AWS::CertificateManager::Certificate.DomainValidationOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html
-type Certificate_DomainValidationOption struct {
+type Certificate_DomainValidationOption[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Certificate_DomainValidationOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_DomainValidationOption) AWSCloudFormationType() string {
+func (r *Certificate_DomainValidationOption[any]) AWSCloudFormationType() string {
 	return "AWS::CertificateManager::Certificate.DomainValidationOption"
 }

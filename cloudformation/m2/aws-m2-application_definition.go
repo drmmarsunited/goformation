@@ -8,7 +8,7 @@ import (
 
 // Application_Definition AWS CloudFormation Resource (AWS::M2::Application.Definition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-definition.html
-type Application_Definition struct {
+type Application_Definition[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_Definition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_Definition) AWSCloudFormationType() string {
+func (r *Application_Definition[any]) AWSCloudFormationType() string {
 	return "AWS::M2::Application.Definition"
 }

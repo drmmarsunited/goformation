@@ -8,7 +8,7 @@ import (
 
 // Alarm_Dimension AWS CloudFormation Resource (AWS::CloudWatch::Alarm.Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html
-type Alarm_Dimension struct {
+type Alarm_Dimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Alarm_Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm_Dimension) AWSCloudFormationType() string {
+func (r *Alarm_Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::Alarm.Dimension"
 }

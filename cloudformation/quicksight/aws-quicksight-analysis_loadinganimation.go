@@ -8,7 +8,7 @@ import (
 
 // Analysis_LoadingAnimation AWS CloudFormation Resource (AWS::QuickSight::Analysis.LoadingAnimation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-loadinganimation.html
-type Analysis_LoadingAnimation struct {
+type Analysis_LoadingAnimation[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_LoadingAnimation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LoadingAnimation) AWSCloudFormationType() string {
+func (r *Analysis_LoadingAnimation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LoadingAnimation"
 }

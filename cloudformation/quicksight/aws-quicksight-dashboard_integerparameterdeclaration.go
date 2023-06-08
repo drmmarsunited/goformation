@@ -8,17 +8,17 @@ import (
 
 // Dashboard_IntegerParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.IntegerParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html
-type Dashboard_IntegerParameterDeclaration struct {
+type Dashboard_IntegerParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html#cfn-quicksight-dashboard-integerparameterdeclaration-defaultvalues
-	DefaultValues *Dashboard_IntegerDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Dashboard_IntegerDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html#cfn-quicksight-dashboard-integerparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Dashboard_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Dashboard_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_IntegerParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html#cfn-quicksight-dashboard-integerparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Dashboard_IntegerValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Dashboard_IntegerValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_IntegerParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_IntegerParameterDeclaration) AWSCloudFormationType() string {
+func (r *Dashboard_IntegerParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.IntegerParameterDeclaration"
 }

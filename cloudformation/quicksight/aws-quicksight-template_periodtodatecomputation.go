@@ -8,7 +8,7 @@ import (
 
 // Template_PeriodToDateComputation AWS CloudFormation Resource (AWS::QuickSight::Template.PeriodToDateComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodtodatecomputation.html
-type Template_PeriodToDateComputation struct {
+type Template_PeriodToDateComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Template_PeriodToDateComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodtodatecomputation.html#cfn-quicksight-template-periodtodatecomputation-time
-	Time *Template_DimensionField `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodtodatecomputation.html#cfn-quicksight-template-periodtodatecomputation-value
-	Value *Template_MeasureField `json:"Value,omitempty"`
+	Value *Template_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Template_PeriodToDateComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PeriodToDateComputation) AWSCloudFormationType() string {
+func (r *Template_PeriodToDateComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PeriodToDateComputation"
 }

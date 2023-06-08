@@ -8,17 +8,17 @@ import (
 
 // Project_LogsConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.LogsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html
-type Project_LogsConfig struct {
+type Project_LogsConfig[T any] struct {
 
 	// CloudWatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs
-	CloudWatchLogs *Project_CloudWatchLogsConfig `json:"CloudWatchLogs,omitempty"`
+	CloudWatchLogs *Project_CloudWatchLogsConfig[any] `json:"CloudWatchLogs,omitempty"`
 
 	// S3Logs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs
-	S3Logs *Project_S3LogsConfig `json:"S3Logs,omitempty"`
+	S3Logs *Project_S3LogsConfig[any] `json:"S3Logs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Project_LogsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_LogsConfig) AWSCloudFormationType() string {
+func (r *Project_LogsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.LogsConfig"
 }

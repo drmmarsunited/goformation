@@ -12,27 +12,27 @@ import (
 
 // RuleGroup AWS CloudFormation Resource (AWS::WAFv2::RuleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html
-type RuleGroup struct {
+type RuleGroup[T any] struct {
 
 	// AvailableLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-availablelabels
-	AvailableLabels []RuleGroup_LabelSummary `json:"AvailableLabels,omitempty"`
+	AvailableLabels []RuleGroup_LabelSummary[any] `json:"AvailableLabels,omitempty"`
 
 	// Capacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-capacity
-	Capacity int `json:"Capacity"`
+	Capacity T `json:"Capacity"`
 
 	// ConsumedLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-consumedlabels
-	ConsumedLabels []RuleGroup_LabelSummary `json:"ConsumedLabels,omitempty"`
+	ConsumedLabels []RuleGroup_LabelSummary[any] `json:"ConsumedLabels,omitempty"`
 
 	// CustomResponseBodies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-customresponsebodies
-	CustomResponseBodies map[string]RuleGroup_CustomResponseBody `json:"CustomResponseBodies,omitempty"`
+	CustomResponseBodies map[string]RuleGroup_CustomResponseBody[any] `json:"CustomResponseBodies,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type RuleGroup struct {
 	// Rules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-rules
-	Rules []RuleGroup_Rule `json:"Rules,omitempty"`
+	Rules []RuleGroup_Rule[any] `json:"Rules,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type RuleGroup struct {
 	// VisibilityConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-visibilityconfig
-	VisibilityConfig *RuleGroup_VisibilityConfig `json:"VisibilityConfig"`
+	VisibilityConfig *RuleGroup_VisibilityConfig[any] `json:"VisibilityConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -81,14 +81,15 @@ type RuleGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup) AWSCloudFormationType() string {
+func (r *RuleGroup[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RuleGroup) MarshalJSON() ([]byte, error) {
-	type Properties RuleGroup
+func (r RuleGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties RuleGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r RuleGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RuleGroup) UnmarshalJSON(b []byte) error {
-	type Properties RuleGroup
+func (r *RuleGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties RuleGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *RuleGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RuleGroup(*res.Properties)
+		*r = RuleGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

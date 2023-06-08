@@ -8,7 +8,7 @@ import (
 
 // Table_KeySchema AWS CloudFormation Resource (AWS::DynamoDB::Table.KeySchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-keyschema.html
-type Table_KeySchema struct {
+type Table_KeySchema[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Table_KeySchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_KeySchema) AWSCloudFormationType() string {
+func (r *Table_KeySchema[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.KeySchema"
 }

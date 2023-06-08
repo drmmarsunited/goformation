@@ -8,22 +8,22 @@ import (
 
 // Analysis_TreeMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.TreeMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapaggregatedfieldwells.html
-type Analysis_TreeMapAggregatedFieldWells struct {
+type Analysis_TreeMapAggregatedFieldWells[T any] struct {
 
 	// Colors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapaggregatedfieldwells.html#cfn-quicksight-analysis-treemapaggregatedfieldwells-colors
-	Colors []Analysis_MeasureField `json:"Colors,omitempty"`
+	Colors []Analysis_MeasureField[any] `json:"Colors,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapaggregatedfieldwells.html#cfn-quicksight-analysis-treemapaggregatedfieldwells-groups
-	Groups []Analysis_DimensionField `json:"Groups,omitempty"`
+	Groups []Analysis_DimensionField[any] `json:"Groups,omitempty"`
 
 	// Sizes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapaggregatedfieldwells.html#cfn-quicksight-analysis-treemapaggregatedfieldwells-sizes
-	Sizes []Analysis_MeasureField `json:"Sizes,omitempty"`
+	Sizes []Analysis_MeasureField[any] `json:"Sizes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_TreeMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TreeMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_TreeMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TreeMapAggregatedFieldWells"
 }

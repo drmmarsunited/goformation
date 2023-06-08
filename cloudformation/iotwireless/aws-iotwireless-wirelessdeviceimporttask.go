@@ -12,7 +12,7 @@ import (
 
 // WirelessDeviceImportTask AWS CloudFormation Resource (AWS::IoTWireless::WirelessDeviceImportTask)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdeviceimporttask.html
-type WirelessDeviceImportTask struct {
+type WirelessDeviceImportTask[T any] struct {
 
 	// DestinationName AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type WirelessDeviceImportTask struct {
 	// Sidewalk AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdeviceimporttask.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk
-	Sidewalk *WirelessDeviceImportTask_Sidewalk `json:"Sidewalk"`
+	Sidewalk *WirelessDeviceImportTask_Sidewalk[any] `json:"Sidewalk"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type WirelessDeviceImportTask struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDeviceImportTask) AWSCloudFormationType() string {
+func (r *WirelessDeviceImportTask[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDeviceImportTask"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WirelessDeviceImportTask) MarshalJSON() ([]byte, error) {
-	type Properties WirelessDeviceImportTask
+func (r WirelessDeviceImportTask[any]) MarshalJSON() ([]byte, error) {
+	type Properties WirelessDeviceImportTask[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r WirelessDeviceImportTask) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WirelessDeviceImportTask) UnmarshalJSON(b []byte) error {
-	type Properties WirelessDeviceImportTask
+func (r *WirelessDeviceImportTask[any]) UnmarshalJSON(b []byte) error {
+	type Properties WirelessDeviceImportTask[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *WirelessDeviceImportTask) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WirelessDeviceImportTask(*res.Properties)
+		*r = WirelessDeviceImportTask[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

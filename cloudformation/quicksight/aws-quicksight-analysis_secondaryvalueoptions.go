@@ -8,7 +8,7 @@ import (
 
 // Analysis_SecondaryValueOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.SecondaryValueOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-secondaryvalueoptions.html
-type Analysis_SecondaryValueOptions struct {
+type Analysis_SecondaryValueOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_SecondaryValueOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SecondaryValueOptions) AWSCloudFormationType() string {
+func (r *Analysis_SecondaryValueOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SecondaryValueOptions"
 }

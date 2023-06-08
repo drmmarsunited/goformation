@@ -8,7 +8,7 @@ import (
 
 // MitigationAction_UpdateCACertificateParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.UpdateCACertificateParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-updatecacertificateparams.html
-type MitigationAction_UpdateCACertificateParams struct {
+type MitigationAction_UpdateCACertificateParams[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MitigationAction_UpdateCACertificateParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_UpdateCACertificateParams) AWSCloudFormationType() string {
+func (r *MitigationAction_UpdateCACertificateParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.UpdateCACertificateParams"
 }

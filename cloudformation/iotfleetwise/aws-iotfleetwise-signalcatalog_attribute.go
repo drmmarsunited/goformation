@@ -8,7 +8,7 @@ import (
 
 // SignalCatalog_Attribute AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.Attribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-attribute.html
-type SignalCatalog_Attribute struct {
+type SignalCatalog_Attribute[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type SignalCatalog_Attribute struct {
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-attribute.html#cfn-iotfleetwise-signalcatalog-attribute-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-attribute.html#cfn-iotfleetwise-signalcatalog-attribute-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type SignalCatalog_Attribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_Attribute) AWSCloudFormationType() string {
+func (r *SignalCatalog_Attribute[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.Attribute"
 }

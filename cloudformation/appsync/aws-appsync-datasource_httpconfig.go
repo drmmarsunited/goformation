@@ -8,12 +8,12 @@ import (
 
 // DataSource_HttpConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.HttpConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
-type DataSource_HttpConfig struct {
+type DataSource_HttpConfig[T any] struct {
 
 	// AuthorizationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig
-	AuthorizationConfig *DataSource_AuthorizationConfig `json:"AuthorizationConfig,omitempty"`
+	AuthorizationConfig *DataSource_AuthorizationConfig[any] `json:"AuthorizationConfig,omitempty"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_HttpConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_HttpConfig) AWSCloudFormationType() string {
+func (r *DataSource_HttpConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.HttpConfig"
 }

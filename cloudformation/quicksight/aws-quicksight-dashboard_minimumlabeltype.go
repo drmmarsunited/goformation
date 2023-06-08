@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MinimumLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MinimumLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-minimumlabeltype.html
-type Dashboard_MinimumLabelType struct {
+type Dashboard_MinimumLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_MinimumLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MinimumLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_MinimumLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MinimumLabelType"
 }

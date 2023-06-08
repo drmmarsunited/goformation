@@ -12,12 +12,12 @@ import (
 
 // PartnerAccount AWS CloudFormation Resource (AWS::IoTWireless::PartnerAccount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html
-type PartnerAccount struct {
+type PartnerAccount[T any] struct {
 
 	// AccountLinked AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-accountlinked
-	AccountLinked *bool `json:"AccountLinked,omitempty"`
+	AccountLinked *T `json:"AccountLinked,omitempty"`
 
 	// PartnerAccountId AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type PartnerAccount struct {
 	// Sidewalk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalk
-	Sidewalk *PartnerAccount_SidewalkAccountInfo `json:"Sidewalk,omitempty"`
+	Sidewalk *PartnerAccount_SidewalkAccountInfo[any] `json:"Sidewalk,omitempty"`
 
 	// SidewalkResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkresponse
-	SidewalkResponse *PartnerAccount_SidewalkAccountInfoWithFingerprint `json:"SidewalkResponse,omitempty"`
+	SidewalkResponse *PartnerAccount_SidewalkAccountInfoWithFingerprint[any] `json:"SidewalkResponse,omitempty"`
 
 	// SidewalkUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkupdate
-	SidewalkUpdate *PartnerAccount_SidewalkUpdateAccount `json:"SidewalkUpdate,omitempty"`
+	SidewalkUpdate *PartnerAccount_SidewalkUpdateAccount[any] `json:"SidewalkUpdate,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type PartnerAccount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PartnerAccount) AWSCloudFormationType() string {
+func (r *PartnerAccount[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::PartnerAccount"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PartnerAccount) MarshalJSON() ([]byte, error) {
-	type Properties PartnerAccount
+func (r PartnerAccount[any]) MarshalJSON() ([]byte, error) {
+	type Properties PartnerAccount[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r PartnerAccount) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PartnerAccount) UnmarshalJSON(b []byte) error {
-	type Properties PartnerAccount
+func (r *PartnerAccount[any]) UnmarshalJSON(b []byte) error {
+	type Properties PartnerAccount[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *PartnerAccount) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PartnerAccount(*res.Properties)
+		*r = PartnerAccount[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

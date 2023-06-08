@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_RedirectConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.RedirectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html
-type ListenerRule_RedirectConfig struct {
+type ListenerRule_RedirectConfig[T any] struct {
 
 	// Host AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ListenerRule_RedirectConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_RedirectConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_RedirectConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.RedirectConfig"
 }

@@ -12,7 +12,7 @@ import (
 
 // Campaign AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html
-type Campaign struct {
+type Campaign[T any] struct {
 
 	// ConnectInstanceArn AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type Campaign struct {
 	// DialerConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-dialerconfig
-	DialerConfig *Campaign_DialerConfig `json:"DialerConfig"`
+	DialerConfig *Campaign_DialerConfig[any] `json:"DialerConfig"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Campaign struct {
 	// OutboundCallConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-outboundcallconfig
-	OutboundCallConfig *Campaign_OutboundCallConfig `json:"OutboundCallConfig"`
+	OutboundCallConfig *Campaign_OutboundCallConfig[any] `json:"OutboundCallConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type Campaign struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign) AWSCloudFormationType() string {
+func (r *Campaign[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Campaign) MarshalJSON() ([]byte, error) {
-	type Properties Campaign
+func (r Campaign[any]) MarshalJSON() ([]byte, error) {
+	type Properties Campaign[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r Campaign) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Campaign) UnmarshalJSON(b []byte) error {
-	type Properties Campaign
+func (r *Campaign[any]) UnmarshalJSON(b []byte) error {
+	type Properties Campaign[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *Campaign) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Campaign(*res.Properties)
+		*r = Campaign[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

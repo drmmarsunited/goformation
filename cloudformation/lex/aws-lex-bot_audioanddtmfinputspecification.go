@@ -8,22 +8,22 @@ import (
 
 // Bot_AudioAndDTMFInputSpecification AWS CloudFormation Resource (AWS::Lex::Bot.AudioAndDTMFInputSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html
-type Bot_AudioAndDTMFInputSpecification struct {
+type Bot_AudioAndDTMFInputSpecification[T any] struct {
 
 	// AudioSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-audiospecification
-	AudioSpecification *Bot_AudioSpecification `json:"AudioSpecification,omitempty"`
+	AudioSpecification *Bot_AudioSpecification[any] `json:"AudioSpecification,omitempty"`
 
 	// DTMFSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-dtmfspecification
-	DTMFSpecification *Bot_DTMFSpecification `json:"DTMFSpecification,omitempty"`
+	DTMFSpecification *Bot_DTMFSpecification[any] `json:"DTMFSpecification,omitempty"`
 
 	// StartTimeoutMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-starttimeoutms
-	StartTimeoutMs int `json:"StartTimeoutMs"`
+	StartTimeoutMs T `json:"StartTimeoutMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_AudioAndDTMFInputSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_AudioAndDTMFInputSpecification) AWSCloudFormationType() string {
+func (r *Bot_AudioAndDTMFInputSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.AudioAndDTMFInputSpecification"
 }

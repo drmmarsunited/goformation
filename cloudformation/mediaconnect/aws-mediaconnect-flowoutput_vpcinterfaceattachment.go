@@ -8,7 +8,7 @@ import (
 
 // FlowOutput_VpcInterfaceAttachment AWS CloudFormation Resource (AWS::MediaConnect::FlowOutput.VpcInterfaceAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-vpcinterfaceattachment.html
-type FlowOutput_VpcInterfaceAttachment struct {
+type FlowOutput_VpcInterfaceAttachment[T any] struct {
 
 	// VpcInterfaceName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type FlowOutput_VpcInterfaceAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowOutput_VpcInterfaceAttachment) AWSCloudFormationType() string {
+func (r *FlowOutput_VpcInterfaceAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::FlowOutput.VpcInterfaceAttachment"
 }

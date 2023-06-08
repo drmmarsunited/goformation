@@ -8,22 +8,22 @@ import (
 
 // VirtualGateway_VirtualGatewaySpec AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewaySpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html
-type VirtualGateway_VirtualGatewaySpec struct {
+type VirtualGateway_VirtualGatewaySpec[T any] struct {
 
 	// BackendDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-backenddefaults
-	BackendDefaults *VirtualGateway_VirtualGatewayBackendDefaults `json:"BackendDefaults,omitempty"`
+	BackendDefaults *VirtualGateway_VirtualGatewayBackendDefaults[any] `json:"BackendDefaults,omitempty"`
 
 	// Listeners AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-listeners
-	Listeners []VirtualGateway_VirtualGatewayListener `json:"Listeners"`
+	Listeners []VirtualGateway_VirtualGatewayListener[any] `json:"Listeners"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-logging
-	Logging *VirtualGateway_VirtualGatewayLogging `json:"Logging,omitempty"`
+	Logging *VirtualGateway_VirtualGatewayLogging[any] `json:"Logging,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualGateway_VirtualGatewaySpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewaySpec) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewaySpec[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewaySpec"
 }

@@ -8,7 +8,7 @@ import (
 
 // Application_ZeppelinMonitoringConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ZeppelinMonitoringConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinmonitoringconfiguration.html
-type Application_ZeppelinMonitoringConfiguration struct {
+type Application_ZeppelinMonitoringConfiguration[T any] struct {
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Application_ZeppelinMonitoringConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ZeppelinMonitoringConfiguration) AWSCloudFormationType() string {
+func (r *Application_ZeppelinMonitoringConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ZeppelinMonitoringConfiguration"
 }

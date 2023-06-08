@@ -8,27 +8,27 @@ import (
 
 // Bot_SlotValueElicitationSetting AWS CloudFormation Resource (AWS::Lex::Bot.SlotValueElicitationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html
-type Bot_SlotValueElicitationSetting struct {
+type Bot_SlotValueElicitationSetting[T any] struct {
 
 	// DefaultValueSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-defaultvaluespecification
-	DefaultValueSpecification *Bot_SlotDefaultValueSpecification `json:"DefaultValueSpecification,omitempty"`
+	DefaultValueSpecification *Bot_SlotDefaultValueSpecification[any] `json:"DefaultValueSpecification,omitempty"`
 
 	// PromptSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-promptspecification
-	PromptSpecification *Bot_PromptSpecification `json:"PromptSpecification,omitempty"`
+	PromptSpecification *Bot_PromptSpecification[any] `json:"PromptSpecification,omitempty"`
 
 	// SampleUtterances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-sampleutterances
-	SampleUtterances []Bot_SampleUtterance `json:"SampleUtterances,omitempty"`
+	SampleUtterances []Bot_SampleUtterance[any] `json:"SampleUtterances,omitempty"`
 
 	// SlotCaptureSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-slotcapturesetting
-	SlotCaptureSetting *Bot_SlotCaptureSetting `json:"SlotCaptureSetting,omitempty"`
+	SlotCaptureSetting *Bot_SlotCaptureSetting[any] `json:"SlotCaptureSetting,omitempty"`
 
 	// SlotConstraint AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Bot_SlotValueElicitationSetting struct {
 	// WaitAndContinueSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-waitandcontinuespecification
-	WaitAndContinueSpecification *Bot_WaitAndContinueSpecification `json:"WaitAndContinueSpecification,omitempty"`
+	WaitAndContinueSpecification *Bot_WaitAndContinueSpecification[any] `json:"WaitAndContinueSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Bot_SlotValueElicitationSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotValueElicitationSetting) AWSCloudFormationType() string {
+func (r *Bot_SlotValueElicitationSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotValueElicitationSetting"
 }

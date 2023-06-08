@@ -8,7 +8,7 @@ import (
 
 // FHIRDatastore_PreloadDataConfig AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore.PreloadDataConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-preloaddataconfig.html
-type FHIRDatastore_PreloadDataConfig struct {
+type FHIRDatastore_PreloadDataConfig[T any] struct {
 
 	// PreloadDataType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type FHIRDatastore_PreloadDataConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FHIRDatastore_PreloadDataConfig) AWSCloudFormationType() string {
+func (r *FHIRDatastore_PreloadDataConfig[any]) AWSCloudFormationType() string {
 	return "AWS::HealthLake::FHIRDatastore.PreloadDataConfig"
 }

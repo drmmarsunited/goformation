@@ -8,12 +8,12 @@ import (
 
 // ComponentVersion_LambdaVolumeMount AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaVolumeMount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html
-type ComponentVersion_LambdaVolumeMount struct {
+type ComponentVersion_LambdaVolumeMount[T any] struct {
 
 	// AddGroupOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-addgroupowner
-	AddGroupOwner *bool `json:"AddGroupOwner,omitempty"`
+	AddGroupOwner *T `json:"AddGroupOwner,omitempty"`
 
 	// DestinationPath AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ComponentVersion_LambdaVolumeMount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaVolumeMount) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaVolumeMount[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaVolumeMount"
 }

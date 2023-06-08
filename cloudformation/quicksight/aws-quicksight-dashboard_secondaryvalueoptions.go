@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SecondaryValueOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SecondaryValueOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-secondaryvalueoptions.html
-type Dashboard_SecondaryValueOptions struct {
+type Dashboard_SecondaryValueOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SecondaryValueOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SecondaryValueOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SecondaryValueOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SecondaryValueOptions"
 }

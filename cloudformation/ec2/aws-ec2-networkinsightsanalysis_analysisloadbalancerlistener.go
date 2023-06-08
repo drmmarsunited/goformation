@@ -8,17 +8,17 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisLoadBalancerListener AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerListener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html
-type NetworkInsightsAnalysis_AnalysisLoadBalancerListener struct {
+type NetworkInsightsAnalysis_AnalysisLoadBalancerListener[T any] struct {
 
 	// InstancePort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancerlistener-instanceport
-	InstancePort *int `json:"InstancePort,omitempty"`
+	InstancePort *T `json:"InstancePort,omitempty"`
 
 	// LoadBalancerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancerlistener-loadbalancerport
-	LoadBalancerPort *int `json:"LoadBalancerPort,omitempty"`
+	LoadBalancerPort *T `json:"LoadBalancerPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkInsightsAnalysis_AnalysisLoadBalancerListener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisLoadBalancerListener) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisLoadBalancerListener[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerListener"
 }

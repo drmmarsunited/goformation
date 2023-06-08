@@ -11,7 +11,7 @@ import (
 
 // ClusterCapacityProviderAssociations AWS CloudFormation Resource (AWS::ECS::ClusterCapacityProviderAssociations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html
-type ClusterCapacityProviderAssociations struct {
+type ClusterCapacityProviderAssociations[T any] struct {
 
 	// CapacityProviders AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type ClusterCapacityProviderAssociations struct {
 	// DefaultCapacityProviderStrategy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-defaultcapacityproviderstrategy
-	DefaultCapacityProviderStrategy []ClusterCapacityProviderAssociations_CapacityProviderStrategy `json:"DefaultCapacityProviderStrategy"`
+	DefaultCapacityProviderStrategy []ClusterCapacityProviderAssociations_CapacityProviderStrategy[any] `json:"DefaultCapacityProviderStrategy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type ClusterCapacityProviderAssociations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClusterCapacityProviderAssociations) AWSCloudFormationType() string {
+func (r *ClusterCapacityProviderAssociations[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::ClusterCapacityProviderAssociations"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ClusterCapacityProviderAssociations) MarshalJSON() ([]byte, error) {
-	type Properties ClusterCapacityProviderAssociations
+func (r ClusterCapacityProviderAssociations[any]) MarshalJSON() ([]byte, error) {
+	type Properties ClusterCapacityProviderAssociations[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ClusterCapacityProviderAssociations) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ClusterCapacityProviderAssociations) UnmarshalJSON(b []byte) error {
-	type Properties ClusterCapacityProviderAssociations
+func (r *ClusterCapacityProviderAssociations[any]) UnmarshalJSON(b []byte) error {
+	type Properties ClusterCapacityProviderAssociations[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ClusterCapacityProviderAssociations) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ClusterCapacityProviderAssociations(*res.Properties)
+		*r = ClusterCapacityProviderAssociations[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

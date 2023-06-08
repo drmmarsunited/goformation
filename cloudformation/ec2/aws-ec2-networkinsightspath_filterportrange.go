@@ -8,17 +8,17 @@ import (
 
 // NetworkInsightsPath_FilterPortRange AWS CloudFormation Resource (AWS::EC2::NetworkInsightsPath.FilterPortRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html
-type NetworkInsightsPath_FilterPortRange struct {
+type NetworkInsightsPath_FilterPortRange[T any] struct {
 
 	// FromPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html#cfn-ec2-networkinsightspath-filterportrange-fromport
-	FromPort *int `json:"FromPort,omitempty"`
+	FromPort *T `json:"FromPort,omitempty"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html#cfn-ec2-networkinsightspath-filterportrange-toport
-	ToPort *int `json:"ToPort,omitempty"`
+	ToPort *T `json:"ToPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkInsightsPath_FilterPortRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsPath_FilterPortRange) AWSCloudFormationType() string {
+func (r *NetworkInsightsPath_FilterPortRange[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsPath.FilterPortRange"
 }

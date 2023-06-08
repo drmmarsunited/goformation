@@ -8,7 +8,7 @@ import (
 
 // LoggerDefinition_Logger AWS CloudFormation Resource (AWS::Greengrass::LoggerDefinition.Logger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
-type LoggerDefinition_Logger struct {
+type LoggerDefinition_Logger[T any] struct {
 
 	// Component AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type LoggerDefinition_Logger struct {
 	// Space AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space
-	Space *int `json:"Space,omitempty"`
+	Space *T `json:"Space,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type LoggerDefinition_Logger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggerDefinition_Logger) AWSCloudFormationType() string {
+func (r *LoggerDefinition_Logger[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::LoggerDefinition.Logger"
 }

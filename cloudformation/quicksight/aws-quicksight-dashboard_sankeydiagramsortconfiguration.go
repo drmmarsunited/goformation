@@ -8,22 +8,22 @@ import (
 
 // Dashboard_SankeyDiagramSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SankeyDiagramSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramsortconfiguration.html
-type Dashboard_SankeyDiagramSortConfiguration struct {
+type Dashboard_SankeyDiagramSortConfiguration[T any] struct {
 
 	// DestinationItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramsortconfiguration.html#cfn-quicksight-dashboard-sankeydiagramsortconfiguration-destinationitemslimit
-	DestinationItemsLimit *Dashboard_ItemsLimitConfiguration `json:"DestinationItemsLimit,omitempty"`
+	DestinationItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"DestinationItemsLimit,omitempty"`
 
 	// SourceItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramsortconfiguration.html#cfn-quicksight-dashboard-sankeydiagramsortconfiguration-sourceitemslimit
-	SourceItemsLimit *Dashboard_ItemsLimitConfiguration `json:"SourceItemsLimit,omitempty"`
+	SourceItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"SourceItemsLimit,omitempty"`
 
 	// WeightSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramsortconfiguration.html#cfn-quicksight-dashboard-sankeydiagramsortconfiguration-weightsort
-	WeightSort []Dashboard_FieldSortOptions `json:"WeightSort,omitempty"`
+	WeightSort []Dashboard_FieldSortOptions[any] `json:"WeightSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_SankeyDiagramSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SankeyDiagramSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SankeyDiagramSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SankeyDiagramSortConfiguration"
 }

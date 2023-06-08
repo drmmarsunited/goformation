@@ -8,22 +8,22 @@ import (
 
 // Dashboard_KPIFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpifieldwells.html
-type Dashboard_KPIFieldWells struct {
+type Dashboard_KPIFieldWells[T any] struct {
 
 	// TargetValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpifieldwells.html#cfn-quicksight-dashboard-kpifieldwells-targetvalues
-	TargetValues []Dashboard_MeasureField `json:"TargetValues,omitempty"`
+	TargetValues []Dashboard_MeasureField[any] `json:"TargetValues,omitempty"`
 
 	// TrendGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpifieldwells.html#cfn-quicksight-dashboard-kpifieldwells-trendgroups
-	TrendGroups []Dashboard_DimensionField `json:"TrendGroups,omitempty"`
+	TrendGroups []Dashboard_DimensionField[any] `json:"TrendGroups,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpifieldwells.html#cfn-quicksight-dashboard-kpifieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_KPIFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_KPIFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIFieldWells"
 }

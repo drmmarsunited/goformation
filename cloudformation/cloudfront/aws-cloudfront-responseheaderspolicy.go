@@ -11,12 +11,12 @@ import (
 
 // ResponseHeadersPolicy AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html
-type ResponseHeadersPolicy struct {
+type ResponseHeadersPolicy[T any] struct {
 
 	// ResponseHeadersPolicyConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig
-	ResponseHeadersPolicyConfig *ResponseHeadersPolicy_ResponseHeadersPolicyConfig `json:"ResponseHeadersPolicyConfig"`
+	ResponseHeadersPolicyConfig *ResponseHeadersPolicy_ResponseHeadersPolicyConfig[any] `json:"ResponseHeadersPolicyConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type ResponseHeadersPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResponseHeadersPolicy) MarshalJSON() ([]byte, error) {
-	type Properties ResponseHeadersPolicy
+func (r ResponseHeadersPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResponseHeadersPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r ResponseHeadersPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResponseHeadersPolicy) UnmarshalJSON(b []byte) error {
-	type Properties ResponseHeadersPolicy
+func (r *ResponseHeadersPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResponseHeadersPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *ResponseHeadersPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResponseHeadersPolicy(*res.Properties)
+		*r = ResponseHeadersPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessTrustProvider_OidcOptions AWS CloudFormation Resource (AWS::EC2::VerifiedAccessTrustProvider.OidcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html
-type VerifiedAccessTrustProvider_OidcOptions struct {
+type VerifiedAccessTrustProvider_OidcOptions[T any] struct {
 
 	// AuthorizationEndpoint AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type VerifiedAccessTrustProvider_OidcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessTrustProvider_OidcOptions) AWSCloudFormationType() string {
+func (r *VerifiedAccessTrustProvider_OidcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessTrustProvider.OidcOptions"
 }

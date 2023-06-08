@@ -8,7 +8,7 @@ import (
 
 // Alarm_MetricDataQuery AWS CloudFormation Resource (AWS::CloudWatch::Alarm.MetricDataQuery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html
-type Alarm_MetricDataQuery struct {
+type Alarm_MetricDataQuery[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Alarm_MetricDataQuery struct {
 	// MetricStat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html#cfn-cloudwatch-alarm-metricdataquery-metricstat
-	MetricStat *Alarm_MetricStat `json:"MetricStat,omitempty"`
+	MetricStat *Alarm_MetricStat[any] `json:"MetricStat,omitempty"`
 
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html#cfn-cloudwatch-alarm-metricdataquery-period
-	Period *int `json:"Period,omitempty"`
+	Period *T `json:"Period,omitempty"`
 
 	// ReturnData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html#cfn-cloudwatch-alarm-metricdataquery-returndata
-	ReturnData *bool `json:"ReturnData,omitempty"`
+	ReturnData *T `json:"ReturnData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Alarm_MetricDataQuery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm_MetricDataQuery) AWSCloudFormationType() string {
+func (r *Alarm_MetricDataQuery[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::Alarm.MetricDataQuery"
 }

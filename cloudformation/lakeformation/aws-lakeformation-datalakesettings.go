@@ -11,17 +11,17 @@ import (
 
 // DataLakeSettings AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html
-type DataLakeSettings struct {
+type DataLakeSettings[T any] struct {
 
 	// Admins AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins
-	Admins *DataLakeSettings_Admins `json:"Admins,omitempty"`
+	Admins *DataLakeSettings_Admins[any] `json:"Admins,omitempty"`
 
 	// AllowExternalDataFiltering AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-allowexternaldatafiltering
-	AllowExternalDataFiltering *bool `json:"AllowExternalDataFiltering,omitempty"`
+	AllowExternalDataFiltering *T `json:"AllowExternalDataFiltering,omitempty"`
 
 	// AuthorizedSessionTagValueList AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type DataLakeSettings struct {
 	// CreateDatabaseDefaultPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-createdatabasedefaultpermissions
-	CreateDatabaseDefaultPermissions *DataLakeSettings_CreateDatabaseDefaultPermissions `json:"CreateDatabaseDefaultPermissions,omitempty"`
+	CreateDatabaseDefaultPermissions *DataLakeSettings_CreateDatabaseDefaultPermissions[any] `json:"CreateDatabaseDefaultPermissions,omitempty"`
 
 	// CreateTableDefaultPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-createtabledefaultpermissions
-	CreateTableDefaultPermissions *DataLakeSettings_CreateTableDefaultPermissions `json:"CreateTableDefaultPermissions,omitempty"`
+	CreateTableDefaultPermissions *DataLakeSettings_CreateTableDefaultPermissions[any] `json:"CreateTableDefaultPermissions,omitempty"`
 
 	// ExternalDataFilteringAllowList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-externaldatafilteringallowlist
-	ExternalDataFilteringAllowList *DataLakeSettings_ExternalDataFilteringAllowList `json:"ExternalDataFilteringAllowList,omitempty"`
+	ExternalDataFilteringAllowList *DataLakeSettings_ExternalDataFilteringAllowList[any] `json:"ExternalDataFilteringAllowList,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type DataLakeSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings) AWSCloudFormationType() string {
+func (r *DataLakeSettings[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataLakeSettings) MarshalJSON() ([]byte, error) {
-	type Properties DataLakeSettings
+func (r DataLakeSettings[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataLakeSettings[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r DataLakeSettings) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataLakeSettings) UnmarshalJSON(b []byte) error {
-	type Properties DataLakeSettings
+func (r *DataLakeSettings[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataLakeSettings[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *DataLakeSettings) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataLakeSettings(*res.Properties)
+		*r = DataLakeSettings[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

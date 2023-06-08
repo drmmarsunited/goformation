@@ -8,7 +8,7 @@ import (
 
 // AppImageConfig_KernelSpec AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig.KernelSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelspec.html
-type AppImageConfig_KernelSpec struct {
+type AppImageConfig_KernelSpec[T any] struct {
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AppImageConfig_KernelSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppImageConfig_KernelSpec) AWSCloudFormationType() string {
+func (r *AppImageConfig_KernelSpec[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::AppImageConfig.KernelSpec"
 }

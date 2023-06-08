@@ -8,12 +8,12 @@ import (
 
 // Application_CodeContent AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CodeContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-codecontent.html
-type Application_CodeContent struct {
+type Application_CodeContent[T any] struct {
 
 	// S3ContentLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-codecontent.html#cfn-kinesisanalyticsv2-application-codecontent-s3contentlocation
-	S3ContentLocation *Application_S3ContentLocation `json:"S3ContentLocation,omitempty"`
+	S3ContentLocation *Application_S3ContentLocation[any] `json:"S3ContentLocation,omitempty"`
 
 	// TextContent AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Application_CodeContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_CodeContent) AWSCloudFormationType() string {
+func (r *Application_CodeContent[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.CodeContent"
 }

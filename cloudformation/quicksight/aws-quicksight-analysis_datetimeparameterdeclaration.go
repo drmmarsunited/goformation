@@ -8,17 +8,17 @@ import (
 
 // Analysis_DateTimeParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimeParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameterdeclaration.html
-type Analysis_DateTimeParameterDeclaration struct {
+type Analysis_DateTimeParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameterdeclaration.html#cfn-quicksight-analysis-datetimeparameterdeclaration-defaultvalues
-	DefaultValues *Analysis_DateTimeDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Analysis_DateTimeDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameterdeclaration.html#cfn-quicksight-analysis-datetimeparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Analysis_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Analysis_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Analysis_DateTimeParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameterdeclaration.html#cfn-quicksight-analysis-datetimeparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Analysis_DateTimeValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Analysis_DateTimeValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_DateTimeParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimeParameterDeclaration) AWSCloudFormationType() string {
+func (r *Analysis_DateTimeParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimeParameterDeclaration"
 }

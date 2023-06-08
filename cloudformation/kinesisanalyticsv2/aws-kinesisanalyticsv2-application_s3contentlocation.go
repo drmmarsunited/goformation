@@ -8,7 +8,7 @@ import (
 
 // Application_S3ContentLocation AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.S3ContentLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentlocation.html
-type Application_S3ContentLocation struct {
+type Application_S3ContentLocation[T any] struct {
 
 	// BucketARN AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Application_S3ContentLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_S3ContentLocation) AWSCloudFormationType() string {
+func (r *Application_S3ContentLocation[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.S3ContentLocation"
 }

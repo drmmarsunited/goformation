@@ -12,7 +12,7 @@ import (
 
 // Script AWS CloudFormation Resource (AWS::GameLift::Script)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html
-type Script struct {
+type Script[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Script struct {
 	// StorageLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation
-	StorageLocation *Script_S3Location `json:"StorageLocation"`
+	StorageLocation *Script_S3Location[any] `json:"StorageLocation"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Script struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Script) AWSCloudFormationType() string {
+func (r *Script[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Script"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Script) MarshalJSON() ([]byte, error) {
-	type Properties Script
+func (r Script[any]) MarshalJSON() ([]byte, error) {
+	type Properties Script[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Script) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Script) UnmarshalJSON(b []byte) error {
-	type Properties Script
+func (r *Script[any]) UnmarshalJSON(b []byte) error {
+	type Properties Script[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Script) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Script(*res.Properties)
+		*r = Script[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

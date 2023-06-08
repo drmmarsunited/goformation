@@ -8,7 +8,7 @@ import (
 
 // ContainerRecipe_ComponentParameter AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.ComponentParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-componentparameter.html
-type ContainerRecipe_ComponentParameter struct {
+type ContainerRecipe_ComponentParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ContainerRecipe_ComponentParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe_ComponentParameter) AWSCloudFormationType() string {
+func (r *ContainerRecipe_ComponentParameter[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe.ComponentParameter"
 }

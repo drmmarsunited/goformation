@@ -8,7 +8,7 @@ import (
 
 // Integration_S3SourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.S3SourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-s3sourceproperties.html
-type Integration_S3SourceProperties struct {
+type Integration_S3SourceProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Integration_S3SourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_S3SourceProperties) AWSCloudFormationType() string {
+func (r *Integration_S3SourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.S3SourceProperties"
 }

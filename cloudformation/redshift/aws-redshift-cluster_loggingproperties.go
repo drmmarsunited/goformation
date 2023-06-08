@@ -8,7 +8,7 @@ import (
 
 // Cluster_LoggingProperties AWS CloudFormation Resource (AWS::Redshift::Cluster.LoggingProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html
-type Cluster_LoggingProperties struct {
+type Cluster_LoggingProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Cluster_LoggingProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_LoggingProperties) AWSCloudFormationType() string {
+func (r *Cluster_LoggingProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::Cluster.LoggingProperties"
 }

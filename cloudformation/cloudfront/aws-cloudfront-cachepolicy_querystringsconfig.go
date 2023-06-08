@@ -8,7 +8,7 @@ import (
 
 // CachePolicy_QueryStringsConfig AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.QueryStringsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-querystringsconfig.html
-type CachePolicy_QueryStringsConfig struct {
+type CachePolicy_QueryStringsConfig[T any] struct {
 
 	// QueryStringBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type CachePolicy_QueryStringsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CachePolicy_QueryStringsConfig) AWSCloudFormationType() string {
+func (r *CachePolicy_QueryStringsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CachePolicy.QueryStringsConfig"
 }

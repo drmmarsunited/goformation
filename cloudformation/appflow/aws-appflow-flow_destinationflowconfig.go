@@ -8,7 +8,7 @@ import (
 
 // Flow_DestinationFlowConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.DestinationFlowConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html
-type Flow_DestinationFlowConfig struct {
+type Flow_DestinationFlowConfig[T any] struct {
 
 	// ApiVersion AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flow_DestinationFlowConfig struct {
 	// DestinationConnectorProperties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-destinationconnectorproperties
-	DestinationConnectorProperties *Flow_DestinationConnectorProperties `json:"DestinationConnectorProperties"`
+	DestinationConnectorProperties *Flow_DestinationConnectorProperties[any] `json:"DestinationConnectorProperties"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Flow_DestinationFlowConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_DestinationFlowConfig) AWSCloudFormationType() string {
+func (r *Flow_DestinationFlowConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.DestinationFlowConfig"
 }

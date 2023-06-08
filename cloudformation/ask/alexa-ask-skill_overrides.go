@@ -8,7 +8,7 @@ import (
 
 // Skill_Overrides AWS CloudFormation Resource (Alexa::ASK::Skill.Overrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html
-type Skill_Overrides struct {
+type Skill_Overrides[T any] struct {
 
 	// Manifest AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Skill_Overrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Skill_Overrides) AWSCloudFormationType() string {
+func (r *Skill_Overrides[any]) AWSCloudFormationType() string {
 	return "Alexa::ASK::Skill.Overrides"
 }

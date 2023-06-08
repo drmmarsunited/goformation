@@ -8,17 +8,17 @@ import (
 
 // Connector_Capacity AWS CloudFormation Resource (AWS::KafkaConnect::Connector.Capacity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-capacity.html
-type Connector_Capacity struct {
+type Connector_Capacity[T any] struct {
 
 	// AutoScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-capacity.html#cfn-kafkaconnect-connector-capacity-autoscaling
-	AutoScaling *Connector_AutoScaling `json:"AutoScaling,omitempty"`
+	AutoScaling *Connector_AutoScaling[any] `json:"AutoScaling,omitempty"`
 
 	// ProvisionedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-capacity.html#cfn-kafkaconnect-connector-capacity-provisionedcapacity
-	ProvisionedCapacity *Connector_ProvisionedCapacity `json:"ProvisionedCapacity,omitempty"`
+	ProvisionedCapacity *Connector_ProvisionedCapacity[any] `json:"ProvisionedCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Connector_Capacity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_Capacity) AWSCloudFormationType() string {
+func (r *Connector_Capacity[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.Capacity"
 }

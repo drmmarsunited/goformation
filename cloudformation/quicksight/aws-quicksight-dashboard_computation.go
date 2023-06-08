@@ -8,57 +8,57 @@ import (
 
 // Dashboard_Computation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Computation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html
-type Dashboard_Computation struct {
+type Dashboard_Computation[T any] struct {
 
 	// Forecast AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-forecast
-	Forecast *Dashboard_ForecastComputation `json:"Forecast,omitempty"`
+	Forecast *Dashboard_ForecastComputation[any] `json:"Forecast,omitempty"`
 
 	// GrowthRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-growthrate
-	GrowthRate *Dashboard_GrowthRateComputation `json:"GrowthRate,omitempty"`
+	GrowthRate *Dashboard_GrowthRateComputation[any] `json:"GrowthRate,omitempty"`
 
 	// MaximumMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-maximumminimum
-	MaximumMinimum *Dashboard_MaximumMinimumComputation `json:"MaximumMinimum,omitempty"`
+	MaximumMinimum *Dashboard_MaximumMinimumComputation[any] `json:"MaximumMinimum,omitempty"`
 
 	// MetricComparison AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-metriccomparison
-	MetricComparison *Dashboard_MetricComparisonComputation `json:"MetricComparison,omitempty"`
+	MetricComparison *Dashboard_MetricComparisonComputation[any] `json:"MetricComparison,omitempty"`
 
 	// PeriodOverPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-periodoverperiod
-	PeriodOverPeriod *Dashboard_PeriodOverPeriodComputation `json:"PeriodOverPeriod,omitempty"`
+	PeriodOverPeriod *Dashboard_PeriodOverPeriodComputation[any] `json:"PeriodOverPeriod,omitempty"`
 
 	// PeriodToDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-periodtodate
-	PeriodToDate *Dashboard_PeriodToDateComputation `json:"PeriodToDate,omitempty"`
+	PeriodToDate *Dashboard_PeriodToDateComputation[any] `json:"PeriodToDate,omitempty"`
 
 	// TopBottomMovers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-topbottommovers
-	TopBottomMovers *Dashboard_TopBottomMoversComputation `json:"TopBottomMovers,omitempty"`
+	TopBottomMovers *Dashboard_TopBottomMoversComputation[any] `json:"TopBottomMovers,omitempty"`
 
 	// TopBottomRanked AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-topbottomranked
-	TopBottomRanked *Dashboard_TopBottomRankedComputation `json:"TopBottomRanked,omitempty"`
+	TopBottomRanked *Dashboard_TopBottomRankedComputation[any] `json:"TopBottomRanked,omitempty"`
 
 	// TotalAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-totalaggregation
-	TotalAggregation *Dashboard_TotalAggregationComputation `json:"TotalAggregation,omitempty"`
+	TotalAggregation *Dashboard_TotalAggregationComputation[any] `json:"TotalAggregation,omitempty"`
 
 	// UniqueValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-computation.html#cfn-quicksight-dashboard-computation-uniquevalues
-	UniqueValues *Dashboard_UniqueValuesComputation `json:"UniqueValues,omitempty"`
+	UniqueValues *Dashboard_UniqueValuesComputation[any] `json:"UniqueValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Dashboard_Computation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Computation) AWSCloudFormationType() string {
+func (r *Dashboard_Computation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Computation"
 }

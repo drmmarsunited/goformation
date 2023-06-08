@@ -8,7 +8,7 @@ import (
 
 // Rule_RuleTriggerEventSource AWS CloudFormation Resource (AWS::Connect::Rule.RuleTriggerEventSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-ruletriggereventsource.html
-type Rule_RuleTriggerEventSource struct {
+type Rule_RuleTriggerEventSource[T any] struct {
 
 	// EventSourceName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rule_RuleTriggerEventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_RuleTriggerEventSource) AWSCloudFormationType() string {
+func (r *Rule_RuleTriggerEventSource[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.RuleTriggerEventSource"
 }

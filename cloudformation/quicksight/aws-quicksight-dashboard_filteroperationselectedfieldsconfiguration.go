@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FilterOperationSelectedFieldsConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterOperationSelectedFieldsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filteroperationselectedfieldsconfiguration.html
-type Dashboard_FilterOperationSelectedFieldsConfiguration struct {
+type Dashboard_FilterOperationSelectedFieldsConfiguration[T any] struct {
 
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_FilterOperationSelectedFieldsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterOperationSelectedFieldsConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FilterOperationSelectedFieldsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterOperationSelectedFieldsConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_ServiceNowSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ServiceNowSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-servicenowsourceproperties.html
-type Flow_ServiceNowSourceProperties struct {
+type Flow_ServiceNowSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_ServiceNowSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ServiceNowSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_ServiceNowSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ServiceNowSourceProperties"
 }

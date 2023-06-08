@@ -8,7 +8,7 @@ import (
 
 // TopicRule_CloudwatchMetricAction AWS CloudFormation Resource (AWS::IoT::TopicRule.CloudwatchMetricAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html
-type TopicRule_CloudwatchMetricAction struct {
+type TopicRule_CloudwatchMetricAction[T any] struct {
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type TopicRule_CloudwatchMetricAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_CloudwatchMetricAction) AWSCloudFormationType() string {
+func (r *TopicRule_CloudwatchMetricAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.CloudwatchMetricAction"
 }

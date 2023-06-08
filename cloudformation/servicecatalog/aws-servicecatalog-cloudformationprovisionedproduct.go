@@ -12,7 +12,7 @@ import (
 
 // CloudFormationProvisionedProduct AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProvisionedProduct)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html
-type CloudFormationProvisionedProduct struct {
+type CloudFormationProvisionedProduct[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -62,12 +62,12 @@ type CloudFormationProvisionedProduct struct {
 	// ProvisioningParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters
-	ProvisioningParameters []CloudFormationProvisionedProduct_ProvisioningParameter `json:"ProvisioningParameters,omitempty"`
+	ProvisioningParameters []CloudFormationProvisionedProduct_ProvisioningParameter[any] `json:"ProvisioningParameters,omitempty"`
 
 	// ProvisioningPreferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences
-	ProvisioningPreferences *CloudFormationProvisionedProduct_ProvisioningPreferences `json:"ProvisioningPreferences,omitempty"`
+	ProvisioningPreferences *CloudFormationProvisionedProduct_ProvisioningPreferences[any] `json:"ProvisioningPreferences,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -91,14 +91,15 @@ type CloudFormationProvisionedProduct struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProvisionedProduct) AWSCloudFormationType() string {
+func (r *CloudFormationProvisionedProduct[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProvisionedProduct"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CloudFormationProvisionedProduct) MarshalJSON() ([]byte, error) {
-	type Properties CloudFormationProvisionedProduct
+func (r CloudFormationProvisionedProduct[any]) MarshalJSON() ([]byte, error) {
+	type Properties CloudFormationProvisionedProduct[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r CloudFormationProvisionedProduct) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CloudFormationProvisionedProduct) UnmarshalJSON(b []byte) error {
-	type Properties CloudFormationProvisionedProduct
+func (r *CloudFormationProvisionedProduct[any]) UnmarshalJSON(b []byte) error {
+	type Properties CloudFormationProvisionedProduct[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *CloudFormationProvisionedProduct) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CloudFormationProvisionedProduct(*res.Properties)
+		*r = CloudFormationProvisionedProduct[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

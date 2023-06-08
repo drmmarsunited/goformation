@@ -8,7 +8,7 @@ import (
 
 // VirtualCluster_ContainerProvider AWS CloudFormation Resource (AWS::EMRContainers::VirtualCluster.ContainerProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html
-type VirtualCluster_ContainerProvider struct {
+type VirtualCluster_ContainerProvider[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type VirtualCluster_ContainerProvider struct {
 	// Info AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html#cfn-emrcontainers-virtualcluster-containerprovider-info
-	Info *VirtualCluster_ContainerInfo `json:"Info"`
+	Info *VirtualCluster_ContainerInfo[any] `json:"Info"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type VirtualCluster_ContainerProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualCluster_ContainerProvider) AWSCloudFormationType() string {
+func (r *VirtualCluster_ContainerProvider[any]) AWSCloudFormationType() string {
 	return "AWS::EMRContainers::VirtualCluster.ContainerProvider"
 }

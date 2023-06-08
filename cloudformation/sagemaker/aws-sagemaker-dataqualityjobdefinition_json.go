@@ -8,12 +8,12 @@ import (
 
 // DataQualityJobDefinition_Json AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.Json)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-json.html
-type DataQualityJobDefinition_Json struct {
+type DataQualityJobDefinition_Json[T any] struct {
 
 	// Line AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-json.html#cfn-sagemaker-dataqualityjobdefinition-json-line
-	Line *bool `json:"Line,omitempty"`
+	Line *T `json:"Line,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataQualityJobDefinition_Json struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_Json) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_Json[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.Json"
 }

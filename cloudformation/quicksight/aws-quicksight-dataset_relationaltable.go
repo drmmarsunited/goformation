@@ -8,7 +8,7 @@ import (
 
 // DataSet_RelationalTable AWS CloudFormation Resource (AWS::QuickSight::DataSet.RelationalTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html
-type DataSet_RelationalTable struct {
+type DataSet_RelationalTable[T any] struct {
 
 	// Catalog AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSet_RelationalTable struct {
 	// InputColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-inputcolumns
-	InputColumns []DataSet_InputColumn `json:"InputColumns"`
+	InputColumns []DataSet_InputColumn[any] `json:"InputColumns"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DataSet_RelationalTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_RelationalTable) AWSCloudFormationType() string {
+func (r *DataSet_RelationalTable[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.RelationalTable"
 }

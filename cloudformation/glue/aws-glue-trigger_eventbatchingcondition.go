@@ -8,17 +8,17 @@ import (
 
 // Trigger_EventBatchingCondition AWS CloudFormation Resource (AWS::Glue::Trigger.EventBatchingCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html
-type Trigger_EventBatchingCondition struct {
+type Trigger_EventBatchingCondition[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchsize
-	BatchSize int `json:"BatchSize"`
+	BatchSize T `json:"BatchSize"`
 
 	// BatchWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchwindow
-	BatchWindow *int `json:"BatchWindow,omitempty"`
+	BatchWindow *T `json:"BatchWindow,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Trigger_EventBatchingCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger_EventBatchingCondition) AWSCloudFormationType() string {
+func (r *Trigger_EventBatchingCondition[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.EventBatchingCondition"
 }

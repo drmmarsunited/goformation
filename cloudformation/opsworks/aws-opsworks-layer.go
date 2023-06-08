@@ -12,7 +12,7 @@ import (
 
 // Layer AWS CloudFormation Resource (AWS::OpsWorks::Layer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html
-type Layer struct {
+type Layer[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Layer struct {
 	// AutoAssignElasticIps AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
-	AutoAssignElasticIps bool `json:"AutoAssignElasticIps"`
+	AutoAssignElasticIps T `json:"AutoAssignElasticIps"`
 
 	// AutoAssignPublicIps AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
-	AutoAssignPublicIps bool `json:"AutoAssignPublicIps"`
+	AutoAssignPublicIps T `json:"AutoAssignPublicIps"`
 
 	// CustomInstanceProfileArn AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Layer struct {
 	// CustomRecipes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes
-	CustomRecipes *Layer_Recipes `json:"CustomRecipes,omitempty"`
+	CustomRecipes *Layer_Recipes[any] `json:"CustomRecipes,omitempty"`
 
 	// CustomSecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -52,22 +52,22 @@ type Layer struct {
 	// EnableAutoHealing AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
-	EnableAutoHealing bool `json:"EnableAutoHealing"`
+	EnableAutoHealing T `json:"EnableAutoHealing"`
 
 	// InstallUpdatesOnBoot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
-	InstallUpdatesOnBoot *bool `json:"InstallUpdatesOnBoot,omitempty"`
+	InstallUpdatesOnBoot *T `json:"InstallUpdatesOnBoot,omitempty"`
 
 	// LifecycleEventConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
-	LifecycleEventConfiguration *Layer_LifecycleEventConfiguration `json:"LifecycleEventConfiguration,omitempty"`
+	LifecycleEventConfiguration *Layer_LifecycleEventConfiguration[any] `json:"LifecycleEventConfiguration,omitempty"`
 
 	// LoadBasedAutoScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling
-	LoadBasedAutoScaling *Layer_LoadBasedAutoScaling `json:"LoadBasedAutoScaling,omitempty"`
+	LoadBasedAutoScaling *Layer_LoadBasedAutoScaling[any] `json:"LoadBasedAutoScaling,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -102,12 +102,12 @@ type Layer struct {
 	// UseEbsOptimizedInstances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
-	UseEbsOptimizedInstances *bool `json:"UseEbsOptimizedInstances,omitempty"`
+	UseEbsOptimizedInstances *T `json:"UseEbsOptimizedInstances,omitempty"`
 
 	// VolumeConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations
-	VolumeConfigurations []Layer_VolumeConfiguration `json:"VolumeConfigurations,omitempty"`
+	VolumeConfigurations []Layer_VolumeConfiguration[any] `json:"VolumeConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -126,14 +126,15 @@ type Layer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Layer) AWSCloudFormationType() string {
+func (r *Layer[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Layer) MarshalJSON() ([]byte, error) {
-	type Properties Layer
+func (r Layer[any]) MarshalJSON() ([]byte, error) {
+	type Properties Layer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -155,8 +156,9 @@ func (r Layer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Layer) UnmarshalJSON(b []byte) error {
-	type Properties Layer
+func (r *Layer[any]) UnmarshalJSON(b []byte) error {
+	type Properties Layer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -176,7 +178,7 @@ func (r *Layer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Layer(*res.Properties)
+		*r = Layer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

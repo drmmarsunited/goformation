@@ -8,22 +8,22 @@ import (
 
 // Dashboard_ColumnHierarchy AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColumnHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnhierarchy.html
-type Dashboard_ColumnHierarchy struct {
+type Dashboard_ColumnHierarchy[T any] struct {
 
 	// DateTimeHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnhierarchy.html#cfn-quicksight-dashboard-columnhierarchy-datetimehierarchy
-	DateTimeHierarchy *Dashboard_DateTimeHierarchy `json:"DateTimeHierarchy,omitempty"`
+	DateTimeHierarchy *Dashboard_DateTimeHierarchy[any] `json:"DateTimeHierarchy,omitempty"`
 
 	// ExplicitHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnhierarchy.html#cfn-quicksight-dashboard-columnhierarchy-explicithierarchy
-	ExplicitHierarchy *Dashboard_ExplicitHierarchy `json:"ExplicitHierarchy,omitempty"`
+	ExplicitHierarchy *Dashboard_ExplicitHierarchy[any] `json:"ExplicitHierarchy,omitempty"`
 
 	// PredefinedHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnhierarchy.html#cfn-quicksight-dashboard-columnhierarchy-predefinedhierarchy
-	PredefinedHierarchy *Dashboard_PredefinedHierarchy `json:"PredefinedHierarchy,omitempty"`
+	PredefinedHierarchy *Dashboard_PredefinedHierarchy[any] `json:"PredefinedHierarchy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ColumnHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColumnHierarchy) AWSCloudFormationType() string {
+func (r *Dashboard_ColumnHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColumnHierarchy"
 }

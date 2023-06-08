@@ -11,12 +11,12 @@ import (
 
 // ConfigurationSet AWS CloudFormation Resource (AWS::SES::ConfigurationSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html
-type ConfigurationSet struct {
+type ConfigurationSet[T any] struct {
 
 	// DeliveryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-deliveryoptions
-	DeliveryOptions *ConfigurationSet_DeliveryOptions `json:"DeliveryOptions,omitempty"`
+	DeliveryOptions *ConfigurationSet_DeliveryOptions[any] `json:"DeliveryOptions,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -26,27 +26,27 @@ type ConfigurationSet struct {
 	// ReputationOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-reputationoptions
-	ReputationOptions *ConfigurationSet_ReputationOptions `json:"ReputationOptions,omitempty"`
+	ReputationOptions *ConfigurationSet_ReputationOptions[any] `json:"ReputationOptions,omitempty"`
 
 	// SendingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-sendingoptions
-	SendingOptions *ConfigurationSet_SendingOptions `json:"SendingOptions,omitempty"`
+	SendingOptions *ConfigurationSet_SendingOptions[any] `json:"SendingOptions,omitempty"`
 
 	// SuppressionOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-suppressionoptions
-	SuppressionOptions *ConfigurationSet_SuppressionOptions `json:"SuppressionOptions,omitempty"`
+	SuppressionOptions *ConfigurationSet_SuppressionOptions[any] `json:"SuppressionOptions,omitempty"`
 
 	// TrackingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-trackingoptions
-	TrackingOptions *ConfigurationSet_TrackingOptions `json:"TrackingOptions,omitempty"`
+	TrackingOptions *ConfigurationSet_TrackingOptions[any] `json:"TrackingOptions,omitempty"`
 
 	// VdmOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-vdmoptions
-	VdmOptions *ConfigurationSet_VdmOptions `json:"VdmOptions,omitempty"`
+	VdmOptions *ConfigurationSet_VdmOptions[any] `json:"VdmOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type ConfigurationSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet) AWSCloudFormationType() string {
+func (r *ConfigurationSet[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigurationSet) MarshalJSON() ([]byte, error) {
-	type Properties ConfigurationSet
+func (r ConfigurationSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigurationSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r ConfigurationSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigurationSet) UnmarshalJSON(b []byte) error {
-	type Properties ConfigurationSet
+func (r *ConfigurationSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigurationSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *ConfigurationSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigurationSet(*res.Properties)
+		*r = ConfigurationSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

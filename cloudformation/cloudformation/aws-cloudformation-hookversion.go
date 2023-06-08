@@ -11,7 +11,7 @@ import (
 
 // HookVersion AWS CloudFormation Resource (AWS::CloudFormation::HookVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html
-type HookVersion struct {
+type HookVersion[T any] struct {
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type HookVersion struct {
 	// LoggingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#cfn-cloudformation-hookversion-loggingconfig
-	LoggingConfig *HookVersion_LoggingConfig `json:"LoggingConfig,omitempty"`
+	LoggingConfig *HookVersion_LoggingConfig[any] `json:"LoggingConfig,omitempty"`
 
 	// SchemaHandlerPackage AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type HookVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HookVersion) AWSCloudFormationType() string {
+func (r *HookVersion[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::HookVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HookVersion) MarshalJSON() ([]byte, error) {
-	type Properties HookVersion
+func (r HookVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties HookVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r HookVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HookVersion) UnmarshalJSON(b []byte) error {
-	type Properties HookVersion
+func (r *HookVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties HookVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *HookVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HookVersion(*res.Properties)
+		*r = HookVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

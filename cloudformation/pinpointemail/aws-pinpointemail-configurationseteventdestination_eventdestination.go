@@ -8,22 +8,22 @@ import (
 
 // ConfigurationSetEventDestination_EventDestination AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html
-type ConfigurationSetEventDestination_EventDestination struct {
+type ConfigurationSetEventDestination_EventDestination[T any] struct {
 
 	// CloudWatchDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-cloudwatchdestination
-	CloudWatchDestination *ConfigurationSetEventDestination_CloudWatchDestination `json:"CloudWatchDestination,omitempty"`
+	CloudWatchDestination *ConfigurationSetEventDestination_CloudWatchDestination[any] `json:"CloudWatchDestination,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// KinesisFirehoseDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-kinesisfirehosedestination
-	KinesisFirehoseDestination *ConfigurationSetEventDestination_KinesisFirehoseDestination `json:"KinesisFirehoseDestination,omitempty"`
+	KinesisFirehoseDestination *ConfigurationSetEventDestination_KinesisFirehoseDestination[any] `json:"KinesisFirehoseDestination,omitempty"`
 
 	// MatchingEventTypes AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type ConfigurationSetEventDestination_EventDestination struct {
 	// PinpointDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-pinpointdestination
-	PinpointDestination *ConfigurationSetEventDestination_PinpointDestination `json:"PinpointDestination,omitempty"`
+	PinpointDestination *ConfigurationSetEventDestination_PinpointDestination[any] `json:"PinpointDestination,omitempty"`
 
 	// SnsDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-snsdestination
-	SnsDestination *ConfigurationSetEventDestination_SnsDestination `json:"SnsDestination,omitempty"`
+	SnsDestination *ConfigurationSetEventDestination_SnsDestination[any] `json:"SnsDestination,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type ConfigurationSetEventDestination_EventDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSetEventDestination_EventDestination) AWSCloudFormationType() string {
+func (r *ConfigurationSetEventDestination_EventDestination[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination"
 }

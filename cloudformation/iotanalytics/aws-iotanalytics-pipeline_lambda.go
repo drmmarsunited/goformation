@@ -8,12 +8,12 @@ import (
 
 // Pipeline_Lambda AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Lambda)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html
-type Pipeline_Lambda struct {
+type Pipeline_Lambda[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html#cfn-iotanalytics-pipeline-lambda-batchsize
-	BatchSize int `json:"BatchSize"`
+	BatchSize T `json:"BatchSize"`
 
 	// LambdaName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Pipeline_Lambda struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Lambda) AWSCloudFormationType() string {
+func (r *Pipeline_Lambda[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Lambda"
 }

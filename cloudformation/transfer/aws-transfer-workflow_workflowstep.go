@@ -8,32 +8,32 @@ import (
 
 // Workflow_WorkflowStep AWS CloudFormation Resource (AWS::Transfer::Workflow.WorkflowStep)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html
-type Workflow_WorkflowStep struct {
+type Workflow_WorkflowStep[T any] struct {
 
 	// CopyStepDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-copystepdetails
-	CopyStepDetails *Workflow_CopyStepDetails `json:"CopyStepDetails,omitempty"`
+	CopyStepDetails *Workflow_CopyStepDetails[any] `json:"CopyStepDetails,omitempty"`
 
 	// CustomStepDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-customstepdetails
-	CustomStepDetails *Workflow_CustomStepDetails `json:"CustomStepDetails,omitempty"`
+	CustomStepDetails *Workflow_CustomStepDetails[any] `json:"CustomStepDetails,omitempty"`
 
 	// DecryptStepDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-decryptstepdetails
-	DecryptStepDetails *Workflow_DecryptStepDetails `json:"DecryptStepDetails,omitempty"`
+	DecryptStepDetails *Workflow_DecryptStepDetails[any] `json:"DecryptStepDetails,omitempty"`
 
 	// DeleteStepDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-deletestepdetails
-	DeleteStepDetails *Workflow_DeleteStepDetails `json:"DeleteStepDetails,omitempty"`
+	DeleteStepDetails *Workflow_DeleteStepDetails[any] `json:"DeleteStepDetails,omitempty"`
 
 	// TagStepDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-workflowstep.html#cfn-transfer-workflow-workflowstep-tagstepdetails
-	TagStepDetails *Workflow_TagStepDetails `json:"TagStepDetails,omitempty"`
+	TagStepDetails *Workflow_TagStepDetails[any] `json:"TagStepDetails,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Workflow_WorkflowStep struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_WorkflowStep) AWSCloudFormationType() string {
+func (r *Workflow_WorkflowStep[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.WorkflowStep"
 }

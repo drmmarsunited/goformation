@@ -8,7 +8,7 @@ import (
 
 // Integration_ZendeskSourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.ZendeskSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-zendesksourceproperties.html
-type Integration_ZendeskSourceProperties struct {
+type Integration_ZendeskSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Integration_ZendeskSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ZendeskSourceProperties) AWSCloudFormationType() string {
+func (r *Integration_ZendeskSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.ZendeskSourceProperties"
 }

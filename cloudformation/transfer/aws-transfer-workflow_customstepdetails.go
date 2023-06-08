@@ -8,7 +8,7 @@ import (
 
 // Workflow_CustomStepDetails AWS CloudFormation Resource (AWS::Transfer::Workflow.CustomStepDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-customstepdetails.html
-type Workflow_CustomStepDetails struct {
+type Workflow_CustomStepDetails[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Workflow_CustomStepDetails struct {
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-customstepdetails.html#cfn-transfer-workflow-customstepdetails-timeoutseconds
-	TimeoutSeconds *int `json:"TimeoutSeconds,omitempty"`
+	TimeoutSeconds *T `json:"TimeoutSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Workflow_CustomStepDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_CustomStepDetails) AWSCloudFormationType() string {
+func (r *Workflow_CustomStepDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.CustomStepDetails"
 }

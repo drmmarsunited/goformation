@@ -8,7 +8,7 @@ import (
 
 // EventBus_TagEntry AWS CloudFormation Resource (AWS::Events::EventBus.TagEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html
-type EventBus_TagEntry struct {
+type EventBus_TagEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type EventBus_TagEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventBus_TagEntry) AWSCloudFormationType() string {
+func (r *EventBus_TagEntry[any]) AWSCloudFormationType() string {
 	return "AWS::Events::EventBus.TagEntry"
 }

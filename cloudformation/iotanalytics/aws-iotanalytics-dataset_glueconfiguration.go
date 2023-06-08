@@ -8,7 +8,7 @@ import (
 
 // Dataset_GlueConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.GlueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html
-type Dataset_GlueConfiguration struct {
+type Dataset_GlueConfiguration[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_GlueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_GlueConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_GlueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.GlueConfiguration"
 }

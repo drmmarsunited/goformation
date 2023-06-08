@@ -8,12 +8,12 @@ import (
 
 // GatewayRoute_QueryParameter AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.QueryParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html
-type GatewayRoute_QueryParameter struct {
+type GatewayRoute_QueryParameter[T any] struct {
 
 	// Match AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-match
-	Match *GatewayRoute_HttpQueryParameterMatch `json:"Match,omitempty"`
+	Match *GatewayRoute_HttpQueryParameterMatch[any] `json:"Match,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type GatewayRoute_QueryParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_QueryParameter) AWSCloudFormationType() string {
+func (r *GatewayRoute_QueryParameter[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.QueryParameter"
 }

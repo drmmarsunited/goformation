@@ -8,7 +8,7 @@ import (
 
 // Dashboard_GridLayoutScreenCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GridLayoutScreenCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutscreencanvassizeoptions.html
-type Dashboard_GridLayoutScreenCanvasSizeOptions struct {
+type Dashboard_GridLayoutScreenCanvasSizeOptions[T any] struct {
 
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_GridLayoutScreenCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GridLayoutScreenCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_GridLayoutScreenCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GridLayoutScreenCanvasSizeOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.GoogleAnalyticsConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html
-type ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials struct {
+type ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_GoogleAnalyticsConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.GoogleAnalyticsConnectorProfileCredentials"
 }

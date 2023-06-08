@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_Tmpfs AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Tmpfs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-tmpfs.html
-type TaskDefinition_Tmpfs struct {
+type TaskDefinition_Tmpfs[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TaskDefinition_Tmpfs struct {
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-tmpfs.html#cfn-ecs-taskdefinition-tmpfs-size
-	Size int `json:"Size"`
+	Size T `json:"Size"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TaskDefinition_Tmpfs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_Tmpfs) AWSCloudFormationType() string {
+func (r *TaskDefinition_Tmpfs[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Tmpfs"
 }

@@ -8,7 +8,7 @@ import (
 
 // WebACL_GeoMatchStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.GeoMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html
-type WebACL_GeoMatchStatement struct {
+type WebACL_GeoMatchStatement[T any] struct {
 
 	// CountryCodes AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type WebACL_GeoMatchStatement struct {
 	// ForwardedIPConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html#cfn-wafv2-webacl-geomatchstatement-forwardedipconfig
-	ForwardedIPConfig *WebACL_ForwardedIPConfiguration `json:"ForwardedIPConfig,omitempty"`
+	ForwardedIPConfig *WebACL_ForwardedIPConfiguration[any] `json:"ForwardedIPConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type WebACL_GeoMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_GeoMatchStatement) AWSCloudFormationType() string {
+func (r *WebACL_GeoMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.GeoMatchStatement"
 }

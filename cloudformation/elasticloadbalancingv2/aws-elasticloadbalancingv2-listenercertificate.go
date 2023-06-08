@@ -11,12 +11,12 @@ import (
 
 // ListenerCertificate AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
-type ListenerCertificate struct {
+type ListenerCertificate[T any] struct {
 
 	// Certificates AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
-	Certificates []ListenerCertificate_Certificate `json:"Certificates"`
+	Certificates []ListenerCertificate_Certificate[any] `json:"Certificates"`
 
 	// ListenerArn AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ListenerCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerCertificate) AWSCloudFormationType() string {
+func (r *ListenerCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerCertificate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ListenerCertificate) MarshalJSON() ([]byte, error) {
-	type Properties ListenerCertificate
+func (r ListenerCertificate[any]) MarshalJSON() ([]byte, error) {
+	type Properties ListenerCertificate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ListenerCertificate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ListenerCertificate) UnmarshalJSON(b []byte) error {
-	type Properties ListenerCertificate
+func (r *ListenerCertificate[any]) UnmarshalJSON(b []byte) error {
+	type Properties ListenerCertificate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ListenerCertificate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ListenerCertificate(*res.Properties)
+		*r = ListenerCertificate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

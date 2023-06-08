@@ -12,12 +12,12 @@ import (
 
 // DeviceProfile AWS CloudFormation Resource (AWS::IoTWireless::DeviceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html
-type DeviceProfile struct {
+type DeviceProfile[T any] struct {
 
 	// LoRaWAN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-lorawan
-	LoRaWAN *DeviceProfile_LoRaWANDeviceProfile `json:"LoRaWAN,omitempty"`
+	LoRaWAN *DeviceProfile_LoRaWANDeviceProfile[any] `json:"LoRaWAN,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type DeviceProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeviceProfile) AWSCloudFormationType() string {
+func (r *DeviceProfile[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::DeviceProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeviceProfile) MarshalJSON() ([]byte, error) {
-	type Properties DeviceProfile
+func (r DeviceProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeviceProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r DeviceProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeviceProfile) UnmarshalJSON(b []byte) error {
-	type Properties DeviceProfile
+func (r *DeviceProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeviceProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *DeviceProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeviceProfile(*res.Properties)
+		*r = DeviceProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Schedule_PlacementStrategy AWS CloudFormation Resource (AWS::Scheduler::Schedule.PlacementStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-placementstrategy.html
-type Schedule_PlacementStrategy struct {
+type Schedule_PlacementStrategy[T any] struct {
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Schedule_PlacementStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_PlacementStrategy) AWSCloudFormationType() string {
+func (r *Schedule_PlacementStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.PlacementStrategy"
 }

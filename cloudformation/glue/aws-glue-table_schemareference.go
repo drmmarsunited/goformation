@@ -8,12 +8,12 @@ import (
 
 // Table_SchemaReference AWS CloudFormation Resource (AWS::Glue::Table.SchemaReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html
-type Table_SchemaReference struct {
+type Table_SchemaReference[T any] struct {
 
 	// SchemaId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaid
-	SchemaId *Table_SchemaId `json:"SchemaId,omitempty"`
+	SchemaId *Table_SchemaId[any] `json:"SchemaId,omitempty"`
 
 	// SchemaVersionId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Table_SchemaReference struct {
 	// SchemaVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaversionnumber
-	SchemaVersionNumber *int `json:"SchemaVersionNumber,omitempty"`
+	SchemaVersionNumber *T `json:"SchemaVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Table_SchemaReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_SchemaReference) AWSCloudFormationType() string {
+func (r *Table_SchemaReference[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.SchemaReference"
 }

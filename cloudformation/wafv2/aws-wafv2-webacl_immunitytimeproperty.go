@@ -8,12 +8,12 @@ import (
 
 // WebACL_ImmunityTimeProperty AWS CloudFormation Resource (AWS::WAFv2::WebACL.ImmunityTimeProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-immunitytimeproperty.html
-type WebACL_ImmunityTimeProperty struct {
+type WebACL_ImmunityTimeProperty[T any] struct {
 
 	// ImmunityTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-immunitytimeproperty.html#cfn-wafv2-webacl-immunitytimeproperty-immunitytime
-	ImmunityTime int `json:"ImmunityTime"`
+	ImmunityTime T `json:"ImmunityTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_ImmunityTimeProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ImmunityTimeProperty) AWSCloudFormationType() string {
+func (r *WebACL_ImmunityTimeProperty[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ImmunityTimeProperty"
 }

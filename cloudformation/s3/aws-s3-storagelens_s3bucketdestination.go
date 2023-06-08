@@ -8,7 +8,7 @@ import (
 
 // StorageLens_S3BucketDestination AWS CloudFormation Resource (AWS::S3::StorageLens.S3BucketDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-s3bucketdestination.html
-type StorageLens_S3BucketDestination struct {
+type StorageLens_S3BucketDestination[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type StorageLens_S3BucketDestination struct {
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-s3bucketdestination.html#cfn-s3-storagelens-s3bucketdestination-encryption
-	Encryption *StorageLens_Encryption `json:"Encryption,omitempty"`
+	Encryption *StorageLens_Encryption[any] `json:"Encryption,omitempty"`
 
 	// Format AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type StorageLens_S3BucketDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_S3BucketDestination) AWSCloudFormationType() string {
+func (r *StorageLens_S3BucketDestination[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.S3BucketDestination"
 }

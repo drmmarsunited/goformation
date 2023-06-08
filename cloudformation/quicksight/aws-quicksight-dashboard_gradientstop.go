@@ -8,7 +8,7 @@ import (
 
 // Dashboard_GradientStop AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GradientStop)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gradientstop.html
-type Dashboard_GradientStop struct {
+type Dashboard_GradientStop[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Dashboard_GradientStop struct {
 	// DataValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gradientstop.html#cfn-quicksight-dashboard-gradientstop-datavalue
-	DataValue *float64 `json:"DataValue,omitempty"`
+	DataValue *T `json:"DataValue,omitempty"`
 
 	// GradientOffset AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gradientstop.html#cfn-quicksight-dashboard-gradientstop-gradientoffset
-	GradientOffset float64 `json:"GradientOffset"`
+	GradientOffset T `json:"GradientOffset"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_GradientStop struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GradientStop) AWSCloudFormationType() string {
+func (r *Dashboard_GradientStop[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GradientStop"
 }

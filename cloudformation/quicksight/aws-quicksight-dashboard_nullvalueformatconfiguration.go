@@ -8,7 +8,7 @@ import (
 
 // Dashboard_NullValueFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NullValueFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-nullvalueformatconfiguration.html
-type Dashboard_NullValueFormatConfiguration struct {
+type Dashboard_NullValueFormatConfiguration[T any] struct {
 
 	// NullString AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_NullValueFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NullValueFormatConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_NullValueFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NullValueFormatConfiguration"
 }

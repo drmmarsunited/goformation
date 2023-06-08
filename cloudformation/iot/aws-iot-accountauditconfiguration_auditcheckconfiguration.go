@@ -8,12 +8,12 @@ import (
 
 // AccountAuditConfiguration_AuditCheckConfiguration AWS CloudFormation Resource (AWS::IoT::AccountAuditConfiguration.AuditCheckConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfiguration.html
-type AccountAuditConfiguration_AuditCheckConfiguration struct {
+type AccountAuditConfiguration_AuditCheckConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfiguration.html#cfn-iot-accountauditconfiguration-auditcheckconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AccountAuditConfiguration_AuditCheckConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccountAuditConfiguration_AuditCheckConfiguration) AWSCloudFormationType() string {
+func (r *AccountAuditConfiguration_AuditCheckConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::AccountAuditConfiguration.AuditCheckConfiguration"
 }

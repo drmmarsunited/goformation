@@ -8,7 +8,7 @@ import (
 
 // DataLakeSettings_DataLakePrincipal AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings.DataLakePrincipal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html
-type DataLakeSettings_DataLakePrincipal struct {
+type DataLakeSettings_DataLakePrincipal[T any] struct {
 
 	// DataLakePrincipalIdentifier AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataLakeSettings_DataLakePrincipal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings_DataLakePrincipal) AWSCloudFormationType() string {
+func (r *DataLakeSettings_DataLakePrincipal[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings.DataLakePrincipal"
 }

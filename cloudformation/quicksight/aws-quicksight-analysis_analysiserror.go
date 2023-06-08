@@ -8,7 +8,7 @@ import (
 
 // Analysis_AnalysisError AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnalysisError)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysiserror.html
-type Analysis_AnalysisError struct {
+type Analysis_AnalysisError[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_AnalysisError struct {
 	// ViolatedEntities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysiserror.html#cfn-quicksight-analysis-analysiserror-violatedentities
-	ViolatedEntities []Analysis_Entity `json:"ViolatedEntities,omitempty"`
+	ViolatedEntities []Analysis_Entity[any] `json:"ViolatedEntities,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_AnalysisError struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AnalysisError) AWSCloudFormationType() string {
+func (r *Analysis_AnalysisError[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AnalysisError"
 }

@@ -8,7 +8,7 @@ import (
 
 // Schedule_SqsParameters AWS CloudFormation Resource (AWS::Scheduler::Schedule.SqsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-sqsparameters.html
-type Schedule_SqsParameters struct {
+type Schedule_SqsParameters[T any] struct {
 
 	// MessageGroupId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Schedule_SqsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_SqsParameters) AWSCloudFormationType() string {
+func (r *Schedule_SqsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.SqsParameters"
 }

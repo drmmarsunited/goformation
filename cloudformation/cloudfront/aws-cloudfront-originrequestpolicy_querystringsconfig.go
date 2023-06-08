@@ -8,7 +8,7 @@ import (
 
 // OriginRequestPolicy_QueryStringsConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.QueryStringsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-querystringsconfig.html
-type OriginRequestPolicy_QueryStringsConfig struct {
+type OriginRequestPolicy_QueryStringsConfig[T any] struct {
 
 	// QueryStringBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type OriginRequestPolicy_QueryStringsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginRequestPolicy_QueryStringsConfig) AWSCloudFormationType() string {
+func (r *OriginRequestPolicy_QueryStringsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginRequestPolicy.QueryStringsConfig"
 }

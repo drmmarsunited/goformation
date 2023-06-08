@@ -8,7 +8,7 @@ import (
 
 // Analysis_NumericRangeFilterValue AWS CloudFormation Resource (AWS::QuickSight::Analysis.NumericRangeFilterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericrangefiltervalue.html
-type Analysis_NumericRangeFilterValue struct {
+type Analysis_NumericRangeFilterValue[T any] struct {
 
 	// Parameter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_NumericRangeFilterValue struct {
 	// StaticValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericrangefiltervalue.html#cfn-quicksight-analysis-numericrangefiltervalue-staticvalue
-	StaticValue *float64 `json:"StaticValue,omitempty"`
+	StaticValue *T `json:"StaticValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_NumericRangeFilterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_NumericRangeFilterValue) AWSCloudFormationType() string {
+func (r *Analysis_NumericRangeFilterValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.NumericRangeFilterValue"
 }

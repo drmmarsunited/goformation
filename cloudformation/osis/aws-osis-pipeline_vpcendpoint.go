@@ -8,7 +8,7 @@ import (
 
 // Pipeline_VpcEndpoint AWS CloudFormation Resource (AWS::OSIS::Pipeline.VpcEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-vpcendpoint.html
-type Pipeline_VpcEndpoint struct {
+type Pipeline_VpcEndpoint[T any] struct {
 
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Pipeline_VpcEndpoint struct {
 	// VpcOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-vpcendpoint.html#cfn-osis-pipeline-vpcendpoint-vpcoptions
-	VpcOptions *Pipeline_VpcOptions `json:"VpcOptions,omitempty"`
+	VpcOptions *Pipeline_VpcOptions[any] `json:"VpcOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Pipeline_VpcEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_VpcEndpoint) AWSCloudFormationType() string {
+func (r *Pipeline_VpcEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::OSIS::Pipeline.VpcEndpoint"
 }

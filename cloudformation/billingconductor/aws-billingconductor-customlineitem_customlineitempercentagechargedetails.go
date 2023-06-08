@@ -8,7 +8,7 @@ import (
 
 // CustomLineItem_CustomLineItemPercentageChargeDetails AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem.CustomLineItemPercentageChargeDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitempercentagechargedetails.html
-type CustomLineItem_CustomLineItemPercentageChargeDetails struct {
+type CustomLineItem_CustomLineItemPercentageChargeDetails[T any] struct {
 
 	// ChildAssociatedResources AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type CustomLineItem_CustomLineItemPercentageChargeDetails struct {
 	// PercentageValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitempercentagechargedetails.html#cfn-billingconductor-customlineitem-customlineitempercentagechargedetails-percentagevalue
-	PercentageValue float64 `json:"PercentageValue"`
+	PercentageValue T `json:"PercentageValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type CustomLineItem_CustomLineItemPercentageChargeDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomLineItem_CustomLineItemPercentageChargeDetails) AWSCloudFormationType() string {
+func (r *CustomLineItem_CustomLineItemPercentageChargeDetails[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::CustomLineItem.CustomLineItemPercentageChargeDetails"
 }

@@ -12,12 +12,12 @@ import (
 
 // TransitGatewayAttachment AWS CloudFormation Resource (AWS::EC2::TransitGatewayAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html
-type TransitGatewayAttachment struct {
+type TransitGatewayAttachment[T any] struct {
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-options
-	Options *TransitGatewayAttachment_Options `json:"Options,omitempty"`
+	Options *TransitGatewayAttachment_Options[any] `json:"Options,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type TransitGatewayAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayAttachment) AWSCloudFormationType() string {
+func (r *TransitGatewayAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayAttachment) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayAttachment
+func (r TransitGatewayAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r TransitGatewayAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayAttachment) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayAttachment
+func (r *TransitGatewayAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *TransitGatewayAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayAttachment(*res.Properties)
+		*r = TransitGatewayAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

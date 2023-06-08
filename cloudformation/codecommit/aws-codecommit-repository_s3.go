@@ -8,7 +8,7 @@ import (
 
 // Repository_S3 AWS CloudFormation Resource (AWS::CodeCommit::Repository.S3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html
-type Repository_S3 struct {
+type Repository_S3[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Repository_S3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository_S3) AWSCloudFormationType() string {
+func (r *Repository_S3[any]) AWSCloudFormationType() string {
 	return "AWS::CodeCommit::Repository.S3"
 }

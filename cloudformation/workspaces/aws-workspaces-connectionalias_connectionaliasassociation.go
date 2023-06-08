@@ -8,7 +8,7 @@ import (
 
 // ConnectionAlias_ConnectionAliasAssociation AWS CloudFormation Resource (AWS::WorkSpaces::ConnectionAlias.ConnectionAliasAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-connectionalias-connectionaliasassociation.html
-type ConnectionAlias_ConnectionAliasAssociation struct {
+type ConnectionAlias_ConnectionAliasAssociation[T any] struct {
 
 	// AssociatedAccountId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ConnectionAlias_ConnectionAliasAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectionAlias_ConnectionAliasAssociation) AWSCloudFormationType() string {
+func (r *ConnectionAlias_ConnectionAliasAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::WorkSpaces::ConnectionAlias.ConnectionAliasAssociation"
 }

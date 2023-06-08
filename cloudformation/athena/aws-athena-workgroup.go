@@ -12,7 +12,7 @@ import (
 
 // WorkGroup AWS CloudFormation Resource (AWS::Athena::WorkGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html
-type WorkGroup struct {
+type WorkGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type WorkGroup struct {
 	// RecursiveDeleteOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption
-	RecursiveDeleteOption *bool `json:"RecursiveDeleteOption,omitempty"`
+	RecursiveDeleteOption *T `json:"RecursiveDeleteOption,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type WorkGroup struct {
 	// WorkGroupConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration
-	WorkGroupConfiguration *WorkGroup_WorkGroupConfiguration `json:"WorkGroupConfiguration,omitempty"`
+	WorkGroupConfiguration *WorkGroup_WorkGroupConfiguration[any] `json:"WorkGroupConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -61,14 +61,15 @@ type WorkGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup) AWSCloudFormationType() string {
+func (r *WorkGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WorkGroup) MarshalJSON() ([]byte, error) {
-	type Properties WorkGroup
+func (r WorkGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties WorkGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r WorkGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WorkGroup) UnmarshalJSON(b []byte) error {
-	type Properties WorkGroup
+func (r *WorkGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties WorkGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *WorkGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WorkGroup(*res.Properties)
+		*r = WorkGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

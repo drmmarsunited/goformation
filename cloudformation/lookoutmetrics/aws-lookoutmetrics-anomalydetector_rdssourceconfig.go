@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_RDSSourceConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.RDSSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html
-type AnomalyDetector_RDSSourceConfig struct {
+type AnomalyDetector_RDSSourceConfig[T any] struct {
 
 	// DBInstanceIdentifier AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AnomalyDetector_RDSSourceConfig struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html#cfn-lookoutmetrics-anomalydetector-rdssourceconfig-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort T `json:"DatabasePort"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type AnomalyDetector_RDSSourceConfig struct {
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html#cfn-lookoutmetrics-anomalydetector-rdssourceconfig-vpcconfiguration
-	VpcConfiguration *AnomalyDetector_VpcConfiguration `json:"VpcConfiguration"`
+	VpcConfiguration *AnomalyDetector_VpcConfiguration[any] `json:"VpcConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type AnomalyDetector_RDSSourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_RDSSourceConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_RDSSourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.RDSSourceConfig"
 }

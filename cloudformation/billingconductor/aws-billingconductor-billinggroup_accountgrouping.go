@@ -8,7 +8,7 @@ import (
 
 // BillingGroup_AccountGrouping AWS CloudFormation Resource (AWS::BillingConductor::BillingGroup.AccountGrouping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-accountgrouping.html
-type BillingGroup_AccountGrouping struct {
+type BillingGroup_AccountGrouping[T any] struct {
 
 	// LinkedAccountIds AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type BillingGroup_AccountGrouping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BillingGroup_AccountGrouping) AWSCloudFormationType() string {
+func (r *BillingGroup_AccountGrouping[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::BillingGroup.AccountGrouping"
 }

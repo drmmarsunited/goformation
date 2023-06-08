@@ -8,7 +8,7 @@ import (
 
 // PackagingConfiguration_EncryptionContractConfiguration AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.EncryptionContractConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-encryptioncontractconfiguration.html
-type PackagingConfiguration_EncryptionContractConfiguration struct {
+type PackagingConfiguration_EncryptionContractConfiguration[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type PackagingConfiguration_EncryptionContractConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_EncryptionContractConfiguration) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_EncryptionContractConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.EncryptionContractConfiguration"
 }

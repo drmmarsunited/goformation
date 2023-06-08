@@ -11,7 +11,7 @@ import (
 
 // Entitlement AWS CloudFormation Resource (AWS::AppStream::Entitlement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-entitlement.html
-type Entitlement struct {
+type Entitlement[T any] struct {
 
 	// AppVisibility AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Entitlement struct {
 	// Attributes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-entitlement.html#cfn-appstream-entitlement-attributes
-	Attributes []Entitlement_Attribute `json:"Attributes"`
+	Attributes []Entitlement_Attribute[any] `json:"Attributes"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Entitlement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entitlement) AWSCloudFormationType() string {
+func (r *Entitlement[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Entitlement"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Entitlement) MarshalJSON() ([]byte, error) {
-	type Properties Entitlement
+func (r Entitlement[any]) MarshalJSON() ([]byte, error) {
+	type Properties Entitlement[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Entitlement) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Entitlement) UnmarshalJSON(b []byte) error {
-	type Properties Entitlement
+func (r *Entitlement[any]) UnmarshalJSON(b []byte) error {
+	type Properties Entitlement[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Entitlement) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Entitlement(*res.Properties)
+		*r = Entitlement[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // WirelessDevice_SessionKeysAbpV11 AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.SessionKeysAbpV11)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html
-type WirelessDevice_SessionKeysAbpV11 struct {
+type WirelessDevice_SessionKeysAbpV11[T any] struct {
 
 	// AppSKey AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type WirelessDevice_SessionKeysAbpV11 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDevice_SessionKeysAbpV11) AWSCloudFormationType() string {
+func (r *WirelessDevice_SessionKeysAbpV11[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDevice.SessionKeysAbpV11"
 }

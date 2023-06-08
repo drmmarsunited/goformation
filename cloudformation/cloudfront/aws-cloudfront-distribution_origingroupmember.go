@@ -8,7 +8,7 @@ import (
 
 // Distribution_OriginGroupMember AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginGroupMember)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html
-type Distribution_OriginGroupMember struct {
+type Distribution_OriginGroupMember[T any] struct {
 
 	// OriginId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Distribution_OriginGroupMember struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginGroupMember) AWSCloudFormationType() string {
+func (r *Distribution_OriginGroupMember[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginGroupMember"
 }

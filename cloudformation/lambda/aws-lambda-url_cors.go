@@ -8,12 +8,12 @@ import (
 
 // Url_Cors AWS CloudFormation Resource (AWS::Lambda::Url.Cors)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html
-type Url_Cors struct {
+type Url_Cors[T any] struct {
 
 	// AllowCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html#cfn-lambda-url-cors-allowcredentials
-	AllowCredentials *bool `json:"AllowCredentials,omitempty"`
+	AllowCredentials *T `json:"AllowCredentials,omitempty"`
 
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Url_Cors struct {
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html#cfn-lambda-url-cors-maxage
-	MaxAge *int `json:"MaxAge,omitempty"`
+	MaxAge *T `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Url_Cors struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Url_Cors) AWSCloudFormationType() string {
+func (r *Url_Cors[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Url.Cors"
 }

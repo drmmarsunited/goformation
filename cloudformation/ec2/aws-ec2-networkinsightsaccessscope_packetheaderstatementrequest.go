@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAccessScope_PacketHeaderStatementRequest AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAccessScope.PacketHeaderStatementRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html
-type NetworkInsightsAccessScope_PacketHeaderStatementRequest struct {
+type NetworkInsightsAccessScope_PacketHeaderStatementRequest[T any] struct {
 
 	// DestinationAddresses AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type NetworkInsightsAccessScope_PacketHeaderStatementRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAccessScope_PacketHeaderStatementRequest) AWSCloudFormationType() string {
+func (r *NetworkInsightsAccessScope_PacketHeaderStatementRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAccessScope.PacketHeaderStatementRequest"
 }

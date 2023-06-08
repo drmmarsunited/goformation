@@ -8,7 +8,7 @@ import (
 
 // PlaceIndex_DataSourceConfiguration AWS CloudFormation Resource (AWS::Location::PlaceIndex.DataSourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-placeindex-datasourceconfiguration.html
-type PlaceIndex_DataSourceConfiguration struct {
+type PlaceIndex_DataSourceConfiguration[T any] struct {
 
 	// IntendedUse AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type PlaceIndex_DataSourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaceIndex_DataSourceConfiguration) AWSCloudFormationType() string {
+func (r *PlaceIndex_DataSourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Location::PlaceIndex.DataSourceConfiguration"
 }

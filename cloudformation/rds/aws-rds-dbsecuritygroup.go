@@ -12,12 +12,12 @@ import (
 
 // DBSecurityGroup AWS CloudFormation Resource (AWS::RDS::DBSecurityGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
-type DBSecurityGroup struct {
+type DBSecurityGroup[T any] struct {
 
 	// DBSecurityGroupIngress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress
-	DBSecurityGroupIngress []DBSecurityGroup_Ingress `json:"DBSecurityGroupIngress"`
+	DBSecurityGroupIngress []DBSecurityGroup_Ingress[any] `json:"DBSecurityGroupIngress"`
 
 	// EC2VpcId AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type DBSecurityGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBSecurityGroup) AWSCloudFormationType() string {
+func (r *DBSecurityGroup[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBSecurityGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBSecurityGroup) MarshalJSON() ([]byte, error) {
-	type Properties DBSecurityGroup
+func (r DBSecurityGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBSecurityGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r DBSecurityGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBSecurityGroup) UnmarshalJSON(b []byte) error {
-	type Properties DBSecurityGroup
+func (r *DBSecurityGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBSecurityGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *DBSecurityGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBSecurityGroup(*res.Properties)
+		*r = DBSecurityGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

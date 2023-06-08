@@ -9,7 +9,7 @@ import (
 
 // EC2Fleet_TagSpecification AWS CloudFormation Resource (AWS::EC2::EC2Fleet.TagSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html
-type EC2Fleet_TagSpecification struct {
+type EC2Fleet_TagSpecification[T any] struct {
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
@@ -38,6 +38,6 @@ type EC2Fleet_TagSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_TagSpecification) AWSCloudFormationType() string {
+func (r *EC2Fleet_TagSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.TagSpecification"
 }

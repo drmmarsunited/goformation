@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FieldLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FieldLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldlabeltype.html
-type Dashboard_FieldLabelType struct {
+type Dashboard_FieldLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_FieldLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FieldLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_FieldLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FieldLabelType"
 }

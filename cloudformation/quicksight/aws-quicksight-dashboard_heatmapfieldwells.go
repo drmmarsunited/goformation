@@ -8,12 +8,12 @@ import (
 
 // Dashboard_HeatMapFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.HeatMapFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapfieldwells.html
-type Dashboard_HeatMapFieldWells struct {
+type Dashboard_HeatMapFieldWells[T any] struct {
 
 	// HeatMapAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapfieldwells.html#cfn-quicksight-dashboard-heatmapfieldwells-heatmapaggregatedfieldwells
-	HeatMapAggregatedFieldWells *Dashboard_HeatMapAggregatedFieldWells `json:"HeatMapAggregatedFieldWells,omitempty"`
+	HeatMapAggregatedFieldWells *Dashboard_HeatMapAggregatedFieldWells[any] `json:"HeatMapAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_HeatMapFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_HeatMapFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_HeatMapFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.HeatMapFieldWells"
 }

@@ -11,7 +11,7 @@ import (
 
 // PullThroughCacheRule AWS CloudFormation Resource (AWS::ECR::PullThroughCacheRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html
-type PullThroughCacheRule struct {
+type PullThroughCacheRule[T any] struct {
 
 	// EcrRepositoryPrefix AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type PullThroughCacheRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PullThroughCacheRule) AWSCloudFormationType() string {
+func (r *PullThroughCacheRule[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::PullThroughCacheRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PullThroughCacheRule) MarshalJSON() ([]byte, error) {
-	type Properties PullThroughCacheRule
+func (r PullThroughCacheRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties PullThroughCacheRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r PullThroughCacheRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PullThroughCacheRule) UnmarshalJSON(b []byte) error {
-	type Properties PullThroughCacheRule
+func (r *PullThroughCacheRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties PullThroughCacheRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *PullThroughCacheRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PullThroughCacheRule(*res.Properties)
+		*r = PullThroughCacheRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

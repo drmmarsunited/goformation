@@ -8,7 +8,7 @@ import (
 
 // Template_TemplateVersion AWS CloudFormation Resource (AWS::QuickSight::Template.TemplateVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html
-type Template_TemplateVersion struct {
+type Template_TemplateVersion[T any] struct {
 
 	// CreatedTime AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_TemplateVersion struct {
 	// DataSetConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-datasetconfigurations
-	DataSetConfigurations []Template_DataSetConfiguration `json:"DataSetConfigurations,omitempty"`
+	DataSetConfigurations []Template_DataSetConfiguration[any] `json:"DataSetConfigurations,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Template_TemplateVersion struct {
 	// Errors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-errors
-	Errors []Template_TemplateError `json:"Errors,omitempty"`
+	Errors []Template_TemplateError[any] `json:"Errors,omitempty"`
 
 	// Sheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-sheets
-	Sheets []Template_Sheet `json:"Sheets,omitempty"`
+	Sheets []Template_Sheet[any] `json:"Sheets,omitempty"`
 
 	// SourceEntityArn AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Template_TemplateVersion struct {
 	// VersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-versionnumber
-	VersionNumber *float64 `json:"VersionNumber,omitempty"`
+	VersionNumber *T `json:"VersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Template_TemplateVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TemplateVersion) AWSCloudFormationType() string {
+func (r *Template_TemplateVersion[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TemplateVersion"
 }

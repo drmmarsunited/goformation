@@ -8,7 +8,7 @@ import (
 
 // Function_TopicSAMPT AWS CloudFormation Resource (AWS::Serverless::Function.TopicSAMPT)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type Function_TopicSAMPT struct {
+type Function_TopicSAMPT[T any] struct {
 
 	// TopicName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_TopicSAMPT struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_TopicSAMPT) AWSCloudFormationType() string {
+func (r *Function_TopicSAMPT[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.TopicSAMPT"
 }

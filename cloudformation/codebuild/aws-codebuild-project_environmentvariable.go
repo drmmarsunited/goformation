@@ -8,7 +8,7 @@ import (
 
 // Project_EnvironmentVariable AWS CloudFormation Resource (AWS::CodeBuild::Project.EnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html
-type Project_EnvironmentVariable struct {
+type Project_EnvironmentVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Project_EnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_EnvironmentVariable) AWSCloudFormationType() string {
+func (r *Project_EnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.EnvironmentVariable"
 }

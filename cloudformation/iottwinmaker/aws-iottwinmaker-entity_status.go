@@ -8,12 +8,12 @@ import (
 
 // Entity_Status AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.Status)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html
-type Entity_Status struct {
+type Entity_Status[T any] struct {
 
 	// Error AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html#cfn-iottwinmaker-entity-status-error
-	Error *Entity_Error `json:"Error,omitempty"`
+	Error *Entity_Error[any] `json:"Error,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Entity_Status struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_Status) AWSCloudFormationType() string {
+func (r *Entity_Status[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.Status"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bot_SampleUtterance AWS CloudFormation Resource (AWS::Lex::Bot.SampleUtterance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-sampleutterance.html
-type Bot_SampleUtterance struct {
+type Bot_SampleUtterance[T any] struct {
 
 	// Utterance AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_SampleUtterance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SampleUtterance) AWSCloudFormationType() string {
+func (r *Bot_SampleUtterance[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SampleUtterance"
 }

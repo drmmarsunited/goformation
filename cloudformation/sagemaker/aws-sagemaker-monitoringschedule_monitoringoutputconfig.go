@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_MonitoringOutputConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutputconfig.html
-type MonitoringSchedule_MonitoringOutputConfig struct {
+type MonitoringSchedule_MonitoringOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type MonitoringSchedule_MonitoringOutputConfig struct {
 	// MonitoringOutputs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutputconfig.html#cfn-sagemaker-monitoringschedule-monitoringoutputconfig-monitoringoutputs
-	MonitoringOutputs []MonitoringSchedule_MonitoringOutput `json:"MonitoringOutputs"`
+	MonitoringOutputs []MonitoringSchedule_MonitoringOutput[any] `json:"MonitoringOutputs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type MonitoringSchedule_MonitoringOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringOutputConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringOutputConfig"
 }

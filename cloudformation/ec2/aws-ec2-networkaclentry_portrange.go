@@ -8,17 +8,17 @@ import (
 
 // NetworkAclEntry_PortRange AWS CloudFormation Resource (AWS::EC2::NetworkAclEntry.PortRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html
-type NetworkAclEntry_PortRange struct {
+type NetworkAclEntry_PortRange[T any] struct {
 
 	// From AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from
-	From *int `json:"From,omitempty"`
+	From *T `json:"From,omitempty"`
 
 	// To AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to
-	To *int `json:"To,omitempty"`
+	To *T `json:"To,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkAclEntry_PortRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAclEntry_PortRange) AWSCloudFormationType() string {
+func (r *NetworkAclEntry_PortRange[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkAclEntry.PortRange"
 }

@@ -8,7 +8,7 @@ import (
 
 // Faq_S3Path AWS CloudFormation Resource (AWS::Kendra::Faq.S3Path)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-faq-s3path.html
-type Faq_S3Path struct {
+type Faq_S3Path[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Faq_S3Path struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Faq_S3Path) AWSCloudFormationType() string {
+func (r *Faq_S3Path[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Faq.S3Path"
 }

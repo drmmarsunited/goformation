@@ -8,7 +8,7 @@ import (
 
 // UserPool_UserPoolAddOns AWS CloudFormation Resource (AWS::Cognito::UserPool.UserPoolAddOns)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html
-type UserPool_UserPoolAddOns struct {
+type UserPool_UserPoolAddOns[T any] struct {
 
 	// AdvancedSecurityMode AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type UserPool_UserPoolAddOns struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_UserPoolAddOns) AWSCloudFormationType() string {
+func (r *UserPool_UserPoolAddOns[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.UserPoolAddOns"
 }

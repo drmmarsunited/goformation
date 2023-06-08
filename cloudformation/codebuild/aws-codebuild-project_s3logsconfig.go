@@ -8,12 +8,12 @@ import (
 
 // Project_S3LogsConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.S3LogsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html
-type Project_S3LogsConfig struct {
+type Project_S3LogsConfig[T any] struct {
 
 	// EncryptionDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-encryptiondisabled
-	EncryptionDisabled *bool `json:"EncryptionDisabled,omitempty"`
+	EncryptionDisabled *T `json:"EncryptionDisabled,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Project_S3LogsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_S3LogsConfig) AWSCloudFormationType() string {
+func (r *Project_S3LogsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.S3LogsConfig"
 }

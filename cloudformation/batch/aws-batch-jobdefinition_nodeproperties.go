@@ -8,22 +8,22 @@ import (
 
 // JobDefinition_NodeProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.NodeProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
-type JobDefinition_NodeProperties struct {
+type JobDefinition_NodeProperties[T any] struct {
 
 	// MainNode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode
-	MainNode int `json:"MainNode"`
+	MainNode T `json:"MainNode"`
 
 	// NodeRangeProperties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties
-	NodeRangeProperties []JobDefinition_NodeRangeProperty `json:"NodeRangeProperties"`
+	NodeRangeProperties []JobDefinition_NodeRangeProperty[any] `json:"NodeRangeProperties"`
 
 	// NumNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes
-	NumNodes int `json:"NumNodes"`
+	NumNodes T `json:"NumNodes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobDefinition_NodeProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_NodeProperties) AWSCloudFormationType() string {
+func (r *JobDefinition_NodeProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.NodeProperties"
 }

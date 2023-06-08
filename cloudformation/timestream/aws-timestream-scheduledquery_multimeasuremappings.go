@@ -8,12 +8,12 @@ import (
 
 // ScheduledQuery_MultiMeasureMappings AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.MultiMeasureMappings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasuremappings.html
-type ScheduledQuery_MultiMeasureMappings struct {
+type ScheduledQuery_MultiMeasureMappings[T any] struct {
 
 	// MultiMeasureAttributeMappings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasuremappings.html#cfn-timestream-scheduledquery-multimeasuremappings-multimeasureattributemappings
-	MultiMeasureAttributeMappings []ScheduledQuery_MultiMeasureAttributeMapping `json:"MultiMeasureAttributeMappings"`
+	MultiMeasureAttributeMappings []ScheduledQuery_MultiMeasureAttributeMapping[any] `json:"MultiMeasureAttributeMappings"`
 
 	// TargetMultiMeasureName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ScheduledQuery_MultiMeasureMappings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_MultiMeasureMappings) AWSCloudFormationType() string {
+func (r *ScheduledQuery_MultiMeasureMappings[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.MultiMeasureMappings"
 }

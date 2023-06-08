@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_Placement AWS CloudFormation Resource (AWS::EC2::EC2Fleet.Placement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-placement.html
-type EC2Fleet_Placement struct {
+type EC2Fleet_Placement[T any] struct {
 
 	// Affinity AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type EC2Fleet_Placement struct {
 	// PartitionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-placement.html#cfn-ec2-ec2fleet-placement-partitionnumber
-	PartitionNumber *int `json:"PartitionNumber,omitempty"`
+	PartitionNumber *T `json:"PartitionNumber,omitempty"`
 
 	// SpreadDomain AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type EC2Fleet_Placement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_Placement) AWSCloudFormationType() string {
+func (r *EC2Fleet_Placement[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.Placement"
 }

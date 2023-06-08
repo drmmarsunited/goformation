@@ -11,12 +11,12 @@ import (
 
 // JobQueue AWS CloudFormation Resource (AWS::Batch::JobQueue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html
-type JobQueue struct {
+type JobQueue[T any] struct {
 
 	// ComputeEnvironmentOrder AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder
-	ComputeEnvironmentOrder []JobQueue_ComputeEnvironmentOrder `json:"ComputeEnvironmentOrder"`
+	ComputeEnvironmentOrder []JobQueue_ComputeEnvironmentOrder[any] `json:"ComputeEnvironmentOrder"`
 
 	// JobQueueName AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type JobQueue struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// SchedulingPolicyArn AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type JobQueue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobQueue) AWSCloudFormationType() string {
+func (r *JobQueue[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobQueue"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r JobQueue) MarshalJSON() ([]byte, error) {
-	type Properties JobQueue
+func (r JobQueue[any]) MarshalJSON() ([]byte, error) {
+	type Properties JobQueue[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r JobQueue) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *JobQueue) UnmarshalJSON(b []byte) error {
-	type Properties JobQueue
+func (r *JobQueue[any]) UnmarshalJSON(b []byte) error {
+	type Properties JobQueue[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *JobQueue) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = JobQueue(*res.Properties)
+		*r = JobQueue[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

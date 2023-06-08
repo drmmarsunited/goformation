@@ -12,7 +12,7 @@ import (
 
 // FeatureGroup AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html
-type FeatureGroup struct {
+type FeatureGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type FeatureGroup struct {
 	// FeatureDefinitions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuredefinitions
-	FeatureDefinitions []FeatureGroup_FeatureDefinition `json:"FeatureDefinitions"`
+	FeatureDefinitions []FeatureGroup_FeatureDefinition[any] `json:"FeatureDefinitions"`
 
 	// FeatureGroupName AWS CloudFormation Property
 	// Required: true
@@ -37,12 +37,12 @@ type FeatureGroup struct {
 	// OfflineStoreConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-offlinestoreconfig
-	OfflineStoreConfig *FeatureGroup_OfflineStoreConfig `json:"OfflineStoreConfig,omitempty"`
+	OfflineStoreConfig *FeatureGroup_OfflineStoreConfig[any] `json:"OfflineStoreConfig,omitempty"`
 
 	// OnlineStoreConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-onlinestoreconfig
-	OnlineStoreConfig *FeatureGroup_OnlineStoreConfig `json:"OnlineStoreConfig,omitempty"`
+	OnlineStoreConfig *FeatureGroup_OnlineStoreConfig[any] `json:"OnlineStoreConfig,omitempty"`
 
 	// RecordIdentifierFeatureName AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type FeatureGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup) AWSCloudFormationType() string {
+func (r *FeatureGroup[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FeatureGroup) MarshalJSON() ([]byte, error) {
-	type Properties FeatureGroup
+func (r FeatureGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties FeatureGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r FeatureGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FeatureGroup) UnmarshalJSON(b []byte) error {
-	type Properties FeatureGroup
+func (r *FeatureGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties FeatureGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *FeatureGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FeatureGroup(*res.Properties)
+		*r = FeatureGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

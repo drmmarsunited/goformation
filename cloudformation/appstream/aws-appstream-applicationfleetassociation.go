@@ -11,7 +11,7 @@ import (
 
 // ApplicationFleetAssociation AWS CloudFormation Resource (AWS::AppStream::ApplicationFleetAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationfleetassociation.html
-type ApplicationFleetAssociation struct {
+type ApplicationFleetAssociation[T any] struct {
 
 	// ApplicationArn AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ApplicationFleetAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationFleetAssociation) AWSCloudFormationType() string {
+func (r *ApplicationFleetAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::ApplicationFleetAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationFleetAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationFleetAssociation
+func (r ApplicationFleetAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationFleetAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ApplicationFleetAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationFleetAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationFleetAssociation
+func (r *ApplicationFleetAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationFleetAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ApplicationFleetAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationFleetAssociation(*res.Properties)
+		*r = ApplicationFleetAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

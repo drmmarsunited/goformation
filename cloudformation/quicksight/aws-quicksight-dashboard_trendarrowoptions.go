@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TrendArrowOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TrendArrowOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-trendarrowoptions.html
-type Dashboard_TrendArrowOptions struct {
+type Dashboard_TrendArrowOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_TrendArrowOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TrendArrowOptions) AWSCloudFormationType() string {
+func (r *Dashboard_TrendArrowOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TrendArrowOptions"
 }

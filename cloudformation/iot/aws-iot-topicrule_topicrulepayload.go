@@ -8,12 +8,12 @@ import (
 
 // TopicRule_TopicRulePayload AWS CloudFormation Resource (AWS::IoT::TopicRule.TopicRulePayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
-type TopicRule_TopicRulePayload struct {
+type TopicRule_TopicRulePayload[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-actions
-	Actions []TopicRule_Action `json:"Actions"`
+	Actions []TopicRule_Action[any] `json:"Actions"`
 
 	// AwsIotSqlVersion AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type TopicRule_TopicRulePayload struct {
 	// ErrorAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-erroraction
-	ErrorAction *TopicRule_Action `json:"ErrorAction,omitempty"`
+	ErrorAction *TopicRule_Action[any] `json:"ErrorAction,omitempty"`
 
 	// RuleDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled
-	RuleDisabled *bool `json:"RuleDisabled,omitempty"`
+	RuleDisabled *T `json:"RuleDisabled,omitempty"`
 
 	// Sql AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type TopicRule_TopicRulePayload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_TopicRulePayload) AWSCloudFormationType() string {
+func (r *TopicRule_TopicRulePayload[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.TopicRulePayload"
 }

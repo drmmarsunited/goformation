@@ -11,7 +11,7 @@ import (
 
 // Tracker AWS CloudFormation Resource (AWS::Location::Tracker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html
-type Tracker struct {
+type Tracker[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type Tracker struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Tracker) AWSCloudFormationType() string {
+func (r *Tracker[any]) AWSCloudFormationType() string {
 	return "AWS::Location::Tracker"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Tracker) MarshalJSON() ([]byte, error) {
-	type Properties Tracker
+func (r Tracker[any]) MarshalJSON() ([]byte, error) {
+	type Properties Tracker[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Tracker) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Tracker) UnmarshalJSON(b []byte) error {
-	type Properties Tracker
+func (r *Tracker[any]) UnmarshalJSON(b []byte) error {
+	type Properties Tracker[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Tracker) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Tracker(*res.Properties)
+		*r = Tracker[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

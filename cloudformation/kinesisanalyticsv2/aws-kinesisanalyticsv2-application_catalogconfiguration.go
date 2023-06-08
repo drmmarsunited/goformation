@@ -8,12 +8,12 @@ import (
 
 // Application_CatalogConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CatalogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-catalogconfiguration.html
-type Application_CatalogConfiguration struct {
+type Application_CatalogConfiguration[T any] struct {
 
 	// GlueDataCatalogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-catalogconfiguration.html#cfn-kinesisanalyticsv2-application-catalogconfiguration-gluedatacatalogconfiguration
-	GlueDataCatalogConfiguration *Application_GlueDataCatalogConfiguration `json:"GlueDataCatalogConfiguration,omitempty"`
+	GlueDataCatalogConfiguration *Application_GlueDataCatalogConfiguration[any] `json:"GlueDataCatalogConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_CatalogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_CatalogConfiguration) AWSCloudFormationType() string {
+func (r *Application_CatalogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.CatalogConfiguration"
 }

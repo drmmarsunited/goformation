@@ -8,7 +8,7 @@ import (
 
 // TaskTemplate_FieldIdentifier AWS CloudFormation Resource (AWS::Connect::TaskTemplate.FieldIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-fieldidentifier.html
-type TaskTemplate_FieldIdentifier struct {
+type TaskTemplate_FieldIdentifier[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type TaskTemplate_FieldIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_FieldIdentifier) AWSCloudFormationType() string {
+func (r *TaskTemplate_FieldIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.FieldIdentifier"
 }

@@ -8,12 +8,12 @@ import (
 
 // Analysis_DateTimeHierarchy AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimeHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimehierarchy.html
-type Analysis_DateTimeHierarchy struct {
+type Analysis_DateTimeHierarchy[T any] struct {
 
 	// DrillDownFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimehierarchy.html#cfn-quicksight-analysis-datetimehierarchy-drilldownfilters
-	DrillDownFilters []Analysis_DrillDownFilter `json:"DrillDownFilters,omitempty"`
+	DrillDownFilters []Analysis_DrillDownFilter[any] `json:"DrillDownFilters,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_DateTimeHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimeHierarchy) AWSCloudFormationType() string {
+func (r *Analysis_DateTimeHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimeHierarchy"
 }

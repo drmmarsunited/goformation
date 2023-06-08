@@ -8,12 +8,12 @@ import (
 
 // Workflow_CopyStepDetails AWS CloudFormation Resource (AWS::Transfer::Workflow.CopyStepDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-copystepdetails.html
-type Workflow_CopyStepDetails struct {
+type Workflow_CopyStepDetails[T any] struct {
 
 	// DestinationFileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-copystepdetails.html#cfn-transfer-workflow-copystepdetails-destinationfilelocation
-	DestinationFileLocation *Workflow_S3FileLocation `json:"DestinationFileLocation,omitempty"`
+	DestinationFileLocation *Workflow_S3FileLocation[any] `json:"DestinationFileLocation,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Workflow_CopyStepDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_CopyStepDetails) AWSCloudFormationType() string {
+func (r *Workflow_CopyStepDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.CopyStepDetails"
 }

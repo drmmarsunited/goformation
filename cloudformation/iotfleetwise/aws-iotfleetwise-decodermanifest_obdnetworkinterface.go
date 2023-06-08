@@ -18,7 +18,7 @@ type DecoderManifest_ObdNetworkInterface struct {
 	// ObdInterface AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-obdinterface
-	ObdInterface *DecoderManifest_ObdInterface `json:"ObdInterface"`
+	ObdInterface *DecoderManifest_ObdInterface[any] `json:"ObdInterface"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

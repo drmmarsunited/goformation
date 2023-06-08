@@ -8,12 +8,12 @@ import (
 
 // Template_StringDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Template.StringDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-stringdefaultvalues.html
-type Template_StringDefaultValues struct {
+type Template_StringDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-stringdefaultvalues.html#cfn-quicksight-template-stringdefaultvalues-dynamicvalue
-	DynamicValue *Template_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Template_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_StringDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_StringDefaultValues) AWSCloudFormationType() string {
+func (r *Template_StringDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.StringDefaultValues"
 }

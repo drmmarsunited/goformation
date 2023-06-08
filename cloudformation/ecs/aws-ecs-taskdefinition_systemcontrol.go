@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_SystemControl AWS CloudFormation Resource (AWS::ECS::TaskDefinition.SystemControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-systemcontrol.html
-type TaskDefinition_SystemControl struct {
+type TaskDefinition_SystemControl[T any] struct {
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_SystemControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_SystemControl) AWSCloudFormationType() string {
+func (r *TaskDefinition_SystemControl[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.SystemControl"
 }

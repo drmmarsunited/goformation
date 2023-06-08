@@ -8,7 +8,7 @@ import (
 
 // ConfigurationProfile_Tags AWS CloudFormation Resource (AWS::AppConfig::ConfigurationProfile.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-tags.html
-type ConfigurationProfile_Tags struct {
+type ConfigurationProfile_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConfigurationProfile_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationProfile_Tags) AWSCloudFormationType() string {
+func (r *ConfigurationProfile_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::ConfigurationProfile.Tags"
 }

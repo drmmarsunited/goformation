@@ -8,7 +8,7 @@ import (
 
 // Fleet_AnywhereConfiguration AWS CloudFormation Resource (AWS::GameLift::Fleet.AnywhereConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-anywhereconfiguration.html
-type Fleet_AnywhereConfiguration struct {
+type Fleet_AnywhereConfiguration[T any] struct {
 
 	// Cost AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Fleet_AnywhereConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_AnywhereConfiguration) AWSCloudFormationType() string {
+func (r *Fleet_AnywhereConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.AnywhereConfiguration"
 }

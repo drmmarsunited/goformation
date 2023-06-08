@@ -8,17 +8,17 @@ import (
 
 // DataRepositoryAssociation_S3 AWS CloudFormation Resource (AWS::FSx::DataRepositoryAssociation.S3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-datarepositoryassociation-s3.html
-type DataRepositoryAssociation_S3 struct {
+type DataRepositoryAssociation_S3[T any] struct {
 
 	// AutoExportPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-datarepositoryassociation-s3.html#cfn-fsx-datarepositoryassociation-s3-autoexportpolicy
-	AutoExportPolicy *DataRepositoryAssociation_AutoExportPolicy `json:"AutoExportPolicy,omitempty"`
+	AutoExportPolicy *DataRepositoryAssociation_AutoExportPolicy[any] `json:"AutoExportPolicy,omitempty"`
 
 	// AutoImportPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-datarepositoryassociation-s3.html#cfn-fsx-datarepositoryassociation-s3-autoimportpolicy
-	AutoImportPolicy *DataRepositoryAssociation_AutoImportPolicy `json:"AutoImportPolicy,omitempty"`
+	AutoImportPolicy *DataRepositoryAssociation_AutoImportPolicy[any] `json:"AutoImportPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataRepositoryAssociation_S3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataRepositoryAssociation_S3) AWSCloudFormationType() string {
+func (r *DataRepositoryAssociation_S3[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::DataRepositoryAssociation.S3"
 }

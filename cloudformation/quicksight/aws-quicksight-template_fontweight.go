@@ -8,7 +8,7 @@ import (
 
 // Template_FontWeight AWS CloudFormation Resource (AWS::QuickSight::Template.FontWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fontweight.html
-type Template_FontWeight struct {
+type Template_FontWeight[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_FontWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FontWeight) AWSCloudFormationType() string {
+func (r *Template_FontWeight[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FontWeight"
 }

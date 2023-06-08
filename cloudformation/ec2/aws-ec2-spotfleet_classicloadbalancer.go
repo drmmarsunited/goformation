@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_ClassicLoadBalancer AWS CloudFormation Resource (AWS::EC2::SpotFleet.ClassicLoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancer.html
-type SpotFleet_ClassicLoadBalancer struct {
+type SpotFleet_ClassicLoadBalancer[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type SpotFleet_ClassicLoadBalancer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_ClassicLoadBalancer) AWSCloudFormationType() string {
+func (r *SpotFleet_ClassicLoadBalancer[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.ClassicLoadBalancer"
 }

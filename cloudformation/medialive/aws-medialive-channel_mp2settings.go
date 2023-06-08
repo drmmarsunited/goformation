@@ -8,12 +8,12 @@ import (
 
 // Channel_Mp2Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Mp2Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html
-type Channel_Mp2Settings struct {
+type Channel_Mp2Settings[T any] struct {
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-bitrate
-	Bitrate *float64 `json:"Bitrate,omitempty"`
+	Bitrate *T `json:"Bitrate,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_Mp2Settings struct {
 	// SampleRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-samplerate
-	SampleRate *float64 `json:"SampleRate,omitempty"`
+	SampleRate *T `json:"SampleRate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_Mp2Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Mp2Settings) AWSCloudFormationType() string {
+func (r *Channel_Mp2Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Mp2Settings"
 }

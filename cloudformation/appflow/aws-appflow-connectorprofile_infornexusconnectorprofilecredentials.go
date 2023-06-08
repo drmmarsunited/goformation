@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_InforNexusConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofilecredentials.html
-type ConnectorProfile_InforNexusConnectorProfileCredentials struct {
+type ConnectorProfile_InforNexusConnectorProfileCredentials[T any] struct {
 
 	// AccessKeyId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ConnectorProfile_InforNexusConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_InforNexusConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_InforNexusConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileCredentials"
 }

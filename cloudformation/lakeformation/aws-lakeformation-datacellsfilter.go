@@ -11,7 +11,7 @@ import (
 
 // DataCellsFilter AWS CloudFormation Resource (AWS::LakeFormation::DataCellsFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html
-type DataCellsFilter struct {
+type DataCellsFilter[T any] struct {
 
 	// ColumnNames AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type DataCellsFilter struct {
 	// ColumnWildcard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-columnwildcard
-	ColumnWildcard *DataCellsFilter_ColumnWildcard `json:"ColumnWildcard,omitempty"`
+	ColumnWildcard *DataCellsFilter_ColumnWildcard[any] `json:"ColumnWildcard,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type DataCellsFilter struct {
 	// RowFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-rowfilter
-	RowFilter *DataCellsFilter_RowFilter `json:"RowFilter,omitempty"`
+	RowFilter *DataCellsFilter_RowFilter[any] `json:"RowFilter,omitempty"`
 
 	// TableCatalogId AWS CloudFormation Property
 	// Required: true
@@ -65,14 +65,15 @@ type DataCellsFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCellsFilter) AWSCloudFormationType() string {
+func (r *DataCellsFilter[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataCellsFilter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataCellsFilter) MarshalJSON() ([]byte, error) {
-	type Properties DataCellsFilter
+func (r DataCellsFilter[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataCellsFilter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r DataCellsFilter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataCellsFilter) UnmarshalJSON(b []byte) error {
-	type Properties DataCellsFilter
+func (r *DataCellsFilter[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataCellsFilter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *DataCellsFilter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataCellsFilter(*res.Properties)
+		*r = DataCellsFilter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

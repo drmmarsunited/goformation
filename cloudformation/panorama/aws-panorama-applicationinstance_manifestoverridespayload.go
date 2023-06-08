@@ -8,7 +8,7 @@ import (
 
 // ApplicationInstance_ManifestOverridesPayload AWS CloudFormation Resource (AWS::Panorama::ApplicationInstance.ManifestOverridesPayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-applicationinstance-manifestoverridespayload.html
-type ApplicationInstance_ManifestOverridesPayload struct {
+type ApplicationInstance_ManifestOverridesPayload[T any] struct {
 
 	// PayloadData AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ApplicationInstance_ManifestOverridesPayload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationInstance_ManifestOverridesPayload) AWSCloudFormationType() string {
+func (r *ApplicationInstance_ManifestOverridesPayload[any]) AWSCloudFormationType() string {
 	return "AWS::Panorama::ApplicationInstance.ManifestOverridesPayload"
 }

@@ -11,7 +11,7 @@ import (
 
 // ApiGatewayManagedOverrides AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html
-type ApiGatewayManagedOverrides struct {
+type ApiGatewayManagedOverrides[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -21,17 +21,17 @@ type ApiGatewayManagedOverrides struct {
 	// Integration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integration
-	Integration *ApiGatewayManagedOverrides_IntegrationOverrides `json:"Integration,omitempty"`
+	Integration *ApiGatewayManagedOverrides_IntegrationOverrides[any] `json:"Integration,omitempty"`
 
 	// Route AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-route
-	Route *ApiGatewayManagedOverrides_RouteOverrides `json:"Route,omitempty"`
+	Route *ApiGatewayManagedOverrides_RouteOverrides[any] `json:"Route,omitempty"`
 
 	// Stage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stage
-	Stage *ApiGatewayManagedOverrides_StageOverrides `json:"Stage,omitempty"`
+	Stage *ApiGatewayManagedOverrides_StageOverrides[any] `json:"Stage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type ApiGatewayManagedOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiGatewayManagedOverrides) AWSCloudFormationType() string {
+func (r *ApiGatewayManagedOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::ApiGatewayManagedOverrides"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApiGatewayManagedOverrides) MarshalJSON() ([]byte, error) {
-	type Properties ApiGatewayManagedOverrides
+func (r ApiGatewayManagedOverrides[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApiGatewayManagedOverrides[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r ApiGatewayManagedOverrides) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApiGatewayManagedOverrides) UnmarshalJSON(b []byte) error {
-	type Properties ApiGatewayManagedOverrides
+func (r *ApiGatewayManagedOverrides[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApiGatewayManagedOverrides[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *ApiGatewayManagedOverrides) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApiGatewayManagedOverrides(*res.Properties)
+		*r = ApiGatewayManagedOverrides[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

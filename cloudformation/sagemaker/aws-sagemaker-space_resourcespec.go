@@ -8,7 +8,7 @@ import (
 
 // Space_ResourceSpec AWS CloudFormation Resource (AWS::SageMaker::Space.ResourceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html
-type Space_ResourceSpec struct {
+type Space_ResourceSpec[T any] struct {
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Space_ResourceSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Space_ResourceSpec) AWSCloudFormationType() string {
+func (r *Space_ResourceSpec[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Space.ResourceSpec"
 }

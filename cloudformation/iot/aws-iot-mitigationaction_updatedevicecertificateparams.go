@@ -8,7 +8,7 @@ import (
 
 // MitigationAction_UpdateDeviceCertificateParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.UpdateDeviceCertificateParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-updatedevicecertificateparams.html
-type MitigationAction_UpdateDeviceCertificateParams struct {
+type MitigationAction_UpdateDeviceCertificateParams[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MitigationAction_UpdateDeviceCertificateParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_UpdateDeviceCertificateParams) AWSCloudFormationType() string {
+func (r *MitigationAction_UpdateDeviceCertificateParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.UpdateDeviceCertificateParams"
 }

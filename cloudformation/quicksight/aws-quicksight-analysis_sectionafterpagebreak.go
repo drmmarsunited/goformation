@@ -8,7 +8,7 @@ import (
 
 // Analysis_SectionAfterPageBreak AWS CloudFormation Resource (AWS::QuickSight::Analysis.SectionAfterPageBreak)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionafterpagebreak.html
-type Analysis_SectionAfterPageBreak struct {
+type Analysis_SectionAfterPageBreak[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_SectionAfterPageBreak struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SectionAfterPageBreak) AWSCloudFormationType() string {
+func (r *Analysis_SectionAfterPageBreak[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SectionAfterPageBreak"
 }

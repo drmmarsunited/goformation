@@ -8,12 +8,12 @@ import (
 
 // Analysis_AxisLogarithmicScale AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisLogarithmicScale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislogarithmicscale.html
-type Analysis_AxisLogarithmicScale struct {
+type Analysis_AxisLogarithmicScale[T any] struct {
 
 	// Base AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislogarithmicscale.html#cfn-quicksight-analysis-axislogarithmicscale-base
-	Base *float64 `json:"Base,omitempty"`
+	Base *T `json:"Base,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_AxisLogarithmicScale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisLogarithmicScale) AWSCloudFormationType() string {
+func (r *Analysis_AxisLogarithmicScale[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisLogarithmicScale"
 }

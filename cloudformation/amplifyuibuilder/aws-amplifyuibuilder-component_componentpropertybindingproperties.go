@@ -8,7 +8,7 @@ import (
 
 // Component_ComponentPropertyBindingProperties AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentPropertyBindingProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentpropertybindingproperties.html
-type Component_ComponentPropertyBindingProperties struct {
+type Component_ComponentPropertyBindingProperties[T any] struct {
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Component_ComponentPropertyBindingProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentPropertyBindingProperties) AWSCloudFormationType() string {
+func (r *Component_ComponentPropertyBindingProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentPropertyBindingProperties"
 }

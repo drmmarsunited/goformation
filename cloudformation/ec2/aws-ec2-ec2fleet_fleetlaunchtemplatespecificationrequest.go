@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_FleetLaunchTemplateSpecificationRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html
-type EC2Fleet_FleetLaunchTemplateSpecificationRequest struct {
+type EC2Fleet_FleetLaunchTemplateSpecificationRequest[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EC2Fleet_FleetLaunchTemplateSpecificationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_FleetLaunchTemplateSpecificationRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_FleetLaunchTemplateSpecificationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest"
 }

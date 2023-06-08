@@ -8,7 +8,7 @@ import (
 
 // Bot_ObfuscationSetting AWS CloudFormation Resource (AWS::Lex::Bot.ObfuscationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-obfuscationsetting.html
-type Bot_ObfuscationSetting struct {
+type Bot_ObfuscationSetting[T any] struct {
 
 	// ObfuscationSettingType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_ObfuscationSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ObfuscationSetting) AWSCloudFormationType() string {
+func (r *Bot_ObfuscationSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ObfuscationSetting"
 }

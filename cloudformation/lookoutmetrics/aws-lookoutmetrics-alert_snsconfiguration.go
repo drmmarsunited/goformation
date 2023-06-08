@@ -8,7 +8,7 @@ import (
 
 // Alert_SNSConfiguration AWS CloudFormation Resource (AWS::LookoutMetrics::Alert.SNSConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html
-type Alert_SNSConfiguration struct {
+type Alert_SNSConfiguration[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Alert_SNSConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alert_SNSConfiguration) AWSCloudFormationType() string {
+func (r *Alert_SNSConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::Alert.SNSConfiguration"
 }

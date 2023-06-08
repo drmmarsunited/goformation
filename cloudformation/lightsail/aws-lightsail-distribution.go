@@ -12,7 +12,7 @@ import (
 
 // Distribution AWS CloudFormation Resource (AWS::Lightsail::Distribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html
-type Distribution struct {
+type Distribution[T any] struct {
 
 	// BundleId AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,12 @@ type Distribution struct {
 	// CacheBehaviorSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-cachebehaviorsettings
-	CacheBehaviorSettings *Distribution_CacheSettings `json:"CacheBehaviorSettings,omitempty"`
+	CacheBehaviorSettings *Distribution_CacheSettings[any] `json:"CacheBehaviorSettings,omitempty"`
 
 	// CacheBehaviors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-cachebehaviors
-	CacheBehaviors []Distribution_CacheBehaviorPerPath `json:"CacheBehaviors,omitempty"`
+	CacheBehaviors []Distribution_CacheBehaviorPerPath[any] `json:"CacheBehaviors,omitempty"`
 
 	// CertificateName AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Distribution struct {
 	// DefaultCacheBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-defaultcachebehavior
-	DefaultCacheBehavior *Distribution_CacheBehavior `json:"DefaultCacheBehavior"`
+	DefaultCacheBehavior *Distribution_CacheBehavior[any] `json:"DefaultCacheBehavior"`
 
 	// DistributionName AWS CloudFormation Property
 	// Required: true
@@ -52,12 +52,12 @@ type Distribution struct {
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-isenabled
-	IsEnabled *bool `json:"IsEnabled,omitempty"`
+	IsEnabled *T `json:"IsEnabled,omitempty"`
 
 	// Origin AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-origin
-	Origin *Distribution_InputOrigin `json:"Origin"`
+	Origin *Distribution_InputOrigin[any] `json:"Origin"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Distribution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution) AWSCloudFormationType() string {
+func (r *Distribution[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Distribution) MarshalJSON() ([]byte, error) {
-	type Properties Distribution
+func (r Distribution[any]) MarshalJSON() ([]byte, error) {
+	type Properties Distribution[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Distribution) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Distribution) UnmarshalJSON(b []byte) error {
-	type Properties Distribution
+func (r *Distribution[any]) UnmarshalJSON(b []byte) error {
+	type Properties Distribution[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Distribution) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Distribution(*res.Properties)
+		*r = Distribution[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

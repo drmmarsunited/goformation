@@ -8,22 +8,22 @@ import (
 
 // FileSystem_OpenZFSConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.OpenZFSConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html
-type FileSystem_OpenZFSConfiguration struct {
+type FileSystem_OpenZFSConfiguration[T any] struct {
 
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays *int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *T `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstobackups
-	CopyTagsToBackups *bool `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *T `json:"CopyTagsToBackups,omitempty"`
 
 	// CopyTagsToVolumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstovolumes
-	CopyTagsToVolumes *bool `json:"CopyTagsToVolumes,omitempty"`
+	CopyTagsToVolumes *T `json:"CopyTagsToVolumes,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type FileSystem_OpenZFSConfiguration struct {
 	// DiskIopsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration
-	DiskIopsConfiguration *FileSystem_DiskIopsConfiguration `json:"DiskIopsConfiguration,omitempty"`
+	DiskIopsConfiguration *FileSystem_DiskIopsConfiguration[any] `json:"DiskIopsConfiguration,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type FileSystem_OpenZFSConfiguration struct {
 	// RootVolumeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration
-	RootVolumeConfiguration *FileSystem_RootVolumeConfiguration `json:"RootVolumeConfiguration,omitempty"`
+	RootVolumeConfiguration *FileSystem_RootVolumeConfiguration[any] `json:"RootVolumeConfiguration,omitempty"`
 
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-throughputcapacity
-	ThroughputCapacity *int `json:"ThroughputCapacity,omitempty"`
+	ThroughputCapacity *T `json:"ThroughputCapacity,omitempty"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type FileSystem_OpenZFSConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_OpenZFSConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_OpenZFSConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.OpenZFSConfiguration"
 }

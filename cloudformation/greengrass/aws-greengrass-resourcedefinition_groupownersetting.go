@@ -8,12 +8,12 @@ import (
 
 // ResourceDefinition_GroupOwnerSetting AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.GroupOwnerSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-groupownersetting.html
-type ResourceDefinition_GroupOwnerSetting struct {
+type ResourceDefinition_GroupOwnerSetting[T any] struct {
 
 	// AutoAddGroupOwner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-groupownersetting.html#cfn-greengrass-resourcedefinition-groupownersetting-autoaddgroupowner
-	AutoAddGroupOwner bool `json:"AutoAddGroupOwner"`
+	AutoAddGroupOwner T `json:"AutoAddGroupOwner"`
 
 	// GroupOwner AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ResourceDefinition_GroupOwnerSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_GroupOwnerSetting) AWSCloudFormationType() string {
+func (r *ResourceDefinition_GroupOwnerSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.GroupOwnerSetting"
 }

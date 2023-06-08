@@ -8,22 +8,22 @@ import (
 
 // Dashboard_RelativeDatesFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RelativeDatesFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatesfilter.html
-type Dashboard_RelativeDatesFilter struct {
+type Dashboard_RelativeDatesFilter[T any] struct {
 
 	// AnchorDateConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatesfilter.html#cfn-quicksight-dashboard-relativedatesfilter-anchordateconfiguration
-	AnchorDateConfiguration *Dashboard_AnchorDateConfiguration `json:"AnchorDateConfiguration"`
+	AnchorDateConfiguration *Dashboard_AnchorDateConfiguration[any] `json:"AnchorDateConfiguration"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatesfilter.html#cfn-quicksight-dashboard-relativedatesfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// ExcludePeriodConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatesfilter.html#cfn-quicksight-dashboard-relativedatesfilter-excludeperiodconfiguration
-	ExcludePeriodConfiguration *Dashboard_ExcludePeriodConfiguration `json:"ExcludePeriodConfiguration,omitempty"`
+	ExcludePeriodConfiguration *Dashboard_ExcludePeriodConfiguration[any] `json:"ExcludePeriodConfiguration,omitempty"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Dashboard_RelativeDatesFilter struct {
 	// RelativeDateValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatesfilter.html#cfn-quicksight-dashboard-relativedatesfilter-relativedatevalue
-	RelativeDateValue *float64 `json:"RelativeDateValue,omitempty"`
+	RelativeDateValue *T `json:"RelativeDateValue,omitempty"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: true
@@ -77,6 +77,6 @@ type Dashboard_RelativeDatesFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RelativeDatesFilter) AWSCloudFormationType() string {
+func (r *Dashboard_RelativeDatesFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RelativeDatesFilter"
 }

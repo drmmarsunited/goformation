@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_AlarmEventActions AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AlarmEventActions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmeventactions.html
-type AlarmModel_AlarmEventActions struct {
+type AlarmModel_AlarmEventActions[T any] struct {
 
 	// AlarmActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-alarmeventactions.html#cfn-iotevents-alarmmodel-alarmeventactions-alarmactions
-	AlarmActions []AlarmModel_AlarmAction `json:"AlarmActions,omitempty"`
+	AlarmActions []AlarmModel_AlarmAction[any] `json:"AlarmActions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AlarmModel_AlarmEventActions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_AlarmEventActions) AWSCloudFormationType() string {
+func (r *AlarmModel_AlarmEventActions[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.AlarmEventActions"
 }

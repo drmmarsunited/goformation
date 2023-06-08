@@ -8,7 +8,7 @@ import (
 
 // Domain_VPCOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.VPCOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html
-type Domain_VPCOptions struct {
+type Domain_VPCOptions[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Domain_VPCOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_VPCOptions) AWSCloudFormationType() string {
+func (r *Domain_VPCOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.VPCOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_MaintenanceWindowLambdaParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html
-type MaintenanceWindowTask_MaintenanceWindowLambdaParameters struct {
+type MaintenanceWindowTask_MaintenanceWindowLambdaParameters[T any] struct {
 
 	// ClientContext AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type MaintenanceWindowTask_MaintenanceWindowLambdaParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_MaintenanceWindowLambdaParameters) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_MaintenanceWindowLambdaParameters[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters"
 }

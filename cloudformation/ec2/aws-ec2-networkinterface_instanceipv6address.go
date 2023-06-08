@@ -8,7 +8,7 @@ import (
 
 // NetworkInterface_InstanceIpv6Address AWS CloudFormation Resource (AWS::EC2::NetworkInterface.InstanceIpv6Address)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html
-type NetworkInterface_InstanceIpv6Address struct {
+type NetworkInterface_InstanceIpv6Address[T any] struct {
 
 	// Ipv6Address AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type NetworkInterface_InstanceIpv6Address struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInterface_InstanceIpv6Address) AWSCloudFormationType() string {
+func (r *NetworkInterface_InstanceIpv6Address[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInterface.InstanceIpv6Address"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ComparisonFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ComparisonFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonformatconfiguration.html
-type Dashboard_ComparisonFormatConfiguration struct {
+type Dashboard_ComparisonFormatConfiguration[T any] struct {
 
 	// NumberDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonformatconfiguration.html#cfn-quicksight-dashboard-comparisonformatconfiguration-numberdisplayformatconfiguration
-	NumberDisplayFormatConfiguration *Dashboard_NumberDisplayFormatConfiguration `json:"NumberDisplayFormatConfiguration,omitempty"`
+	NumberDisplayFormatConfiguration *Dashboard_NumberDisplayFormatConfiguration[any] `json:"NumberDisplayFormatConfiguration,omitempty"`
 
 	// PercentageDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonformatconfiguration.html#cfn-quicksight-dashboard-comparisonformatconfiguration-percentagedisplayformatconfiguration
-	PercentageDisplayFormatConfiguration *Dashboard_PercentageDisplayFormatConfiguration `json:"PercentageDisplayFormatConfiguration,omitempty"`
+	PercentageDisplayFormatConfiguration *Dashboard_PercentageDisplayFormatConfiguration[any] `json:"PercentageDisplayFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_ComparisonFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ComparisonFormatConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ComparisonFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ComparisonFormatConfiguration"
 }

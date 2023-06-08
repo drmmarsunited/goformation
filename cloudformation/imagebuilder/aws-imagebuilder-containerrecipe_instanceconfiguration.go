@@ -8,12 +8,12 @@ import (
 
 // ContainerRecipe_InstanceConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.InstanceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceconfiguration.html
-type ContainerRecipe_InstanceConfiguration struct {
+type ContainerRecipe_InstanceConfiguration[T any] struct {
 
 	// BlockDeviceMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceconfiguration.html#cfn-imagebuilder-containerrecipe-instanceconfiguration-blockdevicemappings
-	BlockDeviceMappings []ContainerRecipe_InstanceBlockDeviceMapping `json:"BlockDeviceMappings,omitempty"`
+	BlockDeviceMappings []ContainerRecipe_InstanceBlockDeviceMapping[any] `json:"BlockDeviceMappings,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ContainerRecipe_InstanceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe_InstanceConfiguration) AWSCloudFormationType() string {
+func (r *ContainerRecipe_InstanceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe.InstanceConfiguration"
 }

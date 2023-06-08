@@ -11,7 +11,7 @@ import (
 
 // Listener AWS CloudFormation Resource (AWS::GlobalAccelerator::Listener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html
-type Listener struct {
+type Listener[T any] struct {
 
 	// AcceleratorArn AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Listener struct {
 	// PortRanges AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-portranges
-	PortRanges []Listener_PortRange `json:"PortRanges"`
+	PortRanges []Listener_PortRange[any] `json:"PortRanges"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type Listener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener) AWSCloudFormationType() string {
+func (r *Listener[any]) AWSCloudFormationType() string {
 	return "AWS::GlobalAccelerator::Listener"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Listener) MarshalJSON() ([]byte, error) {
-	type Properties Listener
+func (r Listener[any]) MarshalJSON() ([]byte, error) {
+	type Properties Listener[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Listener) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Listener) UnmarshalJSON(b []byte) error {
-	type Properties Listener
+func (r *Listener[any]) UnmarshalJSON(b []byte) error {
+	type Properties Listener[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Listener) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Listener(*res.Properties)
+		*r = Listener[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

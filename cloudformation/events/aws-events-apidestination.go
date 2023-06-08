@@ -11,7 +11,7 @@ import (
 
 // ApiDestination AWS CloudFormation Resource (AWS::Events::ApiDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html
-type ApiDestination struct {
+type ApiDestination[T any] struct {
 
 	// ConnectionArn AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type ApiDestination struct {
 	// InvocationRateLimitPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-invocationratelimitpersecond
-	InvocationRateLimitPerSecond *int `json:"InvocationRateLimitPerSecond,omitempty"`
+	InvocationRateLimitPerSecond *T `json:"InvocationRateLimitPerSecond,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type ApiDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiDestination) AWSCloudFormationType() string {
+func (r *ApiDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Events::ApiDestination"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApiDestination) MarshalJSON() ([]byte, error) {
-	type Properties ApiDestination
+func (r ApiDestination[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApiDestination[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r ApiDestination) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApiDestination) UnmarshalJSON(b []byte) error {
-	type Properties ApiDestination
+func (r *ApiDestination[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApiDestination[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *ApiDestination) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApiDestination(*res.Properties)
+		*r = ApiDestination[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

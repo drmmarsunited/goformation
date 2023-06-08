@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_ProxyConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.ProxyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html
-type TaskDefinition_ProxyConfiguration struct {
+type TaskDefinition_ProxyConfiguration[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type TaskDefinition_ProxyConfiguration struct {
 	// ProxyConfigurationProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-proxyconfigurationproperties
-	ProxyConfigurationProperties []TaskDefinition_KeyValuePair `json:"ProxyConfigurationProperties,omitempty"`
+	ProxyConfigurationProperties []TaskDefinition_KeyValuePair[any] `json:"ProxyConfigurationProperties,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TaskDefinition_ProxyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_ProxyConfiguration) AWSCloudFormationType() string {
+func (r *TaskDefinition_ProxyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.ProxyConfiguration"
 }

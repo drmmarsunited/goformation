@@ -8,7 +8,7 @@ import (
 
 // Ruleset_Threshold AWS CloudFormation Resource (AWS::DataBrew::Ruleset.Threshold)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html
-type Ruleset_Threshold struct {
+type Ruleset_Threshold[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Ruleset_Threshold struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Ruleset_Threshold struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ruleset_Threshold) AWSCloudFormationType() string {
+func (r *Ruleset_Threshold[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Ruleset.Threshold"
 }

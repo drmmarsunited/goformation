@@ -8,12 +8,12 @@ import (
 
 // Campaign_ConditionBasedCollectionScheme AWS CloudFormation Resource (AWS::IoTFleetWise::Campaign.ConditionBasedCollectionScheme)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html
-type Campaign_ConditionBasedCollectionScheme struct {
+type Campaign_ConditionBasedCollectionScheme[T any] struct {
 
 	// ConditionLanguageVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html#cfn-iotfleetwise-campaign-conditionbasedcollectionscheme-conditionlanguageversion
-	ConditionLanguageVersion *int `json:"ConditionLanguageVersion,omitempty"`
+	ConditionLanguageVersion *T `json:"ConditionLanguageVersion,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Campaign_ConditionBasedCollectionScheme struct {
 	// MinimumTriggerIntervalMs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html#cfn-iotfleetwise-campaign-conditionbasedcollectionscheme-minimumtriggerintervalms
-	MinimumTriggerIntervalMs *float64 `json:"MinimumTriggerIntervalMs,omitempty"`
+	MinimumTriggerIntervalMs *T `json:"MinimumTriggerIntervalMs,omitempty"`
 
 	// TriggerMode AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Campaign_ConditionBasedCollectionScheme struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_ConditionBasedCollectionScheme) AWSCloudFormationType() string {
+func (r *Campaign_ConditionBasedCollectionScheme[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Campaign.ConditionBasedCollectionScheme"
 }

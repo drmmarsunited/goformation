@@ -8,7 +8,7 @@ import (
 
 // Trigger_Action AWS CloudFormation Resource (AWS::Glue::Trigger.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html
-type Trigger_Action struct {
+type Trigger_Action[T any] struct {
 
 	// Arguments AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Trigger_Action struct {
 	// NotificationProperty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-notificationproperty
-	NotificationProperty *Trigger_NotificationProperty `json:"NotificationProperty,omitempty"`
+	NotificationProperty *Trigger_NotificationProperty[any] `json:"NotificationProperty,omitempty"`
 
 	// SecurityConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Trigger_Action struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Trigger_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger_Action) AWSCloudFormationType() string {
+func (r *Trigger_Action[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Action"
 }

@@ -8,7 +8,7 @@ import (
 
 // Group_TagFilter AWS CloudFormation Resource (AWS::ResourceGroups::Group.TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-tagfilter.html
-type Group_TagFilter struct {
+type Group_TagFilter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Group_TagFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_TagFilter) AWSCloudFormationType() string {
+func (r *Group_TagFilter[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceGroups::Group.TagFilter"
 }

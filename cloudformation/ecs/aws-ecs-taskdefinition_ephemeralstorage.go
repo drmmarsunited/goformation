@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_EphemeralStorage AWS CloudFormation Resource (AWS::ECS::TaskDefinition.EphemeralStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ephemeralstorage.html
-type TaskDefinition_EphemeralStorage struct {
+type TaskDefinition_EphemeralStorage[T any] struct {
 
 	// SizeInGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ephemeralstorage.html#cfn-ecs-taskdefinition-ephemeralstorage-sizeingib
-	SizeInGiB *int `json:"SizeInGiB,omitempty"`
+	SizeInGiB *T `json:"SizeInGiB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type TaskDefinition_EphemeralStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_EphemeralStorage) AWSCloudFormationType() string {
+func (r *TaskDefinition_EphemeralStorage[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.EphemeralStorage"
 }

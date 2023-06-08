@@ -8,7 +8,7 @@ import (
 
 // PatchBaseline_PatchStringDate AWS CloudFormation Resource (AWS::SSM::PatchBaseline.PatchStringDate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchstringdate.html
-type PatchBaseline_PatchStringDate struct {
+type PatchBaseline_PatchStringDate[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type PatchBaseline_PatchStringDate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PatchBaseline_PatchStringDate) AWSCloudFormationType() string {
+func (r *PatchBaseline_PatchStringDate[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.PatchStringDate"
 }

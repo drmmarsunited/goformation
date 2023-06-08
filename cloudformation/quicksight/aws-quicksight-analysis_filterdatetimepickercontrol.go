@@ -8,12 +8,12 @@ import (
 
 // Analysis_FilterDateTimePickerControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterDateTimePickerControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdatetimepickercontrol.html
-type Analysis_FilterDateTimePickerControl struct {
+type Analysis_FilterDateTimePickerControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdatetimepickercontrol.html#cfn-quicksight-analysis-filterdatetimepickercontrol-displayoptions
-	DisplayOptions *Analysis_DateTimePickerControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_DateTimePickerControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Analysis_FilterDateTimePickerControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterDateTimePickerControl) AWSCloudFormationType() string {
+func (r *Analysis_FilterDateTimePickerControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterDateTimePickerControl"
 }

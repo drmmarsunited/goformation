@@ -8,12 +8,12 @@ import (
 
 // Application_RecordFormat AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.RecordFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html
-type Application_RecordFormat struct {
+type Application_RecordFormat[T any] struct {
 
 	// MappingParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html#cfn-kinesisanalyticsv2-application-recordformat-mappingparameters
-	MappingParameters *Application_MappingParameters `json:"MappingParameters,omitempty"`
+	MappingParameters *Application_MappingParameters[any] `json:"MappingParameters,omitempty"`
 
 	// RecordFormatType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_RecordFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_RecordFormat) AWSCloudFormationType() string {
+func (r *Application_RecordFormat[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.RecordFormat"
 }

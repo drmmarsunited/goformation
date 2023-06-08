@@ -11,17 +11,17 @@ import (
 
 // RotationSchedule AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html
-type RotationSchedule struct {
+type RotationSchedule[T any] struct {
 
 	// HostedRotationLambda AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda
-	HostedRotationLambda *RotationSchedule_HostedRotationLambda `json:"HostedRotationLambda,omitempty"`
+	HostedRotationLambda *RotationSchedule_HostedRotationLambda[any] `json:"HostedRotationLambda,omitempty"`
 
 	// RotateImmediatelyOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate
-	RotateImmediatelyOnUpdate *bool `json:"RotateImmediatelyOnUpdate,omitempty"`
+	RotateImmediatelyOnUpdate *T `json:"RotateImmediatelyOnUpdate,omitempty"`
 
 	// RotationLambdaARN AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type RotationSchedule struct {
 	// RotationRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationrules
-	RotationRules *RotationSchedule_RotationRules `json:"RotationRules,omitempty"`
+	RotationRules *RotationSchedule_RotationRules[any] `json:"RotationRules,omitempty"`
 
 	// SecretId AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type RotationSchedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RotationSchedule) AWSCloudFormationType() string {
+func (r *RotationSchedule[any]) AWSCloudFormationType() string {
 	return "AWS::SecretsManager::RotationSchedule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RotationSchedule) MarshalJSON() ([]byte, error) {
-	type Properties RotationSchedule
+func (r RotationSchedule[any]) MarshalJSON() ([]byte, error) {
+	type Properties RotationSchedule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r RotationSchedule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RotationSchedule) UnmarshalJSON(b []byte) error {
-	type Properties RotationSchedule
+func (r *RotationSchedule[any]) UnmarshalJSON(b []byte) error {
+	type Properties RotationSchedule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *RotationSchedule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RotationSchedule(*res.Properties)
+		*r = RotationSchedule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

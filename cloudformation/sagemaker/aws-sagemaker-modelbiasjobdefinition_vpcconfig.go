@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html
-type ModelBiasJobDefinition_VpcConfig struct {
+type ModelBiasJobDefinition_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelBiasJobDefinition_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_VpcConfig) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.VpcConfig"
 }

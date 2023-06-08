@@ -8,17 +8,17 @@ import (
 
 // LifecyclePolicy_RetentionArchiveTier AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.RetentionArchiveTier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retentionarchivetier.html
-type LifecyclePolicy_RetentionArchiveTier struct {
+type LifecyclePolicy_RetentionArchiveTier[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retentionarchivetier.html#cfn-dlm-lifecyclepolicy-retentionarchivetier-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retentionarchivetier.html#cfn-dlm-lifecyclepolicy-retentionarchivetier-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LifecyclePolicy_RetentionArchiveTier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_RetentionArchiveTier) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_RetentionArchiveTier[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.RetentionArchiveTier"
 }

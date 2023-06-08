@@ -8,7 +8,7 @@ import (
 
 // HostedZone_HostedZoneTag AWS CloudFormation Resource (AWS::Route53::HostedZone.HostedZoneTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetag.html
-type HostedZone_HostedZoneTag struct {
+type HostedZone_HostedZoneTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type HostedZone_HostedZoneTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HostedZone_HostedZoneTag) AWSCloudFormationType() string {
+func (r *HostedZone_HostedZoneTag[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HostedZone.HostedZoneTag"
 }

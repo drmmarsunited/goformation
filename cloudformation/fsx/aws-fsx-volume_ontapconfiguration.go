@@ -8,7 +8,7 @@ import (
 
 // Volume_OntapConfiguration AWS CloudFormation Resource (AWS::FSx::Volume.OntapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html
-type Volume_OntapConfiguration struct {
+type Volume_OntapConfiguration[T any] struct {
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Volume_OntapConfiguration struct {
 	// TieringPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy
-	TieringPolicy *Volume_TieringPolicy `json:"TieringPolicy,omitempty"`
+	TieringPolicy *Volume_TieringPolicy[any] `json:"TieringPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Volume_OntapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_OntapConfiguration) AWSCloudFormationType() string {
+func (r *Volume_OntapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.OntapConfiguration"
 }

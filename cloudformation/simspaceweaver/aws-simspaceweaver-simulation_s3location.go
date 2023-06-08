@@ -8,7 +8,7 @@ import (
 
 // Simulation_S3Location AWS CloudFormation Resource (AWS::SimSpaceWeaver::Simulation.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simspaceweaver-simulation-s3location.html
-type Simulation_S3Location struct {
+type Simulation_S3Location[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Simulation_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Simulation_S3Location) AWSCloudFormationType() string {
+func (r *Simulation_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::SimSpaceWeaver::Simulation.S3Location"
 }

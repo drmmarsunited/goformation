@@ -12,7 +12,7 @@ import (
 
 // DataSet AWS CloudFormation Resource (AWS::QuickSight::DataSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html
-type DataSet struct {
+type DataSet[T any] struct {
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
@@ -22,27 +22,37 @@ type DataSet struct {
 	// ColumnGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columngroups
-	ColumnGroups []DataSet_ColumnGroup `json:"ColumnGroups,omitempty"`
+	ColumnGroups []DataSet_ColumnGroup[any] `json:"ColumnGroups,omitempty"`
 
 	// ColumnLevelPermissionRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columnlevelpermissionrules
-	ColumnLevelPermissionRules []DataSet_ColumnLevelPermissionRule `json:"ColumnLevelPermissionRules,omitempty"`
+	ColumnLevelPermissionRules []DataSet_ColumnLevelPermissionRule[any] `json:"ColumnLevelPermissionRules,omitempty"`
 
 	// DataSetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetid
 	DataSetId *string `json:"DataSetId,omitempty"`
 
+	// DataSetRefreshProperties AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetrefreshproperties
+	DataSetRefreshProperties *DataSet_DataSetRefreshProperties[any] `json:"DataSetRefreshProperties,omitempty"`
+
 	// DataSetUsageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetusageconfiguration
-	DataSetUsageConfiguration *DataSet_DataSetUsageConfiguration `json:"DataSetUsageConfiguration,omitempty"`
+	DataSetUsageConfiguration *DataSet_DataSetUsageConfiguration[any] `json:"DataSetUsageConfiguration,omitempty"`
+
+	// DatasetParameters AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetparameters
+	DatasetParameters []DataSet_DatasetParameter[any] `json:"DatasetParameters,omitempty"`
 
 	// FieldFolders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-fieldfolders
-	FieldFolders map[string]DataSet_FieldFolder `json:"FieldFolders,omitempty"`
+	FieldFolders map[string]DataSet_FieldFolder[any] `json:"FieldFolders,omitempty"`
 
 	// ImportMode AWS CloudFormation Property
 	// Required: false
@@ -52,12 +62,12 @@ type DataSet struct {
 	// IngestionWaitPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-ingestionwaitpolicy
-	IngestionWaitPolicy *DataSet_IngestionWaitPolicy `json:"IngestionWaitPolicy,omitempty"`
+	IngestionWaitPolicy *DataSet_IngestionWaitPolicy[any] `json:"IngestionWaitPolicy,omitempty"`
 
 	// LogicalTableMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-logicaltablemap
-	LogicalTableMap map[string]DataSet_LogicalTable `json:"LogicalTableMap,omitempty"`
+	LogicalTableMap map[string]DataSet_LogicalTable[any] `json:"LogicalTableMap,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -67,17 +77,22 @@ type DataSet struct {
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-permissions
-	Permissions []DataSet_ResourcePermission `json:"Permissions,omitempty"`
+	Permissions []DataSet_ResourcePermission[any] `json:"Permissions,omitempty"`
 
 	// PhysicalTableMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-physicaltablemap
-	PhysicalTableMap map[string]DataSet_PhysicalTable `json:"PhysicalTableMap,omitempty"`
+	PhysicalTableMap map[string]DataSet_PhysicalTable[any] `json:"PhysicalTableMap,omitempty"`
 
 	// RowLevelPermissionDataSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset
-	RowLevelPermissionDataSet *DataSet_RowLevelPermissionDataSet `json:"RowLevelPermissionDataSet,omitempty"`
+	RowLevelPermissionDataSet *DataSet_RowLevelPermissionDataSet[any] `json:"RowLevelPermissionDataSet,omitempty"`
+
+	// RowLevelPermissionTagConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-rowlevelpermissiontagconfiguration
+	RowLevelPermissionTagConfiguration *DataSet_RowLevelPermissionTagConfiguration[any] `json:"RowLevelPermissionTagConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -101,14 +116,15 @@ type DataSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet) AWSCloudFormationType() string {
+func (r *DataSet[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataSet) MarshalJSON() ([]byte, error) {
-	type Properties DataSet
+func (r DataSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -130,8 +146,9 @@ func (r DataSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataSet) UnmarshalJSON(b []byte) error {
-	type Properties DataSet
+func (r *DataSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -151,7 +168,7 @@ func (r *DataSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataSet(*res.Properties)
+		*r = DataSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

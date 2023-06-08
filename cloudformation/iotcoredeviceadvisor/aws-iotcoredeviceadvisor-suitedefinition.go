@@ -12,12 +12,12 @@ import (
 
 // SuiteDefinition AWS CloudFormation Resource (AWS::IoTCoreDeviceAdvisor::SuiteDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotcoredeviceadvisor-suitedefinition.html
-type SuiteDefinition struct {
+type SuiteDefinition[T any] struct {
 
 	// SuiteDefinitionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotcoredeviceadvisor-suitedefinition.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration
-	SuiteDefinitionConfiguration *SuiteDefinition_SuiteDefinitionConfiguration `json:"SuiteDefinitionConfiguration"`
+	SuiteDefinitionConfiguration *SuiteDefinition_SuiteDefinitionConfiguration[any] `json:"SuiteDefinitionConfiguration"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type SuiteDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SuiteDefinition) AWSCloudFormationType() string {
+func (r *SuiteDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTCoreDeviceAdvisor::SuiteDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SuiteDefinition) MarshalJSON() ([]byte, error) {
-	type Properties SuiteDefinition
+func (r SuiteDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties SuiteDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r SuiteDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SuiteDefinition) UnmarshalJSON(b []byte) error {
-	type Properties SuiteDefinition
+func (r *SuiteDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties SuiteDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *SuiteDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SuiteDefinition(*res.Properties)
+		*r = SuiteDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_AggregationFunction AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AggregationFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationfunction.html
-type Dashboard_AggregationFunction struct {
+type Dashboard_AggregationFunction[T any] struct {
 
 	// CategoricalAggregationFunction AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_AggregationFunction struct {
 	// NumericalAggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationfunction.html#cfn-quicksight-dashboard-aggregationfunction-numericalaggregationfunction
-	NumericalAggregationFunction *Dashboard_NumericalAggregationFunction `json:"NumericalAggregationFunction,omitempty"`
+	NumericalAggregationFunction *Dashboard_NumericalAggregationFunction[any] `json:"NumericalAggregationFunction,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_AggregationFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AggregationFunction) AWSCloudFormationType() string {
+func (r *Dashboard_AggregationFunction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AggregationFunction"
 }

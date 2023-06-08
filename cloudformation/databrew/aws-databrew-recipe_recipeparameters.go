@@ -8,7 +8,7 @@ import (
 
 // Recipe_RecipeParameters AWS CloudFormation Resource (AWS::DataBrew::Recipe.RecipeParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html
-type Recipe_RecipeParameters struct {
+type Recipe_RecipeParameters[T any] struct {
 
 	// AggregateFunction AWS CloudFormation Property
 	// Required: false
@@ -158,7 +158,7 @@ type Recipe_RecipeParameters struct {
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-input
-	Input *Recipe_Input `json:"Input,omitempty"`
+	Input *Recipe_Input[any] `json:"Input,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
@@ -208,7 +208,7 @@ type Recipe_RecipeParameters struct {
 	// MultiLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-multiline
-	MultiLine *bool `json:"MultiLine,omitempty"`
+	MultiLine *T `json:"MultiLine,omitempty"`
 
 	// NumRows AWS CloudFormation Property
 	// Required: false
@@ -353,12 +353,12 @@ type Recipe_RecipeParameters struct {
 	// SecondaryInputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-secondaryinputs
-	SecondaryInputs []Recipe_SecondaryInput `json:"SecondaryInputs,omitempty"`
+	SecondaryInputs []Recipe_SecondaryInput[any] `json:"SecondaryInputs,omitempty"`
 
 	// SheetIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-sheetindexes
-	SheetIndexes []int `json:"SheetIndexes,omitempty"`
+	SheetIndexes []T `json:"SheetIndexes,omitempty"`
 
 	// SheetNames AWS CloudFormation Property
 	// Required: false
@@ -532,6 +532,6 @@ type Recipe_RecipeParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe_RecipeParameters) AWSCloudFormationType() string {
+func (r *Recipe_RecipeParameters[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe.RecipeParameters"
 }

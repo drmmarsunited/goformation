@@ -8,7 +8,7 @@ import (
 
 // Map_MapConfiguration AWS CloudFormation Resource (AWS::Location::Map.MapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-map-mapconfiguration.html
-type Map_MapConfiguration struct {
+type Map_MapConfiguration[T any] struct {
 
 	// Style AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Map_MapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Map_MapConfiguration) AWSCloudFormationType() string {
+func (r *Map_MapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Location::Map.MapConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioHlsRenditionSelection AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioHlsRenditionSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html
-type Channel_AudioHlsRenditionSelection struct {
+type Channel_AudioHlsRenditionSelection[T any] struct {
 
 	// GroupId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_AudioHlsRenditionSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioHlsRenditionSelection) AWSCloudFormationType() string {
+func (r *Channel_AudioHlsRenditionSelection[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioHlsRenditionSelection"
 }

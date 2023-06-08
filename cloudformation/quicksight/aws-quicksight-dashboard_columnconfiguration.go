@@ -8,22 +8,22 @@ import (
 
 // Dashboard_ColumnConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColumnConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnconfiguration.html
-type Dashboard_ColumnConfiguration struct {
+type Dashboard_ColumnConfiguration[T any] struct {
 
 	// ColorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnconfiguration.html#cfn-quicksight-dashboard-columnconfiguration-colorsconfiguration
-	ColorsConfiguration *Dashboard_ColorsConfiguration `json:"ColorsConfiguration,omitempty"`
+	ColorsConfiguration *Dashboard_ColorsConfiguration[any] `json:"ColorsConfiguration,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnconfiguration.html#cfn-quicksight-dashboard-columnconfiguration-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnconfiguration.html#cfn-quicksight-dashboard-columnconfiguration-formatconfiguration
-	FormatConfiguration *Dashboard_FormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Dashboard_FormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_ColumnConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColumnConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ColumnConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColumnConfiguration"
 }

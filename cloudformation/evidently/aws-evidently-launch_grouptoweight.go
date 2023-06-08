@@ -8,7 +8,7 @@ import (
 
 // Launch_GroupToWeight AWS CloudFormation Resource (AWS::Evidently::Launch.GroupToWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html
-type Launch_GroupToWeight struct {
+type Launch_GroupToWeight[T any] struct {
 
 	// GroupName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Launch_GroupToWeight struct {
 	// SplitWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html#cfn-evidently-launch-grouptoweight-splitweight
-	SplitWeight int `json:"SplitWeight"`
+	SplitWeight T `json:"SplitWeight"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Launch_GroupToWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_GroupToWeight) AWSCloudFormationType() string {
+func (r *Launch_GroupToWeight[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.GroupToWeight"
 }

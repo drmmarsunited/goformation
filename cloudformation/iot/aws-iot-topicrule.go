@@ -12,7 +12,7 @@ import (
 
 // TopicRule AWS CloudFormation Resource (AWS::IoT::TopicRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
-type TopicRule struct {
+type TopicRule[T any] struct {
 
 	// RuleName AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type TopicRule struct {
 	// TopicRulePayload AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload
-	TopicRulePayload *TopicRule_TopicRulePayload `json:"TopicRulePayload"`
+	TopicRulePayload *TopicRule_TopicRulePayload[any] `json:"TopicRulePayload"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -46,14 +46,15 @@ type TopicRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule) AWSCloudFormationType() string {
+func (r *TopicRule[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TopicRule) MarshalJSON() ([]byte, error) {
-	type Properties TopicRule
+func (r TopicRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties TopicRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r TopicRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TopicRule) UnmarshalJSON(b []byte) error {
-	type Properties TopicRule
+func (r *TopicRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties TopicRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *TopicRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TopicRule(*res.Properties)
+		*r = TopicRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

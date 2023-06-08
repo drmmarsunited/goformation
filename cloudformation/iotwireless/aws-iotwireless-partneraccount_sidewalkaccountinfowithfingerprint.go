@@ -8,7 +8,7 @@ import (
 
 // PartnerAccount_SidewalkAccountInfoWithFingerprint AWS CloudFormation Resource (AWS::IoTWireless::PartnerAccount.SidewalkAccountInfoWithFingerprint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html
-type PartnerAccount_SidewalkAccountInfoWithFingerprint struct {
+type PartnerAccount_SidewalkAccountInfoWithFingerprint[T any] struct {
 
 	// AmazonId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type PartnerAccount_SidewalkAccountInfoWithFingerprint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PartnerAccount_SidewalkAccountInfoWithFingerprint) AWSCloudFormationType() string {
+func (r *PartnerAccount_SidewalkAccountInfoWithFingerprint[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::PartnerAccount.SidewalkAccountInfoWithFingerprint"
 }

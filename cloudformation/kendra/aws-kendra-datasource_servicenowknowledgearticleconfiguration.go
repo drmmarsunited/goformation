@@ -8,12 +8,12 @@ import (
 
 // DataSource_ServiceNowKnowledgeArticleConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ServiceNowKnowledgeArticleConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html
-type DataSource_ServiceNowKnowledgeArticleConfiguration struct {
+type DataSource_ServiceNowKnowledgeArticleConfiguration[T any] struct {
 
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *T `json:"CrawlAttachments,omitempty"`
 
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type DataSource_ServiceNowKnowledgeArticleConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// FilterQuery AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type DataSource_ServiceNowKnowledgeArticleConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ServiceNowKnowledgeArticleConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ServiceNowKnowledgeArticleConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ServiceNowKnowledgeArticleConfiguration"
 }

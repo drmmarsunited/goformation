@@ -8,12 +8,12 @@ import (
 
 // TopicRule_HttpAction AWS CloudFormation Resource (AWS::IoT::TopicRule.HttpAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html
-type TopicRule_HttpAction struct {
+type TopicRule_HttpAction[T any] struct {
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-auth
-	Auth *TopicRule_HttpAuthorization `json:"Auth,omitempty"`
+	Auth *TopicRule_HttpAuthorization[any] `json:"Auth,omitempty"`
 
 	// ConfirmationUrl AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TopicRule_HttpAction struct {
 	// Headers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-headers
-	Headers []TopicRule_HttpActionHeader `json:"Headers,omitempty"`
+	Headers []TopicRule_HttpActionHeader[any] `json:"Headers,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TopicRule_HttpAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_HttpAction) AWSCloudFormationType() string {
+func (r *TopicRule_HttpAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.HttpAction"
 }

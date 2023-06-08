@@ -8,7 +8,7 @@ import (
 
 // DataSource_VpcConnectionProperties AWS CloudFormation Resource (AWS::QuickSight::DataSource.VpcConnectionProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-vpcconnectionproperties.html
-type DataSource_VpcConnectionProperties struct {
+type DataSource_VpcConnectionProperties[T any] struct {
 
 	// VpcConnectionArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_VpcConnectionProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_VpcConnectionProperties) AWSCloudFormationType() string {
+func (r *DataSource_VpcConnectionProperties[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.VpcConnectionProperties"
 }

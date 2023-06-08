@@ -8,7 +8,7 @@ import (
 
 // Analysis_PivotTableFieldSubtotalOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableFieldSubtotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablefieldsubtotaloptions.html
-type Analysis_PivotTableFieldSubtotalOptions struct {
+type Analysis_PivotTableFieldSubtotalOptions[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_PivotTableFieldSubtotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableFieldSubtotalOptions) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableFieldSubtotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableFieldSubtotalOptions"
 }

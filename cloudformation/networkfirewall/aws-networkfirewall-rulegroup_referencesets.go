@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_ReferenceSets AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.ReferenceSets)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-referencesets.html
-type RuleGroup_ReferenceSets struct {
+type RuleGroup_ReferenceSets[T any] struct {
 
 	// IPSetReferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-referencesets.html#cfn-networkfirewall-rulegroup-referencesets-ipsetreferences
-	IPSetReferences map[string]RuleGroup_IPSetReference `json:"IPSetReferences,omitempty"`
+	IPSetReferences map[string]RuleGroup_IPSetReference[any] `json:"IPSetReferences,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_ReferenceSets struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_ReferenceSets) AWSCloudFormationType() string {
+func (r *RuleGroup_ReferenceSets[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.ReferenceSets"
 }

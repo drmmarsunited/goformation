@@ -8,7 +8,7 @@ import (
 
 // InstanceGroupConfig_MetricDimension AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-metricdimension.html
-type InstanceGroupConfig_MetricDimension struct {
+type InstanceGroupConfig_MetricDimension[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InstanceGroupConfig_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_MetricDimension) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.MetricDimension"
 }

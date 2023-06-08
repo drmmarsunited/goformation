@@ -8,12 +8,12 @@ import (
 
 // Channel_StaticKeySettings AWS CloudFormation Resource (AWS::MediaLive::Channel.StaticKeySettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-statickeysettings.html
-type Channel_StaticKeySettings struct {
+type Channel_StaticKeySettings[T any] struct {
 
 	// KeyProviderServer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-statickeysettings.html#cfn-medialive-channel-statickeysettings-keyproviderserver
-	KeyProviderServer *Channel_InputLocation `json:"KeyProviderServer,omitempty"`
+	KeyProviderServer *Channel_InputLocation[any] `json:"KeyProviderServer,omitempty"`
 
 	// StaticKeyValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_StaticKeySettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_StaticKeySettings) AWSCloudFormationType() string {
+func (r *Channel_StaticKeySettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.StaticKeySettings"
 }

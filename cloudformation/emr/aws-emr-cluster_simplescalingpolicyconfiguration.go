@@ -8,7 +8,7 @@ import (
 
 // Cluster_SimpleScalingPolicyConfiguration AWS CloudFormation Resource (AWS::EMR::Cluster.SimpleScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html
-type Cluster_SimpleScalingPolicyConfiguration struct {
+type Cluster_SimpleScalingPolicyConfiguration[T any] struct {
 
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Cluster_SimpleScalingPolicyConfiguration struct {
 	// CoolDown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-cooldown
-	CoolDown *int `json:"CoolDown,omitempty"`
+	CoolDown *T `json:"CoolDown,omitempty"`
 
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-scalingadjustment
-	ScalingAdjustment int `json:"ScalingAdjustment"`
+	ScalingAdjustment T `json:"ScalingAdjustment"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Cluster_SimpleScalingPolicyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_SimpleScalingPolicyConfiguration) AWSCloudFormationType() string {
+func (r *Cluster_SimpleScalingPolicyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.SimpleScalingPolicyConfiguration"
 }

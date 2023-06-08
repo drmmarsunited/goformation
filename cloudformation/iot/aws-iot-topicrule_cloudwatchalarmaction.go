@@ -8,7 +8,7 @@ import (
 
 // TopicRule_CloudwatchAlarmAction AWS CloudFormation Resource (AWS::IoT::TopicRule.CloudwatchAlarmAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html
-type TopicRule_CloudwatchAlarmAction struct {
+type TopicRule_CloudwatchAlarmAction[T any] struct {
 
 	// AlarmName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TopicRule_CloudwatchAlarmAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_CloudwatchAlarmAction) AWSCloudFormationType() string {
+func (r *TopicRule_CloudwatchAlarmAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.CloudwatchAlarmAction"
 }

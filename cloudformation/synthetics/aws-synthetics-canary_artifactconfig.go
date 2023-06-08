@@ -8,12 +8,12 @@ import (
 
 // Canary_ArtifactConfig AWS CloudFormation Resource (AWS::Synthetics::Canary.ArtifactConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html
-type Canary_ArtifactConfig struct {
+type Canary_ArtifactConfig[T any] struct {
 
 	// S3Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption
-	S3Encryption *Canary_S3Encryption `json:"S3Encryption,omitempty"`
+	S3Encryption *Canary_S3Encryption[any] `json:"S3Encryption,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Canary_ArtifactConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_ArtifactConfig) AWSCloudFormationType() string {
+func (r *Canary_ArtifactConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.ArtifactConfig"
 }

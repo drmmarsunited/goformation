@@ -8,17 +8,17 @@ import (
 
 // Deployment_DeploymentPolicies AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.DeploymentPolicies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentpolicies.html
-type Deployment_DeploymentPolicies struct {
+type Deployment_DeploymentPolicies[T any] struct {
 
 	// ComponentUpdatePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentpolicies.html#cfn-greengrassv2-deployment-deploymentpolicies-componentupdatepolicy
-	ComponentUpdatePolicy *Deployment_DeploymentComponentUpdatePolicy `json:"ComponentUpdatePolicy,omitempty"`
+	ComponentUpdatePolicy *Deployment_DeploymentComponentUpdatePolicy[any] `json:"ComponentUpdatePolicy,omitempty"`
 
 	// ConfigurationValidationPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentpolicies.html#cfn-greengrassv2-deployment-deploymentpolicies-configurationvalidationpolicy
-	ConfigurationValidationPolicy *Deployment_DeploymentConfigurationValidationPolicy `json:"ConfigurationValidationPolicy,omitempty"`
+	ConfigurationValidationPolicy *Deployment_DeploymentConfigurationValidationPolicy[any] `json:"ConfigurationValidationPolicy,omitempty"`
 
 	// FailureHandlingPolicy AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Deployment_DeploymentPolicies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_DeploymentPolicies) AWSCloudFormationType() string {
+func (r *Deployment_DeploymentPolicies[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.DeploymentPolicies"
 }

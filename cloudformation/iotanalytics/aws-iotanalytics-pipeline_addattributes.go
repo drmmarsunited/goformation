@@ -8,7 +8,7 @@ import (
 
 // Pipeline_AddAttributes AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.AddAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-addattributes.html
-type Pipeline_AddAttributes struct {
+type Pipeline_AddAttributes[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_AddAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_AddAttributes) AWSCloudFormationType() string {
+func (r *Pipeline_AddAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.AddAttributes"
 }

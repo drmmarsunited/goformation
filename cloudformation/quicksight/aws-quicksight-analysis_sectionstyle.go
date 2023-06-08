@@ -8,7 +8,7 @@ import (
 
 // Analysis_SectionStyle AWS CloudFormation Resource (AWS::QuickSight::Analysis.SectionStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionstyle.html
-type Analysis_SectionStyle struct {
+type Analysis_SectionStyle[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_SectionStyle struct {
 	// Padding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sectionstyle.html#cfn-quicksight-analysis-sectionstyle-padding
-	Padding *Analysis_Spacing `json:"Padding,omitempty"`
+	Padding *Analysis_Spacing[any] `json:"Padding,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_SectionStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SectionStyle) AWSCloudFormationType() string {
+func (r *Analysis_SectionStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SectionStyle"
 }

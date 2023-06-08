@@ -8,12 +8,12 @@ import (
 
 // Channel_AudioDescription AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html
-type Channel_AudioDescription struct {
+type Channel_AudioDescription[T any] struct {
 
 	// AudioNormalizationSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audionormalizationsettings
-	AudioNormalizationSettings *Channel_AudioNormalizationSettings `json:"AudioNormalizationSettings,omitempty"`
+	AudioNormalizationSettings *Channel_AudioNormalizationSettings[any] `json:"AudioNormalizationSettings,omitempty"`
 
 	// AudioSelectorName AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Channel_AudioDescription struct {
 	// AudioWatermarkingSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiowatermarkingsettings
-	AudioWatermarkingSettings *Channel_AudioWatermarkSettings `json:"AudioWatermarkingSettings,omitempty"`
+	AudioWatermarkingSettings *Channel_AudioWatermarkSettings[any] `json:"AudioWatermarkingSettings,omitempty"`
 
 	// CodecSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-codecsettings
-	CodecSettings *Channel_AudioCodecSettings `json:"CodecSettings,omitempty"`
+	CodecSettings *Channel_AudioCodecSettings[any] `json:"CodecSettings,omitempty"`
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Channel_AudioDescription struct {
 	// RemixSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-remixsettings
-	RemixSettings *Channel_RemixSettings `json:"RemixSettings,omitempty"`
+	RemixSettings *Channel_RemixSettings[any] `json:"RemixSettings,omitempty"`
 
 	// StreamName AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type Channel_AudioDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioDescription) AWSCloudFormationType() string {
+func (r *Channel_AudioDescription[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioDescription"
 }

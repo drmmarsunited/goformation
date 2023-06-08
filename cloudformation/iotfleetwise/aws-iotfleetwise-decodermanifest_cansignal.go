@@ -8,7 +8,7 @@ import (
 
 // DecoderManifest_CanSignal AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.CanSignal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html
-type DecoderManifest_CanSignal struct {
+type DecoderManifest_CanSignal[T any] struct {
 
 	// Factor AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type DecoderManifest_CanSignal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_CanSignal) AWSCloudFormationType() string {
+func (r *DecoderManifest_CanSignal[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.CanSignal"
 }

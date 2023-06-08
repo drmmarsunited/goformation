@@ -11,12 +11,12 @@ import (
 
 // BackupPlan AWS CloudFormation Resource (AWS::Backup::BackupPlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html
-type BackupPlan struct {
+type BackupPlan[T any] struct {
 
 	// BackupPlan AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplan
-	BackupPlan *BackupPlan_BackupPlanResourceType `json:"BackupPlan"`
+	BackupPlan *BackupPlan_BackupPlanResourceType[any] `json:"BackupPlan"`
 
 	// BackupPlanTags AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type BackupPlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupPlan) AWSCloudFormationType() string {
+func (r *BackupPlan[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupPlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BackupPlan) MarshalJSON() ([]byte, error) {
-	type Properties BackupPlan
+func (r BackupPlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties BackupPlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r BackupPlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BackupPlan) UnmarshalJSON(b []byte) error {
-	type Properties BackupPlan
+func (r *BackupPlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties BackupPlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *BackupPlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BackupPlan(*res.Properties)
+		*r = BackupPlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

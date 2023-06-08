@@ -8,17 +8,17 @@ import (
 
 // Channel_HlsMediaStoreSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsMediaStoreSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html
-type Channel_HlsMediaStoreSettings struct {
+type Channel_HlsMediaStoreSettings[T any] struct {
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-connectionretryinterval
-	ConnectionRetryInterval *int `json:"ConnectionRetryInterval,omitempty"`
+	ConnectionRetryInterval *T `json:"ConnectionRetryInterval,omitempty"`
 
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-filecacheduration
-	FilecacheDuration *int `json:"FilecacheDuration,omitempty"`
+	FilecacheDuration *T `json:"FilecacheDuration,omitempty"`
 
 	// MediaStoreStorageClass AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_HlsMediaStoreSettings struct {
 	// NumRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-numretries
-	NumRetries *int `json:"NumRetries,omitempty"`
+	NumRetries *T `json:"NumRetries,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-restartdelay
-	RestartDelay *int `json:"RestartDelay,omitempty"`
+	RestartDelay *T `json:"RestartDelay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Channel_HlsMediaStoreSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsMediaStoreSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsMediaStoreSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsMediaStoreSettings"
 }

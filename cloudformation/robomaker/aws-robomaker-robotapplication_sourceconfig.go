@@ -8,7 +8,7 @@ import (
 
 // RobotApplication_SourceConfig AWS CloudFormation Resource (AWS::RoboMaker::RobotApplication.SourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html
-type RobotApplication_SourceConfig struct {
+type RobotApplication_SourceConfig[T any] struct {
 
 	// Architecture AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type RobotApplication_SourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RobotApplication_SourceConfig) AWSCloudFormationType() string {
+func (r *RobotApplication_SourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::RobotApplication.SourceConfig"
 }

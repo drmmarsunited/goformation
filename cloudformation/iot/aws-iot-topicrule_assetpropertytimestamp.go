@@ -8,7 +8,7 @@ import (
 
 // TopicRule_AssetPropertyTimestamp AWS CloudFormation Resource (AWS::IoT::TopicRule.AssetPropertyTimestamp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertytimestamp.html
-type TopicRule_AssetPropertyTimestamp struct {
+type TopicRule_AssetPropertyTimestamp[T any] struct {
 
 	// OffsetInNanos AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TopicRule_AssetPropertyTimestamp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_AssetPropertyTimestamp) AWSCloudFormationType() string {
+func (r *TopicRule_AssetPropertyTimestamp[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.AssetPropertyTimestamp"
 }

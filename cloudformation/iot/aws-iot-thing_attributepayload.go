@@ -8,7 +8,7 @@ import (
 
 // Thing_AttributePayload AWS CloudFormation Resource (AWS::IoT::Thing.AttributePayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html
-type Thing_AttributePayload struct {
+type Thing_AttributePayload[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Thing_AttributePayload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Thing_AttributePayload) AWSCloudFormationType() string {
+func (r *Thing_AttributePayload[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::Thing.AttributePayload"
 }

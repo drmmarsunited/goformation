@@ -8,7 +8,7 @@ import (
 
 // Table_EncryptionSpecification AWS CloudFormation Resource (AWS::Cassandra::Table.EncryptionSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-encryptionspecification.html
-type Table_EncryptionSpecification struct {
+type Table_EncryptionSpecification[T any] struct {
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Table_EncryptionSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_EncryptionSpecification) AWSCloudFormationType() string {
+func (r *Table_EncryptionSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Cassandra::Table.EncryptionSpecification"
 }

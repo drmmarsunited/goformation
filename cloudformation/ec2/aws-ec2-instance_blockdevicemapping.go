@@ -8,7 +8,7 @@ import (
 
 // Instance_BlockDeviceMapping AWS CloudFormation Resource (AWS::EC2::Instance.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html
-type Instance_BlockDeviceMapping struct {
+type Instance_BlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Instance_BlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html#cfn-ec2-blockdev-mapping-ebs
-	Ebs *Instance_Ebs `json:"Ebs,omitempty"`
+	Ebs *Instance_Ebs[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html#cfn-ec2-blockdev-mapping-nodevice
-	NoDevice *Instance_NoDevice `json:"NoDevice,omitempty"`
+	NoDevice *Instance_NoDevice[any] `json:"NoDevice,omitempty"`
 
 	// VirtualName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Instance_BlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_BlockDeviceMapping) AWSCloudFormationType() string {
+func (r *Instance_BlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.BlockDeviceMapping"
 }

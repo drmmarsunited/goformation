@@ -8,7 +8,7 @@ import (
 
 // LaunchProfile_StreamConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.StreamConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html
-type LaunchProfile_StreamConfiguration struct {
+type LaunchProfile_StreamConfiguration[T any] struct {
 
 	// AutomaticTerminationMode AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type LaunchProfile_StreamConfiguration struct {
 	// MaxSessionLengthInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxsessionlengthinminutes
-	MaxSessionLengthInMinutes *float64 `json:"MaxSessionLengthInMinutes,omitempty"`
+	MaxSessionLengthInMinutes *T `json:"MaxSessionLengthInMinutes,omitempty"`
 
 	// MaxStoppedSessionLengthInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxstoppedsessionlengthinminutes
-	MaxStoppedSessionLengthInMinutes *float64 `json:"MaxStoppedSessionLengthInMinutes,omitempty"`
+	MaxStoppedSessionLengthInMinutes *T `json:"MaxStoppedSessionLengthInMinutes,omitempty"`
 
 	// SessionBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionbackup
-	SessionBackup *LaunchProfile_StreamConfigurationSessionBackup `json:"SessionBackup,omitempty"`
+	SessionBackup *LaunchProfile_StreamConfigurationSessionBackup[any] `json:"SessionBackup,omitempty"`
 
 	// SessionPersistenceMode AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type LaunchProfile_StreamConfiguration struct {
 	// SessionStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionstorage
-	SessionStorage *LaunchProfile_StreamConfigurationSessionStorage `json:"SessionStorage,omitempty"`
+	SessionStorage *LaunchProfile_StreamConfigurationSessionStorage[any] `json:"SessionStorage,omitempty"`
 
 	// StreamingImageIds AWS CloudFormation Property
 	// Required: true
@@ -58,7 +58,7 @@ type LaunchProfile_StreamConfiguration struct {
 	// VolumeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-volumeconfiguration
-	VolumeConfiguration *LaunchProfile_VolumeConfiguration `json:"VolumeConfiguration,omitempty"`
+	VolumeConfiguration *LaunchProfile_VolumeConfiguration[any] `json:"VolumeConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type LaunchProfile_StreamConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchProfile_StreamConfiguration) AWSCloudFormationType() string {
+func (r *LaunchProfile_StreamConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::LaunchProfile.StreamConfiguration"
 }

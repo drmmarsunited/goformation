@@ -8,22 +8,22 @@ import (
 
 // AccessPolicy_AccessPolicyIdentity AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.AccessPolicyIdentity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html
-type AccessPolicy_AccessPolicyIdentity struct {
+type AccessPolicy_AccessPolicyIdentity[T any] struct {
 
 	// IamRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-iamrole
-	IamRole *AccessPolicy_IamRole `json:"IamRole,omitempty"`
+	IamRole *AccessPolicy_IamRole[any] `json:"IamRole,omitempty"`
 
 	// IamUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-iamuser
-	IamUser *AccessPolicy_IamUser `json:"IamUser,omitempty"`
+	IamUser *AccessPolicy_IamUser[any] `json:"IamUser,omitempty"`
 
 	// User AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-user
-	User *AccessPolicy_User `json:"User,omitempty"`
+	User *AccessPolicy_User[any] `json:"User,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type AccessPolicy_AccessPolicyIdentity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy_AccessPolicyIdentity) AWSCloudFormationType() string {
+func (r *AccessPolicy_AccessPolicyIdentity[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy.AccessPolicyIdentity"
 }

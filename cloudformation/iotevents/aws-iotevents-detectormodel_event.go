@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_Event AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.Event)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html
-type DetectorModel_Event struct {
+type DetectorModel_Event[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions
-	Actions []DetectorModel_Action `json:"Actions,omitempty"`
+	Actions []DetectorModel_Action[any] `json:"Actions,omitempty"`
 
 	// Condition AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DetectorModel_Event struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_Event) AWSCloudFormationType() string {
+func (r *DetectorModel_Event[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.Event"
 }

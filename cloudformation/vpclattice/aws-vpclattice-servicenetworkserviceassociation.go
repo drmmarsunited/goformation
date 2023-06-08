@@ -12,12 +12,12 @@ import (
 
 // ServiceNetworkServiceAssociation AWS CloudFormation Resource (AWS::VpcLattice::ServiceNetworkServiceAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkserviceassociation.html
-type ServiceNetworkServiceAssociation struct {
+type ServiceNetworkServiceAssociation[T any] struct {
 
 	// DnsEntry AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkserviceassociation.html#cfn-vpclattice-servicenetworkserviceassociation-dnsentry
-	DnsEntry *ServiceNetworkServiceAssociation_DnsEntry `json:"DnsEntry,omitempty"`
+	DnsEntry *ServiceNetworkServiceAssociation_DnsEntry[any] `json:"DnsEntry,omitempty"`
 
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type ServiceNetworkServiceAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceNetworkServiceAssociation) AWSCloudFormationType() string {
+func (r *ServiceNetworkServiceAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::ServiceNetworkServiceAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceNetworkServiceAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ServiceNetworkServiceAssociation
+func (r ServiceNetworkServiceAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceNetworkServiceAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ServiceNetworkServiceAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceNetworkServiceAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ServiceNetworkServiceAssociation
+func (r *ServiceNetworkServiceAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceNetworkServiceAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ServiceNetworkServiceAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceNetworkServiceAssociation(*res.Properties)
+		*r = ServiceNetworkServiceAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Domain_UserSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.UserSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html
-type Domain_UserSettings struct {
+type Domain_UserSettings[T any] struct {
 
 	// ExecutionRole AWS CloudFormation Property
 	// Required: true
@@ -18,22 +18,22 @@ type Domain_UserSettings struct {
 	// JupyterServerAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-jupyterserverappsettings
-	JupyterServerAppSettings *Domain_JupyterServerAppSettings `json:"JupyterServerAppSettings,omitempty"`
+	JupyterServerAppSettings *Domain_JupyterServerAppSettings[any] `json:"JupyterServerAppSettings,omitempty"`
 
 	// KernelGatewayAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-kernelgatewayappsettings
-	KernelGatewayAppSettings *Domain_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+	KernelGatewayAppSettings *Domain_KernelGatewayAppSettings[any] `json:"KernelGatewayAppSettings,omitempty"`
 
 	// RSessionAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-rsessionappsettings
-	RSessionAppSettings *Domain_RSessionAppSettings `json:"RSessionAppSettings,omitempty"`
+	RSessionAppSettings *Domain_RSessionAppSettings[any] `json:"RSessionAppSettings,omitempty"`
 
 	// RStudioServerProAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-rstudioserverproappsettings
-	RStudioServerProAppSettings *Domain_RStudioServerProAppSettings `json:"RStudioServerProAppSettings,omitempty"`
+	RStudioServerProAppSettings *Domain_RStudioServerProAppSettings[any] `json:"RStudioServerProAppSettings,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Domain_UserSettings struct {
 	// SharingSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-sharingsettings
-	SharingSettings *Domain_SharingSettings `json:"SharingSettings,omitempty"`
+	SharingSettings *Domain_SharingSettings[any] `json:"SharingSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Domain_UserSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_UserSettings) AWSCloudFormationType() string {
+func (r *Domain_UserSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.UserSettings"
 }

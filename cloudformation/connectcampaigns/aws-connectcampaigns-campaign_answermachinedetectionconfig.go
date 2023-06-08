@@ -8,12 +8,12 @@ import (
 
 // Campaign_AnswerMachineDetectionConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.AnswerMachineDetectionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-answermachinedetectionconfig.html
-type Campaign_AnswerMachineDetectionConfig struct {
+type Campaign_AnswerMachineDetectionConfig[T any] struct {
 
 	// EnableAnswerMachineDetection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-answermachinedetectionconfig.html#cfn-connectcampaigns-campaign-answermachinedetectionconfig-enableanswermachinedetection
-	EnableAnswerMachineDetection bool `json:"EnableAnswerMachineDetection"`
+	EnableAnswerMachineDetection T `json:"EnableAnswerMachineDetection"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Campaign_AnswerMachineDetectionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_AnswerMachineDetectionConfig) AWSCloudFormationType() string {
+func (r *Campaign_AnswerMachineDetectionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign.AnswerMachineDetectionConfig"
 }

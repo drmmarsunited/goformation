@@ -8,12 +8,12 @@ import (
 
 // DecoderManifest_SignalDecodersItems AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.SignalDecodersItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html
-type DecoderManifest_SignalDecodersItems struct {
+type DecoderManifest_SignalDecodersItems[T any] struct {
 
 	// CanSignal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-cansignal
-	CanSignal *DecoderManifest_CanSignal `json:"CanSignal,omitempty"`
+	CanSignal *DecoderManifest_CanSignal[any] `json:"CanSignal,omitempty"`
 
 	// FullyQualifiedName AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type DecoderManifest_SignalDecodersItems struct {
 	// ObdSignal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-obdsignal
-	ObdSignal *DecoderManifest_ObdSignal `json:"ObdSignal,omitempty"`
+	ObdSignal *DecoderManifest_ObdSignal[any] `json:"ObdSignal,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DecoderManifest_SignalDecodersItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_SignalDecodersItems) AWSCloudFormationType() string {
+func (r *DecoderManifest_SignalDecodersItems[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.SignalDecodersItems"
 }

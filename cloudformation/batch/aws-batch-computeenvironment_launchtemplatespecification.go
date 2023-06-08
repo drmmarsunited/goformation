@@ -8,7 +8,7 @@ import (
 
 // ComputeEnvironment_LaunchTemplateSpecification AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html
-type ComputeEnvironment_LaunchTemplateSpecification struct {
+type ComputeEnvironment_LaunchTemplateSpecification[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ComputeEnvironment_LaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment_LaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *ComputeEnvironment_LaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification"
 }

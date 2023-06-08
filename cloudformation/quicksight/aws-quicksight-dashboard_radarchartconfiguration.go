@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RadarChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RadarChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html
-type Dashboard_RadarChartConfiguration struct {
+type Dashboard_RadarChartConfiguration[T any] struct {
 
 	// AlternateBandColorsVisibility AWS CloudFormation Property
 	// Required: false
@@ -28,37 +28,37 @@ type Dashboard_RadarChartConfiguration struct {
 	// BaseSeriesSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-baseseriessettings
-	BaseSeriesSettings *Dashboard_RadarChartSeriesSettings `json:"BaseSeriesSettings,omitempty"`
+	BaseSeriesSettings *Dashboard_RadarChartSeriesSettings[any] `json:"BaseSeriesSettings,omitempty"`
 
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-categoryaxis
-	CategoryAxis *Dashboard_AxisDisplayOptions `json:"CategoryAxis,omitempty"`
+	CategoryAxis *Dashboard_AxisDisplayOptions[any] `json:"CategoryAxis,omitempty"`
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// ColorAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-coloraxis
-	ColorAxis *Dashboard_AxisDisplayOptions `json:"ColorAxis,omitempty"`
+	ColorAxis *Dashboard_AxisDisplayOptions[any] `json:"ColorAxis,omitempty"`
 
 	// ColorLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-colorlabeloptions
-	ColorLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ColorLabelOptions,omitempty"`
+	ColorLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ColorLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-fieldwells
-	FieldWells *Dashboard_RadarChartFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_RadarChartFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// Shape AWS CloudFormation Property
 	// Required: false
@@ -68,17 +68,17 @@ type Dashboard_RadarChartConfiguration struct {
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_RadarChartSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_RadarChartSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// StartAngle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-startangle
-	StartAngle *float64 `json:"StartAngle,omitempty"`
+	StartAngle *T `json:"StartAngle,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartconfiguration.html#cfn-quicksight-dashboard-radarchartconfiguration-visualpalette
-	VisualPalette *Dashboard_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Dashboard_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -97,6 +97,6 @@ type Dashboard_RadarChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RadarChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_RadarChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RadarChartConfiguration"
 }

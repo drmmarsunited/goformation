@@ -8,12 +8,12 @@ import (
 
 // Template_TableFieldLinkConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.TableFieldLinkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldlinkconfiguration.html
-type Template_TableFieldLinkConfiguration struct {
+type Template_TableFieldLinkConfiguration[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldlinkconfiguration.html#cfn-quicksight-template-tablefieldlinkconfiguration-content
-	Content *Template_TableFieldLinkContentConfiguration `json:"Content"`
+	Content *Template_TableFieldLinkContentConfiguration[any] `json:"Content"`
 
 	// Target AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_TableFieldLinkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableFieldLinkConfiguration) AWSCloudFormationType() string {
+func (r *Template_TableFieldLinkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableFieldLinkConfiguration"
 }

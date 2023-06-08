@@ -11,12 +11,12 @@ import (
 
 // UserProfile AWS CloudFormation Resource (AWS::OpsWorks::UserProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
-type UserProfile struct {
+type UserProfile[T any] struct {
 
 	// AllowSelfManagement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
-	AllowSelfManagement *bool `json:"AllowSelfManagement,omitempty"`
+	AllowSelfManagement *T `json:"AllowSelfManagement,omitempty"`
 
 	// IamUserArn AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type UserProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile) AWSCloudFormationType() string {
+func (r *UserProfile[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::UserProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserProfile) MarshalJSON() ([]byte, error) {
-	type Properties UserProfile
+func (r UserProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r UserProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserProfile) UnmarshalJSON(b []byte) error {
-	type Properties UserProfile
+func (r *UserProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *UserProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserProfile(*res.Properties)
+		*r = UserProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

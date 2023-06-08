@@ -8,7 +8,7 @@ import (
 
 // Theme_ThemeValues AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Theme.ThemeValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalues.html
-type Theme_ThemeValues struct {
+type Theme_ThemeValues[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Theme_ThemeValues struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalues.html#cfn-amplifyuibuilder-theme-themevalues-value
-	Value *Theme_ThemeValue `json:"Value,omitempty"`
+	Value *Theme_ThemeValue[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Theme_ThemeValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_ThemeValues) AWSCloudFormationType() string {
+func (r *Theme_ThemeValues[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Theme.ThemeValues"
 }

@@ -13,7 +13,7 @@ type DecoderManifest_CanSignalDecoder struct {
 	// CanSignal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-cansignal
-	CanSignal *DecoderManifest_CanSignal `json:"CanSignal"`
+	CanSignal *DecoderManifest_CanSignal[any] `json:"CanSignal"`
 
 	// FullyQualifiedName AWS CloudFormation Property
 	// Required: true

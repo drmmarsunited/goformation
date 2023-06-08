@@ -8,7 +8,7 @@ import (
 
 // RotationSchedule_HostedRotationLambda AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule.HostedRotationLambda)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html
-type RotationSchedule_HostedRotationLambda struct {
+type RotationSchedule_HostedRotationLambda[T any] struct {
 
 	// ExcludeCharacters AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type RotationSchedule_HostedRotationLambda struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RotationSchedule_HostedRotationLambda) AWSCloudFormationType() string {
+func (r *RotationSchedule_HostedRotationLambda[any]) AWSCloudFormationType() string {
 	return "AWS::SecretsManager::RotationSchedule.HostedRotationLambda"
 }

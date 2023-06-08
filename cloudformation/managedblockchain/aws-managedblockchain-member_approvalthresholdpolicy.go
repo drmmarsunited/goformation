@@ -8,12 +8,12 @@ import (
 
 // Member_ApprovalThresholdPolicy AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.ApprovalThresholdPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html
-type Member_ApprovalThresholdPolicy struct {
+type Member_ApprovalThresholdPolicy[T any] struct {
 
 	// ProposalDurationInHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-proposaldurationinhours
-	ProposalDurationInHours *int `json:"ProposalDurationInHours,omitempty"`
+	ProposalDurationInHours *T `json:"ProposalDurationInHours,omitempty"`
 
 	// ThresholdComparator AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Member_ApprovalThresholdPolicy struct {
 	// ThresholdPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-thresholdpercentage
-	ThresholdPercentage *int `json:"ThresholdPercentage,omitempty"`
+	ThresholdPercentage *T `json:"ThresholdPercentage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Member_ApprovalThresholdPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_ApprovalThresholdPolicy) AWSCloudFormationType() string {
+func (r *Member_ApprovalThresholdPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.ApprovalThresholdPolicy"
 }

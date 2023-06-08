@@ -8,17 +8,17 @@ import (
 
 // Analysis_TableFieldLinkContentConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableFieldLinkContentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldlinkcontentconfiguration.html
-type Analysis_TableFieldLinkContentConfiguration struct {
+type Analysis_TableFieldLinkContentConfiguration[T any] struct {
 
 	// CustomIconContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldlinkcontentconfiguration.html#cfn-quicksight-analysis-tablefieldlinkcontentconfiguration-customiconcontent
-	CustomIconContent *Analysis_TableFieldCustomIconContent `json:"CustomIconContent,omitempty"`
+	CustomIconContent *Analysis_TableFieldCustomIconContent[any] `json:"CustomIconContent,omitempty"`
 
 	// CustomTextContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldlinkcontentconfiguration.html#cfn-quicksight-analysis-tablefieldlinkcontentconfiguration-customtextcontent
-	CustomTextContent *Analysis_TableFieldCustomTextContent `json:"CustomTextContent,omitempty"`
+	CustomTextContent *Analysis_TableFieldCustomTextContent[any] `json:"CustomTextContent,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TableFieldLinkContentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableFieldLinkContentConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TableFieldLinkContentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableFieldLinkContentConfiguration"
 }

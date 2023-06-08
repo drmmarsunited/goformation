@@ -12,17 +12,17 @@ import (
 
 // Dataset AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html
-type Dataset struct {
+type Dataset[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-actions
-	Actions []Dataset_Action `json:"Actions"`
+	Actions []Dataset_Action[any] `json:"Actions"`
 
 	// ContentDeliveryRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules
-	ContentDeliveryRules []Dataset_DatasetContentDeliveryRule `json:"ContentDeliveryRules,omitempty"`
+	ContentDeliveryRules []Dataset_DatasetContentDeliveryRule[any] `json:"ContentDeliveryRules,omitempty"`
 
 	// DatasetName AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type Dataset struct {
 	// LateDataRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-latedatarules
-	LateDataRules []Dataset_LateDataRule `json:"LateDataRules,omitempty"`
+	LateDataRules []Dataset_LateDataRule[any] `json:"LateDataRules,omitempty"`
 
 	// RetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-retentionperiod
-	RetentionPeriod *Dataset_RetentionPeriod `json:"RetentionPeriod,omitempty"`
+	RetentionPeriod *Dataset_RetentionPeriod[any] `json:"RetentionPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Dataset struct {
 	// Triggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers
-	Triggers []Dataset_Trigger `json:"Triggers,omitempty"`
+	Triggers []Dataset_Trigger[any] `json:"Triggers,omitempty"`
 
 	// VersioningConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration
-	VersioningConfiguration *Dataset_VersioningConfiguration `json:"VersioningConfiguration,omitempty"`
+	VersioningConfiguration *Dataset_VersioningConfiguration[any] `json:"VersioningConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type Dataset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset) AWSCloudFormationType() string {
+func (r *Dataset[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Dataset) MarshalJSON() ([]byte, error) {
-	type Properties Dataset
+func (r Dataset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Dataset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Dataset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Dataset) UnmarshalJSON(b []byte) error {
-	type Properties Dataset
+func (r *Dataset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Dataset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Dataset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Dataset(*res.Properties)
+		*r = Dataset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

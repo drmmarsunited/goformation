@@ -8,17 +8,17 @@ import (
 
 // Template_ComparisonFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ComparisonFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-comparisonformatconfiguration.html
-type Template_ComparisonFormatConfiguration struct {
+type Template_ComparisonFormatConfiguration[T any] struct {
 
 	// NumberDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-comparisonformatconfiguration.html#cfn-quicksight-template-comparisonformatconfiguration-numberdisplayformatconfiguration
-	NumberDisplayFormatConfiguration *Template_NumberDisplayFormatConfiguration `json:"NumberDisplayFormatConfiguration,omitempty"`
+	NumberDisplayFormatConfiguration *Template_NumberDisplayFormatConfiguration[any] `json:"NumberDisplayFormatConfiguration,omitempty"`
 
 	// PercentageDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-comparisonformatconfiguration.html#cfn-quicksight-template-comparisonformatconfiguration-percentagedisplayformatconfiguration
-	PercentageDisplayFormatConfiguration *Template_PercentageDisplayFormatConfiguration `json:"PercentageDisplayFormatConfiguration,omitempty"`
+	PercentageDisplayFormatConfiguration *Template_PercentageDisplayFormatConfiguration[any] `json:"PercentageDisplayFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ComparisonFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ComparisonFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_ComparisonFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ComparisonFormatConfiguration"
 }

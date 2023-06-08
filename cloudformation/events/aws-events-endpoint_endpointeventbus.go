@@ -8,7 +8,7 @@ import (
 
 // Endpoint_EndpointEventBus AWS CloudFormation Resource (AWS::Events::Endpoint.EndpointEventBus)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-endpointeventbus.html
-type Endpoint_EndpointEventBus struct {
+type Endpoint_EndpointEventBus[T any] struct {
 
 	// EventBusArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_EndpointEventBus struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_EndpointEventBus) AWSCloudFormationType() string {
+func (r *Endpoint_EndpointEventBus[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.EndpointEventBus"
 }

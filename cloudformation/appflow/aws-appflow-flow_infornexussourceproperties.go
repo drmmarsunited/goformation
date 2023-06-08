@@ -8,7 +8,7 @@ import (
 
 // Flow_InforNexusSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.InforNexusSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-infornexussourceproperties.html
-type Flow_InforNexusSourceProperties struct {
+type Flow_InforNexusSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_InforNexusSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_InforNexusSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_InforNexusSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.InforNexusSourceProperties"
 }

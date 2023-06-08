@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityAppSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html
-type ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification struct {
+type ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification[T any] struct {
 
 	// ConfigUri AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification struct
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityAppSpecification"
 }

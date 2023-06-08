@@ -8,7 +8,7 @@ import (
 
 // Template_ScrollBarOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ScrollBarOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scrollbaroptions.html
-type Template_ScrollBarOptions struct {
+type Template_ScrollBarOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_ScrollBarOptions struct {
 	// VisibleRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-scrollbaroptions.html#cfn-quicksight-template-scrollbaroptions-visiblerange
-	VisibleRange *Template_VisibleRangeOptions `json:"VisibleRange,omitempty"`
+	VisibleRange *Template_VisibleRangeOptions[any] `json:"VisibleRange,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_ScrollBarOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ScrollBarOptions) AWSCloudFormationType() string {
+func (r *Template_ScrollBarOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ScrollBarOptions"
 }

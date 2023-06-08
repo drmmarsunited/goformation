@@ -8,17 +8,22 @@ import (
 
 // Route_UriPathRouteInput AWS CloudFormation Resource (AWS::RefactorSpaces::Route.UriPathRouteInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html
-type Route_UriPathRouteInput struct {
+type Route_UriPathRouteInput[T any] struct {
 
 	// ActivationState AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-activationstate
 	ActivationState string `json:"ActivationState"`
 
+	// AppendSourcePath AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-appendsourcepath
+	AppendSourcePath *T `json:"AppendSourcePath,omitempty"`
+
 	// IncludeChildPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-includechildpaths
-	IncludeChildPaths *bool `json:"IncludeChildPaths,omitempty"`
+	IncludeChildPaths *T `json:"IncludeChildPaths,omitempty"`
 
 	// Methods AWS CloudFormation Property
 	// Required: false
@@ -47,6 +52,6 @@ type Route_UriPathRouteInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_UriPathRouteInput) AWSCloudFormationType() string {
+func (r *Route_UriPathRouteInput[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Route.UriPathRouteInput"
 }

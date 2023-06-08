@@ -8,7 +8,7 @@ import (
 
 // EventInvokeConfig_OnFailure AWS CloudFormation Resource (AWS::Lambda::EventInvokeConfig.OnFailure)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onfailure.html
-type EventInvokeConfig_OnFailure struct {
+type EventInvokeConfig_OnFailure[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type EventInvokeConfig_OnFailure struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventInvokeConfig_OnFailure) AWSCloudFormationType() string {
+func (r *EventInvokeConfig_OnFailure[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventInvokeConfig.OnFailure"
 }

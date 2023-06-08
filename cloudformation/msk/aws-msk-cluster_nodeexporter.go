@@ -8,12 +8,12 @@ import (
 
 // Cluster_NodeExporter AWS CloudFormation Resource (AWS::MSK::Cluster.NodeExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html
-type Cluster_NodeExporter struct {
+type Cluster_NodeExporter[T any] struct {
 
 	// EnabledInBroker AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
-	EnabledInBroker bool `json:"EnabledInBroker"`
+	EnabledInBroker T `json:"EnabledInBroker"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_NodeExporter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_NodeExporter) AWSCloudFormationType() string {
+func (r *Cluster_NodeExporter[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.NodeExporter"
 }

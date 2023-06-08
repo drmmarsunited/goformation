@@ -8,7 +8,7 @@ import (
 
 // Instance_AddOn AWS CloudFormation Resource (AWS::Lightsail::Instance.AddOn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-addon.html
-type Instance_AddOn struct {
+type Instance_AddOn[T any] struct {
 
 	// AddOnType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Instance_AddOn struct {
 	// AutoSnapshotAddOnRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-addon.html#cfn-lightsail-instance-addon-autosnapshotaddonrequest
-	AutoSnapshotAddOnRequest *Instance_AutoSnapshotAddOn `json:"AutoSnapshotAddOnRequest,omitempty"`
+	AutoSnapshotAddOnRequest *Instance_AutoSnapshotAddOn[any] `json:"AutoSnapshotAddOnRequest,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Instance_AddOn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_AddOn) AWSCloudFormationType() string {
+func (r *Instance_AddOn[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.AddOn"
 }

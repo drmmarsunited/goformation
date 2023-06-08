@@ -8,7 +8,7 @@ import (
 
 // MitigationAction_ReplaceDefaultPolicyVersionParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.ReplaceDefaultPolicyVersionParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-replacedefaultpolicyversionparams.html
-type MitigationAction_ReplaceDefaultPolicyVersionParams struct {
+type MitigationAction_ReplaceDefaultPolicyVersionParams[T any] struct {
 
 	// TemplateName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MitigationAction_ReplaceDefaultPolicyVersionParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_ReplaceDefaultPolicyVersionParams) AWSCloudFormationType() string {
+func (r *MitigationAction_ReplaceDefaultPolicyVersionParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.ReplaceDefaultPolicyVersionParams"
 }

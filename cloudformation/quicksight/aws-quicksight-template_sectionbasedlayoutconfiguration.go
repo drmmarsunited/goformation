@@ -8,27 +8,27 @@ import (
 
 // Template_SectionBasedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.SectionBasedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutconfiguration.html
-type Template_SectionBasedLayoutConfiguration struct {
+type Template_SectionBasedLayoutConfiguration[T any] struct {
 
 	// BodySections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutconfiguration.html#cfn-quicksight-template-sectionbasedlayoutconfiguration-bodysections
-	BodySections []Template_BodySectionConfiguration `json:"BodySections"`
+	BodySections []Template_BodySectionConfiguration[any] `json:"BodySections"`
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutconfiguration.html#cfn-quicksight-template-sectionbasedlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Template_SectionBasedLayoutCanvasSizeOptions `json:"CanvasSizeOptions"`
+	CanvasSizeOptions *Template_SectionBasedLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions"`
 
 	// FooterSections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutconfiguration.html#cfn-quicksight-template-sectionbasedlayoutconfiguration-footersections
-	FooterSections []Template_HeaderFooterSectionConfiguration `json:"FooterSections"`
+	FooterSections []Template_HeaderFooterSectionConfiguration[any] `json:"FooterSections"`
 
 	// HeaderSections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutconfiguration.html#cfn-quicksight-template-sectionbasedlayoutconfiguration-headersections
-	HeaderSections []Template_HeaderFooterSectionConfiguration `json:"HeaderSections"`
+	HeaderSections []Template_HeaderFooterSectionConfiguration[any] `json:"HeaderSections"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_SectionBasedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SectionBasedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_SectionBasedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SectionBasedLayoutConfiguration"
 }

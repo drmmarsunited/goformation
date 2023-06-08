@@ -8,7 +8,7 @@ import (
 
 // Distribution_Cookies AWS CloudFormation Resource (AWS::CloudFront::Distribution.Cookies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html
-type Distribution_Cookies struct {
+type Distribution_Cookies[T any] struct {
 
 	// Forward AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Distribution_Cookies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_Cookies) AWSCloudFormationType() string {
+func (r *Distribution_Cookies[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.Cookies"
 }

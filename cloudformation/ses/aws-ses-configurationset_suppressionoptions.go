@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_SuppressionOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.SuppressionOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-suppressionoptions.html
-type ConfigurationSet_SuppressionOptions struct {
+type ConfigurationSet_SuppressionOptions[T any] struct {
 
 	// SuppressedReasons AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ConfigurationSet_SuppressionOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_SuppressionOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_SuppressionOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.SuppressionOptions"
 }

@@ -8,42 +8,42 @@ import (
 
 // Application_ConfigurationDetails AWS CloudFormation Resource (AWS::ApplicationInsights::Application.ConfigurationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html
-type Application_ConfigurationDetails struct {
+type Application_ConfigurationDetails[T any] struct {
 
 	// AlarmMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarmmetrics
-	AlarmMetrics []Application_AlarmMetric `json:"AlarmMetrics,omitempty"`
+	AlarmMetrics []Application_AlarmMetric[any] `json:"AlarmMetrics,omitempty"`
 
 	// Alarms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarms
-	Alarms []Application_Alarm `json:"Alarms,omitempty"`
+	Alarms []Application_Alarm[any] `json:"Alarms,omitempty"`
 
 	// HAClusterPrometheusExporter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-haclusterprometheusexporter
-	HAClusterPrometheusExporter *Application_HAClusterPrometheusExporter `json:"HAClusterPrometheusExporter,omitempty"`
+	HAClusterPrometheusExporter *Application_HAClusterPrometheusExporter[any] `json:"HAClusterPrometheusExporter,omitempty"`
 
 	// HANAPrometheusExporter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-hanaprometheusexporter
-	HANAPrometheusExporter *Application_HANAPrometheusExporter `json:"HANAPrometheusExporter,omitempty"`
+	HANAPrometheusExporter *Application_HANAPrometheusExporter[any] `json:"HANAPrometheusExporter,omitempty"`
 
 	// JMXPrometheusExporter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-jmxprometheusexporter
-	JMXPrometheusExporter *Application_JMXPrometheusExporter `json:"JMXPrometheusExporter,omitempty"`
+	JMXPrometheusExporter *Application_JMXPrometheusExporter[any] `json:"JMXPrometheusExporter,omitempty"`
 
 	// Logs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-logs
-	Logs []Application_Log `json:"Logs,omitempty"`
+	Logs []Application_Log[any] `json:"Logs,omitempty"`
 
 	// WindowsEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-windowsevents
-	WindowsEvents []Application_WindowsEvent `json:"WindowsEvents,omitempty"`
+	WindowsEvents []Application_WindowsEvent[any] `json:"WindowsEvents,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Application_ConfigurationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ConfigurationDetails) AWSCloudFormationType() string {
+func (r *Application_ConfigurationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.ConfigurationDetails"
 }

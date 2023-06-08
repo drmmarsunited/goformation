@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinition_SecretsManagerSecretResourceData AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html
-type ResourceDefinition_SecretsManagerSecretResourceData struct {
+type ResourceDefinition_SecretsManagerSecretResourceData[T any] struct {
 
 	// ARN AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResourceDefinition_SecretsManagerSecretResourceData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_SecretsManagerSecretResourceData) AWSCloudFormationType() string {
+func (r *ResourceDefinition_SecretsManagerSecretResourceData[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData"
 }

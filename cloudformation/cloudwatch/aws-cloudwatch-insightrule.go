@@ -11,7 +11,7 @@ import (
 
 // InsightRule AWS CloudFormation Resource (AWS::CloudWatch::InsightRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html
-type InsightRule struct {
+type InsightRule[T any] struct {
 
 	// RuleBody AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type InsightRule struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-tags
-	Tags *InsightRule_Tags `json:"Tags,omitempty"`
+	Tags *InsightRule_Tags[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type InsightRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InsightRule) AWSCloudFormationType() string {
+func (r *InsightRule[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::InsightRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InsightRule) MarshalJSON() ([]byte, error) {
-	type Properties InsightRule
+func (r InsightRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties InsightRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r InsightRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InsightRule) UnmarshalJSON(b []byte) error {
-	type Properties InsightRule
+func (r *InsightRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties InsightRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *InsightRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InsightRule(*res.Properties)
+		*r = InsightRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

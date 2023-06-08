@@ -12,7 +12,7 @@ import (
 
 // DBClusterParameterGroup AWS CloudFormation Resource (AWS::Neptune::DBClusterParameterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html
-type DBClusterParameterGroup struct {
+type DBClusterParameterGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type DBClusterParameterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBClusterParameterGroup) AWSCloudFormationType() string {
+func (r *DBClusterParameterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Neptune::DBClusterParameterGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBClusterParameterGroup) MarshalJSON() ([]byte, error) {
-	type Properties DBClusterParameterGroup
+func (r DBClusterParameterGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBClusterParameterGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r DBClusterParameterGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBClusterParameterGroup) UnmarshalJSON(b []byte) error {
-	type Properties DBClusterParameterGroup
+func (r *DBClusterParameterGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBClusterParameterGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *DBClusterParameterGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBClusterParameterGroup(*res.Properties)
+		*r = DBClusterParameterGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

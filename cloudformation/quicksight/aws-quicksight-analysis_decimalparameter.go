@@ -8,7 +8,7 @@ import (
 
 // Analysis_DecimalParameter AWS CloudFormation Resource (AWS::QuickSight::Analysis.DecimalParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameter.html
-type Analysis_DecimalParameter struct {
+type Analysis_DecimalParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_DecimalParameter struct {
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameter.html#cfn-quicksight-analysis-decimalparameter-values
-	Values []float64 `json:"Values"`
+	Values []T `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_DecimalParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DecimalParameter) AWSCloudFormationType() string {
+func (r *Analysis_DecimalParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DecimalParameter"
 }

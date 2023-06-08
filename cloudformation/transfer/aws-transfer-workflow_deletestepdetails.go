@@ -8,7 +8,7 @@ import (
 
 // Workflow_DeleteStepDetails AWS CloudFormation Resource (AWS::Transfer::Workflow.DeleteStepDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-deletestepdetails.html
-type Workflow_DeleteStepDetails struct {
+type Workflow_DeleteStepDetails[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workflow_DeleteStepDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_DeleteStepDetails) AWSCloudFormationType() string {
+func (r *Workflow_DeleteStepDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.DeleteStepDetails"
 }

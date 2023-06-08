@@ -11,7 +11,7 @@ import (
 
 // Destination AWS CloudFormation Resource (AWS::Logs::Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html
-type Destination struct {
+type Destination[T any] struct {
 
 	// DestinationName AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Destination) AWSCloudFormationType() string {
+func (r *Destination[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::Destination"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Destination) MarshalJSON() ([]byte, error) {
-	type Properties Destination
+func (r Destination[any]) MarshalJSON() ([]byte, error) {
+	type Properties Destination[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Destination) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Destination) UnmarshalJSON(b []byte) error {
-	type Properties Destination
+func (r *Destination[any]) UnmarshalJSON(b []byte) error {
+	type Properties Destination[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Destination) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Destination(*res.Properties)
+		*r = Destination[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

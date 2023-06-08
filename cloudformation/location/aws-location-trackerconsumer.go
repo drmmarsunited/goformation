@@ -11,7 +11,7 @@ import (
 
 // TrackerConsumer AWS CloudFormation Resource (AWS::Location::TrackerConsumer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html
-type TrackerConsumer struct {
+type TrackerConsumer[T any] struct {
 
 	// ConsumerArn AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type TrackerConsumer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TrackerConsumer) AWSCloudFormationType() string {
+func (r *TrackerConsumer[any]) AWSCloudFormationType() string {
 	return "AWS::Location::TrackerConsumer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TrackerConsumer) MarshalJSON() ([]byte, error) {
-	type Properties TrackerConsumer
+func (r TrackerConsumer[any]) MarshalJSON() ([]byte, error) {
+	type Properties TrackerConsumer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r TrackerConsumer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TrackerConsumer) UnmarshalJSON(b []byte) error {
-	type Properties TrackerConsumer
+func (r *TrackerConsumer[any]) UnmarshalJSON(b []byte) error {
+	type Properties TrackerConsumer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *TrackerConsumer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TrackerConsumer(*res.Properties)
+		*r = TrackerConsumer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

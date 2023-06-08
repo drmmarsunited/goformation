@@ -8,7 +8,7 @@ import (
 
 // DBCluster_DBClusterRole AWS CloudFormation Resource (AWS::Neptune::DBCluster.DBClusterRole)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbcluster-dbclusterrole.html
-type DBCluster_DBClusterRole struct {
+type DBCluster_DBClusterRole[T any] struct {
 
 	// FeatureName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBCluster_DBClusterRole struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster_DBClusterRole) AWSCloudFormationType() string {
+func (r *DBCluster_DBClusterRole[any]) AWSCloudFormationType() string {
 	return "AWS::Neptune::DBCluster.DBClusterRole"
 }

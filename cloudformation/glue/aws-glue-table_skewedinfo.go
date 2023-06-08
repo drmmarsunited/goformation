@@ -8,7 +8,7 @@ import (
 
 // Table_SkewedInfo AWS CloudFormation Resource (AWS::Glue::Table.SkewedInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html
-type Table_SkewedInfo struct {
+type Table_SkewedInfo[T any] struct {
 
 	// SkewedColumnNames AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_SkewedInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_SkewedInfo) AWSCloudFormationType() string {
+func (r *Table_SkewedInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.SkewedInfo"
 }

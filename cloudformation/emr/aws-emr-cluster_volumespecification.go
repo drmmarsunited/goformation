@@ -8,17 +8,17 @@ import (
 
 // Cluster_VolumeSpecification AWS CloudFormation Resource (AWS::EMR::Cluster.VolumeSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html
-type Cluster_VolumeSpecification struct {
+type Cluster_VolumeSpecification[T any] struct {
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// SizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-sizeingb
-	SizeInGB int `json:"SizeInGB"`
+	SizeInGB T `json:"SizeInGB"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Cluster_VolumeSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VolumeSpecification) AWSCloudFormationType() string {
+func (r *Cluster_VolumeSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.VolumeSpecification"
 }

@@ -11,7 +11,7 @@ import (
 
 // StateMachine AWS CloudFormation Resource (AWS::StepFunctions::StateMachine)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html
-type StateMachine struct {
+type StateMachine[T any] struct {
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type StateMachine struct {
 	// DefinitionS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitions3location
-	DefinitionS3Location *StateMachine_S3Location `json:"DefinitionS3Location,omitempty"`
+	DefinitionS3Location *StateMachine_S3Location[any] `json:"DefinitionS3Location,omitempty"`
 
 	// DefinitionString AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type StateMachine struct {
 	// LoggingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration
-	LoggingConfiguration *StateMachine_LoggingConfiguration `json:"LoggingConfiguration,omitempty"`
+	LoggingConfiguration *StateMachine_LoggingConfiguration[any] `json:"LoggingConfiguration,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -56,12 +56,12 @@ type StateMachine struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags
-	Tags []StateMachine_TagsEntry `json:"Tags,omitempty"`
+	Tags []StateMachine_TagsEntry[any] `json:"Tags,omitempty"`
 
 	// TracingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration
-	TracingConfiguration *StateMachine_TracingConfiguration `json:"TracingConfiguration,omitempty"`
+	TracingConfiguration *StateMachine_TracingConfiguration[any] `json:"TracingConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -80,14 +80,15 @@ type StateMachine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine) AWSCloudFormationType() string {
+func (r *StateMachine[any]) AWSCloudFormationType() string {
 	return "AWS::StepFunctions::StateMachine"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StateMachine) MarshalJSON() ([]byte, error) {
-	type Properties StateMachine
+func (r StateMachine[any]) MarshalJSON() ([]byte, error) {
+	type Properties StateMachine[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r StateMachine) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StateMachine) UnmarshalJSON(b []byte) error {
-	type Properties StateMachine
+func (r *StateMachine[any]) UnmarshalJSON(b []byte) error {
+	type Properties StateMachine[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *StateMachine) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StateMachine(*res.Properties)
+		*r = StateMachine[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

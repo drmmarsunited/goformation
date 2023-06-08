@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_Secret AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Secret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-secret.html
-type TaskDefinition_Secret struct {
+type TaskDefinition_Secret[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TaskDefinition_Secret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_Secret) AWSCloudFormationType() string {
+func (r *TaskDefinition_Secret[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Secret"
 }

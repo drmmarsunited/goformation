@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_RedshiftSourceConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.RedshiftSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html
-type AnomalyDetector_RedshiftSourceConfig struct {
+type AnomalyDetector_RedshiftSourceConfig[T any] struct {
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AnomalyDetector_RedshiftSourceConfig struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort T `json:"DatabasePort"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type AnomalyDetector_RedshiftSourceConfig struct {
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-vpcconfiguration
-	VpcConfiguration *AnomalyDetector_VpcConfiguration `json:"VpcConfiguration"`
+	VpcConfiguration *AnomalyDetector_VpcConfiguration[any] `json:"VpcConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type AnomalyDetector_RedshiftSourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_RedshiftSourceConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_RedshiftSourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.RedshiftSourceConfig"
 }

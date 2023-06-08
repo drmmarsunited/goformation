@@ -11,12 +11,12 @@ import (
 
 // ConformancePack AWS CloudFormation Resource (AWS::Config::ConformancePack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html
-type ConformancePack struct {
+type ConformancePack[T any] struct {
 
 	// ConformancePackInputParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackinputparameters
-	ConformancePackInputParameters []ConformancePack_ConformancePackInputParameter `json:"ConformancePackInputParameters,omitempty"`
+	ConformancePackInputParameters []ConformancePack_ConformancePackInputParameter[any] `json:"ConformancePackInputParameters,omitempty"`
 
 	// ConformancePackName AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type ConformancePack struct {
 	// TemplateSSMDocumentDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatessmdocumentdetails
-	TemplateSSMDocumentDetails *ConformancePack_TemplateSSMDocumentDetails `json:"TemplateSSMDocumentDetails,omitempty"`
+	TemplateSSMDocumentDetails *ConformancePack_TemplateSSMDocumentDetails[any] `json:"TemplateSSMDocumentDetails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type ConformancePack struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConformancePack) AWSCloudFormationType() string {
+func (r *ConformancePack[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConformancePack"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConformancePack) MarshalJSON() ([]byte, error) {
-	type Properties ConformancePack
+func (r ConformancePack[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConformancePack[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r ConformancePack) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConformancePack) UnmarshalJSON(b []byte) error {
-	type Properties ConformancePack
+func (r *ConformancePack[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConformancePack[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *ConformancePack) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConformancePack(*res.Properties)
+		*r = ConformancePack[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

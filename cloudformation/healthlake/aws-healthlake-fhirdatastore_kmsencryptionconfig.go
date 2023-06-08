@@ -8,7 +8,7 @@ import (
 
 // FHIRDatastore_KmsEncryptionConfig AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore.KmsEncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-kmsencryptionconfig.html
-type FHIRDatastore_KmsEncryptionConfig struct {
+type FHIRDatastore_KmsEncryptionConfig[T any] struct {
 
 	// CmkType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FHIRDatastore_KmsEncryptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FHIRDatastore_KmsEncryptionConfig) AWSCloudFormationType() string {
+func (r *FHIRDatastore_KmsEncryptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::HealthLake::FHIRDatastore.KmsEncryptionConfig"
 }

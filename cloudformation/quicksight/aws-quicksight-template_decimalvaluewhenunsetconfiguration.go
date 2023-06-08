@@ -8,12 +8,12 @@ import (
 
 // Template_DecimalValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DecimalValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalvaluewhenunsetconfiguration.html
-type Template_DecimalValueWhenUnsetConfiguration struct {
+type Template_DecimalValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-decimalvaluewhenunsetconfiguration.html#cfn-quicksight-template-decimalvaluewhenunsetconfiguration-customvalue
-	CustomValue *float64 `json:"CustomValue,omitempty"`
+	CustomValue *T `json:"CustomValue,omitempty"`
 
 	// ValueWhenUnsetOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_DecimalValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DecimalValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Template_DecimalValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DecimalValueWhenUnsetConfiguration"
 }

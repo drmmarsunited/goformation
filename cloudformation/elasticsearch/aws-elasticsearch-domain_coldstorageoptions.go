@@ -8,12 +8,12 @@ import (
 
 // Domain_ColdStorageOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.ColdStorageOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-coldstorageoptions.html
-type Domain_ColdStorageOptions struct {
+type Domain_ColdStorageOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-coldstorageoptions.html#cfn-elasticsearch-domain-coldstorageoptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_ColdStorageOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_ColdStorageOptions) AWSCloudFormationType() string {
+func (r *Domain_ColdStorageOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.ColdStorageOptions"
 }

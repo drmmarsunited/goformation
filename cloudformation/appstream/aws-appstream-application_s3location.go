@@ -8,7 +8,7 @@ import (
 
 // Application_S3Location AWS CloudFormation Resource (AWS::AppStream::Application.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-application-s3location.html
-type Application_S3Location struct {
+type Application_S3Location[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_S3Location) AWSCloudFormationType() string {
+func (r *Application_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Application.S3Location"
 }

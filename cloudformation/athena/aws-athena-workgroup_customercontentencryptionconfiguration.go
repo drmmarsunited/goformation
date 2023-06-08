@@ -8,7 +8,7 @@ import (
 
 // WorkGroup_CustomerContentEncryptionConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.CustomerContentEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-customercontentencryptionconfiguration.html
-type WorkGroup_CustomerContentEncryptionConfiguration struct {
+type WorkGroup_CustomerContentEncryptionConfiguration[T any] struct {
 
 	// KmsKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WorkGroup_CustomerContentEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_CustomerContentEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *WorkGroup_CustomerContentEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.CustomerContentEncryptionConfiguration"
 }

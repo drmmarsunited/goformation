@@ -8,7 +8,7 @@ import (
 
 // Application_MonitoringConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html
-type Application_MonitoringConfiguration struct {
+type Application_MonitoringConfiguration[T any] struct {
 
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Application_MonitoringConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_MonitoringConfiguration) AWSCloudFormationType() string {
+func (r *Application_MonitoringConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration"
 }

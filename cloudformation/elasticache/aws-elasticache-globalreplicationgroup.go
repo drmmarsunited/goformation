@@ -11,12 +11,12 @@ import (
 
 // GlobalReplicationGroup AWS CloudFormation Resource (AWS::ElastiCache::GlobalReplicationGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html
-type GlobalReplicationGroup struct {
+type GlobalReplicationGroup[T any] struct {
 
 	// AutomaticFailoverEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-automaticfailoverenabled
-	AutomaticFailoverEnabled *bool `json:"AutomaticFailoverEnabled,omitempty"`
+	AutomaticFailoverEnabled *T `json:"AutomaticFailoverEnabled,omitempty"`
 
 	// CacheNodeType AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type GlobalReplicationGroup struct {
 	// GlobalNodeGroupCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalnodegroupcount
-	GlobalNodeGroupCount *int `json:"GlobalNodeGroupCount,omitempty"`
+	GlobalNodeGroupCount *T `json:"GlobalNodeGroupCount,omitempty"`
 
 	// GlobalReplicationGroupDescription AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type GlobalReplicationGroup struct {
 	// Members AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-members
-	Members []GlobalReplicationGroup_GlobalReplicationGroupMember `json:"Members"`
+	Members []GlobalReplicationGroup_GlobalReplicationGroupMember[any] `json:"Members"`
 
 	// RegionalConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-regionalconfigurations
-	RegionalConfigurations []GlobalReplicationGroup_RegionalConfiguration `json:"RegionalConfigurations,omitempty"`
+	RegionalConfigurations []GlobalReplicationGroup_RegionalConfiguration[any] `json:"RegionalConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -75,14 +75,15 @@ type GlobalReplicationGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalReplicationGroup) AWSCloudFormationType() string {
+func (r *GlobalReplicationGroup[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::GlobalReplicationGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GlobalReplicationGroup) MarshalJSON() ([]byte, error) {
-	type Properties GlobalReplicationGroup
+func (r GlobalReplicationGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties GlobalReplicationGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r GlobalReplicationGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GlobalReplicationGroup) UnmarshalJSON(b []byte) error {
-	type Properties GlobalReplicationGroup
+func (r *GlobalReplicationGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties GlobalReplicationGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *GlobalReplicationGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GlobalReplicationGroup(*res.Properties)
+		*r = GlobalReplicationGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

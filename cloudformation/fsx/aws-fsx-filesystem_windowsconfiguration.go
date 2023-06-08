@@ -8,7 +8,7 @@ import (
 
 // FileSystem_WindowsConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.WindowsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
-type FileSystem_WindowsConfiguration struct {
+type FileSystem_WindowsConfiguration[T any] struct {
 
 	// ActiveDirectoryId AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type FileSystem_WindowsConfiguration struct {
 	// AuditLogConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-auditlogconfiguration
-	AuditLogConfiguration *FileSystem_AuditLogConfiguration `json:"AuditLogConfiguration,omitempty"`
+	AuditLogConfiguration *FileSystem_AuditLogConfiguration[any] `json:"AuditLogConfiguration,omitempty"`
 
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays *int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *T `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-copytagstobackups
-	CopyTagsToBackups *bool `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *T `json:"CopyTagsToBackups,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type FileSystem_WindowsConfiguration struct {
 	// SelfManagedActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration
-	SelfManagedActiveDirectoryConfiguration *FileSystem_SelfManagedActiveDirectoryConfiguration `json:"SelfManagedActiveDirectoryConfiguration,omitempty"`
+	SelfManagedActiveDirectoryConfiguration *FileSystem_SelfManagedActiveDirectoryConfiguration[any] `json:"SelfManagedActiveDirectoryConfiguration,omitempty"`
 
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-throughputcapacity
-	ThroughputCapacity int `json:"ThroughputCapacity"`
+	ThroughputCapacity T `json:"ThroughputCapacity"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type FileSystem_WindowsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_WindowsConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_WindowsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.WindowsConfiguration"
 }

@@ -8,37 +8,37 @@ import (
 
 // Analysis_PivotTableConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html
-type Analysis_PivotTableConfiguration struct {
+type Analysis_PivotTableConfiguration[T any] struct {
 
 	// FieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-fieldoptions
-	FieldOptions *Analysis_PivotTableFieldOptions `json:"FieldOptions,omitempty"`
+	FieldOptions *Analysis_PivotTableFieldOptions[any] `json:"FieldOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-fieldwells
-	FieldWells *Analysis_PivotTableFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_PivotTableFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// PaginatedReportOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-paginatedreportoptions
-	PaginatedReportOptions *Analysis_PivotTablePaginatedReportOptions `json:"PaginatedReportOptions,omitempty"`
+	PaginatedReportOptions *Analysis_PivotTablePaginatedReportOptions[any] `json:"PaginatedReportOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-sortconfiguration
-	SortConfiguration *Analysis_PivotTableSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_PivotTableSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// TableOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-tableoptions
-	TableOptions *Analysis_PivotTableOptions `json:"TableOptions,omitempty"`
+	TableOptions *Analysis_PivotTableOptions[any] `json:"TableOptions,omitempty"`
 
 	// TotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-totaloptions
-	TotalOptions *Analysis_PivotTableTotalOptions `json:"TotalOptions,omitempty"`
+	TotalOptions *Analysis_PivotTableTotalOptions[any] `json:"TotalOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Analysis_PivotTableConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableConfiguration"
 }

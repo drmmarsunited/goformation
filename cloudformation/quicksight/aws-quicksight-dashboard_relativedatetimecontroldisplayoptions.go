@@ -8,7 +8,7 @@ import (
 
 // Dashboard_RelativeDateTimeControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.RelativeDateTimeControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatetimecontroldisplayoptions.html
-type Dashboard_RelativeDateTimeControlDisplayOptions struct {
+type Dashboard_RelativeDateTimeControlDisplayOptions[T any] struct {
 
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_RelativeDateTimeControlDisplayOptions struct {
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatetimecontroldisplayoptions.html#cfn-quicksight-dashboard-relativedatetimecontroldisplayoptions-titleoptions
-	TitleOptions *Dashboard_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Dashboard_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_RelativeDateTimeControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_RelativeDateTimeControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Dashboard_RelativeDateTimeControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.RelativeDateTimeControlDisplayOptions"
 }

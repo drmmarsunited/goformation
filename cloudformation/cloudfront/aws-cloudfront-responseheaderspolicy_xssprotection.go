@@ -8,22 +8,22 @@ import (
 
 // ResponseHeadersPolicy_XSSProtection AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.XSSProtection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html
-type ResponseHeadersPolicy_XSSProtection struct {
+type ResponseHeadersPolicy_XSSProtection[T any] struct {
 
 	// ModeBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock
-	ModeBlock *bool `json:"ModeBlock,omitempty"`
+	ModeBlock *T `json:"ModeBlock,omitempty"`
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// Protection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection
-	Protection bool `json:"Protection"`
+	Protection T `json:"Protection"`
 
 	// ReportUri AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ResponseHeadersPolicy_XSSProtection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_XSSProtection) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_XSSProtection[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.XSSProtection"
 }

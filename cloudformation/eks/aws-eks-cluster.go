@@ -12,22 +12,22 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::EKS::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-encryptionconfig
-	EncryptionConfig []Cluster_EncryptionConfig `json:"EncryptionConfig,omitempty"`
+	EncryptionConfig []Cluster_EncryptionConfig[any] `json:"EncryptionConfig,omitempty"`
 
 	// KubernetesNetworkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-kubernetesnetworkconfig
-	KubernetesNetworkConfig *Cluster_KubernetesNetworkConfig `json:"KubernetesNetworkConfig,omitempty"`
+	KubernetesNetworkConfig *Cluster_KubernetesNetworkConfig[any] `json:"KubernetesNetworkConfig,omitempty"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-logging
-	Logging *Cluster_Logging `json:"Logging,omitempty"`
+	Logging *Cluster_Logging[any] `json:"Logging,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Cluster struct {
 	// OutpostConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-outpostconfig
-	OutpostConfig *Cluster_OutpostConfig `json:"OutpostConfig,omitempty"`
+	OutpostConfig *Cluster_OutpostConfig[any] `json:"OutpostConfig,omitempty"`
 
 	// ResourcesVpcConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig
-	ResourcesVpcConfig *Cluster_ResourcesVpcConfig `json:"ResourcesVpcConfig"`
+	ResourcesVpcConfig *Cluster_ResourcesVpcConfig[any] `json:"ResourcesVpcConfig"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -76,14 +76,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

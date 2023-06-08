@@ -8,7 +8,7 @@ import (
 
 // Job_StatisticOverride AWS CloudFormation Resource (AWS::DataBrew::Job.StatisticOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html
-type Job_StatisticOverride struct {
+type Job_StatisticOverride[T any] struct {
 
 	// Parameters AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Job_StatisticOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_StatisticOverride) AWSCloudFormationType() string {
+func (r *Job_StatisticOverride[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.StatisticOverride"
 }

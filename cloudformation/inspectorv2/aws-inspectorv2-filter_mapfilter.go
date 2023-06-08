@@ -8,7 +8,7 @@ import (
 
 // Filter_MapFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.MapFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-mapfilter.html
-type Filter_MapFilter struct {
+type Filter_MapFilter[T any] struct {
 
 	// Comparison AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Filter_MapFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Filter_MapFilter) AWSCloudFormationType() string {
+func (r *Filter_MapFilter[any]) AWSCloudFormationType() string {
 	return "AWS::InspectorV2::Filter.MapFilter"
 }

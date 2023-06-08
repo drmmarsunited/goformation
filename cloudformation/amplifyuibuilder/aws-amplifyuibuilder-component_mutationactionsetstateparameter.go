@@ -8,7 +8,7 @@ import (
 
 // Component_MutationActionSetStateParameter AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.MutationActionSetStateParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html
-type Component_MutationActionSetStateParameter struct {
+type Component_MutationActionSetStateParameter[T any] struct {
 
 	// ComponentName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Component_MutationActionSetStateParameter struct {
 	// Set AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html#cfn-amplifyuibuilder-component-mutationactionsetstateparameter-set
-	Set *Component_ComponentProperty `json:"Set"`
+	Set *Component_ComponentProperty[any] `json:"Set"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Component_MutationActionSetStateParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_MutationActionSetStateParameter) AWSCloudFormationType() string {
+func (r *Component_MutationActionSetStateParameter[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.MutationActionSetStateParameter"
 }

@@ -8,7 +8,7 @@ import (
 
 // PackagingConfiguration_DashManifest AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.DashManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html
-type PackagingConfiguration_DashManifest struct {
+type PackagingConfiguration_DashManifest[T any] struct {
 
 	// ManifestLayout AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type PackagingConfiguration_DashManifest struct {
 	// MinBufferTimeSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-minbuffertimeseconds
-	MinBufferTimeSeconds *int `json:"MinBufferTimeSeconds,omitempty"`
+	MinBufferTimeSeconds *T `json:"MinBufferTimeSeconds,omitempty"`
 
 	// Profile AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type PackagingConfiguration_DashManifest struct {
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-streamselection
-	StreamSelection *PackagingConfiguration_StreamSelection `json:"StreamSelection,omitempty"`
+	StreamSelection *PackagingConfiguration_StreamSelection[any] `json:"StreamSelection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type PackagingConfiguration_DashManifest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_DashManifest) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_DashManifest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.DashManifest"
 }

@@ -8,12 +8,12 @@ import (
 
 // EvaluationForm_EvaluationFormSingleSelectQuestionOption AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormSingleSelectQuestionOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionoption.html
-type EvaluationForm_EvaluationFormSingleSelectQuestionOption struct {
+type EvaluationForm_EvaluationFormSingleSelectQuestionOption[T any] struct {
 
 	// AutomaticFail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionoption.html#cfn-connect-evaluationform-evaluationformsingleselectquestionoption-automaticfail
-	AutomaticFail *bool `json:"AutomaticFail,omitempty"`
+	AutomaticFail *T `json:"AutomaticFail,omitempty"`
 
 	// RefId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionOption struct {
 	// Score AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionoption.html#cfn-connect-evaluationform-evaluationformsingleselectquestionoption-score
-	Score *int `json:"Score,omitempty"`
+	Score *T `json:"Score,omitempty"`
 
 	// Text AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormSingleSelectQuestionOption) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormSingleSelectQuestionOption[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormSingleSelectQuestionOption"
 }

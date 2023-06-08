@@ -8,22 +8,22 @@ import (
 
 // VerifiedAccessInstance_VerifiedAccessLogs AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance.VerifiedAccessLogs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesslogs.html
-type VerifiedAccessInstance_VerifiedAccessLogs struct {
+type VerifiedAccessInstance_VerifiedAccessLogs[T any] struct {
 
 	// CloudWatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesslogs.html#cfn-ec2-verifiedaccessinstance-verifiedaccesslogs-cloudwatchlogs
-	CloudWatchLogs *VerifiedAccessInstance_CloudWatchLogs `json:"CloudWatchLogs,omitempty"`
+	CloudWatchLogs *VerifiedAccessInstance_CloudWatchLogs[any] `json:"CloudWatchLogs,omitempty"`
 
 	// KinesisDataFirehose AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesslogs.html#cfn-ec2-verifiedaccessinstance-verifiedaccesslogs-kinesisdatafirehose
-	KinesisDataFirehose *VerifiedAccessInstance_KinesisDataFirehose `json:"KinesisDataFirehose,omitempty"`
+	KinesisDataFirehose *VerifiedAccessInstance_KinesisDataFirehose[any] `json:"KinesisDataFirehose,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesslogs.html#cfn-ec2-verifiedaccessinstance-verifiedaccesslogs-s3
-	S3 *VerifiedAccessInstance_S3 `json:"S3,omitempty"`
+	S3 *VerifiedAccessInstance_S3[any] `json:"S3,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VerifiedAccessInstance_VerifiedAccessLogs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance_VerifiedAccessLogs) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance_VerifiedAccessLogs[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance.VerifiedAccessLogs"
 }

@@ -8,12 +8,12 @@ import (
 
 // GlobalTable_ContributorInsightsSpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ContributorInsightsSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-contributorinsightsspecification.html
-type GlobalTable_ContributorInsightsSpecification struct {
+type GlobalTable_ContributorInsightsSpecification[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-contributorinsightsspecification.html#cfn-dynamodb-globaltable-contributorinsightsspecification-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type GlobalTable_ContributorInsightsSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_ContributorInsightsSpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_ContributorInsightsSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.ContributorInsightsSpecification"
 }

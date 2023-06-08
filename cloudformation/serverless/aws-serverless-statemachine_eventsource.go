@@ -8,12 +8,12 @@ import (
 
 // StateMachine_EventSource AWS CloudFormation Resource (AWS::Serverless::StateMachine.EventSource)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#event-source-object
-type StateMachine_EventSource struct {
+type StateMachine_EventSource[T any] struct {
 
 	// Properties AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#event-source-types
-	Properties *StateMachine_Properties `json:"Properties"`
+	Properties *StateMachine_Properties[any] `json:"Properties"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StateMachine_EventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_EventSource) AWSCloudFormationType() string {
+func (r *StateMachine_EventSource[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.EventSource"
 }

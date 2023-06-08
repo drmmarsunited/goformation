@@ -8,12 +8,12 @@ import (
 
 // Template_UniqueValuesComputation AWS CloudFormation Resource (AWS::QuickSight::Template.UniqueValuesComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-uniquevaluescomputation.html
-type Template_UniqueValuesComputation struct {
+type Template_UniqueValuesComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-uniquevaluescomputation.html#cfn-quicksight-template-uniquevaluescomputation-category
-	Category *Template_DimensionField `json:"Category"`
+	Category *Template_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_UniqueValuesComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_UniqueValuesComputation) AWSCloudFormationType() string {
+func (r *Template_UniqueValuesComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.UniqueValuesComputation"
 }

@@ -8,12 +8,12 @@ import (
 
 // DataSet_JoinKeyProperties AWS CloudFormation Resource (AWS::QuickSight::DataSet.JoinKeyProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joinkeyproperties.html
-type DataSet_JoinKeyProperties struct {
+type DataSet_JoinKeyProperties[T any] struct {
 
 	// UniqueKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joinkeyproperties.html#cfn-quicksight-dataset-joinkeyproperties-uniquekey
-	UniqueKey *bool `json:"UniqueKey,omitempty"`
+	UniqueKey *T `json:"UniqueKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSet_JoinKeyProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_JoinKeyProperties) AWSCloudFormationType() string {
+func (r *DataSet_JoinKeyProperties[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.JoinKeyProperties"
 }

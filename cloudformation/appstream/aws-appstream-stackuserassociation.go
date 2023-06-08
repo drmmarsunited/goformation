@@ -11,7 +11,7 @@ import (
 
 // StackUserAssociation AWS CloudFormation Resource (AWS::AppStream::StackUserAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html
-type StackUserAssociation struct {
+type StackUserAssociation[T any] struct {
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type StackUserAssociation struct {
 	// SendEmailNotification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-sendemailnotification
-	SendEmailNotification *bool `json:"SendEmailNotification,omitempty"`
+	SendEmailNotification *T `json:"SendEmailNotification,omitempty"`
 
 	// StackName AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type StackUserAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackUserAssociation) AWSCloudFormationType() string {
+func (r *StackUserAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::StackUserAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StackUserAssociation) MarshalJSON() ([]byte, error) {
-	type Properties StackUserAssociation
+func (r StackUserAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties StackUserAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r StackUserAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StackUserAssociation) UnmarshalJSON(b []byte) error {
-	type Properties StackUserAssociation
+func (r *StackUserAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties StackUserAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *StackUserAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StackUserAssociation(*res.Properties)
+		*r = StackUserAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

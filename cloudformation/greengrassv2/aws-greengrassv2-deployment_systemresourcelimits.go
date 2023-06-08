@@ -8,17 +8,17 @@ import (
 
 // Deployment_SystemResourceLimits AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.SystemResourceLimits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-systemresourcelimits.html
-type Deployment_SystemResourceLimits struct {
+type Deployment_SystemResourceLimits[T any] struct {
 
 	// Cpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-systemresourcelimits.html#cfn-greengrassv2-deployment-systemresourcelimits-cpus
-	Cpus *float64 `json:"Cpus,omitempty"`
+	Cpus *T `json:"Cpus,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-systemresourcelimits.html#cfn-greengrassv2-deployment-systemresourcelimits-memory
-	Memory *int `json:"Memory,omitempty"`
+	Memory *T `json:"Memory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Deployment_SystemResourceLimits struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_SystemResourceLimits) AWSCloudFormationType() string {
+func (r *Deployment_SystemResourceLimits[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.SystemResourceLimits"
 }

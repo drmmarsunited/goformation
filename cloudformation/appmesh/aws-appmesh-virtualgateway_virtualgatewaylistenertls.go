@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayListenerTls AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html
-type VirtualGateway_VirtualGatewayListenerTls struct {
+type VirtualGateway_VirtualGatewayListenerTls[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-certificate
-	Certificate *VirtualGateway_VirtualGatewayListenerTlsCertificate `json:"Certificate"`
+	Certificate *VirtualGateway_VirtualGatewayListenerTlsCertificate[any] `json:"Certificate"`
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type VirtualGateway_VirtualGatewayListenerTls struct {
 	// Validation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-validation
-	Validation *VirtualGateway_VirtualGatewayListenerTlsValidationContext `json:"Validation,omitempty"`
+	Validation *VirtualGateway_VirtualGatewayListenerTlsValidationContext[any] `json:"Validation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type VirtualGateway_VirtualGatewayListenerTls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListenerTls) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListenerTls[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls"
 }

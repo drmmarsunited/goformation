@@ -8,7 +8,7 @@ import (
 
 // Build_StorageLocation AWS CloudFormation Resource (AWS::GameLift::Build.StorageLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html
-type Build_StorageLocation struct {
+type Build_StorageLocation[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Build_StorageLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Build_StorageLocation) AWSCloudFormationType() string {
+func (r *Build_StorageLocation[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Build.StorageLocation"
 }

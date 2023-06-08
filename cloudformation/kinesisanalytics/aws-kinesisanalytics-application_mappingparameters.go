@@ -8,17 +8,17 @@ import (
 
 // Application_MappingParameters AWS CloudFormation Resource (AWS::KinesisAnalytics::Application.MappingParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html
-type Application_MappingParameters struct {
+type Application_MappingParameters[T any] struct {
 
 	// CSVMappingParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-csvmappingparameters
-	CSVMappingParameters *Application_CSVMappingParameters `json:"CSVMappingParameters,omitempty"`
+	CSVMappingParameters *Application_CSVMappingParameters[any] `json:"CSVMappingParameters,omitempty"`
 
 	// JSONMappingParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-jsonmappingparameters
-	JSONMappingParameters *Application_JSONMappingParameters `json:"JSONMappingParameters,omitempty"`
+	JSONMappingParameters *Application_JSONMappingParameters[any] `json:"JSONMappingParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_MappingParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_MappingParameters) AWSCloudFormationType() string {
+func (r *Application_MappingParameters[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::Application.MappingParameters"
 }

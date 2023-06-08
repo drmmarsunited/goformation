@@ -8,7 +8,7 @@ import (
 
 // ReferenceStore_SseConfig AWS CloudFormation Resource (AWS::Omics::ReferenceStore.SseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-referencestore-sseconfig.html
-type ReferenceStore_SseConfig struct {
+type ReferenceStore_SseConfig[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ReferenceStore_SseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReferenceStore_SseConfig) AWSCloudFormationType() string {
+func (r *ReferenceStore_SseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::ReferenceStore.SseConfig"
 }

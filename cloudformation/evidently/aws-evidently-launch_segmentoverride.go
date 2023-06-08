@@ -8,12 +8,12 @@ import (
 
 // Launch_SegmentOverride AWS CloudFormation Resource (AWS::Evidently::Launch.SegmentOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-segmentoverride.html
-type Launch_SegmentOverride struct {
+type Launch_SegmentOverride[T any] struct {
 
 	// EvaluationOrder AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-segmentoverride.html#cfn-evidently-launch-segmentoverride-evaluationorder
-	EvaluationOrder int `json:"EvaluationOrder"`
+	EvaluationOrder T `json:"EvaluationOrder"`
 
 	// Segment AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Launch_SegmentOverride struct {
 	// Weights AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-segmentoverride.html#cfn-evidently-launch-segmentoverride-weights
-	Weights []Launch_GroupToWeight `json:"Weights"`
+	Weights []Launch_GroupToWeight[any] `json:"Weights"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Launch_SegmentOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_SegmentOverride) AWSCloudFormationType() string {
+func (r *Launch_SegmentOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.SegmentOverride"
 }

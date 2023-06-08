@@ -8,7 +8,7 @@ import (
 
 // ScalingPolicy_MetricDataQuery AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.MetricDataQuery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html
-type ScalingPolicy_MetricDataQuery struct {
+type ScalingPolicy_MetricDataQuery[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type ScalingPolicy_MetricDataQuery struct {
 	// MetricStat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-metricstat
-	MetricStat *ScalingPolicy_MetricStat `json:"MetricStat,omitempty"`
+	MetricStat *ScalingPolicy_MetricStat[any] `json:"MetricStat,omitempty"`
 
 	// ReturnData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-returndata
-	ReturnData *bool `json:"ReturnData,omitempty"`
+	ReturnData *T `json:"ReturnData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ScalingPolicy_MetricDataQuery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_MetricDataQuery) AWSCloudFormationType() string {
+func (r *ScalingPolicy_MetricDataQuery[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScalingPolicy.MetricDataQuery"
 }

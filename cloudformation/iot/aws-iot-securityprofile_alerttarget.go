@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_AlertTarget AWS CloudFormation Resource (AWS::IoT::SecurityProfile.AlertTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-alerttarget.html
-type SecurityProfile_AlertTarget struct {
+type SecurityProfile_AlertTarget[T any] struct {
 
 	// AlertTargetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SecurityProfile_AlertTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_AlertTarget) AWSCloudFormationType() string {
+func (r *SecurityProfile_AlertTarget[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.AlertTarget"
 }

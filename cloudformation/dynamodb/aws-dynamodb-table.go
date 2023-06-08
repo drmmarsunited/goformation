@@ -12,12 +12,12 @@ import (
 
 // Table AWS CloudFormation Resource (AWS::DynamoDB::Table)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html
-type Table struct {
+type Table[T any] struct {
 
 	// AttributeDefinitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedefinitions
-	AttributeDefinitions []Table_AttributeDefinition `json:"AttributeDefinitions,omitempty"`
+	AttributeDefinitions []Table_AttributeDefinition[any] `json:"AttributeDefinitions,omitempty"`
 
 	// BillingMode AWS CloudFormation Property
 	// Required: false
@@ -27,57 +27,57 @@ type Table struct {
 	// ContributorInsightsSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-contributorinsightsspecification
-	ContributorInsightsSpecification *Table_ContributorInsightsSpecification `json:"ContributorInsightsSpecification,omitempty"`
+	ContributorInsightsSpecification *Table_ContributorInsightsSpecification[any] `json:"ContributorInsightsSpecification,omitempty"`
 
 	// DeletionProtectionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-deletionprotectionenabled
-	DeletionProtectionEnabled *bool `json:"DeletionProtectionEnabled,omitempty"`
+	DeletionProtectionEnabled *T `json:"DeletionProtectionEnabled,omitempty"`
 
 	// GlobalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-globalsecondaryindexes
-	GlobalSecondaryIndexes []Table_GlobalSecondaryIndex `json:"GlobalSecondaryIndexes,omitempty"`
+	GlobalSecondaryIndexes []Table_GlobalSecondaryIndex[any] `json:"GlobalSecondaryIndexes,omitempty"`
 
 	// ImportSourceSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-importsourcespecification
-	ImportSourceSpecification *Table_ImportSourceSpecification `json:"ImportSourceSpecification,omitempty"`
+	ImportSourceSpecification *Table_ImportSourceSpecification[any] `json:"ImportSourceSpecification,omitempty"`
 
 	// KeySchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema
-	KeySchema []Table_KeySchema `json:"KeySchema"`
+	KeySchema []Table_KeySchema[any] `json:"KeySchema"`
 
 	// KinesisStreamSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-kinesisstreamspecification
-	KinesisStreamSpecification *Table_KinesisStreamSpecification `json:"KinesisStreamSpecification,omitempty"`
+	KinesisStreamSpecification *Table_KinesisStreamSpecification[any] `json:"KinesisStreamSpecification,omitempty"`
 
 	// LocalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-localsecondaryindexes
-	LocalSecondaryIndexes []Table_LocalSecondaryIndex `json:"LocalSecondaryIndexes,omitempty"`
+	LocalSecondaryIndexes []Table_LocalSecondaryIndex[any] `json:"LocalSecondaryIndexes,omitempty"`
 
 	// PointInTimeRecoverySpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification
-	PointInTimeRecoverySpecification *Table_PointInTimeRecoverySpecification `json:"PointInTimeRecoverySpecification,omitempty"`
+	PointInTimeRecoverySpecification *Table_PointInTimeRecoverySpecification[any] `json:"PointInTimeRecoverySpecification,omitempty"`
 
 	// ProvisionedThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput
-	ProvisionedThroughput *Table_ProvisionedThroughput `json:"ProvisionedThroughput,omitempty"`
+	ProvisionedThroughput *Table_ProvisionedThroughput[any] `json:"ProvisionedThroughput,omitempty"`
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification
-	SSESpecification *Table_SSESpecification `json:"SSESpecification,omitempty"`
+	SSESpecification *Table_SSESpecification[any] `json:"SSESpecification,omitempty"`
 
 	// StreamSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification
-	StreamSpecification *Table_StreamSpecification `json:"StreamSpecification,omitempty"`
+	StreamSpecification *Table_StreamSpecification[any] `json:"StreamSpecification,omitempty"`
 
 	// TableClass AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type Table struct {
 	// TimeToLiveSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification
-	TimeToLiveSpecification *Table_TimeToLiveSpecification `json:"TimeToLiveSpecification,omitempty"`
+	TimeToLiveSpecification *Table_TimeToLiveSpecification[any] `json:"TimeToLiveSpecification,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -116,14 +116,15 @@ type Table struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table) AWSCloudFormationType() string {
+func (r *Table[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Table) MarshalJSON() ([]byte, error) {
-	type Properties Table
+func (r Table[any]) MarshalJSON() ([]byte, error) {
+	type Properties Table[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -145,8 +146,9 @@ func (r Table) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Table) UnmarshalJSON(b []byte) error {
-	type Properties Table
+func (r *Table[any]) UnmarshalJSON(b []byte) error {
+	type Properties Table[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -166,7 +168,7 @@ func (r *Table) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Table(*res.Properties)
+		*r = Table[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

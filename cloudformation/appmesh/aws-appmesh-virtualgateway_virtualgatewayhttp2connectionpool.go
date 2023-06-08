@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_VirtualGatewayHttp2ConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayHttp2ConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttp2connectionpool.html
-type VirtualGateway_VirtualGatewayHttp2ConnectionPool struct {
+type VirtualGateway_VirtualGatewayHttp2ConnectionPool[T any] struct {
 
 	// MaxRequests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttp2connectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayhttp2connectionpool-maxrequests
-	MaxRequests int `json:"MaxRequests"`
+	MaxRequests T `json:"MaxRequests"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayHttp2ConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayHttp2ConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayHttp2ConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayHttp2ConnectionPool"
 }

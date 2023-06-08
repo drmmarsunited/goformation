@@ -8,7 +8,7 @@ import (
 
 // BotAlias_S3BucketLogDestination AWS CloudFormation Resource (AWS::Lex::BotAlias.S3BucketLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-s3bucketlogdestination.html
-type BotAlias_S3BucketLogDestination struct {
+type BotAlias_S3BucketLogDestination[T any] struct {
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type BotAlias_S3BucketLogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias_S3BucketLogDestination) AWSCloudFormationType() string {
+func (r *BotAlias_S3BucketLogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias.S3BucketLogDestination"
 }

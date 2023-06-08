@@ -8,7 +8,7 @@ import (
 
 // JobTemplate_AbortCriteria AWS CloudFormation Resource (AWS::IoT::JobTemplate.AbortCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html
-type JobTemplate_AbortCriteria struct {
+type JobTemplate_AbortCriteria[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type JobTemplate_AbortCriteria struct {
 	// MinNumberOfExecutedThings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-minnumberofexecutedthings
-	MinNumberOfExecutedThings int `json:"MinNumberOfExecutedThings"`
+	MinNumberOfExecutedThings T `json:"MinNumberOfExecutedThings"`
 
 	// ThresholdPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-thresholdpercentage
-	ThresholdPercentage float64 `json:"ThresholdPercentage"`
+	ThresholdPercentage T `json:"ThresholdPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type JobTemplate_AbortCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_AbortCriteria) AWSCloudFormationType() string {
+func (r *JobTemplate_AbortCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.AbortCriteria"
 }

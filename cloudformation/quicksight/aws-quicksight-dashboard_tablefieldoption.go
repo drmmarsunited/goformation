@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TableFieldOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldoption.html
-type Dashboard_TableFieldOption struct {
+type Dashboard_TableFieldOption[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_TableFieldOption struct {
 	// URLStyling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldoption.html#cfn-quicksight-dashboard-tablefieldoption-urlstyling
-	URLStyling *Dashboard_TableFieldURLConfiguration `json:"URLStyling,omitempty"`
+	URLStyling *Dashboard_TableFieldURLConfiguration[any] `json:"URLStyling,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dashboard_TableFieldOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldOption) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldOption"
 }

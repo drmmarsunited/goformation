@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_ChallengeAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.ChallengeAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-challengeaction.html
-type RuleGroup_ChallengeAction struct {
+type RuleGroup_ChallengeAction[T any] struct {
 
 	// CustomRequestHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-challengeaction.html#cfn-wafv2-rulegroup-challengeaction-customrequesthandling
-	CustomRequestHandling *RuleGroup_CustomRequestHandling `json:"CustomRequestHandling,omitempty"`
+	CustomRequestHandling *RuleGroup_CustomRequestHandling[any] `json:"CustomRequestHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_ChallengeAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_ChallengeAction) AWSCloudFormationType() string {
+func (r *RuleGroup_ChallengeAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.ChallengeAction"
 }

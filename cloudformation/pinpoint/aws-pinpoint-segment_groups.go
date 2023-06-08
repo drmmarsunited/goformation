@@ -8,17 +8,17 @@ import (
 
 // Segment_Groups AWS CloudFormation Resource (AWS::Pinpoint::Segment.Groups)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html
-type Segment_Groups struct {
+type Segment_Groups[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-dimensions
-	Dimensions []Segment_SegmentDimensions `json:"Dimensions,omitempty"`
+	Dimensions []Segment_SegmentDimensions[any] `json:"Dimensions,omitempty"`
 
 	// SourceSegments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments
-	SourceSegments []Segment_SourceSegments `json:"SourceSegments,omitempty"`
+	SourceSegments []Segment_SourceSegments[any] `json:"SourceSegments,omitempty"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Segment_Groups struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_Groups) AWSCloudFormationType() string {
+func (r *Segment_Groups[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.Groups"
 }

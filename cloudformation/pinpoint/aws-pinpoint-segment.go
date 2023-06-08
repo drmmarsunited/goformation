@@ -11,7 +11,7 @@ import (
 
 // Segment AWS CloudFormation Resource (AWS::Pinpoint::Segment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html
-type Segment struct {
+type Segment[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Segment struct {
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-dimensions
-	Dimensions *Segment_SegmentDimensions `json:"Dimensions,omitempty"`
+	Dimensions *Segment_SegmentDimensions[any] `json:"Dimensions,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Segment struct {
 	// SegmentGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-segmentgroups
-	SegmentGroups *Segment_SegmentGroups `json:"SegmentGroups,omitempty"`
+	SegmentGroups *Segment_SegmentGroups[any] `json:"SegmentGroups,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type Segment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment) AWSCloudFormationType() string {
+func (r *Segment[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Segment) MarshalJSON() ([]byte, error) {
-	type Properties Segment
+func (r Segment[any]) MarshalJSON() ([]byte, error) {
+	type Properties Segment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Segment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Segment) UnmarshalJSON(b []byte) error {
-	type Properties Segment
+func (r *Segment[any]) UnmarshalJSON(b []byte) error {
+	type Properties Segment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Segment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Segment(*res.Properties)
+		*r = Segment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

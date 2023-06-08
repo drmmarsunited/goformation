@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_IamInstanceProfileSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.IamInstanceProfileSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html
-type SpotFleet_IamInstanceProfileSpecification struct {
+type SpotFleet_IamInstanceProfileSpecification[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type SpotFleet_IamInstanceProfileSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_IamInstanceProfileSpecification) AWSCloudFormationType() string {
+func (r *SpotFleet_IamInstanceProfileSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.IamInstanceProfileSpecification"
 }

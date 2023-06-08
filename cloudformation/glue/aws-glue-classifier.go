@@ -11,27 +11,27 @@ import (
 
 // Classifier AWS CloudFormation Resource (AWS::Glue::Classifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html
-type Classifier struct {
+type Classifier[T any] struct {
 
 	// CsvClassifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier
-	CsvClassifier *Classifier_CsvClassifier `json:"CsvClassifier,omitempty"`
+	CsvClassifier *Classifier_CsvClassifier[any] `json:"CsvClassifier,omitempty"`
 
 	// GrokClassifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier
-	GrokClassifier *Classifier_GrokClassifier `json:"GrokClassifier,omitempty"`
+	GrokClassifier *Classifier_GrokClassifier[any] `json:"GrokClassifier,omitempty"`
 
 	// JsonClassifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier
-	JsonClassifier *Classifier_JsonClassifier `json:"JsonClassifier,omitempty"`
+	JsonClassifier *Classifier_JsonClassifier[any] `json:"JsonClassifier,omitempty"`
 
 	// XMLClassifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-xmlclassifier
-	XMLClassifier *Classifier_XMLClassifier `json:"XMLClassifier,omitempty"`
+	XMLClassifier *Classifier_XMLClassifier[any] `json:"XMLClassifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type Classifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Classifier) AWSCloudFormationType() string {
+func (r *Classifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Classifier) MarshalJSON() ([]byte, error) {
-	type Properties Classifier
+func (r Classifier[any]) MarshalJSON() ([]byte, error) {
+	type Properties Classifier[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Classifier) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Classifier) UnmarshalJSON(b []byte) error {
-	type Properties Classifier
+func (r *Classifier[any]) UnmarshalJSON(b []byte) error {
+	type Properties Classifier[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Classifier) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Classifier(*res.Properties)
+		*r = Classifier[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

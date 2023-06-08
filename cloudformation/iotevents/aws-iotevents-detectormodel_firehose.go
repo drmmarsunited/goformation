@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_Firehose AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.Firehose)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html
-type DetectorModel_Firehose struct {
+type DetectorModel_Firehose[T any] struct {
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DetectorModel_Firehose struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// Separator AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DetectorModel_Firehose struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_Firehose) AWSCloudFormationType() string {
+func (r *DetectorModel_Firehose[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.Firehose"
 }

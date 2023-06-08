@@ -8,7 +8,7 @@ import (
 
 // Flow_LookoutMetricsDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.LookoutMetricsDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-lookoutmetricsdestinationproperties.html
-type Flow_LookoutMetricsDestinationProperties struct {
+type Flow_LookoutMetricsDestinationProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Flow_LookoutMetricsDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_LookoutMetricsDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_LookoutMetricsDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.LookoutMetricsDestinationProperties"
 }

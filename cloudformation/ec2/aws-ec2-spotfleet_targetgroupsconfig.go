@@ -8,12 +8,12 @@ import (
 
 // SpotFleet_TargetGroupsConfig AWS CloudFormation Resource (AWS::EC2::SpotFleet.TargetGroupsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroupsconfig.html
-type SpotFleet_TargetGroupsConfig struct {
+type SpotFleet_TargetGroupsConfig[T any] struct {
 
 	// TargetGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroupsconfig.html#cfn-ec2-spotfleet-targetgroupsconfig-targetgroups
-	TargetGroups []SpotFleet_TargetGroup `json:"TargetGroups"`
+	TargetGroups []SpotFleet_TargetGroup[any] `json:"TargetGroups"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type SpotFleet_TargetGroupsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_TargetGroupsConfig) AWSCloudFormationType() string {
+func (r *SpotFleet_TargetGroupsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.TargetGroupsConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // Domain_CognitoOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.CognitoOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html
-type Domain_CognitoOptions struct {
+type Domain_CognitoOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// IdentityPoolId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Domain_CognitoOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_CognitoOptions) AWSCloudFormationType() string {
+func (r *Domain_CognitoOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.CognitoOptions"
 }

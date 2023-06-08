@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_CsvFormatDescriptor AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.CsvFormatDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html
-type AnomalyDetector_CsvFormatDescriptor struct {
+type AnomalyDetector_CsvFormatDescriptor[T any] struct {
 
 	// Charset AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type AnomalyDetector_CsvFormatDescriptor struct {
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-containsheader
-	ContainsHeader *bool `json:"ContainsHeader,omitempty"`
+	ContainsHeader *T `json:"ContainsHeader,omitempty"`
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type AnomalyDetector_CsvFormatDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_CsvFormatDescriptor) AWSCloudFormationType() string {
+func (r *AnomalyDetector_CsvFormatDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.CsvFormatDescriptor"
 }

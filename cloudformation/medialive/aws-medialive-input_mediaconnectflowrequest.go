@@ -8,7 +8,7 @@ import (
 
 // Input_MediaConnectFlowRequest AWS CloudFormation Resource (AWS::MediaLive::Input.MediaConnectFlowRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html
-type Input_MediaConnectFlowRequest struct {
+type Input_MediaConnectFlowRequest[T any] struct {
 
 	// FlowArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Input_MediaConnectFlowRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_MediaConnectFlowRequest) AWSCloudFormationType() string {
+func (r *Input_MediaConnectFlowRequest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input.MediaConnectFlowRequest"
 }

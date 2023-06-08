@@ -12,7 +12,7 @@ import (
 
 // FlowLog AWS CloudFormation Resource (AWS::EC2::FlowLog)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
-type FlowLog struct {
+type FlowLog[T any] struct {
 
 	// DeliverLogsPermissionArn AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type FlowLog struct {
 	// DestinationOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-destinationoptions
-	DestinationOptions *FlowLog_DestinationOptions `json:"DestinationOptions,omitempty"`
+	DestinationOptions *FlowLog_DestinationOptions[any] `json:"DestinationOptions,omitempty"`
 
 	// LogDestination AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type FlowLog struct {
 	// MaxAggregationInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-maxaggregationinterval
-	MaxAggregationInterval *int `json:"MaxAggregationInterval,omitempty"`
+	MaxAggregationInterval *T `json:"MaxAggregationInterval,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
@@ -86,14 +86,15 @@ type FlowLog struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowLog) AWSCloudFormationType() string {
+func (r *FlowLog[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::FlowLog"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FlowLog) MarshalJSON() ([]byte, error) {
-	type Properties FlowLog
+func (r FlowLog[any]) MarshalJSON() ([]byte, error) {
+	type Properties FlowLog[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r FlowLog) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FlowLog) UnmarshalJSON(b []byte) error {
-	type Properties FlowLog
+func (r *FlowLog[any]) UnmarshalJSON(b []byte) error {
+	type Properties FlowLog[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *FlowLog) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FlowLog(*res.Properties)
+		*r = FlowLog[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_ImmunityTimeProperty AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.ImmunityTimeProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html
-type RuleGroup_ImmunityTimeProperty struct {
+type RuleGroup_ImmunityTimeProperty[T any] struct {
 
 	// ImmunityTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html#cfn-wafv2-rulegroup-immunitytimeproperty-immunitytime
-	ImmunityTime int `json:"ImmunityTime"`
+	ImmunityTime T `json:"ImmunityTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_ImmunityTimeProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_ImmunityTimeProperty) AWSCloudFormationType() string {
+func (r *RuleGroup_ImmunityTimeProperty[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.ImmunityTimeProperty"
 }

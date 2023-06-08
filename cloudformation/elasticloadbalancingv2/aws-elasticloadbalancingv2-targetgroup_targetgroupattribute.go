@@ -8,7 +8,7 @@ import (
 
 // TargetGroup_TargetGroupAttribute AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::TargetGroup.TargetGroupAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html
-type TargetGroup_TargetGroupAttribute struct {
+type TargetGroup_TargetGroupAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TargetGroup_TargetGroupAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_TargetGroupAttribute) AWSCloudFormationType() string {
+func (r *TargetGroup_TargetGroupAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::TargetGroup.TargetGroupAttribute"
 }

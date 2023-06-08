@@ -8,7 +8,7 @@ import (
 
 // Channel_OutputLocationRef AWS CloudFormation Resource (AWS::MediaLive::Channel.OutputLocationRef)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputlocationref.html
-type Channel_OutputLocationRef struct {
+type Channel_OutputLocationRef[T any] struct {
 
 	// DestinationRefId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_OutputLocationRef struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_OutputLocationRef) AWSCloudFormationType() string {
+func (r *Channel_OutputLocationRef[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.OutputLocationRef"
 }

@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_AssetPropertyTimestamp AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.AssetPropertyTimestamp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertytimestamp.html
-type DetectorModel_AssetPropertyTimestamp struct {
+type DetectorModel_AssetPropertyTimestamp[T any] struct {
 
 	// OffsetInNanos AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DetectorModel_AssetPropertyTimestamp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_AssetPropertyTimestamp) AWSCloudFormationType() string {
+func (r *DetectorModel_AssetPropertyTimestamp[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.AssetPropertyTimestamp"
 }

@@ -8,22 +8,22 @@ import (
 
 // Template_NumericFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.NumericFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericformatconfiguration.html
-type Template_NumericFormatConfiguration struct {
+type Template_NumericFormatConfiguration[T any] struct {
 
 	// CurrencyDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericformatconfiguration.html#cfn-quicksight-template-numericformatconfiguration-currencydisplayformatconfiguration
-	CurrencyDisplayFormatConfiguration *Template_CurrencyDisplayFormatConfiguration `json:"CurrencyDisplayFormatConfiguration,omitempty"`
+	CurrencyDisplayFormatConfiguration *Template_CurrencyDisplayFormatConfiguration[any] `json:"CurrencyDisplayFormatConfiguration,omitempty"`
 
 	// NumberDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericformatconfiguration.html#cfn-quicksight-template-numericformatconfiguration-numberdisplayformatconfiguration
-	NumberDisplayFormatConfiguration *Template_NumberDisplayFormatConfiguration `json:"NumberDisplayFormatConfiguration,omitempty"`
+	NumberDisplayFormatConfiguration *Template_NumberDisplayFormatConfiguration[any] `json:"NumberDisplayFormatConfiguration,omitempty"`
 
 	// PercentageDisplayFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericformatconfiguration.html#cfn-quicksight-template-numericformatconfiguration-percentagedisplayformatconfiguration
-	PercentageDisplayFormatConfiguration *Template_PercentageDisplayFormatConfiguration `json:"PercentageDisplayFormatConfiguration,omitempty"`
+	PercentageDisplayFormatConfiguration *Template_PercentageDisplayFormatConfiguration[any] `json:"PercentageDisplayFormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_NumericFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumericFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_NumericFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumericFormatConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // MonitoringSchedule_BaselineConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.BaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html
-type MonitoringSchedule_BaselineConfig struct {
+type MonitoringSchedule_BaselineConfig[T any] struct {
 
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html#cfn-sagemaker-monitoringschedule-baselineconfig-constraintsresource
-	ConstraintsResource *MonitoringSchedule_ConstraintsResource `json:"ConstraintsResource,omitempty"`
+	ConstraintsResource *MonitoringSchedule_ConstraintsResource[any] `json:"ConstraintsResource,omitempty"`
 
 	// StatisticsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html#cfn-sagemaker-monitoringschedule-baselineconfig-statisticsresource
-	StatisticsResource *MonitoringSchedule_StatisticsResource `json:"StatisticsResource,omitempty"`
+	StatisticsResource *MonitoringSchedule_StatisticsResource[any] `json:"StatisticsResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type MonitoringSchedule_BaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_BaselineConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_BaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.BaselineConfig"
 }

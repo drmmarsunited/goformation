@@ -8,12 +8,12 @@ import (
 
 // Theme_ThemeValue AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Theme.ThemeValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalue.html
-type Theme_ThemeValue struct {
+type Theme_ThemeValue[T any] struct {
 
 	// Children AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalue.html#cfn-amplifyuibuilder-theme-themevalue-children
-	Children []Theme_ThemeValues `json:"Children,omitempty"`
+	Children []Theme_ThemeValues[any] `json:"Children,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Theme_ThemeValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_ThemeValue) AWSCloudFormationType() string {
+func (r *Theme_ThemeValue[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Theme.ThemeValue"
 }

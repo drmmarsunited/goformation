@@ -8,7 +8,7 @@ import (
 
 // InferenceExperiment_EndpointMetadata AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.EndpointMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-endpointmetadata.html
-type InferenceExperiment_EndpointMetadata struct {
+type InferenceExperiment_EndpointMetadata[T any] struct {
 
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type InferenceExperiment_EndpointMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_EndpointMetadata) AWSCloudFormationType() string {
+func (r *InferenceExperiment_EndpointMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.EndpointMetadata"
 }

@@ -11,17 +11,17 @@ import (
 
 // HealthCheck AWS CloudFormation Resource (AWS::Route53::HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
-type HealthCheck struct {
+type HealthCheck[T any] struct {
 
 	// HealthCheckConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig
-	HealthCheckConfig *HealthCheck_HealthCheckConfig `json:"HealthCheckConfig"`
+	HealthCheckConfig *HealthCheck_HealthCheckConfig[any] `json:"HealthCheckConfig"`
 
 	// HealthCheckTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags
-	HealthCheckTags []HealthCheck_HealthCheckTag `json:"HealthCheckTags,omitempty"`
+	HealthCheckTags []HealthCheck_HealthCheckTag[any] `json:"HealthCheckTags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type HealthCheck struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HealthCheck) AWSCloudFormationType() string {
+func (r *HealthCheck[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HealthCheck"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r HealthCheck) MarshalJSON() ([]byte, error) {
-	type Properties HealthCheck
+func (r HealthCheck[any]) MarshalJSON() ([]byte, error) {
+	type Properties HealthCheck[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r HealthCheck) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *HealthCheck) UnmarshalJSON(b []byte) error {
-	type Properties HealthCheck
+func (r *HealthCheck[any]) UnmarshalJSON(b []byte) error {
+	type Properties HealthCheck[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *HealthCheck) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = HealthCheck(*res.Properties)
+		*r = HealthCheck[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

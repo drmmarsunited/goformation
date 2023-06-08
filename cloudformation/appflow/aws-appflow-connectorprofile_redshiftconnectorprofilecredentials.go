@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_RedshiftConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofilecredentials.html
-type ConnectorProfile_RedshiftConnectorProfileCredentials struct {
+type ConnectorProfile_RedshiftConnectorProfileCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConnectorProfile_RedshiftConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_RedshiftConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_RedshiftConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileCredentials"
 }

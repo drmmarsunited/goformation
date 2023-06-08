@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_TransformInput AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transforminput.html
-type ModelPackage_TransformInput struct {
+type ModelPackage_TransformInput[T any] struct {
 
 	// CompressionType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ModelPackage_TransformInput struct {
 	// DataSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transforminput.html#cfn-sagemaker-modelpackage-transforminput-datasource
-	DataSource *ModelPackage_DataSource `json:"DataSource"`
+	DataSource *ModelPackage_DataSource[any] `json:"DataSource"`
 
 	// SplitType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ModelPackage_TransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_TransformInput) AWSCloudFormationType() string {
+func (r *ModelPackage_TransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.TransformInput"
 }

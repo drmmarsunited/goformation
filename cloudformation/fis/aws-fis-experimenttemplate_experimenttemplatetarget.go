@@ -8,12 +8,12 @@ import (
 
 // ExperimentTemplate_ExperimentTemplateTarget AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html
-type ExperimentTemplate_ExperimentTemplateTarget struct {
+type ExperimentTemplate_ExperimentTemplateTarget[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-filters
-	Filters []ExperimentTemplate_ExperimentTemplateTargetFilter `json:"Filters,omitempty"`
+	Filters []ExperimentTemplate_ExperimentTemplateTargetFilter[any] `json:"Filters,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ExperimentTemplate_ExperimentTemplateTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_ExperimentTemplateTarget) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_ExperimentTemplateTarget[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.ExperimentTemplateTarget"
 }

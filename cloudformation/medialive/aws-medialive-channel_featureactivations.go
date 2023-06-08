@@ -8,7 +8,7 @@ import (
 
 // Channel_FeatureActivations AWS CloudFormation Resource (AWS::MediaLive::Channel.FeatureActivations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-featureactivations.html
-type Channel_FeatureActivations struct {
+type Channel_FeatureActivations[T any] struct {
 
 	// InputPrepareScheduleActions AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_FeatureActivations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FeatureActivations) AWSCloudFormationType() string {
+func (r *Channel_FeatureActivations[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FeatureActivations"
 }

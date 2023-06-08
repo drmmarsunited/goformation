@@ -8,12 +8,12 @@ import (
 
 // Volume_NfsExports AWS CloudFormation Resource (AWS::FSx::Volume.NfsExports)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports.html
-type Volume_NfsExports struct {
+type Volume_NfsExports[T any] struct {
 
 	// ClientConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports.html#cfn-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations
-	ClientConfigurations []Volume_ClientConfigurations `json:"ClientConfigurations"`
+	ClientConfigurations []Volume_ClientConfigurations[any] `json:"ClientConfigurations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Volume_NfsExports struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_NfsExports) AWSCloudFormationType() string {
+func (r *Volume_NfsExports[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.NfsExports"
 }

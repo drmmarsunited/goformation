@@ -8,12 +8,12 @@ import (
 
 // DataSource_WebCrawlerAuthenticationConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerAuthenticationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerauthenticationconfiguration.html
-type DataSource_WebCrawlerAuthenticationConfiguration struct {
+type DataSource_WebCrawlerAuthenticationConfiguration[T any] struct {
 
 	// BasicAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerauthenticationconfiguration.html#cfn-kendra-datasource-webcrawlerauthenticationconfiguration-basicauthentication
-	BasicAuthentication []DataSource_WebCrawlerBasicAuthentication `json:"BasicAuthentication,omitempty"`
+	BasicAuthentication []DataSource_WebCrawlerBasicAuthentication[any] `json:"BasicAuthentication,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSource_WebCrawlerAuthenticationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_WebCrawlerAuthenticationConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_WebCrawlerAuthenticationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.WebCrawlerAuthenticationConfiguration"
 }

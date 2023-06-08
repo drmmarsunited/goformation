@@ -12,7 +12,7 @@ import (
 
 // Application AWS CloudFormation Resource (AWS::EMRServerless::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html
-type Application struct {
+type Application[T any] struct {
 
 	// Architecture AWS CloudFormation Property
 	// Required: false
@@ -22,27 +22,27 @@ type Application struct {
 	// AutoStartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostartconfiguration
-	AutoStartConfiguration *Application_AutoStartConfiguration `json:"AutoStartConfiguration,omitempty"`
+	AutoStartConfiguration *Application_AutoStartConfiguration[any] `json:"AutoStartConfiguration,omitempty"`
 
 	// AutoStopConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostopconfiguration
-	AutoStopConfiguration *Application_AutoStopConfiguration `json:"AutoStopConfiguration,omitempty"`
+	AutoStopConfiguration *Application_AutoStopConfiguration[any] `json:"AutoStopConfiguration,omitempty"`
 
 	// ImageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-imageconfiguration
-	ImageConfiguration *Application_ImageConfigurationInput `json:"ImageConfiguration,omitempty"`
+	ImageConfiguration *Application_ImageConfigurationInput[any] `json:"ImageConfiguration,omitempty"`
 
 	// InitialCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-initialcapacity
-	InitialCapacity []Application_InitialCapacityConfigKeyValuePair `json:"InitialCapacity,omitempty"`
+	InitialCapacity []Application_InitialCapacityConfigKeyValuePair[any] `json:"InitialCapacity,omitempty"`
 
 	// MaximumCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-maximumcapacity
-	MaximumCapacity *Application_MaximumAllowedResources `json:"MaximumCapacity,omitempty"`
+	MaximumCapacity *Application_MaximumAllowedResources[any] `json:"MaximumCapacity,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Application struct {
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-networkconfiguration
-	NetworkConfiguration *Application_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Application_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// ReleaseLabel AWS CloudFormation Property
 	// Required: true
@@ -72,7 +72,7 @@ type Application struct {
 	// WorkerTypeSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-workertypespecifications
-	WorkerTypeSpecifications map[string]Application_WorkerTypeSpecificationInput `json:"WorkerTypeSpecifications,omitempty"`
+	WorkerTypeSpecifications map[string]Application_WorkerTypeSpecificationInput[any] `json:"WorkerTypeSpecifications,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -91,14 +91,15 @@ type Application struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application) AWSCloudFormationType() string {
+func (r *Application[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Application) MarshalJSON() ([]byte, error) {
-	type Properties Application
+func (r Application[any]) MarshalJSON() ([]byte, error) {
+	type Properties Application[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r Application) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Application) UnmarshalJSON(b []byte) error {
-	type Properties Application
+func (r *Application[any]) UnmarshalJSON(b []byte) error {
+	type Properties Application[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *Application) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Application(*res.Properties)
+		*r = Application[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

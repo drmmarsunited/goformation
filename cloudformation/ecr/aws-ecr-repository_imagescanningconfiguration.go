@@ -8,12 +8,12 @@ import (
 
 // Repository_ImageScanningConfiguration AWS CloudFormation Resource (AWS::ECR::Repository.ImageScanningConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html
-type Repository_ImageScanningConfiguration struct {
+type Repository_ImageScanningConfiguration[T any] struct {
 
 	// ScanOnPush AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html#cfn-ecr-repository-imagescanningconfiguration-scanonpush
-	ScanOnPush *bool `json:"ScanOnPush,omitempty"`
+	ScanOnPush *T `json:"ScanOnPush,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Repository_ImageScanningConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository_ImageScanningConfiguration) AWSCloudFormationType() string {
+func (r *Repository_ImageScanningConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::Repository.ImageScanningConfiguration"
 }

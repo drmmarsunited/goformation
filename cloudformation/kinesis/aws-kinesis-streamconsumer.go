@@ -11,7 +11,7 @@ import (
 
 // StreamConsumer AWS CloudFormation Resource (AWS::Kinesis::StreamConsumer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html
-type StreamConsumer struct {
+type StreamConsumer[T any] struct {
 
 	// ConsumerName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type StreamConsumer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamConsumer) AWSCloudFormationType() string {
+func (r *StreamConsumer[any]) AWSCloudFormationType() string {
 	return "AWS::Kinesis::StreamConsumer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StreamConsumer) MarshalJSON() ([]byte, error) {
-	type Properties StreamConsumer
+func (r StreamConsumer[any]) MarshalJSON() ([]byte, error) {
+	type Properties StreamConsumer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r StreamConsumer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StreamConsumer) UnmarshalJSON(b []byte) error {
-	type Properties StreamConsumer
+func (r *StreamConsumer[any]) UnmarshalJSON(b []byte) error {
+	type Properties StreamConsumer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *StreamConsumer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StreamConsumer(*res.Properties)
+		*r = StreamConsumer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

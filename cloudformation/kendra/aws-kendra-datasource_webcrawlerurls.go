@@ -8,17 +8,17 @@ import (
 
 // DataSource_WebCrawlerUrls AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerUrls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerurls.html
-type DataSource_WebCrawlerUrls struct {
+type DataSource_WebCrawlerUrls[T any] struct {
 
 	// SeedUrlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerurls.html#cfn-kendra-datasource-webcrawlerurls-seedurlconfiguration
-	SeedUrlConfiguration *DataSource_WebCrawlerSeedUrlConfiguration `json:"SeedUrlConfiguration,omitempty"`
+	SeedUrlConfiguration *DataSource_WebCrawlerSeedUrlConfiguration[any] `json:"SeedUrlConfiguration,omitempty"`
 
 	// SiteMapsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerurls.html#cfn-kendra-datasource-webcrawlerurls-sitemapsconfiguration
-	SiteMapsConfiguration *DataSource_WebCrawlerSiteMapsConfiguration `json:"SiteMapsConfiguration,omitempty"`
+	SiteMapsConfiguration *DataSource_WebCrawlerSiteMapsConfiguration[any] `json:"SiteMapsConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_WebCrawlerUrls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_WebCrawlerUrls) AWSCloudFormationType() string {
+func (r *DataSource_WebCrawlerUrls[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.WebCrawlerUrls"
 }

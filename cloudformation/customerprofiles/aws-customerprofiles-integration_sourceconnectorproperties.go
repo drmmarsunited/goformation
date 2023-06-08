@@ -8,32 +8,32 @@ import (
 
 // Integration_SourceConnectorProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.SourceConnectorProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html
-type Integration_SourceConnectorProperties struct {
+type Integration_SourceConnectorProperties[T any] struct {
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-marketo
-	Marketo *Integration_MarketoSourceProperties `json:"Marketo,omitempty"`
+	Marketo *Integration_MarketoSourceProperties[any] `json:"Marketo,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-s3
-	S3 *Integration_S3SourceProperties `json:"S3,omitempty"`
+	S3 *Integration_S3SourceProperties[any] `json:"S3,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-salesforce
-	Salesforce *Integration_SalesforceSourceProperties `json:"Salesforce,omitempty"`
+	Salesforce *Integration_SalesforceSourceProperties[any] `json:"Salesforce,omitempty"`
 
 	// ServiceNow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-servicenow
-	ServiceNow *Integration_ServiceNowSourceProperties `json:"ServiceNow,omitempty"`
+	ServiceNow *Integration_ServiceNowSourceProperties[any] `json:"ServiceNow,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-zendesk
-	Zendesk *Integration_ZendeskSourceProperties `json:"Zendesk,omitempty"`
+	Zendesk *Integration_ZendeskSourceProperties[any] `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Integration_SourceConnectorProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_SourceConnectorProperties) AWSCloudFormationType() string {
+func (r *Integration_SourceConnectorProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.SourceConnectorProperties"
 }

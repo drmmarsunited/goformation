@@ -8,7 +8,7 @@ import (
 
 // Flow_AmplitudeSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.AmplitudeSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-amplitudesourceproperties.html
-type Flow_AmplitudeSourceProperties struct {
+type Flow_AmplitudeSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_AmplitudeSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_AmplitudeSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_AmplitudeSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.AmplitudeSourceProperties"
 }

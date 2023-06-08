@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_Alias AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.Alias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-alias.html
-type AccessPoint_Alias struct {
+type AccessPoint_Alias[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AccessPoint_Alias struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_Alias) AWSCloudFormationType() string {
+func (r *AccessPoint_Alias[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPoint.Alias"
 }

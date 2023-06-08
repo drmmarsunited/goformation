@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_CustomAuthCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.CustomAuthCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customauthcredentials.html
-type ConnectorProfile_CustomAuthCredentials struct {
+type ConnectorProfile_CustomAuthCredentials[T any] struct {
 
 	// CredentialsMap AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConnectorProfile_CustomAuthCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_CustomAuthCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_CustomAuthCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.CustomAuthCredentials"
 }

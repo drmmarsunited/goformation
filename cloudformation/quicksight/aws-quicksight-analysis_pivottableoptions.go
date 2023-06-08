@@ -8,17 +8,17 @@ import (
 
 // Analysis_PivotTableOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html
-type Analysis_PivotTableOptions struct {
+type Analysis_PivotTableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-cellstyle
-	CellStyle *Analysis_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Analysis_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// ColumnHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-columnheaderstyle
-	ColumnHeaderStyle *Analysis_TableCellStyle `json:"ColumnHeaderStyle,omitempty"`
+	ColumnHeaderStyle *Analysis_TableCellStyle[any] `json:"ColumnHeaderStyle,omitempty"`
 
 	// ColumnNamesVisibility AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Analysis_PivotTableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Analysis_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Analysis_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// RowFieldNamesStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-rowfieldnamesstyle
-	RowFieldNamesStyle *Analysis_TableCellStyle `json:"RowFieldNamesStyle,omitempty"`
+	RowFieldNamesStyle *Analysis_TableCellStyle[any] `json:"RowFieldNamesStyle,omitempty"`
 
 	// RowHeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-rowheaderstyle
-	RowHeaderStyle *Analysis_TableCellStyle `json:"RowHeaderStyle,omitempty"`
+	RowHeaderStyle *Analysis_TableCellStyle[any] `json:"RowHeaderStyle,omitempty"`
 
 	// SingleMetricVisibility AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Analysis_PivotTableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableOptions) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableOptions"
 }

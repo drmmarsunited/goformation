@@ -11,7 +11,7 @@ import (
 
 // TransitGatewayMulticastGroupSource AWS CloudFormation Resource (AWS::EC2::TransitGatewayMulticastGroupSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html
-type TransitGatewayMulticastGroupSource struct {
+type TransitGatewayMulticastGroupSource[T any] struct {
 
 	// GroupIpAddress AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type TransitGatewayMulticastGroupSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayMulticastGroupSource) AWSCloudFormationType() string {
+func (r *TransitGatewayMulticastGroupSource[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayMulticastGroupSource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayMulticastGroupSource) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayMulticastGroupSource
+func (r TransitGatewayMulticastGroupSource[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayMulticastGroupSource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r TransitGatewayMulticastGroupSource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayMulticastGroupSource) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayMulticastGroupSource
+func (r *TransitGatewayMulticastGroupSource[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayMulticastGroupSource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *TransitGatewayMulticastGroupSource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayMulticastGroupSource(*res.Properties)
+		*r = TransitGatewayMulticastGroupSource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // CodeSigningConfig_AllowedPublishers AWS CloudFormation Resource (AWS::Lambda::CodeSigningConfig.AllowedPublishers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-allowedpublishers.html
-type CodeSigningConfig_AllowedPublishers struct {
+type CodeSigningConfig_AllowedPublishers[T any] struct {
 
 	// SigningProfileVersionArns AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type CodeSigningConfig_AllowedPublishers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CodeSigningConfig_AllowedPublishers) AWSCloudFormationType() string {
+func (r *CodeSigningConfig_AllowedPublishers[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::CodeSigningConfig.AllowedPublishers"
 }

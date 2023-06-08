@@ -8,7 +8,7 @@ import (
 
 // Project_Environment AWS CloudFormation Resource (AWS::CodeBuild::Project.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
-type Project_Environment struct {
+type Project_Environment[T any] struct {
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Project_Environment struct {
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-environmentvariables
-	EnvironmentVariables []Project_EnvironmentVariable `json:"EnvironmentVariables,omitempty"`
+	EnvironmentVariables []Project_EnvironmentVariable[any] `json:"EnvironmentVariables,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type Project_Environment struct {
 	// PrivilegedMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode
-	PrivilegedMode *bool `json:"PrivilegedMode,omitempty"`
+	PrivilegedMode *T `json:"PrivilegedMode,omitempty"`
 
 	// RegistryCredential AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-registrycredential
-	RegistryCredential *Project_RegistryCredential `json:"RegistryCredential,omitempty"`
+	RegistryCredential *Project_RegistryCredential[any] `json:"RegistryCredential,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type Project_Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_Environment) AWSCloudFormationType() string {
+func (r *Project_Environment[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.Environment"
 }

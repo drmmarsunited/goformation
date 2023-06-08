@@ -11,7 +11,7 @@ import (
 
 // Form AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html
-type Form struct {
+type Form[T any] struct {
 
 	// AppId AWS CloudFormation Property
 	// Required: false
@@ -21,12 +21,12 @@ type Form struct {
 	// Cta AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-cta
-	Cta *Form_FormCTA `json:"Cta,omitempty"`
+	Cta *Form_FormCTA[any] `json:"Cta,omitempty"`
 
 	// DataType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-datatype
-	DataType *Form_FormDataTypeConfig `json:"DataType"`
+	DataType *Form_FormDataTypeConfig[any] `json:"DataType"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Form struct {
 	// Fields AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-fields
-	Fields map[string]Form_FieldConfig `json:"Fields"`
+	Fields map[string]Form_FieldConfig[any] `json:"Fields"`
 
 	// FormActionType AWS CloudFormation Property
 	// Required: true
@@ -61,12 +61,12 @@ type Form struct {
 	// SectionalElements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-sectionalelements
-	SectionalElements map[string]Form_SectionalElement `json:"SectionalElements"`
+	SectionalElements map[string]Form_SectionalElement[any] `json:"SectionalElements"`
 
 	// Style AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-style
-	Style *Form_FormStyle `json:"Style"`
+	Style *Form_FormStyle[any] `json:"Style"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -90,14 +90,15 @@ type Form struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form) AWSCloudFormationType() string {
+func (r *Form[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Form) MarshalJSON() ([]byte, error) {
-	type Properties Form
+func (r Form[any]) MarshalJSON() ([]byte, error) {
+	type Properties Form[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r Form) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Form) UnmarshalJSON(b []byte) error {
-	type Properties Form
+func (r *Form[any]) UnmarshalJSON(b []byte) error {
+	type Properties Form[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *Form) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Form(*res.Properties)
+		*r = Form[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

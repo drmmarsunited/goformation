@@ -8,7 +8,7 @@ import (
 
 // Analysis_DataSetReference AWS CloudFormation Resource (AWS::QuickSight::Analysis.DataSetReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datasetreference.html
-type Analysis_DataSetReference struct {
+type Analysis_DataSetReference[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_DataSetReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DataSetReference) AWSCloudFormationType() string {
+func (r *Analysis_DataSetReference[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DataSetReference"
 }

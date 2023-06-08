@@ -8,7 +8,7 @@ import (
 
 // Bot_SlotDefaultValue AWS CloudFormation Resource (AWS::Lex::Bot.SlotDefaultValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotdefaultvalue.html
-type Bot_SlotDefaultValue struct {
+type Bot_SlotDefaultValue[T any] struct {
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_SlotDefaultValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotDefaultValue) AWSCloudFormationType() string {
+func (r *Bot_SlotDefaultValue[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotDefaultValue"
 }

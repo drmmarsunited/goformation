@@ -8,42 +8,42 @@ import (
 
 // Analysis_AnalysisDefinition AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnalysisDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html
-type Analysis_AnalysisDefinition struct {
+type Analysis_AnalysisDefinition[T any] struct {
 
 	// AnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-analysisdefaults
-	AnalysisDefaults *Analysis_AnalysisDefaults `json:"AnalysisDefaults,omitempty"`
+	AnalysisDefaults *Analysis_AnalysisDefaults[any] `json:"AnalysisDefaults,omitempty"`
 
 	// CalculatedFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-calculatedfields
-	CalculatedFields []Analysis_CalculatedField `json:"CalculatedFields,omitempty"`
+	CalculatedFields []Analysis_CalculatedField[any] `json:"CalculatedFields,omitempty"`
 
 	// ColumnConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-columnconfigurations
-	ColumnConfigurations []Analysis_ColumnConfiguration `json:"ColumnConfigurations,omitempty"`
+	ColumnConfigurations []Analysis_ColumnConfiguration[any] `json:"ColumnConfigurations,omitempty"`
 
 	// DataSetIdentifierDeclarations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-datasetidentifierdeclarations
-	DataSetIdentifierDeclarations []Analysis_DataSetIdentifierDeclaration `json:"DataSetIdentifierDeclarations"`
+	DataSetIdentifierDeclarations []Analysis_DataSetIdentifierDeclaration[any] `json:"DataSetIdentifierDeclarations"`
 
 	// FilterGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-filtergroups
-	FilterGroups []Analysis_FilterGroup `json:"FilterGroups,omitempty"`
+	FilterGroups []Analysis_FilterGroup[any] `json:"FilterGroups,omitempty"`
 
 	// ParameterDeclarations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-parameterdeclarations
-	ParameterDeclarations []Analysis_ParameterDeclaration `json:"ParameterDeclarations,omitempty"`
+	ParameterDeclarations []Analysis_ParameterDeclaration[any] `json:"ParameterDeclarations,omitempty"`
 
 	// Sheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-sheets
-	Sheets []Analysis_SheetDefinition `json:"Sheets,omitempty"`
+	Sheets []Analysis_SheetDefinition[any] `json:"Sheets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_AnalysisDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AnalysisDefinition) AWSCloudFormationType() string {
+func (r *Analysis_AnalysisDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AnalysisDefinition"
 }

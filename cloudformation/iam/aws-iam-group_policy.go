@@ -8,7 +8,7 @@ import (
 
 // Group_Policy AWS CloudFormation Resource (AWS::IAM::Group.Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
-type Group_Policy struct {
+type Group_Policy[T any] struct {
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Group_Policy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_Policy) AWSCloudFormationType() string {
+func (r *Group_Policy[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::Group.Policy"
 }

@@ -8,7 +8,7 @@ import (
 
 // ApplicationSettings_CampaignHook AWS CloudFormation Resource (AWS::Pinpoint::ApplicationSettings.CampaignHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html
-type ApplicationSettings_CampaignHook struct {
+type ApplicationSettings_CampaignHook[T any] struct {
 
 	// LambdaFunctionName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ApplicationSettings_CampaignHook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationSettings_CampaignHook) AWSCloudFormationType() string {
+func (r *ApplicationSettings_CampaignHook[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::ApplicationSettings.CampaignHook"
 }

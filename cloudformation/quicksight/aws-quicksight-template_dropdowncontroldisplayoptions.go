@@ -8,17 +8,17 @@ import (
 
 // Template_DropDownControlDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Template.DropDownControlDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dropdowncontroldisplayoptions.html
-type Template_DropDownControlDisplayOptions struct {
+type Template_DropDownControlDisplayOptions[T any] struct {
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dropdowncontroldisplayoptions.html#cfn-quicksight-template-dropdowncontroldisplayoptions-selectalloptions
-	SelectAllOptions *Template_ListControlSelectAllOptions `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *Template_ListControlSelectAllOptions[any] `json:"SelectAllOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-dropdowncontroldisplayoptions.html#cfn-quicksight-template-dropdowncontroldisplayoptions-titleoptions
-	TitleOptions *Template_LabelOptions `json:"TitleOptions,omitempty"`
+	TitleOptions *Template_LabelOptions[any] `json:"TitleOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_DropDownControlDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DropDownControlDisplayOptions) AWSCloudFormationType() string {
+func (r *Template_DropDownControlDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DropDownControlDisplayOptions"
 }

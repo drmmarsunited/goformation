@@ -8,12 +8,12 @@ import (
 
 // OriginEndpoint_MssEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.MssEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-mssencryption.html
-type OriginEndpoint_MssEncryption struct {
+type OriginEndpoint_MssEncryption[T any] struct {
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-mssencryption.html#cfn-mediapackage-originendpoint-mssencryption-spekekeyprovider
-	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type OriginEndpoint_MssEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_MssEncryption) AWSCloudFormationType() string {
+func (r *OriginEndpoint_MssEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.MssEncryption"
 }

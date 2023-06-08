@@ -8,7 +8,7 @@ import (
 
 // Bucket_MetricsConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.MetricsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
-type Bucket_MetricsConfiguration struct {
+type Bucket_MetricsConfiguration[T any] struct {
 
 	// AccessPointArn AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Bucket_MetricsConfiguration struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html#cfn-s3-bucket-metricsconfiguration-tagfilters
-	TagFilters []Bucket_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Bucket_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bucket_MetricsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_MetricsConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_MetricsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.MetricsConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // ComponentVersion_LambdaFunctionRecipeSource AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaFunctionRecipeSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html
-type ComponentVersion_LambdaFunctionRecipeSource struct {
+type ComponentVersion_LambdaFunctionRecipeSource[T any] struct {
 
 	// ComponentDependencies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentdependencies
-	ComponentDependencies map[string]ComponentVersion_ComponentDependencyRequirement `json:"ComponentDependencies,omitempty"`
+	ComponentDependencies map[string]ComponentVersion_ComponentDependencyRequirement[any] `json:"ComponentDependencies,omitempty"`
 
 	// ComponentLambdaParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentlambdaparameters
-	ComponentLambdaParameters *ComponentVersion_LambdaExecutionParameters `json:"ComponentLambdaParameters,omitempty"`
+	ComponentLambdaParameters *ComponentVersion_LambdaExecutionParameters[any] `json:"ComponentLambdaParameters,omitempty"`
 
 	// ComponentName AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ComponentVersion_LambdaFunctionRecipeSource struct {
 	// ComponentPlatforms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentplatforms
-	ComponentPlatforms []ComponentVersion_ComponentPlatform `json:"ComponentPlatforms,omitempty"`
+	ComponentPlatforms []ComponentVersion_ComponentPlatform[any] `json:"ComponentPlatforms,omitempty"`
 
 	// ComponentVersion AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ComponentVersion_LambdaFunctionRecipeSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaFunctionRecipeSource) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaFunctionRecipeSource[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaFunctionRecipeSource"
 }

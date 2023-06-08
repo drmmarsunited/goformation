@@ -11,7 +11,7 @@ import (
 
 // License AWS CloudFormation Resource (AWS::LicenseManager::License)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html
-type License struct {
+type License[T any] struct {
 
 	// Beneficiary AWS CloudFormation Property
 	// Required: false
@@ -21,12 +21,12 @@ type License struct {
 	// ConsumptionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-consumptionconfiguration
-	ConsumptionConfiguration *License_ConsumptionConfiguration `json:"ConsumptionConfiguration"`
+	ConsumptionConfiguration *License_ConsumptionConfiguration[any] `json:"ConsumptionConfiguration"`
 
 	// Entitlements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-entitlements
-	Entitlements []License_Entitlement `json:"Entitlements"`
+	Entitlements []License_Entitlement[any] `json:"Entitlements"`
 
 	// HomeRegion AWS CloudFormation Property
 	// Required: true
@@ -36,12 +36,12 @@ type License struct {
 	// Issuer AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-issuer
-	Issuer *License_IssuerData `json:"Issuer"`
+	Issuer *License_IssuerData[any] `json:"Issuer"`
 
 	// LicenseMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensemetadata
-	LicenseMetadata []License_Metadata `json:"LicenseMetadata,omitempty"`
+	LicenseMetadata []License_Metadata[any] `json:"LicenseMetadata,omitempty"`
 
 	// LicenseName AWS CloudFormation Property
 	// Required: true
@@ -66,7 +66,7 @@ type License struct {
 	// Validity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-validity
-	Validity *License_ValidityDateFormat `json:"Validity"`
+	Validity *License_ValidityDateFormat[any] `json:"Validity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -85,14 +85,15 @@ type License struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License) AWSCloudFormationType() string {
+func (r *License[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r License) MarshalJSON() ([]byte, error) {
-	type Properties License
+func (r License[any]) MarshalJSON() ([]byte, error) {
+	type Properties License[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r License) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *License) UnmarshalJSON(b []byte) error {
-	type Properties License
+func (r *License[any]) UnmarshalJSON(b []byte) error {
+	type Properties License[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *License) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = License(*res.Properties)
+		*r = License[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

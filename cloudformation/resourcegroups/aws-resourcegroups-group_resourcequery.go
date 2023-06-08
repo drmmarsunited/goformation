@@ -8,12 +8,12 @@ import (
 
 // Group_ResourceQuery AWS CloudFormation Resource (AWS::ResourceGroups::Group.ResourceQuery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-resourcequery.html
-type Group_ResourceQuery struct {
+type Group_ResourceQuery[T any] struct {
 
 	// Query AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-resourcequery.html#cfn-resourcegroups-group-resourcequery-query
-	Query *Group_Query `json:"Query,omitempty"`
+	Query *Group_Query[any] `json:"Query,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Group_ResourceQuery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_ResourceQuery) AWSCloudFormationType() string {
+func (r *Group_ResourceQuery[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceGroups::Group.ResourceQuery"
 }

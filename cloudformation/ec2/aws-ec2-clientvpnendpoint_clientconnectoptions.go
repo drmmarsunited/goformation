@@ -8,12 +8,12 @@ import (
 
 // ClientVpnEndpoint_ClientConnectOptions AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.ClientConnectOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientconnectoptions.html
-type ClientVpnEndpoint_ClientConnectOptions struct {
+type ClientVpnEndpoint_ClientConnectOptions[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientconnectoptions.html#cfn-ec2-clientvpnendpoint-clientconnectoptions-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// LambdaFunctionArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ClientVpnEndpoint_ClientConnectOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_ClientConnectOptions) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_ClientConnectOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.ClientConnectOptions"
 }

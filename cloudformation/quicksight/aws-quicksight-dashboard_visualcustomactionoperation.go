@@ -8,27 +8,27 @@ import (
 
 // Dashboard_VisualCustomActionOperation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualCustomActionOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomactionoperation.html
-type Dashboard_VisualCustomActionOperation struct {
+type Dashboard_VisualCustomActionOperation[T any] struct {
 
 	// FilterOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomactionoperation.html#cfn-quicksight-dashboard-visualcustomactionoperation-filteroperation
-	FilterOperation *Dashboard_CustomActionFilterOperation `json:"FilterOperation,omitempty"`
+	FilterOperation *Dashboard_CustomActionFilterOperation[any] `json:"FilterOperation,omitempty"`
 
 	// NavigationOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomactionoperation.html#cfn-quicksight-dashboard-visualcustomactionoperation-navigationoperation
-	NavigationOperation *Dashboard_CustomActionNavigationOperation `json:"NavigationOperation,omitempty"`
+	NavigationOperation *Dashboard_CustomActionNavigationOperation[any] `json:"NavigationOperation,omitempty"`
 
 	// SetParametersOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomactionoperation.html#cfn-quicksight-dashboard-visualcustomactionoperation-setparametersoperation
-	SetParametersOperation *Dashboard_CustomActionSetParametersOperation `json:"SetParametersOperation,omitempty"`
+	SetParametersOperation *Dashboard_CustomActionSetParametersOperation[any] `json:"SetParametersOperation,omitempty"`
 
 	// URLOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualcustomactionoperation.html#cfn-quicksight-dashboard-visualcustomactionoperation-urloperation
-	URLOperation *Dashboard_CustomActionURLOperation `json:"URLOperation,omitempty"`
+	URLOperation *Dashboard_CustomActionURLOperation[any] `json:"URLOperation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_VisualCustomActionOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualCustomActionOperation) AWSCloudFormationType() string {
+func (r *Dashboard_VisualCustomActionOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualCustomActionOperation"
 }

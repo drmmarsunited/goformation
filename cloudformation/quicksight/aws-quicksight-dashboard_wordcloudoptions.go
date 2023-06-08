@@ -8,7 +8,7 @@ import (
 
 // Dashboard_WordCloudOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.WordCloudOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html
-type Dashboard_WordCloudOptions struct {
+type Dashboard_WordCloudOptions[T any] struct {
 
 	// CloudLayout AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_WordCloudOptions struct {
 	// MaximumStringLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-maximumstringlength
-	MaximumStringLength *float64 `json:"MaximumStringLength,omitempty"`
+	MaximumStringLength *T `json:"MaximumStringLength,omitempty"`
 
 	// WordCasing AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Dashboard_WordCloudOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_WordCloudOptions) AWSCloudFormationType() string {
+func (r *Dashboard_WordCloudOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.WordCloudOptions"
 }

@@ -8,12 +8,12 @@ import (
 
 // Pipe_BatchRetryStrategy AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchRetryStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchretrystrategy.html
-type Pipe_BatchRetryStrategy struct {
+type Pipe_BatchRetryStrategy[T any] struct {
 
 	// Attempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchretrystrategy.html#cfn-pipes-pipe-batchretrystrategy-attempts
-	Attempts *int `json:"Attempts,omitempty"`
+	Attempts *T `json:"Attempts,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_BatchRetryStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchRetryStrategy) AWSCloudFormationType() string {
+func (r *Pipe_BatchRetryStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchRetryStrategy"
 }

@@ -12,17 +12,17 @@ import (
 
 // LocationNFS AWS CloudFormation Resource (AWS::DataSync::LocationNFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html
-type LocationNFS struct {
+type LocationNFS[T any] struct {
 
 	// MountOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-mountoptions
-	MountOptions *LocationNFS_MountOptions `json:"MountOptions,omitempty"`
+	MountOptions *LocationNFS_MountOptions[any] `json:"MountOptions,omitempty"`
 
 	// OnPremConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-onpremconfig
-	OnPremConfig *LocationNFS_OnPremConfig `json:"OnPremConfig"`
+	OnPremConfig *LocationNFS_OnPremConfig[any] `json:"OnPremConfig"`
 
 	// ServerHostname AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type LocationNFS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationNFS) AWSCloudFormationType() string {
+func (r *LocationNFS[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationNFS"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationNFS) MarshalJSON() ([]byte, error) {
-	type Properties LocationNFS
+func (r LocationNFS[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationNFS[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r LocationNFS) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationNFS) UnmarshalJSON(b []byte) error {
-	type Properties LocationNFS
+func (r *LocationNFS[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationNFS[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *LocationNFS) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationNFS(*res.Properties)
+		*r = LocationNFS[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

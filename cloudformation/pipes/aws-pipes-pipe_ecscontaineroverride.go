@@ -8,7 +8,7 @@ import (
 
 // Pipe_EcsContainerOverride AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsContainerOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html
-type Pipe_EcsContainerOverride struct {
+type Pipe_EcsContainerOverride[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -18,27 +18,27 @@ type Pipe_EcsContainerOverride struct {
 	// Cpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-cpu
-	Cpu *int `json:"Cpu,omitempty"`
+	Cpu *T `json:"Cpu,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-environment
-	Environment []Pipe_EcsEnvironmentVariable `json:"Environment,omitempty"`
+	Environment []Pipe_EcsEnvironmentVariable[any] `json:"Environment,omitempty"`
 
 	// EnvironmentFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-environmentfiles
-	EnvironmentFiles []Pipe_EcsEnvironmentFile `json:"EnvironmentFiles,omitempty"`
+	EnvironmentFiles []Pipe_EcsEnvironmentFile[any] `json:"EnvironmentFiles,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-memory
-	Memory *int `json:"Memory,omitempty"`
+	Memory *T `json:"Memory,omitempty"`
 
 	// MemoryReservation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-memoryreservation
-	MemoryReservation *int `json:"MemoryReservation,omitempty"`
+	MemoryReservation *T `json:"MemoryReservation,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Pipe_EcsContainerOverride struct {
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-resourcerequirements
-	ResourceRequirements []Pipe_EcsResourceRequirement `json:"ResourceRequirements,omitempty"`
+	ResourceRequirements []Pipe_EcsResourceRequirement[any] `json:"ResourceRequirements,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Pipe_EcsContainerOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsContainerOverride) AWSCloudFormationType() string {
+func (r *Pipe_EcsContainerOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsContainerOverride"
 }

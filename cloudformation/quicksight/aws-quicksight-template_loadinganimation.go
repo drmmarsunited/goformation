@@ -8,7 +8,7 @@ import (
 
 // Template_LoadingAnimation AWS CloudFormation Resource (AWS::QuickSight::Template.LoadingAnimation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-loadinganimation.html
-type Template_LoadingAnimation struct {
+type Template_LoadingAnimation[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_LoadingAnimation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LoadingAnimation) AWSCloudFormationType() string {
+func (r *Template_LoadingAnimation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LoadingAnimation"
 }

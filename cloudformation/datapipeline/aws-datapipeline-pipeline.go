@@ -11,12 +11,12 @@ import (
 
 // Pipeline AWS CloudFormation Resource (AWS::DataPipeline::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
-type Pipeline struct {
+type Pipeline[T any] struct {
 
 	// Activate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
-	Activate *bool `json:"Activate,omitempty"`
+	Activate *T `json:"Activate,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -31,22 +31,22 @@ type Pipeline struct {
 	// ParameterObjects AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
-	ParameterObjects []Pipeline_ParameterObject `json:"ParameterObjects,omitempty"`
+	ParameterObjects []Pipeline_ParameterObject[any] `json:"ParameterObjects,omitempty"`
 
 	// ParameterValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
-	ParameterValues []Pipeline_ParameterValue `json:"ParameterValues,omitempty"`
+	ParameterValues []Pipeline_ParameterValue[any] `json:"ParameterValues,omitempty"`
 
 	// PipelineObjects AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
-	PipelineObjects []Pipeline_PipelineObject `json:"PipelineObjects,omitempty"`
+	PipelineObjects []Pipeline_PipelineObject[any] `json:"PipelineObjects,omitempty"`
 
 	// PipelineTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
-	PipelineTags []Pipeline_PipelineTag `json:"PipelineTags,omitempty"`
+	PipelineTags []Pipeline_PipelineTag[any] `json:"PipelineTags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type Pipeline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline) AWSCloudFormationType() string {
+func (r *Pipeline[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Pipeline) MarshalJSON() ([]byte, error) {
-	type Properties Pipeline
+func (r Pipeline[any]) MarshalJSON() ([]byte, error) {
+	type Properties Pipeline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r Pipeline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Pipeline) UnmarshalJSON(b []byte) error {
-	type Properties Pipeline
+func (r *Pipeline[any]) UnmarshalJSON(b []byte) error {
+	type Properties Pipeline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *Pipeline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Pipeline(*res.Properties)
+		*r = Pipeline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

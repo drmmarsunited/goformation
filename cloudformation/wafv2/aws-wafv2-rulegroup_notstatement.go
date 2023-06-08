@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_NotStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.NotStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-notstatement.html
-type RuleGroup_NotStatement struct {
+type RuleGroup_NotStatement[T any] struct {
 
 	// Statement AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-notstatement.html#cfn-wafv2-rulegroup-notstatement-statement
-	Statement *RuleGroup_Statement `json:"Statement"`
+	Statement *RuleGroup_Statement[any] `json:"Statement"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_NotStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_NotStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_NotStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.NotStatement"
 }

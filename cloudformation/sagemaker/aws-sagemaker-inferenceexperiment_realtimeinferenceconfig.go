@@ -8,12 +8,12 @@ import (
 
 // InferenceExperiment_RealTimeInferenceConfig AWS CloudFormation Resource (AWS::SageMaker::InferenceExperiment.RealTimeInferenceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-realtimeinferenceconfig.html
-type InferenceExperiment_RealTimeInferenceConfig struct {
+type InferenceExperiment_RealTimeInferenceConfig[T any] struct {
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-realtimeinferenceconfig.html#cfn-sagemaker-inferenceexperiment-realtimeinferenceconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type InferenceExperiment_RealTimeInferenceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceExperiment_RealTimeInferenceConfig) AWSCloudFormationType() string {
+func (r *InferenceExperiment_RealTimeInferenceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::InferenceExperiment.RealTimeInferenceConfig"
 }

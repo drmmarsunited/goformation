@@ -8,7 +8,7 @@ import (
 
 // Bot_AdvancedRecognitionSetting AWS CloudFormation Resource (AWS::Lex::Bot.AdvancedRecognitionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-advancedrecognitionsetting.html
-type Bot_AdvancedRecognitionSetting struct {
+type Bot_AdvancedRecognitionSetting[T any] struct {
 
 	// AudioRecognitionStrategy AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Bot_AdvancedRecognitionSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_AdvancedRecognitionSetting) AWSCloudFormationType() string {
+func (r *Bot_AdvancedRecognitionSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.AdvancedRecognitionSetting"
 }

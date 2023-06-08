@@ -11,7 +11,7 @@ import (
 
 // Archive AWS CloudFormation Resource (AWS::Events::Archive)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html
-type Archive struct {
+type Archive[T any] struct {
 
 	// ArchiveName AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Archive struct {
 	// RetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-retentiondays
-	RetentionDays *int `json:"RetentionDays,omitempty"`
+	RetentionDays *T `json:"RetentionDays,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type Archive struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Archive) AWSCloudFormationType() string {
+func (r *Archive[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Archive"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Archive) MarshalJSON() ([]byte, error) {
-	type Properties Archive
+func (r Archive[any]) MarshalJSON() ([]byte, error) {
+	type Properties Archive[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Archive) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Archive) UnmarshalJSON(b []byte) error {
-	type Properties Archive
+func (r *Archive[any]) UnmarshalJSON(b []byte) error {
+	type Properties Archive[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Archive) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Archive(*res.Properties)
+		*r = Archive[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AlternatePathHint AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AlternatePathHint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html
-type NetworkInsightsAnalysis_AlternatePathHint struct {
+type NetworkInsightsAnalysis_AlternatePathHint[T any] struct {
 
 	// ComponentArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type NetworkInsightsAnalysis_AlternatePathHint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AlternatePathHint) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AlternatePathHint[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AlternatePathHint"
 }

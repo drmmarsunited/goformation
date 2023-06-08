@@ -8,32 +8,32 @@ import (
 
 // ScalingPlan_ScalingInstruction AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html
-type ScalingPlan_ScalingInstruction struct {
+type ScalingPlan_ScalingInstruction[T any] struct {
 
 	// CustomizedLoadMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-customizedloadmetricspecification
-	CustomizedLoadMetricSpecification *ScalingPlan_CustomizedLoadMetricSpecification `json:"CustomizedLoadMetricSpecification,omitempty"`
+	CustomizedLoadMetricSpecification *ScalingPlan_CustomizedLoadMetricSpecification[any] `json:"CustomizedLoadMetricSpecification,omitempty"`
 
 	// DisableDynamicScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-disabledynamicscaling
-	DisableDynamicScaling *bool `json:"DisableDynamicScaling,omitempty"`
+	DisableDynamicScaling *T `json:"DisableDynamicScaling,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity T `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity T `json:"MinCapacity"`
 
 	// PredefinedLoadMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predefinedloadmetricspecification
-	PredefinedLoadMetricSpecification *ScalingPlan_PredefinedLoadMetricSpecification `json:"PredefinedLoadMetricSpecification,omitempty"`
+	PredefinedLoadMetricSpecification *ScalingPlan_PredefinedLoadMetricSpecification[any] `json:"PredefinedLoadMetricSpecification,omitempty"`
 
 	// PredictiveScalingMaxCapacityBehavior AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type ScalingPlan_ScalingInstruction struct {
 	// PredictiveScalingMaxCapacityBuffer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybuffer
-	PredictiveScalingMaxCapacityBuffer *int `json:"PredictiveScalingMaxCapacityBuffer,omitempty"`
+	PredictiveScalingMaxCapacityBuffer *T `json:"PredictiveScalingMaxCapacityBuffer,omitempty"`
 
 	// PredictiveScalingMode AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type ScalingPlan_ScalingInstruction struct {
 	// ScheduledActionBufferTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scheduledactionbuffertime
-	ScheduledActionBufferTime *int `json:"ScheduledActionBufferTime,omitempty"`
+	ScheduledActionBufferTime *T `json:"ScheduledActionBufferTime,omitempty"`
 
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true
@@ -78,7 +78,7 @@ type ScalingPlan_ScalingInstruction struct {
 	// TargetTrackingConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-targettrackingconfigurations
-	TargetTrackingConfigurations []ScalingPlan_TargetTrackingConfiguration `json:"TargetTrackingConfigurations"`
+	TargetTrackingConfigurations []ScalingPlan_TargetTrackingConfiguration[any] `json:"TargetTrackingConfigurations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -97,6 +97,6 @@ type ScalingPlan_ScalingInstruction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_ScalingInstruction) AWSCloudFormationType() string {
+func (r *ScalingPlan_ScalingInstruction[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction"
 }

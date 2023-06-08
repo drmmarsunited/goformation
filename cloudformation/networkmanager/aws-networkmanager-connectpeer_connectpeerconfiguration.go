@@ -8,12 +8,12 @@ import (
 
 // ConnectPeer_ConnectPeerConfiguration AWS CloudFormation Resource (AWS::NetworkManager::ConnectPeer.ConnectPeerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html
-type ConnectPeer_ConnectPeerConfiguration struct {
+type ConnectPeer_ConnectPeerConfiguration[T any] struct {
 
 	// BgpConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-bgpconfigurations
-	BgpConfigurations []ConnectPeer_ConnectPeerBgpConfiguration `json:"BgpConfigurations,omitempty"`
+	BgpConfigurations []ConnectPeer_ConnectPeerBgpConfiguration[any] `json:"BgpConfigurations,omitempty"`
 
 	// CoreNetworkAddress AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ConnectPeer_ConnectPeerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectPeer_ConnectPeerConfiguration) AWSCloudFormationType() string {
+func (r *ConnectPeer_ConnectPeerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectPeer.ConnectPeerConfiguration"
 }

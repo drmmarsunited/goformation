@@ -8,12 +8,12 @@ import (
 
 // Channel_BlackoutSlate AWS CloudFormation Resource (AWS::MediaLive::Channel.BlackoutSlate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html
-type Channel_BlackoutSlate struct {
+type Channel_BlackoutSlate[T any] struct {
 
 	// BlackoutSlateImage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-blackoutslateimage
-	BlackoutSlateImage *Channel_InputLocation `json:"BlackoutSlateImage,omitempty"`
+	BlackoutSlateImage *Channel_InputLocation[any] `json:"BlackoutSlateImage,omitempty"`
 
 	// NetworkEndBlackout AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_BlackoutSlate struct {
 	// NetworkEndBlackoutImage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackoutimage
-	NetworkEndBlackoutImage *Channel_InputLocation `json:"NetworkEndBlackoutImage,omitempty"`
+	NetworkEndBlackoutImage *Channel_InputLocation[any] `json:"NetworkEndBlackoutImage,omitempty"`
 
 	// NetworkId AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Channel_BlackoutSlate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_BlackoutSlate) AWSCloudFormationType() string {
+func (r *Channel_BlackoutSlate[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.BlackoutSlate"
 }

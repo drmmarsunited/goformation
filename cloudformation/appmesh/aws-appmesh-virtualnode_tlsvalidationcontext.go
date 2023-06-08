@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_TlsValidationContext AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TlsValidationContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html
-type VirtualNode_TlsValidationContext struct {
+type VirtualNode_TlsValidationContext[T any] struct {
 
 	// SubjectAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-subjectalternativenames
-	SubjectAlternativeNames *VirtualNode_SubjectAlternativeNames `json:"SubjectAlternativeNames,omitempty"`
+	SubjectAlternativeNames *VirtualNode_SubjectAlternativeNames[any] `json:"SubjectAlternativeNames,omitempty"`
 
 	// Trust AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust
-	Trust *VirtualNode_TlsValidationContextTrust `json:"Trust"`
+	Trust *VirtualNode_TlsValidationContextTrust[any] `json:"Trust"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_TlsValidationContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_TlsValidationContext) AWSCloudFormationType() string {
+func (r *VirtualNode_TlsValidationContext[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.TlsValidationContext"
 }

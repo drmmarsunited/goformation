@@ -11,7 +11,7 @@ import (
 
 // GatewayResponse AWS CloudFormation Resource (AWS::ApiGateway::GatewayResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html
-type GatewayResponse struct {
+type GatewayResponse[T any] struct {
 
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
@@ -55,14 +55,15 @@ type GatewayResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayResponse) AWSCloudFormationType() string {
+func (r *GatewayResponse[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::GatewayResponse"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GatewayResponse) MarshalJSON() ([]byte, error) {
-	type Properties GatewayResponse
+func (r GatewayResponse[any]) MarshalJSON() ([]byte, error) {
+	type Properties GatewayResponse[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r GatewayResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GatewayResponse) UnmarshalJSON(b []byte) error {
-	type Properties GatewayResponse
+func (r *GatewayResponse[any]) UnmarshalJSON(b []byte) error {
+	type Properties GatewayResponse[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *GatewayResponse) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GatewayResponse(*res.Properties)
+		*r = GatewayResponse[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

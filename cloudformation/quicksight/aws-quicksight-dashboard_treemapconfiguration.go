@@ -8,52 +8,52 @@ import (
 
 // Dashboard_TreeMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TreeMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html
-type Dashboard_TreeMapConfiguration struct {
+type Dashboard_TreeMapConfiguration[T any] struct {
 
 	// ColorLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-colorlabeloptions
-	ColorLabelOptions *Dashboard_ChartAxisLabelOptions `json:"ColorLabelOptions,omitempty"`
+	ColorLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"ColorLabelOptions,omitempty"`
 
 	// ColorScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-colorscale
-	ColorScale *Dashboard_ColorScale `json:"ColorScale,omitempty"`
+	ColorScale *Dashboard_ColorScale[any] `json:"ColorScale,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-fieldwells
-	FieldWells *Dashboard_TreeMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_TreeMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// GroupLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-grouplabeloptions
-	GroupLabelOptions *Dashboard_ChartAxisLabelOptions `json:"GroupLabelOptions,omitempty"`
+	GroupLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"GroupLabelOptions,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// SizeLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-sizelabeloptions
-	SizeLabelOptions *Dashboard_ChartAxisLabelOptions `json:"SizeLabelOptions,omitempty"`
+	SizeLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"SizeLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_TreeMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_TreeMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapconfiguration.html#cfn-quicksight-dashboard-treemapconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Dashboard_TreeMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TreeMapConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TreeMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TreeMapConfiguration"
 }

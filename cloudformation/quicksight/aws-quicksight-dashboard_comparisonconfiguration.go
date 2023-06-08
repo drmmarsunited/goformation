@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ComparisonConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ComparisonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonconfiguration.html
-type Dashboard_ComparisonConfiguration struct {
+type Dashboard_ComparisonConfiguration[T any] struct {
 
 	// ComparisonFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonconfiguration.html#cfn-quicksight-dashboard-comparisonconfiguration-comparisonformat
-	ComparisonFormat *Dashboard_ComparisonFormatConfiguration `json:"ComparisonFormat,omitempty"`
+	ComparisonFormat *Dashboard_ComparisonFormatConfiguration[any] `json:"ComparisonFormat,omitempty"`
 
 	// ComparisonMethod AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ComparisonConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ComparisonConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ComparisonConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ComparisonConfiguration"
 }

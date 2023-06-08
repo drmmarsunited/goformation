@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_MountPoints AWS CloudFormation Resource (AWS::Batch::JobDefinition.MountPoints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html
-type JobDefinition_MountPoints struct {
+type JobDefinition_MountPoints[T any] struct {
 
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type JobDefinition_MountPoints struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// SourceVolume AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type JobDefinition_MountPoints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_MountPoints) AWSCloudFormationType() string {
+func (r *JobDefinition_MountPoints[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.MountPoints"
 }

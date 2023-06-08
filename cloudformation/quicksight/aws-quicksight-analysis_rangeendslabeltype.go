@@ -8,7 +8,7 @@ import (
 
 // Analysis_RangeEndsLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.RangeEndsLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-rangeendslabeltype.html
-type Analysis_RangeEndsLabelType struct {
+type Analysis_RangeEndsLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_RangeEndsLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_RangeEndsLabelType) AWSCloudFormationType() string {
+func (r *Analysis_RangeEndsLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.RangeEndsLabelType"
 }

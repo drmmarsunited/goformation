@@ -12,12 +12,12 @@ import (
 
 // BotAlias AWS CloudFormation Resource (AWS::Lex::BotAlias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html
-type BotAlias struct {
+type BotAlias[T any] struct {
 
 	// BotAliasLocaleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliaslocalesettings
-	BotAliasLocaleSettings []BotAlias_BotAliasLocaleSettingsItem `json:"BotAliasLocaleSettings,omitempty"`
+	BotAliasLocaleSettings []BotAlias_BotAliasLocaleSettingsItem[any] `json:"BotAliasLocaleSettings,omitempty"`
 
 	// BotAliasName AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type BotAlias struct {
 	// ConversationLogSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-conversationlogsettings
-	ConversationLogSettings *BotAlias_ConversationLogSettings `json:"ConversationLogSettings,omitempty"`
+	ConversationLogSettings *BotAlias_ConversationLogSettings[any] `json:"ConversationLogSettings,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type BotAlias struct {
 	// SentimentAnalysisSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-sentimentanalysissettings
-	SentimentAnalysisSettings *BotAlias_SentimentAnalysisSettings `json:"SentimentAnalysisSettings,omitempty"`
+	SentimentAnalysisSettings *BotAlias_SentimentAnalysisSettings[any] `json:"SentimentAnalysisSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +71,15 @@ type BotAlias struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias) AWSCloudFormationType() string {
+func (r *BotAlias[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BotAlias) MarshalJSON() ([]byte, error) {
-	type Properties BotAlias
+func (r BotAlias[any]) MarshalJSON() ([]byte, error) {
+	type Properties BotAlias[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r BotAlias) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BotAlias) UnmarshalJSON(b []byte) error {
-	type Properties BotAlias
+func (r *BotAlias[any]) UnmarshalJSON(b []byte) error {
+	type Properties BotAlias[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *BotAlias) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BotAlias(*res.Properties)
+		*r = BotAlias[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

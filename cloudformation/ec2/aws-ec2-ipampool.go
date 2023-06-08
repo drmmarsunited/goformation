@@ -12,7 +12,7 @@ import (
 
 // IPAMPool AWS CloudFormation Resource (AWS::EC2::IPAMPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html
-type IPAMPool struct {
+type IPAMPool[T any] struct {
 
 	// AddressFamily AWS CloudFormation Property
 	// Required: true
@@ -22,17 +22,17 @@ type IPAMPool struct {
 	// AllocationDefaultNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationdefaultnetmasklength
-	AllocationDefaultNetmaskLength *int `json:"AllocationDefaultNetmaskLength,omitempty"`
+	AllocationDefaultNetmaskLength *T `json:"AllocationDefaultNetmaskLength,omitempty"`
 
 	// AllocationMaxNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationmaxnetmasklength
-	AllocationMaxNetmaskLength *int `json:"AllocationMaxNetmaskLength,omitempty"`
+	AllocationMaxNetmaskLength *T `json:"AllocationMaxNetmaskLength,omitempty"`
 
 	// AllocationMinNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationminnetmasklength
-	AllocationMinNetmaskLength *int `json:"AllocationMinNetmaskLength,omitempty"`
+	AllocationMinNetmaskLength *T `json:"AllocationMinNetmaskLength,omitempty"`
 
 	// AllocationResourceTags AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type IPAMPool struct {
 	// AutoImport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-autoimport
-	AutoImport *bool `json:"AutoImport,omitempty"`
+	AutoImport *T `json:"AutoImport,omitempty"`
 
 	// AwsService AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type IPAMPool struct {
 	// ProvisionedCidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-provisionedcidrs
-	ProvisionedCidrs []IPAMPool_ProvisionedCidr `json:"ProvisionedCidrs,omitempty"`
+	ProvisionedCidrs []IPAMPool_ProvisionedCidr[any] `json:"ProvisionedCidrs,omitempty"`
 
 	// PublicIpSource AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type IPAMPool struct {
 	// PubliclyAdvertisable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publiclyadvertisable
-	PubliclyAdvertisable *bool `json:"PubliclyAdvertisable,omitempty"`
+	PubliclyAdvertisable *T `json:"PubliclyAdvertisable,omitempty"`
 
 	// SourceIpamPoolId AWS CloudFormation Property
 	// Required: false
@@ -106,14 +106,15 @@ type IPAMPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IPAMPool) AWSCloudFormationType() string {
+func (r *IPAMPool[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::IPAMPool"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IPAMPool) MarshalJSON() ([]byte, error) {
-	type Properties IPAMPool
+func (r IPAMPool[any]) MarshalJSON() ([]byte, error) {
+	type Properties IPAMPool[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r IPAMPool) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IPAMPool) UnmarshalJSON(b []byte) error {
-	type Properties IPAMPool
+func (r *IPAMPool[any]) UnmarshalJSON(b []byte) error {
+	type Properties IPAMPool[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *IPAMPool) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IPAMPool(*res.Properties)
+		*r = IPAMPool[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

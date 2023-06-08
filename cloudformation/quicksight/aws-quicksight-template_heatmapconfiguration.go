@@ -8,47 +8,47 @@ import (
 
 // Template_HeatMapConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.HeatMapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html
-type Template_HeatMapConfiguration struct {
+type Template_HeatMapConfiguration[T any] struct {
 
 	// ColorScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-colorscale
-	ColorScale *Template_ColorScale `json:"ColorScale,omitempty"`
+	ColorScale *Template_ColorScale[any] `json:"ColorScale,omitempty"`
 
 	// ColumnLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-columnlabeloptions
-	ColumnLabelOptions *Template_ChartAxisLabelOptions `json:"ColumnLabelOptions,omitempty"`
+	ColumnLabelOptions *Template_ChartAxisLabelOptions[any] `json:"ColumnLabelOptions,omitempty"`
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-datalabels
-	DataLabels *Template_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Template_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-fieldwells
-	FieldWells *Template_HeatMapFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Template_HeatMapFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-legend
-	Legend *Template_LegendOptions `json:"Legend,omitempty"`
+	Legend *Template_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// RowLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-rowlabeloptions
-	RowLabelOptions *Template_ChartAxisLabelOptions `json:"RowLabelOptions,omitempty"`
+	RowLabelOptions *Template_ChartAxisLabelOptions[any] `json:"RowLabelOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-sortconfiguration
-	SortConfiguration *Template_HeatMapSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Template_HeatMapSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-heatmapconfiguration.html#cfn-quicksight-template-heatmapconfiguration-tooltip
-	Tooltip *Template_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Template_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Template_HeatMapConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HeatMapConfiguration) AWSCloudFormationType() string {
+func (r *Template_HeatMapConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HeatMapConfiguration"
 }

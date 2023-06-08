@@ -11,12 +11,12 @@ import (
 
 // SchedulingPolicy AWS CloudFormation Resource (AWS::Batch::SchedulingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html
-type SchedulingPolicy struct {
+type SchedulingPolicy[T any] struct {
 
 	// FairsharePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy
-	FairsharePolicy *SchedulingPolicy_FairsharePolicy `json:"FairsharePolicy,omitempty"`
+	FairsharePolicy *SchedulingPolicy_FairsharePolicy[any] `json:"FairsharePolicy,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type SchedulingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SchedulingPolicy) AWSCloudFormationType() string {
+func (r *SchedulingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::SchedulingPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SchedulingPolicy) MarshalJSON() ([]byte, error) {
-	type Properties SchedulingPolicy
+func (r SchedulingPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties SchedulingPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r SchedulingPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SchedulingPolicy) UnmarshalJSON(b []byte) error {
-	type Properties SchedulingPolicy
+func (r *SchedulingPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties SchedulingPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *SchedulingPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SchedulingPolicy(*res.Properties)
+		*r = SchedulingPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

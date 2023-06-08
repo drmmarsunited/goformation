@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_SetTimer AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.SetTimer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html
-type DetectorModel_SetTimer struct {
+type DetectorModel_SetTimer[T any] struct {
 
 	// DurationExpression AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DetectorModel_SetTimer struct {
 	// Seconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds
-	Seconds *int `json:"Seconds,omitempty"`
+	Seconds *T `json:"Seconds,omitempty"`
 
 	// TimerName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DetectorModel_SetTimer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_SetTimer) AWSCloudFormationType() string {
+func (r *DetectorModel_SetTimer[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.SetTimer"
 }

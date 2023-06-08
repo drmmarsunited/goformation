@@ -8,27 +8,27 @@ import (
 
 // Analysis_PivotTableTotalOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableTotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabletotaloptions.html
-type Analysis_PivotTableTotalOptions struct {
+type Analysis_PivotTableTotalOptions[T any] struct {
 
 	// ColumnSubtotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabletotaloptions.html#cfn-quicksight-analysis-pivottabletotaloptions-columnsubtotaloptions
-	ColumnSubtotalOptions *Analysis_SubtotalOptions `json:"ColumnSubtotalOptions,omitempty"`
+	ColumnSubtotalOptions *Analysis_SubtotalOptions[any] `json:"ColumnSubtotalOptions,omitempty"`
 
 	// ColumnTotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabletotaloptions.html#cfn-quicksight-analysis-pivottabletotaloptions-columntotaloptions
-	ColumnTotalOptions *Analysis_PivotTotalOptions `json:"ColumnTotalOptions,omitempty"`
+	ColumnTotalOptions *Analysis_PivotTotalOptions[any] `json:"ColumnTotalOptions,omitempty"`
 
 	// RowSubtotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabletotaloptions.html#cfn-quicksight-analysis-pivottabletotaloptions-rowsubtotaloptions
-	RowSubtotalOptions *Analysis_SubtotalOptions `json:"RowSubtotalOptions,omitempty"`
+	RowSubtotalOptions *Analysis_SubtotalOptions[any] `json:"RowSubtotalOptions,omitempty"`
 
 	// RowTotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabletotaloptions.html#cfn-quicksight-analysis-pivottabletotaloptions-rowtotaloptions
-	RowTotalOptions *Analysis_PivotTotalOptions `json:"RowTotalOptions,omitempty"`
+	RowTotalOptions *Analysis_PivotTotalOptions[any] `json:"RowTotalOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_PivotTableTotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableTotalOptions) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableTotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableTotalOptions"
 }

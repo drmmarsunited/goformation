@@ -8,7 +8,7 @@ import (
 
 // FlowEntitlement_Encryption AWS CloudFormation Resource (AWS::MediaConnect::FlowEntitlement.Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html
-type FlowEntitlement_Encryption struct {
+type FlowEntitlement_Encryption[T any] struct {
 
 	// Algorithm AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type FlowEntitlement_Encryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowEntitlement_Encryption) AWSCloudFormationType() string {
+func (r *FlowEntitlement_Encryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::FlowEntitlement.Encryption"
 }

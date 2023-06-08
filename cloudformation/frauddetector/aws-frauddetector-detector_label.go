@@ -9,7 +9,7 @@ import (
 
 // Detector_Label AWS CloudFormation Resource (AWS::FraudDetector::Detector.Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-label.html
-type Detector_Label struct {
+type Detector_Label[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -29,7 +29,7 @@ type Detector_Label struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-label.html#cfn-frauddetector-detector-label-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -63,6 +63,6 @@ type Detector_Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_Label) AWSCloudFormationType() string {
+func (r *Detector_Label[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.Label"
 }

@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_InitializationConfiguration AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.InitializationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-initializationconfiguration.html
-type AlarmModel_InitializationConfiguration struct {
+type AlarmModel_InitializationConfiguration[T any] struct {
 
 	// DisabledOnInitialization AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-initializationconfiguration.html#cfn-iotevents-alarmmodel-initializationconfiguration-disabledoninitialization
-	DisabledOnInitialization bool `json:"DisabledOnInitialization"`
+	DisabledOnInitialization T `json:"DisabledOnInitialization"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AlarmModel_InitializationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_InitializationConfiguration) AWSCloudFormationType() string {
+func (r *AlarmModel_InitializationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.InitializationConfiguration"
 }

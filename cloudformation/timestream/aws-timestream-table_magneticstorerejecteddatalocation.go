@@ -8,12 +8,12 @@ import (
 
 // Table_MagneticStoreRejectedDataLocation AWS CloudFormation Resource (AWS::Timestream::Table.MagneticStoreRejectedDataLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorerejecteddatalocation.html
-type Table_MagneticStoreRejectedDataLocation struct {
+type Table_MagneticStoreRejectedDataLocation[T any] struct {
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorerejecteddatalocation.html#cfn-timestream-table-magneticstorerejecteddatalocation-s3configuration
-	S3Configuration *Table_S3Configuration `json:"S3Configuration,omitempty"`
+	S3Configuration *Table_S3Configuration[any] `json:"S3Configuration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Table_MagneticStoreRejectedDataLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_MagneticStoreRejectedDataLocation) AWSCloudFormationType() string {
+func (r *Table_MagneticStoreRejectedDataLocation[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::Table.MagneticStoreRejectedDataLocation"
 }

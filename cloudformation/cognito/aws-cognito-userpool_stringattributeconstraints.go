@@ -8,7 +8,7 @@ import (
 
 // UserPool_StringAttributeConstraints AWS CloudFormation Resource (AWS::Cognito::UserPool.StringAttributeConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html
-type UserPool_StringAttributeConstraints struct {
+type UserPool_StringAttributeConstraints[T any] struct {
 
 	// MaxLength AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPool_StringAttributeConstraints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_StringAttributeConstraints) AWSCloudFormationType() string {
+func (r *UserPool_StringAttributeConstraints[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.StringAttributeConstraints"
 }

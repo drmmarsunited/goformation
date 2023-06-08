@@ -11,7 +11,7 @@ import (
 
 // SubnetNetworkAclAssociation AWS CloudFormation Resource (AWS::EC2::SubnetNetworkAclAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
-type SubnetNetworkAclAssociation struct {
+type SubnetNetworkAclAssociation[T any] struct {
 
 	// NetworkAclId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type SubnetNetworkAclAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubnetNetworkAclAssociation) AWSCloudFormationType() string {
+func (r *SubnetNetworkAclAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SubnetNetworkAclAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubnetNetworkAclAssociation) MarshalJSON() ([]byte, error) {
-	type Properties SubnetNetworkAclAssociation
+func (r SubnetNetworkAclAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubnetNetworkAclAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SubnetNetworkAclAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubnetNetworkAclAssociation) UnmarshalJSON(b []byte) error {
-	type Properties SubnetNetworkAclAssociation
+func (r *SubnetNetworkAclAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubnetNetworkAclAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SubnetNetworkAclAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubnetNetworkAclAssociation(*res.Properties)
+		*r = SubnetNetworkAclAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

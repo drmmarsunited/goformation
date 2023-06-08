@@ -8,22 +8,22 @@ import (
 
 // Channel_ArchiveGroupSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.ArchiveGroupSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html
-type Channel_ArchiveGroupSettings struct {
+type Channel_ArchiveGroupSettings[T any] struct {
 
 	// ArchiveCdnSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-archivecdnsettings
-	ArchiveCdnSettings *Channel_ArchiveCdnSettings `json:"ArchiveCdnSettings,omitempty"`
+	ArchiveCdnSettings *Channel_ArchiveCdnSettings[any] `json:"ArchiveCdnSettings,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-destination
-	Destination *Channel_OutputLocationRef `json:"Destination,omitempty"`
+	Destination *Channel_OutputLocationRef[any] `json:"Destination,omitempty"`
 
 	// RolloverInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-rolloverinterval
-	RolloverInterval *int `json:"RolloverInterval,omitempty"`
+	RolloverInterval *T `json:"RolloverInterval,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_ArchiveGroupSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ArchiveGroupSettings) AWSCloudFormationType() string {
+func (r *Channel_ArchiveGroupSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ArchiveGroupSettings"
 }

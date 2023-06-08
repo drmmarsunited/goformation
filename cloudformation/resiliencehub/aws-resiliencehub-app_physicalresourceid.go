@@ -8,7 +8,7 @@ import (
 
 // App_PhysicalResourceId AWS CloudFormation Resource (AWS::ResilienceHub::App.PhysicalResourceId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-physicalresourceid.html
-type App_PhysicalResourceId struct {
+type App_PhysicalResourceId[T any] struct {
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type App_PhysicalResourceId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_PhysicalResourceId) AWSCloudFormationType() string {
+func (r *App_PhysicalResourceId[any]) AWSCloudFormationType() string {
 	return "AWS::ResilienceHub::App.PhysicalResourceId"
 }

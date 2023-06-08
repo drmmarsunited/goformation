@@ -8,7 +8,7 @@ import (
 
 // KnowledgeBase_ServerSideEncryptionConfiguration AWS CloudFormation Resource (AWS::Wisdom::KnowledgeBase.ServerSideEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-serversideencryptionconfiguration.html
-type KnowledgeBase_ServerSideEncryptionConfiguration struct {
+type KnowledgeBase_ServerSideEncryptionConfiguration[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type KnowledgeBase_ServerSideEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KnowledgeBase_ServerSideEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *KnowledgeBase_ServerSideEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::KnowledgeBase.ServerSideEncryptionConfiguration"
 }

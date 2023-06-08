@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableFieldCustomIconContent AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableFieldCustomIconContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldcustomiconcontent.html
-type Analysis_TableFieldCustomIconContent struct {
+type Analysis_TableFieldCustomIconContent[T any] struct {
 
 	// Icon AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_TableFieldCustomIconContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableFieldCustomIconContent) AWSCloudFormationType() string {
+func (r *Analysis_TableFieldCustomIconContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableFieldCustomIconContent"
 }

@@ -12,7 +12,7 @@ import (
 
 // Theme AWS CloudFormation Resource (AWS::QuickSight::Theme)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html
-type Theme struct {
+type Theme[T any] struct {
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Theme struct {
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-configuration
-	Configuration *Theme_ThemeConfiguration `json:"Configuration,omitempty"`
+	Configuration *Theme_ThemeConfiguration[any] `json:"Configuration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Theme struct {
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-permissions
-	Permissions []Theme_ResourcePermission `json:"Permissions,omitempty"`
+	Permissions []Theme_ResourcePermission[any] `json:"Permissions,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Theme struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme) AWSCloudFormationType() string {
+func (r *Theme[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Theme) MarshalJSON() ([]byte, error) {
-	type Properties Theme
+func (r Theme[any]) MarshalJSON() ([]byte, error) {
+	type Properties Theme[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Theme) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Theme) UnmarshalJSON(b []byte) error {
-	type Properties Theme
+func (r *Theme[any]) UnmarshalJSON(b []byte) error {
+	type Properties Theme[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Theme) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Theme(*res.Properties)
+		*r = Theme[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // ComponentType_Status AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.Status)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html
-type ComponentType_Status struct {
+type ComponentType_Status[T any] struct {
 
 	// Error AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html#cfn-iottwinmaker-componenttype-status-error
-	Error *ComponentType_Error `json:"Error,omitempty"`
+	Error *ComponentType_Error[any] `json:"Error,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentType_Status struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_Status) AWSCloudFormationType() string {
+func (r *ComponentType_Status[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.Status"
 }

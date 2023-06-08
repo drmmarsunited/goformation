@@ -8,7 +8,7 @@ import (
 
 // Analysis_ReferenceLineDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ReferenceLineDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html
-type Analysis_ReferenceLineDataConfiguration struct {
+type Analysis_ReferenceLineDataConfiguration[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Analysis_ReferenceLineDataConfiguration struct {
 	// DynamicConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html#cfn-quicksight-analysis-referencelinedataconfiguration-dynamicconfiguration
-	DynamicConfiguration *Analysis_ReferenceLineDynamicDataConfiguration `json:"DynamicConfiguration,omitempty"`
+	DynamicConfiguration *Analysis_ReferenceLineDynamicDataConfiguration[any] `json:"DynamicConfiguration,omitempty"`
 
 	// StaticConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html#cfn-quicksight-analysis-referencelinedataconfiguration-staticconfiguration
-	StaticConfiguration *Analysis_ReferenceLineStaticDataConfiguration `json:"StaticConfiguration,omitempty"`
+	StaticConfiguration *Analysis_ReferenceLineStaticDataConfiguration[any] `json:"StaticConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ReferenceLineDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ReferenceLineDataConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ReferenceLineDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ReferenceLineDataConfiguration"
 }

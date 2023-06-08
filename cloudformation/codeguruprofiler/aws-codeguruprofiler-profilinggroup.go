@@ -12,17 +12,17 @@ import (
 
 // ProfilingGroup AWS CloudFormation Resource (AWS::CodeGuruProfiler::ProfilingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html
-type ProfilingGroup struct {
+type ProfilingGroup[T any] struct {
 
 	// AgentPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-agentpermissions
-	AgentPermissions *ProfilingGroup_AgentPermissions `json:"AgentPermissions,omitempty"`
+	AgentPermissions *ProfilingGroup_AgentPermissions[any] `json:"AgentPermissions,omitempty"`
 
 	// AnomalyDetectionNotificationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-anomalydetectionnotificationconfiguration
-	AnomalyDetectionNotificationConfiguration []ProfilingGroup_Channel `json:"AnomalyDetectionNotificationConfiguration,omitempty"`
+	AnomalyDetectionNotificationConfiguration []ProfilingGroup_Channel[any] `json:"AnomalyDetectionNotificationConfiguration,omitempty"`
 
 	// ComputePlatform AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type ProfilingGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ProfilingGroup) AWSCloudFormationType() string {
+func (r *ProfilingGroup[any]) AWSCloudFormationType() string {
 	return "AWS::CodeGuruProfiler::ProfilingGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ProfilingGroup) MarshalJSON() ([]byte, error) {
-	type Properties ProfilingGroup
+func (r ProfilingGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties ProfilingGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r ProfilingGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ProfilingGroup) UnmarshalJSON(b []byte) error {
-	type Properties ProfilingGroup
+func (r *ProfilingGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties ProfilingGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *ProfilingGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ProfilingGroup(*res.Properties)
+		*r = ProfilingGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

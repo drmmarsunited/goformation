@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_DocumentIdOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.DocumentIdOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-documentidoptions.html
-type DeliveryStream_DocumentIdOptions struct {
+type DeliveryStream_DocumentIdOptions[T any] struct {
 
 	// DefaultDocumentIdFormat AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DeliveryStream_DocumentIdOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_DocumentIdOptions) AWSCloudFormationType() string {
+func (r *DeliveryStream_DocumentIdOptions[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.DocumentIdOptions"
 }

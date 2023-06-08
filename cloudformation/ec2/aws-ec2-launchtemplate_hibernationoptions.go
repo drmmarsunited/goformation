@@ -8,12 +8,12 @@ import (
 
 // LaunchTemplate_HibernationOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.HibernationOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-hibernationoptions.html
-type LaunchTemplate_HibernationOptions struct {
+type LaunchTemplate_HibernationOptions[T any] struct {
 
 	// Configured AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-hibernationoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions-configured
-	Configured *bool `json:"Configured,omitempty"`
+	Configured *T `json:"Configured,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LaunchTemplate_HibernationOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_HibernationOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_HibernationOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.HibernationOptions"
 }

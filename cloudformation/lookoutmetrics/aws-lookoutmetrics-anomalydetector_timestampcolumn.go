@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_TimestampColumn AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.TimestampColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-timestampcolumn.html
-type AnomalyDetector_TimestampColumn struct {
+type AnomalyDetector_TimestampColumn[T any] struct {
 
 	// ColumnFormat AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AnomalyDetector_TimestampColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_TimestampColumn) AWSCloudFormationType() string {
+func (r *AnomalyDetector_TimestampColumn[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.TimestampColumn"
 }

@@ -8,12 +8,12 @@ import (
 
 // IdentityPoolRoleAttachment_RulesConfigurationType AWS CloudFormation Resource (AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html
-type IdentityPoolRoleAttachment_RulesConfigurationType struct {
+type IdentityPoolRoleAttachment_RulesConfigurationType[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules
-	Rules []IdentityPoolRoleAttachment_MappingRule `json:"Rules"`
+	Rules []IdentityPoolRoleAttachment_MappingRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type IdentityPoolRoleAttachment_RulesConfigurationType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPoolRoleAttachment_RulesConfigurationType) AWSCloudFormationType() string {
+func (r *IdentityPoolRoleAttachment_RulesConfigurationType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType"
 }

@@ -8,12 +8,12 @@ import (
 
 // Application_InputProcessingConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html
-type Application_InputProcessingConfiguration struct {
+type Application_InputProcessingConfiguration[T any] struct {
 
 	// InputLambdaProcessor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html#cfn-kinesisanalyticsv2-application-inputprocessingconfiguration-inputlambdaprocessor
-	InputLambdaProcessor *Application_InputLambdaProcessor `json:"InputLambdaProcessor,omitempty"`
+	InputLambdaProcessor *Application_InputLambdaProcessor[any] `json:"InputLambdaProcessor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_InputProcessingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_InputProcessingConfiguration) AWSCloudFormationType() string {
+func (r *Application_InputProcessingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration"
 }

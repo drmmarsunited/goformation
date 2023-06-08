@@ -8,7 +8,7 @@ import (
 
 // Cluster_KeyValue AWS CloudFormation Resource (AWS::EMR::Cluster.KeyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html
-type Cluster_KeyValue struct {
+type Cluster_KeyValue[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_KeyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_KeyValue) AWSCloudFormationType() string {
+func (r *Cluster_KeyValue[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.KeyValue"
 }

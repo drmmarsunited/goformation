@@ -8,7 +8,7 @@ import (
 
 // Template_WaterfallChartOptions AWS CloudFormation Resource (AWS::QuickSight::Template.WaterfallChartOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-waterfallchartoptions.html
-type Template_WaterfallChartOptions struct {
+type Template_WaterfallChartOptions[T any] struct {
 
 	// TotalBarLabel AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_WaterfallChartOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_WaterfallChartOptions) AWSCloudFormationType() string {
+func (r *Template_WaterfallChartOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.WaterfallChartOptions"
 }

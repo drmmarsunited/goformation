@@ -12,7 +12,7 @@ import (
 
 // ResolverEndpoint AWS CloudFormation Resource (AWS::Route53Resolver::ResolverEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html
-type ResolverEndpoint struct {
+type ResolverEndpoint[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type ResolverEndpoint struct {
 	// IpAddresses AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
-	IpAddresses []ResolverEndpoint_IpAddressRequest `json:"IpAddresses"`
+	IpAddresses []ResolverEndpoint_IpAddressRequest[any] `json:"IpAddresses"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type ResolverEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverEndpoint) AWSCloudFormationType() string {
+func (r *ResolverEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties ResolverEndpoint
+func (r ResolverEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r ResolverEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties ResolverEndpoint
+func (r *ResolverEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *ResolverEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverEndpoint(*res.Properties)
+		*r = ResolverEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

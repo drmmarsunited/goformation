@@ -8,7 +8,7 @@ import (
 
 // StateMachine_CloudWatchEventEvent AWS CloudFormation Resource (AWS::Serverless::StateMachine.CloudWatchEventEvent)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html
-type StateMachine_CloudWatchEventEvent struct {
+type StateMachine_CloudWatchEventEvent[T any] struct {
 
 	// EventBusName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type StateMachine_CloudWatchEventEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_CloudWatchEventEvent) AWSCloudFormationType() string {
+func (r *StateMachine_CloudWatchEventEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.CloudWatchEventEvent"
 }

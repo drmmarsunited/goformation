@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioOnlyHlsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioOnlyHlsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html
-type Channel_AudioOnlyHlsSettings struct {
+type Channel_AudioOnlyHlsSettings[T any] struct {
 
 	// AudioGroupId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_AudioOnlyHlsSettings struct {
 	// AudioOnlyImage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audioonlyimage
-	AudioOnlyImage *Channel_InputLocation `json:"AudioOnlyImage,omitempty"`
+	AudioOnlyImage *Channel_InputLocation[any] `json:"AudioOnlyImage,omitempty"`
 
 	// AudioTrackType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Channel_AudioOnlyHlsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioOnlyHlsSettings) AWSCloudFormationType() string {
+func (r *Channel_AudioOnlyHlsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioOnlyHlsSettings"
 }

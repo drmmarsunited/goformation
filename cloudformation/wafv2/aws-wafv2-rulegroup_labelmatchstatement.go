@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_LabelMatchStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.LabelMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-labelmatchstatement.html
-type RuleGroup_LabelMatchStatement struct {
+type RuleGroup_LabelMatchStatement[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_LabelMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_LabelMatchStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_LabelMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.LabelMatchStatement"
 }

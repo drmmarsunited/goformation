@@ -11,7 +11,7 @@ import (
 
 // AttributeGroup AWS CloudFormation Resource (AWS::ServiceCatalogAppRegistry::AttributeGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroup.html
-type AttributeGroup struct {
+type AttributeGroup[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type AttributeGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AttributeGroup) AWSCloudFormationType() string {
+func (r *AttributeGroup[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalogAppRegistry::AttributeGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AttributeGroup) MarshalJSON() ([]byte, error) {
-	type Properties AttributeGroup
+func (r AttributeGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties AttributeGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r AttributeGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AttributeGroup) UnmarshalJSON(b []byte) error {
-	type Properties AttributeGroup
+func (r *AttributeGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties AttributeGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *AttributeGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AttributeGroup(*res.Properties)
+		*r = AttributeGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

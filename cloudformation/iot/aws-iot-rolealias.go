@@ -12,12 +12,12 @@ import (
 
 // RoleAlias AWS CloudFormation Resource (AWS::IoT::RoleAlias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-rolealias.html
-type RoleAlias struct {
+type RoleAlias[T any] struct {
 
 	// CredentialDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-rolealias.html#cfn-iot-rolealias-credentialdurationseconds
-	CredentialDurationSeconds *int `json:"CredentialDurationSeconds,omitempty"`
+	CredentialDurationSeconds *T `json:"CredentialDurationSeconds,omitempty"`
 
 	// RoleAlias AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type RoleAlias struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RoleAlias) AWSCloudFormationType() string {
+func (r *RoleAlias[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::RoleAlias"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RoleAlias) MarshalJSON() ([]byte, error) {
-	type Properties RoleAlias
+func (r RoleAlias[any]) MarshalJSON() ([]byte, error) {
+	type Properties RoleAlias[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r RoleAlias) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RoleAlias) UnmarshalJSON(b []byte) error {
-	type Properties RoleAlias
+func (r *RoleAlias[any]) UnmarshalJSON(b []byte) error {
+	type Properties RoleAlias[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *RoleAlias) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RoleAlias(*res.Properties)
+		*r = RoleAlias[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

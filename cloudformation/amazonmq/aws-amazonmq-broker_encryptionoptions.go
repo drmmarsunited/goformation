@@ -8,7 +8,7 @@ import (
 
 // Broker_EncryptionOptions AWS CloudFormation Resource (AWS::AmazonMQ::Broker.EncryptionOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html
-type Broker_EncryptionOptions struct {
+type Broker_EncryptionOptions[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Broker_EncryptionOptions struct {
 	// UseAwsOwnedKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-useawsownedkey
-	UseAwsOwnedKey bool `json:"UseAwsOwnedKey"`
+	UseAwsOwnedKey T `json:"UseAwsOwnedKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Broker_EncryptionOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_EncryptionOptions) AWSCloudFormationType() string {
+func (r *Broker_EncryptionOptions[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.EncryptionOptions"
 }

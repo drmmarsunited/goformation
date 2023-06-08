@@ -8,12 +8,12 @@ import (
 
 // Template_GaugeChartConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Template.GaugeChartConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconditionalformatting.html
-type Template_GaugeChartConditionalFormatting struct {
+type Template_GaugeChartConditionalFormatting[T any] struct {
 
 	// ConditionalFormattingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartconditionalformatting.html#cfn-quicksight-template-gaugechartconditionalformatting-conditionalformattingoptions
-	ConditionalFormattingOptions []Template_GaugeChartConditionalFormattingOption `json:"ConditionalFormattingOptions,omitempty"`
+	ConditionalFormattingOptions []Template_GaugeChartConditionalFormattingOption[any] `json:"ConditionalFormattingOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_GaugeChartConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GaugeChartConditionalFormatting) AWSCloudFormationType() string {
+func (r *Template_GaugeChartConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GaugeChartConditionalFormatting"
 }

@@ -8,17 +8,17 @@ import (
 
 // ConnectorProfile_ConnectorProfileConfig AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ConnectorProfileConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html
-type ConnectorProfile_ConnectorProfileConfig struct {
+type ConnectorProfile_ConnectorProfileConfig[T any] struct {
 
 	// ConnectorProfileCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html#cfn-appflow-connectorprofile-connectorprofileconfig-connectorprofilecredentials
-	ConnectorProfileCredentials *ConnectorProfile_ConnectorProfileCredentials `json:"ConnectorProfileCredentials,omitempty"`
+	ConnectorProfileCredentials *ConnectorProfile_ConnectorProfileCredentials[any] `json:"ConnectorProfileCredentials,omitempty"`
 
 	// ConnectorProfileProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html#cfn-appflow-connectorprofile-connectorprofileconfig-connectorprofileproperties
-	ConnectorProfileProperties *ConnectorProfile_ConnectorProfileProperties `json:"ConnectorProfileProperties,omitempty"`
+	ConnectorProfileProperties *ConnectorProfile_ConnectorProfileProperties[any] `json:"ConnectorProfileProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ConnectorProfile_ConnectorProfileConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ConnectorProfileConfig) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ConnectorProfileConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ConnectorProfileConfig"
 }

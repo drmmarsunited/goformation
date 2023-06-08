@@ -8,7 +8,7 @@ import (
 
 // Distribution_LegacyS3Origin AWS CloudFormation Resource (AWS::CloudFront::Distribution.LegacyS3Origin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html
-type Distribution_LegacyS3Origin struct {
+type Distribution_LegacyS3Origin[T any] struct {
 
 	// DNSName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Distribution_LegacyS3Origin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_LegacyS3Origin) AWSCloudFormationType() string {
+func (r *Distribution_LegacyS3Origin[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.LegacyS3Origin"
 }

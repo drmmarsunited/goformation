@@ -8,17 +8,17 @@ import (
 
 // Cluster_EBSStorageInfo AWS CloudFormation Resource (AWS::MSK::Cluster.EBSStorageInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html
-type Cluster_EBSStorageInfo struct {
+type Cluster_EBSStorageInfo[T any] struct {
 
 	// ProvisionedThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-provisionedthroughput
-	ProvisionedThroughput *Cluster_ProvisionedThroughput `json:"ProvisionedThroughput,omitempty"`
+	ProvisionedThroughput *Cluster_ProvisionedThroughput[any] `json:"ProvisionedThroughput,omitempty"`
 
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_EBSStorageInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_EBSStorageInfo) AWSCloudFormationType() string {
+func (r *Cluster_EBSStorageInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.EBSStorageInfo"
 }

@@ -8,7 +8,7 @@ import (
 
 // UserProfile_RStudioServerProAppSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.RStudioServerProAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-rstudioserverproappsettings.html
-type UserProfile_RStudioServerProAppSettings struct {
+type UserProfile_RStudioServerProAppSettings[T any] struct {
 
 	// AccessStatus AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserProfile_RStudioServerProAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_RStudioServerProAppSettings) AWSCloudFormationType() string {
+func (r *UserProfile_RStudioServerProAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.RStudioServerProAppSettings"
 }

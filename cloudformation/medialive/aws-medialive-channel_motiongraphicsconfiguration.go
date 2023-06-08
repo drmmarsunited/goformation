@@ -8,7 +8,7 @@ import (
 
 // Channel_MotionGraphicsConfiguration AWS CloudFormation Resource (AWS::MediaLive::Channel.MotionGraphicsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicsconfiguration.html
-type Channel_MotionGraphicsConfiguration struct {
+type Channel_MotionGraphicsConfiguration[T any] struct {
 
 	// MotionGraphicsInsertion AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_MotionGraphicsConfiguration struct {
 	// MotionGraphicsSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicsconfiguration.html#cfn-medialive-channel-motiongraphicsconfiguration-motiongraphicssettings
-	MotionGraphicsSettings *Channel_MotionGraphicsSettings `json:"MotionGraphicsSettings,omitempty"`
+	MotionGraphicsSettings *Channel_MotionGraphicsSettings[any] `json:"MotionGraphicsSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_MotionGraphicsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MotionGraphicsConfiguration) AWSCloudFormationType() string {
+func (r *Channel_MotionGraphicsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MotionGraphicsConfiguration"
 }

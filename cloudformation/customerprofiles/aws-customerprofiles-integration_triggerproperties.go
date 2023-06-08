@@ -8,12 +8,12 @@ import (
 
 // Integration_TriggerProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.TriggerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerproperties.html
-type Integration_TriggerProperties struct {
+type Integration_TriggerProperties[T any] struct {
 
 	// Scheduled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerproperties.html#cfn-customerprofiles-integration-triggerproperties-scheduled
-	Scheduled *Integration_ScheduledTriggerProperties `json:"Scheduled,omitempty"`
+	Scheduled *Integration_ScheduledTriggerProperties[any] `json:"Scheduled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Integration_TriggerProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_TriggerProperties) AWSCloudFormationType() string {
+func (r *Integration_TriggerProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.TriggerProperties"
 }

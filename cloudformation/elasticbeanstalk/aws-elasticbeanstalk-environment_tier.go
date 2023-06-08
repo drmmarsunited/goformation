@@ -8,7 +8,7 @@ import (
 
 // Environment_Tier AWS CloudFormation Resource (AWS::ElasticBeanstalk::Environment.Tier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-environment-tier.html
-type Environment_Tier struct {
+type Environment_Tier[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Environment_Tier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_Tier) AWSCloudFormationType() string {
+func (r *Environment_Tier[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Environment.Tier"
 }

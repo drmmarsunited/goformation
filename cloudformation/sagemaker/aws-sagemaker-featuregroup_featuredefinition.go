@@ -8,7 +8,7 @@ import (
 
 // FeatureGroup_FeatureDefinition AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.FeatureDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-featuredefinition.html
-type FeatureGroup_FeatureDefinition struct {
+type FeatureGroup_FeatureDefinition[T any] struct {
 
 	// FeatureName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FeatureGroup_FeatureDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_FeatureDefinition) AWSCloudFormationType() string {
+func (r *FeatureGroup_FeatureDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.FeatureDefinition"
 }

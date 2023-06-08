@@ -8,7 +8,7 @@ import (
 
 // Distribution_CookieObject AWS CloudFormation Resource (AWS::Lightsail::Distribution.CookieObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cookieobject.html
-type Distribution_CookieObject struct {
+type Distribution_CookieObject[T any] struct {
 
 	// CookiesAllowList AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_CookieObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CookieObject) AWSCloudFormationType() string {
+func (r *Distribution_CookieObject[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.CookieObject"
 }

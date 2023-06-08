@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_Address AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.Address)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-address.html
-type RuleGroup_Address struct {
+type RuleGroup_Address[T any] struct {
 
 	// AddressDefinition AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RuleGroup_Address struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Address) AWSCloudFormationType() string {
+func (r *RuleGroup_Address[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.Address"
 }

@@ -8,12 +8,12 @@ import (
 
 // InstanceGroupConfig_ScalingTrigger AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.ScalingTrigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html
-type InstanceGroupConfig_ScalingTrigger struct {
+type InstanceGroupConfig_ScalingTrigger[T any] struct {
 
 	// CloudWatchAlarmDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html#cfn-elasticmapreduce-instancegroupconfig-scalingtrigger-cloudwatchalarmdefinition
-	CloudWatchAlarmDefinition *InstanceGroupConfig_CloudWatchAlarmDefinition `json:"CloudWatchAlarmDefinition"`
+	CloudWatchAlarmDefinition *InstanceGroupConfig_CloudWatchAlarmDefinition[any] `json:"CloudWatchAlarmDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type InstanceGroupConfig_ScalingTrigger struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_ScalingTrigger) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_ScalingTrigger[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.ScalingTrigger"
 }

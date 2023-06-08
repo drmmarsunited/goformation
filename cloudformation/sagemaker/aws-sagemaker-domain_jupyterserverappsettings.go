@@ -8,12 +8,12 @@ import (
 
 // Domain_JupyterServerAppSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.JupyterServerAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterserverappsettings.html
-type Domain_JupyterServerAppSettings struct {
+type Domain_JupyterServerAppSettings[T any] struct {
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterserverappsettings.html#cfn-sagemaker-domain-jupyterserverappsettings-defaultresourcespec
-	DefaultResourceSpec *Domain_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Domain_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_JupyterServerAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_JupyterServerAppSettings) AWSCloudFormationType() string {
+func (r *Domain_JupyterServerAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.JupyterServerAppSettings"
 }

@@ -8,17 +8,17 @@ import (
 
 // Listener_DefaultAction AWS CloudFormation Resource (AWS::VpcLattice::Listener.DefaultAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-defaultaction.html
-type Listener_DefaultAction struct {
+type Listener_DefaultAction[T any] struct {
 
 	// FixedResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-defaultaction.html#cfn-vpclattice-listener-defaultaction-fixedresponse
-	FixedResponse *Listener_FixedResponse `json:"FixedResponse,omitempty"`
+	FixedResponse *Listener_FixedResponse[any] `json:"FixedResponse,omitempty"`
 
 	// Forward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-defaultaction.html#cfn-vpclattice-listener-defaultaction-forward
-	Forward *Listener_Forward `json:"Forward,omitempty"`
+	Forward *Listener_Forward[any] `json:"Forward,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Listener_DefaultAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_DefaultAction) AWSCloudFormationType() string {
+func (r *Listener_DefaultAction[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Listener.DefaultAction"
 }

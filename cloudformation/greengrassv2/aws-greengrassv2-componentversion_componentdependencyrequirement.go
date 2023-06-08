@@ -8,7 +8,7 @@ import (
 
 // ComponentVersion_ComponentDependencyRequirement AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.ComponentDependencyRequirement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html
-type ComponentVersion_ComponentDependencyRequirement struct {
+type ComponentVersion_ComponentDependencyRequirement[T any] struct {
 
 	// DependencyType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentVersion_ComponentDependencyRequirement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_ComponentDependencyRequirement) AWSCloudFormationType() string {
+func (r *ComponentVersion_ComponentDependencyRequirement[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.ComponentDependencyRequirement"
 }

@@ -8,7 +8,7 @@ import (
 
 // Channel_HlsOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html
-type Channel_HlsOutputSettings struct {
+type Channel_HlsOutputSettings[T any] struct {
 
 	// H265PackagingType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_HlsOutputSettings struct {
 	// HlsSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-hlssettings
-	HlsSettings *Channel_HlsSettings `json:"HlsSettings,omitempty"`
+	HlsSettings *Channel_HlsSettings[any] `json:"HlsSettings,omitempty"`
 
 	// NameModifier AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Channel_HlsOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_HlsOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsOutputSettings"
 }

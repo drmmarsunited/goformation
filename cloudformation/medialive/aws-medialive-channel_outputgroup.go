@@ -8,7 +8,7 @@ import (
 
 // Channel_OutputGroup AWS CloudFormation Resource (AWS::MediaLive::Channel.OutputGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html
-type Channel_OutputGroup struct {
+type Channel_OutputGroup[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Channel_OutputGroup struct {
 	// OutputGroupSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputgroupsettings
-	OutputGroupSettings *Channel_OutputGroupSettings `json:"OutputGroupSettings,omitempty"`
+	OutputGroupSettings *Channel_OutputGroupSettings[any] `json:"OutputGroupSettings,omitempty"`
 
 	// Outputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputs
-	Outputs []Channel_Output `json:"Outputs,omitempty"`
+	Outputs []Channel_Output[any] `json:"Outputs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_OutputGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_OutputGroup) AWSCloudFormationType() string {
+func (r *Channel_OutputGroup[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.OutputGroup"
 }

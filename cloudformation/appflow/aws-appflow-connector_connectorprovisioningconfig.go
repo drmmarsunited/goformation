@@ -8,12 +8,12 @@ import (
 
 // Connector_ConnectorProvisioningConfig AWS CloudFormation Resource (AWS::AppFlow::Connector.ConnectorProvisioningConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connector-connectorprovisioningconfig.html
-type Connector_ConnectorProvisioningConfig struct {
+type Connector_ConnectorProvisioningConfig[T any] struct {
 
 	// Lambda AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connector-connectorprovisioningconfig.html#cfn-appflow-connector-connectorprovisioningconfig-lambda
-	Lambda *Connector_LambdaConnectorProvisioningConfig `json:"Lambda,omitempty"`
+	Lambda *Connector_LambdaConnectorProvisioningConfig[any] `json:"Lambda,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Connector_ConnectorProvisioningConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_ConnectorProvisioningConfig) AWSCloudFormationType() string {
+func (r *Connector_ConnectorProvisioningConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Connector.ConnectorProvisioningConfig"
 }

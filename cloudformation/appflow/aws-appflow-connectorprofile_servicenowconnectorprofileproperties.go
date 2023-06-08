@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ServiceNowConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-servicenowconnectorprofileproperties.html
-type ConnectorProfile_ServiceNowConnectorProfileProperties struct {
+type ConnectorProfile_ServiceNowConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_ServiceNowConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ServiceNowConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ServiceNowConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileProperties"
 }

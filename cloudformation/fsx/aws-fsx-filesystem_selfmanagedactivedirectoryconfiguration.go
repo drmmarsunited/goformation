@@ -8,7 +8,7 @@ import (
 
 // FileSystem_SelfManagedActiveDirectoryConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.SelfManagedActiveDirectoryConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html
-type FileSystem_SelfManagedActiveDirectoryConfiguration struct {
+type FileSystem_SelfManagedActiveDirectoryConfiguration[T any] struct {
 
 	// DnsIps AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type FileSystem_SelfManagedActiveDirectoryConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_SelfManagedActiveDirectoryConfiguration) AWSCloudFormationType() string {
+func (r *FileSystem_SelfManagedActiveDirectoryConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem.SelfManagedActiveDirectoryConfiguration"
 }

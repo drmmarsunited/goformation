@@ -8,22 +8,22 @@ import (
 
 // Dashboard_PivotTableAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableaggregatedfieldwells.html
-type Dashboard_PivotTableAggregatedFieldWells struct {
+type Dashboard_PivotTableAggregatedFieldWells[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableaggregatedfieldwells.html#cfn-quicksight-dashboard-pivottableaggregatedfieldwells-columns
-	Columns []Dashboard_DimensionField `json:"Columns,omitempty"`
+	Columns []Dashboard_DimensionField[any] `json:"Columns,omitempty"`
 
 	// Rows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableaggregatedfieldwells.html#cfn-quicksight-dashboard-pivottableaggregatedfieldwells-rows
-	Rows []Dashboard_DimensionField `json:"Rows,omitempty"`
+	Rows []Dashboard_DimensionField[any] `json:"Rows,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableaggregatedfieldwells.html#cfn-quicksight-dashboard-pivottableaggregatedfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_PivotTableAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableAggregatedFieldWells"
 }

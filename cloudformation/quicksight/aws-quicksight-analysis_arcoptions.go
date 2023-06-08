@@ -8,7 +8,7 @@ import (
 
 // Analysis_ArcOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ArcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-arcoptions.html
-type Analysis_ArcOptions struct {
+type Analysis_ArcOptions[T any] struct {
 
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_ArcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ArcOptions) AWSCloudFormationType() string {
+func (r *Analysis_ArcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ArcOptions"
 }

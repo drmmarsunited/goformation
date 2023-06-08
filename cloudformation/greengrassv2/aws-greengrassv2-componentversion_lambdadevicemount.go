@@ -8,12 +8,12 @@ import (
 
 // ComponentVersion_LambdaDeviceMount AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaDeviceMount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html
-type ComponentVersion_LambdaDeviceMount struct {
+type ComponentVersion_LambdaDeviceMount[T any] struct {
 
 	// AddGroupOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-addgroupowner
-	AddGroupOwner *bool `json:"AddGroupOwner,omitempty"`
+	AddGroupOwner *T `json:"AddGroupOwner,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ComponentVersion_LambdaDeviceMount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaDeviceMount) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaDeviceMount[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaDeviceMount"
 }

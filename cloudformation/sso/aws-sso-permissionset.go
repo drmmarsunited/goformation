@@ -12,12 +12,12 @@ import (
 
 // PermissionSet AWS CloudFormation Resource (AWS::SSO::PermissionSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html
-type PermissionSet struct {
+type PermissionSet[T any] struct {
 
 	// CustomerManagedPolicyReferences AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-customermanagedpolicyreferences
-	CustomerManagedPolicyReferences []PermissionSet_CustomerManagedPolicyReference `json:"CustomerManagedPolicyReferences,omitempty"`
+	CustomerManagedPolicyReferences []PermissionSet_CustomerManagedPolicyReference[any] `json:"CustomerManagedPolicyReferences,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type PermissionSet struct {
 	// PermissionsBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-permissionsboundary
-	PermissionsBoundary *PermissionSet_PermissionsBoundary `json:"PermissionsBoundary,omitempty"`
+	PermissionsBoundary *PermissionSet_PermissionsBoundary[any] `json:"PermissionsBoundary,omitempty"`
 
 	// RelayStateType AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type PermissionSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PermissionSet) AWSCloudFormationType() string {
+func (r *PermissionSet[any]) AWSCloudFormationType() string {
 	return "AWS::SSO::PermissionSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PermissionSet) MarshalJSON() ([]byte, error) {
-	type Properties PermissionSet
+func (r PermissionSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties PermissionSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r PermissionSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PermissionSet) UnmarshalJSON(b []byte) error {
-	type Properties PermissionSet
+func (r *PermissionSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties PermissionSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *PermissionSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PermissionSet(*res.Properties)
+		*r = PermissionSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

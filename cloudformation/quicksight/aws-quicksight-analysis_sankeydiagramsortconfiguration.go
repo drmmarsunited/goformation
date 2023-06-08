@@ -8,22 +8,22 @@ import (
 
 // Analysis_SankeyDiagramSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SankeyDiagramSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramsortconfiguration.html
-type Analysis_SankeyDiagramSortConfiguration struct {
+type Analysis_SankeyDiagramSortConfiguration[T any] struct {
 
 	// DestinationItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramsortconfiguration.html#cfn-quicksight-analysis-sankeydiagramsortconfiguration-destinationitemslimit
-	DestinationItemsLimit *Analysis_ItemsLimitConfiguration `json:"DestinationItemsLimit,omitempty"`
+	DestinationItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"DestinationItemsLimit,omitempty"`
 
 	// SourceItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramsortconfiguration.html#cfn-quicksight-analysis-sankeydiagramsortconfiguration-sourceitemslimit
-	SourceItemsLimit *Analysis_ItemsLimitConfiguration `json:"SourceItemsLimit,omitempty"`
+	SourceItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"SourceItemsLimit,omitempty"`
 
 	// WeightSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramsortconfiguration.html#cfn-quicksight-analysis-sankeydiagramsortconfiguration-weightsort
-	WeightSort []Analysis_FieldSortOptions `json:"WeightSort,omitempty"`
+	WeightSort []Analysis_FieldSortOptions[any] `json:"WeightSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_SankeyDiagramSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SankeyDiagramSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SankeyDiagramSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SankeyDiagramSortConfiguration"
 }

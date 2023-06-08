@@ -8,17 +8,17 @@ import (
 
 // Dashboard_CustomValuesConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomValuesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customvaluesconfiguration.html
-type Dashboard_CustomValuesConfiguration struct {
+type Dashboard_CustomValuesConfiguration[T any] struct {
 
 	// CustomValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customvaluesconfiguration.html#cfn-quicksight-dashboard-customvaluesconfiguration-customvalues
-	CustomValues *Dashboard_CustomParameterValues `json:"CustomValues"`
+	CustomValues *Dashboard_CustomParameterValues[any] `json:"CustomValues"`
 
 	// IncludeNullValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customvaluesconfiguration.html#cfn-quicksight-dashboard-customvaluesconfiguration-includenullvalue
-	IncludeNullValue *bool `json:"IncludeNullValue,omitempty"`
+	IncludeNullValue *T `json:"IncludeNullValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_CustomValuesConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomValuesConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_CustomValuesConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomValuesConfiguration"
 }

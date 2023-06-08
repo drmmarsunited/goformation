@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_OnEnter AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.OnEnter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html
-type DetectorModel_OnEnter struct {
+type DetectorModel_OnEnter[T any] struct {
 
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html#cfn-iotevents-detectormodel-onenter-events
-	Events []DetectorModel_Event `json:"Events,omitempty"`
+	Events []DetectorModel_Event[any] `json:"Events,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DetectorModel_OnEnter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_OnEnter) AWSCloudFormationType() string {
+func (r *DetectorModel_OnEnter[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.OnEnter"
 }

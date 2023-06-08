@@ -8,17 +8,17 @@ import (
 
 // Template_DefaultInteractiveLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DefaultInteractiveLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultinteractivelayoutconfiguration.html
-type Template_DefaultInteractiveLayoutConfiguration struct {
+type Template_DefaultInteractiveLayoutConfiguration[T any] struct {
 
 	// FreeForm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultinteractivelayoutconfiguration.html#cfn-quicksight-template-defaultinteractivelayoutconfiguration-freeform
-	FreeForm *Template_DefaultFreeFormLayoutConfiguration `json:"FreeForm,omitempty"`
+	FreeForm *Template_DefaultFreeFormLayoutConfiguration[any] `json:"FreeForm,omitempty"`
 
 	// Grid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultinteractivelayoutconfiguration.html#cfn-quicksight-template-defaultinteractivelayoutconfiguration-grid
-	Grid *Template_DefaultGridLayoutConfiguration `json:"Grid,omitempty"`
+	Grid *Template_DefaultGridLayoutConfiguration[any] `json:"Grid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_DefaultInteractiveLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DefaultInteractiveLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_DefaultInteractiveLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DefaultInteractiveLayoutConfiguration"
 }

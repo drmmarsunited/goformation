@@ -12,7 +12,7 @@ import (
 
 // DHCPOptions AWS CloudFormation Resource (AWS::EC2::DHCPOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html
-type DHCPOptions struct {
+type DHCPOptions[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type DHCPOptions struct {
 	// NetbiosNodeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnodetype
-	NetbiosNodeType *int `json:"NetbiosNodeType,omitempty"`
+	NetbiosNodeType *T `json:"NetbiosNodeType,omitempty"`
 
 	// NtpServers AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type DHCPOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DHCPOptions) AWSCloudFormationType() string {
+func (r *DHCPOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::DHCPOptions"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DHCPOptions) MarshalJSON() ([]byte, error) {
-	type Properties DHCPOptions
+func (r DHCPOptions[any]) MarshalJSON() ([]byte, error) {
+	type Properties DHCPOptions[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r DHCPOptions) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DHCPOptions) UnmarshalJSON(b []byte) error {
-	type Properties DHCPOptions
+func (r *DHCPOptions[any]) UnmarshalJSON(b []byte) error {
+	type Properties DHCPOptions[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *DHCPOptions) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DHCPOptions(*res.Properties)
+		*r = DHCPOptions[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

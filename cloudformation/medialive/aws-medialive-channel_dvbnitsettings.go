@@ -8,12 +8,12 @@ import (
 
 // Channel_DvbNitSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.DvbNitSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html
-type Channel_DvbNitSettings struct {
+type Channel_DvbNitSettings[T any] struct {
 
 	// NetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-networkid
-	NetworkId *int `json:"NetworkId,omitempty"`
+	NetworkId *T `json:"NetworkId,omitempty"`
 
 	// NetworkName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_DvbNitSettings struct {
 	// RepInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-repinterval
-	RepInterval *int `json:"RepInterval,omitempty"`
+	RepInterval *T `json:"RepInterval,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_DvbNitSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_DvbNitSettings) AWSCloudFormationType() string {
+func (r *Channel_DvbNitSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.DvbNitSettings"
 }

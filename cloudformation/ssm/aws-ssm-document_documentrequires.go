@@ -8,7 +8,7 @@ import (
 
 // Document_DocumentRequires AWS CloudFormation Resource (AWS::SSM::Document.DocumentRequires)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-document-documentrequires.html
-type Document_DocumentRequires struct {
+type Document_DocumentRequires[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Document_DocumentRequires struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Document_DocumentRequires) AWSCloudFormationType() string {
+func (r *Document_DocumentRequires[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Document.DocumentRequires"
 }

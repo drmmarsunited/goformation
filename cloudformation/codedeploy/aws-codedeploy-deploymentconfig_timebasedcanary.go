@@ -8,17 +8,17 @@ import (
 
 // DeploymentConfig_TimeBasedCanary AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.TimeBasedCanary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html
-type DeploymentConfig_TimeBasedCanary struct {
+type DeploymentConfig_TimeBasedCanary[T any] struct {
 
 	// CanaryInterval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-codedeploy-deploymentconfig-timebasedcanary-canaryinterval
-	CanaryInterval int `json:"CanaryInterval"`
+	CanaryInterval T `json:"CanaryInterval"`
 
 	// CanaryPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-codedeploy-deploymentconfig-timebasedcanary-canarypercentage
-	CanaryPercentage int `json:"CanaryPercentage"`
+	CanaryPercentage T `json:"CanaryPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeploymentConfig_TimeBasedCanary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentConfig_TimeBasedCanary) AWSCloudFormationType() string {
+func (r *DeploymentConfig_TimeBasedCanary[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentConfig.TimeBasedCanary"
 }

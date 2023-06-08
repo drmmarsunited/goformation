@@ -12,7 +12,7 @@ import (
 
 // PricingPlan AWS CloudFormation Resource (AWS::BillingConductor::PricingPlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html
-type PricingPlan struct {
+type PricingPlan[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type PricingPlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PricingPlan) AWSCloudFormationType() string {
+func (r *PricingPlan[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::PricingPlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PricingPlan) MarshalJSON() ([]byte, error) {
-	type Properties PricingPlan
+func (r PricingPlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties PricingPlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r PricingPlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PricingPlan) UnmarshalJSON(b []byte) error {
-	type Properties PricingPlan
+func (r *PricingPlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties PricingPlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *PricingPlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PricingPlan(*res.Properties)
+		*r = PricingPlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

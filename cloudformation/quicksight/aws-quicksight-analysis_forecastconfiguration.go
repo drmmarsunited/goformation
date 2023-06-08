@@ -8,17 +8,17 @@ import (
 
 // Analysis_ForecastConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ForecastConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-forecastconfiguration.html
-type Analysis_ForecastConfiguration struct {
+type Analysis_ForecastConfiguration[T any] struct {
 
 	// ForecastProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-forecastconfiguration.html#cfn-quicksight-analysis-forecastconfiguration-forecastproperties
-	ForecastProperties *Analysis_TimeBasedForecastProperties `json:"ForecastProperties,omitempty"`
+	ForecastProperties *Analysis_TimeBasedForecastProperties[any] `json:"ForecastProperties,omitempty"`
 
 	// Scenario AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-forecastconfiguration.html#cfn-quicksight-analysis-forecastconfiguration-scenario
-	Scenario *Analysis_ForecastScenario `json:"Scenario,omitempty"`
+	Scenario *Analysis_ForecastScenario[any] `json:"Scenario,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_ForecastConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ForecastConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ForecastConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ForecastConfiguration"
 }

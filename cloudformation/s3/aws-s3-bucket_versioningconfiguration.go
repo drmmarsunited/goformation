@@ -8,7 +8,7 @@ import (
 
 // Bucket_VersioningConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.VersioningConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html
-type Bucket_VersioningConfiguration struct {
+type Bucket_VersioningConfiguration[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bucket_VersioningConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_VersioningConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_VersioningConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.VersioningConfiguration"
 }

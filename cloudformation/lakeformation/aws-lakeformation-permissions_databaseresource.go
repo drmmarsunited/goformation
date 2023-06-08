@@ -8,7 +8,7 @@ import (
 
 // Permissions_DatabaseResource AWS CloudFormation Resource (AWS::LakeFormation::Permissions.DatabaseResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html
-type Permissions_DatabaseResource struct {
+type Permissions_DatabaseResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Permissions_DatabaseResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions_DatabaseResource) AWSCloudFormationType() string {
+func (r *Permissions_DatabaseResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions.DatabaseResource"
 }

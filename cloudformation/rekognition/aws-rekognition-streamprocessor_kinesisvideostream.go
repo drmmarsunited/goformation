@@ -8,7 +8,7 @@ import (
 
 // StreamProcessor_KinesisVideoStream AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.KinesisVideoStream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-kinesisvideostream.html
-type StreamProcessor_KinesisVideoStream struct {
+type StreamProcessor_KinesisVideoStream[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type StreamProcessor_KinesisVideoStream struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_KinesisVideoStream) AWSCloudFormationType() string {
+func (r *StreamProcessor_KinesisVideoStream[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.KinesisVideoStream"
 }

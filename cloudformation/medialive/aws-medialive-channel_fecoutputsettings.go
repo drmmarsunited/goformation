@@ -8,12 +8,12 @@ import (
 
 // Channel_FecOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FecOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html
-type Channel_FecOutputSettings struct {
+type Channel_FecOutputSettings[T any] struct {
 
 	// ColumnDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-columndepth
-	ColumnDepth *int `json:"ColumnDepth,omitempty"`
+	ColumnDepth *T `json:"ColumnDepth,omitempty"`
 
 	// IncludeFec AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_FecOutputSettings struct {
 	// RowLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-rowlength
-	RowLength *int `json:"RowLength,omitempty"`
+	RowLength *T `json:"RowLength,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_FecOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FecOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_FecOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FecOutputSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPathLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPathLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathlabeltype.html
-type Dashboard_DataPathLabelType struct {
+type Dashboard_DataPathLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_DataPathLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPathLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_DataPathLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPathLabelType"
 }

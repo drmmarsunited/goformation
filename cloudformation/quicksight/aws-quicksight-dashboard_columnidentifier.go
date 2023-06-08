@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ColumnIdentifier AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColumnIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnidentifier.html
-type Dashboard_ColumnIdentifier struct {
+type Dashboard_ColumnIdentifier[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_ColumnIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColumnIdentifier) AWSCloudFormationType() string {
+func (r *Dashboard_ColumnIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColumnIdentifier"
 }

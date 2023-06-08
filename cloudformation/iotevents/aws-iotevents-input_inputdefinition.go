@@ -8,12 +8,12 @@ import (
 
 // Input_InputDefinition AWS CloudFormation Resource (AWS::IoTEvents::Input.InputDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-inputdefinition.html
-type Input_InputDefinition struct {
+type Input_InputDefinition[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-inputdefinition.html#cfn-iotevents-input-inputdefinition-attributes
-	Attributes []Input_Attribute `json:"Attributes"`
+	Attributes []Input_Attribute[any] `json:"Attributes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Input_InputDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_InputDefinition) AWSCloudFormationType() string {
+func (r *Input_InputDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::Input.InputDefinition"
 }

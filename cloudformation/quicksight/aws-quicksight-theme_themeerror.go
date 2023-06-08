@@ -8,7 +8,7 @@ import (
 
 // Theme_ThemeError AWS CloudFormation Resource (AWS::QuickSight::Theme.ThemeError)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html
-type Theme_ThemeError struct {
+type Theme_ThemeError[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Theme_ThemeError struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_ThemeError) AWSCloudFormationType() string {
+func (r *Theme_ThemeError[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.ThemeError"
 }

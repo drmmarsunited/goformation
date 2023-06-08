@@ -11,7 +11,7 @@ import (
 
 // AutoScalingGroup AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html
-type AutoScalingGroup struct {
+type AutoScalingGroup[T any] struct {
 
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type AutoScalingGroup struct {
 	// CapacityRebalance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-capacityrebalance
-	CapacityRebalance *bool `json:"CapacityRebalance,omitempty"`
+	CapacityRebalance *T `json:"CapacityRebalance,omitempty"`
 
 	// Context AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type AutoScalingGroup struct {
 	// DefaultInstanceWarmup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-defaultinstancewarmup
-	DefaultInstanceWarmup *int `json:"DefaultInstanceWarmup,omitempty"`
+	DefaultInstanceWarmup *T `json:"DefaultInstanceWarmup,omitempty"`
 
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type AutoScalingGroup struct {
 	// HealthCheckGracePeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthcheckgraceperiod
-	HealthCheckGracePeriod *int `json:"HealthCheckGracePeriod,omitempty"`
+	HealthCheckGracePeriod *T `json:"HealthCheckGracePeriod,omitempty"`
 
 	// HealthCheckType AWS CloudFormation Property
 	// Required: false
@@ -76,12 +76,12 @@ type AutoScalingGroup struct {
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchtemplate
-	LaunchTemplate *AutoScalingGroup_LaunchTemplateSpecification `json:"LaunchTemplate,omitempty"`
+	LaunchTemplate *AutoScalingGroup_LaunchTemplateSpecification[any] `json:"LaunchTemplate,omitempty"`
 
 	// LifecycleHookSpecificationList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist
-	LifecycleHookSpecificationList []AutoScalingGroup_LifecycleHookSpecification `json:"LifecycleHookSpecificationList,omitempty"`
+	LifecycleHookSpecificationList []AutoScalingGroup_LifecycleHookSpecification[any] `json:"LifecycleHookSpecificationList,omitempty"`
 
 	// LoadBalancerNames AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type AutoScalingGroup struct {
 	// MaxInstanceLifetime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxinstancelifetime
-	MaxInstanceLifetime *int `json:"MaxInstanceLifetime,omitempty"`
+	MaxInstanceLifetime *T `json:"MaxInstanceLifetime,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: true
@@ -101,7 +101,7 @@ type AutoScalingGroup struct {
 	// MetricsCollection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection
-	MetricsCollection []AutoScalingGroup_MetricsCollection `json:"MetricsCollection,omitempty"`
+	MetricsCollection []AutoScalingGroup_MetricsCollection[any] `json:"MetricsCollection,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: true
@@ -111,17 +111,17 @@ type AutoScalingGroup struct {
 	// MixedInstancesPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-mixedinstancespolicy
-	MixedInstancesPolicy *AutoScalingGroup_MixedInstancesPolicy `json:"MixedInstancesPolicy,omitempty"`
+	MixedInstancesPolicy *AutoScalingGroup_MixedInstancesPolicy[any] `json:"MixedInstancesPolicy,omitempty"`
 
 	// NewInstancesProtectedFromScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-newinstancesprotectedfromscalein
-	NewInstancesProtectedFromScaleIn *bool `json:"NewInstancesProtectedFromScaleIn,omitempty"`
+	NewInstancesProtectedFromScaleIn *T `json:"NewInstancesProtectedFromScaleIn,omitempty"`
 
 	// NotificationConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations
-	NotificationConfigurations []AutoScalingGroup_NotificationConfiguration `json:"NotificationConfigurations,omitempty"`
+	NotificationConfigurations []AutoScalingGroup_NotificationConfiguration[any] `json:"NotificationConfigurations,omitempty"`
 
 	// PlacementGroup AWS CloudFormation Property
 	// Required: false
@@ -136,7 +136,7 @@ type AutoScalingGroup struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags
-	Tags []AutoScalingGroup_TagProperty `json:"Tags,omitempty"`
+	Tags []AutoScalingGroup_TagProperty[any] `json:"Tags,omitempty"`
 
 	// TargetGroupARNs AWS CloudFormation Property
 	// Required: false
@@ -176,14 +176,15 @@ type AutoScalingGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup) AWSCloudFormationType() string {
+func (r *AutoScalingGroup[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AutoScalingGroup) MarshalJSON() ([]byte, error) {
-	type Properties AutoScalingGroup
+func (r AutoScalingGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties AutoScalingGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -209,8 +210,9 @@ func (r AutoScalingGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AutoScalingGroup) UnmarshalJSON(b []byte) error {
-	type Properties AutoScalingGroup
+func (r *AutoScalingGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties AutoScalingGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -232,7 +234,7 @@ func (r *AutoScalingGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AutoScalingGroup(*res.Properties)
+		*r = AutoScalingGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Campaign_InAppMessageBodyConfig AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageBodyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagebodyconfig.html
-type Campaign_InAppMessageBodyConfig struct {
+type Campaign_InAppMessageBodyConfig[T any] struct {
 
 	// Alignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Campaign_InAppMessageBodyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_InAppMessageBodyConfig) AWSCloudFormationType() string {
+func (r *Campaign_InAppMessageBodyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.InAppMessageBodyConfig"
 }

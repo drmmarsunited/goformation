@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TotalOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totaloptions.html
-type Dashboard_TotalOptions struct {
+type Dashboard_TotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_TotalOptions struct {
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totaloptions.html#cfn-quicksight-dashboard-totaloptions-totalcellstyle
-	TotalCellStyle *Dashboard_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Dashboard_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dashboard_TotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TotalOptions) AWSCloudFormationType() string {
+func (r *Dashboard_TotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TotalOptions"
 }

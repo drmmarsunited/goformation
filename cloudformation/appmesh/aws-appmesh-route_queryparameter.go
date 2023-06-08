@@ -8,12 +8,12 @@ import (
 
 // Route_QueryParameter AWS CloudFormation Resource (AWS::AppMesh::Route.QueryParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-queryparameter.html
-type Route_QueryParameter struct {
+type Route_QueryParameter[T any] struct {
 
 	// Match AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-queryparameter.html#cfn-appmesh-route-queryparameter-match
-	Match *Route_HttpQueryParameterMatch `json:"Match,omitempty"`
+	Match *Route_HttpQueryParameterMatch[any] `json:"Match,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Route_QueryParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_QueryParameter) AWSCloudFormationType() string {
+func (r *Route_QueryParameter[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.QueryParameter"
 }

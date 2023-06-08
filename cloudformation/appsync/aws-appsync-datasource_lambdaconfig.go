@@ -8,7 +8,7 @@ import (
 
 // DataSource_LambdaConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.LambdaConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html
-type DataSource_LambdaConfig struct {
+type DataSource_LambdaConfig[T any] struct {
 
 	// LambdaFunctionArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_LambdaConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_LambdaConfig) AWSCloudFormationType() string {
+func (r *DataSource_LambdaConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.LambdaConfig"
 }

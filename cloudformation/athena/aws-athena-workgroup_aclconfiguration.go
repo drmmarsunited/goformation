@@ -8,7 +8,7 @@ import (
 
 // WorkGroup_AclConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.AclConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-aclconfiguration.html
-type WorkGroup_AclConfiguration struct {
+type WorkGroup_AclConfiguration[T any] struct {
 
 	// S3AclOption AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WorkGroup_AclConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_AclConfiguration) AWSCloudFormationType() string {
+func (r *WorkGroup_AclConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.AclConfiguration"
 }

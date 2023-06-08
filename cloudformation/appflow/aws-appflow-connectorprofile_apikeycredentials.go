@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_ApiKeyCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.ApiKeyCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-apikeycredentials.html
-type ConnectorProfile_ApiKeyCredentials struct {
+type ConnectorProfile_ApiKeyCredentials[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_ApiKeyCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_ApiKeyCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_ApiKeyCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.ApiKeyCredentials"
 }

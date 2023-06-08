@@ -8,7 +8,7 @@ import (
 
 // Table_AttributeDefinition AWS CloudFormation Resource (AWS::DynamoDB::Table.AttributeDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-attributedefinition.html
-type Table_AttributeDefinition struct {
+type Table_AttributeDefinition[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Table_AttributeDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_AttributeDefinition) AWSCloudFormationType() string {
+func (r *Table_AttributeDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.AttributeDefinition"
 }

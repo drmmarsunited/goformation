@@ -8,7 +8,7 @@ import (
 
 // Dashboard_PeriodToDateComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PeriodToDateComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html
-type Dashboard_PeriodToDateComputation struct {
+type Dashboard_PeriodToDateComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Dashboard_PeriodToDateComputation struct {
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-time
-	Time *Dashboard_DimensionField `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-value
-	Value *Dashboard_MeasureField `json:"Value,omitempty"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_PeriodToDateComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PeriodToDateComputation) AWSCloudFormationType() string {
+func (r *Dashboard_PeriodToDateComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PeriodToDateComputation"
 }

@@ -8,12 +8,12 @@ import (
 
 // Channel_FrameCaptureCdnSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureCdnSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturecdnsettings.html
-type Channel_FrameCaptureCdnSettings struct {
+type Channel_FrameCaptureCdnSettings[T any] struct {
 
 	// FrameCaptureS3Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturecdnsettings.html#cfn-medialive-channel-framecapturecdnsettings-framecaptures3settings
-	FrameCaptureS3Settings *Channel_FrameCaptureS3Settings `json:"FrameCaptureS3Settings,omitempty"`
+	FrameCaptureS3Settings *Channel_FrameCaptureS3Settings[any] `json:"FrameCaptureS3Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_FrameCaptureCdnSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FrameCaptureCdnSettings) AWSCloudFormationType() string {
+func (r *Channel_FrameCaptureCdnSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FrameCaptureCdnSettings"
 }

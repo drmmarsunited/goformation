@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_SchemaConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html
-type DeliveryStream_SchemaConfiguration struct {
+type DeliveryStream_SchemaConfiguration[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DeliveryStream_SchemaConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_SchemaConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_SchemaConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration"
 }

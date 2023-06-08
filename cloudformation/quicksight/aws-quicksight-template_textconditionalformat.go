@@ -8,22 +8,22 @@ import (
 
 // Template_TextConditionalFormat AWS CloudFormation Resource (AWS::QuickSight::Template.TextConditionalFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-textconditionalformat.html
-type Template_TextConditionalFormat struct {
+type Template_TextConditionalFormat[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-textconditionalformat.html#cfn-quicksight-template-textconditionalformat-backgroundcolor
-	BackgroundColor *Template_ConditionalFormattingColor `json:"BackgroundColor,omitempty"`
+	BackgroundColor *Template_ConditionalFormattingColor[any] `json:"BackgroundColor,omitempty"`
 
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-textconditionalformat.html#cfn-quicksight-template-textconditionalformat-icon
-	Icon *Template_ConditionalFormattingIcon `json:"Icon,omitempty"`
+	Icon *Template_ConditionalFormattingIcon[any] `json:"Icon,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-textconditionalformat.html#cfn-quicksight-template-textconditionalformat-textcolor
-	TextColor *Template_ConditionalFormattingColor `json:"TextColor,omitempty"`
+	TextColor *Template_ConditionalFormattingColor[any] `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_TextConditionalFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TextConditionalFormat) AWSCloudFormationType() string {
+func (r *Template_TextConditionalFormat[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TextConditionalFormat"
 }

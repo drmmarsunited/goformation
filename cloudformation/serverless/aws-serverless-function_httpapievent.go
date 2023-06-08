@@ -8,7 +8,7 @@ import (
 
 // Function_HttpApiEvent AWS CloudFormation Resource (AWS::Serverless::Function.HttpApiEvent)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-type Function_HttpApiEvent struct {
+type Function_HttpApiEvent[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Function_HttpApiEvent struct {
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-httpapi.html
-	Auth *Function_HttpApiFunctionAuth `json:"Auth,omitempty"`
+	Auth *Function_HttpApiFunctionAuth[any] `json:"Auth,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Function_HttpApiEvent struct {
 	// RouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings
-	RouteSettings *Function_RouteSettings `json:"RouteSettings,omitempty"`
+	RouteSettings *Function_RouteSettings[any] `json:"RouteSettings,omitempty"`
 
 	// TimeoutInMillis AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-	TimeoutInMillis *int `json:"TimeoutInMillis,omitempty"`
+	TimeoutInMillis *T `json:"TimeoutInMillis,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Function_HttpApiEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_HttpApiEvent) AWSCloudFormationType() string {
+func (r *Function_HttpApiEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.HttpApiEvent"
 }

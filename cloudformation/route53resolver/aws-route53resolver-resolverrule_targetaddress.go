@@ -8,7 +8,7 @@ import (
 
 // ResolverRule_TargetAddress AWS CloudFormation Resource (AWS::Route53Resolver::ResolverRule.TargetAddress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html
-type ResolverRule_TargetAddress struct {
+type ResolverRule_TargetAddress[T any] struct {
 
 	// Ip AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ResolverRule_TargetAddress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverRule_TargetAddress) AWSCloudFormationType() string {
+func (r *ResolverRule_TargetAddress[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverRule.TargetAddress"
 }

@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_IamInstanceProfile AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.IamInstanceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html
-type LaunchTemplate_IamInstanceProfile struct {
+type LaunchTemplate_IamInstanceProfile[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LaunchTemplate_IamInstanceProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_IamInstanceProfile) AWSCloudFormationType() string {
+func (r *LaunchTemplate_IamInstanceProfile[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.IamInstanceProfile"
 }

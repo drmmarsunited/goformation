@@ -12,7 +12,7 @@ import (
 
 // Datastore AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html
-type Datastore struct {
+type Datastore[T any] struct {
 
 	// DatastoreName AWS CloudFormation Property
 	// Required: false
@@ -22,22 +22,22 @@ type Datastore struct {
 	// DatastorePartitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorepartitions
-	DatastorePartitions *Datastore_DatastorePartitions `json:"DatastorePartitions,omitempty"`
+	DatastorePartitions *Datastore_DatastorePartitions[any] `json:"DatastorePartitions,omitempty"`
 
 	// DatastoreStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorestorage
-	DatastoreStorage *Datastore_DatastoreStorage `json:"DatastoreStorage,omitempty"`
+	DatastoreStorage *Datastore_DatastoreStorage[any] `json:"DatastoreStorage,omitempty"`
 
 	// FileFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-fileformatconfiguration
-	FileFormatConfiguration *Datastore_FileFormatConfiguration `json:"FileFormatConfiguration,omitempty"`
+	FileFormatConfiguration *Datastore_FileFormatConfiguration[any] `json:"FileFormatConfiguration,omitempty"`
 
 	// RetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-retentionperiod
-	RetentionPeriod *Datastore_RetentionPeriod `json:"RetentionPeriod,omitempty"`
+	RetentionPeriod *Datastore_RetentionPeriod[any] `json:"RetentionPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Datastore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore) AWSCloudFormationType() string {
+func (r *Datastore[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Datastore) MarshalJSON() ([]byte, error) {
-	type Properties Datastore
+func (r Datastore[any]) MarshalJSON() ([]byte, error) {
+	type Properties Datastore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Datastore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Datastore) UnmarshalJSON(b []byte) error {
-	type Properties Datastore
+func (r *Datastore[any]) UnmarshalJSON(b []byte) error {
+	type Properties Datastore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Datastore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Datastore(*res.Properties)
+		*r = Datastore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

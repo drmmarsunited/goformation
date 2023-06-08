@@ -8,17 +8,17 @@ import (
 
 // AutoScalingGroup_MemoryGiBPerVCpuRequest AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.MemoryGiBPerVCpuRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-memorygibpervcpurequest.html
-type AutoScalingGroup_MemoryGiBPerVCpuRequest struct {
+type AutoScalingGroup_MemoryGiBPerVCpuRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-memorygibpervcpurequest.html#cfn-autoscaling-autoscalinggroup-memorygibpervcpurequest-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-memorygibpervcpurequest.html#cfn-autoscaling-autoscalinggroup-memorygibpervcpurequest-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AutoScalingGroup_MemoryGiBPerVCpuRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_MemoryGiBPerVCpuRequest) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_MemoryGiBPerVCpuRequest[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.MemoryGiBPerVCpuRequest"
 }

@@ -8,12 +8,12 @@ import (
 
 // ReplicationConfiguration_ReplicationConfiguration AWS CloudFormation Resource (AWS::ECR::ReplicationConfiguration.ReplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html
-type ReplicationConfiguration_ReplicationConfiguration struct {
+type ReplicationConfiguration_ReplicationConfiguration[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules
-	Rules []ReplicationConfiguration_ReplicationRule `json:"Rules"`
+	Rules []ReplicationConfiguration_ReplicationRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ReplicationConfiguration_ReplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationConfiguration_ReplicationConfiguration) AWSCloudFormationType() string {
+func (r *ReplicationConfiguration_ReplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::ReplicationConfiguration.ReplicationConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_CustomResponse AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CustomResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customresponse.html
-type RuleGroup_CustomResponse struct {
+type RuleGroup_CustomResponse[T any] struct {
 
 	// CustomResponseBodyKey AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type RuleGroup_CustomResponse struct {
 	// ResponseCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customresponse.html#cfn-wafv2-rulegroup-customresponse-responsecode
-	ResponseCode int `json:"ResponseCode"`
+	ResponseCode T `json:"ResponseCode"`
 
 	// ResponseHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customresponse.html#cfn-wafv2-rulegroup-customresponse-responseheaders
-	ResponseHeaders []RuleGroup_CustomHTTPHeader `json:"ResponseHeaders,omitempty"`
+	ResponseHeaders []RuleGroup_CustomHTTPHeader[any] `json:"ResponseHeaders,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type RuleGroup_CustomResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CustomResponse) AWSCloudFormationType() string {
+func (r *RuleGroup_CustomResponse[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CustomResponse"
 }

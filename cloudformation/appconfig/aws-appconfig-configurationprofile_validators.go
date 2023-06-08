@@ -8,7 +8,7 @@ import (
 
 // ConfigurationProfile_Validators AWS CloudFormation Resource (AWS::AppConfig::ConfigurationProfile.Validators)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html
-type ConfigurationProfile_Validators struct {
+type ConfigurationProfile_Validators[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConfigurationProfile_Validators struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationProfile_Validators) AWSCloudFormationType() string {
+func (r *ConfigurationProfile_Validators[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::ConfigurationProfile.Validators"
 }

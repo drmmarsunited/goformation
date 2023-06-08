@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_DatadogConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofileproperties.html
-type ConnectorProfile_DatadogConnectorProfileProperties struct {
+type ConnectorProfile_DatadogConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConnectorProfile_DatadogConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_DatadogConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_DatadogConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileProperties"
 }

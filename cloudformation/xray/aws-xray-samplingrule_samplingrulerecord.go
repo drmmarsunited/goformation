@@ -23,7 +23,7 @@ type SamplingRule_SamplingRuleRecord struct {
 	// SamplingRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-samplingrule
-	SamplingRule *SamplingRule_SamplingRule `json:"SamplingRule,omitempty"`
+	SamplingRule *SamplingRule_SamplingRule[any] `json:"SamplingRule,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -8,7 +8,7 @@ import (
 
 // Ruleset_Rule AWS CloudFormation Resource (AWS::DataBrew::Ruleset.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html
-type Ruleset_Rule struct {
+type Ruleset_Rule[T any] struct {
 
 	// CheckExpression AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Ruleset_Rule struct {
 	// ColumnSelectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-columnselectors
-	ColumnSelectors []Ruleset_ColumnSelector `json:"ColumnSelectors,omitempty"`
+	ColumnSelectors []Ruleset_ColumnSelector[any] `json:"ColumnSelectors,omitempty"`
 
 	// Disabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-disabled
-	Disabled *bool `json:"Disabled,omitempty"`
+	Disabled *T `json:"Disabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type Ruleset_Rule struct {
 	// SubstitutionMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-substitutionmap
-	SubstitutionMap []Ruleset_SubstitutionValue `json:"SubstitutionMap,omitempty"`
+	SubstitutionMap []Ruleset_SubstitutionValue[any] `json:"SubstitutionMap,omitempty"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-threshold
-	Threshold *Ruleset_Threshold `json:"Threshold,omitempty"`
+	Threshold *Ruleset_Threshold[any] `json:"Threshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Ruleset_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ruleset_Rule) AWSCloudFormationType() string {
+func (r *Ruleset_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Ruleset.Rule"
 }

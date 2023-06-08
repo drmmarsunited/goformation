@@ -8,7 +8,7 @@ import (
 
 // Dashboard_StringParameter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.StringParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameter.html
-type Dashboard_StringParameter struct {
+type Dashboard_StringParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_StringParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_StringParameter) AWSCloudFormationType() string {
+func (r *Dashboard_StringParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.StringParameter"
 }

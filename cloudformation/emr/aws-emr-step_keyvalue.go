@@ -8,7 +8,7 @@ import (
 
 // Step_KeyValue AWS CloudFormation Resource (AWS::EMR::Step.KeyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html
-type Step_KeyValue struct {
+type Step_KeyValue[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Step_KeyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Step_KeyValue) AWSCloudFormationType() string {
+func (r *Step_KeyValue[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Step.KeyValue"
 }

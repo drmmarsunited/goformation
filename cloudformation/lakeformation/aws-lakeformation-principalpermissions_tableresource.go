@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_TableResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.TableResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html
-type PrincipalPermissions_TableResource struct {
+type PrincipalPermissions_TableResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type PrincipalPermissions_TableResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_TableResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_TableResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.TableResource"
 }

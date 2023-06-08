@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_ActionCondition AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.ActionCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-actioncondition.html
-type LoggingConfiguration_ActionCondition struct {
+type LoggingConfiguration_ActionCondition[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_ActionCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_ActionCondition) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_ActionCondition[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.ActionCondition"
 }

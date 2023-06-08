@@ -8,7 +8,7 @@ import (
 
 // Pipe_SageMakerPipelineParameter AWS CloudFormation Resource (AWS::Pipes::Pipe.SageMakerPipelineParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-sagemakerpipelineparameter.html
-type Pipe_SageMakerPipelineParameter struct {
+type Pipe_SageMakerPipelineParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipe_SageMakerPipelineParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_SageMakerPipelineParameter) AWSCloudFormationType() string {
+func (r *Pipe_SageMakerPipelineParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.SageMakerPipelineParameter"
 }

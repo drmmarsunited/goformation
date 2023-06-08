@@ -8,7 +8,7 @@ import (
 
 // OrganizationConfigRule_OrganizationManagedRuleMetadata AWS CloudFormation Resource (AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationmanagedrulemetadata.html
-type OrganizationConfigRule_OrganizationManagedRuleMetadata struct {
+type OrganizationConfigRule_OrganizationManagedRuleMetadata[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type OrganizationConfigRule_OrganizationManagedRuleMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OrganizationConfigRule_OrganizationManagedRuleMetadata) AWSCloudFormationType() string {
+func (r *OrganizationConfigRule_OrganizationManagedRuleMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata"
 }

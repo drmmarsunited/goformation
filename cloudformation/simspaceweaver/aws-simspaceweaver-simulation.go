@@ -11,7 +11,7 @@ import (
 
 // Simulation AWS CloudFormation Resource (AWS::SimSpaceWeaver::Simulation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-simspaceweaver-simulation.html
-type Simulation struct {
+type Simulation[T any] struct {
 
 	// MaximumDuration AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type Simulation struct {
 	// SchemaS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-simspaceweaver-simulation.html#cfn-simspaceweaver-simulation-schemas3location
-	SchemaS3Location *Simulation_S3Location `json:"SchemaS3Location,omitempty"`
+	SchemaS3Location *Simulation_S3Location[any] `json:"SchemaS3Location,omitempty"`
 
 	// SnapshotS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-simspaceweaver-simulation.html#cfn-simspaceweaver-simulation-snapshots3location
-	SnapshotS3Location *Simulation_S3Location `json:"SnapshotS3Location,omitempty"`
+	SnapshotS3Location *Simulation_S3Location[any] `json:"SnapshotS3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type Simulation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Simulation) AWSCloudFormationType() string {
+func (r *Simulation[any]) AWSCloudFormationType() string {
 	return "AWS::SimSpaceWeaver::Simulation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Simulation) MarshalJSON() ([]byte, error) {
-	type Properties Simulation
+func (r Simulation[any]) MarshalJSON() ([]byte, error) {
+	type Properties Simulation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Simulation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Simulation) UnmarshalJSON(b []byte) error {
-	type Properties Simulation
+func (r *Simulation[any]) UnmarshalJSON(b []byte) error {
+	type Properties Simulation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Simulation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Simulation(*res.Properties)
+		*r = Simulation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

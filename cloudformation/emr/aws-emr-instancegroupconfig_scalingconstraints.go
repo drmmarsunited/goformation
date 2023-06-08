@@ -8,17 +8,17 @@ import (
 
 // InstanceGroupConfig_ScalingConstraints AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.ScalingConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html
-type InstanceGroupConfig_ScalingConstraints struct {
+type InstanceGroupConfig_ScalingConstraints[T any] struct {
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html#cfn-elasticmapreduce-instancegroupconfig-scalingconstraints-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity T `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html#cfn-elasticmapreduce-instancegroupconfig-scalingconstraints-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity T `json:"MinCapacity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceGroupConfig_ScalingConstraints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_ScalingConstraints) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_ScalingConstraints[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.ScalingConstraints"
 }

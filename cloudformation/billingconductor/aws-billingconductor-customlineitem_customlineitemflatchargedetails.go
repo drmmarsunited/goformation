@@ -8,12 +8,12 @@ import (
 
 // CustomLineItem_CustomLineItemFlatChargeDetails AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem.CustomLineItemFlatChargeDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemflatchargedetails.html
-type CustomLineItem_CustomLineItemFlatChargeDetails struct {
+type CustomLineItem_CustomLineItemFlatChargeDetails[T any] struct {
 
 	// ChargeValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemflatchargedetails.html#cfn-billingconductor-customlineitem-customlineitemflatchargedetails-chargevalue
-	ChargeValue float64 `json:"ChargeValue"`
+	ChargeValue T `json:"ChargeValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type CustomLineItem_CustomLineItemFlatChargeDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomLineItem_CustomLineItemFlatChargeDetails) AWSCloudFormationType() string {
+func (r *CustomLineItem_CustomLineItemFlatChargeDetails[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::CustomLineItem.CustomLineItemFlatChargeDetails"
 }

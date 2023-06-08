@@ -8,7 +8,7 @@ import (
 
 // TopicRule_SqsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.SqsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html
-type TopicRule_SqsAction struct {
+type TopicRule_SqsAction[T any] struct {
 
 	// QueueUrl AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type TopicRule_SqsAction struct {
 	// UseBase64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-usebase64
-	UseBase64 *bool `json:"UseBase64,omitempty"`
+	UseBase64 *T `json:"UseBase64,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TopicRule_SqsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_SqsAction) AWSCloudFormationType() string {
+func (r *TopicRule_SqsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.SqsAction"
 }

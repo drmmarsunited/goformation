@@ -8,7 +8,7 @@ import (
 
 // Pipeline_SelectAttributes AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.SelectAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
-type Pipeline_SelectAttributes struct {
+type Pipeline_SelectAttributes[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_SelectAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_SelectAttributes) AWSCloudFormationType() string {
+func (r *Pipeline_SelectAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.SelectAttributes"
 }

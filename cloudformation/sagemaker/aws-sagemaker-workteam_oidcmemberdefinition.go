@@ -8,7 +8,7 @@ import (
 
 // Workteam_OidcMemberDefinition AWS CloudFormation Resource (AWS::SageMaker::Workteam.OidcMemberDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-oidcmemberdefinition.html
-type Workteam_OidcMemberDefinition struct {
+type Workteam_OidcMemberDefinition[T any] struct {
 
 	// OidcGroups AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Workteam_OidcMemberDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workteam_OidcMemberDefinition) AWSCloudFormationType() string {
+func (r *Workteam_OidcMemberDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Workteam.OidcMemberDefinition"
 }

@@ -8,12 +8,12 @@ import (
 
 // ConnectorProfile_CustomConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.CustomConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofileproperties.html
-type ConnectorProfile_CustomConnectorProfileProperties struct {
+type ConnectorProfile_CustomConnectorProfileProperties[T any] struct {
 
 	// OAuth2Properties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofileproperties.html#cfn-appflow-connectorprofile-customconnectorprofileproperties-oauth2properties
-	OAuth2Properties *ConnectorProfile_OAuth2Properties `json:"OAuth2Properties,omitempty"`
+	OAuth2Properties *ConnectorProfile_OAuth2Properties[any] `json:"OAuth2Properties,omitempty"`
 
 	// ProfileProperties AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConnectorProfile_CustomConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_CustomConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_CustomConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.CustomConnectorProfileProperties"
 }

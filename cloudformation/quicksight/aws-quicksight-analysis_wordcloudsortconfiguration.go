@@ -8,17 +8,17 @@ import (
 
 // Analysis_WordCloudSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.WordCloudSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudsortconfiguration.html
-type Analysis_WordCloudSortConfiguration struct {
+type Analysis_WordCloudSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudsortconfiguration.html#cfn-quicksight-analysis-wordcloudsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Analysis_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Analysis_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudsortconfiguration.html#cfn-quicksight-analysis-wordcloudsortconfiguration-categorysort
-	CategorySort []Analysis_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Analysis_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_WordCloudSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WordCloudSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_WordCloudSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WordCloudSortConfiguration"
 }

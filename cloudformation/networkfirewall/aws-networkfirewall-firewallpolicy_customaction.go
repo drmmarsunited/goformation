@@ -8,12 +8,12 @@ import (
 
 // FirewallPolicy_CustomAction AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.CustomAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-customaction.html
-type FirewallPolicy_CustomAction struct {
+type FirewallPolicy_CustomAction[T any] struct {
 
 	// ActionDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-customaction.html#cfn-networkfirewall-firewallpolicy-customaction-actiondefinition
-	ActionDefinition *FirewallPolicy_ActionDefinition `json:"ActionDefinition"`
+	ActionDefinition *FirewallPolicy_ActionDefinition[any] `json:"ActionDefinition"`
 
 	// ActionName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FirewallPolicy_CustomAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_CustomAction) AWSCloudFormationType() string {
+func (r *FirewallPolicy_CustomAction[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.CustomAction"
 }

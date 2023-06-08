@@ -8,12 +8,12 @@ import (
 
 // AssetModel_MetricWindow AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.MetricWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metricwindow.html
-type AssetModel_MetricWindow struct {
+type AssetModel_MetricWindow[T any] struct {
 
 	// Tumbling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metricwindow.html#cfn-iotsitewise-assetmodel-metricwindow-tumbling
-	Tumbling *AssetModel_TumblingWindow `json:"Tumbling,omitempty"`
+	Tumbling *AssetModel_TumblingWindow[any] `json:"Tumbling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type AssetModel_MetricWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_MetricWindow) AWSCloudFormationType() string {
+func (r *AssetModel_MetricWindow[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.MetricWindow"
 }

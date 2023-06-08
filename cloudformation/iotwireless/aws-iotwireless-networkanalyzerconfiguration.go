@@ -12,7 +12,7 @@ import (
 
 // NetworkAnalyzerConfiguration AWS CloudFormation Resource (AWS::IoTWireless::NetworkAnalyzerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-networkanalyzerconfiguration.html
-type NetworkAnalyzerConfiguration struct {
+type NetworkAnalyzerConfiguration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type NetworkAnalyzerConfiguration struct {
 	// TraceContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-networkanalyzerconfiguration.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent
-	TraceContent *NetworkAnalyzerConfiguration_TraceContent `json:"TraceContent,omitempty"`
+	TraceContent *NetworkAnalyzerConfiguration_TraceContent[any] `json:"TraceContent,omitempty"`
 
 	// WirelessDevices AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type NetworkAnalyzerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAnalyzerConfiguration) AWSCloudFormationType() string {
+func (r *NetworkAnalyzerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::NetworkAnalyzerConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r NetworkAnalyzerConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties NetworkAnalyzerConfiguration
+func (r NetworkAnalyzerConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties NetworkAnalyzerConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r NetworkAnalyzerConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *NetworkAnalyzerConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties NetworkAnalyzerConfiguration
+func (r *NetworkAnalyzerConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties NetworkAnalyzerConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *NetworkAnalyzerConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = NetworkAnalyzerConfiguration(*res.Properties)
+		*r = NetworkAnalyzerConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

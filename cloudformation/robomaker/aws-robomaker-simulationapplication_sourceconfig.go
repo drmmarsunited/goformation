@@ -8,7 +8,7 @@ import (
 
 // SimulationApplication_SourceConfig AWS CloudFormation Resource (AWS::RoboMaker::SimulationApplication.SourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html
-type SimulationApplication_SourceConfig struct {
+type SimulationApplication_SourceConfig[T any] struct {
 
 	// Architecture AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type SimulationApplication_SourceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimulationApplication_SourceConfig) AWSCloudFormationType() string {
+func (r *SimulationApplication_SourceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::RoboMaker::SimulationApplication.SourceConfig"
 }

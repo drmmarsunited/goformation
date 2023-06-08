@@ -8,7 +8,7 @@ import (
 
 // ModelCard_TrainingEnvironment AWS CloudFormation Resource (AWS::SageMaker::ModelCard.TrainingEnvironment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingenvironment.html
-type ModelCard_TrainingEnvironment struct {
+type ModelCard_TrainingEnvironment[T any] struct {
 
 	// ContainerImage AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ModelCard_TrainingEnvironment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_TrainingEnvironment) AWSCloudFormationType() string {
+func (r *ModelCard_TrainingEnvironment[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.TrainingEnvironment"
 }

@@ -8,12 +8,12 @@ import (
 
 // Function_Auth AWS CloudFormation Resource (AWS::Serverless::Function.Auth)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-type Function_Auth struct {
+type Function_Auth[T any] struct {
 
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	ApiKeyRequired *bool `json:"ApiKeyRequired,omitempty"`
+	ApiKeyRequired *T `json:"ApiKeyRequired,omitempty"`
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Function_Auth struct {
 	// ResourcePolicy AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	ResourcePolicy *Function_AuthResourcePolicy `json:"ResourcePolicy,omitempty"`
+	ResourcePolicy *Function_AuthResourcePolicy[any] `json:"ResourcePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Function_Auth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_Auth) AWSCloudFormationType() string {
+func (r *Function_Auth[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.Auth"
 }

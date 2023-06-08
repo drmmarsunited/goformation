@@ -8,7 +8,7 @@ import (
 
 // SecurityConfiguration_S3Encryption AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration.S3Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-s3encryption.html
-type SecurityConfiguration_S3Encryption struct {
+type SecurityConfiguration_S3Encryption[T any] struct {
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SecurityConfiguration_S3Encryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration_S3Encryption) AWSCloudFormationType() string {
+func (r *SecurityConfiguration_S3Encryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration.S3Encryption"
 }

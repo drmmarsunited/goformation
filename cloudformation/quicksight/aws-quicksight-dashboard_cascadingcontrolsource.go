@@ -8,12 +8,12 @@ import (
 
 // Dashboard_CascadingControlSource AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CascadingControlSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-cascadingcontrolsource.html
-type Dashboard_CascadingControlSource struct {
+type Dashboard_CascadingControlSource[T any] struct {
 
 	// ColumnToMatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-cascadingcontrolsource.html#cfn-quicksight-dashboard-cascadingcontrolsource-columntomatch
-	ColumnToMatch *Dashboard_ColumnIdentifier `json:"ColumnToMatch,omitempty"`
+	ColumnToMatch *Dashboard_ColumnIdentifier[any] `json:"ColumnToMatch,omitempty"`
 
 	// SourceSheetControlId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_CascadingControlSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CascadingControlSource) AWSCloudFormationType() string {
+func (r *Dashboard_CascadingControlSource[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CascadingControlSource"
 }

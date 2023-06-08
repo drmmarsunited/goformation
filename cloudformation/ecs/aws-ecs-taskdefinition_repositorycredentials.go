@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_RepositoryCredentials AWS CloudFormation Resource (AWS::ECS::TaskDefinition.RepositoryCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-repositorycredentials.html
-type TaskDefinition_RepositoryCredentials struct {
+type TaskDefinition_RepositoryCredentials[T any] struct {
 
 	// CredentialsParameter AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type TaskDefinition_RepositoryCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_RepositoryCredentials) AWSCloudFormationType() string {
+func (r *TaskDefinition_RepositoryCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.RepositoryCredentials"
 }

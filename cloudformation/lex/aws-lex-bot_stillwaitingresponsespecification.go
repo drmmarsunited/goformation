@@ -8,27 +8,27 @@ import (
 
 // Bot_StillWaitingResponseSpecification AWS CloudFormation Resource (AWS::Lex::Bot.StillWaitingResponseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html
-type Bot_StillWaitingResponseSpecification struct {
+type Bot_StillWaitingResponseSpecification[T any] struct {
 
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *T `json:"AllowInterrupt,omitempty"`
 
 	// FrequencyInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-frequencyinseconds
-	FrequencyInSeconds int `json:"FrequencyInSeconds"`
+	FrequencyInSeconds T `json:"FrequencyInSeconds"`
 
 	// MessageGroupsList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-messagegroupslist
-	MessageGroupsList []Bot_MessageGroup `json:"MessageGroupsList"`
+	MessageGroupsList []Bot_MessageGroup[any] `json:"MessageGroupsList"`
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-stillwaitingresponsespecification.html#cfn-lex-bot-stillwaitingresponsespecification-timeoutinseconds
-	TimeoutInSeconds int `json:"TimeoutInSeconds"`
+	TimeoutInSeconds T `json:"TimeoutInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_StillWaitingResponseSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_StillWaitingResponseSpecification) AWSCloudFormationType() string {
+func (r *Bot_StillWaitingResponseSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.StillWaitingResponseSpecification"
 }

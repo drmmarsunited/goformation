@@ -8,17 +8,17 @@ import (
 
 // Dashboard_InsightConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.InsightConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightconfiguration.html
-type Dashboard_InsightConfiguration struct {
+type Dashboard_InsightConfiguration[T any] struct {
 
 	// Computations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightconfiguration.html#cfn-quicksight-dashboard-insightconfiguration-computations
-	Computations []Dashboard_Computation `json:"Computations,omitempty"`
+	Computations []Dashboard_Computation[any] `json:"Computations,omitempty"`
 
 	// CustomNarrative AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightconfiguration.html#cfn-quicksight-dashboard-insightconfiguration-customnarrative
-	CustomNarrative *Dashboard_CustomNarrativeOptions `json:"CustomNarrative,omitempty"`
+	CustomNarrative *Dashboard_CustomNarrativeOptions[any] `json:"CustomNarrative,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_InsightConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_InsightConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_InsightConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.InsightConfiguration"
 }

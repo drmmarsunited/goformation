@@ -8,7 +8,7 @@ import (
 
 // TopicRule_ElasticsearchAction AWS CloudFormation Resource (AWS::IoT::TopicRule.ElasticsearchAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html
-type TopicRule_ElasticsearchAction struct {
+type TopicRule_ElasticsearchAction[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type TopicRule_ElasticsearchAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_ElasticsearchAction) AWSCloudFormationType() string {
+func (r *TopicRule_ElasticsearchAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.ElasticsearchAction"
 }

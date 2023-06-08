@@ -12,7 +12,7 @@ import (
 
 // PhoneNumber AWS CloudFormation Resource (AWS::Connect::PhoneNumber)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-phonenumber.html
-type PhoneNumber struct {
+type PhoneNumber[T any] struct {
 
 	// CountryCode AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type PhoneNumber struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PhoneNumber) AWSCloudFormationType() string {
+func (r *PhoneNumber[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::PhoneNumber"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PhoneNumber) MarshalJSON() ([]byte, error) {
-	type Properties PhoneNumber
+func (r PhoneNumber[any]) MarshalJSON() ([]byte, error) {
+	type Properties PhoneNumber[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r PhoneNumber) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PhoneNumber) UnmarshalJSON(b []byte) error {
-	type Properties PhoneNumber
+func (r *PhoneNumber[any]) UnmarshalJSON(b []byte) error {
+	type Properties PhoneNumber[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *PhoneNumber) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PhoneNumber(*res.Properties)
+		*r = PhoneNumber[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

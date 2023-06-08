@@ -8,17 +8,17 @@ import (
 
 // ComponentType_DataConnector AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.DataConnector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html
-type ComponentType_DataConnector struct {
+type ComponentType_DataConnector[T any] struct {
 
 	// IsNative AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html#cfn-iottwinmaker-componenttype-dataconnector-isnative
-	IsNative *bool `json:"IsNative,omitempty"`
+	IsNative *T `json:"IsNative,omitempty"`
 
 	// Lambda AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html#cfn-iottwinmaker-componenttype-dataconnector-lambda
-	Lambda *ComponentType_LambdaFunction `json:"Lambda,omitempty"`
+	Lambda *ComponentType_LambdaFunction[any] `json:"Lambda,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ComponentType_DataConnector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentType_DataConnector) AWSCloudFormationType() string {
+func (r *ComponentType_DataConnector[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::ComponentType.DataConnector"
 }

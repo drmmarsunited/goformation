@@ -8,12 +8,12 @@ import (
 
 // Analysis_PivotTableDataPathOption AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableDataPathOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabledatapathoption.html
-type Analysis_PivotTableDataPathOption struct {
+type Analysis_PivotTableDataPathOption[T any] struct {
 
 	// DataPathList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottabledatapathoption.html#cfn-quicksight-analysis-pivottabledatapathoption-datapathlist
-	DataPathList []Analysis_DataPathValue `json:"DataPathList"`
+	DataPathList []Analysis_DataPathValue[any] `json:"DataPathList"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_PivotTableDataPathOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableDataPathOption) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableDataPathOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableDataPathOption"
 }

@@ -8,12 +8,12 @@ import (
 
 // PrivateDnsNamespace_SOA AWS CloudFormation Resource (AWS::ServiceDiscovery::PrivateDnsNamespace.SOA)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-soa.html
-type PrivateDnsNamespace_SOA struct {
+type PrivateDnsNamespace_SOA[T any] struct {
 
 	// TTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-soa.html#cfn-servicediscovery-privatednsnamespace-soa-ttl
-	TTL *float64 `json:"TTL,omitempty"`
+	TTL *T `json:"TTL,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PrivateDnsNamespace_SOA struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrivateDnsNamespace_SOA) AWSCloudFormationType() string {
+func (r *PrivateDnsNamespace_SOA[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::PrivateDnsNamespace.SOA"
 }

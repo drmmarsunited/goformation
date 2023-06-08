@@ -8,12 +8,12 @@ import (
 
 // WebACL_TextTransformation AWS CloudFormation Resource (AWS::WAFv2::WebACL.TextTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-texttransformation.html
-type WebACL_TextTransformation struct {
+type WebACL_TextTransformation[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-texttransformation.html#cfn-wafv2-webacl-texttransformation-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_TextTransformation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_TextTransformation) AWSCloudFormationType() string {
+func (r *WebACL_TextTransformation[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.TextTransformation"
 }

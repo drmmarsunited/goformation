@@ -8,12 +8,12 @@ import (
 
 // AssetModel_AssetModelCompositeModel AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html
-type AssetModel_AssetModelCompositeModel struct {
+type AssetModel_AssetModelCompositeModel[T any] struct {
 
 	// CompositeModelProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-compositemodelproperties
-	CompositeModelProperties []AssetModel_AssetModelProperty `json:"CompositeModelProperties,omitempty"`
+	CompositeModelProperties []AssetModel_AssetModelProperty[any] `json:"CompositeModelProperties,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type AssetModel_AssetModelCompositeModel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_AssetModelCompositeModel) AWSCloudFormationType() string {
+func (r *AssetModel_AssetModelCompositeModel[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel"
 }

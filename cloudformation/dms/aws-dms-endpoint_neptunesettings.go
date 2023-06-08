@@ -8,27 +8,27 @@ import (
 
 // Endpoint_NeptuneSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.NeptuneSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html
-type Endpoint_NeptuneSettings struct {
+type Endpoint_NeptuneSettings[T any] struct {
 
 	// ErrorRetryDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-errorretryduration
-	ErrorRetryDuration *int `json:"ErrorRetryDuration,omitempty"`
+	ErrorRetryDuration *T `json:"ErrorRetryDuration,omitempty"`
 
 	// IamAuthEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-iamauthenabled
-	IamAuthEnabled *bool `json:"IamAuthEnabled,omitempty"`
+	IamAuthEnabled *T `json:"IamAuthEnabled,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *T `json:"MaxFileSize,omitempty"`
 
 	// MaxRetryCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-maxretrycount
-	MaxRetryCount *int `json:"MaxRetryCount,omitempty"`
+	MaxRetryCount *T `json:"MaxRetryCount,omitempty"`
 
 	// S3BucketFolder AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Endpoint_NeptuneSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_NeptuneSettings) AWSCloudFormationType() string {
+func (r *Endpoint_NeptuneSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.NeptuneSettings"
 }

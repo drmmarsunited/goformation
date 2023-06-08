@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TableFieldImageConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldImageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldimageconfiguration.html
-type Dashboard_TableFieldImageConfiguration struct {
+type Dashboard_TableFieldImageConfiguration[T any] struct {
 
 	// SizingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldimageconfiguration.html#cfn-quicksight-dashboard-tablefieldimageconfiguration-sizingoptions
-	SizingOptions *Dashboard_TableCellImageSizingConfiguration `json:"SizingOptions,omitempty"`
+	SizingOptions *Dashboard_TableCellImageSizingConfiguration[any] `json:"SizingOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_TableFieldImageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldImageConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldImageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldImageConfiguration"
 }

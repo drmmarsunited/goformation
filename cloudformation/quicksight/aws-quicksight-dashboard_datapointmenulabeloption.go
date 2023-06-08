@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPointMenuLabelOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPointMenuLabelOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapointmenulabeloption.html
-type Dashboard_DataPointMenuLabelOption struct {
+type Dashboard_DataPointMenuLabelOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_DataPointMenuLabelOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPointMenuLabelOption) AWSCloudFormationType() string {
+func (r *Dashboard_DataPointMenuLabelOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPointMenuLabelOption"
 }

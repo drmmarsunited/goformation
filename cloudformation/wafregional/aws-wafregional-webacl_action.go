@@ -8,7 +8,7 @@ import (
 
 // WebACL_Action AWS CloudFormation Resource (AWS::WAFRegional::WebACL.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html
-type WebACL_Action struct {
+type WebACL_Action[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Action) AWSCloudFormationType() string {
+func (r *WebACL_Action[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::WebACL.Action"
 }

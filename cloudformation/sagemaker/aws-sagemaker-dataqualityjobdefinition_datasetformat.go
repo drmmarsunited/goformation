@@ -8,22 +8,22 @@ import (
 
 // DataQualityJobDefinition_DatasetFormat AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.DatasetFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-datasetformat.html
-type DataQualityJobDefinition_DatasetFormat struct {
+type DataQualityJobDefinition_DatasetFormat[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-datasetformat.html#cfn-sagemaker-dataqualityjobdefinition-datasetformat-csv
-	Csv *DataQualityJobDefinition_Csv `json:"Csv,omitempty"`
+	Csv *DataQualityJobDefinition_Csv[any] `json:"Csv,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-datasetformat.html#cfn-sagemaker-dataqualityjobdefinition-datasetformat-json
-	Json *DataQualityJobDefinition_Json `json:"Json,omitempty"`
+	Json *DataQualityJobDefinition_Json[any] `json:"Json,omitempty"`
 
 	// Parquet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-datasetformat.html#cfn-sagemaker-dataqualityjobdefinition-datasetformat-parquet
-	Parquet *bool `json:"Parquet,omitempty"`
+	Parquet *T `json:"Parquet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataQualityJobDefinition_DatasetFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_DatasetFormat) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_DatasetFormat[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.DatasetFormat"
 }

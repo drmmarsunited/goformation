@@ -8,12 +8,12 @@ import (
 
 // DataQualityJobDefinition_StoppingCondition AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.StoppingCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-stoppingcondition.html
-type DataQualityJobDefinition_StoppingCondition struct {
+type DataQualityJobDefinition_StoppingCondition[T any] struct {
 
 	// MaxRuntimeInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-stoppingcondition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition-maxruntimeinseconds
-	MaxRuntimeInSeconds int `json:"MaxRuntimeInSeconds"`
+	MaxRuntimeInSeconds T `json:"MaxRuntimeInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataQualityJobDefinition_StoppingCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_StoppingCondition) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_StoppingCondition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.StoppingCondition"
 }

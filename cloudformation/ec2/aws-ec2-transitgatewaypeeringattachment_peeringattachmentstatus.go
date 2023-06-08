@@ -8,7 +8,7 @@ import (
 
 // TransitGatewayPeeringAttachment_PeeringAttachmentStatus AWS CloudFormation Resource (AWS::EC2::TransitGatewayPeeringAttachment.PeeringAttachmentStatus)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html
-type TransitGatewayPeeringAttachment_PeeringAttachmentStatus struct {
+type TransitGatewayPeeringAttachment_PeeringAttachmentStatus[T any] struct {
 
 	// Code AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TransitGatewayPeeringAttachment_PeeringAttachmentStatus struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayPeeringAttachment_PeeringAttachmentStatus) AWSCloudFormationType() string {
+func (r *TransitGatewayPeeringAttachment_PeeringAttachmentStatus[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayPeeringAttachment.PeeringAttachmentStatus"
 }

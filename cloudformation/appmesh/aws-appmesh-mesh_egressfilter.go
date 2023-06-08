@@ -8,7 +8,7 @@ import (
 
 // Mesh_EgressFilter AWS CloudFormation Resource (AWS::AppMesh::Mesh.EgressFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-egressfilter.html
-type Mesh_EgressFilter struct {
+type Mesh_EgressFilter[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Mesh_EgressFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Mesh_EgressFilter) AWSCloudFormationType() string {
+func (r *Mesh_EgressFilter[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Mesh.EgressFilter"
 }

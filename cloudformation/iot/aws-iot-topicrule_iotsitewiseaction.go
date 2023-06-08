@@ -8,12 +8,12 @@ import (
 
 // TopicRule_IotSiteWiseAction AWS CloudFormation Resource (AWS::IoT::TopicRule.IotSiteWiseAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html
-type TopicRule_IotSiteWiseAction struct {
+type TopicRule_IotSiteWiseAction[T any] struct {
 
 	// PutAssetPropertyValueEntries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html#cfn-iot-topicrule-iotsitewiseaction-putassetpropertyvalueentries
-	PutAssetPropertyValueEntries []TopicRule_PutAssetPropertyValueEntry `json:"PutAssetPropertyValueEntries"`
+	PutAssetPropertyValueEntries []TopicRule_PutAssetPropertyValueEntry[any] `json:"PutAssetPropertyValueEntries"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TopicRule_IotSiteWiseAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_IotSiteWiseAction) AWSCloudFormationType() string {
+func (r *TopicRule_IotSiteWiseAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.IotSiteWiseAction"
 }

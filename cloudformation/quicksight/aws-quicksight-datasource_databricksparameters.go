@@ -8,7 +8,7 @@ import (
 
 // DataSource_DatabricksParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.DatabricksParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html
-type DataSource_DatabricksParameters struct {
+type DataSource_DatabricksParameters[T any] struct {
 
 	// Host AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSource_DatabricksParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// SqlEndpointPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_DatabricksParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DatabricksParameters) AWSCloudFormationType() string {
+func (r *DataSource_DatabricksParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.DatabricksParameters"
 }

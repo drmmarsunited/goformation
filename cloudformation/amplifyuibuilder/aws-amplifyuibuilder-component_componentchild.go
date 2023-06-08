@@ -8,12 +8,12 @@ import (
 
 // Component_ComponentChild AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentChild)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html
-type Component_ComponentChild struct {
+type Component_ComponentChild[T any] struct {
 
 	// Children AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-children
-	Children []Component_ComponentChild `json:"Children,omitempty"`
+	Children []Component_ComponentChild[any] `json:"Children,omitempty"`
 
 	// ComponentType AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Component_ComponentChild struct {
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-events
-	Events map[string]Component_ComponentEvent `json:"Events,omitempty"`
+	Events map[string]Component_ComponentEvent[any] `json:"Events,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Component_ComponentChild struct {
 	// Properties AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-properties
-	Properties map[string]Component_ComponentProperty `json:"Properties"`
+	Properties map[string]Component_ComponentProperty[any] `json:"Properties"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Component_ComponentChild struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentChild) AWSCloudFormationType() string {
+func (r *Component_ComponentChild[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentChild"
 }

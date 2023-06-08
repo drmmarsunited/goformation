@@ -8,12 +8,12 @@ import (
 
 // Template_BarChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.BarChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartfieldwells.html
-type Template_BarChartFieldWells struct {
+type Template_BarChartFieldWells[T any] struct {
 
 	// BarChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartfieldwells.html#cfn-quicksight-template-barchartfieldwells-barchartaggregatedfieldwells
-	BarChartAggregatedFieldWells *Template_BarChartAggregatedFieldWells `json:"BarChartAggregatedFieldWells,omitempty"`
+	BarChartAggregatedFieldWells *Template_BarChartAggregatedFieldWells[any] `json:"BarChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_BarChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BarChartFieldWells) AWSCloudFormationType() string {
+func (r *Template_BarChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BarChartFieldWells"
 }

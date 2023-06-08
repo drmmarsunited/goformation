@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableBorderOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableBorderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableborderoptions.html
-type Analysis_TableBorderOptions struct {
+type Analysis_TableBorderOptions[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_TableBorderOptions struct {
 	// Thickness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableborderoptions.html#cfn-quicksight-analysis-tableborderoptions-thickness
-	Thickness *float64 `json:"Thickness,omitempty"`
+	Thickness *T `json:"Thickness,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_TableBorderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableBorderOptions) AWSCloudFormationType() string {
+func (r *Analysis_TableBorderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableBorderOptions"
 }

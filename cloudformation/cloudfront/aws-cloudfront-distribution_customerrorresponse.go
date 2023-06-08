@@ -8,22 +8,22 @@ import (
 
 // Distribution_CustomErrorResponse AWS CloudFormation Resource (AWS::CloudFront::Distribution.CustomErrorResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
-type Distribution_CustomErrorResponse struct {
+type Distribution_CustomErrorResponse[T any] struct {
 
 	// ErrorCachingMinTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl
-	ErrorCachingMinTTL *float64 `json:"ErrorCachingMinTTL,omitempty"`
+	ErrorCachingMinTTL *T `json:"ErrorCachingMinTTL,omitempty"`
 
 	// ErrorCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode
-	ErrorCode int `json:"ErrorCode"`
+	ErrorCode T `json:"ErrorCode"`
 
 	// ResponseCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode
-	ResponseCode *int `json:"ResponseCode,omitempty"`
+	ResponseCode *T `json:"ResponseCode,omitempty"`
 
 	// ResponsePagePath AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Distribution_CustomErrorResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_CustomErrorResponse) AWSCloudFormationType() string {
+func (r *Distribution_CustomErrorResponse[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.CustomErrorResponse"
 }

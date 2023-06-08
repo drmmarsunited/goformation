@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TableInlineVisualization AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableInlineVisualization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableinlinevisualization.html
-type Dashboard_TableInlineVisualization struct {
+type Dashboard_TableInlineVisualization[T any] struct {
 
 	// DataBars AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableinlinevisualization.html#cfn-quicksight-dashboard-tableinlinevisualization-databars
-	DataBars *Dashboard_DataBarsOptions `json:"DataBars,omitempty"`
+	DataBars *Dashboard_DataBarsOptions[any] `json:"DataBars,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_TableInlineVisualization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableInlineVisualization) AWSCloudFormationType() string {
+func (r *Dashboard_TableInlineVisualization[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableInlineVisualization"
 }

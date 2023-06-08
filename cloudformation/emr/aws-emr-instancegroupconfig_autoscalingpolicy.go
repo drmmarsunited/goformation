@@ -8,17 +8,17 @@ import (
 
 // InstanceGroupConfig_AutoScalingPolicy AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.AutoScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html
-type InstanceGroupConfig_AutoScalingPolicy struct {
+type InstanceGroupConfig_AutoScalingPolicy[T any] struct {
 
 	// Constraints AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints
-	Constraints *InstanceGroupConfig_ScalingConstraints `json:"Constraints"`
+	Constraints *InstanceGroupConfig_ScalingConstraints[any] `json:"Constraints"`
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules
-	Rules []InstanceGroupConfig_ScalingRule `json:"Rules"`
+	Rules []InstanceGroupConfig_ScalingRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceGroupConfig_AutoScalingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig_AutoScalingPolicy) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig_AutoScalingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.AutoScalingPolicy"
 }

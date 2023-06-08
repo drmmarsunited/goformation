@@ -11,12 +11,12 @@ import (
 
 // AccessPoint AWS CloudFormation Resource (AWS::EFS::AccessPoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html
-type AccessPoint struct {
+type AccessPoint[T any] struct {
 
 	// AccessPointTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-accesspointtags
-	AccessPointTags []AccessPoint_AccessPointTag `json:"AccessPointTags,omitempty"`
+	AccessPointTags []AccessPoint_AccessPointTag[any] `json:"AccessPointTags,omitempty"`
 
 	// ClientToken AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type AccessPoint struct {
 	// PosixUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-posixuser
-	PosixUser *AccessPoint_PosixUser `json:"PosixUser,omitempty"`
+	PosixUser *AccessPoint_PosixUser[any] `json:"PosixUser,omitempty"`
 
 	// RootDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-rootdirectory
-	RootDirectory *AccessPoint_RootDirectory `json:"RootDirectory,omitempty"`
+	RootDirectory *AccessPoint_RootDirectory[any] `json:"RootDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type AccessPoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint) AWSCloudFormationType() string {
+func (r *AccessPoint[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::AccessPoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccessPoint) MarshalJSON() ([]byte, error) {
-	type Properties AccessPoint
+func (r AccessPoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccessPoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r AccessPoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccessPoint) UnmarshalJSON(b []byte) error {
-	type Properties AccessPoint
+func (r *AccessPoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccessPoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *AccessPoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccessPoint(*res.Properties)
+		*r = AccessPoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // EmailIdentity_DkimAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.DkimAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimattributes.html
-type EmailIdentity_DkimAttributes struct {
+type EmailIdentity_DkimAttributes[T any] struct {
 
 	// SigningEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimattributes.html#cfn-ses-emailidentity-dkimattributes-signingenabled
-	SigningEnabled *bool `json:"SigningEnabled,omitempty"`
+	SigningEnabled *T `json:"SigningEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EmailIdentity_DkimAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailIdentity_DkimAttributes) AWSCloudFormationType() string {
+func (r *EmailIdentity_DkimAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::EmailIdentity.DkimAttributes"
 }

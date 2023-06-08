@@ -12,7 +12,7 @@ import (
 
 // FuotaTask AWS CloudFormation Resource (AWS::IoTWireless::FuotaTask)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html
-type FuotaTask struct {
+type FuotaTask[T any] struct {
 
 	// AssociateMulticastGroup AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type FuotaTask struct {
 	// LoRaWAN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#cfn-iotwireless-fuotatask-lorawan
-	LoRaWAN *FuotaTask_LoRaWAN `json:"LoRaWAN"`
+	LoRaWAN *FuotaTask_LoRaWAN[any] `json:"LoRaWAN"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type FuotaTask struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FuotaTask) AWSCloudFormationType() string {
+func (r *FuotaTask[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::FuotaTask"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FuotaTask) MarshalJSON() ([]byte, error) {
-	type Properties FuotaTask
+func (r FuotaTask[any]) MarshalJSON() ([]byte, error) {
+	type Properties FuotaTask[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r FuotaTask) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FuotaTask) UnmarshalJSON(b []byte) error {
-	type Properties FuotaTask
+func (r *FuotaTask[any]) UnmarshalJSON(b []byte) error {
+	type Properties FuotaTask[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *FuotaTask) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FuotaTask(*res.Properties)
+		*r = FuotaTask[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

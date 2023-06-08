@@ -8,7 +8,7 @@ import (
 
 // ApiKey_StageKey AWS CloudFormation Resource (AWS::ApiGateway::ApiKey.StageKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html
-type ApiKey_StageKey struct {
+type ApiKey_StageKey[T any] struct {
 
 	// RestApiId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ApiKey_StageKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApiKey_StageKey) AWSCloudFormationType() string {
+func (r *ApiKey_StageKey[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::ApiKey.StageKey"
 }

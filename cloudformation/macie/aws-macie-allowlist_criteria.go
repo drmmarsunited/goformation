@@ -8,7 +8,7 @@ import (
 
 // AllowList_Criteria AWS CloudFormation Resource (AWS::Macie::AllowList.Criteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-criteria.html
-type AllowList_Criteria struct {
+type AllowList_Criteria[T any] struct {
 
 	// Regex AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type AllowList_Criteria struct {
 	// S3WordsList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-criteria.html#cfn-macie-allowlist-criteria-s3wordslist
-	S3WordsList *AllowList_S3WordsList `json:"S3WordsList,omitempty"`
+	S3WordsList *AllowList_S3WordsList[any] `json:"S3WordsList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AllowList_Criteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AllowList_Criteria) AWSCloudFormationType() string {
+func (r *AllowList_Criteria[any]) AWSCloudFormationType() string {
 	return "AWS::Macie::AllowList.Criteria"
 }

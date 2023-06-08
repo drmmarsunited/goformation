@@ -8,7 +8,7 @@ import (
 
 // Server_Protocol AWS CloudFormation Resource (AWS::Transfer::Server.Protocol)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocol.html
-type Server_Protocol struct {
+type Server_Protocol[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Server_Protocol struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_Protocol) AWSCloudFormationType() string {
+func (r *Server_Protocol[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.Protocol"
 }

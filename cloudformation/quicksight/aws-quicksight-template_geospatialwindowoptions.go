@@ -8,12 +8,12 @@ import (
 
 // Template_GeospatialWindowOptions AWS CloudFormation Resource (AWS::QuickSight::Template.GeospatialWindowOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialwindowoptions.html
-type Template_GeospatialWindowOptions struct {
+type Template_GeospatialWindowOptions[T any] struct {
 
 	// Bounds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialwindowoptions.html#cfn-quicksight-template-geospatialwindowoptions-bounds
-	Bounds *Template_GeospatialCoordinateBounds `json:"Bounds,omitempty"`
+	Bounds *Template_GeospatialCoordinateBounds[any] `json:"Bounds,omitempty"`
 
 	// MapZoomMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_GeospatialWindowOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GeospatialWindowOptions) AWSCloudFormationType() string {
+func (r *Template_GeospatialWindowOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GeospatialWindowOptions"
 }

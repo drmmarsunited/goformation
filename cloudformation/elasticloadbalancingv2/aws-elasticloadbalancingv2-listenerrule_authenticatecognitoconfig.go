@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_AuthenticateCognitoConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html
-type ListenerRule_AuthenticateCognitoConfig struct {
+type ListenerRule_AuthenticateCognitoConfig[T any] struct {
 
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ListenerRule_AuthenticateCognitoConfig struct {
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-sessiontimeout
-	SessionTimeout *int `json:"SessionTimeout,omitempty"`
+	SessionTimeout *T `json:"SessionTimeout,omitempty"`
 
 	// UserPoolArn AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type ListenerRule_AuthenticateCognitoConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_AuthenticateCognitoConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_AuthenticateCognitoConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig"
 }

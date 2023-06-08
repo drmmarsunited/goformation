@@ -8,22 +8,22 @@ import (
 
 // Detector_CFNDataSourceConfigurations AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNDataSourceConfigurations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html
-type Detector_CFNDataSourceConfigurations struct {
+type Detector_CFNDataSourceConfigurations[T any] struct {
 
 	// Kubernetes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-kubernetes
-	Kubernetes *Detector_CFNKubernetesConfiguration `json:"Kubernetes,omitempty"`
+	Kubernetes *Detector_CFNKubernetesConfiguration[any] `json:"Kubernetes,omitempty"`
 
 	// MalwareProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-malwareprotection
-	MalwareProtection *Detector_CFNMalwareProtectionConfiguration `json:"MalwareProtection,omitempty"`
+	MalwareProtection *Detector_CFNMalwareProtectionConfiguration[any] `json:"MalwareProtection,omitempty"`
 
 	// S3Logs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-s3logs
-	S3Logs *Detector_CFNS3LogsConfiguration `json:"S3Logs,omitempty"`
+	S3Logs *Detector_CFNS3LogsConfiguration[any] `json:"S3Logs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Detector_CFNDataSourceConfigurations struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_CFNDataSourceConfigurations) AWSCloudFormationType() string {
+func (r *Detector_CFNDataSourceConfigurations[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector.CFNDataSourceConfigurations"
 }

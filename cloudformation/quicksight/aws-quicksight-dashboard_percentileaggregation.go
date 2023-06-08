@@ -8,12 +8,12 @@ import (
 
 // Dashboard_PercentileAggregation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PercentileAggregation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-percentileaggregation.html
-type Dashboard_PercentileAggregation struct {
+type Dashboard_PercentileAggregation[T any] struct {
 
 	// PercentileValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-percentileaggregation.html#cfn-quicksight-dashboard-percentileaggregation-percentilevalue
-	PercentileValue *float64 `json:"PercentileValue,omitempty"`
+	PercentileValue *T `json:"PercentileValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_PercentileAggregation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PercentileAggregation) AWSCloudFormationType() string {
+func (r *Dashboard_PercentileAggregation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PercentileAggregation"
 }

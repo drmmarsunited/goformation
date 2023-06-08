@@ -8,7 +8,7 @@ import (
 
 // Domain_DomainEndpointOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.DomainEndpointOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html
-type Domain_DomainEndpointOptions struct {
+type Domain_DomainEndpointOptions[T any] struct {
 
 	// CustomEndpoint AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Domain_DomainEndpointOptions struct {
 	// CustomEndpointEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointenabled
-	CustomEndpointEnabled *bool `json:"CustomEndpointEnabled,omitempty"`
+	CustomEndpointEnabled *T `json:"CustomEndpointEnabled,omitempty"`
 
 	// EnforceHTTPS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-enforcehttps
-	EnforceHTTPS *bool `json:"EnforceHTTPS,omitempty"`
+	EnforceHTTPS *T `json:"EnforceHTTPS,omitempty"`
 
 	// TLSSecurityPolicy AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Domain_DomainEndpointOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_DomainEndpointOptions) AWSCloudFormationType() string {
+func (r *Domain_DomainEndpointOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.DomainEndpointOptions"
 }

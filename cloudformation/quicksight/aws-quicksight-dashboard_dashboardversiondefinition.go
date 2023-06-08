@@ -8,42 +8,42 @@ import (
 
 // Dashboard_DashboardVersionDefinition AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DashboardVersionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html
-type Dashboard_DashboardVersionDefinition struct {
+type Dashboard_DashboardVersionDefinition[T any] struct {
 
 	// AnalysisDefaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-analysisdefaults
-	AnalysisDefaults *Dashboard_AnalysisDefaults `json:"AnalysisDefaults,omitempty"`
+	AnalysisDefaults *Dashboard_AnalysisDefaults[any] `json:"AnalysisDefaults,omitempty"`
 
 	// CalculatedFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-calculatedfields
-	CalculatedFields []Dashboard_CalculatedField `json:"CalculatedFields,omitempty"`
+	CalculatedFields []Dashboard_CalculatedField[any] `json:"CalculatedFields,omitempty"`
 
 	// ColumnConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-columnconfigurations
-	ColumnConfigurations []Dashboard_ColumnConfiguration `json:"ColumnConfigurations,omitempty"`
+	ColumnConfigurations []Dashboard_ColumnConfiguration[any] `json:"ColumnConfigurations,omitempty"`
 
 	// DataSetIdentifierDeclarations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-datasetidentifierdeclarations
-	DataSetIdentifierDeclarations []Dashboard_DataSetIdentifierDeclaration `json:"DataSetIdentifierDeclarations"`
+	DataSetIdentifierDeclarations []Dashboard_DataSetIdentifierDeclaration[any] `json:"DataSetIdentifierDeclarations"`
 
 	// FilterGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-filtergroups
-	FilterGroups []Dashboard_FilterGroup `json:"FilterGroups,omitempty"`
+	FilterGroups []Dashboard_FilterGroup[any] `json:"FilterGroups,omitempty"`
 
 	// ParameterDeclarations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-parameterdeclarations
-	ParameterDeclarations []Dashboard_ParameterDeclaration `json:"ParameterDeclarations,omitempty"`
+	ParameterDeclarations []Dashboard_ParameterDeclaration[any] `json:"ParameterDeclarations,omitempty"`
 
 	// Sheets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-sheets
-	Sheets []Dashboard_SheetDefinition `json:"Sheets,omitempty"`
+	Sheets []Dashboard_SheetDefinition[any] `json:"Sheets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_DashboardVersionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DashboardVersionDefinition) AWSCloudFormationType() string {
+func (r *Dashboard_DashboardVersionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DashboardVersionDefinition"
 }

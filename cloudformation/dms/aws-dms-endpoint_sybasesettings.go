@@ -8,7 +8,7 @@ import (
 
 // Endpoint_SybaseSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.SybaseSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-sybasesettings.html
-type Endpoint_SybaseSettings struct {
+type Endpoint_SybaseSettings[T any] struct {
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Endpoint_SybaseSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_SybaseSettings) AWSCloudFormationType() string {
+func (r *Endpoint_SybaseSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.SybaseSettings"
 }

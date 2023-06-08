@@ -12,7 +12,7 @@ import (
 
 // EventIntegration AWS CloudFormation Resource (AWS::AppIntegrations::EventIntegration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html
-type EventIntegration struct {
+type EventIntegration[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type EventIntegration struct {
 	// EventFilter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventfilter
-	EventFilter *EventIntegration_EventFilter `json:"EventFilter"`
+	EventFilter *EventIntegration_EventFilter[any] `json:"EventFilter"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type EventIntegration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventIntegration) AWSCloudFormationType() string {
+func (r *EventIntegration[any]) AWSCloudFormationType() string {
 	return "AWS::AppIntegrations::EventIntegration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EventIntegration) MarshalJSON() ([]byte, error) {
-	type Properties EventIntegration
+func (r EventIntegration[any]) MarshalJSON() ([]byte, error) {
+	type Properties EventIntegration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r EventIntegration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EventIntegration) UnmarshalJSON(b []byte) error {
-	type Properties EventIntegration
+func (r *EventIntegration[any]) UnmarshalJSON(b []byte) error {
+	type Properties EventIntegration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *EventIntegration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EventIntegration(*res.Properties)
+		*r = EventIntegration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

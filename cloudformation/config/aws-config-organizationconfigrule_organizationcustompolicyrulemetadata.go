@@ -8,7 +8,7 @@ import (
 
 // OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata AWS CloudFormation Resource (AWS::Config::OrganizationConfigRule.OrganizationCustomPolicyRuleMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html
-type OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata struct {
+type OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata[T any] struct {
 
 	// DebugLogDeliveryAccounts AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata) AWSCloudFormationType() string {
+func (r *OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::Config::OrganizationConfigRule.OrganizationCustomPolicyRuleMetadata"
 }

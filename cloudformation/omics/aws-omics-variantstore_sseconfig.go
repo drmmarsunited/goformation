@@ -8,7 +8,7 @@ import (
 
 // VariantStore_SseConfig AWS CloudFormation Resource (AWS::Omics::VariantStore.SseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-variantstore-sseconfig.html
-type VariantStore_SseConfig struct {
+type VariantStore_SseConfig[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type VariantStore_SseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VariantStore_SseConfig) AWSCloudFormationType() string {
+func (r *VariantStore_SseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::VariantStore.SseConfig"
 }

@@ -12,7 +12,7 @@ import (
 
 // KnowledgeBase AWS CloudFormation Resource (AWS::Wisdom::KnowledgeBase)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html
-type KnowledgeBase struct {
+type KnowledgeBase[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type KnowledgeBase struct {
 	// RenderingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-renderingconfiguration
-	RenderingConfiguration *KnowledgeBase_RenderingConfiguration `json:"RenderingConfiguration,omitempty"`
+	RenderingConfiguration *KnowledgeBase_RenderingConfiguration[any] `json:"RenderingConfiguration,omitempty"`
 
 	// ServerSideEncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-serversideencryptionconfiguration
-	ServerSideEncryptionConfiguration *KnowledgeBase_ServerSideEncryptionConfiguration `json:"ServerSideEncryptionConfiguration,omitempty"`
+	ServerSideEncryptionConfiguration *KnowledgeBase_ServerSideEncryptionConfiguration[any] `json:"ServerSideEncryptionConfiguration,omitempty"`
 
 	// SourceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-sourceconfiguration
-	SourceConfiguration *KnowledgeBase_SourceConfiguration `json:"SourceConfiguration,omitempty"`
+	SourceConfiguration *KnowledgeBase_SourceConfiguration[any] `json:"SourceConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type KnowledgeBase struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KnowledgeBase) AWSCloudFormationType() string {
+func (r *KnowledgeBase[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::KnowledgeBase"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r KnowledgeBase) MarshalJSON() ([]byte, error) {
-	type Properties KnowledgeBase
+func (r KnowledgeBase[any]) MarshalJSON() ([]byte, error) {
+	type Properties KnowledgeBase[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r KnowledgeBase) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *KnowledgeBase) UnmarshalJSON(b []byte) error {
-	type Properties KnowledgeBase
+func (r *KnowledgeBase[any]) UnmarshalJSON(b []byte) error {
+	type Properties KnowledgeBase[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *KnowledgeBase) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = KnowledgeBase(*res.Properties)
+		*r = KnowledgeBase[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

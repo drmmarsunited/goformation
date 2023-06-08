@@ -8,12 +8,12 @@ import (
 
 // GraphQLApi_OpenIDConnectConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.OpenIDConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html
-type GraphQLApi_OpenIDConnectConfig struct {
+type GraphQLApi_OpenIDConnectConfig[T any] struct {
 
 	// AuthTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
-	AuthTTL *float64 `json:"AuthTTL,omitempty"`
+	AuthTTL *T `json:"AuthTTL,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type GraphQLApi_OpenIDConnectConfig struct {
 	// IatTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
-	IatTTL *float64 `json:"IatTTL,omitempty"`
+	IatTTL *T `json:"IatTTL,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type GraphQLApi_OpenIDConnectConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi_OpenIDConnectConfig) AWSCloudFormationType() string {
+func (r *GraphQLApi_OpenIDConnectConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.OpenIDConnectConfig"
 }

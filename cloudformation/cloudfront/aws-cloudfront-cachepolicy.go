@@ -11,12 +11,12 @@ import (
 
 // CachePolicy AWS CloudFormation Resource (AWS::CloudFront::CachePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html
-type CachePolicy struct {
+type CachePolicy[T any] struct {
 
 	// CachePolicyConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#cfn-cloudfront-cachepolicy-cachepolicyconfig
-	CachePolicyConfig *CachePolicy_CachePolicyConfig `json:"CachePolicyConfig"`
+	CachePolicyConfig *CachePolicy_CachePolicyConfig[any] `json:"CachePolicyConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type CachePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CachePolicy) AWSCloudFormationType() string {
+func (r *CachePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CachePolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CachePolicy) MarshalJSON() ([]byte, error) {
-	type Properties CachePolicy
+func (r CachePolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties CachePolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r CachePolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CachePolicy) UnmarshalJSON(b []byte) error {
-	type Properties CachePolicy
+func (r *CachePolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties CachePolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *CachePolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CachePolicy(*res.Properties)
+		*r = CachePolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

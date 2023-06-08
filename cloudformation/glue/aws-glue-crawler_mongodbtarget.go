@@ -8,7 +8,7 @@ import (
 
 // Crawler_MongoDBTarget AWS CloudFormation Resource (AWS::Glue::Crawler.MongoDBTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-mongodbtarget.html
-type Crawler_MongoDBTarget struct {
+type Crawler_MongoDBTarget[T any] struct {
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Crawler_MongoDBTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_MongoDBTarget) AWSCloudFormationType() string {
+func (r *Crawler_MongoDBTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.MongoDBTarget"
 }

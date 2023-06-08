@@ -8,22 +8,22 @@ import (
 
 // Instance_NetworkInterface AWS CloudFormation Resource (AWS::EC2::Instance.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
-type Instance_NetworkInterface struct {
+type Instance_NetworkInterface[T any] struct {
 
 	// AssociateCarrierIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-associatecarrieripaddress
-	AssociateCarrierIpAddress *bool `json:"AssociateCarrierIpAddress,omitempty"`
+	AssociateCarrierIpAddress *T `json:"AssociateCarrierIpAddress,omitempty"`
 
 	// AssociatePublicIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
-	AssociatePublicIpAddress *bool `json:"AssociatePublicIpAddress,omitempty"`
+	AssociatePublicIpAddress *T `json:"AssociatePublicIpAddress,omitempty"`
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type Instance_NetworkInterface struct {
 	// Ipv6AddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount
-	Ipv6AddressCount *int `json:"Ipv6AddressCount,omitempty"`
+	Ipv6AddressCount *T `json:"Ipv6AddressCount,omitempty"`
 
 	// Ipv6Addresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses
-	Ipv6Addresses []Instance_InstanceIpv6Address `json:"Ipv6Addresses,omitempty"`
+	Ipv6Addresses []Instance_InstanceIpv6Address[any] `json:"Ipv6Addresses,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
@@ -63,12 +63,12 @@ type Instance_NetworkInterface struct {
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddresses
-	PrivateIpAddresses []Instance_PrivateIpAddressSpecification `json:"PrivateIpAddresses,omitempty"`
+	PrivateIpAddresses []Instance_PrivateIpAddressSpecification[any] `json:"PrivateIpAddresses,omitempty"`
 
 	// SecondaryPrivateIpAddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip
-	SecondaryPrivateIpAddressCount *int `json:"SecondaryPrivateIpAddressCount,omitempty"`
+	SecondaryPrivateIpAddressCount *T `json:"SecondaryPrivateIpAddressCount,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type Instance_NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_NetworkInterface) AWSCloudFormationType() string {
+func (r *Instance_NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.NetworkInterface"
 }

@@ -8,22 +8,22 @@ import (
 
 // Analysis_PivotTableAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableaggregatedfieldwells.html
-type Analysis_PivotTableAggregatedFieldWells struct {
+type Analysis_PivotTableAggregatedFieldWells[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableaggregatedfieldwells.html#cfn-quicksight-analysis-pivottableaggregatedfieldwells-columns
-	Columns []Analysis_DimensionField `json:"Columns,omitempty"`
+	Columns []Analysis_DimensionField[any] `json:"Columns,omitempty"`
 
 	// Rows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableaggregatedfieldwells.html#cfn-quicksight-analysis-pivottableaggregatedfieldwells-rows
-	Rows []Analysis_DimensionField `json:"Rows,omitempty"`
+	Rows []Analysis_DimensionField[any] `json:"Rows,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableaggregatedfieldwells.html#cfn-quicksight-analysis-pivottableaggregatedfieldwells-values
-	Values []Analysis_MeasureField `json:"Values,omitempty"`
+	Values []Analysis_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_PivotTableAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableAggregatedFieldWells"
 }

@@ -8,12 +8,12 @@ import (
 
 // Application_ApplicationSnapshotConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html
-type Application_ApplicationSnapshotConfiguration struct {
+type Application_ApplicationSnapshotConfiguration[T any] struct {
 
 	// SnapshotsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotsenabled
-	SnapshotsEnabled bool `json:"SnapshotsEnabled"`
+	SnapshotsEnabled T `json:"SnapshotsEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_ApplicationSnapshotConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationSnapshotConfiguration) AWSCloudFormationType() string {
+func (r *Application_ApplicationSnapshotConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration"
 }

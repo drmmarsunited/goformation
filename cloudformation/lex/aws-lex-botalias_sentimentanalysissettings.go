@@ -8,12 +8,12 @@ import (
 
 // BotAlias_SentimentAnalysisSettings AWS CloudFormation Resource (AWS::Lex::BotAlias.SentimentAnalysisSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-sentimentanalysissettings.html
-type BotAlias_SentimentAnalysisSettings struct {
+type BotAlias_SentimentAnalysisSettings[T any] struct {
 
 	// DetectSentiment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-sentimentanalysissettings.html#cfn-lex-botalias-sentimentanalysissettings-detectsentiment
-	DetectSentiment bool `json:"DetectSentiment"`
+	DetectSentiment T `json:"DetectSentiment"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type BotAlias_SentimentAnalysisSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias_SentimentAnalysisSettings) AWSCloudFormationType() string {
+func (r *BotAlias_SentimentAnalysisSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias.SentimentAnalysisSettings"
 }

@@ -8,12 +8,12 @@ import (
 
 // Api_Cors AWS CloudFormation Resource (AWS::ApiGatewayV2::Api.Cors)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html
-type Api_Cors struct {
+type Api_Cors[T any] struct {
 
 	// AllowCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-allowcredentials
-	AllowCredentials *bool `json:"AllowCredentials,omitempty"`
+	AllowCredentials *T `json:"AllowCredentials,omitempty"`
 
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Api_Cors struct {
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-maxage
-	MaxAge *int `json:"MaxAge,omitempty"`
+	MaxAge *T `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Api_Cors struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Api_Cors) AWSCloudFormationType() string {
+func (r *Api_Cors[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Api.Cors"
 }

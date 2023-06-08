@@ -8,17 +8,17 @@ import (
 
 // Workgroup_Workgroup AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.Workgroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html
-type Workgroup_Workgroup struct {
+type Workgroup_Workgroup[T any] struct {
 
 	// BaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-basecapacity
-	BaseCapacity *int `json:"BaseCapacity,omitempty"`
+	BaseCapacity *T `json:"BaseCapacity,omitempty"`
 
 	// ConfigParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-configparameters
-	ConfigParameters []Workgroup_ConfigParameter `json:"ConfigParameters,omitempty"`
+	ConfigParameters []Workgroup_ConfigParameter[any] `json:"ConfigParameters,omitempty"`
 
 	// CreationDate AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Workgroup_Workgroup struct {
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-endpoint
-	Endpoint *Workgroup_Endpoint `json:"Endpoint,omitempty"`
+	Endpoint *Workgroup_Endpoint[any] `json:"Endpoint,omitempty"`
 
 	// EnhancedVpcRouting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-enhancedvpcrouting
-	EnhancedVpcRouting *bool `json:"EnhancedVpcRouting,omitempty"`
+	EnhancedVpcRouting *T `json:"EnhancedVpcRouting,omitempty"`
 
 	// NamespaceName AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Workgroup_Workgroup struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type Workgroup_Workgroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup_Workgroup) AWSCloudFormationType() string {
+func (r *Workgroup_Workgroup[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup.Workgroup"
 }

@@ -8,17 +8,17 @@ import (
 
 // Analysis_WordCloudAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.WordCloudAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudaggregatedfieldwells.html
-type Analysis_WordCloudAggregatedFieldWells struct {
+type Analysis_WordCloudAggregatedFieldWells[T any] struct {
 
 	// GroupBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudaggregatedfieldwells.html#cfn-quicksight-analysis-wordcloudaggregatedfieldwells-groupby
-	GroupBy []Analysis_DimensionField `json:"GroupBy,omitempty"`
+	GroupBy []Analysis_DimensionField[any] `json:"GroupBy,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudaggregatedfieldwells.html#cfn-quicksight-analysis-wordcloudaggregatedfieldwells-size
-	Size []Analysis_MeasureField `json:"Size,omitempty"`
+	Size []Analysis_MeasureField[any] `json:"Size,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_WordCloudAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WordCloudAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_WordCloudAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WordCloudAggregatedFieldWells"
 }

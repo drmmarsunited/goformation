@@ -8,7 +8,7 @@ import (
 
 // Bucket_Tiering AWS CloudFormation Resource (AWS::S3::Bucket.Tiering)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tiering.html
-type Bucket_Tiering struct {
+type Bucket_Tiering[T any] struct {
 
 	// AccessTier AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Bucket_Tiering struct {
 	// Days AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tiering.html#cfn-s3-bucket-tiering-days
-	Days int `json:"Days"`
+	Days T `json:"Days"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_Tiering struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Tiering) AWSCloudFormationType() string {
+func (r *Bucket_Tiering[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Tiering"
 }

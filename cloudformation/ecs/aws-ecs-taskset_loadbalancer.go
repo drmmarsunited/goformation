@@ -8,7 +8,7 @@ import (
 
 // TaskSet_LoadBalancer AWS CloudFormation Resource (AWS::ECS::TaskSet.LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html
-type TaskSet_LoadBalancer struct {
+type TaskSet_LoadBalancer[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type TaskSet_LoadBalancer struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html#cfn-ecs-taskset-loadbalancer-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type TaskSet_LoadBalancer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskSet_LoadBalancer) AWSCloudFormationType() string {
+func (r *TaskSet_LoadBalancer[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskSet.LoadBalancer"
 }

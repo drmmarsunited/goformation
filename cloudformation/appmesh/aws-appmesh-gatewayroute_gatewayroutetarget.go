@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_GatewayRouteTarget AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html
-type GatewayRoute_GatewayRouteTarget struct {
+type GatewayRoute_GatewayRouteTarget[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// VirtualService AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-virtualservice
-	VirtualService *GatewayRoute_GatewayRouteVirtualService `json:"VirtualService"`
+	VirtualService *GatewayRoute_GatewayRouteVirtualService[any] `json:"VirtualService"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GatewayRoute_GatewayRouteTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteTarget) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteTarget[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteTarget"
 }

@@ -8,17 +8,17 @@ import (
 
 // FunctionDefinitionVersion_RunAs AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinitionVersion.RunAs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html
-type FunctionDefinitionVersion_RunAs struct {
+type FunctionDefinitionVersion_RunAs[T any] struct {
 
 	// Gid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid
-	Gid *int `json:"Gid,omitempty"`
+	Gid *T `json:"Gid,omitempty"`
 
 	// Uid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid
-	Uid *int `json:"Uid,omitempty"`
+	Uid *T `json:"Uid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type FunctionDefinitionVersion_RunAs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinitionVersion_RunAs) AWSCloudFormationType() string {
+func (r *FunctionDefinitionVersion_RunAs[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinitionVersion.RunAs"
 }

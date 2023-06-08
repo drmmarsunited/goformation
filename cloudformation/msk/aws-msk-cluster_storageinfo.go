@@ -8,12 +8,12 @@ import (
 
 // Cluster_StorageInfo AWS CloudFormation Resource (AWS::MSK::Cluster.StorageInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html
-type Cluster_StorageInfo struct {
+type Cluster_StorageInfo[T any] struct {
 
 	// EBSStorageInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo
-	EBSStorageInfo *Cluster_EBSStorageInfo `json:"EBSStorageInfo,omitempty"`
+	EBSStorageInfo *Cluster_EBSStorageInfo[any] `json:"EBSStorageInfo,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_StorageInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_StorageInfo) AWSCloudFormationType() string {
+func (r *Cluster_StorageInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.StorageInfo"
 }

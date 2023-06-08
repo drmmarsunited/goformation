@@ -12,7 +12,7 @@ import (
 
 // Mesh AWS CloudFormation Resource (AWS::AppMesh::Mesh)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html
-type Mesh struct {
+type Mesh[T any] struct {
 
 	// MeshName AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Mesh struct {
 	// Spec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec
-	Spec *Mesh_MeshSpec `json:"Spec,omitempty"`
+	Spec *Mesh_MeshSpec[any] `json:"Spec,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type Mesh struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Mesh) AWSCloudFormationType() string {
+func (r *Mesh[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Mesh"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Mesh) MarshalJSON() ([]byte, error) {
-	type Properties Mesh
+func (r Mesh[any]) MarshalJSON() ([]byte, error) {
+	type Properties Mesh[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r Mesh) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Mesh) UnmarshalJSON(b []byte) error {
-	type Properties Mesh
+func (r *Mesh[any]) UnmarshalJSON(b []byte) error {
+	type Properties Mesh[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *Mesh) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Mesh(*res.Properties)
+		*r = Mesh[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,27 +8,27 @@ import (
 
 // Dashboard_Parameters AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Parameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html
-type Dashboard_Parameters struct {
+type Dashboard_Parameters[T any] struct {
 
 	// DateTimeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-datetimeparameters
-	DateTimeParameters []Dashboard_DateTimeParameter `json:"DateTimeParameters,omitempty"`
+	DateTimeParameters []Dashboard_DateTimeParameter[any] `json:"DateTimeParameters,omitempty"`
 
 	// DecimalParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-decimalparameters
-	DecimalParameters []Dashboard_DecimalParameter `json:"DecimalParameters,omitempty"`
+	DecimalParameters []Dashboard_DecimalParameter[any] `json:"DecimalParameters,omitempty"`
 
 	// IntegerParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-integerparameters
-	IntegerParameters []Dashboard_IntegerParameter `json:"IntegerParameters,omitempty"`
+	IntegerParameters []Dashboard_IntegerParameter[any] `json:"IntegerParameters,omitempty"`
 
 	// StringParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-stringparameters
-	StringParameters []Dashboard_StringParameter `json:"StringParameters,omitempty"`
+	StringParameters []Dashboard_StringParameter[any] `json:"StringParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_Parameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Parameters) AWSCloudFormationType() string {
+func (r *Dashboard_Parameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Parameters"
 }

@@ -8,12 +8,12 @@ import (
 
 // Bucket_NotificationFilter AWS CloudFormation Resource (AWS::S3::Bucket.NotificationFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html
-type Bucket_NotificationFilter struct {
+type Bucket_NotificationFilter[T any] struct {
 
 	// S3Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key
-	S3Key *Bucket_S3KeyFilter `json:"S3Key"`
+	S3Key *Bucket_S3KeyFilter[any] `json:"S3Key"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_NotificationFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_NotificationFilter) AWSCloudFormationType() string {
+func (r *Bucket_NotificationFilter[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.NotificationFilter"
 }

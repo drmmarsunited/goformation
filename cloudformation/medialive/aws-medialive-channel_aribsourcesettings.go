@@ -8,7 +8,7 @@ import (
 
 // Channel_AribSourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AribSourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aribsourcesettings.html
-type Channel_AribSourceSettings struct {
+type Channel_AribSourceSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_AribSourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AribSourceSettings) AWSCloudFormationType() string {
+func (r *Channel_AribSourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AribSourceSettings"
 }

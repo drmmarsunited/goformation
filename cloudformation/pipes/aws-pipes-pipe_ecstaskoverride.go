@@ -8,12 +8,12 @@ import (
 
 // Pipe_EcsTaskOverride AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsTaskOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html
-type Pipe_EcsTaskOverride struct {
+type Pipe_EcsTaskOverride[T any] struct {
 
 	// ContainerOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-containeroverrides
-	ContainerOverrides []Pipe_EcsContainerOverride `json:"ContainerOverrides,omitempty"`
+	ContainerOverrides []Pipe_EcsContainerOverride[any] `json:"ContainerOverrides,omitempty"`
 
 	// Cpu AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Pipe_EcsTaskOverride struct {
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-ephemeralstorage
-	EphemeralStorage *Pipe_EcsEphemeralStorage `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *Pipe_EcsEphemeralStorage[any] `json:"EphemeralStorage,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Pipe_EcsTaskOverride struct {
 	// InferenceAcceleratorOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-inferenceacceleratoroverrides
-	InferenceAcceleratorOverrides []Pipe_EcsInferenceAcceleratorOverride `json:"InferenceAcceleratorOverrides,omitempty"`
+	InferenceAcceleratorOverrides []Pipe_EcsInferenceAcceleratorOverride[any] `json:"InferenceAcceleratorOverrides,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Pipe_EcsTaskOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsTaskOverride) AWSCloudFormationType() string {
+func (r *Pipe_EcsTaskOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsTaskOverride"
 }

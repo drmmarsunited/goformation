@@ -8,7 +8,7 @@ import (
 
 // Identity_MailFromAttributes AWS CloudFormation Resource (AWS::PinpointEmail::Identity.MailFromAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html
-type Identity_MailFromAttributes struct {
+type Identity_MailFromAttributes[T any] struct {
 
 	// BehaviorOnMxFailure AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Identity_MailFromAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Identity_MailFromAttributes) AWSCloudFormationType() string {
+func (r *Identity_MailFromAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::Identity.MailFromAttributes"
 }

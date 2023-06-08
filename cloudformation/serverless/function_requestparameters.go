@@ -12,13 +12,13 @@ import (
 )
 
 // Function_RequestParameters is a helper struct that can hold either a String or RequestParameter value
-type Function_RequestParameters struct {
+type Function_RequestParameters[T any] struct {
 	StringArray *[]string
 
-	RequestParameterArray *[]Function_RequestParameter
+	RequestParameterArray *[]Function_RequestParameter[any]
 }
 
-func (r Function_RequestParameters) value() interface{} {
+func (r Function_RequestParameters[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.StringArray != nil {
@@ -37,12 +37,12 @@ func (r Function_RequestParameters) value() interface{} {
 	return nil
 }
 
-func (r Function_RequestParameters) MarshalJSON() ([]byte, error) {
+func (r Function_RequestParameters[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_RequestParameters) UnmarshalJSON(b []byte) error {
+func (r *Function_RequestParameters[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

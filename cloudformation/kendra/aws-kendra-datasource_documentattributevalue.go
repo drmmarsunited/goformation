@@ -8,7 +8,7 @@ import (
 
 // DataSource_DocumentAttributeValue AWS CloudFormation Resource (AWS::Kendra::DataSource.DocumentAttributeValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html
-type DataSource_DocumentAttributeValue struct {
+type DataSource_DocumentAttributeValue[T any] struct {
 
 	// DateValue AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataSource_DocumentAttributeValue struct {
 	// LongValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-longvalue
-	LongValue *int `json:"LongValue,omitempty"`
+	LongValue *T `json:"LongValue,omitempty"`
 
 	// StringListValue AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DataSource_DocumentAttributeValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DocumentAttributeValue) AWSCloudFormationType() string {
+func (r *DataSource_DocumentAttributeValue[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DocumentAttributeValue"
 }

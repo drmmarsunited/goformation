@@ -8,7 +8,7 @@ import (
 
 // Schedule_AwsVpcConfiguration AWS CloudFormation Resource (AWS::Scheduler::Schedule.AwsVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-awsvpcconfiguration.html
-type Schedule_AwsVpcConfiguration struct {
+type Schedule_AwsVpcConfiguration[T any] struct {
 
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Schedule_AwsVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_AwsVpcConfiguration) AWSCloudFormationType() string {
+func (r *Schedule_AwsVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.AwsVpcConfiguration"
 }

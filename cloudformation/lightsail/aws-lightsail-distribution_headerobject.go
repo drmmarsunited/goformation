@@ -8,7 +8,7 @@ import (
 
 // Distribution_HeaderObject AWS CloudFormation Resource (AWS::Lightsail::Distribution.HeaderObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-headerobject.html
-type Distribution_HeaderObject struct {
+type Distribution_HeaderObject[T any] struct {
 
 	// HeadersAllowList AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_HeaderObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_HeaderObject) AWSCloudFormationType() string {
+func (r *Distribution_HeaderObject[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Distribution.HeaderObject"
 }

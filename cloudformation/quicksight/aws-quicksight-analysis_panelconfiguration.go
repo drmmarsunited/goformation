@@ -8,7 +8,7 @@ import (
 
 // Analysis_PanelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.PanelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html
-type Analysis_PanelConfiguration struct {
+type Analysis_PanelConfiguration[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Analysis_PanelConfiguration struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-title
-	Title *Analysis_PanelTitleOptions `json:"Title,omitempty"`
+	Title *Analysis_PanelTitleOptions[any] `json:"Title,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Analysis_PanelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PanelConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_PanelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PanelConfiguration"
 }

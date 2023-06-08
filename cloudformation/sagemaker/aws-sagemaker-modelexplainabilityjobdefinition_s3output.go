@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_S3Output AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.S3Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html
-type ModelExplainabilityJobDefinition_S3Output struct {
+type ModelExplainabilityJobDefinition_S3Output[T any] struct {
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelExplainabilityJobDefinition_S3Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_S3Output) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_S3Output[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.S3Output"
 }

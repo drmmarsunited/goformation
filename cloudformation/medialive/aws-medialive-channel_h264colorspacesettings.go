@@ -8,22 +8,22 @@ import (
 
 // Channel_H264ColorSpaceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.H264ColorSpaceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html
-type Channel_H264ColorSpaceSettings struct {
+type Channel_H264ColorSpaceSettings[T any] struct {
 
 	// ColorSpacePassthroughSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-colorspacepassthroughsettings
-	ColorSpacePassthroughSettings *Channel_ColorSpacePassthroughSettings `json:"ColorSpacePassthroughSettings,omitempty"`
+	ColorSpacePassthroughSettings *Channel_ColorSpacePassthroughSettings[any] `json:"ColorSpacePassthroughSettings,omitempty"`
 
 	// Rec601Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec601settings
-	Rec601Settings *Channel_Rec601Settings `json:"Rec601Settings,omitempty"`
+	Rec601Settings *Channel_Rec601Settings[any] `json:"Rec601Settings,omitempty"`
 
 	// Rec709Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec709settings
-	Rec709Settings *Channel_Rec709Settings `json:"Rec709Settings,omitempty"`
+	Rec709Settings *Channel_Rec709Settings[any] `json:"Rec709Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_H264ColorSpaceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_H264ColorSpaceSettings) AWSCloudFormationType() string {
+func (r *Channel_H264ColorSpaceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.H264ColorSpaceSettings"
 }

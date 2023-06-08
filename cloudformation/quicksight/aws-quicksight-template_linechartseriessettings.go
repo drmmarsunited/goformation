@@ -8,17 +8,17 @@ import (
 
 // Template_LineChartSeriesSettings AWS CloudFormation Resource (AWS::QuickSight::Template.LineChartSeriesSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-linechartseriessettings.html
-type Template_LineChartSeriesSettings struct {
+type Template_LineChartSeriesSettings[T any] struct {
 
 	// LineStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-linechartseriessettings.html#cfn-quicksight-template-linechartseriessettings-linestylesettings
-	LineStyleSettings *Template_LineChartLineStyleSettings `json:"LineStyleSettings,omitempty"`
+	LineStyleSettings *Template_LineChartLineStyleSettings[any] `json:"LineStyleSettings,omitempty"`
 
 	// MarkerStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-linechartseriessettings.html#cfn-quicksight-template-linechartseriessettings-markerstylesettings
-	MarkerStyleSettings *Template_LineChartMarkerStyleSettings `json:"MarkerStyleSettings,omitempty"`
+	MarkerStyleSettings *Template_LineChartMarkerStyleSettings[any] `json:"MarkerStyleSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_LineChartSeriesSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LineChartSeriesSettings) AWSCloudFormationType() string {
+func (r *Template_LineChartSeriesSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LineChartSeriesSettings"
 }

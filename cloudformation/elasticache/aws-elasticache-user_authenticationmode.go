@@ -8,7 +8,7 @@ import (
 
 // User_AuthenticationMode AWS CloudFormation Resource (AWS::ElastiCache::User.AuthenticationMode)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-authenticationmode.html
-type User_AuthenticationMode struct {
+type User_AuthenticationMode[T any] struct {
 
 	// Passwords AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type User_AuthenticationMode struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_AuthenticationMode) AWSCloudFormationType() string {
+func (r *User_AuthenticationMode[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::User.AuthenticationMode"
 }

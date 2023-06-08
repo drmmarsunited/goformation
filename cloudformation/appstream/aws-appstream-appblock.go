@@ -12,7 +12,7 @@ import (
 
 // AppBlock AWS CloudFormation Resource (AWS::AppStream::AppBlock)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html
-type AppBlock struct {
+type AppBlock[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type AppBlock struct {
 	// SetupScriptDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-setupscriptdetails
-	SetupScriptDetails *AppBlock_ScriptDetails `json:"SetupScriptDetails"`
+	SetupScriptDetails *AppBlock_ScriptDetails[any] `json:"SetupScriptDetails"`
 
 	// SourceS3Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-sources3location
-	SourceS3Location *AppBlock_S3Location `json:"SourceS3Location"`
+	SourceS3Location *AppBlock_S3Location[any] `json:"SourceS3Location"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type AppBlock struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppBlock) AWSCloudFormationType() string {
+func (r *AppBlock[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::AppBlock"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AppBlock) MarshalJSON() ([]byte, error) {
-	type Properties AppBlock
+func (r AppBlock[any]) MarshalJSON() ([]byte, error) {
+	type Properties AppBlock[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r AppBlock) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AppBlock) UnmarshalJSON(b []byte) error {
-	type Properties AppBlock
+func (r *AppBlock[any]) UnmarshalJSON(b []byte) error {
+	type Properties AppBlock[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *AppBlock) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AppBlock(*res.Properties)
+		*r = AppBlock[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

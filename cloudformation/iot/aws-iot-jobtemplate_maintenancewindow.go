@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_MaintenanceWindow AWS CloudFormation Resource (AWS::IoT::JobTemplate.MaintenanceWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html
-type JobTemplate_MaintenanceWindow struct {
+type JobTemplate_MaintenanceWindow[T any] struct {
 
 	// DurationInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-durationinminutes
-	DurationInMinutes *int `json:"DurationInMinutes,omitempty"`
+	DurationInMinutes *T `json:"DurationInMinutes,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobTemplate_MaintenanceWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_MaintenanceWindow) AWSCloudFormationType() string {
+func (r *JobTemplate_MaintenanceWindow[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.MaintenanceWindow"
 }

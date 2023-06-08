@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_AppFlowConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.AppFlowConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-appflowconfig.html
-type AnomalyDetector_AppFlowConfig struct {
+type AnomalyDetector_AppFlowConfig[T any] struct {
 
 	// FlowName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalyDetector_AppFlowConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_AppFlowConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_AppFlowConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.AppFlowConfig"
 }

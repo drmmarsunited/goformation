@@ -8,7 +8,7 @@ import (
 
 // Flow_UpsolverDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.UpsolverDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html
-type Flow_UpsolverDestinationProperties struct {
+type Flow_UpsolverDestinationProperties[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Flow_UpsolverDestinationProperties struct {
 	// S3OutputFormatConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-s3outputformatconfig
-	S3OutputFormatConfig *Flow_UpsolverS3OutputFormatConfig `json:"S3OutputFormatConfig"`
+	S3OutputFormatConfig *Flow_UpsolverS3OutputFormatConfig[any] `json:"S3OutputFormatConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Flow_UpsolverDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_UpsolverDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_UpsolverDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.UpsolverDestinationProperties"
 }

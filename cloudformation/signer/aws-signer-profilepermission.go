@@ -11,7 +11,7 @@ import (
 
 // ProfilePermission AWS CloudFormation Resource (AWS::Signer::ProfilePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html
-type ProfilePermission struct {
+type ProfilePermission[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type ProfilePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ProfilePermission) AWSCloudFormationType() string {
+func (r *ProfilePermission[any]) AWSCloudFormationType() string {
 	return "AWS::Signer::ProfilePermission"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ProfilePermission) MarshalJSON() ([]byte, error) {
-	type Properties ProfilePermission
+func (r ProfilePermission[any]) MarshalJSON() ([]byte, error) {
+	type Properties ProfilePermission[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r ProfilePermission) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ProfilePermission) UnmarshalJSON(b []byte) error {
-	type Properties ProfilePermission
+func (r *ProfilePermission[any]) UnmarshalJSON(b []byte) error {
+	type Properties ProfilePermission[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *ProfilePermission) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ProfilePermission(*res.Properties)
+		*r = ProfilePermission[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

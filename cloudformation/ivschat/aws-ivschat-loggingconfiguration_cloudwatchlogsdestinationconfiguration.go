@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_CloudWatchLogsDestinationConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration.CloudWatchLogsDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-cloudwatchlogsdestinationconfiguration.html
-type LoggingConfiguration_CloudWatchLogsDestinationConfiguration struct {
+type LoggingConfiguration_CloudWatchLogsDestinationConfiguration[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_CloudWatchLogsDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_CloudWatchLogsDestinationConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_CloudWatchLogsDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::LoggingConfiguration.CloudWatchLogsDestinationConfiguration"
 }

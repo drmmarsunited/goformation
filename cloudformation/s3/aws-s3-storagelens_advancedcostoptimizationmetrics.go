@@ -8,12 +8,12 @@ import (
 
 // StorageLens_AdvancedCostOptimizationMetrics AWS CloudFormation Resource (AWS::S3::StorageLens.AdvancedCostOptimizationMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-advancedcostoptimizationmetrics.html
-type StorageLens_AdvancedCostOptimizationMetrics struct {
+type StorageLens_AdvancedCostOptimizationMetrics[T any] struct {
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-advancedcostoptimizationmetrics.html#cfn-s3-storagelens-advancedcostoptimizationmetrics-isenabled
-	IsEnabled *bool `json:"IsEnabled,omitempty"`
+	IsEnabled *T `json:"IsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StorageLens_AdvancedCostOptimizationMetrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_AdvancedCostOptimizationMetrics) AWSCloudFormationType() string {
+func (r *StorageLens_AdvancedCostOptimizationMetrics[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.AdvancedCostOptimizationMetrics"
 }

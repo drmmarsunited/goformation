@@ -8,12 +8,12 @@ import (
 
 // Template_FunnelChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.FunnelChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartfieldwells.html
-type Template_FunnelChartFieldWells struct {
+type Template_FunnelChartFieldWells[T any] struct {
 
 	// FunnelChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-funnelchartfieldwells.html#cfn-quicksight-template-funnelchartfieldwells-funnelchartaggregatedfieldwells
-	FunnelChartAggregatedFieldWells *Template_FunnelChartAggregatedFieldWells `json:"FunnelChartAggregatedFieldWells,omitempty"`
+	FunnelChartAggregatedFieldWells *Template_FunnelChartAggregatedFieldWells[any] `json:"FunnelChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_FunnelChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FunnelChartFieldWells) AWSCloudFormationType() string {
+func (r *Template_FunnelChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FunnelChartFieldWells"
 }

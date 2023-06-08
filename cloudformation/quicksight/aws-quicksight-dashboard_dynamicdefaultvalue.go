@@ -8,22 +8,22 @@ import (
 
 // Dashboard_DynamicDefaultValue AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DynamicDefaultValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dynamicdefaultvalue.html
-type Dashboard_DynamicDefaultValue struct {
+type Dashboard_DynamicDefaultValue[T any] struct {
 
 	// DefaultValueColumn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dynamicdefaultvalue.html#cfn-quicksight-dashboard-dynamicdefaultvalue-defaultvaluecolumn
-	DefaultValueColumn *Dashboard_ColumnIdentifier `json:"DefaultValueColumn"`
+	DefaultValueColumn *Dashboard_ColumnIdentifier[any] `json:"DefaultValueColumn"`
 
 	// GroupNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dynamicdefaultvalue.html#cfn-quicksight-dashboard-dynamicdefaultvalue-groupnamecolumn
-	GroupNameColumn *Dashboard_ColumnIdentifier `json:"GroupNameColumn,omitempty"`
+	GroupNameColumn *Dashboard_ColumnIdentifier[any] `json:"GroupNameColumn,omitempty"`
 
 	// UserNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dynamicdefaultvalue.html#cfn-quicksight-dashboard-dynamicdefaultvalue-usernamecolumn
-	UserNameColumn *Dashboard_ColumnIdentifier `json:"UserNameColumn,omitempty"`
+	UserNameColumn *Dashboard_ColumnIdentifier[any] `json:"UserNameColumn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_DynamicDefaultValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DynamicDefaultValue) AWSCloudFormationType() string {
+func (r *Dashboard_DynamicDefaultValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DynamicDefaultValue"
 }

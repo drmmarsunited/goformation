@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyHeader AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyheader.html
-type EndpointConfig_ClarifyHeader struct {
+type EndpointConfig_ClarifyHeader[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type EndpointConfig_ClarifyHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyHeader) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyHeader[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyHeader"
 }

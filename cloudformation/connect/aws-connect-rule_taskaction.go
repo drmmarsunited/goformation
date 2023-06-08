@@ -8,7 +8,7 @@ import (
 
 // Rule_TaskAction AWS CloudFormation Resource (AWS::Connect::Rule.TaskAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-taskaction.html
-type Rule_TaskAction struct {
+type Rule_TaskAction[T any] struct {
 
 	// ContactFlowArn AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Rule_TaskAction struct {
 	// References AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-taskaction.html#cfn-connect-rule-taskaction-references
-	References map[string]Rule_Reference `json:"References,omitempty"`
+	References map[string]Rule_Reference[any] `json:"References,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Rule_TaskAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_TaskAction) AWSCloudFormationType() string {
+func (r *Rule_TaskAction[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.TaskAction"
 }

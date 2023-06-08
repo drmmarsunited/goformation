@@ -8,7 +8,7 @@ import (
 
 // DataCatalogEncryptionSettings_EncryptionAtRest AWS CloudFormation Resource (AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html
-type DataCatalogEncryptionSettings_EncryptionAtRest struct {
+type DataCatalogEncryptionSettings_EncryptionAtRest[T any] struct {
 
 	// CatalogEncryptionMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataCatalogEncryptionSettings_EncryptionAtRest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCatalogEncryptionSettings_EncryptionAtRest) AWSCloudFormationType() string {
+func (r *DataCatalogEncryptionSettings_EncryptionAtRest[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest"
 }

@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_LaunchTemplateOverrides AWS CloudFormation Resource (AWS::EC2::SpotFleet.LaunchTemplateOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html
-type SpotFleet_LaunchTemplateOverrides struct {
+type SpotFleet_LaunchTemplateOverrides[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type SpotFleet_LaunchTemplateOverrides struct {
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancerequirements
-	InstanceRequirements *SpotFleet_InstanceRequirementsRequest `json:"InstanceRequirements,omitempty"`
+	InstanceRequirements *SpotFleet_InstanceRequirementsRequest[any] `json:"InstanceRequirements,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type SpotFleet_LaunchTemplateOverrides struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-priority
-	Priority *float64 `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type SpotFleet_LaunchTemplateOverrides struct {
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-weightedcapacity
-	WeightedCapacity *float64 `json:"WeightedCapacity,omitempty"`
+	WeightedCapacity *T `json:"WeightedCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type SpotFleet_LaunchTemplateOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_LaunchTemplateOverrides) AWSCloudFormationType() string {
+func (r *SpotFleet_LaunchTemplateOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.LaunchTemplateOverrides"
 }

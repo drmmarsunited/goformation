@@ -8,7 +8,7 @@ import (
 
 // Channel_DolbyVision81Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.DolbyVision81Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dolbyvision81settings.html
-type Channel_DolbyVision81Settings struct {
+type Channel_DolbyVision81Settings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_DolbyVision81Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_DolbyVision81Settings) AWSCloudFormationType() string {
+func (r *Channel_DolbyVision81Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.DolbyVision81Settings"
 }

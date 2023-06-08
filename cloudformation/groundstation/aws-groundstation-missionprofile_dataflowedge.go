@@ -8,7 +8,7 @@ import (
 
 // MissionProfile_DataflowEdge AWS CloudFormation Resource (AWS::GroundStation::MissionProfile.DataflowEdge)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-dataflowedge.html
-type MissionProfile_DataflowEdge struct {
+type MissionProfile_DataflowEdge[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MissionProfile_DataflowEdge struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MissionProfile_DataflowEdge) AWSCloudFormationType() string {
+func (r *MissionProfile_DataflowEdge[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::MissionProfile.DataflowEdge"
 }

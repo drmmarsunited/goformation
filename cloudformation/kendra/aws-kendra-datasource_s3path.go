@@ -8,7 +8,7 @@ import (
 
 // DataSource_S3Path AWS CloudFormation Resource (AWS::Kendra::DataSource.S3Path)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3path.html
-type DataSource_S3Path struct {
+type DataSource_S3Path[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_S3Path struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_S3Path) AWSCloudFormationType() string {
+func (r *DataSource_S3Path[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.S3Path"
 }

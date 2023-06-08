@@ -8,7 +8,7 @@ import (
 
 // Flow_ScheduledTriggerProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ScheduledTriggerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html
-type Flow_ScheduledTriggerProperties struct {
+type Flow_ScheduledTriggerProperties[T any] struct {
 
 	// DataPullMode AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Flow_ScheduledTriggerProperties struct {
 	// FirstExecutionFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-firstexecutionfrom
-	FirstExecutionFrom *float64 `json:"FirstExecutionFrom,omitempty"`
+	FirstExecutionFrom *T `json:"FirstExecutionFrom,omitempty"`
 
 	// FlowErrorDeactivationThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-flowerrordeactivationthreshold
-	FlowErrorDeactivationThreshold *int `json:"FlowErrorDeactivationThreshold,omitempty"`
+	FlowErrorDeactivationThreshold *T `json:"FlowErrorDeactivationThreshold,omitempty"`
 
 	// ScheduleEndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleendtime
-	ScheduleEndTime *float64 `json:"ScheduleEndTime,omitempty"`
+	ScheduleEndTime *T `json:"ScheduleEndTime,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type Flow_ScheduledTriggerProperties struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleoffset
-	ScheduleOffset *float64 `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *T `json:"ScheduleOffset,omitempty"`
 
 	// ScheduleStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-schedulestarttime
-	ScheduleStartTime *float64 `json:"ScheduleStartTime,omitempty"`
+	ScheduleStartTime *T `json:"ScheduleStartTime,omitempty"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Flow_ScheduledTriggerProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ScheduledTriggerProperties) AWSCloudFormationType() string {
+func (r *Flow_ScheduledTriggerProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ScheduledTriggerProperties"
 }

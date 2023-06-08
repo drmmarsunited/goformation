@@ -8,7 +8,7 @@ import (
 
 // Crawler_JdbcTarget AWS CloudFormation Resource (AWS::Glue::Crawler.JdbcTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html
-type Crawler_JdbcTarget struct {
+type Crawler_JdbcTarget[T any] struct {
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Crawler_JdbcTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Crawler_JdbcTarget) AWSCloudFormationType() string {
+func (r *Crawler_JdbcTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Crawler.JdbcTarget"
 }

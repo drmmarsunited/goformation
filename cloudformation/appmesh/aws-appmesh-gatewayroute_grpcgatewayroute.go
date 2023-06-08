@@ -8,17 +8,17 @@ import (
 
 // GatewayRoute_GrpcGatewayRoute AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GrpcGatewayRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html
-type GatewayRoute_GrpcGatewayRoute struct {
+type GatewayRoute_GrpcGatewayRoute[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-action
-	Action *GatewayRoute_GrpcGatewayRouteAction `json:"Action"`
+	Action *GatewayRoute_GrpcGatewayRouteAction[any] `json:"Action"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-match
-	Match *GatewayRoute_GrpcGatewayRouteMatch `json:"Match"`
+	Match *GatewayRoute_GrpcGatewayRouteMatch[any] `json:"Match"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GatewayRoute_GrpcGatewayRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GrpcGatewayRoute) AWSCloudFormationType() string {
+func (r *GatewayRoute_GrpcGatewayRoute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GrpcGatewayRoute"
 }

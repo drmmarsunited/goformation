@@ -8,17 +8,17 @@ import (
 
 // Analysis_TableSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesortconfiguration.html
-type Analysis_TableSortConfiguration struct {
+type Analysis_TableSortConfiguration[T any] struct {
 
 	// PaginationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesortconfiguration.html#cfn-quicksight-analysis-tablesortconfiguration-paginationconfiguration
-	PaginationConfiguration *Analysis_PaginationConfiguration `json:"PaginationConfiguration,omitempty"`
+	PaginationConfiguration *Analysis_PaginationConfiguration[any] `json:"PaginationConfiguration,omitempty"`
 
 	// RowSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablesortconfiguration.html#cfn-quicksight-analysis-tablesortconfiguration-rowsort
-	RowSort []Analysis_FieldSortOptions `json:"RowSort,omitempty"`
+	RowSort []Analysis_FieldSortOptions[any] `json:"RowSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_TableSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_TableSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableSortConfiguration"
 }

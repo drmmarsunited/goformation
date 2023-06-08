@@ -8,12 +8,12 @@ import (
 
 // Dashboard_IntegerValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.IntegerValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integervaluewhenunsetconfiguration.html
-type Dashboard_IntegerValueWhenUnsetConfiguration struct {
+type Dashboard_IntegerValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integervaluewhenunsetconfiguration.html#cfn-quicksight-dashboard-integervaluewhenunsetconfiguration-customvalue
-	CustomValue *float64 `json:"CustomValue,omitempty"`
+	CustomValue *T `json:"CustomValue,omitempty"`
 
 	// ValueWhenUnsetOption AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_IntegerValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_IntegerValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_IntegerValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.IntegerValueWhenUnsetConfiguration"
 }

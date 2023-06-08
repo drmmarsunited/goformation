@@ -11,17 +11,17 @@ import (
 
 // RecordSet AWS CloudFormation Resource (AWS::Route53::RecordSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
-type RecordSet struct {
+type RecordSet[T any] struct {
 
 	// AliasTarget AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget
-	AliasTarget *RecordSet_AliasTarget `json:"AliasTarget,omitempty"`
+	AliasTarget *RecordSet_AliasTarget[any] `json:"AliasTarget,omitempty"`
 
 	// CidrRoutingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-cidrroutingconfig
-	CidrRoutingConfig *RecordSet_CidrRoutingConfig `json:"CidrRoutingConfig,omitempty"`
+	CidrRoutingConfig *RecordSet_CidrRoutingConfig[any] `json:"CidrRoutingConfig,omitempty"`
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type RecordSet struct {
 	// GeoLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation
-	GeoLocation *RecordSet_GeoLocation `json:"GeoLocation,omitempty"`
+	GeoLocation *RecordSet_GeoLocation[any] `json:"GeoLocation,omitempty"`
 
 	// HealthCheckId AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type RecordSet struct {
 	// MultiValueAnswer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-multivalueanswer
-	MultiValueAnswer *bool `json:"MultiValueAnswer,omitempty"`
+	MultiValueAnswer *T `json:"MultiValueAnswer,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -91,7 +91,7 @@ type RecordSet struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -110,14 +110,15 @@ type RecordSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordSet) AWSCloudFormationType() string {
+func (r *RecordSet[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RecordSet) MarshalJSON() ([]byte, error) {
-	type Properties RecordSet
+func (r RecordSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties RecordSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -139,8 +140,9 @@ func (r RecordSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RecordSet) UnmarshalJSON(b []byte) error {
-	type Properties RecordSet
+func (r *RecordSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties RecordSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -160,7 +162,7 @@ func (r *RecordSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RecordSet(*res.Properties)
+		*r = RecordSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

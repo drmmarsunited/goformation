@@ -8,7 +8,7 @@ import (
 
 // Broker_TagsEntry AWS CloudFormation Resource (AWS::AmazonMQ::Broker.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-tagsentry.html
-type Broker_TagsEntry struct {
+type Broker_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Broker_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_TagsEntry) AWSCloudFormationType() string {
+func (r *Broker_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.TagsEntry"
 }

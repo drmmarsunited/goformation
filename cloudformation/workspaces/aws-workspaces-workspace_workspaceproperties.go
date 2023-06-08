@@ -8,7 +8,7 @@ import (
 
 // Workspace_WorkspaceProperties AWS CloudFormation Resource (AWS::WorkSpaces::Workspace.WorkspaceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html
-type Workspace_WorkspaceProperties struct {
+type Workspace_WorkspaceProperties[T any] struct {
 
 	// ComputeTypeName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Workspace_WorkspaceProperties struct {
 	// RootVolumeSizeGib AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib
-	RootVolumeSizeGib *int `json:"RootVolumeSizeGib,omitempty"`
+	RootVolumeSizeGib *T `json:"RootVolumeSizeGib,omitempty"`
 
 	// RunningMode AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Workspace_WorkspaceProperties struct {
 	// RunningModeAutoStopTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes
-	RunningModeAutoStopTimeoutInMinutes *int `json:"RunningModeAutoStopTimeoutInMinutes,omitempty"`
+	RunningModeAutoStopTimeoutInMinutes *T `json:"RunningModeAutoStopTimeoutInMinutes,omitempty"`
 
 	// UserVolumeSizeGib AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib
-	UserVolumeSizeGib *int `json:"UserVolumeSizeGib,omitempty"`
+	UserVolumeSizeGib *T `json:"UserVolumeSizeGib,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Workspace_WorkspaceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_WorkspaceProperties) AWSCloudFormationType() string {
+func (r *Workspace_WorkspaceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::WorkSpaces::Workspace.WorkspaceProperties"
 }

@@ -11,7 +11,7 @@ import (
 
 // AssessmentTarget AWS CloudFormation Resource (AWS::Inspector::AssessmentTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html
-type AssessmentTarget struct {
+type AssessmentTarget[T any] struct {
 
 	// AssessmentTargetName AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type AssessmentTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssessmentTarget) AWSCloudFormationType() string {
+func (r *AssessmentTarget[any]) AWSCloudFormationType() string {
 	return "AWS::Inspector::AssessmentTarget"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AssessmentTarget) MarshalJSON() ([]byte, error) {
-	type Properties AssessmentTarget
+func (r AssessmentTarget[any]) MarshalJSON() ([]byte, error) {
+	type Properties AssessmentTarget[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r AssessmentTarget) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AssessmentTarget) UnmarshalJSON(b []byte) error {
-	type Properties AssessmentTarget
+func (r *AssessmentTarget[any]) UnmarshalJSON(b []byte) error {
+	type Properties AssessmentTarget[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *AssessmentTarget) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AssessmentTarget(*res.Properties)
+		*r = AssessmentTarget[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

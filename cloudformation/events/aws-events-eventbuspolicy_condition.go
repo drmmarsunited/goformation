@@ -8,7 +8,7 @@ import (
 
 // EventBusPolicy_Condition AWS CloudFormation Resource (AWS::Events::EventBusPolicy.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html
-type EventBusPolicy_Condition struct {
+type EventBusPolicy_Condition[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EventBusPolicy_Condition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventBusPolicy_Condition) AWSCloudFormationType() string {
+func (r *EventBusPolicy_Condition[any]) AWSCloudFormationType() string {
 	return "AWS::Events::EventBusPolicy.Condition"
 }

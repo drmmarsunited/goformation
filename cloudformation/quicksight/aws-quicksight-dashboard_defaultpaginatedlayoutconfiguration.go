@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DefaultPaginatedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DefaultPaginatedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultpaginatedlayoutconfiguration.html
-type Dashboard_DefaultPaginatedLayoutConfiguration struct {
+type Dashboard_DefaultPaginatedLayoutConfiguration[T any] struct {
 
 	// SectionBased AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-defaultpaginatedlayoutconfiguration.html#cfn-quicksight-dashboard-defaultpaginatedlayoutconfiguration-sectionbased
-	SectionBased *Dashboard_DefaultSectionBasedLayoutConfiguration `json:"SectionBased,omitempty"`
+	SectionBased *Dashboard_DefaultSectionBasedLayoutConfiguration[any] `json:"SectionBased,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_DefaultPaginatedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DefaultPaginatedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DefaultPaginatedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DefaultPaginatedLayoutConfiguration"
 }

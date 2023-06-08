@@ -11,12 +11,12 @@ import (
 
 // PackageVersion AWS CloudFormation Resource (AWS::Panorama::PackageVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html
-type PackageVersion struct {
+type PackageVersion[T any] struct {
 
 	// MarkLatest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-marklatest
-	MarkLatest *bool `json:"MarkLatest,omitempty"`
+	MarkLatest *T `json:"MarkLatest,omitempty"`
 
 	// OwnerAccount AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type PackageVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackageVersion) AWSCloudFormationType() string {
+func (r *PackageVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Panorama::PackageVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PackageVersion) MarshalJSON() ([]byte, error) {
-	type Properties PackageVersion
+func (r PackageVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties PackageVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r PackageVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PackageVersion) UnmarshalJSON(b []byte) error {
-	type Properties PackageVersion
+func (r *PackageVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties PackageVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *PackageVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PackageVersion(*res.Properties)
+		*r = PackageVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

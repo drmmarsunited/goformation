@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_HlsConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.HlsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-hlsconfiguration.html
-type PlaybackConfiguration_HlsConfiguration struct {
+type PlaybackConfiguration_HlsConfiguration[T any] struct {
 
 	// ManifestEndpointPrefix AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type PlaybackConfiguration_HlsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_HlsConfiguration) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_HlsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.HlsConfiguration"
 }

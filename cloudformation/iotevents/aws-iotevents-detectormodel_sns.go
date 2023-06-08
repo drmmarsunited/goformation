@@ -8,12 +8,12 @@ import (
 
 // DetectorModel_Sns AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.Sns)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html
-type DetectorModel_Sns struct {
+type DetectorModel_Sns[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DetectorModel_Sns struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_Sns) AWSCloudFormationType() string {
+func (r *DetectorModel_Sns[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.Sns"
 }

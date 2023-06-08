@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyFeatureType AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyFeatureType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyfeaturetype.html
-type EndpointConfig_ClarifyFeatureType struct {
+type EndpointConfig_ClarifyFeatureType[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type EndpointConfig_ClarifyFeatureType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyFeatureType) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyFeatureType[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyFeatureType"
 }

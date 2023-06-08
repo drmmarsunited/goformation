@@ -11,12 +11,12 @@ import (
 
 // StudioComponent AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html
-type StudioComponent struct {
+type StudioComponent[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-configuration
-	Configuration *StudioComponent_StudioComponentConfiguration `json:"Configuration,omitempty"`
+	Configuration *StudioComponent_StudioComponentConfiguration[any] `json:"Configuration,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type StudioComponent struct {
 	// InitializationScripts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-initializationscripts
-	InitializationScripts []StudioComponent_StudioComponentInitializationScript `json:"InitializationScripts,omitempty"`
+	InitializationScripts []StudioComponent_StudioComponentInitializationScript[any] `json:"InitializationScripts,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type StudioComponent struct {
 	// ScriptParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-scriptparameters
-	ScriptParameters []StudioComponent_ScriptParameterKeyValue `json:"ScriptParameters,omitempty"`
+	ScriptParameters []StudioComponent_ScriptParameterKeyValue[any] `json:"ScriptParameters,omitempty"`
 
 	// StudioId AWS CloudFormation Property
 	// Required: true
@@ -80,14 +80,15 @@ type StudioComponent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent) AWSCloudFormationType() string {
+func (r *StudioComponent[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StudioComponent) MarshalJSON() ([]byte, error) {
-	type Properties StudioComponent
+func (r StudioComponent[any]) MarshalJSON() ([]byte, error) {
+	type Properties StudioComponent[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r StudioComponent) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StudioComponent) UnmarshalJSON(b []byte) error {
-	type Properties StudioComponent
+func (r *StudioComponent[any]) UnmarshalJSON(b []byte) error {
+	type Properties StudioComponent[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *StudioComponent) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StudioComponent(*res.Properties)
+		*r = StudioComponent[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

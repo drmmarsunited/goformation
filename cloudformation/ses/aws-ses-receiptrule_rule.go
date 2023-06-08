@@ -8,17 +8,17 @@ import (
 
 // ReceiptRule_Rule AWS CloudFormation Resource (AWS::SES::ReceiptRule.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
-type ReceiptRule_Rule struct {
+type ReceiptRule_Rule[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-actions
-	Actions []ReceiptRule_Action `json:"Actions,omitempty"`
+	Actions []ReceiptRule_Action[any] `json:"Actions,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ReceiptRule_Rule struct {
 	// ScanEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled
-	ScanEnabled *bool `json:"ScanEnabled,omitempty"`
+	ScanEnabled *T `json:"ScanEnabled,omitempty"`
 
 	// TlsPolicy AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type ReceiptRule_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_Rule) AWSCloudFormationType() string {
+func (r *ReceiptRule_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.Rule"
 }

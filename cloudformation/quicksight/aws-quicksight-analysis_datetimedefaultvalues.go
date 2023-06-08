@@ -8,17 +8,17 @@ import (
 
 // Analysis_DateTimeDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimeDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimedefaultvalues.html
-type Analysis_DateTimeDefaultValues struct {
+type Analysis_DateTimeDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimedefaultvalues.html#cfn-quicksight-analysis-datetimedefaultvalues-dynamicvalue
-	DynamicValue *Analysis_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Analysis_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// RollingDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimedefaultvalues.html#cfn-quicksight-analysis-datetimedefaultvalues-rollingdate
-	RollingDate *Analysis_RollingDateConfiguration `json:"RollingDate,omitempty"`
+	RollingDate *Analysis_RollingDateConfiguration[any] `json:"RollingDate,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_DateTimeDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimeDefaultValues) AWSCloudFormationType() string {
+func (r *Analysis_DateTimeDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimeDefaultValues"
 }

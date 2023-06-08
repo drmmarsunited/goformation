@@ -8,7 +8,7 @@ import (
 
 // Table_SSESpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
-type Table_SSESpecification struct {
+type Table_SSESpecification[T any] struct {
 
 	// KMSMasterKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Table_SSESpecification struct {
 	// SSEEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-sseenabled
-	SSEEnabled bool `json:"SSEEnabled"`
+	SSEEnabled T `json:"SSEEnabled"`
 
 	// SSEType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_SSESpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_SSESpecification) AWSCloudFormationType() string {
+func (r *Table_SSESpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.SSESpecification"
 }

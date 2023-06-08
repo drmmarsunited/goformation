@@ -8,12 +8,12 @@ import (
 
 // Dataset_DatasetContentDeliveryRule AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html
-type Dataset_DatasetContentDeliveryRule struct {
+type Dataset_DatasetContentDeliveryRule[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination
-	Destination *Dataset_DatasetContentDeliveryRuleDestination `json:"Destination"`
+	Destination *Dataset_DatasetContentDeliveryRuleDestination[any] `json:"Destination"`
 
 	// EntryName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dataset_DatasetContentDeliveryRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatasetContentDeliveryRule) AWSCloudFormationType() string {
+func (r *Dataset_DatasetContentDeliveryRule[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule"
 }

@@ -12,7 +12,7 @@ import (
 
 // Site AWS CloudFormation Resource (AWS::NetworkManager::Site)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html
-type Site struct {
+type Site[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Site struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-location
-	Location *Site_Location `json:"Location,omitempty"`
+	Location *Site_Location[any] `json:"Location,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Site struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Site) AWSCloudFormationType() string {
+func (r *Site[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::Site"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Site) MarshalJSON() ([]byte, error) {
-	type Properties Site
+func (r Site[any]) MarshalJSON() ([]byte, error) {
+	type Properties Site[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Site) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Site) UnmarshalJSON(b []byte) error {
-	type Properties Site
+func (r *Site[any]) UnmarshalJSON(b []byte) error {
+	type Properties Site[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Site) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Site(*res.Properties)
+		*r = Site[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

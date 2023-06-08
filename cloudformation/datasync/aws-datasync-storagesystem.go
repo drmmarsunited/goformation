@@ -12,7 +12,7 @@ import (
 
 // StorageSystem AWS CloudFormation Resource (AWS::DataSync::StorageSystem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html
-type StorageSystem struct {
+type StorageSystem[T any] struct {
 
 	// AgentArns AWS CloudFormation Property
 	// Required: true
@@ -32,12 +32,12 @@ type StorageSystem struct {
 	// ServerConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-serverconfiguration
-	ServerConfiguration *StorageSystem_ServerConfiguration `json:"ServerConfiguration"`
+	ServerConfiguration *StorageSystem_ServerConfiguration[any] `json:"ServerConfiguration"`
 
 	// ServerCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-servercredentials
-	ServerCredentials *StorageSystem_ServerCredentials `json:"ServerCredentials,omitempty"`
+	ServerCredentials *StorageSystem_ServerCredentials[any] `json:"ServerCredentials,omitempty"`
 
 	// SystemType AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type StorageSystem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageSystem) AWSCloudFormationType() string {
+func (r *StorageSystem[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::StorageSystem"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StorageSystem) MarshalJSON() ([]byte, error) {
-	type Properties StorageSystem
+func (r StorageSystem[any]) MarshalJSON() ([]byte, error) {
+	type Properties StorageSystem[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r StorageSystem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StorageSystem) UnmarshalJSON(b []byte) error {
-	type Properties StorageSystem
+func (r *StorageSystem[any]) UnmarshalJSON(b []byte) error {
+	type Properties StorageSystem[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *StorageSystem) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StorageSystem(*res.Properties)
+		*r = StorageSystem[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // Application_SqlApplicationConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-sqlapplicationconfiguration.html
-type Application_SqlApplicationConfiguration struct {
+type Application_SqlApplicationConfiguration[T any] struct {
 
 	// Inputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-sqlapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-sqlapplicationconfiguration-inputs
-	Inputs []Application_Input `json:"Inputs,omitempty"`
+	Inputs []Application_Input[any] `json:"Inputs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_SqlApplicationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_SqlApplicationConfiguration) AWSCloudFormationType() string {
+func (r *Application_SqlApplicationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration"
 }

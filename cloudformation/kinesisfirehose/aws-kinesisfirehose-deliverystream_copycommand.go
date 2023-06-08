@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_CopyCommand AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.CopyCommand)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html
-type DeliveryStream_CopyCommand struct {
+type DeliveryStream_CopyCommand[T any] struct {
 
 	// CopyOptions AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DeliveryStream_CopyCommand struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_CopyCommand) AWSCloudFormationType() string {
+func (r *DeliveryStream_CopyCommand[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.CopyCommand"
 }

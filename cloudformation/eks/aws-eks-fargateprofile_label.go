@@ -8,7 +8,7 @@ import (
 
 // FargateProfile_Label AWS CloudFormation Resource (AWS::EKS::FargateProfile.Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-label.html
-type FargateProfile_Label struct {
+type FargateProfile_Label[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FargateProfile_Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FargateProfile_Label) AWSCloudFormationType() string {
+func (r *FargateProfile_Label[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::FargateProfile.Label"
 }

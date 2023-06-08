@@ -8,17 +8,17 @@ import (
 
 // ModelPackage_ModelDataQuality AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelDataQuality)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modeldataquality.html
-type ModelPackage_ModelDataQuality struct {
+type ModelPackage_ModelDataQuality[T any] struct {
 
 	// Constraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modeldataquality.html#cfn-sagemaker-modelpackage-modeldataquality-constraints
-	Constraints *ModelPackage_MetricsSource `json:"Constraints,omitempty"`
+	Constraints *ModelPackage_MetricsSource[any] `json:"Constraints,omitempty"`
 
 	// Statistics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modeldataquality.html#cfn-sagemaker-modelpackage-modeldataquality-statistics
-	Statistics *ModelPackage_MetricsSource `json:"Statistics,omitempty"`
+	Statistics *ModelPackage_MetricsSource[any] `json:"Statistics,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelPackage_ModelDataQuality struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelDataQuality) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelDataQuality[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelDataQuality"
 }

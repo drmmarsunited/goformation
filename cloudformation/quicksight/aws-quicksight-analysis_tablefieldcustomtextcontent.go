@@ -8,12 +8,12 @@ import (
 
 // Analysis_TableFieldCustomTextContent AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableFieldCustomTextContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldcustomtextcontent.html
-type Analysis_TableFieldCustomTextContent struct {
+type Analysis_TableFieldCustomTextContent[T any] struct {
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldcustomtextcontent.html#cfn-quicksight-analysis-tablefieldcustomtextcontent-fontconfiguration
-	FontConfiguration *Analysis_FontConfiguration `json:"FontConfiguration"`
+	FontConfiguration *Analysis_FontConfiguration[any] `json:"FontConfiguration"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_TableFieldCustomTextContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableFieldCustomTextContent) AWSCloudFormationType() string {
+func (r *Analysis_TableFieldCustomTextContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableFieldCustomTextContent"
 }

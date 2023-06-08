@@ -8,7 +8,7 @@ import (
 
 // Schema_TagsEntry AWS CloudFormation Resource (AWS::EventSchemas::Schema.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html
-type Schema_TagsEntry struct {
+type Schema_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Schema_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schema_TagsEntry) AWSCloudFormationType() string {
+func (r *Schema_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::EventSchemas::Schema.TagsEntry"
 }

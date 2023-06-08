@@ -8,7 +8,7 @@ import (
 
 // ImageBuilder_AccessEndpoint AWS CloudFormation Resource (AWS::AppStream::ImageBuilder.AccessEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html
-type ImageBuilder_AccessEndpoint struct {
+type ImageBuilder_AccessEndpoint[T any] struct {
 
 	// EndpointType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ImageBuilder_AccessEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageBuilder_AccessEndpoint) AWSCloudFormationType() string {
+func (r *ImageBuilder_AccessEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::ImageBuilder.AccessEndpoint"
 }

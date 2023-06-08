@@ -8,7 +8,7 @@ import (
 
 // Component_FormBindingElement AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.FormBindingElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-formbindingelement.html
-type Component_FormBindingElement struct {
+type Component_FormBindingElement[T any] struct {
 
 	// Element AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Component_FormBindingElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_FormBindingElement) AWSCloudFormationType() string {
+func (r *Component_FormBindingElement[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.FormBindingElement"
 }

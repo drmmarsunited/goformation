@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_TotalLocalStorageGBRequest AWS CloudFormation Resource (AWS::EC2::SpotFleet.TotalLocalStorageGBRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html
-type SpotFleet_TotalLocalStorageGBRequest struct {
+type SpotFleet_TotalLocalStorageGBRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_TotalLocalStorageGBRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_TotalLocalStorageGBRequest) AWSCloudFormationType() string {
+func (r *SpotFleet_TotalLocalStorageGBRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.TotalLocalStorageGBRequest"
 }

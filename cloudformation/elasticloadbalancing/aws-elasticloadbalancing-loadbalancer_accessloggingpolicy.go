@@ -8,17 +8,17 @@ import (
 
 // LoadBalancer_AccessLoggingPolicy AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html
-type LoadBalancer_AccessLoggingPolicy struct {
+type LoadBalancer_AccessLoggingPolicy[T any] struct {
 
 	// EmitInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-emitinterval
-	EmitInterval *int `json:"EmitInterval,omitempty"`
+	EmitInterval *T `json:"EmitInterval,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type LoadBalancer_AccessLoggingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_AccessLoggingPolicy) AWSCloudFormationType() string {
+func (r *LoadBalancer_AccessLoggingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy"
 }

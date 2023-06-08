@@ -8,12 +8,12 @@ import (
 
 // Cluster_ManagedScalingPolicy AWS CloudFormation Resource (AWS::EMR::Cluster.ManagedScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html
-type Cluster_ManagedScalingPolicy struct {
+type Cluster_ManagedScalingPolicy[T any] struct {
 
 	// ComputeLimits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-computelimits
-	ComputeLimits *Cluster_ComputeLimits `json:"ComputeLimits,omitempty"`
+	ComputeLimits *Cluster_ComputeLimits[any] `json:"ComputeLimits,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_ManagedScalingPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ManagedScalingPolicy) AWSCloudFormationType() string {
+func (r *Cluster_ManagedScalingPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ManagedScalingPolicy"
 }

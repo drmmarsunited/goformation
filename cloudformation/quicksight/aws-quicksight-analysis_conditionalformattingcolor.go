@@ -8,17 +8,17 @@ import (
 
 // Analysis_ConditionalFormattingColor AWS CloudFormation Resource (AWS::QuickSight::Analysis.ConditionalFormattingColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattingcolor.html
-type Analysis_ConditionalFormattingColor struct {
+type Analysis_ConditionalFormattingColor[T any] struct {
 
 	// Gradient AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattingcolor.html#cfn-quicksight-analysis-conditionalformattingcolor-gradient
-	Gradient *Analysis_ConditionalFormattingGradientColor `json:"Gradient,omitempty"`
+	Gradient *Analysis_ConditionalFormattingGradientColor[any] `json:"Gradient,omitempty"`
 
 	// Solid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattingcolor.html#cfn-quicksight-analysis-conditionalformattingcolor-solid
-	Solid *Analysis_ConditionalFormattingSolidColor `json:"Solid,omitempty"`
+	Solid *Analysis_ConditionalFormattingSolidColor[any] `json:"Solid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_ConditionalFormattingColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ConditionalFormattingColor) AWSCloudFormationType() string {
+func (r *Analysis_ConditionalFormattingColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ConditionalFormattingColor"
 }

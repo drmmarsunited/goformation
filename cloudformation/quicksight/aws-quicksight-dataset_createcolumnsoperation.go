@@ -8,12 +8,12 @@ import (
 
 // DataSet_CreateColumnsOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.CreateColumnsOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-createcolumnsoperation.html
-type DataSet_CreateColumnsOperation struct {
+type DataSet_CreateColumnsOperation[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-createcolumnsoperation.html#cfn-quicksight-dataset-createcolumnsoperation-columns
-	Columns []DataSet_CalculatedColumn `json:"Columns"`
+	Columns []DataSet_CalculatedColumn[any] `json:"Columns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSet_CreateColumnsOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_CreateColumnsOperation) AWSCloudFormationType() string {
+func (r *DataSet_CreateColumnsOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.CreateColumnsOperation"
 }

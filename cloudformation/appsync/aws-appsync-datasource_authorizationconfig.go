@@ -8,7 +8,7 @@ import (
 
 // DataSource_AuthorizationConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.AuthorizationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
-type DataSource_AuthorizationConfig struct {
+type DataSource_AuthorizationConfig[T any] struct {
 
 	// AuthorizationType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSource_AuthorizationConfig struct {
 	// AwsIamConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig
-	AwsIamConfig *DataSource_AwsIamConfig `json:"AwsIamConfig,omitempty"`
+	AwsIamConfig *DataSource_AwsIamConfig[any] `json:"AwsIamConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataSource_AuthorizationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AuthorizationConfig) AWSCloudFormationType() string {
+func (r *DataSource_AuthorizationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.AuthorizationConfig"
 }

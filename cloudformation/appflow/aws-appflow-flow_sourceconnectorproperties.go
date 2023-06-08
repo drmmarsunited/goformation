@@ -8,92 +8,92 @@ import (
 
 // Flow_SourceConnectorProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SourceConnectorProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html
-type Flow_SourceConnectorProperties struct {
+type Flow_SourceConnectorProperties[T any] struct {
 
 	// Amplitude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-amplitude
-	Amplitude *Flow_AmplitudeSourceProperties `json:"Amplitude,omitempty"`
+	Amplitude *Flow_AmplitudeSourceProperties[any] `json:"Amplitude,omitempty"`
 
 	// CustomConnector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-customconnector
-	CustomConnector *Flow_CustomConnectorSourceProperties `json:"CustomConnector,omitempty"`
+	CustomConnector *Flow_CustomConnectorSourceProperties[any] `json:"CustomConnector,omitempty"`
 
 	// Datadog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-datadog
-	Datadog *Flow_DatadogSourceProperties `json:"Datadog,omitempty"`
+	Datadog *Flow_DatadogSourceProperties[any] `json:"Datadog,omitempty"`
 
 	// Dynatrace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-dynatrace
-	Dynatrace *Flow_DynatraceSourceProperties `json:"Dynatrace,omitempty"`
+	Dynatrace *Flow_DynatraceSourceProperties[any] `json:"Dynatrace,omitempty"`
 
 	// GoogleAnalytics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-googleanalytics
-	GoogleAnalytics *Flow_GoogleAnalyticsSourceProperties `json:"GoogleAnalytics,omitempty"`
+	GoogleAnalytics *Flow_GoogleAnalyticsSourceProperties[any] `json:"GoogleAnalytics,omitempty"`
 
 	// InforNexus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-infornexus
-	InforNexus *Flow_InforNexusSourceProperties `json:"InforNexus,omitempty"`
+	InforNexus *Flow_InforNexusSourceProperties[any] `json:"InforNexus,omitempty"`
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-marketo
-	Marketo *Flow_MarketoSourceProperties `json:"Marketo,omitempty"`
+	Marketo *Flow_MarketoSourceProperties[any] `json:"Marketo,omitempty"`
 
 	// Pardot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-pardot
-	Pardot *Flow_PardotSourceProperties `json:"Pardot,omitempty"`
+	Pardot *Flow_PardotSourceProperties[any] `json:"Pardot,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-s3
-	S3 *Flow_S3SourceProperties `json:"S3,omitempty"`
+	S3 *Flow_S3SourceProperties[any] `json:"S3,omitempty"`
 
 	// SAPOData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-sapodata
-	SAPOData *Flow_SAPODataSourceProperties `json:"SAPOData,omitempty"`
+	SAPOData *Flow_SAPODataSourceProperties[any] `json:"SAPOData,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-salesforce
-	Salesforce *Flow_SalesforceSourceProperties `json:"Salesforce,omitempty"`
+	Salesforce *Flow_SalesforceSourceProperties[any] `json:"Salesforce,omitempty"`
 
 	// ServiceNow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-servicenow
-	ServiceNow *Flow_ServiceNowSourceProperties `json:"ServiceNow,omitempty"`
+	ServiceNow *Flow_ServiceNowSourceProperties[any] `json:"ServiceNow,omitempty"`
 
 	// Singular AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-singular
-	Singular *Flow_SingularSourceProperties `json:"Singular,omitempty"`
+	Singular *Flow_SingularSourceProperties[any] `json:"Singular,omitempty"`
 
 	// Slack AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-slack
-	Slack *Flow_SlackSourceProperties `json:"Slack,omitempty"`
+	Slack *Flow_SlackSourceProperties[any] `json:"Slack,omitempty"`
 
 	// Trendmicro AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-trendmicro
-	Trendmicro *Flow_TrendmicroSourceProperties `json:"Trendmicro,omitempty"`
+	Trendmicro *Flow_TrendmicroSourceProperties[any] `json:"Trendmicro,omitempty"`
 
 	// Veeva AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-veeva
-	Veeva *Flow_VeevaSourceProperties `json:"Veeva,omitempty"`
+	Veeva *Flow_VeevaSourceProperties[any] `json:"Veeva,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-zendesk
-	Zendesk *Flow_ZendeskSourceProperties `json:"Zendesk,omitempty"`
+	Zendesk *Flow_ZendeskSourceProperties[any] `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -112,6 +112,6 @@ type Flow_SourceConnectorProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SourceConnectorProperties) AWSCloudFormationType() string {
+func (r *Flow_SourceConnectorProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SourceConnectorProperties"
 }

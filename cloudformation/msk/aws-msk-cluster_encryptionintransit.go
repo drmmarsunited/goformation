@@ -8,7 +8,7 @@ import (
 
 // Cluster_EncryptionInTransit AWS CloudFormation Resource (AWS::MSK::Cluster.EncryptionInTransit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html
-type Cluster_EncryptionInTransit struct {
+type Cluster_EncryptionInTransit[T any] struct {
 
 	// ClientBroker AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Cluster_EncryptionInTransit struct {
 	// InCluster AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster
-	InCluster *bool `json:"InCluster,omitempty"`
+	InCluster *T `json:"InCluster,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_EncryptionInTransit struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_EncryptionInTransit) AWSCloudFormationType() string {
+func (r *Cluster_EncryptionInTransit[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.EncryptionInTransit"
 }

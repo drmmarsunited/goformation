@@ -8,7 +8,7 @@ import (
 
 // Template_ReferenceLineCustomLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLineCustomLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinecustomlabelconfiguration.html
-type Template_ReferenceLineCustomLabelConfiguration struct {
+type Template_ReferenceLineCustomLabelConfiguration[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_ReferenceLineCustomLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLineCustomLabelConfiguration) AWSCloudFormationType() string {
+func (r *Template_ReferenceLineCustomLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLineCustomLabelConfiguration"
 }

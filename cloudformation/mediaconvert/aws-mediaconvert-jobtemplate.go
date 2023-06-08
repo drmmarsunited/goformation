@@ -11,12 +11,12 @@ import (
 
 // JobTemplate AWS CloudFormation Resource (AWS::MediaConvert::JobTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html
-type JobTemplate struct {
+type JobTemplate[T any] struct {
 
 	// AccelerationSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-accelerationsettings
-	AccelerationSettings *JobTemplate_AccelerationSettings `json:"AccelerationSettings,omitempty"`
+	AccelerationSettings *JobTemplate_AccelerationSettings[any] `json:"AccelerationSettings,omitempty"`
 
 	// Category AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type JobTemplate struct {
 	// HopDestinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-hopdestinations
-	HopDestinations []JobTemplate_HopDestination `json:"HopDestinations,omitempty"`
+	HopDestinations []JobTemplate_HopDestination[any] `json:"HopDestinations,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type JobTemplate struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// Queue AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type JobTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate) AWSCloudFormationType() string {
+func (r *JobTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConvert::JobTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r JobTemplate) MarshalJSON() ([]byte, error) {
-	type Properties JobTemplate
+func (r JobTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties JobTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r JobTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *JobTemplate) UnmarshalJSON(b []byte) error {
-	type Properties JobTemplate
+func (r *JobTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties JobTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *JobTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = JobTemplate(*res.Properties)
+		*r = JobTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

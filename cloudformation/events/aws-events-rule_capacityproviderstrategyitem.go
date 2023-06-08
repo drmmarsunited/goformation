@@ -8,12 +8,12 @@ import (
 
 // Rule_CapacityProviderStrategyItem AWS CloudFormation Resource (AWS::Events::Rule.CapacityProviderStrategyItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-capacityproviderstrategyitem.html
-type Rule_CapacityProviderStrategyItem struct {
+type Rule_CapacityProviderStrategyItem[T any] struct {
 
 	// Base AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-capacityproviderstrategyitem.html#cfn-events-rule-capacityproviderstrategyitem-base
-	Base *int `json:"Base,omitempty"`
+	Base *T `json:"Base,omitempty"`
 
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Rule_CapacityProviderStrategyItem struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-capacityproviderstrategyitem.html#cfn-events-rule-capacityproviderstrategyitem-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Rule_CapacityProviderStrategyItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_CapacityProviderStrategyItem) AWSCloudFormationType() string {
+func (r *Rule_CapacityProviderStrategyItem[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.CapacityProviderStrategyItem"
 }

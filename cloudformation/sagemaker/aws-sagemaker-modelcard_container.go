@@ -8,7 +8,7 @@ import (
 
 // ModelCard_Container AWS CloudFormation Resource (AWS::SageMaker::ModelCard.Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-container.html
-type ModelCard_Container struct {
+type ModelCard_Container[T any] struct {
 
 	// Image AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelCard_Container struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_Container) AWSCloudFormationType() string {
+func (r *ModelCard_Container[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.Container"
 }

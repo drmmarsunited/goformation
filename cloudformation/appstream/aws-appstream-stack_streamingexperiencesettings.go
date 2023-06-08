@@ -8,7 +8,7 @@ import (
 
 // Stack_StreamingExperienceSettings AWS CloudFormation Resource (AWS::AppStream::Stack.StreamingExperienceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-streamingexperiencesettings.html
-type Stack_StreamingExperienceSettings struct {
+type Stack_StreamingExperienceSettings[T any] struct {
 
 	// PreferredProtocol AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Stack_StreamingExperienceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_StreamingExperienceSettings) AWSCloudFormationType() string {
+func (r *Stack_StreamingExperienceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Stack.StreamingExperienceSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_LivePreRollConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.LivePreRollConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html
-type PlaybackConfiguration_LivePreRollConfiguration struct {
+type PlaybackConfiguration_LivePreRollConfiguration[T any] struct {
 
 	// AdDecisionServerUrl AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type PlaybackConfiguration_LivePreRollConfiguration struct {
 	// MaxDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration-maxdurationseconds
-	MaxDurationSeconds *int `json:"MaxDurationSeconds,omitempty"`
+	MaxDurationSeconds *T `json:"MaxDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type PlaybackConfiguration_LivePreRollConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_LivePreRollConfiguration) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_LivePreRollConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.LivePreRollConfiguration"
 }

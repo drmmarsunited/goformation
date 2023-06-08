@@ -8,22 +8,22 @@ import (
 
 // ModelExplainabilityJobDefinition_NetworkConfig AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.NetworkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html
-type ModelExplainabilityJobDefinition_NetworkConfig struct {
+type ModelExplainabilityJobDefinition_NetworkConfig[T any] struct {
 
 	// EnableInterContainerTrafficEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enableintercontainertrafficencryption
-	EnableInterContainerTrafficEncryption *bool `json:"EnableInterContainerTrafficEncryption,omitempty"`
+	EnableInterContainerTrafficEncryption *T `json:"EnableInterContainerTrafficEncryption,omitempty"`
 
 	// EnableNetworkIsolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enablenetworkisolation
-	EnableNetworkIsolation *bool `json:"EnableNetworkIsolation,omitempty"`
+	EnableNetworkIsolation *T `json:"EnableNetworkIsolation,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-vpcconfig
-	VpcConfig *ModelExplainabilityJobDefinition_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *ModelExplainabilityJobDefinition_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelExplainabilityJobDefinition_NetworkConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_NetworkConfig) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_NetworkConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.NetworkConfig"
 }

@@ -11,12 +11,12 @@ import (
 
 // ClientVpnEndpoint AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html
-type ClientVpnEndpoint struct {
+type ClientVpnEndpoint[T any] struct {
 
 	// AuthenticationOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions
-	AuthenticationOptions []ClientVpnEndpoint_ClientAuthenticationRequest `json:"AuthenticationOptions"`
+	AuthenticationOptions []ClientVpnEndpoint_ClientAuthenticationRequest[any] `json:"AuthenticationOptions"`
 
 	// ClientCidrBlock AWS CloudFormation Property
 	// Required: true
@@ -26,17 +26,17 @@ type ClientVpnEndpoint struct {
 	// ClientConnectOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientconnectoptions
-	ClientConnectOptions *ClientVpnEndpoint_ClientConnectOptions `json:"ClientConnectOptions,omitempty"`
+	ClientConnectOptions *ClientVpnEndpoint_ClientConnectOptions[any] `json:"ClientConnectOptions,omitempty"`
 
 	// ClientLoginBannerOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions
-	ClientLoginBannerOptions *ClientVpnEndpoint_ClientLoginBannerOptions `json:"ClientLoginBannerOptions,omitempty"`
+	ClientLoginBannerOptions *ClientVpnEndpoint_ClientLoginBannerOptions[any] `json:"ClientLoginBannerOptions,omitempty"`
 
 	// ConnectionLogOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions
-	ConnectionLogOptions *ClientVpnEndpoint_ConnectionLogOptions `json:"ConnectionLogOptions"`
+	ConnectionLogOptions *ClientVpnEndpoint_ConnectionLogOptions[any] `json:"ConnectionLogOptions"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -66,17 +66,17 @@ type ClientVpnEndpoint struct {
 	// SessionTimeoutHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-sessiontimeouthours
-	SessionTimeoutHours *int `json:"SessionTimeoutHours,omitempty"`
+	SessionTimeoutHours *T `json:"SessionTimeoutHours,omitempty"`
 
 	// SplitTunnel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
-	SplitTunnel *bool `json:"SplitTunnel,omitempty"`
+	SplitTunnel *T `json:"SplitTunnel,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications
-	TagSpecifications []ClientVpnEndpoint_TagSpecification `json:"TagSpecifications,omitempty"`
+	TagSpecifications []ClientVpnEndpoint_TagSpecification[any] `json:"TagSpecifications,omitempty"`
 
 	// TransportProtocol AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type ClientVpnEndpoint struct {
 	// VpnPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport
-	VpnPort *int `json:"VpnPort,omitempty"`
+	VpnPort *T `json:"VpnPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -110,14 +110,15 @@ type ClientVpnEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ClientVpnEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties ClientVpnEndpoint
+func (r ClientVpnEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties ClientVpnEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -139,8 +140,9 @@ func (r ClientVpnEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ClientVpnEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties ClientVpnEndpoint
+func (r *ClientVpnEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties ClientVpnEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -160,7 +162,7 @@ func (r *ClientVpnEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ClientVpnEndpoint(*res.Properties)
+		*r = ClientVpnEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

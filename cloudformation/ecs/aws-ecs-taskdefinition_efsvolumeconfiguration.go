@@ -8,12 +8,12 @@ import (
 
 // TaskDefinition_EFSVolumeConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.EFSVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html
-type TaskDefinition_EFSVolumeConfiguration struct {
+type TaskDefinition_EFSVolumeConfiguration[T any] struct {
 
 	// AuthorizationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-authorizationconfig
-	AuthorizationConfig *TaskDefinition_AuthorizationConfig `json:"AuthorizationConfig,omitempty"`
+	AuthorizationConfig *TaskDefinition_AuthorizationConfig[any] `json:"AuthorizationConfig,omitempty"`
 
 	// FilesystemId AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type TaskDefinition_EFSVolumeConfiguration struct {
 	// TransitEncryptionPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-transitencryptionport
-	TransitEncryptionPort *int `json:"TransitEncryptionPort,omitempty"`
+	TransitEncryptionPort *T `json:"TransitEncryptionPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type TaskDefinition_EFSVolumeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_EFSVolumeConfiguration) AWSCloudFormationType() string {
+func (r *TaskDefinition_EFSVolumeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.EFSVolumeConfiguration"
 }

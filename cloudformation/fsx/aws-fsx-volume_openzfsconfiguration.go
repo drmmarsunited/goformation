@@ -8,12 +8,12 @@ import (
 
 // Volume_OpenZFSConfiguration AWS CloudFormation Resource (AWS::FSx::Volume.OpenZFSConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html
-type Volume_OpenZFSConfiguration struct {
+type Volume_OpenZFSConfiguration[T any] struct {
 
 	// CopyTagsToSnapshots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-copytagstosnapshots
-	CopyTagsToSnapshots *bool `json:"CopyTagsToSnapshots,omitempty"`
+	CopyTagsToSnapshots *T `json:"CopyTagsToSnapshots,omitempty"`
 
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Volume_OpenZFSConfiguration struct {
 	// NfsExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-nfsexports
-	NfsExports []Volume_NfsExports `json:"NfsExports,omitempty"`
+	NfsExports []Volume_NfsExports[any] `json:"NfsExports,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Volume_OpenZFSConfiguration struct {
 	// OriginSnapshot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot
-	OriginSnapshot *Volume_OriginSnapshot `json:"OriginSnapshot,omitempty"`
+	OriginSnapshot *Volume_OriginSnapshot[any] `json:"OriginSnapshot,omitempty"`
 
 	// ParentVolumeId AWS CloudFormation Property
 	// Required: true
@@ -43,27 +43,27 @@ type Volume_OpenZFSConfiguration struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *T `json:"ReadOnly,omitempty"`
 
 	// RecordSizeKiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-recordsizekib
-	RecordSizeKiB *int `json:"RecordSizeKiB,omitempty"`
+	RecordSizeKiB *T `json:"RecordSizeKiB,omitempty"`
 
 	// StorageCapacityQuotaGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityquotagib
-	StorageCapacityQuotaGiB *int `json:"StorageCapacityQuotaGiB,omitempty"`
+	StorageCapacityQuotaGiB *T `json:"StorageCapacityQuotaGiB,omitempty"`
 
 	// StorageCapacityReservationGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityreservationgib
-	StorageCapacityReservationGiB *int `json:"StorageCapacityReservationGiB,omitempty"`
+	StorageCapacityReservationGiB *T `json:"StorageCapacityReservationGiB,omitempty"`
 
 	// UserAndGroupQuotas AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas
-	UserAndGroupQuotas []Volume_UserAndGroupQuotas `json:"UserAndGroupQuotas,omitempty"`
+	UserAndGroupQuotas []Volume_UserAndGroupQuotas[any] `json:"UserAndGroupQuotas,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Volume_OpenZFSConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_OpenZFSConfiguration) AWSCloudFormationType() string {
+func (r *Volume_OpenZFSConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.OpenZFSConfiguration"
 }

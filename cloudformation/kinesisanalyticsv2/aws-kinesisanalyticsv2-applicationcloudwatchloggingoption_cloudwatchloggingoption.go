@@ -8,7 +8,7 @@ import (
 
 // ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html
-type ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption struct {
+type ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption[T any] struct {
 
 	// LogStreamARN AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption) AWSCloudFormationType() string {
+func (r *ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption"
 }

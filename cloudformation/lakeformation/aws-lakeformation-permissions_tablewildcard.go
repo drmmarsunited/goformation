@@ -8,7 +8,7 @@ import (
 
 // Permissions_TableWildcard AWS CloudFormation Resource (AWS::LakeFormation::Permissions.TableWildcard)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewildcard.html
-type Permissions_TableWildcard struct {
+type Permissions_TableWildcard[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Permissions_TableWildcard struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Permissions_TableWildcard) AWSCloudFormationType() string {
+func (r *Permissions_TableWildcard[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Permissions.TableWildcard"
 }

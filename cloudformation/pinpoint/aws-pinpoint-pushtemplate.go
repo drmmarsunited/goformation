@@ -11,27 +11,27 @@ import (
 
 // PushTemplate AWS CloudFormation Resource (AWS::Pinpoint::PushTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html
-type PushTemplate struct {
+type PushTemplate[T any] struct {
 
 	// ADM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-adm
-	ADM *PushTemplate_AndroidPushNotificationTemplate `json:"ADM,omitempty"`
+	ADM *PushTemplate_AndroidPushNotificationTemplate[any] `json:"ADM,omitempty"`
 
 	// APNS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-apns
-	APNS *PushTemplate_APNSPushNotificationTemplate `json:"APNS,omitempty"`
+	APNS *PushTemplate_APNSPushNotificationTemplate[any] `json:"APNS,omitempty"`
 
 	// Baidu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-baidu
-	Baidu *PushTemplate_AndroidPushNotificationTemplate `json:"Baidu,omitempty"`
+	Baidu *PushTemplate_AndroidPushNotificationTemplate[any] `json:"Baidu,omitempty"`
 
 	// Default AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-default
-	Default *PushTemplate_DefaultPushNotificationTemplate `json:"Default,omitempty"`
+	Default *PushTemplate_DefaultPushNotificationTemplate[any] `json:"Default,omitempty"`
 
 	// DefaultSubstitutions AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type PushTemplate struct {
 	// GCM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-gcm
-	GCM *PushTemplate_AndroidPushNotificationTemplate `json:"GCM,omitempty"`
+	GCM *PushTemplate_AndroidPushNotificationTemplate[any] `json:"GCM,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type PushTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PushTemplate) AWSCloudFormationType() string {
+func (r *PushTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::PushTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PushTemplate) MarshalJSON() ([]byte, error) {
-	type Properties PushTemplate
+func (r PushTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties PushTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r PushTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PushTemplate) UnmarshalJSON(b []byte) error {
-	type Properties PushTemplate
+func (r *PushTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties PushTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *PushTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PushTemplate(*res.Properties)
+		*r = PushTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

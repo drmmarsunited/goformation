@@ -8,17 +8,17 @@ import (
 
 // Index_UserTokenConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.UserTokenConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html
-type Index_UserTokenConfiguration struct {
+type Index_UserTokenConfiguration[T any] struct {
 
 	// JsonTokenTypeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jsontokentypeconfiguration
-	JsonTokenTypeConfiguration *Index_JsonTokenTypeConfiguration `json:"JsonTokenTypeConfiguration,omitempty"`
+	JsonTokenTypeConfiguration *Index_JsonTokenTypeConfiguration[any] `json:"JsonTokenTypeConfiguration,omitempty"`
 
 	// JwtTokenTypeConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jwttokentypeconfiguration
-	JwtTokenTypeConfiguration *Index_JwtTokenTypeConfiguration `json:"JwtTokenTypeConfiguration,omitempty"`
+	JwtTokenTypeConfiguration *Index_JwtTokenTypeConfiguration[any] `json:"JwtTokenTypeConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Index_UserTokenConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_UserTokenConfiguration) AWSCloudFormationType() string {
+func (r *Index_UserTokenConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.UserTokenConfiguration"
 }

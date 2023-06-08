@@ -8,7 +8,7 @@ import (
 
 // DataSource_ConnectionConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConnectionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html
-type DataSource_ConnectionConfiguration struct {
+type DataSource_ConnectionConfiguration[T any] struct {
 
 	// DatabaseHost AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_ConnectionConfiguration struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort T `json:"DatabasePort"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DataSource_ConnectionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ConnectionConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ConnectionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ConnectionConfiguration"
 }

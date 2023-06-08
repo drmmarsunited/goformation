@@ -8,7 +8,7 @@ import (
 
 // StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration AWS CloudFormation Resource (AWS::FSx::StorageVirtualMachine.SelfManagedActiveDirectoryConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html
-type StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration struct {
+type StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration[T any] struct {
 
 	// DnsIps AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration) AWSCloudFormationType() string {
+func (r *StorageVirtualMachine_SelfManagedActiveDirectoryConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::StorageVirtualMachine.SelfManagedActiveDirectoryConfiguration"
 }

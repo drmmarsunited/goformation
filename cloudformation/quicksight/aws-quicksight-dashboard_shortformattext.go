@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ShortFormatText AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ShortFormatText)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-shortformattext.html
-type Dashboard_ShortFormatText struct {
+type Dashboard_ShortFormatText[T any] struct {
 
 	// PlainText AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_ShortFormatText struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ShortFormatText) AWSCloudFormationType() string {
+func (r *Dashboard_ShortFormatText[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ShortFormatText"
 }

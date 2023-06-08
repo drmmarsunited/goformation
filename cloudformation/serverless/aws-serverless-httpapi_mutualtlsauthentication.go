@@ -8,7 +8,7 @@ import (
 
 // HttpApi_MutualTlsAuthentication AWS CloudFormation Resource (AWS::Serverless::HttpApi.MutualTlsAuthentication)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html
-type HttpApi_MutualTlsAuthentication struct {
+type HttpApi_MutualTlsAuthentication[T any] struct {
 
 	// TruststoreUri AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type HttpApi_MutualTlsAuthentication struct {
 	// TruststoreVersion AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html#cfn-apigatewayv2-domainname-mutualtlsauthentication-truststoreversion
-	TruststoreVersion *bool `json:"TruststoreVersion,omitempty"`
+	TruststoreVersion *T `json:"TruststoreVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type HttpApi_MutualTlsAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_MutualTlsAuthentication) AWSCloudFormationType() string {
+func (r *HttpApi_MutualTlsAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.MutualTlsAuthentication"
 }

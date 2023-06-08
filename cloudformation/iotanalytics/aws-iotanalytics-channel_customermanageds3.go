@@ -8,7 +8,7 @@ import (
 
 // Channel_CustomerManagedS3 AWS CloudFormation Resource (AWS::IoTAnalytics::Channel.CustomerManagedS3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-customermanageds3.html
-type Channel_CustomerManagedS3 struct {
+type Channel_CustomerManagedS3[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Channel_CustomerManagedS3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CustomerManagedS3) AWSCloudFormationType() string {
+func (r *Channel_CustomerManagedS3[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Channel.CustomerManagedS3"
 }

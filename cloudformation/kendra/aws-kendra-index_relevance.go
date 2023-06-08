@@ -8,7 +8,7 @@ import (
 
 // Index_Relevance AWS CloudFormation Resource (AWS::Kendra::Index.Relevance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html
-type Index_Relevance struct {
+type Index_Relevance[T any] struct {
 
 	// Duration AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Index_Relevance struct {
 	// Freshness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-freshness
-	Freshness *bool `json:"Freshness,omitempty"`
+	Freshness *T `json:"Freshness,omitempty"`
 
 	// Importance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-importance
-	Importance *int `json:"Importance,omitempty"`
+	Importance *T `json:"Importance,omitempty"`
 
 	// RankOrder AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Index_Relevance struct {
 	// ValueImportanceItems AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-valueimportanceitems
-	ValueImportanceItems []Index_ValueImportanceItem `json:"ValueImportanceItems,omitempty"`
+	ValueImportanceItems []Index_ValueImportanceItem[any] `json:"ValueImportanceItems,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Index_Relevance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_Relevance) AWSCloudFormationType() string {
+func (r *Index_Relevance[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.Relevance"
 }

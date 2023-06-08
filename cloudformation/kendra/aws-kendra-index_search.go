@@ -8,27 +8,27 @@ import (
 
 // Index_Search AWS CloudFormation Resource (AWS::Kendra::Index.Search)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html
-type Index_Search struct {
+type Index_Search[T any] struct {
 
 	// Displayable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-displayable
-	Displayable *bool `json:"Displayable,omitempty"`
+	Displayable *T `json:"Displayable,omitempty"`
 
 	// Facetable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-facetable
-	Facetable *bool `json:"Facetable,omitempty"`
+	Facetable *T `json:"Facetable,omitempty"`
 
 	// Searchable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-searchable
-	Searchable *bool `json:"Searchable,omitempty"`
+	Searchable *T `json:"Searchable,omitempty"`
 
 	// Sortable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-sortable
-	Sortable *bool `json:"Sortable,omitempty"`
+	Sortable *T `json:"Sortable,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Index_Search struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_Search) AWSCloudFormationType() string {
+func (r *Index_Search[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.Search"
 }

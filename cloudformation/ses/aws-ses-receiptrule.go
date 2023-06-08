@@ -11,7 +11,7 @@ import (
 
 // ReceiptRule AWS CloudFormation Resource (AWS::SES::ReceiptRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
-type ReceiptRule struct {
+type ReceiptRule[T any] struct {
 
 	// After AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type ReceiptRule struct {
 	// Rule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
-	Rule *ReceiptRule_Rule `json:"Rule"`
+	Rule *ReceiptRule_Rule[any] `json:"Rule"`
 
 	// RuleSetName AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type ReceiptRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule) AWSCloudFormationType() string {
+func (r *ReceiptRule[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReceiptRule) MarshalJSON() ([]byte, error) {
-	type Properties ReceiptRule
+func (r ReceiptRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReceiptRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ReceiptRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReceiptRule) UnmarshalJSON(b []byte) error {
-	type Properties ReceiptRule
+func (r *ReceiptRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReceiptRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ReceiptRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReceiptRule(*res.Properties)
+		*r = ReceiptRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

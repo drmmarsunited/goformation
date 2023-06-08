@@ -8,12 +8,12 @@ import (
 
 // CacheCluster_LogDeliveryConfigurationRequest AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster.LogDeliveryConfigurationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html
-type CacheCluster_LogDeliveryConfigurationRequest struct {
+type CacheCluster_LogDeliveryConfigurationRequest[T any] struct {
 
 	// DestinationDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html#cfn-elasticache-cachecluster-logdeliveryconfigurationrequest-destinationdetails
-	DestinationDetails *CacheCluster_DestinationDetails `json:"DestinationDetails"`
+	DestinationDetails *CacheCluster_DestinationDetails[any] `json:"DestinationDetails"`
 
 	// DestinationType AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type CacheCluster_LogDeliveryConfigurationRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CacheCluster_LogDeliveryConfigurationRequest) AWSCloudFormationType() string {
+func (r *CacheCluster_LogDeliveryConfigurationRequest[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::CacheCluster.LogDeliveryConfigurationRequest"
 }

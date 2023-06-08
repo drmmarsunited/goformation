@@ -8,7 +8,7 @@ import (
 
 // InferenceScheduler_InputNameConfiguration AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler.InputNameConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html
-type InferenceScheduler_InputNameConfiguration struct {
+type InferenceScheduler_InputNameConfiguration[T any] struct {
 
 	// ComponentTimestampDelimiter AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InferenceScheduler_InputNameConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceScheduler_InputNameConfiguration) AWSCloudFormationType() string {
+func (r *InferenceScheduler_InputNameConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutEquipment::InferenceScheduler.InputNameConfiguration"
 }

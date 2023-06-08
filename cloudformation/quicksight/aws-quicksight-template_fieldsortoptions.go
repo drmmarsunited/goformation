@@ -8,17 +8,17 @@ import (
 
 // Template_FieldSortOptions AWS CloudFormation Resource (AWS::QuickSight::Template.FieldSortOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldsortoptions.html
-type Template_FieldSortOptions struct {
+type Template_FieldSortOptions[T any] struct {
 
 	// ColumnSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldsortoptions.html#cfn-quicksight-template-fieldsortoptions-columnsort
-	ColumnSort *Template_ColumnSort `json:"ColumnSort,omitempty"`
+	ColumnSort *Template_ColumnSort[any] `json:"ColumnSort,omitempty"`
 
 	// FieldSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldsortoptions.html#cfn-quicksight-template-fieldsortoptions-fieldsort
-	FieldSort *Template_FieldSort `json:"FieldSort,omitempty"`
+	FieldSort *Template_FieldSort[any] `json:"FieldSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_FieldSortOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FieldSortOptions) AWSCloudFormationType() string {
+func (r *Template_FieldSortOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FieldSortOptions"
 }

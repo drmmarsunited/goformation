@@ -11,12 +11,12 @@ import (
 
 // WaitCondition AWS CloudFormation Resource (AWS::CloudFormation::WaitCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
-type WaitCondition struct {
+type WaitCondition[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Handle AWS CloudFormation Property
 	// Required: false
@@ -48,14 +48,15 @@ type WaitCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WaitCondition) AWSCloudFormationType() string {
+func (r *WaitCondition[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::WaitCondition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r WaitCondition) MarshalJSON() ([]byte, error) {
-	type Properties WaitCondition
+func (r WaitCondition[any]) MarshalJSON() ([]byte, error) {
+	type Properties WaitCondition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -81,8 +82,9 @@ func (r WaitCondition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *WaitCondition) UnmarshalJSON(b []byte) error {
-	type Properties WaitCondition
+func (r *WaitCondition[any]) UnmarshalJSON(b []byte) error {
+	type Properties WaitCondition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -104,7 +106,7 @@ func (r *WaitCondition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = WaitCondition(*res.Properties)
+		*r = WaitCondition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

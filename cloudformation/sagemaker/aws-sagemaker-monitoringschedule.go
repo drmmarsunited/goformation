@@ -12,7 +12,7 @@ import (
 
 // MonitoringSchedule AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html
-type MonitoringSchedule struct {
+type MonitoringSchedule[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type MonitoringSchedule struct {
 	// LastMonitoringExecutionSummary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-lastmonitoringexecutionsummary
-	LastMonitoringExecutionSummary *MonitoringSchedule_MonitoringExecutionSummary `json:"LastMonitoringExecutionSummary,omitempty"`
+	LastMonitoringExecutionSummary *MonitoringSchedule_MonitoringExecutionSummary[any] `json:"LastMonitoringExecutionSummary,omitempty"`
 
 	// MonitoringScheduleConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig
-	MonitoringScheduleConfig *MonitoringSchedule_MonitoringScheduleConfig `json:"MonitoringScheduleConfig"`
+	MonitoringScheduleConfig *MonitoringSchedule_MonitoringScheduleConfig[any] `json:"MonitoringScheduleConfig"`
 
 	// MonitoringScheduleName AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type MonitoringSchedule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule) AWSCloudFormationType() string {
+func (r *MonitoringSchedule[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MonitoringSchedule) MarshalJSON() ([]byte, error) {
-	type Properties MonitoringSchedule
+func (r MonitoringSchedule[any]) MarshalJSON() ([]byte, error) {
+	type Properties MonitoringSchedule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r MonitoringSchedule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MonitoringSchedule) UnmarshalJSON(b []byte) error {
-	type Properties MonitoringSchedule
+func (r *MonitoringSchedule[any]) UnmarshalJSON(b []byte) error {
+	type Properties MonitoringSchedule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *MonitoringSchedule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MonitoringSchedule(*res.Properties)
+		*r = MonitoringSchedule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

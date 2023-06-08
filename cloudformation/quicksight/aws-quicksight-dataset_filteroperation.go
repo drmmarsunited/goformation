@@ -8,7 +8,7 @@ import (
 
 // DataSet_FilterOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.FilterOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-filteroperation.html
-type DataSet_FilterOperation struct {
+type DataSet_FilterOperation[T any] struct {
 
 	// ConditionExpression AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSet_FilterOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_FilterOperation) AWSCloudFormationType() string {
+func (r *DataSet_FilterOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.FilterOperation"
 }

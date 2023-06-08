@@ -8,12 +8,12 @@ import (
 
 // Bucket_ReplicationDestination AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html
-type Bucket_ReplicationDestination struct {
+type Bucket_ReplicationDestination[T any] struct {
 
 	// AccessControlTranslation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-accesscontroltranslation
-	AccessControlTranslation *Bucket_AccessControlTranslation `json:"AccessControlTranslation,omitempty"`
+	AccessControlTranslation *Bucket_AccessControlTranslation[any] `json:"AccessControlTranslation,omitempty"`
 
 	// Account AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type Bucket_ReplicationDestination struct {
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-encryptionconfiguration
-	EncryptionConfiguration *Bucket_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *Bucket_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// Metrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-metrics
-	Metrics *Bucket_Metrics `json:"Metrics,omitempty"`
+	Metrics *Bucket_Metrics[any] `json:"Metrics,omitempty"`
 
 	// ReplicationTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-replicationtime
-	ReplicationTime *Bucket_ReplicationTime `json:"ReplicationTime,omitempty"`
+	ReplicationTime *Bucket_ReplicationTime[any] `json:"ReplicationTime,omitempty"`
 
 	// StorageClass AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Bucket_ReplicationDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ReplicationDestination) AWSCloudFormationType() string {
+func (r *Bucket_ReplicationDestination[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicationDestination"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ResourcePermission AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ResourcePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-resourcepermission.html
-type Dashboard_ResourcePermission struct {
+type Dashboard_ResourcePermission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_ResourcePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ResourcePermission) AWSCloudFormationType() string {
+func (r *Dashboard_ResourcePermission[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ResourcePermission"
 }

@@ -8,7 +8,7 @@ import (
 
 // HookVersion_LoggingConfig AWS CloudFormation Resource (AWS::CloudFormation::HookVersion.LoggingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-hookversion-loggingconfig.html
-type HookVersion_LoggingConfig struct {
+type HookVersion_LoggingConfig[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type HookVersion_LoggingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HookVersion_LoggingConfig) AWSCloudFormationType() string {
+func (r *HookVersion_LoggingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::HookVersion.LoggingConfig"
 }

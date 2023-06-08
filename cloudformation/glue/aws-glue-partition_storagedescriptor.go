@@ -8,7 +8,7 @@ import (
 
 // Partition_StorageDescriptor AWS CloudFormation Resource (AWS::Glue::Partition.StorageDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html
-type Partition_StorageDescriptor struct {
+type Partition_StorageDescriptor[T any] struct {
 
 	// BucketColumns AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Partition_StorageDescriptor struct {
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-columns
-	Columns []Partition_Column `json:"Columns,omitempty"`
+	Columns []Partition_Column[any] `json:"Columns,omitempty"`
 
 	// Compressed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-compressed
-	Compressed *bool `json:"Compressed,omitempty"`
+	Compressed *T `json:"Compressed,omitempty"`
 
 	// InputFormat AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Partition_StorageDescriptor struct {
 	// NumberOfBuckets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-numberofbuckets
-	NumberOfBuckets *int `json:"NumberOfBuckets,omitempty"`
+	NumberOfBuckets *T `json:"NumberOfBuckets,omitempty"`
 
 	// OutputFormat AWS CloudFormation Property
 	// Required: false
@@ -53,27 +53,27 @@ type Partition_StorageDescriptor struct {
 	// SchemaReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-schemareference
-	SchemaReference *Partition_SchemaReference `json:"SchemaReference,omitempty"`
+	SchemaReference *Partition_SchemaReference[any] `json:"SchemaReference,omitempty"`
 
 	// SerdeInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-serdeinfo
-	SerdeInfo *Partition_SerdeInfo `json:"SerdeInfo,omitempty"`
+	SerdeInfo *Partition_SerdeInfo[any] `json:"SerdeInfo,omitempty"`
 
 	// SkewedInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-skewedinfo
-	SkewedInfo *Partition_SkewedInfo `json:"SkewedInfo,omitempty"`
+	SkewedInfo *Partition_SkewedInfo[any] `json:"SkewedInfo,omitempty"`
 
 	// SortColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-sortcolumns
-	SortColumns []Partition_Order `json:"SortColumns,omitempty"`
+	SortColumns []Partition_Order[any] `json:"SortColumns,omitempty"`
 
 	// StoredAsSubDirectories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-storedassubdirectories
-	StoredAsSubDirectories *bool `json:"StoredAsSubDirectories,omitempty"`
+	StoredAsSubDirectories *T `json:"StoredAsSubDirectories,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -92,6 +92,6 @@ type Partition_StorageDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_StorageDescriptor) AWSCloudFormationType() string {
+func (r *Partition_StorageDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.StorageDescriptor"
 }

@@ -8,7 +8,7 @@ import (
 
 // CustomActionType_Settings AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType.Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html
-type CustomActionType_Settings struct {
+type CustomActionType_Settings[T any] struct {
 
 	// EntityUrlTemplate AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type CustomActionType_Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomActionType_Settings) AWSCloudFormationType() string {
+func (r *CustomActionType_Settings[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::CustomActionType.Settings"
 }

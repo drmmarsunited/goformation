@@ -12,17 +12,17 @@ import (
 
 // ReplicationSet AWS CloudFormation Resource (AWS::SSMIncidents::ReplicationSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html
-type ReplicationSet struct {
+type ReplicationSet[T any] struct {
 
 	// DeletionProtected AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-deletionprotected
-	DeletionProtected *bool `json:"DeletionProtected,omitempty"`
+	DeletionProtected *T `json:"DeletionProtected,omitempty"`
 
 	// Regions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-regions
-	Regions []ReplicationSet_ReplicationRegion `json:"Regions"`
+	Regions []ReplicationSet_ReplicationRegion[any] `json:"Regions"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type ReplicationSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationSet) AWSCloudFormationType() string {
+func (r *ReplicationSet[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ReplicationSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReplicationSet) MarshalJSON() ([]byte, error) {
-	type Properties ReplicationSet
+func (r ReplicationSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReplicationSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r ReplicationSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReplicationSet) UnmarshalJSON(b []byte) error {
-	type Properties ReplicationSet
+func (r *ReplicationSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReplicationSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *ReplicationSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReplicationSet(*res.Properties)
+		*r = ReplicationSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

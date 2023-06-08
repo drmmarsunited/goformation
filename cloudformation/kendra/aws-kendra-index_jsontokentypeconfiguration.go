@@ -8,7 +8,7 @@ import (
 
 // Index_JsonTokenTypeConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.JsonTokenTypeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html
-type Index_JsonTokenTypeConfiguration struct {
+type Index_JsonTokenTypeConfiguration[T any] struct {
 
 	// GroupAttributeField AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Index_JsonTokenTypeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_JsonTokenTypeConfiguration) AWSCloudFormationType() string {
+func (r *Index_JsonTokenTypeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.JsonTokenTypeConfiguration"
 }

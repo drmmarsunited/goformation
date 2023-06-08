@@ -8,7 +8,7 @@ import (
 
 // HostedZone_QueryLoggingConfig AWS CloudFormation Resource (AWS::Route53::HostedZone.QueryLoggingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html
-type HostedZone_QueryLoggingConfig struct {
+type HostedZone_QueryLoggingConfig[T any] struct {
 
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type HostedZone_QueryLoggingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HostedZone_QueryLoggingConfig) AWSCloudFormationType() string {
+func (r *HostedZone_QueryLoggingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::HostedZone.QueryLoggingConfig"
 }

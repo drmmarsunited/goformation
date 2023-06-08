@@ -12,7 +12,7 @@ import (
 
 // FileSystem AWS CloudFormation Resource (AWS::FSx::FileSystem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html
-type FileSystem struct {
+type FileSystem[T any] struct {
 
 	// BackupId AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type FileSystem struct {
 	// LustreConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-lustreconfiguration
-	LustreConfiguration *FileSystem_LustreConfiguration `json:"LustreConfiguration,omitempty"`
+	LustreConfiguration *FileSystem_LustreConfiguration[any] `json:"LustreConfiguration,omitempty"`
 
 	// OntapConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-ontapconfiguration
-	OntapConfiguration *FileSystem_OntapConfiguration `json:"OntapConfiguration,omitempty"`
+	OntapConfiguration *FileSystem_OntapConfiguration[any] `json:"OntapConfiguration,omitempty"`
 
 	// OpenZFSConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-openzfsconfiguration
-	OpenZFSConfiguration *FileSystem_OpenZFSConfiguration `json:"OpenZFSConfiguration,omitempty"`
+	OpenZFSConfiguration *FileSystem_OpenZFSConfiguration[any] `json:"OpenZFSConfiguration,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type FileSystem struct {
 	// StorageCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity
-	StorageCapacity *int `json:"StorageCapacity,omitempty"`
+	StorageCapacity *T `json:"StorageCapacity,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type FileSystem struct {
 	// WindowsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-windowsconfiguration
-	WindowsConfiguration *FileSystem_WindowsConfiguration `json:"WindowsConfiguration,omitempty"`
+	WindowsConfiguration *FileSystem_WindowsConfiguration[any] `json:"WindowsConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -96,14 +96,15 @@ type FileSystem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem) AWSCloudFormationType() string {
+func (r *FileSystem[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::FileSystem"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FileSystem) MarshalJSON() ([]byte, error) {
-	type Properties FileSystem
+func (r FileSystem[any]) MarshalJSON() ([]byte, error) {
+	type Properties FileSystem[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r FileSystem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FileSystem) UnmarshalJSON(b []byte) error {
-	type Properties FileSystem
+func (r *FileSystem[any]) UnmarshalJSON(b []byte) error {
+	type Properties FileSystem[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *FileSystem) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FileSystem(*res.Properties)
+		*r = FileSystem[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

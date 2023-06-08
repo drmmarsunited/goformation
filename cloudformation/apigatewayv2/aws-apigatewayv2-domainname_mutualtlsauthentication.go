@@ -8,7 +8,7 @@ import (
 
 // DomainName_MutualTlsAuthentication AWS CloudFormation Resource (AWS::ApiGatewayV2::DomainName.MutualTlsAuthentication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html
-type DomainName_MutualTlsAuthentication struct {
+type DomainName_MutualTlsAuthentication[T any] struct {
 
 	// TruststoreUri AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DomainName_MutualTlsAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainName_MutualTlsAuthentication) AWSCloudFormationType() string {
+func (r *DomainName_MutualTlsAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::DomainName.MutualTlsAuthentication"
 }

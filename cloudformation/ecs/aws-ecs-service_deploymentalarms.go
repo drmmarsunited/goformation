@@ -8,7 +8,7 @@ import (
 
 // Service_DeploymentAlarms AWS CloudFormation Resource (AWS::ECS::Service.DeploymentAlarms)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentalarms.html
-type Service_DeploymentAlarms struct {
+type Service_DeploymentAlarms[T any] struct {
 
 	// AlarmNames AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Service_DeploymentAlarms struct {
 	// Enable AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentalarms.html#cfn-ecs-service-deploymentalarms-enable
-	Enable bool `json:"Enable"`
+	Enable T `json:"Enable"`
 
 	// Rollback AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentalarms.html#cfn-ecs-service-deploymentalarms-rollback
-	Rollback bool `json:"Rollback"`
+	Rollback T `json:"Rollback"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Service_DeploymentAlarms struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DeploymentAlarms) AWSCloudFormationType() string {
+func (r *Service_DeploymentAlarms[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.DeploymentAlarms"
 }

@@ -8,17 +8,17 @@ import (
 
 // StateMachine_SAMPolicyTemplate AWS CloudFormation Resource (AWS::Serverless::StateMachine.SAMPolicyTemplate)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-type StateMachine_SAMPolicyTemplate struct {
+type StateMachine_SAMPolicyTemplate[T any] struct {
 
 	// LambdaInvokePolicy AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	LambdaInvokePolicy *StateMachine_FunctionSAMPT `json:"LambdaInvokePolicy,omitempty"`
+	LambdaInvokePolicy *StateMachine_FunctionSAMPT[any] `json:"LambdaInvokePolicy,omitempty"`
 
 	// StepFunctionsExecutionPolicy AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	StepFunctionsExecutionPolicy *StateMachine_StateMachineSAMPT `json:"StepFunctionsExecutionPolicy,omitempty"`
+	StepFunctionsExecutionPolicy *StateMachine_StateMachineSAMPT[any] `json:"StepFunctionsExecutionPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StateMachine_SAMPolicyTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_SAMPolicyTemplate) AWSCloudFormationType() string {
+func (r *StateMachine_SAMPolicyTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.SAMPolicyTemplate"
 }

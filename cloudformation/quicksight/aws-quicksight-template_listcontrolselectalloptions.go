@@ -8,7 +8,7 @@ import (
 
 // Template_ListControlSelectAllOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ListControlSelectAllOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-listcontrolselectalloptions.html
-type Template_ListControlSelectAllOptions struct {
+type Template_ListControlSelectAllOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_ListControlSelectAllOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ListControlSelectAllOptions) AWSCloudFormationType() string {
+func (r *Template_ListControlSelectAllOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ListControlSelectAllOptions"
 }

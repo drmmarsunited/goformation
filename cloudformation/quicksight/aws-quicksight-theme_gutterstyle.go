@@ -8,12 +8,12 @@ import (
 
 // Theme_GutterStyle AWS CloudFormation Resource (AWS::QuickSight::Theme.GutterStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-gutterstyle.html
-type Theme_GutterStyle struct {
+type Theme_GutterStyle[T any] struct {
 
 	// Show AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-gutterstyle.html#cfn-quicksight-theme-gutterstyle-show
-	Show *bool `json:"Show,omitempty"`
+	Show *T `json:"Show,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Theme_GutterStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_GutterStyle) AWSCloudFormationType() string {
+func (r *Theme_GutterStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.GutterStyle"
 }

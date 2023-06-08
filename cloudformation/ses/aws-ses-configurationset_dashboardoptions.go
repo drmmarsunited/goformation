@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_DashboardOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.DashboardOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-dashboardoptions.html
-type ConfigurationSet_DashboardOptions struct {
+type ConfigurationSet_DashboardOptions[T any] struct {
 
 	// EngagementMetrics AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ConfigurationSet_DashboardOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_DashboardOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_DashboardOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.DashboardOptions"
 }

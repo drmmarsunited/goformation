@@ -12,7 +12,7 @@ import (
 
 // TransitGatewayRouteTableAttachment AWS CloudFormation Resource (AWS::NetworkManager::TransitGatewayRouteTableAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html
-type TransitGatewayRouteTableAttachment struct {
+type TransitGatewayRouteTableAttachment[T any] struct {
 
 	// PeeringId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type TransitGatewayRouteTableAttachment struct {
 	// ProposedSegmentChange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange
-	ProposedSegmentChange *TransitGatewayRouteTableAttachment_ProposedSegmentChange `json:"ProposedSegmentChange,omitempty"`
+	ProposedSegmentChange *TransitGatewayRouteTableAttachment_ProposedSegmentChange[any] `json:"ProposedSegmentChange,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type TransitGatewayRouteTableAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayRouteTableAttachment) AWSCloudFormationType() string {
+func (r *TransitGatewayRouteTableAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::TransitGatewayRouteTableAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayRouteTableAttachment) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayRouteTableAttachment
+func (r TransitGatewayRouteTableAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayRouteTableAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r TransitGatewayRouteTableAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayRouteTableAttachment) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayRouteTableAttachment
+func (r *TransitGatewayRouteTableAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayRouteTableAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *TransitGatewayRouteTableAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayRouteTableAttachment(*res.Properties)
+		*r = TransitGatewayRouteTableAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

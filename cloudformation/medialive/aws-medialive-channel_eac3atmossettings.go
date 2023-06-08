@@ -8,12 +8,12 @@ import (
 
 // Channel_Eac3AtmosSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Eac3AtmosSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html
-type Channel_Eac3AtmosSettings struct {
+type Channel_Eac3AtmosSettings[T any] struct {
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-bitrate
-	Bitrate *float64 `json:"Bitrate,omitempty"`
+	Bitrate *T `json:"Bitrate,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_Eac3AtmosSettings struct {
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-dialnorm
-	Dialnorm *int `json:"Dialnorm,omitempty"`
+	Dialnorm *T `json:"Dialnorm,omitempty"`
 
 	// DrcLine AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Channel_Eac3AtmosSettings struct {
 	// HeightTrim AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-heighttrim
-	HeightTrim *float64 `json:"HeightTrim,omitempty"`
+	HeightTrim *T `json:"HeightTrim,omitempty"`
 
 	// SurroundTrim AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-surroundtrim
-	SurroundTrim *float64 `json:"SurroundTrim,omitempty"`
+	SurroundTrim *T `json:"SurroundTrim,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Channel_Eac3AtmosSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Eac3AtmosSettings) AWSCloudFormationType() string {
+func (r *Channel_Eac3AtmosSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Eac3AtmosSettings"
 }

@@ -11,7 +11,7 @@ import (
 
 // VPCEndpointServicePermissions AWS CloudFormation Resource (AWS::EC2::VPCEndpointServicePermissions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html
-type VPCEndpointServicePermissions struct {
+type VPCEndpointServicePermissions[T any] struct {
 
 	// AllowedPrincipals AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type VPCEndpointServicePermissions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCEndpointServicePermissions) AWSCloudFormationType() string {
+func (r *VPCEndpointServicePermissions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPCEndpointServicePermissions"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPCEndpointServicePermissions) MarshalJSON() ([]byte, error) {
-	type Properties VPCEndpointServicePermissions
+func (r VPCEndpointServicePermissions[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPCEndpointServicePermissions[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r VPCEndpointServicePermissions) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPCEndpointServicePermissions) UnmarshalJSON(b []byte) error {
-	type Properties VPCEndpointServicePermissions
+func (r *VPCEndpointServicePermissions[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPCEndpointServicePermissions[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *VPCEndpointServicePermissions) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPCEndpointServicePermissions(*res.Properties)
+		*r = VPCEndpointServicePermissions[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,22 +8,22 @@ import (
 
 // DataflowEndpointGroup_EndpointDetails AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.EndpointDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html
-type DataflowEndpointGroup_EndpointDetails struct {
+type DataflowEndpointGroup_EndpointDetails[T any] struct {
 
 	// AwsGroundStationAgentEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-awsgroundstationagentendpoint
-	AwsGroundStationAgentEndpoint *DataflowEndpointGroup_AwsGroundStationAgentEndpoint `json:"AwsGroundStationAgentEndpoint,omitempty"`
+	AwsGroundStationAgentEndpoint *DataflowEndpointGroup_AwsGroundStationAgentEndpoint[any] `json:"AwsGroundStationAgentEndpoint,omitempty"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-endpoint
-	Endpoint *DataflowEndpointGroup_DataflowEndpoint `json:"Endpoint,omitempty"`
+	Endpoint *DataflowEndpointGroup_DataflowEndpoint[any] `json:"Endpoint,omitempty"`
 
 	// SecurityDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-securitydetails
-	SecurityDetails *DataflowEndpointGroup_SecurityDetails `json:"SecurityDetails,omitempty"`
+	SecurityDetails *DataflowEndpointGroup_SecurityDetails[any] `json:"SecurityDetails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataflowEndpointGroup_EndpointDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_EndpointDetails) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_EndpointDetails[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.EndpointDetails"
 }

@@ -8,12 +8,12 @@ import (
 
 // Analysis_ShapeConditionalFormat AWS CloudFormation Resource (AWS::QuickSight::Analysis.ShapeConditionalFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-shapeconditionalformat.html
-type Analysis_ShapeConditionalFormat struct {
+type Analysis_ShapeConditionalFormat[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-shapeconditionalformat.html#cfn-quicksight-analysis-shapeconditionalformat-backgroundcolor
-	BackgroundColor *Analysis_ConditionalFormattingColor `json:"BackgroundColor"`
+	BackgroundColor *Analysis_ConditionalFormattingColor[any] `json:"BackgroundColor"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_ShapeConditionalFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ShapeConditionalFormat) AWSCloudFormationType() string {
+func (r *Analysis_ShapeConditionalFormat[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ShapeConditionalFormat"
 }

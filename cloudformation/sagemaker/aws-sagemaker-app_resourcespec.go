@@ -8,7 +8,7 @@ import (
 
 // App_ResourceSpec AWS CloudFormation Resource (AWS::SageMaker::App.ResourceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html
-type App_ResourceSpec struct {
+type App_ResourceSpec[T any] struct {
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type App_ResourceSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_ResourceSpec) AWSCloudFormationType() string {
+func (r *App_ResourceSpec[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::App.ResourceSpec"
 }

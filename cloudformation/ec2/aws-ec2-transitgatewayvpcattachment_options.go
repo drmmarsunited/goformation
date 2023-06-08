@@ -8,7 +8,7 @@ import (
 
 // TransitGatewayVpcAttachment_Options AWS CloudFormation Resource (AWS::EC2::TransitGatewayVpcAttachment.Options)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html
-type TransitGatewayVpcAttachment_Options struct {
+type TransitGatewayVpcAttachment_Options[T any] struct {
 
 	// ApplianceModeSupport AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TransitGatewayVpcAttachment_Options struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayVpcAttachment_Options) AWSCloudFormationType() string {
+func (r *TransitGatewayVpcAttachment_Options[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayVpcAttachment.Options"
 }

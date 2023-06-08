@@ -11,7 +11,7 @@ import (
 
 // Authorizer AWS CloudFormation Resource (AWS::ApiGateway::Authorizer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html
-type Authorizer struct {
+type Authorizer[T any] struct {
 
 	// AuthType AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type Authorizer struct {
 	// AuthorizerResultTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds
-	AuthorizerResultTtlInSeconds *int `json:"AuthorizerResultTtlInSeconds,omitempty"`
+	AuthorizerResultTtlInSeconds *T `json:"AuthorizerResultTtlInSeconds,omitempty"`
 
 	// AuthorizerUri AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type Authorizer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Authorizer) AWSCloudFormationType() string {
+func (r *Authorizer[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Authorizer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Authorizer) MarshalJSON() ([]byte, error) {
-	type Properties Authorizer
+func (r Authorizer[any]) MarshalJSON() ([]byte, error) {
+	type Properties Authorizer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r Authorizer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Authorizer) UnmarshalJSON(b []byte) error {
-	type Properties Authorizer
+func (r *Authorizer[any]) UnmarshalJSON(b []byte) error {
+	type Properties Authorizer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *Authorizer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Authorizer(*res.Properties)
+		*r = Authorizer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

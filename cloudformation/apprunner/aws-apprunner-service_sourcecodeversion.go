@@ -8,7 +8,7 @@ import (
 
 // Service_SourceCodeVersion AWS CloudFormation Resource (AWS::AppRunner::Service.SourceCodeVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourcecodeversion.html
-type Service_SourceCodeVersion struct {
+type Service_SourceCodeVersion[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Service_SourceCodeVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_SourceCodeVersion) AWSCloudFormationType() string {
+func (r *Service_SourceCodeVersion[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.SourceCodeVersion"
 }

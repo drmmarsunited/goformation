@@ -11,7 +11,7 @@ import (
 
 // LaunchProfile AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html
-type LaunchProfile struct {
+type LaunchProfile[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type LaunchProfile struct {
 	// StreamConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-streamconfiguration
-	StreamConfiguration *LaunchProfile_StreamConfiguration `json:"StreamConfiguration"`
+	StreamConfiguration *LaunchProfile_StreamConfiguration[any] `json:"StreamConfiguration"`
 
 	// StudioComponentIds AWS CloudFormation Property
 	// Required: true
@@ -70,14 +70,15 @@ type LaunchProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchProfile) AWSCloudFormationType() string {
+func (r *LaunchProfile[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::LaunchProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LaunchProfile) MarshalJSON() ([]byte, error) {
-	type Properties LaunchProfile
+func (r LaunchProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties LaunchProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r LaunchProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LaunchProfile) UnmarshalJSON(b []byte) error {
-	type Properties LaunchProfile
+func (r *LaunchProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties LaunchProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *LaunchProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LaunchProfile(*res.Properties)
+		*r = LaunchProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_StatisticalThreshold AWS CloudFormation Resource (AWS::IoT::SecurityProfile.StatisticalThreshold)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-statisticalthreshold.html
-type SecurityProfile_StatisticalThreshold struct {
+type SecurityProfile_StatisticalThreshold[T any] struct {
 
 	// Statistic AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type SecurityProfile_StatisticalThreshold struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_StatisticalThreshold) AWSCloudFormationType() string {
+func (r *SecurityProfile_StatisticalThreshold[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.StatisticalThreshold"
 }

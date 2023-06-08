@@ -8,7 +8,7 @@ import (
 
 // Analysis_WordCloudOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.WordCloudOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudoptions.html
-type Analysis_WordCloudOptions struct {
+type Analysis_WordCloudOptions[T any] struct {
 
 	// CloudLayout AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_WordCloudOptions struct {
 	// MaximumStringLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudoptions.html#cfn-quicksight-analysis-wordcloudoptions-maximumstringlength
-	MaximumStringLength *float64 `json:"MaximumStringLength,omitempty"`
+	MaximumStringLength *T `json:"MaximumStringLength,omitempty"`
 
 	// WordCasing AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Analysis_WordCloudOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WordCloudOptions) AWSCloudFormationType() string {
+func (r *Analysis_WordCloudOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WordCloudOptions"
 }

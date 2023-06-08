@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_AccessLog AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.AccessLog)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
-type VirtualNode_AccessLog struct {
+type VirtualNode_AccessLog[T any] struct {
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file
-	File *VirtualNode_FileAccessLog `json:"File,omitempty"`
+	File *VirtualNode_FileAccessLog[any] `json:"File,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_AccessLog struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_AccessLog) AWSCloudFormationType() string {
+func (r *VirtualNode_AccessLog[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.AccessLog"
 }

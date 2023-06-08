@@ -11,12 +11,12 @@ import (
 
 // AnomalyDetector AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html
-type AnomalyDetector struct {
+type AnomalyDetector[T any] struct {
 
 	// AnomalyDetectorConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig
-	AnomalyDetectorConfig *AnomalyDetector_AnomalyDetectorConfig `json:"AnomalyDetectorConfig"`
+	AnomalyDetectorConfig *AnomalyDetector_AnomalyDetectorConfig[any] `json:"AnomalyDetectorConfig"`
 
 	// AnomalyDetectorDescription AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type AnomalyDetector struct {
 	// MetricSetList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-metricsetlist
-	MetricSetList []AnomalyDetector_MetricSet `json:"MetricSetList"`
+	MetricSetList []AnomalyDetector_MetricSet[any] `json:"MetricSetList"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type AnomalyDetector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector) AWSCloudFormationType() string {
+func (r *AnomalyDetector[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AnomalyDetector) MarshalJSON() ([]byte, error) {
-	type Properties AnomalyDetector
+func (r AnomalyDetector[any]) MarshalJSON() ([]byte, error) {
+	type Properties AnomalyDetector[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r AnomalyDetector) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AnomalyDetector) UnmarshalJSON(b []byte) error {
-	type Properties AnomalyDetector
+func (r *AnomalyDetector[any]) UnmarshalJSON(b []byte) error {
+	type Properties AnomalyDetector[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *AnomalyDetector) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AnomalyDetector(*res.Properties)
+		*r = AnomalyDetector[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Analysis_ConditionalFormattingSolidColor AWS CloudFormation Resource (AWS::QuickSight::Analysis.ConditionalFormattingSolidColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattingsolidcolor.html
-type Analysis_ConditionalFormattingSolidColor struct {
+type Analysis_ConditionalFormattingSolidColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ConditionalFormattingSolidColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ConditionalFormattingSolidColor) AWSCloudFormationType() string {
+func (r *Analysis_ConditionalFormattingSolidColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ConditionalFormattingSolidColor"
 }

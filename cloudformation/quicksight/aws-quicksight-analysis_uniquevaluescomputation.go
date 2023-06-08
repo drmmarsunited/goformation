@@ -8,12 +8,12 @@ import (
 
 // Analysis_UniqueValuesComputation AWS CloudFormation Resource (AWS::QuickSight::Analysis.UniqueValuesComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-uniquevaluescomputation.html
-type Analysis_UniqueValuesComputation struct {
+type Analysis_UniqueValuesComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-uniquevaluescomputation.html#cfn-quicksight-analysis-uniquevaluescomputation-category
-	Category *Analysis_DimensionField `json:"Category"`
+	Category *Analysis_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_UniqueValuesComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_UniqueValuesComputation) AWSCloudFormationType() string {
+func (r *Analysis_UniqueValuesComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.UniqueValuesComputation"
 }

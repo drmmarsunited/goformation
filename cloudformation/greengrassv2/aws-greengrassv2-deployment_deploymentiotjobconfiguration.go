@@ -8,22 +8,22 @@ import (
 
 // Deployment_DeploymentIoTJobConfiguration AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.DeploymentIoTJobConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentiotjobconfiguration.html
-type Deployment_DeploymentIoTJobConfiguration struct {
+type Deployment_DeploymentIoTJobConfiguration[T any] struct {
 
 	// AbortConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentiotjobconfiguration.html#cfn-greengrassv2-deployment-deploymentiotjobconfiguration-abortconfig
-	AbortConfig *Deployment_IoTJobAbortConfig `json:"AbortConfig,omitempty"`
+	AbortConfig *Deployment_IoTJobAbortConfig[any] `json:"AbortConfig,omitempty"`
 
 	// JobExecutionsRolloutConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentiotjobconfiguration.html#cfn-greengrassv2-deployment-deploymentiotjobconfiguration-jobexecutionsrolloutconfig
-	JobExecutionsRolloutConfig *Deployment_IoTJobExecutionsRolloutConfig `json:"JobExecutionsRolloutConfig,omitempty"`
+	JobExecutionsRolloutConfig *Deployment_IoTJobExecutionsRolloutConfig[any] `json:"JobExecutionsRolloutConfig,omitempty"`
 
 	// TimeoutConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentiotjobconfiguration.html#cfn-greengrassv2-deployment-deploymentiotjobconfiguration-timeoutconfig
-	TimeoutConfig *Deployment_IoTJobTimeoutConfig `json:"TimeoutConfig,omitempty"`
+	TimeoutConfig *Deployment_IoTJobTimeoutConfig[any] `json:"TimeoutConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Deployment_DeploymentIoTJobConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_DeploymentIoTJobConfiguration) AWSCloudFormationType() string {
+func (r *Deployment_DeploymentIoTJobConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.DeploymentIoTJobConfiguration"
 }

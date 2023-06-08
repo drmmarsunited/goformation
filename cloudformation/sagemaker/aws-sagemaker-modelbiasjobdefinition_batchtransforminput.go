@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_BatchTransformInput AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.BatchTransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html
-type ModelBiasJobDefinition_BatchTransformInput struct {
+type ModelBiasJobDefinition_BatchTransformInput[T any] struct {
 
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ModelBiasJobDefinition_BatchTransformInput struct {
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-datasetformat
-	DatasetFormat *ModelBiasJobDefinition_DatasetFormat `json:"DatasetFormat"`
+	DatasetFormat *ModelBiasJobDefinition_DatasetFormat[any] `json:"DatasetFormat"`
 
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type ModelBiasJobDefinition_BatchTransformInput struct {
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-probabilitythresholdattribute
-	ProbabilityThresholdAttribute *float64 `json:"ProbabilityThresholdAttribute,omitempty"`
+	ProbabilityThresholdAttribute *T `json:"ProbabilityThresholdAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type ModelBiasJobDefinition_BatchTransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_BatchTransformInput) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_BatchTransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.BatchTransformInput"
 }

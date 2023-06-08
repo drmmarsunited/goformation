@@ -8,7 +8,7 @@ import (
 
 // WirelessDeviceImportTask_Sidewalk AWS CloudFormation Resource (AWS::IoTWireless::WirelessDeviceImportTask.Sidewalk)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdeviceimporttask-sidewalk.html
-type WirelessDeviceImportTask_Sidewalk struct {
+type WirelessDeviceImportTask_Sidewalk[T any] struct {
 
 	// DeviceCreationFile AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type WirelessDeviceImportTask_Sidewalk struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDeviceImportTask_Sidewalk) AWSCloudFormationType() string {
+func (r *WirelessDeviceImportTask_Sidewalk[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDeviceImportTask.Sidewalk"
 }

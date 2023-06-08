@@ -8,32 +8,32 @@ import (
 
 // RuleGroup_RuleAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.RuleAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html
-type RuleGroup_RuleAction struct {
+type RuleGroup_RuleAction[T any] struct {
 
 	// Allow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-allow
-	Allow *RuleGroup_AllowAction `json:"Allow,omitempty"`
+	Allow *RuleGroup_AllowAction[any] `json:"Allow,omitempty"`
 
 	// Block AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-block
-	Block *RuleGroup_BlockAction `json:"Block,omitempty"`
+	Block *RuleGroup_BlockAction[any] `json:"Block,omitempty"`
 
 	// Captcha AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-captcha
-	Captcha *RuleGroup_CaptchaAction `json:"Captcha,omitempty"`
+	Captcha *RuleGroup_CaptchaAction[any] `json:"Captcha,omitempty"`
 
 	// Challenge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-challenge
-	Challenge *RuleGroup_ChallengeAction `json:"Challenge,omitempty"`
+	Challenge *RuleGroup_ChallengeAction[any] `json:"Challenge,omitempty"`
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-count
-	Count *RuleGroup_CountAction `json:"Count,omitempty"`
+	Count *RuleGroup_CountAction[any] `json:"Count,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type RuleGroup_RuleAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RuleAction) AWSCloudFormationType() string {
+func (r *RuleGroup_RuleAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.RuleAction"
 }

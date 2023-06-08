@@ -8,7 +8,7 @@ import (
 
 // LocationHDFS_NameNode AWS CloudFormation Resource (AWS::DataSync::LocationHDFS.NameNode)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-namenode.html
-type LocationHDFS_NameNode struct {
+type LocationHDFS_NameNode[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type LocationHDFS_NameNode struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-namenode.html#cfn-datasync-locationhdfs-namenode-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LocationHDFS_NameNode struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationHDFS_NameNode) AWSCloudFormationType() string {
+func (r *LocationHDFS_NameNode[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationHDFS.NameNode"
 }

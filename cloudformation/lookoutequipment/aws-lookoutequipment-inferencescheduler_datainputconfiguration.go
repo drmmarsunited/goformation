@@ -8,12 +8,12 @@ import (
 
 // InferenceScheduler_DataInputConfiguration AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler.DataInputConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html
-type InferenceScheduler_DataInputConfiguration struct {
+type InferenceScheduler_DataInputConfiguration[T any] struct {
 
 	// InferenceInputNameConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inferenceinputnameconfiguration
-	InferenceInputNameConfiguration *InferenceScheduler_InputNameConfiguration `json:"InferenceInputNameConfiguration,omitempty"`
+	InferenceInputNameConfiguration *InferenceScheduler_InputNameConfiguration[any] `json:"InferenceInputNameConfiguration,omitempty"`
 
 	// InputTimeZoneOffset AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type InferenceScheduler_DataInputConfiguration struct {
 	// S3InputConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-s3inputconfiguration
-	S3InputConfiguration *InferenceScheduler_S3InputConfiguration `json:"S3InputConfiguration"`
+	S3InputConfiguration *InferenceScheduler_S3InputConfiguration[any] `json:"S3InputConfiguration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type InferenceScheduler_DataInputConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InferenceScheduler_DataInputConfiguration) AWSCloudFormationType() string {
+func (r *InferenceScheduler_DataInputConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutEquipment::InferenceScheduler.DataInputConfiguration"
 }

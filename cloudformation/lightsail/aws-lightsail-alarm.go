@@ -11,7 +11,7 @@ import (
 
 // Alarm AWS CloudFormation Resource (AWS::Lightsail::Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html
-type Alarm struct {
+type Alarm[T any] struct {
 
 	// AlarmName AWS CloudFormation Property
 	// Required: true
@@ -31,12 +31,12 @@ type Alarm struct {
 	// DatapointsToAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-datapointstoalarm
-	DatapointsToAlarm *int `json:"DatapointsToAlarm,omitempty"`
+	DatapointsToAlarm *T `json:"DatapointsToAlarm,omitempty"`
 
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-evaluationperiods
-	EvaluationPeriods int `json:"EvaluationPeriods"`
+	EvaluationPeriods T `json:"EvaluationPeriods"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type Alarm struct {
 	// NotificationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-notificationenabled
-	NotificationEnabled *bool `json:"NotificationEnabled,omitempty"`
+	NotificationEnabled *T `json:"NotificationEnabled,omitempty"`
 
 	// NotificationTriggers AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type Alarm struct {
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-threshold
-	Threshold float64 `json:"Threshold"`
+	Threshold T `json:"Threshold"`
 
 	// TreatMissingData AWS CloudFormation Property
 	// Required: false
@@ -85,14 +85,15 @@ type Alarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm) AWSCloudFormationType() string {
+func (r *Alarm[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Alarm"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Alarm) MarshalJSON() ([]byte, error) {
-	type Properties Alarm
+func (r Alarm[any]) MarshalJSON() ([]byte, error) {
+	type Properties Alarm[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r Alarm) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Alarm) UnmarshalJSON(b []byte) error {
-	type Properties Alarm
+func (r *Alarm[any]) UnmarshalJSON(b []byte) error {
+	type Properties Alarm[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *Alarm) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Alarm(*res.Properties)
+		*r = Alarm[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

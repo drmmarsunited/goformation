@@ -8,12 +8,12 @@ import (
 
 // Flow_UpsolverS3OutputFormatConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.UpsolverS3OutputFormatConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html
-type Flow_UpsolverS3OutputFormatConfig struct {
+type Flow_UpsolverS3OutputFormatConfig[T any] struct {
 
 	// AggregationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-aggregationconfig
-	AggregationConfig *Flow_AggregationConfig `json:"AggregationConfig,omitempty"`
+	AggregationConfig *Flow_AggregationConfig[any] `json:"AggregationConfig,omitempty"`
 
 	// FileType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Flow_UpsolverS3OutputFormatConfig struct {
 	// PrefixConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-prefixconfig
-	PrefixConfig *Flow_PrefixConfig `json:"PrefixConfig"`
+	PrefixConfig *Flow_PrefixConfig[any] `json:"PrefixConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Flow_UpsolverS3OutputFormatConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_UpsolverS3OutputFormatConfig) AWSCloudFormationType() string {
+func (r *Flow_UpsolverS3OutputFormatConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.UpsolverS3OutputFormatConfig"
 }

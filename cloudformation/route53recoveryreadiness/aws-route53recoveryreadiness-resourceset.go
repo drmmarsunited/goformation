@@ -12,7 +12,7 @@ import (
 
 // ResourceSet AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html
-type ResourceSet struct {
+type ResourceSet[T any] struct {
 
 	// ResourceSetName AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type ResourceSet struct {
 	// Resources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resources
-	Resources []ResourceSet_Resource `json:"Resources"`
+	Resources []ResourceSet_Resource[any] `json:"Resources"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type ResourceSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet) AWSCloudFormationType() string {
+func (r *ResourceSet[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceSet) MarshalJSON() ([]byte, error) {
-	type Properties ResourceSet
+func (r ResourceSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ResourceSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceSet) UnmarshalJSON(b []byte) error {
-	type Properties ResourceSet
+func (r *ResourceSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ResourceSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceSet(*res.Properties)
+		*r = ResourceSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

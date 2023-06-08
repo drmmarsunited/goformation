@@ -8,7 +8,7 @@ import (
 
 // Workspace_SamlConfiguration AWS CloudFormation Resource (AWS::Grafana::Workspace.SamlConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html
-type Workspace_SamlConfiguration struct {
+type Workspace_SamlConfiguration[T any] struct {
 
 	// AllowedOrganizations AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type Workspace_SamlConfiguration struct {
 	// AssertionAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html#cfn-grafana-workspace-samlconfiguration-assertionattributes
-	AssertionAttributes *Workspace_AssertionAttributes `json:"AssertionAttributes,omitempty"`
+	AssertionAttributes *Workspace_AssertionAttributes[any] `json:"AssertionAttributes,omitempty"`
 
 	// IdpMetadata AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html#cfn-grafana-workspace-samlconfiguration-idpmetadata
-	IdpMetadata *Workspace_IdpMetadata `json:"IdpMetadata"`
+	IdpMetadata *Workspace_IdpMetadata[any] `json:"IdpMetadata"`
 
 	// LoginValidityDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html#cfn-grafana-workspace-samlconfiguration-loginvalidityduration
-	LoginValidityDuration *float64 `json:"LoginValidityDuration,omitempty"`
+	LoginValidityDuration *T `json:"LoginValidityDuration,omitempty"`
 
 	// RoleValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html#cfn-grafana-workspace-samlconfiguration-rolevalues
-	RoleValues *Workspace_RoleValues `json:"RoleValues,omitempty"`
+	RoleValues *Workspace_RoleValues[any] `json:"RoleValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Workspace_SamlConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_SamlConfiguration) AWSCloudFormationType() string {
+func (r *Workspace_SamlConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.SamlConfiguration"
 }

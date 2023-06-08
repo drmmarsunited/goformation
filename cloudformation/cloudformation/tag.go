@@ -8,7 +8,7 @@ import (
 
 // Tag AWS CloudFormation Resource (Tag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html
-type Tag struct {
+type Tag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Tag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Tag) AWSCloudFormationType() string {
+func (r *Tag[any]) AWSCloudFormationType() string {
 	return "Tag"
 }

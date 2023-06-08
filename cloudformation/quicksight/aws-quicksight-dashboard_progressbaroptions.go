@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ProgressBarOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ProgressBarOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-progressbaroptions.html
-type Dashboard_ProgressBarOptions struct {
+type Dashboard_ProgressBarOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_ProgressBarOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ProgressBarOptions) AWSCloudFormationType() string {
+func (r *Dashboard_ProgressBarOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ProgressBarOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Flow_GoogleAnalyticsSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.GoogleAnalyticsSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-googleanalyticssourceproperties.html
-type Flow_GoogleAnalyticsSourceProperties struct {
+type Flow_GoogleAnalyticsSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_GoogleAnalyticsSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_GoogleAnalyticsSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_GoogleAnalyticsSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.GoogleAnalyticsSourceProperties"
 }

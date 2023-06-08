@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_StatefulRule AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.StatefulRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html
-type RuleGroup_StatefulRule struct {
+type RuleGroup_StatefulRule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type RuleGroup_StatefulRule struct {
 	// Header AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html#cfn-networkfirewall-rulegroup-statefulrule-header
-	Header *RuleGroup_Header `json:"Header"`
+	Header *RuleGroup_Header[any] `json:"Header"`
 
 	// RuleOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html#cfn-networkfirewall-rulegroup-statefulrule-ruleoptions
-	RuleOptions []RuleGroup_RuleOption `json:"RuleOptions"`
+	RuleOptions []RuleGroup_RuleOption[any] `json:"RuleOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type RuleGroup_StatefulRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_StatefulRule) AWSCloudFormationType() string {
+func (r *RuleGroup_StatefulRule[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.StatefulRule"
 }

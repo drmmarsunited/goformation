@@ -8,7 +8,7 @@ import (
 
 // Dashboard_VisualPalette AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualPalette)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualpalette.html
-type Dashboard_VisualPalette struct {
+type Dashboard_VisualPalette[T any] struct {
 
 	// ChartColor AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_VisualPalette struct {
 	// ColorMap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualpalette.html#cfn-quicksight-dashboard-visualpalette-colormap
-	ColorMap []Dashboard_DataPathColor `json:"ColorMap,omitempty"`
+	ColorMap []Dashboard_DataPathColor[any] `json:"ColorMap,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_VisualPalette struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualPalette) AWSCloudFormationType() string {
+func (r *Dashboard_VisualPalette[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualPalette"
 }

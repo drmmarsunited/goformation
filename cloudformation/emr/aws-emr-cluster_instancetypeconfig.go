@@ -8,7 +8,7 @@ import (
 
 // Cluster_InstanceTypeConfig AWS CloudFormation Resource (AWS::EMR::Cluster.InstanceTypeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html
-type Cluster_InstanceTypeConfig struct {
+type Cluster_InstanceTypeConfig[T any] struct {
 
 	// BidPrice AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Cluster_InstanceTypeConfig struct {
 	// BidPriceAsPercentageOfOnDemandPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice
-	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
+	BidPriceAsPercentageOfOnDemandPrice *T `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-configurations
-	Configurations []Cluster_Configuration `json:"Configurations,omitempty"`
+	Configurations []Cluster_Configuration[any] `json:"Configurations,omitempty"`
 
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Cluster_InstanceTypeConfig struct {
 	// EbsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-ebsconfiguration
-	EbsConfiguration *Cluster_EbsConfiguration `json:"EbsConfiguration,omitempty"`
+	EbsConfiguration *Cluster_EbsConfiguration[any] `json:"EbsConfiguration,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type Cluster_InstanceTypeConfig struct {
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-weightedcapacity
-	WeightedCapacity *int `json:"WeightedCapacity,omitempty"`
+	WeightedCapacity *T `json:"WeightedCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Cluster_InstanceTypeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_InstanceTypeConfig) AWSCloudFormationType() string {
+func (r *Cluster_InstanceTypeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.InstanceTypeConfig"
 }

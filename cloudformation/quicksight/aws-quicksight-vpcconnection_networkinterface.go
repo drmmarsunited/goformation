@@ -8,7 +8,7 @@ import (
 
 // VPCConnection_NetworkInterface AWS CloudFormation Resource (AWS::QuickSight::VPCConnection.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-vpcconnection-networkinterface.html
-type VPCConnection_NetworkInterface struct {
+type VPCConnection_NetworkInterface[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type VPCConnection_NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCConnection_NetworkInterface) AWSCloudFormationType() string {
+func (r *VPCConnection_NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::VPCConnection.NetworkInterface"
 }

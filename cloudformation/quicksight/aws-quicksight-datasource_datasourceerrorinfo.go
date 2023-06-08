@@ -8,7 +8,7 @@ import (
 
 // DataSource_DataSourceErrorInfo AWS CloudFormation Resource (AWS::QuickSight::DataSource.DataSourceErrorInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceerrorinfo.html
-type DataSource_DataSourceErrorInfo struct {
+type DataSource_DataSourceErrorInfo[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataSource_DataSourceErrorInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceErrorInfo) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceErrorInfo[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.DataSourceErrorInfo"
 }

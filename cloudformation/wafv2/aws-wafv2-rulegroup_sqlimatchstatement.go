@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_SqliMatchStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.SqliMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sqlimatchstatement.html
-type RuleGroup_SqliMatchStatement struct {
+type RuleGroup_SqliMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sqlimatchstatement.html#cfn-wafv2-rulegroup-sqlimatchstatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// SensitivityLevel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type RuleGroup_SqliMatchStatement struct {
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sqlimatchstatement.html#cfn-wafv2-rulegroup-sqlimatchstatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type RuleGroup_SqliMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_SqliMatchStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_SqliMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.SqliMatchStatement"
 }

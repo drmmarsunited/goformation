@@ -8,7 +8,7 @@ import (
 
 // Workspace_LoggingConfiguration AWS CloudFormation Resource (AWS::APS::Workspace.LoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-workspace-loggingconfiguration.html
-type Workspace_LoggingConfiguration struct {
+type Workspace_LoggingConfiguration[T any] struct {
 
 	// LogGroupArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Workspace_LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_LoggingConfiguration) AWSCloudFormationType() string {
+func (r *Workspace_LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::APS::Workspace.LoggingConfiguration"
 }

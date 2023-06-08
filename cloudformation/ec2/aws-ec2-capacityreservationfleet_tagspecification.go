@@ -9,7 +9,7 @@ import (
 
 // CapacityReservationFleet_TagSpecification AWS CloudFormation Resource (AWS::EC2::CapacityReservationFleet.TagSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html
-type CapacityReservationFleet_TagSpecification struct {
+type CapacityReservationFleet_TagSpecification[T any] struct {
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
@@ -38,6 +38,6 @@ type CapacityReservationFleet_TagSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityReservationFleet_TagSpecification) AWSCloudFormationType() string {
+func (r *CapacityReservationFleet_TagSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::CapacityReservationFleet.TagSpecification"
 }

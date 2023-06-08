@@ -12,7 +12,7 @@ import (
 
 // Workteam AWS CloudFormation Resource (AWS::SageMaker::Workteam)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html
-type Workteam struct {
+type Workteam[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Workteam struct {
 	// MemberDefinitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions
-	MemberDefinitions []Workteam_MemberDefinition `json:"MemberDefinitions,omitempty"`
+	MemberDefinitions []Workteam_MemberDefinition[any] `json:"MemberDefinitions,omitempty"`
 
 	// NotificationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-notificationconfiguration
-	NotificationConfiguration *Workteam_NotificationConfiguration `json:"NotificationConfiguration,omitempty"`
+	NotificationConfiguration *Workteam_NotificationConfiguration[any] `json:"NotificationConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Workteam struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workteam) AWSCloudFormationType() string {
+func (r *Workteam[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Workteam"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Workteam) MarshalJSON() ([]byte, error) {
-	type Properties Workteam
+func (r Workteam[any]) MarshalJSON() ([]byte, error) {
+	type Properties Workteam[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Workteam) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Workteam) UnmarshalJSON(b []byte) error {
-	type Properties Workteam
+func (r *Workteam[any]) UnmarshalJSON(b []byte) error {
+	type Properties Workteam[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Workteam) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Workteam(*res.Properties)
+		*r = Workteam[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_KinesisStreamSourceConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html
-type DeliveryStream_KinesisStreamSourceConfiguration struct {
+type DeliveryStream_KinesisStreamSourceConfiguration[T any] struct {
 
 	// KinesisStreamARN AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DeliveryStream_KinesisStreamSourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_KinesisStreamSourceConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_KinesisStreamSourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration"
 }

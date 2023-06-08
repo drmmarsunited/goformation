@@ -8,12 +8,12 @@ import (
 
 // TargetGroup_TargetGroupConfig AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup.TargetGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html
-type TargetGroup_TargetGroupConfig struct {
+type TargetGroup_TargetGroupConfig[T any] struct {
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-healthcheck
-	HealthCheck *TargetGroup_HealthCheckConfig `json:"HealthCheck,omitempty"`
+	HealthCheck *TargetGroup_HealthCheckConfig[any] `json:"HealthCheck,omitempty"`
 
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TargetGroup_TargetGroupConfig struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type TargetGroup_TargetGroupConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_TargetGroupConfig) AWSCloudFormationType() string {
+func (r *TargetGroup_TargetGroupConfig[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::TargetGroup.TargetGroupConfig"
 }

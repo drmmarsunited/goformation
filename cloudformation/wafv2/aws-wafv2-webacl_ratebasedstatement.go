@@ -8,7 +8,7 @@ import (
 
 // WebACL_RateBasedStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.RateBasedStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html
-type WebACL_RateBasedStatement struct {
+type WebACL_RateBasedStatement[T any] struct {
 
 	// AggregateKeyType AWS CloudFormation Property
 	// Required: true
@@ -18,17 +18,17 @@ type WebACL_RateBasedStatement struct {
 	// ForwardedIPConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-forwardedipconfig
-	ForwardedIPConfig *WebACL_ForwardedIPConfiguration `json:"ForwardedIPConfig,omitempty"`
+	ForwardedIPConfig *WebACL_ForwardedIPConfiguration[any] `json:"ForwardedIPConfig,omitempty"`
 
 	// Limit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-limit
-	Limit int `json:"Limit"`
+	Limit T `json:"Limit"`
 
 	// ScopeDownStatement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-scopedownstatement
-	ScopeDownStatement *WebACL_Statement `json:"ScopeDownStatement,omitempty"`
+	ScopeDownStatement *WebACL_Statement[any] `json:"ScopeDownStatement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type WebACL_RateBasedStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_RateBasedStatement) AWSCloudFormationType() string {
+func (r *WebACL_RateBasedStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.RateBasedStatement"
 }

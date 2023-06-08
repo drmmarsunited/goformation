@@ -8,17 +8,17 @@ import (
 
 // ModelPackage_ModelPackageStatusDetails AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelPackageStatusDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagestatusdetails.html
-type ModelPackage_ModelPackageStatusDetails struct {
+type ModelPackage_ModelPackageStatusDetails[T any] struct {
 
 	// ImageScanStatuses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagestatusdetails.html#cfn-sagemaker-modelpackage-modelpackagestatusdetails-imagescanstatuses
-	ImageScanStatuses []ModelPackage_ModelPackageStatusItem `json:"ImageScanStatuses,omitempty"`
+	ImageScanStatuses []ModelPackage_ModelPackageStatusItem[any] `json:"ImageScanStatuses,omitempty"`
 
 	// ValidationStatuses AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagestatusdetails.html#cfn-sagemaker-modelpackage-modelpackagestatusdetails-validationstatuses
-	ValidationStatuses []ModelPackage_ModelPackageStatusItem `json:"ValidationStatuses"`
+	ValidationStatuses []ModelPackage_ModelPackageStatusItem[any] `json:"ValidationStatuses"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelPackage_ModelPackageStatusDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelPackageStatusDetails) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelPackageStatusDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelPackageStatusDetails"
 }

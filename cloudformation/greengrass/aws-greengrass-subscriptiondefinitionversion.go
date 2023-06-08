@@ -11,7 +11,7 @@ import (
 
 // SubscriptionDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::SubscriptionDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html
-type SubscriptionDefinitionVersion struct {
+type SubscriptionDefinitionVersion[T any] struct {
 
 	// SubscriptionDefinitionId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type SubscriptionDefinitionVersion struct {
 	// Subscriptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptions
-	Subscriptions []SubscriptionDefinitionVersion_Subscription `json:"Subscriptions"`
+	Subscriptions []SubscriptionDefinitionVersion_Subscription[any] `json:"Subscriptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type SubscriptionDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubscriptionDefinitionVersion) AWSCloudFormationType() string {
+func (r *SubscriptionDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::SubscriptionDefinitionVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubscriptionDefinitionVersion) MarshalJSON() ([]byte, error) {
-	type Properties SubscriptionDefinitionVersion
+func (r SubscriptionDefinitionVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubscriptionDefinitionVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r SubscriptionDefinitionVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubscriptionDefinitionVersion) UnmarshalJSON(b []byte) error {
-	type Properties SubscriptionDefinitionVersion
+func (r *SubscriptionDefinitionVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubscriptionDefinitionVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *SubscriptionDefinitionVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubscriptionDefinitionVersion(*res.Properties)
+		*r = SubscriptionDefinitionVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

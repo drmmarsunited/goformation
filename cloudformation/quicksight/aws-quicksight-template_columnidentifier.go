@@ -8,7 +8,7 @@ import (
 
 // Template_ColumnIdentifier AWS CloudFormation Resource (AWS::QuickSight::Template.ColumnIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnidentifier.html
-type Template_ColumnIdentifier struct {
+type Template_ColumnIdentifier[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_ColumnIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ColumnIdentifier) AWSCloudFormationType() string {
+func (r *Template_ColumnIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ColumnIdentifier"
 }

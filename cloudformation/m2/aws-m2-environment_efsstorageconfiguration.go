@@ -8,7 +8,7 @@ import (
 
 // Environment_EfsStorageConfiguration AWS CloudFormation Resource (AWS::M2::Environment.EfsStorageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-efsstorageconfiguration.html
-type Environment_EfsStorageConfiguration struct {
+type Environment_EfsStorageConfiguration[T any] struct {
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Environment_EfsStorageConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_EfsStorageConfiguration) AWSCloudFormationType() string {
+func (r *Environment_EfsStorageConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::M2::Environment.EfsStorageConfiguration"
 }

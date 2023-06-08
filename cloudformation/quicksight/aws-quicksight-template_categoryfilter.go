@@ -8,17 +8,17 @@ import (
 
 // Template_CategoryFilter AWS CloudFormation Resource (AWS::QuickSight::Template.CategoryFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilter.html
-type Template_CategoryFilter struct {
+type Template_CategoryFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilter.html#cfn-quicksight-template-categoryfilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilter.html#cfn-quicksight-template-categoryfilter-configuration
-	Configuration *Template_CategoryFilterConfiguration `json:"Configuration"`
+	Configuration *Template_CategoryFilterConfiguration[any] `json:"Configuration"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_CategoryFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CategoryFilter) AWSCloudFormationType() string {
+func (r *Template_CategoryFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CategoryFilter"
 }

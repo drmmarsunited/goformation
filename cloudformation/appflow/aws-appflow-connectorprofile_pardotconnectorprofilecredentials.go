@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_PardotConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.PardotConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofilecredentials.html
-type ConnectorProfile_PardotConnectorProfileCredentials struct {
+type ConnectorProfile_PardotConnectorProfileCredentials[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ConnectorProfile_PardotConnectorProfileCredentials struct {
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofilecredentials.html#cfn-appflow-connectorprofile-pardotconnectorprofilecredentials-connectoroauthrequest
-	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest `json:"ConnectorOAuthRequest,omitempty"`
+	ConnectorOAuthRequest *ConnectorProfile_ConnectorOAuthRequest[any] `json:"ConnectorOAuthRequest,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ConnectorProfile_PardotConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_PardotConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_PardotConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.PardotConnectorProfileCredentials"
 }

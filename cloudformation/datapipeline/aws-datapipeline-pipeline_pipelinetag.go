@@ -8,7 +8,7 @@ import (
 
 // Pipeline_PipelineTag AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.PipelineTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetag.html
-type Pipeline_PipelineTag struct {
+type Pipeline_PipelineTag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_PipelineTag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_PipelineTag) AWSCloudFormationType() string {
+func (r *Pipeline_PipelineTag[any]) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.PipelineTag"
 }

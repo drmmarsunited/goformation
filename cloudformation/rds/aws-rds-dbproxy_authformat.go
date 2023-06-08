@@ -8,7 +8,7 @@ import (
 
 // DBProxy_AuthFormat AWS CloudFormation Resource (AWS::RDS::DBProxy.AuthFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html
-type DBProxy_AuthFormat struct {
+type DBProxy_AuthFormat[T any] struct {
 
 	// AuthScheme AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type DBProxy_AuthFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxy_AuthFormat) AWSCloudFormationType() string {
+func (r *DBProxy_AuthFormat[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxy.AuthFormat"
 }

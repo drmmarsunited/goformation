@@ -12,7 +12,7 @@ import (
 
 // Workflow AWS CloudFormation Resource (AWS::Transfer::Workflow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html
-type Workflow struct {
+type Workflow[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type Workflow struct {
 	// OnExceptionSteps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-onexceptionsteps
-	OnExceptionSteps []Workflow_WorkflowStep `json:"OnExceptionSteps,omitempty"`
+	OnExceptionSteps []Workflow_WorkflowStep[any] `json:"OnExceptionSteps,omitempty"`
 
 	// Steps AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-steps
-	Steps []Workflow_WorkflowStep `json:"Steps"`
+	Steps []Workflow_WorkflowStep[any] `json:"Steps"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Workflow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow) AWSCloudFormationType() string {
+func (r *Workflow[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Workflow) MarshalJSON() ([]byte, error) {
-	type Properties Workflow
+func (r Workflow[any]) MarshalJSON() ([]byte, error) {
+	type Properties Workflow[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Workflow) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Workflow) UnmarshalJSON(b []byte) error {
-	type Properties Workflow
+func (r *Workflow[any]) UnmarshalJSON(b []byte) error {
+	type Properties Workflow[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Workflow) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Workflow(*res.Properties)
+		*r = Workflow[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

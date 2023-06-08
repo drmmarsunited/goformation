@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_AsyncInferenceNotificationConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.AsyncInferenceNotificationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferencenotificationconfig.html
-type EndpointConfig_AsyncInferenceNotificationConfig struct {
+type EndpointConfig_AsyncInferenceNotificationConfig[T any] struct {
 
 	// ErrorTopic AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EndpointConfig_AsyncInferenceNotificationConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_AsyncInferenceNotificationConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_AsyncInferenceNotificationConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.AsyncInferenceNotificationConfig"
 }

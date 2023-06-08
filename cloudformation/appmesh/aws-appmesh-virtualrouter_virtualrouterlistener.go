@@ -8,12 +8,12 @@ import (
 
 // VirtualRouter_VirtualRouterListener AWS CloudFormation Resource (AWS::AppMesh::VirtualRouter.VirtualRouterListener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html
-type VirtualRouter_VirtualRouterListener struct {
+type VirtualRouter_VirtualRouterListener[T any] struct {
 
 	// PortMapping AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html#cfn-appmesh-virtualrouter-virtualrouterlistener-portmapping
-	PortMapping *VirtualRouter_PortMapping `json:"PortMapping"`
+	PortMapping *VirtualRouter_PortMapping[any] `json:"PortMapping"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualRouter_VirtualRouterListener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualRouter_VirtualRouterListener) AWSCloudFormationType() string {
+func (r *VirtualRouter_VirtualRouterListener[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualRouter.VirtualRouterListener"
 }

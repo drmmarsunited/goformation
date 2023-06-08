@@ -8,7 +8,7 @@ import (
 
 // Channel_TimecodeBurninSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.TimecodeBurninSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeburninsettings.html
-type Channel_TimecodeBurninSettings struct {
+type Channel_TimecodeBurninSettings[T any] struct {
 
 	// FontSize AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_TimecodeBurninSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TimecodeBurninSettings) AWSCloudFormationType() string {
+func (r *Channel_TimecodeBurninSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TimecodeBurninSettings"
 }

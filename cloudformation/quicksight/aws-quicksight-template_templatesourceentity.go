@@ -8,17 +8,17 @@ import (
 
 // Template_TemplateSourceEntity AWS CloudFormation Resource (AWS::QuickSight::Template.TemplateSourceEntity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html
-type Template_TemplateSourceEntity struct {
+type Template_TemplateSourceEntity[T any] struct {
 
 	// SourceAnalysis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html#cfn-quicksight-template-templatesourceentity-sourceanalysis
-	SourceAnalysis *Template_TemplateSourceAnalysis `json:"SourceAnalysis,omitempty"`
+	SourceAnalysis *Template_TemplateSourceAnalysis[any] `json:"SourceAnalysis,omitempty"`
 
 	// SourceTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html#cfn-quicksight-template-templatesourceentity-sourcetemplate
-	SourceTemplate *Template_TemplateSourceTemplate `json:"SourceTemplate,omitempty"`
+	SourceTemplate *Template_TemplateSourceTemplate[any] `json:"SourceTemplate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_TemplateSourceEntity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TemplateSourceEntity) AWSCloudFormationType() string {
+func (r *Template_TemplateSourceEntity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TemplateSourceEntity"
 }

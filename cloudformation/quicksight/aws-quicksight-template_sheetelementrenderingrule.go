@@ -8,12 +8,12 @@ import (
 
 // Template_SheetElementRenderingRule AWS CloudFormation Resource (AWS::QuickSight::Template.SheetElementRenderingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetelementrenderingrule.html
-type Template_SheetElementRenderingRule struct {
+type Template_SheetElementRenderingRule[T any] struct {
 
 	// ConfigurationOverrides AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetelementrenderingrule.html#cfn-quicksight-template-sheetelementrenderingrule-configurationoverrides
-	ConfigurationOverrides *Template_SheetElementConfigurationOverrides `json:"ConfigurationOverrides"`
+	ConfigurationOverrides *Template_SheetElementConfigurationOverrides[any] `json:"ConfigurationOverrides"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_SheetElementRenderingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SheetElementRenderingRule) AWSCloudFormationType() string {
+func (r *Template_SheetElementRenderingRule[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SheetElementRenderingRule"
 }

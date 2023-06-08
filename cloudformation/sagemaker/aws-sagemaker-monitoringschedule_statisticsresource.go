@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_StatisticsResource AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.StatisticsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-statisticsresource.html
-type MonitoringSchedule_StatisticsResource struct {
+type MonitoringSchedule_StatisticsResource[T any] struct {
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type MonitoringSchedule_StatisticsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_StatisticsResource) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_StatisticsResource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.StatisticsResource"
 }

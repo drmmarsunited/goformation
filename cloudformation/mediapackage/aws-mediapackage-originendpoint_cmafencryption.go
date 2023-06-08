@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_CmafEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.CmafEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html
-type OriginEndpoint_CmafEncryption struct {
+type OriginEndpoint_CmafEncryption[T any] struct {
 
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type OriginEndpoint_CmafEncryption struct {
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-keyrotationintervalseconds
-	KeyRotationIntervalSeconds *int `json:"KeyRotationIntervalSeconds,omitempty"`
+	KeyRotationIntervalSeconds *T `json:"KeyRotationIntervalSeconds,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-spekekeyprovider
-	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *OriginEndpoint_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type OriginEndpoint_CmafEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_CmafEncryption) AWSCloudFormationType() string {
+func (r *OriginEndpoint_CmafEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.CmafEncryption"
 }

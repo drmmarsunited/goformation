@@ -8,17 +8,17 @@ import (
 
 // Space_KernelGatewayAppSettings AWS CloudFormation Resource (AWS::SageMaker::Space.KernelGatewayAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html
-type Space_KernelGatewayAppSettings struct {
+type Space_KernelGatewayAppSettings[T any] struct {
 
 	// CustomImages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-customimages
-	CustomImages []Space_CustomImage `json:"CustomImages,omitempty"`
+	CustomImages []Space_CustomImage[any] `json:"CustomImages,omitempty"`
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-defaultresourcespec
-	DefaultResourceSpec *Space_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Space_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Space_KernelGatewayAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Space_KernelGatewayAppSettings) AWSCloudFormationType() string {
+func (r *Space_KernelGatewayAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Space.KernelGatewayAppSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // UserPool_LambdaConfig AWS CloudFormation Resource (AWS::Cognito::UserPool.LambdaConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
-type UserPool_LambdaConfig struct {
+type UserPool_LambdaConfig[T any] struct {
 
 	// CreateAuthChallenge AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type UserPool_LambdaConfig struct {
 	// CustomEmailSender AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customemailsender
-	CustomEmailSender *UserPool_CustomEmailSender `json:"CustomEmailSender,omitempty"`
+	CustomEmailSender *UserPool_CustomEmailSender[any] `json:"CustomEmailSender,omitempty"`
 
 	// CustomMessage AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type UserPool_LambdaConfig struct {
 	// CustomSMSSender AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customsmssender
-	CustomSMSSender *UserPool_CustomSMSSender `json:"CustomSMSSender,omitempty"`
+	CustomSMSSender *UserPool_CustomSMSSender[any] `json:"CustomSMSSender,omitempty"`
 
 	// DefineAuthChallenge AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type UserPool_LambdaConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_LambdaConfig) AWSCloudFormationType() string {
+func (r *UserPool_LambdaConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.LambdaConfig"
 }

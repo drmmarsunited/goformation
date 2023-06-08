@@ -8,7 +8,7 @@ import (
 
 // Gateway_GreengrassV2 AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway.GreengrassV2)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrassv2.html
-type Gateway_GreengrassV2 struct {
+type Gateway_GreengrassV2[T any] struct {
 
 	// CoreDeviceThingName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Gateway_GreengrassV2 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Gateway_GreengrassV2) AWSCloudFormationType() string {
+func (r *Gateway_GreengrassV2[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Gateway.GreengrassV2"
 }

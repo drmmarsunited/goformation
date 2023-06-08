@@ -8,7 +8,7 @@ import (
 
 // SuiteDefinition_DeviceUnderTest AWS CloudFormation Resource (AWS::IoTCoreDeviceAdvisor::SuiteDefinition.DeviceUnderTest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-deviceundertest.html
-type SuiteDefinition_DeviceUnderTest struct {
+type SuiteDefinition_DeviceUnderTest[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SuiteDefinition_DeviceUnderTest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SuiteDefinition_DeviceUnderTest) AWSCloudFormationType() string {
+func (r *SuiteDefinition_DeviceUnderTest[any]) AWSCloudFormationType() string {
 	return "AWS::IoTCoreDeviceAdvisor::SuiteDefinition.DeviceUnderTest"
 }

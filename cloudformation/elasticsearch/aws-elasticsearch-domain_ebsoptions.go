@@ -8,22 +8,22 @@ import (
 
 // Domain_EBSOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.EBSOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html
-type Domain_EBSOptions struct {
+type Domain_EBSOptions[T any] struct {
 
 	// EBSEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-ebsenabled
-	EBSEnabled *bool `json:"EBSEnabled,omitempty"`
+	EBSEnabled *T `json:"EBSEnabled,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Domain_EBSOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_EBSOptions) AWSCloudFormationType() string {
+func (r *Domain_EBSOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.EBSOptions"
 }

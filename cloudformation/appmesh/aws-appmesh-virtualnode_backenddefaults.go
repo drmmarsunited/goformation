@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_BackendDefaults AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.BackendDefaults)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backenddefaults.html
-type VirtualNode_BackendDefaults struct {
+type VirtualNode_BackendDefaults[T any] struct {
 
 	// ClientPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backenddefaults.html#cfn-appmesh-virtualnode-backenddefaults-clientpolicy
-	ClientPolicy *VirtualNode_ClientPolicy `json:"ClientPolicy,omitempty"`
+	ClientPolicy *VirtualNode_ClientPolicy[any] `json:"ClientPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_BackendDefaults struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_BackendDefaults) AWSCloudFormationType() string {
+func (r *VirtualNode_BackendDefaults[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.BackendDefaults"
 }

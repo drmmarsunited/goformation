@@ -8,17 +8,17 @@ import (
 
 // Dashboard_FieldSortOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FieldSortOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldsortoptions.html
-type Dashboard_FieldSortOptions struct {
+type Dashboard_FieldSortOptions[T any] struct {
 
 	// ColumnSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldsortoptions.html#cfn-quicksight-dashboard-fieldsortoptions-columnsort
-	ColumnSort *Dashboard_ColumnSort `json:"ColumnSort,omitempty"`
+	ColumnSort *Dashboard_ColumnSort[any] `json:"ColumnSort,omitempty"`
 
 	// FieldSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldsortoptions.html#cfn-quicksight-dashboard-fieldsortoptions-fieldsort
-	FieldSort *Dashboard_FieldSort `json:"FieldSort,omitempty"`
+	FieldSort *Dashboard_FieldSort[any] `json:"FieldSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_FieldSortOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FieldSortOptions) AWSCloudFormationType() string {
+func (r *Dashboard_FieldSortOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FieldSortOptions"
 }

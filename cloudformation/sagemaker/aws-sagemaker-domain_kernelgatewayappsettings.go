@@ -8,17 +8,17 @@ import (
 
 // Domain_KernelGatewayAppSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.KernelGatewayAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html
-type Domain_KernelGatewayAppSettings struct {
+type Domain_KernelGatewayAppSettings[T any] struct {
 
 	// CustomImages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-customimages
-	CustomImages []Domain_CustomImage `json:"CustomImages,omitempty"`
+	CustomImages []Domain_CustomImage[any] `json:"CustomImages,omitempty"`
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-defaultresourcespec
-	DefaultResourceSpec *Domain_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Domain_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Domain_KernelGatewayAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_KernelGatewayAppSettings) AWSCloudFormationType() string {
+func (r *Domain_KernelGatewayAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.KernelGatewayAppSettings"
 }

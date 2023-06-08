@@ -8,7 +8,7 @@ import (
 
 // EmailIdentity_MailFromAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.MailFromAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-mailfromattributes.html
-type EmailIdentity_MailFromAttributes struct {
+type EmailIdentity_MailFromAttributes[T any] struct {
 
 	// BehaviorOnMxFailure AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type EmailIdentity_MailFromAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailIdentity_MailFromAttributes) AWSCloudFormationType() string {
+func (r *EmailIdentity_MailFromAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::EmailIdentity.MailFromAttributes"
 }

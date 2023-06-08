@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_BatchTransformInput AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.BatchTransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html
-type ModelQualityJobDefinition_BatchTransformInput struct {
+type ModelQualityJobDefinition_BatchTransformInput[T any] struct {
 
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ModelQualityJobDefinition_BatchTransformInput struct {
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-datasetformat
-	DatasetFormat *ModelQualityJobDefinition_DatasetFormat `json:"DatasetFormat"`
+	DatasetFormat *ModelQualityJobDefinition_DatasetFormat[any] `json:"DatasetFormat"`
 
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type ModelQualityJobDefinition_BatchTransformInput struct {
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-probabilitythresholdattribute
-	ProbabilityThresholdAttribute *float64 `json:"ProbabilityThresholdAttribute,omitempty"`
+	ProbabilityThresholdAttribute *T `json:"ProbabilityThresholdAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type ModelQualityJobDefinition_BatchTransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_BatchTransformInput) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_BatchTransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.BatchTransformInput"
 }

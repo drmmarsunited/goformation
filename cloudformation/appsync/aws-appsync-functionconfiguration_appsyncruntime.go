@@ -8,7 +8,7 @@ import (
 
 // FunctionConfiguration_AppSyncRuntime AWS CloudFormation Resource (AWS::AppSync::FunctionConfiguration.AppSyncRuntime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html
-type FunctionConfiguration_AppSyncRuntime struct {
+type FunctionConfiguration_AppSyncRuntime[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FunctionConfiguration_AppSyncRuntime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionConfiguration_AppSyncRuntime) AWSCloudFormationType() string {
+func (r *FunctionConfiguration_AppSyncRuntime[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::FunctionConfiguration.AppSyncRuntime"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelBiasJobDefinition_Csv AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.Csv)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-csv.html
-type ModelBiasJobDefinition_Csv struct {
+type ModelBiasJobDefinition_Csv[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-csv.html#cfn-sagemaker-modelbiasjobdefinition-csv-header
-	Header *bool `json:"Header,omitempty"`
+	Header *T `json:"Header,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelBiasJobDefinition_Csv struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_Csv) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_Csv[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.Csv"
 }

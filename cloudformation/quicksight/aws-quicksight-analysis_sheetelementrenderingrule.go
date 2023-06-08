@@ -8,12 +8,12 @@ import (
 
 // Analysis_SheetElementRenderingRule AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetElementRenderingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetelementrenderingrule.html
-type Analysis_SheetElementRenderingRule struct {
+type Analysis_SheetElementRenderingRule[T any] struct {
 
 	// ConfigurationOverrides AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetelementrenderingrule.html#cfn-quicksight-analysis-sheetelementrenderingrule-configurationoverrides
-	ConfigurationOverrides *Analysis_SheetElementConfigurationOverrides `json:"ConfigurationOverrides"`
+	ConfigurationOverrides *Analysis_SheetElementConfigurationOverrides[any] `json:"ConfigurationOverrides"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_SheetElementRenderingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetElementRenderingRule) AWSCloudFormationType() string {
+func (r *Analysis_SheetElementRenderingRule[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetElementRenderingRule"
 }

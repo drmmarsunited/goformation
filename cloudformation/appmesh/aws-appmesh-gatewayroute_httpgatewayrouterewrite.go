@@ -8,22 +8,22 @@ import (
 
 // GatewayRoute_HttpGatewayRouteRewrite AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html
-type GatewayRoute_HttpGatewayRouteRewrite struct {
+type GatewayRoute_HttpGatewayRouteRewrite[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-hostname
-	Hostname *GatewayRoute_GatewayRouteHostnameRewrite `json:"Hostname,omitempty"`
+	Hostname *GatewayRoute_GatewayRouteHostnameRewrite[any] `json:"Hostname,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-path
-	Path *GatewayRoute_HttpGatewayRoutePathRewrite `json:"Path,omitempty"`
+	Path *GatewayRoute_HttpGatewayRoutePathRewrite[any] `json:"Path,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-prefix
-	Prefix *GatewayRoute_HttpGatewayRoutePrefixRewrite `json:"Prefix,omitempty"`
+	Prefix *GatewayRoute_HttpGatewayRoutePrefixRewrite[any] `json:"Prefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type GatewayRoute_HttpGatewayRouteRewrite struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_HttpGatewayRouteRewrite) AWSCloudFormationType() string {
+func (r *GatewayRoute_HttpGatewayRouteRewrite[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite"
 }

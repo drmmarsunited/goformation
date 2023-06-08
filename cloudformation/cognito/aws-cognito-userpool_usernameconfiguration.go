@@ -8,12 +8,12 @@ import (
 
 // UserPool_UsernameConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPool.UsernameConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html
-type UserPool_UsernameConfiguration struct {
+type UserPool_UsernameConfiguration[T any] struct {
 
 	// CaseSensitive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html#cfn-cognito-userpool-usernameconfiguration-casesensitive
-	CaseSensitive *bool `json:"CaseSensitive,omitempty"`
+	CaseSensitive *T `json:"CaseSensitive,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type UserPool_UsernameConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_UsernameConfiguration) AWSCloudFormationType() string {
+func (r *UserPool_UsernameConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.UsernameConfiguration"
 }

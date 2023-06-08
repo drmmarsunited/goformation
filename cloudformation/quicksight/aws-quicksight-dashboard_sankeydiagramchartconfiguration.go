@@ -8,22 +8,22 @@ import (
 
 // Dashboard_SankeyDiagramChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SankeyDiagramChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramchartconfiguration.html
-type Dashboard_SankeyDiagramChartConfiguration struct {
+type Dashboard_SankeyDiagramChartConfiguration[T any] struct {
 
 	// DataLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramchartconfiguration.html#cfn-quicksight-dashboard-sankeydiagramchartconfiguration-datalabels
-	DataLabels *Dashboard_DataLabelOptions `json:"DataLabels,omitempty"`
+	DataLabels *Dashboard_DataLabelOptions[any] `json:"DataLabels,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramchartconfiguration.html#cfn-quicksight-dashboard-sankeydiagramchartconfiguration-fieldwells
-	FieldWells *Dashboard_SankeyDiagramFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_SankeyDiagramFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramchartconfiguration.html#cfn-quicksight-dashboard-sankeydiagramchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_SankeyDiagramSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_SankeyDiagramSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_SankeyDiagramChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SankeyDiagramChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SankeyDiagramChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SankeyDiagramChartConfiguration"
 }

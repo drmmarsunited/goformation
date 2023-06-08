@@ -8,7 +8,7 @@ import (
 
 // User_LoginProfile AWS CloudFormation Resource (AWS::IAM::User.LoginProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html
-type User_LoginProfile struct {
+type User_LoginProfile[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type User_LoginProfile struct {
 	// PasswordResetRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired
-	PasswordResetRequired *bool `json:"PasswordResetRequired,omitempty"`
+	PasswordResetRequired *T `json:"PasswordResetRequired,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type User_LoginProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_LoginProfile) AWSCloudFormationType() string {
+func (r *User_LoginProfile[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::User.LoginProfile"
 }

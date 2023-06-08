@@ -12,7 +12,7 @@ import (
 
 // User AWS CloudFormation Resource (AWS::IAM::User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
-type User struct {
+type User[T any] struct {
 
 	// Groups AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type User struct {
 	// LoginProfile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
-	LoginProfile *User_LoginProfile `json:"LoginProfile,omitempty"`
+	LoginProfile *User_LoginProfile[any] `json:"LoginProfile,omitempty"`
 
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type User struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
-	Policies []User_Policy `json:"Policies,omitempty"`
+	Policies []User_Policy[any] `json:"Policies,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type User struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User) AWSCloudFormationType() string {
+func (r *User[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::User"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r User) MarshalJSON() ([]byte, error) {
-	type Properties User
+func (r User[any]) MarshalJSON() ([]byte, error) {
+	type Properties User[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r User) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *User) UnmarshalJSON(b []byte) error {
-	type Properties User
+func (r *User[any]) UnmarshalJSON(b []byte) error {
+	type Properties User[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *User) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = User(*res.Properties)
+		*r = User[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

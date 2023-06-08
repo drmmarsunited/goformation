@@ -8,7 +8,7 @@ import (
 
 // Channel_NielsenNaesIiNw AWS CloudFormation Resource (AWS::MediaLive::Channel.NielsenNaesIiNw)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html
-type Channel_NielsenNaesIiNw struct {
+type Channel_NielsenNaesIiNw[T any] struct {
 
 	// CheckDigitString AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_NielsenNaesIiNw struct {
 	// Sid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-sid
-	Sid *float64 `json:"Sid,omitempty"`
+	Sid *T `json:"Sid,omitempty"`
 
 	// Timezone AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_NielsenNaesIiNw struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_NielsenNaesIiNw) AWSCloudFormationType() string {
+func (r *Channel_NielsenNaesIiNw[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.NielsenNaesIiNw"
 }

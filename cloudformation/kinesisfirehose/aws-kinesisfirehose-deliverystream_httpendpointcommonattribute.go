@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_HttpEndpointCommonAttribute AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HttpEndpointCommonAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointcommonattribute.html
-type DeliveryStream_HttpEndpointCommonAttribute struct {
+type DeliveryStream_HttpEndpointCommonAttribute[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DeliveryStream_HttpEndpointCommonAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_HttpEndpointCommonAttribute) AWSCloudFormationType() string {
+func (r *DeliveryStream_HttpEndpointCommonAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.HttpEndpointCommonAttribute"
 }

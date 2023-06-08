@@ -8,7 +8,7 @@ import (
 
 // TopicRule_OpenSearchAction AWS CloudFormation Resource (AWS::IoT::TopicRule.OpenSearchAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-opensearchaction.html
-type TopicRule_OpenSearchAction struct {
+type TopicRule_OpenSearchAction[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type TopicRule_OpenSearchAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_OpenSearchAction) AWSCloudFormationType() string {
+func (r *TopicRule_OpenSearchAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.OpenSearchAction"
 }

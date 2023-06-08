@@ -8,7 +8,7 @@ import (
 
 // Instance_Volume AWS CloudFormation Resource (AWS::EC2::Instance.Volume)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html
-type Instance_Volume struct {
+type Instance_Volume[T any] struct {
 
 	// Device AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Instance_Volume struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_Volume) AWSCloudFormationType() string {
+func (r *Instance_Volume[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.Volume"
 }

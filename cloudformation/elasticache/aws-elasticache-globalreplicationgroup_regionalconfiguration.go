@@ -8,7 +8,7 @@ import (
 
 // GlobalReplicationGroup_RegionalConfiguration AWS CloudFormation Resource (AWS::ElastiCache::GlobalReplicationGroup.RegionalConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html
-type GlobalReplicationGroup_RegionalConfiguration struct {
+type GlobalReplicationGroup_RegionalConfiguration[T any] struct {
 
 	// ReplicationGroupId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type GlobalReplicationGroup_RegionalConfiguration struct {
 	// ReshardingConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-reshardingconfigurations
-	ReshardingConfigurations []GlobalReplicationGroup_ReshardingConfiguration `json:"ReshardingConfigurations,omitempty"`
+	ReshardingConfigurations []GlobalReplicationGroup_ReshardingConfiguration[any] `json:"ReshardingConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type GlobalReplicationGroup_RegionalConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalReplicationGroup_RegionalConfiguration) AWSCloudFormationType() string {
+func (r *GlobalReplicationGroup_RegionalConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::GlobalReplicationGroup.RegionalConfiguration"
 }

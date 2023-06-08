@@ -12,22 +12,22 @@ import (
 
 // DeliveryStream AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
-type DeliveryStream struct {
+type DeliveryStream[T any] struct {
 
 	// AmazonOpenSearchServerlessDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration
-	AmazonOpenSearchServerlessDestinationConfiguration *DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration `json:"AmazonOpenSearchServerlessDestinationConfiguration,omitempty"`
+	AmazonOpenSearchServerlessDestinationConfiguration *DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration[any] `json:"AmazonOpenSearchServerlessDestinationConfiguration,omitempty"`
 
 	// AmazonopensearchserviceDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration
-	AmazonopensearchserviceDestinationConfiguration *DeliveryStream_AmazonopensearchserviceDestinationConfiguration `json:"AmazonopensearchserviceDestinationConfiguration,omitempty"`
+	AmazonopensearchserviceDestinationConfiguration *DeliveryStream_AmazonopensearchserviceDestinationConfiguration[any] `json:"AmazonopensearchserviceDestinationConfiguration,omitempty"`
 
 	// DeliveryStreamEncryptionConfigurationInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput
-	DeliveryStreamEncryptionConfigurationInput *DeliveryStream_DeliveryStreamEncryptionConfigurationInput `json:"DeliveryStreamEncryptionConfigurationInput,omitempty"`
+	DeliveryStreamEncryptionConfigurationInput *DeliveryStream_DeliveryStreamEncryptionConfigurationInput[any] `json:"DeliveryStreamEncryptionConfigurationInput,omitempty"`
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: false
@@ -42,37 +42,37 @@ type DeliveryStream struct {
 	// ElasticsearchDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration
-	ElasticsearchDestinationConfiguration *DeliveryStream_ElasticsearchDestinationConfiguration `json:"ElasticsearchDestinationConfiguration,omitempty"`
+	ElasticsearchDestinationConfiguration *DeliveryStream_ElasticsearchDestinationConfiguration[any] `json:"ElasticsearchDestinationConfiguration,omitempty"`
 
 	// ExtendedS3DestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration
-	ExtendedS3DestinationConfiguration *DeliveryStream_ExtendedS3DestinationConfiguration `json:"ExtendedS3DestinationConfiguration,omitempty"`
+	ExtendedS3DestinationConfiguration *DeliveryStream_ExtendedS3DestinationConfiguration[any] `json:"ExtendedS3DestinationConfiguration,omitempty"`
 
 	// HttpEndpointDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration
-	HttpEndpointDestinationConfiguration *DeliveryStream_HttpEndpointDestinationConfiguration `json:"HttpEndpointDestinationConfiguration,omitempty"`
+	HttpEndpointDestinationConfiguration *DeliveryStream_HttpEndpointDestinationConfiguration[any] `json:"HttpEndpointDestinationConfiguration,omitempty"`
 
 	// KinesisStreamSourceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration
-	KinesisStreamSourceConfiguration *DeliveryStream_KinesisStreamSourceConfiguration `json:"KinesisStreamSourceConfiguration,omitempty"`
+	KinesisStreamSourceConfiguration *DeliveryStream_KinesisStreamSourceConfiguration[any] `json:"KinesisStreamSourceConfiguration,omitempty"`
 
 	// RedshiftDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration
-	RedshiftDestinationConfiguration *DeliveryStream_RedshiftDestinationConfiguration `json:"RedshiftDestinationConfiguration,omitempty"`
+	RedshiftDestinationConfiguration *DeliveryStream_RedshiftDestinationConfiguration[any] `json:"RedshiftDestinationConfiguration,omitempty"`
 
 	// S3DestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration
-	S3DestinationConfiguration *DeliveryStream_S3DestinationConfiguration `json:"S3DestinationConfiguration,omitempty"`
+	S3DestinationConfiguration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3DestinationConfiguration,omitempty"`
 
 	// SplunkDestinationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration
-	SplunkDestinationConfiguration *DeliveryStream_SplunkDestinationConfiguration `json:"SplunkDestinationConfiguration,omitempty"`
+	SplunkDestinationConfiguration *DeliveryStream_SplunkDestinationConfiguration[any] `json:"SplunkDestinationConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type DeliveryStream struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream) AWSCloudFormationType() string {
+func (r *DeliveryStream[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeliveryStream) MarshalJSON() ([]byte, error) {
-	type Properties DeliveryStream
+func (r DeliveryStream[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeliveryStream[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r DeliveryStream) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeliveryStream) UnmarshalJSON(b []byte) error {
-	type Properties DeliveryStream
+func (r *DeliveryStream[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeliveryStream[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *DeliveryStream) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeliveryStream(*res.Properties)
+		*r = DeliveryStream[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TopBottomRankedComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TopBottomRankedComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html
-type Dashboard_TopBottomRankedComputation struct {
+type Dashboard_TopBottomRankedComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-category
-	Category *Dashboard_DimensionField `json:"Category"`
+	Category *Dashboard_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_TopBottomRankedComputation struct {
 	// ResultSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-resultsize
-	ResultSize *float64 `json:"ResultSize,omitempty"`
+	ResultSize *T `json:"ResultSize,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Dashboard_TopBottomRankedComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-value
-	Value *Dashboard_MeasureField `json:"Value,omitempty"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Dashboard_TopBottomRankedComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TopBottomRankedComputation) AWSCloudFormationType() string {
+func (r *Dashboard_TopBottomRankedComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TopBottomRankedComputation"
 }

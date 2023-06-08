@@ -8,7 +8,7 @@ import (
 
 // ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityBaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html
-type ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig struct {
+type ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig[T any] struct {
 
 	// BaseliningJobName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig struct {
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-constraintsresource
-	ConstraintsResource *ModelExplainabilityJobDefinition_ConstraintsResource `json:"ConstraintsResource,omitempty"`
+	ConstraintsResource *ModelExplainabilityJobDefinition_ConstraintsResource[any] `json:"ConstraintsResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityBaselineConfig"
 }

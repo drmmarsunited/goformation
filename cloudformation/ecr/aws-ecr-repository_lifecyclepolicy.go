@@ -8,7 +8,7 @@ import (
 
 // Repository_LifecyclePolicy AWS CloudFormation Resource (AWS::ECR::Repository.LifecyclePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html
-type Repository_LifecyclePolicy struct {
+type Repository_LifecyclePolicy[T any] struct {
 
 	// LifecyclePolicyText AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Repository_LifecyclePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository_LifecyclePolicy) AWSCloudFormationType() string {
+func (r *Repository_LifecyclePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::Repository.LifecyclePolicy"
 }

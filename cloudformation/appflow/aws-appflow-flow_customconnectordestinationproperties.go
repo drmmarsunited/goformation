@@ -8,7 +8,7 @@ import (
 
 // Flow_CustomConnectorDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.CustomConnectorDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html
-type Flow_CustomConnectorDestinationProperties struct {
+type Flow_CustomConnectorDestinationProperties[T any] struct {
 
 	// CustomProperties AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Flow_CustomConnectorDestinationProperties struct {
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html#cfn-appflow-flow-customconnectordestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Flow_CustomConnectorDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_CustomConnectorDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_CustomConnectorDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.CustomConnectorDestinationProperties"
 }

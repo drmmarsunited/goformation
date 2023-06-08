@@ -8,12 +8,12 @@ import (
 
 // Cluster_EncryptionConfig AWS CloudFormation Resource (AWS::EKS::Cluster.EncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html
-type Cluster_EncryptionConfig struct {
+type Cluster_EncryptionConfig[T any] struct {
 
 	// Provider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html#cfn-eks-cluster-encryptionconfig-provider
-	Provider *Cluster_Provider `json:"Provider,omitempty"`
+	Provider *Cluster_Provider[any] `json:"Provider,omitempty"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_EncryptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_EncryptionConfig) AWSCloudFormationType() string {
+func (r *Cluster_EncryptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.EncryptionConfig"
 }

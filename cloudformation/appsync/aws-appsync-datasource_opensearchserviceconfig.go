@@ -8,7 +8,7 @@ import (
 
 // DataSource_OpenSearchServiceConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.OpenSearchServiceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html
-type DataSource_OpenSearchServiceConfig struct {
+type DataSource_OpenSearchServiceConfig[T any] struct {
 
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_OpenSearchServiceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_OpenSearchServiceConfig) AWSCloudFormationType() string {
+func (r *DataSource_OpenSearchServiceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.OpenSearchServiceConfig"
 }

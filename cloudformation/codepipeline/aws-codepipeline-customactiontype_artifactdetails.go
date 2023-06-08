@@ -8,17 +8,17 @@ import (
 
 // CustomActionType_ArtifactDetails AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType.ArtifactDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html
-type CustomActionType_ArtifactDetails struct {
+type CustomActionType_ArtifactDetails[T any] struct {
 
 	// MaximumCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount
-	MaximumCount int `json:"MaximumCount"`
+	MaximumCount T `json:"MaximumCount"`
 
 	// MinimumCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount
-	MinimumCount int `json:"MinimumCount"`
+	MinimumCount T `json:"MinimumCount"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type CustomActionType_ArtifactDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomActionType_ArtifactDetails) AWSCloudFormationType() string {
+func (r *CustomActionType_ArtifactDetails[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::CustomActionType.ArtifactDetails"
 }

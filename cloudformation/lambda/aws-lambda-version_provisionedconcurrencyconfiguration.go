@@ -8,12 +8,12 @@ import (
 
 // Version_ProvisionedConcurrencyConfiguration AWS CloudFormation Resource (AWS::Lambda::Version.ProvisionedConcurrencyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html
-type Version_ProvisionedConcurrencyConfiguration struct {
+type Version_ProvisionedConcurrencyConfiguration[T any] struct {
 
 	// ProvisionedConcurrentExecutions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
-	ProvisionedConcurrentExecutions int `json:"ProvisionedConcurrentExecutions"`
+	ProvisionedConcurrentExecutions T `json:"ProvisionedConcurrentExecutions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Version_ProvisionedConcurrencyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Version_ProvisionedConcurrencyConfiguration) AWSCloudFormationType() string {
+func (r *Version_ProvisionedConcurrencyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Version.ProvisionedConcurrencyConfiguration"
 }

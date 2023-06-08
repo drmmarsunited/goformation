@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_PortMapping AWS CloudFormation Resource (AWS::ECS::TaskDefinition.PortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html
-type TaskDefinition_PortMapping struct {
+type TaskDefinition_PortMapping[T any] struct {
 
 	// AppProtocol AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type TaskDefinition_PortMapping struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// ContainerPortRange AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type TaskDefinition_PortMapping struct {
 	// HostPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-hostport
-	HostPort *int `json:"HostPort,omitempty"`
+	HostPort *T `json:"HostPort,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type TaskDefinition_PortMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_PortMapping) AWSCloudFormationType() string {
+func (r *TaskDefinition_PortMapping[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.PortMapping"
 }

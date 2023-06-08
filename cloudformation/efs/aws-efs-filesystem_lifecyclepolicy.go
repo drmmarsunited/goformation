@@ -8,7 +8,7 @@ import (
 
 // FileSystem_LifecyclePolicy AWS CloudFormation Resource (AWS::EFS::FileSystem.LifecyclePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html
-type FileSystem_LifecyclePolicy struct {
+type FileSystem_LifecyclePolicy[T any] struct {
 
 	// TransitionToIA AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FileSystem_LifecyclePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem_LifecyclePolicy) AWSCloudFormationType() string {
+func (r *FileSystem_LifecyclePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::FileSystem.LifecyclePolicy"
 }

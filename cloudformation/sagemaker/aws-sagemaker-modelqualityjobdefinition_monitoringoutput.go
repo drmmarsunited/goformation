@@ -8,12 +8,12 @@ import (
 
 // ModelQualityJobDefinition_MonitoringOutput AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutput.html
-type ModelQualityJobDefinition_MonitoringOutput struct {
+type ModelQualityJobDefinition_MonitoringOutput[T any] struct {
 
 	// S3Output AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutput-s3output
-	S3Output *ModelQualityJobDefinition_S3Output `json:"S3Output"`
+	S3Output *ModelQualityJobDefinition_S3Output[any] `json:"S3Output"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelQualityJobDefinition_MonitoringOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_MonitoringOutput) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_MonitoringOutput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutput"
 }

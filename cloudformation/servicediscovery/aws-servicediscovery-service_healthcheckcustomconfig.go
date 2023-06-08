@@ -8,12 +8,12 @@ import (
 
 // Service_HealthCheckCustomConfig AWS CloudFormation Resource (AWS::ServiceDiscovery::Service.HealthCheckCustomConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html
-type Service_HealthCheckCustomConfig struct {
+type Service_HealthCheckCustomConfig[T any] struct {
 
 	// FailureThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html#cfn-servicediscovery-service-healthcheckcustomconfig-failurethreshold
-	FailureThreshold *float64 `json:"FailureThreshold,omitempty"`
+	FailureThreshold *T `json:"FailureThreshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Service_HealthCheckCustomConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_HealthCheckCustomConfig) AWSCloudFormationType() string {
+func (r *Service_HealthCheckCustomConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::Service.HealthCheckCustomConfig"
 }

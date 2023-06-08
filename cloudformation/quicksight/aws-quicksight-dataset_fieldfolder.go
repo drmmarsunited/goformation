@@ -8,7 +8,7 @@ import (
 
 // DataSet_FieldFolder AWS CloudFormation Resource (AWS::QuickSight::DataSet.FieldFolder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-fieldfolder.html
-type DataSet_FieldFolder struct {
+type DataSet_FieldFolder[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataSet_FieldFolder struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_FieldFolder) AWSCloudFormationType() string {
+func (r *DataSet_FieldFolder[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.FieldFolder"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_Entity AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Entity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-entity.html
-type Dashboard_Entity struct {
+type Dashboard_Entity[T any] struct {
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_Entity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Entity) AWSCloudFormationType() string {
+func (r *Dashboard_Entity[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Entity"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetCloudWatchLogsParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetCloudWatchLogsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetcloudwatchlogsparameters.html
-type Pipe_PipeTargetCloudWatchLogsParameters struct {
+type Pipe_PipeTargetCloudWatchLogsParameters[T any] struct {
 
 	// LogStreamName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_PipeTargetCloudWatchLogsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetCloudWatchLogsParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetCloudWatchLogsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetCloudWatchLogsParameters"
 }

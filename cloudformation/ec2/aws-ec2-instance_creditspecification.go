@@ -8,7 +8,7 @@ import (
 
 // Instance_CreditSpecification AWS CloudFormation Resource (AWS::EC2::Instance.CreditSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
-type Instance_CreditSpecification struct {
+type Instance_CreditSpecification[T any] struct {
 
 	// CPUCredits AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Instance_CreditSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_CreditSpecification) AWSCloudFormationType() string {
+func (r *Instance_CreditSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.CreditSpecification"
 }

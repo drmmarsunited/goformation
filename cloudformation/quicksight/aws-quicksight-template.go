@@ -12,7 +12,7 @@ import (
 
 // Template AWS CloudFormation Resource (AWS::QuickSight::Template)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html
-type Template struct {
+type Template[T any] struct {
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type Template struct {
 	// Definition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-definition
-	Definition *Template_TemplateVersionDefinition `json:"Definition,omitempty"`
+	Definition *Template_TemplateVersionDefinition[any] `json:"Definition,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type Template struct {
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-permissions
-	Permissions []Template_ResourcePermission `json:"Permissions,omitempty"`
+	Permissions []Template_ResourcePermission[any] `json:"Permissions,omitempty"`
 
 	// SourceEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-sourceentity
-	SourceEntity *Template_TemplateSourceEntity `json:"SourceEntity,omitempty"`
+	SourceEntity *Template_TemplateSourceEntity[any] `json:"SourceEntity,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Template struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template) AWSCloudFormationType() string {
+func (r *Template[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Template) MarshalJSON() ([]byte, error) {
-	type Properties Template
+func (r Template[any]) MarshalJSON() ([]byte, error) {
+	type Properties Template[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Template) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Template) UnmarshalJSON(b []byte) error {
-	type Properties Template
+func (r *Template[any]) UnmarshalJSON(b []byte) error {
+	type Properties Template[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Template) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Template(*res.Properties)
+		*r = Template[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

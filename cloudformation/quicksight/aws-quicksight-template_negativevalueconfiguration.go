@@ -8,7 +8,7 @@ import (
 
 // Template_NegativeValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.NegativeValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-negativevalueconfiguration.html
-type Template_NegativeValueConfiguration struct {
+type Template_NegativeValueConfiguration[T any] struct {
 
 	// DisplayMode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_NegativeValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NegativeValueConfiguration) AWSCloudFormationType() string {
+func (r *Template_NegativeValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NegativeValueConfiguration"
 }

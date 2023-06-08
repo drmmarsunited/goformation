@@ -8,12 +8,12 @@ import (
 
 // Channel_Scte35SpliceInsert AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte35SpliceInsert)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35spliceinsert.html
-type Channel_Scte35SpliceInsert struct {
+type Channel_Scte35SpliceInsert[T any] struct {
 
 	// AdAvailOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35spliceinsert.html#cfn-medialive-channel-scte35spliceinsert-adavailoffset
-	AdAvailOffset *int `json:"AdAvailOffset,omitempty"`
+	AdAvailOffset *T `json:"AdAvailOffset,omitempty"`
 
 	// NoRegionalBlackoutFlag AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_Scte35SpliceInsert struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Scte35SpliceInsert) AWSCloudFormationType() string {
+func (r *Channel_Scte35SpliceInsert[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Scte35SpliceInsert"
 }

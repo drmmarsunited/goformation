@@ -8,7 +8,7 @@ import (
 
 // Dataset_ResourceConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.ResourceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-resourceconfiguration.html
-type Dataset_ResourceConfiguration struct {
+type Dataset_ResourceConfiguration[T any] struct {
 
 	// ComputeType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dataset_ResourceConfiguration struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-resourceconfiguration.html#cfn-iotanalytics-dataset-resourceconfiguration-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB"`
+	VolumeSizeInGB T `json:"VolumeSizeInGB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dataset_ResourceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_ResourceConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_ResourceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.ResourceConfiguration"
 }

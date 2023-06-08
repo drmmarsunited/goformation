@@ -8,12 +8,12 @@ import (
 
 // XssMatchSet_XssMatchTuple AWS CloudFormation Resource (AWS::WAFRegional::XssMatchSet.XssMatchTuple)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html
-type XssMatchSet_XssMatchTuple struct {
+type XssMatchSet_XssMatchTuple[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-fieldtomatch
-	FieldToMatch *XssMatchSet_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *XssMatchSet_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type XssMatchSet_XssMatchTuple struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *XssMatchSet_XssMatchTuple) AWSCloudFormationType() string {
+func (r *XssMatchSet_XssMatchTuple[any]) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::XssMatchSet.XssMatchTuple"
 }

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_CategoryFilter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CategoryFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilter.html
-type Dashboard_CategoryFilter struct {
+type Dashboard_CategoryFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilter.html#cfn-quicksight-dashboard-categoryfilter-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoryfilter.html#cfn-quicksight-dashboard-categoryfilter-configuration
-	Configuration *Dashboard_CategoryFilterConfiguration `json:"Configuration"`
+	Configuration *Dashboard_CategoryFilterConfiguration[any] `json:"Configuration"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_CategoryFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CategoryFilter) AWSCloudFormationType() string {
+func (r *Dashboard_CategoryFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CategoryFilter"
 }

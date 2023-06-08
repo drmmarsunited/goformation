@@ -12,12 +12,12 @@ import (
 
 // Rule AWS CloudFormation Resource (AWS::VpcLattice::Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html
-type Rule struct {
+type Rule[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-action
-	Action *Rule_Action `json:"Action"`
+	Action *Rule_Action[any] `json:"Action"`
 
 	// ListenerIdentifier AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Rule struct {
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-match
-	Match *Rule_Match `json:"Match"`
+	Match *Rule_Match[any] `json:"Match"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Rule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-priority
-	Priority int `json:"Priority"`
+	Priority T `json:"Priority"`
 
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule) AWSCloudFormationType() string {
+func (r *Rule[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Rule) MarshalJSON() ([]byte, error) {
-	type Properties Rule
+func (r Rule[any]) MarshalJSON() ([]byte, error) {
+	type Properties Rule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Rule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Rule) UnmarshalJSON(b []byte) error {
-	type Properties Rule
+func (r *Rule[any]) UnmarshalJSON(b []byte) error {
+	type Properties Rule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Rule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Rule(*res.Properties)
+		*r = Rule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

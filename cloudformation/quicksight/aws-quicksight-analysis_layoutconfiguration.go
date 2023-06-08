@@ -8,22 +8,22 @@ import (
 
 // Analysis_LayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.LayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layoutconfiguration.html
-type Analysis_LayoutConfiguration struct {
+type Analysis_LayoutConfiguration[T any] struct {
 
 	// FreeFormLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layoutconfiguration.html#cfn-quicksight-analysis-layoutconfiguration-freeformlayout
-	FreeFormLayout *Analysis_FreeFormLayoutConfiguration `json:"FreeFormLayout,omitempty"`
+	FreeFormLayout *Analysis_FreeFormLayoutConfiguration[any] `json:"FreeFormLayout,omitempty"`
 
 	// GridLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layoutconfiguration.html#cfn-quicksight-analysis-layoutconfiguration-gridlayout
-	GridLayout *Analysis_GridLayoutConfiguration `json:"GridLayout,omitempty"`
+	GridLayout *Analysis_GridLayoutConfiguration[any] `json:"GridLayout,omitempty"`
 
 	// SectionBasedLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layoutconfiguration.html#cfn-quicksight-analysis-layoutconfiguration-sectionbasedlayout
-	SectionBasedLayout *Analysis_SectionBasedLayoutConfiguration `json:"SectionBasedLayout,omitempty"`
+	SectionBasedLayout *Analysis_SectionBasedLayoutConfiguration[any] `json:"SectionBasedLayout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_LayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LayoutConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_LayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LayoutConfiguration"
 }

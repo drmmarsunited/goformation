@@ -8,32 +8,32 @@ import (
 
 // SignalCatalog_NodeCounts AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.NodeCounts)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html
-type SignalCatalog_NodeCounts struct {
+type SignalCatalog_NodeCounts[T any] struct {
 
 	// TotalActuators AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html#cfn-iotfleetwise-signalcatalog-nodecounts-totalactuators
-	TotalActuators *float64 `json:"TotalActuators,omitempty"`
+	TotalActuators *T `json:"TotalActuators,omitempty"`
 
 	// TotalAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html#cfn-iotfleetwise-signalcatalog-nodecounts-totalattributes
-	TotalAttributes *float64 `json:"TotalAttributes,omitempty"`
+	TotalAttributes *T `json:"TotalAttributes,omitempty"`
 
 	// TotalBranches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html#cfn-iotfleetwise-signalcatalog-nodecounts-totalbranches
-	TotalBranches *float64 `json:"TotalBranches,omitempty"`
+	TotalBranches *T `json:"TotalBranches,omitempty"`
 
 	// TotalNodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html#cfn-iotfleetwise-signalcatalog-nodecounts-totalnodes
-	TotalNodes *float64 `json:"TotalNodes,omitempty"`
+	TotalNodes *T `json:"TotalNodes,omitempty"`
 
 	// TotalSensors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-nodecounts.html#cfn-iotfleetwise-signalcatalog-nodecounts-totalsensors
-	TotalSensors *float64 `json:"TotalSensors,omitempty"`
+	TotalSensors *T `json:"TotalSensors,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type SignalCatalog_NodeCounts struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_NodeCounts) AWSCloudFormationType() string {
+func (r *SignalCatalog_NodeCounts[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.NodeCounts"
 }

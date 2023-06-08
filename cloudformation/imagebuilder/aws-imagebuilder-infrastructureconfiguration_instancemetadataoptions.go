@@ -8,12 +8,12 @@ import (
 
 // InfrastructureConfiguration_InstanceMetadataOptions AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration.InstanceMetadataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-instancemetadataoptions.html
-type InfrastructureConfiguration_InstanceMetadataOptions struct {
+type InfrastructureConfiguration_InstanceMetadataOptions[T any] struct {
 
 	// HttpPutResponseHopLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-instancemetadataoptions.html#cfn-imagebuilder-infrastructureconfiguration-instancemetadataoptions-httpputresponsehoplimit
-	HttpPutResponseHopLimit *int `json:"HttpPutResponseHopLimit,omitempty"`
+	HttpPutResponseHopLimit *T `json:"HttpPutResponseHopLimit,omitempty"`
 
 	// HttpTokens AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InfrastructureConfiguration_InstanceMetadataOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InfrastructureConfiguration_InstanceMetadataOptions) AWSCloudFormationType() string {
+func (r *InfrastructureConfiguration_InstanceMetadataOptions[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::InfrastructureConfiguration.InstanceMetadataOptions"
 }

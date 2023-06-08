@@ -8,22 +8,22 @@ import (
 
 // UserPool_AdminCreateUserConfig AWS CloudFormation Resource (AWS::Cognito::UserPool.AdminCreateUserConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
-type UserPool_AdminCreateUserConfig struct {
+type UserPool_AdminCreateUserConfig[T any] struct {
 
 	// AllowAdminCreateUserOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-allowadmincreateuseronly
-	AllowAdminCreateUserOnly *bool `json:"AllowAdminCreateUserOnly,omitempty"`
+	AllowAdminCreateUserOnly *T `json:"AllowAdminCreateUserOnly,omitempty"`
 
 	// InviteMessageTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-invitemessagetemplate
-	InviteMessageTemplate *UserPool_InviteMessageTemplate `json:"InviteMessageTemplate,omitempty"`
+	InviteMessageTemplate *UserPool_InviteMessageTemplate[any] `json:"InviteMessageTemplate,omitempty"`
 
 	// UnusedAccountValidityDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-unusedaccountvaliditydays
-	UnusedAccountValidityDays *int `json:"UnusedAccountValidityDays,omitempty"`
+	UnusedAccountValidityDays *T `json:"UnusedAccountValidityDays,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type UserPool_AdminCreateUserConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_AdminCreateUserConfig) AWSCloudFormationType() string {
+func (r *UserPool_AdminCreateUserConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.AdminCreateUserConfig"
 }

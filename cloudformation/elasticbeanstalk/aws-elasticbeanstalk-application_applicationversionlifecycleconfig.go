@@ -8,17 +8,17 @@ import (
 
 // Application_ApplicationVersionLifecycleConfig AWS CloudFormation Resource (AWS::ElasticBeanstalk::Application.ApplicationVersionLifecycleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html
-type Application_ApplicationVersionLifecycleConfig struct {
+type Application_ApplicationVersionLifecycleConfig[T any] struct {
 
 	// MaxAgeRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule
-	MaxAgeRule *Application_MaxAgeRule `json:"MaxAgeRule,omitempty"`
+	MaxAgeRule *Application_MaxAgeRule[any] `json:"MaxAgeRule,omitempty"`
 
 	// MaxCountRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxcountrule
-	MaxCountRule *Application_MaxCountRule `json:"MaxCountRule,omitempty"`
+	MaxCountRule *Application_MaxCountRule[any] `json:"MaxCountRule,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_ApplicationVersionLifecycleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationVersionLifecycleConfig) AWSCloudFormationType() string {
+func (r *Application_ApplicationVersionLifecycleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Application.ApplicationVersionLifecycleConfig"
 }

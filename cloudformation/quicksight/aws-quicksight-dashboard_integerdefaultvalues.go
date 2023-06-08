@@ -8,17 +8,17 @@ import (
 
 // Dashboard_IntegerDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.IntegerDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerdefaultvalues.html
-type Dashboard_IntegerDefaultValues struct {
+type Dashboard_IntegerDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerdefaultvalues.html#cfn-quicksight-dashboard-integerdefaultvalues-dynamicvalue
-	DynamicValue *Dashboard_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Dashboard_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerdefaultvalues.html#cfn-quicksight-dashboard-integerdefaultvalues-staticvalues
-	StaticValues []float64 `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_IntegerDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_IntegerDefaultValues) AWSCloudFormationType() string {
+func (r *Dashboard_IntegerDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.IntegerDefaultValues"
 }

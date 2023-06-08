@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DashboardError AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DashboardError)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html
-type Dashboard_DashboardError struct {
+type Dashboard_DashboardError[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_DashboardError struct {
 	// ViolatedEntities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html#cfn-quicksight-dashboard-dashboarderror-violatedentities
-	ViolatedEntities []Dashboard_Entity `json:"ViolatedEntities,omitempty"`
+	ViolatedEntities []Dashboard_Entity[any] `json:"ViolatedEntities,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_DashboardError struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DashboardError) AWSCloudFormationType() string {
+func (r *Dashboard_DashboardError[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DashboardError"
 }

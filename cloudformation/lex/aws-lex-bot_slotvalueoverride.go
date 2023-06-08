@@ -8,7 +8,7 @@ import (
 
 // Bot_SlotValueOverride AWS CloudFormation Resource (AWS::Lex::Bot.SlotValueOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html
-type Bot_SlotValueOverride struct {
+type Bot_SlotValueOverride[T any] struct {
 
 	// Shape AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Bot_SlotValueOverride struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-value
-	Value *Bot_SlotValue `json:"Value,omitempty"`
+	Value *Bot_SlotValue[any] `json:"Value,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-values
-	Values []Bot_SlotValueOverride `json:"Values,omitempty"`
+	Values []Bot_SlotValueOverride[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_SlotValueOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SlotValueOverride) AWSCloudFormationType() string {
+func (r *Bot_SlotValueOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SlotValueOverride"
 }

@@ -8,7 +8,7 @@ import (
 
 // Service_LoadBalancer AWS CloudFormation Resource (AWS::ECS::Service.LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html
-type Service_LoadBalancer struct {
+type Service_LoadBalancer[T any] struct {
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Service_LoadBalancer struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *T `json:"ContainerPort,omitempty"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Service_LoadBalancer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_LoadBalancer) AWSCloudFormationType() string {
+func (r *Service_LoadBalancer[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.LoadBalancer"
 }

@@ -8,7 +8,7 @@ import (
 
 // PlaybackConfiguration_CdnConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.CdnConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-cdnconfiguration.html
-type PlaybackConfiguration_CdnConfiguration struct {
+type PlaybackConfiguration_CdnConfiguration[T any] struct {
 
 	// AdSegmentUrlPrefix AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type PlaybackConfiguration_CdnConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration_CdnConfiguration) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration_CdnConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration.CdnConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Table_KinesisStreamSpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.KinesisStreamSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-kinesisstreamspecification.html
-type Table_KinesisStreamSpecification struct {
+type Table_KinesisStreamSpecification[T any] struct {
 
 	// StreamArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Table_KinesisStreamSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_KinesisStreamSpecification) AWSCloudFormationType() string {
+func (r *Table_KinesisStreamSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.KinesisStreamSpecification"
 }

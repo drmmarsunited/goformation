@@ -8,7 +8,7 @@ import (
 
 // ListenerCertificate_Certificate AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html
-type ListenerCertificate_Certificate struct {
+type ListenerCertificate_Certificate[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ListenerCertificate_Certificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerCertificate_Certificate) AWSCloudFormationType() string {
+func (r *ListenerCertificate_Certificate[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate"
 }

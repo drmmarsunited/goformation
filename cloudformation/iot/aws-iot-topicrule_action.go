@@ -8,117 +8,117 @@ import (
 
 // TopicRule_Action AWS CloudFormation Resource (AWS::IoT::TopicRule.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html
-type TopicRule_Action struct {
+type TopicRule_Action[T any] struct {
 
 	// CloudwatchAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm
-	CloudwatchAlarm *TopicRule_CloudwatchAlarmAction `json:"CloudwatchAlarm,omitempty"`
+	CloudwatchAlarm *TopicRule_CloudwatchAlarmAction[any] `json:"CloudwatchAlarm,omitempty"`
 
 	// CloudwatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchlogs
-	CloudwatchLogs *TopicRule_CloudwatchLogsAction `json:"CloudwatchLogs,omitempty"`
+	CloudwatchLogs *TopicRule_CloudwatchLogsAction[any] `json:"CloudwatchLogs,omitempty"`
 
 	// CloudwatchMetric AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric
-	CloudwatchMetric *TopicRule_CloudwatchMetricAction `json:"CloudwatchMetric,omitempty"`
+	CloudwatchMetric *TopicRule_CloudwatchMetricAction[any] `json:"CloudwatchMetric,omitempty"`
 
 	// DynamoDB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb
-	DynamoDB *TopicRule_DynamoDBAction `json:"DynamoDB,omitempty"`
+	DynamoDB *TopicRule_DynamoDBAction[any] `json:"DynamoDB,omitempty"`
 
 	// DynamoDBv2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2
-	DynamoDBv2 *TopicRule_DynamoDBv2Action `json:"DynamoDBv2,omitempty"`
+	DynamoDBv2 *TopicRule_DynamoDBv2Action[any] `json:"DynamoDBv2,omitempty"`
 
 	// Elasticsearch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch
-	Elasticsearch *TopicRule_ElasticsearchAction `json:"Elasticsearch,omitempty"`
+	Elasticsearch *TopicRule_ElasticsearchAction[any] `json:"Elasticsearch,omitempty"`
 
 	// Firehose AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose
-	Firehose *TopicRule_FirehoseAction `json:"Firehose,omitempty"`
+	Firehose *TopicRule_FirehoseAction[any] `json:"Firehose,omitempty"`
 
 	// Http AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-http
-	Http *TopicRule_HttpAction `json:"Http,omitempty"`
+	Http *TopicRule_HttpAction[any] `json:"Http,omitempty"`
 
 	// IotAnalytics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics
-	IotAnalytics *TopicRule_IotAnalyticsAction `json:"IotAnalytics,omitempty"`
+	IotAnalytics *TopicRule_IotAnalyticsAction[any] `json:"IotAnalytics,omitempty"`
 
 	// IotEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotevents
-	IotEvents *TopicRule_IotEventsAction `json:"IotEvents,omitempty"`
+	IotEvents *TopicRule_IotEventsAction[any] `json:"IotEvents,omitempty"`
 
 	// IotSiteWise AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotsitewise
-	IotSiteWise *TopicRule_IotSiteWiseAction `json:"IotSiteWise,omitempty"`
+	IotSiteWise *TopicRule_IotSiteWiseAction[any] `json:"IotSiteWise,omitempty"`
 
 	// Kafka AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kafka
-	Kafka *TopicRule_KafkaAction `json:"Kafka,omitempty"`
+	Kafka *TopicRule_KafkaAction[any] `json:"Kafka,omitempty"`
 
 	// Kinesis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis
-	Kinesis *TopicRule_KinesisAction `json:"Kinesis,omitempty"`
+	Kinesis *TopicRule_KinesisAction[any] `json:"Kinesis,omitempty"`
 
 	// Lambda AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda
-	Lambda *TopicRule_LambdaAction `json:"Lambda,omitempty"`
+	Lambda *TopicRule_LambdaAction[any] `json:"Lambda,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-location
-	Location *TopicRule_LocationAction `json:"Location,omitempty"`
+	Location *TopicRule_LocationAction[any] `json:"Location,omitempty"`
 
 	// OpenSearch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-opensearch
-	OpenSearch *TopicRule_OpenSearchAction `json:"OpenSearch,omitempty"`
+	OpenSearch *TopicRule_OpenSearchAction[any] `json:"OpenSearch,omitempty"`
 
 	// Republish AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish
-	Republish *TopicRule_RepublishAction `json:"Republish,omitempty"`
+	Republish *TopicRule_RepublishAction[any] `json:"Republish,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3
-	S3 *TopicRule_S3Action `json:"S3,omitempty"`
+	S3 *TopicRule_S3Action[any] `json:"S3,omitempty"`
 
 	// Sns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns
-	Sns *TopicRule_SnsAction `json:"Sns,omitempty"`
+	Sns *TopicRule_SnsAction[any] `json:"Sns,omitempty"`
 
 	// Sqs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs
-	Sqs *TopicRule_SqsAction `json:"Sqs,omitempty"`
+	Sqs *TopicRule_SqsAction[any] `json:"Sqs,omitempty"`
 
 	// StepFunctions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions
-	StepFunctions *TopicRule_StepFunctionsAction `json:"StepFunctions,omitempty"`
+	StepFunctions *TopicRule_StepFunctionsAction[any] `json:"StepFunctions,omitempty"`
 
 	// Timestream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-timestream
-	Timestream *TopicRule_TimestreamAction `json:"Timestream,omitempty"`
+	Timestream *TopicRule_TimestreamAction[any] `json:"Timestream,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -137,6 +137,6 @@ type TopicRule_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_Action) AWSCloudFormationType() string {
+func (r *TopicRule_Action[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.Action"
 }

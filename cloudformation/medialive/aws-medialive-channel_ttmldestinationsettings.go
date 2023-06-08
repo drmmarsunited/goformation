@@ -8,7 +8,7 @@ import (
 
 // Channel_TtmlDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.TtmlDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ttmldestinationsettings.html
-type Channel_TtmlDestinationSettings struct {
+type Channel_TtmlDestinationSettings[T any] struct {
 
 	// StyleControl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_TtmlDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_TtmlDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_TtmlDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.TtmlDestinationSettings"
 }

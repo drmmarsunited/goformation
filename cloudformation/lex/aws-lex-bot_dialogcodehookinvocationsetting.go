@@ -8,12 +8,12 @@ import (
 
 // Bot_DialogCodeHookInvocationSetting AWS CloudFormation Resource (AWS::Lex::Bot.DialogCodeHookInvocationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html
-type Bot_DialogCodeHookInvocationSetting struct {
+type Bot_DialogCodeHookInvocationSetting[T any] struct {
 
 	// EnableCodeHookInvocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-enablecodehookinvocation
-	EnableCodeHookInvocation bool `json:"EnableCodeHookInvocation"`
+	EnableCodeHookInvocation T `json:"EnableCodeHookInvocation"`
 
 	// InvocationLabel AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Bot_DialogCodeHookInvocationSetting struct {
 	// IsActive AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-isactive
-	IsActive bool `json:"IsActive"`
+	IsActive T `json:"IsActive"`
 
 	// PostCodeHookSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-postcodehookspecification
-	PostCodeHookSpecification *Bot_PostDialogCodeHookInvocationSpecification `json:"PostCodeHookSpecification"`
+	PostCodeHookSpecification *Bot_PostDialogCodeHookInvocationSpecification[any] `json:"PostCodeHookSpecification"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_DialogCodeHookInvocationSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_DialogCodeHookInvocationSetting) AWSCloudFormationType() string {
+func (r *Bot_DialogCodeHookInvocationSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.DialogCodeHookInvocationSetting"
 }

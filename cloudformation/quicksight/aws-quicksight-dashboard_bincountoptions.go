@@ -8,12 +8,12 @@ import (
 
 // Dashboard_BinCountOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BinCountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bincountoptions.html
-type Dashboard_BinCountOptions struct {
+type Dashboard_BinCountOptions[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bincountoptions.html#cfn-quicksight-dashboard-bincountoptions-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_BinCountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BinCountOptions) AWSCloudFormationType() string {
+func (r *Dashboard_BinCountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BinCountOptions"
 }

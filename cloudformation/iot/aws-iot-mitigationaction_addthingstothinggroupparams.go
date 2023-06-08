@@ -8,12 +8,12 @@ import (
 
 // MitigationAction_AddThingsToThingGroupParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.AddThingsToThingGroupParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html
-type MitigationAction_AddThingsToThingGroupParams struct {
+type MitigationAction_AddThingsToThingGroupParams[T any] struct {
 
 	// OverrideDynamicGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html#cfn-iot-mitigationaction-addthingstothinggroupparams-overridedynamicgroups
-	OverrideDynamicGroups *bool `json:"OverrideDynamicGroups,omitempty"`
+	OverrideDynamicGroups *T `json:"OverrideDynamicGroups,omitempty"`
 
 	// ThingGroupNames AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MitigationAction_AddThingsToThingGroupParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_AddThingsToThingGroupParams) AWSCloudFormationType() string {
+func (r *MitigationAction_AddThingsToThingGroupParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.AddThingsToThingGroupParams"
 }

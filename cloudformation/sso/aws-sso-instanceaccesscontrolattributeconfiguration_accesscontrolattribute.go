@@ -8,7 +8,7 @@ import (
 
 // InstanceAccessControlAttributeConfiguration_AccessControlAttribute AWS CloudFormation Resource (AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html
-type InstanceAccessControlAttributeConfiguration_AccessControlAttribute struct {
+type InstanceAccessControlAttributeConfiguration_AccessControlAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type InstanceAccessControlAttributeConfiguration_AccessControlAttribute struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute-value
-	Value *InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue `json:"Value"`
+	Value *InstanceAccessControlAttributeConfiguration_AccessControlAttributeValue[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type InstanceAccessControlAttributeConfiguration_AccessControlAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceAccessControlAttributeConfiguration_AccessControlAttribute) AWSCloudFormationType() string {
+func (r *InstanceAccessControlAttributeConfiguration_AccessControlAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttribute"
 }

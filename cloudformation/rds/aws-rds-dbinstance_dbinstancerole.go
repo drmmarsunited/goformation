@@ -8,7 +8,7 @@ import (
 
 // DBInstance_DBInstanceRole AWS CloudFormation Resource (AWS::RDS::DBInstance.DBInstanceRole)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancerole.html
-type DBInstance_DBInstanceRole struct {
+type DBInstance_DBInstanceRole[T any] struct {
 
 	// FeatureName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DBInstance_DBInstanceRole struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance_DBInstanceRole) AWSCloudFormationType() string {
+func (r *DBInstance_DBInstanceRole[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance.DBInstanceRole"
 }

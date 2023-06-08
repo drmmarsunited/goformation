@@ -12,12 +12,12 @@ import (
 
 // Portal AWS CloudFormation Resource (AWS::IoTSiteWise::Portal)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html
-type Portal struct {
+type Portal[T any] struct {
 
 	// Alarms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-alarms
-	Alarms *Portal_Alarms `json:"Alarms,omitempty"`
+	Alarms *Portal_Alarms[any] `json:"Alarms,omitempty"`
 
 	// NotificationSenderEmail AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Portal struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Portal) AWSCloudFormationType() string {
+func (r *Portal[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Portal"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Portal) MarshalJSON() ([]byte, error) {
-	type Properties Portal
+func (r Portal[any]) MarshalJSON() ([]byte, error) {
+	type Properties Portal[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Portal) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Portal) UnmarshalJSON(b []byte) error {
-	type Properties Portal
+func (r *Portal[any]) UnmarshalJSON(b []byte) error {
+	type Properties Portal[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Portal) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Portal(*res.Properties)
+		*r = Portal[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

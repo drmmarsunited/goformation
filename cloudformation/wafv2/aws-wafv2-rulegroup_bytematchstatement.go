@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_ByteMatchStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.ByteMatchStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html
-type RuleGroup_ByteMatchStatement struct {
+type RuleGroup_ByteMatchStatement[T any] struct {
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// PositionalConstraint AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type RuleGroup_ByteMatchStatement struct {
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type RuleGroup_ByteMatchStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_ByteMatchStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_ByteMatchStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.ByteMatchStatement"
 }

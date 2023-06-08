@@ -8,17 +8,17 @@ import (
 
 // License_ConsumptionConfiguration AWS CloudFormation Resource (AWS::LicenseManager::License.ConsumptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html
-type License_ConsumptionConfiguration struct {
+type License_ConsumptionConfiguration[T any] struct {
 
 	// BorrowConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-borrowconfiguration
-	BorrowConfiguration *License_BorrowConfiguration `json:"BorrowConfiguration,omitempty"`
+	BorrowConfiguration *License_BorrowConfiguration[any] `json:"BorrowConfiguration,omitempty"`
 
 	// ProvisionalConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-provisionalconfiguration
-	ProvisionalConfiguration *License_ProvisionalConfiguration `json:"ProvisionalConfiguration,omitempty"`
+	ProvisionalConfiguration *License_ProvisionalConfiguration[any] `json:"ProvisionalConfiguration,omitempty"`
 
 	// RenewType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type License_ConsumptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_ConsumptionConfiguration) AWSCloudFormationType() string {
+func (r *License_ConsumptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.ConsumptionConfiguration"
 }

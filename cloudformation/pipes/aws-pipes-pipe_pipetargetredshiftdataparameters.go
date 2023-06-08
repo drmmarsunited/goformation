@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetRedshiftDataParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetRedshiftDataParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html
-type Pipe_PipeTargetRedshiftDataParameters struct {
+type Pipe_PipeTargetRedshiftDataParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Pipe_PipeTargetRedshiftDataParameters struct {
 	// WithEvent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-withevent
-	WithEvent *bool `json:"WithEvent,omitempty"`
+	WithEvent *T `json:"WithEvent,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Pipe_PipeTargetRedshiftDataParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetRedshiftDataParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetRedshiftDataParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetRedshiftDataParameters"
 }

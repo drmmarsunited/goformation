@@ -8,12 +8,12 @@ import (
 
 // Bot_ConditionalBranch AWS CloudFormation Resource (AWS::Lex::Bot.ConditionalBranch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalbranch.html
-type Bot_ConditionalBranch struct {
+type Bot_ConditionalBranch[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalbranch.html#cfn-lex-bot-conditionalbranch-condition
-	Condition *Bot_Condition `json:"Condition"`
+	Condition *Bot_Condition[any] `json:"Condition"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Bot_ConditionalBranch struct {
 	// NextStep AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalbranch.html#cfn-lex-bot-conditionalbranch-nextstep
-	NextStep *Bot_DialogState `json:"NextStep"`
+	NextStep *Bot_DialogState[any] `json:"NextStep"`
 
 	// Response AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conditionalbranch.html#cfn-lex-bot-conditionalbranch-response
-	Response *Bot_ResponseSpecification `json:"Response,omitempty"`
+	Response *Bot_ResponseSpecification[any] `json:"Response,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_ConditionalBranch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ConditionalBranch) AWSCloudFormationType() string {
+func (r *Bot_ConditionalBranch[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ConditionalBranch"
 }

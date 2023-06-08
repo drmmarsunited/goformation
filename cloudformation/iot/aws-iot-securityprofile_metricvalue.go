@@ -8,7 +8,7 @@ import (
 
 // SecurityProfile_MetricValue AWS CloudFormation Resource (AWS::IoT::SecurityProfile.MetricValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html
-type SecurityProfile_MetricValue struct {
+type SecurityProfile_MetricValue[T any] struct {
 
 	// Cidrs AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type SecurityProfile_MetricValue struct {
 	// Number AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-number
-	Number *float64 `json:"Number,omitempty"`
+	Number *T `json:"Number,omitempty"`
 
 	// Numbers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-numbers
-	Numbers []float64 `json:"Numbers,omitempty"`
+	Numbers []T `json:"Numbers,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-ports
-	Ports []int `json:"Ports,omitempty"`
+	Ports []T `json:"Ports,omitempty"`
 
 	// Strings AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type SecurityProfile_MetricValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile_MetricValue) AWSCloudFormationType() string {
+func (r *SecurityProfile_MetricValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile.MetricValue"
 }

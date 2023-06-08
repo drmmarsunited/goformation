@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_EnvironmentFile AWS CloudFormation Resource (AWS::ECS::TaskDefinition.EnvironmentFile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-environmentfile.html
-type TaskDefinition_EnvironmentFile struct {
+type TaskDefinition_EnvironmentFile[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_EnvironmentFile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_EnvironmentFile) AWSCloudFormationType() string {
+func (r *TaskDefinition_EnvironmentFile[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.EnvironmentFile"
 }

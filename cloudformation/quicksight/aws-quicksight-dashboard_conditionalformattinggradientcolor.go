@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ConditionalFormattingGradientColor AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ConditionalFormattingGradientColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattinggradientcolor.html
-type Dashboard_ConditionalFormattingGradientColor struct {
+type Dashboard_ConditionalFormattingGradientColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattinggradientcolor.html#cfn-quicksight-dashboard-conditionalformattinggradientcolor-color
-	Color *Dashboard_GradientColor `json:"Color"`
+	Color *Dashboard_GradientColor[any] `json:"Color"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_ConditionalFormattingGradientColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ConditionalFormattingGradientColor) AWSCloudFormationType() string {
+func (r *Dashboard_ConditionalFormattingGradientColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ConditionalFormattingGradientColor"
 }

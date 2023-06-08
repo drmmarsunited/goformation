@@ -8,7 +8,7 @@ import (
 
 // TopicRule_PutAssetPropertyValueEntry AWS CloudFormation Resource (AWS::IoT::TopicRule.PutAssetPropertyValueEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putassetpropertyvalueentry.html
-type TopicRule_PutAssetPropertyValueEntry struct {
+type TopicRule_PutAssetPropertyValueEntry[T any] struct {
 
 	// AssetId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type TopicRule_PutAssetPropertyValueEntry struct {
 	// PropertyValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putassetpropertyvalueentry.html#cfn-iot-topicrule-putassetpropertyvalueentry-propertyvalues
-	PropertyValues []TopicRule_AssetPropertyValue `json:"PropertyValues"`
+	PropertyValues []TopicRule_AssetPropertyValue[any] `json:"PropertyValues"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type TopicRule_PutAssetPropertyValueEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_PutAssetPropertyValueEntry) AWSCloudFormationType() string {
+func (r *TopicRule_PutAssetPropertyValueEntry[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.PutAssetPropertyValueEntry"
 }

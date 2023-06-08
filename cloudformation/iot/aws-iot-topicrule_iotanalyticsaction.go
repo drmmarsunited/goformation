@@ -8,12 +8,12 @@ import (
 
 // TopicRule_IotAnalyticsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.IotAnalyticsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html
-type TopicRule_IotAnalyticsAction struct {
+type TopicRule_IotAnalyticsAction[T any] struct {
 
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html#cfn-iot-topicrule-iotanalyticsaction-batchmode
-	BatchMode *bool `json:"BatchMode,omitempty"`
+	BatchMode *T `json:"BatchMode,omitempty"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type TopicRule_IotAnalyticsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_IotAnalyticsAction) AWSCloudFormationType() string {
+func (r *TopicRule_IotAnalyticsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.IotAnalyticsAction"
 }

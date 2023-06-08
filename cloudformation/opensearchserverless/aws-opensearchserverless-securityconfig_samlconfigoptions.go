@@ -8,7 +8,7 @@ import (
 
 // SecurityConfig_SamlConfigOptions AWS CloudFormation Resource (AWS::OpenSearchServerless::SecurityConfig.SamlConfigOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html
-type SecurityConfig_SamlConfigOptions struct {
+type SecurityConfig_SamlConfigOptions[T any] struct {
 
 	// GroupAttribute AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type SecurityConfig_SamlConfigOptions struct {
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-sessiontimeout
-	SessionTimeout *int `json:"SessionTimeout,omitempty"`
+	SessionTimeout *T `json:"SessionTimeout,omitempty"`
 
 	// UserAttribute AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type SecurityConfig_SamlConfigOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfig_SamlConfigOptions) AWSCloudFormationType() string {
+func (r *SecurityConfig_SamlConfigOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchServerless::SecurityConfig.SamlConfigOptions"
 }

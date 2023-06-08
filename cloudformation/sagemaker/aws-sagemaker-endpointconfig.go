@@ -12,17 +12,17 @@ import (
 
 // EndpointConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html
-type EndpointConfig struct {
+type EndpointConfig[T any] struct {
 
 	// AsyncInferenceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig
-	AsyncInferenceConfig *EndpointConfig_AsyncInferenceConfig `json:"AsyncInferenceConfig,omitempty"`
+	AsyncInferenceConfig *EndpointConfig_AsyncInferenceConfig[any] `json:"AsyncInferenceConfig,omitempty"`
 
 	// DataCaptureConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig
-	DataCaptureConfig *EndpointConfig_DataCaptureConfig `json:"DataCaptureConfig,omitempty"`
+	DataCaptureConfig *EndpointConfig_DataCaptureConfig[any] `json:"DataCaptureConfig,omitempty"`
 
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type EndpointConfig struct {
 	// ExplainerConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-explainerconfig
-	ExplainerConfig *EndpointConfig_ExplainerConfig `json:"ExplainerConfig,omitempty"`
+	ExplainerConfig *EndpointConfig_ExplainerConfig[any] `json:"ExplainerConfig,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type EndpointConfig struct {
 	// ProductionVariants AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants
-	ProductionVariants []EndpointConfig_ProductionVariant `json:"ProductionVariants"`
+	ProductionVariants []EndpointConfig_ProductionVariant[any] `json:"ProductionVariants"`
 
 	// ShadowProductionVariants AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-shadowproductionvariants
-	ShadowProductionVariants []EndpointConfig_ProductionVariant `json:"ShadowProductionVariants,omitempty"`
+	ShadowProductionVariants []EndpointConfig_ProductionVariant[any] `json:"ShadowProductionVariants,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type EndpointConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EndpointConfig) MarshalJSON() ([]byte, error) {
-	type Properties EndpointConfig
+func (r EndpointConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties EndpointConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r EndpointConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EndpointConfig) UnmarshalJSON(b []byte) error {
-	type Properties EndpointConfig
+func (r *EndpointConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties EndpointConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *EndpointConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EndpointConfig(*res.Properties)
+		*r = EndpointConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

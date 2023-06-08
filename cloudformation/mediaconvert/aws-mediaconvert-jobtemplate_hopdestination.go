@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_HopDestination AWS CloudFormation Resource (AWS::MediaConvert::JobTemplate.HopDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html
-type JobTemplate_HopDestination struct {
+type JobTemplate_HopDestination[T any] struct {
 
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// Queue AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type JobTemplate_HopDestination struct {
 	// WaitMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-waitminutes
-	WaitMinutes *int `json:"WaitMinutes,omitempty"`
+	WaitMinutes *T `json:"WaitMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobTemplate_HopDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_HopDestination) AWSCloudFormationType() string {
+func (r *JobTemplate_HopDestination[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConvert::JobTemplate.HopDestination"
 }

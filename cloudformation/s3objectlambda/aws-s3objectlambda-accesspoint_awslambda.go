@@ -8,7 +8,7 @@ import (
 
 // AccessPoint_AwsLambda AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.AwsLambda)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-awslambda.html
-type AccessPoint_AwsLambda struct {
+type AccessPoint_AwsLambda[T any] struct {
 
 	// FunctionArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AccessPoint_AwsLambda struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_AwsLambda) AWSCloudFormationType() string {
+func (r *AccessPoint_AwsLambda[any]) AWSCloudFormationType() string {
 	return "AWS::S3ObjectLambda::AccessPoint.AwsLambda"
 }

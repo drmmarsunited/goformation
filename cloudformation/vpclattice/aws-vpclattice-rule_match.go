@@ -8,12 +8,12 @@ import (
 
 // Rule_Match AWS CloudFormation Resource (AWS::VpcLattice::Rule.Match)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-match.html
-type Rule_Match struct {
+type Rule_Match[T any] struct {
 
 	// HttpMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-match.html#cfn-vpclattice-rule-match-httpmatch
-	HttpMatch *Rule_HttpMatch `json:"HttpMatch"`
+	HttpMatch *Rule_HttpMatch[any] `json:"HttpMatch"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_Match struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Match) AWSCloudFormationType() string {
+func (r *Rule_Match[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.Match"
 }

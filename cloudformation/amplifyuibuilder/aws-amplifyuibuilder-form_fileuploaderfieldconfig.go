@@ -8,7 +8,7 @@ import (
 
 // Form_FileUploaderFieldConfig AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FileUploaderFieldConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html
-type Form_FileUploaderFieldConfig struct {
+type Form_FileUploaderFieldConfig[T any] struct {
 
 	// AcceptedFileTypes AWS CloudFormation Property
 	// Required: true
@@ -23,22 +23,22 @@ type Form_FileUploaderFieldConfig struct {
 	// IsResumable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-isresumable
-	IsResumable *bool `json:"IsResumable,omitempty"`
+	IsResumable *T `json:"IsResumable,omitempty"`
 
 	// MaxFileCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-maxfilecount
-	MaxFileCount *float64 `json:"MaxFileCount,omitempty"`
+	MaxFileCount *T `json:"MaxFileCount,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-maxsize
-	MaxSize *float64 `json:"MaxSize,omitempty"`
+	MaxSize *T `json:"MaxSize,omitempty"`
 
 	// ShowThumbnails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-showthumbnails
-	ShowThumbnails *bool `json:"ShowThumbnails,omitempty"`
+	ShowThumbnails *T `json:"ShowThumbnails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Form_FileUploaderFieldConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FileUploaderFieldConfig) AWSCloudFormationType() string {
+func (r *Form_FileUploaderFieldConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FileUploaderFieldConfig"
 }

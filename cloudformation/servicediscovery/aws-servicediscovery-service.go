@@ -12,7 +12,7 @@ import (
 
 // Service AWS CloudFormation Resource (AWS::ServiceDiscovery::Service)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html
-type Service struct {
+type Service[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,17 +22,17 @@ type Service struct {
 	// DnsConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig
-	DnsConfig *Service_DnsConfig `json:"DnsConfig,omitempty"`
+	DnsConfig *Service_DnsConfig[any] `json:"DnsConfig,omitempty"`
 
 	// HealthCheckConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig
-	HealthCheckConfig *Service_HealthCheckConfig `json:"HealthCheckConfig,omitempty"`
+	HealthCheckConfig *Service_HealthCheckConfig[any] `json:"HealthCheckConfig,omitempty"`
 
 	// HealthCheckCustomConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig
-	HealthCheckCustomConfig *Service_HealthCheckCustomConfig `json:"HealthCheckCustomConfig,omitempty"`
+	HealthCheckCustomConfig *Service_HealthCheckCustomConfig[any] `json:"HealthCheckCustomConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Service struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service) AWSCloudFormationType() string {
+func (r *Service[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::Service"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Service) MarshalJSON() ([]byte, error) {
-	type Properties Service
+func (r Service[any]) MarshalJSON() ([]byte, error) {
+	type Properties Service[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Service) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Service) UnmarshalJSON(b []byte) error {
-	type Properties Service
+func (r *Service[any]) UnmarshalJSON(b []byte) error {
+	type Properties Service[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Service) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Service(*res.Properties)
+		*r = Service[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

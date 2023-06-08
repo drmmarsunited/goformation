@@ -8,17 +8,17 @@ import (
 
 // Cluster_ProvisionedThroughput AWS CloudFormation Resource (AWS::MSK::Cluster.ProvisionedThroughput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-provisionedthroughput.html
-type Cluster_ProvisionedThroughput struct {
+type Cluster_ProvisionedThroughput[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-provisionedthroughput.html#cfn-msk-cluster-provisionedthroughput-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// VolumeThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-provisionedthroughput.html#cfn-msk-cluster-provisionedthroughput-volumethroughput
-	VolumeThroughput *int `json:"VolumeThroughput,omitempty"`
+	VolumeThroughput *T `json:"VolumeThroughput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_ProvisionedThroughput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ProvisionedThroughput) AWSCloudFormationType() string {
+func (r *Cluster_ProvisionedThroughput[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.ProvisionedThroughput"
 }

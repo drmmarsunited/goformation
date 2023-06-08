@@ -8,17 +8,17 @@ import (
 
 // Cluster_Sasl AWS CloudFormation Resource (AWS::MSK::Cluster.Sasl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html
-type Cluster_Sasl struct {
+type Cluster_Sasl[T any] struct {
 
 	// Iam AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-iam
-	Iam *Cluster_Iam `json:"Iam,omitempty"`
+	Iam *Cluster_Iam[any] `json:"Iam,omitempty"`
 
 	// Scram AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-scram
-	Scram *Cluster_Scram `json:"Scram,omitempty"`
+	Scram *Cluster_Scram[any] `json:"Scram,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_Sasl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Sasl) AWSCloudFormationType() string {
+func (r *Cluster_Sasl[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Sasl"
 }

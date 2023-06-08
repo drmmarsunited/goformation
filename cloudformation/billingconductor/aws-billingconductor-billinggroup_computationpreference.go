@@ -8,7 +8,7 @@ import (
 
 // BillingGroup_ComputationPreference AWS CloudFormation Resource (AWS::BillingConductor::BillingGroup.ComputationPreference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-computationpreference.html
-type BillingGroup_ComputationPreference struct {
+type BillingGroup_ComputationPreference[T any] struct {
 
 	// PricingPlanArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type BillingGroup_ComputationPreference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BillingGroup_ComputationPreference) AWSCloudFormationType() string {
+func (r *BillingGroup_ComputationPreference[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::BillingGroup.ComputationPreference"
 }

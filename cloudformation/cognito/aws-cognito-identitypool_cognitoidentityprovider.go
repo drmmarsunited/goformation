@@ -8,7 +8,7 @@ import (
 
 // IdentityPool_CognitoIdentityProvider AWS CloudFormation Resource (AWS::Cognito::IdentityPool.CognitoIdentityProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html
-type IdentityPool_CognitoIdentityProvider struct {
+type IdentityPool_CognitoIdentityProvider[T any] struct {
 
 	// ClientId AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type IdentityPool_CognitoIdentityProvider struct {
 	// ServerSideTokenCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-serversidetokencheck
-	ServerSideTokenCheck *bool `json:"ServerSideTokenCheck,omitempty"`
+	ServerSideTokenCheck *T `json:"ServerSideTokenCheck,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type IdentityPool_CognitoIdentityProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPool_CognitoIdentityProvider) AWSCloudFormationType() string {
+func (r *IdentityPool_CognitoIdentityProvider[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.CognitoIdentityProvider"
 }

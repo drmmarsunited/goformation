@@ -11,7 +11,7 @@ import (
 
 // StackFleetAssociation AWS CloudFormation Resource (AWS::AppStream::StackFleetAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html
-type StackFleetAssociation struct {
+type StackFleetAssociation[T any] struct {
 
 	// FleetName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type StackFleetAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StackFleetAssociation) AWSCloudFormationType() string {
+func (r *StackFleetAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::StackFleetAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StackFleetAssociation) MarshalJSON() ([]byte, error) {
-	type Properties StackFleetAssociation
+func (r StackFleetAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties StackFleetAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r StackFleetAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StackFleetAssociation) UnmarshalJSON(b []byte) error {
-	type Properties StackFleetAssociation
+func (r *StackFleetAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties StackFleetAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *StackFleetAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StackFleetAssociation(*res.Properties)
+		*r = StackFleetAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Cluster_OnDemandProvisioningSpecification AWS CloudFormation Resource (AWS::EMR::Cluster.OnDemandProvisioningSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandprovisioningspecification.html
-type Cluster_OnDemandProvisioningSpecification struct {
+type Cluster_OnDemandProvisioningSpecification[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Cluster_OnDemandProvisioningSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_OnDemandProvisioningSpecification) AWSCloudFormationType() string {
+func (r *Cluster_OnDemandProvisioningSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.OnDemandProvisioningSpecification"
 }

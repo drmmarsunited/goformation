@@ -8,7 +8,7 @@ import (
 
 // Stack_ElasticIp AWS CloudFormation Resource (AWS::OpsWorks::Stack.ElasticIp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html
-type Stack_ElasticIp struct {
+type Stack_ElasticIp[T any] struct {
 
 	// Ip AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Stack_ElasticIp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_ElasticIp) AWSCloudFormationType() string {
+func (r *Stack_ElasticIp[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.ElasticIp"
 }

@@ -8,12 +8,12 @@ import (
 
 // LoggerDefinition_LoggerDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::LoggerDefinition.LoggerDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html
-type LoggerDefinition_LoggerDefinitionVersion struct {
+type LoggerDefinition_LoggerDefinitionVersion[T any] struct {
 
 	// Loggers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html#cfn-greengrass-loggerdefinition-loggerdefinitionversion-loggers
-	Loggers []LoggerDefinition_Logger `json:"Loggers"`
+	Loggers []LoggerDefinition_Logger[any] `json:"Loggers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LoggerDefinition_LoggerDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggerDefinition_LoggerDefinitionVersion) AWSCloudFormationType() string {
+func (r *LoggerDefinition_LoggerDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::LoggerDefinition.LoggerDefinitionVersion"
 }

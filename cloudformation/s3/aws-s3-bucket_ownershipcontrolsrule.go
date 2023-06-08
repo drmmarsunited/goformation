@@ -8,7 +8,7 @@ import (
 
 // Bucket_OwnershipControlsRule AWS CloudFormation Resource (AWS::S3::Bucket.OwnershipControlsRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrolsrule.html
-type Bucket_OwnershipControlsRule struct {
+type Bucket_OwnershipControlsRule[T any] struct {
 
 	// ObjectOwnership AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Bucket_OwnershipControlsRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_OwnershipControlsRule) AWSCloudFormationType() string {
+func (r *Bucket_OwnershipControlsRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.OwnershipControlsRule"
 }

@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_PortMapping AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.PortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html
-type VirtualNode_PortMapping struct {
+type VirtualNode_PortMapping[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html#cfn-appmesh-virtualnode-portmapping-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_PortMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_PortMapping) AWSCloudFormationType() string {
+func (r *VirtualNode_PortMapping[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.PortMapping"
 }

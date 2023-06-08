@@ -8,22 +8,22 @@ import (
 
 // ScalingPolicy_StepAdjustment AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.StepAdjustment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html
-type ScalingPolicy_StepAdjustment struct {
+type ScalingPolicy_StepAdjustment[T any] struct {
 
 	// MetricIntervalLowerBound AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervallowerbound
-	MetricIntervalLowerBound *float64 `json:"MetricIntervalLowerBound,omitempty"`
+	MetricIntervalLowerBound *T `json:"MetricIntervalLowerBound,omitempty"`
 
 	// MetricIntervalUpperBound AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervalupperbound
-	MetricIntervalUpperBound *float64 `json:"MetricIntervalUpperBound,omitempty"`
+	MetricIntervalUpperBound *T `json:"MetricIntervalUpperBound,omitempty"`
 
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-scalingadjustment
-	ScalingAdjustment int `json:"ScalingAdjustment"`
+	ScalingAdjustment T `json:"ScalingAdjustment"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ScalingPolicy_StepAdjustment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_StepAdjustment) AWSCloudFormationType() string {
+func (r *ScalingPolicy_StepAdjustment[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy.StepAdjustment"
 }

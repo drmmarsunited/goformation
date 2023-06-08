@@ -12,7 +12,7 @@ import (
 
 // Addon AWS CloudFormation Resource (AWS::EKS::Addon)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html
-type Addon struct {
+type Addon[T any] struct {
 
 	// AddonName AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Addon struct {
 	// PreserveOnDelete AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-preserveondelete
-	PreserveOnDelete *bool `json:"PreserveOnDelete,omitempty"`
+	PreserveOnDelete *T `json:"PreserveOnDelete,omitempty"`
 
 	// ResolveConflicts AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Addon struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Addon) AWSCloudFormationType() string {
+func (r *Addon[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Addon"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Addon) MarshalJSON() ([]byte, error) {
-	type Properties Addon
+func (r Addon[any]) MarshalJSON() ([]byte, error) {
+	type Properties Addon[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Addon) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Addon) UnmarshalJSON(b []byte) error {
-	type Properties Addon
+func (r *Addon[any]) UnmarshalJSON(b []byte) error {
+	type Properties Addon[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Addon) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Addon(*res.Properties)
+		*r = Addon[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

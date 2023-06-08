@@ -11,12 +11,12 @@ import (
 
 // TopicRuleDestination AWS CloudFormation Resource (AWS::IoT::TopicRuleDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html
-type TopicRuleDestination struct {
+type TopicRuleDestination[T any] struct {
 
 	// HttpUrlProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-httpurlproperties
-	HttpUrlProperties *TopicRuleDestination_HttpUrlDestinationSummary `json:"HttpUrlProperties,omitempty"`
+	HttpUrlProperties *TopicRuleDestination_HttpUrlDestinationSummary[any] `json:"HttpUrlProperties,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type TopicRuleDestination struct {
 	// VpcProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-vpcproperties
-	VpcProperties *TopicRuleDestination_VpcDestinationProperties `json:"VpcProperties,omitempty"`
+	VpcProperties *TopicRuleDestination_VpcDestinationProperties[any] `json:"VpcProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type TopicRuleDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRuleDestination) AWSCloudFormationType() string {
+func (r *TopicRuleDestination[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRuleDestination"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TopicRuleDestination) MarshalJSON() ([]byte, error) {
-	type Properties TopicRuleDestination
+func (r TopicRuleDestination[any]) MarshalJSON() ([]byte, error) {
+	type Properties TopicRuleDestination[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r TopicRuleDestination) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TopicRuleDestination) UnmarshalJSON(b []byte) error {
-	type Properties TopicRuleDestination
+func (r *TopicRuleDestination[any]) UnmarshalJSON(b []byte) error {
+	type Properties TopicRuleDestination[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *TopicRuleDestination) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TopicRuleDestination(*res.Properties)
+		*r = TopicRuleDestination[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

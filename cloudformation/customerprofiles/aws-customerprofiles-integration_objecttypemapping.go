@@ -8,7 +8,7 @@ import (
 
 // Integration_ObjectTypeMapping AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.ObjectTypeMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-objecttypemapping.html
-type Integration_ObjectTypeMapping struct {
+type Integration_ObjectTypeMapping[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Integration_ObjectTypeMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ObjectTypeMapping) AWSCloudFormationType() string {
+func (r *Integration_ObjectTypeMapping[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.ObjectTypeMapping"
 }

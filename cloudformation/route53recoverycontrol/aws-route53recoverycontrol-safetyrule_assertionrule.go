@@ -8,7 +8,7 @@ import (
 
 // SafetyRule_AssertionRule AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.AssertionRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-assertionrule.html
-type SafetyRule_AssertionRule struct {
+type SafetyRule_AssertionRule[T any] struct {
 
 	// AssertedControls AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type SafetyRule_AssertionRule struct {
 	// WaitPeriodMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-assertionrule.html#cfn-route53recoverycontrol-safetyrule-assertionrule-waitperiodms
-	WaitPeriodMs int `json:"WaitPeriodMs"`
+	WaitPeriodMs T `json:"WaitPeriodMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SafetyRule_AssertionRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SafetyRule_AssertionRule) AWSCloudFormationType() string {
+func (r *SafetyRule_AssertionRule[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::SafetyRule.AssertionRule"
 }

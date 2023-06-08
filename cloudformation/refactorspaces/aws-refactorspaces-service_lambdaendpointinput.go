@@ -8,7 +8,7 @@ import (
 
 // Service_LambdaEndpointInput AWS CloudFormation Resource (AWS::RefactorSpaces::Service.LambdaEndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-service-lambdaendpointinput.html
-type Service_LambdaEndpointInput struct {
+type Service_LambdaEndpointInput[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Service_LambdaEndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_LambdaEndpointInput) AWSCloudFormationType() string {
+func (r *Service_LambdaEndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::RefactorSpaces::Service.LambdaEndpointInput"
 }

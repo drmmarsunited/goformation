@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DecimalParameter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DecimalParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalparameter.html
-type Dashboard_DecimalParameter struct {
+type Dashboard_DecimalParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_DecimalParameter struct {
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalparameter.html#cfn-quicksight-dashboard-decimalparameter-values
-	Values []float64 `json:"Values"`
+	Values []T `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DecimalParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DecimalParameter) AWSCloudFormationType() string {
+func (r *Dashboard_DecimalParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DecimalParameter"
 }

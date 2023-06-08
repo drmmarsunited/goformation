@@ -8,7 +8,7 @@ import (
 
 // Disk_AutoSnapshotAddOn AWS CloudFormation Resource (AWS::Lightsail::Disk.AutoSnapshotAddOn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-autosnapshotaddon.html
-type Disk_AutoSnapshotAddOn struct {
+type Disk_AutoSnapshotAddOn[T any] struct {
 
 	// SnapshotTimeOfDay AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Disk_AutoSnapshotAddOn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Disk_AutoSnapshotAddOn) AWSCloudFormationType() string {
+func (r *Disk_AutoSnapshotAddOn[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Disk.AutoSnapshotAddOn"
 }

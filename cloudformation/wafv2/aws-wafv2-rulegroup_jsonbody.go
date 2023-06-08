@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_JsonBody AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.JsonBody)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-jsonbody.html
-type RuleGroup_JsonBody struct {
+type RuleGroup_JsonBody[T any] struct {
 
 	// InvalidFallbackBehavior AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type RuleGroup_JsonBody struct {
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-jsonbody.html#cfn-wafv2-rulegroup-jsonbody-matchpattern
-	MatchPattern *RuleGroup_JsonMatchPattern `json:"MatchPattern"`
+	MatchPattern *RuleGroup_JsonMatchPattern[any] `json:"MatchPattern"`
 
 	// MatchScope AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type RuleGroup_JsonBody struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_JsonBody) AWSCloudFormationType() string {
+func (r *RuleGroup_JsonBody[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.JsonBody"
 }

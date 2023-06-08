@@ -8,12 +8,12 @@ import (
 
 // AlarmModel_Sqs AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.Sqs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sqs.html
-type AlarmModel_Sqs struct {
+type AlarmModel_Sqs[T any] struct {
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sqs.html#cfn-iotevents-alarmmodel-sqs-payload
-	Payload *AlarmModel_Payload `json:"Payload,omitempty"`
+	Payload *AlarmModel_Payload[any] `json:"Payload,omitempty"`
 
 	// QueueUrl AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type AlarmModel_Sqs struct {
 	// UseBase64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sqs.html#cfn-iotevents-alarmmodel-sqs-usebase64
-	UseBase64 *bool `json:"UseBase64,omitempty"`
+	UseBase64 *T `json:"UseBase64,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type AlarmModel_Sqs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AlarmModel_Sqs) AWSCloudFormationType() string {
+func (r *AlarmModel_Sqs[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::AlarmModel.Sqs"
 }

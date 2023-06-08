@@ -8,7 +8,7 @@ import (
 
 // Cluster_ScriptBootstrapActionConfig AWS CloudFormation Resource (AWS::EMR::Cluster.ScriptBootstrapActionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html
-type Cluster_ScriptBootstrapActionConfig struct {
+type Cluster_ScriptBootstrapActionConfig[T any] struct {
 
 	// Args AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_ScriptBootstrapActionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ScriptBootstrapActionConfig) AWSCloudFormationType() string {
+func (r *Cluster_ScriptBootstrapActionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ScriptBootstrapActionConfig"
 }

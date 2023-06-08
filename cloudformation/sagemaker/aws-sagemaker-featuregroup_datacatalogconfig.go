@@ -8,7 +8,7 @@ import (
 
 // FeatureGroup_DataCatalogConfig AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.DataCatalogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html
-type FeatureGroup_DataCatalogConfig struct {
+type FeatureGroup_DataCatalogConfig[T any] struct {
 
 	// Catalog AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type FeatureGroup_DataCatalogConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_DataCatalogConfig) AWSCloudFormationType() string {
+func (r *FeatureGroup_DataCatalogConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.DataCatalogConfig"
 }

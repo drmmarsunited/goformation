@@ -8,12 +8,12 @@ import (
 
 // Template_DataSetSchema AWS CloudFormation Resource (AWS::QuickSight::Template.DataSetSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetschema.html
-type Template_DataSetSchema struct {
+type Template_DataSetSchema[T any] struct {
 
 	// ColumnSchemaList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetschema.html#cfn-quicksight-template-datasetschema-columnschemalist
-	ColumnSchemaList []Template_ColumnSchema `json:"ColumnSchemaList,omitempty"`
+	ColumnSchemaList []Template_ColumnSchema[any] `json:"ColumnSchemaList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_DataSetSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataSetSchema) AWSCloudFormationType() string {
+func (r *Template_DataSetSchema[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataSetSchema"
 }

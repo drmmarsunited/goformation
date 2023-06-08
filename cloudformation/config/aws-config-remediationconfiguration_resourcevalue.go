@@ -8,7 +8,7 @@ import (
 
 // RemediationConfiguration_ResourceValue AWS CloudFormation Resource (AWS::Config::RemediationConfiguration.ResourceValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html
-type RemediationConfiguration_ResourceValue struct {
+type RemediationConfiguration_ResourceValue[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RemediationConfiguration_ResourceValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RemediationConfiguration_ResourceValue) AWSCloudFormationType() string {
+func (r *RemediationConfiguration_ResourceValue[any]) AWSCloudFormationType() string {
 	return "AWS::Config::RemediationConfiguration.ResourceValue"
 }

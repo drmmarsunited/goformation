@@ -11,7 +11,7 @@ import (
 
 // BackupVault AWS CloudFormation Resource (AWS::Backup::BackupVault)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html
-type BackupVault struct {
+type BackupVault[T any] struct {
 
 	// AccessPolicy AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type BackupVault struct {
 	// LockConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-lockconfiguration
-	LockConfiguration *BackupVault_LockConfigurationType `json:"LockConfiguration,omitempty"`
+	LockConfiguration *BackupVault_LockConfigurationType[any] `json:"LockConfiguration,omitempty"`
 
 	// Notifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications
-	Notifications *BackupVault_NotificationObjectType `json:"Notifications,omitempty"`
+	Notifications *BackupVault_NotificationObjectType[any] `json:"Notifications,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type BackupVault struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupVault) AWSCloudFormationType() string {
+func (r *BackupVault[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupVault"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BackupVault) MarshalJSON() ([]byte, error) {
-	type Properties BackupVault
+func (r BackupVault[any]) MarshalJSON() ([]byte, error) {
+	type Properties BackupVault[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r BackupVault) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BackupVault) UnmarshalJSON(b []byte) error {
-	type Properties BackupVault
+func (r *BackupVault[any]) UnmarshalJSON(b []byte) error {
+	type Properties BackupVault[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *BackupVault) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BackupVault(*res.Properties)
+		*r = BackupVault[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

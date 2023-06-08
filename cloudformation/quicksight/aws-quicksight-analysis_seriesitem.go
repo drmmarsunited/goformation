@@ -8,17 +8,17 @@ import (
 
 // Analysis_SeriesItem AWS CloudFormation Resource (AWS::QuickSight::Analysis.SeriesItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-seriesitem.html
-type Analysis_SeriesItem struct {
+type Analysis_SeriesItem[T any] struct {
 
 	// DataFieldSeriesItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-seriesitem.html#cfn-quicksight-analysis-seriesitem-datafieldseriesitem
-	DataFieldSeriesItem *Analysis_DataFieldSeriesItem `json:"DataFieldSeriesItem,omitempty"`
+	DataFieldSeriesItem *Analysis_DataFieldSeriesItem[any] `json:"DataFieldSeriesItem,omitempty"`
 
 	// FieldSeriesItem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-seriesitem.html#cfn-quicksight-analysis-seriesitem-fieldseriesitem
-	FieldSeriesItem *Analysis_FieldSeriesItem `json:"FieldSeriesItem,omitempty"`
+	FieldSeriesItem *Analysis_FieldSeriesItem[any] `json:"FieldSeriesItem,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_SeriesItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SeriesItem) AWSCloudFormationType() string {
+func (r *Analysis_SeriesItem[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SeriesItem"
 }

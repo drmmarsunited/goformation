@@ -8,17 +8,17 @@ import (
 
 // VirtualNode_ClientTlsCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ClientTlsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clienttlscertificate.html
-type VirtualNode_ClientTlsCertificate struct {
+type VirtualNode_ClientTlsCertificate[T any] struct {
 
 	// File AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clienttlscertificate.html#cfn-appmesh-virtualnode-clienttlscertificate-file
-	File *VirtualNode_ListenerTlsFileCertificate `json:"File,omitempty"`
+	File *VirtualNode_ListenerTlsFileCertificate[any] `json:"File,omitempty"`
 
 	// SDS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clienttlscertificate.html#cfn-appmesh-virtualnode-clienttlscertificate-sds
-	SDS *VirtualNode_ListenerTlsSdsCertificate `json:"SDS,omitempty"`
+	SDS *VirtualNode_ListenerTlsSdsCertificate[any] `json:"SDS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualNode_ClientTlsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ClientTlsCertificate) AWSCloudFormationType() string {
+func (r *VirtualNode_ClientTlsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ClientTlsCertificate"
 }

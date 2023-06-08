@@ -8,27 +8,27 @@ import (
 
 // SignalCatalog_Node AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.Node)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html
-type SignalCatalog_Node struct {
+type SignalCatalog_Node[T any] struct {
 
 	// Actuator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html#cfn-iotfleetwise-signalcatalog-node-actuator
-	Actuator *SignalCatalog_Actuator `json:"Actuator,omitempty"`
+	Actuator *SignalCatalog_Actuator[any] `json:"Actuator,omitempty"`
 
 	// Attribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html#cfn-iotfleetwise-signalcatalog-node-attribute
-	Attribute *SignalCatalog_Attribute `json:"Attribute,omitempty"`
+	Attribute *SignalCatalog_Attribute[any] `json:"Attribute,omitempty"`
 
 	// Branch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html#cfn-iotfleetwise-signalcatalog-node-branch
-	Branch *SignalCatalog_Branch `json:"Branch,omitempty"`
+	Branch *SignalCatalog_Branch[any] `json:"Branch,omitempty"`
 
 	// Sensor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html#cfn-iotfleetwise-signalcatalog-node-sensor
-	Sensor *SignalCatalog_Sensor `json:"Sensor,omitempty"`
+	Sensor *SignalCatalog_Sensor[any] `json:"Sensor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type SignalCatalog_Node struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_Node) AWSCloudFormationType() string {
+func (r *SignalCatalog_Node[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.Node"
 }

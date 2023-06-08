@@ -8,17 +8,17 @@ import (
 
 // Bot_ResponseSpecification AWS CloudFormation Resource (AWS::Lex::Bot.ResponseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html
-type Bot_ResponseSpecification struct {
+type Bot_ResponseSpecification[T any] struct {
 
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *T `json:"AllowInterrupt,omitempty"`
 
 	// MessageGroupsList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-messagegroupslist
-	MessageGroupsList []Bot_MessageGroup `json:"MessageGroupsList"`
+	MessageGroupsList []Bot_MessageGroup[any] `json:"MessageGroupsList"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_ResponseSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ResponseSpecification) AWSCloudFormationType() string {
+func (r *Bot_ResponseSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ResponseSpecification"
 }

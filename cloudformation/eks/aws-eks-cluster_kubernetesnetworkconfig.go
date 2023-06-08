@@ -8,7 +8,7 @@ import (
 
 // Cluster_KubernetesNetworkConfig AWS CloudFormation Resource (AWS::EKS::Cluster.KubernetesNetworkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html
-type Cluster_KubernetesNetworkConfig struct {
+type Cluster_KubernetesNetworkConfig[T any] struct {
 
 	// IpFamily AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Cluster_KubernetesNetworkConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_KubernetesNetworkConfig) AWSCloudFormationType() string {
+func (r *Cluster_KubernetesNetworkConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.KubernetesNetworkConfig"
 }

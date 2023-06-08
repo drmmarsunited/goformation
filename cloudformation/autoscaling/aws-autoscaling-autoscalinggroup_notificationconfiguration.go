@@ -8,7 +8,7 @@ import (
 
 // AutoScalingGroup_NotificationConfiguration AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.NotificationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html
-type AutoScalingGroup_NotificationConfiguration struct {
+type AutoScalingGroup_NotificationConfiguration[T any] struct {
 
 	// NotificationTypes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AutoScalingGroup_NotificationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_NotificationConfiguration) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_NotificationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.NotificationConfiguration"
 }

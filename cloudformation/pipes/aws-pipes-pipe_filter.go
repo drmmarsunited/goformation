@@ -8,7 +8,7 @@ import (
 
 // Pipe_Filter AWS CloudFormation Resource (AWS::Pipes::Pipe.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-filter.html
-type Pipe_Filter struct {
+type Pipe_Filter[T any] struct {
 
 	// Pattern AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Pipe_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_Filter) AWSCloudFormationType() string {
+func (r *Pipe_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.Filter"
 }

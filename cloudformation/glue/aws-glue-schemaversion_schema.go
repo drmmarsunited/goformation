@@ -8,7 +8,7 @@ import (
 
 // SchemaVersion_Schema AWS CloudFormation Resource (AWS::Glue::SchemaVersion.Schema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html
-type SchemaVersion_Schema struct {
+type SchemaVersion_Schema[T any] struct {
 
 	// RegistryName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type SchemaVersion_Schema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SchemaVersion_Schema) AWSCloudFormationType() string {
+func (r *SchemaVersion_Schema[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SchemaVersion.Schema"
 }

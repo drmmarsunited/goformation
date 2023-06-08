@@ -8,7 +8,7 @@ import (
 
 // Rule_PlacementConstraint AWS CloudFormation Resource (AWS::Events::Rule.PlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-placementconstraint.html
-type Rule_PlacementConstraint struct {
+type Rule_PlacementConstraint[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_PlacementConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_PlacementConstraint) AWSCloudFormationType() string {
+func (r *Rule_PlacementConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.PlacementConstraint"
 }

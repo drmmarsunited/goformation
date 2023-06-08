@@ -8,12 +8,12 @@ import (
 
 // Deployment_IoTJobAbortConfig AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobAbortConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortconfig.html
-type Deployment_IoTJobAbortConfig struct {
+type Deployment_IoTJobAbortConfig[T any] struct {
 
 	// CriteriaList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortconfig.html#cfn-greengrassv2-deployment-iotjobabortconfig-criterialist
-	CriteriaList []Deployment_IoTJobAbortCriteria `json:"CriteriaList"`
+	CriteriaList []Deployment_IoTJobAbortCriteria[any] `json:"CriteriaList"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Deployment_IoTJobAbortConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobAbortConfig) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobAbortConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobAbortConfig"
 }

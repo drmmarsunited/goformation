@@ -8,7 +8,7 @@ import (
 
 // Route_HttpPathMatch AWS CloudFormation Resource (AWS::AppMesh::Route.HttpPathMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httppathmatch.html
-type Route_HttpPathMatch struct {
+type Route_HttpPathMatch[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Route_HttpPathMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route_HttpPathMatch) AWSCloudFormationType() string {
+func (r *Route_HttpPathMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::Route.HttpPathMatch"
 }

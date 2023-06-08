@@ -8,7 +8,7 @@ import (
 
 // OriginRequestPolicy_CookiesConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.CookiesConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-cookiesconfig.html
-type OriginRequestPolicy_CookiesConfig struct {
+type OriginRequestPolicy_CookiesConfig[T any] struct {
 
 	// CookieBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type OriginRequestPolicy_CookiesConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginRequestPolicy_CookiesConfig) AWSCloudFormationType() string {
+func (r *OriginRequestPolicy_CookiesConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginRequestPolicy.CookiesConfig"
 }

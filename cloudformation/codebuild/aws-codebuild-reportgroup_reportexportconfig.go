@@ -8,7 +8,7 @@ import (
 
 // ReportGroup_ReportExportConfig AWS CloudFormation Resource (AWS::CodeBuild::ReportGroup.ReportExportConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html
-type ReportGroup_ReportExportConfig struct {
+type ReportGroup_ReportExportConfig[T any] struct {
 
 	// ExportConfigType AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ReportGroup_ReportExportConfig struct {
 	// S3Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-s3destination
-	S3Destination *ReportGroup_S3ReportExportConfig `json:"S3Destination,omitempty"`
+	S3Destination *ReportGroup_S3ReportExportConfig[any] `json:"S3Destination,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ReportGroup_ReportExportConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportGroup_ReportExportConfig) AWSCloudFormationType() string {
+func (r *ReportGroup_ReportExportConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::ReportGroup.ReportExportConfig"
 }

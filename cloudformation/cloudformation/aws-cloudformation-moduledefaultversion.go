@@ -11,7 +11,7 @@ import (
 
 // ModuleDefaultVersion AWS CloudFormation Resource (AWS::CloudFormation::ModuleDefaultVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html
-type ModuleDefaultVersion struct {
+type ModuleDefaultVersion[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type ModuleDefaultVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModuleDefaultVersion) AWSCloudFormationType() string {
+func (r *ModuleDefaultVersion[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::ModuleDefaultVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModuleDefaultVersion) MarshalJSON() ([]byte, error) {
-	type Properties ModuleDefaultVersion
+func (r ModuleDefaultVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModuleDefaultVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ModuleDefaultVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModuleDefaultVersion) UnmarshalJSON(b []byte) error {
-	type Properties ModuleDefaultVersion
+func (r *ModuleDefaultVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModuleDefaultVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ModuleDefaultVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModuleDefaultVersion(*res.Properties)
+		*r = ModuleDefaultVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

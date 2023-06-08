@@ -8,7 +8,7 @@ import (
 
 // GlobalReplicationGroup_GlobalReplicationGroupMember AWS CloudFormation Resource (AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html
-type GlobalReplicationGroup_GlobalReplicationGroupMember struct {
+type GlobalReplicationGroup_GlobalReplicationGroupMember[T any] struct {
 
 	// ReplicationGroupId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type GlobalReplicationGroup_GlobalReplicationGroupMember struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalReplicationGroup_GlobalReplicationGroupMember) AWSCloudFormationType() string {
+func (r *GlobalReplicationGroup_GlobalReplicationGroupMember[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
 }

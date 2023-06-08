@@ -8,7 +8,7 @@ import (
 
 // CachePolicy_CachePolicyConfig AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.CachePolicyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html
-type CachePolicy_CachePolicyConfig struct {
+type CachePolicy_CachePolicyConfig[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type CachePolicy_CachePolicyConfig struct {
 	// DefaultTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-defaultttl
-	DefaultTTL float64 `json:"DefaultTTL"`
+	DefaultTTL T `json:"DefaultTTL"`
 
 	// MaxTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-maxttl
-	MaxTTL float64 `json:"MaxTTL"`
+	MaxTTL T `json:"MaxTTL"`
 
 	// MinTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-minttl
-	MinTTL float64 `json:"MinTTL"`
+	MinTTL T `json:"MinTTL"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type CachePolicy_CachePolicyConfig struct {
 	// ParametersInCacheKeyAndForwardedToOrigin AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-parametersincachekeyandforwardedtoorigin
-	ParametersInCacheKeyAndForwardedToOrigin *CachePolicy_ParametersInCacheKeyAndForwardedToOrigin `json:"ParametersInCacheKeyAndForwardedToOrigin"`
+	ParametersInCacheKeyAndForwardedToOrigin *CachePolicy_ParametersInCacheKeyAndForwardedToOrigin[any] `json:"ParametersInCacheKeyAndForwardedToOrigin"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type CachePolicy_CachePolicyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CachePolicy_CachePolicyConfig) AWSCloudFormationType() string {
+func (r *CachePolicy_CachePolicyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::CachePolicy.CachePolicyConfig"
 }

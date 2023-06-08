@@ -8,12 +8,12 @@ import (
 
 // Channel_GlobalConfiguration AWS CloudFormation Resource (AWS::MediaLive::Channel.GlobalConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html
-type Channel_GlobalConfiguration struct {
+type Channel_GlobalConfiguration[T any] struct {
 
 	// InitialAudioGain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-initialaudiogain
-	InitialAudioGain *int `json:"InitialAudioGain,omitempty"`
+	InitialAudioGain *T `json:"InitialAudioGain,omitempty"`
 
 	// InputEndAction AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_GlobalConfiguration struct {
 	// InputLossBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-inputlossbehavior
-	InputLossBehavior *Channel_InputLossBehavior `json:"InputLossBehavior,omitempty"`
+	InputLossBehavior *Channel_InputLossBehavior[any] `json:"InputLossBehavior,omitempty"`
 
 	// OutputLockingMode AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Channel_GlobalConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_GlobalConfiguration) AWSCloudFormationType() string {
+func (r *Channel_GlobalConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.GlobalConfiguration"
 }

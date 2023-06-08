@@ -11,7 +11,7 @@ import (
 
 // PreparedStatement AWS CloudFormation Resource (AWS::Athena::PreparedStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html
-type PreparedStatement struct {
+type PreparedStatement[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type PreparedStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PreparedStatement) AWSCloudFormationType() string {
+func (r *PreparedStatement[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::PreparedStatement"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PreparedStatement) MarshalJSON() ([]byte, error) {
-	type Properties PreparedStatement
+func (r PreparedStatement[any]) MarshalJSON() ([]byte, error) {
+	type Properties PreparedStatement[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r PreparedStatement) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PreparedStatement) UnmarshalJSON(b []byte) error {
-	type Properties PreparedStatement
+func (r *PreparedStatement[any]) UnmarshalJSON(b []byte) error {
+	type Properties PreparedStatement[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *PreparedStatement) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PreparedStatement(*res.Properties)
+		*r = PreparedStatement[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

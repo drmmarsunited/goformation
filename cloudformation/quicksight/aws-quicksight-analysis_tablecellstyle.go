@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableCellStyle AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableCellStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellstyle.html
-type Analysis_TableCellStyle struct {
+type Analysis_TableCellStyle[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Analysis_TableCellStyle struct {
 	// Border AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellstyle.html#cfn-quicksight-analysis-tablecellstyle-border
-	Border *Analysis_GlobalTableBorderOptions `json:"Border,omitempty"`
+	Border *Analysis_GlobalTableBorderOptions[any] `json:"Border,omitempty"`
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellstyle.html#cfn-quicksight-analysis-tablecellstyle-fontconfiguration
-	FontConfiguration *Analysis_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Analysis_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablecellstyle.html#cfn-quicksight-analysis-tablecellstyle-height
-	Height *float64 `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// HorizontalTextAlignment AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Analysis_TableCellStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableCellStyle) AWSCloudFormationType() string {
+func (r *Analysis_TableCellStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableCellStyle"
 }

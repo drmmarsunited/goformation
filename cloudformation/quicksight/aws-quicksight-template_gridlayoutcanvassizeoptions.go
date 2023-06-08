@@ -8,12 +8,12 @@ import (
 
 // Template_GridLayoutCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Template.GridLayoutCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutcanvassizeoptions.html
-type Template_GridLayoutCanvasSizeOptions struct {
+type Template_GridLayoutCanvasSizeOptions[T any] struct {
 
 	// ScreenCanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutcanvassizeoptions.html#cfn-quicksight-template-gridlayoutcanvassizeoptions-screencanvassizeoptions
-	ScreenCanvasSizeOptions *Template_GridLayoutScreenCanvasSizeOptions `json:"ScreenCanvasSizeOptions,omitempty"`
+	ScreenCanvasSizeOptions *Template_GridLayoutScreenCanvasSizeOptions[any] `json:"ScreenCanvasSizeOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_GridLayoutCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GridLayoutCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Template_GridLayoutCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GridLayoutCanvasSizeOptions"
 }

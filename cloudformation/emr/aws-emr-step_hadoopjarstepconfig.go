@@ -8,7 +8,7 @@ import (
 
 // Step_HadoopJarStepConfig AWS CloudFormation Resource (AWS::EMR::Step.HadoopJarStepConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html
-type Step_HadoopJarStepConfig struct {
+type Step_HadoopJarStepConfig[T any] struct {
 
 	// Args AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Step_HadoopJarStepConfig struct {
 	// StepProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-stepproperties
-	StepProperties []Step_KeyValue `json:"StepProperties,omitempty"`
+	StepProperties []Step_KeyValue[any] `json:"StepProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Step_HadoopJarStepConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Step_HadoopJarStepConfig) AWSCloudFormationType() string {
+func (r *Step_HadoopJarStepConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Step.HadoopJarStepConfig"
 }

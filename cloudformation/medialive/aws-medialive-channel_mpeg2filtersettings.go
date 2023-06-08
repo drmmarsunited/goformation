@@ -8,12 +8,12 @@ import (
 
 // Channel_Mpeg2FilterSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.Mpeg2FilterSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2filtersettings.html
-type Channel_Mpeg2FilterSettings struct {
+type Channel_Mpeg2FilterSettings[T any] struct {
 
 	// TemporalFilterSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2filtersettings.html#cfn-medialive-channel-mpeg2filtersettings-temporalfiltersettings
-	TemporalFilterSettings *Channel_TemporalFilterSettings `json:"TemporalFilterSettings,omitempty"`
+	TemporalFilterSettings *Channel_TemporalFilterSettings[any] `json:"TemporalFilterSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_Mpeg2FilterSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Mpeg2FilterSettings) AWSCloudFormationType() string {
+func (r *Channel_Mpeg2FilterSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Mpeg2FilterSettings"
 }

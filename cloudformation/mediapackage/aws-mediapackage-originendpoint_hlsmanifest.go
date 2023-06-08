@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_HlsManifest AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html
-type OriginEndpoint_HlsManifest struct {
+type OriginEndpoint_HlsManifest[T any] struct {
 
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type OriginEndpoint_HlsManifest struct {
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *T `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type OriginEndpoint_HlsManifest struct {
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-playlistwindowseconds
-	PlaylistWindowSeconds *int `json:"PlaylistWindowSeconds,omitempty"`
+	PlaylistWindowSeconds *T `json:"PlaylistWindowSeconds,omitempty"`
 
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-programdatetimeintervalseconds
-	ProgramDateTimeIntervalSeconds *int `json:"ProgramDateTimeIntervalSeconds,omitempty"`
+	ProgramDateTimeIntervalSeconds *T `json:"ProgramDateTimeIntervalSeconds,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type OriginEndpoint_HlsManifest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_HlsManifest) AWSCloudFormationType() string {
+func (r *OriginEndpoint_HlsManifest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.HlsManifest"
 }

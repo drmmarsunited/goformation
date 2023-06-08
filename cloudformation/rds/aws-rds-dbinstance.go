@@ -12,7 +12,7 @@ import (
 
 // DBInstance AWS CloudFormation Resource (AWS::RDS::DBInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html
-type DBInstance struct {
+type DBInstance[T any] struct {
 
 	// AllocatedStorage AWS CloudFormation Property
 	// Required: false
@@ -22,17 +22,17 @@ type DBInstance struct {
 	// AllowMajorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-allowmajorversionupgrade
-	AllowMajorVersionUpgrade *bool `json:"AllowMajorVersionUpgrade,omitempty"`
+	AllowMajorVersionUpgrade *T `json:"AllowMajorVersionUpgrade,omitempty"`
 
 	// AssociatedRoles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-associatedroles
-	AssociatedRoles []DBInstance_DBInstanceRole `json:"AssociatedRoles,omitempty"`
+	AssociatedRoles []DBInstance_DBInstanceRole[any] `json:"AssociatedRoles,omitempty"`
 
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type DBInstance struct {
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-backupretentionperiod
-	BackupRetentionPeriod *int `json:"BackupRetentionPeriod,omitempty"`
+	BackupRetentionPeriod *T `json:"BackupRetentionPeriod,omitempty"`
 
 	// CACertificateIdentifier AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type DBInstance struct {
 	// CertificateDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificatedetails
-	CertificateDetails *DBInstance_CertificateDetails `json:"CertificateDetails,omitempty"`
+	CertificateDetails *DBInstance_CertificateDetails[any] `json:"CertificateDetails,omitempty"`
 
 	// CertificateRotationRestart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificaterotationrestart
-	CertificateRotationRestart *bool `json:"CertificateRotationRestart,omitempty"`
+	CertificateRotationRestart *T `json:"CertificateRotationRestart,omitempty"`
 
 	// CharacterSetName AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type DBInstance struct {
 	// CopyTagsToSnapshot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-copytagstosnapshot
-	CopyTagsToSnapshot *bool `json:"CopyTagsToSnapshot,omitempty"`
+	CopyTagsToSnapshot *T `json:"CopyTagsToSnapshot,omitempty"`
 
 	// CustomIAMInstanceProfile AWS CloudFormation Property
 	// Required: false
@@ -122,12 +122,12 @@ type DBInstance struct {
 	// DeleteAutomatedBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-deleteautomatedbackups
-	DeleteAutomatedBackups *bool `json:"DeleteAutomatedBackups,omitempty"`
+	DeleteAutomatedBackups *T `json:"DeleteAutomatedBackups,omitempty"`
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-deletionprotection
-	DeletionProtection *bool `json:"DeletionProtection,omitempty"`
+	DeletionProtection *T `json:"DeletionProtection,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
@@ -147,17 +147,17 @@ type DBInstance struct {
 	// EnableIAMDatabaseAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enableiamdatabaseauthentication
-	EnableIAMDatabaseAuthentication *bool `json:"EnableIAMDatabaseAuthentication,omitempty"`
+	EnableIAMDatabaseAuthentication *T `json:"EnableIAMDatabaseAuthentication,omitempty"`
 
 	// EnablePerformanceInsights AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enableperformanceinsights
-	EnablePerformanceInsights *bool `json:"EnablePerformanceInsights,omitempty"`
+	EnablePerformanceInsights *T `json:"EnablePerformanceInsights,omitempty"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-endpoint
-	Endpoint *DBInstance_Endpoint `json:"Endpoint,omitempty"`
+	Endpoint *DBInstance_Endpoint[any] `json:"Endpoint,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -172,7 +172,7 @@ type DBInstance struct {
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -187,7 +187,7 @@ type DBInstance struct {
 	// ManageMasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-managemasteruserpassword
-	ManageMasterUserPassword *bool `json:"ManageMasterUserPassword,omitempty"`
+	ManageMasterUserPassword *T `json:"ManageMasterUserPassword,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: false
@@ -197,7 +197,7 @@ type DBInstance struct {
 	// MasterUserSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masterusersecret
-	MasterUserSecret *DBInstance_MasterUserSecret `json:"MasterUserSecret,omitempty"`
+	MasterUserSecret *DBInstance_MasterUserSecret[any] `json:"MasterUserSecret,omitempty"`
 
 	// MasterUsername AWS CloudFormation Property
 	// Required: false
@@ -207,12 +207,12 @@ type DBInstance struct {
 	// MaxAllocatedStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-maxallocatedstorage
-	MaxAllocatedStorage *int `json:"MaxAllocatedStorage,omitempty"`
+	MaxAllocatedStorage *T `json:"MaxAllocatedStorage,omitempty"`
 
 	// MonitoringInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-monitoringinterval
-	MonitoringInterval *int `json:"MonitoringInterval,omitempty"`
+	MonitoringInterval *T `json:"MonitoringInterval,omitempty"`
 
 	// MonitoringRoleArn AWS CloudFormation Property
 	// Required: false
@@ -222,7 +222,7 @@ type DBInstance struct {
 	// MultiAZ AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-multiaz
-	MultiAZ *bool `json:"MultiAZ,omitempty"`
+	MultiAZ *T `json:"MultiAZ,omitempty"`
 
 	// NcharCharacterSetName AWS CloudFormation Property
 	// Required: false
@@ -247,7 +247,7 @@ type DBInstance struct {
 	// PerformanceInsightsRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-performanceinsightsretentionperiod
-	PerformanceInsightsRetentionPeriod *int `json:"PerformanceInsightsRetentionPeriod,omitempty"`
+	PerformanceInsightsRetentionPeriod *T `json:"PerformanceInsightsRetentionPeriod,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -267,17 +267,17 @@ type DBInstance struct {
 	// ProcessorFeatures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-processorfeatures
-	ProcessorFeatures []DBInstance_ProcessorFeature `json:"ProcessorFeatures,omitempty"`
+	ProcessorFeatures []DBInstance_ProcessorFeature[any] `json:"ProcessorFeatures,omitempty"`
 
 	// PromotionTier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-promotiontier
-	PromotionTier *int `json:"PromotionTier,omitempty"`
+	PromotionTier *T `json:"PromotionTier,omitempty"`
 
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// ReplicaMode AWS CloudFormation Property
 	// Required: false
@@ -317,12 +317,12 @@ type DBInstance struct {
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storageencrypted
-	StorageEncrypted *bool `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *T `json:"StorageEncrypted,omitempty"`
 
 	// StorageThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storagethroughput
-	StorageThroughput *int `json:"StorageThroughput,omitempty"`
+	StorageThroughput *T `json:"StorageThroughput,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: false
@@ -342,12 +342,12 @@ type DBInstance struct {
 	// UseDefaultProcessorFeatures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-usedefaultprocessorfeatures
-	UseDefaultProcessorFeatures *bool `json:"UseDefaultProcessorFeatures,omitempty"`
+	UseDefaultProcessorFeatures *T `json:"UseDefaultProcessorFeatures,omitempty"`
 
 	// UseLatestRestorableTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-uselatestrestorabletime
-	UseLatestRestorableTime *bool `json:"UseLatestRestorableTime,omitempty"`
+	UseLatestRestorableTime *T `json:"UseLatestRestorableTime,omitempty"`
 
 	// VPCSecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -371,14 +371,15 @@ type DBInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance) AWSCloudFormationType() string {
+func (r *DBInstance[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBInstance) MarshalJSON() ([]byte, error) {
-	type Properties DBInstance
+func (r DBInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -400,8 +401,9 @@ func (r DBInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBInstance) UnmarshalJSON(b []byte) error {
-	type Properties DBInstance
+func (r *DBInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -421,7 +423,7 @@ func (r *DBInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBInstance(*res.Properties)
+		*r = DBInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

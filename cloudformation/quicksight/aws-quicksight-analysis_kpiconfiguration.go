@@ -8,22 +8,22 @@ import (
 
 // Analysis_KPIConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.KPIConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconfiguration.html
-type Analysis_KPIConfiguration struct {
+type Analysis_KPIConfiguration[T any] struct {
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconfiguration.html#cfn-quicksight-analysis-kpiconfiguration-fieldwells
-	FieldWells *Analysis_KPIFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Analysis_KPIFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// KPIOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconfiguration.html#cfn-quicksight-analysis-kpiconfiguration-kpioptions
-	KPIOptions *Analysis_KPIOptions `json:"KPIOptions,omitempty"`
+	KPIOptions *Analysis_KPIOptions[any] `json:"KPIOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconfiguration.html#cfn-quicksight-analysis-kpiconfiguration-sortconfiguration
-	SortConfiguration *Analysis_KPISortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Analysis_KPISortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_KPIConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_KPIConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_KPIConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.KPIConfiguration"
 }

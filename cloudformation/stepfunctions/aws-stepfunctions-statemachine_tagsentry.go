@@ -8,7 +8,7 @@ import (
 
 // StateMachine_TagsEntry AWS CloudFormation Resource (AWS::StepFunctions::StateMachine.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tagsentry.html
-type StateMachine_TagsEntry struct {
+type StateMachine_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StateMachine_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_TagsEntry) AWSCloudFormationType() string {
+func (r *StateMachine_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::StepFunctions::StateMachine.TagsEntry"
 }

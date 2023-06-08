@@ -8,7 +8,7 @@ import (
 
 // UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.RiskExceptionConfigurationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-riskexceptionconfigurationtype.html
-type UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType struct {
+type UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType[T any] struct {
 
 	// BlockedIPRangeList AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.RiskExceptionConfigurationType"
 }

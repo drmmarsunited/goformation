@@ -8,7 +8,7 @@ import (
 
 // Endpoint_NetworkInterface AWS CloudFormation Resource (AWS::S3Outposts::Endpoint.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-endpoint-networkinterface.html
-type Endpoint_NetworkInterface struct {
+type Endpoint_NetworkInterface[T any] struct {
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_NetworkInterface) AWSCloudFormationType() string {
+func (r *Endpoint_NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::S3Outposts::Endpoint.NetworkInterface"
 }

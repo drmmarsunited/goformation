@@ -8,7 +8,7 @@ import (
 
 // DataSource_ElasticsearchConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.ElasticsearchConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html
-type DataSource_ElasticsearchConfig struct {
+type DataSource_ElasticsearchConfig[T any] struct {
 
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_ElasticsearchConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ElasticsearchConfig) AWSCloudFormationType() string {
+func (r *DataSource_ElasticsearchConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.ElasticsearchConfig"
 }

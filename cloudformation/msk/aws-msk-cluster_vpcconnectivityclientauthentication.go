@@ -8,17 +8,17 @@ import (
 
 // Cluster_VpcConnectivityClientAuthentication AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivityClientAuthentication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html
-type Cluster_VpcConnectivityClientAuthentication struct {
+type Cluster_VpcConnectivityClientAuthentication[T any] struct {
 
 	// Sasl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-sasl
-	Sasl *Cluster_VpcConnectivitySasl `json:"Sasl,omitempty"`
+	Sasl *Cluster_VpcConnectivitySasl[any] `json:"Sasl,omitempty"`
 
 	// Tls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-tls
-	Tls *Cluster_VpcConnectivityTls `json:"Tls,omitempty"`
+	Tls *Cluster_VpcConnectivityTls[any] `json:"Tls,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_VpcConnectivityClientAuthentication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivityClientAuthentication) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivityClientAuthentication[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivityClientAuthentication"
 }

@@ -8,7 +8,7 @@ import (
 
 // User_UserIdentityInfo AWS CloudFormation Resource (AWS::Connect::User.UserIdentityInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html
-type User_UserIdentityInfo struct {
+type User_UserIdentityInfo[T any] struct {
 
 	// Email AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type User_UserIdentityInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User_UserIdentityInfo) AWSCloudFormationType() string {
+func (r *User_UserIdentityInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::User.UserIdentityInfo"
 }

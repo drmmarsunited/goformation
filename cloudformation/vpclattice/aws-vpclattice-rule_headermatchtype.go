@@ -8,7 +8,7 @@ import (
 
 // Rule_HeaderMatchType AWS CloudFormation Resource (AWS::VpcLattice::Rule.HeaderMatchType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-headermatchtype.html
-type Rule_HeaderMatchType struct {
+type Rule_HeaderMatchType[T any] struct {
 
 	// Contains AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Rule_HeaderMatchType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_HeaderMatchType) AWSCloudFormationType() string {
+func (r *Rule_HeaderMatchType[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.HeaderMatchType"
 }

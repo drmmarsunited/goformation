@@ -12,7 +12,7 @@ import (
 
 // TaskTemplate AWS CloudFormation Resource (AWS::Connect::TaskTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html
-type TaskTemplate struct {
+type TaskTemplate[T any] struct {
 
 	// ClientToken AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type TaskTemplate struct {
 	// Constraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-constraints
-	Constraints *TaskTemplate_Constraints `json:"Constraints,omitempty"`
+	Constraints *TaskTemplate_Constraints[any] `json:"Constraints,omitempty"`
 
 	// ContactFlowArn AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type TaskTemplate struct {
 	// Defaults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-defaults
-	Defaults []TaskTemplate_DefaultFieldValue `json:"Defaults,omitempty"`
+	Defaults []TaskTemplate_DefaultFieldValue[any] `json:"Defaults,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type TaskTemplate struct {
 	// Fields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-fields
-	Fields []TaskTemplate_Field `json:"Fields,omitempty"`
+	Fields []TaskTemplate_Field[any] `json:"Fields,omitempty"`
 
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
@@ -81,14 +81,15 @@ type TaskTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate) AWSCloudFormationType() string {
+func (r *TaskTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TaskTemplate) MarshalJSON() ([]byte, error) {
-	type Properties TaskTemplate
+func (r TaskTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties TaskTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r TaskTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TaskTemplate) UnmarshalJSON(b []byte) error {
-	type Properties TaskTemplate
+func (r *TaskTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties TaskTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *TaskTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TaskTemplate(*res.Properties)
+		*r = TaskTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Dashboard_BodySectionConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BodySectionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectionconfiguration.html
-type Dashboard_BodySectionConfiguration struct {
+type Dashboard_BodySectionConfiguration[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectionconfiguration.html#cfn-quicksight-dashboard-bodysectionconfiguration-content
-	Content *Dashboard_BodySectionContent `json:"Content"`
+	Content *Dashboard_BodySectionContent[any] `json:"Content"`
 
 	// PageBreakConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectionconfiguration.html#cfn-quicksight-dashboard-bodysectionconfiguration-pagebreakconfiguration
-	PageBreakConfiguration *Dashboard_SectionPageBreakConfiguration `json:"PageBreakConfiguration,omitempty"`
+	PageBreakConfiguration *Dashboard_SectionPageBreakConfiguration[any] `json:"PageBreakConfiguration,omitempty"`
 
 	// SectionId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_BodySectionConfiguration struct {
 	// Style AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectionconfiguration.html#cfn-quicksight-dashboard-bodysectionconfiguration-style
-	Style *Dashboard_SectionStyle `json:"Style,omitempty"`
+	Style *Dashboard_SectionStyle[any] `json:"Style,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_BodySectionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BodySectionConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_BodySectionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BodySectionConfiguration"
 }

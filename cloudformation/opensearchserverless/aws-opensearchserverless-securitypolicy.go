@@ -11,7 +11,7 @@ import (
 
 // SecurityPolicy AWS CloudFormation Resource (AWS::OpenSearchServerless::SecurityPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-securitypolicy.html
-type SecurityPolicy struct {
+type SecurityPolicy[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type SecurityPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityPolicy) AWSCloudFormationType() string {
+func (r *SecurityPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchServerless::SecurityPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityPolicy) MarshalJSON() ([]byte, error) {
-	type Properties SecurityPolicy
+func (r SecurityPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r SecurityPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityPolicy) UnmarshalJSON(b []byte) error {
-	type Properties SecurityPolicy
+func (r *SecurityPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *SecurityPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityPolicy(*res.Properties)
+		*r = SecurityPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

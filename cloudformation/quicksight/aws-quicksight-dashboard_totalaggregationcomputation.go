@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TotalAggregationComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TotalAggregationComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totalaggregationcomputation.html
-type Dashboard_TotalAggregationComputation struct {
+type Dashboard_TotalAggregationComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_TotalAggregationComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totalaggregationcomputation.html#cfn-quicksight-dashboard-totalaggregationcomputation-value
-	Value *Dashboard_MeasureField `json:"Value"`
+	Value *Dashboard_MeasureField[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_TotalAggregationComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TotalAggregationComputation) AWSCloudFormationType() string {
+func (r *Dashboard_TotalAggregationComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TotalAggregationComputation"
 }

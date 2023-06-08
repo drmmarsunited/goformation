@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_InputFormatConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html
-type DeliveryStream_InputFormatConfiguration struct {
+type DeliveryStream_InputFormatConfiguration[T any] struct {
 
 	// Deserializer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-inputformatconfiguration-deserializer
-	Deserializer *DeliveryStream_Deserializer `json:"Deserializer,omitempty"`
+	Deserializer *DeliveryStream_Deserializer[any] `json:"Deserializer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DeliveryStream_InputFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_InputFormatConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_InputFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration"
 }

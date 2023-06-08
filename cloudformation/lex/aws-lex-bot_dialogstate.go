@@ -8,22 +8,22 @@ import (
 
 // Bot_DialogState AWS CloudFormation Resource (AWS::Lex::Bot.DialogState)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html
-type Bot_DialogState struct {
+type Bot_DialogState[T any] struct {
 
 	// DialogAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-dialogaction
-	DialogAction *Bot_DialogAction `json:"DialogAction,omitempty"`
+	DialogAction *Bot_DialogAction[any] `json:"DialogAction,omitempty"`
 
 	// Intent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-intent
-	Intent *Bot_IntentOverride `json:"Intent,omitempty"`
+	Intent *Bot_IntentOverride[any] `json:"Intent,omitempty"`
 
 	// SessionAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-sessionattributes
-	SessionAttributes []Bot_SessionAttribute `json:"SessionAttributes,omitempty"`
+	SessionAttributes []Bot_SessionAttribute[any] `json:"SessionAttributes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_DialogState struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_DialogState) AWSCloudFormationType() string {
+func (r *Bot_DialogState[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.DialogState"
 }

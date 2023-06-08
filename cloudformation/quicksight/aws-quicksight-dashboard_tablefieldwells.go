@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TableFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldwells.html
-type Dashboard_TableFieldWells struct {
+type Dashboard_TableFieldWells[T any] struct {
 
 	// TableAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldwells.html#cfn-quicksight-dashboard-tablefieldwells-tableaggregatedfieldwells
-	TableAggregatedFieldWells *Dashboard_TableAggregatedFieldWells `json:"TableAggregatedFieldWells,omitempty"`
+	TableAggregatedFieldWells *Dashboard_TableAggregatedFieldWells[any] `json:"TableAggregatedFieldWells,omitempty"`
 
 	// TableUnaggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldwells.html#cfn-quicksight-dashboard-tablefieldwells-tableunaggregatedfieldwells
-	TableUnaggregatedFieldWells *Dashboard_TableUnaggregatedFieldWells `json:"TableUnaggregatedFieldWells,omitempty"`
+	TableUnaggregatedFieldWells *Dashboard_TableUnaggregatedFieldWells[any] `json:"TableUnaggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_TableFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldWells"
 }

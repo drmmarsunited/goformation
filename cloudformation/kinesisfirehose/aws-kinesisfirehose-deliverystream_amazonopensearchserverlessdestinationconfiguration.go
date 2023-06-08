@@ -8,17 +8,17 @@ import (
 
 // DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.AmazonOpenSearchServerlessDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html
-type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration struct {
+type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration[T any] struct {
 
 	// BufferingHints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-bufferinghints
-	BufferingHints *DeliveryStream_AmazonOpenSearchServerlessBufferingHints `json:"BufferingHints,omitempty"`
+	BufferingHints *DeliveryStream_AmazonOpenSearchServerlessBufferingHints[any] `json:"BufferingHints,omitempty"`
 
 	// CloudWatchLoggingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-cloudwatchloggingoptions
-	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions `json:"CloudWatchLoggingOptions,omitempty"`
+	CloudWatchLoggingOptions *DeliveryStream_CloudWatchLoggingOptions[any] `json:"CloudWatchLoggingOptions,omitempty"`
 
 	// CollectionEndpoint AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration struct {
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-processingconfiguration
-	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration `json:"ProcessingConfiguration,omitempty"`
+	ProcessingConfiguration *DeliveryStream_ProcessingConfiguration[any] `json:"ProcessingConfiguration,omitempty"`
 
 	// RetryOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-retryoptions
-	RetryOptions *DeliveryStream_AmazonOpenSearchServerlessRetryOptions `json:"RetryOptions,omitempty"`
+	RetryOptions *DeliveryStream_AmazonOpenSearchServerlessRetryOptions[any] `json:"RetryOptions,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -53,12 +53,12 @@ type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration struct {
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-s3configuration
-	S3Configuration *DeliveryStream_S3DestinationConfiguration `json:"S3Configuration"`
+	S3Configuration *DeliveryStream_S3DestinationConfiguration[any] `json:"S3Configuration"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-vpcconfiguration
-	VpcConfiguration *DeliveryStream_VpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DeliveryStream_VpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.AmazonOpenSearchServerlessDestinationConfiguration"
 }

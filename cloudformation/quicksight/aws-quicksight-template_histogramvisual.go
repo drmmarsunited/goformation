@@ -8,27 +8,27 @@ import (
 
 // Template_HistogramVisual AWS CloudFormation Resource (AWS::QuickSight::Template.HistogramVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramvisual.html
-type Template_HistogramVisual struct {
+type Template_HistogramVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramvisual.html#cfn-quicksight-template-histogramvisual-actions
-	Actions []Template_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Template_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramvisual.html#cfn-quicksight-template-histogramvisual-chartconfiguration
-	ChartConfiguration *Template_HistogramConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Template_HistogramConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramvisual.html#cfn-quicksight-template-histogramvisual-subtitle
-	Subtitle *Template_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Template_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-histogramvisual.html#cfn-quicksight-template-histogramvisual-title
-	Title *Template_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Template_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Template_HistogramVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HistogramVisual) AWSCloudFormationType() string {
+func (r *Template_HistogramVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HistogramVisual"
 }

@@ -8,17 +8,17 @@ import (
 
 // Function_SQSEvent AWS CloudFormation Resource (AWS::Serverless::Function.SQSEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-type Function_SQSEvent struct {
+type Function_SQSEvent[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// Queue AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Function_SQSEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_SQSEvent) AWSCloudFormationType() string {
+func (r *Function_SQSEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.SQSEvent"
 }

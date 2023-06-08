@@ -8,7 +8,7 @@ import (
 
 // Config_S3RecordingConfig AWS CloudFormation Resource (AWS::GroundStation::Config.S3RecordingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-s3recordingconfig.html
-type Config_S3RecordingConfig struct {
+type Config_S3RecordingConfig[T any] struct {
 
 	// BucketArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Config_S3RecordingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_S3RecordingConfig) AWSCloudFormationType() string {
+func (r *Config_S3RecordingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.S3RecordingConfig"
 }

@@ -8,17 +8,17 @@ import (
 
 // NetworkInsightsAnalysis_PortRange AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.PortRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html
-type NetworkInsightsAnalysis_PortRange struct {
+type NetworkInsightsAnalysis_PortRange[T any] struct {
 
 	// From AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from
-	From *int `json:"From,omitempty"`
+	From *T `json:"From,omitempty"`
 
 	// To AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to
-	To *int `json:"To,omitempty"`
+	To *T `json:"To,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkInsightsAnalysis_PortRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_PortRange) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_PortRange[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.PortRange"
 }

@@ -8,7 +8,7 @@ import (
 
 // ComputeEnvironment_Ec2ConfigurationObject AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.Ec2ConfigurationObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html
-type ComputeEnvironment_Ec2ConfigurationObject struct {
+type ComputeEnvironment_Ec2ConfigurationObject[T any] struct {
 
 	// ImageIdOverride AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ComputeEnvironment_Ec2ConfigurationObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment_Ec2ConfigurationObject) AWSCloudFormationType() string {
+func (r *ComputeEnvironment_Ec2ConfigurationObject[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.Ec2ConfigurationObject"
 }

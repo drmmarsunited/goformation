@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_DatadogConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofilecredentials.html
-type ConnectorProfile_DatadogConnectorProfileCredentials struct {
+type ConnectorProfile_DatadogConnectorProfileCredentials[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_DatadogConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_DatadogConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_DatadogConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileCredentials"
 }

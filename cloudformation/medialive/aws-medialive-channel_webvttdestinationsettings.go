@@ -8,7 +8,7 @@ import (
 
 // Channel_WebvttDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.WebvttDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-webvttdestinationsettings.html
-type Channel_WebvttDestinationSettings struct {
+type Channel_WebvttDestinationSettings[T any] struct {
 
 	// StyleControl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_WebvttDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_WebvttDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_WebvttDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.WebvttDestinationSettings"
 }

@@ -11,7 +11,7 @@ import (
 
 // Flow AWS CloudFormation Resource (AWS::MediaConnect::Flow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html
-type Flow struct {
+type Flow[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type Flow struct {
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-source
-	Source *Flow_Source `json:"Source"`
+	Source *Flow_Source[any] `json:"Source"`
 
 	// SourceFailoverConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-sourcefailoverconfig
-	SourceFailoverConfig *Flow_FailoverConfig `json:"SourceFailoverConfig,omitempty"`
+	SourceFailoverConfig *Flow_FailoverConfig[any] `json:"SourceFailoverConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type Flow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow) AWSCloudFormationType() string {
+func (r *Flow[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::Flow"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Flow) MarshalJSON() ([]byte, error) {
-	type Properties Flow
+func (r Flow[any]) MarshalJSON() ([]byte, error) {
+	type Properties Flow[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Flow) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Flow) UnmarshalJSON(b []byte) error {
-	type Properties Flow
+func (r *Flow[any]) UnmarshalJSON(b []byte) error {
+	type Properties Flow[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Flow) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Flow(*res.Properties)
+		*r = Flow[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

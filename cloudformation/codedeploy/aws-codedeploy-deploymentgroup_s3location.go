@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_S3Location AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html
-type DeploymentGroup_S3Location struct {
+type DeploymentGroup_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DeploymentGroup_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_S3Location) AWSCloudFormationType() string {
+func (r *DeploymentGroup_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.S3Location"
 }

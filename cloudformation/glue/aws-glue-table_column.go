@@ -8,7 +8,7 @@ import (
 
 // Table_Column AWS CloudFormation Resource (AWS::Glue::Table.Column)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html
-type Table_Column struct {
+type Table_Column[T any] struct {
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Table_Column struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_Column) AWSCloudFormationType() string {
+func (r *Table_Column[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.Column"
 }

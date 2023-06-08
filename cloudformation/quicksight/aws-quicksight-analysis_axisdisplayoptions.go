@@ -8,7 +8,7 @@ import (
 
 // Analysis_AxisDisplayOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisDisplayOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html
-type Analysis_AxisDisplayOptions struct {
+type Analysis_AxisDisplayOptions[T any] struct {
 
 	// AxisLineVisibility AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_AxisDisplayOptions struct {
 	// DataOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-dataoptions
-	DataOptions *Analysis_AxisDataOptions `json:"DataOptions,omitempty"`
+	DataOptions *Analysis_AxisDataOptions[any] `json:"DataOptions,omitempty"`
 
 	// GridLineVisibility AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Analysis_AxisDisplayOptions struct {
 	// ScrollbarOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-scrollbaroptions
-	ScrollbarOptions *Analysis_ScrollBarOptions `json:"ScrollbarOptions,omitempty"`
+	ScrollbarOptions *Analysis_ScrollBarOptions[any] `json:"ScrollbarOptions,omitempty"`
 
 	// TickLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-ticklabeloptions
-	TickLabelOptions *Analysis_AxisTickLabelOptions `json:"TickLabelOptions,omitempty"`
+	TickLabelOptions *Analysis_AxisTickLabelOptions[any] `json:"TickLabelOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Analysis_AxisDisplayOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisDisplayOptions) AWSCloudFormationType() string {
+func (r *Analysis_AxisDisplayOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisDisplayOptions"
 }

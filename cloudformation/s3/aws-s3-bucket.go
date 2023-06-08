@@ -12,12 +12,12 @@ import (
 
 // Bucket AWS CloudFormation Resource (AWS::S3::Bucket)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
-type Bucket struct {
+type Bucket[T any] struct {
 
 	// AccelerateConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration
-	AccelerateConfiguration *Bucket_AccelerateConfiguration `json:"AccelerateConfiguration,omitempty"`
+	AccelerateConfiguration *Bucket_AccelerateConfiguration[any] `json:"AccelerateConfiguration,omitempty"`
 
 	// AccessControl AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type Bucket struct {
 	// AnalyticsConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
-	AnalyticsConfigurations []Bucket_AnalyticsConfiguration `json:"AnalyticsConfigurations,omitempty"`
+	AnalyticsConfigurations []Bucket_AnalyticsConfiguration[any] `json:"AnalyticsConfigurations,omitempty"`
 
 	// BucketEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption
-	BucketEncryption *Bucket_BucketEncryption `json:"BucketEncryption,omitempty"`
+	BucketEncryption *Bucket_BucketEncryption[any] `json:"BucketEncryption,omitempty"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -42,62 +42,62 @@ type Bucket struct {
 	// CorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig
-	CorsConfiguration *Bucket_CorsConfiguration `json:"CorsConfiguration,omitempty"`
+	CorsConfiguration *Bucket_CorsConfiguration[any] `json:"CorsConfiguration,omitempty"`
 
 	// IntelligentTieringConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-intelligenttieringconfigurations
-	IntelligentTieringConfigurations []Bucket_IntelligentTieringConfiguration `json:"IntelligentTieringConfigurations,omitempty"`
+	IntelligentTieringConfigurations []Bucket_IntelligentTieringConfiguration[any] `json:"IntelligentTieringConfigurations,omitempty"`
 
 	// InventoryConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations
-	InventoryConfigurations []Bucket_InventoryConfiguration `json:"InventoryConfigurations,omitempty"`
+	InventoryConfigurations []Bucket_InventoryConfiguration[any] `json:"InventoryConfigurations,omitempty"`
 
 	// LifecycleConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-lifecycleconfig
-	LifecycleConfiguration *Bucket_LifecycleConfiguration `json:"LifecycleConfiguration,omitempty"`
+	LifecycleConfiguration *Bucket_LifecycleConfiguration[any] `json:"LifecycleConfiguration,omitempty"`
 
 	// LoggingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-loggingconfig
-	LoggingConfiguration *Bucket_LoggingConfiguration `json:"LoggingConfiguration,omitempty"`
+	LoggingConfiguration *Bucket_LoggingConfiguration[any] `json:"LoggingConfiguration,omitempty"`
 
 	// MetricsConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-metricsconfigurations
-	MetricsConfigurations []Bucket_MetricsConfiguration `json:"MetricsConfigurations,omitempty"`
+	MetricsConfigurations []Bucket_MetricsConfiguration[any] `json:"MetricsConfigurations,omitempty"`
 
 	// NotificationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-notification
-	NotificationConfiguration *Bucket_NotificationConfiguration `json:"NotificationConfiguration,omitempty"`
+	NotificationConfiguration *Bucket_NotificationConfiguration[any] `json:"NotificationConfiguration,omitempty"`
 
 	// ObjectLockConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
-	ObjectLockConfiguration *Bucket_ObjectLockConfiguration `json:"ObjectLockConfiguration,omitempty"`
+	ObjectLockConfiguration *Bucket_ObjectLockConfiguration[any] `json:"ObjectLockConfiguration,omitempty"`
 
 	// ObjectLockEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled
-	ObjectLockEnabled *bool `json:"ObjectLockEnabled,omitempty"`
+	ObjectLockEnabled *T `json:"ObjectLockEnabled,omitempty"`
 
 	// OwnershipControls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-ownershipcontrols
-	OwnershipControls *Bucket_OwnershipControls `json:"OwnershipControls,omitempty"`
+	OwnershipControls *Bucket_OwnershipControls[any] `json:"OwnershipControls,omitempty"`
 
 	// PublicAccessBlockConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration
-	PublicAccessBlockConfiguration *Bucket_PublicAccessBlockConfiguration `json:"PublicAccessBlockConfiguration,omitempty"`
+	PublicAccessBlockConfiguration *Bucket_PublicAccessBlockConfiguration[any] `json:"PublicAccessBlockConfiguration,omitempty"`
 
 	// ReplicationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration
-	ReplicationConfiguration *Bucket_ReplicationConfiguration `json:"ReplicationConfiguration,omitempty"`
+	ReplicationConfiguration *Bucket_ReplicationConfiguration[any] `json:"ReplicationConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -107,12 +107,12 @@ type Bucket struct {
 	// VersioningConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-versioning
-	VersioningConfiguration *Bucket_VersioningConfiguration `json:"VersioningConfiguration,omitempty"`
+	VersioningConfiguration *Bucket_VersioningConfiguration[any] `json:"VersioningConfiguration,omitempty"`
 
 	// WebsiteConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-websiteconfiguration
-	WebsiteConfiguration *Bucket_WebsiteConfiguration `json:"WebsiteConfiguration,omitempty"`
+	WebsiteConfiguration *Bucket_WebsiteConfiguration[any] `json:"WebsiteConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -131,14 +131,15 @@ type Bucket struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket) AWSCloudFormationType() string {
+func (r *Bucket[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Bucket) MarshalJSON() ([]byte, error) {
-	type Properties Bucket
+func (r Bucket[any]) MarshalJSON() ([]byte, error) {
+	type Properties Bucket[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -160,8 +161,9 @@ func (r Bucket) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Bucket) UnmarshalJSON(b []byte) error {
-	type Properties Bucket
+func (r *Bucket[any]) UnmarshalJSON(b []byte) error {
+	type Properties Bucket[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -181,7 +183,7 @@ func (r *Bucket) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Bucket(*res.Properties)
+		*r = Bucket[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

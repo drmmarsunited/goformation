@@ -8,12 +8,12 @@ import (
 
 // Function_EventSource AWS CloudFormation Resource (AWS::Serverless::Function.EventSource)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#event-source-object
-type Function_EventSource struct {
+type Function_EventSource[T any] struct {
 
 	// Properties AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#event-source-types
-	Properties *Function_Properties `json:"Properties"`
+	Properties *Function_Properties[any] `json:"Properties"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Function_EventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EventSource) AWSCloudFormationType() string {
+func (r *Function_EventSource[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.EventSource"
 }

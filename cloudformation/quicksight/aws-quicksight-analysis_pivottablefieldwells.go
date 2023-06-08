@@ -8,12 +8,12 @@ import (
 
 // Analysis_PivotTableFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTableFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablefieldwells.html
-type Analysis_PivotTableFieldWells struct {
+type Analysis_PivotTableFieldWells[T any] struct {
 
 	// PivotTableAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablefieldwells.html#cfn-quicksight-analysis-pivottablefieldwells-pivottableaggregatedfieldwells
-	PivotTableAggregatedFieldWells *Analysis_PivotTableAggregatedFieldWells `json:"PivotTableAggregatedFieldWells,omitempty"`
+	PivotTableAggregatedFieldWells *Analysis_PivotTableAggregatedFieldWells[any] `json:"PivotTableAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_PivotTableFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTableFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_PivotTableFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTableFieldWells"
 }

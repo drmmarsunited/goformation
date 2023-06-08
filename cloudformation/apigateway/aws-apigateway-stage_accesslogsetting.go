@@ -8,7 +8,7 @@ import (
 
 // Stage_AccessLogSetting AWS CloudFormation Resource (AWS::ApiGateway::Stage.AccessLogSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
-type Stage_AccessLogSetting struct {
+type Stage_AccessLogSetting[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Stage_AccessLogSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stage_AccessLogSetting) AWSCloudFormationType() string {
+func (r *Stage_AccessLogSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Stage.AccessLogSetting"
 }

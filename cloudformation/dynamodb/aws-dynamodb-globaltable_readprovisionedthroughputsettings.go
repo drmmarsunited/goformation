@@ -8,17 +8,17 @@ import (
 
 // GlobalTable_ReadProvisionedThroughputSettings AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReadProvisionedThroughputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html
-type GlobalTable_ReadProvisionedThroughputSettings struct {
+type GlobalTable_ReadProvisionedThroughputSettings[T any] struct {
 
 	// ReadCapacityAutoScalingSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityautoscalingsettings
-	ReadCapacityAutoScalingSettings *GlobalTable_CapacityAutoScalingSettings `json:"ReadCapacityAutoScalingSettings,omitempty"`
+	ReadCapacityAutoScalingSettings *GlobalTable_CapacityAutoScalingSettings[any] `json:"ReadCapacityAutoScalingSettings,omitempty"`
 
 	// ReadCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits
-	ReadCapacityUnits *int `json:"ReadCapacityUnits,omitempty"`
+	ReadCapacityUnits *T `json:"ReadCapacityUnits,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type GlobalTable_ReadProvisionedThroughputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_ReadProvisionedThroughputSettings) AWSCloudFormationType() string {
+func (r *GlobalTable_ReadProvisionedThroughputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.ReadProvisionedThroughputSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Instance_BlockDeviceMapping AWS CloudFormation Resource (AWS::OpsWorks::Instance.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html
-type Instance_BlockDeviceMapping struct {
+type Instance_BlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Instance_BlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs
-	Ebs *Instance_EbsBlockDevice `json:"Ebs,omitempty"`
+	Ebs *Instance_EbsBlockDevice[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Instance_BlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_BlockDeviceMapping) AWSCloudFormationType() string {
+func (r *Instance_BlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.BlockDeviceMapping"
 }

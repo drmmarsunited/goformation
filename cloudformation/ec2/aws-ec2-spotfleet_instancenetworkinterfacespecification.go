@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_InstanceNetworkInterfaceSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html
-type SpotFleet_InstanceNetworkInterfaceSpecification struct {
+type SpotFleet_InstanceNetworkInterfaceSpecification[T any] struct {
 
 	// AssociatePublicIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-associatepublicipaddress
-	AssociatePublicIpAddress *bool `json:"AssociatePublicIpAddress,omitempty"`
+	AssociatePublicIpAddress *T `json:"AssociatePublicIpAddress,omitempty"`
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-deleteontermination
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type SpotFleet_InstanceNetworkInterfaceSpecification struct {
 	// DeviceIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-deviceindex
-	DeviceIndex *int `json:"DeviceIndex,omitempty"`
+	DeviceIndex *T `json:"DeviceIndex,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type SpotFleet_InstanceNetworkInterfaceSpecification struct {
 	// Ipv6AddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-ipv6addresscount
-	Ipv6AddressCount *int `json:"Ipv6AddressCount,omitempty"`
+	Ipv6AddressCount *T `json:"Ipv6AddressCount,omitempty"`
 
 	// Ipv6Addresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-ipv6addresses
-	Ipv6Addresses []SpotFleet_InstanceIpv6Address `json:"Ipv6Addresses,omitempty"`
+	Ipv6Addresses []SpotFleet_InstanceIpv6Address[any] `json:"Ipv6Addresses,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type SpotFleet_InstanceNetworkInterfaceSpecification struct {
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-privateipaddresses
-	PrivateIpAddresses []SpotFleet_PrivateIpAddressSpecification `json:"PrivateIpAddresses,omitempty"`
+	PrivateIpAddresses []SpotFleet_PrivateIpAddressSpecification[any] `json:"PrivateIpAddresses,omitempty"`
 
 	// SecondaryPrivateIpAddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-secondaryprivateipaddresscount
-	SecondaryPrivateIpAddressCount *int `json:"SecondaryPrivateIpAddressCount,omitempty"`
+	SecondaryPrivateIpAddressCount *T `json:"SecondaryPrivateIpAddressCount,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type SpotFleet_InstanceNetworkInterfaceSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_InstanceNetworkInterfaceSpecification) AWSCloudFormationType() string {
+func (r *SpotFleet_InstanceNetworkInterfaceSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification"
 }

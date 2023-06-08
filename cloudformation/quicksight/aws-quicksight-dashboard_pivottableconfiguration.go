@@ -8,37 +8,37 @@ import (
 
 // Dashboard_PivotTableConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html
-type Dashboard_PivotTableConfiguration struct {
+type Dashboard_PivotTableConfiguration[T any] struct {
 
 	// FieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-fieldoptions
-	FieldOptions *Dashboard_PivotTableFieldOptions `json:"FieldOptions,omitempty"`
+	FieldOptions *Dashboard_PivotTableFieldOptions[any] `json:"FieldOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-fieldwells
-	FieldWells *Dashboard_PivotTableFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_PivotTableFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// PaginatedReportOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-paginatedreportoptions
-	PaginatedReportOptions *Dashboard_PivotTablePaginatedReportOptions `json:"PaginatedReportOptions,omitempty"`
+	PaginatedReportOptions *Dashboard_PivotTablePaginatedReportOptions[any] `json:"PaginatedReportOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_PivotTableSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_PivotTableSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// TableOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-tableoptions
-	TableOptions *Dashboard_PivotTableOptions `json:"TableOptions,omitempty"`
+	TableOptions *Dashboard_PivotTableOptions[any] `json:"TableOptions,omitempty"`
 
 	// TotalOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottableconfiguration.html#cfn-quicksight-dashboard-pivottableconfiguration-totaloptions
-	TotalOptions *Dashboard_PivotTableTotalOptions `json:"TotalOptions,omitempty"`
+	TotalOptions *Dashboard_PivotTableTotalOptions[any] `json:"TotalOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Dashboard_PivotTableConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableConfiguration"
 }

@@ -8,17 +8,17 @@ import (
 
 // Budget_BudgetData AWS CloudFormation Resource (AWS::Budgets::Budget.BudgetData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html
-type Budget_BudgetData struct {
+type Budget_BudgetData[T any] struct {
 
 	// AutoAdjustData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-autoadjustdata
-	AutoAdjustData *Budget_AutoAdjustData `json:"AutoAdjustData,omitempty"`
+	AutoAdjustData *Budget_AutoAdjustData[any] `json:"AutoAdjustData,omitempty"`
 
 	// BudgetLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetlimit
-	BudgetLimit *Budget_Spend `json:"BudgetLimit,omitempty"`
+	BudgetLimit *Budget_Spend[any] `json:"BudgetLimit,omitempty"`
 
 	// BudgetName AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Budget_BudgetData struct {
 	// CostTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costtypes
-	CostTypes *Budget_CostTypes `json:"CostTypes,omitempty"`
+	CostTypes *Budget_CostTypes[any] `json:"CostTypes,omitempty"`
 
 	// PlannedBudgetLimits AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Budget_BudgetData struct {
 	// TimePeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeperiod
-	TimePeriod *Budget_TimePeriod `json:"TimePeriod,omitempty"`
+	TimePeriod *Budget_TimePeriod[any] `json:"TimePeriod,omitempty"`
 
 	// TimeUnit AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type Budget_BudgetData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_BudgetData) AWSCloudFormationType() string {
+func (r *Budget_BudgetData[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.BudgetData"
 }

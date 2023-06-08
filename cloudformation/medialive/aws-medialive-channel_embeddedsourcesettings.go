@@ -8,7 +8,7 @@ import (
 
 // Channel_EmbeddedSourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EmbeddedSourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html
-type Channel_EmbeddedSourceSettings struct {
+type Channel_EmbeddedSourceSettings[T any] struct {
 
 	// Convert608To708 AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Channel_EmbeddedSourceSettings struct {
 	// Source608ChannelNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608channelnumber
-	Source608ChannelNumber *int `json:"Source608ChannelNumber,omitempty"`
+	Source608ChannelNumber *T `json:"Source608ChannelNumber,omitempty"`
 
 	// Source608TrackNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608tracknumber
-	Source608TrackNumber *int `json:"Source608TrackNumber,omitempty"`
+	Source608TrackNumber *T `json:"Source608TrackNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_EmbeddedSourceSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_EmbeddedSourceSettings) AWSCloudFormationType() string {
+func (r *Channel_EmbeddedSourceSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.EmbeddedSourceSettings"
 }

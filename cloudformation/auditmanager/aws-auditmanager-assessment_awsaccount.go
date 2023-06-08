@@ -8,7 +8,7 @@ import (
 
 // Assessment_AWSAccount AWS CloudFormation Resource (AWS::AuditManager::Assessment.AWSAccount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html
-type Assessment_AWSAccount struct {
+type Assessment_AWSAccount[T any] struct {
 
 	// EmailAddress AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Assessment_AWSAccount struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Assessment_AWSAccount) AWSCloudFormationType() string {
+func (r *Assessment_AWSAccount[any]) AWSCloudFormationType() string {
 	return "AWS::AuditManager::Assessment.AWSAccount"
 }

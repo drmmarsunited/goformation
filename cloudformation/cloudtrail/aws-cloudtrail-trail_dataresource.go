@@ -8,7 +8,7 @@ import (
 
 // Trail_DataResource AWS CloudFormation Resource (AWS::CloudTrail::Trail.DataResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html
-type Trail_DataResource struct {
+type Trail_DataResource[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Trail_DataResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trail_DataResource) AWSCloudFormationType() string {
+func (r *Trail_DataResource[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Trail.DataResource"
 }

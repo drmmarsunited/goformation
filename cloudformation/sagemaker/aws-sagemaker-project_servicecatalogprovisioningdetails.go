@@ -8,7 +8,7 @@ import (
 
 // Project_ServiceCatalogProvisioningDetails AWS CloudFormation Resource (AWS::SageMaker::Project.ServiceCatalogProvisioningDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html
-type Project_ServiceCatalogProvisioningDetails struct {
+type Project_ServiceCatalogProvisioningDetails[T any] struct {
 
 	// PathId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Project_ServiceCatalogProvisioningDetails struct {
 	// ProvisioningParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningparameters
-	ProvisioningParameters []Project_ProvisioningParameter `json:"ProvisioningParameters,omitempty"`
+	ProvisioningParameters []Project_ProvisioningParameter[any] `json:"ProvisioningParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Project_ServiceCatalogProvisioningDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ServiceCatalogProvisioningDetails) AWSCloudFormationType() string {
+func (r *Project_ServiceCatalogProvisioningDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Project.ServiceCatalogProvisioningDetails"
 }

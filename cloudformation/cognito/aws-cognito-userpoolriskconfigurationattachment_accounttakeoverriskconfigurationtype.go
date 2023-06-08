@@ -8,17 +8,17 @@ import (
 
 // UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html
-type UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType struct {
+type UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-actions
-	Actions *UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType `json:"Actions"`
+	Actions *UserPoolRiskConfigurationAttachment_AccountTakeoverActionsType[any] `json:"Actions"`
 
 	// NotifyConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-notifyconfiguration
-	NotifyConfiguration *UserPoolRiskConfigurationAttachment_NotifyConfigurationType `json:"NotifyConfiguration,omitempty"`
+	NotifyConfiguration *UserPoolRiskConfigurationAttachment_NotifyConfigurationType[any] `json:"NotifyConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType st
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType"
 }

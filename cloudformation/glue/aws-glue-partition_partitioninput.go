@@ -8,7 +8,7 @@ import (
 
 // Partition_PartitionInput AWS CloudFormation Resource (AWS::Glue::Partition.PartitionInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
-type Partition_PartitionInput struct {
+type Partition_PartitionInput[T any] struct {
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Partition_PartitionInput struct {
 	// StorageDescriptor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor
-	StorageDescriptor *Partition_StorageDescriptor `json:"StorageDescriptor,omitempty"`
+	StorageDescriptor *Partition_StorageDescriptor[any] `json:"StorageDescriptor,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Partition_PartitionInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition_PartitionInput) AWSCloudFormationType() string {
+func (r *Partition_PartitionInput[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.PartitionInput"
 }

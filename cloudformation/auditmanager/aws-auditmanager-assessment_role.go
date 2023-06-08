@@ -8,7 +8,7 @@ import (
 
 // Assessment_Role AWS CloudFormation Resource (AWS::AuditManager::Assessment.Role)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-role.html
-type Assessment_Role struct {
+type Assessment_Role[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Assessment_Role struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Assessment_Role) AWSCloudFormationType() string {
+func (r *Assessment_Role[any]) AWSCloudFormationType() string {
 	return "AWS::AuditManager::Assessment.Role"
 }

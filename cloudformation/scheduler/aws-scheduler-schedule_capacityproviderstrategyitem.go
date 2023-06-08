@@ -8,12 +8,12 @@ import (
 
 // Schedule_CapacityProviderStrategyItem AWS CloudFormation Resource (AWS::Scheduler::Schedule.CapacityProviderStrategyItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-capacityproviderstrategyitem.html
-type Schedule_CapacityProviderStrategyItem struct {
+type Schedule_CapacityProviderStrategyItem[T any] struct {
 
 	// Base AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-capacityproviderstrategyitem.html#cfn-scheduler-schedule-capacityproviderstrategyitem-base
-	Base *float64 `json:"Base,omitempty"`
+	Base *T `json:"Base,omitempty"`
 
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Schedule_CapacityProviderStrategyItem struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-capacityproviderstrategyitem.html#cfn-scheduler-schedule-capacityproviderstrategyitem-weight
-	Weight *float64 `json:"Weight,omitempty"`
+	Weight *T `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Schedule_CapacityProviderStrategyItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_CapacityProviderStrategyItem) AWSCloudFormationType() string {
+func (r *Schedule_CapacityProviderStrategyItem[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.CapacityProviderStrategyItem"
 }

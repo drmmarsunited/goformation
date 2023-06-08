@@ -8,7 +8,7 @@ import (
 
 // ObjectType_FieldMap AWS CloudFormation Resource (AWS::CustomerProfiles::ObjectType.FieldMap)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-fieldmap.html
-type ObjectType_FieldMap struct {
+type ObjectType_FieldMap[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ObjectType_FieldMap struct {
 	// ObjectTypeField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-fieldmap.html#cfn-customerprofiles-objecttype-fieldmap-objecttypefield
-	ObjectTypeField *ObjectType_ObjectTypeField `json:"ObjectTypeField,omitempty"`
+	ObjectTypeField *ObjectType_ObjectTypeField[any] `json:"ObjectTypeField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ObjectType_FieldMap struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ObjectType_FieldMap) AWSCloudFormationType() string {
+func (r *ObjectType_FieldMap[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::ObjectType.FieldMap"
 }

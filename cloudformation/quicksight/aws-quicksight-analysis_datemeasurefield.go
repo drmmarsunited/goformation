@@ -8,7 +8,7 @@ import (
 
 // Analysis_DateMeasureField AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateMeasureField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datemeasurefield.html
-type Analysis_DateMeasureField struct {
+type Analysis_DateMeasureField[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_DateMeasureField struct {
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datemeasurefield.html#cfn-quicksight-analysis-datemeasurefield-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_DateMeasureField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datemeasurefield.html#cfn-quicksight-analysis-datemeasurefield-formatconfiguration
-	FormatConfiguration *Analysis_DateTimeFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_DateTimeFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_DateMeasureField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateMeasureField) AWSCloudFormationType() string {
+func (r *Analysis_DateMeasureField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateMeasureField"
 }

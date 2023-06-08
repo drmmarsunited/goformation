@@ -8,7 +8,7 @@ import (
 
 // Pipe_BatchEnvironmentVariable AWS CloudFormation Resource (AWS::Pipes::Pipe.BatchEnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchenvironmentvariable.html
-type Pipe_BatchEnvironmentVariable struct {
+type Pipe_BatchEnvironmentVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_BatchEnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_BatchEnvironmentVariable) AWSCloudFormationType() string {
+func (r *Pipe_BatchEnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.BatchEnvironmentVariable"
 }

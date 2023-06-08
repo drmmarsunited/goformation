@@ -8,17 +8,17 @@ import (
 
 // Server_WorkflowDetails AWS CloudFormation Resource (AWS::Transfer::Server.WorkflowDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html
-type Server_WorkflowDetails struct {
+type Server_WorkflowDetails[T any] struct {
 
 	// OnPartialUpload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html#cfn-transfer-server-workflowdetails-onpartialupload
-	OnPartialUpload []Server_WorkflowDetail `json:"OnPartialUpload,omitempty"`
+	OnPartialUpload []Server_WorkflowDetail[any] `json:"OnPartialUpload,omitempty"`
 
 	// OnUpload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html#cfn-transfer-server-workflowdetails-onupload
-	OnUpload []Server_WorkflowDetail `json:"OnUpload,omitempty"`
+	OnUpload []Server_WorkflowDetail[any] `json:"OnUpload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Server_WorkflowDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_WorkflowDetails) AWSCloudFormationType() string {
+func (r *Server_WorkflowDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.WorkflowDetails"
 }

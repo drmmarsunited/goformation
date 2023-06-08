@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_HttpHeaderConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html
-type ListenerRule_HttpHeaderConfig struct {
+type ListenerRule_HttpHeaderConfig[T any] struct {
 
 	// HttpHeaderName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ListenerRule_HttpHeaderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_HttpHeaderConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_HttpHeaderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Cluster_MetricDimension AWS CloudFormation Resource (AWS::EMR::Cluster.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html
-type Cluster_MetricDimension struct {
+type Cluster_MetricDimension[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Cluster_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_MetricDimension) AWSCloudFormationType() string {
+func (r *Cluster_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.MetricDimension"
 }

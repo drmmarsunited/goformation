@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_InstanceMarketOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.InstanceMarketOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html
-type LaunchTemplate_InstanceMarketOptions struct {
+type LaunchTemplate_InstanceMarketOptions[T any] struct {
 
 	// MarketType AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LaunchTemplate_InstanceMarketOptions struct {
 	// SpotOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions
-	SpotOptions *LaunchTemplate_SpotOptions `json:"SpotOptions,omitempty"`
+	SpotOptions *LaunchTemplate_SpotOptions[any] `json:"SpotOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_InstanceMarketOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_InstanceMarketOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_InstanceMarketOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.InstanceMarketOptions"
 }

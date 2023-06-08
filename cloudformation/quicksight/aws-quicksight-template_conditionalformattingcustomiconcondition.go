@@ -8,7 +8,7 @@ import (
 
 // Template_ConditionalFormattingCustomIconCondition AWS CloudFormation Resource (AWS::QuickSight::Template.ConditionalFormattingCustomIconCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingcustomiconcondition.html
-type Template_ConditionalFormattingCustomIconCondition struct {
+type Template_ConditionalFormattingCustomIconCondition[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_ConditionalFormattingCustomIconCondition struct {
 	// DisplayConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingcustomiconcondition.html#cfn-quicksight-template-conditionalformattingcustomiconcondition-displayconfiguration
-	DisplayConfiguration *Template_ConditionalFormattingIconDisplayConfiguration `json:"DisplayConfiguration,omitempty"`
+	DisplayConfiguration *Template_ConditionalFormattingIconDisplayConfiguration[any] `json:"DisplayConfiguration,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_ConditionalFormattingCustomIconCondition struct {
 	// IconOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingcustomiconcondition.html#cfn-quicksight-template-conditionalformattingcustomiconcondition-iconoptions
-	IconOptions *Template_ConditionalFormattingCustomIconOptions `json:"IconOptions"`
+	IconOptions *Template_ConditionalFormattingCustomIconOptions[any] `json:"IconOptions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_ConditionalFormattingCustomIconCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ConditionalFormattingCustomIconCondition) AWSCloudFormationType() string {
+func (r *Template_ConditionalFormattingCustomIconCondition[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ConditionalFormattingCustomIconCondition"
 }

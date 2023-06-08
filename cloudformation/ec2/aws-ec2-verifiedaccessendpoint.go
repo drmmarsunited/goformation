@@ -12,7 +12,7 @@ import (
 
 // VerifiedAccessEndpoint AWS CloudFormation Resource (AWS::EC2::VerifiedAccessEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html
-type VerifiedAccessEndpoint struct {
+type VerifiedAccessEndpoint[T any] struct {
 
 	// ApplicationDomain AWS CloudFormation Property
 	// Required: true
@@ -47,12 +47,12 @@ type VerifiedAccessEndpoint struct {
 	// LoadBalancerOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-loadbalanceroptions
-	LoadBalancerOptions *VerifiedAccessEndpoint_LoadBalancerOptions `json:"LoadBalancerOptions,omitempty"`
+	LoadBalancerOptions *VerifiedAccessEndpoint_LoadBalancerOptions[any] `json:"LoadBalancerOptions,omitempty"`
 
 	// NetworkInterfaceOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-networkinterfaceoptions
-	NetworkInterfaceOptions *VerifiedAccessEndpoint_NetworkInterfaceOptions `json:"NetworkInterfaceOptions,omitempty"`
+	NetworkInterfaceOptions *VerifiedAccessEndpoint_NetworkInterfaceOptions[any] `json:"NetworkInterfaceOptions,omitempty"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type VerifiedAccessEndpoint struct {
 	// PolicyEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-policyenabled
-	PolicyEnabled *bool `json:"PolicyEnabled,omitempty"`
+	PolicyEnabled *T `json:"PolicyEnabled,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type VerifiedAccessEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessEndpoint) AWSCloudFormationType() string {
+func (r *VerifiedAccessEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VerifiedAccessEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties VerifiedAccessEndpoint
+func (r VerifiedAccessEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties VerifiedAccessEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r VerifiedAccessEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VerifiedAccessEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties VerifiedAccessEndpoint
+func (r *VerifiedAccessEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties VerifiedAccessEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *VerifiedAccessEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VerifiedAccessEndpoint(*res.Properties)
+		*r = VerifiedAccessEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

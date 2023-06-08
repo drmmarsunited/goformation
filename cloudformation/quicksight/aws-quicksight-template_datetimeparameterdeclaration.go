@@ -8,17 +8,17 @@ import (
 
 // Template_DateTimeParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Template.DateTimeParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeparameterdeclaration.html
-type Template_DateTimeParameterDeclaration struct {
+type Template_DateTimeParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeparameterdeclaration.html#cfn-quicksight-template-datetimeparameterdeclaration-defaultvalues
-	DefaultValues *Template_DateTimeDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Template_DateTimeDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeparameterdeclaration.html#cfn-quicksight-template-datetimeparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Template_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Template_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Template_DateTimeParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimeparameterdeclaration.html#cfn-quicksight-template-datetimeparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Template_DateTimeValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Template_DateTimeValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Template_DateTimeParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DateTimeParameterDeclaration) AWSCloudFormationType() string {
+func (r *Template_DateTimeParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DateTimeParameterDeclaration"
 }

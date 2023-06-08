@@ -8,12 +8,12 @@ import (
 
 // Service_CodeConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.CodeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfiguration.html
-type Service_CodeConfiguration struct {
+type Service_CodeConfiguration[T any] struct {
 
 	// CodeConfigurationValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfiguration.html#cfn-apprunner-service-codeconfiguration-codeconfigurationvalues
-	CodeConfigurationValues *Service_CodeConfigurationValues `json:"CodeConfigurationValues,omitempty"`
+	CodeConfigurationValues *Service_CodeConfigurationValues[any] `json:"CodeConfigurationValues,omitempty"`
 
 	// ConfigurationSource AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Service_CodeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_CodeConfiguration) AWSCloudFormationType() string {
+func (r *Service_CodeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.CodeConfiguration"
 }

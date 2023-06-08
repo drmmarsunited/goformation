@@ -12,7 +12,7 @@ import (
 
 // CACertificate AWS CloudFormation Resource (AWS::IoT::CACertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html
-type CACertificate struct {
+type CACertificate[T any] struct {
 
 	// AutoRegistrationStatus AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type CACertificate struct {
 	// RegistrationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-registrationconfig
-	RegistrationConfig *CACertificate_RegistrationConfig `json:"RegistrationConfig,omitempty"`
+	RegistrationConfig *CACertificate_RegistrationConfig[any] `json:"RegistrationConfig,omitempty"`
 
 	// RemoveAutoRegistration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-removeautoregistration
-	RemoveAutoRegistration *bool `json:"RemoveAutoRegistration,omitempty"`
+	RemoveAutoRegistration *T `json:"RemoveAutoRegistration,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type CACertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CACertificate) AWSCloudFormationType() string {
+func (r *CACertificate[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::CACertificate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CACertificate) MarshalJSON() ([]byte, error) {
-	type Properties CACertificate
+func (r CACertificate[any]) MarshalJSON() ([]byte, error) {
+	type Properties CACertificate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r CACertificate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CACertificate) UnmarshalJSON(b []byte) error {
-	type Properties CACertificate
+func (r *CACertificate[any]) UnmarshalJSON(b []byte) error {
+	type Properties CACertificate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *CACertificate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CACertificate(*res.Properties)
+		*r = CACertificate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

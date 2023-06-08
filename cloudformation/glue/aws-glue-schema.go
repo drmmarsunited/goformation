@@ -12,12 +12,12 @@ import (
 
 // Schema AWS CloudFormation Resource (AWS::Glue::Schema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html
-type Schema struct {
+type Schema[T any] struct {
 
 	// CheckpointVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-checkpointversion
-	CheckpointVersion *Schema_SchemaVersion `json:"CheckpointVersion,omitempty"`
+	CheckpointVersion *Schema_SchemaVersion[any] `json:"CheckpointVersion,omitempty"`
 
 	// Compatibility AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Schema struct {
 	// Registry AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-registry
-	Registry *Schema_Registry `json:"Registry,omitempty"`
+	Registry *Schema_Registry[any] `json:"Registry,omitempty"`
 
 	// SchemaDefinition AWS CloudFormation Property
 	// Required: true
@@ -71,14 +71,15 @@ type Schema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schema) AWSCloudFormationType() string {
+func (r *Schema[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Schema"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Schema) MarshalJSON() ([]byte, error) {
-	type Properties Schema
+func (r Schema[any]) MarshalJSON() ([]byte, error) {
+	type Properties Schema[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Schema) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Schema) UnmarshalJSON(b []byte) error {
-	type Properties Schema
+func (r *Schema[any]) UnmarshalJSON(b []byte) error {
+	type Properties Schema[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Schema) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Schema(*res.Properties)
+		*r = Schema[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

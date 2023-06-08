@@ -8,7 +8,7 @@ import (
 
 // Model_VpcConfig AWS CloudFormation Resource (AWS::SageMaker::Model.VpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html
-type Model_VpcConfig struct {
+type Model_VpcConfig[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Model_VpcConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_VpcConfig) AWSCloudFormationType() string {
+func (r *Model_VpcConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.VpcConfig"
 }

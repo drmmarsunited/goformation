@@ -12,12 +12,12 @@ import (
 
 // JobTemplate AWS CloudFormation Resource (AWS::IoT::JobTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html
-type JobTemplate struct {
+type JobTemplate[T any] struct {
 
 	// AbortConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-abortconfig
-	AbortConfig *JobTemplate_AbortConfig `json:"AbortConfig,omitempty"`
+	AbortConfig *JobTemplate_AbortConfig[any] `json:"AbortConfig,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -42,12 +42,12 @@ type JobTemplate struct {
 	// JobExecutionsRetryConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsretryconfig
-	JobExecutionsRetryConfig *JobTemplate_JobExecutionsRetryConfig `json:"JobExecutionsRetryConfig,omitempty"`
+	JobExecutionsRetryConfig *JobTemplate_JobExecutionsRetryConfig[any] `json:"JobExecutionsRetryConfig,omitempty"`
 
 	// JobExecutionsRolloutConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig
-	JobExecutionsRolloutConfig *JobTemplate_JobExecutionsRolloutConfig `json:"JobExecutionsRolloutConfig,omitempty"`
+	JobExecutionsRolloutConfig *JobTemplate_JobExecutionsRolloutConfig[any] `json:"JobExecutionsRolloutConfig,omitempty"`
 
 	// JobTemplateId AWS CloudFormation Property
 	// Required: true
@@ -57,12 +57,12 @@ type JobTemplate struct {
 	// MaintenanceWindows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-maintenancewindows
-	MaintenanceWindows []JobTemplate_MaintenanceWindow `json:"MaintenanceWindows,omitempty"`
+	MaintenanceWindows []JobTemplate_MaintenanceWindow[any] `json:"MaintenanceWindows,omitempty"`
 
 	// PresignedUrlConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-presignedurlconfig
-	PresignedUrlConfig *JobTemplate_PresignedUrlConfig `json:"PresignedUrlConfig,omitempty"`
+	PresignedUrlConfig *JobTemplate_PresignedUrlConfig[any] `json:"PresignedUrlConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type JobTemplate struct {
 	// TimeoutConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-timeoutconfig
-	TimeoutConfig *JobTemplate_TimeoutConfig `json:"TimeoutConfig,omitempty"`
+	TimeoutConfig *JobTemplate_TimeoutConfig[any] `json:"TimeoutConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -91,14 +91,15 @@ type JobTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate) AWSCloudFormationType() string {
+func (r *JobTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r JobTemplate) MarshalJSON() ([]byte, error) {
-	type Properties JobTemplate
+func (r JobTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties JobTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -120,8 +121,9 @@ func (r JobTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *JobTemplate) UnmarshalJSON(b []byte) error {
-	type Properties JobTemplate
+func (r *JobTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties JobTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -141,7 +143,7 @@ func (r *JobTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = JobTemplate(*res.Properties)
+		*r = JobTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

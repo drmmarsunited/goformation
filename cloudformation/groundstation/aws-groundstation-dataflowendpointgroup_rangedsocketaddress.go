@@ -8,7 +8,7 @@ import (
 
 // DataflowEndpointGroup_RangedSocketAddress AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.RangedSocketAddress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedsocketaddress.html
-type DataflowEndpointGroup_RangedSocketAddress struct {
+type DataflowEndpointGroup_RangedSocketAddress[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataflowEndpointGroup_RangedSocketAddress struct {
 	// PortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedsocketaddress.html#cfn-groundstation-dataflowendpointgroup-rangedsocketaddress-portrange
-	PortRange *DataflowEndpointGroup_IntegerRange `json:"PortRange,omitempty"`
+	PortRange *DataflowEndpointGroup_IntegerRange[any] `json:"PortRange,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataflowEndpointGroup_RangedSocketAddress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_RangedSocketAddress) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_RangedSocketAddress[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.RangedSocketAddress"
 }

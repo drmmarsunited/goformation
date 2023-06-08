@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ReferenceLineLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinelabelconfiguration.html
-type Dashboard_ReferenceLineLabelConfiguration struct {
+type Dashboard_ReferenceLineLabelConfiguration[T any] struct {
 
 	// CustomLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinelabelconfiguration.html#cfn-quicksight-dashboard-referencelinelabelconfiguration-customlabelconfiguration
-	CustomLabelConfiguration *Dashboard_ReferenceLineCustomLabelConfiguration `json:"CustomLabelConfiguration,omitempty"`
+	CustomLabelConfiguration *Dashboard_ReferenceLineCustomLabelConfiguration[any] `json:"CustomLabelConfiguration,omitempty"`
 
 	// FontColor AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_ReferenceLineLabelConfiguration struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinelabelconfiguration.html#cfn-quicksight-dashboard-referencelinelabelconfiguration-fontconfiguration
-	FontConfiguration *Dashboard_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Dashboard_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// HorizontalPosition AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_ReferenceLineLabelConfiguration struct {
 	// ValueLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinelabelconfiguration.html#cfn-quicksight-dashboard-referencelinelabelconfiguration-valuelabelconfiguration
-	ValueLabelConfiguration *Dashboard_ReferenceLineValueLabelConfiguration `json:"ValueLabelConfiguration,omitempty"`
+	ValueLabelConfiguration *Dashboard_ReferenceLineValueLabelConfiguration[any] `json:"ValueLabelConfiguration,omitempty"`
 
 	// VerticalPosition AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Dashboard_ReferenceLineLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineLabelConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineLabelConfiguration"
 }

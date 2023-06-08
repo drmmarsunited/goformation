@@ -8,62 +8,62 @@ import (
 
 // Dashboard_BoxPlotChartConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BoxPlotChartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html
-type Dashboard_BoxPlotChartConfiguration struct {
+type Dashboard_BoxPlotChartConfiguration[T any] struct {
 
 	// BoxPlotOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-boxplotoptions
-	BoxPlotOptions *Dashboard_BoxPlotOptions `json:"BoxPlotOptions,omitempty"`
+	BoxPlotOptions *Dashboard_BoxPlotOptions[any] `json:"BoxPlotOptions,omitempty"`
 
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-categoryaxis
-	CategoryAxis *Dashboard_AxisDisplayOptions `json:"CategoryAxis,omitempty"`
+	CategoryAxis *Dashboard_AxisDisplayOptions[any] `json:"CategoryAxis,omitempty"`
 
 	// CategoryLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-categorylabeloptions
-	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions `json:"CategoryLabelOptions,omitempty"`
+	CategoryLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"CategoryLabelOptions,omitempty"`
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-fieldwells
-	FieldWells *Dashboard_BoxPlotFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_BoxPlotFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// Legend AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-legend
-	Legend *Dashboard_LegendOptions `json:"Legend,omitempty"`
+	Legend *Dashboard_LegendOptions[any] `json:"Legend,omitempty"`
 
 	// PrimaryYAxisDisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-primaryyaxisdisplayoptions
-	PrimaryYAxisDisplayOptions *Dashboard_AxisDisplayOptions `json:"PrimaryYAxisDisplayOptions,omitempty"`
+	PrimaryYAxisDisplayOptions *Dashboard_AxisDisplayOptions[any] `json:"PrimaryYAxisDisplayOptions,omitempty"`
 
 	// PrimaryYAxisLabelOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-primaryyaxislabeloptions
-	PrimaryYAxisLabelOptions *Dashboard_ChartAxisLabelOptions `json:"PrimaryYAxisLabelOptions,omitempty"`
+	PrimaryYAxisLabelOptions *Dashboard_ChartAxisLabelOptions[any] `json:"PrimaryYAxisLabelOptions,omitempty"`
 
 	// ReferenceLines AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-referencelines
-	ReferenceLines []Dashboard_ReferenceLine `json:"ReferenceLines,omitempty"`
+	ReferenceLines []Dashboard_ReferenceLine[any] `json:"ReferenceLines,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_BoxPlotSortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_BoxPlotSortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// Tooltip AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-tooltip
-	Tooltip *Dashboard_TooltipOptions `json:"Tooltip,omitempty"`
+	Tooltip *Dashboard_TooltipOptions[any] `json:"Tooltip,omitempty"`
 
 	// VisualPalette AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotchartconfiguration.html#cfn-quicksight-dashboard-boxplotchartconfiguration-visualpalette
-	VisualPalette *Dashboard_VisualPalette `json:"VisualPalette,omitempty"`
+	VisualPalette *Dashboard_VisualPalette[any] `json:"VisualPalette,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Dashboard_BoxPlotChartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BoxPlotChartConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_BoxPlotChartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BoxPlotChartConfiguration"
 }

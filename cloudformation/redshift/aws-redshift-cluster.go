@@ -12,12 +12,12 @@ import (
 
 // Cluster AWS CloudFormation Resource (AWS::Redshift::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html
-type Cluster struct {
+type Cluster[T any] struct {
 
 	// AllowVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade
-	AllowVersionUpgrade *bool `json:"AllowVersionUpgrade,omitempty"`
+	AllowVersionUpgrade *T `json:"AllowVersionUpgrade,omitempty"`
 
 	// AquaConfigurationStatus AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Cluster struct {
 	// AutomatedSnapshotRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod
-	AutomatedSnapshotRetentionPeriod *int `json:"AutomatedSnapshotRetentionPeriod,omitempty"`
+	AutomatedSnapshotRetentionPeriod *T `json:"AutomatedSnapshotRetentionPeriod,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Cluster struct {
 	// AvailabilityZoneRelocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzonerelocation
-	AvailabilityZoneRelocation *bool `json:"AvailabilityZoneRelocation,omitempty"`
+	AvailabilityZoneRelocation *T `json:"AvailabilityZoneRelocation,omitempty"`
 
 	// AvailabilityZoneRelocationStatus AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Cluster struct {
 	// Classic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-classic
-	Classic *bool `json:"Classic,omitempty"`
+	Classic *T `json:"Classic,omitempty"`
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: false
@@ -87,12 +87,12 @@ type Cluster struct {
 	// DeferMaintenance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenance
-	DeferMaintenance *bool `json:"DeferMaintenance,omitempty"`
+	DeferMaintenance *T `json:"DeferMaintenance,omitempty"`
 
 	// DeferMaintenanceDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-defermaintenanceduration
-	DeferMaintenanceDuration *int `json:"DeferMaintenanceDuration,omitempty"`
+	DeferMaintenanceDuration *T `json:"DeferMaintenanceDuration,omitempty"`
 
 	// DeferMaintenanceEndTime AWS CloudFormation Property
 	// Required: false
@@ -117,17 +117,17 @@ type Cluster struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-endpoint
-	Endpoint *Cluster_Endpoint `json:"Endpoint,omitempty"`
+	Endpoint *Cluster_Endpoint[any] `json:"Endpoint,omitempty"`
 
 	// EnhancedVpcRouting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-enhancedvpcrouting
-	EnhancedVpcRouting *bool `json:"EnhancedVpcRouting,omitempty"`
+	EnhancedVpcRouting *T `json:"EnhancedVpcRouting,omitempty"`
 
 	// HsmClientCertificateIdentifier AWS CloudFormation Property
 	// Required: false
@@ -152,7 +152,7 @@ type Cluster struct {
 	// LoggingProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties
-	LoggingProperties *Cluster_LoggingProperties `json:"LoggingProperties,omitempty"`
+	LoggingProperties *Cluster_LoggingProperties[any] `json:"LoggingProperties,omitempty"`
 
 	// MaintenanceTrackName AWS CloudFormation Property
 	// Required: false
@@ -162,7 +162,7 @@ type Cluster struct {
 	// ManualSnapshotRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-manualsnapshotretentionperiod
-	ManualSnapshotRetentionPeriod *int `json:"ManualSnapshotRetentionPeriod,omitempty"`
+	ManualSnapshotRetentionPeriod *T `json:"ManualSnapshotRetentionPeriod,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: true
@@ -182,7 +182,7 @@ type Cluster struct {
 	// NumberOfNodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-numberofnodes
-	NumberOfNodes *int `json:"NumberOfNodes,omitempty"`
+	NumberOfNodes *T `json:"NumberOfNodes,omitempty"`
 
 	// OwnerAccount AWS CloudFormation Property
 	// Required: false
@@ -192,7 +192,7 @@ type Cluster struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
@@ -202,7 +202,7 @@ type Cluster struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// ResourceAction AWS CloudFormation Property
 	// Required: false
@@ -217,7 +217,7 @@ type Cluster struct {
 	// RotateEncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-rotateencryptionkey
-	RotateEncryptionKey *bool `json:"RotateEncryptionKey,omitempty"`
+	RotateEncryptionKey *T `json:"RotateEncryptionKey,omitempty"`
 
 	// SnapshotClusterIdentifier AWS CloudFormation Property
 	// Required: false
@@ -232,12 +232,12 @@ type Cluster struct {
 	// SnapshotCopyManual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotcopymanual
-	SnapshotCopyManual *bool `json:"SnapshotCopyManual,omitempty"`
+	SnapshotCopyManual *T `json:"SnapshotCopyManual,omitempty"`
 
 	// SnapshotCopyRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotcopyretentionperiod
-	SnapshotCopyRetentionPeriod *int `json:"SnapshotCopyRetentionPeriod,omitempty"`
+	SnapshotCopyRetentionPeriod *T `json:"SnapshotCopyRetentionPeriod,omitempty"`
 
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
@@ -271,14 +271,15 @@ type Cluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster) AWSCloudFormationType() string {
+func (r *Cluster[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::Cluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Cluster) MarshalJSON() ([]byte, error) {
-	type Properties Cluster
+func (r Cluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties Cluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -300,8 +301,9 @@ func (r Cluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Cluster) UnmarshalJSON(b []byte) error {
-	type Properties Cluster
+func (r *Cluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties Cluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -321,7 +323,7 @@ func (r *Cluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Cluster(*res.Properties)
+		*r = Cluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

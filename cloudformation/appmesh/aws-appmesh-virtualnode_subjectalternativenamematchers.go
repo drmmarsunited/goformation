@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_SubjectAlternativeNameMatchers AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html
-type VirtualNode_SubjectAlternativeNameMatchers struct {
+type VirtualNode_SubjectAlternativeNameMatchers[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type VirtualNode_SubjectAlternativeNameMatchers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_SubjectAlternativeNameMatchers) AWSCloudFormationType() string {
+func (r *VirtualNode_SubjectAlternativeNameMatchers[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers"
 }

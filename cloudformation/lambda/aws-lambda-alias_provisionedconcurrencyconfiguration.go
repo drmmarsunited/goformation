@@ -8,12 +8,12 @@ import (
 
 // Alias_ProvisionedConcurrencyConfiguration AWS CloudFormation Resource (AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html
-type Alias_ProvisionedConcurrencyConfiguration struct {
+type Alias_ProvisionedConcurrencyConfiguration[T any] struct {
 
 	// ProvisionedConcurrentExecutions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html#cfn-lambda-alias-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
-	ProvisionedConcurrentExecutions int `json:"ProvisionedConcurrentExecutions"`
+	ProvisionedConcurrentExecutions T `json:"ProvisionedConcurrentExecutions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Alias_ProvisionedConcurrencyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alias_ProvisionedConcurrencyConfiguration) AWSCloudFormationType() string {
+func (r *Alias_ProvisionedConcurrencyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipe_PlacementStrategy AWS CloudFormation Resource (AWS::Pipes::Pipe.PlacementStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-placementstrategy.html
-type Pipe_PlacementStrategy struct {
+type Pipe_PlacementStrategy[T any] struct {
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_PlacementStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PlacementStrategy) AWSCloudFormationType() string {
+func (r *Pipe_PlacementStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PlacementStrategy"
 }

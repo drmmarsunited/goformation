@@ -8,7 +8,7 @@ import (
 
 // ModelCard_Function AWS CloudFormation Resource (AWS::SageMaker::ModelCard.Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html
-type ModelCard_Function struct {
+type ModelCard_Function[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelCard_Function struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_Function) AWSCloudFormationType() string {
+func (r *ModelCard_Function[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.Function"
 }

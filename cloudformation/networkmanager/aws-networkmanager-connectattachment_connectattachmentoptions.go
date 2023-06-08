@@ -8,7 +8,7 @@ import (
 
 // ConnectAttachment_ConnectAttachmentOptions AWS CloudFormation Resource (AWS::NetworkManager::ConnectAttachment.ConnectAttachmentOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-connectattachmentoptions.html
-type ConnectAttachment_ConnectAttachmentOptions struct {
+type ConnectAttachment_ConnectAttachmentOptions[T any] struct {
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ConnectAttachment_ConnectAttachmentOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectAttachment_ConnectAttachmentOptions) AWSCloudFormationType() string {
+func (r *ConnectAttachment_ConnectAttachmentOptions[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectAttachment.ConnectAttachmentOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Campaign_AttributeDimension AWS CloudFormation Resource (AWS::Pinpoint::Campaign.AttributeDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-attributedimension.html
-type Campaign_AttributeDimension struct {
+type Campaign_AttributeDimension[T any] struct {
 
 	// AttributeType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_AttributeDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_AttributeDimension) AWSCloudFormationType() string {
+func (r *Campaign_AttributeDimension[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.AttributeDimension"
 }

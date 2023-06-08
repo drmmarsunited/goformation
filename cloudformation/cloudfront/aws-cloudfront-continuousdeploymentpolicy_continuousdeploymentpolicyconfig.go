@@ -8,12 +8,12 @@ import (
 
 // ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig AWS CloudFormation Resource (AWS::CloudFront::ContinuousDeploymentPolicy.ContinuousDeploymentPolicyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html
-type ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig struct {
+type ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// StagingDistributionDnsNames AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig struct {
 	// TrafficConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-trafficconfig
-	TrafficConfig *ContinuousDeploymentPolicy_TrafficConfig `json:"TrafficConfig,omitempty"`
+	TrafficConfig *ContinuousDeploymentPolicy_TrafficConfig[any] `json:"TrafficConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig) AWSCloudFormationType() string {
+func (r *ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ContinuousDeploymentPolicy.ContinuousDeploymentPolicyConfig"
 }

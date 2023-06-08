@@ -9,12 +9,12 @@ import (
 
 // SiteToSiteVpnAttachment_ProposedSegmentChange AWS CloudFormation Resource (AWS::NetworkManager::SiteToSiteVpnAttachment.ProposedSegmentChange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html
-type SiteToSiteVpnAttachment_ProposedSegmentChange struct {
+type SiteToSiteVpnAttachment_ProposedSegmentChange[T any] struct {
 
 	// AttachmentPolicyRuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-attachmentpolicyrulenumber
-	AttachmentPolicyRuleNumber *int `json:"AttachmentPolicyRuleNumber,omitempty"`
+	AttachmentPolicyRuleNumber *T `json:"AttachmentPolicyRuleNumber,omitempty"`
 
 	// SegmentName AWS CloudFormation Property
 	// Required: false
@@ -43,6 +43,6 @@ type SiteToSiteVpnAttachment_ProposedSegmentChange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SiteToSiteVpnAttachment_ProposedSegmentChange) AWSCloudFormationType() string {
+func (r *SiteToSiteVpnAttachment_ProposedSegmentChange[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::SiteToSiteVpnAttachment.ProposedSegmentChange"
 }

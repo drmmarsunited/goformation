@@ -8,7 +8,7 @@ import (
 
 // Table_BillingMode AWS CloudFormation Resource (AWS::Cassandra::Table.BillingMode)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-billingmode.html
-type Table_BillingMode struct {
+type Table_BillingMode[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Table_BillingMode struct {
 	// ProvisionedThroughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-billingmode.html#cfn-cassandra-table-billingmode-provisionedthroughput
-	ProvisionedThroughput *Table_ProvisionedThroughput `json:"ProvisionedThroughput,omitempty"`
+	ProvisionedThroughput *Table_ProvisionedThroughput[any] `json:"ProvisionedThroughput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Table_BillingMode struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_BillingMode) AWSCloudFormationType() string {
+func (r *Table_BillingMode[any]) AWSCloudFormationType() string {
 	return "AWS::Cassandra::Table.BillingMode"
 }

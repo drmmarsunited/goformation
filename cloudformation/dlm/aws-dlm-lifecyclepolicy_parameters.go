@@ -9,12 +9,12 @@ import (
 
 // LifecyclePolicy_Parameters AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.Parameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html
-type LifecyclePolicy_Parameters struct {
+type LifecyclePolicy_Parameters[T any] struct {
 
 	// ExcludeBootVolume AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-excludebootvolume
-	ExcludeBootVolume *bool `json:"ExcludeBootVolume,omitempty"`
+	ExcludeBootVolume *T `json:"ExcludeBootVolume,omitempty"`
 
 	// ExcludeDataVolumeTags AWS CloudFormation Property
 	// Required: false
@@ -24,7 +24,7 @@ type LifecyclePolicy_Parameters struct {
 	// NoReboot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-noreboot
-	NoReboot *bool `json:"NoReboot,omitempty"`
+	NoReboot *T `json:"NoReboot,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -43,6 +43,6 @@ type LifecyclePolicy_Parameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_Parameters) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_Parameters[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.Parameters"
 }

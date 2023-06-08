@@ -8,12 +8,12 @@ import (
 
 // Campaign_CampaignEventFilter AWS CloudFormation Resource (AWS::Pinpoint::Campaign.CampaignEventFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html
-type Campaign_CampaignEventFilter struct {
+type Campaign_CampaignEventFilter[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html#cfn-pinpoint-campaign-campaigneventfilter-dimensions
-	Dimensions *Campaign_EventDimensions `json:"Dimensions,omitempty"`
+	Dimensions *Campaign_EventDimensions[any] `json:"Dimensions,omitempty"`
 
 	// FilterType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Campaign_CampaignEventFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_CampaignEventFilter) AWSCloudFormationType() string {
+func (r *Campaign_CampaignEventFilter[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.CampaignEventFilter"
 }

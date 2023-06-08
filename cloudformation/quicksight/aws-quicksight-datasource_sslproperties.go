@@ -8,12 +8,12 @@ import (
 
 // DataSource_SslProperties AWS CloudFormation Resource (AWS::QuickSight::DataSource.SslProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sslproperties.html
-type DataSource_SslProperties struct {
+type DataSource_SslProperties[T any] struct {
 
 	// DisableSsl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sslproperties.html#cfn-quicksight-datasource-sslproperties-disablessl
-	DisableSsl *bool `json:"DisableSsl,omitempty"`
+	DisableSsl *T `json:"DisableSsl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSource_SslProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SslProperties) AWSCloudFormationType() string {
+func (r *DataSource_SslProperties[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.SslProperties"
 }

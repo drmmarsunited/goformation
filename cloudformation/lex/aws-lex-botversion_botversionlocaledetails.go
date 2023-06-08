@@ -8,7 +8,7 @@ import (
 
 // BotVersion_BotVersionLocaleDetails AWS CloudFormation Resource (AWS::Lex::BotVersion.BotVersionLocaleDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html
-type BotVersion_BotVersionLocaleDetails struct {
+type BotVersion_BotVersionLocaleDetails[T any] struct {
 
 	// SourceBotVersion AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type BotVersion_BotVersionLocaleDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotVersion_BotVersionLocaleDetails) AWSCloudFormationType() string {
+func (r *BotVersion_BotVersionLocaleDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotVersion.BotVersionLocaleDetails"
 }

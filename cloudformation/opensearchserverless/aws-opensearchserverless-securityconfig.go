@@ -11,7 +11,7 @@ import (
 
 // SecurityConfig AWS CloudFormation Resource (AWS::OpenSearchServerless::SecurityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-securityconfig.html
-type SecurityConfig struct {
+type SecurityConfig[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type SecurityConfig struct {
 	// SamlOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-securityconfig.html#cfn-opensearchserverless-securityconfig-samloptions
-	SamlOptions *SecurityConfig_SamlConfigOptions `json:"SamlOptions,omitempty"`
+	SamlOptions *SecurityConfig_SamlConfigOptions[any] `json:"SamlOptions,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type SecurityConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfig) AWSCloudFormationType() string {
+func (r *SecurityConfig[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchServerless::SecurityConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityConfig) MarshalJSON() ([]byte, error) {
-	type Properties SecurityConfig
+func (r SecurityConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r SecurityConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityConfig) UnmarshalJSON(b []byte) error {
-	type Properties SecurityConfig
+func (r *SecurityConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *SecurityConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityConfig(*res.Properties)
+		*r = SecurityConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // ModelQualityJobDefinition_ModelQualityBaselineConfig AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.ModelQualityBaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html
-type ModelQualityJobDefinition_ModelQualityBaselineConfig struct {
+type ModelQualityJobDefinition_ModelQualityBaselineConfig[T any] struct {
 
 	// BaseliningJobName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelQualityJobDefinition_ModelQualityBaselineConfig struct {
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-constraintsresource
-	ConstraintsResource *ModelQualityJobDefinition_ConstraintsResource `json:"ConstraintsResource,omitempty"`
+	ConstraintsResource *ModelQualityJobDefinition_ConstraintsResource[any] `json:"ConstraintsResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelQualityJobDefinition_ModelQualityBaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_ModelQualityBaselineConfig) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_ModelQualityBaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityBaselineConfig"
 }

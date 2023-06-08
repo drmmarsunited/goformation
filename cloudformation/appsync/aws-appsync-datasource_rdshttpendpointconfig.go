@@ -8,7 +8,7 @@ import (
 
 // DataSource_RdsHttpEndpointConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.RdsHttpEndpointConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html
-type DataSource_RdsHttpEndpointConfig struct {
+type DataSource_RdsHttpEndpointConfig[T any] struct {
 
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DataSource_RdsHttpEndpointConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_RdsHttpEndpointConfig) AWSCloudFormationType() string {
+func (r *DataSource_RdsHttpEndpointConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.RdsHttpEndpointConfig"
 }

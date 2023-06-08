@@ -8,12 +8,12 @@ import (
 
 // Flow_S3OutputFormatConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.S3OutputFormatConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html
-type Flow_S3OutputFormatConfig struct {
+type Flow_S3OutputFormatConfig[T any] struct {
 
 	// AggregationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-aggregationconfig
-	AggregationConfig *Flow_AggregationConfig `json:"AggregationConfig,omitempty"`
+	AggregationConfig *Flow_AggregationConfig[any] `json:"AggregationConfig,omitempty"`
 
 	// FileType AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Flow_S3OutputFormatConfig struct {
 	// PrefixConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-prefixconfig
-	PrefixConfig *Flow_PrefixConfig `json:"PrefixConfig,omitempty"`
+	PrefixConfig *Flow_PrefixConfig[any] `json:"PrefixConfig,omitempty"`
 
 	// PreserveSourceDataTyping AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-preservesourcedatatyping
-	PreserveSourceDataTyping *bool `json:"PreserveSourceDataTyping,omitempty"`
+	PreserveSourceDataTyping *T `json:"PreserveSourceDataTyping,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Flow_S3OutputFormatConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_S3OutputFormatConfig) AWSCloudFormationType() string {
+func (r *Flow_S3OutputFormatConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.S3OutputFormatConfig"
 }

@@ -9,22 +9,22 @@ import (
 
 // Pipe_PipeTargetEcsTaskParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetEcsTaskParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html
-type Pipe_PipeTargetEcsTaskParameters struct {
+type Pipe_PipeTargetEcsTaskParameters[T any] struct {
 
 	// CapacityProviderStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-capacityproviderstrategy
-	CapacityProviderStrategy []Pipe_CapacityProviderStrategyItem `json:"CapacityProviderStrategy,omitempty"`
+	CapacityProviderStrategy []Pipe_CapacityProviderStrategyItem[any] `json:"CapacityProviderStrategy,omitempty"`
 
 	// EnableECSManagedTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-enableecsmanagedtags
-	EnableECSManagedTags *bool `json:"EnableECSManagedTags,omitempty"`
+	EnableECSManagedTags *T `json:"EnableECSManagedTags,omitempty"`
 
 	// EnableExecuteCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-enableexecutecommand
-	EnableExecuteCommand *bool `json:"EnableExecuteCommand,omitempty"`
+	EnableExecuteCommand *T `json:"EnableExecuteCommand,omitempty"`
 
 	// Group AWS CloudFormation Property
 	// Required: false
@@ -39,22 +39,22 @@ type Pipe_PipeTargetEcsTaskParameters struct {
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-networkconfiguration
-	NetworkConfiguration *Pipe_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+	NetworkConfiguration *Pipe_NetworkConfiguration[any] `json:"NetworkConfiguration,omitempty"`
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-overrides
-	Overrides *Pipe_EcsTaskOverride `json:"Overrides,omitempty"`
+	Overrides *Pipe_EcsTaskOverride[any] `json:"Overrides,omitempty"`
 
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-placementconstraints
-	PlacementConstraints []Pipe_PlacementConstraint `json:"PlacementConstraints,omitempty"`
+	PlacementConstraints []Pipe_PlacementConstraint[any] `json:"PlacementConstraints,omitempty"`
 
 	// PlacementStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-placementstrategy
-	PlacementStrategy []Pipe_PlacementStrategy `json:"PlacementStrategy,omitempty"`
+	PlacementStrategy []Pipe_PlacementStrategy[any] `json:"PlacementStrategy,omitempty"`
 
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
@@ -79,7 +79,7 @@ type Pipe_PipeTargetEcsTaskParameters struct {
 	// TaskCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-taskcount
-	TaskCount *int `json:"TaskCount,omitempty"`
+	TaskCount *T `json:"TaskCount,omitempty"`
 
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
@@ -103,6 +103,6 @@ type Pipe_PipeTargetEcsTaskParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetEcsTaskParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetEcsTaskParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetEcsTaskParameters"
 }

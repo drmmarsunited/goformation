@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SameSheetTargetVisualConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SameSheetTargetVisualConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-samesheettargetvisualconfiguration.html
-type Dashboard_SameSheetTargetVisualConfiguration struct {
+type Dashboard_SameSheetTargetVisualConfiguration[T any] struct {
 
 	// TargetVisualOptions AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_SameSheetTargetVisualConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SameSheetTargetVisualConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SameSheetTargetVisualConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SameSheetTargetVisualConfiguration"
 }

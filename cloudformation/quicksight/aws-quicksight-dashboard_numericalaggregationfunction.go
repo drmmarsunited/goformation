@@ -8,12 +8,12 @@ import (
 
 // Dashboard_NumericalAggregationFunction AWS CloudFormation Resource (AWS::QuickSight::Dashboard.NumericalAggregationFunction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalaggregationfunction.html
-type Dashboard_NumericalAggregationFunction struct {
+type Dashboard_NumericalAggregationFunction[T any] struct {
 
 	// PercentileAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericalaggregationfunction.html#cfn-quicksight-dashboard-numericalaggregationfunction-percentileaggregation
-	PercentileAggregation *Dashboard_PercentileAggregation `json:"PercentileAggregation,omitempty"`
+	PercentileAggregation *Dashboard_PercentileAggregation[any] `json:"PercentileAggregation,omitempty"`
 
 	// SimpleNumericalAggregation AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_NumericalAggregationFunction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_NumericalAggregationFunction) AWSCloudFormationType() string {
+func (r *Dashboard_NumericalAggregationFunction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.NumericalAggregationFunction"
 }

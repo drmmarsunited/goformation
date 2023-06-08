@@ -8,12 +8,12 @@ import (
 
 // Analysis_FilterSliderControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterSliderControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterslidercontrol.html
-type Analysis_FilterSliderControl struct {
+type Analysis_FilterSliderControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterslidercontrol.html#cfn-quicksight-analysis-filterslidercontrol-displayoptions
-	DisplayOptions *Analysis_SliderControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_SliderControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Analysis_FilterSliderControl struct {
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterslidercontrol.html#cfn-quicksight-analysis-filterslidercontrol-maximumvalue
-	MaximumValue float64 `json:"MaximumValue"`
+	MaximumValue T `json:"MaximumValue"`
 
 	// MinimumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterslidercontrol.html#cfn-quicksight-analysis-filterslidercontrol-minimumvalue
-	MinimumValue float64 `json:"MinimumValue"`
+	MinimumValue T `json:"MinimumValue"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Analysis_FilterSliderControl struct {
 	// StepSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterslidercontrol.html#cfn-quicksight-analysis-filterslidercontrol-stepsize
-	StepSize float64 `json:"StepSize"`
+	StepSize T `json:"StepSize"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
@@ -67,6 +67,6 @@ type Analysis_FilterSliderControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterSliderControl) AWSCloudFormationType() string {
+func (r *Analysis_FilterSliderControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterSliderControl"
 }

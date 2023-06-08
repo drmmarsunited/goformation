@@ -8,7 +8,7 @@ import (
 
 // Project_ProjectBuildBatchConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectBuildBatchConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html
-type Project_ProjectBuildBatchConfig struct {
+type Project_ProjectBuildBatchConfig[T any] struct {
 
 	// BatchReportMode AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Project_ProjectBuildBatchConfig struct {
 	// CombineArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-combineartifacts
-	CombineArtifacts *bool `json:"CombineArtifacts,omitempty"`
+	CombineArtifacts *T `json:"CombineArtifacts,omitempty"`
 
 	// Restrictions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-restrictions
-	Restrictions *Project_BatchRestrictions `json:"Restrictions,omitempty"`
+	Restrictions *Project_BatchRestrictions[any] `json:"Restrictions,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Project_ProjectBuildBatchConfig struct {
 	// TimeoutInMins AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-timeoutinmins
-	TimeoutInMins *int `json:"TimeoutInMins,omitempty"`
+	TimeoutInMins *T `json:"TimeoutInMins,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Project_ProjectBuildBatchConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProjectBuildBatchConfig) AWSCloudFormationType() string {
+func (r *Project_ProjectBuildBatchConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectBuildBatchConfig"
 }

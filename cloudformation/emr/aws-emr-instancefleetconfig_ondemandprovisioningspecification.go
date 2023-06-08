@@ -8,7 +8,7 @@ import (
 
 // InstanceFleetConfig_OnDemandProvisioningSpecification AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.OnDemandProvisioningSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification.html
-type InstanceFleetConfig_OnDemandProvisioningSpecification struct {
+type InstanceFleetConfig_OnDemandProvisioningSpecification[T any] struct {
 
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type InstanceFleetConfig_OnDemandProvisioningSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_OnDemandProvisioningSpecification) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_OnDemandProvisioningSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.OnDemandProvisioningSpecification"
 }

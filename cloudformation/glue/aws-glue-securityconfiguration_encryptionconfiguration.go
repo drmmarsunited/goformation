@@ -8,22 +8,22 @@ import (
 
 // SecurityConfiguration_EncryptionConfiguration AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html
-type SecurityConfiguration_EncryptionConfiguration struct {
+type SecurityConfiguration_EncryptionConfiguration[T any] struct {
 
 	// CloudWatchEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-cloudwatchencryption
-	CloudWatchEncryption *SecurityConfiguration_CloudWatchEncryption `json:"CloudWatchEncryption,omitempty"`
+	CloudWatchEncryption *SecurityConfiguration_CloudWatchEncryption[any] `json:"CloudWatchEncryption,omitempty"`
 
 	// JobBookmarksEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-jobbookmarksencryption
-	JobBookmarksEncryption *SecurityConfiguration_JobBookmarksEncryption `json:"JobBookmarksEncryption,omitempty"`
+	JobBookmarksEncryption *SecurityConfiguration_JobBookmarksEncryption[any] `json:"JobBookmarksEncryption,omitempty"`
 
 	// S3Encryptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-s3encryptions
-	S3Encryptions *SecurityConfiguration_S3Encryptions `json:"S3Encryptions,omitempty"`
+	S3Encryptions *SecurityConfiguration_S3Encryptions[any] `json:"S3Encryptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type SecurityConfiguration_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *SecurityConfiguration_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration.EncryptionConfiguration"
 }

@@ -11,12 +11,12 @@ import (
 
 // Campaign AWS CloudFormation Resource (AWS::Pinpoint::Campaign)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html
-type Campaign struct {
+type Campaign[T any] struct {
 
 	// AdditionalTreatments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-additionaltreatments
-	AdditionalTreatments []Campaign_WriteTreatmentResource `json:"AdditionalTreatments,omitempty"`
+	AdditionalTreatments []Campaign_WriteTreatmentResource[any] `json:"AdditionalTreatments,omitempty"`
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type Campaign struct {
 	// CampaignHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook
-	CampaignHook *Campaign_CampaignHook `json:"CampaignHook,omitempty"`
+	CampaignHook *Campaign_CampaignHook[any] `json:"CampaignHook,omitempty"`
 
 	// CustomDeliveryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-customdeliveryconfiguration
-	CustomDeliveryConfiguration *Campaign_CustomDeliveryConfiguration `json:"CustomDeliveryConfiguration,omitempty"`
+	CustomDeliveryConfiguration *Campaign_CustomDeliveryConfiguration[any] `json:"CustomDeliveryConfiguration,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -41,22 +41,22 @@ type Campaign struct {
 	// HoldoutPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent
-	HoldoutPercent *int `json:"HoldoutPercent,omitempty"`
+	HoldoutPercent *T `json:"HoldoutPercent,omitempty"`
 
 	// IsPaused AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
-	IsPaused *bool `json:"IsPaused,omitempty"`
+	IsPaused *T `json:"IsPaused,omitempty"`
 
 	// Limits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits
-	Limits *Campaign_Limits `json:"Limits,omitempty"`
+	Limits *Campaign_Limits[any] `json:"Limits,omitempty"`
 
 	// MessageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration
-	MessageConfiguration *Campaign_MessageConfiguration `json:"MessageConfiguration,omitempty"`
+	MessageConfiguration *Campaign_MessageConfiguration[any] `json:"MessageConfiguration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -66,12 +66,12 @@ type Campaign struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule
-	Schedule *Campaign_Schedule `json:"Schedule"`
+	Schedule *Campaign_Schedule[any] `json:"Schedule"`
 
 	// SegmentId AWS CloudFormation Property
 	// Required: true
@@ -81,7 +81,7 @@ type Campaign struct {
 	// SegmentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion
-	SegmentVersion *int `json:"SegmentVersion,omitempty"`
+	SegmentVersion *T `json:"SegmentVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type Campaign struct {
 	// TemplateConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-templateconfiguration
-	TemplateConfiguration *Campaign_TemplateConfiguration `json:"TemplateConfiguration,omitempty"`
+	TemplateConfiguration *Campaign_TemplateConfiguration[any] `json:"TemplateConfiguration,omitempty"`
 
 	// TreatmentDescription AWS CloudFormation Property
 	// Required: false
@@ -120,14 +120,15 @@ type Campaign struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign) AWSCloudFormationType() string {
+func (r *Campaign[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Campaign) MarshalJSON() ([]byte, error) {
-	type Properties Campaign
+func (r Campaign[any]) MarshalJSON() ([]byte, error) {
+	type Properties Campaign[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -149,8 +150,9 @@ func (r Campaign) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Campaign) UnmarshalJSON(b []byte) error {
-	type Properties Campaign
+func (r *Campaign[any]) UnmarshalJSON(b []byte) error {
+	type Properties Campaign[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -170,7 +172,7 @@ func (r *Campaign) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Campaign(*res.Properties)
+		*r = Campaign[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

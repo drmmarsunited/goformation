@@ -8,17 +8,17 @@ import (
 
 // Link_Bandwidth AWS CloudFormation Resource (AWS::NetworkManager::Link.Bandwidth)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html
-type Link_Bandwidth struct {
+type Link_Bandwidth[T any] struct {
 
 	// DownloadSpeed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-downloadspeed
-	DownloadSpeed *int `json:"DownloadSpeed,omitempty"`
+	DownloadSpeed *T `json:"DownloadSpeed,omitempty"`
 
 	// UploadSpeed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-uploadspeed
-	UploadSpeed *int `json:"UploadSpeed,omitempty"`
+	UploadSpeed *T `json:"UploadSpeed,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Link_Bandwidth struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Link_Bandwidth) AWSCloudFormationType() string {
+func (r *Link_Bandwidth[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::Link.Bandwidth"
 }

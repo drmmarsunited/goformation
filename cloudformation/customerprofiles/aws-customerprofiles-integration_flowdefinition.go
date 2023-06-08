@@ -8,7 +8,7 @@ import (
 
 // Integration_FlowDefinition AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.FlowDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html
-type Integration_FlowDefinition struct {
+type Integration_FlowDefinition[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type Integration_FlowDefinition struct {
 	// SourceFlowConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-sourceflowconfig
-	SourceFlowConfig *Integration_SourceFlowConfig `json:"SourceFlowConfig"`
+	SourceFlowConfig *Integration_SourceFlowConfig[any] `json:"SourceFlowConfig"`
 
 	// Tasks AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-tasks
-	Tasks []Integration_Task `json:"Tasks"`
+	Tasks []Integration_Task[any] `json:"Tasks"`
 
 	// TriggerConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-triggerconfig
-	TriggerConfig *Integration_TriggerConfig `json:"TriggerConfig"`
+	TriggerConfig *Integration_TriggerConfig[any] `json:"TriggerConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Integration_FlowDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_FlowDefinition) AWSCloudFormationType() string {
+func (r *Integration_FlowDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.FlowDefinition"
 }

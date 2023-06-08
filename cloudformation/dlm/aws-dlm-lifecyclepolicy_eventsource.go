@@ -8,12 +8,12 @@ import (
 
 // LifecyclePolicy_EventSource AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.EventSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventsource.html
-type LifecyclePolicy_EventSource struct {
+type LifecyclePolicy_EventSource[T any] struct {
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventsource.html#cfn-dlm-lifecyclepolicy-eventsource-parameters
-	Parameters *LifecyclePolicy_EventParameters `json:"Parameters,omitempty"`
+	Parameters *LifecyclePolicy_EventParameters[any] `json:"Parameters,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LifecyclePolicy_EventSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_EventSource) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_EventSource[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.EventSource"
 }

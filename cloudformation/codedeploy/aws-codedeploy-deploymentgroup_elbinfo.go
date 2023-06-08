@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_ELBInfo AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.ELBInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-elbinfo.html
-type DeploymentGroup_ELBInfo struct {
+type DeploymentGroup_ELBInfo[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeploymentGroup_ELBInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_ELBInfo) AWSCloudFormationType() string {
+func (r *DeploymentGroup_ELBInfo[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.ELBInfo"
 }

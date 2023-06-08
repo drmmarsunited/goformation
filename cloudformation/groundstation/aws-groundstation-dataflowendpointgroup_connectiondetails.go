@@ -8,17 +8,17 @@ import (
 
 // DataflowEndpointGroup_ConnectionDetails AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.ConnectionDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-connectiondetails.html
-type DataflowEndpointGroup_ConnectionDetails struct {
+type DataflowEndpointGroup_ConnectionDetails[T any] struct {
 
 	// Mtu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-connectiondetails.html#cfn-groundstation-dataflowendpointgroup-connectiondetails-mtu
-	Mtu *int `json:"Mtu,omitempty"`
+	Mtu *T `json:"Mtu,omitempty"`
 
 	// SocketAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-connectiondetails.html#cfn-groundstation-dataflowendpointgroup-connectiondetails-socketaddress
-	SocketAddress *DataflowEndpointGroup_SocketAddress `json:"SocketAddress,omitempty"`
+	SocketAddress *DataflowEndpointGroup_SocketAddress[any] `json:"SocketAddress,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataflowEndpointGroup_ConnectionDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_ConnectionDetails) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_ConnectionDetails[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.ConnectionDetails"
 }

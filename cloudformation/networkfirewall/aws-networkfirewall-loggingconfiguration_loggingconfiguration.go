@@ -8,12 +8,12 @@ import (
 
 // LoggingConfiguration_LoggingConfiguration AWS CloudFormation Resource (AWS::NetworkFirewall::LoggingConfiguration.LoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-loggingconfiguration-loggingconfiguration.html
-type LoggingConfiguration_LoggingConfiguration struct {
+type LoggingConfiguration_LoggingConfiguration[T any] struct {
 
 	// LogDestinationConfigs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-loggingconfiguration-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-loggingconfiguration-logdestinationconfigs
-	LogDestinationConfigs []LoggingConfiguration_LogDestinationConfig `json:"LogDestinationConfigs"`
+	LogDestinationConfigs []LoggingConfiguration_LogDestinationConfig[any] `json:"LogDestinationConfigs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type LoggingConfiguration_LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_LoggingConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::LoggingConfiguration.LoggingConfiguration"
 }

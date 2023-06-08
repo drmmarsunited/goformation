@@ -8,7 +8,7 @@ import (
 
 // DataSource_SnowflakeParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.SnowflakeParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html
-type DataSource_SnowflakeParameters struct {
+type DataSource_SnowflakeParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_SnowflakeParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SnowflakeParameters) AWSCloudFormationType() string {
+func (r *DataSource_SnowflakeParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.SnowflakeParameters"
 }

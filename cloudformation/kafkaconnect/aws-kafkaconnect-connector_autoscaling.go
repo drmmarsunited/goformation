@@ -8,32 +8,32 @@ import (
 
 // Connector_AutoScaling AWS CloudFormation Resource (AWS::KafkaConnect::Connector.AutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html
-type Connector_AutoScaling struct {
+type Connector_AutoScaling[T any] struct {
 
 	// MaxWorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-maxworkercount
-	MaxWorkerCount int `json:"MaxWorkerCount"`
+	MaxWorkerCount T `json:"MaxWorkerCount"`
 
 	// McuCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-mcucount
-	McuCount int `json:"McuCount"`
+	McuCount T `json:"McuCount"`
 
 	// MinWorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-minworkercount
-	MinWorkerCount int `json:"MinWorkerCount"`
+	MinWorkerCount T `json:"MinWorkerCount"`
 
 	// ScaleInPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-scaleinpolicy
-	ScaleInPolicy *Connector_ScaleInPolicy `json:"ScaleInPolicy"`
+	ScaleInPolicy *Connector_ScaleInPolicy[any] `json:"ScaleInPolicy"`
 
 	// ScaleOutPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-scaleoutpolicy
-	ScaleOutPolicy *Connector_ScaleOutPolicy `json:"ScaleOutPolicy"`
+	ScaleOutPolicy *Connector_ScaleOutPolicy[any] `json:"ScaleOutPolicy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Connector_AutoScaling struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_AutoScaling) AWSCloudFormationType() string {
+func (r *Connector_AutoScaling[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.AutoScaling"
 }

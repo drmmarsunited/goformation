@@ -11,12 +11,12 @@ import (
 
 // DBProxy AWS CloudFormation Resource (AWS::RDS::DBProxy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html
-type DBProxy struct {
+type DBProxy[T any] struct {
 
 	// Auth AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-auth
-	Auth []DBProxy_AuthFormat `json:"Auth"`
+	Auth []DBProxy_AuthFormat[any] `json:"Auth"`
 
 	// DBProxyName AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type DBProxy struct {
 	// DebugLogging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-debuglogging
-	DebugLogging *bool `json:"DebugLogging,omitempty"`
+	DebugLogging *T `json:"DebugLogging,omitempty"`
 
 	// EngineFamily AWS CloudFormation Property
 	// Required: true
@@ -36,12 +36,12 @@ type DBProxy struct {
 	// IdleClientTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-idleclienttimeout
-	IdleClientTimeout *int `json:"IdleClientTimeout,omitempty"`
+	IdleClientTimeout *T `json:"IdleClientTimeout,omitempty"`
 
 	// RequireTLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-requiretls
-	RequireTLS *bool `json:"RequireTLS,omitempty"`
+	RequireTLS *T `json:"RequireTLS,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type DBProxy struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-tags
-	Tags []DBProxy_TagFormat `json:"Tags,omitempty"`
+	Tags []DBProxy_TagFormat[any] `json:"Tags,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -80,14 +80,15 @@ type DBProxy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxy) AWSCloudFormationType() string {
+func (r *DBProxy[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBProxy) MarshalJSON() ([]byte, error) {
-	type Properties DBProxy
+func (r DBProxy[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBProxy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r DBProxy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBProxy) UnmarshalJSON(b []byte) error {
-	type Properties DBProxy
+func (r *DBProxy[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBProxy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *DBProxy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBProxy(*res.Properties)
+		*r = DBProxy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

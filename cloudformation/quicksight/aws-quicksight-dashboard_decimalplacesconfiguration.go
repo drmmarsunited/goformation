@@ -8,12 +8,12 @@ import (
 
 // Dashboard_DecimalPlacesConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DecimalPlacesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalplacesconfiguration.html
-type Dashboard_DecimalPlacesConfiguration struct {
+type Dashboard_DecimalPlacesConfiguration[T any] struct {
 
 	// DecimalPlaces AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalplacesconfiguration.html#cfn-quicksight-dashboard-decimalplacesconfiguration-decimalplaces
-	DecimalPlaces float64 `json:"DecimalPlaces"`
+	DecimalPlaces T `json:"DecimalPlaces"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_DecimalPlacesConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DecimalPlacesConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_DecimalPlacesConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DecimalPlacesConfiguration"
 }

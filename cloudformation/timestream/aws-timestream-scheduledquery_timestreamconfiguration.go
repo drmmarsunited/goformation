@@ -8,7 +8,7 @@ import (
 
 // ScheduledQuery_TimestreamConfiguration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.TimestreamConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html
-type ScheduledQuery_TimestreamConfiguration struct {
+type ScheduledQuery_TimestreamConfiguration[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ScheduledQuery_TimestreamConfiguration struct {
 	// DimensionMappings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-dimensionmappings
-	DimensionMappings []ScheduledQuery_DimensionMapping `json:"DimensionMappings"`
+	DimensionMappings []ScheduledQuery_DimensionMapping[any] `json:"DimensionMappings"`
 
 	// MeasureNameColumn AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type ScheduledQuery_TimestreamConfiguration struct {
 	// MixedMeasureMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-mixedmeasuremappings
-	MixedMeasureMappings []ScheduledQuery_MixedMeasureMapping `json:"MixedMeasureMappings,omitempty"`
+	MixedMeasureMappings []ScheduledQuery_MixedMeasureMapping[any] `json:"MixedMeasureMappings,omitempty"`
 
 	// MultiMeasureMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-multimeasuremappings
-	MultiMeasureMappings *ScheduledQuery_MultiMeasureMappings `json:"MultiMeasureMappings,omitempty"`
+	MultiMeasureMappings *ScheduledQuery_MultiMeasureMappings[any] `json:"MultiMeasureMappings,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type ScheduledQuery_TimestreamConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledQuery_TimestreamConfiguration) AWSCloudFormationType() string {
+func (r *ScheduledQuery_TimestreamConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::ScheduledQuery.TimestreamConfiguration"
 }

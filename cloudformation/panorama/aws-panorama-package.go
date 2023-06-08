@@ -12,7 +12,7 @@ import (
 
 // Package AWS CloudFormation Resource (AWS::Panorama::Package)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html
-type Package struct {
+type Package[T any] struct {
 
 	// PackageName AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type Package struct {
 	// StorageLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-storagelocation
-	StorageLocation *Package_StorageLocation `json:"StorageLocation,omitempty"`
+	StorageLocation *Package_StorageLocation[any] `json:"StorageLocation,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type Package struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Package) AWSCloudFormationType() string {
+func (r *Package[any]) AWSCloudFormationType() string {
 	return "AWS::Panorama::Package"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Package) MarshalJSON() ([]byte, error) {
-	type Properties Package
+func (r Package[any]) MarshalJSON() ([]byte, error) {
+	type Properties Package[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r Package) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Package) UnmarshalJSON(b []byte) error {
-	type Properties Package
+func (r *Package[any]) UnmarshalJSON(b []byte) error {
+	type Properties Package[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *Package) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Package(*res.Properties)
+		*r = Package[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

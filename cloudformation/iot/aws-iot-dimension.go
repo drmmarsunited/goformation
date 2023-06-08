@@ -12,7 +12,7 @@ import (
 
 // Dimension AWS CloudFormation Resource (AWS::IoT::Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-dimension.html
-type Dimension struct {
+type Dimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dimension) AWSCloudFormationType() string {
+func (r *Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::Dimension"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Dimension) MarshalJSON() ([]byte, error) {
-	type Properties Dimension
+func (r Dimension[any]) MarshalJSON() ([]byte, error) {
+	type Properties Dimension[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Dimension) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Dimension) UnmarshalJSON(b []byte) error {
-	type Properties Dimension
+func (r *Dimension[any]) UnmarshalJSON(b []byte) error {
+	type Properties Dimension[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Dimension) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Dimension(*res.Properties)
+		*r = Dimension[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // VolumeAttachment AWS CloudFormation Resource (AWS::EC2::VolumeAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html
-type VolumeAttachment struct {
+type VolumeAttachment[T any] struct {
 
 	// Device AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type VolumeAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VolumeAttachment) AWSCloudFormationType() string {
+func (r *VolumeAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VolumeAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VolumeAttachment) MarshalJSON() ([]byte, error) {
-	type Properties VolumeAttachment
+func (r VolumeAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties VolumeAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r VolumeAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VolumeAttachment) UnmarshalJSON(b []byte) error {
-	type Properties VolumeAttachment
+func (r *VolumeAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties VolumeAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *VolumeAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VolumeAttachment(*res.Properties)
+		*r = VolumeAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

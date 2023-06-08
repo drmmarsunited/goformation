@@ -8,12 +8,12 @@ import (
 
 // ResponseHeadersPolicy_ReferrerPolicy AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ReferrerPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-referrerpolicy.html
-type ResponseHeadersPolicy_ReferrerPolicy struct {
+type ResponseHeadersPolicy_ReferrerPolicy[T any] struct {
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-referrerpolicy.html#cfn-cloudfront-responseheaderspolicy-referrerpolicy-override
-	Override bool `json:"Override"`
+	Override T `json:"Override"`
 
 	// ReferrerPolicy AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResponseHeadersPolicy_ReferrerPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_ReferrerPolicy) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_ReferrerPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.ReferrerPolicy"
 }

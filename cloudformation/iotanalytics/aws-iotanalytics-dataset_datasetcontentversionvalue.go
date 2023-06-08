@@ -8,7 +8,7 @@ import (
 
 // Dataset_DatasetContentVersionValue AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.DatasetContentVersionValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentversionvalue.html
-type Dataset_DatasetContentVersionValue struct {
+type Dataset_DatasetContentVersionValue[T any] struct {
 
 	// DatasetName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dataset_DatasetContentVersionValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatasetContentVersionValue) AWSCloudFormationType() string {
+func (r *Dataset_DatasetContentVersionValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.DatasetContentVersionValue"
 }

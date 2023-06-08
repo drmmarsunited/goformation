@@ -8,12 +8,12 @@ import (
 
 // Dashboard_VisualSubtitleLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualSubtitleLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualsubtitlelabeloptions.html
-type Dashboard_VisualSubtitleLabelOptions struct {
+type Dashboard_VisualSubtitleLabelOptions[T any] struct {
 
 	// FormatText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualsubtitlelabeloptions.html#cfn-quicksight-dashboard-visualsubtitlelabeloptions-formattext
-	FormatText *Dashboard_LongFormatText `json:"FormatText,omitempty"`
+	FormatText *Dashboard_LongFormatText[any] `json:"FormatText,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_VisualSubtitleLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualSubtitleLabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_VisualSubtitleLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualSubtitleLabelOptions"
 }

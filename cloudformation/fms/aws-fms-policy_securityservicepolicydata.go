@@ -8,7 +8,7 @@ import (
 
 // Policy_SecurityServicePolicyData AWS CloudFormation Resource (AWS::FMS::Policy.SecurityServicePolicyData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-securityservicepolicydata.html
-type Policy_SecurityServicePolicyData struct {
+type Policy_SecurityServicePolicyData[T any] struct {
 
 	// ManagedServiceData AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Policy_SecurityServicePolicyData struct {
 	// PolicyOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-securityservicepolicydata.html#cfn-fms-policy-securityservicepolicydata-policyoption
-	PolicyOption *Policy_PolicyOption `json:"PolicyOption,omitempty"`
+	PolicyOption *Policy_PolicyOption[any] `json:"PolicyOption,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Policy_SecurityServicePolicyData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Policy_SecurityServicePolicyData) AWSCloudFormationType() string {
+func (r *Policy_SecurityServicePolicyData[any]) AWSCloudFormationType() string {
 	return "AWS::FMS::Policy.SecurityServicePolicyData"
 }

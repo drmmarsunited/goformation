@@ -8,7 +8,7 @@ import (
 
 // IdentityProviderConfig_OidcIdentityProviderConfig AWS CloudFormation Resource (AWS::EKS::IdentityProviderConfig.OidcIdentityProviderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html
-type IdentityProviderConfig_OidcIdentityProviderConfig struct {
+type IdentityProviderConfig_OidcIdentityProviderConfig[T any] struct {
 
 	// ClientId AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type IdentityProviderConfig_OidcIdentityProviderConfig struct {
 	// RequiredClaims AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-oidcidentityproviderconfig.html#cfn-eks-identityproviderconfig-oidcidentityproviderconfig-requiredclaims
-	RequiredClaims []IdentityProviderConfig_RequiredClaim `json:"RequiredClaims,omitempty"`
+	RequiredClaims []IdentityProviderConfig_RequiredClaim[any] `json:"RequiredClaims,omitempty"`
 
 	// UsernameClaim AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type IdentityProviderConfig_OidcIdentityProviderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityProviderConfig_OidcIdentityProviderConfig) AWSCloudFormationType() string {
+func (r *IdentityProviderConfig_OidcIdentityProviderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::IdentityProviderConfig.OidcIdentityProviderConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipeline_S3Location AWS CloudFormation Resource (AWS::SageMaker::Pipeline.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html
-type Pipeline_S3Location struct {
+type Pipeline_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Pipeline_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_S3Location) AWSCloudFormationType() string {
+func (r *Pipeline_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Pipeline.S3Location"
 }

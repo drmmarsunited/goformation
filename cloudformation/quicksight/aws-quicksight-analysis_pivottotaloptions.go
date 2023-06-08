@@ -8,7 +8,7 @@ import (
 
 // Analysis_PivotTotalOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html
-type Analysis_PivotTotalOptions struct {
+type Analysis_PivotTotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Analysis_PivotTotalOptions struct {
 	// MetricHeaderCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-metricheadercellstyle
-	MetricHeaderCellStyle *Analysis_TableCellStyle `json:"MetricHeaderCellStyle,omitempty"`
+	MetricHeaderCellStyle *Analysis_TableCellStyle[any] `json:"MetricHeaderCellStyle,omitempty"`
 
 	// Placement AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Analysis_PivotTotalOptions struct {
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-totalcellstyle
-	TotalCellStyle *Analysis_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Analysis_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Analysis_PivotTotalOptions struct {
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-valuecellstyle
-	ValueCellStyle *Analysis_TableCellStyle `json:"ValueCellStyle,omitempty"`
+	ValueCellStyle *Analysis_TableCellStyle[any] `json:"ValueCellStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Analysis_PivotTotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTotalOptions) AWSCloudFormationType() string {
+func (r *Analysis_PivotTotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTotalOptions"
 }

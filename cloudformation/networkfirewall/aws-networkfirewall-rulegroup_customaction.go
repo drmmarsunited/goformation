@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_CustomAction AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.CustomAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-customaction.html
-type RuleGroup_CustomAction struct {
+type RuleGroup_CustomAction[T any] struct {
 
 	// ActionDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-customaction.html#cfn-networkfirewall-rulegroup-customaction-actiondefinition
-	ActionDefinition *RuleGroup_ActionDefinition `json:"ActionDefinition"`
+	ActionDefinition *RuleGroup_ActionDefinition[any] `json:"ActionDefinition"`
 
 	// ActionName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_CustomAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CustomAction) AWSCloudFormationType() string {
+func (r *RuleGroup_CustomAction[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.CustomAction"
 }

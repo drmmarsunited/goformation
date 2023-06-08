@@ -8,7 +8,7 @@ import (
 
 // ContainerRecipe_TargetContainerRepository AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.TargetContainerRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-targetcontainerrepository.html
-type ContainerRecipe_TargetContainerRepository struct {
+type ContainerRecipe_TargetContainerRepository[T any] struct {
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ContainerRecipe_TargetContainerRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe_TargetContainerRepository) AWSCloudFormationType() string {
+func (r *ContainerRecipe_TargetContainerRepository[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe.TargetContainerRepository"
 }

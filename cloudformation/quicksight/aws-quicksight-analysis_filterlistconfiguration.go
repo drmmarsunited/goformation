@@ -8,7 +8,7 @@ import (
 
 // Analysis_FilterListConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterListConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterlistconfiguration.html
-type Analysis_FilterListConfiguration struct {
+type Analysis_FilterListConfiguration[T any] struct {
 
 	// CategoryValues AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Analysis_FilterListConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterListConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_FilterListConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterListConfiguration"
 }

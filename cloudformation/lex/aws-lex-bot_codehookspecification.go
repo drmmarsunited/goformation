@@ -8,12 +8,12 @@ import (
 
 // Bot_CodeHookSpecification AWS CloudFormation Resource (AWS::Lex::Bot.CodeHookSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-codehookspecification.html
-type Bot_CodeHookSpecification struct {
+type Bot_CodeHookSpecification[T any] struct {
 
 	// LambdaCodeHook AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-codehookspecification.html#cfn-lex-bot-codehookspecification-lambdacodehook
-	LambdaCodeHook *Bot_LambdaCodeHook `json:"LambdaCodeHook"`
+	LambdaCodeHook *Bot_LambdaCodeHook[any] `json:"LambdaCodeHook"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_CodeHookSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_CodeHookSpecification) AWSCloudFormationType() string {
+func (r *Bot_CodeHookSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.CodeHookSpecification"
 }

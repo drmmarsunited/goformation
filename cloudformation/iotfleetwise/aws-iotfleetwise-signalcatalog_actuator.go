@@ -8,7 +8,7 @@ import (
 
 // SignalCatalog_Actuator AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.Actuator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-actuator.html
-type SignalCatalog_Actuator struct {
+type SignalCatalog_Actuator[T any] struct {
 
 	// AllowedValues AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type SignalCatalog_Actuator struct {
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-actuator.html#cfn-iotfleetwise-signalcatalog-actuator-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-actuator.html#cfn-iotfleetwise-signalcatalog-actuator-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type SignalCatalog_Actuator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_Actuator) AWSCloudFormationType() string {
+func (r *SignalCatalog_Actuator[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.Actuator"
 }

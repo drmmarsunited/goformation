@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ColumnSort AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ColumnSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnsort.html
-type Dashboard_ColumnSort struct {
+type Dashboard_ColumnSort[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnsort.html#cfn-quicksight-dashboard-columnsort-aggregationfunction
-	AggregationFunction *Dashboard_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Dashboard_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_ColumnSort struct {
 	// SortBy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnsort.html#cfn-quicksight-dashboard-columnsort-sortby
-	SortBy *Dashboard_ColumnIdentifier `json:"SortBy"`
+	SortBy *Dashboard_ColumnIdentifier[any] `json:"SortBy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_ColumnSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ColumnSort) AWSCloudFormationType() string {
+func (r *Dashboard_ColumnSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ColumnSort"
 }

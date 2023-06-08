@@ -11,7 +11,7 @@ import (
 
 // SubscriptionFilter AWS CloudFormation Resource (AWS::Logs::SubscriptionFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
-type SubscriptionFilter struct {
+type SubscriptionFilter[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type SubscriptionFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SubscriptionFilter) AWSCloudFormationType() string {
+func (r *SubscriptionFilter[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::SubscriptionFilter"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SubscriptionFilter) MarshalJSON() ([]byte, error) {
-	type Properties SubscriptionFilter
+func (r SubscriptionFilter[any]) MarshalJSON() ([]byte, error) {
+	type Properties SubscriptionFilter[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r SubscriptionFilter) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SubscriptionFilter) UnmarshalJSON(b []byte) error {
-	type Properties SubscriptionFilter
+func (r *SubscriptionFilter[any]) UnmarshalJSON(b []byte) error {
+	type Properties SubscriptionFilter[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *SubscriptionFilter) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SubscriptionFilter(*res.Properties)
+		*r = SubscriptionFilter[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

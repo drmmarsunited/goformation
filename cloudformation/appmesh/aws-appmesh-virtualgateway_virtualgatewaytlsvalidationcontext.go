@@ -8,17 +8,17 @@ import (
 
 // VirtualGateway_VirtualGatewayTlsValidationContext AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html
-type VirtualGateway_VirtualGatewayTlsValidationContext struct {
+type VirtualGateway_VirtualGatewayTlsValidationContext[T any] struct {
 
 	// SubjectAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-subjectalternativenames
-	SubjectAlternativeNames *VirtualGateway_SubjectAlternativeNames `json:"SubjectAlternativeNames,omitempty"`
+	SubjectAlternativeNames *VirtualGateway_SubjectAlternativeNames[any] `json:"SubjectAlternativeNames,omitempty"`
 
 	// Trust AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-trust
-	Trust *VirtualGateway_VirtualGatewayTlsValidationContextTrust `json:"Trust"`
+	Trust *VirtualGateway_VirtualGatewayTlsValidationContextTrust[any] `json:"Trust"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualGateway_VirtualGatewayTlsValidationContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayTlsValidationContext) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayTlsValidationContext[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext"
 }

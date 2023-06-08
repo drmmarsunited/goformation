@@ -8,7 +8,7 @@ import (
 
 // Cluster_BrokerNodeGroupInfo AWS CloudFormation Resource (AWS::MSK::Cluster.BrokerNodeGroupInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html
-type Cluster_BrokerNodeGroupInfo struct {
+type Cluster_BrokerNodeGroupInfo[T any] struct {
 
 	// BrokerAZDistribution AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Cluster_BrokerNodeGroupInfo struct {
 	// ConnectivityInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-connectivityinfo
-	ConnectivityInfo *Cluster_ConnectivityInfo `json:"ConnectivityInfo,omitempty"`
+	ConnectivityInfo *Cluster_ConnectivityInfo[any] `json:"ConnectivityInfo,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Cluster_BrokerNodeGroupInfo struct {
 	// StorageInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo
-	StorageInfo *Cluster_StorageInfo `json:"StorageInfo,omitempty"`
+	StorageInfo *Cluster_StorageInfo[any] `json:"StorageInfo,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Cluster_BrokerNodeGroupInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_BrokerNodeGroupInfo) AWSCloudFormationType() string {
+func (r *Cluster_BrokerNodeGroupInfo[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.BrokerNodeGroupInfo"
 }

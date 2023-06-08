@@ -8,7 +8,7 @@ import (
 
 // Model_MultiModelConfig AWS CloudFormation Resource (AWS::SageMaker::Model.MultiModelConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-multimodelconfig.html
-type Model_MultiModelConfig struct {
+type Model_MultiModelConfig[T any] struct {
 
 	// ModelCacheSetting AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Model_MultiModelConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Model_MultiModelConfig) AWSCloudFormationType() string {
+func (r *Model_MultiModelConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.MultiModelConfig"
 }

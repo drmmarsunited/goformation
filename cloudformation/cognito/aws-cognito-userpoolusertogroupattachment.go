@@ -11,7 +11,7 @@ import (
 
 // UserPoolUserToGroupAttachment AWS CloudFormation Resource (AWS::Cognito::UserPoolUserToGroupAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html
-type UserPoolUserToGroupAttachment struct {
+type UserPoolUserToGroupAttachment[T any] struct {
 
 	// GroupName AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type UserPoolUserToGroupAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolUserToGroupAttachment) AWSCloudFormationType() string {
+func (r *UserPoolUserToGroupAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolUserToGroupAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolUserToGroupAttachment) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolUserToGroupAttachment
+func (r UserPoolUserToGroupAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolUserToGroupAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r UserPoolUserToGroupAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolUserToGroupAttachment) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolUserToGroupAttachment
+func (r *UserPoolUserToGroupAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolUserToGroupAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *UserPoolUserToGroupAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolUserToGroupAttachment(*res.Properties)
+		*r = UserPoolUserToGroupAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

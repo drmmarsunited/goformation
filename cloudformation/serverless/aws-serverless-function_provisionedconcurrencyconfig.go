@@ -8,7 +8,7 @@ import (
 
 // Function_ProvisionedConcurrencyConfig AWS CloudFormation Resource (AWS::Serverless::Function.ProvisionedConcurrencyConfig)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#provisioned-concurrency-config-object
-type Function_ProvisionedConcurrencyConfig struct {
+type Function_ProvisionedConcurrencyConfig[T any] struct {
 
 	// ProvisionedConcurrentExecutions AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_ProvisionedConcurrencyConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_ProvisionedConcurrencyConfig) AWSCloudFormationType() string {
+func (r *Function_ProvisionedConcurrencyConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.ProvisionedConcurrencyConfig"
 }

@@ -8,17 +8,17 @@ import (
 
 // Channel_VideoBlackFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoBlackFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html
-type Channel_VideoBlackFailoverSettings struct {
+type Channel_VideoBlackFailoverSettings[T any] struct {
 
 	// BlackDetectThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html#cfn-medialive-channel-videoblackfailoversettings-blackdetectthreshold
-	BlackDetectThreshold *float64 `json:"BlackDetectThreshold,omitempty"`
+	BlackDetectThreshold *T `json:"BlackDetectThreshold,omitempty"`
 
 	// VideoBlackThresholdMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html#cfn-medialive-channel-videoblackfailoversettings-videoblackthresholdmsec
-	VideoBlackThresholdMsec *int `json:"VideoBlackThresholdMsec,omitempty"`
+	VideoBlackThresholdMsec *T `json:"VideoBlackThresholdMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_VideoBlackFailoverSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VideoBlackFailoverSettings) AWSCloudFormationType() string {
+func (r *Channel_VideoBlackFailoverSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VideoBlackFailoverSettings"
 }

@@ -8,12 +8,12 @@ import (
 
 // CoreDefinition_CoreDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::CoreDefinition.CoreDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html
-type CoreDefinition_CoreDefinitionVersion struct {
+type CoreDefinition_CoreDefinitionVersion[T any] struct {
 
 	// Cores AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html#cfn-greengrass-coredefinition-coredefinitionversion-cores
-	Cores []CoreDefinition_Core `json:"Cores"`
+	Cores []CoreDefinition_Core[any] `json:"Cores"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type CoreDefinition_CoreDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreDefinition_CoreDefinitionVersion) AWSCloudFormationType() string {
+func (r *CoreDefinition_CoreDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::CoreDefinition.CoreDefinitionVersion"
 }

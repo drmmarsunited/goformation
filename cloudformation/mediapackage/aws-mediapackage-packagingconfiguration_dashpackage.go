@@ -8,27 +8,27 @@ import (
 
 // PackagingConfiguration_DashPackage AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.DashPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html
-type PackagingConfiguration_DashPackage struct {
+type PackagingConfiguration_DashPackage[T any] struct {
 
 	// DashManifests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-dashmanifests
-	DashManifests []PackagingConfiguration_DashManifest `json:"DashManifests"`
+	DashManifests []PackagingConfiguration_DashManifest[any] `json:"DashManifests"`
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-encryption
-	Encryption *PackagingConfiguration_DashEncryption `json:"Encryption,omitempty"`
+	Encryption *PackagingConfiguration_DashEncryption[any] `json:"Encryption,omitempty"`
 
 	// IncludeEncoderConfigurationInSegments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-includeencoderconfigurationinsegments
-	IncludeEncoderConfigurationInSegments *bool `json:"IncludeEncoderConfigurationInSegments,omitempty"`
+	IncludeEncoderConfigurationInSegments *T `json:"IncludeEncoderConfigurationInSegments,omitempty"`
 
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *T `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type PackagingConfiguration_DashPackage struct {
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type PackagingConfiguration_DashPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_DashPackage) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_DashPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.DashPackage"
 }

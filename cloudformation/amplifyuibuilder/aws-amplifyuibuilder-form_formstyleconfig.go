@@ -8,7 +8,7 @@ import (
 
 // Form_FormStyleConfig AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormStyleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formstyleconfig.html
-type Form_FormStyleConfig struct {
+type Form_FormStyleConfig[T any] struct {
 
 	// TokenReference AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Form_FormStyleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormStyleConfig) AWSCloudFormationType() string {
+func (r *Form_FormStyleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormStyleConfig"
 }

@@ -8,32 +8,32 @@ import (
 
 // Analysis_LineChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.LineChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html
-type Analysis_LineChartSortConfiguration struct {
+type Analysis_LineChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html#cfn-quicksight-analysis-linechartsortconfiguration-categoryitemslimitconfiguration
-	CategoryItemsLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"CategoryItemsLimitConfiguration,omitempty"`
+	CategoryItemsLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"CategoryItemsLimitConfiguration,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html#cfn-quicksight-analysis-linechartsortconfiguration-categorysort
-	CategorySort []Analysis_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Analysis_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html#cfn-quicksight-analysis-linechartsortconfiguration-coloritemslimitconfiguration
-	ColorItemsLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"ColorItemsLimitConfiguration,omitempty"`
+	ColorItemsLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"ColorItemsLimitConfiguration,omitempty"`
 
 	// SmallMultiplesLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html#cfn-quicksight-analysis-linechartsortconfiguration-smallmultipleslimitconfiguration
-	SmallMultiplesLimitConfiguration *Analysis_ItemsLimitConfiguration `json:"SmallMultiplesLimitConfiguration,omitempty"`
+	SmallMultiplesLimitConfiguration *Analysis_ItemsLimitConfiguration[any] `json:"SmallMultiplesLimitConfiguration,omitempty"`
 
 	// SmallMultiplesSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartsortconfiguration.html#cfn-quicksight-analysis-linechartsortconfiguration-smallmultiplessort
-	SmallMultiplesSort []Analysis_FieldSortOptions `json:"SmallMultiplesSort,omitempty"`
+	SmallMultiplesSort []Analysis_FieldSortOptions[any] `json:"SmallMultiplesSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_LineChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LineChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_LineChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LineChartSortConfiguration"
 }

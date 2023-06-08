@@ -8,7 +8,7 @@ import (
 
 // Domain_RStudioServerProAppSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.RStudioServerProAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverproappsettings.html
-type Domain_RStudioServerProAppSettings struct {
+type Domain_RStudioServerProAppSettings[T any] struct {
 
 	// AccessStatus AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Domain_RStudioServerProAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_RStudioServerProAppSettings) AWSCloudFormationType() string {
+func (r *Domain_RStudioServerProAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.RStudioServerProAppSettings"
 }

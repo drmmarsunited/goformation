@@ -8,12 +8,12 @@ import (
 
 // Flow_ZendeskDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ZendeskDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html
-type Flow_ZendeskDestinationProperties struct {
+type Flow_ZendeskDestinationProperties[T any] struct {
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Flow_ZendeskDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ZendeskDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_ZendeskDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ZendeskDestinationProperties"
 }

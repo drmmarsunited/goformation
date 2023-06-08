@@ -12,7 +12,7 @@ import (
 
 // User AWS CloudFormation Resource (AWS::Transfer::User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html
-type User struct {
+type User[T any] struct {
 
 	// HomeDirectory AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type User struct {
 	// HomeDirectoryMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings
-	HomeDirectoryMappings []User_HomeDirectoryMapEntry `json:"HomeDirectoryMappings,omitempty"`
+	HomeDirectoryMappings []User_HomeDirectoryMapEntry[any] `json:"HomeDirectoryMappings,omitempty"`
 
 	// HomeDirectoryType AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type User struct {
 	// PosixProfile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-posixprofile
-	PosixProfile *User_PosixProfile `json:"PosixProfile,omitempty"`
+	PosixProfile *User_PosixProfile[any] `json:"PosixProfile,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -52,7 +52,7 @@ type User struct {
 	// SshPublicKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-sshpublickeys
-	SshPublicKeys []User_SshPublicKey `json:"SshPublicKeys,omitempty"`
+	SshPublicKeys []User_SshPublicKey[any] `json:"SshPublicKeys,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type User struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *User) AWSCloudFormationType() string {
+func (r *User[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::User"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r User) MarshalJSON() ([]byte, error) {
-	type Properties User
+func (r User[any]) MarshalJSON() ([]byte, error) {
+	type Properties User[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r User) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *User) UnmarshalJSON(b []byte) error {
-	type Properties User
+func (r *User[any]) UnmarshalJSON(b []byte) error {
+	type Properties User[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *User) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = User(*res.Properties)
+		*r = User[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_IotEvents AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.IotEvents)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html
-type DetectorModel_IotEvents struct {
+type DetectorModel_IotEvents[T any] struct {
 
 	// InputName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DetectorModel_IotEvents struct {
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-payload
-	Payload *DetectorModel_Payload `json:"Payload,omitempty"`
+	Payload *DetectorModel_Payload[any] `json:"Payload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DetectorModel_IotEvents struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_IotEvents) AWSCloudFormationType() string {
+func (r *DetectorModel_IotEvents[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.IotEvents"
 }

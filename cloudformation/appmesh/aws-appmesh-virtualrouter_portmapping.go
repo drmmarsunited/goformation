@@ -8,12 +8,12 @@ import (
 
 // VirtualRouter_PortMapping AWS CloudFormation Resource (AWS::AppMesh::VirtualRouter.PortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html
-type VirtualRouter_PortMapping struct {
+type VirtualRouter_PortMapping[T any] struct {
 
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualRouter_PortMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualRouter_PortMapping) AWSCloudFormationType() string {
+func (r *VirtualRouter_PortMapping[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualRouter.PortMapping"
 }

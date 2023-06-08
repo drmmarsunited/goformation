@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LineChartDefaultSeriesSettings AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LineChartDefaultSeriesSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartdefaultseriessettings.html
-type Dashboard_LineChartDefaultSeriesSettings struct {
+type Dashboard_LineChartDefaultSeriesSettings[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Dashboard_LineChartDefaultSeriesSettings struct {
 	// LineStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartdefaultseriessettings.html#cfn-quicksight-dashboard-linechartdefaultseriessettings-linestylesettings
-	LineStyleSettings *Dashboard_LineChartLineStyleSettings `json:"LineStyleSettings,omitempty"`
+	LineStyleSettings *Dashboard_LineChartLineStyleSettings[any] `json:"LineStyleSettings,omitempty"`
 
 	// MarkerStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartdefaultseriessettings.html#cfn-quicksight-dashboard-linechartdefaultseriessettings-markerstylesettings
-	MarkerStyleSettings *Dashboard_LineChartMarkerStyleSettings `json:"MarkerStyleSettings,omitempty"`
+	MarkerStyleSettings *Dashboard_LineChartMarkerStyleSettings[any] `json:"MarkerStyleSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_LineChartDefaultSeriesSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LineChartDefaultSeriesSettings) AWSCloudFormationType() string {
+func (r *Dashboard_LineChartDefaultSeriesSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LineChartDefaultSeriesSettings"
 }

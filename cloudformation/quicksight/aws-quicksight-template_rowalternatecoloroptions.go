@@ -8,7 +8,7 @@ import (
 
 // Template_RowAlternateColorOptions AWS CloudFormation Resource (AWS::QuickSight::Template.RowAlternateColorOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-rowalternatecoloroptions.html
-type Template_RowAlternateColorOptions struct {
+type Template_RowAlternateColorOptions[T any] struct {
 
 	// RowAlternateColors AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_RowAlternateColorOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_RowAlternateColorOptions) AWSCloudFormationType() string {
+func (r *Template_RowAlternateColorOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.RowAlternateColorOptions"
 }

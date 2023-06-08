@@ -8,7 +8,7 @@ import (
 
 // CodeRepository_GitConfig AWS CloudFormation Resource (AWS::SageMaker::CodeRepository.GitConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html
-type CodeRepository_GitConfig struct {
+type CodeRepository_GitConfig[T any] struct {
 
 	// Branch AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type CodeRepository_GitConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CodeRepository_GitConfig) AWSCloudFormationType() string {
+func (r *CodeRepository_GitConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::CodeRepository.GitConfig"
 }

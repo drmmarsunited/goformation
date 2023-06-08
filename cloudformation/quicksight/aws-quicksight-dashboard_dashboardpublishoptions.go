@@ -8,62 +8,62 @@ import (
 
 // Dashboard_DashboardPublishOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DashboardPublishOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html
-type Dashboard_DashboardPublishOptions struct {
+type Dashboard_DashboardPublishOptions[T any] struct {
 
 	// AdHocFilteringOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-adhocfilteringoption
-	AdHocFilteringOption *Dashboard_AdHocFilteringOption `json:"AdHocFilteringOption,omitempty"`
+	AdHocFilteringOption *Dashboard_AdHocFilteringOption[any] `json:"AdHocFilteringOption,omitempty"`
 
 	// DataPointDrillUpDownOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-datapointdrillupdownoption
-	DataPointDrillUpDownOption *Dashboard_DataPointDrillUpDownOption `json:"DataPointDrillUpDownOption,omitempty"`
+	DataPointDrillUpDownOption *Dashboard_DataPointDrillUpDownOption[any] `json:"DataPointDrillUpDownOption,omitempty"`
 
 	// DataPointMenuLabelOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-datapointmenulabeloption
-	DataPointMenuLabelOption *Dashboard_DataPointMenuLabelOption `json:"DataPointMenuLabelOption,omitempty"`
+	DataPointMenuLabelOption *Dashboard_DataPointMenuLabelOption[any] `json:"DataPointMenuLabelOption,omitempty"`
 
 	// DataPointTooltipOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-datapointtooltipoption
-	DataPointTooltipOption *Dashboard_DataPointTooltipOption `json:"DataPointTooltipOption,omitempty"`
+	DataPointTooltipOption *Dashboard_DataPointTooltipOption[any] `json:"DataPointTooltipOption,omitempty"`
 
 	// ExportToCSVOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-exporttocsvoption
-	ExportToCSVOption *Dashboard_ExportToCSVOption `json:"ExportToCSVOption,omitempty"`
+	ExportToCSVOption *Dashboard_ExportToCSVOption[any] `json:"ExportToCSVOption,omitempty"`
 
 	// ExportWithHiddenFieldsOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-exportwithhiddenfieldsoption
-	ExportWithHiddenFieldsOption *Dashboard_ExportWithHiddenFieldsOption `json:"ExportWithHiddenFieldsOption,omitempty"`
+	ExportWithHiddenFieldsOption *Dashboard_ExportWithHiddenFieldsOption[any] `json:"ExportWithHiddenFieldsOption,omitempty"`
 
 	// SheetControlsOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-sheetcontrolsoption
-	SheetControlsOption *Dashboard_SheetControlsOption `json:"SheetControlsOption,omitempty"`
+	SheetControlsOption *Dashboard_SheetControlsOption[any] `json:"SheetControlsOption,omitempty"`
 
 	// SheetLayoutElementMaximizationOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-sheetlayoutelementmaximizationoption
-	SheetLayoutElementMaximizationOption *Dashboard_SheetLayoutElementMaximizationOption `json:"SheetLayoutElementMaximizationOption,omitempty"`
+	SheetLayoutElementMaximizationOption *Dashboard_SheetLayoutElementMaximizationOption[any] `json:"SheetLayoutElementMaximizationOption,omitempty"`
 
 	// VisualAxisSortOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-visualaxissortoption
-	VisualAxisSortOption *Dashboard_VisualAxisSortOption `json:"VisualAxisSortOption,omitempty"`
+	VisualAxisSortOption *Dashboard_VisualAxisSortOption[any] `json:"VisualAxisSortOption,omitempty"`
 
 	// VisualMenuOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-visualmenuoption
-	VisualMenuOption *Dashboard_VisualMenuOption `json:"VisualMenuOption,omitempty"`
+	VisualMenuOption *Dashboard_VisualMenuOption[any] `json:"VisualMenuOption,omitempty"`
 
 	// VisualPublishOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-visualpublishoptions
-	VisualPublishOptions *Dashboard_DashboardVisualPublishOptions `json:"VisualPublishOptions,omitempty"`
+	VisualPublishOptions *Dashboard_DashboardVisualPublishOptions[any] `json:"VisualPublishOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Dashboard_DashboardPublishOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DashboardPublishOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DashboardPublishOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DashboardPublishOptions"
 }

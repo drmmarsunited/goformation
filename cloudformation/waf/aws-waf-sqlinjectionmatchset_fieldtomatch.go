@@ -8,7 +8,7 @@ import (
 
 // SqlInjectionMatchSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::SqlInjectionMatchSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html
-type SqlInjectionMatchSet_FieldToMatch struct {
+type SqlInjectionMatchSet_FieldToMatch[T any] struct {
 
 	// Data AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SqlInjectionMatchSet_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SqlInjectionMatchSet_FieldToMatch) AWSCloudFormationType() string {
+func (r *SqlInjectionMatchSet_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAF::SqlInjectionMatchSet.FieldToMatch"
 }

@@ -11,7 +11,7 @@ import (
 
 // ImageVersion AWS CloudFormation Resource (AWS::SageMaker::ImageVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html
-type ImageVersion struct {
+type ImageVersion[T any] struct {
 
 	// BaseImage AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type ImageVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageVersion) AWSCloudFormationType() string {
+func (r *ImageVersion[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ImageVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ImageVersion) MarshalJSON() ([]byte, error) {
-	type Properties ImageVersion
+func (r ImageVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ImageVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ImageVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ImageVersion) UnmarshalJSON(b []byte) error {
-	type Properties ImageVersion
+func (r *ImageVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ImageVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ImageVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ImageVersion(*res.Properties)
+		*r = ImageVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

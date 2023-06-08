@@ -8,12 +8,12 @@ import (
 
 // StateMachine_TracingConfiguration AWS CloudFormation Resource (AWS::StepFunctions::StateMachine.TracingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html
-type StateMachine_TracingConfiguration struct {
+type StateMachine_TracingConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html#cfn-stepfunctions-statemachine-tracingconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StateMachine_TracingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_TracingConfiguration) AWSCloudFormationType() string {
+func (r *StateMachine_TracingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::StepFunctions::StateMachine.TracingConfiguration"
 }

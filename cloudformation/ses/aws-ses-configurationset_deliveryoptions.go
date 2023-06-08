@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_DeliveryOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.DeliveryOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-deliveryoptions.html
-type ConfigurationSet_DeliveryOptions struct {
+type ConfigurationSet_DeliveryOptions[T any] struct {
 
 	// SendingPoolName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ConfigurationSet_DeliveryOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_DeliveryOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_DeliveryOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.DeliveryOptions"
 }

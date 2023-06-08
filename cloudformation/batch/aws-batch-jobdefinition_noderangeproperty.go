@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_NodeRangeProperty AWS CloudFormation Resource (AWS::Batch::JobDefinition.NodeRangeProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html
-type JobDefinition_NodeRangeProperty struct {
+type JobDefinition_NodeRangeProperty[T any] struct {
 
 	// Container AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-container
-	Container *JobDefinition_ContainerProperties `json:"Container,omitempty"`
+	Container *JobDefinition_ContainerProperties[any] `json:"Container,omitempty"`
 
 	// TargetNodes AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type JobDefinition_NodeRangeProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_NodeRangeProperty) AWSCloudFormationType() string {
+func (r *JobDefinition_NodeRangeProperty[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.NodeRangeProperty"
 }

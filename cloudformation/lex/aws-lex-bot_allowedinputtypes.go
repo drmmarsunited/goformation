@@ -8,17 +8,17 @@ import (
 
 // Bot_AllowedInputTypes AWS CloudFormation Resource (AWS::Lex::Bot.AllowedInputTypes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html
-type Bot_AllowedInputTypes struct {
+type Bot_AllowedInputTypes[T any] struct {
 
 	// AllowAudioInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowaudioinput
-	AllowAudioInput bool `json:"AllowAudioInput"`
+	AllowAudioInput T `json:"AllowAudioInput"`
 
 	// AllowDTMFInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowdtmfinput
-	AllowDTMFInput bool `json:"AllowDTMFInput"`
+	AllowDTMFInput T `json:"AllowDTMFInput"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_AllowedInputTypes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_AllowedInputTypes) AWSCloudFormationType() string {
+func (r *Bot_AllowedInputTypes[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.AllowedInputTypes"
 }

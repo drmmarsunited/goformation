@@ -8,22 +8,22 @@ import (
 
 // LoggingConfiguration_DestinationConfiguration AWS CloudFormation Resource (AWS::IVSChat::LoggingConfiguration.DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-destinationconfiguration.html
-type LoggingConfiguration_DestinationConfiguration struct {
+type LoggingConfiguration_DestinationConfiguration[T any] struct {
 
 	// CloudWatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-destinationconfiguration.html#cfn-ivschat-loggingconfiguration-destinationconfiguration-cloudwatchlogs
-	CloudWatchLogs *LoggingConfiguration_CloudWatchLogsDestinationConfiguration `json:"CloudWatchLogs,omitempty"`
+	CloudWatchLogs *LoggingConfiguration_CloudWatchLogsDestinationConfiguration[any] `json:"CloudWatchLogs,omitempty"`
 
 	// Firehose AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-destinationconfiguration.html#cfn-ivschat-loggingconfiguration-destinationconfiguration-firehose
-	Firehose *LoggingConfiguration_FirehoseDestinationConfiguration `json:"Firehose,omitempty"`
+	Firehose *LoggingConfiguration_FirehoseDestinationConfiguration[any] `json:"Firehose,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-destinationconfiguration.html#cfn-ivschat-loggingconfiguration-destinationconfiguration-s3
-	S3 *LoggingConfiguration_S3DestinationConfiguration `json:"S3,omitempty"`
+	S3 *LoggingConfiguration_S3DestinationConfiguration[any] `json:"S3,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type LoggingConfiguration_DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_DestinationConfiguration) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::LoggingConfiguration.DestinationConfiguration"
 }

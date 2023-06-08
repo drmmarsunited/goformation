@@ -12,7 +12,7 @@ import (
 
 // GameSessionQueue AWS CloudFormation Resource (AWS::GameLift::GameSessionQueue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html
-type GameSessionQueue struct {
+type GameSessionQueue[T any] struct {
 
 	// CustomEventData AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type GameSessionQueue struct {
 	// Destinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-destinations
-	Destinations []GameSessionQueue_Destination `json:"Destinations,omitempty"`
+	Destinations []GameSessionQueue_Destination[any] `json:"Destinations,omitempty"`
 
 	// FilterConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-filterconfiguration
-	FilterConfiguration *GameSessionQueue_FilterConfiguration `json:"FilterConfiguration,omitempty"`
+	FilterConfiguration *GameSessionQueue_FilterConfiguration[any] `json:"FilterConfiguration,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,12 +42,12 @@ type GameSessionQueue struct {
 	// PlayerLatencyPolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-playerlatencypolicies
-	PlayerLatencyPolicies []GameSessionQueue_PlayerLatencyPolicy `json:"PlayerLatencyPolicies,omitempty"`
+	PlayerLatencyPolicies []GameSessionQueue_PlayerLatencyPolicy[any] `json:"PlayerLatencyPolicies,omitempty"`
 
 	// PriorityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-priorityconfiguration
-	PriorityConfiguration *GameSessionQueue_PriorityConfiguration `json:"PriorityConfiguration,omitempty"`
+	PriorityConfiguration *GameSessionQueue_PriorityConfiguration[any] `json:"PriorityConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type GameSessionQueue struct {
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-timeoutinseconds
-	TimeoutInSeconds *int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *T `json:"TimeoutInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -76,14 +76,15 @@ type GameSessionQueue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameSessionQueue) AWSCloudFormationType() string {
+func (r *GameSessionQueue[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameSessionQueue"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GameSessionQueue) MarshalJSON() ([]byte, error) {
-	type Properties GameSessionQueue
+func (r GameSessionQueue[any]) MarshalJSON() ([]byte, error) {
+	type Properties GameSessionQueue[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r GameSessionQueue) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GameSessionQueue) UnmarshalJSON(b []byte) error {
-	type Properties GameSessionQueue
+func (r *GameSessionQueue[any]) UnmarshalJSON(b []byte) error {
+	type Properties GameSessionQueue[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *GameSessionQueue) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GameSessionQueue(*res.Properties)
+		*r = GameSessionQueue[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

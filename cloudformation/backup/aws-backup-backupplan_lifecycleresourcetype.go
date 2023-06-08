@@ -8,17 +8,17 @@ import (
 
 // BackupPlan_LifecycleResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.LifecycleResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html
-type BackupPlan_LifecycleResourceType struct {
+type BackupPlan_LifecycleResourceType[T any] struct {
 
 	// DeleteAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
-	DeleteAfterDays *float64 `json:"DeleteAfterDays,omitempty"`
+	DeleteAfterDays *T `json:"DeleteAfterDays,omitempty"`
 
 	// MoveToColdStorageAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays
-	MoveToColdStorageAfterDays *float64 `json:"MoveToColdStorageAfterDays,omitempty"`
+	MoveToColdStorageAfterDays *T `json:"MoveToColdStorageAfterDays,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type BackupPlan_LifecycleResourceType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupPlan_LifecycleResourceType) AWSCloudFormationType() string {
+func (r *BackupPlan_LifecycleResourceType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupPlan.LifecycleResourceType"
 }

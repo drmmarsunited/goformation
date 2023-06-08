@@ -8,12 +8,12 @@ import (
 
 // Framework_FrameworkControl AWS CloudFormation Resource (AWS::Backup::Framework.FrameworkControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html
-type Framework_FrameworkControl struct {
+type Framework_FrameworkControl[T any] struct {
 
 	// ControlInputParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html#cfn-backup-framework-frameworkcontrol-controlinputparameters
-	ControlInputParameters []Framework_ControlInputParameter `json:"ControlInputParameters,omitempty"`
+	ControlInputParameters []Framework_ControlInputParameter[any] `json:"ControlInputParameters,omitempty"`
 
 	// ControlName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Framework_FrameworkControl struct {
 	// ControlScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html#cfn-backup-framework-frameworkcontrol-controlscope
-	ControlScope *Framework_ControlScope `json:"ControlScope,omitempty"`
+	ControlScope *Framework_ControlScope[any] `json:"ControlScope,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Framework_FrameworkControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Framework_FrameworkControl) AWSCloudFormationType() string {
+func (r *Framework_FrameworkControl[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::Framework.FrameworkControl"
 }

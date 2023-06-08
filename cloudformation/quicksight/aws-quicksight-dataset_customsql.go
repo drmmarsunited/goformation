@@ -8,12 +8,12 @@ import (
 
 // DataSet_CustomSql AWS CloudFormation Resource (AWS::QuickSight::DataSet.CustomSql)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html
-type DataSet_CustomSql struct {
+type DataSet_CustomSql[T any] struct {
 
 	// Columns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-columns
-	Columns []DataSet_InputColumn `json:"Columns"`
+	Columns []DataSet_InputColumn[any] `json:"Columns"`
 
 	// DataSourceArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DataSet_CustomSql struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_CustomSql) AWSCloudFormationType() string {
+func (r *DataSet_CustomSql[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.CustomSql"
 }

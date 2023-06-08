@@ -8,7 +8,7 @@ import (
 
 // Bucket_LoggingConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.LoggingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-loggingconfig.html
-type Bucket_LoggingConfiguration struct {
+type Bucket_LoggingConfiguration[T any] struct {
 
 	// DestinationBucketName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bucket_LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_LoggingConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.LoggingConfiguration"
 }

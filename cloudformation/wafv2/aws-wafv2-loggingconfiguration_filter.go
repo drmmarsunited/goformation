@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_Filter AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-filter.html
-type LoggingConfiguration_Filter struct {
+type LoggingConfiguration_Filter[T any] struct {
 
 	// Behavior AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type LoggingConfiguration_Filter struct {
 	// Conditions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-filter.html#cfn-wafv2-loggingconfiguration-filter-conditions
-	Conditions []LoggingConfiguration_Condition `json:"Conditions"`
+	Conditions []LoggingConfiguration_Condition[any] `json:"Conditions"`
 
 	// Requirement AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type LoggingConfiguration_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_Filter) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.Filter"
 }

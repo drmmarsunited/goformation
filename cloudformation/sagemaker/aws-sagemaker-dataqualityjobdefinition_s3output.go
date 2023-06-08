@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_S3Output AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.S3Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html
-type DataQualityJobDefinition_S3Output struct {
+type DataQualityJobDefinition_S3Output[T any] struct {
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataQualityJobDefinition_S3Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_S3Output) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_S3Output[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.S3Output"
 }

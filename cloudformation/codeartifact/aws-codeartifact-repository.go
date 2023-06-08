@@ -12,7 +12,7 @@ import (
 
 // Repository AWS CloudFormation Resource (AWS::CodeArtifact::Repository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html
-type Repository struct {
+type Repository[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type Repository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository) AWSCloudFormationType() string {
+func (r *Repository[any]) AWSCloudFormationType() string {
 	return "AWS::CodeArtifact::Repository"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Repository) MarshalJSON() ([]byte, error) {
-	type Properties Repository
+func (r Repository[any]) MarshalJSON() ([]byte, error) {
+	type Properties Repository[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r Repository) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Repository) UnmarshalJSON(b []byte) error {
-	type Properties Repository
+func (r *Repository[any]) UnmarshalJSON(b []byte) error {
+	type Properties Repository[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *Repository) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Repository(*res.Properties)
+		*r = Repository[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

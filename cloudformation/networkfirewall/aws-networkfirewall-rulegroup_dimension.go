@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_Dimension AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-dimension.html
-type RuleGroup_Dimension struct {
+type RuleGroup_Dimension[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RuleGroup_Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Dimension) AWSCloudFormationType() string {
+func (r *RuleGroup_Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.Dimension"
 }

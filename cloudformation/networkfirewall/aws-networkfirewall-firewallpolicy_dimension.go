@@ -8,7 +8,7 @@ import (
 
 // FirewallPolicy_Dimension AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-dimension.html
-type FirewallPolicy_Dimension struct {
+type FirewallPolicy_Dimension[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type FirewallPolicy_Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_Dimension) AWSCloudFormationType() string {
+func (r *FirewallPolicy_Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.Dimension"
 }

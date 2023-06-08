@@ -8,7 +8,7 @@ import (
 
 // MulticastGroup_LoRaWAN AWS CloudFormation Resource (AWS::IoTWireless::MulticastGroup.LoRaWAN)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html
-type MulticastGroup_LoRaWAN struct {
+type MulticastGroup_LoRaWAN[T any] struct {
 
 	// DlClass AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type MulticastGroup_LoRaWAN struct {
 	// NumberOfDevicesInGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-numberofdevicesingroup
-	NumberOfDevicesInGroup *int `json:"NumberOfDevicesInGroup,omitempty"`
+	NumberOfDevicesInGroup *T `json:"NumberOfDevicesInGroup,omitempty"`
 
 	// NumberOfDevicesRequested AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-numberofdevicesrequested
-	NumberOfDevicesRequested *int `json:"NumberOfDevicesRequested,omitempty"`
+	NumberOfDevicesRequested *T `json:"NumberOfDevicesRequested,omitempty"`
 
 	// RfRegion AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type MulticastGroup_LoRaWAN struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MulticastGroup_LoRaWAN) AWSCloudFormationType() string {
+func (r *MulticastGroup_LoRaWAN[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::MulticastGroup.LoRaWAN"
 }

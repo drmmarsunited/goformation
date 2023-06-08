@@ -8,12 +8,12 @@ import (
 
 // Domain_OffPeakWindow AWS CloudFormation Resource (AWS::OpenSearchService::Domain.OffPeakWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-offpeakwindow.html
-type Domain_OffPeakWindow struct {
+type Domain_OffPeakWindow[T any] struct {
 
 	// WindowStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-offpeakwindow.html#cfn-opensearchservice-domain-offpeakwindow-windowstarttime
-	WindowStartTime *Domain_WindowStartTime `json:"WindowStartTime,omitempty"`
+	WindowStartTime *Domain_WindowStartTime[any] `json:"WindowStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Domain_OffPeakWindow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_OffPeakWindow) AWSCloudFormationType() string {
+func (r *Domain_OffPeakWindow[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.OffPeakWindow"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetControlsOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetControlsOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetcontrolsoption.html
-type Dashboard_SheetControlsOption struct {
+type Dashboard_SheetControlsOption[T any] struct {
 
 	// VisibilityState AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SheetControlsOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetControlsOption) AWSCloudFormationType() string {
+func (r *Dashboard_SheetControlsOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetControlsOption"
 }

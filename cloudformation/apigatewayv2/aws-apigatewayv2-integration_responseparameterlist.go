@@ -8,12 +8,12 @@ import (
 
 // Integration_ResponseParameterList AWS CloudFormation Resource (AWS::ApiGatewayV2::Integration.ResponseParameterList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameterlist.html
-type Integration_ResponseParameterList struct {
+type Integration_ResponseParameterList[T any] struct {
 
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameterlist.html#cfn-apigatewayv2-integration-responseparameterlist-responseparameters
-	ResponseParameters []Integration_ResponseParameter `json:"ResponseParameters,omitempty"`
+	ResponseParameters []Integration_ResponseParameter[any] `json:"ResponseParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Integration_ResponseParameterList struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ResponseParameterList) AWSCloudFormationType() string {
+func (r *Integration_ResponseParameterList[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Integration.ResponseParameterList"
 }

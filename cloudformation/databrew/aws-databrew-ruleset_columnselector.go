@@ -8,7 +8,7 @@ import (
 
 // Ruleset_ColumnSelector AWS CloudFormation Resource (AWS::DataBrew::Ruleset.ColumnSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-columnselector.html
-type Ruleset_ColumnSelector struct {
+type Ruleset_ColumnSelector[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Ruleset_ColumnSelector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ruleset_ColumnSelector) AWSCloudFormationType() string {
+func (r *Ruleset_ColumnSelector[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Ruleset.ColumnSelector"
 }

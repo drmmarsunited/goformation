@@ -8,17 +8,17 @@ import (
 
 // ResourceSet_TargetResource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.TargetResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-targetresource.html
-type ResourceSet_TargetResource struct {
+type ResourceSet_TargetResource[T any] struct {
 
 	// NLBResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-targetresource.html#cfn-route53recoveryreadiness-resourceset-targetresource-nlbresource
-	NLBResource *ResourceSet_NLBResource `json:"NLBResource,omitempty"`
+	NLBResource *ResourceSet_NLBResource[any] `json:"NLBResource,omitempty"`
 
 	// R53Resource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-targetresource.html#cfn-route53recoveryreadiness-resourceset-targetresource-r53resource
-	R53Resource *ResourceSet_R53ResourceRecord `json:"R53Resource,omitempty"`
+	R53Resource *ResourceSet_R53ResourceRecord[any] `json:"R53Resource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ResourceSet_TargetResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet_TargetResource) AWSCloudFormationType() string {
+func (r *ResourceSet_TargetResource[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet.TargetResource"
 }

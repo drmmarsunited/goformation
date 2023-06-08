@@ -8,17 +8,17 @@ import (
 
 // FeatureGroup_OnlineStoreConfig AWS CloudFormation Resource (AWS::SageMaker::FeatureGroup.OnlineStoreConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html
-type FeatureGroup_OnlineStoreConfig struct {
+type FeatureGroup_OnlineStoreConfig[T any] struct {
 
 	// EnableOnlineStore AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-enableonlinestore
-	EnableOnlineStore *bool `json:"EnableOnlineStore,omitempty"`
+	EnableOnlineStore *T `json:"EnableOnlineStore,omitempty"`
 
 	// SecurityConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-securityconfig
-	SecurityConfig *FeatureGroup_OnlineStoreSecurityConfig `json:"SecurityConfig,omitempty"`
+	SecurityConfig *FeatureGroup_OnlineStoreSecurityConfig[any] `json:"SecurityConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type FeatureGroup_OnlineStoreConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FeatureGroup_OnlineStoreConfig) AWSCloudFormationType() string {
+func (r *FeatureGroup_OnlineStoreConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::FeatureGroup.OnlineStoreConfig"
 }

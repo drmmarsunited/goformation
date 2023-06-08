@@ -8,7 +8,7 @@ import (
 
 // ConfigurationTemplate_ConfigurationOptionSetting AWS CloudFormation Resource (AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-configurationoptionsetting.html
-type ConfigurationTemplate_ConfigurationOptionSetting struct {
+type ConfigurationTemplate_ConfigurationOptionSetting[T any] struct {
 
 	// Namespace AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type ConfigurationTemplate_ConfigurationOptionSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationTemplate_ConfigurationOptionSetting) AWSCloudFormationType() string {
+func (r *ConfigurationTemplate_ConfigurationOptionSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting"
 }

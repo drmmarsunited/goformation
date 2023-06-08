@@ -11,7 +11,7 @@ import (
 
 // AnnotationStore AWS CloudFormation Resource (AWS::Omics::AnnotationStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-annotationstore.html
-type AnnotationStore struct {
+type AnnotationStore[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type AnnotationStore struct {
 	// Reference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-annotationstore.html#cfn-omics-annotationstore-reference
-	Reference *AnnotationStore_ReferenceItem `json:"Reference,omitempty"`
+	Reference *AnnotationStore_ReferenceItem[any] `json:"Reference,omitempty"`
 
 	// SseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-annotationstore.html#cfn-omics-annotationstore-sseconfig
-	SseConfig *AnnotationStore_SseConfig `json:"SseConfig,omitempty"`
+	SseConfig *AnnotationStore_SseConfig[any] `json:"SseConfig,omitempty"`
 
 	// StoreFormat AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type AnnotationStore struct {
 	// StoreOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-annotationstore.html#cfn-omics-annotationstore-storeoptions
-	StoreOptions *AnnotationStore_StoreOptions `json:"StoreOptions,omitempty"`
+	StoreOptions *AnnotationStore_StoreOptions[any] `json:"StoreOptions,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type AnnotationStore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnnotationStore) AWSCloudFormationType() string {
+func (r *AnnotationStore[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::AnnotationStore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AnnotationStore) MarshalJSON() ([]byte, error) {
-	type Properties AnnotationStore
+func (r AnnotationStore[any]) MarshalJSON() ([]byte, error) {
+	type Properties AnnotationStore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r AnnotationStore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AnnotationStore) UnmarshalJSON(b []byte) error {
-	type Properties AnnotationStore
+func (r *AnnotationStore[any]) UnmarshalJSON(b []byte) error {
+	type Properties AnnotationStore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *AnnotationStore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AnnotationStore(*res.Properties)
+		*r = AnnotationStore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

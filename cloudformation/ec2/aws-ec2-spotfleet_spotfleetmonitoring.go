@@ -8,12 +8,12 @@ import (
 
 // SpotFleet_SpotFleetMonitoring AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotFleetMonitoring)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html
-type SpotFleet_SpotFleetMonitoring struct {
+type SpotFleet_SpotFleetMonitoring[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type SpotFleet_SpotFleetMonitoring struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_SpotFleetMonitoring) AWSCloudFormationType() string {
+func (r *SpotFleet_SpotFleetMonitoring[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotFleetMonitoring"
 }

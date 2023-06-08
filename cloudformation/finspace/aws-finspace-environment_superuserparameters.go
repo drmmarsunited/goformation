@@ -8,7 +8,7 @@ import (
 
 // Environment_SuperuserParameters AWS CloudFormation Resource (AWS::FinSpace::Environment.SuperuserParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-superuserparameters.html
-type Environment_SuperuserParameters struct {
+type Environment_SuperuserParameters[T any] struct {
 
 	// EmailAddress AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Environment_SuperuserParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_SuperuserParameters) AWSCloudFormationType() string {
+func (r *Environment_SuperuserParameters[any]) AWSCloudFormationType() string {
 	return "AWS::FinSpace::Environment.SuperuserParameters"
 }

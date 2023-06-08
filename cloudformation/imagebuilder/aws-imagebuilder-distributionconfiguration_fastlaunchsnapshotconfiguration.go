@@ -8,12 +8,12 @@ import (
 
 // DistributionConfiguration_FastLaunchSnapshotConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.FastLaunchSnapshotConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration.html
-type DistributionConfiguration_FastLaunchSnapshotConfiguration struct {
+type DistributionConfiguration_FastLaunchSnapshotConfiguration[T any] struct {
 
 	// TargetResourceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration-targetresourcecount
-	TargetResourceCount *int `json:"TargetResourceCount,omitempty"`
+	TargetResourceCount *T `json:"TargetResourceCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DistributionConfiguration_FastLaunchSnapshotConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_FastLaunchSnapshotConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_FastLaunchSnapshotConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.FastLaunchSnapshotConfiguration"
 }

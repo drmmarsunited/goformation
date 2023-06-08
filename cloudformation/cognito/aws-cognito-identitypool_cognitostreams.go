@@ -8,7 +8,7 @@ import (
 
 // IdentityPool_CognitoStreams AWS CloudFormation Resource (AWS::Cognito::IdentityPool.CognitoStreams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html
-type IdentityPool_CognitoStreams struct {
+type IdentityPool_CognitoStreams[T any] struct {
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type IdentityPool_CognitoStreams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPool_CognitoStreams) AWSCloudFormationType() string {
+func (r *IdentityPool_CognitoStreams[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.CognitoStreams"
 }

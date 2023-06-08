@@ -8,7 +8,7 @@ import (
 
 // Schema_Registry AWS CloudFormation Resource (AWS::Glue::Schema.Registry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-registry.html
-type Schema_Registry struct {
+type Schema_Registry[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Schema_Registry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schema_Registry) AWSCloudFormationType() string {
+func (r *Schema_Registry[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Schema.Registry"
 }

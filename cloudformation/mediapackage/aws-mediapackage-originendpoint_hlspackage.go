@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_HlsPackage AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html
-type OriginEndpoint_HlsPackage struct {
+type OriginEndpoint_HlsPackage[T any] struct {
 
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type OriginEndpoint_HlsPackage struct {
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-encryption
-	Encryption *OriginEndpoint_HlsEncryption `json:"Encryption,omitempty"`
+	Encryption *OriginEndpoint_HlsEncryption[any] `json:"Encryption,omitempty"`
 
 	// IncludeDvbSubtitles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-includedvbsubtitles
-	IncludeDvbSubtitles *bool `json:"IncludeDvbSubtitles,omitempty"`
+	IncludeDvbSubtitles *T `json:"IncludeDvbSubtitles,omitempty"`
 
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *T `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// PlaylistType AWS CloudFormation Property
 	// Required: false
@@ -48,27 +48,27 @@ type OriginEndpoint_HlsPackage struct {
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-playlistwindowseconds
-	PlaylistWindowSeconds *int `json:"PlaylistWindowSeconds,omitempty"`
+	PlaylistWindowSeconds *T `json:"PlaylistWindowSeconds,omitempty"`
 
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-programdatetimeintervalseconds
-	ProgramDateTimeIntervalSeconds *int `json:"ProgramDateTimeIntervalSeconds,omitempty"`
+	ProgramDateTimeIntervalSeconds *T `json:"ProgramDateTimeIntervalSeconds,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-streamselection
-	StreamSelection *OriginEndpoint_StreamSelection `json:"StreamSelection,omitempty"`
+	StreamSelection *OriginEndpoint_StreamSelection[any] `json:"StreamSelection,omitempty"`
 
 	// UseAudioRenditionGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-useaudiorenditiongroup
-	UseAudioRenditionGroup *bool `json:"UseAudioRenditionGroup,omitempty"`
+	UseAudioRenditionGroup *T `json:"UseAudioRenditionGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -87,6 +87,6 @@ type OriginEndpoint_HlsPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_HlsPackage) AWSCloudFormationType() string {
+func (r *OriginEndpoint_HlsPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.HlsPackage"
 }

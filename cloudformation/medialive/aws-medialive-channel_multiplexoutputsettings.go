@@ -8,12 +8,12 @@ import (
 
 // Channel_MultiplexOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MultiplexOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexoutputsettings.html
-type Channel_MultiplexOutputSettings struct {
+type Channel_MultiplexOutputSettings[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexoutputsettings.html#cfn-medialive-channel-multiplexoutputsettings-destination
-	Destination *Channel_OutputLocationRef `json:"Destination,omitempty"`
+	Destination *Channel_OutputLocationRef[any] `json:"Destination,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_MultiplexOutputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MultiplexOutputSettings) AWSCloudFormationType() string {
+func (r *Channel_MultiplexOutputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MultiplexOutputSettings"
 }

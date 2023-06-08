@@ -8,7 +8,7 @@ import (
 
 // Dashboard_LineChartLineStyleSettings AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LineChartLineStyleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartlinestylesettings.html
-type Dashboard_LineChartLineStyleSettings struct {
+type Dashboard_LineChartLineStyleSettings[T any] struct {
 
 	// LineInterpolation AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_LineChartLineStyleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LineChartLineStyleSettings) AWSCloudFormationType() string {
+func (r *Dashboard_LineChartLineStyleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LineChartLineStyleSettings"
 }

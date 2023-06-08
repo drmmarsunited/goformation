@@ -8,7 +8,7 @@ import (
 
 // GraphQLApi_CognitoUserPoolConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.CognitoUserPoolConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html
-type GraphQLApi_CognitoUserPoolConfig struct {
+type GraphQLApi_CognitoUserPoolConfig[T any] struct {
 
 	// AppIdClientRegex AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type GraphQLApi_CognitoUserPoolConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi_CognitoUserPoolConfig) AWSCloudFormationType() string {
+func (r *GraphQLApi_CognitoUserPoolConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
 }

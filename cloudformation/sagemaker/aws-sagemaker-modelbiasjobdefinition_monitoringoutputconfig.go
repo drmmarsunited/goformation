@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_MonitoringOutputConfig AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html
-type ModelBiasJobDefinition_MonitoringOutputConfig struct {
+type ModelBiasJobDefinition_MonitoringOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelBiasJobDefinition_MonitoringOutputConfig struct {
 	// MonitoringOutputs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-monitoringoutputs
-	MonitoringOutputs []ModelBiasJobDefinition_MonitoringOutput `json:"MonitoringOutputs"`
+	MonitoringOutputs []ModelBiasJobDefinition_MonitoringOutput[any] `json:"MonitoringOutputs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelBiasJobDefinition_MonitoringOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_MonitoringOutputConfig) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_MonitoringOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutputConfig"
 }

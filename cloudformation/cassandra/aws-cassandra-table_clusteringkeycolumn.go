@@ -8,12 +8,12 @@ import (
 
 // Table_ClusteringKeyColumn AWS CloudFormation Resource (AWS::Cassandra::Table.ClusteringKeyColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html
-type Table_ClusteringKeyColumn struct {
+type Table_ClusteringKeyColumn[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-column
-	Column *Table_Column `json:"Column"`
+	Column *Table_Column[any] `json:"Column"`
 
 	// OrderBy AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Table_ClusteringKeyColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_ClusteringKeyColumn) AWSCloudFormationType() string {
+func (r *Table_ClusteringKeyColumn[any]) AWSCloudFormationType() string {
 	return "AWS::Cassandra::Table.ClusteringKeyColumn"
 }

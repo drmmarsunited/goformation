@@ -8,37 +8,37 @@ import (
 
 // Template_TimeBasedForecastProperties AWS CloudFormation Resource (AWS::QuickSight::Template.TimeBasedForecastProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html
-type Template_TimeBasedForecastProperties struct {
+type Template_TimeBasedForecastProperties[T any] struct {
 
 	// LowerBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-lowerboundary
-	LowerBoundary *float64 `json:"LowerBoundary,omitempty"`
+	LowerBoundary *T `json:"LowerBoundary,omitempty"`
 
 	// PeriodsBackward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-periodsbackward
-	PeriodsBackward *float64 `json:"PeriodsBackward,omitempty"`
+	PeriodsBackward *T `json:"PeriodsBackward,omitempty"`
 
 	// PeriodsForward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-periodsforward
-	PeriodsForward *float64 `json:"PeriodsForward,omitempty"`
+	PeriodsForward *T `json:"PeriodsForward,omitempty"`
 
 	// PredictionInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-predictioninterval
-	PredictionInterval *float64 `json:"PredictionInterval,omitempty"`
+	PredictionInterval *T `json:"PredictionInterval,omitempty"`
 
 	// Seasonality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-seasonality
-	Seasonality *float64 `json:"Seasonality,omitempty"`
+	Seasonality *T `json:"Seasonality,omitempty"`
 
 	// UpperBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timebasedforecastproperties.html#cfn-quicksight-template-timebasedforecastproperties-upperboundary
-	UpperBoundary *float64 `json:"UpperBoundary,omitempty"`
+	UpperBoundary *T `json:"UpperBoundary,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_TimeBasedForecastProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TimeBasedForecastProperties) AWSCloudFormationType() string {
+func (r *Template_TimeBasedForecastProperties[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TimeBasedForecastProperties"
 }

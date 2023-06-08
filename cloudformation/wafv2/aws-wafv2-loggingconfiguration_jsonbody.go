@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_JsonBody AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.JsonBody)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-jsonbody.html
-type LoggingConfiguration_JsonBody struct {
+type LoggingConfiguration_JsonBody[T any] struct {
 
 	// InvalidFallbackBehavior AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LoggingConfiguration_JsonBody struct {
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-jsonbody.html#cfn-wafv2-loggingconfiguration-jsonbody-matchpattern
-	MatchPattern *LoggingConfiguration_MatchPattern `json:"MatchPattern"`
+	MatchPattern *LoggingConfiguration_MatchPattern[any] `json:"MatchPattern"`
 
 	// MatchScope AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type LoggingConfiguration_JsonBody struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_JsonBody) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_JsonBody[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.JsonBody"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_NumberFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.NumberFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberformatconfiguration.html
-type Template_NumberFormatConfiguration struct {
+type Template_NumberFormatConfiguration[T any] struct {
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberformatconfiguration.html#cfn-quicksight-template-numberformatconfiguration-formatconfiguration
-	FormatConfiguration *Template_NumericFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Template_NumericFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_NumberFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumberFormatConfiguration) AWSCloudFormationType() string {
+func (r *Template_NumberFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumberFormatConfiguration"
 }

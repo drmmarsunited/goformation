@@ -8,7 +8,7 @@ import (
 
 // Template_TimeRangeFilterValue AWS CloudFormation Resource (AWS::QuickSight::Template.TimeRangeFilterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefiltervalue.html
-type Template_TimeRangeFilterValue struct {
+type Template_TimeRangeFilterValue[T any] struct {
 
 	// Parameter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_TimeRangeFilterValue struct {
 	// RollingDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefiltervalue.html#cfn-quicksight-template-timerangefiltervalue-rollingdate
-	RollingDate *Template_RollingDateConfiguration `json:"RollingDate,omitempty"`
+	RollingDate *Template_RollingDateConfiguration[any] `json:"RollingDate,omitempty"`
 
 	// StaticValue AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_TimeRangeFilterValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TimeRangeFilterValue) AWSCloudFormationType() string {
+func (r *Template_TimeRangeFilterValue[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TimeRangeFilterValue"
 }

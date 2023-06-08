@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_ResourceRequirement AWS CloudFormation Resource (AWS::ECS::TaskDefinition.ResourceRequirement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html
-type TaskDefinition_ResourceRequirement struct {
+type TaskDefinition_ResourceRequirement[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TaskDefinition_ResourceRequirement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_ResourceRequirement) AWSCloudFormationType() string {
+func (r *TaskDefinition_ResourceRequirement[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.ResourceRequirement"
 }

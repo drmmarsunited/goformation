@@ -8,7 +8,7 @@ import (
 
 // Rule_SageMakerPipelineParameter AWS CloudFormation Resource (AWS::Events::Rule.SageMakerPipelineParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html
-type Rule_SageMakerPipelineParameter struct {
+type Rule_SageMakerPipelineParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rule_SageMakerPipelineParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_SageMakerPipelineParameter) AWSCloudFormationType() string {
+func (r *Rule_SageMakerPipelineParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.SageMakerPipelineParameter"
 }

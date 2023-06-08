@@ -8,7 +8,7 @@ import (
 
 // Channel_EmbeddedDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EmbeddedDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddeddestinationsettings.html
-type Channel_EmbeddedDestinationSettings struct {
+type Channel_EmbeddedDestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_EmbeddedDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_EmbeddedDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_EmbeddedDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.EmbeddedDestinationSettings"
 }

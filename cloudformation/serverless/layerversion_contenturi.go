@@ -12,13 +12,13 @@ import (
 )
 
 // LayerVersion_ContentUri is a helper struct that can hold either a String or S3Location value
-type LayerVersion_ContentUri struct {
+type LayerVersion_ContentUri[T any] struct {
 	String *string
 
-	S3Location *LayerVersion_S3Location
+	S3Location *LayerVersion_S3Location[any]
 }
 
-func (r LayerVersion_ContentUri) value() interface{} {
+func (r LayerVersion_ContentUri[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r LayerVersion_ContentUri) value() interface{} {
 	return nil
 }
 
-func (r LayerVersion_ContentUri) MarshalJSON() ([]byte, error) {
+func (r LayerVersion_ContentUri[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *LayerVersion_ContentUri) UnmarshalJSON(b []byte) error {
+func (r *LayerVersion_ContentUri[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

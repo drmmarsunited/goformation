@@ -8,17 +8,17 @@ import (
 
 // Function_KinesisEvent AWS CloudFormation Resource (AWS::Serverless::Function.KinesisEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-type Function_KinesisEvent struct {
+type Function_KinesisEvent[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// FunctionResponseTypes AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Function_KinesisEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_KinesisEvent) AWSCloudFormationType() string {
+func (r *Function_KinesisEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.KinesisEvent"
 }

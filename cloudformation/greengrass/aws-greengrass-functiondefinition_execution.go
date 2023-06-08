@@ -8,7 +8,7 @@ import (
 
 // FunctionDefinition_Execution AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.Execution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html
-type FunctionDefinition_Execution struct {
+type FunctionDefinition_Execution[T any] struct {
 
 	// IsolationMode AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type FunctionDefinition_Execution struct {
 	// RunAs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html#cfn-greengrass-functiondefinition-execution-runas
-	RunAs *FunctionDefinition_RunAs `json:"RunAs,omitempty"`
+	RunAs *FunctionDefinition_RunAs[any] `json:"RunAs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type FunctionDefinition_Execution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinition_Execution) AWSCloudFormationType() string {
+func (r *FunctionDefinition_Execution[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinition.Execution"
 }

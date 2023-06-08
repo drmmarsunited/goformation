@@ -8,7 +8,7 @@ import (
 
 // Dashboard_BoxPlotStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BoxPlotStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotstyleoptions.html
-type Dashboard_BoxPlotStyleOptions struct {
+type Dashboard_BoxPlotStyleOptions[T any] struct {
 
 	// FillStyle AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_BoxPlotStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BoxPlotStyleOptions) AWSCloudFormationType() string {
+func (r *Dashboard_BoxPlotStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BoxPlotStyleOptions"
 }

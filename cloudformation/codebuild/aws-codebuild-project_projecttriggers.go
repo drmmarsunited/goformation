@@ -8,7 +8,7 @@ import (
 
 // Project_ProjectTriggers AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectTriggers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
-type Project_ProjectTriggers struct {
+type Project_ProjectTriggers[T any] struct {
 
 	// BuildType AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Project_ProjectTriggers struct {
 	// FilterGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
-	FilterGroups []Project_FilterGroup `json:"FilterGroups,omitempty"`
+	FilterGroups []Project_FilterGroup[any] `json:"FilterGroups,omitempty"`
 
 	// Webhook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook
-	Webhook *bool `json:"Webhook,omitempty"`
+	Webhook *T `json:"Webhook,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Project_ProjectTriggers struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProjectTriggers) AWSCloudFormationType() string {
+func (r *Project_ProjectTriggers[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectTriggers"
 }

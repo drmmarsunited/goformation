@@ -12,7 +12,7 @@ import (
 
 // IdentityProviderConfig AWS CloudFormation Resource (AWS::EKS::IdentityProviderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html
-type IdentityProviderConfig struct {
+type IdentityProviderConfig[T any] struct {
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type IdentityProviderConfig struct {
 	// Oidc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-oidc
-	Oidc *IdentityProviderConfig_OidcIdentityProviderConfig `json:"Oidc,omitempty"`
+	Oidc *IdentityProviderConfig_OidcIdentityProviderConfig[any] `json:"Oidc,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type IdentityProviderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityProviderConfig) AWSCloudFormationType() string {
+func (r *IdentityProviderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::IdentityProviderConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IdentityProviderConfig) MarshalJSON() ([]byte, error) {
-	type Properties IdentityProviderConfig
+func (r IdentityProviderConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties IdentityProviderConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r IdentityProviderConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IdentityProviderConfig) UnmarshalJSON(b []byte) error {
-	type Properties IdentityProviderConfig
+func (r *IdentityProviderConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties IdentityProviderConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *IdentityProviderConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IdentityProviderConfig(*res.Properties)
+		*r = IdentityProviderConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

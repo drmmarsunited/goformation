@@ -12,12 +12,12 @@ import (
 
 // ReportPlan AWS CloudFormation Resource (AWS::Backup::ReportPlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html
-type ReportPlan struct {
+type ReportPlan[T any] struct {
 
 	// ReportDeliveryChannel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportdeliverychannel
-	ReportDeliveryChannel *ReportPlan_ReportDeliveryChannel `json:"ReportDeliveryChannel"`
+	ReportDeliveryChannel *ReportPlan_ReportDeliveryChannel[any] `json:"ReportDeliveryChannel"`
 
 	// ReportPlanDescription AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type ReportPlan struct {
 	// ReportSetting AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportsetting
-	ReportSetting *ReportPlan_ReportSetting `json:"ReportSetting"`
+	ReportSetting *ReportPlan_ReportSetting[any] `json:"ReportSetting"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -56,14 +56,15 @@ type ReportPlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReportPlan) AWSCloudFormationType() string {
+func (r *ReportPlan[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::ReportPlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReportPlan) MarshalJSON() ([]byte, error) {
-	type Properties ReportPlan
+func (r ReportPlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReportPlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r ReportPlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReportPlan) UnmarshalJSON(b []byte) error {
-	type Properties ReportPlan
+func (r *ReportPlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReportPlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *ReportPlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReportPlan(*res.Properties)
+		*r = ReportPlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

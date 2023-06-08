@@ -8,7 +8,7 @@ import (
 
 // PermissionSet_CustomerManagedPolicyReference AWS CloudFormation Resource (AWS::SSO::PermissionSet.CustomerManagedPolicyReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html
-type PermissionSet_CustomerManagedPolicyReference struct {
+type PermissionSet_CustomerManagedPolicyReference[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type PermissionSet_CustomerManagedPolicyReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PermissionSet_CustomerManagedPolicyReference) AWSCloudFormationType() string {
+func (r *PermissionSet_CustomerManagedPolicyReference[any]) AWSCloudFormationType() string {
 	return "AWS::SSO::PermissionSet.CustomerManagedPolicyReference"
 }

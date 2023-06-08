@@ -8,12 +8,12 @@ import (
 
 // Alarm_Metric AWS CloudFormation Resource (AWS::CloudWatch::Alarm.Metric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html
-type Alarm_Metric struct {
+type Alarm_Metric[T any] struct {
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html#cfn-cloudwatch-alarm-metric-dimensions
-	Dimensions []Alarm_Dimension `json:"Dimensions,omitempty"`
+	Dimensions []Alarm_Dimension[any] `json:"Dimensions,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Alarm_Metric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm_Metric) AWSCloudFormationType() string {
+func (r *Alarm_Metric[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::Alarm.Metric"
 }

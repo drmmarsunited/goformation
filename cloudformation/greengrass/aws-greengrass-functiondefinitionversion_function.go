@@ -8,7 +8,7 @@ import (
 
 // FunctionDefinitionVersion_Function AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinitionVersion.Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html
-type FunctionDefinitionVersion_Function struct {
+type FunctionDefinitionVersion_Function[T any] struct {
 
 	// FunctionArn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type FunctionDefinitionVersion_Function struct {
 	// FunctionConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration
-	FunctionConfiguration *FunctionDefinitionVersion_FunctionConfiguration `json:"FunctionConfiguration"`
+	FunctionConfiguration *FunctionDefinitionVersion_FunctionConfiguration[any] `json:"FunctionConfiguration"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type FunctionDefinitionVersion_Function struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinitionVersion_Function) AWSCloudFormationType() string {
+func (r *FunctionDefinitionVersion_Function[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinitionVersion.Function"
 }

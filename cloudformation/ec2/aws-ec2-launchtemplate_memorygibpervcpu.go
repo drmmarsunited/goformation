@@ -8,17 +8,17 @@ import (
 
 // LaunchTemplate_MemoryGiBPerVCpu AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.MemoryGiBPerVCpu)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html
-type LaunchTemplate_MemoryGiBPerVCpu struct {
+type LaunchTemplate_MemoryGiBPerVCpu[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html#cfn-ec2-launchtemplate-memorygibpervcpu-max
-	Max *float64 `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html#cfn-ec2-launchtemplate-memorygibpervcpu-min
-	Min *float64 `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LaunchTemplate_MemoryGiBPerVCpu struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_MemoryGiBPerVCpu) AWSCloudFormationType() string {
+func (r *LaunchTemplate_MemoryGiBPerVCpu[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.MemoryGiBPerVCpu"
 }

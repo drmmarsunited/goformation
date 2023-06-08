@@ -8,17 +8,17 @@ import (
 
 // Endpoint_DocDbSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.DocDbSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html
-type Endpoint_DocDbSettings struct {
+type Endpoint_DocDbSettings[T any] struct {
 
 	// DocsToInvestigate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html#cfn-dms-endpoint-docdbsettings-docstoinvestigate
-	DocsToInvestigate *int `json:"DocsToInvestigate,omitempty"`
+	DocsToInvestigate *T `json:"DocsToInvestigate,omitempty"`
 
 	// ExtractDocId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html#cfn-dms-endpoint-docdbsettings-extractdocid
-	ExtractDocId *bool `json:"ExtractDocId,omitempty"`
+	ExtractDocId *T `json:"ExtractDocId,omitempty"`
 
 	// NestingLevel AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Endpoint_DocDbSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_DocDbSettings) AWSCloudFormationType() string {
+func (r *Endpoint_DocDbSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.DocDbSettings"
 }

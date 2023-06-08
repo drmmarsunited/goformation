@@ -8,7 +8,7 @@ import (
 
 // Application_Alarm AWS CloudFormation Resource (AWS::ApplicationInsights::Application.Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarm.html
-type Application_Alarm struct {
+type Application_Alarm[T any] struct {
 
 	// AlarmName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_Alarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_Alarm) AWSCloudFormationType() string {
+func (r *Application_Alarm[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.Alarm"
 }

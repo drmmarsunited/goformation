@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_HostVolumeProperties AWS CloudFormation Resource (AWS::ECS::TaskDefinition.HostVolumeProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-hostvolumeproperties.html
-type TaskDefinition_HostVolumeProperties struct {
+type TaskDefinition_HostVolumeProperties[T any] struct {
 
 	// SourcePath AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type TaskDefinition_HostVolumeProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_HostVolumeProperties) AWSCloudFormationType() string {
+func (r *TaskDefinition_HostVolumeProperties[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.HostVolumeProperties"
 }

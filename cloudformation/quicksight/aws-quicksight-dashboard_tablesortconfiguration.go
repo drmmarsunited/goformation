@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TableSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablesortconfiguration.html
-type Dashboard_TableSortConfiguration struct {
+type Dashboard_TableSortConfiguration[T any] struct {
 
 	// PaginationConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablesortconfiguration.html#cfn-quicksight-dashboard-tablesortconfiguration-paginationconfiguration
-	PaginationConfiguration *Dashboard_PaginationConfiguration `json:"PaginationConfiguration,omitempty"`
+	PaginationConfiguration *Dashboard_PaginationConfiguration[any] `json:"PaginationConfiguration,omitempty"`
 
 	// RowSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablesortconfiguration.html#cfn-quicksight-dashboard-tablesortconfiguration-rowsort
-	RowSort []Dashboard_FieldSortOptions `json:"RowSort,omitempty"`
+	RowSort []Dashboard_FieldSortOptions[any] `json:"RowSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_TableSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TableSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableSortConfiguration"
 }

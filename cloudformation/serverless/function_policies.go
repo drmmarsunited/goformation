@@ -12,18 +12,18 @@ import (
 )
 
 // Function_Policies is a helper struct that can hold either a String, String, IAMPolicyDocument, SAMPolicyTemplate, or IAMPolicyDocument value
-type Function_Policies struct {
+type Function_Policies[T any] struct {
 	String *string
 
 	StringArray *[]string
 
-	IAMPolicyDocument *Function_IAMPolicyDocument
+	IAMPolicyDocument *Function_IAMPolicyDocument[any]
 
-	IAMPolicyDocumentArray *[]Function_IAMPolicyDocument
-	SAMPolicyTemplateArray *[]Function_SAMPolicyTemplate
+	IAMPolicyDocumentArray *[]Function_IAMPolicyDocument[any]
+	SAMPolicyTemplateArray *[]Function_SAMPolicyTemplate[any]
 }
 
-func (r Function_Policies) value() interface{} {
+func (r Function_Policies[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -54,12 +54,12 @@ func (r Function_Policies) value() interface{} {
 	return nil
 }
 
-func (r Function_Policies) MarshalJSON() ([]byte, error) {
+func (r Function_Policies[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_Policies) UnmarshalJSON(b []byte) error {
+func (r *Function_Policies[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

@@ -8,7 +8,7 @@ import (
 
 // InstanceFleetConfig_Configuration AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html
-type InstanceFleetConfig_Configuration struct {
+type InstanceFleetConfig_Configuration[T any] struct {
 
 	// Classification AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type InstanceFleetConfig_Configuration struct {
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations
-	Configurations []InstanceFleetConfig_Configuration `json:"Configurations,omitempty"`
+	Configurations []InstanceFleetConfig_Configuration[any] `json:"Configurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type InstanceFleetConfig_Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig_Configuration) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig_Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.Configuration"
 }

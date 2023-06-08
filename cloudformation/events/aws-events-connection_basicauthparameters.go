@@ -8,7 +8,7 @@ import (
 
 // Connection_BasicAuthParameters AWS CloudFormation Resource (AWS::Events::Connection.BasicAuthParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html
-type Connection_BasicAuthParameters struct {
+type Connection_BasicAuthParameters[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Connection_BasicAuthParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_BasicAuthParameters) AWSCloudFormationType() string {
+func (r *Connection_BasicAuthParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.BasicAuthParameters"
 }

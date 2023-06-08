@@ -8,17 +8,17 @@ import (
 
 // Analysis_CustomContentVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomContentVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html
-type Analysis_CustomContentVisual struct {
+type Analysis_CustomContentVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-chartconfiguration
-	ChartConfiguration *Analysis_CustomContentConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Analysis_CustomContentConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Analysis_CustomContentVisual struct {
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-subtitle
-	Subtitle *Analysis_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Analysis_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-title
-	Title *Analysis_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Analysis_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Analysis_CustomContentVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomContentVisual) AWSCloudFormationType() string {
+func (r *Analysis_CustomContentVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomContentVisual"
 }

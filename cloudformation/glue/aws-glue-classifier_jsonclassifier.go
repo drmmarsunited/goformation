@@ -8,7 +8,7 @@ import (
 
 // Classifier_JsonClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.JsonClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
-type Classifier_JsonClassifier struct {
+type Classifier_JsonClassifier[T any] struct {
 
 	// JsonPath AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Classifier_JsonClassifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Classifier_JsonClassifier) AWSCloudFormationType() string {
+func (r *Classifier_JsonClassifier[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier.JsonClassifier"
 }

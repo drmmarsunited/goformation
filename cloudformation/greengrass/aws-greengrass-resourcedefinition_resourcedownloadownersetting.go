@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinition_ResourceDownloadOwnerSetting AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.ResourceDownloadOwnerSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedownloadownersetting.html
-type ResourceDefinition_ResourceDownloadOwnerSetting struct {
+type ResourceDefinition_ResourceDownloadOwnerSetting[T any] struct {
 
 	// GroupOwner AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResourceDefinition_ResourceDownloadOwnerSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition_ResourceDownloadOwnerSetting) AWSCloudFormationType() string {
+func (r *ResourceDefinition_ResourceDownloadOwnerSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition.ResourceDownloadOwnerSetting"
 }

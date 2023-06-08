@@ -8,7 +8,7 @@ import (
 
 // WorkGroup_EncryptionConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-encryptionconfiguration.html
-type WorkGroup_EncryptionConfiguration struct {
+type WorkGroup_EncryptionConfiguration[T any] struct {
 
 	// EncryptionOption AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WorkGroup_EncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WorkGroup_EncryptionConfiguration) AWSCloudFormationType() string {
+func (r *WorkGroup_EncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Athena::WorkGroup.EncryptionConfiguration"
 }

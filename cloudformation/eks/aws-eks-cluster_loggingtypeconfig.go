@@ -8,7 +8,7 @@ import (
 
 // Cluster_LoggingTypeConfig AWS CloudFormation Resource (AWS::EKS::Cluster.LoggingTypeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-loggingtypeconfig.html
-type Cluster_LoggingTypeConfig struct {
+type Cluster_LoggingTypeConfig[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Cluster_LoggingTypeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_LoggingTypeConfig) AWSCloudFormationType() string {
+func (r *Cluster_LoggingTypeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.LoggingTypeConfig"
 }

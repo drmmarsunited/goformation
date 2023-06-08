@@ -12,17 +12,17 @@ import (
 
 // DBInstance AWS CloudFormation Resource (AWS::Neptune::DBInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html
-type DBInstance struct {
+type DBInstance[T any] struct {
 
 	// AllowMajorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-allowmajorversionupgrade
-	AllowMajorVersionUpgrade *bool `json:"AllowMajorVersionUpgrade,omitempty"`
+	AllowMajorVersionUpgrade *T `json:"AllowMajorVersionUpgrade,omitempty"`
 
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type DBInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBInstance) AWSCloudFormationType() string {
+func (r *DBInstance[any]) AWSCloudFormationType() string {
 	return "AWS::Neptune::DBInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DBInstance) MarshalJSON() ([]byte, error) {
-	type Properties DBInstance
+func (r DBInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties DBInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r DBInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DBInstance) UnmarshalJSON(b []byte) error {
-	type Properties DBInstance
+func (r *DBInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties DBInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *DBInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DBInstance(*res.Properties)
+		*r = DBInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,27 +8,27 @@ import (
 
 // VirtualGateway_VirtualGatewayListener AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html
-type VirtualGateway_VirtualGatewayListener struct {
+type VirtualGateway_VirtualGatewayListener[T any] struct {
 
 	// ConnectionPool AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-connectionpool
-	ConnectionPool *VirtualGateway_VirtualGatewayConnectionPool `json:"ConnectionPool,omitempty"`
+	ConnectionPool *VirtualGateway_VirtualGatewayConnectionPool[any] `json:"ConnectionPool,omitempty"`
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-healthcheck
-	HealthCheck *VirtualGateway_VirtualGatewayHealthCheckPolicy `json:"HealthCheck,omitempty"`
+	HealthCheck *VirtualGateway_VirtualGatewayHealthCheckPolicy[any] `json:"HealthCheck,omitempty"`
 
 	// PortMapping AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-portmapping
-	PortMapping *VirtualGateway_VirtualGatewayPortMapping `json:"PortMapping"`
+	PortMapping *VirtualGateway_VirtualGatewayPortMapping[any] `json:"PortMapping"`
 
 	// TLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-tls
-	TLS *VirtualGateway_VirtualGatewayListenerTls `json:"TLS,omitempty"`
+	TLS *VirtualGateway_VirtualGatewayListenerTls[any] `json:"TLS,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualGateway_VirtualGatewayListener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListener) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListener[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListener"
 }

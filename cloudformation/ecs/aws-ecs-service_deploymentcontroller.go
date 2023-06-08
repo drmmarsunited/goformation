@@ -8,7 +8,7 @@ import (
 
 // Service_DeploymentController AWS CloudFormation Resource (AWS::ECS::Service.DeploymentController)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcontroller.html
-type Service_DeploymentController struct {
+type Service_DeploymentController[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Service_DeploymentController struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DeploymentController) AWSCloudFormationType() string {
+func (r *Service_DeploymentController[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.DeploymentController"
 }

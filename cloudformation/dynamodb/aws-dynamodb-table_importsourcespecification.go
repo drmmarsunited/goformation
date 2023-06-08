@@ -8,7 +8,7 @@ import (
 
 // Table_ImportSourceSpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.ImportSourceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-importsourcespecification.html
-type Table_ImportSourceSpecification struct {
+type Table_ImportSourceSpecification[T any] struct {
 
 	// InputCompressionType AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Table_ImportSourceSpecification struct {
 	// InputFormatOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-importsourcespecification.html#cfn-dynamodb-table-importsourcespecification-inputformatoptions
-	InputFormatOptions *Table_InputFormatOptions `json:"InputFormatOptions,omitempty"`
+	InputFormatOptions *Table_InputFormatOptions[any] `json:"InputFormatOptions,omitempty"`
 
 	// S3BucketSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-importsourcespecification.html#cfn-dynamodb-table-importsourcespecification-s3bucketsource
-	S3BucketSource *Table_S3BucketSource `json:"S3BucketSource"`
+	S3BucketSource *Table_S3BucketSource[any] `json:"S3BucketSource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Table_ImportSourceSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_ImportSourceSpecification) AWSCloudFormationType() string {
+func (r *Table_ImportSourceSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.ImportSourceSpecification"
 }

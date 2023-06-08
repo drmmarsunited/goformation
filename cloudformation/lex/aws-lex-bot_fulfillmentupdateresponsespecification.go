@@ -8,22 +8,22 @@ import (
 
 // Bot_FulfillmentUpdateResponseSpecification AWS CloudFormation Resource (AWS::Lex::Bot.FulfillmentUpdateResponseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html
-type Bot_FulfillmentUpdateResponseSpecification struct {
+type Bot_FulfillmentUpdateResponseSpecification[T any] struct {
 
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *T `json:"AllowInterrupt,omitempty"`
 
 	// FrequencyInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-frequencyinseconds
-	FrequencyInSeconds int `json:"FrequencyInSeconds"`
+	FrequencyInSeconds T `json:"FrequencyInSeconds"`
 
 	// MessageGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-messagegroups
-	MessageGroups []Bot_MessageGroup `json:"MessageGroups"`
+	MessageGroups []Bot_MessageGroup[any] `json:"MessageGroups"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_FulfillmentUpdateResponseSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_FulfillmentUpdateResponseSpecification) AWSCloudFormationType() string {
+func (r *Bot_FulfillmentUpdateResponseSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.FulfillmentUpdateResponseSpecification"
 }

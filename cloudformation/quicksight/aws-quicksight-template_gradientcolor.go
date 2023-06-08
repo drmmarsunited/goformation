@@ -8,12 +8,12 @@ import (
 
 // Template_GradientColor AWS CloudFormation Resource (AWS::QuickSight::Template.GradientColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gradientcolor.html
-type Template_GradientColor struct {
+type Template_GradientColor[T any] struct {
 
 	// Stops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gradientcolor.html#cfn-quicksight-template-gradientcolor-stops
-	Stops []Template_GradientStop `json:"Stops,omitempty"`
+	Stops []Template_GradientStop[any] `json:"Stops,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_GradientColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GradientColor) AWSCloudFormationType() string {
+func (r *Template_GradientColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GradientColor"
 }

@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_AbortConfig AWS CloudFormation Resource (AWS::IoT::JobTemplate.AbortConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortconfig.html
-type JobTemplate_AbortConfig struct {
+type JobTemplate_AbortConfig[T any] struct {
 
 	// CriteriaList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortconfig.html#cfn-iot-jobtemplate-abortconfig-criterialist
-	CriteriaList []JobTemplate_AbortCriteria `json:"CriteriaList"`
+	CriteriaList []JobTemplate_AbortCriteria[any] `json:"CriteriaList"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobTemplate_AbortConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_AbortConfig) AWSCloudFormationType() string {
+func (r *JobTemplate_AbortConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.AbortConfig"
 }

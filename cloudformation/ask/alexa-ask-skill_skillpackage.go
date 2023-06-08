@@ -8,12 +8,12 @@ import (
 
 // Skill_SkillPackage AWS CloudFormation Resource (Alexa::ASK::Skill.SkillPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html
-type Skill_SkillPackage struct {
+type Skill_SkillPackage[T any] struct {
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-overrides
-	Overrides *Skill_Overrides `json:"Overrides,omitempty"`
+	Overrides *Skill_Overrides[any] `json:"Overrides,omitempty"`
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Skill_SkillPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Skill_SkillPackage) AWSCloudFormationType() string {
+func (r *Skill_SkillPackage[any]) AWSCloudFormationType() string {
 	return "Alexa::ASK::Skill.SkillPackage"
 }

@@ -8,7 +8,7 @@ import (
 
 // StreamProcessor_NotificationChannel AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.NotificationChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-notificationchannel.html
-type StreamProcessor_NotificationChannel struct {
+type StreamProcessor_NotificationChannel[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type StreamProcessor_NotificationChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_NotificationChannel) AWSCloudFormationType() string {
+func (r *StreamProcessor_NotificationChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.NotificationChannel"
 }

@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_ScheduleConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.ScheduleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-scheduleconfig.html
-type MonitoringSchedule_ScheduleConfig struct {
+type MonitoringSchedule_ScheduleConfig[T any] struct {
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MonitoringSchedule_ScheduleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_ScheduleConfig) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_ScheduleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.ScheduleConfig"
 }

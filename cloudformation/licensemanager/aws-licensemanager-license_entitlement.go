@@ -8,17 +8,17 @@ import (
 
 // License_Entitlement AWS CloudFormation Resource (AWS::LicenseManager::License.Entitlement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html
-type License_Entitlement struct {
+type License_Entitlement[T any] struct {
 
 	// AllowCheckIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-allowcheckin
-	AllowCheckIn *bool `json:"AllowCheckIn,omitempty"`
+	AllowCheckIn *T `json:"AllowCheckIn,omitempty"`
 
 	// MaxCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-maxcount
-	MaxCount *int `json:"MaxCount,omitempty"`
+	MaxCount *T `json:"MaxCount,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type License_Entitlement struct {
 	// Overage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-overage
-	Overage *bool `json:"Overage,omitempty"`
+	Overage *T `json:"Overage,omitempty"`
 
 	// Unit AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type License_Entitlement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_Entitlement) AWSCloudFormationType() string {
+func (r *License_Entitlement[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.Entitlement"
 }

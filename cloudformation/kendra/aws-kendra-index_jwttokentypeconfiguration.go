@@ -8,7 +8,7 @@ import (
 
 // Index_JwtTokenTypeConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.JwtTokenTypeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html
-type Index_JwtTokenTypeConfiguration struct {
+type Index_JwtTokenTypeConfiguration[T any] struct {
 
 	// ClaimRegex AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Index_JwtTokenTypeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_JwtTokenTypeConfiguration) AWSCloudFormationType() string {
+func (r *Index_JwtTokenTypeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.JwtTokenTypeConfiguration"
 }

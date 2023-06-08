@@ -8,7 +8,7 @@ import (
 
 // Trigger_Condition AWS CloudFormation Resource (AWS::Glue::Trigger.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
-type Trigger_Condition struct {
+type Trigger_Condition[T any] struct {
 
 	// CrawlState AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Trigger_Condition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Trigger_Condition) AWSCloudFormationType() string {
+func (r *Trigger_Condition[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Condition"
 }

@@ -8,32 +8,32 @@ import (
 
 // Dashboard_TableVisual AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html
-type Dashboard_TableVisual struct {
+type Dashboard_TableVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-actions
-	Actions []Dashboard_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Dashboard_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// ChartConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-chartconfiguration
-	ChartConfiguration *Dashboard_TableConfiguration `json:"ChartConfiguration,omitempty"`
+	ChartConfiguration *Dashboard_TableConfiguration[any] `json:"ChartConfiguration,omitempty"`
 
 	// ConditionalFormatting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-conditionalformatting
-	ConditionalFormatting *Dashboard_TableConditionalFormatting `json:"ConditionalFormatting,omitempty"`
+	ConditionalFormatting *Dashboard_TableConditionalFormatting[any] `json:"ConditionalFormatting,omitempty"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-subtitle
-	Subtitle *Dashboard_VisualSubtitleLabelOptions `json:"Subtitle,omitempty"`
+	Subtitle *Dashboard_VisualSubtitleLabelOptions[any] `json:"Subtitle,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-title
-	Title *Dashboard_VisualTitleLabelOptions `json:"Title,omitempty"`
+	Title *Dashboard_VisualTitleLabelOptions[any] `json:"Title,omitempty"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Dashboard_TableVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableVisual) AWSCloudFormationType() string {
+func (r *Dashboard_TableVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableVisual"
 }

@@ -8,7 +8,7 @@ import (
 
 // Channel_Esam AWS CloudFormation Resource (AWS::MediaLive::Channel.Esam)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html
-type Channel_Esam struct {
+type Channel_Esam[T any] struct {
 
 	// AcquisitionPointId AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_Esam struct {
 	// AdAvailOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-adavailoffset
-	AdAvailOffset *int `json:"AdAvailOffset,omitempty"`
+	AdAvailOffset *T `json:"AdAvailOffset,omitempty"`
 
 	// PasswordParam AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Channel_Esam struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Esam) AWSCloudFormationType() string {
+func (r *Channel_Esam[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Esam"
 }

@@ -8,7 +8,7 @@ import (
 
 // Pipe_DeadLetterConfig AWS CloudFormation Resource (AWS::Pipes::Pipe.DeadLetterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-deadletterconfig.html
-type Pipe_DeadLetterConfig struct {
+type Pipe_DeadLetterConfig[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Pipe_DeadLetterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_DeadLetterConfig) AWSCloudFormationType() string {
+func (r *Pipe_DeadLetterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.DeadLetterConfig"
 }

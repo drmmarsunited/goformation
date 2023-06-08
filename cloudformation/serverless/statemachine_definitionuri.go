@@ -12,13 +12,13 @@ import (
 )
 
 // StateMachine_DefinitionUri is a helper struct that can hold either a String or S3Location value
-type StateMachine_DefinitionUri struct {
+type StateMachine_DefinitionUri[T any] struct {
 	String *string
 
-	S3Location *StateMachine_S3Location
+	S3Location *StateMachine_S3Location[any]
 }
 
-func (r StateMachine_DefinitionUri) value() interface{} {
+func (r StateMachine_DefinitionUri[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r StateMachine_DefinitionUri) value() interface{} {
 	return nil
 }
 
-func (r StateMachine_DefinitionUri) MarshalJSON() ([]byte, error) {
+func (r StateMachine_DefinitionUri[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *StateMachine_DefinitionUri) UnmarshalJSON(b []byte) error {
+func (r *StateMachine_DefinitionUri[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

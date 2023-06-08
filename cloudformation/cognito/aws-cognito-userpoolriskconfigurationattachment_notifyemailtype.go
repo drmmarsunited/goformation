@@ -8,7 +8,7 @@ import (
 
 // UserPoolRiskConfigurationAttachment_NotifyEmailType AWS CloudFormation Resource (AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyEmailType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyemailtype.html
-type UserPoolRiskConfigurationAttachment_NotifyEmailType struct {
+type UserPoolRiskConfigurationAttachment_NotifyEmailType[T any] struct {
 
 	// HtmlBody AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserPoolRiskConfigurationAttachment_NotifyEmailType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolRiskConfigurationAttachment_NotifyEmailType) AWSCloudFormationType() string {
+func (r *UserPoolRiskConfigurationAttachment_NotifyEmailType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyEmailType"
 }

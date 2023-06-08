@@ -8,7 +8,7 @@ import (
 
 // ScalingPlan_PredefinedLoadMetricSpecification AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.PredefinedLoadMetricSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html
-type ScalingPlan_PredefinedLoadMetricSpecification struct {
+type ScalingPlan_PredefinedLoadMetricSpecification[T any] struct {
 
 	// PredefinedLoadMetricType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ScalingPlan_PredefinedLoadMetricSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPlan_PredefinedLoadMetricSpecification) AWSCloudFormationType() string {
+func (r *ScalingPlan_PredefinedLoadMetricSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.PredefinedLoadMetricSpecification"
 }

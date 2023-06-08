@@ -12,7 +12,7 @@ import (
 
 // QuickConnect AWS CloudFormation Resource (AWS::Connect::QuickConnect)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html
-type QuickConnect struct {
+type QuickConnect[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type QuickConnect struct {
 	// QuickConnectConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-quickconnectconfig
-	QuickConnectConfig *QuickConnect_QuickConnectConfig `json:"QuickConnectConfig"`
+	QuickConnectConfig *QuickConnect_QuickConnectConfig[any] `json:"QuickConnectConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type QuickConnect struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QuickConnect) AWSCloudFormationType() string {
+func (r *QuickConnect[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::QuickConnect"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r QuickConnect) MarshalJSON() ([]byte, error) {
-	type Properties QuickConnect
+func (r QuickConnect[any]) MarshalJSON() ([]byte, error) {
+	type Properties QuickConnect[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r QuickConnect) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *QuickConnect) UnmarshalJSON(b []byte) error {
-	type Properties QuickConnect
+func (r *QuickConnect[any]) UnmarshalJSON(b []byte) error {
+	type Properties QuickConnect[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *QuickConnect) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = QuickConnect(*res.Properties)
+		*r = QuickConnect[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

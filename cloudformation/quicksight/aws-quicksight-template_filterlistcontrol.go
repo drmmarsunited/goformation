@@ -8,17 +8,17 @@ import (
 
 // Template_FilterListControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterListControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterlistcontrol.html
-type Template_FilterListControl struct {
+type Template_FilterListControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterlistcontrol.html#cfn-quicksight-template-filterlistcontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Template_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Template_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterlistcontrol.html#cfn-quicksight-template-filterlistcontrol-displayoptions
-	DisplayOptions *Template_ListControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_ListControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_FilterListControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterlistcontrol.html#cfn-quicksight-template-filterlistcontrol-selectablevalues
-	SelectableValues *Template_FilterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Template_FilterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_FilterListControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterListControl) AWSCloudFormationType() string {
+func (r *Template_FilterListControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterListControl"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelCard_InferenceSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelCard.InferenceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferencespecification.html
-type ModelCard_InferenceSpecification struct {
+type ModelCard_InferenceSpecification[T any] struct {
 
 	// Containers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferencespecification.html#cfn-sagemaker-modelcard-inferencespecification-containers
-	Containers []ModelCard_Container `json:"Containers"`
+	Containers []ModelCard_Container[any] `json:"Containers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelCard_InferenceSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_InferenceSpecification) AWSCloudFormationType() string {
+func (r *ModelCard_InferenceSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.InferenceSpecification"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataflowEndpointGroup_SocketAddress AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.SocketAddress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html
-type DataflowEndpointGroup_SocketAddress struct {
+type DataflowEndpointGroup_SocketAddress[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataflowEndpointGroup_SocketAddress struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataflowEndpointGroup_SocketAddress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_SocketAddress) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_SocketAddress[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.SocketAddress"
 }

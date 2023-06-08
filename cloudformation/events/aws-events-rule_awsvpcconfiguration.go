@@ -8,7 +8,7 @@ import (
 
 // Rule_AwsVpcConfiguration AWS CloudFormation Resource (AWS::Events::Rule.AwsVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html
-type Rule_AwsVpcConfiguration struct {
+type Rule_AwsVpcConfiguration[T any] struct {
 
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Rule_AwsVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_AwsVpcConfiguration) AWSCloudFormationType() string {
+func (r *Rule_AwsVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.AwsVpcConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Server_ProtocolDetails AWS CloudFormation Resource (AWS::Transfer::Server.ProtocolDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html
-type Server_ProtocolDetails struct {
+type Server_ProtocolDetails[T any] struct {
 
 	// As2Transports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-as2transports
-	As2Transports []Server_As2Transport `json:"As2Transports,omitempty"`
+	As2Transports []Server_As2Transport[any] `json:"As2Transports,omitempty"`
 
 	// PassiveIp AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Server_ProtocolDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_ProtocolDetails) AWSCloudFormationType() string {
+func (r *Server_ProtocolDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.ProtocolDetails"
 }

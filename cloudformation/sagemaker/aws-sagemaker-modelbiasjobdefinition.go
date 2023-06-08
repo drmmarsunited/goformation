@@ -12,7 +12,7 @@ import (
 
 // ModelBiasJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html
-type ModelBiasJobDefinition struct {
+type ModelBiasJobDefinition[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
@@ -27,32 +27,32 @@ type ModelBiasJobDefinition struct {
 	// JobResources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobresources
-	JobResources *ModelBiasJobDefinition_MonitoringResources `json:"JobResources"`
+	JobResources *ModelBiasJobDefinition_MonitoringResources[any] `json:"JobResources"`
 
 	// ModelBiasAppSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification
-	ModelBiasAppSpecification *ModelBiasJobDefinition_ModelBiasAppSpecification `json:"ModelBiasAppSpecification"`
+	ModelBiasAppSpecification *ModelBiasJobDefinition_ModelBiasAppSpecification[any] `json:"ModelBiasAppSpecification"`
 
 	// ModelBiasBaselineConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig
-	ModelBiasBaselineConfig *ModelBiasJobDefinition_ModelBiasBaselineConfig `json:"ModelBiasBaselineConfig,omitempty"`
+	ModelBiasBaselineConfig *ModelBiasJobDefinition_ModelBiasBaselineConfig[any] `json:"ModelBiasBaselineConfig,omitempty"`
 
 	// ModelBiasJobInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput
-	ModelBiasJobInput *ModelBiasJobDefinition_ModelBiasJobInput `json:"ModelBiasJobInput"`
+	ModelBiasJobInput *ModelBiasJobDefinition_ModelBiasJobInput[any] `json:"ModelBiasJobInput"`
 
 	// ModelBiasJobOutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjoboutputconfig
-	ModelBiasJobOutputConfig *ModelBiasJobDefinition_MonitoringOutputConfig `json:"ModelBiasJobOutputConfig"`
+	ModelBiasJobOutputConfig *ModelBiasJobDefinition_MonitoringOutputConfig[any] `json:"ModelBiasJobOutputConfig"`
 
 	// NetworkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig
-	NetworkConfig *ModelBiasJobDefinition_NetworkConfig `json:"NetworkConfig,omitempty"`
+	NetworkConfig *ModelBiasJobDefinition_NetworkConfig[any] `json:"NetworkConfig,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type ModelBiasJobDefinition struct {
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition
-	StoppingCondition *ModelBiasJobDefinition_StoppingCondition `json:"StoppingCondition,omitempty"`
+	StoppingCondition *ModelBiasJobDefinition_StoppingCondition[any] `json:"StoppingCondition,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type ModelBiasJobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModelBiasJobDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ModelBiasJobDefinition
+func (r ModelBiasJobDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModelBiasJobDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r ModelBiasJobDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModelBiasJobDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ModelBiasJobDefinition
+func (r *ModelBiasJobDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModelBiasJobDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *ModelBiasJobDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModelBiasJobDefinition(*res.Properties)
+		*r = ModelBiasJobDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

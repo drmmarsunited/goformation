@@ -8,22 +8,22 @@ import (
 
 // Cluster_BrokerLogs AWS CloudFormation Resource (AWS::MSK::Cluster.BrokerLogs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html
-type Cluster_BrokerLogs struct {
+type Cluster_BrokerLogs[T any] struct {
 
 	// CloudWatchLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs
-	CloudWatchLogs *Cluster_CloudWatchLogs `json:"CloudWatchLogs,omitempty"`
+	CloudWatchLogs *Cluster_CloudWatchLogs[any] `json:"CloudWatchLogs,omitempty"`
 
 	// Firehose AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose
-	Firehose *Cluster_Firehose `json:"Firehose,omitempty"`
+	Firehose *Cluster_Firehose[any] `json:"Firehose,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3
-	S3 *Cluster_S3 `json:"S3,omitempty"`
+	S3 *Cluster_S3[any] `json:"S3,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Cluster_BrokerLogs struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_BrokerLogs) AWSCloudFormationType() string {
+func (r *Cluster_BrokerLogs[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.BrokerLogs"
 }

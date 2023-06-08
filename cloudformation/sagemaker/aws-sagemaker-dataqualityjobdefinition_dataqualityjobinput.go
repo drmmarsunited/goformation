@@ -8,17 +8,17 @@ import (
 
 // DataQualityJobDefinition_DataQualityJobInput AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.DataQualityJobInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html
-type DataQualityJobDefinition_DataQualityJobInput struct {
+type DataQualityJobDefinition_DataQualityJobInput[T any] struct {
 
 	// BatchTransformInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput-batchtransforminput
-	BatchTransformInput *DataQualityJobDefinition_BatchTransformInput `json:"BatchTransformInput,omitempty"`
+	BatchTransformInput *DataQualityJobDefinition_BatchTransformInput[any] `json:"BatchTransformInput,omitempty"`
 
 	// EndpointInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput-endpointinput
-	EndpointInput *DataQualityJobDefinition_EndpointInput `json:"EndpointInput,omitempty"`
+	EndpointInput *DataQualityJobDefinition_EndpointInput[any] `json:"EndpointInput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataQualityJobDefinition_DataQualityJobInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_DataQualityJobInput) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_DataQualityJobInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.DataQualityJobInput"
 }

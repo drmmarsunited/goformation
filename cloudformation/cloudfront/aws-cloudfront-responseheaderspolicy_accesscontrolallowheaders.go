@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_AccessControlAllowHeaders AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html
-type ResponseHeadersPolicy_AccessControlAllowHeaders struct {
+type ResponseHeadersPolicy_AccessControlAllowHeaders[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_AccessControlAllowHeaders struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_AccessControlAllowHeaders) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_AccessControlAllowHeaders[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders"
 }

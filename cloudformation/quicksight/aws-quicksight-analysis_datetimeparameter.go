@@ -8,7 +8,7 @@ import (
 
 // Analysis_DateTimeParameter AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateTimeParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameter.html
-type Analysis_DateTimeParameter struct {
+type Analysis_DateTimeParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analysis_DateTimeParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateTimeParameter) AWSCloudFormationType() string {
+func (r *Analysis_DateTimeParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateTimeParameter"
 }

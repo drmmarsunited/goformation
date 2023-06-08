@@ -8,7 +8,7 @@ import (
 
 // Plan_ContactTargetInfo AWS CloudFormation Resource (AWS::SSMContacts::Plan.ContactTargetInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-contacttargetinfo.html
-type Plan_ContactTargetInfo struct {
+type Plan_ContactTargetInfo[T any] struct {
 
 	// ContactId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Plan_ContactTargetInfo struct {
 	// IsEssential AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-contacttargetinfo.html#cfn-ssmcontacts-plan-contacttargetinfo-isessential
-	IsEssential bool `json:"IsEssential"`
+	IsEssential T `json:"IsEssential"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Plan_ContactTargetInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Plan_ContactTargetInfo) AWSCloudFormationType() string {
+func (r *Plan_ContactTargetInfo[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Plan.ContactTargetInfo"
 }

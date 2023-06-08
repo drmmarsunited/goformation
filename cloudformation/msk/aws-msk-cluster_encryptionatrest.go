@@ -8,7 +8,7 @@ import (
 
 // Cluster_EncryptionAtRest AWS CloudFormation Resource (AWS::MSK::Cluster.EncryptionAtRest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html
-type Cluster_EncryptionAtRest struct {
+type Cluster_EncryptionAtRest[T any] struct {
 
 	// DataVolumeKMSKeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Cluster_EncryptionAtRest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_EncryptionAtRest) AWSCloudFormationType() string {
+func (r *Cluster_EncryptionAtRest[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.EncryptionAtRest"
 }

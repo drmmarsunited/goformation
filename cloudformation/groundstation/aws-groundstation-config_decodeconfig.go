@@ -8,7 +8,7 @@ import (
 
 // Config_DecodeConfig AWS CloudFormation Resource (AWS::GroundStation::Config.DecodeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-decodeconfig.html
-type Config_DecodeConfig struct {
+type Config_DecodeConfig[T any] struct {
 
 	// UnvalidatedJSON AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Config_DecodeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_DecodeConfig) AWSCloudFormationType() string {
+func (r *Config_DecodeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.DecodeConfig"
 }

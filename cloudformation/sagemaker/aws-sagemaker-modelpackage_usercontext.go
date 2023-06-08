@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_UserContext AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.UserContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-usercontext.html
-type ModelPackage_UserContext struct {
+type ModelPackage_UserContext[T any] struct {
 
 	// DomainId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ModelPackage_UserContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_UserContext) AWSCloudFormationType() string {
+func (r *ModelPackage_UserContext[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.UserContext"
 }

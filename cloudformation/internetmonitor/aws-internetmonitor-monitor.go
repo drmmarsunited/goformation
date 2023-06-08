@@ -12,17 +12,17 @@ import (
 
 // Monitor AWS CloudFormation Resource (AWS::InternetMonitor::Monitor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html
-type Monitor struct {
+type Monitor[T any] struct {
 
 	// InternetMeasurementsLogDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-internetmeasurementslogdelivery
-	InternetMeasurementsLogDelivery *Monitor_InternetMeasurementsLogDelivery `json:"InternetMeasurementsLogDelivery,omitempty"`
+	InternetMeasurementsLogDelivery *Monitor_InternetMeasurementsLogDelivery[any] `json:"InternetMeasurementsLogDelivery,omitempty"`
 
 	// MaxCityNetworksToMonitor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-maxcitynetworkstomonitor
-	MaxCityNetworksToMonitor *int `json:"MaxCityNetworksToMonitor,omitempty"`
+	MaxCityNetworksToMonitor *T `json:"MaxCityNetworksToMonitor,omitempty"`
 
 	// MonitorName AWS CloudFormation Property
 	// Required: true
@@ -57,7 +57,7 @@ type Monitor struct {
 	// TrafficPercentageToMonitor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-trafficpercentagetomonitor
-	TrafficPercentageToMonitor *int `json:"TrafficPercentageToMonitor,omitempty"`
+	TrafficPercentageToMonitor *T `json:"TrafficPercentageToMonitor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -76,14 +76,15 @@ type Monitor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Monitor) AWSCloudFormationType() string {
+func (r *Monitor[any]) AWSCloudFormationType() string {
 	return "AWS::InternetMonitor::Monitor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Monitor) MarshalJSON() ([]byte, error) {
-	type Properties Monitor
+func (r Monitor[any]) MarshalJSON() ([]byte, error) {
+	type Properties Monitor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r Monitor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Monitor) UnmarshalJSON(b []byte) error {
-	type Properties Monitor
+func (r *Monitor[any]) UnmarshalJSON(b []byte) error {
+	type Properties Monitor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *Monitor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Monitor(*res.Properties)
+		*r = Monitor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

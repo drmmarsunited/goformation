@@ -8,7 +8,7 @@ import (
 
 // Flow_ErrorHandlingConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.ErrorHandlingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html
-type Flow_ErrorHandlingConfig struct {
+type Flow_ErrorHandlingConfig[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Flow_ErrorHandlingConfig struct {
 	// FailOnFirstError AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror
-	FailOnFirstError *bool `json:"FailOnFirstError,omitempty"`
+	FailOnFirstError *T `json:"FailOnFirstError,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Flow_ErrorHandlingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_ErrorHandlingConfig) AWSCloudFormationType() string {
+func (r *Flow_ErrorHandlingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.ErrorHandlingConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // WebACL_SingleQueryArgument AWS CloudFormation Resource (AWS::WAFv2::WebACL.SingleQueryArgument)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-singlequeryargument.html
-type WebACL_SingleQueryArgument struct {
+type WebACL_SingleQueryArgument[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type WebACL_SingleQueryArgument struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_SingleQueryArgument) AWSCloudFormationType() string {
+func (r *WebACL_SingleQueryArgument[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.SingleQueryArgument"
 }

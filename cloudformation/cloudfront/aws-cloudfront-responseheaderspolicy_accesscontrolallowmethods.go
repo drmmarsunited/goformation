@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_AccessControlAllowMethods AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowMethods)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowmethods.html
-type ResponseHeadersPolicy_AccessControlAllowMethods struct {
+type ResponseHeadersPolicy_AccessControlAllowMethods[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_AccessControlAllowMethods struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_AccessControlAllowMethods) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_AccessControlAllowMethods[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowMethods"
 }

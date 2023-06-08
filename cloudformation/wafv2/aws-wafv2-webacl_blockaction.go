@@ -8,12 +8,12 @@ import (
 
 // WebACL_BlockAction AWS CloudFormation Resource (AWS::WAFv2::WebACL.BlockAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-blockaction.html
-type WebACL_BlockAction struct {
+type WebACL_BlockAction[T any] struct {
 
 	// CustomResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-blockaction.html#cfn-wafv2-webacl-blockaction-customresponse
-	CustomResponse *WebACL_CustomResponse `json:"CustomResponse,omitempty"`
+	CustomResponse *WebACL_CustomResponse[any] `json:"CustomResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type WebACL_BlockAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_BlockAction) AWSCloudFormationType() string {
+func (r *WebACL_BlockAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.BlockAction"
 }

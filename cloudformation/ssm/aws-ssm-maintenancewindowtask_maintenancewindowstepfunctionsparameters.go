@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html
-type MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters struct {
+type MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters[T any] struct {
 
 	// Input AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_MaintenanceWindowStepFunctionsParameters[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters"
 }

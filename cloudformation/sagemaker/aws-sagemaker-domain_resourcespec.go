@@ -8,7 +8,7 @@ import (
 
 // Domain_ResourceSpec AWS CloudFormation Resource (AWS::SageMaker::Domain.ResourceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html
-type Domain_ResourceSpec struct {
+type Domain_ResourceSpec[T any] struct {
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Domain_ResourceSpec struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_ResourceSpec) AWSCloudFormationType() string {
+func (r *Domain_ResourceSpec[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.ResourceSpec"
 }

@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_Dimension AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.Dimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html
-type AnomalyDetector_Dimension struct {
+type AnomalyDetector_Dimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalyDetector_Dimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_Dimension) AWSCloudFormationType() string {
+func (r *AnomalyDetector_Dimension[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.Dimension"
 }

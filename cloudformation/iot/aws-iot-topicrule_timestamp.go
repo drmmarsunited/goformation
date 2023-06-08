@@ -8,7 +8,7 @@ import (
 
 // TopicRule_Timestamp AWS CloudFormation Resource (AWS::IoT::TopicRule.Timestamp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestamp.html
-type TopicRule_Timestamp struct {
+type TopicRule_Timestamp[T any] struct {
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TopicRule_Timestamp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_Timestamp) AWSCloudFormationType() string {
+func (r *TopicRule_Timestamp[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.Timestamp"
 }

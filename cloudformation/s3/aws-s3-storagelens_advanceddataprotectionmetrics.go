@@ -8,12 +8,12 @@ import (
 
 // StorageLens_AdvancedDataProtectionMetrics AWS CloudFormation Resource (AWS::S3::StorageLens.AdvancedDataProtectionMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-advanceddataprotectionmetrics.html
-type StorageLens_AdvancedDataProtectionMetrics struct {
+type StorageLens_AdvancedDataProtectionMetrics[T any] struct {
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-advanceddataprotectionmetrics.html#cfn-s3-storagelens-advanceddataprotectionmetrics-isenabled
-	IsEnabled *bool `json:"IsEnabled,omitempty"`
+	IsEnabled *T `json:"IsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StorageLens_AdvancedDataProtectionMetrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_AdvancedDataProtectionMetrics) AWSCloudFormationType() string {
+func (r *StorageLens_AdvancedDataProtectionMetrics[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.AdvancedDataProtectionMetrics"
 }

@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_LogConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.LogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-logconfiguration.html
-type TaskDefinition_LogConfiguration struct {
+type TaskDefinition_LogConfiguration[T any] struct {
 
 	// LogDriver AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type TaskDefinition_LogConfiguration struct {
 	// SecretOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-logconfiguration.html#cfn-ecs-taskdefinition-logconfiguration-secretoptions
-	SecretOptions []TaskDefinition_Secret `json:"SecretOptions,omitempty"`
+	SecretOptions []TaskDefinition_Secret[any] `json:"SecretOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TaskDefinition_LogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_LogConfiguration) AWSCloudFormationType() string {
+func (r *TaskDefinition_LogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.LogConfiguration"
 }

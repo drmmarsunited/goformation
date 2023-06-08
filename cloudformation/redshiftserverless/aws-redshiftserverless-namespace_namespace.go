@@ -8,7 +8,7 @@ import (
 
 // Namespace_Namespace AWS CloudFormation Resource (AWS::RedshiftServerless::Namespace.Namespace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html
-type Namespace_Namespace struct {
+type Namespace_Namespace[T any] struct {
 
 	// AdminUsername AWS CloudFormation Property
 	// Required: false
@@ -82,6 +82,6 @@ type Namespace_Namespace struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Namespace_Namespace) AWSCloudFormationType() string {
+func (r *Namespace_Namespace[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Namespace.Namespace"
 }

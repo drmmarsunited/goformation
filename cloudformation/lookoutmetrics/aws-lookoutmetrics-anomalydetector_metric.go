@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_Metric AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.Metric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metric.html
-type AnomalyDetector_Metric struct {
+type AnomalyDetector_Metric[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AnomalyDetector_Metric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_Metric) AWSCloudFormationType() string {
+func (r *AnomalyDetector_Metric[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.Metric"
 }

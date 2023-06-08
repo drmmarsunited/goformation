@@ -8,7 +8,7 @@ import (
 
 // Form_FieldPosition AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FieldPosition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldposition.html
-type Form_FieldPosition struct {
+type Form_FieldPosition[T any] struct {
 
 	// Below AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Form_FieldPosition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FieldPosition) AWSCloudFormationType() string {
+func (r *Form_FieldPosition[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FieldPosition"
 }

@@ -8,12 +8,12 @@ import (
 
 // TaskTemplate_RequiredFieldInfo AWS CloudFormation Resource (AWS::Connect::TaskTemplate.RequiredFieldInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-requiredfieldinfo.html
-type TaskTemplate_RequiredFieldInfo struct {
+type TaskTemplate_RequiredFieldInfo[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-requiredfieldinfo.html#cfn-connect-tasktemplate-requiredfieldinfo-id
-	Id *TaskTemplate_FieldIdentifier `json:"Id"`
+	Id *TaskTemplate_FieldIdentifier[any] `json:"Id"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type TaskTemplate_RequiredFieldInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_RequiredFieldInfo) AWSCloudFormationType() string {
+func (r *TaskTemplate_RequiredFieldInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.RequiredFieldInfo"
 }

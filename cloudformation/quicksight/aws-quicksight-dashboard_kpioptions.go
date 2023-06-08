@@ -8,12 +8,12 @@ import (
 
 // Dashboard_KPIOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html
-type Dashboard_KPIOptions struct {
+type Dashboard_KPIOptions[T any] struct {
 
 	// Comparison AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-comparison
-	Comparison *Dashboard_ComparisonConfiguration `json:"Comparison,omitempty"`
+	Comparison *Dashboard_ComparisonConfiguration[any] `json:"Comparison,omitempty"`
 
 	// PrimaryValueDisplayType AWS CloudFormation Property
 	// Required: false
@@ -23,27 +23,27 @@ type Dashboard_KPIOptions struct {
 	// PrimaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-primaryvaluefontconfiguration
-	PrimaryValueFontConfiguration *Dashboard_FontConfiguration `json:"PrimaryValueFontConfiguration,omitempty"`
+	PrimaryValueFontConfiguration *Dashboard_FontConfiguration[any] `json:"PrimaryValueFontConfiguration,omitempty"`
 
 	// ProgressBar AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-progressbar
-	ProgressBar *Dashboard_ProgressBarOptions `json:"ProgressBar,omitempty"`
+	ProgressBar *Dashboard_ProgressBarOptions[any] `json:"ProgressBar,omitempty"`
 
 	// SecondaryValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-secondaryvalue
-	SecondaryValue *Dashboard_SecondaryValueOptions `json:"SecondaryValue,omitempty"`
+	SecondaryValue *Dashboard_SecondaryValueOptions[any] `json:"SecondaryValue,omitempty"`
 
 	// SecondaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-secondaryvaluefontconfiguration
-	SecondaryValueFontConfiguration *Dashboard_FontConfiguration `json:"SecondaryValueFontConfiguration,omitempty"`
+	SecondaryValueFontConfiguration *Dashboard_FontConfiguration[any] `json:"SecondaryValueFontConfiguration,omitempty"`
 
 	// TrendArrows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpioptions.html#cfn-quicksight-dashboard-kpioptions-trendarrows
-	TrendArrows *Dashboard_TrendArrowOptions `json:"TrendArrows,omitempty"`
+	TrendArrows *Dashboard_TrendArrowOptions[any] `json:"TrendArrows,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_KPIOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIOptions) AWSCloudFormationType() string {
+func (r *Dashboard_KPIOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIOptions"
 }

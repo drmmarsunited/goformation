@@ -8,12 +8,12 @@ import (
 
 // Channel_FailoverCondition AWS CloudFormation Resource (AWS::MediaLive::Channel.FailoverCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failovercondition.html
-type Channel_FailoverCondition struct {
+type Channel_FailoverCondition[T any] struct {
 
 	// FailoverConditionSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failovercondition.html#cfn-medialive-channel-failovercondition-failoverconditionsettings
-	FailoverConditionSettings *Channel_FailoverConditionSettings `json:"FailoverConditionSettings,omitempty"`
+	FailoverConditionSettings *Channel_FailoverConditionSettings[any] `json:"FailoverConditionSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_FailoverCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FailoverCondition) AWSCloudFormationType() string {
+func (r *Channel_FailoverCondition[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FailoverCondition"
 }

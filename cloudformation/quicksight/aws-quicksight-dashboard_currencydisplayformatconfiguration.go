@@ -8,22 +8,22 @@ import (
 
 // Dashboard_CurrencyDisplayFormatConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CurrencyDisplayFormatConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-currencydisplayformatconfiguration.html
-type Dashboard_CurrencyDisplayFormatConfiguration struct {
+type Dashboard_CurrencyDisplayFormatConfiguration[T any] struct {
 
 	// DecimalPlacesConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-currencydisplayformatconfiguration.html#cfn-quicksight-dashboard-currencydisplayformatconfiguration-decimalplacesconfiguration
-	DecimalPlacesConfiguration *Dashboard_DecimalPlacesConfiguration `json:"DecimalPlacesConfiguration,omitempty"`
+	DecimalPlacesConfiguration *Dashboard_DecimalPlacesConfiguration[any] `json:"DecimalPlacesConfiguration,omitempty"`
 
 	// NegativeValueConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-currencydisplayformatconfiguration.html#cfn-quicksight-dashboard-currencydisplayformatconfiguration-negativevalueconfiguration
-	NegativeValueConfiguration *Dashboard_NegativeValueConfiguration `json:"NegativeValueConfiguration,omitempty"`
+	NegativeValueConfiguration *Dashboard_NegativeValueConfiguration[any] `json:"NegativeValueConfiguration,omitempty"`
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-currencydisplayformatconfiguration.html#cfn-quicksight-dashboard-currencydisplayformatconfiguration-nullvalueformatconfiguration
-	NullValueFormatConfiguration *Dashboard_NullValueFormatConfiguration `json:"NullValueFormatConfiguration,omitempty"`
+	NullValueFormatConfiguration *Dashboard_NullValueFormatConfiguration[any] `json:"NullValueFormatConfiguration,omitempty"`
 
 	// NumberScale AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Dashboard_CurrencyDisplayFormatConfiguration struct {
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-currencydisplayformatconfiguration.html#cfn-quicksight-dashboard-currencydisplayformatconfiguration-separatorconfiguration
-	SeparatorConfiguration *Dashboard_NumericSeparatorConfiguration `json:"SeparatorConfiguration,omitempty"`
+	SeparatorConfiguration *Dashboard_NumericSeparatorConfiguration[any] `json:"SeparatorConfiguration,omitempty"`
 
 	// Suffix AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Dashboard_CurrencyDisplayFormatConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CurrencyDisplayFormatConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_CurrencyDisplayFormatConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CurrencyDisplayFormatConfiguration"
 }

@@ -8,12 +8,12 @@ import (
 
 // Template_ReferenceLineLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLineLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html
-type Template_ReferenceLineLabelConfiguration struct {
+type Template_ReferenceLineLabelConfiguration[T any] struct {
 
 	// CustomLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-customlabelconfiguration
-	CustomLabelConfiguration *Template_ReferenceLineCustomLabelConfiguration `json:"CustomLabelConfiguration,omitempty"`
+	CustomLabelConfiguration *Template_ReferenceLineCustomLabelConfiguration[any] `json:"CustomLabelConfiguration,omitempty"`
 
 	// FontColor AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_ReferenceLineLabelConfiguration struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-fontconfiguration
-	FontConfiguration *Template_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Template_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// HorizontalPosition AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Template_ReferenceLineLabelConfiguration struct {
 	// ValueLabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-valuelabelconfiguration
-	ValueLabelConfiguration *Template_ReferenceLineValueLabelConfiguration `json:"ValueLabelConfiguration,omitempty"`
+	ValueLabelConfiguration *Template_ReferenceLineValueLabelConfiguration[any] `json:"ValueLabelConfiguration,omitempty"`
 
 	// VerticalPosition AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Template_ReferenceLineLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLineLabelConfiguration) AWSCloudFormationType() string {
+func (r *Template_ReferenceLineLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLineLabelConfiguration"
 }

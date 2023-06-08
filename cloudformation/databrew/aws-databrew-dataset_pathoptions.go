@@ -8,22 +8,22 @@ import (
 
 // Dataset_PathOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.PathOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html
-type Dataset_PathOptions struct {
+type Dataset_PathOptions[T any] struct {
 
 	// FilesLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit
-	FilesLimit *Dataset_FilesLimit `json:"FilesLimit,omitempty"`
+	FilesLimit *Dataset_FilesLimit[any] `json:"FilesLimit,omitempty"`
 
 	// LastModifiedDateCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition
-	LastModifiedDateCondition *Dataset_FilterExpression `json:"LastModifiedDateCondition,omitempty"`
+	LastModifiedDateCondition *Dataset_FilterExpression[any] `json:"LastModifiedDateCondition,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters
-	Parameters []Dataset_PathParameter `json:"Parameters,omitempty"`
+	Parameters []Dataset_PathParameter[any] `json:"Parameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dataset_PathOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_PathOptions) AWSCloudFormationType() string {
+func (r *Dataset_PathOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.PathOptions"
 }

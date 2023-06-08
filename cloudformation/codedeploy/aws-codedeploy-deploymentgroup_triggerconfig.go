@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_TriggerConfig AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.TriggerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html
-type DeploymentGroup_TriggerConfig struct {
+type DeploymentGroup_TriggerConfig[T any] struct {
 
 	// TriggerEvents AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DeploymentGroup_TriggerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_TriggerConfig) AWSCloudFormationType() string {
+func (r *DeploymentGroup_TriggerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.TriggerConfig"
 }

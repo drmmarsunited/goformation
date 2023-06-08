@@ -8,12 +8,12 @@ import (
 
 // Application_AutoStartConfiguration AWS CloudFormation Resource (AWS::EMRServerless::Application.AutoStartConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-autostartconfiguration.html
-type Application_AutoStartConfiguration struct {
+type Application_AutoStartConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-autostartconfiguration.html#cfn-emrserverless-application-autostartconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_AutoStartConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_AutoStartConfiguration) AWSCloudFormationType() string {
+func (r *Application_AutoStartConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.AutoStartConfiguration"
 }

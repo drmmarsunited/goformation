@@ -8,27 +8,27 @@ import (
 
 // PackagingConfiguration_CmafPackage AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.CmafPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html
-type PackagingConfiguration_CmafPackage struct {
+type PackagingConfiguration_CmafPackage[T any] struct {
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-encryption
-	Encryption *PackagingConfiguration_CmafEncryption `json:"Encryption,omitempty"`
+	Encryption *PackagingConfiguration_CmafEncryption[any] `json:"Encryption,omitempty"`
 
 	// HlsManifests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-hlsmanifests
-	HlsManifests []PackagingConfiguration_HlsManifest `json:"HlsManifests"`
+	HlsManifests []PackagingConfiguration_HlsManifest[any] `json:"HlsManifests"`
 
 	// IncludeEncoderConfigurationInSegments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-includeencoderconfigurationinsegments
-	IncludeEncoderConfigurationInSegments *bool `json:"IncludeEncoderConfigurationInSegments,omitempty"`
+	IncludeEncoderConfigurationInSegments *T `json:"IncludeEncoderConfigurationInSegments,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type PackagingConfiguration_CmafPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_CmafPackage) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_CmafPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.CmafPackage"
 }

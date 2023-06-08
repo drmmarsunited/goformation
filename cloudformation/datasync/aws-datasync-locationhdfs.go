@@ -12,7 +12,7 @@ import (
 
 // LocationHDFS AWS CloudFormation Resource (AWS::DataSync::LocationHDFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html
-type LocationHDFS struct {
+type LocationHDFS[T any] struct {
 
 	// AgentArns AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type LocationHDFS struct {
 	// BlockSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-blocksize
-	BlockSize *int `json:"BlockSize,omitempty"`
+	BlockSize *T `json:"BlockSize,omitempty"`
 
 	// KerberosKeytab AWS CloudFormation Property
 	// Required: false
@@ -52,17 +52,17 @@ type LocationHDFS struct {
 	// NameNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-namenodes
-	NameNodes []LocationHDFS_NameNode `json:"NameNodes"`
+	NameNodes []LocationHDFS_NameNode[any] `json:"NameNodes"`
 
 	// QopConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-qopconfiguration
-	QopConfiguration *LocationHDFS_QopConfiguration `json:"QopConfiguration,omitempty"`
+	QopConfiguration *LocationHDFS_QopConfiguration[any] `json:"QopConfiguration,omitempty"`
 
 	// ReplicationFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-replicationfactor
-	ReplicationFactor *int `json:"ReplicationFactor,omitempty"`
+	ReplicationFactor *T `json:"ReplicationFactor,omitempty"`
 
 	// SimpleUser AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type LocationHDFS struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationHDFS) AWSCloudFormationType() string {
+func (r *LocationHDFS[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationHDFS"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocationHDFS) MarshalJSON() ([]byte, error) {
-	type Properties LocationHDFS
+func (r LocationHDFS[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocationHDFS[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r LocationHDFS) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocationHDFS) UnmarshalJSON(b []byte) error {
-	type Properties LocationHDFS
+func (r *LocationHDFS[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocationHDFS[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *LocationHDFS) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocationHDFS(*res.Properties)
+		*r = LocationHDFS[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

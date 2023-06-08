@@ -8,7 +8,7 @@ import (
 
 // OptionGroup_OptionConfiguration AWS CloudFormation Resource (AWS::RDS::OptionGroup.OptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html
-type OptionGroup_OptionConfiguration struct {
+type OptionGroup_OptionConfiguration[T any] struct {
 
 	// DBSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type OptionGroup_OptionConfiguration struct {
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-optionsettings
-	OptionSettings []OptionGroup_OptionSetting `json:"OptionSettings,omitempty"`
+	OptionSettings []OptionGroup_OptionSetting[any] `json:"OptionSettings,omitempty"`
 
 	// OptionVersion AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type OptionGroup_OptionConfiguration struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// VpcSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type OptionGroup_OptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OptionGroup_OptionConfiguration) AWSCloudFormationType() string {
+func (r *OptionGroup_OptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::OptionGroup.OptionConfiguration"
 }

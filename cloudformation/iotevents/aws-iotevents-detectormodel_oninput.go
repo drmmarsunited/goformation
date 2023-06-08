@@ -8,17 +8,17 @@ import (
 
 // DetectorModel_OnInput AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.OnInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html
-type DetectorModel_OnInput struct {
+type DetectorModel_OnInput[T any] struct {
 
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events
-	Events []DetectorModel_Event `json:"Events,omitempty"`
+	Events []DetectorModel_Event[any] `json:"Events,omitempty"`
 
 	// TransitionEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents
-	TransitionEvents []DetectorModel_TransitionEvent `json:"TransitionEvents,omitempty"`
+	TransitionEvents []DetectorModel_TransitionEvent[any] `json:"TransitionEvents,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DetectorModel_OnInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_OnInput) AWSCloudFormationType() string {
+func (r *DetectorModel_OnInput[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.OnInput"
 }

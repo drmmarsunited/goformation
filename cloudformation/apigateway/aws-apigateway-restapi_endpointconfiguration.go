@@ -8,7 +8,7 @@ import (
 
 // RestApi_EndpointConfiguration AWS CloudFormation Resource (AWS::ApiGateway::RestApi.EndpointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html
-type RestApi_EndpointConfiguration struct {
+type RestApi_EndpointConfiguration[T any] struct {
 
 	// Types AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type RestApi_EndpointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RestApi_EndpointConfiguration) AWSCloudFormationType() string {
+func (r *RestApi_EndpointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::RestApi.EndpointConfiguration"
 }

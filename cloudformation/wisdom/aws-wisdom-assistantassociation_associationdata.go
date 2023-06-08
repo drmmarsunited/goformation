@@ -8,7 +8,7 @@ import (
 
 // AssistantAssociation_AssociationData AWS CloudFormation Resource (AWS::Wisdom::AssistantAssociation.AssociationData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-associationdata.html
-type AssistantAssociation_AssociationData struct {
+type AssistantAssociation_AssociationData[T any] struct {
 
 	// KnowledgeBaseId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type AssistantAssociation_AssociationData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssistantAssociation_AssociationData) AWSCloudFormationType() string {
+func (r *AssistantAssociation_AssociationData[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::AssistantAssociation.AssociationData"
 }

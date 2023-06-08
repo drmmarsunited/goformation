@@ -8,12 +8,12 @@ import (
 
 // Template_FilterRelativeDateTimeControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterRelativeDateTimeControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterrelativedatetimecontrol.html
-type Template_FilterRelativeDateTimeControl struct {
+type Template_FilterRelativeDateTimeControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filterrelativedatetimecontrol.html#cfn-quicksight-template-filterrelativedatetimecontrol-displayoptions
-	DisplayOptions *Template_RelativeDateTimeControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_RelativeDateTimeControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Template_FilterRelativeDateTimeControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterRelativeDateTimeControl) AWSCloudFormationType() string {
+func (r *Template_FilterRelativeDateTimeControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterRelativeDateTimeControl"
 }

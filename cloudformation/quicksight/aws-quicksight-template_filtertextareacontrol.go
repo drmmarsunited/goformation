@@ -8,7 +8,7 @@ import (
 
 // Template_FilterTextAreaControl AWS CloudFormation Resource (AWS::QuickSight::Template.FilterTextAreaControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtertextareacontrol.html
-type Template_FilterTextAreaControl struct {
+type Template_FilterTextAreaControl[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_FilterTextAreaControl struct {
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-filtertextareacontrol.html#cfn-quicksight-template-filtertextareacontrol-displayoptions
-	DisplayOptions *Template_TextAreaControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_TextAreaControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Template_FilterTextAreaControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FilterTextAreaControl) AWSCloudFormationType() string {
+func (r *Template_FilterTextAreaControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FilterTextAreaControl"
 }

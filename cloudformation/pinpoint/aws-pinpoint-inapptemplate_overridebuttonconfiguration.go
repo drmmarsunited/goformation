@@ -8,7 +8,7 @@ import (
 
 // InAppTemplate_OverrideButtonConfiguration AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.OverrideButtonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-overridebuttonconfiguration.html
-type InAppTemplate_OverrideButtonConfiguration struct {
+type InAppTemplate_OverrideButtonConfiguration[T any] struct {
 
 	// ButtonAction AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type InAppTemplate_OverrideButtonConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InAppTemplate_OverrideButtonConfiguration) AWSCloudFormationType() string {
+func (r *InAppTemplate_OverrideButtonConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::InAppTemplate.OverrideButtonConfiguration"
 }

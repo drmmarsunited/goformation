@@ -8,17 +8,17 @@ import (
 
 // Function_RequestParameter AWS CloudFormation Resource (AWS::Serverless::Function.RequestParameter)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html
-type Function_RequestParameter struct {
+type Function_RequestParameter[T any] struct {
 
 	// Caching AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html#sam-function-requestparameter-caching
-	Caching *bool `json:"Caching,omitempty"`
+	Caching *T `json:"Caching,omitempty"`
 
 	// Required AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html#sam-function-requestparameter-required
-	Required *bool `json:"Required,omitempty"`
+	Required *T `json:"Required,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Function_RequestParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_RequestParameter) AWSCloudFormationType() string {
+func (r *Function_RequestParameter[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.RequestParameter"
 }

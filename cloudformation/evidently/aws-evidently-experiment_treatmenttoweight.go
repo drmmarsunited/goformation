@@ -8,12 +8,12 @@ import (
 
 // Experiment_TreatmentToWeight AWS CloudFormation Resource (AWS::Evidently::Experiment.TreatmentToWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmenttoweight.html
-type Experiment_TreatmentToWeight struct {
+type Experiment_TreatmentToWeight[T any] struct {
 
 	// SplitWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmenttoweight.html#cfn-evidently-experiment-treatmenttoweight-splitweight
-	SplitWeight int `json:"SplitWeight"`
+	SplitWeight T `json:"SplitWeight"`
 
 	// Treatment AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Experiment_TreatmentToWeight struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment_TreatmentToWeight) AWSCloudFormationType() string {
+func (r *Experiment_TreatmentToWeight[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment.TreatmentToWeight"
 }

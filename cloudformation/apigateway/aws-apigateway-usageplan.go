@@ -12,12 +12,12 @@ import (
 
 // UsagePlan AWS CloudFormation Resource (AWS::ApiGateway::UsagePlan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
-type UsagePlan struct {
+type UsagePlan[T any] struct {
 
 	// ApiStages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
-	ApiStages []UsagePlan_ApiStage `json:"ApiStages,omitempty"`
+	ApiStages []UsagePlan_ApiStage[any] `json:"ApiStages,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type UsagePlan struct {
 	// Quota AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
-	Quota *UsagePlan_QuotaSettings `json:"Quota,omitempty"`
+	Quota *UsagePlan_QuotaSettings[any] `json:"Quota,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type UsagePlan struct {
 	// Throttle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
-	Throttle *UsagePlan_ThrottleSettings `json:"Throttle,omitempty"`
+	Throttle *UsagePlan_ThrottleSettings[any] `json:"Throttle,omitempty"`
 
 	// UsagePlanName AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type UsagePlan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UsagePlan) AWSCloudFormationType() string {
+func (r *UsagePlan[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::UsagePlan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UsagePlan) MarshalJSON() ([]byte, error) {
-	type Properties UsagePlan
+func (r UsagePlan[any]) MarshalJSON() ([]byte, error) {
+	type Properties UsagePlan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r UsagePlan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UsagePlan) UnmarshalJSON(b []byte) error {
-	type Properties UsagePlan
+func (r *UsagePlan[any]) UnmarshalJSON(b []byte) error {
+	type Properties UsagePlan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *UsagePlan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UsagePlan(*res.Properties)
+		*r = UsagePlan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

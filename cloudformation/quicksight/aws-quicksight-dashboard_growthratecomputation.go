@@ -8,7 +8,7 @@ import (
 
 // Dashboard_GrowthRateComputation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GrowthRateComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html
-type Dashboard_GrowthRateComputation struct {
+type Dashboard_GrowthRateComputation[T any] struct {
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type Dashboard_GrowthRateComputation struct {
 	// PeriodSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-periodsize
-	PeriodSize *float64 `json:"PeriodSize,omitempty"`
+	PeriodSize *T `json:"PeriodSize,omitempty"`
 
 	// Time AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-time
-	Time *Dashboard_DimensionField `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-value
-	Value *Dashboard_MeasureField `json:"Value,omitempty"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_GrowthRateComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GrowthRateComputation) AWSCloudFormationType() string {
+func (r *Dashboard_GrowthRateComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GrowthRateComputation"
 }

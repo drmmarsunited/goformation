@@ -12,7 +12,7 @@ import (
 
 // FleetMetric AWS CloudFormation Resource (AWS::IoT::FleetMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html
-type FleetMetric struct {
+type FleetMetric[T any] struct {
 
 	// AggregationField AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type FleetMetric struct {
 	// AggregationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-aggregationtype
-	AggregationType *FleetMetric_AggregationType `json:"AggregationType,omitempty"`
+	AggregationType *FleetMetric_AggregationType[any] `json:"AggregationType,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type FleetMetric struct {
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-period
-	Period *int `json:"Period,omitempty"`
+	Period *T `json:"Period,omitempty"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type FleetMetric struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FleetMetric) AWSCloudFormationType() string {
+func (r *FleetMetric[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::FleetMetric"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FleetMetric) MarshalJSON() ([]byte, error) {
-	type Properties FleetMetric
+func (r FleetMetric[any]) MarshalJSON() ([]byte, error) {
+	type Properties FleetMetric[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r FleetMetric) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FleetMetric) UnmarshalJSON(b []byte) error {
-	type Properties FleetMetric
+func (r *FleetMetric[any]) UnmarshalJSON(b []byte) error {
+	type Properties FleetMetric[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *FleetMetric) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FleetMetric(*res.Properties)
+		*r = FleetMetric[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

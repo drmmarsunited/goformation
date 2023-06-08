@@ -8,17 +8,17 @@ import (
 
 // Analysis_FilterListControl AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilterListControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterlistcontrol.html
-type Analysis_FilterListControl struct {
+type Analysis_FilterListControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterlistcontrol.html#cfn-quicksight-analysis-filterlistcontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Analysis_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Analysis_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterlistcontrol.html#cfn-quicksight-analysis-filterlistcontrol-displayoptions
-	DisplayOptions *Analysis_ListControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Analysis_ListControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Analysis_FilterListControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterlistcontrol.html#cfn-quicksight-analysis-filterlistcontrol-selectablevalues
-	SelectableValues *Analysis_FilterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Analysis_FilterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Analysis_FilterListControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilterListControl) AWSCloudFormationType() string {
+func (r *Analysis_FilterListControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilterListControl"
 }

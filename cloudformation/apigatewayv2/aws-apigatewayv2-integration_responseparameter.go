@@ -8,7 +8,7 @@ import (
 
 // Integration_ResponseParameter AWS CloudFormation Resource (AWS::ApiGatewayV2::Integration.ResponseParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameter.html
-type Integration_ResponseParameter struct {
+type Integration_ResponseParameter[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Integration_ResponseParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_ResponseParameter) AWSCloudFormationType() string {
+func (r *Integration_ResponseParameter[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Integration.ResponseParameter"
 }

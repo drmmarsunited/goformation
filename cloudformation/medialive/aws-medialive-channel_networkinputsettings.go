@@ -8,12 +8,12 @@ import (
 
 // Channel_NetworkInputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.NetworkInputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html
-type Channel_NetworkInputSettings struct {
+type Channel_NetworkInputSettings[T any] struct {
 
 	// HlsInputSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings
-	HlsInputSettings *Channel_HlsInputSettings `json:"HlsInputSettings,omitempty"`
+	HlsInputSettings *Channel_HlsInputSettings[any] `json:"HlsInputSettings,omitempty"`
 
 	// ServerValidation AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_NetworkInputSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_NetworkInputSettings) AWSCloudFormationType() string {
+func (r *Channel_NetworkInputSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.NetworkInputSettings"
 }

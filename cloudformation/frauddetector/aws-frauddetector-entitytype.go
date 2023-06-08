@@ -12,7 +12,7 @@ import (
 
 // EntityType AWS CloudFormation Resource (AWS::FraudDetector::EntityType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html
-type EntityType struct {
+type EntityType[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type EntityType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EntityType) AWSCloudFormationType() string {
+func (r *EntityType[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::EntityType"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EntityType) MarshalJSON() ([]byte, error) {
-	type Properties EntityType
+func (r EntityType[any]) MarshalJSON() ([]byte, error) {
+	type Properties EntityType[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r EntityType) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EntityType) UnmarshalJSON(b []byte) error {
-	type Properties EntityType
+func (r *EntityType[any]) UnmarshalJSON(b []byte) error {
+	type Properties EntityType[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *EntityType) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EntityType(*res.Properties)
+		*r = EntityType[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // FargateProfile_Selector AWS CloudFormation Resource (AWS::EKS::FargateProfile.Selector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-selector.html
-type FargateProfile_Selector struct {
+type FargateProfile_Selector[T any] struct {
 
 	// Labels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-selector.html#cfn-eks-fargateprofile-selector-labels
-	Labels []FargateProfile_Label `json:"Labels,omitempty"`
+	Labels []FargateProfile_Label[any] `json:"Labels,omitempty"`
 
 	// Namespace AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type FargateProfile_Selector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FargateProfile_Selector) AWSCloudFormationType() string {
+func (r *FargateProfile_Selector[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::FargateProfile.Selector"
 }

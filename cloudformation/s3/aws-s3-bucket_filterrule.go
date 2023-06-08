@@ -8,7 +8,7 @@ import (
 
 // Bucket_FilterRule AWS CloudFormation Resource (AWS::S3::Bucket.FilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
-type Bucket_FilterRule struct {
+type Bucket_FilterRule[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_FilterRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_FilterRule) AWSCloudFormationType() string {
+func (r *Bucket_FilterRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.FilterRule"
 }

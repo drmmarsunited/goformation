@@ -8,7 +8,7 @@ import (
 
 // DataSource_AccessControlListConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.AccessControlListConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-accesscontrollistconfiguration.html
-type DataSource_AccessControlListConfiguration struct {
+type DataSource_AccessControlListConfiguration[T any] struct {
 
 	// KeyPath AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataSource_AccessControlListConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AccessControlListConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_AccessControlListConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.AccessControlListConfiguration"
 }

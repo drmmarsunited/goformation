@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_LoadBalancersConfig AWS CloudFormation Resource (AWS::EC2::SpotFleet.LoadBalancersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html
-type SpotFleet_LoadBalancersConfig struct {
+type SpotFleet_LoadBalancersConfig[T any] struct {
 
 	// ClassicLoadBalancersConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-classicloadbalancersconfig
-	ClassicLoadBalancersConfig *SpotFleet_ClassicLoadBalancersConfig `json:"ClassicLoadBalancersConfig,omitempty"`
+	ClassicLoadBalancersConfig *SpotFleet_ClassicLoadBalancersConfig[any] `json:"ClassicLoadBalancersConfig,omitempty"`
 
 	// TargetGroupsConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-targetgroupsconfig
-	TargetGroupsConfig *SpotFleet_TargetGroupsConfig `json:"TargetGroupsConfig,omitempty"`
+	TargetGroupsConfig *SpotFleet_TargetGroupsConfig[any] `json:"TargetGroupsConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_LoadBalancersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_LoadBalancersConfig) AWSCloudFormationType() string {
+func (r *SpotFleet_LoadBalancersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.LoadBalancersConfig"
 }

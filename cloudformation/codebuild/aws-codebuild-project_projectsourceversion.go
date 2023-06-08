@@ -8,7 +8,7 @@ import (
 
 // Project_ProjectSourceVersion AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectSourceVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectsourceversion.html
-type Project_ProjectSourceVersion struct {
+type Project_ProjectSourceVersion[T any] struct {
 
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Project_ProjectSourceVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ProjectSourceVersion) AWSCloudFormationType() string {
+func (r *Project_ProjectSourceVersion[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectSourceVersion"
 }

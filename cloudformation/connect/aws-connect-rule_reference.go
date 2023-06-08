@@ -8,7 +8,7 @@ import (
 
 // Rule_Reference AWS CloudFormation Resource (AWS::Connect::Rule.Reference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-reference.html
-type Rule_Reference struct {
+type Rule_Reference[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rule_Reference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Reference) AWSCloudFormationType() string {
+func (r *Rule_Reference[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.Reference"
 }

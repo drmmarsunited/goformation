@@ -8,7 +8,7 @@ import (
 
 // Pipeline_VpcOptions AWS CloudFormation Resource (AWS::OSIS::Pipeline.VpcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-vpcoptions.html
-type Pipeline_VpcOptions struct {
+type Pipeline_VpcOptions[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipeline_VpcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_VpcOptions) AWSCloudFormationType() string {
+func (r *Pipeline_VpcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OSIS::Pipeline.VpcOptions"
 }

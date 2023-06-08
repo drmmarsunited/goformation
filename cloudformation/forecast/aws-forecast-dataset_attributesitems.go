@@ -8,7 +8,7 @@ import (
 
 // Dataset_AttributesItems AWS CloudFormation Resource (AWS::Forecast::Dataset.AttributesItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html
-type Dataset_AttributesItems struct {
+type Dataset_AttributesItems[T any] struct {
 
 	// AttributeName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dataset_AttributesItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_AttributesItems) AWSCloudFormationType() string {
+func (r *Dataset_AttributesItems[any]) AWSCloudFormationType() string {
 	return "AWS::Forecast::Dataset.AttributesItems"
 }

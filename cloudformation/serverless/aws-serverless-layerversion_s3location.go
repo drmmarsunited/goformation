@@ -8,7 +8,7 @@ import (
 
 // LayerVersion_S3Location AWS CloudFormation Resource (AWS::Serverless::LayerVersion.S3Location)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-type LayerVersion_S3Location struct {
+type LayerVersion_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type LayerVersion_S3Location struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Version *int `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type LayerVersion_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LayerVersion_S3Location) AWSCloudFormationType() string {
+func (r *LayerVersion_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::LayerVersion.S3Location"
 }

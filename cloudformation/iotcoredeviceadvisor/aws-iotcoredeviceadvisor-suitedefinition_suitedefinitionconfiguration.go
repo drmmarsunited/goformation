@@ -8,7 +8,7 @@ import (
 
 // SuiteDefinition_SuiteDefinitionConfiguration AWS CloudFormation Resource (AWS::IoTCoreDeviceAdvisor::SuiteDefinition.SuiteDefinitionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html
-type SuiteDefinition_SuiteDefinitionConfiguration struct {
+type SuiteDefinition_SuiteDefinitionConfiguration[T any] struct {
 
 	// DevicePermissionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type SuiteDefinition_SuiteDefinitionConfiguration struct {
 	// Devices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration-devices
-	Devices []SuiteDefinition_DeviceUnderTest `json:"Devices,omitempty"`
+	Devices []SuiteDefinition_DeviceUnderTest[any] `json:"Devices,omitempty"`
 
 	// IntendedForQualification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration-intendedforqualification
-	IntendedForQualification *bool `json:"IntendedForQualification,omitempty"`
+	IntendedForQualification *T `json:"IntendedForQualification,omitempty"`
 
 	// RootGroup AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type SuiteDefinition_SuiteDefinitionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SuiteDefinition_SuiteDefinitionConfiguration) AWSCloudFormationType() string {
+func (r *SuiteDefinition_SuiteDefinitionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTCoreDeviceAdvisor::SuiteDefinition.SuiteDefinitionConfiguration"
 }

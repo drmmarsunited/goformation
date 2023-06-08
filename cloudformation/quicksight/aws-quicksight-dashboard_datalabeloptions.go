@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeloptions.html
-type Dashboard_DataLabelOptions struct {
+type Dashboard_DataLabelOptions[T any] struct {
 
 	// CategoryLabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_DataLabelOptions struct {
 	// DataLabelTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeloptions.html#cfn-quicksight-dashboard-datalabeloptions-datalabeltypes
-	DataLabelTypes []Dashboard_DataLabelType `json:"DataLabelTypes,omitempty"`
+	DataLabelTypes []Dashboard_DataLabelType[any] `json:"DataLabelTypes,omitempty"`
 
 	// LabelColor AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_DataLabelOptions struct {
 	// LabelFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datalabeloptions.html#cfn-quicksight-dashboard-datalabeloptions-labelfontconfiguration
-	LabelFontConfiguration *Dashboard_FontConfiguration `json:"LabelFontConfiguration,omitempty"`
+	LabelFontConfiguration *Dashboard_FontConfiguration[any] `json:"LabelFontConfiguration,omitempty"`
 
 	// MeasureLabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Dashboard_DataLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataLabelOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DataLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataLabelOptions"
 }

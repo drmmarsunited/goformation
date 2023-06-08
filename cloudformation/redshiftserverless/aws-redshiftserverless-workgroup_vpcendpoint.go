@@ -8,12 +8,12 @@ import (
 
 // Workgroup_VpcEndpoint AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.VpcEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-vpcendpoint.html
-type Workgroup_VpcEndpoint struct {
+type Workgroup_VpcEndpoint[T any] struct {
 
 	// NetworkInterfaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-vpcendpoint.html#cfn-redshiftserverless-workgroup-vpcendpoint-networkinterfaces
-	NetworkInterfaces []Workgroup_NetworkInterface `json:"NetworkInterfaces,omitempty"`
+	NetworkInterfaces []Workgroup_NetworkInterface[any] `json:"NetworkInterfaces,omitempty"`
 
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Workgroup_VpcEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup_VpcEndpoint) AWSCloudFormationType() string {
+func (r *Workgroup_VpcEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup.VpcEndpoint"
 }

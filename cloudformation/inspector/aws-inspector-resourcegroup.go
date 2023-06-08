@@ -12,7 +12,7 @@ import (
 
 // ResourceGroup AWS CloudFormation Resource (AWS::Inspector::ResourceGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html
-type ResourceGroup struct {
+type ResourceGroup[T any] struct {
 
 	// ResourceGroupTags AWS CloudFormation Property
 	// Required: true
@@ -36,14 +36,15 @@ type ResourceGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceGroup) AWSCloudFormationType() string {
+func (r *ResourceGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Inspector::ResourceGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceGroup) MarshalJSON() ([]byte, error) {
-	type Properties ResourceGroup
+func (r ResourceGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -65,8 +66,9 @@ func (r ResourceGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceGroup) UnmarshalJSON(b []byte) error {
-	type Properties ResourceGroup
+func (r *ResourceGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -86,7 +88,7 @@ func (r *ResourceGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceGroup(*res.Properties)
+		*r = ResourceGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

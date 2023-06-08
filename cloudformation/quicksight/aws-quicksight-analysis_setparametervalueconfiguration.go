@@ -8,7 +8,7 @@ import (
 
 // Analysis_SetParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SetParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-setparametervalueconfiguration.html
-type Analysis_SetParameterValueConfiguration struct {
+type Analysis_SetParameterValueConfiguration[T any] struct {
 
 	// DestinationParameterName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Analysis_SetParameterValueConfiguration struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-setparametervalueconfiguration.html#cfn-quicksight-analysis-setparametervalueconfiguration-value
-	Value *Analysis_DestinationParameterValueConfiguration `json:"Value"`
+	Value *Analysis_DestinationParameterValueConfiguration[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Analysis_SetParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SetParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SetParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SetParameterValueConfiguration"
 }

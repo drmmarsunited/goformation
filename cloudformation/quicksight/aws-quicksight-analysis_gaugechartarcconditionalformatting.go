@@ -8,12 +8,12 @@ import (
 
 // Analysis_GaugeChartArcConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Analysis.GaugeChartArcConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartarcconditionalformatting.html
-type Analysis_GaugeChartArcConditionalFormatting struct {
+type Analysis_GaugeChartArcConditionalFormatting[T any] struct {
 
 	// ForegroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartarcconditionalformatting.html#cfn-quicksight-analysis-gaugechartarcconditionalformatting-foregroundcolor
-	ForegroundColor *Analysis_ConditionalFormattingColor `json:"ForegroundColor,omitempty"`
+	ForegroundColor *Analysis_ConditionalFormattingColor[any] `json:"ForegroundColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_GaugeChartArcConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GaugeChartArcConditionalFormatting) AWSCloudFormationType() string {
+func (r *Analysis_GaugeChartArcConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GaugeChartArcConditionalFormatting"
 }

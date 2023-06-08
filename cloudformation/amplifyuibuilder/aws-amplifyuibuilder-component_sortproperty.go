@@ -8,7 +8,7 @@ import (
 
 // Component_SortProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.SortProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-sortproperty.html
-type Component_SortProperty struct {
+type Component_SortProperty[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Component_SortProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_SortProperty) AWSCloudFormationType() string {
+func (r *Component_SortProperty[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.SortProperty"
 }

@@ -8,17 +8,17 @@ import (
 
 // LifecyclePolicy_DeprecateRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.DeprecateRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html
-type LifecyclePolicy_DeprecateRule struct {
+type LifecyclePolicy_DeprecateRule[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LifecyclePolicy_DeprecateRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_DeprecateRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_DeprecateRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.DeprecateRule"
 }

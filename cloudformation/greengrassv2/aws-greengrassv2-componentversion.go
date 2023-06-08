@@ -11,7 +11,7 @@ import (
 
 // ComponentVersion AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html
-type ComponentVersion struct {
+type ComponentVersion[T any] struct {
 
 	// InlineRecipe AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type ComponentVersion struct {
 	// LambdaFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-lambdafunction
-	LambdaFunction *ComponentVersion_LambdaFunctionRecipeSource `json:"LambdaFunction,omitempty"`
+	LambdaFunction *ComponentVersion_LambdaFunctionRecipeSource[any] `json:"LambdaFunction,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type ComponentVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion) AWSCloudFormationType() string {
+func (r *ComponentVersion[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ComponentVersion) MarshalJSON() ([]byte, error) {
-	type Properties ComponentVersion
+func (r ComponentVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ComponentVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ComponentVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ComponentVersion) UnmarshalJSON(b []byte) error {
-	type Properties ComponentVersion
+func (r *ComponentVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ComponentVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ComponentVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ComponentVersion(*res.Properties)
+		*r = ComponentVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

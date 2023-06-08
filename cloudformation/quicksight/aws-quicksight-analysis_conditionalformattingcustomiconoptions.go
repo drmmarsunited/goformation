@@ -8,7 +8,7 @@ import (
 
 // Analysis_ConditionalFormattingCustomIconOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ConditionalFormattingCustomIconOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-conditionalformattingcustomiconoptions.html
-type Analysis_ConditionalFormattingCustomIconOptions struct {
+type Analysis_ConditionalFormattingCustomIconOptions[T any] struct {
 
 	// Icon AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ConditionalFormattingCustomIconOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ConditionalFormattingCustomIconOptions) AWSCloudFormationType() string {
+func (r *Analysis_ConditionalFormattingCustomIconOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ConditionalFormattingCustomIconOptions"
 }

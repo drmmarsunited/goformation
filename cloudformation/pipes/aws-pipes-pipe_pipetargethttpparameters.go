@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetHttpParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetHttpParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html
-type Pipe_PipeTargetHttpParameters struct {
+type Pipe_PipeTargetHttpParameters[T any] struct {
 
 	// HeaderParameters AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Pipe_PipeTargetHttpParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetHttpParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetHttpParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetHttpParameters"
 }

@@ -8,7 +8,7 @@ import (
 
 // ReplicationConfiguration_ReplicationDestination AWS CloudFormation Resource (AWS::ECR::ReplicationConfiguration.ReplicationDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html
-type ReplicationConfiguration_ReplicationDestination struct {
+type ReplicationConfiguration_ReplicationDestination[T any] struct {
 
 	// Region AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ReplicationConfiguration_ReplicationDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationConfiguration_ReplicationDestination) AWSCloudFormationType() string {
+func (r *ReplicationConfiguration_ReplicationDestination[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::ReplicationConfiguration.ReplicationDestination"
 }

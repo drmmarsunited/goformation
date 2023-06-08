@@ -8,7 +8,7 @@ import (
 
 // Bot_SessionAttribute AWS CloudFormation Resource (AWS::Lex::Bot.SessionAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-sessionattribute.html
-type Bot_SessionAttribute struct {
+type Bot_SessionAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bot_SessionAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SessionAttribute) AWSCloudFormationType() string {
+func (r *Bot_SessionAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SessionAttribute"
 }

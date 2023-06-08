@@ -8,22 +8,22 @@ import (
 
 // EndpointConfig_ServerlessConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ServerlessConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html
-type EndpointConfig_ServerlessConfig struct {
+type EndpointConfig_ServerlessConfig[T any] struct {
 
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-maxconcurrency
-	MaxConcurrency int `json:"MaxConcurrency"`
+	MaxConcurrency T `json:"MaxConcurrency"`
 
 	// MemorySizeInMB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-memorysizeinmb
-	MemorySizeInMB int `json:"MemorySizeInMB"`
+	MemorySizeInMB T `json:"MemorySizeInMB"`
 
 	// ProvisionedConcurrency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-provisionedconcurrency
-	ProvisionedConcurrency *int `json:"ProvisionedConcurrency,omitempty"`
+	ProvisionedConcurrency *T `json:"ProvisionedConcurrency,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type EndpointConfig_ServerlessConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ServerlessConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ServerlessConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ServerlessConfig"
 }

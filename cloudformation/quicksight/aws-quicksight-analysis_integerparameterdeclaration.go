@@ -8,17 +8,17 @@ import (
 
 // Analysis_IntegerParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Analysis.IntegerParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameterdeclaration.html
-type Analysis_IntegerParameterDeclaration struct {
+type Analysis_IntegerParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameterdeclaration.html#cfn-quicksight-analysis-integerparameterdeclaration-defaultvalues
-	DefaultValues *Analysis_IntegerDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Analysis_IntegerDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameterdeclaration.html#cfn-quicksight-analysis-integerparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Analysis_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Analysis_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Analysis_IntegerParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameterdeclaration.html#cfn-quicksight-analysis-integerparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Analysis_IntegerValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Analysis_IntegerValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Analysis_IntegerParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_IntegerParameterDeclaration) AWSCloudFormationType() string {
+func (r *Analysis_IntegerParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.IntegerParameterDeclaration"
 }

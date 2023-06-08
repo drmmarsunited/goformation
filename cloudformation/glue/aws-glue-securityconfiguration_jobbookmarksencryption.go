@@ -8,7 +8,7 @@ import (
 
 // SecurityConfiguration_JobBookmarksEncryption AWS CloudFormation Resource (AWS::Glue::SecurityConfiguration.JobBookmarksEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html
-type SecurityConfiguration_JobBookmarksEncryption struct {
+type SecurityConfiguration_JobBookmarksEncryption[T any] struct {
 
 	// JobBookmarksEncryptionMode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SecurityConfiguration_JobBookmarksEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityConfiguration_JobBookmarksEncryption) AWSCloudFormationType() string {
+func (r *SecurityConfiguration_JobBookmarksEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::SecurityConfiguration.JobBookmarksEncryption"
 }

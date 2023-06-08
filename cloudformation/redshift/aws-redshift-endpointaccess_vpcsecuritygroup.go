@@ -8,7 +8,7 @@ import (
 
 // EndpointAccess_VpcSecurityGroup AWS CloudFormation Resource (AWS::Redshift::EndpointAccess.VpcSecurityGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcsecuritygroup.html
-type EndpointAccess_VpcSecurityGroup struct {
+type EndpointAccess_VpcSecurityGroup[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type EndpointAccess_VpcSecurityGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointAccess_VpcSecurityGroup) AWSCloudFormationType() string {
+func (r *EndpointAccess_VpcSecurityGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::EndpointAccess.VpcSecurityGroup"
 }

@@ -12,22 +12,22 @@ import (
 
 // Pipeline AWS CloudFormation Resource (AWS::OSIS::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html
-type Pipeline struct {
+type Pipeline[T any] struct {
 
 	// LogPublishingOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-logpublishingoptions
-	LogPublishingOptions *Pipeline_LogPublishingOptions `json:"LogPublishingOptions,omitempty"`
+	LogPublishingOptions *Pipeline_LogPublishingOptions[any] `json:"LogPublishingOptions,omitempty"`
 
 	// MaxUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-maxunits
-	MaxUnits int `json:"MaxUnits"`
+	MaxUnits T `json:"MaxUnits"`
 
 	// MinUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-minunits
-	MinUnits int `json:"MinUnits"`
+	MinUnits T `json:"MinUnits"`
 
 	// PipelineConfigurationBody AWS CloudFormation Property
 	// Required: true
@@ -47,7 +47,7 @@ type Pipeline struct {
 	// VpcOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-vpcoptions
-	VpcOptions *Pipeline_VpcOptions `json:"VpcOptions,omitempty"`
+	VpcOptions *Pipeline_VpcOptions[any] `json:"VpcOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -66,14 +66,15 @@ type Pipeline struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline) AWSCloudFormationType() string {
+func (r *Pipeline[any]) AWSCloudFormationType() string {
 	return "AWS::OSIS::Pipeline"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Pipeline) MarshalJSON() ([]byte, error) {
-	type Properties Pipeline
+func (r Pipeline[any]) MarshalJSON() ([]byte, error) {
+	type Properties Pipeline[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Pipeline) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Pipeline) UnmarshalJSON(b []byte) error {
-	type Properties Pipeline
+func (r *Pipeline[any]) UnmarshalJSON(b []byte) error {
+	type Properties Pipeline[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Pipeline) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Pipeline(*res.Properties)
+		*r = Pipeline[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

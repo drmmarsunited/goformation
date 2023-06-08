@@ -12,7 +12,7 @@ import (
 
 // ResolverRule AWS CloudFormation Resource (AWS::Route53Resolver::ResolverRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html
-type ResolverRule struct {
+type ResolverRule[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type ResolverRule struct {
 	// TargetIps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-targetips
-	TargetIps []ResolverRule_TargetAddress `json:"TargetIps,omitempty"`
+	TargetIps []ResolverRule_TargetAddress[any] `json:"TargetIps,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -61,14 +61,15 @@ type ResolverRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverRule) AWSCloudFormationType() string {
+func (r *ResolverRule[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverRule) MarshalJSON() ([]byte, error) {
-	type Properties ResolverRule
+func (r ResolverRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ResolverRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverRule) UnmarshalJSON(b []byte) error {
-	type Properties ResolverRule
+func (r *ResolverRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ResolverRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverRule(*res.Properties)
+		*r = ResolverRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

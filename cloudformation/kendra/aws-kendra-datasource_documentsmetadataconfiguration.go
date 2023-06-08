@@ -8,7 +8,7 @@ import (
 
 // DataSource_DocumentsMetadataConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.DocumentsMetadataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentsmetadataconfiguration.html
-type DataSource_DocumentsMetadataConfiguration struct {
+type DataSource_DocumentsMetadataConfiguration[T any] struct {
 
 	// S3Prefix AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DataSource_DocumentsMetadataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DocumentsMetadataConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_DocumentsMetadataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DocumentsMetadataConfiguration"
 }

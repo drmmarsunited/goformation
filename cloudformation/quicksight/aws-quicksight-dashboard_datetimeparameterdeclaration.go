@@ -8,17 +8,17 @@ import (
 
 // Dashboard_DateTimeParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateTimeParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameterdeclaration.html
-type Dashboard_DateTimeParameterDeclaration struct {
+type Dashboard_DateTimeParameterDeclaration[T any] struct {
 
 	// DefaultValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameterdeclaration.html#cfn-quicksight-dashboard-datetimeparameterdeclaration-defaultvalues
-	DefaultValues *Dashboard_DateTimeDefaultValues `json:"DefaultValues,omitempty"`
+	DefaultValues *Dashboard_DateTimeDefaultValues[any] `json:"DefaultValues,omitempty"`
 
 	// MappedDataSetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameterdeclaration.html#cfn-quicksight-dashboard-datetimeparameterdeclaration-mappeddatasetparameters
-	MappedDataSetParameters []Dashboard_MappedDataSetParameter `json:"MappedDataSetParameters,omitempty"`
+	MappedDataSetParameters []Dashboard_MappedDataSetParameter[any] `json:"MappedDataSetParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_DateTimeParameterDeclaration struct {
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameterdeclaration.html#cfn-quicksight-dashboard-datetimeparameterdeclaration-valuewhenunset
-	ValueWhenUnset *Dashboard_DateTimeValueWhenUnsetConfiguration `json:"ValueWhenUnset,omitempty"`
+	ValueWhenUnset *Dashboard_DateTimeValueWhenUnsetConfiguration[any] `json:"ValueWhenUnset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Dashboard_DateTimeParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateTimeParameterDeclaration) AWSCloudFormationType() string {
+func (r *Dashboard_DateTimeParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateTimeParameterDeclaration"
 }

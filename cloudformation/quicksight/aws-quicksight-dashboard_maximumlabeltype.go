@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MaximumLabelType AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MaximumLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-maximumlabeltype.html
-type Dashboard_MaximumLabelType struct {
+type Dashboard_MaximumLabelType[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_MaximumLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MaximumLabelType) AWSCloudFormationType() string {
+func (r *Dashboard_MaximumLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MaximumLabelType"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FilledMapConditionalFormattingOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilledMapConditionalFormattingOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconditionalformattingoption.html
-type Dashboard_FilledMapConditionalFormattingOption struct {
+type Dashboard_FilledMapConditionalFormattingOption[T any] struct {
 
 	// Shape AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapconditionalformattingoption.html#cfn-quicksight-dashboard-filledmapconditionalformattingoption-shape
-	Shape *Dashboard_FilledMapShapeConditionalFormatting `json:"Shape"`
+	Shape *Dashboard_FilledMapShapeConditionalFormatting[any] `json:"Shape"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_FilledMapConditionalFormattingOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilledMapConditionalFormattingOption) AWSCloudFormationType() string {
+func (r *Dashboard_FilledMapConditionalFormattingOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilledMapConditionalFormattingOption"
 }

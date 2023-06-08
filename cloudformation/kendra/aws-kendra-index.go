@@ -12,12 +12,12 @@ import (
 
 // Index AWS CloudFormation Resource (AWS::Kendra::Index)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html
-type Index struct {
+type Index[T any] struct {
 
 	// CapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-capacityunits
-	CapacityUnits *Index_CapacityUnitsConfiguration `json:"CapacityUnits,omitempty"`
+	CapacityUnits *Index_CapacityUnitsConfiguration[any] `json:"CapacityUnits,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Index struct {
 	// DocumentMetadataConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-documentmetadataconfigurations
-	DocumentMetadataConfigurations []Index_DocumentMetadataConfiguration `json:"DocumentMetadataConfigurations,omitempty"`
+	DocumentMetadataConfigurations []Index_DocumentMetadataConfiguration[any] `json:"DocumentMetadataConfigurations,omitempty"`
 
 	// Edition AWS CloudFormation Property
 	// Required: true
@@ -47,7 +47,7 @@ type Index struct {
 	// ServerSideEncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-serversideencryptionconfiguration
-	ServerSideEncryptionConfiguration *Index_ServerSideEncryptionConfiguration `json:"ServerSideEncryptionConfiguration,omitempty"`
+	ServerSideEncryptionConfiguration *Index_ServerSideEncryptionConfiguration[any] `json:"ServerSideEncryptionConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Index struct {
 	// UserTokenConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usertokenconfigurations
-	UserTokenConfigurations []Index_UserTokenConfiguration `json:"UserTokenConfigurations,omitempty"`
+	UserTokenConfigurations []Index_UserTokenConfiguration[any] `json:"UserTokenConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -81,14 +81,15 @@ type Index struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index) AWSCloudFormationType() string {
+func (r *Index[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Index) MarshalJSON() ([]byte, error) {
-	type Properties Index
+func (r Index[any]) MarshalJSON() ([]byte, error) {
+	type Properties Index[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Index) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Index) UnmarshalJSON(b []byte) error {
-	type Properties Index
+func (r *Index[any]) UnmarshalJSON(b []byte) error {
+	type Properties Index[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Index) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Index(*res.Properties)
+		*r = Index[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

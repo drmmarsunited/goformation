@@ -8,12 +8,12 @@ import (
 
 // AutoScalingGroup_LaunchTemplateOverrides AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html
-type AutoScalingGroup_LaunchTemplateOverrides struct {
+type AutoScalingGroup_LaunchTemplateOverrides[T any] struct {
 
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-as-mixedinstancespolicy-instancerequirements
-	InstanceRequirements *AutoScalingGroup_InstanceRequirements `json:"InstanceRequirements,omitempty"`
+	InstanceRequirements *AutoScalingGroup_InstanceRequirements[any] `json:"InstanceRequirements,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type AutoScalingGroup_LaunchTemplateOverrides struct {
 	// LaunchTemplateSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-launchtemplatespecification
-	LaunchTemplateSpecification *AutoScalingGroup_LaunchTemplateSpecification `json:"LaunchTemplateSpecification,omitempty"`
+	LaunchTemplateSpecification *AutoScalingGroup_LaunchTemplateSpecification[any] `json:"LaunchTemplateSpecification,omitempty"`
 
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type AutoScalingGroup_LaunchTemplateOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_LaunchTemplateOverrides) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_LaunchTemplateOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides"
 }

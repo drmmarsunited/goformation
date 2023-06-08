@@ -8,7 +8,7 @@ import (
 
 // Dataset_CsvOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.CsvOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html
-type Dataset_CsvOptions struct {
+type Dataset_CsvOptions[T any] struct {
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dataset_CsvOptions struct {
 	// HeaderRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-headerrow
-	HeaderRow *bool `json:"HeaderRow,omitempty"`
+	HeaderRow *T `json:"HeaderRow,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dataset_CsvOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_CsvOptions) AWSCloudFormationType() string {
+func (r *Dataset_CsvOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.CsvOptions"
 }

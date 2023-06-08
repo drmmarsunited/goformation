@@ -11,7 +11,7 @@ import (
 
 // Integration AWS CloudFormation Resource (AWS::ApiGatewayV2::Integration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html
-type Integration struct {
+type Integration[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -96,12 +96,12 @@ type Integration struct {
 	// TimeoutInMillis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-timeoutinmillis
-	TimeoutInMillis *int `json:"TimeoutInMillis,omitempty"`
+	TimeoutInMillis *T `json:"TimeoutInMillis,omitempty"`
 
 	// TlsConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-tlsconfig
-	TlsConfig *Integration_TlsConfig `json:"TlsConfig,omitempty"`
+	TlsConfig *Integration_TlsConfig[any] `json:"TlsConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -120,14 +120,15 @@ type Integration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration) AWSCloudFormationType() string {
+func (r *Integration[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGatewayV2::Integration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Integration) MarshalJSON() ([]byte, error) {
-	type Properties Integration
+func (r Integration[any]) MarshalJSON() ([]byte, error) {
+	type Properties Integration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -149,8 +150,9 @@ func (r Integration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Integration) UnmarshalJSON(b []byte) error {
-	type Properties Integration
+func (r *Integration[any]) UnmarshalJSON(b []byte) error {
+	type Properties Integration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -170,7 +172,7 @@ func (r *Integration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Integration(*res.Properties)
+		*r = Integration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

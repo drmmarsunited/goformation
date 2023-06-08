@@ -12,7 +12,7 @@ import (
 
 // PrivateDnsNamespace AWS CloudFormation Resource (AWS::ServiceDiscovery::PrivateDnsNamespace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html
-type PrivateDnsNamespace struct {
+type PrivateDnsNamespace[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type PrivateDnsNamespace struct {
 	// Properties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-properties
-	Properties *PrivateDnsNamespace_Properties `json:"Properties,omitempty"`
+	Properties *PrivateDnsNamespace_Properties[any] `json:"Properties,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type PrivateDnsNamespace struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrivateDnsNamespace) AWSCloudFormationType() string {
+func (r *PrivateDnsNamespace[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::PrivateDnsNamespace"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PrivateDnsNamespace) MarshalJSON() ([]byte, error) {
-	type Properties PrivateDnsNamespace
+func (r PrivateDnsNamespace[any]) MarshalJSON() ([]byte, error) {
+	type Properties PrivateDnsNamespace[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r PrivateDnsNamespace) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PrivateDnsNamespace) UnmarshalJSON(b []byte) error {
-	type Properties PrivateDnsNamespace
+func (r *PrivateDnsNamespace[any]) UnmarshalJSON(b []byte) error {
+	type Properties PrivateDnsNamespace[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *PrivateDnsNamespace) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PrivateDnsNamespace(*res.Properties)
+		*r = PrivateDnsNamespace[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

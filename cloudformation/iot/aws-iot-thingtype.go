@@ -12,12 +12,12 @@ import (
 
 // ThingType AWS CloudFormation Resource (AWS::IoT::ThingType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingtype.html
-type ThingType struct {
+type ThingType[T any] struct {
 
 	// DeprecateThingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingtype.html#cfn-iot-thingtype-deprecatethingtype
-	DeprecateThingType *bool `json:"DeprecateThingType,omitempty"`
+	DeprecateThingType *T `json:"DeprecateThingType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type ThingType struct {
 	// ThingTypeProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingtype.html#cfn-iot-thingtype-thingtypeproperties
-	ThingTypeProperties *ThingType_ThingTypeProperties `json:"ThingTypeProperties,omitempty"`
+	ThingTypeProperties *ThingType_ThingTypeProperties[any] `json:"ThingTypeProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -51,14 +51,15 @@ type ThingType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ThingType) AWSCloudFormationType() string {
+func (r *ThingType[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::ThingType"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ThingType) MarshalJSON() ([]byte, error) {
-	type Properties ThingType
+func (r ThingType[any]) MarshalJSON() ([]byte, error) {
+	type Properties ThingType[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r ThingType) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ThingType) UnmarshalJSON(b []byte) error {
-	type Properties ThingType
+func (r *ThingType[any]) UnmarshalJSON(b []byte) error {
+	type Properties ThingType[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *ThingType) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ThingType(*res.Properties)
+		*r = ThingType[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // ModelCard_ModelPackageDetails AWS CloudFormation Resource (AWS::SageMaker::ModelCard.ModelPackageDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html
-type ModelCard_ModelPackageDetails struct {
+type ModelCard_ModelPackageDetails[T any] struct {
 
 	// ApprovalDescription AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ModelCard_ModelPackageDetails struct {
 	// CreatedBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-createdby
-	CreatedBy *ModelCard_ModelPackageCreator `json:"CreatedBy,omitempty"`
+	CreatedBy *ModelCard_ModelPackageCreator[any] `json:"CreatedBy,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ModelCard_ModelPackageDetails struct {
 	// InferenceSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-inferencespecification
-	InferenceSpecification *ModelCard_InferenceSpecification `json:"InferenceSpecification,omitempty"`
+	InferenceSpecification *ModelCard_InferenceSpecification[any] `json:"InferenceSpecification,omitempty"`
 
 	// ModelApprovalStatus AWS CloudFormation Property
 	// Required: false
@@ -63,12 +63,12 @@ type ModelCard_ModelPackageDetails struct {
 	// ModelPackageVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackageversion
-	ModelPackageVersion *float64 `json:"ModelPackageVersion,omitempty"`
+	ModelPackageVersion *T `json:"ModelPackageVersion,omitempty"`
 
 	// SourceAlgorithms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-sourcealgorithms
-	SourceAlgorithms []ModelCard_SourceAlgorithm `json:"SourceAlgorithms,omitempty"`
+	SourceAlgorithms []ModelCard_SourceAlgorithm[any] `json:"SourceAlgorithms,omitempty"`
 
 	// Task AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type ModelCard_ModelPackageDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelCard_ModelPackageDetails) AWSCloudFormationType() string {
+func (r *ModelCard_ModelPackageDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelCard.ModelPackageDetails"
 }

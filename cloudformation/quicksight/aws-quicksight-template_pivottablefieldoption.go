@@ -8,7 +8,7 @@ import (
 
 // Template_PivotTableFieldOption AWS CloudFormation Resource (AWS::QuickSight::Template.PivotTableFieldOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldoption.html
-type Template_PivotTableFieldOption struct {
+type Template_PivotTableFieldOption[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_PivotTableFieldOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_PivotTableFieldOption) AWSCloudFormationType() string {
+func (r *Template_PivotTableFieldOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.PivotTableFieldOption"
 }

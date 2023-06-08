@@ -8,12 +8,12 @@ import (
 
 // Pipe_FilterCriteria AWS CloudFormation Resource (AWS::Pipes::Pipe.FilterCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-filtercriteria.html
-type Pipe_FilterCriteria struct {
+type Pipe_FilterCriteria[T any] struct {
 
 	// Filters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-filtercriteria.html#cfn-pipes-pipe-filtercriteria-filters
-	Filters []Pipe_Filter `json:"Filters,omitempty"`
+	Filters []Pipe_Filter[any] `json:"Filters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_FilterCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_FilterCriteria) AWSCloudFormationType() string {
+func (r *Pipe_FilterCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.FilterCriteria"
 }

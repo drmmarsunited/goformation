@@ -8,7 +8,7 @@ import (
 
 // Application_Log AWS CloudFormation Resource (AWS::ApplicationInsights::Application.Log)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html
-type Application_Log struct {
+type Application_Log[T any] struct {
 
 	// Encoding AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Application_Log struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_Log) AWSCloudFormationType() string {
+func (r *Application_Log[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.Log"
 }

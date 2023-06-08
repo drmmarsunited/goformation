@@ -8,12 +8,12 @@ import (
 
 // Schedule_NetworkConfiguration AWS CloudFormation Resource (AWS::Scheduler::Schedule.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-networkconfiguration.html
-type Schedule_NetworkConfiguration struct {
+type Schedule_NetworkConfiguration[T any] struct {
 
 	// AwsvpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-networkconfiguration.html#cfn-scheduler-schedule-networkconfiguration-awsvpcconfiguration
-	AwsvpcConfiguration *Schedule_AwsVpcConfiguration `json:"AwsvpcConfiguration,omitempty"`
+	AwsvpcConfiguration *Schedule_AwsVpcConfiguration[any] `json:"AwsvpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Schedule_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Schedule_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.NetworkConfiguration"
 }

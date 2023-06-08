@@ -8,7 +8,7 @@ import (
 
 // ConnectorDefinitionVersion_Connector AWS CloudFormation Resource (AWS::Greengrass::ConnectorDefinitionVersion.Connector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html
-type ConnectorDefinitionVersion_Connector struct {
+type ConnectorDefinitionVersion_Connector[T any] struct {
 
 	// ConnectorArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ConnectorDefinitionVersion_Connector struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorDefinitionVersion_Connector) AWSCloudFormationType() string {
+func (r *ConnectorDefinitionVersion_Connector[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ConnectorDefinitionVersion.Connector"
 }

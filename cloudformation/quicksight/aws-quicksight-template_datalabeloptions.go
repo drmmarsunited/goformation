@@ -8,7 +8,7 @@ import (
 
 // Template_DataLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Template.DataLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datalabeloptions.html
-type Template_DataLabelOptions struct {
+type Template_DataLabelOptions[T any] struct {
 
 	// CategoryLabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Template_DataLabelOptions struct {
 	// DataLabelTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datalabeloptions.html#cfn-quicksight-template-datalabeloptions-datalabeltypes
-	DataLabelTypes []Template_DataLabelType `json:"DataLabelTypes,omitempty"`
+	DataLabelTypes []Template_DataLabelType[any] `json:"DataLabelTypes,omitempty"`
 
 	// LabelColor AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Template_DataLabelOptions struct {
 	// LabelFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datalabeloptions.html#cfn-quicksight-template-datalabeloptions-labelfontconfiguration
-	LabelFontConfiguration *Template_FontConfiguration `json:"LabelFontConfiguration,omitempty"`
+	LabelFontConfiguration *Template_FontConfiguration[any] `json:"LabelFontConfiguration,omitempty"`
 
 	// MeasureLabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Template_DataLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DataLabelOptions) AWSCloudFormationType() string {
+func (r *Template_DataLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DataLabelOptions"
 }

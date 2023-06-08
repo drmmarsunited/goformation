@@ -8,12 +8,12 @@ import (
 
 // Template_SankeyDiagramFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.SankeyDiagramFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sankeydiagramfieldwells.html
-type Template_SankeyDiagramFieldWells struct {
+type Template_SankeyDiagramFieldWells[T any] struct {
 
 	// SankeyDiagramAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sankeydiagramfieldwells.html#cfn-quicksight-template-sankeydiagramfieldwells-sankeydiagramaggregatedfieldwells
-	SankeyDiagramAggregatedFieldWells *Template_SankeyDiagramAggregatedFieldWells `json:"SankeyDiagramAggregatedFieldWells,omitempty"`
+	SankeyDiagramAggregatedFieldWells *Template_SankeyDiagramAggregatedFieldWells[any] `json:"SankeyDiagramAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_SankeyDiagramFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SankeyDiagramFieldWells) AWSCloudFormationType() string {
+func (r *Template_SankeyDiagramFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SankeyDiagramFieldWells"
 }

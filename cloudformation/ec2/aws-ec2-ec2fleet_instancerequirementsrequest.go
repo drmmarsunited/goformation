@@ -8,12 +8,12 @@ import (
 
 // EC2Fleet_InstanceRequirementsRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.InstanceRequirementsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html
-type EC2Fleet_InstanceRequirementsRequest struct {
+type EC2Fleet_InstanceRequirementsRequest[T any] struct {
 
 	// AcceleratorCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratorcount
-	AcceleratorCount *EC2Fleet_AcceleratorCountRequest `json:"AcceleratorCount,omitempty"`
+	AcceleratorCount *EC2Fleet_AcceleratorCountRequest[any] `json:"AcceleratorCount,omitempty"`
 
 	// AcceleratorManufacturers AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type EC2Fleet_InstanceRequirementsRequest struct {
 	// AcceleratorTotalMemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortotalmemorymib
-	AcceleratorTotalMemoryMiB *EC2Fleet_AcceleratorTotalMemoryMiBRequest `json:"AcceleratorTotalMemoryMiB,omitempty"`
+	AcceleratorTotalMemoryMiB *EC2Fleet_AcceleratorTotalMemoryMiBRequest[any] `json:"AcceleratorTotalMemoryMiB,omitempty"`
 
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type EC2Fleet_InstanceRequirementsRequest struct {
 	// BaselineEbsBandwidthMbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baselineebsbandwidthmbps
-	BaselineEbsBandwidthMbps *EC2Fleet_BaselineEbsBandwidthMbpsRequest `json:"BaselineEbsBandwidthMbps,omitempty"`
+	BaselineEbsBandwidthMbps *EC2Fleet_BaselineEbsBandwidthMbpsRequest[any] `json:"BaselineEbsBandwidthMbps,omitempty"`
 
 	// BurstablePerformance AWS CloudFormation Property
 	// Required: false
@@ -83,47 +83,47 @@ type EC2Fleet_InstanceRequirementsRequest struct {
 	// MemoryGiBPerVCpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorygibpervcpu
-	MemoryGiBPerVCpu *EC2Fleet_MemoryGiBPerVCpuRequest `json:"MemoryGiBPerVCpu,omitempty"`
+	MemoryGiBPerVCpu *EC2Fleet_MemoryGiBPerVCpuRequest[any] `json:"MemoryGiBPerVCpu,omitempty"`
 
 	// MemoryMiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorymib
-	MemoryMiB *EC2Fleet_MemoryMiBRequest `json:"MemoryMiB,omitempty"`
+	MemoryMiB *EC2Fleet_MemoryMiBRequest[any] `json:"MemoryMiB,omitempty"`
 
 	// NetworkBandwidthGbps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkbandwidthgbps
-	NetworkBandwidthGbps *EC2Fleet_NetworkBandwidthGbpsRequest `json:"NetworkBandwidthGbps,omitempty"`
+	NetworkBandwidthGbps *EC2Fleet_NetworkBandwidthGbpsRequest[any] `json:"NetworkBandwidthGbps,omitempty"`
 
 	// NetworkInterfaceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkinterfacecount
-	NetworkInterfaceCount *EC2Fleet_NetworkInterfaceCountRequest `json:"NetworkInterfaceCount,omitempty"`
+	NetworkInterfaceCount *EC2Fleet_NetworkInterfaceCountRequest[any] `json:"NetworkInterfaceCount,omitempty"`
 
 	// OnDemandMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice
-	OnDemandMaxPricePercentageOverLowestPrice *int `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
+	OnDemandMaxPricePercentageOverLowestPrice *T `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// RequireHibernateSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-requirehibernatesupport
-	RequireHibernateSupport *bool `json:"RequireHibernateSupport,omitempty"`
+	RequireHibernateSupport *T `json:"RequireHibernateSupport,omitempty"`
 
 	// SpotMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice
-	SpotMaxPricePercentageOverLowestPrice *int `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
+	SpotMaxPricePercentageOverLowestPrice *T `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// TotalLocalStorageGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-totallocalstoragegb
-	TotalLocalStorageGB *EC2Fleet_TotalLocalStorageGBRequest `json:"TotalLocalStorageGB,omitempty"`
+	TotalLocalStorageGB *EC2Fleet_TotalLocalStorageGBRequest[any] `json:"TotalLocalStorageGB,omitempty"`
 
 	// VCpuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-vcpucount
-	VCpuCount *EC2Fleet_VCpuCountRangeRequest `json:"VCpuCount,omitempty"`
+	VCpuCount *EC2Fleet_VCpuCountRangeRequest[any] `json:"VCpuCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -142,6 +142,6 @@ type EC2Fleet_InstanceRequirementsRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_InstanceRequirementsRequest) AWSCloudFormationType() string {
+func (r *EC2Fleet_InstanceRequirementsRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.InstanceRequirementsRequest"
 }

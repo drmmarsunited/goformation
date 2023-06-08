@@ -8,7 +8,7 @@ import (
 
 // Certificate_Subject AWS CloudFormation Resource (AWS::ACMPCA::Certificate.Subject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html
-type Certificate_Subject struct {
+type Certificate_Subject[T any] struct {
 
 	// CommonName AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Certificate_Subject struct {
 	// CustomAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-customattributes
-	CustomAttributes []Certificate_CustomAttribute `json:"CustomAttributes,omitempty"`
+	CustomAttributes []Certificate_CustomAttribute[any] `json:"CustomAttributes,omitempty"`
 
 	// DistinguishedNameQualifier AWS CloudFormation Property
 	// Required: false
@@ -102,6 +102,6 @@ type Certificate_Subject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_Subject) AWSCloudFormationType() string {
+func (r *Certificate_Subject[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.Subject"
 }

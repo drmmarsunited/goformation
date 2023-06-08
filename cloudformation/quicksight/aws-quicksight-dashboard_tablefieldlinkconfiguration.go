@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TableFieldLinkConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldLinkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldlinkconfiguration.html
-type Dashboard_TableFieldLinkConfiguration struct {
+type Dashboard_TableFieldLinkConfiguration[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldlinkconfiguration.html#cfn-quicksight-dashboard-tablefieldlinkconfiguration-content
-	Content *Dashboard_TableFieldLinkContentConfiguration `json:"Content"`
+	Content *Dashboard_TableFieldLinkContentConfiguration[any] `json:"Content"`
 
 	// Target AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_TableFieldLinkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldLinkConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldLinkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldLinkConfiguration"
 }

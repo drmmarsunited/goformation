@@ -11,7 +11,7 @@ import (
 
 // EndpointAccess AWS CloudFormation Resource (AWS::Redshift::EndpointAccess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html
-type EndpointAccess struct {
+type EndpointAccess[T any] struct {
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type EndpointAccess struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointAccess) AWSCloudFormationType() string {
+func (r *EndpointAccess[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::EndpointAccess"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EndpointAccess) MarshalJSON() ([]byte, error) {
-	type Properties EndpointAccess
+func (r EndpointAccess[any]) MarshalJSON() ([]byte, error) {
+	type Properties EndpointAccess[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r EndpointAccess) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EndpointAccess) UnmarshalJSON(b []byte) error {
-	type Properties EndpointAccess
+func (r *EndpointAccess[any]) UnmarshalJSON(b []byte) error {
+	type Properties EndpointAccess[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *EndpointAccess) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EndpointAccess(*res.Properties)
+		*r = EndpointAccess[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

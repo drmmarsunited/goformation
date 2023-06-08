@@ -8,27 +8,27 @@ import (
 
 // HttpApi AWS CloudFormation Resource (HttpApi)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-type HttpApi struct {
+type HttpApi[T any] struct {
 
 	// AccessLogSetting AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	AccessLogSetting *serverless.HttpApi_AccessLogSetting `json:"AccessLogSetting,omitempty"`
+	AccessLogSetting *serverless.HttpApi_AccessLogSetting[any] `json:"AccessLogSetting,omitempty"`
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Auth *serverless.HttpApi_HttpApiAuth `json:"Auth,omitempty"`
+	Auth *serverless.HttpApi_HttpApiAuth[any] `json:"Auth,omitempty"`
 
 	// CorsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	CorsConfiguration *serverless.HttpApi_CorsConfiguration `json:"CorsConfiguration,omitempty"`
+	CorsConfiguration *serverless.HttpApi_CorsConfiguration[any] `json:"CorsConfiguration,omitempty"`
 
 	// DefaultRouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	DefaultRouteSettings *serverless.HttpApi_RouteSettings `json:"DefaultRouteSettings,omitempty"`
+	DefaultRouteSettings *serverless.HttpApi_RouteSettings[any] `json:"DefaultRouteSettings,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -38,22 +38,22 @@ type HttpApi struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-httpapi.html#sam-httpapi-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *T `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Domain *serverless.HttpApi_HttpApiDomainConfiguration `json:"Domain,omitempty"`
+	Domain *serverless.HttpApi_HttpApiDomainConfiguration[any] `json:"Domain,omitempty"`
 
 	// FailOnWarnings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	FailOnWarnings *bool `json:"FailOnWarnings,omitempty"`
+	FailOnWarnings *T `json:"FailOnWarnings,omitempty"`
 
 	// RouteSettings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	RouteSettings *serverless.HttpApi_RouteSettings `json:"RouteSettings,omitempty"`
+	RouteSettings *serverless.HttpApi_RouteSettings[any] `json:"RouteSettings,omitempty"`
 
 	// StageVariables AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type HttpApi struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi) AWSCloudFormationType() string {
+func (r *HttpApi[any]) AWSCloudFormationType() string {
 	return "HttpApi"
 }

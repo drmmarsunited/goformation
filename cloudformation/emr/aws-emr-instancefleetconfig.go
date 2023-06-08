@@ -11,7 +11,7 @@ import (
 
 // InstanceFleetConfig AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html
-type InstanceFleetConfig struct {
+type InstanceFleetConfig[T any] struct {
 
 	// ClusterId AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type InstanceFleetConfig struct {
 	// InstanceTypeConfigs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfigs
-	InstanceTypeConfigs []InstanceFleetConfig_InstanceTypeConfig `json:"InstanceTypeConfigs,omitempty"`
+	InstanceTypeConfigs []InstanceFleetConfig_InstanceTypeConfig[any] `json:"InstanceTypeConfigs,omitempty"`
 
 	// LaunchSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-launchspecifications
-	LaunchSpecifications *InstanceFleetConfig_InstanceFleetProvisioningSpecifications `json:"LaunchSpecifications,omitempty"`
+	LaunchSpecifications *InstanceFleetConfig_InstanceFleetProvisioningSpecifications[any] `json:"LaunchSpecifications,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type InstanceFleetConfig struct {
 	// TargetOnDemandCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetondemandcapacity
-	TargetOnDemandCapacity *int `json:"TargetOnDemandCapacity,omitempty"`
+	TargetOnDemandCapacity *T `json:"TargetOnDemandCapacity,omitempty"`
 
 	// TargetSpotCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetspotcapacity
-	TargetSpotCapacity *int `json:"TargetSpotCapacity,omitempty"`
+	TargetSpotCapacity *T `json:"TargetSpotCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type InstanceFleetConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceFleetConfig) AWSCloudFormationType() string {
+func (r *InstanceFleetConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InstanceFleetConfig) MarshalJSON() ([]byte, error) {
-	type Properties InstanceFleetConfig
+func (r InstanceFleetConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties InstanceFleetConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r InstanceFleetConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InstanceFleetConfig) UnmarshalJSON(b []byte) error {
-	type Properties InstanceFleetConfig
+func (r *InstanceFleetConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties InstanceFleetConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *InstanceFleetConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InstanceFleetConfig(*res.Properties)
+		*r = InstanceFleetConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DBCluster_Endpoint AWS CloudFormation Resource (AWS::RDS::DBCluster.Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html
-type DBCluster_Endpoint struct {
+type DBCluster_Endpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DBCluster_Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBCluster_Endpoint) AWSCloudFormationType() string {
+func (r *DBCluster_Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBCluster.Endpoint"
 }

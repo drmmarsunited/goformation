@@ -8,22 +8,22 @@ import (
 
 // Pipe_PipeSourceRabbitMQBrokerParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeSourceRabbitMQBrokerParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html
-type Pipe_PipeSourceRabbitMQBrokerParameters struct {
+type Pipe_PipeSourceRabbitMQBrokerParameters[T any] struct {
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html#cfn-pipes-pipe-pipesourcerabbitmqbrokerparameters-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html#cfn-pipes-pipe-pipesourcerabbitmqbrokerparameters-credentials
-	Credentials *Pipe_MQBrokerAccessCredentials `json:"Credentials"`
+	Credentials *Pipe_MQBrokerAccessCredentials[any] `json:"Credentials"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html#cfn-pipes-pipe-pipesourcerabbitmqbrokerparameters-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// QueueName AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Pipe_PipeSourceRabbitMQBrokerParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeSourceRabbitMQBrokerParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeSourceRabbitMQBrokerParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeSourceRabbitMQBrokerParameters"
 }

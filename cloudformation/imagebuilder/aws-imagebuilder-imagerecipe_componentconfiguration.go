@@ -8,7 +8,7 @@ import (
 
 // ImageRecipe_ComponentConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::ImageRecipe.ComponentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html
-type ImageRecipe_ComponentConfiguration struct {
+type ImageRecipe_ComponentConfiguration[T any] struct {
 
 	// ComponentArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ImageRecipe_ComponentConfiguration struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html#cfn-imagebuilder-imagerecipe-componentconfiguration-parameters
-	Parameters []ImageRecipe_ComponentParameter `json:"Parameters,omitempty"`
+	Parameters []ImageRecipe_ComponentParameter[any] `json:"Parameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ImageRecipe_ComponentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageRecipe_ComponentConfiguration) AWSCloudFormationType() string {
+func (r *ImageRecipe_ComponentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImageRecipe.ComponentConfiguration"
 }

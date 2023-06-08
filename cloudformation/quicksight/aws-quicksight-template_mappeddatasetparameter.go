@@ -8,7 +8,7 @@ import (
 
 // Template_MappedDataSetParameter AWS CloudFormation Resource (AWS::QuickSight::Template.MappedDataSetParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-mappeddatasetparameter.html
-type Template_MappedDataSetParameter struct {
+type Template_MappedDataSetParameter[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_MappedDataSetParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_MappedDataSetParameter) AWSCloudFormationType() string {
+func (r *Template_MappedDataSetParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.MappedDataSetParameter"
 }

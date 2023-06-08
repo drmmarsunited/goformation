@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_Csv AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.Csv)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-csv.html
-type MonitoringSchedule_Csv struct {
+type MonitoringSchedule_Csv[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-csv.html#cfn-sagemaker-monitoringschedule-csv-header
-	Header *bool `json:"Header,omitempty"`
+	Header *T `json:"Header,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type MonitoringSchedule_Csv struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_Csv) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_Csv[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.Csv"
 }

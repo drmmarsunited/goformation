@@ -8,7 +8,7 @@ import (
 
 // License_Metadata AWS CloudFormation Resource (AWS::LicenseManager::License.Metadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadata.html
-type License_Metadata struct {
+type License_Metadata[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type License_Metadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_Metadata) AWSCloudFormationType() string {
+func (r *License_Metadata[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.Metadata"
 }

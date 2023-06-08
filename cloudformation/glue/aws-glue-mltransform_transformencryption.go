@@ -8,12 +8,12 @@ import (
 
 // MLTransform_TransformEncryption AWS CloudFormation Resource (AWS::Glue::MLTransform.TransformEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html
-type MLTransform_TransformEncryption struct {
+type MLTransform_TransformEncryption[T any] struct {
 
 	// MLUserDataEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html#cfn-glue-mltransform-transformencryption-mluserdataencryption
-	MLUserDataEncryption *MLTransform_MLUserDataEncryption `json:"MLUserDataEncryption,omitempty"`
+	MLUserDataEncryption *MLTransform_MLUserDataEncryption[any] `json:"MLUserDataEncryption,omitempty"`
 
 	// TaskRunSecurityConfigurationName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MLTransform_TransformEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_TransformEncryption) AWSCloudFormationType() string {
+func (r *MLTransform_TransformEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.TransformEncryption"
 }

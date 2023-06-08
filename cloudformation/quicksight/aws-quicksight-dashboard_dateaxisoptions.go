@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DateAxisOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateAxisOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dateaxisoptions.html
-type Dashboard_DateAxisOptions struct {
+type Dashboard_DateAxisOptions[T any] struct {
 
 	// MissingDateVisibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_DateAxisOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateAxisOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DateAxisOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateAxisOptions"
 }

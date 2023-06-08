@@ -8,7 +8,7 @@ import (
 
 // BudgetsAction_ActionThreshold AWS CloudFormation Resource (AWS::Budgets::BudgetsAction.ActionThreshold)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-actionthreshold.html
-type BudgetsAction_ActionThreshold struct {
+type BudgetsAction_ActionThreshold[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type BudgetsAction_ActionThreshold struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-actionthreshold.html#cfn-budgets-budgetsaction-actionthreshold-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type BudgetsAction_ActionThreshold struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction_ActionThreshold) AWSCloudFormationType() string {
+func (r *BudgetsAction_ActionThreshold[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction.ActionThreshold"
 }

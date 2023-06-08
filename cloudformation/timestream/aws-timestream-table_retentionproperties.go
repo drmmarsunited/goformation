@@ -8,7 +8,7 @@ import (
 
 // Table_RetentionProperties AWS CloudFormation Resource (AWS::Timestream::Table.RetentionProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html
-type Table_RetentionProperties struct {
+type Table_RetentionProperties[T any] struct {
 
 	// MagneticStoreRetentionPeriodInDays AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Table_RetentionProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_RetentionProperties) AWSCloudFormationType() string {
+func (r *Table_RetentionProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::Table.RetentionProperties"
 }

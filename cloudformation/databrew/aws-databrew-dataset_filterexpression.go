@@ -8,7 +8,7 @@ import (
 
 // Dataset_FilterExpression AWS CloudFormation Resource (AWS::DataBrew::Dataset.FilterExpression)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html
-type Dataset_FilterExpression struct {
+type Dataset_FilterExpression[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dataset_FilterExpression struct {
 	// ValuesMap AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap
-	ValuesMap []Dataset_FilterValue `json:"ValuesMap"`
+	ValuesMap []Dataset_FilterValue[any] `json:"ValuesMap"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dataset_FilterExpression struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_FilterExpression) AWSCloudFormationType() string {
+func (r *Dataset_FilterExpression[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.FilterExpression"
 }

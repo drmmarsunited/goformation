@@ -11,7 +11,7 @@ import (
 
 // DevEndpoint AWS CloudFormation Resource (AWS::Glue::DevEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html
-type DevEndpoint struct {
+type DevEndpoint[T any] struct {
 
 	// Arguments AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type DevEndpoint struct {
 	// NumberOfNodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
-	NumberOfNodes *int `json:"NumberOfNodes,omitempty"`
+	NumberOfNodes *T `json:"NumberOfNodes,omitempty"`
 
 	// NumberOfWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofworkers
-	NumberOfWorkers *int `json:"NumberOfWorkers,omitempty"`
+	NumberOfWorkers *T `json:"NumberOfWorkers,omitempty"`
 
 	// PublicKey AWS CloudFormation Property
 	// Required: false
@@ -105,14 +105,15 @@ type DevEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DevEndpoint) AWSCloudFormationType() string {
+func (r *DevEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::DevEndpoint"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DevEndpoint) MarshalJSON() ([]byte, error) {
-	type Properties DevEndpoint
+func (r DevEndpoint[any]) MarshalJSON() ([]byte, error) {
+	type Properties DevEndpoint[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -134,8 +135,9 @@ func (r DevEndpoint) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DevEndpoint) UnmarshalJSON(b []byte) error {
-	type Properties DevEndpoint
+func (r *DevEndpoint[any]) UnmarshalJSON(b []byte) error {
+	type Properties DevEndpoint[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -155,7 +157,7 @@ func (r *DevEndpoint) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DevEndpoint(*res.Properties)
+		*r = DevEndpoint[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

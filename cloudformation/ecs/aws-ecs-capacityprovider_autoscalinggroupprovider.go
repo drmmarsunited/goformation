@@ -8,7 +8,7 @@ import (
 
 // CapacityProvider_AutoScalingGroupProvider AWS CloudFormation Resource (AWS::ECS::CapacityProvider.AutoScalingGroupProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-autoscalinggroupprovider.html
-type CapacityProvider_AutoScalingGroupProvider struct {
+type CapacityProvider_AutoScalingGroupProvider[T any] struct {
 
 	// AutoScalingGroupArn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type CapacityProvider_AutoScalingGroupProvider struct {
 	// ManagedScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-autoscalinggroupprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider-managedscaling
-	ManagedScaling *CapacityProvider_ManagedScaling `json:"ManagedScaling,omitempty"`
+	ManagedScaling *CapacityProvider_ManagedScaling[any] `json:"ManagedScaling,omitempty"`
 
 	// ManagedTerminationProtection AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type CapacityProvider_AutoScalingGroupProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CapacityProvider_AutoScalingGroupProvider) AWSCloudFormationType() string {
+func (r *CapacityProvider_AutoScalingGroupProvider[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::CapacityProvider.AutoScalingGroupProvider"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FieldBasedTooltip AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FieldBasedTooltip)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldbasedtooltip.html
-type Dashboard_FieldBasedTooltip struct {
+type Dashboard_FieldBasedTooltip[T any] struct {
 
 	// AggregationVisibility AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_FieldBasedTooltip struct {
 	// TooltipFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldbasedtooltip.html#cfn-quicksight-dashboard-fieldbasedtooltip-tooltipfields
-	TooltipFields []Dashboard_TooltipItem `json:"TooltipFields,omitempty"`
+	TooltipFields []Dashboard_TooltipItem[any] `json:"TooltipFields,omitempty"`
 
 	// TooltipTitleType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_FieldBasedTooltip struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FieldBasedTooltip) AWSCloudFormationType() string {
+func (r *Dashboard_FieldBasedTooltip[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FieldBasedTooltip"
 }

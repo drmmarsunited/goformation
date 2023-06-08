@@ -11,7 +11,7 @@ import (
 
 // Dataset AWS CloudFormation Resource (AWS::Forecast::Dataset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html
-type Dataset struct {
+type Dataset[T any] struct {
 
 	// DataFrequency AWS CloudFormation Property
 	// Required: false
@@ -36,17 +36,17 @@ type Dataset struct {
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-encryptionconfig
-	EncryptionConfig *Dataset_EncryptionConfig `json:"EncryptionConfig,omitempty"`
+	EncryptionConfig *Dataset_EncryptionConfig[any] `json:"EncryptionConfig,omitempty"`
 
 	// Schema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-schema
-	Schema *Dataset_Schema `json:"Schema"`
+	Schema *Dataset_Schema[any] `json:"Schema"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-tags
-	Tags []Dataset_TagsItems `json:"Tags,omitempty"`
+	Tags []Dataset_TagsItems[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -65,14 +65,15 @@ type Dataset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset) AWSCloudFormationType() string {
+func (r *Dataset[any]) AWSCloudFormationType() string {
 	return "AWS::Forecast::Dataset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Dataset) MarshalJSON() ([]byte, error) {
-	type Properties Dataset
+func (r Dataset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Dataset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r Dataset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Dataset) UnmarshalJSON(b []byte) error {
-	type Properties Dataset
+func (r *Dataset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Dataset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *Dataset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Dataset(*res.Properties)
+		*r = Dataset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

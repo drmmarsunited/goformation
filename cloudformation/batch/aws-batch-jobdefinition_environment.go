@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_Environment AWS CloudFormation Resource (AWS::Batch::JobDefinition.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html
-type JobDefinition_Environment struct {
+type JobDefinition_Environment[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type JobDefinition_Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Environment) AWSCloudFormationType() string {
+func (r *JobDefinition_Environment[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Environment"
 }

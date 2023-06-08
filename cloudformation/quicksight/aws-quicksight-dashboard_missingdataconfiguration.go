@@ -8,7 +8,7 @@ import (
 
 // Dashboard_MissingDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.MissingDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-missingdataconfiguration.html
-type Dashboard_MissingDataConfiguration struct {
+type Dashboard_MissingDataConfiguration[T any] struct {
 
 	// TreatmentOption AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_MissingDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_MissingDataConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_MissingDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.MissingDataConfiguration"
 }

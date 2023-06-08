@@ -8,7 +8,7 @@ import (
 
 // Service_ServiceObservabilityConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.ServiceObservabilityConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-serviceobservabilityconfiguration.html
-type Service_ServiceObservabilityConfiguration struct {
+type Service_ServiceObservabilityConfiguration[T any] struct {
 
 	// ObservabilityConfigurationArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Service_ServiceObservabilityConfiguration struct {
 	// ObservabilityEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-serviceobservabilityconfiguration.html#cfn-apprunner-service-serviceobservabilityconfiguration-observabilityenabled
-	ObservabilityEnabled bool `json:"ObservabilityEnabled"`
+	ObservabilityEnabled T `json:"ObservabilityEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Service_ServiceObservabilityConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ServiceObservabilityConfiguration) AWSCloudFormationType() string {
+func (r *Service_ServiceObservabilityConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.ServiceObservabilityConfiguration"
 }

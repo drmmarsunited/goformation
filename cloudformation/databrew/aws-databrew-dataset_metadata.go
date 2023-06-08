@@ -8,7 +8,7 @@ import (
 
 // Dataset_Metadata AWS CloudFormation Resource (AWS::DataBrew::Dataset.Metadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-metadata.html
-type Dataset_Metadata struct {
+type Dataset_Metadata[T any] struct {
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dataset_Metadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_Metadata) AWSCloudFormationType() string {
+func (r *Dataset_Metadata[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.Metadata"
 }

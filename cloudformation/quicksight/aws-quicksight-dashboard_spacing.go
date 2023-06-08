@@ -8,7 +8,7 @@ import (
 
 // Dashboard_Spacing AWS CloudFormation Resource (AWS::QuickSight::Dashboard.Spacing)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-spacing.html
-type Dashboard_Spacing struct {
+type Dashboard_Spacing[T any] struct {
 
 	// Bottom AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Dashboard_Spacing struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_Spacing) AWSCloudFormationType() string {
+func (r *Dashboard_Spacing[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.Spacing"
 }

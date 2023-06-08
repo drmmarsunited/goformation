@@ -8,22 +8,22 @@ import (
 
 // Dataset_DatasetParameter AWS CloudFormation Resource (AWS::DataBrew::Dataset.DatasetParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html
-type Dataset_DatasetParameter struct {
+type Dataset_DatasetParameter[T any] struct {
 
 	// CreateColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-createcolumn
-	CreateColumn *bool `json:"CreateColumn,omitempty"`
+	CreateColumn *T `json:"CreateColumn,omitempty"`
 
 	// DatetimeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-datetimeoptions
-	DatetimeOptions *Dataset_DatetimeOptions `json:"DatetimeOptions,omitempty"`
+	DatetimeOptions *Dataset_DatetimeOptions[any] `json:"DatetimeOptions,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-filter
-	Filter *Dataset_FilterExpression `json:"Filter,omitempty"`
+	Filter *Dataset_FilterExpression[any] `json:"Filter,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Dataset_DatasetParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatasetParameter) AWSCloudFormationType() string {
+func (r *Dataset_DatasetParameter[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.DatasetParameter"
 }

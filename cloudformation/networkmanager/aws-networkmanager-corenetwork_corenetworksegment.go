@@ -8,7 +8,7 @@ import (
 
 // CoreNetwork_CoreNetworkSegment AWS CloudFormation Resource (AWS::NetworkManager::CoreNetwork.CoreNetworkSegment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworksegment.html
-type CoreNetwork_CoreNetworkSegment struct {
+type CoreNetwork_CoreNetworkSegment[T any] struct {
 
 	// EdgeLocations AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type CoreNetwork_CoreNetworkSegment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreNetwork_CoreNetworkSegment) AWSCloudFormationType() string {
+func (r *CoreNetwork_CoreNetworkSegment[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::CoreNetwork.CoreNetworkSegment"
 }

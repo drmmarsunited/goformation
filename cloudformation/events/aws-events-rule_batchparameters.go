@@ -8,12 +8,12 @@ import (
 
 // Rule_BatchParameters AWS CloudFormation Resource (AWS::Events::Rule.BatchParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html
-type Rule_BatchParameters struct {
+type Rule_BatchParameters[T any] struct {
 
 	// ArrayProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-arrayproperties
-	ArrayProperties *Rule_BatchArrayProperties `json:"ArrayProperties,omitempty"`
+	ArrayProperties *Rule_BatchArrayProperties[any] `json:"ArrayProperties,omitempty"`
 
 	// JobDefinition AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Rule_BatchParameters struct {
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-retrystrategy
-	RetryStrategy *Rule_BatchRetryStrategy `json:"RetryStrategy,omitempty"`
+	RetryStrategy *Rule_BatchRetryStrategy[any] `json:"RetryStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Rule_BatchParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_BatchParameters) AWSCloudFormationType() string {
+func (r *Rule_BatchParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.BatchParameters"
 }

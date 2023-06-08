@@ -8,22 +8,22 @@ import (
 
 // SchedulingPolicy_FairsharePolicy AWS CloudFormation Resource (AWS::Batch::SchedulingPolicy.FairsharePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html
-type SchedulingPolicy_FairsharePolicy struct {
+type SchedulingPolicy_FairsharePolicy[T any] struct {
 
 	// ComputeReservation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-computereservation
-	ComputeReservation *float64 `json:"ComputeReservation,omitempty"`
+	ComputeReservation *T `json:"ComputeReservation,omitempty"`
 
 	// ShareDecaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-sharedecayseconds
-	ShareDecaySeconds *float64 `json:"ShareDecaySeconds,omitempty"`
+	ShareDecaySeconds *T `json:"ShareDecaySeconds,omitempty"`
 
 	// ShareDistribution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-sharedistribution
-	ShareDistribution []SchedulingPolicy_ShareAttributes `json:"ShareDistribution,omitempty"`
+	ShareDistribution []SchedulingPolicy_ShareAttributes[any] `json:"ShareDistribution,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type SchedulingPolicy_FairsharePolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SchedulingPolicy_FairsharePolicy) AWSCloudFormationType() string {
+func (r *SchedulingPolicy_FairsharePolicy[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::SchedulingPolicy.FairsharePolicy"
 }

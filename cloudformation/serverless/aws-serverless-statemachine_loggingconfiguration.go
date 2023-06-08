@@ -8,17 +8,17 @@ import (
 
 // StateMachine_LoggingConfiguration AWS CloudFormation Resource (AWS::Serverless::StateMachine.LoggingConfiguration)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
-type StateMachine_LoggingConfiguration struct {
+type StateMachine_LoggingConfiguration[T any] struct {
 
 	// Destinations AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
-	Destinations []StateMachine_LogDestination `json:"Destinations"`
+	Destinations []StateMachine_LogDestination[any] `json:"Destinations"`
 
 	// IncludeExecutionData AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
-	IncludeExecutionData bool `json:"IncludeExecutionData"`
+	IncludeExecutionData T `json:"IncludeExecutionData"`
 
 	// Level AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type StateMachine_LoggingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_LoggingConfiguration) AWSCloudFormationType() string {
+func (r *StateMachine_LoggingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.LoggingConfiguration"
 }

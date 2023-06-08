@@ -8,7 +8,7 @@ import (
 
 // DataSource_PostgreSqlParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.PostgreSqlParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-postgresqlparameters.html
-type DataSource_PostgreSqlParameters struct {
+type DataSource_PostgreSqlParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_PostgreSqlParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-postgresqlparameters.html#cfn-quicksight-datasource-postgresqlparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_PostgreSqlParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_PostgreSqlParameters) AWSCloudFormationType() string {
+func (r *DataSource_PostgreSqlParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.PostgreSqlParameters"
 }

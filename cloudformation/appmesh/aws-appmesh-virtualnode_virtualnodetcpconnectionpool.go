@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_VirtualNodeTcpConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.VirtualNodeTcpConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodetcpconnectionpool.html
-type VirtualNode_VirtualNodeTcpConnectionPool struct {
+type VirtualNode_VirtualNodeTcpConnectionPool[T any] struct {
 
 	// MaxConnections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodetcpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodetcpconnectionpool-maxconnections
-	MaxConnections int `json:"MaxConnections"`
+	MaxConnections T `json:"MaxConnections"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualNode_VirtualNodeTcpConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_VirtualNodeTcpConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualNode_VirtualNodeTcpConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.VirtualNodeTcpConnectionPool"
 }

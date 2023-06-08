@@ -8,7 +8,7 @@ import (
 
 // TopicRule_TimestreamDimension AWS CloudFormation Resource (AWS::IoT::TopicRule.TimestreamDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamdimension.html
-type TopicRule_TimestreamDimension struct {
+type TopicRule_TimestreamDimension[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type TopicRule_TimestreamDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_TimestreamDimension) AWSCloudFormationType() string {
+func (r *TopicRule_TimestreamDimension[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.TimestreamDimension"
 }

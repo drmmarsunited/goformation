@@ -8,12 +8,12 @@ import (
 
 // CloudFormationProduct_ConnectionParameters AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.ConnectionParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html
-type CloudFormationProduct_ConnectionParameters struct {
+type CloudFormationProduct_ConnectionParameters[T any] struct {
 
 	// CodeStar AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters-codestar
-	CodeStar *CloudFormationProduct_CodeStarParameters `json:"CodeStar,omitempty"`
+	CodeStar *CloudFormationProduct_CodeStarParameters[any] `json:"CodeStar,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type CloudFormationProduct_ConnectionParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CloudFormationProduct_ConnectionParameters) AWSCloudFormationType() string {
+func (r *CloudFormationProduct_ConnectionParameters[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct.ConnectionParameters"
 }

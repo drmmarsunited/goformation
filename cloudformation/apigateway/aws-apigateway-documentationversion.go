@@ -11,7 +11,7 @@ import (
 
 // DocumentationVersion AWS CloudFormation Resource (AWS::ApiGateway::DocumentationVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html
-type DocumentationVersion struct {
+type DocumentationVersion[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type DocumentationVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DocumentationVersion) AWSCloudFormationType() string {
+func (r *DocumentationVersion[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DocumentationVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DocumentationVersion) MarshalJSON() ([]byte, error) {
-	type Properties DocumentationVersion
+func (r DocumentationVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties DocumentationVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r DocumentationVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DocumentationVersion) UnmarshalJSON(b []byte) error {
-	type Properties DocumentationVersion
+func (r *DocumentationVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties DocumentationVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *DocumentationVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DocumentationVersion(*res.Properties)
+		*r = DocumentationVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

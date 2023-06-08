@@ -12,12 +12,12 @@ import (
 
 // TargetGroup AWS CloudFormation Resource (AWS::VpcLattice::TargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-targetgroup.html
-type TargetGroup struct {
+type TargetGroup[T any] struct {
 
 	// Config AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-targetgroup.html#cfn-vpclattice-targetgroup-config
-	Config *TargetGroup_TargetGroupConfig `json:"Config,omitempty"`
+	Config *TargetGroup_TargetGroupConfig[any] `json:"Config,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type TargetGroup struct {
 	// Targets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-targetgroup.html#cfn-vpclattice-targetgroup-targets
-	Targets []TargetGroup_Target `json:"Targets,omitempty"`
+	Targets []TargetGroup_Target[any] `json:"Targets,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type TargetGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup) AWSCloudFormationType() string {
+func (r *TargetGroup[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::TargetGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TargetGroup) MarshalJSON() ([]byte, error) {
-	type Properties TargetGroup
+func (r TargetGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties TargetGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r TargetGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TargetGroup) UnmarshalJSON(b []byte) error {
-	type Properties TargetGroup
+func (r *TargetGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties TargetGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *TargetGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TargetGroup(*res.Properties)
+		*r = TargetGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

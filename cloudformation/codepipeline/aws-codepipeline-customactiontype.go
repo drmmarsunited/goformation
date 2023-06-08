@@ -12,7 +12,7 @@ import (
 
 // CustomActionType AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
-type CustomActionType struct {
+type CustomActionType[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
@@ -22,17 +22,17 @@ type CustomActionType struct {
 	// ConfigurationProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
-	ConfigurationProperties []CustomActionType_ConfigurationProperties `json:"ConfigurationProperties,omitempty"`
+	ConfigurationProperties []CustomActionType_ConfigurationProperties[any] `json:"ConfigurationProperties,omitempty"`
 
 	// InputArtifactDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
-	InputArtifactDetails *CustomActionType_ArtifactDetails `json:"InputArtifactDetails"`
+	InputArtifactDetails *CustomActionType_ArtifactDetails[any] `json:"InputArtifactDetails"`
 
 	// OutputArtifactDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
-	OutputArtifactDetails *CustomActionType_ArtifactDetails `json:"OutputArtifactDetails"`
+	OutputArtifactDetails *CustomActionType_ArtifactDetails[any] `json:"OutputArtifactDetails"`
 
 	// Provider AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type CustomActionType struct {
 	// Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
-	Settings *CustomActionType_Settings `json:"Settings,omitempty"`
+	Settings *CustomActionType_Settings[any] `json:"Settings,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -71,14 +71,15 @@ type CustomActionType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomActionType) AWSCloudFormationType() string {
+func (r *CustomActionType[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::CustomActionType"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CustomActionType) MarshalJSON() ([]byte, error) {
-	type Properties CustomActionType
+func (r CustomActionType[any]) MarshalJSON() ([]byte, error) {
+	type Properties CustomActionType[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +101,9 @@ func (r CustomActionType) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CustomActionType) UnmarshalJSON(b []byte) error {
-	type Properties CustomActionType
+func (r *CustomActionType[any]) UnmarshalJSON(b []byte) error {
+	type Properties CustomActionType[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +123,7 @@ func (r *CustomActionType) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CustomActionType(*res.Properties)
+		*r = CustomActionType[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

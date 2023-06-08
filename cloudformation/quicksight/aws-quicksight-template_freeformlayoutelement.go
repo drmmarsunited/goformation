@@ -8,17 +8,17 @@ import (
 
 // Template_FreeFormLayoutElement AWS CloudFormation Resource (AWS::QuickSight::Template.FreeFormLayoutElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html
-type Template_FreeFormLayoutElement struct {
+type Template_FreeFormLayoutElement[T any] struct {
 
 	// BackgroundStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html#cfn-quicksight-template-freeformlayoutelement-backgroundstyle
-	BackgroundStyle *Template_FreeFormLayoutElementBackgroundStyle `json:"BackgroundStyle,omitempty"`
+	BackgroundStyle *Template_FreeFormLayoutElementBackgroundStyle[any] `json:"BackgroundStyle,omitempty"`
 
 	// BorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html#cfn-quicksight-template-freeformlayoutelement-borderstyle
-	BorderStyle *Template_FreeFormLayoutElementBorderStyle `json:"BorderStyle,omitempty"`
+	BorderStyle *Template_FreeFormLayoutElementBorderStyle[any] `json:"BorderStyle,omitempty"`
 
 	// ElementId AWS CloudFormation Property
 	// Required: true
@@ -38,17 +38,17 @@ type Template_FreeFormLayoutElement struct {
 	// LoadingAnimation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html#cfn-quicksight-template-freeformlayoutelement-loadinganimation
-	LoadingAnimation *Template_LoadingAnimation `json:"LoadingAnimation,omitempty"`
+	LoadingAnimation *Template_LoadingAnimation[any] `json:"LoadingAnimation,omitempty"`
 
 	// RenderingRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html#cfn-quicksight-template-freeformlayoutelement-renderingrules
-	RenderingRules []Template_SheetElementRenderingRule `json:"RenderingRules,omitempty"`
+	RenderingRules []Template_SheetElementRenderingRule[any] `json:"RenderingRules,omitempty"`
 
 	// SelectedBorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelement.html#cfn-quicksight-template-freeformlayoutelement-selectedborderstyle
-	SelectedBorderStyle *Template_FreeFormLayoutElementBorderStyle `json:"SelectedBorderStyle,omitempty"`
+	SelectedBorderStyle *Template_FreeFormLayoutElementBorderStyle[any] `json:"SelectedBorderStyle,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -87,6 +87,6 @@ type Template_FreeFormLayoutElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FreeFormLayoutElement) AWSCloudFormationType() string {
+func (r *Template_FreeFormLayoutElement[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FreeFormLayoutElement"
 }

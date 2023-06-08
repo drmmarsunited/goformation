@@ -8,7 +8,7 @@ import (
 
 // MLTransform_MLUserDataEncryption AWS CloudFormation Resource (AWS::Glue::MLTransform.MLUserDataEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption-mluserdataencryption.html
-type MLTransform_MLUserDataEncryption struct {
+type MLTransform_MLUserDataEncryption[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MLTransform_MLUserDataEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MLTransform_MLUserDataEncryption) AWSCloudFormationType() string {
+func (r *MLTransform_MLUserDataEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::MLTransform.MLUserDataEncryption"
 }

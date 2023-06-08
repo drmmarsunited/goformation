@@ -8,17 +8,17 @@ import (
 
 // LoggingConfiguration_Condition AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-condition.html
-type LoggingConfiguration_Condition struct {
+type LoggingConfiguration_Condition[T any] struct {
 
 	// ActionCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-condition.html#cfn-wafv2-loggingconfiguration-condition-actioncondition
-	ActionCondition *LoggingConfiguration_ActionCondition `json:"ActionCondition,omitempty"`
+	ActionCondition *LoggingConfiguration_ActionCondition[any] `json:"ActionCondition,omitempty"`
 
 	// LabelNameCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-condition.html#cfn-wafv2-loggingconfiguration-condition-labelnamecondition
-	LabelNameCondition *LoggingConfiguration_LabelNameCondition `json:"LabelNameCondition,omitempty"`
+	LabelNameCondition *LoggingConfiguration_LabelNameCondition[any] `json:"LabelNameCondition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type LoggingConfiguration_Condition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_Condition) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_Condition[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.Condition"
 }

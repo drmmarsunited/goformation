@@ -8,7 +8,7 @@ import (
 
 // DataSource_DataSourceCredentials AWS CloudFormation Resource (AWS::QuickSight::DataSource.DataSourceCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html
-type DataSource_DataSourceCredentials struct {
+type DataSource_DataSourceCredentials[T any] struct {
 
 	// CopySourceArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type DataSource_DataSourceCredentials struct {
 	// CredentialPair AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-credentialpair
-	CredentialPair *DataSource_CredentialPair `json:"CredentialPair,omitempty"`
+	CredentialPair *DataSource_CredentialPair[any] `json:"CredentialPair,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataSource_DataSourceCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceCredentials) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.DataSourceCredentials"
 }

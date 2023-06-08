@@ -8,17 +8,17 @@ import (
 
 // Template_NumericRangeFilter AWS CloudFormation Resource (AWS::QuickSight::Template.NumericRangeFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html
-type Template_NumericRangeFilter struct {
+type Template_NumericRangeFilter[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-aggregationfunction
-	AggregationFunction *Template_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Template_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Template_NumericRangeFilter struct {
 	// IncludeMaximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-includemaximum
-	IncludeMaximum *bool `json:"IncludeMaximum,omitempty"`
+	IncludeMaximum *T `json:"IncludeMaximum,omitempty"`
 
 	// IncludeMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-includeminimum
-	IncludeMinimum *bool `json:"IncludeMinimum,omitempty"`
+	IncludeMinimum *T `json:"IncludeMinimum,omitempty"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
@@ -43,12 +43,12 @@ type Template_NumericRangeFilter struct {
 	// RangeMaximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-rangemaximum
-	RangeMaximum *Template_NumericRangeFilterValue `json:"RangeMaximum,omitempty"`
+	RangeMaximum *Template_NumericRangeFilterValue[any] `json:"RangeMaximum,omitempty"`
 
 	// RangeMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericrangefilter.html#cfn-quicksight-template-numericrangefilter-rangeminimum
-	RangeMinimum *Template_NumericRangeFilterValue `json:"RangeMinimum,omitempty"`
+	RangeMinimum *Template_NumericRangeFilterValue[any] `json:"RangeMinimum,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Template_NumericRangeFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumericRangeFilter) AWSCloudFormationType() string {
+func (r *Template_NumericRangeFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumericRangeFilter"
 }

@@ -8,7 +8,7 @@ import (
 
 // LocationFSxOpenZFS_MountOptions AWS CloudFormation Resource (AWS::DataSync::LocationFSxOpenZFS.MountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-mountoptions.html
-type LocationFSxOpenZFS_MountOptions struct {
+type LocationFSxOpenZFS_MountOptions[T any] struct {
 
 	// Version AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LocationFSxOpenZFS_MountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxOpenZFS_MountOptions) AWSCloudFormationType() string {
+func (r *LocationFSxOpenZFS_MountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxOpenZFS.MountOptions"
 }

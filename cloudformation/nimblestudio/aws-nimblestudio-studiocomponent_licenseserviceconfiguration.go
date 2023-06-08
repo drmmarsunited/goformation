@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_LicenseServiceConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.LicenseServiceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-licenseserviceconfiguration.html
-type StudioComponent_LicenseServiceConfiguration struct {
+type StudioComponent_LicenseServiceConfiguration[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type StudioComponent_LicenseServiceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_LicenseServiceConfiguration) AWSCloudFormationType() string {
+func (r *StudioComponent_LicenseServiceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.LicenseServiceConfiguration"
 }

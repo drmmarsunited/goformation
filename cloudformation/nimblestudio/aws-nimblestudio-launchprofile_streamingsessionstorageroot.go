@@ -8,7 +8,7 @@ import (
 
 // LaunchProfile_StreamingSessionStorageRoot AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.StreamingSessionStorageRoot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamingsessionstorageroot.html
-type LaunchProfile_StreamingSessionStorageRoot struct {
+type LaunchProfile_StreamingSessionStorageRoot[T any] struct {
 
 	// Linux AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LaunchProfile_StreamingSessionStorageRoot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchProfile_StreamingSessionStorageRoot) AWSCloudFormationType() string {
+func (r *LaunchProfile_StreamingSessionStorageRoot[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::LaunchProfile.StreamingSessionStorageRoot"
 }

@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_BatchTransformInput AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.BatchTransformInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html
-type DataQualityJobDefinition_BatchTransformInput struct {
+type DataQualityJobDefinition_BatchTransformInput[T any] struct {
 
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataQualityJobDefinition_BatchTransformInput struct {
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-datasetformat
-	DatasetFormat *DataQualityJobDefinition_DatasetFormat `json:"DatasetFormat"`
+	DatasetFormat *DataQualityJobDefinition_DatasetFormat[any] `json:"DatasetFormat"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type DataQualityJobDefinition_BatchTransformInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_BatchTransformInput) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_BatchTransformInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.BatchTransformInput"
 }

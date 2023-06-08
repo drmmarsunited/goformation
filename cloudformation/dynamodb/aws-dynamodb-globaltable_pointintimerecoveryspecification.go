@@ -8,12 +8,12 @@ import (
 
 // GlobalTable_PointInTimeRecoverySpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.PointInTimeRecoverySpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-pointintimerecoveryspecification.html
-type GlobalTable_PointInTimeRecoverySpecification struct {
+type GlobalTable_PointInTimeRecoverySpecification[T any] struct {
 
 	// PointInTimeRecoveryEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-pointintimerecoveryspecification.html#cfn-dynamodb-globaltable-pointintimerecoveryspecification-pointintimerecoveryenabled
-	PointInTimeRecoveryEnabled *bool `json:"PointInTimeRecoveryEnabled,omitempty"`
+	PointInTimeRecoveryEnabled *T `json:"PointInTimeRecoveryEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type GlobalTable_PointInTimeRecoverySpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_PointInTimeRecoverySpecification) AWSCloudFormationType() string {
+func (r *GlobalTable_PointInTimeRecoverySpecification[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.PointInTimeRecoverySpecification"
 }

@@ -8,12 +8,12 @@ import (
 
 // Flow_MarketoDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.MarketoDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-marketodestinationproperties.html
-type Flow_MarketoDestinationProperties struct {
+type Flow_MarketoDestinationProperties[T any] struct {
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-marketodestinationproperties.html#cfn-appflow-flow-marketodestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Flow_MarketoDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_MarketoDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_MarketoDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.MarketoDestinationProperties"
 }

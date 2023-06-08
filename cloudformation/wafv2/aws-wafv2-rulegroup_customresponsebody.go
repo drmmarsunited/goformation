@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_CustomResponseBody AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CustomResponseBody)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customresponsebody.html
-type RuleGroup_CustomResponseBody struct {
+type RuleGroup_CustomResponseBody[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_CustomResponseBody struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CustomResponseBody) AWSCloudFormationType() string {
+func (r *RuleGroup_CustomResponseBody[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CustomResponseBody"
 }

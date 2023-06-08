@@ -12,7 +12,7 @@ import (
 
 // PlaybackConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html
-type PlaybackConfiguration struct {
+type PlaybackConfiguration[T any] struct {
 
 	// AdDecisionServerUrl AWS CloudFormation Property
 	// Required: true
@@ -22,17 +22,17 @@ type PlaybackConfiguration struct {
 	// AvailSuppression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-availsuppression
-	AvailSuppression *PlaybackConfiguration_AvailSuppression `json:"AvailSuppression,omitempty"`
+	AvailSuppression *PlaybackConfiguration_AvailSuppression[any] `json:"AvailSuppression,omitempty"`
 
 	// Bumper AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-bumper
-	Bumper *PlaybackConfiguration_Bumper `json:"Bumper,omitempty"`
+	Bumper *PlaybackConfiguration_Bumper[any] `json:"Bumper,omitempty"`
 
 	// CdnConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration
-	CdnConfiguration *PlaybackConfiguration_CdnConfiguration `json:"CdnConfiguration,omitempty"`
+	CdnConfiguration *PlaybackConfiguration_CdnConfiguration[any] `json:"CdnConfiguration,omitempty"`
 
 	// ConfigurationAliases AWS CloudFormation Property
 	// Required: false
@@ -42,22 +42,22 @@ type PlaybackConfiguration struct {
 	// DashConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration
-	DashConfiguration *PlaybackConfiguration_DashConfiguration `json:"DashConfiguration,omitempty"`
+	DashConfiguration *PlaybackConfiguration_DashConfiguration[any] `json:"DashConfiguration,omitempty"`
 
 	// HlsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-hlsconfiguration
-	HlsConfiguration *PlaybackConfiguration_HlsConfiguration `json:"HlsConfiguration,omitempty"`
+	HlsConfiguration *PlaybackConfiguration_HlsConfiguration[any] `json:"HlsConfiguration,omitempty"`
 
 	// LivePreRollConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration
-	LivePreRollConfiguration *PlaybackConfiguration_LivePreRollConfiguration `json:"LivePreRollConfiguration,omitempty"`
+	LivePreRollConfiguration *PlaybackConfiguration_LivePreRollConfiguration[any] `json:"LivePreRollConfiguration,omitempty"`
 
 	// ManifestProcessingRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-manifestprocessingrules
-	ManifestProcessingRules *PlaybackConfiguration_ManifestProcessingRules `json:"ManifestProcessingRules,omitempty"`
+	ManifestProcessingRules *PlaybackConfiguration_ManifestProcessingRules[any] `json:"ManifestProcessingRules,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type PlaybackConfiguration struct {
 	// PersonalizationThresholdSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-personalizationthresholdseconds
-	PersonalizationThresholdSeconds *int `json:"PersonalizationThresholdSeconds,omitempty"`
+	PersonalizationThresholdSeconds *T `json:"PersonalizationThresholdSeconds,omitempty"`
 
 	// SlateAdUrl AWS CloudFormation Property
 	// Required: false
@@ -106,14 +106,15 @@ type PlaybackConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PlaybackConfiguration) AWSCloudFormationType() string {
+func (r *PlaybackConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaTailor::PlaybackConfiguration"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r PlaybackConfiguration) MarshalJSON() ([]byte, error) {
-	type Properties PlaybackConfiguration
+func (r PlaybackConfiguration[any]) MarshalJSON() ([]byte, error) {
+	type Properties PlaybackConfiguration[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r PlaybackConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *PlaybackConfiguration) UnmarshalJSON(b []byte) error {
-	type Properties PlaybackConfiguration
+func (r *PlaybackConfiguration[any]) UnmarshalJSON(b []byte) error {
+	type Properties PlaybackConfiguration[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *PlaybackConfiguration) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = PlaybackConfiguration(*res.Properties)
+		*r = PlaybackConfiguration[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

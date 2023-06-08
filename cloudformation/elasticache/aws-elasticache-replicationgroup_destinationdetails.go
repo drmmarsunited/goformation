@@ -8,17 +8,17 @@ import (
 
 // ReplicationGroup_DestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.DestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html
-type ReplicationGroup_DestinationDetails struct {
+type ReplicationGroup_DestinationDetails[T any] struct {
 
 	// CloudWatchLogsDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-cloudwatchlogsdetails
-	CloudWatchLogsDetails *ReplicationGroup_CloudWatchLogsDestinationDetails `json:"CloudWatchLogsDetails,omitempty"`
+	CloudWatchLogsDetails *ReplicationGroup_CloudWatchLogsDestinationDetails[any] `json:"CloudWatchLogsDetails,omitempty"`
 
 	// KinesisFirehoseDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-kinesisfirehosedetails
-	KinesisFirehoseDetails *ReplicationGroup_KinesisFirehoseDestinationDetails `json:"KinesisFirehoseDetails,omitempty"`
+	KinesisFirehoseDetails *ReplicationGroup_KinesisFirehoseDestinationDetails[any] `json:"KinesisFirehoseDetails,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ReplicationGroup_DestinationDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationGroup_DestinationDetails) AWSCloudFormationType() string {
+func (r *ReplicationGroup_DestinationDetails[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::ReplicationGroup.DestinationDetails"
 }

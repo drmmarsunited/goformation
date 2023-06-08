@@ -8,7 +8,7 @@ import (
 
 // Gateway_GatewayCapabilitySummary AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway.GatewayCapabilitySummary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewaycapabilitysummary.html
-type Gateway_GatewayCapabilitySummary struct {
+type Gateway_GatewayCapabilitySummary[T any] struct {
 
 	// CapabilityConfiguration AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Gateway_GatewayCapabilitySummary struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Gateway_GatewayCapabilitySummary) AWSCloudFormationType() string {
+func (r *Gateway_GatewayCapabilitySummary[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::Gateway.GatewayCapabilitySummary"
 }

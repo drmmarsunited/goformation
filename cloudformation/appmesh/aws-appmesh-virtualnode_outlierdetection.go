@@ -8,27 +8,27 @@ import (
 
 // VirtualNode_OutlierDetection AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.OutlierDetection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html
-type VirtualNode_OutlierDetection struct {
+type VirtualNode_OutlierDetection[T any] struct {
 
 	// BaseEjectionDuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-baseejectionduration
-	BaseEjectionDuration *VirtualNode_Duration `json:"BaseEjectionDuration"`
+	BaseEjectionDuration *VirtualNode_Duration[any] `json:"BaseEjectionDuration"`
 
 	// Interval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-interval
-	Interval *VirtualNode_Duration `json:"Interval"`
+	Interval *VirtualNode_Duration[any] `json:"Interval"`
 
 	// MaxEjectionPercent AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-maxejectionpercent
-	MaxEjectionPercent int `json:"MaxEjectionPercent"`
+	MaxEjectionPercent T `json:"MaxEjectionPercent"`
 
 	// MaxServerErrors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-maxservererrors
-	MaxServerErrors int `json:"MaxServerErrors"`
+	MaxServerErrors T `json:"MaxServerErrors"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualNode_OutlierDetection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_OutlierDetection) AWSCloudFormationType() string {
+func (r *VirtualNode_OutlierDetection[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.OutlierDetection"
 }

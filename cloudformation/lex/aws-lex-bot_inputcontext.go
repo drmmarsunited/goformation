@@ -8,7 +8,7 @@ import (
 
 // Bot_InputContext AWS CloudFormation Resource (AWS::Lex::Bot.InputContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-inputcontext.html
-type Bot_InputContext struct {
+type Bot_InputContext[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_InputContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_InputContext) AWSCloudFormationType() string {
+func (r *Bot_InputContext[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.InputContext"
 }

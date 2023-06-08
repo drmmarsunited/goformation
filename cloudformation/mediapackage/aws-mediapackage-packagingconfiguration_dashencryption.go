@@ -8,12 +8,12 @@ import (
 
 // PackagingConfiguration_DashEncryption AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.DashEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashencryption.html
-type PackagingConfiguration_DashEncryption struct {
+type PackagingConfiguration_DashEncryption[T any] struct {
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashencryption.html#cfn-mediapackage-packagingconfiguration-dashencryption-spekekeyprovider
-	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PackagingConfiguration_DashEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_DashEncryption) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_DashEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.DashEncryption"
 }

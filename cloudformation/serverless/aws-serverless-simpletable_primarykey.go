@@ -8,7 +8,7 @@ import (
 
 // SimpleTable_PrimaryKey AWS CloudFormation Resource (AWS::Serverless::SimpleTable.PrimaryKey)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#primary-key-object
-type SimpleTable_PrimaryKey struct {
+type SimpleTable_PrimaryKey[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SimpleTable_PrimaryKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleTable_PrimaryKey) AWSCloudFormationType() string {
+func (r *SimpleTable_PrimaryKey[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::SimpleTable.PrimaryKey"
 }

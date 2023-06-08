@@ -8,7 +8,7 @@ import (
 
 // Configuration_TagsEntry AWS CloudFormation Resource (AWS::AmazonMQ::Configuration.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configuration-tagsentry.html
-type Configuration_TagsEntry struct {
+type Configuration_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Configuration_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Configuration_TagsEntry) AWSCloudFormationType() string {
+func (r *Configuration_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Configuration.TagsEntry"
 }

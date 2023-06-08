@@ -8,7 +8,7 @@ import (
 
 // InstanceStorageConfig_KinesisStreamConfig AWS CloudFormation Resource (AWS::Connect::InstanceStorageConfig.KinesisStreamConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisstreamconfig.html
-type InstanceStorageConfig_KinesisStreamConfig struct {
+type InstanceStorageConfig_KinesisStreamConfig[T any] struct {
 
 	// StreamArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type InstanceStorageConfig_KinesisStreamConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceStorageConfig_KinesisStreamConfig) AWSCloudFormationType() string {
+func (r *InstanceStorageConfig_KinesisStreamConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::InstanceStorageConfig.KinesisStreamConfig"
 }

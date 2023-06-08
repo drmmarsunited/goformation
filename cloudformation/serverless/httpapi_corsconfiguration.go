@@ -12,13 +12,13 @@ import (
 )
 
 // HttpApi_CorsConfiguration is a helper struct that can hold either a Boolean or CorsConfigurationObject value
-type HttpApi_CorsConfiguration struct {
-	Boolean *bool
+type HttpApi_CorsConfiguration[T any] struct {
+	Boolean *T
 
-	CorsConfigurationObject *HttpApi_CorsConfigurationObject
+	CorsConfigurationObject *HttpApi_CorsConfigurationObject[any]
 }
 
-func (r HttpApi_CorsConfiguration) value() interface{} {
+func (r HttpApi_CorsConfiguration[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.Boolean != nil {
@@ -37,12 +37,12 @@ func (r HttpApi_CorsConfiguration) value() interface{} {
 	return nil
 }
 
-func (r HttpApi_CorsConfiguration) MarshalJSON() ([]byte, error) {
+func (r HttpApi_CorsConfiguration[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *HttpApi_CorsConfiguration) UnmarshalJSON(b []byte) error {
+func (r *HttpApi_CorsConfiguration[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}
@@ -52,7 +52,7 @@ func (r *HttpApi_CorsConfiguration) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case bool:
+	case any:
 		r.Boolean = &val
 
 	case map[string]interface{}:

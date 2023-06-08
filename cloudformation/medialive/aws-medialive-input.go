@@ -11,17 +11,17 @@ import (
 
 // Input AWS CloudFormation Resource (AWS::MediaLive::Input)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html
-type Input struct {
+type Input[T any] struct {
 
 	// Destinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-destinations
-	Destinations []Input_InputDestinationRequest `json:"Destinations,omitempty"`
+	Destinations []Input_InputDestinationRequest[any] `json:"Destinations,omitempty"`
 
 	// InputDevices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices
-	InputDevices []Input_InputDeviceSettings `json:"InputDevices,omitempty"`
+	InputDevices []Input_InputDeviceSettings[any] `json:"InputDevices,omitempty"`
 
 	// InputSecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Input struct {
 	// MediaConnectFlows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows
-	MediaConnectFlows []Input_MediaConnectFlowRequest `json:"MediaConnectFlows,omitempty"`
+	MediaConnectFlows []Input_MediaConnectFlowRequest[any] `json:"MediaConnectFlows,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type Input struct {
 	// Sources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources
-	Sources []Input_InputSourceRequest `json:"Sources,omitempty"`
+	Sources []Input_InputSourceRequest[any] `json:"Sources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type Input struct {
 	// Vpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc
-	Vpc *Input_InputVpcRequest `json:"Vpc,omitempty"`
+	Vpc *Input_InputVpcRequest[any] `json:"Vpc,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -80,14 +80,15 @@ type Input struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input) AWSCloudFormationType() string {
+func (r *Input[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Input) MarshalJSON() ([]byte, error) {
-	type Properties Input
+func (r Input[any]) MarshalJSON() ([]byte, error) {
+	type Properties Input[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r Input) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Input) UnmarshalJSON(b []byte) error {
-	type Properties Input
+func (r *Input[any]) UnmarshalJSON(b []byte) error {
+	type Properties Input[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *Input) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Input(*res.Properties)
+		*r = Input[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

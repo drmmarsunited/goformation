@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_VirtualGatewayListenerTlsSdsCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsSdsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlssdscertificate.html
-type VirtualGateway_VirtualGatewayListenerTlsSdsCertificate struct {
+type VirtualGateway_VirtualGatewayListenerTlsSdsCertificate[T any] struct {
 
 	// SecretName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayListenerTlsSdsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListenerTlsSdsCertificate) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListenerTlsSdsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsSdsCertificate"
 }

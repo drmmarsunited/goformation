@@ -8,7 +8,7 @@ import (
 
 // NotebookInstance_InstanceMetadataServiceConfiguration AWS CloudFormation Resource (AWS::SageMaker::NotebookInstance.InstanceMetadataServiceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstance-instancemetadataserviceconfiguration.html
-type NotebookInstance_InstanceMetadataServiceConfiguration struct {
+type NotebookInstance_InstanceMetadataServiceConfiguration[T any] struct {
 
 	// MinimumInstanceMetadataServiceVersion AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type NotebookInstance_InstanceMetadataServiceConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NotebookInstance_InstanceMetadataServiceConfiguration) AWSCloudFormationType() string {
+func (r *NotebookInstance_InstanceMetadataServiceConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::NotebookInstance.InstanceMetadataServiceConfiguration"
 }

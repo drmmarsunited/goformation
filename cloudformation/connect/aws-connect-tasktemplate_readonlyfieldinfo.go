@@ -8,12 +8,12 @@ import (
 
 // TaskTemplate_ReadOnlyFieldInfo AWS CloudFormation Resource (AWS::Connect::TaskTemplate.ReadOnlyFieldInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-readonlyfieldinfo.html
-type TaskTemplate_ReadOnlyFieldInfo struct {
+type TaskTemplate_ReadOnlyFieldInfo[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-readonlyfieldinfo.html#cfn-connect-tasktemplate-readonlyfieldinfo-id
-	Id *TaskTemplate_FieldIdentifier `json:"Id"`
+	Id *TaskTemplate_FieldIdentifier[any] `json:"Id"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type TaskTemplate_ReadOnlyFieldInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_ReadOnlyFieldInfo) AWSCloudFormationType() string {
+func (r *TaskTemplate_ReadOnlyFieldInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.ReadOnlyFieldInfo"
 }

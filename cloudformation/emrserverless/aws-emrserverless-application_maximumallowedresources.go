@@ -8,7 +8,7 @@ import (
 
 // Application_MaximumAllowedResources AWS CloudFormation Resource (AWS::EMRServerless::Application.MaximumAllowedResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-maximumallowedresources.html
-type Application_MaximumAllowedResources struct {
+type Application_MaximumAllowedResources[T any] struct {
 
 	// Cpu AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Application_MaximumAllowedResources struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_MaximumAllowedResources) AWSCloudFormationType() string {
+func (r *Application_MaximumAllowedResources[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.MaximumAllowedResources"
 }

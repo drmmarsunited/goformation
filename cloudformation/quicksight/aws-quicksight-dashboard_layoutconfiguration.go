@@ -8,22 +8,22 @@ import (
 
 // Dashboard_LayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.LayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layoutconfiguration.html
-type Dashboard_LayoutConfiguration struct {
+type Dashboard_LayoutConfiguration[T any] struct {
 
 	// FreeFormLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layoutconfiguration.html#cfn-quicksight-dashboard-layoutconfiguration-freeformlayout
-	FreeFormLayout *Dashboard_FreeFormLayoutConfiguration `json:"FreeFormLayout,omitempty"`
+	FreeFormLayout *Dashboard_FreeFormLayoutConfiguration[any] `json:"FreeFormLayout,omitempty"`
 
 	// GridLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layoutconfiguration.html#cfn-quicksight-dashboard-layoutconfiguration-gridlayout
-	GridLayout *Dashboard_GridLayoutConfiguration `json:"GridLayout,omitempty"`
+	GridLayout *Dashboard_GridLayoutConfiguration[any] `json:"GridLayout,omitempty"`
 
 	// SectionBasedLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layoutconfiguration.html#cfn-quicksight-dashboard-layoutconfiguration-sectionbasedlayout
-	SectionBasedLayout *Dashboard_SectionBasedLayoutConfiguration `json:"SectionBasedLayout,omitempty"`
+	SectionBasedLayout *Dashboard_SectionBasedLayoutConfiguration[any] `json:"SectionBasedLayout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_LayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_LayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_LayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.LayoutConfiguration"
 }

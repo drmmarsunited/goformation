@@ -12,22 +12,22 @@ import (
 
 // SecurityProfile AWS CloudFormation Resource (AWS::IoT::SecurityProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html
-type SecurityProfile struct {
+type SecurityProfile[T any] struct {
 
 	// AdditionalMetricsToRetainV2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-additionalmetricstoretainv2
-	AdditionalMetricsToRetainV2 []SecurityProfile_MetricToRetain `json:"AdditionalMetricsToRetainV2,omitempty"`
+	AdditionalMetricsToRetainV2 []SecurityProfile_MetricToRetain[any] `json:"AdditionalMetricsToRetainV2,omitempty"`
 
 	// AlertTargets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-alerttargets
-	AlertTargets map[string]SecurityProfile_AlertTarget `json:"AlertTargets,omitempty"`
+	AlertTargets map[string]SecurityProfile_AlertTarget[any] `json:"AlertTargets,omitempty"`
 
 	// Behaviors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-behaviors
-	Behaviors []SecurityProfile_Behavior `json:"Behaviors,omitempty"`
+	Behaviors []SecurityProfile_Behavior[any] `json:"Behaviors,omitempty"`
 
 	// SecurityProfileDescription AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type SecurityProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SecurityProfile) AWSCloudFormationType() string {
+func (r *SecurityProfile[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::SecurityProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SecurityProfile) MarshalJSON() ([]byte, error) {
-	type Properties SecurityProfile
+func (r SecurityProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties SecurityProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r SecurityProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SecurityProfile) UnmarshalJSON(b []byte) error {
-	type Properties SecurityProfile
+func (r *SecurityProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties SecurityProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *SecurityProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SecurityProfile(*res.Properties)
+		*r = SecurityProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

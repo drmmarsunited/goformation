@@ -8,7 +8,7 @@ import (
 
 // Connection_OAuthParameters AWS CloudFormation Resource (AWS::Events::Connection.OAuthParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html
-type Connection_OAuthParameters struct {
+type Connection_OAuthParameters[T any] struct {
 
 	// AuthorizationEndpoint AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Connection_OAuthParameters struct {
 	// ClientParameters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-clientparameters
-	ClientParameters *Connection_ClientParameters `json:"ClientParameters"`
+	ClientParameters *Connection_ClientParameters[any] `json:"ClientParameters"`
 
 	// HttpMethod AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Connection_OAuthParameters struct {
 	// OAuthHttpParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-oauthhttpparameters
-	OAuthHttpParameters *Connection_ConnectionHttpParameters `json:"OAuthHttpParameters,omitempty"`
+	OAuthHttpParameters *Connection_ConnectionHttpParameters[any] `json:"OAuthHttpParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Connection_OAuthParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_OAuthParameters) AWSCloudFormationType() string {
+func (r *Connection_OAuthParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.OAuthParameters"
 }

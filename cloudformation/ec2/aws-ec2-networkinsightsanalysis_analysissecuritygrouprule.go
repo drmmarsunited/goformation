@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_AnalysisSecurityGroupRule AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisSecurityGroupRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html
-type NetworkInsightsAnalysis_AnalysisSecurityGroupRule struct {
+type NetworkInsightsAnalysis_AnalysisSecurityGroupRule[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type NetworkInsightsAnalysis_AnalysisSecurityGroupRule struct {
 	// PortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-portrange
-	PortRange *NetworkInsightsAnalysis_PortRange `json:"PortRange,omitempty"`
+	PortRange *NetworkInsightsAnalysis_PortRange[any] `json:"PortRange,omitempty"`
 
 	// PrefixListId AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type NetworkInsightsAnalysis_AnalysisSecurityGroupRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_AnalysisSecurityGroupRule) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_AnalysisSecurityGroupRule[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.AnalysisSecurityGroupRule"
 }

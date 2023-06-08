@@ -8,17 +8,17 @@ import (
 
 // WebACL_ResponseInspectionStatusCode AWS CloudFormation Resource (AWS::WAFv2::WebACL.ResponseInspectionStatusCode)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionstatuscode.html
-type WebACL_ResponseInspectionStatusCode struct {
+type WebACL_ResponseInspectionStatusCode[T any] struct {
 
 	// FailureCodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionstatuscode.html#cfn-wafv2-webacl-responseinspectionstatuscode-failurecodes
-	FailureCodes []int `json:"FailureCodes"`
+	FailureCodes []T `json:"FailureCodes"`
 
 	// SuccessCodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionstatuscode.html#cfn-wafv2-webacl-responseinspectionstatuscode-successcodes
-	SuccessCodes []int `json:"SuccessCodes"`
+	SuccessCodes []T `json:"SuccessCodes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type WebACL_ResponseInspectionStatusCode struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ResponseInspectionStatusCode) AWSCloudFormationType() string {
+func (r *WebACL_ResponseInspectionStatusCode[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ResponseInspectionStatusCode"
 }

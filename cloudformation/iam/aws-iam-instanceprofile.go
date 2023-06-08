@@ -11,7 +11,7 @@ import (
 
 // InstanceProfile AWS CloudFormation Resource (AWS::IAM::InstanceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
-type InstanceProfile struct {
+type InstanceProfile[T any] struct {
 
 	// InstanceProfileName AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type InstanceProfile struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceProfile) AWSCloudFormationType() string {
+func (r *InstanceProfile[any]) AWSCloudFormationType() string {
 	return "AWS::IAM::InstanceProfile"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InstanceProfile) MarshalJSON() ([]byte, error) {
-	type Properties InstanceProfile
+func (r InstanceProfile[any]) MarshalJSON() ([]byte, error) {
+	type Properties InstanceProfile[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r InstanceProfile) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InstanceProfile) UnmarshalJSON(b []byte) error {
-	type Properties InstanceProfile
+func (r *InstanceProfile[any]) UnmarshalJSON(b []byte) error {
+	type Properties InstanceProfile[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *InstanceProfile) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InstanceProfile(*res.Properties)
+		*r = InstanceProfile[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

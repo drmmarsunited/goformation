@@ -11,7 +11,7 @@ import (
 
 // Metadata AWS CloudFormation Resource (AWS::CDK::Metadata)
 // See: https://github.com/aws/aws-cdk-rfcs/blob/master/text/0253-cdk-metadata-v2.md
-type Metadata struct {
+type Metadata[T any] struct {
 
 	// Analytics AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type Metadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Metadata) AWSCloudFormationType() string {
+func (r *Metadata[any]) AWSCloudFormationType() string {
 	return "AWS::CDK::Metadata"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Metadata) MarshalJSON() ([]byte, error) {
-	type Properties Metadata
+func (r Metadata[any]) MarshalJSON() ([]byte, error) {
+	type Properties Metadata[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r Metadata) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Metadata) UnmarshalJSON(b []byte) error {
-	type Properties Metadata
+func (r *Metadata[any]) UnmarshalJSON(b []byte) error {
+	type Properties Metadata[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *Metadata) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Metadata(*res.Properties)
+		*r = Metadata[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

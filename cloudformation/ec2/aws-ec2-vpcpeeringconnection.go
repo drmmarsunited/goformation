@@ -12,7 +12,7 @@ import (
 
 // VPCPeeringConnection AWS CloudFormation Resource (AWS::EC2::VPCPeeringConnection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
-type VPCPeeringConnection struct {
+type VPCPeeringConnection[T any] struct {
 
 	// PeerOwnerId AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type VPCPeeringConnection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPCPeeringConnection) AWSCloudFormationType() string {
+func (r *VPCPeeringConnection[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPCPeeringConnection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPCPeeringConnection) MarshalJSON() ([]byte, error) {
-	type Properties VPCPeeringConnection
+func (r VPCPeeringConnection[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPCPeeringConnection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r VPCPeeringConnection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPCPeeringConnection) UnmarshalJSON(b []byte) error {
-	type Properties VPCPeeringConnection
+func (r *VPCPeeringConnection[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPCPeeringConnection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *VPCPeeringConnection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPCPeeringConnection(*res.Properties)
+		*r = VPCPeeringConnection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Solution_ContinuousHyperParameterRange AWS CloudFormation Resource (AWS::Personalize::Solution.ContinuousHyperParameterRange)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-continuoushyperparameterrange.html
-type Solution_ContinuousHyperParameterRange struct {
+type Solution_ContinuousHyperParameterRange[T any] struct {
 
 	// MaxValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-continuoushyperparameterrange.html#cfn-personalize-solution-continuoushyperparameterrange-maxvalue
-	MaxValue *float64 `json:"MaxValue,omitempty"`
+	MaxValue *T `json:"MaxValue,omitempty"`
 
 	// MinValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-continuoushyperparameterrange.html#cfn-personalize-solution-continuoushyperparameterrange-minvalue
-	MinValue *float64 `json:"MinValue,omitempty"`
+	MinValue *T `json:"MinValue,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Solution_ContinuousHyperParameterRange struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Solution_ContinuousHyperParameterRange) AWSCloudFormationType() string {
+func (r *Solution_ContinuousHyperParameterRange[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Solution.ContinuousHyperParameterRange"
 }

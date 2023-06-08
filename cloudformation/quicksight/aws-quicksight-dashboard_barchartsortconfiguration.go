@@ -8,37 +8,37 @@ import (
 
 // Dashboard_BarChartSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.BarChartSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html
-type Dashboard_BarChartSortConfiguration struct {
+type Dashboard_BarChartSortConfiguration[T any] struct {
 
 	// CategoryItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-categoryitemslimit
-	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration `json:"CategoryItemsLimit,omitempty"`
+	CategoryItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"CategoryItemsLimit,omitempty"`
 
 	// CategorySort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-categorysort
-	CategorySort []Dashboard_FieldSortOptions `json:"CategorySort,omitempty"`
+	CategorySort []Dashboard_FieldSortOptions[any] `json:"CategorySort,omitempty"`
 
 	// ColorItemsLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-coloritemslimit
-	ColorItemsLimit *Dashboard_ItemsLimitConfiguration `json:"ColorItemsLimit,omitempty"`
+	ColorItemsLimit *Dashboard_ItemsLimitConfiguration[any] `json:"ColorItemsLimit,omitempty"`
 
 	// ColorSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-colorsort
-	ColorSort []Dashboard_FieldSortOptions `json:"ColorSort,omitempty"`
+	ColorSort []Dashboard_FieldSortOptions[any] `json:"ColorSort,omitempty"`
 
 	// SmallMultiplesLimitConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-smallmultipleslimitconfiguration
-	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration `json:"SmallMultiplesLimitConfiguration,omitempty"`
+	SmallMultiplesLimitConfiguration *Dashboard_ItemsLimitConfiguration[any] `json:"SmallMultiplesLimitConfiguration,omitempty"`
 
 	// SmallMultiplesSort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartsortconfiguration.html#cfn-quicksight-dashboard-barchartsortconfiguration-smallmultiplessort
-	SmallMultiplesSort []Dashboard_FieldSortOptions `json:"SmallMultiplesSort,omitempty"`
+	SmallMultiplesSort []Dashboard_FieldSortOptions[any] `json:"SmallMultiplesSort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Dashboard_BarChartSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_BarChartSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_BarChartSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.BarChartSortConfiguration"
 }

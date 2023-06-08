@@ -8,37 +8,37 @@ import (
 
 // ScalingPolicy_TargetTrackingScalingPolicyConfiguration AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.TargetTrackingScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html
-type ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
+type ScalingPolicy_TargetTrackingScalingPolicyConfiguration[T any] struct {
 
 	// CustomizedMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-customizedmetricspecification
-	CustomizedMetricSpecification *ScalingPolicy_CustomizedMetricSpecification `json:"CustomizedMetricSpecification,omitempty"`
+	CustomizedMetricSpecification *ScalingPolicy_CustomizedMetricSpecification[any] `json:"CustomizedMetricSpecification,omitempty"`
 
 	// DisableScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein
-	DisableScaleIn *bool `json:"DisableScaleIn,omitempty"`
+	DisableScaleIn *T `json:"DisableScaleIn,omitempty"`
 
 	// PredefinedMetricSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification
-	PredefinedMetricSpecification *ScalingPolicy_PredefinedMetricSpecification `json:"PredefinedMetricSpecification,omitempty"`
+	PredefinedMetricSpecification *ScalingPolicy_PredefinedMetricSpecification[any] `json:"PredefinedMetricSpecification,omitempty"`
 
 	// ScaleInCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleincooldown
-	ScaleInCooldown *int `json:"ScaleInCooldown,omitempty"`
+	ScaleInCooldown *T `json:"ScaleInCooldown,omitempty"`
 
 	// ScaleOutCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleoutcooldown
-	ScaleOutCooldown *int `json:"ScaleOutCooldown,omitempty"`
+	ScaleOutCooldown *T `json:"ScaleOutCooldown,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-targetvalue
-	TargetValue float64 `json:"TargetValue"`
+	TargetValue T `json:"TargetValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScalingPolicy_TargetTrackingScalingPolicyConfiguration) AWSCloudFormationType() string {
+func (r *ScalingPolicy_TargetTrackingScalingPolicyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy.TargetTrackingScalingPolicyConfiguration"
 }

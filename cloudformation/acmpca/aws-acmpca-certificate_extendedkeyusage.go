@@ -8,7 +8,7 @@ import (
 
 // Certificate_ExtendedKeyUsage AWS CloudFormation Resource (AWS::ACMPCA::Certificate.ExtendedKeyUsage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extendedkeyusage.html
-type Certificate_ExtendedKeyUsage struct {
+type Certificate_ExtendedKeyUsage[T any] struct {
 
 	// ExtendedKeyUsageObjectIdentifier AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Certificate_ExtendedKeyUsage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_ExtendedKeyUsage) AWSCloudFormationType() string {
+func (r *Certificate_ExtendedKeyUsage[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.ExtendedKeyUsage"
 }

@@ -11,7 +11,7 @@ import (
 
 // ScheduledAction AWS CloudFormation Resource (AWS::AutoScaling::ScheduledAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html
-type ScheduledAction struct {
+type ScheduledAction[T any] struct {
 
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ScheduledAction struct {
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-desiredcapacity
-	DesiredCapacity *int `json:"DesiredCapacity,omitempty"`
+	DesiredCapacity *T `json:"DesiredCapacity,omitempty"`
 
 	// EndTime AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type ScheduledAction struct {
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-maxsize
-	MaxSize *int `json:"MaxSize,omitempty"`
+	MaxSize *T `json:"MaxSize,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-minsize
-	MinSize *int `json:"MinSize,omitempty"`
+	MinSize *T `json:"MinSize,omitempty"`
 
 	// Recurrence AWS CloudFormation Property
 	// Required: false
@@ -70,14 +70,15 @@ type ScheduledAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ScheduledAction) AWSCloudFormationType() string {
+func (r *ScheduledAction[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::ScheduledAction"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ScheduledAction) MarshalJSON() ([]byte, error) {
-	type Properties ScheduledAction
+func (r ScheduledAction[any]) MarshalJSON() ([]byte, error) {
+	type Properties ScheduledAction[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r ScheduledAction) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ScheduledAction) UnmarshalJSON(b []byte) error {
-	type Properties ScheduledAction
+func (r *ScheduledAction[any]) UnmarshalJSON(b []byte) error {
+	type Properties ScheduledAction[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *ScheduledAction) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ScheduledAction(*res.Properties)
+		*r = ScheduledAction[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

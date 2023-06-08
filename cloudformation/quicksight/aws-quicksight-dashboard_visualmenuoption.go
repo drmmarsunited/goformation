@@ -8,7 +8,7 @@ import (
 
 // Dashboard_VisualMenuOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.VisualMenuOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualmenuoption.html
-type Dashboard_VisualMenuOption struct {
+type Dashboard_VisualMenuOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_VisualMenuOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_VisualMenuOption) AWSCloudFormationType() string {
+func (r *Dashboard_VisualMenuOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.VisualMenuOption"
 }

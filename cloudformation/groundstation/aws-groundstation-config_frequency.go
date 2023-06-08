@@ -8,7 +8,7 @@ import (
 
 // Config_Frequency AWS CloudFormation Resource (AWS::GroundStation::Config.Frequency)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequency.html
-type Config_Frequency struct {
+type Config_Frequency[T any] struct {
 
 	// Units AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Config_Frequency struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequency.html#cfn-groundstation-config-frequency-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Config_Frequency struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_Frequency) AWSCloudFormationType() string {
+func (r *Config_Frequency[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.Frequency"
 }

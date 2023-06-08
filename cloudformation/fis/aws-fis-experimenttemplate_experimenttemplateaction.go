@@ -8,7 +8,7 @@ import (
 
 // ExperimentTemplate_ExperimentTemplateAction AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html
-type ExperimentTemplate_ExperimentTemplateAction struct {
+type ExperimentTemplate_ExperimentTemplateAction[T any] struct {
 
 	// ActionId AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ExperimentTemplate_ExperimentTemplateAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_ExperimentTemplateAction) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_ExperimentTemplateAction[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.ExperimentTemplateAction"
 }

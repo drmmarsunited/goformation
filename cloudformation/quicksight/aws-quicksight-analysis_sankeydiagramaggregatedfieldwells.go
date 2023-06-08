@@ -8,22 +8,22 @@ import (
 
 // Analysis_SankeyDiagramAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.SankeyDiagramAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramaggregatedfieldwells.html
-type Analysis_SankeyDiagramAggregatedFieldWells struct {
+type Analysis_SankeyDiagramAggregatedFieldWells[T any] struct {
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramaggregatedfieldwells.html#cfn-quicksight-analysis-sankeydiagramaggregatedfieldwells-destination
-	Destination []Analysis_DimensionField `json:"Destination,omitempty"`
+	Destination []Analysis_DimensionField[any] `json:"Destination,omitempty"`
 
 	// Source AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramaggregatedfieldwells.html#cfn-quicksight-analysis-sankeydiagramaggregatedfieldwells-source
-	Source []Analysis_DimensionField `json:"Source,omitempty"`
+	Source []Analysis_DimensionField[any] `json:"Source,omitempty"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramaggregatedfieldwells.html#cfn-quicksight-analysis-sankeydiagramaggregatedfieldwells-weight
-	Weight []Analysis_MeasureField `json:"Weight,omitempty"`
+	Weight []Analysis_MeasureField[any] `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_SankeyDiagramAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SankeyDiagramAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_SankeyDiagramAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SankeyDiagramAggregatedFieldWells"
 }

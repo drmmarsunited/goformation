@@ -8,7 +8,7 @@ import (
 
 // UserProfile_UserSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.UserSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html
-type UserProfile_UserSettings struct {
+type UserProfile_UserSettings[T any] struct {
 
 	// ExecutionRole AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type UserProfile_UserSettings struct {
 	// JupyterServerAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-jupyterserverappsettings
-	JupyterServerAppSettings *UserProfile_JupyterServerAppSettings `json:"JupyterServerAppSettings,omitempty"`
+	JupyterServerAppSettings *UserProfile_JupyterServerAppSettings[any] `json:"JupyterServerAppSettings,omitempty"`
 
 	// KernelGatewayAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-kernelgatewayappsettings
-	KernelGatewayAppSettings *UserProfile_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+	KernelGatewayAppSettings *UserProfile_KernelGatewayAppSettings[any] `json:"KernelGatewayAppSettings,omitempty"`
 
 	// RStudioServerProAppSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-rstudioserverproappsettings
-	RStudioServerProAppSettings *UserProfile_RStudioServerProAppSettings `json:"RStudioServerProAppSettings,omitempty"`
+	RStudioServerProAppSettings *UserProfile_RStudioServerProAppSettings[any] `json:"RStudioServerProAppSettings,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type UserProfile_UserSettings struct {
 	// SharingSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-sharingsettings
-	SharingSettings *UserProfile_SharingSettings `json:"SharingSettings,omitempty"`
+	SharingSettings *UserProfile_SharingSettings[any] `json:"SharingSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type UserProfile_UserSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserProfile_UserSettings) AWSCloudFormationType() string {
+func (r *UserProfile_UserSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::UserProfile.UserSettings"
 }

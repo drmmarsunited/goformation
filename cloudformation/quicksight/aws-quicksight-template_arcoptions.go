@@ -8,7 +8,7 @@ import (
 
 // Template_ArcOptions AWS CloudFormation Resource (AWS::QuickSight::Template.ArcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-arcoptions.html
-type Template_ArcOptions struct {
+type Template_ArcOptions[T any] struct {
 
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_ArcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ArcOptions) AWSCloudFormationType() string {
+func (r *Template_ArcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ArcOptions"
 }

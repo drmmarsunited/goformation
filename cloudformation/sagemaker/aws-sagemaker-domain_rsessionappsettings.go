@@ -8,17 +8,17 @@ import (
 
 // Domain_RSessionAppSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.RSessionAppSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rsessionappsettings.html
-type Domain_RSessionAppSettings struct {
+type Domain_RSessionAppSettings[T any] struct {
 
 	// CustomImages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rsessionappsettings.html#cfn-sagemaker-domain-rsessionappsettings-customimages
-	CustomImages []Domain_CustomImage `json:"CustomImages,omitempty"`
+	CustomImages []Domain_CustomImage[any] `json:"CustomImages,omitempty"`
 
 	// DefaultResourceSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rsessionappsettings.html#cfn-sagemaker-domain-rsessionappsettings-defaultresourcespec
-	DefaultResourceSpec *Domain_ResourceSpec `json:"DefaultResourceSpec,omitempty"`
+	DefaultResourceSpec *Domain_ResourceSpec[any] `json:"DefaultResourceSpec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Domain_RSessionAppSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_RSessionAppSettings) AWSCloudFormationType() string {
+func (r *Domain_RSessionAppSettings[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Domain.RSessionAppSettings"
 }

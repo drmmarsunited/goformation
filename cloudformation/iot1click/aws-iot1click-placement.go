@@ -11,7 +11,7 @@ import (
 
 // Placement AWS CloudFormation Resource (AWS::IoT1Click::Placement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html
-type Placement struct {
+type Placement[T any] struct {
 
 	// AssociatedDevices AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type Placement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Placement) AWSCloudFormationType() string {
+func (r *Placement[any]) AWSCloudFormationType() string {
 	return "AWS::IoT1Click::Placement"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Placement) MarshalJSON() ([]byte, error) {
-	type Properties Placement
+func (r Placement[any]) MarshalJSON() ([]byte, error) {
+	type Properties Placement[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Placement) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Placement) UnmarshalJSON(b []byte) error {
-	type Properties Placement
+func (r *Placement[any]) UnmarshalJSON(b []byte) error {
+	type Properties Placement[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Placement) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Placement(*res.Properties)
+		*r = Placement[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

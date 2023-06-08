@@ -8,7 +8,7 @@ import (
 
 // VerifiedAccessInstance_VerifiedAccessTrustProvider AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance.VerifiedAccessTrustProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html
-type VerifiedAccessInstance_VerifiedAccessTrustProvider struct {
+type VerifiedAccessInstance_VerifiedAccessTrustProvider[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type VerifiedAccessInstance_VerifiedAccessTrustProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance_VerifiedAccessTrustProvider) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance_VerifiedAccessTrustProvider[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance.VerifiedAccessTrustProvider"
 }

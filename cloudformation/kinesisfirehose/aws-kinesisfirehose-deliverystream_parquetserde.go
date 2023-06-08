@@ -8,12 +8,12 @@ import (
 
 // DeliveryStream_ParquetSerDe AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ParquetSerDe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html
-type DeliveryStream_ParquetSerDe struct {
+type DeliveryStream_ParquetSerDe[T any] struct {
 
 	// BlockSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-blocksizebytes
-	BlockSizeBytes *int `json:"BlockSizeBytes,omitempty"`
+	BlockSizeBytes *T `json:"BlockSizeBytes,omitempty"`
 
 	// Compression AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type DeliveryStream_ParquetSerDe struct {
 	// EnableDictionaryCompression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-enabledictionarycompression
-	EnableDictionaryCompression *bool `json:"EnableDictionaryCompression,omitempty"`
+	EnableDictionaryCompression *T `json:"EnableDictionaryCompression,omitempty"`
 
 	// MaxPaddingBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-maxpaddingbytes
-	MaxPaddingBytes *int `json:"MaxPaddingBytes,omitempty"`
+	MaxPaddingBytes *T `json:"MaxPaddingBytes,omitempty"`
 
 	// PageSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-pagesizebytes
-	PageSizeBytes *int `json:"PageSizeBytes,omitempty"`
+	PageSizeBytes *T `json:"PageSizeBytes,omitempty"`
 
 	// WriterVersion AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DeliveryStream_ParquetSerDe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_ParquetSerDe) AWSCloudFormationType() string {
+func (r *DeliveryStream_ParquetSerDe[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ParquetSerDe"
 }

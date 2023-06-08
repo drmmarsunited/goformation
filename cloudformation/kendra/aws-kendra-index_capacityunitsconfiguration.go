@@ -8,17 +8,17 @@ import (
 
 // Index_CapacityUnitsConfiguration AWS CloudFormation Resource (AWS::Kendra::Index.CapacityUnitsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-capacityunitsconfiguration.html
-type Index_CapacityUnitsConfiguration struct {
+type Index_CapacityUnitsConfiguration[T any] struct {
 
 	// QueryCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-capacityunitsconfiguration.html#cfn-kendra-index-capacityunitsconfiguration-querycapacityunits
-	QueryCapacityUnits int `json:"QueryCapacityUnits"`
+	QueryCapacityUnits T `json:"QueryCapacityUnits"`
 
 	// StorageCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-capacityunitsconfiguration.html#cfn-kendra-index-capacityunitsconfiguration-storagecapacityunits
-	StorageCapacityUnits int `json:"StorageCapacityUnits"`
+	StorageCapacityUnits T `json:"StorageCapacityUnits"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Index_CapacityUnitsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Index_CapacityUnitsConfiguration) AWSCloudFormationType() string {
+func (r *Index_CapacityUnitsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::Index.CapacityUnitsConfiguration"
 }

@@ -8,27 +8,27 @@ import (
 
 // Bot_InitialResponseSetting AWS CloudFormation Resource (AWS::Lex::Bot.InitialResponseSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-initialresponsesetting.html
-type Bot_InitialResponseSetting struct {
+type Bot_InitialResponseSetting[T any] struct {
 
 	// CodeHook AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-initialresponsesetting.html#cfn-lex-bot-initialresponsesetting-codehook
-	CodeHook *Bot_DialogCodeHookInvocationSetting `json:"CodeHook,omitempty"`
+	CodeHook *Bot_DialogCodeHookInvocationSetting[any] `json:"CodeHook,omitempty"`
 
 	// Conditional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-initialresponsesetting.html#cfn-lex-bot-initialresponsesetting-conditional
-	Conditional *Bot_ConditionalSpecification `json:"Conditional,omitempty"`
+	Conditional *Bot_ConditionalSpecification[any] `json:"Conditional,omitempty"`
 
 	// InitialResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-initialresponsesetting.html#cfn-lex-bot-initialresponsesetting-initialresponse
-	InitialResponse *Bot_ResponseSpecification `json:"InitialResponse,omitempty"`
+	InitialResponse *Bot_ResponseSpecification[any] `json:"InitialResponse,omitempty"`
 
 	// NextStep AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-initialresponsesetting.html#cfn-lex-bot-initialresponsesetting-nextstep
-	NextStep *Bot_DialogState `json:"NextStep,omitempty"`
+	NextStep *Bot_DialogState[any] `json:"NextStep,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_InitialResponseSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_InitialResponseSetting) AWSCloudFormationType() string {
+func (r *Bot_InitialResponseSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.InitialResponseSetting"
 }

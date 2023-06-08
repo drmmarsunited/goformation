@@ -11,7 +11,7 @@ import (
 
 // BackupSelection AWS CloudFormation Resource (AWS::Backup::BackupSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html
-type BackupSelection struct {
+type BackupSelection[T any] struct {
 
 	// BackupPlanId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type BackupSelection struct {
 	// BackupSelection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupselection
-	BackupSelection *BackupSelection_BackupSelectionResourceType `json:"BackupSelection"`
+	BackupSelection *BackupSelection_BackupSelectionResourceType[any] `json:"BackupSelection"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type BackupSelection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupSelection) AWSCloudFormationType() string {
+func (r *BackupSelection[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupSelection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r BackupSelection) MarshalJSON() ([]byte, error) {
-	type Properties BackupSelection
+func (r BackupSelection[any]) MarshalJSON() ([]byte, error) {
+	type Properties BackupSelection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r BackupSelection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *BackupSelection) UnmarshalJSON(b []byte) error {
-	type Properties BackupSelection
+func (r *BackupSelection[any]) UnmarshalJSON(b []byte) error {
+	type Properties BackupSelection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *BackupSelection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = BackupSelection(*res.Properties)
+		*r = BackupSelection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

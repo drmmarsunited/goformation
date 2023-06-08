@@ -8,7 +8,7 @@ import (
 
 // Cluster_ControlPlanePlacement AWS CloudFormation Resource (AWS::EKS::Cluster.ControlPlanePlacement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-controlplaneplacement.html
-type Cluster_ControlPlanePlacement struct {
+type Cluster_ControlPlanePlacement[T any] struct {
 
 	// GroupName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Cluster_ControlPlanePlacement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ControlPlanePlacement) AWSCloudFormationType() string {
+func (r *Cluster_ControlPlanePlacement[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Cluster.ControlPlanePlacement"
 }

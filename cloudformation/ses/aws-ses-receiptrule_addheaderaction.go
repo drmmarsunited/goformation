@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_AddHeaderAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.AddHeaderAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
-type ReceiptRule_AddHeaderAction struct {
+type ReceiptRule_AddHeaderAction[T any] struct {
 
 	// HeaderName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ReceiptRule_AddHeaderAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_AddHeaderAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_AddHeaderAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.AddHeaderAction"
 }

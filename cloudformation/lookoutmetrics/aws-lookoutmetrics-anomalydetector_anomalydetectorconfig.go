@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_AnomalyDetectorConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.AnomalyDetectorConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-anomalydetectorconfig.html
-type AnomalyDetector_AnomalyDetectorConfig struct {
+type AnomalyDetector_AnomalyDetectorConfig[T any] struct {
 
 	// AnomalyDetectorFrequency AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type AnomalyDetector_AnomalyDetectorConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_AnomalyDetectorConfig) AWSCloudFormationType() string {
+func (r *AnomalyDetector_AnomalyDetectorConfig[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.AnomalyDetectorConfig"
 }

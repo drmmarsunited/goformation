@@ -8,22 +8,22 @@ import (
 
 // Template_LayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.LayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layoutconfiguration.html
-type Template_LayoutConfiguration struct {
+type Template_LayoutConfiguration[T any] struct {
 
 	// FreeFormLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layoutconfiguration.html#cfn-quicksight-template-layoutconfiguration-freeformlayout
-	FreeFormLayout *Template_FreeFormLayoutConfiguration `json:"FreeFormLayout,omitempty"`
+	FreeFormLayout *Template_FreeFormLayoutConfiguration[any] `json:"FreeFormLayout,omitempty"`
 
 	// GridLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layoutconfiguration.html#cfn-quicksight-template-layoutconfiguration-gridlayout
-	GridLayout *Template_GridLayoutConfiguration `json:"GridLayout,omitempty"`
+	GridLayout *Template_GridLayoutConfiguration[any] `json:"GridLayout,omitempty"`
 
 	// SectionBasedLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-layoutconfiguration.html#cfn-quicksight-template-layoutconfiguration-sectionbasedlayout
-	SectionBasedLayout *Template_SectionBasedLayoutConfiguration `json:"SectionBasedLayout,omitempty"`
+	SectionBasedLayout *Template_SectionBasedLayoutConfiguration[any] `json:"SectionBasedLayout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_LayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_LayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LayoutConfiguration"
 }

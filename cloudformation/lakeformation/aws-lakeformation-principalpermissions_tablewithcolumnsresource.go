@@ -8,7 +8,7 @@ import (
 
 // PrincipalPermissions_TableWithColumnsResource AWS CloudFormation Resource (AWS::LakeFormation::PrincipalPermissions.TableWithColumnsResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tablewithcolumnsresource.html
-type PrincipalPermissions_TableWithColumnsResource struct {
+type PrincipalPermissions_TableWithColumnsResource[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type PrincipalPermissions_TableWithColumnsResource struct {
 	// ColumnWildcard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tablewithcolumnsresource.html#cfn-lakeformation-principalpermissions-tablewithcolumnsresource-columnwildcard
-	ColumnWildcard *PrincipalPermissions_ColumnWildcard `json:"ColumnWildcard,omitempty"`
+	ColumnWildcard *PrincipalPermissions_ColumnWildcard[any] `json:"ColumnWildcard,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type PrincipalPermissions_TableWithColumnsResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PrincipalPermissions_TableWithColumnsResource) AWSCloudFormationType() string {
+func (r *PrincipalPermissions_TableWithColumnsResource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::PrincipalPermissions.TableWithColumnsResource"
 }

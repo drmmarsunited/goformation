@@ -8,17 +8,17 @@ import (
 
 // Template_GridLayoutElement AWS CloudFormation Resource (AWS::QuickSight::Template.GridLayoutElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html
-type Template_GridLayoutElement struct {
+type Template_GridLayoutElement[T any] struct {
 
 	// ColumnIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-columnindex
-	ColumnIndex *float64 `json:"ColumnIndex,omitempty"`
+	ColumnIndex *T `json:"ColumnIndex,omitempty"`
 
 	// ColumnSpan AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-columnspan
-	ColumnSpan float64 `json:"ColumnSpan"`
+	ColumnSpan T `json:"ColumnSpan"`
 
 	// ElementId AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type Template_GridLayoutElement struct {
 	// RowIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-rowindex
-	RowIndex *float64 `json:"RowIndex,omitempty"`
+	RowIndex *T `json:"RowIndex,omitempty"`
 
 	// RowSpan AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-rowspan
-	RowSpan float64 `json:"RowSpan"`
+	RowSpan T `json:"RowSpan"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_GridLayoutElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_GridLayoutElement) AWSCloudFormationType() string {
+func (r *Template_GridLayoutElement[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.GridLayoutElement"
 }

@@ -8,7 +8,7 @@ import (
 
 // Canary_BaseScreenshot AWS CloudFormation Resource (AWS::Synthetics::Canary.BaseScreenshot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html
-type Canary_BaseScreenshot struct {
+type Canary_BaseScreenshot[T any] struct {
 
 	// IgnoreCoordinates AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Canary_BaseScreenshot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Canary_BaseScreenshot) AWSCloudFormationType() string {
+func (r *Canary_BaseScreenshot[any]) AWSCloudFormationType() string {
 	return "AWS::Synthetics::Canary.BaseScreenshot"
 }

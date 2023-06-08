@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_PortSet AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.PortSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portset.html
-type RuleGroup_PortSet struct {
+type RuleGroup_PortSet[T any] struct {
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RuleGroup_PortSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_PortSet) AWSCloudFormationType() string {
+func (r *RuleGroup_PortSet[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.PortSet"
 }

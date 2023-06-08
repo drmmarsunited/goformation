@@ -8,27 +8,27 @@ import (
 
 // VirtualNode_VirtualNodeConnectionPool AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html
-type VirtualNode_VirtualNodeConnectionPool struct {
+type VirtualNode_VirtualNodeConnectionPool[T any] struct {
 
 	// GRPC AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-grpc
-	GRPC *VirtualNode_VirtualNodeGrpcConnectionPool `json:"GRPC,omitempty"`
+	GRPC *VirtualNode_VirtualNodeGrpcConnectionPool[any] `json:"GRPC,omitempty"`
 
 	// HTTP AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http
-	HTTP *VirtualNode_VirtualNodeHttpConnectionPool `json:"HTTP,omitempty"`
+	HTTP *VirtualNode_VirtualNodeHttpConnectionPool[any] `json:"HTTP,omitempty"`
 
 	// HTTP2 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http2
-	HTTP2 *VirtualNode_VirtualNodeHttp2ConnectionPool `json:"HTTP2,omitempty"`
+	HTTP2 *VirtualNode_VirtualNodeHttp2ConnectionPool[any] `json:"HTTP2,omitempty"`
 
 	// TCP AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-tcp
-	TCP *VirtualNode_VirtualNodeTcpConnectionPool `json:"TCP,omitempty"`
+	TCP *VirtualNode_VirtualNodeTcpConnectionPool[any] `json:"TCP,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type VirtualNode_VirtualNodeConnectionPool struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_VirtualNodeConnectionPool) AWSCloudFormationType() string {
+func (r *VirtualNode_VirtualNodeConnectionPool[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool"
 }

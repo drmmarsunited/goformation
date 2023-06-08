@@ -8,7 +8,7 @@ import (
 
 // Certificate_PolicyQualifierInfo AWS CloudFormation Resource (AWS::ACMPCA::Certificate.PolicyQualifierInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyqualifierinfo.html
-type Certificate_PolicyQualifierInfo struct {
+type Certificate_PolicyQualifierInfo[T any] struct {
 
 	// PolicyQualifierId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Certificate_PolicyQualifierInfo struct {
 	// Qualifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyqualifierinfo.html#cfn-acmpca-certificate-policyqualifierinfo-qualifier
-	Qualifier *Certificate_Qualifier `json:"Qualifier"`
+	Qualifier *Certificate_Qualifier[any] `json:"Qualifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Certificate_PolicyQualifierInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_PolicyQualifierInfo) AWSCloudFormationType() string {
+func (r *Certificate_PolicyQualifierInfo[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.PolicyQualifierInfo"
 }

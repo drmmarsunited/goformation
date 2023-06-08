@@ -8,7 +8,7 @@ import (
 
 // Channel_CdiInputSpecification AWS CloudFormation Resource (AWS::MediaLive::Channel.CdiInputSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-cdiinputspecification.html
-type Channel_CdiInputSpecification struct {
+type Channel_CdiInputSpecification[T any] struct {
 
 	// Resolution AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_CdiInputSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CdiInputSpecification) AWSCloudFormationType() string {
+func (r *Channel_CdiInputSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CdiInputSpecification"
 }

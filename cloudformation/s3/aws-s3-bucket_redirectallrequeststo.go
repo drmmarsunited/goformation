@@ -8,7 +8,7 @@ import (
 
 // Bucket_RedirectAllRequestsTo AWS CloudFormation Resource (AWS::S3::Bucket.RedirectAllRequestsTo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html
-type Bucket_RedirectAllRequestsTo struct {
+type Bucket_RedirectAllRequestsTo[T any] struct {
 
 	// HostName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_RedirectAllRequestsTo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_RedirectAllRequestsTo) AWSCloudFormationType() string {
+func (r *Bucket_RedirectAllRequestsTo[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.RedirectAllRequestsTo"
 }

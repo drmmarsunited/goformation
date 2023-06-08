@@ -8,12 +8,12 @@ import (
 
 // DataSet_UploadSettings AWS CloudFormation Resource (AWS::QuickSight::DataSet.UploadSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html
-type DataSet_UploadSettings struct {
+type DataSet_UploadSettings[T any] struct {
 
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-containsheader
-	ContainsHeader *bool `json:"ContainsHeader,omitempty"`
+	ContainsHeader *T `json:"ContainsHeader,omitempty"`
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DataSet_UploadSettings struct {
 	// StartFromRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-startfromrow
-	StartFromRow *float64 `json:"StartFromRow,omitempty"`
+	StartFromRow *T `json:"StartFromRow,omitempty"`
 
 	// TextQualifier AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type DataSet_UploadSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_UploadSettings) AWSCloudFormationType() string {
+func (r *DataSet_UploadSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.UploadSettings"
 }

@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ReferenceLineStaticDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineStaticDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinestaticdataconfiguration.html
-type Dashboard_ReferenceLineStaticDataConfiguration struct {
+type Dashboard_ReferenceLineStaticDataConfiguration[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinestaticdataconfiguration.html#cfn-quicksight-dashboard-referencelinestaticdataconfiguration-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_ReferenceLineStaticDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineStaticDataConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineStaticDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineStaticDataConfiguration"
 }

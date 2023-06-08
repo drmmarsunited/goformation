@@ -8,12 +8,12 @@ import (
 
 // Pipe_PipeTargetSageMakerPipelineParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetSageMakerPipelineParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetsagemakerpipelineparameters.html
-type Pipe_PipeTargetSageMakerPipelineParameters struct {
+type Pipe_PipeTargetSageMakerPipelineParameters[T any] struct {
 
 	// PipelineParameterList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetsagemakerpipelineparameters.html#cfn-pipes-pipe-pipetargetsagemakerpipelineparameters-pipelineparameterlist
-	PipelineParameterList []Pipe_SageMakerPipelineParameter `json:"PipelineParameterList,omitempty"`
+	PipelineParameterList []Pipe_SageMakerPipelineParameter[any] `json:"PipelineParameterList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Pipe_PipeTargetSageMakerPipelineParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetSageMakerPipelineParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetSageMakerPipelineParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetSageMakerPipelineParameters"
 }

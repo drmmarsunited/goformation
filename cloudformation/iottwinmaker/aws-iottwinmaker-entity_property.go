@@ -8,17 +8,17 @@ import (
 
 // Entity_Property AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.Property)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html
-type Entity_Property struct {
+type Entity_Property[T any] struct {
 
 	// Definition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-definition
-	Definition *Entity_Definition `json:"Definition,omitempty"`
+	Definition *Entity_Definition[any] `json:"Definition,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-value
-	Value *Entity_DataValue `json:"Value,omitempty"`
+	Value *Entity_DataValue[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Entity_Property struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_Property) AWSCloudFormationType() string {
+func (r *Entity_Property[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.Property"
 }

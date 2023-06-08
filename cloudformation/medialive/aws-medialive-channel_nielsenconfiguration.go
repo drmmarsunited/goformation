@@ -8,7 +8,7 @@ import (
 
 // Channel_NielsenConfiguration AWS CloudFormation Resource (AWS::MediaLive::Channel.NielsenConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenconfiguration.html
-type Channel_NielsenConfiguration struct {
+type Channel_NielsenConfiguration[T any] struct {
 
 	// DistributorId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_NielsenConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_NielsenConfiguration) AWSCloudFormationType() string {
+func (r *Channel_NielsenConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.NielsenConfiguration"
 }

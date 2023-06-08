@@ -8,12 +8,12 @@ import (
 
 // ModelExplainabilityJobDefinition_MonitoringOutput AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutput.html
-type ModelExplainabilityJobDefinition_MonitoringOutput struct {
+type ModelExplainabilityJobDefinition_MonitoringOutput[T any] struct {
 
 	// S3Output AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutput-s3output
-	S3Output *ModelExplainabilityJobDefinition_S3Output `json:"S3Output"`
+	S3Output *ModelExplainabilityJobDefinition_S3Output[any] `json:"S3Output"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelExplainabilityJobDefinition_MonitoringOutput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_MonitoringOutput) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_MonitoringOutput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutput"
 }

@@ -12,7 +12,7 @@ import (
 
 // Namespace AWS CloudFormation Resource (AWS::RedshiftServerless::Namespace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html
-type Namespace struct {
+type Namespace[T any] struct {
 
 	// AdminUserPassword AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Namespace struct {
 	// FinalSnapshotRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-finalsnapshotretentionperiod
-	FinalSnapshotRetentionPeriod *int `json:"FinalSnapshotRetentionPeriod,omitempty"`
+	FinalSnapshotRetentionPeriod *T `json:"FinalSnapshotRetentionPeriod,omitempty"`
 
 	// IamRoles AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type Namespace struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Namespace) AWSCloudFormationType() string {
+func (r *Namespace[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Namespace"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Namespace) MarshalJSON() ([]byte, error) {
-	type Properties Namespace
+func (r Namespace[any]) MarshalJSON() ([]byte, error) {
+	type Properties Namespace[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r Namespace) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Namespace) UnmarshalJSON(b []byte) error {
-	type Properties Namespace
+func (r *Namespace[any]) UnmarshalJSON(b []byte) error {
+	type Properties Namespace[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *Namespace) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Namespace(*res.Properties)
+		*r = Namespace[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

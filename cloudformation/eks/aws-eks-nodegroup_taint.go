@@ -8,7 +8,7 @@ import (
 
 // Nodegroup_Taint AWS CloudFormation Resource (AWS::EKS::Nodegroup.Taint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-taint.html
-type Nodegroup_Taint struct {
+type Nodegroup_Taint[T any] struct {
 
 	// Effect AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Nodegroup_Taint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Nodegroup_Taint) AWSCloudFormationType() string {
+func (r *Nodegroup_Taint[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::Nodegroup.Taint"
 }

@@ -8,7 +8,7 @@ import (
 
 // Stack_UserSetting AWS CloudFormation Resource (AWS::AppStream::Stack.UserSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html
-type Stack_UserSetting struct {
+type Stack_UserSetting[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Stack_UserSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_UserSetting) AWSCloudFormationType() string {
+func (r *Stack_UserSetting[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Stack.UserSetting"
 }

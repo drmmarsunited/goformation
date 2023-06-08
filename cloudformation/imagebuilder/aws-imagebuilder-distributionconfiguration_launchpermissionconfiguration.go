@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_LaunchPermissionConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.LaunchPermissionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchpermissionconfiguration.html
-type DistributionConfiguration_LaunchPermissionConfiguration struct {
+type DistributionConfiguration_LaunchPermissionConfiguration[T any] struct {
 
 	// OrganizationArns AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type DistributionConfiguration_LaunchPermissionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_LaunchPermissionConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_LaunchPermissionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.LaunchPermissionConfiguration"
 }

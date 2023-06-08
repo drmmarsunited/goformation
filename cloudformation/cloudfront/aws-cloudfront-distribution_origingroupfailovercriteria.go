@@ -8,12 +8,12 @@ import (
 
 // Distribution_OriginGroupFailoverCriteria AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginGroupFailoverCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html
-type Distribution_OriginGroupFailoverCriteria struct {
+type Distribution_OriginGroupFailoverCriteria[T any] struct {
 
 	// StatusCodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes
-	StatusCodes *Distribution_StatusCodes `json:"StatusCodes"`
+	StatusCodes *Distribution_StatusCodes[any] `json:"StatusCodes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Distribution_OriginGroupFailoverCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginGroupFailoverCriteria) AWSCloudFormationType() string {
+func (r *Distribution_OriginGroupFailoverCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
 }

@@ -8,22 +8,22 @@ import (
 
 // ModelQualityJobDefinition_NetworkConfig AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.NetworkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html
-type ModelQualityJobDefinition_NetworkConfig struct {
+type ModelQualityJobDefinition_NetworkConfig[T any] struct {
 
 	// EnableInterContainerTrafficEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enableintercontainertrafficencryption
-	EnableInterContainerTrafficEncryption *bool `json:"EnableInterContainerTrafficEncryption,omitempty"`
+	EnableInterContainerTrafficEncryption *T `json:"EnableInterContainerTrafficEncryption,omitempty"`
 
 	// EnableNetworkIsolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enablenetworkisolation
-	EnableNetworkIsolation *bool `json:"EnableNetworkIsolation,omitempty"`
+	EnableNetworkIsolation *T `json:"EnableNetworkIsolation,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-vpcconfig
-	VpcConfig *ModelQualityJobDefinition_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *ModelQualityJobDefinition_VpcConfig[any] `json:"VpcConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelQualityJobDefinition_NetworkConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelQualityJobDefinition_NetworkConfig) AWSCloudFormationType() string {
+func (r *ModelQualityJobDefinition_NetworkConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelQualityJobDefinition.NetworkConfig"
 }

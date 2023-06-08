@@ -8,7 +8,7 @@ import (
 
 // Template_DateTimeValueWhenUnsetConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.DateTimeValueWhenUnsetConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimevaluewhenunsetconfiguration.html
-type Template_DateTimeValueWhenUnsetConfiguration struct {
+type Template_DateTimeValueWhenUnsetConfiguration[T any] struct {
 
 	// CustomValue AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_DateTimeValueWhenUnsetConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DateTimeValueWhenUnsetConfiguration) AWSCloudFormationType() string {
+func (r *Template_DateTimeValueWhenUnsetConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DateTimeValueWhenUnsetConfiguration"
 }

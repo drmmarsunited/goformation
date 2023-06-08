@@ -8,12 +8,12 @@ import (
 
 // Analysis_EmptyVisual AWS CloudFormation Resource (AWS::QuickSight::Analysis.EmptyVisual)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html
-type Analysis_EmptyVisual struct {
+type Analysis_EmptyVisual[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html#cfn-quicksight-analysis-emptyvisual-actions
-	Actions []Analysis_VisualCustomAction `json:"Actions,omitempty"`
+	Actions []Analysis_VisualCustomAction[any] `json:"Actions,omitempty"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_EmptyVisual struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_EmptyVisual) AWSCloudFormationType() string {
+func (r *Analysis_EmptyVisual[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.EmptyVisual"
 }

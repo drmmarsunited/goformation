@@ -8,7 +8,7 @@ import (
 
 // Entity_Component AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.Component)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html
-type Entity_Component struct {
+type Entity_Component[T any] struct {
 
 	// ComponentName AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Entity_Component struct {
 	// Properties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-properties
-	Properties map[string]Entity_Property `json:"Properties,omitempty"`
+	Properties map[string]Entity_Property[any] `json:"Properties,omitempty"`
 
 	// PropertyGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-propertygroups
-	PropertyGroups map[string]Entity_PropertyGroup `json:"PropertyGroups,omitempty"`
+	PropertyGroups map[string]Entity_PropertyGroup[any] `json:"PropertyGroups,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-status
-	Status *Entity_Status `json:"Status,omitempty"`
+	Status *Entity_Status[any] `json:"Status,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Entity_Component struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_Component) AWSCloudFormationType() string {
+func (r *Entity_Component[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.Component"
 }

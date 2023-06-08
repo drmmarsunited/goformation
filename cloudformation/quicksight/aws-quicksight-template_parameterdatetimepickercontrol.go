@@ -8,12 +8,12 @@ import (
 
 // Template_ParameterDateTimePickerControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterDateTimePickerControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdatetimepickercontrol.html
-type Template_ParameterDateTimePickerControl struct {
+type Template_ParameterDateTimePickerControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdatetimepickercontrol.html#cfn-quicksight-template-parameterdatetimepickercontrol-displayoptions
-	DisplayOptions *Template_DateTimePickerControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_DateTimePickerControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Template_ParameterDateTimePickerControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterDateTimePickerControl) AWSCloudFormationType() string {
+func (r *Template_ParameterDateTimePickerControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterDateTimePickerControl"
 }

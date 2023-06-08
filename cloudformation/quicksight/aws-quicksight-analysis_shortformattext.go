@@ -8,7 +8,7 @@ import (
 
 // Analysis_ShortFormatText AWS CloudFormation Resource (AWS::QuickSight::Analysis.ShortFormatText)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-shortformattext.html
-type Analysis_ShortFormatText struct {
+type Analysis_ShortFormatText[T any] struct {
 
 	// PlainText AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ShortFormatText struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ShortFormatText) AWSCloudFormationType() string {
+func (r *Analysis_ShortFormatText[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ShortFormatText"
 }

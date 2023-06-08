@@ -8,7 +8,7 @@ import (
 
 // TransitGatewayMulticastDomain_Options AWS CloudFormation Resource (AWS::EC2::TransitGatewayMulticastDomain.Options)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html
-type TransitGatewayMulticastDomain_Options struct {
+type TransitGatewayMulticastDomain_Options[T any] struct {
 
 	// AutoAcceptSharedAssociations AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type TransitGatewayMulticastDomain_Options struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayMulticastDomain_Options) AWSCloudFormationType() string {
+func (r *TransitGatewayMulticastDomain_Options[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayMulticastDomain.Options"
 }

@@ -8,17 +8,17 @@ import (
 
 // Template_IntegerDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Template.IntegerDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-integerdefaultvalues.html
-type Template_IntegerDefaultValues struct {
+type Template_IntegerDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-integerdefaultvalues.html#cfn-quicksight-template-integerdefaultvalues-dynamicvalue
-	DynamicValue *Template_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Template_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-integerdefaultvalues.html#cfn-quicksight-template-integerdefaultvalues-staticvalues
-	StaticValues []float64 `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_IntegerDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_IntegerDefaultValues) AWSCloudFormationType() string {
+func (r *Template_IntegerDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.IntegerDefaultValues"
 }

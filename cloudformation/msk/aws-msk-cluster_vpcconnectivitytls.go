@@ -8,12 +8,12 @@ import (
 
 // Cluster_VpcConnectivityTls AWS CloudFormation Resource (AWS::MSK::Cluster.VpcConnectivityTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html
-type Cluster_VpcConnectivityTls struct {
+type Cluster_VpcConnectivityTls[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html#cfn-msk-cluster-vpcconnectivitytls-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_VpcConnectivityTls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_VpcConnectivityTls) AWSCloudFormationType() string {
+func (r *Cluster_VpcConnectivityTls[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.VpcConnectivityTls"
 }

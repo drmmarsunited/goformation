@@ -8,12 +8,12 @@ import (
 
 // HttpApi_CorsConfigurationObject AWS CloudFormation Resource (AWS::Serverless::HttpApi.CorsConfigurationObject)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration-object
-type HttpApi_CorsConfigurationObject struct {
+type HttpApi_CorsConfigurationObject[T any] struct {
 
 	// AllowCredentials AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration-object
-	AllowCredentials *bool `json:"AllowCredentials,omitempty"`
+	AllowCredentials *T `json:"AllowCredentials,omitempty"`
 
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type HttpApi_CorsConfigurationObject struct {
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration-object
-	MaxAge *int `json:"MaxAge,omitempty"`
+	MaxAge *T `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type HttpApi_CorsConfigurationObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HttpApi_CorsConfigurationObject) AWSCloudFormationType() string {
+func (r *HttpApi_CorsConfigurationObject[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::HttpApi.CorsConfigurationObject"
 }

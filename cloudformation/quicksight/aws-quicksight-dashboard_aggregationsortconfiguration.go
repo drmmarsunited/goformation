@@ -8,17 +8,17 @@ import (
 
 // Dashboard_AggregationSortConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AggregationSortConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationsortconfiguration.html
-type Dashboard_AggregationSortConfiguration struct {
+type Dashboard_AggregationSortConfiguration[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationsortconfiguration.html#cfn-quicksight-dashboard-aggregationsortconfiguration-aggregationfunction
-	AggregationFunction *Dashboard_AggregationFunction `json:"AggregationFunction"`
+	AggregationFunction *Dashboard_AggregationFunction[any] `json:"AggregationFunction"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationsortconfiguration.html#cfn-quicksight-dashboard-aggregationsortconfiguration-column
-	Column *Dashboard_ColumnIdentifier `json:"Column"`
+	Column *Dashboard_ColumnIdentifier[any] `json:"Column"`
 
 	// SortDirection AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_AggregationSortConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AggregationSortConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_AggregationSortConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AggregationSortConfiguration"
 }

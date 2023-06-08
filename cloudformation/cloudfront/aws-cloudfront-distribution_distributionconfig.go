@@ -8,7 +8,7 @@ import (
 
 // Distribution_DistributionConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.DistributionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
-type Distribution_DistributionConfig struct {
+type Distribution_DistributionConfig[T any] struct {
 
 	// Aliases AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Distribution_DistributionConfig struct {
 	// CacheBehaviors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors
-	CacheBehaviors []Distribution_CacheBehavior `json:"CacheBehaviors,omitempty"`
+	CacheBehaviors []Distribution_CacheBehavior[any] `json:"CacheBehaviors,omitempty"`
 
 	// Comment AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Distribution_DistributionConfig struct {
 	// CustomErrorResponses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses
-	CustomErrorResponses []Distribution_CustomErrorResponse `json:"CustomErrorResponses,omitempty"`
+	CustomErrorResponses []Distribution_CustomErrorResponse[any] `json:"CustomErrorResponses,omitempty"`
 
 	// CustomOrigin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customorigin
-	CustomOrigin *Distribution_LegacyCustomOrigin `json:"CustomOrigin,omitempty"`
+	CustomOrigin *Distribution_LegacyCustomOrigin[any] `json:"CustomOrigin,omitempty"`
 
 	// DefaultCacheBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior
-	DefaultCacheBehavior *Distribution_DefaultCacheBehavior `json:"DefaultCacheBehavior"`
+	DefaultCacheBehavior *Distribution_DefaultCacheBehavior[any] `json:"DefaultCacheBehavior"`
 
 	// DefaultRootObject AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Distribution_DistributionConfig struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// HttpVersion AWS CloudFormation Property
 	// Required: false
@@ -68,22 +68,22 @@ type Distribution_DistributionConfig struct {
 	// IPV6Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
-	IPV6Enabled *bool `json:"IPV6Enabled,omitempty"`
+	IPV6Enabled *T `json:"IPV6Enabled,omitempty"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-logging
-	Logging *Distribution_Logging `json:"Logging,omitempty"`
+	Logging *Distribution_Logging[any] `json:"Logging,omitempty"`
 
 	// OriginGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups
-	OriginGroups *Distribution_OriginGroups `json:"OriginGroups,omitempty"`
+	OriginGroups *Distribution_OriginGroups[any] `json:"OriginGroups,omitempty"`
 
 	// Origins AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origins
-	Origins []Distribution_Origin `json:"Origins,omitempty"`
+	Origins []Distribution_Origin[any] `json:"Origins,omitempty"`
 
 	// PriceClass AWS CloudFormation Property
 	// Required: false
@@ -93,22 +93,22 @@ type Distribution_DistributionConfig struct {
 	// Restrictions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions
-	Restrictions *Distribution_Restrictions `json:"Restrictions,omitempty"`
+	Restrictions *Distribution_Restrictions[any] `json:"Restrictions,omitempty"`
 
 	// S3Origin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-s3origin
-	S3Origin *Distribution_LegacyS3Origin `json:"S3Origin,omitempty"`
+	S3Origin *Distribution_LegacyS3Origin[any] `json:"S3Origin,omitempty"`
 
 	// Staging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-staging
-	Staging *bool `json:"Staging,omitempty"`
+	Staging *T `json:"Staging,omitempty"`
 
 	// ViewerCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewercertificate
-	ViewerCertificate *Distribution_ViewerCertificate `json:"ViewerCertificate,omitempty"`
+	ViewerCertificate *Distribution_ViewerCertificate[any] `json:"ViewerCertificate,omitempty"`
 
 	// WebACLId AWS CloudFormation Property
 	// Required: false
@@ -132,6 +132,6 @@ type Distribution_DistributionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_DistributionConfig) AWSCloudFormationType() string {
+func (r *Distribution_DistributionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.DistributionConfig"
 }

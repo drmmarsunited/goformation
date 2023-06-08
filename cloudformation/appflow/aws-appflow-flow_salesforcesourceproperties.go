@@ -8,7 +8,7 @@ import (
 
 // Flow_SalesforceSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SalesforceSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html
-type Flow_SalesforceSourceProperties struct {
+type Flow_SalesforceSourceProperties[T any] struct {
 
 	// DataTransferApi AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Flow_SalesforceSourceProperties struct {
 	// EnableDynamicFieldUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-enabledynamicfieldupdate
-	EnableDynamicFieldUpdate *bool `json:"EnableDynamicFieldUpdate,omitempty"`
+	EnableDynamicFieldUpdate *T `json:"EnableDynamicFieldUpdate,omitempty"`
 
 	// IncludeDeletedRecords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-includedeletedrecords
-	IncludeDeletedRecords *bool `json:"IncludeDeletedRecords,omitempty"`
+	IncludeDeletedRecords *T `json:"IncludeDeletedRecords,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Flow_SalesforceSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SalesforceSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_SalesforceSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SalesforceSourceProperties"
 }

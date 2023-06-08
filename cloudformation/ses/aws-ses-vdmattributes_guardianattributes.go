@@ -8,7 +8,7 @@ import (
 
 // VdmAttributes_GuardianAttributes AWS CloudFormation Resource (AWS::SES::VdmAttributes.GuardianAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-vdmattributes-guardianattributes.html
-type VdmAttributes_GuardianAttributes struct {
+type VdmAttributes_GuardianAttributes[T any] struct {
 
 	// OptimizedSharedDelivery AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type VdmAttributes_GuardianAttributes struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VdmAttributes_GuardianAttributes) AWSCloudFormationType() string {
+func (r *VdmAttributes_GuardianAttributes[any]) AWSCloudFormationType() string {
 	return "AWS::SES::VdmAttributes.GuardianAttributes"
 }

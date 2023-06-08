@@ -12,12 +12,12 @@ import (
 
 // Input AWS CloudFormation Resource (AWS::IoTEvents::Input)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html
-type Input struct {
+type Input[T any] struct {
 
 	// InputDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdefinition
-	InputDefinition *Input_InputDefinition `json:"InputDefinition"`
+	InputDefinition *Input_InputDefinition[any] `json:"InputDefinition"`
 
 	// InputDescription AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Input struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input) AWSCloudFormationType() string {
+func (r *Input[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::Input"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Input) MarshalJSON() ([]byte, error) {
-	type Properties Input
+func (r Input[any]) MarshalJSON() ([]byte, error) {
+	type Properties Input[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Input) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Input) UnmarshalJSON(b []byte) error {
-	type Properties Input
+func (r *Input[any]) UnmarshalJSON(b []byte) error {
+	type Properties Input[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Input) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Input(*res.Properties)
+		*r = Input[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

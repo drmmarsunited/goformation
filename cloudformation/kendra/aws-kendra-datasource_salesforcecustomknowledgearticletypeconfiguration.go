@@ -8,7 +8,7 @@ import (
 
 // DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SalesforceCustomKnowledgeArticleTypeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html
-type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration struct {
+type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration[T any] struct {
 
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SalesforceCustomKnowledgeArticleTypeConfiguration"
 }

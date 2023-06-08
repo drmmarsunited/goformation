@@ -8,7 +8,7 @@ import (
 
 // Table_StorageDescriptor AWS CloudFormation Resource (AWS::Glue::Table.StorageDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html
-type Table_StorageDescriptor struct {
+type Table_StorageDescriptor[T any] struct {
 
 	// BucketColumns AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Table_StorageDescriptor struct {
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-columns
-	Columns []Table_Column `json:"Columns,omitempty"`
+	Columns []Table_Column[any] `json:"Columns,omitempty"`
 
 	// Compressed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-compressed
-	Compressed *bool `json:"Compressed,omitempty"`
+	Compressed *T `json:"Compressed,omitempty"`
 
 	// InputFormat AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Table_StorageDescriptor struct {
 	// NumberOfBuckets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-numberofbuckets
-	NumberOfBuckets *int `json:"NumberOfBuckets,omitempty"`
+	NumberOfBuckets *T `json:"NumberOfBuckets,omitempty"`
 
 	// OutputFormat AWS CloudFormation Property
 	// Required: false
@@ -53,27 +53,27 @@ type Table_StorageDescriptor struct {
 	// SchemaReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-schemareference
-	SchemaReference *Table_SchemaReference `json:"SchemaReference,omitempty"`
+	SchemaReference *Table_SchemaReference[any] `json:"SchemaReference,omitempty"`
 
 	// SerdeInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-serdeinfo
-	SerdeInfo *Table_SerdeInfo `json:"SerdeInfo,omitempty"`
+	SerdeInfo *Table_SerdeInfo[any] `json:"SerdeInfo,omitempty"`
 
 	// SkewedInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-skewedinfo
-	SkewedInfo *Table_SkewedInfo `json:"SkewedInfo,omitempty"`
+	SkewedInfo *Table_SkewedInfo[any] `json:"SkewedInfo,omitempty"`
 
 	// SortColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-sortcolumns
-	SortColumns []Table_Order `json:"SortColumns,omitempty"`
+	SortColumns []Table_Order[any] `json:"SortColumns,omitempty"`
 
 	// StoredAsSubDirectories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-storedassubdirectories
-	StoredAsSubDirectories *bool `json:"StoredAsSubDirectories,omitempty"`
+	StoredAsSubDirectories *T `json:"StoredAsSubDirectories,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -92,6 +92,6 @@ type Table_StorageDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_StorageDescriptor) AWSCloudFormationType() string {
+func (r *Table_StorageDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.StorageDescriptor"
 }

@@ -8,7 +8,7 @@ import (
 
 // Detector_Model AWS CloudFormation Resource (AWS::FraudDetector::Detector.Model)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-model.html
-type Detector_Model struct {
+type Detector_Model[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Detector_Model struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_Model) AWSCloudFormationType() string {
+func (r *Detector_Model[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.Model"
 }

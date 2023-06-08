@@ -11,7 +11,7 @@ import (
 
 // GCMChannel AWS CloudFormation Resource (AWS::Pinpoint::GCMChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html
-type GCMChannel struct {
+type GCMChannel[T any] struct {
 
 	// ApiKey AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type GCMChannel struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type GCMChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GCMChannel) AWSCloudFormationType() string {
+func (r *GCMChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::GCMChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GCMChannel) MarshalJSON() ([]byte, error) {
-	type Properties GCMChannel
+func (r GCMChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties GCMChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r GCMChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GCMChannel) UnmarshalJSON(b []byte) error {
-	type Properties GCMChannel
+func (r *GCMChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties GCMChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *GCMChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GCMChannel(*res.Properties)
+		*r = GCMChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

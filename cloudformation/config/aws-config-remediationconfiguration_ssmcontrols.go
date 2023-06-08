@@ -8,17 +8,17 @@ import (
 
 // RemediationConfiguration_SsmControls AWS CloudFormation Resource (AWS::Config::RemediationConfiguration.SsmControls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html
-type RemediationConfiguration_SsmControls struct {
+type RemediationConfiguration_SsmControls[T any] struct {
 
 	// ConcurrentExecutionRatePercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-concurrentexecutionratepercentage
-	ConcurrentExecutionRatePercentage *int `json:"ConcurrentExecutionRatePercentage,omitempty"`
+	ConcurrentExecutionRatePercentage *T `json:"ConcurrentExecutionRatePercentage,omitempty"`
 
 	// ErrorPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-errorpercentage
-	ErrorPercentage *int `json:"ErrorPercentage,omitempty"`
+	ErrorPercentage *T `json:"ErrorPercentage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RemediationConfiguration_SsmControls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RemediationConfiguration_SsmControls) AWSCloudFormationType() string {
+func (r *RemediationConfiguration_SsmControls[any]) AWSCloudFormationType() string {
 	return "AWS::Config::RemediationConfiguration.SsmControls"
 }

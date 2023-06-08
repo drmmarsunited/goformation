@@ -8,7 +8,7 @@ import (
 
 // TopicRule_KafkaAction AWS CloudFormation Resource (AWS::IoT::TopicRule.KafkaAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kafkaaction.html
-type TopicRule_KafkaAction struct {
+type TopicRule_KafkaAction[T any] struct {
 
 	// ClientProperties AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type TopicRule_KafkaAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_KafkaAction) AWSCloudFormationType() string {
+func (r *TopicRule_KafkaAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.KafkaAction"
 }

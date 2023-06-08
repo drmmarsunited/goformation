@@ -8,7 +8,7 @@ import (
 
 // Server_As2Transport AWS CloudFormation Resource (AWS::Transfer::Server.As2Transport)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-as2transport.html
-type Server_As2Transport struct {
+type Server_As2Transport[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Server_As2Transport struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_As2Transport) AWSCloudFormationType() string {
+func (r *Server_As2Transport[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.As2Transport"
 }

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DateTimeParameter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DateTimeParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameter.html
-type Dashboard_DateTimeParameter struct {
+type Dashboard_DateTimeParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_DateTimeParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DateTimeParameter) AWSCloudFormationType() string {
+func (r *Dashboard_DateTimeParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DateTimeParameter"
 }

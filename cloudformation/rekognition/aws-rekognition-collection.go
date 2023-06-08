@@ -12,7 +12,7 @@ import (
 
 // Collection AWS CloudFormation Resource (AWS::Rekognition::Collection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-collection.html
-type Collection struct {
+type Collection[T any] struct {
 
 	// CollectionId AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type Collection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Collection) AWSCloudFormationType() string {
+func (r *Collection[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::Collection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Collection) MarshalJSON() ([]byte, error) {
-	type Properties Collection
+func (r Collection[any]) MarshalJSON() ([]byte, error) {
+	type Properties Collection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r Collection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Collection) UnmarshalJSON(b []byte) error {
-	type Properties Collection
+func (r *Collection[any]) UnmarshalJSON(b []byte) error {
+	type Properties Collection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *Collection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Collection(*res.Properties)
+		*r = Collection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Schedule_PlacementConstraint AWS CloudFormation Resource (AWS::Scheduler::Schedule.PlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-placementconstraint.html
-type Schedule_PlacementConstraint struct {
+type Schedule_PlacementConstraint[T any] struct {
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Schedule_PlacementConstraint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_PlacementConstraint) AWSCloudFormationType() string {
+func (r *Schedule_PlacementConstraint[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.PlacementConstraint"
 }

@@ -8,17 +8,17 @@ import (
 
 // Channel_ArchiveContainerSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.ArchiveContainerSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html
-type Channel_ArchiveContainerSettings struct {
+type Channel_ArchiveContainerSettings[T any] struct {
 
 	// M2tsSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html#cfn-medialive-channel-archivecontainersettings-m2tssettings
-	M2tsSettings *Channel_M2tsSettings `json:"M2tsSettings,omitempty"`
+	M2tsSettings *Channel_M2tsSettings[any] `json:"M2tsSettings,omitempty"`
 
 	// RawSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html#cfn-medialive-channel-archivecontainersettings-rawsettings
-	RawSettings *Channel_RawSettings `json:"RawSettings,omitempty"`
+	RawSettings *Channel_RawSettings[any] `json:"RawSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Channel_ArchiveContainerSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ArchiveContainerSettings) AWSCloudFormationType() string {
+func (r *Channel_ArchiveContainerSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ArchiveContainerSettings"
 }

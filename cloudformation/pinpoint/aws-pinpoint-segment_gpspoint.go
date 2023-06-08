@@ -8,17 +8,17 @@ import (
 
 // Segment_GPSPoint AWS CloudFormation Resource (AWS::Pinpoint::Segment.GPSPoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html
-type Segment_GPSPoint struct {
+type Segment_GPSPoint[T any] struct {
 
 	// Coordinates AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates
-	Coordinates *Segment_Coordinates `json:"Coordinates"`
+	Coordinates *Segment_Coordinates[any] `json:"Coordinates"`
 
 	// RangeInKilometers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers
-	RangeInKilometers float64 `json:"RangeInKilometers"`
+	RangeInKilometers T `json:"RangeInKilometers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Segment_GPSPoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_GPSPoint) AWSCloudFormationType() string {
+func (r *Segment_GPSPoint[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.GPSPoint"
 }

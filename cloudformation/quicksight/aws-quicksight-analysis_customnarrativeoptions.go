@@ -8,7 +8,7 @@ import (
 
 // Analysis_CustomNarrativeOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomNarrativeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customnarrativeoptions.html
-type Analysis_CustomNarrativeOptions struct {
+type Analysis_CustomNarrativeOptions[T any] struct {
 
 	// Narrative AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Analysis_CustomNarrativeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomNarrativeOptions) AWSCloudFormationType() string {
+func (r *Analysis_CustomNarrativeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomNarrativeOptions"
 }

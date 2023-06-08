@@ -8,37 +8,37 @@ import (
 
 // VirtualNode_Listener AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.Listener)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
-type VirtualNode_Listener struct {
+type VirtualNode_Listener[T any] struct {
 
 	// ConnectionPool AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-connectionpool
-	ConnectionPool *VirtualNode_VirtualNodeConnectionPool `json:"ConnectionPool,omitempty"`
+	ConnectionPool *VirtualNode_VirtualNodeConnectionPool[any] `json:"ConnectionPool,omitempty"`
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-healthcheck
-	HealthCheck *VirtualNode_HealthCheck `json:"HealthCheck,omitempty"`
+	HealthCheck *VirtualNode_HealthCheck[any] `json:"HealthCheck,omitempty"`
 
 	// OutlierDetection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-outlierdetection
-	OutlierDetection *VirtualNode_OutlierDetection `json:"OutlierDetection,omitempty"`
+	OutlierDetection *VirtualNode_OutlierDetection[any] `json:"OutlierDetection,omitempty"`
 
 	// PortMapping AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-portmapping
-	PortMapping *VirtualNode_PortMapping `json:"PortMapping"`
+	PortMapping *VirtualNode_PortMapping[any] `json:"PortMapping"`
 
 	// TLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-tls
-	TLS *VirtualNode_ListenerTls `json:"TLS,omitempty"`
+	TLS *VirtualNode_ListenerTls[any] `json:"TLS,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-timeout
-	Timeout *VirtualNode_ListenerTimeout `json:"Timeout,omitempty"`
+	Timeout *VirtualNode_ListenerTimeout[any] `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type VirtualNode_Listener struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_Listener) AWSCloudFormationType() string {
+func (r *VirtualNode_Listener[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.Listener"
 }

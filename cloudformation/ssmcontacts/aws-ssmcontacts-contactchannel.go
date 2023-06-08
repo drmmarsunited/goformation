@@ -11,7 +11,7 @@ import (
 
 // ContactChannel AWS CloudFormation Resource (AWS::SSMContacts::ContactChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html
-type ContactChannel struct {
+type ContactChannel[T any] struct {
 
 	// ChannelAddress AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type ContactChannel struct {
 	// DeferActivation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-deferactivation
-	DeferActivation *bool `json:"DeferActivation,omitempty"`
+	DeferActivation *T `json:"DeferActivation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type ContactChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContactChannel) AWSCloudFormationType() string {
+func (r *ContactChannel[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::ContactChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ContactChannel) MarshalJSON() ([]byte, error) {
-	type Properties ContactChannel
+func (r ContactChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties ContactChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r ContactChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ContactChannel) UnmarshalJSON(b []byte) error {
-	type Properties ContactChannel
+func (r *ContactChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties ContactChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *ContactChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ContactChannel(*res.Properties)
+		*r = ContactChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

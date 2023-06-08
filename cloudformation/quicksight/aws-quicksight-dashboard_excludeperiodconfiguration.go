@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ExcludePeriodConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ExcludePeriodConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-excludeperiodconfiguration.html
-type Dashboard_ExcludePeriodConfiguration struct {
+type Dashboard_ExcludePeriodConfiguration[T any] struct {
 
 	// Amount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-excludeperiodconfiguration.html#cfn-quicksight-dashboard-excludeperiodconfiguration-amount
-	Amount float64 `json:"Amount"`
+	Amount T `json:"Amount"`
 
 	// Granularity AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Dashboard_ExcludePeriodConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ExcludePeriodConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ExcludePeriodConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ExcludePeriodConfiguration"
 }

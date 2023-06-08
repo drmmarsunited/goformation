@@ -11,12 +11,12 @@ import (
 
 // AccessPolicy AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html
-type AccessPolicy struct {
+type AccessPolicy[T any] struct {
 
 	// AccessPolicyIdentity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity
-	AccessPolicyIdentity *AccessPolicy_AccessPolicyIdentity `json:"AccessPolicyIdentity"`
+	AccessPolicyIdentity *AccessPolicy_AccessPolicyIdentity[any] `json:"AccessPolicyIdentity"`
 
 	// AccessPolicyPermission AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type AccessPolicy struct {
 	// AccessPolicyResource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyresource
-	AccessPolicyResource *AccessPolicy_AccessPolicyResource `json:"AccessPolicyResource"`
+	AccessPolicyResource *AccessPolicy_AccessPolicyResource[any] `json:"AccessPolicyResource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type AccessPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPolicy) AWSCloudFormationType() string {
+func (r *AccessPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AccessPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AccessPolicy) MarshalJSON() ([]byte, error) {
-	type Properties AccessPolicy
+func (r AccessPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties AccessPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r AccessPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AccessPolicy) UnmarshalJSON(b []byte) error {
-	type Properties AccessPolicy
+func (r *AccessPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties AccessPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *AccessPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AccessPolicy(*res.Properties)
+		*r = AccessPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -11,7 +11,7 @@ import (
 
 // DataSource AWS CloudFormation Resource (AWS::AppSync::DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html
-type DataSource struct {
+type DataSource[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -26,27 +26,27 @@ type DataSource struct {
 	// DynamoDBConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
-	DynamoDBConfig *DataSource_DynamoDBConfig `json:"DynamoDBConfig,omitempty"`
+	DynamoDBConfig *DataSource_DynamoDBConfig[any] `json:"DynamoDBConfig,omitempty"`
 
 	// ElasticsearchConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
-	ElasticsearchConfig *DataSource_ElasticsearchConfig `json:"ElasticsearchConfig,omitempty"`
+	ElasticsearchConfig *DataSource_ElasticsearchConfig[any] `json:"ElasticsearchConfig,omitempty"`
 
 	// EventBridgeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-eventbridgeconfig
-	EventBridgeConfig *DataSource_EventBridgeConfig `json:"EventBridgeConfig,omitempty"`
+	EventBridgeConfig *DataSource_EventBridgeConfig[any] `json:"EventBridgeConfig,omitempty"`
 
 	// HttpConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig
-	HttpConfig *DataSource_HttpConfig `json:"HttpConfig,omitempty"`
+	HttpConfig *DataSource_HttpConfig[any] `json:"HttpConfig,omitempty"`
 
 	// LambdaConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig
-	LambdaConfig *DataSource_LambdaConfig `json:"LambdaConfig,omitempty"`
+	LambdaConfig *DataSource_LambdaConfig[any] `json:"LambdaConfig,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -56,12 +56,12 @@ type DataSource struct {
 	// OpenSearchServiceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-opensearchserviceconfig
-	OpenSearchServiceConfig *DataSource_OpenSearchServiceConfig `json:"OpenSearchServiceConfig,omitempty"`
+	OpenSearchServiceConfig *DataSource_OpenSearchServiceConfig[any] `json:"OpenSearchServiceConfig,omitempty"`
 
 	// RelationalDatabaseConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-relationaldatabaseconfig
-	RelationalDatabaseConfig *DataSource_RelationalDatabaseConfig `json:"RelationalDatabaseConfig,omitempty"`
+	RelationalDatabaseConfig *DataSource_RelationalDatabaseConfig[any] `json:"RelationalDatabaseConfig,omitempty"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: false
@@ -90,14 +90,15 @@ type DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource) AWSCloudFormationType() string {
+func (r *DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DataSource) MarshalJSON() ([]byte, error) {
-	type Properties DataSource
+func (r DataSource[any]) MarshalJSON() ([]byte, error) {
+	type Properties DataSource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r DataSource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DataSource) UnmarshalJSON(b []byte) error {
-	type Properties DataSource
+func (r *DataSource[any]) UnmarshalJSON(b []byte) error {
+	type Properties DataSource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *DataSource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DataSource(*res.Properties)
+		*r = DataSource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

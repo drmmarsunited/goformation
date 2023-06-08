@@ -8,7 +8,7 @@ import (
 
 // WebACL_JsonMatchPattern AWS CloudFormation Resource (AWS::WAFv2::WebACL.JsonMatchPattern)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonmatchpattern.html
-type WebACL_JsonMatchPattern struct {
+type WebACL_JsonMatchPattern[T any] struct {
 
 	// All AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type WebACL_JsonMatchPattern struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_JsonMatchPattern) AWSCloudFormationType() string {
+func (r *WebACL_JsonMatchPattern[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.JsonMatchPattern"
 }

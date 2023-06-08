@@ -8,7 +8,7 @@ import (
 
 // AutoScalingGroup_InstancesDistribution AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.InstancesDistribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html
-type AutoScalingGroup_InstancesDistribution struct {
+type AutoScalingGroup_InstancesDistribution[T any] struct {
 
 	// OnDemandAllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type AutoScalingGroup_InstancesDistribution struct {
 	// OnDemandBaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandbasecapacity
-	OnDemandBaseCapacity *int `json:"OnDemandBaseCapacity,omitempty"`
+	OnDemandBaseCapacity *T `json:"OnDemandBaseCapacity,omitempty"`
 
 	// OnDemandPercentageAboveBaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandpercentageabovebasecapacity
-	OnDemandPercentageAboveBaseCapacity *int `json:"OnDemandPercentageAboveBaseCapacity,omitempty"`
+	OnDemandPercentageAboveBaseCapacity *T `json:"OnDemandPercentageAboveBaseCapacity,omitempty"`
 
 	// SpotAllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AutoScalingGroup_InstancesDistribution struct {
 	// SpotInstancePools AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotinstancepools
-	SpotInstancePools *int `json:"SpotInstancePools,omitempty"`
+	SpotInstancePools *T `json:"SpotInstancePools,omitempty"`
 
 	// SpotMaxPrice AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type AutoScalingGroup_InstancesDistribution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_InstancesDistribution) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_InstancesDistribution[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.InstancesDistribution"
 }

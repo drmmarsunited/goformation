@@ -8,17 +8,17 @@ import (
 
 // Dashboard_DecimalDefaultValues AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DecimalDefaultValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimaldefaultvalues.html
-type Dashboard_DecimalDefaultValues struct {
+type Dashboard_DecimalDefaultValues[T any] struct {
 
 	// DynamicValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimaldefaultvalues.html#cfn-quicksight-dashboard-decimaldefaultvalues-dynamicvalue
-	DynamicValue *Dashboard_DynamicDefaultValue `json:"DynamicValue,omitempty"`
+	DynamicValue *Dashboard_DynamicDefaultValue[any] `json:"DynamicValue,omitempty"`
 
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimaldefaultvalues.html#cfn-quicksight-dashboard-decimaldefaultvalues-staticvalues
-	StaticValues []float64 `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_DecimalDefaultValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DecimalDefaultValues) AWSCloudFormationType() string {
+func (r *Dashboard_DecimalDefaultValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DecimalDefaultValues"
 }

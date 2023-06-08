@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_LoggingFormat AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.LoggingFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html
-type VirtualGateway_LoggingFormat struct {
+type VirtualGateway_LoggingFormat[T any] struct {
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html#cfn-appmesh-virtualgateway-loggingformat-json
-	Json []VirtualGateway_JsonFormatRef `json:"Json,omitempty"`
+	Json []VirtualGateway_JsonFormatRef[any] `json:"Json,omitempty"`
 
 	// Text AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type VirtualGateway_LoggingFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_LoggingFormat) AWSCloudFormationType() string {
+func (r *VirtualGateway_LoggingFormat[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.LoggingFormat"
 }

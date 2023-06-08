@@ -8,7 +8,7 @@ import (
 
 // Service_LogConfiguration AWS CloudFormation Resource (AWS::ECS::Service.LogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-logconfiguration.html
-type Service_LogConfiguration struct {
+type Service_LogConfiguration[T any] struct {
 
 	// LogDriver AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Service_LogConfiguration struct {
 	// SecretOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-logconfiguration.html#cfn-ecs-service-logconfiguration-secretoptions
-	SecretOptions []Service_Secret `json:"SecretOptions,omitempty"`
+	SecretOptions []Service_Secret[any] `json:"SecretOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Service_LogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_LogConfiguration) AWSCloudFormationType() string {
+func (r *Service_LogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.LogConfiguration"
 }

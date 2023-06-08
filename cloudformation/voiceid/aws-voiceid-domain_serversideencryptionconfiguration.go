@@ -8,7 +8,7 @@ import (
 
 // Domain_ServerSideEncryptionConfiguration AWS CloudFormation Resource (AWS::VoiceID::Domain.ServerSideEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-voiceid-domain-serversideencryptionconfiguration.html
-type Domain_ServerSideEncryptionConfiguration struct {
+type Domain_ServerSideEncryptionConfiguration[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Domain_ServerSideEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_ServerSideEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Domain_ServerSideEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::VoiceID::Domain.ServerSideEncryptionConfiguration"
 }

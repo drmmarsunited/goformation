@@ -8,27 +8,27 @@ import (
 
 // Component_ActionParameters AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ActionParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html
-type Component_ActionParameters struct {
+type Component_ActionParameters[T any] struct {
 
 	// Anchor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-anchor
-	Anchor *Component_ComponentProperty `json:"Anchor,omitempty"`
+	Anchor *Component_ComponentProperty[any] `json:"Anchor,omitempty"`
 
 	// Fields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-fields
-	Fields map[string]Component_ComponentProperty `json:"Fields,omitempty"`
+	Fields map[string]Component_ComponentProperty[any] `json:"Fields,omitempty"`
 
 	// Global AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-global
-	Global *Component_ComponentProperty `json:"Global,omitempty"`
+	Global *Component_ComponentProperty[any] `json:"Global,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-id
-	Id *Component_ComponentProperty `json:"Id,omitempty"`
+	Id *Component_ComponentProperty[any] `json:"Id,omitempty"`
 
 	// Model AWS CloudFormation Property
 	// Required: false
@@ -38,22 +38,22 @@ type Component_ActionParameters struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-state
-	State *Component_MutationActionSetStateParameter `json:"State,omitempty"`
+	State *Component_MutationActionSetStateParameter[any] `json:"State,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-target
-	Target *Component_ComponentProperty `json:"Target,omitempty"`
+	Target *Component_ComponentProperty[any] `json:"Target,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-type
-	Type *Component_ComponentProperty `json:"Type,omitempty"`
+	Type *Component_ComponentProperty[any] `json:"Type,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-actionparameters.html#cfn-amplifyuibuilder-component-actionparameters-url
-	Url *Component_ComponentProperty `json:"Url,omitempty"`
+	Url *Component_ComponentProperty[any] `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type Component_ActionParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ActionParameters) AWSCloudFormationType() string {
+func (r *Component_ActionParameters[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ActionParameters"
 }

@@ -12,7 +12,7 @@ import (
 
 // CacheCluster AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
-type CacheCluster struct {
+type CacheCluster[T any] struct {
 
 	// AZMode AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type CacheCluster struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *T `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// CacheNodeType AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type CacheCluster struct {
 	// LogDeliveryConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-logdeliveryconfigurations
-	LogDeliveryConfigurations []CacheCluster_LogDeliveryConfigurationRequest `json:"LogDeliveryConfigurations,omitempty"`
+	LogDeliveryConfigurations []CacheCluster_LogDeliveryConfigurationRequest[any] `json:"LogDeliveryConfigurations,omitempty"`
 
 	// NetworkType AWS CloudFormation Property
 	// Required: false
@@ -82,12 +82,12 @@ type CacheCluster struct {
 	// NumCacheNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes
-	NumCacheNodes int `json:"NumCacheNodes"`
+	NumCacheNodes T `json:"NumCacheNodes"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// PreferredAvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -117,7 +117,7 @@ type CacheCluster struct {
 	// SnapshotRetentionLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit
-	SnapshotRetentionLimit *int `json:"SnapshotRetentionLimit,omitempty"`
+	SnapshotRetentionLimit *T `json:"SnapshotRetentionLimit,omitempty"`
 
 	// SnapshotWindow AWS CloudFormation Property
 	// Required: false
@@ -132,7 +132,7 @@ type CacheCluster struct {
 	// TransitEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-transitencryptionenabled
-	TransitEncryptionEnabled *bool `json:"TransitEncryptionEnabled,omitempty"`
+	TransitEncryptionEnabled *T `json:"TransitEncryptionEnabled,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
@@ -156,14 +156,15 @@ type CacheCluster struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CacheCluster) AWSCloudFormationType() string {
+func (r *CacheCluster[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::CacheCluster"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CacheCluster) MarshalJSON() ([]byte, error) {
-	type Properties CacheCluster
+func (r CacheCluster[any]) MarshalJSON() ([]byte, error) {
+	type Properties CacheCluster[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -185,8 +186,9 @@ func (r CacheCluster) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CacheCluster) UnmarshalJSON(b []byte) error {
-	type Properties CacheCluster
+func (r *CacheCluster[any]) UnmarshalJSON(b []byte) error {
+	type Properties CacheCluster[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -206,7 +208,7 @@ func (r *CacheCluster) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CacheCluster(*res.Properties)
+		*r = CacheCluster[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

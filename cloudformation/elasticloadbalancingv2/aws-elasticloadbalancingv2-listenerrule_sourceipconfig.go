@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_SourceIpConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.SourceIpConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-sourceipconfig.html
-type ListenerRule_SourceIpConfig struct {
+type ListenerRule_SourceIpConfig[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ListenerRule_SourceIpConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_SourceIpConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_SourceIpConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.SourceIpConfig"
 }

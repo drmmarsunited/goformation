@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_S3DataSource AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.S3DataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3datasource.html
-type ModelPackage_S3DataSource struct {
+type ModelPackage_S3DataSource[T any] struct {
 
 	// S3DataType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ModelPackage_S3DataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_S3DataSource) AWSCloudFormationType() string {
+func (r *ModelPackage_S3DataSource[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.S3DataSource"
 }

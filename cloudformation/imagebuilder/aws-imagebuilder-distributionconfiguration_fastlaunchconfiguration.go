@@ -8,7 +8,7 @@ import (
 
 // DistributionConfiguration_FastLaunchConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.FastLaunchConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html
-type DistributionConfiguration_FastLaunchConfiguration struct {
+type DistributionConfiguration_FastLaunchConfiguration[T any] struct {
 
 	// AccountId AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type DistributionConfiguration_FastLaunchConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-launchtemplate
-	LaunchTemplate *DistributionConfiguration_FastLaunchLaunchTemplateSpecification `json:"LaunchTemplate,omitempty"`
+	LaunchTemplate *DistributionConfiguration_FastLaunchLaunchTemplateSpecification[any] `json:"LaunchTemplate,omitempty"`
 
 	// MaxParallelLaunches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-maxparallellaunches
-	MaxParallelLaunches *int `json:"MaxParallelLaunches,omitempty"`
+	MaxParallelLaunches *T `json:"MaxParallelLaunches,omitempty"`
 
 	// SnapshotConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-snapshotconfiguration
-	SnapshotConfiguration *DistributionConfiguration_FastLaunchSnapshotConfiguration `json:"SnapshotConfiguration,omitempty"`
+	SnapshotConfiguration *DistributionConfiguration_FastLaunchSnapshotConfiguration[any] `json:"SnapshotConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type DistributionConfiguration_FastLaunchConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DistributionConfiguration_FastLaunchConfiguration) AWSCloudFormationType() string {
+func (r *DistributionConfiguration_FastLaunchConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::DistributionConfiguration.FastLaunchConfiguration"
 }

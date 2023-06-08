@@ -11,37 +11,37 @@ import (
 
 // EventSourceMapping AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html
-type EventSourceMapping struct {
+type EventSourceMapping[T any] struct {
 
 	// AmazonManagedKafkaEventSourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig
-	AmazonManagedKafkaEventSourceConfig *EventSourceMapping_AmazonManagedKafkaEventSourceConfig `json:"AmazonManagedKafkaEventSourceConfig,omitempty"`
+	AmazonManagedKafkaEventSourceConfig *EventSourceMapping_AmazonManagedKafkaEventSourceConfig[any] `json:"AmazonManagedKafkaEventSourceConfig,omitempty"`
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize
-	BatchSize *int `json:"BatchSize,omitempty"`
+	BatchSize *T `json:"BatchSize,omitempty"`
 
 	// BisectBatchOnFunctionError AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror
-	BisectBatchOnFunctionError *bool `json:"BisectBatchOnFunctionError,omitempty"`
+	BisectBatchOnFunctionError *T `json:"BisectBatchOnFunctionError,omitempty"`
 
 	// DestinationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig
-	DestinationConfig *EventSourceMapping_DestinationConfig `json:"DestinationConfig,omitempty"`
+	DestinationConfig *EventSourceMapping_DestinationConfig[any] `json:"DestinationConfig,omitempty"`
 
 	// DocumentDBEventSourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig
-	DocumentDBEventSourceConfig *EventSourceMapping_DocumentDBEventSourceConfig `json:"DocumentDBEventSourceConfig,omitempty"`
+	DocumentDBEventSourceConfig *EventSourceMapping_DocumentDBEventSourceConfig[any] `json:"DocumentDBEventSourceConfig,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// EventSourceArn AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type EventSourceMapping struct {
 	// FilterCriteria AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria
-	FilterCriteria *EventSourceMapping_FilterCriteria `json:"FilterCriteria,omitempty"`
+	FilterCriteria *EventSourceMapping_FilterCriteria[any] `json:"FilterCriteria,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
@@ -66,22 +66,22 @@ type EventSourceMapping struct {
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds
-	MaximumBatchingWindowInSeconds *int `json:"MaximumBatchingWindowInSeconds,omitempty"`
+	MaximumBatchingWindowInSeconds *T `json:"MaximumBatchingWindowInSeconds,omitempty"`
 
 	// MaximumRecordAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumrecordageinseconds
-	MaximumRecordAgeInSeconds *int `json:"MaximumRecordAgeInSeconds,omitempty"`
+	MaximumRecordAgeInSeconds *T `json:"MaximumRecordAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-parallelizationfactor
-	ParallelizationFactor *int `json:"ParallelizationFactor,omitempty"`
+	ParallelizationFactor *T `json:"ParallelizationFactor,omitempty"`
 
 	// Queues AWS CloudFormation Property
 	// Required: false
@@ -91,22 +91,22 @@ type EventSourceMapping struct {
 	// ScalingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-scalingconfig
-	ScalingConfig *EventSourceMapping_ScalingConfig `json:"ScalingConfig,omitempty"`
+	ScalingConfig *EventSourceMapping_ScalingConfig[any] `json:"ScalingConfig,omitempty"`
 
 	// SelfManagedEventSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource
-	SelfManagedEventSource *EventSourceMapping_SelfManagedEventSource `json:"SelfManagedEventSource,omitempty"`
+	SelfManagedEventSource *EventSourceMapping_SelfManagedEventSource[any] `json:"SelfManagedEventSource,omitempty"`
 
 	// SelfManagedKafkaEventSourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig
-	SelfManagedKafkaEventSourceConfig *EventSourceMapping_SelfManagedKafkaEventSourceConfig `json:"SelfManagedKafkaEventSourceConfig,omitempty"`
+	SelfManagedKafkaEventSourceConfig *EventSourceMapping_SelfManagedKafkaEventSourceConfig[any] `json:"SelfManagedKafkaEventSourceConfig,omitempty"`
 
 	// SourceAccessConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations
-	SourceAccessConfigurations []EventSourceMapping_SourceAccessConfiguration `json:"SourceAccessConfigurations,omitempty"`
+	SourceAccessConfigurations []EventSourceMapping_SourceAccessConfiguration[any] `json:"SourceAccessConfigurations,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
@@ -116,7 +116,7 @@ type EventSourceMapping struct {
 	// StartingPositionTimestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingpositiontimestamp
-	StartingPositionTimestamp *float64 `json:"StartingPositionTimestamp,omitempty"`
+	StartingPositionTimestamp *T `json:"StartingPositionTimestamp,omitempty"`
 
 	// Topics AWS CloudFormation Property
 	// Required: false
@@ -126,7 +126,7 @@ type EventSourceMapping struct {
 	// TumblingWindowInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-tumblingwindowinseconds
-	TumblingWindowInSeconds *int `json:"TumblingWindowInSeconds,omitempty"`
+	TumblingWindowInSeconds *T `json:"TumblingWindowInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -145,14 +145,15 @@ type EventSourceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventSourceMapping) AWSCloudFormationType() string {
+func (r *EventSourceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::EventSourceMapping"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EventSourceMapping) MarshalJSON() ([]byte, error) {
-	type Properties EventSourceMapping
+func (r EventSourceMapping[any]) MarshalJSON() ([]byte, error) {
+	type Properties EventSourceMapping[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -174,8 +175,9 @@ func (r EventSourceMapping) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EventSourceMapping) UnmarshalJSON(b []byte) error {
-	type Properties EventSourceMapping
+func (r *EventSourceMapping[any]) UnmarshalJSON(b []byte) error {
+	type Properties EventSourceMapping[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -195,7 +197,7 @@ func (r *EventSourceMapping) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EventSourceMapping(*res.Properties)
+		*r = EventSourceMapping[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Service_DeploymentCircuitBreaker AWS CloudFormation Resource (AWS::ECS::Service.DeploymentCircuitBreaker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html
-type Service_DeploymentCircuitBreaker struct {
+type Service_DeploymentCircuitBreaker[T any] struct {
 
 	// Enable AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-enable
-	Enable bool `json:"Enable"`
+	Enable T `json:"Enable"`
 
 	// Rollback AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-rollback
-	Rollback bool `json:"Rollback"`
+	Rollback T `json:"Rollback"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Service_DeploymentCircuitBreaker struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_DeploymentCircuitBreaker) AWSCloudFormationType() string {
+func (r *Service_DeploymentCircuitBreaker[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.DeploymentCircuitBreaker"
 }

@@ -12,12 +12,12 @@ import (
 
 // Document AWS CloudFormation Resource (AWS::SSM::Document)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html
-type Document struct {
+type Document[T any] struct {
 
 	// Attachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-attachments
-	Attachments []Document_AttachmentsSource `json:"Attachments,omitempty"`
+	Attachments []Document_AttachmentsSource[any] `json:"Attachments,omitempty"`
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Document struct {
 	// Requires AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-requires
-	Requires []Document_DocumentRequires `json:"Requires,omitempty"`
+	Requires []Document_DocumentRequires[any] `json:"Requires,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -81,14 +81,15 @@ type Document struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Document) AWSCloudFormationType() string {
+func (r *Document[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Document"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Document) MarshalJSON() ([]byte, error) {
-	type Properties Document
+func (r Document[any]) MarshalJSON() ([]byte, error) {
+	type Properties Document[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -110,8 +111,9 @@ func (r Document) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Document) UnmarshalJSON(b []byte) error {
-	type Properties Document
+func (r *Document[any]) UnmarshalJSON(b []byte) error {
+	type Properties Document[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -131,7 +133,7 @@ func (r *Document) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Document(*res.Properties)
+		*r = Document[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

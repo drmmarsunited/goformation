@@ -8,7 +8,7 @@ import (
 
 // Node_NodeConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Node.NodeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html
-type Node_NodeConfiguration struct {
+type Node_NodeConfiguration[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Node_NodeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Node_NodeConfiguration) AWSCloudFormationType() string {
+func (r *Node_NodeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Node.NodeConfiguration"
 }

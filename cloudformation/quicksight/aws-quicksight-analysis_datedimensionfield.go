@@ -8,12 +8,12 @@ import (
 
 // Analysis_DateDimensionField AWS CloudFormation Resource (AWS::QuickSight::Analysis.DateDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datedimensionfield.html
-type Analysis_DateDimensionField struct {
+type Analysis_DateDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datedimensionfield.html#cfn-quicksight-analysis-datedimensionfield-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// DateGranularity AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Analysis_DateDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datedimensionfield.html#cfn-quicksight-analysis-datedimensionfield-formatconfiguration
-	FormatConfiguration *Analysis_DateTimeFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_DateTimeFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analysis_DateDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_DateDimensionField) AWSCloudFormationType() string {
+func (r *Analysis_DateDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.DateDimensionField"
 }

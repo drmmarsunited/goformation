@@ -8,7 +8,7 @@ import (
 
 // MonitoringSubscription_RealtimeMetricsSubscriptionConfig AWS CloudFormation Resource (AWS::CloudFront::MonitoringSubscription.RealtimeMetricsSubscriptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig.html
-type MonitoringSubscription_RealtimeMetricsSubscriptionConfig struct {
+type MonitoringSubscription_RealtimeMetricsSubscriptionConfig[T any] struct {
 
 	// RealtimeMetricsSubscriptionStatus AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type MonitoringSubscription_RealtimeMetricsSubscriptionConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSubscription_RealtimeMetricsSubscriptionConfig) AWSCloudFormationType() string {
+func (r *MonitoringSubscription_RealtimeMetricsSubscriptionConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::MonitoringSubscription.RealtimeMetricsSubscriptionConfig"
 }

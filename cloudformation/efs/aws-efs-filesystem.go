@@ -11,7 +11,7 @@ import (
 
 // FileSystem AWS CloudFormation Resource (AWS::EFS::FileSystem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html
-type FileSystem struct {
+type FileSystem[T any] struct {
 
 	// AvailabilityZoneName AWS CloudFormation Property
 	// Required: false
@@ -21,17 +21,17 @@ type FileSystem struct {
 	// BackupPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-backuppolicy
-	BackupPolicy *FileSystem_BackupPolicy `json:"BackupPolicy,omitempty"`
+	BackupPolicy *FileSystem_BackupPolicy[any] `json:"BackupPolicy,omitempty"`
 
 	// BypassPolicyLockoutSafetyCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-bypasspolicylockoutsafetycheck
-	BypassPolicyLockoutSafetyCheck *bool `json:"BypassPolicyLockoutSafetyCheck,omitempty"`
+	BypassPolicyLockoutSafetyCheck *T `json:"BypassPolicyLockoutSafetyCheck,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// FileSystemPolicy AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type FileSystem struct {
 	// FileSystemTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags
-	FileSystemTags []FileSystem_ElasticFileSystemTag `json:"FileSystemTags,omitempty"`
+	FileSystemTags []FileSystem_ElasticFileSystemTag[any] `json:"FileSystemTags,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type FileSystem struct {
 	// LifecyclePolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-lifecyclepolicies
-	LifecyclePolicies []FileSystem_LifecyclePolicy `json:"LifecyclePolicies,omitempty"`
+	LifecyclePolicies []FileSystem_LifecyclePolicy[any] `json:"LifecyclePolicies,omitempty"`
 
 	// PerformanceMode AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type FileSystem struct {
 	// ProvisionedThroughputInMibps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-provisionedthroughputinmibps
-	ProvisionedThroughputInMibps *float64 `json:"ProvisionedThroughputInMibps,omitempty"`
+	ProvisionedThroughputInMibps *T `json:"ProvisionedThroughputInMibps,omitempty"`
 
 	// ThroughputMode AWS CloudFormation Property
 	// Required: false
@@ -85,14 +85,15 @@ type FileSystem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FileSystem) AWSCloudFormationType() string {
+func (r *FileSystem[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::FileSystem"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FileSystem) MarshalJSON() ([]byte, error) {
-	type Properties FileSystem
+func (r FileSystem[any]) MarshalJSON() ([]byte, error) {
+	type Properties FileSystem[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r FileSystem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FileSystem) UnmarshalJSON(b []byte) error {
-	type Properties FileSystem
+func (r *FileSystem[any]) UnmarshalJSON(b []byte) error {
+	type Properties FileSystem[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *FileSystem) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FileSystem(*res.Properties)
+		*r = FileSystem[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

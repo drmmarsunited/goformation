@@ -8,12 +8,12 @@ import (
 
 // Channel_UdpContainerSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.UdpContainerSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpcontainersettings.html
-type Channel_UdpContainerSettings struct {
+type Channel_UdpContainerSettings[T any] struct {
 
 	// M2tsSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpcontainersettings.html#cfn-medialive-channel-udpcontainersettings-m2tssettings
-	M2tsSettings *Channel_M2tsSettings `json:"M2tsSettings,omitempty"`
+	M2tsSettings *Channel_M2tsSettings[any] `json:"M2tsSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_UdpContainerSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_UdpContainerSettings) AWSCloudFormationType() string {
+func (r *Channel_UdpContainerSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.UdpContainerSettings"
 }

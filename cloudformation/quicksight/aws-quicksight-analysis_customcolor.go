@@ -8,7 +8,7 @@ import (
 
 // Analysis_CustomColor AWS CloudFormation Resource (AWS::QuickSight::Analysis.CustomColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcolor.html
-type Analysis_CustomColor struct {
+type Analysis_CustomColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_CustomColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CustomColor) AWSCloudFormationType() string {
+func (r *Analysis_CustomColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CustomColor"
 }

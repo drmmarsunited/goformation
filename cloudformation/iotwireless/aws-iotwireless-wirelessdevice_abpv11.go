@@ -8,7 +8,7 @@ import (
 
 // WirelessDevice_AbpV11 AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.AbpV11)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html
-type WirelessDevice_AbpV11 struct {
+type WirelessDevice_AbpV11[T any] struct {
 
 	// DevAddr AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type WirelessDevice_AbpV11 struct {
 	// SessionKeys AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-sessionkeys
-	SessionKeys *WirelessDevice_SessionKeysAbpV11 `json:"SessionKeys"`
+	SessionKeys *WirelessDevice_SessionKeysAbpV11[any] `json:"SessionKeys"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type WirelessDevice_AbpV11 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WirelessDevice_AbpV11) AWSCloudFormationType() string {
+func (r *WirelessDevice_AbpV11[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::WirelessDevice.AbpV11"
 }

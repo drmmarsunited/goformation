@@ -8,7 +8,7 @@ import (
 
 // ResponseHeadersPolicy_RemoveHeader AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.RemoveHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheader.html
-type ResponseHeadersPolicy_RemoveHeader struct {
+type ResponseHeadersPolicy_RemoveHeader[T any] struct {
 
 	// Header AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ResponseHeadersPolicy_RemoveHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_RemoveHeader) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_RemoveHeader[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeader"
 }

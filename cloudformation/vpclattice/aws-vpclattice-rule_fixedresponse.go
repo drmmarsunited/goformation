@@ -8,12 +8,12 @@ import (
 
 // Rule_FixedResponse AWS CloudFormation Resource (AWS::VpcLattice::Rule.FixedResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-fixedresponse.html
-type Rule_FixedResponse struct {
+type Rule_FixedResponse[T any] struct {
 
 	// StatusCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-fixedresponse.html#cfn-vpclattice-rule-fixedresponse-statuscode
-	StatusCode int `json:"StatusCode"`
+	StatusCode T `json:"StatusCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_FixedResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_FixedResponse) AWSCloudFormationType() string {
+func (r *Rule_FixedResponse[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.FixedResponse"
 }

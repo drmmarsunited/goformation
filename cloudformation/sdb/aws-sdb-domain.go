@@ -11,7 +11,7 @@ import (
 
 // Domain AWS CloudFormation Resource (AWS::SDB::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html
-type Domain struct {
+type Domain[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -35,14 +35,15 @@ type Domain struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain) AWSCloudFormationType() string {
+func (r *Domain[any]) AWSCloudFormationType() string {
 	return "AWS::SDB::Domain"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Domain) MarshalJSON() ([]byte, error) {
-	type Properties Domain
+func (r Domain[any]) MarshalJSON() ([]byte, error) {
+	type Properties Domain[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r Domain) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Domain) UnmarshalJSON(b []byte) error {
-	type Properties Domain
+func (r *Domain[any]) UnmarshalJSON(b []byte) error {
+	type Properties Domain[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *Domain) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Domain(*res.Properties)
+		*r = Domain[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

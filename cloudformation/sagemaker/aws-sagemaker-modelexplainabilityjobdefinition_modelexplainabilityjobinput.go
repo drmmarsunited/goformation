@@ -8,17 +8,17 @@ import (
 
 // ModelExplainabilityJobDefinition_ModelExplainabilityJobInput AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html
-type ModelExplainabilityJobDefinition_ModelExplainabilityJobInput struct {
+type ModelExplainabilityJobDefinition_ModelExplainabilityJobInput[T any] struct {
 
 	// BatchTransformInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput-batchtransforminput
-	BatchTransformInput *ModelExplainabilityJobDefinition_BatchTransformInput `json:"BatchTransformInput,omitempty"`
+	BatchTransformInput *ModelExplainabilityJobDefinition_BatchTransformInput[any] `json:"BatchTransformInput,omitempty"`
 
 	// EndpointInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput-endpointinput
-	EndpointInput *ModelExplainabilityJobDefinition_EndpointInput `json:"EndpointInput,omitempty"`
+	EndpointInput *ModelExplainabilityJobDefinition_EndpointInput[any] `json:"EndpointInput,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ModelExplainabilityJobDefinition_ModelExplainabilityJobInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_ModelExplainabilityJobInput) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_ModelExplainabilityJobInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput"
 }

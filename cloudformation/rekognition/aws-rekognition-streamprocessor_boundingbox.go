@@ -8,27 +8,27 @@ import (
 
 // StreamProcessor_BoundingBox AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.BoundingBox)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html
-type StreamProcessor_BoundingBox struct {
+type StreamProcessor_BoundingBox[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html#cfn-rekognition-streamprocessor-boundingbox-height
-	Height float64 `json:"Height"`
+	Height T `json:"Height"`
 
 	// Left AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html#cfn-rekognition-streamprocessor-boundingbox-left
-	Left float64 `json:"Left"`
+	Left T `json:"Left"`
 
 	// Top AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html#cfn-rekognition-streamprocessor-boundingbox-top
-	Top float64 `json:"Top"`
+	Top T `json:"Top"`
 
 	// Width AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html#cfn-rekognition-streamprocessor-boundingbox-width
-	Width float64 `json:"Width"`
+	Width T `json:"Width"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type StreamProcessor_BoundingBox struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_BoundingBox) AWSCloudFormationType() string {
+func (r *StreamProcessor_BoundingBox[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.BoundingBox"
 }

@@ -8,7 +8,7 @@ import (
 
 // DirectoryConfig_CertificateBasedAuthProperties AWS CloudFormation Resource (AWS::AppStream::DirectoryConfig.CertificateBasedAuthProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-certificatebasedauthproperties.html
-type DirectoryConfig_CertificateBasedAuthProperties struct {
+type DirectoryConfig_CertificateBasedAuthProperties[T any] struct {
 
 	// CertificateAuthorityArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DirectoryConfig_CertificateBasedAuthProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DirectoryConfig_CertificateBasedAuthProperties) AWSCloudFormationType() string {
+func (r *DirectoryConfig_CertificateBasedAuthProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::DirectoryConfig.CertificateBasedAuthProperties"
 }

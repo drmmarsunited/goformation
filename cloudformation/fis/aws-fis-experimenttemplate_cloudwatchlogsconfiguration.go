@@ -8,7 +8,7 @@ import (
 
 // ExperimentTemplate_CloudWatchLogsConfiguration AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.CloudWatchLogsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchlogsconfiguration.html
-type ExperimentTemplate_CloudWatchLogsConfiguration struct {
+type ExperimentTemplate_CloudWatchLogsConfiguration[T any] struct {
 
 	// LogGroupArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ExperimentTemplate_CloudWatchLogsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_CloudWatchLogsConfiguration) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_CloudWatchLogsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.CloudWatchLogsConfiguration"
 }

@@ -11,12 +11,12 @@ import (
 
 // InAppTemplate AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html
-type InAppTemplate struct {
+type InAppTemplate[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-content
-	Content []InAppTemplate_InAppMessageContent `json:"Content,omitempty"`
+	Content []InAppTemplate_InAppMessageContent[any] `json:"Content,omitempty"`
 
 	// CustomConfig AWS CloudFormation Property
 	// Required: false
@@ -60,14 +60,15 @@ type InAppTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InAppTemplate) AWSCloudFormationType() string {
+func (r *InAppTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::InAppTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InAppTemplate) MarshalJSON() ([]byte, error) {
-	type Properties InAppTemplate
+func (r InAppTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties InAppTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r InAppTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InAppTemplate) UnmarshalJSON(b []byte) error {
-	type Properties InAppTemplate
+func (r *InAppTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties InAppTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *InAppTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InAppTemplate(*res.Properties)
+		*r = InAppTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

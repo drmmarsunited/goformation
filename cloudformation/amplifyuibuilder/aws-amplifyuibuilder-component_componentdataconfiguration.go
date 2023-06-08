@@ -8,7 +8,7 @@ import (
 
 // Component_ComponentDataConfiguration AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html
-type Component_ComponentDataConfiguration struct {
+type Component_ComponentDataConfiguration[T any] struct {
 
 	// Identifiers AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Component_ComponentDataConfiguration struct {
 	// Predicate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-predicate
-	Predicate *Component_Predicate `json:"Predicate,omitempty"`
+	Predicate *Component_Predicate[any] `json:"Predicate,omitempty"`
 
 	// Sort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-sort
-	Sort []Component_SortProperty `json:"Sort,omitempty"`
+	Sort []Component_SortProperty[any] `json:"Sort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Component_ComponentDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Component_ComponentDataConfiguration) AWSCloudFormationType() string {
+func (r *Component_ComponentDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Component.ComponentDataConfiguration"
 }

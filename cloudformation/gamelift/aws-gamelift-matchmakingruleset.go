@@ -12,7 +12,7 @@ import (
 
 // MatchmakingRuleSet AWS CloudFormation Resource (AWS::GameLift::MatchmakingRuleSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html
-type MatchmakingRuleSet struct {
+type MatchmakingRuleSet[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type MatchmakingRuleSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MatchmakingRuleSet) AWSCloudFormationType() string {
+func (r *MatchmakingRuleSet[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::MatchmakingRuleSet"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MatchmakingRuleSet) MarshalJSON() ([]byte, error) {
-	type Properties MatchmakingRuleSet
+func (r MatchmakingRuleSet[any]) MarshalJSON() ([]byte, error) {
+	type Properties MatchmakingRuleSet[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r MatchmakingRuleSet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MatchmakingRuleSet) UnmarshalJSON(b []byte) error {
-	type Properties MatchmakingRuleSet
+func (r *MatchmakingRuleSet[any]) UnmarshalJSON(b []byte) error {
+	type Properties MatchmakingRuleSet[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *MatchmakingRuleSet) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MatchmakingRuleSet(*res.Properties)
+		*r = MatchmakingRuleSet[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

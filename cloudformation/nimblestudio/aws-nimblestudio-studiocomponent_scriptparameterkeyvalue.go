@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_ScriptParameterKeyValue AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.ScriptParameterKeyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-scriptparameterkeyvalue.html
-type StudioComponent_ScriptParameterKeyValue struct {
+type StudioComponent_ScriptParameterKeyValue[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StudioComponent_ScriptParameterKeyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_ScriptParameterKeyValue) AWSCloudFormationType() string {
+func (r *StudioComponent_ScriptParameterKeyValue[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.ScriptParameterKeyValue"
 }

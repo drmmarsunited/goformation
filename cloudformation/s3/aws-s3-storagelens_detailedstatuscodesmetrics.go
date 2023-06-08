@@ -8,12 +8,12 @@ import (
 
 // StorageLens_DetailedStatusCodesMetrics AWS CloudFormation Resource (AWS::S3::StorageLens.DetailedStatusCodesMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-detailedstatuscodesmetrics.html
-type StorageLens_DetailedStatusCodesMetrics struct {
+type StorageLens_DetailedStatusCodesMetrics[T any] struct {
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-detailedstatuscodesmetrics.html#cfn-s3-storagelens-detailedstatuscodesmetrics-isenabled
-	IsEnabled *bool `json:"IsEnabled,omitempty"`
+	IsEnabled *T `json:"IsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StorageLens_DetailedStatusCodesMetrics struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens_DetailedStatusCodesMetrics) AWSCloudFormationType() string {
+func (r *StorageLens_DetailedStatusCodesMetrics[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens.DetailedStatusCodesMetrics"
 }

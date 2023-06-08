@@ -8,7 +8,7 @@ import (
 
 // StateMachine_IAMPolicyDocument AWS CloudFormation Resource (AWS::Serverless::StateMachine.IAMPolicyDocument)
 // See: http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html
-type StateMachine_IAMPolicyDocument struct {
+type StateMachine_IAMPolicyDocument[T any] struct {
 
 	// Statement AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type StateMachine_IAMPolicyDocument struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_IAMPolicyDocument) AWSCloudFormationType() string {
+func (r *StateMachine_IAMPolicyDocument[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.IAMPolicyDocument"
 }

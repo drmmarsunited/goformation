@@ -11,7 +11,7 @@ import (
 
 // FlowVpcInterface AWS CloudFormation Resource (AWS::MediaConnect::FlowVpcInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html
-type FlowVpcInterface struct {
+type FlowVpcInterface[T any] struct {
 
 	// FlowArn AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type FlowVpcInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FlowVpcInterface) AWSCloudFormationType() string {
+func (r *FlowVpcInterface[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::FlowVpcInterface"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FlowVpcInterface) MarshalJSON() ([]byte, error) {
-	type Properties FlowVpcInterface
+func (r FlowVpcInterface[any]) MarshalJSON() ([]byte, error) {
+	type Properties FlowVpcInterface[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r FlowVpcInterface) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FlowVpcInterface) UnmarshalJSON(b []byte) error {
-	type Properties FlowVpcInterface
+func (r *FlowVpcInterface[any]) UnmarshalJSON(b []byte) error {
+	type Properties FlowVpcInterface[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *FlowVpcInterface) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FlowVpcInterface(*res.Properties)
+		*r = FlowVpcInterface[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

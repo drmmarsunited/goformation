@@ -8,17 +8,17 @@ import (
 
 // Pipeline_StageDeclaration AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.StageDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
-type Pipeline_StageDeclaration struct {
+type Pipeline_StageDeclaration[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions
-	Actions []Pipeline_ActionDeclaration `json:"Actions"`
+	Actions []Pipeline_ActionDeclaration[any] `json:"Actions"`
 
 	// Blockers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers
-	Blockers []Pipeline_BlockerDeclaration `json:"Blockers,omitempty"`
+	Blockers []Pipeline_BlockerDeclaration[any] `json:"Blockers,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Pipeline_StageDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_StageDeclaration) AWSCloudFormationType() string {
+func (r *Pipeline_StageDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.StageDeclaration"
 }

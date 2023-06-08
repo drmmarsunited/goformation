@@ -8,27 +8,27 @@ import (
 
 // InAppTemplate_ButtonConfig AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.ButtonConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html
-type InAppTemplate_ButtonConfig struct {
+type InAppTemplate_ButtonConfig[T any] struct {
 
 	// Android AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-android
-	Android *InAppTemplate_OverrideButtonConfiguration `json:"Android,omitempty"`
+	Android *InAppTemplate_OverrideButtonConfiguration[any] `json:"Android,omitempty"`
 
 	// DefaultConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-defaultconfig
-	DefaultConfig *InAppTemplate_DefaultButtonConfiguration `json:"DefaultConfig,omitempty"`
+	DefaultConfig *InAppTemplate_DefaultButtonConfiguration[any] `json:"DefaultConfig,omitempty"`
 
 	// IOS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-ios
-	IOS *InAppTemplate_OverrideButtonConfiguration `json:"IOS,omitempty"`
+	IOS *InAppTemplate_OverrideButtonConfiguration[any] `json:"IOS,omitempty"`
 
 	// Web AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-web
-	Web *InAppTemplate_OverrideButtonConfiguration `json:"Web,omitempty"`
+	Web *InAppTemplate_OverrideButtonConfiguration[any] `json:"Web,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type InAppTemplate_ButtonConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InAppTemplate_ButtonConfig) AWSCloudFormationType() string {
+func (r *InAppTemplate_ButtonConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::InAppTemplate.ButtonConfig"
 }

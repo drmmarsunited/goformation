@@ -8,7 +8,7 @@ import (
 
 // DataSet_CastColumnTypeOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.CastColumnTypeOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html
-type DataSet_CastColumnTypeOperation struct {
+type DataSet_CastColumnTypeOperation[T any] struct {
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSet_CastColumnTypeOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_CastColumnTypeOperation) AWSCloudFormationType() string {
+func (r *DataSet_CastColumnTypeOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.CastColumnTypeOperation"
 }

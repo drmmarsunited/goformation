@@ -8,7 +8,7 @@ import (
 
 // Dataset_S3DestinationConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.S3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html
-type Dataset_S3DestinationConfiguration struct {
+type Dataset_S3DestinationConfiguration[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dataset_S3DestinationConfiguration struct {
 	// GlueConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-glueconfiguration
-	GlueConfiguration *Dataset_GlueConfiguration `json:"GlueConfiguration,omitempty"`
+	GlueConfiguration *Dataset_GlueConfiguration[any] `json:"GlueConfiguration,omitempty"`
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dataset_S3DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_S3DestinationConfiguration) AWSCloudFormationType() string {
+func (r *Dataset_S3DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.S3DestinationConfiguration"
 }

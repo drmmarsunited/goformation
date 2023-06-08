@@ -12,17 +12,17 @@ import (
 
 // Repository AWS CloudFormation Resource (AWS::ECR::Repository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html
-type Repository struct {
+type Repository[T any] struct {
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration
-	EncryptionConfiguration *Repository_EncryptionConfiguration `json:"EncryptionConfiguration,omitempty"`
+	EncryptionConfiguration *Repository_EncryptionConfiguration[any] `json:"EncryptionConfiguration,omitempty"`
 
 	// ImageScanningConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration
-	ImageScanningConfiguration *Repository_ImageScanningConfiguration `json:"ImageScanningConfiguration,omitempty"`
+	ImageScanningConfiguration *Repository_ImageScanningConfiguration[any] `json:"ImageScanningConfiguration,omitempty"`
 
 	// ImageTagMutability AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Repository struct {
 	// LifecyclePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
-	LifecyclePolicy *Repository_LifecyclePolicy `json:"LifecyclePolicy,omitempty"`
+	LifecyclePolicy *Repository_LifecyclePolicy[any] `json:"LifecyclePolicy,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Repository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Repository) AWSCloudFormationType() string {
+func (r *Repository[any]) AWSCloudFormationType() string {
 	return "AWS::ECR::Repository"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Repository) MarshalJSON() ([]byte, error) {
-	type Properties Repository
+func (r Repository[any]) MarshalJSON() ([]byte, error) {
+	type Properties Repository[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Repository) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Repository) UnmarshalJSON(b []byte) error {
-	type Properties Repository
+func (r *Repository[any]) UnmarshalJSON(b []byte) error {
+	type Properties Repository[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Repository) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Repository(*res.Properties)
+		*r = Repository[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

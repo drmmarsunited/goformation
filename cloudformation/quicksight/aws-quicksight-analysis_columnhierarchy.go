@@ -8,22 +8,22 @@ import (
 
 // Analysis_ColumnHierarchy AWS CloudFormation Resource (AWS::QuickSight::Analysis.ColumnHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html
-type Analysis_ColumnHierarchy struct {
+type Analysis_ColumnHierarchy[T any] struct {
 
 	// DateTimeHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-datetimehierarchy
-	DateTimeHierarchy *Analysis_DateTimeHierarchy `json:"DateTimeHierarchy,omitempty"`
+	DateTimeHierarchy *Analysis_DateTimeHierarchy[any] `json:"DateTimeHierarchy,omitempty"`
 
 	// ExplicitHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-explicithierarchy
-	ExplicitHierarchy *Analysis_ExplicitHierarchy `json:"ExplicitHierarchy,omitempty"`
+	ExplicitHierarchy *Analysis_ExplicitHierarchy[any] `json:"ExplicitHierarchy,omitempty"`
 
 	// PredefinedHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-predefinedhierarchy
-	PredefinedHierarchy *Analysis_PredefinedHierarchy `json:"PredefinedHierarchy,omitempty"`
+	PredefinedHierarchy *Analysis_PredefinedHierarchy[any] `json:"PredefinedHierarchy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_ColumnHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ColumnHierarchy) AWSCloudFormationType() string {
+func (r *Analysis_ColumnHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ColumnHierarchy"
 }

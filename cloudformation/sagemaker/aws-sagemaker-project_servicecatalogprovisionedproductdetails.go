@@ -8,7 +8,7 @@ import (
 
 // Project_ServiceCatalogProvisionedProductDetails AWS CloudFormation Resource (AWS::SageMaker::Project.ServiceCatalogProvisionedProductDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html
-type Project_ServiceCatalogProvisionedProductDetails struct {
+type Project_ServiceCatalogProvisionedProductDetails[T any] struct {
 
 	// ProvisionedProductId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Project_ServiceCatalogProvisionedProductDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_ServiceCatalogProvisionedProductDetails) AWSCloudFormationType() string {
+func (r *Project_ServiceCatalogProvisionedProductDetails[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Project.ServiceCatalogProvisionedProductDetails"
 }

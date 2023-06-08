@@ -8,12 +8,12 @@ import (
 
 // Config_UplinkSpectrumConfig AWS CloudFormation Resource (AWS::GroundStation::Config.UplinkSpectrumConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkspectrumconfig.html
-type Config_UplinkSpectrumConfig struct {
+type Config_UplinkSpectrumConfig[T any] struct {
 
 	// CenterFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkspectrumconfig.html#cfn-groundstation-config-uplinkspectrumconfig-centerfrequency
-	CenterFrequency *Config_Frequency `json:"CenterFrequency,omitempty"`
+	CenterFrequency *Config_Frequency[any] `json:"CenterFrequency,omitempty"`
 
 	// Polarization AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Config_UplinkSpectrumConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_UplinkSpectrumConfig) AWSCloudFormationType() string {
+func (r *Config_UplinkSpectrumConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.UplinkSpectrumConfig"
 }

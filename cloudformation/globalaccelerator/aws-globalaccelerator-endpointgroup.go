@@ -11,12 +11,12 @@ import (
 
 // EndpointGroup AWS CloudFormation Resource (AWS::GlobalAccelerator::EndpointGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html
-type EndpointGroup struct {
+type EndpointGroup[T any] struct {
 
 	// EndpointConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointconfigurations
-	EndpointConfigurations []EndpointGroup_EndpointConfiguration `json:"EndpointConfigurations,omitempty"`
+	EndpointConfigurations []EndpointGroup_EndpointConfiguration[any] `json:"EndpointConfigurations,omitempty"`
 
 	// EndpointGroupRegion AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type EndpointGroup struct {
 	// HealthCheckIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckintervalseconds
-	HealthCheckIntervalSeconds *int `json:"HealthCheckIntervalSeconds,omitempty"`
+	HealthCheckIntervalSeconds *T `json:"HealthCheckIntervalSeconds,omitempty"`
 
 	// HealthCheckPath AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type EndpointGroup struct {
 	// HealthCheckPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckport
-	HealthCheckPort *int `json:"HealthCheckPort,omitempty"`
+	HealthCheckPort *T `json:"HealthCheckPort,omitempty"`
 
 	// HealthCheckProtocol AWS CloudFormation Property
 	// Required: false
@@ -51,17 +51,17 @@ type EndpointGroup struct {
 	// PortOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-portoverrides
-	PortOverrides []EndpointGroup_PortOverride `json:"PortOverrides,omitempty"`
+	PortOverrides []EndpointGroup_PortOverride[any] `json:"PortOverrides,omitempty"`
 
 	// ThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-thresholdcount
-	ThresholdCount *int `json:"ThresholdCount,omitempty"`
+	ThresholdCount *T `json:"ThresholdCount,omitempty"`
 
 	// TrafficDialPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-trafficdialpercentage
-	TrafficDialPercentage *float64 `json:"TrafficDialPercentage,omitempty"`
+	TrafficDialPercentage *T `json:"TrafficDialPercentage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -80,14 +80,15 @@ type EndpointGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointGroup) AWSCloudFormationType() string {
+func (r *EndpointGroup[any]) AWSCloudFormationType() string {
 	return "AWS::GlobalAccelerator::EndpointGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EndpointGroup) MarshalJSON() ([]byte, error) {
-	type Properties EndpointGroup
+func (r EndpointGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties EndpointGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r EndpointGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EndpointGroup) UnmarshalJSON(b []byte) error {
-	type Properties EndpointGroup
+func (r *EndpointGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties EndpointGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *EndpointGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EndpointGroup(*res.Properties)
+		*r = EndpointGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // DataRepositoryAssociation_AutoExportPolicy AWS CloudFormation Resource (AWS::FSx::DataRepositoryAssociation.AutoExportPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-datarepositoryassociation-autoexportpolicy.html
-type DataRepositoryAssociation_AutoExportPolicy struct {
+type DataRepositoryAssociation_AutoExportPolicy[T any] struct {
 
 	// Events AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataRepositoryAssociation_AutoExportPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataRepositoryAssociation_AutoExportPolicy) AWSCloudFormationType() string {
+func (r *DataRepositoryAssociation_AutoExportPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::DataRepositoryAssociation.AutoExportPolicy"
 }

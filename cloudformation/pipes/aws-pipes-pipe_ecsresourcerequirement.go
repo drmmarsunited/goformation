@@ -8,7 +8,7 @@ import (
 
 // Pipe_EcsResourceRequirement AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsResourceRequirement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsresourcerequirement.html
-type Pipe_EcsResourceRequirement struct {
+type Pipe_EcsResourceRequirement[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipe_EcsResourceRequirement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsResourceRequirement) AWSCloudFormationType() string {
+func (r *Pipe_EcsResourceRequirement[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsResourceRequirement"
 }

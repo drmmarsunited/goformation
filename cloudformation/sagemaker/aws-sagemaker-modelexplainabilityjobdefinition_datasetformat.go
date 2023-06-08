@@ -8,22 +8,22 @@ import (
 
 // ModelExplainabilityJobDefinition_DatasetFormat AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition.DatasetFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-datasetformat.html
-type ModelExplainabilityJobDefinition_DatasetFormat struct {
+type ModelExplainabilityJobDefinition_DatasetFormat[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-datasetformat.html#cfn-sagemaker-modelexplainabilityjobdefinition-datasetformat-csv
-	Csv *ModelExplainabilityJobDefinition_Csv `json:"Csv,omitempty"`
+	Csv *ModelExplainabilityJobDefinition_Csv[any] `json:"Csv,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-datasetformat.html#cfn-sagemaker-modelexplainabilityjobdefinition-datasetformat-json
-	Json *ModelExplainabilityJobDefinition_Json `json:"Json,omitempty"`
+	Json *ModelExplainabilityJobDefinition_Json[any] `json:"Json,omitempty"`
 
 	// Parquet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-datasetformat.html#cfn-sagemaker-modelexplainabilityjobdefinition-datasetformat-parquet
-	Parquet *bool `json:"Parquet,omitempty"`
+	Parquet *T `json:"Parquet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelExplainabilityJobDefinition_DatasetFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition_DatasetFormat) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition_DatasetFormat[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition.DatasetFormat"
 }

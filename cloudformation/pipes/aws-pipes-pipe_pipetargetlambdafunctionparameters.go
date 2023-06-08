@@ -8,7 +8,7 @@ import (
 
 // Pipe_PipeTargetLambdaFunctionParameters AWS CloudFormation Resource (AWS::Pipes::Pipe.PipeTargetLambdaFunctionParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetlambdafunctionparameters.html
-type Pipe_PipeTargetLambdaFunctionParameters struct {
+type Pipe_PipeTargetLambdaFunctionParameters[T any] struct {
 
 	// InvocationType AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Pipe_PipeTargetLambdaFunctionParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_PipeTargetLambdaFunctionParameters) AWSCloudFormationType() string {
+func (r *Pipe_PipeTargetLambdaFunctionParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.PipeTargetLambdaFunctionParameters"
 }

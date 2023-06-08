@@ -8,12 +8,12 @@ import (
 
 // Fleet_ComputeCapacity AWS CloudFormation Resource (AWS::AppStream::Fleet.ComputeCapacity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html
-type Fleet_ComputeCapacity struct {
+type Fleet_ComputeCapacity[T any] struct {
 
 	// DesiredInstances AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredinstances
-	DesiredInstances int `json:"DesiredInstances"`
+	DesiredInstances T `json:"DesiredInstances"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Fleet_ComputeCapacity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_ComputeCapacity) AWSCloudFormationType() string {
+func (r *Fleet_ComputeCapacity[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::Fleet.ComputeCapacity"
 }

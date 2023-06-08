@@ -12,7 +12,7 @@ import (
 
 // Database AWS CloudFormation Resource (AWS::Lightsail::Database)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html
-type Database struct {
+type Database[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Database struct {
 	// BackupRetention AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-backupretention
-	BackupRetention *bool `json:"BackupRetention,omitempty"`
+	BackupRetention *T `json:"BackupRetention,omitempty"`
 
 	// CaCertificateIdentifier AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Database struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *T `json:"PubliclyAccessible,omitempty"`
 
 	// RelationalDatabaseBlueprintId AWS CloudFormation Property
 	// Required: true
@@ -77,12 +77,12 @@ type Database struct {
 	// RelationalDatabaseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabaseparameters
-	RelationalDatabaseParameters []Database_RelationalDatabaseParameter `json:"RelationalDatabaseParameters,omitempty"`
+	RelationalDatabaseParameters []Database_RelationalDatabaseParameter[any] `json:"RelationalDatabaseParameters,omitempty"`
 
 	// RotateMasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-rotatemasteruserpassword
-	RotateMasterUserPassword *bool `json:"RotateMasterUserPassword,omitempty"`
+	RotateMasterUserPassword *T `json:"RotateMasterUserPassword,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -106,14 +106,15 @@ type Database struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Database) AWSCloudFormationType() string {
+func (r *Database[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Database"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Database) MarshalJSON() ([]byte, error) {
-	type Properties Database
+func (r Database[any]) MarshalJSON() ([]byte, error) {
+	type Properties Database[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r Database) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Database) UnmarshalJSON(b []byte) error {
-	type Properties Database
+func (r *Database[any]) UnmarshalJSON(b []byte) error {
+	type Properties Database[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *Database) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Database(*res.Properties)
+		*r = Database[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Discoverer_TagsEntry AWS CloudFormation Resource (AWS::EventSchemas::Discoverer.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html
-type Discoverer_TagsEntry struct {
+type Discoverer_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Discoverer_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Discoverer_TagsEntry) AWSCloudFormationType() string {
+func (r *Discoverer_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::EventSchemas::Discoverer.TagsEntry"
 }

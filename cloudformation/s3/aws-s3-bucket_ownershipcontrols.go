@@ -8,12 +8,12 @@ import (
 
 // Bucket_OwnershipControls AWS CloudFormation Resource (AWS::S3::Bucket.OwnershipControls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html
-type Bucket_OwnershipControls struct {
+type Bucket_OwnershipControls[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html#cfn-s3-bucket-ownershipcontrols-rules
-	Rules []Bucket_OwnershipControlsRule `json:"Rules"`
+	Rules []Bucket_OwnershipControlsRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_OwnershipControls struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_OwnershipControls) AWSCloudFormationType() string {
+func (r *Bucket_OwnershipControls[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.OwnershipControls"
 }

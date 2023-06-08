@@ -8,7 +8,7 @@ import (
 
 // LifecyclePolicy_EventParameters AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.EventParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html
-type LifecyclePolicy_EventParameters struct {
+type LifecyclePolicy_EventParameters[T any] struct {
 
 	// DescriptionRegex AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LifecyclePolicy_EventParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_EventParameters) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_EventParameters[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.EventParameters"
 }

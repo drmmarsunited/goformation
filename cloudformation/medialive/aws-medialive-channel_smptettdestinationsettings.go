@@ -8,7 +8,7 @@ import (
 
 // Channel_SmpteTtDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.SmpteTtDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-smptettdestinationsettings.html
-type Channel_SmpteTtDestinationSettings struct {
+type Channel_SmpteTtDestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_SmpteTtDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_SmpteTtDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_SmpteTtDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.SmpteTtDestinationSettings"
 }

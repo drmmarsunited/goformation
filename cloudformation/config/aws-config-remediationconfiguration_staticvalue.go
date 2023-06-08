@@ -8,7 +8,7 @@ import (
 
 // RemediationConfiguration_StaticValue AWS CloudFormation Resource (AWS::Config::RemediationConfiguration.StaticValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html
-type RemediationConfiguration_StaticValue struct {
+type RemediationConfiguration_StaticValue[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RemediationConfiguration_StaticValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RemediationConfiguration_StaticValue) AWSCloudFormationType() string {
+func (r *RemediationConfiguration_StaticValue[any]) AWSCloudFormationType() string {
 	return "AWS::Config::RemediationConfiguration.StaticValue"
 }

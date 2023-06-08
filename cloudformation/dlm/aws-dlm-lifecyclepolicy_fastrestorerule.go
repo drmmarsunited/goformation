@@ -8,7 +8,7 @@ import (
 
 // LifecyclePolicy_FastRestoreRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.FastRestoreRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html
-type LifecyclePolicy_FastRestoreRule struct {
+type LifecyclePolicy_FastRestoreRule[T any] struct {
 
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type LifecyclePolicy_FastRestoreRule struct {
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type LifecyclePolicy_FastRestoreRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_FastRestoreRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_FastRestoreRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.FastRestoreRule"
 }

@@ -8,12 +8,12 @@ import (
 
 // Pipeline_ArtifactStoreMap AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ArtifactStoreMap)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html
-type Pipeline_ArtifactStoreMap struct {
+type Pipeline_ArtifactStoreMap[T any] struct {
 
 	// ArtifactStore AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html#cfn-codepipeline-pipeline-artifactstoremap-artifactstore
-	ArtifactStore *Pipeline_ArtifactStore `json:"ArtifactStore"`
+	ArtifactStore *Pipeline_ArtifactStore[any] `json:"ArtifactStore"`
 
 	// Region AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_ArtifactStoreMap struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ArtifactStoreMap) AWSCloudFormationType() string {
+func (r *Pipeline_ArtifactStoreMap[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ArtifactStoreMap"
 }

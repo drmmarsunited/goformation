@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_Ipv6PrefixSpecification AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.Ipv6PrefixSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html
-type LaunchTemplate_Ipv6PrefixSpecification struct {
+type LaunchTemplate_Ipv6PrefixSpecification[T any] struct {
 
 	// Ipv6Prefix AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_Ipv6PrefixSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_Ipv6PrefixSpecification) AWSCloudFormationType() string {
+func (r *LaunchTemplate_Ipv6PrefixSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.Ipv6PrefixSpecification"
 }

@@ -8,12 +8,12 @@ import (
 
 // ModelBiasJobDefinition_Json AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.Json)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-json.html
-type ModelBiasJobDefinition_Json struct {
+type ModelBiasJobDefinition_Json[T any] struct {
 
 	// Line AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-json.html#cfn-sagemaker-modelbiasjobdefinition-json-line
-	Line *bool `json:"Line,omitempty"`
+	Line *T `json:"Line,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelBiasJobDefinition_Json struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_Json) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_Json[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.Json"
 }

@@ -8,12 +8,12 @@ import (
 
 // Analysis_ReferenceLineValueLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.ReferenceLineValueLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinevaluelabelconfiguration.html
-type Analysis_ReferenceLineValueLabelConfiguration struct {
+type Analysis_ReferenceLineValueLabelConfiguration[T any] struct {
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinevaluelabelconfiguration.html#cfn-quicksight-analysis-referencelinevaluelabelconfiguration-formatconfiguration
-	FormatConfiguration *Analysis_NumericFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_NumericFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// RelativePosition AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ReferenceLineValueLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ReferenceLineValueLabelConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_ReferenceLineValueLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ReferenceLineValueLabelConfiguration"
 }

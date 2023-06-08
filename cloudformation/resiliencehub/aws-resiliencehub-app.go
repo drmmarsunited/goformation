@@ -11,7 +11,7 @@ import (
 
 // App AWS CloudFormation Resource (AWS::ResilienceHub::App)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html
-type App struct {
+type App[T any] struct {
 
 	// AppAssessmentSchedule AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type App struct {
 	// ResourceMappings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-resourcemappings
-	ResourceMappings []App_ResourceMapping `json:"ResourceMappings"`
+	ResourceMappings []App_ResourceMapping[any] `json:"ResourceMappings"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type App struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App) AWSCloudFormationType() string {
+func (r *App[any]) AWSCloudFormationType() string {
 	return "AWS::ResilienceHub::App"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r App) MarshalJSON() ([]byte, error) {
-	type Properties App
+func (r App[any]) MarshalJSON() ([]byte, error) {
+	type Properties App[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r App) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *App) UnmarshalJSON(b []byte) error {
-	type Properties App
+func (r *App[any]) UnmarshalJSON(b []byte) error {
+	type Properties App[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *App) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = App(*res.Properties)
+		*r = App[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

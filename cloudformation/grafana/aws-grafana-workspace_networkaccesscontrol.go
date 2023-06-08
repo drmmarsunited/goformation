@@ -8,7 +8,7 @@ import (
 
 // Workspace_NetworkAccessControl AWS CloudFormation Resource (AWS::Grafana::Workspace.NetworkAccessControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-networkaccesscontrol.html
-type Workspace_NetworkAccessControl struct {
+type Workspace_NetworkAccessControl[T any] struct {
 
 	// PrefixListIds AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Workspace_NetworkAccessControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workspace_NetworkAccessControl) AWSCloudFormationType() string {
+func (r *Workspace_NetworkAccessControl[any]) AWSCloudFormationType() string {
 	return "AWS::Grafana::Workspace.NetworkAccessControl"
 }

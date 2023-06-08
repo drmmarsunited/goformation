@@ -8,12 +8,12 @@ import (
 
 // ModelPackage_Explainability AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.Explainability)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-explainability.html
-type ModelPackage_Explainability struct {
+type ModelPackage_Explainability[T any] struct {
 
 	// Report AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-explainability.html#cfn-sagemaker-modelpackage-explainability-report
-	Report *ModelPackage_MetricsSource `json:"Report,omitempty"`
+	Report *ModelPackage_MetricsSource[any] `json:"Report,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ModelPackage_Explainability struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_Explainability) AWSCloudFormationType() string {
+func (r *ModelPackage_Explainability[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.Explainability"
 }

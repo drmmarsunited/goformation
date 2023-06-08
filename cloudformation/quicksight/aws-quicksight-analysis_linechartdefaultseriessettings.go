@@ -8,7 +8,7 @@ import (
 
 // Analysis_LineChartDefaultSeriesSettings AWS CloudFormation Resource (AWS::QuickSight::Analysis.LineChartDefaultSeriesSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartdefaultseriessettings.html
-type Analysis_LineChartDefaultSeriesSettings struct {
+type Analysis_LineChartDefaultSeriesSettings[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Analysis_LineChartDefaultSeriesSettings struct {
 	// LineStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartdefaultseriessettings.html#cfn-quicksight-analysis-linechartdefaultseriessettings-linestylesettings
-	LineStyleSettings *Analysis_LineChartLineStyleSettings `json:"LineStyleSettings,omitempty"`
+	LineStyleSettings *Analysis_LineChartLineStyleSettings[any] `json:"LineStyleSettings,omitempty"`
 
 	// MarkerStyleSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartdefaultseriessettings.html#cfn-quicksight-analysis-linechartdefaultseriessettings-markerstylesettings
-	MarkerStyleSettings *Analysis_LineChartMarkerStyleSettings `json:"MarkerStyleSettings,omitempty"`
+	MarkerStyleSettings *Analysis_LineChartMarkerStyleSettings[any] `json:"MarkerStyleSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_LineChartDefaultSeriesSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_LineChartDefaultSeriesSettings) AWSCloudFormationType() string {
+func (r *Analysis_LineChartDefaultSeriesSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.LineChartDefaultSeriesSettings"
 }

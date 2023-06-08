@@ -8,7 +8,7 @@ import (
 
 // EventIntegration_EventFilter AWS CloudFormation Resource (AWS::AppIntegrations::EventIntegration.EventFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventfilter.html
-type EventIntegration_EventFilter struct {
+type EventIntegration_EventFilter[T any] struct {
 
 	// Source AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type EventIntegration_EventFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventIntegration_EventFilter) AWSCloudFormationType() string {
+func (r *EventIntegration_EventFilter[any]) AWSCloudFormationType() string {
 	return "AWS::AppIntegrations::EventIntegration.EventFilter"
 }

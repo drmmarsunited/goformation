@@ -8,7 +8,7 @@ import (
 
 // Job_JobCommand AWS CloudFormation Resource (AWS::Glue::Job.JobCommand)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
-type Job_JobCommand struct {
+type Job_JobCommand[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -19,6 +19,11 @@ type Job_JobCommand struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-pythonversion
 	PythonVersion *string `json:"PythonVersion,omitempty"`
+
+	// Runtime AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-runtime
+	Runtime *string `json:"Runtime,omitempty"`
 
 	// ScriptLocation AWS CloudFormation Property
 	// Required: false
@@ -42,6 +47,6 @@ type Job_JobCommand struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_JobCommand) AWSCloudFormationType() string {
+func (r *Job_JobCommand[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Job.JobCommand"
 }

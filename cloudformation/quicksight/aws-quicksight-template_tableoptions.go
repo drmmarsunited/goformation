@@ -8,17 +8,17 @@ import (
 
 // Template_TableOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TableOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableoptions.html
-type Template_TableOptions struct {
+type Template_TableOptions[T any] struct {
 
 	// CellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableoptions.html#cfn-quicksight-template-tableoptions-cellstyle
-	CellStyle *Template_TableCellStyle `json:"CellStyle,omitempty"`
+	CellStyle *Template_TableCellStyle[any] `json:"CellStyle,omitempty"`
 
 	// HeaderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableoptions.html#cfn-quicksight-template-tableoptions-headerstyle
-	HeaderStyle *Template_TableCellStyle `json:"HeaderStyle,omitempty"`
+	HeaderStyle *Template_TableCellStyle[any] `json:"HeaderStyle,omitempty"`
 
 	// Orientation AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_TableOptions struct {
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableoptions.html#cfn-quicksight-template-tableoptions-rowalternatecoloroptions
-	RowAlternateColorOptions *Template_RowAlternateColorOptions `json:"RowAlternateColorOptions,omitempty"`
+	RowAlternateColorOptions *Template_RowAlternateColorOptions[any] `json:"RowAlternateColorOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Template_TableOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableOptions) AWSCloudFormationType() string {
+func (r *Template_TableOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableOptions"
 }

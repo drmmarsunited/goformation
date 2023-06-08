@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_VpcConfiguration AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.VpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-vpcconfiguration.html
-type AnomalyDetector_VpcConfiguration struct {
+type AnomalyDetector_VpcConfiguration[T any] struct {
 
 	// SecurityGroupIdList AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type AnomalyDetector_VpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_VpcConfiguration) AWSCloudFormationType() string {
+func (r *AnomalyDetector_VpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.VpcConfiguration"
 }

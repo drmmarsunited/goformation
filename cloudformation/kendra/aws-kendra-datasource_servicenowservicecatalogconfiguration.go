@@ -8,12 +8,12 @@ import (
 
 // DataSource_ServiceNowServiceCatalogConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ServiceNowServiceCatalogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html
-type DataSource_ServiceNowServiceCatalogConfiguration struct {
+type DataSource_ServiceNowServiceCatalogConfiguration[T any] struct {
 
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *T `json:"CrawlAttachments,omitempty"`
 
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type DataSource_ServiceNowServiceCatalogConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// IncludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DataSource_ServiceNowServiceCatalogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_ServiceNowServiceCatalogConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_ServiceNowServiceCatalogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.ServiceNowServiceCatalogConfiguration"
 }

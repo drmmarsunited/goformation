@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ParameterListControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterListControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterlistcontrol.html
-type Dashboard_ParameterListControl struct {
+type Dashboard_ParameterListControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterlistcontrol.html#cfn-quicksight-dashboard-parameterlistcontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Dashboard_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterlistcontrol.html#cfn-quicksight-dashboard-parameterlistcontrol-displayoptions
-	DisplayOptions *Dashboard_ListControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_ListControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Dashboard_ParameterListControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterlistcontrol.html#cfn-quicksight-dashboard-parameterlistcontrol-selectablevalues
-	SelectableValues *Dashboard_ParameterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Dashboard_ParameterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Dashboard_ParameterListControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterListControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterListControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterListControl"
 }

@@ -8,7 +8,7 @@ import (
 
 // Analysis_SheetTextBox AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetTextBox)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheettextbox.html
-type Analysis_SheetTextBox struct {
+type Analysis_SheetTextBox[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_SheetTextBox struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetTextBox) AWSCloudFormationType() string {
+func (r *Analysis_SheetTextBox[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetTextBox"
 }

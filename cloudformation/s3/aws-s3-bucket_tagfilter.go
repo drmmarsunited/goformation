@@ -8,7 +8,7 @@ import (
 
 // Bucket_TagFilter AWS CloudFormation Resource (AWS::S3::Bucket.TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html
-type Bucket_TagFilter struct {
+type Bucket_TagFilter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bucket_TagFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_TagFilter) AWSCloudFormationType() string {
+func (r *Bucket_TagFilter[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.TagFilter"
 }

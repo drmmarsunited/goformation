@@ -8,7 +8,7 @@ import (
 
 // StateMachine_CloudWatchLogsLogGroup AWS CloudFormation Resource (AWS::Serverless::StateMachine.CloudWatchLogsLogGroup)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup.html
-type StateMachine_CloudWatchLogsLogGroup struct {
+type StateMachine_CloudWatchLogsLogGroup[T any] struct {
 
 	// LogGroupArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type StateMachine_CloudWatchLogsLogGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_CloudWatchLogsLogGroup) AWSCloudFormationType() string {
+func (r *StateMachine_CloudWatchLogsLogGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.CloudWatchLogsLogGroup"
 }

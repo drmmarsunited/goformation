@@ -8,17 +8,17 @@ import (
 
 // Listener_ForwardConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.ForwardConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html
-type Listener_ForwardConfig struct {
+type Listener_ForwardConfig[T any] struct {
 
 	// TargetGroupStickinessConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html#cfn-elasticloadbalancingv2-listener-forwardconfig-targetgroupstickinessconfig
-	TargetGroupStickinessConfig *Listener_TargetGroupStickinessConfig `json:"TargetGroupStickinessConfig,omitempty"`
+	TargetGroupStickinessConfig *Listener_TargetGroupStickinessConfig[any] `json:"TargetGroupStickinessConfig,omitempty"`
 
 	// TargetGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html#cfn-elasticloadbalancingv2-listener-forwardconfig-targetgroups
-	TargetGroups []Listener_TargetGroupTuple `json:"TargetGroups,omitempty"`
+	TargetGroups []Listener_TargetGroupTuple[any] `json:"TargetGroups,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Listener_ForwardConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_ForwardConfig) AWSCloudFormationType() string {
+func (r *Listener_ForwardConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::Listener.ForwardConfig"
 }

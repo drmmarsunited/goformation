@@ -11,22 +11,22 @@ import (
 
 // ImageRecipe AWS CloudFormation Resource (AWS::ImageBuilder::ImageRecipe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html
-type ImageRecipe struct {
+type ImageRecipe[T any] struct {
 
 	// AdditionalInstanceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-additionalinstanceconfiguration
-	AdditionalInstanceConfiguration *ImageRecipe_AdditionalInstanceConfiguration `json:"AdditionalInstanceConfiguration,omitempty"`
+	AdditionalInstanceConfiguration *ImageRecipe_AdditionalInstanceConfiguration[any] `json:"AdditionalInstanceConfiguration,omitempty"`
 
 	// BlockDeviceMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-blockdevicemappings
-	BlockDeviceMappings []ImageRecipe_InstanceBlockDeviceMapping `json:"BlockDeviceMappings,omitempty"`
+	BlockDeviceMappings []ImageRecipe_InstanceBlockDeviceMapping[any] `json:"BlockDeviceMappings,omitempty"`
 
 	// Components AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-components
-	Components []ImageRecipe_ComponentConfiguration `json:"Components"`
+	Components []ImageRecipe_ComponentConfiguration[any] `json:"Components"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type ImageRecipe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageRecipe) AWSCloudFormationType() string {
+func (r *ImageRecipe[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ImageRecipe"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ImageRecipe) MarshalJSON() ([]byte, error) {
-	type Properties ImageRecipe
+func (r ImageRecipe[any]) MarshalJSON() ([]byte, error) {
+	type Properties ImageRecipe[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r ImageRecipe) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ImageRecipe) UnmarshalJSON(b []byte) error {
-	type Properties ImageRecipe
+func (r *ImageRecipe[any]) UnmarshalJSON(b []byte) error {
+	type Properties ImageRecipe[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *ImageRecipe) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ImageRecipe(*res.Properties)
+		*r = ImageRecipe[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

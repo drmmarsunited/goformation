@@ -8,7 +8,7 @@ import (
 
 // Function_FunctionEnvironment AWS CloudFormation Resource (AWS::Serverless::Function.FunctionEnvironment)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-type Function_FunctionEnvironment struct {
+type Function_FunctionEnvironment[T any] struct {
 
 	// Variables AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Function_FunctionEnvironment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_FunctionEnvironment) AWSCloudFormationType() string {
+func (r *Function_FunctionEnvironment[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.FunctionEnvironment"
 }

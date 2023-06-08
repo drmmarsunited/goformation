@@ -8,17 +8,17 @@ import (
 
 // Container_HealthCheckConfig AWS CloudFormation Resource (AWS::Lightsail::Container.HealthCheckConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html
-type Container_HealthCheckConfig struct {
+type Container_HealthCheckConfig[T any] struct {
 
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-healthythreshold
-	HealthyThreshold *int `json:"HealthyThreshold,omitempty"`
+	HealthyThreshold *T `json:"HealthyThreshold,omitempty"`
 
 	// IntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-intervalseconds
-	IntervalSeconds *int `json:"IntervalSeconds,omitempty"`
+	IntervalSeconds *T `json:"IntervalSeconds,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Container_HealthCheckConfig struct {
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-timeoutseconds
-	TimeoutSeconds *int `json:"TimeoutSeconds,omitempty"`
+	TimeoutSeconds *T `json:"TimeoutSeconds,omitempty"`
 
 	// UnhealthyThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-unhealthythreshold
-	UnhealthyThreshold *int `json:"UnhealthyThreshold,omitempty"`
+	UnhealthyThreshold *T `json:"UnhealthyThreshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Container_HealthCheckConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_HealthCheckConfig) AWSCloudFormationType() string {
+func (r *Container_HealthCheckConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.HealthCheckConfig"
 }

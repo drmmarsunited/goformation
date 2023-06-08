@@ -8,17 +8,17 @@ import (
 
 // Template_TableRowConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Template.TableRowConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablerowconditionalformatting.html
-type Template_TableRowConditionalFormatting struct {
+type Template_TableRowConditionalFormatting[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablerowconditionalformatting.html#cfn-quicksight-template-tablerowconditionalformatting-backgroundcolor
-	BackgroundColor *Template_ConditionalFormattingColor `json:"BackgroundColor,omitempty"`
+	BackgroundColor *Template_ConditionalFormattingColor[any] `json:"BackgroundColor,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablerowconditionalformatting.html#cfn-quicksight-template-tablerowconditionalformatting-textcolor
-	TextColor *Template_ConditionalFormattingColor `json:"TextColor,omitempty"`
+	TextColor *Template_ConditionalFormattingColor[any] `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_TableRowConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableRowConditionalFormatting) AWSCloudFormationType() string {
+func (r *Template_TableRowConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableRowConditionalFormatting"
 }

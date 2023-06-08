@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_MaintenanceOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.MaintenanceOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-maintenanceoptions.html
-type LaunchTemplate_MaintenanceOptions struct {
+type LaunchTemplate_MaintenanceOptions[T any] struct {
 
 	// AutoRecovery AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_MaintenanceOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_MaintenanceOptions) AWSCloudFormationType() string {
+func (r *LaunchTemplate_MaintenanceOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.MaintenanceOptions"
 }

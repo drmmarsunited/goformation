@@ -8,7 +8,7 @@ import (
 
 // IdentityProviderConfig_RequiredClaim AWS CloudFormation Resource (AWS::EKS::IdentityProviderConfig.RequiredClaim)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-identityproviderconfig-requiredclaim.html
-type IdentityProviderConfig_RequiredClaim struct {
+type IdentityProviderConfig_RequiredClaim[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type IdentityProviderConfig_RequiredClaim struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityProviderConfig_RequiredClaim) AWSCloudFormationType() string {
+func (r *IdentityProviderConfig_RequiredClaim[any]) AWSCloudFormationType() string {
 	return "AWS::EKS::IdentityProviderConfig.RequiredClaim"
 }

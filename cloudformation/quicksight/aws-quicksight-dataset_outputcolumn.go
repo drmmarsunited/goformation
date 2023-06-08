@@ -8,7 +8,7 @@ import (
 
 // DataSet_OutputColumn AWS CloudFormation Resource (AWS::QuickSight::DataSet.OutputColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-outputcolumn.html
-type DataSet_OutputColumn struct {
+type DataSet_OutputColumn[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DataSet_OutputColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_OutputColumn) AWSCloudFormationType() string {
+func (r *DataSet_OutputColumn[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.OutputColumn"
 }

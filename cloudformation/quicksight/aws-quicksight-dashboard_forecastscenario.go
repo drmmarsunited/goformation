@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ForecastScenario AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ForecastScenario)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastscenario.html
-type Dashboard_ForecastScenario struct {
+type Dashboard_ForecastScenario[T any] struct {
 
 	// WhatIfPointScenario AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastscenario.html#cfn-quicksight-dashboard-forecastscenario-whatifpointscenario
-	WhatIfPointScenario *Dashboard_WhatIfPointScenario `json:"WhatIfPointScenario,omitempty"`
+	WhatIfPointScenario *Dashboard_WhatIfPointScenario[any] `json:"WhatIfPointScenario,omitempty"`
 
 	// WhatIfRangeScenario AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastscenario.html#cfn-quicksight-dashboard-forecastscenario-whatifrangescenario
-	WhatIfRangeScenario *Dashboard_WhatIfRangeScenario `json:"WhatIfRangeScenario,omitempty"`
+	WhatIfRangeScenario *Dashboard_WhatIfRangeScenario[any] `json:"WhatIfRangeScenario,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_ForecastScenario struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ForecastScenario) AWSCloudFormationType() string {
+func (r *Dashboard_ForecastScenario[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ForecastScenario"
 }

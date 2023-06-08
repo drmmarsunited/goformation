@@ -12,7 +12,7 @@ import (
 
 // Flow AWS CloudFormation Resource (AWS::AppFlow::Flow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html
-type Flow struct {
+type Flow[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,17 @@ type Flow struct {
 	// DestinationFlowConfigList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-destinationflowconfiglist
-	DestinationFlowConfigList []Flow_DestinationFlowConfig `json:"DestinationFlowConfigList"`
+	DestinationFlowConfigList []Flow_DestinationFlowConfig[any] `json:"DestinationFlowConfigList"`
 
 	// FlowName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowname
 	FlowName string `json:"FlowName"`
+
+	// FlowStatus AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowstatus
+	FlowStatus *string `json:"FlowStatus,omitempty"`
 
 	// KMSArn AWS CloudFormation Property
 	// Required: false
@@ -37,12 +42,12 @@ type Flow struct {
 	// MetadataCatalogConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-metadatacatalogconfig
-	MetadataCatalogConfig *Flow_MetadataCatalogConfig `json:"MetadataCatalogConfig,omitempty"`
+	MetadataCatalogConfig *Flow_MetadataCatalogConfig[any] `json:"MetadataCatalogConfig,omitempty"`
 
 	// SourceFlowConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-sourceflowconfig
-	SourceFlowConfig *Flow_SourceFlowConfig `json:"SourceFlowConfig"`
+	SourceFlowConfig *Flow_SourceFlowConfig[any] `json:"SourceFlowConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,12 +57,12 @@ type Flow struct {
 	// Tasks AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-tasks
-	Tasks []Flow_Task `json:"Tasks"`
+	Tasks []Flow_Task[any] `json:"Tasks"`
 
 	// TriggerConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-triggerconfig
-	TriggerConfig *Flow_TriggerConfig `json:"TriggerConfig"`
+	TriggerConfig *Flow_TriggerConfig[any] `json:"TriggerConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -76,14 +81,15 @@ type Flow struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow) AWSCloudFormationType() string {
+func (r *Flow[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Flow) MarshalJSON() ([]byte, error) {
-	type Properties Flow
+func (r Flow[any]) MarshalJSON() ([]byte, error) {
+	type Properties Flow[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +111,9 @@ func (r Flow) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Flow) UnmarshalJSON(b []byte) error {
-	type Properties Flow
+func (r *Flow[any]) UnmarshalJSON(b []byte) error {
+	type Properties Flow[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +133,7 @@ func (r *Flow) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Flow(*res.Properties)
+		*r = Flow[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

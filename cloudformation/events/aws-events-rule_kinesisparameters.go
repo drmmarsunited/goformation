@@ -8,7 +8,7 @@ import (
 
 // Rule_KinesisParameters AWS CloudFormation Resource (AWS::Events::Rule.KinesisParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html
-type Rule_KinesisParameters struct {
+type Rule_KinesisParameters[T any] struct {
 
 	// PartitionKeyPath AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Rule_KinesisParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_KinesisParameters) AWSCloudFormationType() string {
+func (r *Rule_KinesisParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.KinesisParameters"
 }

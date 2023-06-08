@@ -8,12 +8,12 @@ import (
 
 // Connector_Plugin AWS CloudFormation Resource (AWS::KafkaConnect::Connector.Plugin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-plugin.html
-type Connector_Plugin struct {
+type Connector_Plugin[T any] struct {
 
 	// CustomPlugin AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-plugin.html#cfn-kafkaconnect-connector-plugin-customplugin
-	CustomPlugin *Connector_CustomPlugin `json:"CustomPlugin"`
+	CustomPlugin *Connector_CustomPlugin[any] `json:"CustomPlugin"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Connector_Plugin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connector_Plugin) AWSCloudFormationType() string {
+func (r *Connector_Plugin[any]) AWSCloudFormationType() string {
 	return "AWS::KafkaConnect::Connector.Plugin"
 }

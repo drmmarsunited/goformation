@@ -8,7 +8,7 @@ import (
 
 // Service_CodeConfigurationValues AWS CloudFormation Resource (AWS::AppRunner::Service.CodeConfigurationValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html
-type Service_CodeConfigurationValues struct {
+type Service_CodeConfigurationValues[T any] struct {
 
 	// BuildCommand AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Service_CodeConfigurationValues struct {
 	// RuntimeEnvironmentSecrets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentsecrets
-	RuntimeEnvironmentSecrets []Service_KeyValuePair `json:"RuntimeEnvironmentSecrets,omitempty"`
+	RuntimeEnvironmentSecrets []Service_KeyValuePair[any] `json:"RuntimeEnvironmentSecrets,omitempty"`
 
 	// RuntimeEnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentvariables
-	RuntimeEnvironmentVariables []Service_KeyValuePair `json:"RuntimeEnvironmentVariables,omitempty"`
+	RuntimeEnvironmentVariables []Service_KeyValuePair[any] `json:"RuntimeEnvironmentVariables,omitempty"`
 
 	// StartCommand AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Service_CodeConfigurationValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_CodeConfigurationValues) AWSCloudFormationType() string {
+func (r *Service_CodeConfigurationValues[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.CodeConfigurationValues"
 }

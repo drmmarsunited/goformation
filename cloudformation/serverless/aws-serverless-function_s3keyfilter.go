@@ -8,12 +8,12 @@ import (
 
 // Function_S3KeyFilter AWS CloudFormation Resource (AWS::Serverless::Function.S3KeyFilter)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html
-type Function_S3KeyFilter struct {
+type Function_S3KeyFilter[T any] struct {
 
 	// Rules AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html
-	Rules []Function_S3KeyFilterRule `json:"Rules"`
+	Rules []Function_S3KeyFilterRule[any] `json:"Rules"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Function_S3KeyFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_S3KeyFilter) AWSCloudFormationType() string {
+func (r *Function_S3KeyFilter[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.S3KeyFilter"
 }

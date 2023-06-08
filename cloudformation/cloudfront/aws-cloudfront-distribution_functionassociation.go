@@ -8,7 +8,7 @@ import (
 
 // Distribution_FunctionAssociation AWS CloudFormation Resource (AWS::CloudFront::Distribution.FunctionAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html
-type Distribution_FunctionAssociation struct {
+type Distribution_FunctionAssociation[T any] struct {
 
 	// EventType AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Distribution_FunctionAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_FunctionAssociation) AWSCloudFormationType() string {
+func (r *Distribution_FunctionAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.FunctionAssociation"
 }

@@ -8,7 +8,7 @@ import (
 
 // CoreDefinitionVersion_Core AWS CloudFormation Resource (AWS::Greengrass::CoreDefinitionVersion.Core)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html
-type CoreDefinitionVersion_Core struct {
+type CoreDefinitionVersion_Core[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type CoreDefinitionVersion_Core struct {
 	// SyncShadow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow
-	SyncShadow *bool `json:"SyncShadow,omitempty"`
+	SyncShadow *T `json:"SyncShadow,omitempty"`
 
 	// ThingArn AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type CoreDefinitionVersion_Core struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreDefinitionVersion_Core) AWSCloudFormationType() string {
+func (r *CoreDefinitionVersion_Core[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::CoreDefinitionVersion.Core"
 }

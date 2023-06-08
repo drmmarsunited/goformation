@@ -8,7 +8,7 @@ import (
 
 // Stack_RdsDbInstance AWS CloudFormation Resource (AWS::OpsWorks::Stack.RdsDbInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
-type Stack_RdsDbInstance struct {
+type Stack_RdsDbInstance[T any] struct {
 
 	// DbPassword AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Stack_RdsDbInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stack_RdsDbInstance) AWSCloudFormationType() string {
+func (r *Stack_RdsDbInstance[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.RdsDbInstance"
 }

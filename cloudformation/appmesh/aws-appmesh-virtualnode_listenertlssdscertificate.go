@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_ListenerTlsSdsCertificate AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ListenerTlsSdsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlssdscertificate.html
-type VirtualNode_ListenerTlsSdsCertificate struct {
+type VirtualNode_ListenerTlsSdsCertificate[T any] struct {
 
 	// SecretName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualNode_ListenerTlsSdsCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_ListenerTlsSdsCertificate) AWSCloudFormationType() string {
+func (r *VirtualNode_ListenerTlsSdsCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.ListenerTlsSdsCertificate"
 }

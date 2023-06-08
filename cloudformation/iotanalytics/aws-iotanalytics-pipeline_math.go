@@ -8,7 +8,7 @@ import (
 
 // Pipeline_Math AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Math)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html
-type Pipeline_Math struct {
+type Pipeline_Math[T any] struct {
 
 	// Attribute AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Pipeline_Math struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_Math) AWSCloudFormationType() string {
+func (r *Pipeline_Math[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.Math"
 }

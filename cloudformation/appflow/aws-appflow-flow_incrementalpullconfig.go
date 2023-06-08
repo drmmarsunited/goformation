@@ -8,7 +8,7 @@ import (
 
 // Flow_IncrementalPullConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.IncrementalPullConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-incrementalpullconfig.html
-type Flow_IncrementalPullConfig struct {
+type Flow_IncrementalPullConfig[T any] struct {
 
 	// DatetimeTypeFieldName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Flow_IncrementalPullConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_IncrementalPullConfig) AWSCloudFormationType() string {
+func (r *Flow_IncrementalPullConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.IncrementalPullConfig"
 }

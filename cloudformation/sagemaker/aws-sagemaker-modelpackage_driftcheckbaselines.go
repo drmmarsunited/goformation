@@ -8,27 +8,27 @@ import (
 
 // ModelPackage_DriftCheckBaselines AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.DriftCheckBaselines)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbaselines.html
-type ModelPackage_DriftCheckBaselines struct {
+type ModelPackage_DriftCheckBaselines[T any] struct {
 
 	// Bias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbaselines.html#cfn-sagemaker-modelpackage-driftcheckbaselines-bias
-	Bias *ModelPackage_DriftCheckBias `json:"Bias,omitempty"`
+	Bias *ModelPackage_DriftCheckBias[any] `json:"Bias,omitempty"`
 
 	// Explainability AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbaselines.html#cfn-sagemaker-modelpackage-driftcheckbaselines-explainability
-	Explainability *ModelPackage_DriftCheckExplainability `json:"Explainability,omitempty"`
+	Explainability *ModelPackage_DriftCheckExplainability[any] `json:"Explainability,omitempty"`
 
 	// ModelDataQuality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbaselines.html#cfn-sagemaker-modelpackage-driftcheckbaselines-modeldataquality
-	ModelDataQuality *ModelPackage_DriftCheckModelDataQuality `json:"ModelDataQuality,omitempty"`
+	ModelDataQuality *ModelPackage_DriftCheckModelDataQuality[any] `json:"ModelDataQuality,omitempty"`
 
 	// ModelQuality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbaselines.html#cfn-sagemaker-modelpackage-driftcheckbaselines-modelquality
-	ModelQuality *ModelPackage_DriftCheckModelQuality `json:"ModelQuality,omitempty"`
+	ModelQuality *ModelPackage_DriftCheckModelQuality[any] `json:"ModelQuality,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type ModelPackage_DriftCheckBaselines struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_DriftCheckBaselines) AWSCloudFormationType() string {
+func (r *ModelPackage_DriftCheckBaselines[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.DriftCheckBaselines"
 }

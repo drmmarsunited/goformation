@@ -8,12 +8,12 @@ import (
 
 // Dashboard_ParameterDateTimePickerControl AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterDateTimePickerControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdatetimepickercontrol.html
-type Dashboard_ParameterDateTimePickerControl struct {
+type Dashboard_ParameterDateTimePickerControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdatetimepickercontrol.html#cfn-quicksight-dashboard-parameterdatetimepickercontrol-displayoptions
-	DisplayOptions *Dashboard_DateTimePickerControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Dashboard_DateTimePickerControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Dashboard_ParameterDateTimePickerControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterDateTimePickerControl) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterDateTimePickerControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterDateTimePickerControl"
 }

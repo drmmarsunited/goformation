@@ -8,12 +8,12 @@ import (
 
 // PublicDnsNamespace_Properties AWS CloudFormation Resource (AWS::ServiceDiscovery::PublicDnsNamespace.Properties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-properties.html
-type PublicDnsNamespace_Properties struct {
+type PublicDnsNamespace_Properties[T any] struct {
 
 	// DnsProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-properties.html#cfn-servicediscovery-publicdnsnamespace-properties-dnsproperties
-	DnsProperties *PublicDnsNamespace_PublicDnsPropertiesMutable `json:"DnsProperties,omitempty"`
+	DnsProperties *PublicDnsNamespace_PublicDnsPropertiesMutable[any] `json:"DnsProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PublicDnsNamespace_Properties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PublicDnsNamespace_Properties) AWSCloudFormationType() string {
+func (r *PublicDnsNamespace_Properties[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceDiscovery::PublicDnsNamespace.Properties"
 }

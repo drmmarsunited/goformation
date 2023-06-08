@@ -8,17 +8,17 @@ import (
 
 // EvaluationForm_EvaluationFormQuestionTypeProperties AWS CloudFormation Resource (AWS::Connect::EvaluationForm.EvaluationFormQuestionTypeProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestiontypeproperties.html
-type EvaluationForm_EvaluationFormQuestionTypeProperties struct {
+type EvaluationForm_EvaluationFormQuestionTypeProperties[T any] struct {
 
 	// Numeric AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestiontypeproperties.html#cfn-connect-evaluationform-evaluationformquestiontypeproperties-numeric
-	Numeric *EvaluationForm_EvaluationFormNumericQuestionProperties `json:"Numeric,omitempty"`
+	Numeric *EvaluationForm_EvaluationFormNumericQuestionProperties[any] `json:"Numeric,omitempty"`
 
 	// SingleSelect AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestiontypeproperties.html#cfn-connect-evaluationform-evaluationformquestiontypeproperties-singleselect
-	SingleSelect *EvaluationForm_EvaluationFormSingleSelectQuestionProperties `json:"SingleSelect,omitempty"`
+	SingleSelect *EvaluationForm_EvaluationFormSingleSelectQuestionProperties[any] `json:"SingleSelect,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EvaluationForm_EvaluationFormQuestionTypeProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_EvaluationFormQuestionTypeProperties) AWSCloudFormationType() string {
+func (r *EvaluationForm_EvaluationFormQuestionTypeProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.EvaluationFormQuestionTypeProperties"
 }

@@ -8,7 +8,7 @@ import (
 
 // TargetGroup_TargetDescription AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html
-type TargetGroup_TargetDescription struct {
+type TargetGroup_TargetDescription[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TargetGroup_TargetDescription struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TargetGroup_TargetDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TargetGroup_TargetDescription) AWSCloudFormationType() string {
+func (r *TargetGroup_TargetDescription[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription"
 }

@@ -12,17 +12,17 @@ import (
 
 // TaskDefinition AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html
-type TaskDefinition struct {
+type TaskDefinition[T any] struct {
 
 	// AutoCreateTasks AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-autocreatetasks
-	AutoCreateTasks bool `json:"AutoCreateTasks"`
+	AutoCreateTasks T `json:"AutoCreateTasks"`
 
 	// LoRaWANUpdateGatewayTaskEntry AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry
-	LoRaWANUpdateGatewayTaskEntry *TaskDefinition_LoRaWANUpdateGatewayTaskEntry `json:"LoRaWANUpdateGatewayTaskEntry,omitempty"`
+	LoRaWANUpdateGatewayTaskEntry *TaskDefinition_LoRaWANUpdateGatewayTaskEntry[any] `json:"LoRaWANUpdateGatewayTaskEntry,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type TaskDefinition struct {
 	// Update AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-update
-	Update *TaskDefinition_UpdateWirelessGatewayTaskCreate `json:"Update,omitempty"`
+	Update *TaskDefinition_UpdateWirelessGatewayTaskCreate[any] `json:"Update,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -61,14 +61,15 @@ type TaskDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition) AWSCloudFormationType() string {
+func (r *TaskDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::TaskDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TaskDefinition) MarshalJSON() ([]byte, error) {
-	type Properties TaskDefinition
+func (r TaskDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties TaskDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r TaskDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TaskDefinition) UnmarshalJSON(b []byte) error {
-	type Properties TaskDefinition
+func (r *TaskDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties TaskDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *TaskDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TaskDefinition(*res.Properties)
+		*r = TaskDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

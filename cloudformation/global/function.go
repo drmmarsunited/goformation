@@ -8,7 +8,7 @@ import (
 
 // Function AWS CloudFormation Resource (Function)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-type Function struct {
+type Function[T any] struct {
 
 	// Architectures AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Function struct {
 	// CodeUri AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	CodeUri *serverless.Function_CodeUri `json:"CodeUri,omitempty"`
+	CodeUri *serverless.Function_CodeUri[any] `json:"CodeUri,omitempty"`
 
 	// DeadLetterQueue AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	DeadLetterQueue *serverless.Function_DeadLetterQueue `json:"DeadLetterQueue,omitempty"`
+	DeadLetterQueue *serverless.Function_DeadLetterQueue[any] `json:"DeadLetterQueue,omitempty"`
 
 	// DeploymentPreference AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	DeploymentPreference *serverless.Function_DeploymentPreference `json:"DeploymentPreference,omitempty"`
+	DeploymentPreference *serverless.Function_DeploymentPreference[any] `json:"DeploymentPreference,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type Function struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Environment *serverless.Function_FunctionEnvironment `json:"Environment,omitempty"`
+	Environment *serverless.Function_FunctionEnvironment[any] `json:"Environment,omitempty"`
 
 	// EventInvokeConfig AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	EventInvokeConfig *serverless.Function_EventInvokeConfig `json:"EventInvokeConfig,omitempty"`
+	EventInvokeConfig *serverless.Function_EventInvokeConfig[any] `json:"EventInvokeConfig,omitempty"`
 
 	// Handler AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type Function struct {
 	// ImageConfig AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html#sam-function-imageconfig
-	ImageConfig *serverless.Function_ImageConfig `json:"ImageConfig,omitempty"`
+	ImageConfig *serverless.Function_ImageConfig[any] `json:"ImageConfig,omitempty"`
 
 	// ImageUri AWS CloudFormation Property
 	// Required: false
@@ -98,7 +98,7 @@ type Function struct {
 	// MemorySize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	MemorySize *int `json:"MemorySize,omitempty"`
+	MemorySize *T `json:"MemorySize,omitempty"`
 
 	// PackageType AWS CloudFormation Property
 	// Required: false
@@ -113,7 +113,7 @@ type Function struct {
 	// ReservedConcurrentExecutions AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	ReservedConcurrentExecutions *int `json:"ReservedConcurrentExecutions,omitempty"`
+	ReservedConcurrentExecutions *T `json:"ReservedConcurrentExecutions,omitempty"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: false
@@ -128,7 +128,7 @@ type Function struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// Tracing AWS CloudFormation Property
 	// Required: false
@@ -143,10 +143,10 @@ type Function struct {
 	// VpcConfig AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	VpcConfig *serverless.Function_VpcConfig `json:"VpcConfig,omitempty"`
+	VpcConfig *serverless.Function_VpcConfig[any] `json:"VpcConfig,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function) AWSCloudFormationType() string {
+func (r *Function[any]) AWSCloudFormationType() string {
 	return "Function"
 }

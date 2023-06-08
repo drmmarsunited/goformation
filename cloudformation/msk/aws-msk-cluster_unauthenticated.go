@@ -8,12 +8,12 @@ import (
 
 // Cluster_Unauthenticated AWS CloudFormation Resource (AWS::MSK::Cluster.Unauthenticated)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html
-type Cluster_Unauthenticated struct {
+type Cluster_Unauthenticated[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Cluster_Unauthenticated struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_Unauthenticated) AWSCloudFormationType() string {
+func (r *Cluster_Unauthenticated[any]) AWSCloudFormationType() string {
 	return "AWS::MSK::Cluster.Unauthenticated"
 }

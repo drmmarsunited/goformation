@@ -8,12 +8,12 @@ import (
 
 // DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat AWS CloudFormation Resource (AWS::RDS::DBProxyTargetGroup.ConnectionPoolConfigurationInfoFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html
-type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat struct {
+type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat[T any] struct {
 
 	// ConnectionBorrowTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-connectionborrowtimeout
-	ConnectionBorrowTimeout *int `json:"ConnectionBorrowTimeout,omitempty"`
+	ConnectionBorrowTimeout *T `json:"ConnectionBorrowTimeout,omitempty"`
 
 	// InitQuery AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat struct {
 	// MaxConnectionsPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-maxconnectionspercent
-	MaxConnectionsPercent *int `json:"MaxConnectionsPercent,omitempty"`
+	MaxConnectionsPercent *T `json:"MaxConnectionsPercent,omitempty"`
 
 	// MaxIdleConnectionsPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-maxidleconnectionspercent
-	MaxIdleConnectionsPercent *int `json:"MaxIdleConnectionsPercent,omitempty"`
+	MaxIdleConnectionsPercent *T `json:"MaxIdleConnectionsPercent,omitempty"`
 
 	// SessionPinningFilters AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat) AWSCloudFormationType() string {
+func (r *DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat[any]) AWSCloudFormationType() string {
 	return "AWS::RDS::DBProxyTargetGroup.ConnectionPoolConfigurationInfoFormat"
 }

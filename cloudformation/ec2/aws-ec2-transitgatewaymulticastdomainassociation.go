@@ -11,7 +11,7 @@ import (
 
 // TransitGatewayMulticastDomainAssociation AWS CloudFormation Resource (AWS::EC2::TransitGatewayMulticastDomainAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html
-type TransitGatewayMulticastDomainAssociation struct {
+type TransitGatewayMulticastDomainAssociation[T any] struct {
 
 	// SubnetId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type TransitGatewayMulticastDomainAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayMulticastDomainAssociation) AWSCloudFormationType() string {
+func (r *TransitGatewayMulticastDomainAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayMulticastDomainAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayMulticastDomainAssociation) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayMulticastDomainAssociation
+func (r TransitGatewayMulticastDomainAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayMulticastDomainAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r TransitGatewayMulticastDomainAssociation) MarshalJSON() ([]byte, error) 
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayMulticastDomainAssociation) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayMulticastDomainAssociation
+func (r *TransitGatewayMulticastDomainAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayMulticastDomainAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *TransitGatewayMulticastDomainAssociation) UnmarshalJSON(b []byte) error
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayMulticastDomainAssociation(*res.Properties)
+		*r = TransitGatewayMulticastDomainAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

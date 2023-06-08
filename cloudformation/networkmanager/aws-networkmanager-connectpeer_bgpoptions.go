@@ -8,12 +8,12 @@ import (
 
 // ConnectPeer_BgpOptions AWS CloudFormation Resource (AWS::NetworkManager::ConnectPeer.BgpOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-bgpoptions.html
-type ConnectPeer_BgpOptions struct {
+type ConnectPeer_BgpOptions[T any] struct {
 
 	// PeerAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-bgpoptions.html#cfn-networkmanager-connectpeer-bgpoptions-peerasn
-	PeerAsn *float64 `json:"PeerAsn,omitempty"`
+	PeerAsn *T `json:"PeerAsn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type ConnectPeer_BgpOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectPeer_BgpOptions) AWSCloudFormationType() string {
+func (r *ConnectPeer_BgpOptions[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectPeer.BgpOptions"
 }

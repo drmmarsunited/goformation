@@ -8,7 +8,7 @@ import (
 
 // Channel_RtmpCaptionInfoDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.RtmpCaptionInfoDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpcaptioninfodestinationsettings.html
-type Channel_RtmpCaptionInfoDestinationSettings struct {
+type Channel_RtmpCaptionInfoDestinationSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_RtmpCaptionInfoDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_RtmpCaptionInfoDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_RtmpCaptionInfoDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.RtmpCaptionInfoDestinationSettings"
 }

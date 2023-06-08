@@ -8,7 +8,7 @@ import (
 
 // Dashboard_PivotTableCellConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableCellConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablecellconditionalformatting.html
-type Dashboard_PivotTableCellConditionalFormatting struct {
+type Dashboard_PivotTableCellConditionalFormatting[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Dashboard_PivotTableCellConditionalFormatting struct {
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablecellconditionalformatting.html#cfn-quicksight-dashboard-pivottablecellconditionalformatting-scope
-	Scope *Dashboard_PivotTableConditionalFormattingScope `json:"Scope,omitempty"`
+	Scope *Dashboard_PivotTableConditionalFormattingScope[any] `json:"Scope,omitempty"`
 
 	// TextFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablecellconditionalformatting.html#cfn-quicksight-dashboard-pivottablecellconditionalformatting-textformat
-	TextFormat *Dashboard_TextConditionalFormat `json:"TextFormat,omitempty"`
+	TextFormat *Dashboard_TextConditionalFormat[any] `json:"TextFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_PivotTableCellConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableCellConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableCellConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableCellConditionalFormatting"
 }

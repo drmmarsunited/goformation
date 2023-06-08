@@ -8,7 +8,7 @@ import (
 
 // Cluster_ClusterEndpoint AWS CloudFormation Resource (AWS::Route53RecoveryControl::Cluster.ClusterEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-cluster-clusterendpoint.html
-type Cluster_ClusterEndpoint struct {
+type Cluster_ClusterEndpoint[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_ClusterEndpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ClusterEndpoint) AWSCloudFormationType() string {
+func (r *Cluster_ClusterEndpoint[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::Cluster.ClusterEndpoint"
 }

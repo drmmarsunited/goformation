@@ -8,7 +8,7 @@ import (
 
 // GameSessionQueue_Destination AWS CloudFormation Resource (AWS::GameLift::GameSessionQueue.Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-destination.html
-type GameSessionQueue_Destination struct {
+type GameSessionQueue_Destination[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type GameSessionQueue_Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GameSessionQueue_Destination) AWSCloudFormationType() string {
+func (r *GameSessionQueue_Destination[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::GameSessionQueue.Destination"
 }

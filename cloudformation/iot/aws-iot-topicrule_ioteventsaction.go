@@ -8,12 +8,12 @@ import (
 
 // TopicRule_IotEventsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.IotEventsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html
-type TopicRule_IotEventsAction struct {
+type TopicRule_IotEventsAction[T any] struct {
 
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html#cfn-iot-topicrule-ioteventsaction-batchmode
-	BatchMode *bool `json:"BatchMode,omitempty"`
+	BatchMode *T `json:"BatchMode,omitempty"`
 
 	// InputName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TopicRule_IotEventsAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_IotEventsAction) AWSCloudFormationType() string {
+func (r *TopicRule_IotEventsAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.IotEventsAction"
 }

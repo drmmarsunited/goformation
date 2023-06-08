@@ -8,7 +8,7 @@ import (
 
 // Channel_LogConfiguration AWS CloudFormation Resource (AWS::MediaPackage::Channel.LogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-logconfiguration.html
-type Channel_LogConfiguration struct {
+type Channel_LogConfiguration[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_LogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_LogConfiguration) AWSCloudFormationType() string {
+func (r *Channel_LogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Channel.LogConfiguration"
 }

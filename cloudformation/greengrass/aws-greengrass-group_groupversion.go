@@ -8,7 +8,7 @@ import (
 
 // Group_GroupVersion AWS CloudFormation Resource (AWS::Greengrass::Group.GroupVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html
-type Group_GroupVersion struct {
+type Group_GroupVersion[T any] struct {
 
 	// ConnectorDefinitionVersionArn AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Group_GroupVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Group_GroupVersion) AWSCloudFormationType() string {
+func (r *Group_GroupVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::Group.GroupVersion"
 }

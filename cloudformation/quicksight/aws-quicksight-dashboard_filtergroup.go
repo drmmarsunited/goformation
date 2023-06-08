@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FilterGroup AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FilterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html
-type Dashboard_FilterGroup struct {
+type Dashboard_FilterGroup[T any] struct {
 
 	// CrossDataset AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Dashboard_FilterGroup struct {
 	// Filters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html#cfn-quicksight-dashboard-filtergroup-filters
-	Filters []Dashboard_Filter `json:"Filters"`
+	Filters []Dashboard_Filter[any] `json:"Filters"`
 
 	// ScopeConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html#cfn-quicksight-dashboard-filtergroup-scopeconfiguration
-	ScopeConfiguration *Dashboard_FilterScopeConfiguration `json:"ScopeConfiguration"`
+	ScopeConfiguration *Dashboard_FilterScopeConfiguration[any] `json:"ScopeConfiguration"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dashboard_FilterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FilterGroup) AWSCloudFormationType() string {
+func (r *Dashboard_FilterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FilterGroup"
 }

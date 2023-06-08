@@ -8,12 +8,12 @@ import (
 
 // Endpoint_RoutingConfig AWS CloudFormation Resource (AWS::Events::Endpoint.RoutingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-routingconfig.html
-type Endpoint_RoutingConfig struct {
+type Endpoint_RoutingConfig[T any] struct {
 
 	// FailoverConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-routingconfig.html#cfn-events-endpoint-routingconfig-failoverconfig
-	FailoverConfig *Endpoint_FailoverConfig `json:"FailoverConfig"`
+	FailoverConfig *Endpoint_FailoverConfig[any] `json:"FailoverConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Endpoint_RoutingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_RoutingConfig) AWSCloudFormationType() string {
+func (r *Endpoint_RoutingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.RoutingConfig"
 }

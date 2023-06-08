@@ -8,7 +8,7 @@ import (
 
 // Analysis_FieldLabelType AWS CloudFormation Resource (AWS::QuickSight::Analysis.FieldLabelType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldlabeltype.html
-type Analysis_FieldLabelType struct {
+type Analysis_FieldLabelType[T any] struct {
 
 	// FieldId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_FieldLabelType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FieldLabelType) AWSCloudFormationType() string {
+func (r *Analysis_FieldLabelType[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FieldLabelType"
 }

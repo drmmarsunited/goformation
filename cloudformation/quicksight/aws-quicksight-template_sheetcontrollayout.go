@@ -8,12 +8,12 @@ import (
 
 // Template_SheetControlLayout AWS CloudFormation Resource (AWS::QuickSight::Template.SheetControlLayout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetcontrollayout.html
-type Template_SheetControlLayout struct {
+type Template_SheetControlLayout[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetcontrollayout.html#cfn-quicksight-template-sheetcontrollayout-configuration
-	Configuration *Template_SheetControlLayoutConfiguration `json:"Configuration"`
+	Configuration *Template_SheetControlLayoutConfiguration[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_SheetControlLayout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SheetControlLayout) AWSCloudFormationType() string {
+func (r *Template_SheetControlLayout[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SheetControlLayout"
 }

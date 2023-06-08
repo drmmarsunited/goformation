@@ -8,7 +8,7 @@ import (
 
 // Dashboard_AdHocFilteringOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AdHocFilteringOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-adhocfilteringoption.html
-type Dashboard_AdHocFilteringOption struct {
+type Dashboard_AdHocFilteringOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_AdHocFilteringOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_AdHocFilteringOption) AWSCloudFormationType() string {
+func (r *Dashboard_AdHocFilteringOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.AdHocFilteringOption"
 }

@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_ClarifyShapBaselineConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyShapBaselineConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapbaselineconfig.html
-type EndpointConfig_ClarifyShapBaselineConfig struct {
+type EndpointConfig_ClarifyShapBaselineConfig[T any] struct {
 
 	// MimeType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type EndpointConfig_ClarifyShapBaselineConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_ClarifyShapBaselineConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_ClarifyShapBaselineConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.ClarifyShapBaselineConfig"
 }

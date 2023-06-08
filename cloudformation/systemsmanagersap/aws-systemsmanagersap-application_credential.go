@@ -8,7 +8,7 @@ import (
 
 // Application_Credential AWS CloudFormation Resource (AWS::SystemsManagerSAP::Application.Credential)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-systemsmanagersap-application-credential.html
-type Application_Credential struct {
+type Application_Credential[T any] struct {
 
 	// CredentialType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Application_Credential struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_Credential) AWSCloudFormationType() string {
+func (r *Application_Credential[any]) AWSCloudFormationType() string {
 	return "AWS::SystemsManagerSAP::Application.Credential"
 }

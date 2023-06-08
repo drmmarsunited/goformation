@@ -8,7 +8,7 @@ import (
 
 // AnnotationStore_TsvStoreOptions AWS CloudFormation Resource (AWS::Omics::AnnotationStore.TsvStoreOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-tsvstoreoptions.html
-type AnnotationStore_TsvStoreOptions struct {
+type AnnotationStore_TsvStoreOptions[T any] struct {
 
 	// AnnotationType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type AnnotationStore_TsvStoreOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnnotationStore_TsvStoreOptions) AWSCloudFormationType() string {
+func (r *AnnotationStore_TsvStoreOptions[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::AnnotationStore.TsvStoreOptions"
 }

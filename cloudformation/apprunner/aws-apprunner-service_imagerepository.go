@@ -8,12 +8,12 @@ import (
 
 // Service_ImageRepository AWS CloudFormation Resource (AWS::AppRunner::Service.ImageRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html
-type Service_ImageRepository struct {
+type Service_ImageRepository[T any] struct {
 
 	// ImageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html#cfn-apprunner-service-imagerepository-imageconfiguration
-	ImageConfiguration *Service_ImageConfiguration `json:"ImageConfiguration,omitempty"`
+	ImageConfiguration *Service_ImageConfiguration[any] `json:"ImageConfiguration,omitempty"`
 
 	// ImageIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Service_ImageRepository struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ImageRepository) AWSCloudFormationType() string {
+func (r *Service_ImageRepository[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::Service.ImageRepository"
 }

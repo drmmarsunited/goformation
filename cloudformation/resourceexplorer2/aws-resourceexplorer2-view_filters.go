@@ -8,7 +8,7 @@ import (
 
 // View_Filters AWS CloudFormation Resource (AWS::ResourceExplorer2::View.Filters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourceexplorer2-view-filters.html
-type View_Filters struct {
+type View_Filters[T any] struct {
 
 	// FilterString AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type View_Filters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *View_Filters) AWSCloudFormationType() string {
+func (r *View_Filters[any]) AWSCloudFormationType() string {
 	return "AWS::ResourceExplorer2::View.Filters"
 }

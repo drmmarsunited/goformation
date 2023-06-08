@@ -11,7 +11,7 @@ import (
 
 // CoreDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::CoreDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html
-type CoreDefinitionVersion struct {
+type CoreDefinitionVersion[T any] struct {
 
 	// CoreDefinitionId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type CoreDefinitionVersion struct {
 	// Cores AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-cores
-	Cores []CoreDefinitionVersion_Core `json:"Cores"`
+	Cores []CoreDefinitionVersion_Core[any] `json:"Cores"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type CoreDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreDefinitionVersion) AWSCloudFormationType() string {
+func (r *CoreDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::CoreDefinitionVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CoreDefinitionVersion) MarshalJSON() ([]byte, error) {
-	type Properties CoreDefinitionVersion
+func (r CoreDefinitionVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties CoreDefinitionVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r CoreDefinitionVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CoreDefinitionVersion) UnmarshalJSON(b []byte) error {
-	type Properties CoreDefinitionVersion
+func (r *CoreDefinitionVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties CoreDefinitionVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *CoreDefinitionVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CoreDefinitionVersion(*res.Properties)
+		*r = CoreDefinitionVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

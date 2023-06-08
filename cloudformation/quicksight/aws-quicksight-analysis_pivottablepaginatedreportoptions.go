@@ -8,7 +8,7 @@ import (
 
 // Analysis_PivotTablePaginatedReportOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.PivotTablePaginatedReportOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablepaginatedreportoptions.html
-type Analysis_PivotTablePaginatedReportOptions struct {
+type Analysis_PivotTablePaginatedReportOptions[T any] struct {
 
 	// OverflowColumnHeaderVisibility AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_PivotTablePaginatedReportOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_PivotTablePaginatedReportOptions) AWSCloudFormationType() string {
+func (r *Analysis_PivotTablePaginatedReportOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.PivotTablePaginatedReportOptions"
 }

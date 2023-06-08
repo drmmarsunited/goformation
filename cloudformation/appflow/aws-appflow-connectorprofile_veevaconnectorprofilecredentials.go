@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_VeevaConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-veevaconnectorprofilecredentials.html
-type ConnectorProfile_VeevaConnectorProfileCredentials struct {
+type ConnectorProfile_VeevaConnectorProfileCredentials[T any] struct {
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ConnectorProfile_VeevaConnectorProfileCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_VeevaConnectorProfileCredentials) AWSCloudFormationType() string {
+func (r *ConnectorProfile_VeevaConnectorProfileCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileCredentials"
 }

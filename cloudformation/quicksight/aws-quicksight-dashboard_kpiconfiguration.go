@@ -8,22 +8,22 @@ import (
 
 // Dashboard_KPIConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.KPIConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconfiguration.html
-type Dashboard_KPIConfiguration struct {
+type Dashboard_KPIConfiguration[T any] struct {
 
 	// FieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconfiguration.html#cfn-quicksight-dashboard-kpiconfiguration-fieldwells
-	FieldWells *Dashboard_KPIFieldWells `json:"FieldWells,omitempty"`
+	FieldWells *Dashboard_KPIFieldWells[any] `json:"FieldWells,omitempty"`
 
 	// KPIOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconfiguration.html#cfn-quicksight-dashboard-kpiconfiguration-kpioptions
-	KPIOptions *Dashboard_KPIOptions `json:"KPIOptions,omitempty"`
+	KPIOptions *Dashboard_KPIOptions[any] `json:"KPIOptions,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpiconfiguration.html#cfn-quicksight-dashboard-kpiconfiguration-sortconfiguration
-	SortConfiguration *Dashboard_KPISortConfiguration `json:"SortConfiguration,omitempty"`
+	SortConfiguration *Dashboard_KPISortConfiguration[any] `json:"SortConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_KPIConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_KPIConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_KPIConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.KPIConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_EksContainer AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksContainer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html
-type JobDefinition_EksContainer struct {
+type JobDefinition_EksContainer[T any] struct {
 
 	// Args AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type JobDefinition_EksContainer struct {
 	// Env AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-env
-	Env []JobDefinition_EksContainerEnvironmentVariable `json:"Env,omitempty"`
+	Env []JobDefinition_EksContainerEnvironmentVariable[any] `json:"Env,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: true
@@ -43,17 +43,17 @@ type JobDefinition_EksContainer struct {
 	// Resources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-resources
-	Resources *JobDefinition_EksContainerResourceRequirements `json:"Resources,omitempty"`
+	Resources *JobDefinition_EksContainerResourceRequirements[any] `json:"Resources,omitempty"`
 
 	// SecurityContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-securitycontext
-	SecurityContext *JobDefinition_EksContainerSecurityContext `json:"SecurityContext,omitempty"`
+	SecurityContext *JobDefinition_EksContainerSecurityContext[any] `json:"SecurityContext,omitempty"`
 
 	// VolumeMounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-volumemounts
-	VolumeMounts []JobDefinition_EksContainerVolumeMount `json:"VolumeMounts,omitempty"`
+	VolumeMounts []JobDefinition_EksContainerVolumeMount[any] `json:"VolumeMounts,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type JobDefinition_EksContainer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksContainer) AWSCloudFormationType() string {
+func (r *JobDefinition_EksContainer[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksContainer"
 }

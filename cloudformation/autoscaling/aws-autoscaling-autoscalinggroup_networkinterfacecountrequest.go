@@ -8,17 +8,17 @@ import (
 
 // AutoScalingGroup_NetworkInterfaceCountRequest AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.NetworkInterfaceCountRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkinterfacecountrequest.html
-type AutoScalingGroup_NetworkInterfaceCountRequest struct {
+type AutoScalingGroup_NetworkInterfaceCountRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkinterfacecountrequest.html#cfn-autoscaling-autoscalinggroup-networkinterfacecountrequest-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-networkinterfacecountrequest.html#cfn-autoscaling-autoscalinggroup-networkinterfacecountrequest-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type AutoScalingGroup_NetworkInterfaceCountRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AutoScalingGroup_NetworkInterfaceCountRequest) AWSCloudFormationType() string {
+func (r *AutoScalingGroup_NetworkInterfaceCountRequest[any]) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.NetworkInterfaceCountRequest"
 }

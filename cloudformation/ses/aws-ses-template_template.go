@@ -8,7 +8,7 @@ import (
 
 // Template_Template AWS CloudFormation Resource (AWS::SES::Template.Template)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html
-type Template_Template struct {
+type Template_Template[T any] struct {
 
 	// HtmlPart AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_Template struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_Template) AWSCloudFormationType() string {
+func (r *Template_Template[any]) AWSCloudFormationType() string {
 	return "AWS::SES::Template.Template"
 }

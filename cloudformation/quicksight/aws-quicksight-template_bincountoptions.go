@@ -8,12 +8,12 @@ import (
 
 // Template_BinCountOptions AWS CloudFormation Resource (AWS::QuickSight::Template.BinCountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bincountoptions.html
-type Template_BinCountOptions struct {
+type Template_BinCountOptions[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bincountoptions.html#cfn-quicksight-template-bincountoptions-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_BinCountOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_BinCountOptions) AWSCloudFormationType() string {
+func (r *Template_BinCountOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.BinCountOptions"
 }

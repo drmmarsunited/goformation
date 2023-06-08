@@ -8,7 +8,7 @@ import (
 
 // ComponentVersion_ComponentPlatform AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.ComponentPlatform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html
-type ComponentVersion_ComponentPlatform struct {
+type ComponentVersion_ComponentPlatform[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ComponentVersion_ComponentPlatform struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_ComponentPlatform) AWSCloudFormationType() string {
+func (r *ComponentVersion_ComponentPlatform[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.ComponentPlatform"
 }

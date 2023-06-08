@@ -8,7 +8,7 @@ import (
 
 // SigningProfile_SignatureValidityPeriod AWS CloudFormation Resource (AWS::Signer::SigningProfile.SignatureValidityPeriod)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-signer-signingprofile-signaturevalidityperiod.html
-type SigningProfile_SignatureValidityPeriod struct {
+type SigningProfile_SignatureValidityPeriod[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type SigningProfile_SignatureValidityPeriod struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-signer-signingprofile-signaturevalidityperiod.html#cfn-signer-signingprofile-signaturevalidityperiod-value
-	Value *int `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SigningProfile_SignatureValidityPeriod struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SigningProfile_SignatureValidityPeriod) AWSCloudFormationType() string {
+func (r *SigningProfile_SignatureValidityPeriod[any]) AWSCloudFormationType() string {
 	return "AWS::Signer::SigningProfile.SignatureValidityPeriod"
 }

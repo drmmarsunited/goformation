@@ -8,12 +8,12 @@ import (
 
 // Bot_AudioLogDestination AWS CloudFormation Resource (AWS::Lex::Bot.AudioLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologdestination.html
-type Bot_AudioLogDestination struct {
+type Bot_AudioLogDestination[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologdestination.html#cfn-lex-bot-audiologdestination-s3bucket
-	S3Bucket *Bot_S3BucketLogDestination `json:"S3Bucket"`
+	S3Bucket *Bot_S3BucketLogDestination[any] `json:"S3Bucket"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_AudioLogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_AudioLogDestination) AWSCloudFormationType() string {
+func (r *Bot_AudioLogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.AudioLogDestination"
 }

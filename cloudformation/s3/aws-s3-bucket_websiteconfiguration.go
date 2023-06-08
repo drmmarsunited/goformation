@@ -8,7 +8,7 @@ import (
 
 // Bucket_WebsiteConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.WebsiteConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
-type Bucket_WebsiteConfiguration struct {
+type Bucket_WebsiteConfiguration[T any] struct {
 
 	// ErrorDocument AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Bucket_WebsiteConfiguration struct {
 	// RedirectAllRequestsTo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo
-	RedirectAllRequestsTo *Bucket_RedirectAllRequestsTo `json:"RedirectAllRequestsTo,omitempty"`
+	RedirectAllRequestsTo *Bucket_RedirectAllRequestsTo[any] `json:"RedirectAllRequestsTo,omitempty"`
 
 	// RoutingRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules
-	RoutingRules []Bucket_RoutingRule `json:"RoutingRules,omitempty"`
+	RoutingRules []Bucket_RoutingRule[any] `json:"RoutingRules,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bucket_WebsiteConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_WebsiteConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_WebsiteConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.WebsiteConfiguration"
 }

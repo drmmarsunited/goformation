@@ -8,7 +8,7 @@ import (
 
 // DataLakeSettings_CreateDatabaseDefaultPermissions AWS CloudFormation Resource (AWS::LakeFormation::DataLakeSettings.CreateDatabaseDefaultPermissions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-createdatabasedefaultpermissions.html
-type DataLakeSettings_CreateDatabaseDefaultPermissions struct {
+type DataLakeSettings_CreateDatabaseDefaultPermissions[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type DataLakeSettings_CreateDatabaseDefaultPermissions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataLakeSettings_CreateDatabaseDefaultPermissions) AWSCloudFormationType() string {
+func (r *DataLakeSettings_CreateDatabaseDefaultPermissions[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::DataLakeSettings.CreateDatabaseDefaultPermissions"
 }

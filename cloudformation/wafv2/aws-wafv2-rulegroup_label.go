@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_Label AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Label)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-label.html
-type RuleGroup_Label struct {
+type RuleGroup_Label[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RuleGroup_Label struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Label) AWSCloudFormationType() string {
+func (r *RuleGroup_Label[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.Label"
 }

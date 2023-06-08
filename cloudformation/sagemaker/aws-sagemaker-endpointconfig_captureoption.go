@@ -8,7 +8,7 @@ import (
 
 // EndpointConfig_CaptureOption AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.CaptureOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-captureoption.html
-type EndpointConfig_CaptureOption struct {
+type EndpointConfig_CaptureOption[T any] struct {
 
 	// CaptureMode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type EndpointConfig_CaptureOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_CaptureOption) AWSCloudFormationType() string {
+func (r *EndpointConfig_CaptureOption[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.CaptureOption"
 }

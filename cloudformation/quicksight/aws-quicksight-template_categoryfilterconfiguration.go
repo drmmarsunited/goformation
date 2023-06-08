@@ -8,22 +8,22 @@ import (
 
 // Template_CategoryFilterConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.CategoryFilterConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilterconfiguration.html
-type Template_CategoryFilterConfiguration struct {
+type Template_CategoryFilterConfiguration[T any] struct {
 
 	// CustomFilterConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilterconfiguration.html#cfn-quicksight-template-categoryfilterconfiguration-customfilterconfiguration
-	CustomFilterConfiguration *Template_CustomFilterConfiguration `json:"CustomFilterConfiguration,omitempty"`
+	CustomFilterConfiguration *Template_CustomFilterConfiguration[any] `json:"CustomFilterConfiguration,omitempty"`
 
 	// CustomFilterListConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilterconfiguration.html#cfn-quicksight-template-categoryfilterconfiguration-customfilterlistconfiguration
-	CustomFilterListConfiguration *Template_CustomFilterListConfiguration `json:"CustomFilterListConfiguration,omitempty"`
+	CustomFilterListConfiguration *Template_CustomFilterListConfiguration[any] `json:"CustomFilterListConfiguration,omitempty"`
 
 	// FilterListConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categoryfilterconfiguration.html#cfn-quicksight-template-categoryfilterconfiguration-filterlistconfiguration
-	FilterListConfiguration *Template_FilterListConfiguration `json:"FilterListConfiguration,omitempty"`
+	FilterListConfiguration *Template_FilterListConfiguration[any] `json:"FilterListConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_CategoryFilterConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CategoryFilterConfiguration) AWSCloudFormationType() string {
+func (r *Template_CategoryFilterConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CategoryFilterConfiguration"
 }

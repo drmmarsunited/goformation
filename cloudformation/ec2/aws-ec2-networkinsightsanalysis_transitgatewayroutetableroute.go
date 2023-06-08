@@ -8,7 +8,7 @@ import (
 
 // NetworkInsightsAnalysis_TransitGatewayRouteTableRoute AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.TransitGatewayRouteTableRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html
-type NetworkInsightsAnalysis_TransitGatewayRouteTableRoute struct {
+type NetworkInsightsAnalysis_TransitGatewayRouteTableRoute[T any] struct {
 
 	// AttachmentId AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type NetworkInsightsAnalysis_TransitGatewayRouteTableRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute) AWSCloudFormationType() string {
+func (r *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkInsightsAnalysis.TransitGatewayRouteTableRoute"
 }

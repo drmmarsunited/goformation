@@ -8,7 +8,7 @@ import (
 
 // ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html
-type ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData struct {
+type ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData[T any] struct {
 
 	// DestinationPath AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData struct 
 	// OwnerSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
-	OwnerSetting *ResourceDefinitionVersion_ResourceDownloadOwnerSetting `json:"OwnerSetting,omitempty"`
+	OwnerSetting *ResourceDefinitionVersion_ResourceDownloadOwnerSetting[any] `json:"OwnerSetting,omitempty"`
 
 	// SageMakerJobArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData struct 
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData) AWSCloudFormationType() string {
+func (r *ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData"
 }

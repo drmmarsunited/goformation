@@ -8,22 +8,22 @@ import (
 
 // Dashboard_DimensionField AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dimensionfield.html
-type Dashboard_DimensionField struct {
+type Dashboard_DimensionField[T any] struct {
 
 	// CategoricalDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dimensionfield.html#cfn-quicksight-dashboard-dimensionfield-categoricaldimensionfield
-	CategoricalDimensionField *Dashboard_CategoricalDimensionField `json:"CategoricalDimensionField,omitempty"`
+	CategoricalDimensionField *Dashboard_CategoricalDimensionField[any] `json:"CategoricalDimensionField,omitempty"`
 
 	// DateDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dimensionfield.html#cfn-quicksight-dashboard-dimensionfield-datedimensionfield
-	DateDimensionField *Dashboard_DateDimensionField `json:"DateDimensionField,omitempty"`
+	DateDimensionField *Dashboard_DateDimensionField[any] `json:"DateDimensionField,omitempty"`
 
 	// NumericalDimensionField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dimensionfield.html#cfn-quicksight-dashboard-dimensionfield-numericaldimensionfield
-	NumericalDimensionField *Dashboard_NumericalDimensionField `json:"NumericalDimensionField,omitempty"`
+	NumericalDimensionField *Dashboard_NumericalDimensionField[any] `json:"NumericalDimensionField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_DimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DimensionField) AWSCloudFormationType() string {
+func (r *Dashboard_DimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DimensionField"
 }

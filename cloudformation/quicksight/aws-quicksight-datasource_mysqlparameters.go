@@ -8,7 +8,7 @@ import (
 
 // DataSource_MySqlParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.MySqlParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mysqlparameters.html
-type DataSource_MySqlParameters struct {
+type DataSource_MySqlParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_MySqlParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mysqlparameters.html#cfn-quicksight-datasource-mysqlparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_MySqlParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_MySqlParameters) AWSCloudFormationType() string {
+func (r *DataSource_MySqlParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.MySqlParameters"
 }

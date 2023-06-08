@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_FixedResponseConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html
-type ListenerRule_FixedResponseConfig struct {
+type ListenerRule_FixedResponseConfig[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type ListenerRule_FixedResponseConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_FixedResponseConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_FixedResponseConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig"
 }

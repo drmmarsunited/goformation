@@ -8,17 +8,17 @@ import (
 
 // ContinuousDeploymentPolicy_TrafficConfig AWS CloudFormation Resource (AWS::CloudFront::ContinuousDeploymentPolicy.TrafficConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html
-type ContinuousDeploymentPolicy_TrafficConfig struct {
+type ContinuousDeploymentPolicy_TrafficConfig[T any] struct {
 
 	// SingleHeaderConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleheaderconfig
-	SingleHeaderConfig *ContinuousDeploymentPolicy_SingleHeaderConfig `json:"SingleHeaderConfig,omitempty"`
+	SingleHeaderConfig *ContinuousDeploymentPolicy_SingleHeaderConfig[any] `json:"SingleHeaderConfig,omitempty"`
 
 	// SingleWeightConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleweightconfig
-	SingleWeightConfig *ContinuousDeploymentPolicy_SingleWeightConfig `json:"SingleWeightConfig,omitempty"`
+	SingleWeightConfig *ContinuousDeploymentPolicy_SingleWeightConfig[any] `json:"SingleWeightConfig,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ContinuousDeploymentPolicy_TrafficConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContinuousDeploymentPolicy_TrafficConfig) AWSCloudFormationType() string {
+func (r *ContinuousDeploymentPolicy_TrafficConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ContinuousDeploymentPolicy.TrafficConfig"
 }

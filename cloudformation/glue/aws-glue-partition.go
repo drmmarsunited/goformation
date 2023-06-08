@@ -11,7 +11,7 @@ import (
 
 // Partition AWS CloudFormation Resource (AWS::Glue::Partition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html
-type Partition struct {
+type Partition[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Partition struct {
 	// PartitionInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
-	PartitionInput *Partition_PartitionInput `json:"PartitionInput"`
+	PartitionInput *Partition_PartitionInput[any] `json:"PartitionInput"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type Partition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Partition) AWSCloudFormationType() string {
+func (r *Partition[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Partition) MarshalJSON() ([]byte, error) {
-	type Properties Partition
+func (r Partition[any]) MarshalJSON() ([]byte, error) {
+	type Properties Partition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Partition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Partition) UnmarshalJSON(b []byte) error {
-	type Properties Partition
+func (r *Partition[any]) UnmarshalJSON(b []byte) error {
+	type Properties Partition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Partition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Partition(*res.Properties)
+		*r = Partition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

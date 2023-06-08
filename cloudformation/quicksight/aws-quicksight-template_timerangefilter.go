@@ -8,17 +8,17 @@ import (
 
 // Template_TimeRangeFilter AWS CloudFormation Resource (AWS::QuickSight::Template.TimeRangeFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html
-type Template_TimeRangeFilter struct {
+type Template_TimeRangeFilter[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// ExcludePeriodConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-excludeperiodconfiguration
-	ExcludePeriodConfiguration *Template_ExcludePeriodConfiguration `json:"ExcludePeriodConfiguration,omitempty"`
+	ExcludePeriodConfiguration *Template_ExcludePeriodConfiguration[any] `json:"ExcludePeriodConfiguration,omitempty"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Template_TimeRangeFilter struct {
 	// IncludeMaximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-includemaximum
-	IncludeMaximum *bool `json:"IncludeMaximum,omitempty"`
+	IncludeMaximum *T `json:"IncludeMaximum,omitempty"`
 
 	// IncludeMinimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-includeminimum
-	IncludeMinimum *bool `json:"IncludeMinimum,omitempty"`
+	IncludeMinimum *T `json:"IncludeMinimum,omitempty"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
@@ -43,12 +43,12 @@ type Template_TimeRangeFilter struct {
 	// RangeMaximumValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-rangemaximumvalue
-	RangeMaximumValue *Template_TimeRangeFilterValue `json:"RangeMaximumValue,omitempty"`
+	RangeMaximumValue *Template_TimeRangeFilterValue[any] `json:"RangeMaximumValue,omitempty"`
 
 	// RangeMinimumValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-timerangefilter.html#cfn-quicksight-template-timerangefilter-rangeminimumvalue
-	RangeMinimumValue *Template_TimeRangeFilterValue `json:"RangeMinimumValue,omitempty"`
+	RangeMinimumValue *Template_TimeRangeFilterValue[any] `json:"RangeMinimumValue,omitempty"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Template_TimeRangeFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TimeRangeFilter) AWSCloudFormationType() string {
+func (r *Template_TimeRangeFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TimeRangeFilter"
 }

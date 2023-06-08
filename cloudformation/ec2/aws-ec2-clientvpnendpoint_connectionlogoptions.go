@@ -8,7 +8,7 @@ import (
 
 // ClientVpnEndpoint_ConnectionLogOptions AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html
-type ClientVpnEndpoint_ConnectionLogOptions struct {
+type ClientVpnEndpoint_ConnectionLogOptions[T any] struct {
 
 	// CloudwatchLogGroup AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ClientVpnEndpoint_ConnectionLogOptions struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled T `json:"Enabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ClientVpnEndpoint_ConnectionLogOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClientVpnEndpoint_ConnectionLogOptions) AWSCloudFormationType() string {
+func (r *ClientVpnEndpoint_ConnectionLogOptions[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions"
 }

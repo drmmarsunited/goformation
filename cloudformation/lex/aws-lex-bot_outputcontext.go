@@ -8,7 +8,7 @@ import (
 
 // Bot_OutputContext AWS CloudFormation Resource (AWS::Lex::Bot.OutputContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html
-type Bot_OutputContext struct {
+type Bot_OutputContext[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type Bot_OutputContext struct {
 	// TimeToLiveInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds
-	TimeToLiveInSeconds int `json:"TimeToLiveInSeconds"`
+	TimeToLiveInSeconds T `json:"TimeToLiveInSeconds"`
 
 	// TurnsToLive AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive
-	TurnsToLive int `json:"TurnsToLive"`
+	TurnsToLive T `json:"TurnsToLive"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bot_OutputContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_OutputContext) AWSCloudFormationType() string {
+func (r *Bot_OutputContext[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.OutputContext"
 }

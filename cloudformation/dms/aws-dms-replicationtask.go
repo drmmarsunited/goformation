@@ -12,7 +12,7 @@ import (
 
 // ReplicationTask AWS CloudFormation Resource (AWS::DMS::ReplicationTask)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html
-type ReplicationTask struct {
+type ReplicationTask[T any] struct {
 
 	// CdcStartPosition AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type ReplicationTask struct {
 	// CdcStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstarttime
-	CdcStartTime *float64 `json:"CdcStartTime,omitempty"`
+	CdcStartTime *T `json:"CdcStartTime,omitempty"`
 
 	// CdcStopPosition AWS CloudFormation Property
 	// Required: false
@@ -96,14 +96,15 @@ type ReplicationTask struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationTask) AWSCloudFormationType() string {
+func (r *ReplicationTask[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::ReplicationTask"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ReplicationTask) MarshalJSON() ([]byte, error) {
-	type Properties ReplicationTask
+func (r ReplicationTask[any]) MarshalJSON() ([]byte, error) {
+	type Properties ReplicationTask[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -125,8 +126,9 @@ func (r ReplicationTask) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ReplicationTask) UnmarshalJSON(b []byte) error {
-	type Properties ReplicationTask
+func (r *ReplicationTask[any]) UnmarshalJSON(b []byte) error {
+	type Properties ReplicationTask[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -146,7 +148,7 @@ func (r *ReplicationTask) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ReplicationTask(*res.Properties)
+		*r = ReplicationTask[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

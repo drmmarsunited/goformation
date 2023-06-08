@@ -8,7 +8,7 @@ import (
 
 // Service_ServiceConnectClientAlias AWS CloudFormation Resource (AWS::ECS::Service.ServiceConnectClientAlias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectclientalias.html
-type Service_ServiceConnectClientAlias struct {
+type Service_ServiceConnectClientAlias[T any] struct {
 
 	// DnsName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Service_ServiceConnectClientAlias struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectclientalias.html#cfn-ecs-service-serviceconnectclientalias-port
-	Port int `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Service_ServiceConnectClientAlias struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_ServiceConnectClientAlias) AWSCloudFormationType() string {
+func (r *Service_ServiceConnectClientAlias[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.ServiceConnectClientAlias"
 }

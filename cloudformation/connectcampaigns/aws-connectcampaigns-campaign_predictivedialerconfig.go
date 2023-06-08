@@ -8,12 +8,12 @@ import (
 
 // Campaign_PredictiveDialerConfig AWS CloudFormation Resource (AWS::ConnectCampaigns::Campaign.PredictiveDialerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-predictivedialerconfig.html
-type Campaign_PredictiveDialerConfig struct {
+type Campaign_PredictiveDialerConfig[T any] struct {
 
 	// BandwidthAllocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-predictivedialerconfig.html#cfn-connectcampaigns-campaign-predictivedialerconfig-bandwidthallocation
-	BandwidthAllocation float64 `json:"BandwidthAllocation"`
+	BandwidthAllocation T `json:"BandwidthAllocation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Campaign_PredictiveDialerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_PredictiveDialerConfig) AWSCloudFormationType() string {
+func (r *Campaign_PredictiveDialerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ConnectCampaigns::Campaign.PredictiveDialerConfig"
 }

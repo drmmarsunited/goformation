@@ -8,7 +8,7 @@ import (
 
 // Campaign_MetricDimension AWS CloudFormation Resource (AWS::Pinpoint::Campaign.MetricDimension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html
-type Campaign_MetricDimension struct {
+type Campaign_MetricDimension[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Campaign_MetricDimension struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html#cfn-pinpoint-campaign-metricdimension-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Campaign_MetricDimension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_MetricDimension) AWSCloudFormationType() string {
+func (r *Campaign_MetricDimension[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.MetricDimension"
 }

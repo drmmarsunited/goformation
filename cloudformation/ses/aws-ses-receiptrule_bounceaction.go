@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_BounceAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.BounceAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html
-type ReceiptRule_BounceAction struct {
+type ReceiptRule_BounceAction[T any] struct {
 
 	// Message AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ReceiptRule_BounceAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_BounceAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_BounceAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.BounceAction"
 }

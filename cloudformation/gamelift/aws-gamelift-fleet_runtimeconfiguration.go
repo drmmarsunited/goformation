@@ -8,22 +8,22 @@ import (
 
 // Fleet_RuntimeConfiguration AWS CloudFormation Resource (AWS::GameLift::Fleet.RuntimeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html
-type Fleet_RuntimeConfiguration struct {
+type Fleet_RuntimeConfiguration[T any] struct {
 
 	// GameSessionActivationTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-gamesessionactivationtimeoutseconds
-	GameSessionActivationTimeoutSeconds *int `json:"GameSessionActivationTimeoutSeconds,omitempty"`
+	GameSessionActivationTimeoutSeconds *T `json:"GameSessionActivationTimeoutSeconds,omitempty"`
 
 	// MaxConcurrentGameSessionActivations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-maxconcurrentgamesessionactivations
-	MaxConcurrentGameSessionActivations *int `json:"MaxConcurrentGameSessionActivations,omitempty"`
+	MaxConcurrentGameSessionActivations *T `json:"MaxConcurrentGameSessionActivations,omitempty"`
 
 	// ServerProcesses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-serverprocesses
-	ServerProcesses []Fleet_ServerProcess `json:"ServerProcesses,omitempty"`
+	ServerProcesses []Fleet_ServerProcess[any] `json:"ServerProcesses,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Fleet_RuntimeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_RuntimeConfiguration) AWSCloudFormationType() string {
+func (r *Fleet_RuntimeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.RuntimeConfiguration"
 }

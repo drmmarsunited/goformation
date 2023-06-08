@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_SizeConstraintStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.SizeConstraintStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html
-type RuleGroup_SizeConstraintStatement struct {
+type RuleGroup_SizeConstraintStatement[T any] struct {
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
@@ -18,17 +18,17 @@ type RuleGroup_SizeConstraintStatement struct {
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-size
-	Size float64 `json:"Size"`
+	Size T `json:"Size"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type RuleGroup_SizeConstraintStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_SizeConstraintStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_SizeConstraintStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.SizeConstraintStatement"
 }

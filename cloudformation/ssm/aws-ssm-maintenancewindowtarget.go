@@ -11,7 +11,7 @@ import (
 
 // MaintenanceWindowTarget AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html
-type MaintenanceWindowTarget struct {
+type MaintenanceWindowTarget[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type MaintenanceWindowTarget struct {
 	// Targets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets
-	Targets []MaintenanceWindowTarget_Targets `json:"Targets"`
+	Targets []MaintenanceWindowTarget_Targets[any] `json:"Targets"`
 
 	// WindowId AWS CloudFormation Property
 	// Required: true
@@ -60,14 +60,15 @@ type MaintenanceWindowTarget struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTarget) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTarget[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTarget"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MaintenanceWindowTarget) MarshalJSON() ([]byte, error) {
-	type Properties MaintenanceWindowTarget
+func (r MaintenanceWindowTarget[any]) MarshalJSON() ([]byte, error) {
+	type Properties MaintenanceWindowTarget[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r MaintenanceWindowTarget) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MaintenanceWindowTarget) UnmarshalJSON(b []byte) error {
-	type Properties MaintenanceWindowTarget
+func (r *MaintenanceWindowTarget[any]) UnmarshalJSON(b []byte) error {
+	type Properties MaintenanceWindowTarget[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *MaintenanceWindowTarget) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MaintenanceWindowTarget(*res.Properties)
+		*r = MaintenanceWindowTarget[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

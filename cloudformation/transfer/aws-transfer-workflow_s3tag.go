@@ -8,7 +8,7 @@ import (
 
 // Workflow_S3Tag AWS CloudFormation Resource (AWS::Transfer::Workflow.S3Tag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3tag.html
-type Workflow_S3Tag struct {
+type Workflow_S3Tag[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Workflow_S3Tag struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workflow_S3Tag) AWSCloudFormationType() string {
+func (r *Workflow_S3Tag[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Workflow.S3Tag"
 }

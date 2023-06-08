@@ -8,7 +8,7 @@ import (
 
 // TaskSet_Scale AWS CloudFormation Resource (AWS::ECS::TaskSet.Scale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-scale.html
-type TaskSet_Scale struct {
+type TaskSet_Scale[T any] struct {
 
 	// Unit AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type TaskSet_Scale struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-scale.html#cfn-ecs-taskset-scale-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type TaskSet_Scale struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskSet_Scale) AWSCloudFormationType() string {
+func (r *TaskSet_Scale[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskSet.Scale"
 }

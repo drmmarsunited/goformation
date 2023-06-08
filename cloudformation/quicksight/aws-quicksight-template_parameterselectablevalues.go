@@ -8,12 +8,12 @@ import (
 
 // Template_ParameterSelectableValues AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterSelectableValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterselectablevalues.html
-type Template_ParameterSelectableValues struct {
+type Template_ParameterSelectableValues[T any] struct {
 
 	// LinkToDataSetColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterselectablevalues.html#cfn-quicksight-template-parameterselectablevalues-linktodatasetcolumn
-	LinkToDataSetColumn *Template_ColumnIdentifier `json:"LinkToDataSetColumn,omitempty"`
+	LinkToDataSetColumn *Template_ColumnIdentifier[any] `json:"LinkToDataSetColumn,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_ParameterSelectableValues struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterSelectableValues) AWSCloudFormationType() string {
+func (r *Template_ParameterSelectableValues[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterSelectableValues"
 }

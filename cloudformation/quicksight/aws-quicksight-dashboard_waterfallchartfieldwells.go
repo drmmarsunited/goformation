@@ -8,12 +8,12 @@ import (
 
 // Dashboard_WaterfallChartFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.WaterfallChartFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartfieldwells.html
-type Dashboard_WaterfallChartFieldWells struct {
+type Dashboard_WaterfallChartFieldWells[T any] struct {
 
 	// WaterfallChartAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartfieldwells.html#cfn-quicksight-dashboard-waterfallchartfieldwells-waterfallchartaggregatedfieldwells
-	WaterfallChartAggregatedFieldWells *Dashboard_WaterfallChartAggregatedFieldWells `json:"WaterfallChartAggregatedFieldWells,omitempty"`
+	WaterfallChartAggregatedFieldWells *Dashboard_WaterfallChartAggregatedFieldWells[any] `json:"WaterfallChartAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_WaterfallChartFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_WaterfallChartFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_WaterfallChartFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.WaterfallChartFieldWells"
 }

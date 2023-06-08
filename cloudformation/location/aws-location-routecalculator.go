@@ -11,7 +11,7 @@ import (
 
 // RouteCalculator AWS CloudFormation Resource (AWS::Location::RouteCalculator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html
-type RouteCalculator struct {
+type RouteCalculator[T any] struct {
 
 	// CalculatorName AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type RouteCalculator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RouteCalculator) AWSCloudFormationType() string {
+func (r *RouteCalculator[any]) AWSCloudFormationType() string {
 	return "AWS::Location::RouteCalculator"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RouteCalculator) MarshalJSON() ([]byte, error) {
-	type Properties RouteCalculator
+func (r RouteCalculator[any]) MarshalJSON() ([]byte, error) {
+	type Properties RouteCalculator[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r RouteCalculator) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RouteCalculator) UnmarshalJSON(b []byte) error {
-	type Properties RouteCalculator
+func (r *RouteCalculator[any]) UnmarshalJSON(b []byte) error {
+	type Properties RouteCalculator[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *RouteCalculator) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RouteCalculator(*res.Properties)
+		*r = RouteCalculator[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

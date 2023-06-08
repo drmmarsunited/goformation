@@ -8,7 +8,7 @@ import (
 
 // Bucket_QueueConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.QueueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html
-type Bucket_QueueConfiguration struct {
+type Bucket_QueueConfiguration[T any] struct {
 
 	// Event AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Bucket_QueueConfiguration struct {
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-filter
-	Filter *Bucket_NotificationFilter `json:"Filter,omitempty"`
+	Filter *Bucket_NotificationFilter[any] `json:"Filter,omitempty"`
 
 	// Queue AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Bucket_QueueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_QueueConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_QueueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.QueueConfiguration"
 }

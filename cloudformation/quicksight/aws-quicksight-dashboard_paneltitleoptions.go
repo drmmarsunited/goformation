@@ -8,12 +8,12 @@ import (
 
 // Dashboard_PanelTitleOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PanelTitleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-paneltitleoptions.html
-type Dashboard_PanelTitleOptions struct {
+type Dashboard_PanelTitleOptions[T any] struct {
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-paneltitleoptions.html#cfn-quicksight-dashboard-paneltitleoptions-fontconfiguration
-	FontConfiguration *Dashboard_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Dashboard_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// HorizontalTextAlignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Dashboard_PanelTitleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PanelTitleOptions) AWSCloudFormationType() string {
+func (r *Dashboard_PanelTitleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PanelTitleOptions"
 }

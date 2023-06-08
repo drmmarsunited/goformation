@@ -8,7 +8,7 @@ import (
 
 // EvaluationForm_ScoringStrategy AWS CloudFormation Resource (AWS::Connect::EvaluationForm.ScoringStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-scoringstrategy.html
-type EvaluationForm_ScoringStrategy struct {
+type EvaluationForm_ScoringStrategy[T any] struct {
 
 	// Mode AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type EvaluationForm_ScoringStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm_ScoringStrategy) AWSCloudFormationType() string {
+func (r *EvaluationForm_ScoringStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm.ScoringStrategy"
 }

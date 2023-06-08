@@ -8,17 +8,17 @@ import (
 
 // Template_ParameterDropDownControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterDropDownControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdropdowncontrol.html
-type Template_ParameterDropDownControl struct {
+type Template_ParameterDropDownControl[T any] struct {
 
 	// CascadingControlConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdropdowncontrol.html#cfn-quicksight-template-parameterdropdowncontrol-cascadingcontrolconfiguration
-	CascadingControlConfiguration *Template_CascadingControlConfiguration `json:"CascadingControlConfiguration,omitempty"`
+	CascadingControlConfiguration *Template_CascadingControlConfiguration[any] `json:"CascadingControlConfiguration,omitempty"`
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdropdowncontrol.html#cfn-quicksight-template-parameterdropdowncontrol-displayoptions
-	DisplayOptions *Template_DropDownControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_DropDownControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_ParameterDropDownControl struct {
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterdropdowncontrol.html#cfn-quicksight-template-parameterdropdowncontrol-selectablevalues
-	SelectableValues *Template_ParameterSelectableValues `json:"SelectableValues,omitempty"`
+	SelectableValues *Template_ParameterSelectableValues[any] `json:"SelectableValues,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_ParameterDropDownControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterDropDownControl) AWSCloudFormationType() string {
+func (r *Template_ParameterDropDownControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterDropDownControl"
 }

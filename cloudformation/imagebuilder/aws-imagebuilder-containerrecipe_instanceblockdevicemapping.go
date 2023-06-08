@@ -8,7 +8,7 @@ import (
 
 // ContainerRecipe_InstanceBlockDeviceMapping AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.InstanceBlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html
-type ContainerRecipe_InstanceBlockDeviceMapping struct {
+type ContainerRecipe_InstanceBlockDeviceMapping[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ContainerRecipe_InstanceBlockDeviceMapping struct {
 	// Ebs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html#cfn-imagebuilder-containerrecipe-instanceblockdevicemapping-ebs
-	Ebs *ContainerRecipe_EbsInstanceBlockDeviceSpecification `json:"Ebs,omitempty"`
+	Ebs *ContainerRecipe_EbsInstanceBlockDeviceSpecification[any] `json:"Ebs,omitempty"`
 
 	// NoDevice AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ContainerRecipe_InstanceBlockDeviceMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe_InstanceBlockDeviceMapping) AWSCloudFormationType() string {
+func (r *ContainerRecipe_InstanceBlockDeviceMapping[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe.InstanceBlockDeviceMapping"
 }

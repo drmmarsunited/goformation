@@ -8,42 +8,42 @@ import (
 
 // Config_ConfigData AWS CloudFormation Resource (AWS::GroundStation::Config.ConfigData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html
-type Config_ConfigData struct {
+type Config_ConfigData[T any] struct {
 
 	// AntennaDownlinkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennadownlinkconfig
-	AntennaDownlinkConfig *Config_AntennaDownlinkConfig `json:"AntennaDownlinkConfig,omitempty"`
+	AntennaDownlinkConfig *Config_AntennaDownlinkConfig[any] `json:"AntennaDownlinkConfig,omitempty"`
 
 	// AntennaDownlinkDemodDecodeConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennadownlinkdemoddecodeconfig
-	AntennaDownlinkDemodDecodeConfig *Config_AntennaDownlinkDemodDecodeConfig `json:"AntennaDownlinkDemodDecodeConfig,omitempty"`
+	AntennaDownlinkDemodDecodeConfig *Config_AntennaDownlinkDemodDecodeConfig[any] `json:"AntennaDownlinkDemodDecodeConfig,omitempty"`
 
 	// AntennaUplinkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennauplinkconfig
-	AntennaUplinkConfig *Config_AntennaUplinkConfig `json:"AntennaUplinkConfig,omitempty"`
+	AntennaUplinkConfig *Config_AntennaUplinkConfig[any] `json:"AntennaUplinkConfig,omitempty"`
 
 	// DataflowEndpointConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-dataflowendpointconfig
-	DataflowEndpointConfig *Config_DataflowEndpointConfig `json:"DataflowEndpointConfig,omitempty"`
+	DataflowEndpointConfig *Config_DataflowEndpointConfig[any] `json:"DataflowEndpointConfig,omitempty"`
 
 	// S3RecordingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-s3recordingconfig
-	S3RecordingConfig *Config_S3RecordingConfig `json:"S3RecordingConfig,omitempty"`
+	S3RecordingConfig *Config_S3RecordingConfig[any] `json:"S3RecordingConfig,omitempty"`
 
 	// TrackingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-trackingconfig
-	TrackingConfig *Config_TrackingConfig `json:"TrackingConfig,omitempty"`
+	TrackingConfig *Config_TrackingConfig[any] `json:"TrackingConfig,omitempty"`
 
 	// UplinkEchoConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-uplinkechoconfig
-	UplinkEchoConfig *Config_UplinkEchoConfig `json:"UplinkEchoConfig,omitempty"`
+	UplinkEchoConfig *Config_UplinkEchoConfig[any] `json:"UplinkEchoConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Config_ConfigData struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_ConfigData) AWSCloudFormationType() string {
+func (r *Config_ConfigData[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.ConfigData"
 }

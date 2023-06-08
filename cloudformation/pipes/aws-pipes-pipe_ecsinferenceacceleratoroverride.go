@@ -8,7 +8,7 @@ import (
 
 // Pipe_EcsInferenceAcceleratorOverride AWS CloudFormation Resource (AWS::Pipes::Pipe.EcsInferenceAcceleratorOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsinferenceacceleratoroverride.html
-type Pipe_EcsInferenceAcceleratorOverride struct {
+type Pipe_EcsInferenceAcceleratorOverride[T any] struct {
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Pipe_EcsInferenceAcceleratorOverride struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe_EcsInferenceAcceleratorOverride) AWSCloudFormationType() string {
+func (r *Pipe_EcsInferenceAcceleratorOverride[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe.EcsInferenceAcceleratorOverride"
 }

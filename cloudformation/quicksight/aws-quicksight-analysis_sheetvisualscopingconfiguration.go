@@ -8,7 +8,7 @@ import (
 
 // Analysis_SheetVisualScopingConfiguration AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetVisualScopingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetvisualscopingconfiguration.html
-type Analysis_SheetVisualScopingConfiguration struct {
+type Analysis_SheetVisualScopingConfiguration[T any] struct {
 
 	// Scope AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Analysis_SheetVisualScopingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetVisualScopingConfiguration) AWSCloudFormationType() string {
+func (r *Analysis_SheetVisualScopingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetVisualScopingConfiguration"
 }

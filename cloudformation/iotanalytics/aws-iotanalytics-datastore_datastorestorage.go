@@ -8,17 +8,17 @@ import (
 
 // Datastore_DatastoreStorage AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.DatastoreStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html
-type Datastore_DatastoreStorage struct {
+type Datastore_DatastoreStorage[T any] struct {
 
 	// CustomerManagedS3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3
-	CustomerManagedS3 *Datastore_CustomerManagedS3 `json:"CustomerManagedS3,omitempty"`
+	CustomerManagedS3 *Datastore_CustomerManagedS3[any] `json:"CustomerManagedS3,omitempty"`
 
 	// IotSiteWiseMultiLayerStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage
-	IotSiteWiseMultiLayerStorage *Datastore_IotSiteWiseMultiLayerStorage `json:"IotSiteWiseMultiLayerStorage,omitempty"`
+	IotSiteWiseMultiLayerStorage *Datastore_IotSiteWiseMultiLayerStorage[any] `json:"IotSiteWiseMultiLayerStorage,omitempty"`
 
 	// ServiceManagedS3 AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Datastore_DatastoreStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Datastore_DatastoreStorage) AWSCloudFormationType() string {
+func (r *Datastore_DatastoreStorage[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Datastore.DatastoreStorage"
 }

@@ -8,7 +8,7 @@ import (
 
 // Endpoint_PostgreSqlSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.PostgreSqlSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html
-type Endpoint_PostgreSqlSettings struct {
+type Endpoint_PostgreSqlSettings[T any] struct {
 
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Endpoint_PostgreSqlSettings struct {
 	// CaptureDdls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-captureddls
-	CaptureDdls *bool `json:"CaptureDdls,omitempty"`
+	CaptureDdls *T `json:"CaptureDdls,omitempty"`
 
 	// DdlArtifactsSchema AWS CloudFormation Property
 	// Required: false
@@ -28,22 +28,22 @@ type Endpoint_PostgreSqlSettings struct {
 	// ExecuteTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-executetimeout
-	ExecuteTimeout *int `json:"ExecuteTimeout,omitempty"`
+	ExecuteTimeout *T `json:"ExecuteTimeout,omitempty"`
 
 	// FailTasksOnLobTruncation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-failtasksonlobtruncation
-	FailTasksOnLobTruncation *bool `json:"FailTasksOnLobTruncation,omitempty"`
+	FailTasksOnLobTruncation *T `json:"FailTasksOnLobTruncation,omitempty"`
 
 	// HeartbeatEnable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-heartbeatenable
-	HeartbeatEnable *bool `json:"HeartbeatEnable,omitempty"`
+	HeartbeatEnable *T `json:"HeartbeatEnable,omitempty"`
 
 	// HeartbeatFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-heartbeatfrequency
-	HeartbeatFrequency *int `json:"HeartbeatFrequency,omitempty"`
+	HeartbeatFrequency *T `json:"HeartbeatFrequency,omitempty"`
 
 	// HeartbeatSchema AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Endpoint_PostgreSqlSettings struct {
 	// MapBooleanAsBoolean AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-mapbooleanasboolean
-	MapBooleanAsBoolean *bool `json:"MapBooleanAsBoolean,omitempty"`
+	MapBooleanAsBoolean *T `json:"MapBooleanAsBoolean,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *T `json:"MaxFileSize,omitempty"`
 
 	// PluginName AWS CloudFormation Property
 	// Required: false
@@ -97,6 +97,6 @@ type Endpoint_PostgreSqlSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_PostgreSqlSettings) AWSCloudFormationType() string {
+func (r *Endpoint_PostgreSqlSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.PostgreSqlSettings"
 }

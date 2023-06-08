@@ -8,7 +8,7 @@ import (
 
 // GatewayRoute_GatewayRouteHostnameMatch AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteHostnameMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamematch.html
-type GatewayRoute_GatewayRouteHostnameMatch struct {
+type GatewayRoute_GatewayRouteHostnameMatch[T any] struct {
 
 	// Exact AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GatewayRoute_GatewayRouteHostnameMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteHostnameMatch) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteHostnameMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameMatch"
 }

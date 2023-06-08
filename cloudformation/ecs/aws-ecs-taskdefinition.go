@@ -12,12 +12,12 @@ import (
 
 // TaskDefinition AWS CloudFormation Resource (AWS::ECS::TaskDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
-type TaskDefinition struct {
+type TaskDefinition[T any] struct {
 
 	// ContainerDefinitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinitions
-	ContainerDefinitions []TaskDefinition_ContainerDefinition `json:"ContainerDefinitions,omitempty"`
+	ContainerDefinitions []TaskDefinition_ContainerDefinition[any] `json:"ContainerDefinitions,omitempty"`
 
 	// Cpu AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type TaskDefinition struct {
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-ephemeralstorage
-	EphemeralStorage *TaskDefinition_EphemeralStorage `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *TaskDefinition_EphemeralStorage[any] `json:"EphemeralStorage,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type TaskDefinition struct {
 	// InferenceAccelerators AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators
-	InferenceAccelerators []TaskDefinition_InferenceAccelerator `json:"InferenceAccelerators,omitempty"`
+	InferenceAccelerators []TaskDefinition_InferenceAccelerator[any] `json:"InferenceAccelerators,omitempty"`
 
 	// IpcMode AWS CloudFormation Property
 	// Required: false
@@ -67,12 +67,12 @@ type TaskDefinition struct {
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints
-	PlacementConstraints []TaskDefinition_TaskDefinitionPlacementConstraint `json:"PlacementConstraints,omitempty"`
+	PlacementConstraints []TaskDefinition_TaskDefinitionPlacementConstraint[any] `json:"PlacementConstraints,omitempty"`
 
 	// ProxyConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-proxyconfiguration
-	ProxyConfiguration *TaskDefinition_ProxyConfiguration `json:"ProxyConfiguration,omitempty"`
+	ProxyConfiguration *TaskDefinition_ProxyConfiguration[any] `json:"ProxyConfiguration,omitempty"`
 
 	// RequiresCompatibilities AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type TaskDefinition struct {
 	// RuntimePlatform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-runtimeplatform
-	RuntimePlatform *TaskDefinition_RuntimePlatform `json:"RuntimePlatform,omitempty"`
+	RuntimePlatform *TaskDefinition_RuntimePlatform[any] `json:"RuntimePlatform,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type TaskDefinition struct {
 	// Volumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes
-	Volumes []TaskDefinition_Volume `json:"Volumes,omitempty"`
+	Volumes []TaskDefinition_Volume[any] `json:"Volumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -116,14 +116,15 @@ type TaskDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition) AWSCloudFormationType() string {
+func (r *TaskDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TaskDefinition) MarshalJSON() ([]byte, error) {
-	type Properties TaskDefinition
+func (r TaskDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties TaskDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -145,8 +146,9 @@ func (r TaskDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TaskDefinition) UnmarshalJSON(b []byte) error {
-	type Properties TaskDefinition
+func (r *TaskDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties TaskDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -166,7 +168,7 @@ func (r *TaskDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TaskDefinition(*res.Properties)
+		*r = TaskDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // AccessPoint_RootDirectory AWS CloudFormation Resource (AWS::EFS::AccessPoint.RootDirectory)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-rootdirectory.html
-type AccessPoint_RootDirectory struct {
+type AccessPoint_RootDirectory[T any] struct {
 
 	// CreationInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-rootdirectory.html#cfn-efs-accesspoint-rootdirectory-creationinfo
-	CreationInfo *AccessPoint_CreationInfo `json:"CreationInfo,omitempty"`
+	CreationInfo *AccessPoint_CreationInfo[any] `json:"CreationInfo,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AccessPoint_RootDirectory struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AccessPoint_RootDirectory) AWSCloudFormationType() string {
+func (r *AccessPoint_RootDirectory[any]) AWSCloudFormationType() string {
 	return "AWS::EFS::AccessPoint.RootDirectory"
 }

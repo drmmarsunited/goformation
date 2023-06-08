@@ -8,22 +8,22 @@ import (
 
 // GatewayRoute_GrpcGatewayRouteMatch AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html
-type GatewayRoute_GrpcGatewayRouteMatch struct {
+type GatewayRoute_GrpcGatewayRouteMatch[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-hostname
-	Hostname *GatewayRoute_GatewayRouteHostnameMatch `json:"Hostname,omitempty"`
+	Hostname *GatewayRoute_GatewayRouteHostnameMatch[any] `json:"Hostname,omitempty"`
 
 	// Metadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-metadata
-	Metadata []GatewayRoute_GrpcGatewayRouteMetadata `json:"Metadata,omitempty"`
+	Metadata []GatewayRoute_GrpcGatewayRouteMetadata[any] `json:"Metadata,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type GatewayRoute_GrpcGatewayRouteMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GrpcGatewayRouteMatch) AWSCloudFormationType() string {
+func (r *GatewayRoute_GrpcGatewayRouteMatch[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMatch"
 }

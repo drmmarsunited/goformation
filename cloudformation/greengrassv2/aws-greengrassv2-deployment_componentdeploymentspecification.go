@@ -8,7 +8,7 @@ import (
 
 // Deployment_ComponentDeploymentSpecification AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.ComponentDeploymentSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentdeploymentspecification.html
-type Deployment_ComponentDeploymentSpecification struct {
+type Deployment_ComponentDeploymentSpecification[T any] struct {
 
 	// ComponentVersion AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Deployment_ComponentDeploymentSpecification struct {
 	// ConfigurationUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentdeploymentspecification.html#cfn-greengrassv2-deployment-componentdeploymentspecification-configurationupdate
-	ConfigurationUpdate *Deployment_ComponentConfigurationUpdate `json:"ConfigurationUpdate,omitempty"`
+	ConfigurationUpdate *Deployment_ComponentConfigurationUpdate[any] `json:"ConfigurationUpdate,omitempty"`
 
 	// RunWith AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentdeploymentspecification.html#cfn-greengrassv2-deployment-componentdeploymentspecification-runwith
-	RunWith *Deployment_ComponentRunWith `json:"RunWith,omitempty"`
+	RunWith *Deployment_ComponentRunWith[any] `json:"RunWith,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Deployment_ComponentDeploymentSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_ComponentDeploymentSpecification) AWSCloudFormationType() string {
+func (r *Deployment_ComponentDeploymentSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.ComponentDeploymentSpecification"
 }

@@ -8,12 +8,12 @@ import (
 
 // Schedule_SageMakerPipelineParameters AWS CloudFormation Resource (AWS::Scheduler::Schedule.SageMakerPipelineParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-sagemakerpipelineparameters.html
-type Schedule_SageMakerPipelineParameters struct {
+type Schedule_SageMakerPipelineParameters[T any] struct {
 
 	// PipelineParameterList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-sagemakerpipelineparameters.html#cfn-scheduler-schedule-sagemakerpipelineparameters-pipelineparameterlist
-	PipelineParameterList []Schedule_SageMakerPipelineParameter `json:"PipelineParameterList,omitempty"`
+	PipelineParameterList []Schedule_SageMakerPipelineParameter[any] `json:"PipelineParameterList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Schedule_SageMakerPipelineParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_SageMakerPipelineParameters) AWSCloudFormationType() string {
+func (r *Schedule_SageMakerPipelineParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.SageMakerPipelineParameters"
 }

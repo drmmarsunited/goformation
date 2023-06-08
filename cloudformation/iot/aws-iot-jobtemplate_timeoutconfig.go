@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_TimeoutConfig AWS CloudFormation Resource (AWS::IoT::JobTemplate.TimeoutConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-timeoutconfig.html
-type JobTemplate_TimeoutConfig struct {
+type JobTemplate_TimeoutConfig[T any] struct {
 
 	// InProgressTimeoutInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-timeoutconfig.html#cfn-iot-jobtemplate-timeoutconfig-inprogresstimeoutinminutes
-	InProgressTimeoutInMinutes int `json:"InProgressTimeoutInMinutes"`
+	InProgressTimeoutInMinutes T `json:"InProgressTimeoutInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobTemplate_TimeoutConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_TimeoutConfig) AWSCloudFormationType() string {
+func (r *JobTemplate_TimeoutConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.TimeoutConfig"
 }

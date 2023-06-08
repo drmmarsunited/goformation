@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_PresignedUrlConfig AWS CloudFormation Resource (AWS::IoT::JobTemplate.PresignedUrlConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html
-type JobTemplate_PresignedUrlConfig struct {
+type JobTemplate_PresignedUrlConfig[T any] struct {
 
 	// ExpiresInSec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html#cfn-iot-jobtemplate-presignedurlconfig-expiresinsec
-	ExpiresInSec *int `json:"ExpiresInSec,omitempty"`
+	ExpiresInSec *T `json:"ExpiresInSec,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type JobTemplate_PresignedUrlConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_PresignedUrlConfig) AWSCloudFormationType() string {
+func (r *JobTemplate_PresignedUrlConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.PresignedUrlConfig"
 }

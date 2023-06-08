@@ -8,17 +8,17 @@ import (
 
 // Bot_AudioSpecification AWS CloudFormation Resource (AWS::Lex::Bot.AudioSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html
-type Bot_AudioSpecification struct {
+type Bot_AudioSpecification[T any] struct {
 
 	// EndTimeoutMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-endtimeoutms
-	EndTimeoutMs int `json:"EndTimeoutMs"`
+	EndTimeoutMs T `json:"EndTimeoutMs"`
 
 	// MaxLengthMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-maxlengthms
-	MaxLengthMs int `json:"MaxLengthMs"`
+	MaxLengthMs T `json:"MaxLengthMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bot_AudioSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_AudioSpecification) AWSCloudFormationType() string {
+func (r *Bot_AudioSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.AudioSpecification"
 }

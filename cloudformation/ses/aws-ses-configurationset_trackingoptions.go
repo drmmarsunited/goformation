@@ -8,7 +8,7 @@ import (
 
 // ConfigurationSet_TrackingOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.TrackingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-trackingoptions.html
-type ConfigurationSet_TrackingOptions struct {
+type ConfigurationSet_TrackingOptions[T any] struct {
 
 	// CustomRedirectDomain AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ConfigurationSet_TrackingOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_TrackingOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_TrackingOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.TrackingOptions"
 }

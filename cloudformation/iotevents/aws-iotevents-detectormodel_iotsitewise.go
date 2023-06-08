@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_IotSiteWise AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.IotSiteWise)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html
-type DetectorModel_IotSiteWise struct {
+type DetectorModel_IotSiteWise[T any] struct {
 
 	// AssetId AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DetectorModel_IotSiteWise struct {
 	// PropertyValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyvalue
-	PropertyValue *DetectorModel_AssetPropertyValue `json:"PropertyValue"`
+	PropertyValue *DetectorModel_AssetPropertyValue[any] `json:"PropertyValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type DetectorModel_IotSiteWise struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_IotSiteWise) AWSCloudFormationType() string {
+func (r *DetectorModel_IotSiteWise[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.IotSiteWise"
 }

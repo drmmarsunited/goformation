@@ -8,32 +8,32 @@ import (
 
 // ResourceDefinitionVersion_ResourceDataContainer AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html
-type ResourceDefinitionVersion_ResourceDataContainer struct {
+type ResourceDefinitionVersion_ResourceDataContainer[T any] struct {
 
 	// LocalDeviceResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata
-	LocalDeviceResourceData *ResourceDefinitionVersion_LocalDeviceResourceData `json:"LocalDeviceResourceData,omitempty"`
+	LocalDeviceResourceData *ResourceDefinitionVersion_LocalDeviceResourceData[any] `json:"LocalDeviceResourceData,omitempty"`
 
 	// LocalVolumeResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata
-	LocalVolumeResourceData *ResourceDefinitionVersion_LocalVolumeResourceData `json:"LocalVolumeResourceData,omitempty"`
+	LocalVolumeResourceData *ResourceDefinitionVersion_LocalVolumeResourceData[any] `json:"LocalVolumeResourceData,omitempty"`
 
 	// S3MachineLearningModelResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata
-	S3MachineLearningModelResourceData *ResourceDefinitionVersion_S3MachineLearningModelResourceData `json:"S3MachineLearningModelResourceData,omitempty"`
+	S3MachineLearningModelResourceData *ResourceDefinitionVersion_S3MachineLearningModelResourceData[any] `json:"S3MachineLearningModelResourceData,omitempty"`
 
 	// SageMakerMachineLearningModelResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
-	SageMakerMachineLearningModelResourceData *ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData `json:"SageMakerMachineLearningModelResourceData,omitempty"`
+	SageMakerMachineLearningModelResourceData *ResourceDefinitionVersion_SageMakerMachineLearningModelResourceData[any] `json:"SageMakerMachineLearningModelResourceData,omitempty"`
 
 	// SecretsManagerSecretResourceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata
-	SecretsManagerSecretResourceData *ResourceDefinitionVersion_SecretsManagerSecretResourceData `json:"SecretsManagerSecretResourceData,omitempty"`
+	SecretsManagerSecretResourceData *ResourceDefinitionVersion_SecretsManagerSecretResourceData[any] `json:"SecretsManagerSecretResourceData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ResourceDefinitionVersion_ResourceDataContainer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinitionVersion_ResourceDataContainer) AWSCloudFormationType() string {
+func (r *ResourceDefinitionVersion_ResourceDataContainer[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer"
 }

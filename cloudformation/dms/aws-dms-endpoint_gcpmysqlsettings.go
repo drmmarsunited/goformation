@@ -8,7 +8,7 @@ import (
 
 // Endpoint_GcpMySQLSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.GcpMySQLSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html
-type Endpoint_GcpMySQLSettings struct {
+type Endpoint_GcpMySQLSettings[T any] struct {
 
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Endpoint_GcpMySQLSettings struct {
 	// CleanSourceMetadataOnMismatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-cleansourcemetadataonmismatch
-	CleanSourceMetadataOnMismatch *bool `json:"CleanSourceMetadataOnMismatch,omitempty"`
+	CleanSourceMetadataOnMismatch *T `json:"CleanSourceMetadataOnMismatch,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type Endpoint_GcpMySQLSettings struct {
 	// EventsPollInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-eventspollinterval
-	EventsPollInterval *int `json:"EventsPollInterval,omitempty"`
+	EventsPollInterval *T `json:"EventsPollInterval,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *T `json:"MaxFileSize,omitempty"`
 
 	// ParallelLoadThreads AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-parallelloadthreads
-	ParallelLoadThreads *int `json:"ParallelLoadThreads,omitempty"`
+	ParallelLoadThreads *T `json:"ParallelLoadThreads,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Endpoint_GcpMySQLSettings struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -92,6 +92,6 @@ type Endpoint_GcpMySQLSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_GcpMySQLSettings) AWSCloudFormationType() string {
+func (r *Endpoint_GcpMySQLSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.GcpMySQLSettings"
 }

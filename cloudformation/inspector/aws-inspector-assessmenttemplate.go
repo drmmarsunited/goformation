@@ -12,7 +12,7 @@ import (
 
 // AssessmentTemplate AWS CloudFormation Resource (AWS::Inspector::AssessmentTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html
-type AssessmentTemplate struct {
+type AssessmentTemplate[T any] struct {
 
 	// AssessmentTargetArn AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type AssessmentTemplate struct {
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-durationinseconds
-	DurationInSeconds int `json:"DurationInSeconds"`
+	DurationInSeconds T `json:"DurationInSeconds"`
 
 	// RulesPackageArns AWS CloudFormation Property
 	// Required: true
@@ -56,14 +56,15 @@ type AssessmentTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssessmentTemplate) AWSCloudFormationType() string {
+func (r *AssessmentTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Inspector::AssessmentTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AssessmentTemplate) MarshalJSON() ([]byte, error) {
-	type Properties AssessmentTemplate
+func (r AssessmentTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties AssessmentTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r AssessmentTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AssessmentTemplate) UnmarshalJSON(b []byte) error {
-	type Properties AssessmentTemplate
+func (r *AssessmentTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties AssessmentTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *AssessmentTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AssessmentTemplate(*res.Properties)
+		*r = AssessmentTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

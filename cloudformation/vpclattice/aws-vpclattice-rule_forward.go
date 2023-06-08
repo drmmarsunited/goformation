@@ -8,12 +8,12 @@ import (
 
 // Rule_Forward AWS CloudFormation Resource (AWS::VpcLattice::Rule.Forward)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-forward.html
-type Rule_Forward struct {
+type Rule_Forward[T any] struct {
 
 	// TargetGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-forward.html#cfn-vpclattice-rule-forward-targetgroups
-	TargetGroups []Rule_WeightedTargetGroup `json:"TargetGroups"`
+	TargetGroups []Rule_WeightedTargetGroup[any] `json:"TargetGroups"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_Forward struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Forward) AWSCloudFormationType() string {
+func (r *Rule_Forward[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.Forward"
 }

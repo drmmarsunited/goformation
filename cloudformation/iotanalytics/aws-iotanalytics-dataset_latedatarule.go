@@ -8,12 +8,12 @@ import (
 
 // Dataset_LateDataRule AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.LateDataRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html
-type Dataset_LateDataRule struct {
+type Dataset_LateDataRule[T any] struct {
 
 	// RuleConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-ruleconfiguration
-	RuleConfiguration *Dataset_LateDataRuleConfiguration `json:"RuleConfiguration"`
+	RuleConfiguration *Dataset_LateDataRuleConfiguration[any] `json:"RuleConfiguration"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dataset_LateDataRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_LateDataRule) AWSCloudFormationType() string {
+func (r *Dataset_LateDataRule[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.LateDataRule"
 }

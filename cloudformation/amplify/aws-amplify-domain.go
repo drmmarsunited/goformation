@@ -11,7 +11,7 @@ import (
 
 // Domain AWS CloudFormation Resource (AWS::Amplify::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html
-type Domain struct {
+type Domain[T any] struct {
 
 	// AppId AWS CloudFormation Property
 	// Required: true
@@ -36,12 +36,12 @@ type Domain struct {
 	// EnableAutoSubDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-enableautosubdomain
-	EnableAutoSubDomain *bool `json:"EnableAutoSubDomain,omitempty"`
+	EnableAutoSubDomain *T `json:"EnableAutoSubDomain,omitempty"`
 
 	// SubDomainSettings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-subdomainsettings
-	SubDomainSettings []Domain_SubDomainSetting `json:"SubDomainSettings"`
+	SubDomainSettings []Domain_SubDomainSetting[any] `json:"SubDomainSettings"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type Domain struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain) AWSCloudFormationType() string {
+func (r *Domain[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::Domain"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Domain) MarshalJSON() ([]byte, error) {
-	type Properties Domain
+func (r Domain[any]) MarshalJSON() ([]byte, error) {
+	type Properties Domain[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r Domain) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Domain) UnmarshalJSON(b []byte) error {
-	type Properties Domain
+func (r *Domain[any]) UnmarshalJSON(b []byte) error {
+	type Properties Domain[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *Domain) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Domain(*res.Properties)
+		*r = Domain[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,7 +12,7 @@ import (
 
 // Extension AWS CloudFormation Resource (AWS::AppConfig::Extension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html
-type Extension struct {
+type Extension[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Extension struct {
 	// LatestVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-latestversionnumber
-	LatestVersionNumber *int `json:"LatestVersionNumber,omitempty"`
+	LatestVersionNumber *T `json:"LatestVersionNumber,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Extension struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-parameters
-	Parameters map[string]Extension_Parameter `json:"Parameters,omitempty"`
+	Parameters map[string]Extension_Parameter[any] `json:"Parameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type Extension struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Extension) AWSCloudFormationType() string {
+func (r *Extension[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Extension"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Extension) MarshalJSON() ([]byte, error) {
-	type Properties Extension
+func (r Extension[any]) MarshalJSON() ([]byte, error) {
+	type Properties Extension[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r Extension) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Extension) UnmarshalJSON(b []byte) error {
-	type Properties Extension
+func (r *Extension[any]) UnmarshalJSON(b []byte) error {
+	type Properties Extension[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *Extension) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Extension(*res.Properties)
+		*r = Extension[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

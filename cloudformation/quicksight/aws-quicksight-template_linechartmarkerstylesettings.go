@@ -8,7 +8,7 @@ import (
 
 // Template_LineChartMarkerStyleSettings AWS CloudFormation Resource (AWS::QuickSight::Template.LineChartMarkerStyleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-linechartmarkerstylesettings.html
-type Template_LineChartMarkerStyleSettings struct {
+type Template_LineChartMarkerStyleSettings[T any] struct {
 
 	// MarkerColor AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Template_LineChartMarkerStyleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LineChartMarkerStyleSettings) AWSCloudFormationType() string {
+func (r *Template_LineChartMarkerStyleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LineChartMarkerStyleSettings"
 }

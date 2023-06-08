@@ -12,12 +12,12 @@ import (
 
 // StorageLens AWS CloudFormation Resource (AWS::S3::StorageLens)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-storagelens.html
-type StorageLens struct {
+type StorageLens[T any] struct {
 
 	// StorageLensConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-storagelens.html#cfn-s3-storagelens-storagelensconfiguration
-	StorageLensConfiguration *StorageLens_StorageLensConfiguration `json:"StorageLensConfiguration"`
+	StorageLensConfiguration *StorageLens_StorageLensConfiguration[any] `json:"StorageLensConfiguration"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type StorageLens struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StorageLens) AWSCloudFormationType() string {
+func (r *StorageLens[any]) AWSCloudFormationType() string {
 	return "AWS::S3::StorageLens"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r StorageLens) MarshalJSON() ([]byte, error) {
-	type Properties StorageLens
+func (r StorageLens[any]) MarshalJSON() ([]byte, error) {
+	type Properties StorageLens[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r StorageLens) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *StorageLens) UnmarshalJSON(b []byte) error {
-	type Properties StorageLens
+func (r *StorageLens[any]) UnmarshalJSON(b []byte) error {
+	type Properties StorageLens[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *StorageLens) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = StorageLens(*res.Properties)
+		*r = StorageLens[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

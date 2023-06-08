@@ -8,12 +8,12 @@ import (
 
 // Application_FlinkRunConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.FlinkRunConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkrunconfiguration.html
-type Application_FlinkRunConfiguration struct {
+type Application_FlinkRunConfiguration[T any] struct {
 
 	// AllowNonRestoredState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkrunconfiguration.html#cfn-kinesisanalyticsv2-application-flinkrunconfiguration-allownonrestoredstate
-	AllowNonRestoredState *bool `json:"AllowNonRestoredState,omitempty"`
+	AllowNonRestoredState *T `json:"AllowNonRestoredState,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Application_FlinkRunConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_FlinkRunConfiguration) AWSCloudFormationType() string {
+func (r *Application_FlinkRunConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.FlinkRunConfiguration"
 }

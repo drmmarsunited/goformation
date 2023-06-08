@@ -8,7 +8,7 @@ import (
 
 // Template_CategoryDrillDownFilter AWS CloudFormation Resource (AWS::QuickSight::Template.CategoryDrillDownFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categorydrilldownfilter.html
-type Template_CategoryDrillDownFilter struct {
+type Template_CategoryDrillDownFilter[T any] struct {
 
 	// CategoryValues AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Template_CategoryDrillDownFilter struct {
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-categorydrilldownfilter.html#cfn-quicksight-template-categorydrilldownfilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_CategoryDrillDownFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CategoryDrillDownFilter) AWSCloudFormationType() string {
+func (r *Template_CategoryDrillDownFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CategoryDrillDownFilter"
 }

@@ -8,7 +8,7 @@ import (
 
 // ReplicationGroup_NodeGroupConfiguration AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html
-type ReplicationGroup_NodeGroupConfiguration struct {
+type ReplicationGroup_NodeGroupConfiguration[T any] struct {
 
 	// NodeGroupId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ReplicationGroup_NodeGroupConfiguration struct {
 	// ReplicaCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-replicacount
-	ReplicaCount *int `json:"ReplicaCount,omitempty"`
+	ReplicaCount *T `json:"ReplicaCount,omitempty"`
 
 	// Slots AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ReplicationGroup_NodeGroupConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationGroup_NodeGroupConfiguration) AWSCloudFormationType() string {
+func (r *ReplicationGroup_NodeGroupConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration"
 }

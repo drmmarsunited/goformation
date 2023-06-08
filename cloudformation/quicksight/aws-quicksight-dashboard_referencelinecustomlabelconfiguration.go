@@ -8,7 +8,7 @@ import (
 
 // Dashboard_ReferenceLineCustomLabelConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLineCustomLabelConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinecustomlabelconfiguration.html
-type Dashboard_ReferenceLineCustomLabelConfiguration struct {
+type Dashboard_ReferenceLineCustomLabelConfiguration[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dashboard_ReferenceLineCustomLabelConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLineCustomLabelConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLineCustomLabelConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLineCustomLabelConfiguration"
 }

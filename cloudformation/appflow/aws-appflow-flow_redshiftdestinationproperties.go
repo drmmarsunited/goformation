@@ -8,7 +8,7 @@ import (
 
 // Flow_RedshiftDestinationProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.RedshiftDestinationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html
-type Flow_RedshiftDestinationProperties struct {
+type Flow_RedshiftDestinationProperties[T any] struct {
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Flow_RedshiftDestinationProperties struct {
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-errorhandlingconfig
-	ErrorHandlingConfig *Flow_ErrorHandlingConfig `json:"ErrorHandlingConfig,omitempty"`
+	ErrorHandlingConfig *Flow_ErrorHandlingConfig[any] `json:"ErrorHandlingConfig,omitempty"`
 
 	// IntermediateBucketName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Flow_RedshiftDestinationProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_RedshiftDestinationProperties) AWSCloudFormationType() string {
+func (r *Flow_RedshiftDestinationProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.RedshiftDestinationProperties"
 }

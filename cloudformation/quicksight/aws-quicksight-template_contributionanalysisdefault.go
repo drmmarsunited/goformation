@@ -8,12 +8,12 @@ import (
 
 // Template_ContributionAnalysisDefault AWS CloudFormation Resource (AWS::QuickSight::Template.ContributionAnalysisDefault)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-contributionanalysisdefault.html
-type Template_ContributionAnalysisDefault struct {
+type Template_ContributionAnalysisDefault[T any] struct {
 
 	// ContributorDimensions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-contributionanalysisdefault.html#cfn-quicksight-template-contributionanalysisdefault-contributordimensions
-	ContributorDimensions []Template_ColumnIdentifier `json:"ContributorDimensions"`
+	ContributorDimensions []Template_ColumnIdentifier[any] `json:"ContributorDimensions"`
 
 	// MeasureFieldId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Template_ContributionAnalysisDefault struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ContributionAnalysisDefault) AWSCloudFormationType() string {
+func (r *Template_ContributionAnalysisDefault[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ContributionAnalysisDefault"
 }

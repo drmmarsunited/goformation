@@ -8,7 +8,7 @@ import (
 
 // Studio_StudioEncryptionConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::Studio.StudioEncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studio-studioencryptionconfiguration.html
-type Studio_StudioEncryptionConfiguration struct {
+type Studio_StudioEncryptionConfiguration[T any] struct {
 
 	// KeyArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Studio_StudioEncryptionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Studio_StudioEncryptionConfiguration) AWSCloudFormationType() string {
+func (r *Studio_StudioEncryptionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::Studio.StudioEncryptionConfiguration"
 }

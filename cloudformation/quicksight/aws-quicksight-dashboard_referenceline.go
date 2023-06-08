@@ -8,17 +8,17 @@ import (
 
 // Dashboard_ReferenceLine AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ReferenceLine)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referenceline.html
-type Dashboard_ReferenceLine struct {
+type Dashboard_ReferenceLine[T any] struct {
 
 	// DataConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referenceline.html#cfn-quicksight-dashboard-referenceline-dataconfiguration
-	DataConfiguration *Dashboard_ReferenceLineDataConfiguration `json:"DataConfiguration"`
+	DataConfiguration *Dashboard_ReferenceLineDataConfiguration[any] `json:"DataConfiguration"`
 
 	// LabelConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referenceline.html#cfn-quicksight-dashboard-referenceline-labelconfiguration
-	LabelConfiguration *Dashboard_ReferenceLineLabelConfiguration `json:"LabelConfiguration,omitempty"`
+	LabelConfiguration *Dashboard_ReferenceLineLabelConfiguration[any] `json:"LabelConfiguration,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_ReferenceLine struct {
 	// StyleConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referenceline.html#cfn-quicksight-dashboard-referenceline-styleconfiguration
-	StyleConfiguration *Dashboard_ReferenceLineStyleConfiguration `json:"StyleConfiguration,omitempty"`
+	StyleConfiguration *Dashboard_ReferenceLineStyleConfiguration[any] `json:"StyleConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_ReferenceLine struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ReferenceLine) AWSCloudFormationType() string {
+func (r *Dashboard_ReferenceLine[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ReferenceLine"
 }

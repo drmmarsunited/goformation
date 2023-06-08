@@ -12,7 +12,7 @@ import (
 
 // Secret AWS CloudFormation Resource (AWS::SecretsManager::Secret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html
-type Secret struct {
+type Secret[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type Secret struct {
 	// GenerateSecretString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-generatesecretstring
-	GenerateSecretString *Secret_GenerateSecretString `json:"GenerateSecretString,omitempty"`
+	GenerateSecretString *Secret_GenerateSecretString[any] `json:"GenerateSecretString,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Secret struct {
 	// ReplicaRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-replicaregions
-	ReplicaRegions []Secret_ReplicaRegion `json:"ReplicaRegions,omitempty"`
+	ReplicaRegions []Secret_ReplicaRegion[any] `json:"ReplicaRegions,omitempty"`
 
 	// SecretString AWS CloudFormation Property
 	// Required: false
@@ -66,14 +66,15 @@ type Secret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Secret) AWSCloudFormationType() string {
+func (r *Secret[any]) AWSCloudFormationType() string {
 	return "AWS::SecretsManager::Secret"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Secret) MarshalJSON() ([]byte, error) {
-	type Properties Secret
+func (r Secret[any]) MarshalJSON() ([]byte, error) {
+	type Properties Secret[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Secret) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Secret) UnmarshalJSON(b []byte) error {
-	type Properties Secret
+func (r *Secret[any]) UnmarshalJSON(b []byte) error {
+	type Properties Secret[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Secret) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Secret(*res.Properties)
+		*r = Secret[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

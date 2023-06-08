@@ -8,7 +8,7 @@ import (
 
 // Script_S3Location AWS CloudFormation Resource (AWS::GameLift::Script.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html
-type Script_S3Location struct {
+type Script_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Script_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Script_S3Location) AWSCloudFormationType() string {
+func (r *Script_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Script.S3Location"
 }

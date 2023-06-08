@@ -8,7 +8,7 @@ import (
 
 // Fleet_CertificateConfiguration AWS CloudFormation Resource (AWS::GameLift::Fleet.CertificateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-certificateconfiguration.html
-type Fleet_CertificateConfiguration struct {
+type Fleet_CertificateConfiguration[T any] struct {
 
 	// CertificateType AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Fleet_CertificateConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_CertificateConfiguration) AWSCloudFormationType() string {
+func (r *Fleet_CertificateConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.CertificateConfiguration"
 }

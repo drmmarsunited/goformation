@@ -11,12 +11,12 @@ import (
 
 // Alarm AWS CloudFormation Resource (AWS::CloudWatch::Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html
-type Alarm struct {
+type Alarm[T any] struct {
 
 	// ActionsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarms-actionsenabled
-	ActionsEnabled *bool `json:"ActionsEnabled,omitempty"`
+	ActionsEnabled *T `json:"ActionsEnabled,omitempty"`
 
 	// AlarmActions AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type Alarm struct {
 	// DatapointsToAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-datapointstoalarm
-	DatapointsToAlarm *int `json:"DatapointsToAlarm,omitempty"`
+	DatapointsToAlarm *T `json:"DatapointsToAlarm,omitempty"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarms-dimension
-	Dimensions []Alarm_Dimension `json:"Dimensions,omitempty"`
+	Dimensions []Alarm_Dimension[any] `json:"Dimensions,omitempty"`
 
 	// EvaluateLowSampleCountPercentile AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type Alarm struct {
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarms-evaluationperiods
-	EvaluationPeriods int `json:"EvaluationPeriods"`
+	EvaluationPeriods T `json:"EvaluationPeriods"`
 
 	// ExtendedStatistic AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type Alarm struct {
 	// Metrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-metrics
-	Metrics []Alarm_MetricDataQuery `json:"Metrics,omitempty"`
+	Metrics []Alarm_MetricDataQuery[any] `json:"Metrics,omitempty"`
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type Alarm struct {
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarms-period
-	Period *int `json:"Period,omitempty"`
+	Period *T `json:"Period,omitempty"`
 
 	// Statistic AWS CloudFormation Property
 	// Required: false
@@ -101,7 +101,7 @@ type Alarm struct {
 	// Threshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarms-threshold
-	Threshold *float64 `json:"Threshold,omitempty"`
+	Threshold *T `json:"Threshold,omitempty"`
 
 	// ThresholdMetricId AWS CloudFormation Property
 	// Required: false
@@ -135,14 +135,15 @@ type Alarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Alarm) AWSCloudFormationType() string {
+func (r *Alarm[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::Alarm"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Alarm) MarshalJSON() ([]byte, error) {
-	type Properties Alarm
+func (r Alarm[any]) MarshalJSON() ([]byte, error) {
+	type Properties Alarm[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -164,8 +165,9 @@ func (r Alarm) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Alarm) UnmarshalJSON(b []byte) error {
-	type Properties Alarm
+func (r *Alarm[any]) UnmarshalJSON(b []byte) error {
+	type Properties Alarm[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -185,7 +187,7 @@ func (r *Alarm) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Alarm(*res.Properties)
+		*r = Alarm[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

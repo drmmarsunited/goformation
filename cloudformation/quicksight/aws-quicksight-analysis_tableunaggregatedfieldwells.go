@@ -8,12 +8,12 @@ import (
 
 // Analysis_TableUnaggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableUnaggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableunaggregatedfieldwells.html
-type Analysis_TableUnaggregatedFieldWells struct {
+type Analysis_TableUnaggregatedFieldWells[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableunaggregatedfieldwells.html#cfn-quicksight-analysis-tableunaggregatedfieldwells-values
-	Values []Analysis_UnaggregatedField `json:"Values,omitempty"`
+	Values []Analysis_UnaggregatedField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_TableUnaggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableUnaggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_TableUnaggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableUnaggregatedFieldWells"
 }

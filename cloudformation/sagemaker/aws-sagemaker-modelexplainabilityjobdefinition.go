@@ -12,7 +12,7 @@ import (
 
 // ModelExplainabilityJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelExplainabilityJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html
-type ModelExplainabilityJobDefinition struct {
+type ModelExplainabilityJobDefinition[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
@@ -27,32 +27,32 @@ type ModelExplainabilityJobDefinition struct {
 	// JobResources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobresources
-	JobResources *ModelExplainabilityJobDefinition_MonitoringResources `json:"JobResources"`
+	JobResources *ModelExplainabilityJobDefinition_MonitoringResources[any] `json:"JobResources"`
 
 	// ModelExplainabilityAppSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification
-	ModelExplainabilityAppSpecification *ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification `json:"ModelExplainabilityAppSpecification"`
+	ModelExplainabilityAppSpecification *ModelExplainabilityJobDefinition_ModelExplainabilityAppSpecification[any] `json:"ModelExplainabilityAppSpecification"`
 
 	// ModelExplainabilityBaselineConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig
-	ModelExplainabilityBaselineConfig *ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig `json:"ModelExplainabilityBaselineConfig,omitempty"`
+	ModelExplainabilityBaselineConfig *ModelExplainabilityJobDefinition_ModelExplainabilityBaselineConfig[any] `json:"ModelExplainabilityBaselineConfig,omitempty"`
 
 	// ModelExplainabilityJobInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput
-	ModelExplainabilityJobInput *ModelExplainabilityJobDefinition_ModelExplainabilityJobInput `json:"ModelExplainabilityJobInput"`
+	ModelExplainabilityJobInput *ModelExplainabilityJobDefinition_ModelExplainabilityJobInput[any] `json:"ModelExplainabilityJobInput"`
 
 	// ModelExplainabilityJobOutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjoboutputconfig
-	ModelExplainabilityJobOutputConfig *ModelExplainabilityJobDefinition_MonitoringOutputConfig `json:"ModelExplainabilityJobOutputConfig"`
+	ModelExplainabilityJobOutputConfig *ModelExplainabilityJobDefinition_MonitoringOutputConfig[any] `json:"ModelExplainabilityJobOutputConfig"`
 
 	// NetworkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig
-	NetworkConfig *ModelExplainabilityJobDefinition_NetworkConfig `json:"NetworkConfig,omitempty"`
+	NetworkConfig *ModelExplainabilityJobDefinition_NetworkConfig[any] `json:"NetworkConfig,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type ModelExplainabilityJobDefinition struct {
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition
-	StoppingCondition *ModelExplainabilityJobDefinition_StoppingCondition `json:"StoppingCondition,omitempty"`
+	StoppingCondition *ModelExplainabilityJobDefinition_StoppingCondition[any] `json:"StoppingCondition,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -86,14 +86,15 @@ type ModelExplainabilityJobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelExplainabilityJobDefinition) AWSCloudFormationType() string {
+func (r *ModelExplainabilityJobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelExplainabilityJobDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ModelExplainabilityJobDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ModelExplainabilityJobDefinition
+func (r ModelExplainabilityJobDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ModelExplainabilityJobDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -115,8 +116,9 @@ func (r ModelExplainabilityJobDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ModelExplainabilityJobDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ModelExplainabilityJobDefinition
+func (r *ModelExplainabilityJobDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ModelExplainabilityJobDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -136,7 +138,7 @@ func (r *ModelExplainabilityJobDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ModelExplainabilityJobDefinition(*res.Properties)
+		*r = ModelExplainabilityJobDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

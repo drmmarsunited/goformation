@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_BlockAction AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.BlockAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-blockaction.html
-type RuleGroup_BlockAction struct {
+type RuleGroup_BlockAction[T any] struct {
 
 	// CustomResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-blockaction.html#cfn-wafv2-rulegroup-blockaction-customresponse
-	CustomResponse *RuleGroup_CustomResponse `json:"CustomResponse,omitempty"`
+	CustomResponse *RuleGroup_CustomResponse[any] `json:"CustomResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_BlockAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_BlockAction) AWSCloudFormationType() string {
+func (r *RuleGroup_BlockAction[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.BlockAction"
 }

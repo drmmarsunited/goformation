@@ -12,12 +12,12 @@ import (
 
 // Framework AWS CloudFormation Resource (AWS::Backup::Framework)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html
-type Framework struct {
+type Framework[T any] struct {
 
 	// FrameworkControls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkcontrols
-	FrameworkControls []Framework_FrameworkControl `json:"FrameworkControls"`
+	FrameworkControls []Framework_FrameworkControl[any] `json:"FrameworkControls"`
 
 	// FrameworkDescription AWS CloudFormation Property
 	// Required: false
@@ -51,14 +51,15 @@ type Framework struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Framework) AWSCloudFormationType() string {
+func (r *Framework[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::Framework"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Framework) MarshalJSON() ([]byte, error) {
-	type Properties Framework
+func (r Framework[any]) MarshalJSON() ([]byte, error) {
+	type Properties Framework[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r Framework) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Framework) UnmarshalJSON(b []byte) error {
-	type Properties Framework
+func (r *Framework[any]) UnmarshalJSON(b []byte) error {
+	type Properties Framework[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *Framework) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Framework(*res.Properties)
+		*r = Framework[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

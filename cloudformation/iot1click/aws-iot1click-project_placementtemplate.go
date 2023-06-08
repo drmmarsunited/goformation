@@ -8,7 +8,7 @@ import (
 
 // Project_PlacementTemplate AWS CloudFormation Resource (AWS::IoT1Click::Project.PlacementTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html
-type Project_PlacementTemplate struct {
+type Project_PlacementTemplate[T any] struct {
 
 	// DefaultAttributes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Project_PlacementTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_PlacementTemplate) AWSCloudFormationType() string {
+func (r *Project_PlacementTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::IoT1Click::Project.PlacementTemplate"
 }

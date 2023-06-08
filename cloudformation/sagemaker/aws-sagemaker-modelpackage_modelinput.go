@@ -8,7 +8,7 @@ import (
 
 // ModelPackage_ModelInput AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.ModelInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html
-type ModelPackage_ModelInput struct {
+type ModelPackage_ModelInput[T any] struct {
 
 	// DataInputConfig AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ModelPackage_ModelInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelPackage_ModelInput) AWSCloudFormationType() string {
+func (r *ModelPackage_ModelInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelPackage.ModelInput"
 }

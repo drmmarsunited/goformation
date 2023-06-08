@@ -8,7 +8,7 @@ import (
 
 // Bucket_ObjectLockConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.ObjectLockConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html
-type Bucket_ObjectLockConfiguration struct {
+type Bucket_ObjectLockConfiguration[T any] struct {
 
 	// ObjectLockEnabled AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Bucket_ObjectLockConfiguration struct {
 	// Rule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-rule
-	Rule *Bucket_ObjectLockRule `json:"Rule,omitempty"`
+	Rule *Bucket_ObjectLockRule[any] `json:"Rule,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_ObjectLockConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ObjectLockConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_ObjectLockConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ObjectLockConfiguration"
 }

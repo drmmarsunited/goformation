@@ -8,7 +8,7 @@ import (
 
 // InputSecurityGroup_InputWhitelistRuleCidr AWS CloudFormation Resource (AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html
-type InputSecurityGroup_InputWhitelistRuleCidr struct {
+type InputSecurityGroup_InputWhitelistRuleCidr[T any] struct {
 
 	// Cidr AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type InputSecurityGroup_InputWhitelistRuleCidr struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InputSecurityGroup_InputWhitelistRuleCidr) AWSCloudFormationType() string {
+func (r *InputSecurityGroup_InputWhitelistRuleCidr[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr"
 }

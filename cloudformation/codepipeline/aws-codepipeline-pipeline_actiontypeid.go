@@ -8,7 +8,7 @@ import (
 
 // Pipeline_ActionTypeId AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ActionTypeId)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html
-type Pipeline_ActionTypeId struct {
+type Pipeline_ActionTypeId[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Pipeline_ActionTypeId struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_ActionTypeId) AWSCloudFormationType() string {
+func (r *Pipeline_ActionTypeId[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ActionTypeId"
 }

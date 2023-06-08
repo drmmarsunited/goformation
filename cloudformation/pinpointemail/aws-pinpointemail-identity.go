@@ -11,22 +11,22 @@ import (
 
 // Identity AWS CloudFormation Resource (AWS::PinpointEmail::Identity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html
-type Identity struct {
+type Identity[T any] struct {
 
 	// DkimSigningEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-dkimsigningenabled
-	DkimSigningEnabled *bool `json:"DkimSigningEnabled,omitempty"`
+	DkimSigningEnabled *T `json:"DkimSigningEnabled,omitempty"`
 
 	// FeedbackForwardingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-feedbackforwardingenabled
-	FeedbackForwardingEnabled *bool `json:"FeedbackForwardingEnabled,omitempty"`
+	FeedbackForwardingEnabled *T `json:"FeedbackForwardingEnabled,omitempty"`
 
 	// MailFromAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-mailfromattributes
-	MailFromAttributes *Identity_MailFromAttributes `json:"MailFromAttributes,omitempty"`
+	MailFromAttributes *Identity_MailFromAttributes[any] `json:"MailFromAttributes,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type Identity struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-tags
-	Tags []Identity_Tags `json:"Tags,omitempty"`
+	Tags []Identity_Tags[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type Identity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Identity) AWSCloudFormationType() string {
+func (r *Identity[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::Identity"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Identity) MarshalJSON() ([]byte, error) {
-	type Properties Identity
+func (r Identity[any]) MarshalJSON() ([]byte, error) {
+	type Properties Identity[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Identity) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Identity) UnmarshalJSON(b []byte) error {
-	type Properties Identity
+func (r *Identity[any]) UnmarshalJSON(b []byte) error {
+	type Properties Identity[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Identity) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Identity(*res.Properties)
+		*r = Identity[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

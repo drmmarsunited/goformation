@@ -8,12 +8,12 @@ import (
 
 // CoreNetwork_CoreNetworkEdge AWS CloudFormation Resource (AWS::NetworkManager::CoreNetwork.CoreNetworkEdge)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworkedge.html
-type CoreNetwork_CoreNetworkEdge struct {
+type CoreNetwork_CoreNetworkEdge[T any] struct {
 
 	// Asn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworkedge.html#cfn-networkmanager-corenetwork-corenetworkedge-asn
-	Asn *float64 `json:"Asn,omitempty"`
+	Asn *T `json:"Asn,omitempty"`
 
 	// EdgeLocation AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type CoreNetwork_CoreNetworkEdge struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CoreNetwork_CoreNetworkEdge) AWSCloudFormationType() string {
+func (r *CoreNetwork_CoreNetworkEdge[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::CoreNetwork.CoreNetworkEdge"
 }

@@ -8,17 +8,17 @@ import (
 
 // Endpoint_FailoverConfig AWS CloudFormation Resource (AWS::Events::Endpoint.FailoverConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-failoverconfig.html
-type Endpoint_FailoverConfig struct {
+type Endpoint_FailoverConfig[T any] struct {
 
 	// Primary AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-failoverconfig.html#cfn-events-endpoint-failoverconfig-primary
-	Primary *Endpoint_Primary `json:"Primary"`
+	Primary *Endpoint_Primary[any] `json:"Primary"`
 
 	// Secondary AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-failoverconfig.html#cfn-events-endpoint-failoverconfig-secondary
-	Secondary *Endpoint_Secondary `json:"Secondary"`
+	Secondary *Endpoint_Secondary[any] `json:"Secondary"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Endpoint_FailoverConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_FailoverConfig) AWSCloudFormationType() string {
+func (r *Endpoint_FailoverConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Endpoint.FailoverConfig"
 }

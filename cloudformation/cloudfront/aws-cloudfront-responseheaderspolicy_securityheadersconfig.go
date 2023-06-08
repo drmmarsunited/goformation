@@ -8,37 +8,37 @@ import (
 
 // ResponseHeadersPolicy_SecurityHeadersConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.SecurityHeadersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html
-type ResponseHeadersPolicy_SecurityHeadersConfig struct {
+type ResponseHeadersPolicy_SecurityHeadersConfig[T any] struct {
 
 	// ContentSecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-contentsecuritypolicy
-	ContentSecurityPolicy *ResponseHeadersPolicy_ContentSecurityPolicy `json:"ContentSecurityPolicy,omitempty"`
+	ContentSecurityPolicy *ResponseHeadersPolicy_ContentSecurityPolicy[any] `json:"ContentSecurityPolicy,omitempty"`
 
 	// ContentTypeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-contenttypeoptions
-	ContentTypeOptions *ResponseHeadersPolicy_ContentTypeOptions `json:"ContentTypeOptions,omitempty"`
+	ContentTypeOptions *ResponseHeadersPolicy_ContentTypeOptions[any] `json:"ContentTypeOptions,omitempty"`
 
 	// FrameOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-frameoptions
-	FrameOptions *ResponseHeadersPolicy_FrameOptions `json:"FrameOptions,omitempty"`
+	FrameOptions *ResponseHeadersPolicy_FrameOptions[any] `json:"FrameOptions,omitempty"`
 
 	// ReferrerPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-referrerpolicy
-	ReferrerPolicy *ResponseHeadersPolicy_ReferrerPolicy `json:"ReferrerPolicy,omitempty"`
+	ReferrerPolicy *ResponseHeadersPolicy_ReferrerPolicy[any] `json:"ReferrerPolicy,omitempty"`
 
 	// StrictTransportSecurity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-stricttransportsecurity
-	StrictTransportSecurity *ResponseHeadersPolicy_StrictTransportSecurity `json:"StrictTransportSecurity,omitempty"`
+	StrictTransportSecurity *ResponseHeadersPolicy_StrictTransportSecurity[any] `json:"StrictTransportSecurity,omitempty"`
 
 	// XSSProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-xssprotection
-	XSSProtection *ResponseHeadersPolicy_XSSProtection `json:"XSSProtection,omitempty"`
+	XSSProtection *ResponseHeadersPolicy_XSSProtection[any] `json:"XSSProtection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type ResponseHeadersPolicy_SecurityHeadersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponseHeadersPolicy_SecurityHeadersConfig) AWSCloudFormationType() string {
+func (r *ResponseHeadersPolicy_SecurityHeadersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::ResponseHeadersPolicy.SecurityHeadersConfig"
 }

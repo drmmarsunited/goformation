@@ -8,17 +8,17 @@ import (
 
 // TaskDefinition_LoRaWANUpdateGatewayTaskEntry AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskentry.html
-type TaskDefinition_LoRaWANUpdateGatewayTaskEntry struct {
+type TaskDefinition_LoRaWANUpdateGatewayTaskEntry[T any] struct {
 
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskentry.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry-currentversion
-	CurrentVersion *TaskDefinition_LoRaWANGatewayVersion `json:"CurrentVersion,omitempty"`
+	CurrentVersion *TaskDefinition_LoRaWANGatewayVersion[any] `json:"CurrentVersion,omitempty"`
 
 	// UpdateVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskentry.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry-updateversion
-	UpdateVersion *TaskDefinition_LoRaWANGatewayVersion `json:"UpdateVersion,omitempty"`
+	UpdateVersion *TaskDefinition_LoRaWANGatewayVersion[any] `json:"UpdateVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type TaskDefinition_LoRaWANUpdateGatewayTaskEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_LoRaWANUpdateGatewayTaskEntry) AWSCloudFormationType() string {
+func (r *TaskDefinition_LoRaWANUpdateGatewayTaskEntry[any]) AWSCloudFormationType() string {
 	return "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskEntry"
 }

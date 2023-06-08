@@ -11,7 +11,7 @@ import (
 
 // ConfigurationRecorder AWS CloudFormation Resource (AWS::Config::ConfigurationRecorder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
-type ConfigurationRecorder struct {
+type ConfigurationRecorder[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type ConfigurationRecorder struct {
 	// RecordingGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup
-	RecordingGroup *ConfigurationRecorder_RecordingGroup `json:"RecordingGroup,omitempty"`
+	RecordingGroup *ConfigurationRecorder_RecordingGroup[any] `json:"RecordingGroup,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type ConfigurationRecorder struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationRecorder) AWSCloudFormationType() string {
+func (r *ConfigurationRecorder[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigurationRecorder"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConfigurationRecorder) MarshalJSON() ([]byte, error) {
-	type Properties ConfigurationRecorder
+func (r ConfigurationRecorder[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConfigurationRecorder[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ConfigurationRecorder) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConfigurationRecorder) UnmarshalJSON(b []byte) error {
-	type Properties ConfigurationRecorder
+func (r *ConfigurationRecorder[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConfigurationRecorder[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ConfigurationRecorder) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConfigurationRecorder(*res.Properties)
+		*r = ConfigurationRecorder[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // LayerVersion_Content AWS CloudFormation Resource (AWS::Lambda::LayerVersion.Content)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html
-type LayerVersion_Content struct {
+type LayerVersion_Content[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type LayerVersion_Content struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LayerVersion_Content) AWSCloudFormationType() string {
+func (r *LayerVersion_Content[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::LayerVersion.Content"
 }

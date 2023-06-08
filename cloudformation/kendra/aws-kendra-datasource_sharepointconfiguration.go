@@ -8,17 +8,17 @@ import (
 
 // DataSource_SharePointConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SharePointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html
-type DataSource_SharePointConfiguration struct {
+type DataSource_SharePointConfiguration[T any] struct {
 
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *T `json:"CrawlAttachments,omitempty"`
 
 	// DisableLocalGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-disablelocalgroups
-	DisableLocalGroups *bool `json:"DisableLocalGroups,omitempty"`
+	DisableLocalGroups *T `json:"DisableLocalGroups,omitempty"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSource_SharePointConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type DataSource_SharePointConfiguration struct {
 	// SslCertificateS3Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-sslcertificates3path
-	SslCertificateS3Path *DataSource_S3Path `json:"SslCertificateS3Path,omitempty"`
+	SslCertificateS3Path *DataSource_S3Path[any] `json:"SslCertificateS3Path,omitempty"`
 
 	// Urls AWS CloudFormation Property
 	// Required: true
@@ -63,12 +63,12 @@ type DataSource_SharePointConfiguration struct {
 	// UseChangeLog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-usechangelog
-	UseChangeLog *bool `json:"UseChangeLog,omitempty"`
+	UseChangeLog *T `json:"UseChangeLog,omitempty"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-vpcconfiguration
-	VpcConfiguration *DataSource_DataSourceVpcConfiguration `json:"VpcConfiguration,omitempty"`
+	VpcConfiguration *DataSource_DataSourceVpcConfiguration[any] `json:"VpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -87,6 +87,6 @@ type DataSource_SharePointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_SharePointConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_SharePointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.SharePointConfiguration"
 }

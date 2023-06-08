@@ -8,12 +8,12 @@ import (
 
 // Detector_CFNKubernetesConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNKubernetesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html
-type Detector_CFNKubernetesConfiguration struct {
+type Detector_CFNKubernetesConfiguration[T any] struct {
 
 	// AuditLogs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html#cfn-guardduty-detector-cfnkubernetesconfiguration-auditlogs
-	AuditLogs *Detector_CFNKubernetesAuditLogsConfiguration `json:"AuditLogs,omitempty"`
+	AuditLogs *Detector_CFNKubernetesAuditLogsConfiguration[any] `json:"AuditLogs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Detector_CFNKubernetesConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_CFNKubernetesConfiguration) AWSCloudFormationType() string {
+func (r *Detector_CFNKubernetesConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Detector.CFNKubernetesConfiguration"
 }

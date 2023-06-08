@@ -8,7 +8,7 @@ import (
 
 // Application_JMXPrometheusExporter AWS CloudFormation Resource (AWS::ApplicationInsights::Application.JMXPrometheusExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html
-type Application_JMXPrometheusExporter struct {
+type Application_JMXPrometheusExporter[T any] struct {
 
 	// HostPort AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Application_JMXPrometheusExporter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_JMXPrometheusExporter) AWSCloudFormationType() string {
+func (r *Application_JMXPrometheusExporter[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.JMXPrometheusExporter"
 }

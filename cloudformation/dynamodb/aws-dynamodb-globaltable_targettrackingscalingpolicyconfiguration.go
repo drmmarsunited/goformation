@@ -8,27 +8,27 @@ import (
 
 // GlobalTable_TargetTrackingScalingPolicyConfiguration AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.TargetTrackingScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html
-type GlobalTable_TargetTrackingScalingPolicyConfiguration struct {
+type GlobalTable_TargetTrackingScalingPolicyConfiguration[T any] struct {
 
 	// DisableScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-disablescalein
-	DisableScaleIn *bool `json:"DisableScaleIn,omitempty"`
+	DisableScaleIn *T `json:"DisableScaleIn,omitempty"`
 
 	// ScaleInCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-scaleincooldown
-	ScaleInCooldown *int `json:"ScaleInCooldown,omitempty"`
+	ScaleInCooldown *T `json:"ScaleInCooldown,omitempty"`
 
 	// ScaleOutCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-scaleoutcooldown
-	ScaleOutCooldown *int `json:"ScaleOutCooldown,omitempty"`
+	ScaleOutCooldown *T `json:"ScaleOutCooldown,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-targetvalue
-	TargetValue float64 `json:"TargetValue"`
+	TargetValue T `json:"TargetValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type GlobalTable_TargetTrackingScalingPolicyConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_TargetTrackingScalingPolicyConfiguration) AWSCloudFormationType() string {
+func (r *GlobalTable_TargetTrackingScalingPolicyConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.TargetTrackingScalingPolicyConfiguration"
 }

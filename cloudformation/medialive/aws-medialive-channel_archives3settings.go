@@ -8,7 +8,7 @@ import (
 
 // Channel_ArchiveS3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.ArchiveS3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archives3settings.html
-type Channel_ArchiveS3Settings struct {
+type Channel_ArchiveS3Settings[T any] struct {
 
 	// CannedAcl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_ArchiveS3Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_ArchiveS3Settings) AWSCloudFormationType() string {
+func (r *Channel_ArchiveS3Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.ArchiveS3Settings"
 }

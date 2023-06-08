@@ -11,7 +11,7 @@ import (
 
 // APNSVoipSandboxChannel AWS CloudFormation Resource (AWS::Pinpoint::APNSVoipSandboxChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html
-type APNSVoipSandboxChannel struct {
+type APNSVoipSandboxChannel[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type APNSVoipSandboxChannel struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
@@ -75,14 +75,15 @@ type APNSVoipSandboxChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *APNSVoipSandboxChannel) AWSCloudFormationType() string {
+func (r *APNSVoipSandboxChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::APNSVoipSandboxChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r APNSVoipSandboxChannel) MarshalJSON() ([]byte, error) {
-	type Properties APNSVoipSandboxChannel
+func (r APNSVoipSandboxChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties APNSVoipSandboxChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -104,8 +105,9 @@ func (r APNSVoipSandboxChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *APNSVoipSandboxChannel) UnmarshalJSON(b []byte) error {
-	type Properties APNSVoipSandboxChannel
+func (r *APNSVoipSandboxChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties APNSVoipSandboxChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -125,7 +127,7 @@ func (r *APNSVoipSandboxChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = APNSVoipSandboxChannel(*res.Properties)
+		*r = APNSVoipSandboxChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

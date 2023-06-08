@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_GreenFleetProvisioningOption AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.GreenFleetProvisioningOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html
-type DeploymentGroup_GreenFleetProvisioningOption struct {
+type DeploymentGroup_GreenFleetProvisioningOption[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DeploymentGroup_GreenFleetProvisioningOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_GreenFleetProvisioningOption) AWSCloudFormationType() string {
+func (r *DeploymentGroup_GreenFleetProvisioningOption[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.GreenFleetProvisioningOption"
 }

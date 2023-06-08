@@ -11,12 +11,12 @@ import (
 
 // OriginRequestPolicy AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html
-type OriginRequestPolicy struct {
+type OriginRequestPolicy[T any] struct {
 
 	// OriginRequestPolicyConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig
-	OriginRequestPolicyConfig *OriginRequestPolicy_OriginRequestPolicyConfig `json:"OriginRequestPolicyConfig"`
+	OriginRequestPolicyConfig *OriginRequestPolicy_OriginRequestPolicyConfig[any] `json:"OriginRequestPolicyConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -35,14 +35,15 @@ type OriginRequestPolicy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginRequestPolicy) AWSCloudFormationType() string {
+func (r *OriginRequestPolicy[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginRequestPolicy"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r OriginRequestPolicy) MarshalJSON() ([]byte, error) {
-	type Properties OriginRequestPolicy
+func (r OriginRequestPolicy[any]) MarshalJSON() ([]byte, error) {
+	type Properties OriginRequestPolicy[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -64,8 +65,9 @@ func (r OriginRequestPolicy) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *OriginRequestPolicy) UnmarshalJSON(b []byte) error {
-	type Properties OriginRequestPolicy
+func (r *OriginRequestPolicy[any]) UnmarshalJSON(b []byte) error {
+	type Properties OriginRequestPolicy[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -85,7 +87,7 @@ func (r *OriginRequestPolicy) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = OriginRequestPolicy(*res.Properties)
+		*r = OriginRequestPolicy[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataPointTooltipOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataPointTooltipOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapointtooltipoption.html
-type Dashboard_DataPointTooltipOption struct {
+type Dashboard_DataPointTooltipOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_DataPointTooltipOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataPointTooltipOption) AWSCloudFormationType() string {
+func (r *Dashboard_DataPointTooltipOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataPointTooltipOption"
 }

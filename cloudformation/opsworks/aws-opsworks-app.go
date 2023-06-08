@@ -11,12 +11,12 @@ import (
 
 // App AWS CloudFormation Resource (AWS::OpsWorks::App)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
-type App struct {
+type App[T any] struct {
 
 	// AppSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-appsource
-	AppSource *App_Source `json:"AppSource,omitempty"`
+	AppSource *App_Source[any] `json:"AppSource,omitempty"`
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type App struct {
 	// DataSources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-datasources
-	DataSources []App_DataSource `json:"DataSources,omitempty"`
+	DataSources []App_DataSource[any] `json:"DataSources,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type App struct {
 	// EnableSsl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-enablessl
-	EnableSsl *bool `json:"EnableSsl,omitempty"`
+	EnableSsl *T `json:"EnableSsl,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-environment
-	Environment []App_EnvironmentVariable `json:"Environment,omitempty"`
+	Environment []App_EnvironmentVariable[any] `json:"Environment,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -61,7 +61,7 @@ type App struct {
 	// SslConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-sslconfiguration
-	SslConfiguration *App_SslConfiguration `json:"SslConfiguration,omitempty"`
+	SslConfiguration *App_SslConfiguration[any] `json:"SslConfiguration,omitempty"`
 
 	// StackId AWS CloudFormation Property
 	// Required: true
@@ -90,14 +90,15 @@ type App struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App) AWSCloudFormationType() string {
+func (r *App[any]) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r App) MarshalJSON() ([]byte, error) {
-	type Properties App
+func (r App[any]) MarshalJSON() ([]byte, error) {
+	type Properties App[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r App) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *App) UnmarshalJSON(b []byte) error {
-	type Properties App
+func (r *App[any]) UnmarshalJSON(b []byte) error {
+	type Properties App[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *App) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = App(*res.Properties)
+		*r = App[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

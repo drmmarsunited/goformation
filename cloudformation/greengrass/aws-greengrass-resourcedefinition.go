@@ -11,12 +11,12 @@ import (
 
 // ResourceDefinition AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html
-type ResourceDefinition struct {
+type ResourceDefinition[T any] struct {
 
 	// InitialVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-initialversion
-	InitialVersion *ResourceDefinition_ResourceDefinitionVersion `json:"InitialVersion,omitempty"`
+	InitialVersion *ResourceDefinition_ResourceDefinitionVersion[any] `json:"InitialVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type ResourceDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDefinition) AWSCloudFormationType() string {
+func (r *ResourceDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ResourceDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ResourceDefinition
+func (r ResourceDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ResourceDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ResourceDefinition
+func (r *ResourceDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ResourceDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceDefinition(*res.Properties)
+		*r = ResourceDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // VirtualGateway_VirtualGatewayListenerTlsValidationContext AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html
-type VirtualGateway_VirtualGatewayListenerTlsValidationContext struct {
+type VirtualGateway_VirtualGatewayListenerTlsValidationContext[T any] struct {
 
 	// SubjectAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-subjectalternativenames
-	SubjectAlternativeNames *VirtualGateway_SubjectAlternativeNames `json:"SubjectAlternativeNames,omitempty"`
+	SubjectAlternativeNames *VirtualGateway_SubjectAlternativeNames[any] `json:"SubjectAlternativeNames,omitempty"`
 
 	// Trust AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-trust
-	Trust *VirtualGateway_VirtualGatewayListenerTlsValidationContextTrust `json:"Trust"`
+	Trust *VirtualGateway_VirtualGatewayListenerTlsValidationContextTrust[any] `json:"Trust"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VirtualGateway_VirtualGatewayListenerTlsValidationContext struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayListenerTlsValidationContext) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayListenerTlsValidationContext[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext"
 }

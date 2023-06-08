@@ -11,12 +11,12 @@ import (
 
 // InstanceGroupConfig AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
-type InstanceGroupConfig struct {
+type InstanceGroupConfig[T any] struct {
 
 	// AutoScalingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
-	AutoScalingPolicy *InstanceGroupConfig_AutoScalingPolicy `json:"AutoScalingPolicy,omitempty"`
+	AutoScalingPolicy *InstanceGroupConfig_AutoScalingPolicy[any] `json:"AutoScalingPolicy,omitempty"`
 
 	// BidPrice AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type InstanceGroupConfig struct {
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
-	Configurations []InstanceGroupConfig_Configuration `json:"Configurations,omitempty"`
+	Configurations []InstanceGroupConfig_Configuration[any] `json:"Configurations,omitempty"`
 
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type InstanceGroupConfig struct {
 	// EbsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
-	EbsConfiguration *InstanceGroupConfig_EbsConfiguration `json:"EbsConfiguration,omitempty"`
+	EbsConfiguration *InstanceGroupConfig_EbsConfiguration[any] `json:"EbsConfiguration,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceRole AWS CloudFormation Property
 	// Required: true
@@ -85,14 +85,15 @@ type InstanceGroupConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *InstanceGroupConfig) AWSCloudFormationType() string {
+func (r *InstanceGroupConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r InstanceGroupConfig) MarshalJSON() ([]byte, error) {
-	type Properties InstanceGroupConfig
+func (r InstanceGroupConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties InstanceGroupConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r InstanceGroupConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *InstanceGroupConfig) UnmarshalJSON(b []byte) error {
-	type Properties InstanceGroupConfig
+func (r *InstanceGroupConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties InstanceGroupConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *InstanceGroupConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = InstanceGroupConfig(*res.Properties)
+		*r = InstanceGroupConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

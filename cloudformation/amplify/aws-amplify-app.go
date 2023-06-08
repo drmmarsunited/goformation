@@ -12,7 +12,7 @@ import (
 
 // App AWS CloudFormation Resource (AWS::Amplify::App)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html
-type App struct {
+type App[T any] struct {
 
 	// AccessToken AWS CloudFormation Property
 	// Required: false
@@ -22,12 +22,12 @@ type App struct {
 	// AutoBranchCreationConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-autobranchcreationconfig
-	AutoBranchCreationConfig *App_AutoBranchCreationConfig `json:"AutoBranchCreationConfig,omitempty"`
+	AutoBranchCreationConfig *App_AutoBranchCreationConfig[any] `json:"AutoBranchCreationConfig,omitempty"`
 
 	// BasicAuthConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-basicauthconfig
-	BasicAuthConfig *App_BasicAuthConfig `json:"BasicAuthConfig,omitempty"`
+	BasicAuthConfig *App_BasicAuthConfig[any] `json:"BasicAuthConfig,omitempty"`
 
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type App struct {
 	// CustomRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-customrules
-	CustomRules []App_CustomRule `json:"CustomRules,omitempty"`
+	CustomRules []App_CustomRule[any] `json:"CustomRules,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type App struct {
 	// EnableBranchAutoDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-enablebranchautodeletion
-	EnableBranchAutoDeletion *bool `json:"EnableBranchAutoDeletion,omitempty"`
+	EnableBranchAutoDeletion *T `json:"EnableBranchAutoDeletion,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-environmentvariables
-	EnvironmentVariables []App_EnvironmentVariable `json:"EnvironmentVariables,omitempty"`
+	EnvironmentVariables []App_EnvironmentVariable[any] `json:"EnvironmentVariables,omitempty"`
 
 	// IAMServiceRole AWS CloudFormation Property
 	// Required: false
@@ -106,14 +106,15 @@ type App struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App) AWSCloudFormationType() string {
+func (r *App[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::App"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r App) MarshalJSON() ([]byte, error) {
-	type Properties App
+func (r App[any]) MarshalJSON() ([]byte, error) {
+	type Properties App[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -135,8 +136,9 @@ func (r App) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *App) UnmarshalJSON(b []byte) error {
-	type Properties App
+func (r *App[any]) UnmarshalJSON(b []byte) error {
+	type Properties App[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -156,7 +158,7 @@ func (r *App) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = App(*res.Properties)
+		*r = App[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

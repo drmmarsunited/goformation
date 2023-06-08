@@ -8,7 +8,7 @@ import (
 
 // Channel_HlsS3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.HlsS3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlss3settings.html
-type Channel_HlsS3Settings struct {
+type Channel_HlsS3Settings[T any] struct {
 
 	// CannedAcl AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_HlsS3Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HlsS3Settings) AWSCloudFormationType() string {
+func (r *Channel_HlsS3Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HlsS3Settings"
 }

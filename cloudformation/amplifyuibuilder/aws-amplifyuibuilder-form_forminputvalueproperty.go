@@ -8,7 +8,7 @@ import (
 
 // Form_FormInputValueProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.FormInputValueProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-forminputvalueproperty.html
-type Form_FormInputValueProperty struct {
+type Form_FormInputValueProperty[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Form_FormInputValueProperty struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_FormInputValueProperty) AWSCloudFormationType() string {
+func (r *Form_FormInputValueProperty[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.FormInputValueProperty"
 }

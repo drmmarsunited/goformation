@@ -8,7 +8,7 @@ import (
 
 // DomainConfiguration_TlsConfig AWS CloudFormation Resource (AWS::IoT::DomainConfiguration.TlsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-tlsconfig.html
-type DomainConfiguration_TlsConfig struct {
+type DomainConfiguration_TlsConfig[T any] struct {
 
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type DomainConfiguration_TlsConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainConfiguration_TlsConfig) AWSCloudFormationType() string {
+func (r *DomainConfiguration_TlsConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::DomainConfiguration.TlsConfig"
 }

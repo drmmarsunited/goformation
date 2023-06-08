@@ -11,7 +11,7 @@ import (
 
 // VPNConnectionRoute AWS CloudFormation Resource (AWS::EC2::VPNConnectionRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html
-type VPNConnectionRoute struct {
+type VPNConnectionRoute[T any] struct {
 
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type VPNConnectionRoute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VPNConnectionRoute) AWSCloudFormationType() string {
+func (r *VPNConnectionRoute[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VPNConnectionRoute"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VPNConnectionRoute) MarshalJSON() ([]byte, error) {
-	type Properties VPNConnectionRoute
+func (r VPNConnectionRoute[any]) MarshalJSON() ([]byte, error) {
+	type Properties VPNConnectionRoute[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r VPNConnectionRoute) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VPNConnectionRoute) UnmarshalJSON(b []byte) error {
-	type Properties VPNConnectionRoute
+func (r *VPNConnectionRoute[any]) UnmarshalJSON(b []byte) error {
+	type Properties VPNConnectionRoute[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *VPNConnectionRoute) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VPNConnectionRoute(*res.Properties)
+		*r = VPNConnectionRoute[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

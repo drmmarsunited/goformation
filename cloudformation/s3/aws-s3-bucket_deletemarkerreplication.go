@@ -8,7 +8,7 @@ import (
 
 // Bucket_DeleteMarkerReplication AWS CloudFormation Resource (AWS::S3::Bucket.DeleteMarkerReplication)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-deletemarkerreplication.html
-type Bucket_DeleteMarkerReplication struct {
+type Bucket_DeleteMarkerReplication[T any] struct {
 
 	// Status AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Bucket_DeleteMarkerReplication struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_DeleteMarkerReplication) AWSCloudFormationType() string {
+func (r *Bucket_DeleteMarkerReplication[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.DeleteMarkerReplication"
 }

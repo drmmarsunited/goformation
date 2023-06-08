@@ -8,7 +8,7 @@ import (
 
 // Table_S3BucketSource AWS CloudFormation Resource (AWS::DynamoDB::Table.S3BucketSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-s3bucketsource.html
-type Table_S3BucketSource struct {
+type Table_S3BucketSource[T any] struct {
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Table_S3BucketSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_S3BucketSource) AWSCloudFormationType() string {
+func (r *Table_S3BucketSource[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.S3BucketSource"
 }

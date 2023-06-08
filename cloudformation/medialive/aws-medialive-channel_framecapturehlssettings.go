@@ -8,7 +8,7 @@ import (
 
 // Channel_FrameCaptureHlsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureHlsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturehlssettings.html
-type Channel_FrameCaptureHlsSettings struct {
+type Channel_FrameCaptureHlsSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_FrameCaptureHlsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FrameCaptureHlsSettings) AWSCloudFormationType() string {
+func (r *Channel_FrameCaptureHlsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FrameCaptureHlsSettings"
 }

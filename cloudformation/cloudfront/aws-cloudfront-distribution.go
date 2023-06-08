@@ -12,12 +12,12 @@ import (
 
 // Distribution AWS CloudFormation Resource (AWS::CloudFront::Distribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
-type Distribution struct {
+type Distribution[T any] struct {
 
 	// DistributionConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
-	DistributionConfig *Distribution_DistributionConfig `json:"DistributionConfig"`
+	DistributionConfig *Distribution_DistributionConfig[any] `json:"DistributionConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type Distribution struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution) AWSCloudFormationType() string {
+func (r *Distribution[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Distribution) MarshalJSON() ([]byte, error) {
-	type Properties Distribution
+func (r Distribution[any]) MarshalJSON() ([]byte, error) {
+	type Properties Distribution[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r Distribution) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Distribution) UnmarshalJSON(b []byte) error {
-	type Properties Distribution
+func (r *Distribution[any]) UnmarshalJSON(b []byte) error {
+	type Properties Distribution[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *Distribution) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Distribution(*res.Properties)
+		*r = Distribution[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

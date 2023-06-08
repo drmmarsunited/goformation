@@ -8,12 +8,12 @@ import (
 
 // Template_SectionBasedLayoutPaperCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Template.SectionBasedLayoutPaperCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutpapercanvassizeoptions.html
-type Template_SectionBasedLayoutPaperCanvasSizeOptions struct {
+type Template_SectionBasedLayoutPaperCanvasSizeOptions[T any] struct {
 
 	// PaperMargin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sectionbasedlayoutpapercanvassizeoptions.html#cfn-quicksight-template-sectionbasedlayoutpapercanvassizeoptions-papermargin
-	PaperMargin *Template_Spacing `json:"PaperMargin,omitempty"`
+	PaperMargin *Template_Spacing[any] `json:"PaperMargin,omitempty"`
 
 	// PaperOrientation AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_SectionBasedLayoutPaperCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SectionBasedLayoutPaperCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Template_SectionBasedLayoutPaperCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SectionBasedLayoutPaperCanvasSizeOptions"
 }

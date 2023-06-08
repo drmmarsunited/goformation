@@ -8,22 +8,22 @@ import (
 
 // Fleet_LocationCapacity AWS CloudFormation Resource (AWS::GameLift::Fleet.LocationCapacity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html
-type Fleet_LocationCapacity struct {
+type Fleet_LocationCapacity[T any] struct {
 
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-desiredec2instances
-	DesiredEC2Instances int `json:"DesiredEC2Instances"`
+	DesiredEC2Instances T `json:"DesiredEC2Instances"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-maxsize
-	MaxSize int `json:"MaxSize"`
+	MaxSize T `json:"MaxSize"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize
-	MinSize int `json:"MinSize"`
+	MinSize T `json:"MinSize"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Fleet_LocationCapacity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Fleet_LocationCapacity) AWSCloudFormationType() string {
+func (r *Fleet_LocationCapacity[any]) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.LocationCapacity"
 }

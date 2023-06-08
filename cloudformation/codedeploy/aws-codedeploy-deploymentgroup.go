@@ -12,12 +12,12 @@ import (
 
 // DeploymentGroup AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html
-type DeploymentGroup struct {
+type DeploymentGroup[T any] struct {
 
 	// AlarmConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
-	AlarmConfiguration *DeploymentGroup_AlarmConfiguration `json:"AlarmConfiguration,omitempty"`
+	AlarmConfiguration *DeploymentGroup_AlarmConfiguration[any] `json:"AlarmConfiguration,omitempty"`
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type DeploymentGroup struct {
 	// AutoRollbackConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
-	AutoRollbackConfiguration *DeploymentGroup_AutoRollbackConfiguration `json:"AutoRollbackConfiguration,omitempty"`
+	AutoRollbackConfiguration *DeploymentGroup_AutoRollbackConfiguration[any] `json:"AutoRollbackConfiguration,omitempty"`
 
 	// AutoScalingGroups AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type DeploymentGroup struct {
 	// BlueGreenDeploymentConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration
-	BlueGreenDeploymentConfiguration *DeploymentGroup_BlueGreenDeploymentConfiguration `json:"BlueGreenDeploymentConfiguration,omitempty"`
+	BlueGreenDeploymentConfiguration *DeploymentGroup_BlueGreenDeploymentConfiguration[any] `json:"BlueGreenDeploymentConfiguration,omitempty"`
 
 	// Deployment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment
-	Deployment *DeploymentGroup_Deployment `json:"Deployment,omitempty"`
+	Deployment *DeploymentGroup_Deployment[any] `json:"Deployment,omitempty"`
 
 	// DeploymentConfigName AWS CloudFormation Property
 	// Required: false
@@ -57,37 +57,37 @@ type DeploymentGroup struct {
 	// DeploymentStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
-	DeploymentStyle *DeploymentGroup_DeploymentStyle `json:"DeploymentStyle,omitempty"`
+	DeploymentStyle *DeploymentGroup_DeploymentStyle[any] `json:"DeploymentStyle,omitempty"`
 
 	// ECSServices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
-	ECSServices []DeploymentGroup_ECSService `json:"ECSServices,omitempty"`
+	ECSServices []DeploymentGroup_ECSService[any] `json:"ECSServices,omitempty"`
 
 	// Ec2TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters
-	Ec2TagFilters []DeploymentGroup_EC2TagFilter `json:"Ec2TagFilters,omitempty"`
+	Ec2TagFilters []DeploymentGroup_EC2TagFilter[any] `json:"Ec2TagFilters,omitempty"`
 
 	// Ec2TagSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset
-	Ec2TagSet *DeploymentGroup_EC2TagSet `json:"Ec2TagSet,omitempty"`
+	Ec2TagSet *DeploymentGroup_EC2TagSet[any] `json:"Ec2TagSet,omitempty"`
 
 	// LoadBalancerInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
-	LoadBalancerInfo *DeploymentGroup_LoadBalancerInfo `json:"LoadBalancerInfo,omitempty"`
+	LoadBalancerInfo *DeploymentGroup_LoadBalancerInfo[any] `json:"LoadBalancerInfo,omitempty"`
 
 	// OnPremisesInstanceTagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters
-	OnPremisesInstanceTagFilters []DeploymentGroup_TagFilter `json:"OnPremisesInstanceTagFilters,omitempty"`
+	OnPremisesInstanceTagFilters []DeploymentGroup_TagFilter[any] `json:"OnPremisesInstanceTagFilters,omitempty"`
 
 	// OnPremisesTagSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset
-	OnPremisesTagSet *DeploymentGroup_OnPremisesTagSet `json:"OnPremisesTagSet,omitempty"`
+	OnPremisesTagSet *DeploymentGroup_OnPremisesTagSet[any] `json:"OnPremisesTagSet,omitempty"`
 
 	// OutdatedInstancesStrategy AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type DeploymentGroup struct {
 	// TriggerConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
-	TriggerConfigurations []DeploymentGroup_TriggerConfig `json:"TriggerConfigurations,omitempty"`
+	TriggerConfigurations []DeploymentGroup_TriggerConfig[any] `json:"TriggerConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -126,14 +126,15 @@ type DeploymentGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup) AWSCloudFormationType() string {
+func (r *DeploymentGroup[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r DeploymentGroup) MarshalJSON() ([]byte, error) {
-	type Properties DeploymentGroup
+func (r DeploymentGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties DeploymentGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -155,8 +156,9 @@ func (r DeploymentGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *DeploymentGroup) UnmarshalJSON(b []byte) error {
-	type Properties DeploymentGroup
+func (r *DeploymentGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties DeploymentGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -176,7 +178,7 @@ func (r *DeploymentGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = DeploymentGroup(*res.Properties)
+		*r = DeploymentGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

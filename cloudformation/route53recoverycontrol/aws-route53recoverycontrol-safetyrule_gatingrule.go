@@ -8,7 +8,7 @@ import (
 
 // SafetyRule_GatingRule AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.GatingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html
-type SafetyRule_GatingRule struct {
+type SafetyRule_GatingRule[T any] struct {
 
 	// GatingControls AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type SafetyRule_GatingRule struct {
 	// WaitPeriodMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-waitperiodms
-	WaitPeriodMs int `json:"WaitPeriodMs"`
+	WaitPeriodMs T `json:"WaitPeriodMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type SafetyRule_GatingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SafetyRule_GatingRule) AWSCloudFormationType() string {
+func (r *SafetyRule_GatingRule[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::SafetyRule.GatingRule"
 }

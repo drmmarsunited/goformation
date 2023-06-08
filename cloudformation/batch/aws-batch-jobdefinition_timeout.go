@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_Timeout AWS CloudFormation Resource (AWS::Batch::JobDefinition.Timeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html
-type JobDefinition_Timeout struct {
+type JobDefinition_Timeout[T any] struct {
 
 	// AttemptDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds
-	AttemptDurationSeconds *int `json:"AttemptDurationSeconds,omitempty"`
+	AttemptDurationSeconds *T `json:"AttemptDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobDefinition_Timeout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Timeout) AWSCloudFormationType() string {
+func (r *JobDefinition_Timeout[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Timeout"
 }

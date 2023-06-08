@@ -8,7 +8,7 @@ import (
 
 // Analyzer_Filter AWS CloudFormation Resource (AWS::AccessAnalyzer::Analyzer.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html
-type Analyzer_Filter struct {
+type Analyzer_Filter[T any] struct {
 
 	// Contains AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analyzer_Filter struct {
 	// Exists AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-exists
-	Exists *bool `json:"Exists,omitempty"`
+	Exists *T `json:"Exists,omitempty"`
 
 	// Neq AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analyzer_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analyzer_Filter) AWSCloudFormationType() string {
+func (r *Analyzer_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::AccessAnalyzer::Analyzer.Filter"
 }

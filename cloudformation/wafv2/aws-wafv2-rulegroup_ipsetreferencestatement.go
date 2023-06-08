@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_IPSetReferenceStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.IPSetReferenceStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html
-type RuleGroup_IPSetReferenceStatement struct {
+type RuleGroup_IPSetReferenceStatement[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type RuleGroup_IPSetReferenceStatement struct {
 	// IPSetForwardedIPConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html#cfn-wafv2-rulegroup-ipsetreferencestatement-ipsetforwardedipconfig
-	IPSetForwardedIPConfig *RuleGroup_IPSetForwardedIPConfiguration `json:"IPSetForwardedIPConfig,omitempty"`
+	IPSetForwardedIPConfig *RuleGroup_IPSetForwardedIPConfiguration[any] `json:"IPSetForwardedIPConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_IPSetReferenceStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_IPSetReferenceStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_IPSetReferenceStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.IPSetReferenceStatement"
 }

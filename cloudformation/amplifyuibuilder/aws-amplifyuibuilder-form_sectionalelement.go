@@ -8,17 +8,17 @@ import (
 
 // Form_SectionalElement AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Form.SectionalElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-sectionalelement.html
-type Form_SectionalElement struct {
+type Form_SectionalElement[T any] struct {
 
 	// Excluded AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-sectionalelement.html#cfn-amplifyuibuilder-form-sectionalelement-excluded
-	Excluded *bool `json:"Excluded,omitempty"`
+	Excluded *T `json:"Excluded,omitempty"`
 
 	// Level AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-sectionalelement.html#cfn-amplifyuibuilder-form-sectionalelement-level
-	Level *float64 `json:"Level,omitempty"`
+	Level *T `json:"Level,omitempty"`
 
 	// Orientation AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Form_SectionalElement struct {
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-sectionalelement.html#cfn-amplifyuibuilder-form-sectionalelement-position
-	Position *Form_FieldPosition `json:"Position,omitempty"`
+	Position *Form_FieldPosition[any] `json:"Position,omitempty"`
 
 	// Text AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Form_SectionalElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Form_SectionalElement) AWSCloudFormationType() string {
+func (r *Form_SectionalElement[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Form.SectionalElement"
 }

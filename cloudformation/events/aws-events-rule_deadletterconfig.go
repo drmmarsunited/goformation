@@ -8,7 +8,7 @@ import (
 
 // Rule_DeadLetterConfig AWS CloudFormation Resource (AWS::Events::Rule.DeadLetterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-deadletterconfig.html
-type Rule_DeadLetterConfig struct {
+type Rule_DeadLetterConfig[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Rule_DeadLetterConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_DeadLetterConfig) AWSCloudFormationType() string {
+func (r *Rule_DeadLetterConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.DeadLetterConfig"
 }

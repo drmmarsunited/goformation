@@ -8,12 +8,12 @@ import (
 
 // Budget_Spend AWS CloudFormation Resource (AWS::Budgets::Budget.Spend)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html
-type Budget_Spend struct {
+type Budget_Spend[T any] struct {
 
 	// Amount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount
-	Amount float64 `json:"Amount"`
+	Amount T `json:"Amount"`
 
 	// Unit AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Budget_Spend struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Budget_Spend) AWSCloudFormationType() string {
+func (r *Budget_Spend[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.Spend"
 }

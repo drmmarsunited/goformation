@@ -8,12 +8,12 @@ import (
 
 // Template_FreeFormSectionLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.FreeFormSectionLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformsectionlayoutconfiguration.html
-type Template_FreeFormSectionLayoutConfiguration struct {
+type Template_FreeFormSectionLayoutConfiguration[T any] struct {
 
 	// Elements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformsectionlayoutconfiguration.html#cfn-quicksight-template-freeformsectionlayoutconfiguration-elements
-	Elements []Template_FreeFormLayoutElement `json:"Elements"`
+	Elements []Template_FreeFormLayoutElement[any] `json:"Elements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_FreeFormSectionLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FreeFormSectionLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Template_FreeFormSectionLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FreeFormSectionLayoutConfiguration"
 }

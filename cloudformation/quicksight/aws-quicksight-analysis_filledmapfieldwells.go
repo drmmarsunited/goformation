@@ -8,12 +8,12 @@ import (
 
 // Analysis_FilledMapFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.FilledMapFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapfieldwells.html
-type Analysis_FilledMapFieldWells struct {
+type Analysis_FilledMapFieldWells[T any] struct {
 
 	// FilledMapAggregatedFieldWells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapfieldwells.html#cfn-quicksight-analysis-filledmapfieldwells-filledmapaggregatedfieldwells
-	FilledMapAggregatedFieldWells *Analysis_FilledMapAggregatedFieldWells `json:"FilledMapAggregatedFieldWells,omitempty"`
+	FilledMapAggregatedFieldWells *Analysis_FilledMapAggregatedFieldWells[any] `json:"FilledMapAggregatedFieldWells,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_FilledMapFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FilledMapFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_FilledMapFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FilledMapFieldWells"
 }

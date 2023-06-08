@@ -9,7 +9,7 @@ import (
 
 // Detector_Outcome AWS CloudFormation Resource (AWS::FraudDetector::Detector.Outcome)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-outcome.html
-type Detector_Outcome struct {
+type Detector_Outcome[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -29,7 +29,7 @@ type Detector_Outcome struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-outcome.html#cfn-frauddetector-detector-outcome-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -63,6 +63,6 @@ type Detector_Outcome struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_Outcome) AWSCloudFormationType() string {
+func (r *Detector_Outcome[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.Outcome"
 }

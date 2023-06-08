@@ -8,12 +8,12 @@ import (
 
 // Integration_TriggerConfig AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.TriggerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerconfig.html
-type Integration_TriggerConfig struct {
+type Integration_TriggerConfig[T any] struct {
 
 	// TriggerProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerconfig.html#cfn-customerprofiles-integration-triggerconfig-triggerproperties
-	TriggerProperties *Integration_TriggerProperties `json:"TriggerProperties,omitempty"`
+	TriggerProperties *Integration_TriggerProperties[any] `json:"TriggerProperties,omitempty"`
 
 	// TriggerType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Integration_TriggerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_TriggerConfig) AWSCloudFormationType() string {
+func (r *Integration_TriggerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.TriggerConfig"
 }

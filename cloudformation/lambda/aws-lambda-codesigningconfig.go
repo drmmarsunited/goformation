@@ -11,17 +11,17 @@ import (
 
 // CodeSigningConfig AWS CloudFormation Resource (AWS::Lambda::CodeSigningConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html
-type CodeSigningConfig struct {
+type CodeSigningConfig[T any] struct {
 
 	// AllowedPublishers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-allowedpublishers
-	AllowedPublishers *CodeSigningConfig_AllowedPublishers `json:"AllowedPublishers"`
+	AllowedPublishers *CodeSigningConfig_AllowedPublishers[any] `json:"AllowedPublishers"`
 
 	// CodeSigningPolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-codesigningpolicies
-	CodeSigningPolicies *CodeSigningConfig_CodeSigningPolicies `json:"CodeSigningPolicies,omitempty"`
+	CodeSigningPolicies *CodeSigningConfig_CodeSigningPolicies[any] `json:"CodeSigningPolicies,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type CodeSigningConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CodeSigningConfig) AWSCloudFormationType() string {
+func (r *CodeSigningConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::CodeSigningConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CodeSigningConfig) MarshalJSON() ([]byte, error) {
-	type Properties CodeSigningConfig
+func (r CodeSigningConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties CodeSigningConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r CodeSigningConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CodeSigningConfig) UnmarshalJSON(b []byte) error {
-	type Properties CodeSigningConfig
+func (r *CodeSigningConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties CodeSigningConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *CodeSigningConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CodeSigningConfig(*res.Properties)
+		*r = CodeSigningConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

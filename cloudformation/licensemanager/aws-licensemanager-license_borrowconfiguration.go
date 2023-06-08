@@ -8,17 +8,17 @@ import (
 
 // License_BorrowConfiguration AWS CloudFormation Resource (AWS::LicenseManager::License.BorrowConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html
-type License_BorrowConfiguration struct {
+type License_BorrowConfiguration[T any] struct {
 
 	// AllowEarlyCheckIn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-allowearlycheckin
-	AllowEarlyCheckIn bool `json:"AllowEarlyCheckIn"`
+	AllowEarlyCheckIn T `json:"AllowEarlyCheckIn"`
 
 	// MaxTimeToLiveInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-maxtimetoliveinminutes
-	MaxTimeToLiveInMinutes int `json:"MaxTimeToLiveInMinutes"`
+	MaxTimeToLiveInMinutes T `json:"MaxTimeToLiveInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type License_BorrowConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *License_BorrowConfiguration) AWSCloudFormationType() string {
+func (r *License_BorrowConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::LicenseManager::License.BorrowConfiguration"
 }

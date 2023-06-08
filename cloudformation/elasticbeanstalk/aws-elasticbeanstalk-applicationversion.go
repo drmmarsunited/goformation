@@ -11,7 +11,7 @@ import (
 
 // ApplicationVersion AWS CloudFormation Resource (AWS::ElasticBeanstalk::ApplicationVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html
-type ApplicationVersion struct {
+type ApplicationVersion[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type ApplicationVersion struct {
 	// SourceBundle AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
-	SourceBundle *ApplicationVersion_SourceBundle `json:"SourceBundle"`
+	SourceBundle *ApplicationVersion_SourceBundle[any] `json:"SourceBundle"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type ApplicationVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationVersion) AWSCloudFormationType() string {
+func (r *ApplicationVersion[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ApplicationVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationVersion) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationVersion
+func (r ApplicationVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ApplicationVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationVersion) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationVersion
+func (r *ApplicationVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ApplicationVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationVersion(*res.Properties)
+		*r = ApplicationVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

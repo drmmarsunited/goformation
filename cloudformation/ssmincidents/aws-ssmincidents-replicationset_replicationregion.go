@@ -8,12 +8,12 @@ import (
 
 // ReplicationSet_ReplicationRegion AWS CloudFormation Resource (AWS::SSMIncidents::ReplicationSet.ReplicationRegion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-replicationregion.html
-type ReplicationSet_ReplicationRegion struct {
+type ReplicationSet_ReplicationRegion[T any] struct {
 
 	// RegionConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-replicationregion.html#cfn-ssmincidents-replicationset-replicationregion-regionconfiguration
-	RegionConfiguration *ReplicationSet_RegionConfiguration `json:"RegionConfiguration,omitempty"`
+	RegionConfiguration *ReplicationSet_RegionConfiguration[any] `json:"RegionConfiguration,omitempty"`
 
 	// RegionName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ReplicationSet_ReplicationRegion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationSet_ReplicationRegion) AWSCloudFormationType() string {
+func (r *ReplicationSet_ReplicationRegion[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ReplicationSet.ReplicationRegion"
 }

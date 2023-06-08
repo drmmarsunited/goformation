@@ -8,7 +8,7 @@ import (
 
 // Container_Container AWS CloudFormation Resource (AWS::Lightsail::Container.Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html
-type Container_Container struct {
+type Container_Container[T any] struct {
 
 	// Command AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Container_Container struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-environment
-	Environment []Container_EnvironmentVariable `json:"Environment,omitempty"`
+	Environment []Container_EnvironmentVariable[any] `json:"Environment,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Container_Container struct {
 	// Ports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-ports
-	Ports []Container_PortInfo `json:"Ports,omitempty"`
+	Ports []Container_PortInfo[any] `json:"Ports,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type Container_Container struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Container_Container) AWSCloudFormationType() string {
+func (r *Container_Container[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Container.Container"
 }

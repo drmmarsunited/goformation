@@ -8,7 +8,7 @@ import (
 
 // Experiment_RunningStatusObject AWS CloudFormation Resource (AWS::Evidently::Experiment.RunningStatusObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-runningstatusobject.html
-type Experiment_RunningStatusObject struct {
+type Experiment_RunningStatusObject[T any] struct {
 
 	// AnalysisCompleteTime AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Experiment_RunningStatusObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment_RunningStatusObject) AWSCloudFormationType() string {
+func (r *Experiment_RunningStatusObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment.RunningStatusObject"
 }

@@ -8,22 +8,22 @@ import (
 
 // DeploymentGroup_LoadBalancerInfo AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html
-type DeploymentGroup_LoadBalancerInfo struct {
+type DeploymentGroup_LoadBalancerInfo[T any] struct {
 
 	// ElbInfoList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-elbinfolist
-	ElbInfoList []DeploymentGroup_ELBInfo `json:"ElbInfoList,omitempty"`
+	ElbInfoList []DeploymentGroup_ELBInfo[any] `json:"ElbInfoList,omitempty"`
 
 	// TargetGroupInfoList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist
-	TargetGroupInfoList []DeploymentGroup_TargetGroupInfo `json:"TargetGroupInfoList,omitempty"`
+	TargetGroupInfoList []DeploymentGroup_TargetGroupInfo[any] `json:"TargetGroupInfoList,omitempty"`
 
 	// TargetGroupPairInfoList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgrouppairinfolist
-	TargetGroupPairInfoList []DeploymentGroup_TargetGroupPairInfo `json:"TargetGroupPairInfoList,omitempty"`
+	TargetGroupPairInfoList []DeploymentGroup_TargetGroupPairInfo[any] `json:"TargetGroupPairInfoList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DeploymentGroup_LoadBalancerInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_LoadBalancerInfo) AWSCloudFormationType() string {
+func (r *DeploymentGroup_LoadBalancerInfo[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo"
 }

@@ -8,7 +8,7 @@ import (
 
 // ApplicationReferenceDataSource_S3ReferenceDataSource AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html
-type ApplicationReferenceDataSource_S3ReferenceDataSource struct {
+type ApplicationReferenceDataSource_S3ReferenceDataSource[T any] struct {
 
 	// BucketARN AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ApplicationReferenceDataSource_S3ReferenceDataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource_S3ReferenceDataSource) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource_S3ReferenceDataSource[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource"
 }

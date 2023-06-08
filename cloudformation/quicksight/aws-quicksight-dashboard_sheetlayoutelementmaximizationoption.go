@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SheetLayoutElementMaximizationOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SheetLayoutElementMaximizationOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetlayoutelementmaximizationoption.html
-type Dashboard_SheetLayoutElementMaximizationOption struct {
+type Dashboard_SheetLayoutElementMaximizationOption[T any] struct {
 
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_SheetLayoutElementMaximizationOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SheetLayoutElementMaximizationOption) AWSCloudFormationType() string {
+func (r *Dashboard_SheetLayoutElementMaximizationOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SheetLayoutElementMaximizationOption"
 }

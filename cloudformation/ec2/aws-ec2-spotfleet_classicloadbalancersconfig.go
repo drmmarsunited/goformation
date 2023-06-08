@@ -8,12 +8,12 @@ import (
 
 // SpotFleet_ClassicLoadBalancersConfig AWS CloudFormation Resource (AWS::EC2::SpotFleet.ClassicLoadBalancersConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancersconfig.html
-type SpotFleet_ClassicLoadBalancersConfig struct {
+type SpotFleet_ClassicLoadBalancersConfig[T any] struct {
 
 	// ClassicLoadBalancers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancersconfig.html#cfn-ec2-spotfleet-classicloadbalancersconfig-classicloadbalancers
-	ClassicLoadBalancers []SpotFleet_ClassicLoadBalancer `json:"ClassicLoadBalancers"`
+	ClassicLoadBalancers []SpotFleet_ClassicLoadBalancer[any] `json:"ClassicLoadBalancers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type SpotFleet_ClassicLoadBalancersConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_ClassicLoadBalancersConfig) AWSCloudFormationType() string {
+func (r *SpotFleet_ClassicLoadBalancersConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.ClassicLoadBalancersConfig"
 }

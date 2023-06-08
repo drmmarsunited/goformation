@@ -8,7 +8,7 @@ import (
 
 // DetectorModel_DetectorModelDefinition AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.DetectorModelDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html
-type DetectorModel_DetectorModelDefinition struct {
+type DetectorModel_DetectorModelDefinition[T any] struct {
 
 	// InitialStateName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DetectorModel_DetectorModelDefinition struct {
 	// States AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-states
-	States []DetectorModel_State `json:"States"`
+	States []DetectorModel_State[any] `json:"States"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DetectorModel_DetectorModelDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DetectorModel_DetectorModelDefinition) AWSCloudFormationType() string {
+func (r *DetectorModel_DetectorModelDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::IoTEvents::DetectorModel.DetectorModelDefinition"
 }

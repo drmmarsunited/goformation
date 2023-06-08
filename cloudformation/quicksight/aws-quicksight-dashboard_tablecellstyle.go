@@ -8,7 +8,7 @@ import (
 
 // Dashboard_TableCellStyle AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableCellStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html
-type Dashboard_TableCellStyle struct {
+type Dashboard_TableCellStyle[T any] struct {
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Dashboard_TableCellStyle struct {
 	// Border AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-border
-	Border *Dashboard_GlobalTableBorderOptions `json:"Border,omitempty"`
+	Border *Dashboard_GlobalTableBorderOptions[any] `json:"Border,omitempty"`
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-fontconfiguration
-	FontConfiguration *Dashboard_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Dashboard_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-height
-	Height *float64 `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// HorizontalTextAlignment AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type Dashboard_TableCellStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableCellStyle) AWSCloudFormationType() string {
+func (r *Dashboard_TableCellStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableCellStyle"
 }

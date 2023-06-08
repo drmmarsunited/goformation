@@ -8,7 +8,7 @@ import (
 
 // MitigationAction_EnableIoTLoggingParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.EnableIoTLoggingParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-enableiotloggingparams.html
-type MitigationAction_EnableIoTLoggingParams struct {
+type MitigationAction_EnableIoTLoggingParams[T any] struct {
 
 	// LogLevel AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MitigationAction_EnableIoTLoggingParams struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MitigationAction_EnableIoTLoggingParams) AWSCloudFormationType() string {
+func (r *MitigationAction_EnableIoTLoggingParams[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::MitigationAction.EnableIoTLoggingParams"
 }

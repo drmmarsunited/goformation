@@ -8,22 +8,22 @@ import (
 
 // Dashboard_PivotTableSortBy AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTableSortBy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortby.html
-type Dashboard_PivotTableSortBy struct {
+type Dashboard_PivotTableSortBy[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortby.html#cfn-quicksight-dashboard-pivottablesortby-column
-	Column *Dashboard_ColumnSort `json:"Column,omitempty"`
+	Column *Dashboard_ColumnSort[any] `json:"Column,omitempty"`
 
 	// DataPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortby.html#cfn-quicksight-dashboard-pivottablesortby-datapath
-	DataPath *Dashboard_DataPathSort `json:"DataPath,omitempty"`
+	DataPath *Dashboard_DataPathSort[any] `json:"DataPath,omitempty"`
 
 	// Field AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablesortby.html#cfn-quicksight-dashboard-pivottablesortby-field
-	Field *Dashboard_FieldSort `json:"Field,omitempty"`
+	Field *Dashboard_FieldSort[any] `json:"Field,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dashboard_PivotTableSortBy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTableSortBy) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTableSortBy[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTableSortBy"
 }

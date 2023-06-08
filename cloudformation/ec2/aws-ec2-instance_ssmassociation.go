@@ -8,12 +8,12 @@ import (
 
 // Instance_SsmAssociation AWS CloudFormation Resource (AWS::EC2::Instance.SsmAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
-type Instance_SsmAssociation struct {
+type Instance_SsmAssociation[T any] struct {
 
 	// AssociationParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters
-	AssociationParameters []Instance_AssociationParameter `json:"AssociationParameters,omitempty"`
+	AssociationParameters []Instance_AssociationParameter[any] `json:"AssociationParameters,omitempty"`
 
 	// DocumentName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Instance_SsmAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_SsmAssociation) AWSCloudFormationType() string {
+func (r *Instance_SsmAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.SsmAssociation"
 }

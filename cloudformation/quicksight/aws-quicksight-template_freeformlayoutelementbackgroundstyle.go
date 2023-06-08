@@ -8,7 +8,7 @@ import (
 
 // Template_FreeFormLayoutElementBackgroundStyle AWS CloudFormation Resource (AWS::QuickSight::Template.FreeFormLayoutElementBackgroundStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-freeformlayoutelementbackgroundstyle.html
-type Template_FreeFormLayoutElementBackgroundStyle struct {
+type Template_FreeFormLayoutElementBackgroundStyle[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Template_FreeFormLayoutElementBackgroundStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_FreeFormLayoutElementBackgroundStyle) AWSCloudFormationType() string {
+func (r *Template_FreeFormLayoutElementBackgroundStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.FreeFormLayoutElementBackgroundStyle"
 }

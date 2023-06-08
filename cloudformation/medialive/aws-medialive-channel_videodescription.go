@@ -8,17 +8,17 @@ import (
 
 // Channel_VideoDescription AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html
-type Channel_VideoDescription struct {
+type Channel_VideoDescription[T any] struct {
 
 	// CodecSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-codecsettings
-	CodecSettings *Channel_VideoCodecSettings `json:"CodecSettings,omitempty"`
+	CodecSettings *Channel_VideoCodecSettings[any] `json:"CodecSettings,omitempty"`
 
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-height
-	Height *int `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Channel_VideoDescription struct {
 	// Sharpness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-sharpness
-	Sharpness *int `json:"Sharpness,omitempty"`
+	Sharpness *T `json:"Sharpness,omitempty"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-width
-	Width *int `json:"Width,omitempty"`
+	Width *T `json:"Width,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Channel_VideoDescription struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VideoDescription) AWSCloudFormationType() string {
+func (r *Channel_VideoDescription[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VideoDescription"
 }

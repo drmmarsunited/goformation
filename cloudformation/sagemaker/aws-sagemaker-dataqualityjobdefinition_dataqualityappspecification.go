@@ -8,7 +8,7 @@ import (
 
 // DataQualityJobDefinition_DataQualityAppSpecification AWS CloudFormation Resource (AWS::SageMaker::DataQualityJobDefinition.DataQualityAppSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html
-type DataQualityJobDefinition_DataQualityAppSpecification struct {
+type DataQualityJobDefinition_DataQualityAppSpecification[T any] struct {
 
 	// ContainerArguments AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type DataQualityJobDefinition_DataQualityAppSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataQualityJobDefinition_DataQualityAppSpecification) AWSCloudFormationType() string {
+func (r *DataQualityJobDefinition_DataQualityAppSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DataQualityJobDefinition.DataQualityAppSpecification"
 }

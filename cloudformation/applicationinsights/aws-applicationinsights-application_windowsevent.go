@@ -8,7 +8,7 @@ import (
 
 // Application_WindowsEvent AWS CloudFormation Resource (AWS::ApplicationInsights::Application.WindowsEvent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-windowsevent.html
-type Application_WindowsEvent struct {
+type Application_WindowsEvent[T any] struct {
 
 	// EventLevels AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Application_WindowsEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_WindowsEvent) AWSCloudFormationType() string {
+func (r *Application_WindowsEvent[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.WindowsEvent"
 }

@@ -8,12 +8,12 @@ import (
 
 // TaskTemplate_InvisibleFieldInfo AWS CloudFormation Resource (AWS::Connect::TaskTemplate.InvisibleFieldInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-invisiblefieldinfo.html
-type TaskTemplate_InvisibleFieldInfo struct {
+type TaskTemplate_InvisibleFieldInfo[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-invisiblefieldinfo.html#cfn-connect-tasktemplate-invisiblefieldinfo-id
-	Id *TaskTemplate_FieldIdentifier `json:"Id"`
+	Id *TaskTemplate_FieldIdentifier[any] `json:"Id"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type TaskTemplate_InvisibleFieldInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskTemplate_InvisibleFieldInfo) AWSCloudFormationType() string {
+func (r *TaskTemplate_InvisibleFieldInfo[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::TaskTemplate.InvisibleFieldInfo"
 }

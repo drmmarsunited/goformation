@@ -8,22 +8,22 @@ import (
 
 // ContainerRecipe_EbsInstanceBlockDeviceSpecification AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.EbsInstanceBlockDeviceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html
-type ContainerRecipe_EbsInstanceBlockDeviceSpecification struct {
+type ContainerRecipe_EbsInstanceBlockDeviceSpecification[T any] struct {
 
 	// DeleteOnTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-deleteontermination
-	DeleteOnTermination *bool `json:"DeleteOnTermination,omitempty"`
+	DeleteOnTermination *T `json:"DeleteOnTermination,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *T `json:"Encrypted,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *T `json:"Iops,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type ContainerRecipe_EbsInstanceBlockDeviceSpecification struct {
 	// Throughput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-throughput
-	Throughput *int `json:"Throughput,omitempty"`
+	Throughput *T `json:"Throughput,omitempty"`
 
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-volumesize
-	VolumeSize *int `json:"VolumeSize,omitempty"`
+	VolumeSize *T `json:"VolumeSize,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false
@@ -67,6 +67,6 @@ type ContainerRecipe_EbsInstanceBlockDeviceSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe_EbsInstanceBlockDeviceSpecification) AWSCloudFormationType() string {
+func (r *ContainerRecipe_EbsInstanceBlockDeviceSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe.EbsInstanceBlockDeviceSpecification"
 }

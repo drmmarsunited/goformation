@@ -8,27 +8,27 @@ import (
 
 // Domain_AdvancedSecurityOptionsInput AWS CloudFormation Resource (AWS::Elasticsearch::Domain.AdvancedSecurityOptionsInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html
-type Domain_AdvancedSecurityOptionsInput struct {
+type Domain_AdvancedSecurityOptionsInput[T any] struct {
 
 	// AnonymousAuthEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-anonymousauthenabled
-	AnonymousAuthEnabled *bool `json:"AnonymousAuthEnabled,omitempty"`
+	AnonymousAuthEnabled *T `json:"AnonymousAuthEnabled,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// InternalUserDatabaseEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-internaluserdatabaseenabled
-	InternalUserDatabaseEnabled *bool `json:"InternalUserDatabaseEnabled,omitempty"`
+	InternalUserDatabaseEnabled *T `json:"InternalUserDatabaseEnabled,omitempty"`
 
 	// MasterUserOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-masteruseroptions
-	MasterUserOptions *Domain_MasterUserOptions `json:"MasterUserOptions,omitempty"`
+	MasterUserOptions *Domain_MasterUserOptions[any] `json:"MasterUserOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Domain_AdvancedSecurityOptionsInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_AdvancedSecurityOptionsInput) AWSCloudFormationType() string {
+func (r *Domain_AdvancedSecurityOptionsInput[any]) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.AdvancedSecurityOptionsInput"
 }

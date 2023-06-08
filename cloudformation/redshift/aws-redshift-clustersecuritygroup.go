@@ -12,7 +12,7 @@ import (
 
 // ClusterSecurityGroup AWS CloudFormation Resource (AWS::Redshift::ClusterSecurityGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html
-type ClusterSecurityGroup struct {
+type ClusterSecurityGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -41,14 +41,15 @@ type ClusterSecurityGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClusterSecurityGroup) AWSCloudFormationType() string {
+func (r *ClusterSecurityGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ClusterSecurityGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ClusterSecurityGroup) MarshalJSON() ([]byte, error) {
-	type Properties ClusterSecurityGroup
+func (r ClusterSecurityGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties ClusterSecurityGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r ClusterSecurityGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ClusterSecurityGroup) UnmarshalJSON(b []byte) error {
-	type Properties ClusterSecurityGroup
+func (r *ClusterSecurityGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties ClusterSecurityGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *ClusterSecurityGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ClusterSecurityGroup(*res.Properties)
+		*r = ClusterSecurityGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

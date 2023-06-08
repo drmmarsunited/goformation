@@ -8,7 +8,7 @@ import (
 
 // EndpointAccess_NetworkInterface AWS CloudFormation Resource (AWS::Redshift::EndpointAccess.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html
-type EndpointAccess_NetworkInterface struct {
+type EndpointAccess_NetworkInterface[T any] struct {
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type EndpointAccess_NetworkInterface struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointAccess_NetworkInterface) AWSCloudFormationType() string {
+func (r *EndpointAccess_NetworkInterface[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::EndpointAccess.NetworkInterface"
 }

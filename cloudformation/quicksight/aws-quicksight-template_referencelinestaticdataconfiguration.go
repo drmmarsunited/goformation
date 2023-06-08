@@ -8,12 +8,12 @@ import (
 
 // Template_ReferenceLineStaticDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLineStaticDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinestaticdataconfiguration.html
-type Template_ReferenceLineStaticDataConfiguration struct {
+type Template_ReferenceLineStaticDataConfiguration[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinestaticdataconfiguration.html#cfn-quicksight-template-referencelinestaticdataconfiguration-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Template_ReferenceLineStaticDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLineStaticDataConfiguration) AWSCloudFormationType() string {
+func (r *Template_ReferenceLineStaticDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLineStaticDataConfiguration"
 }

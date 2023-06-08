@@ -8,7 +8,7 @@ import (
 
 // Endpoint_RedisSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.RedisSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html
-type Endpoint_RedisSettings struct {
+type Endpoint_RedisSettings[T any] struct {
 
 	// AuthPassword AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Endpoint_RedisSettings struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-port
-	Port *float64 `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// ServerName AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Endpoint_RedisSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_RedisSettings) AWSCloudFormationType() string {
+func (r *Endpoint_RedisSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.RedisSettings"
 }

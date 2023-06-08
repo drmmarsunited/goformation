@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_SsmParameter AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.SsmParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmparameter.html
-type ResponsePlan_SsmParameter struct {
+type ResponsePlan_SsmParameter[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ResponsePlan_SsmParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_SsmParameter) AWSCloudFormationType() string {
+func (r *ResponsePlan_SsmParameter[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.SsmParameter"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bucket_ReplicationRuleAndOperator AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationRuleAndOperator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationruleandoperator.html
-type Bucket_ReplicationRuleAndOperator struct {
+type Bucket_ReplicationRuleAndOperator[T any] struct {
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Bucket_ReplicationRuleAndOperator struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationruleandoperator.html#cfn-s3-bucket-replicationruleandoperator-tagfilters
-	TagFilters []Bucket_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Bucket_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_ReplicationRuleAndOperator struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ReplicationRuleAndOperator) AWSCloudFormationType() string {
+func (r *Bucket_ReplicationRuleAndOperator[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicationRuleAndOperator"
 }

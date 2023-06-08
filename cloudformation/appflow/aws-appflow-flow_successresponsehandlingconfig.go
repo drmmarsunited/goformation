@@ -8,7 +8,7 @@ import (
 
 // Flow_SuccessResponseHandlingConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.SuccessResponseHandlingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-successresponsehandlingconfig.html
-type Flow_SuccessResponseHandlingConfig struct {
+type Flow_SuccessResponseHandlingConfig[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Flow_SuccessResponseHandlingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SuccessResponseHandlingConfig) AWSCloudFormationType() string {
+func (r *Flow_SuccessResponseHandlingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SuccessResponseHandlingConfig"
 }

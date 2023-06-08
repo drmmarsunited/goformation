@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_SharedFileSystemConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.SharedFileSystemConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-sharedfilesystemconfiguration.html
-type StudioComponent_SharedFileSystemConfiguration struct {
+type StudioComponent_SharedFileSystemConfiguration[T any] struct {
 
 	// Endpoint AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type StudioComponent_SharedFileSystemConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_SharedFileSystemConfiguration) AWSCloudFormationType() string {
+func (r *StudioComponent_SharedFileSystemConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.SharedFileSystemConfiguration"
 }

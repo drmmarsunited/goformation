@@ -8,12 +8,12 @@ import (
 
 // Analysis_GeospatialPointStyleOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.GeospatialPointStyleOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html
-type Analysis_GeospatialPointStyleOptions struct {
+type Analysis_GeospatialPointStyleOptions[T any] struct {
 
 	// ClusterMarkerConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html#cfn-quicksight-analysis-geospatialpointstyleoptions-clustermarkerconfiguration
-	ClusterMarkerConfiguration *Analysis_ClusterMarkerConfiguration `json:"ClusterMarkerConfiguration,omitempty"`
+	ClusterMarkerConfiguration *Analysis_ClusterMarkerConfiguration[any] `json:"ClusterMarkerConfiguration,omitempty"`
 
 	// SelectedPointStyle AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_GeospatialPointStyleOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_GeospatialPointStyleOptions) AWSCloudFormationType() string {
+func (r *Analysis_GeospatialPointStyleOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.GeospatialPointStyleOptions"
 }

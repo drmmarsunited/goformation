@@ -8,7 +8,7 @@ import (
 
 // RecordingConfiguration_S3DestinationConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration.S3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-s3destinationconfiguration.html
-type RecordingConfiguration_S3DestinationConfiguration struct {
+type RecordingConfiguration_S3DestinationConfiguration[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type RecordingConfiguration_S3DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordingConfiguration_S3DestinationConfiguration) AWSCloudFormationType() string {
+func (r *RecordingConfiguration_S3DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVS::RecordingConfiguration.S3DestinationConfiguration"
 }

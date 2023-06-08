@@ -8,7 +8,7 @@ import (
 
 // ResourceSet_R53ResourceRecord AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.R53ResourceRecord)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-r53resourcerecord.html
-type ResourceSet_R53ResourceRecord struct {
+type ResourceSet_R53ResourceRecord[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ResourceSet_R53ResourceRecord struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet_R53ResourceRecord) AWSCloudFormationType() string {
+func (r *ResourceSet_R53ResourceRecord[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet.R53ResourceRecord"
 }

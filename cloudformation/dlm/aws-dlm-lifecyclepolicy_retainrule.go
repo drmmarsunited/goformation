@@ -8,17 +8,17 @@ import (
 
 // LifecyclePolicy_RetainRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.RetainRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html
-type LifecyclePolicy_RetainRule struct {
+type LifecyclePolicy_RetainRule[T any] struct {
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-count
-	Count *int `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type LifecyclePolicy_RetainRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_RetainRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_RetainRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.RetainRule"
 }

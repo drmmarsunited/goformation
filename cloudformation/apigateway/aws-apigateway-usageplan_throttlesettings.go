@@ -8,17 +8,17 @@ import (
 
 // UsagePlan_ThrottleSettings AWS CloudFormation Resource (AWS::ApiGateway::UsagePlan.ThrottleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html
-type UsagePlan_ThrottleSettings struct {
+type UsagePlan_ThrottleSettings[T any] struct {
 
 	// BurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-burstlimit
-	BurstLimit *int `json:"BurstLimit,omitempty"`
+	BurstLimit *T `json:"BurstLimit,omitempty"`
 
 	// RateLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit
-	RateLimit *float64 `json:"RateLimit,omitempty"`
+	RateLimit *T `json:"RateLimit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type UsagePlan_ThrottleSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UsagePlan_ThrottleSettings) AWSCloudFormationType() string {
+func (r *UsagePlan_ThrottleSettings[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::UsagePlan.ThrottleSettings"
 }

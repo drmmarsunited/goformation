@@ -11,7 +11,7 @@ import (
 
 // Theme AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Theme)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html
-type Theme struct {
+type Theme[T any] struct {
 
 	// AppId AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Theme struct {
 	// Overrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-overrides
-	Overrides []Theme_ThemeValues `json:"Overrides,omitempty"`
+	Overrides []Theme_ThemeValues[any] `json:"Overrides,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type Theme struct {
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-values
-	Values []Theme_ThemeValues `json:"Values"`
+	Values []Theme_ThemeValues[any] `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -60,14 +60,15 @@ type Theme struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme) AWSCloudFormationType() string {
+func (r *Theme[any]) AWSCloudFormationType() string {
 	return "AWS::AmplifyUIBuilder::Theme"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Theme) MarshalJSON() ([]byte, error) {
-	type Properties Theme
+func (r Theme[any]) MarshalJSON() ([]byte, error) {
+	type Properties Theme[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -89,8 +90,9 @@ func (r Theme) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Theme) UnmarshalJSON(b []byte) error {
-	type Properties Theme
+func (r *Theme[any]) UnmarshalJSON(b []byte) error {
+	type Properties Theme[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -110,7 +112,7 @@ func (r *Theme) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Theme(*res.Properties)
+		*r = Theme[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -12,7 +12,7 @@ import (
 
 // RecoveryGroup AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::RecoveryGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-recoverygroup.html
-type RecoveryGroup struct {
+type RecoveryGroup[T any] struct {
 
 	// Cells AWS CloudFormation Property
 	// Required: false
@@ -46,14 +46,15 @@ type RecoveryGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecoveryGroup) AWSCloudFormationType() string {
+func (r *RecoveryGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::RecoveryGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RecoveryGroup) MarshalJSON() ([]byte, error) {
-	type Properties RecoveryGroup
+func (r RecoveryGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties RecoveryGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r RecoveryGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RecoveryGroup) UnmarshalJSON(b []byte) error {
-	type Properties RecoveryGroup
+func (r *RecoveryGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties RecoveryGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *RecoveryGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RecoveryGroup(*res.Properties)
+		*r = RecoveryGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Volume_OriginSnapshot AWS CloudFormation Resource (AWS::FSx::Volume.OriginSnapshot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html
-type Volume_OriginSnapshot struct {
+type Volume_OriginSnapshot[T any] struct {
 
 	// CopyStrategy AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Volume_OriginSnapshot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Volume_OriginSnapshot) AWSCloudFormationType() string {
+func (r *Volume_OriginSnapshot[any]) AWSCloudFormationType() string {
 	return "AWS::FSx::Volume.OriginSnapshot"
 }

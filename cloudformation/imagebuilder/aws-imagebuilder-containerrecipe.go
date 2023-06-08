@@ -11,12 +11,12 @@ import (
 
 // ContainerRecipe AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html
-type ContainerRecipe struct {
+type ContainerRecipe[T any] struct {
 
 	// Components AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-components
-	Components []ContainerRecipe_ComponentConfiguration `json:"Components"`
+	Components []ContainerRecipe_ComponentConfiguration[any] `json:"Components"`
 
 	// ContainerType AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type ContainerRecipe struct {
 	// InstanceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-instanceconfiguration
-	InstanceConfiguration *ContainerRecipe_InstanceConfiguration `json:"InstanceConfiguration,omitempty"`
+	InstanceConfiguration *ContainerRecipe_InstanceConfiguration[any] `json:"InstanceConfiguration,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type ContainerRecipe struct {
 	// TargetRepository AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-targetrepository
-	TargetRepository *ContainerRecipe_TargetContainerRepository `json:"TargetRepository"`
+	TargetRepository *ContainerRecipe_TargetContainerRepository[any] `json:"TargetRepository"`
 
 	// Version AWS CloudFormation Property
 	// Required: true
@@ -105,14 +105,15 @@ type ContainerRecipe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContainerRecipe) AWSCloudFormationType() string {
+func (r *ContainerRecipe[any]) AWSCloudFormationType() string {
 	return "AWS::ImageBuilder::ContainerRecipe"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ContainerRecipe) MarshalJSON() ([]byte, error) {
-	type Properties ContainerRecipe
+func (r ContainerRecipe[any]) MarshalJSON() ([]byte, error) {
+	type Properties ContainerRecipe[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -134,8 +135,9 @@ func (r ContainerRecipe) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ContainerRecipe) UnmarshalJSON(b []byte) error {
-	type Properties ContainerRecipe
+func (r *ContainerRecipe[any]) UnmarshalJSON(b []byte) error {
+	type Properties ContainerRecipe[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -155,7 +157,7 @@ func (r *ContainerRecipe) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ContainerRecipe(*res.Properties)
+		*r = ContainerRecipe[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

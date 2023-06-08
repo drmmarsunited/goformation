@@ -8,7 +8,7 @@ import (
 
 // Application_HAClusterPrometheusExporter AWS CloudFormation Resource (AWS::ApplicationInsights::Application.HAClusterPrometheusExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-haclusterprometheusexporter.html
-type Application_HAClusterPrometheusExporter struct {
+type Application_HAClusterPrometheusExporter[T any] struct {
 
 	// PrometheusPort AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Application_HAClusterPrometheusExporter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_HAClusterPrometheusExporter) AWSCloudFormationType() string {
+func (r *Application_HAClusterPrometheusExporter[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.HAClusterPrometheusExporter"
 }

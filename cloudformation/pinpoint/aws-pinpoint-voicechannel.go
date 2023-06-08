@@ -11,7 +11,7 @@ import (
 
 // VoiceChannel AWS CloudFormation Resource (AWS::Pinpoint::VoiceChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html
-type VoiceChannel struct {
+type VoiceChannel[T any] struct {
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type VoiceChannel struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html#cfn-pinpoint-voicechannel-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type VoiceChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VoiceChannel) AWSCloudFormationType() string {
+func (r *VoiceChannel[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::VoiceChannel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VoiceChannel) MarshalJSON() ([]byte, error) {
-	type Properties VoiceChannel
+func (r VoiceChannel[any]) MarshalJSON() ([]byte, error) {
+	type Properties VoiceChannel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r VoiceChannel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VoiceChannel) UnmarshalJSON(b []byte) error {
-	type Properties VoiceChannel
+func (r *VoiceChannel[any]) UnmarshalJSON(b []byte) error {
+	type Properties VoiceChannel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *VoiceChannel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VoiceChannel(*res.Properties)
+		*r = VoiceChannel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,12 +8,12 @@ import (
 
 // Dataset_DatasetImportJob AWS CloudFormation Resource (AWS::Personalize::Dataset.DatasetImportJob)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html
-type Dataset_DatasetImportJob struct {
+type Dataset_DatasetImportJob[T any] struct {
 
 	// DataSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasetimportjob.html#cfn-personalize-dataset-datasetimportjob-datasource
-	DataSource *Dataset_DataSource `json:"DataSource,omitempty"`
+	DataSource *Dataset_DataSource[any] `json:"DataSource,omitempty"`
 
 	// DatasetArn AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Dataset_DatasetImportJob struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_DatasetImportJob) AWSCloudFormationType() string {
+func (r *Dataset_DatasetImportJob[any]) AWSCloudFormationType() string {
 	return "AWS::Personalize::Dataset.DatasetImportJob"
 }

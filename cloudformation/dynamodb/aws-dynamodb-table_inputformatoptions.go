@@ -8,12 +8,12 @@ import (
 
 // Table_InputFormatOptions AWS CloudFormation Resource (AWS::DynamoDB::Table.InputFormatOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-inputformatoptions.html
-type Table_InputFormatOptions struct {
+type Table_InputFormatOptions[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-inputformatoptions.html#cfn-dynamodb-table-inputformatoptions-csv
-	Csv *Table_Csv `json:"Csv,omitempty"`
+	Csv *Table_Csv[any] `json:"Csv,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Table_InputFormatOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_InputFormatOptions) AWSCloudFormationType() string {
+func (r *Table_InputFormatOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.InputFormatOptions"
 }

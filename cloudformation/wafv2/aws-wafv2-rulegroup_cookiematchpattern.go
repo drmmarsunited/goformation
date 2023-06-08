@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_CookieMatchPattern AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.CookieMatchPattern)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-cookiematchpattern.html
-type RuleGroup_CookieMatchPattern struct {
+type RuleGroup_CookieMatchPattern[T any] struct {
 
 	// All AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type RuleGroup_CookieMatchPattern struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_CookieMatchPattern) AWSCloudFormationType() string {
+func (r *RuleGroup_CookieMatchPattern[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.CookieMatchPattern"
 }

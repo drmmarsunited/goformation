@@ -12,12 +12,12 @@ import (
 
 // ResourceShare AWS CloudFormation Resource (AWS::RAM::ResourceShare)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html
-type ResourceShare struct {
+type ResourceShare[T any] struct {
 
 	// AllowExternalPrincipals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-allowexternalprincipals
-	AllowExternalPrincipals *bool `json:"AllowExternalPrincipals,omitempty"`
+	AllowExternalPrincipals *T `json:"AllowExternalPrincipals,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type ResourceShare struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceShare) AWSCloudFormationType() string {
+func (r *ResourceShare[any]) AWSCloudFormationType() string {
 	return "AWS::RAM::ResourceShare"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceShare) MarshalJSON() ([]byte, error) {
-	type Properties ResourceShare
+func (r ResourceShare[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceShare[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ResourceShare) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceShare) UnmarshalJSON(b []byte) error {
-	type Properties ResourceShare
+func (r *ResourceShare[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceShare[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ResourceShare) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceShare(*res.Properties)
+		*r = ResourceShare[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

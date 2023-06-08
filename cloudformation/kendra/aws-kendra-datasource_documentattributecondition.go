@@ -8,7 +8,7 @@ import (
 
 // DataSource_DocumentAttributeCondition AWS CloudFormation Resource (AWS::Kendra::DataSource.DocumentAttributeCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html
-type DataSource_DocumentAttributeCondition struct {
+type DataSource_DocumentAttributeCondition[T any] struct {
 
 	// ConditionDocumentAttributeKey AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DataSource_DocumentAttributeCondition struct {
 	// ConditionOnValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiononvalue
-	ConditionOnValue *DataSource_DocumentAttributeValue `json:"ConditionOnValue,omitempty"`
+	ConditionOnValue *DataSource_DocumentAttributeValue[any] `json:"ConditionOnValue,omitempty"`
 
 	// Operator AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type DataSource_DocumentAttributeCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DocumentAttributeCondition) AWSCloudFormationType() string {
+func (r *DataSource_DocumentAttributeCondition[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DocumentAttributeCondition"
 }

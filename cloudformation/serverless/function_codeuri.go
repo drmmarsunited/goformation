@@ -12,13 +12,13 @@ import (
 )
 
 // Function_CodeUri is a helper struct that can hold either a String or S3Location value
-type Function_CodeUri struct {
+type Function_CodeUri[T any] struct {
 	String *string
 
-	S3Location *Function_S3Location
+	S3Location *Function_S3Location[any]
 }
 
-func (r Function_CodeUri) value() interface{} {
+func (r Function_CodeUri[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r Function_CodeUri) value() interface{} {
 	return nil
 }
 
-func (r Function_CodeUri) MarshalJSON() ([]byte, error) {
+func (r Function_CodeUri[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Function_CodeUri) UnmarshalJSON(b []byte) error {
+func (r *Function_CodeUri[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

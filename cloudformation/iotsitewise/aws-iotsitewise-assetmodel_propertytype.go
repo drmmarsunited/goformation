@@ -8,22 +8,22 @@ import (
 
 // AssetModel_PropertyType AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.PropertyType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html
-type AssetModel_PropertyType struct {
+type AssetModel_PropertyType[T any] struct {
 
 	// Attribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-attribute
-	Attribute *AssetModel_Attribute `json:"Attribute,omitempty"`
+	Attribute *AssetModel_Attribute[any] `json:"Attribute,omitempty"`
 
 	// Metric AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-metric
-	Metric *AssetModel_Metric `json:"Metric,omitempty"`
+	Metric *AssetModel_Metric[any] `json:"Metric,omitempty"`
 
 	// Transform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-transform
-	Transform *AssetModel_Transform `json:"Transform,omitempty"`
+	Transform *AssetModel_Transform[any] `json:"Transform,omitempty"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type AssetModel_PropertyType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_PropertyType) AWSCloudFormationType() string {
+func (r *AssetModel_PropertyType[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.PropertyType"
 }

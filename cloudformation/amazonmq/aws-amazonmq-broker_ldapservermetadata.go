@@ -8,7 +8,7 @@ import (
 
 // Broker_LdapServerMetadata AWS CloudFormation Resource (AWS::AmazonMQ::Broker.LdapServerMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html
-type Broker_LdapServerMetadata struct {
+type Broker_LdapServerMetadata[T any] struct {
 
 	// Hosts AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Broker_LdapServerMetadata struct {
 	// RoleSearchSubtree AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-rolesearchsubtree
-	RoleSearchSubtree *bool `json:"RoleSearchSubtree,omitempty"`
+	RoleSearchSubtree *T `json:"RoleSearchSubtree,omitempty"`
 
 	// ServiceAccountPassword AWS CloudFormation Property
 	// Required: true
@@ -63,7 +63,7 @@ type Broker_LdapServerMetadata struct {
 	// UserSearchSubtree AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-usersearchsubtree
-	UserSearchSubtree *bool `json:"UserSearchSubtree,omitempty"`
+	UserSearchSubtree *T `json:"UserSearchSubtree,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type Broker_LdapServerMetadata struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Broker_LdapServerMetadata) AWSCloudFormationType() string {
+func (r *Broker_LdapServerMetadata[any]) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.LdapServerMetadata"
 }

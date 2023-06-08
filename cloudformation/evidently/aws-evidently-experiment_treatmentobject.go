@@ -8,7 +8,7 @@ import (
 
 // Experiment_TreatmentObject AWS CloudFormation Resource (AWS::Evidently::Experiment.TreatmentObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmentobject.html
-type Experiment_TreatmentObject struct {
+type Experiment_TreatmentObject[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Experiment_TreatmentObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment_TreatmentObject) AWSCloudFormationType() string {
+func (r *Experiment_TreatmentObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment.TreatmentObject"
 }

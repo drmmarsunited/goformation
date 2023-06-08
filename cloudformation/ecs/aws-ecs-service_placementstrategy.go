@@ -8,7 +8,7 @@ import (
 
 // Service_PlacementStrategy AWS CloudFormation Resource (AWS::ECS::Service.PlacementStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementstrategy.html
-type Service_PlacementStrategy struct {
+type Service_PlacementStrategy[T any] struct {
 
 	// Field AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Service_PlacementStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_PlacementStrategy) AWSCloudFormationType() string {
+func (r *Service_PlacementStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.PlacementStrategy"
 }

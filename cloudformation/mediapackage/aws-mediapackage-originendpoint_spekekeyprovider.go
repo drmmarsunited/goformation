@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_SpekeKeyProvider AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.SpekeKeyProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html
-type OriginEndpoint_SpekeKeyProvider struct {
+type OriginEndpoint_SpekeKeyProvider[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type OriginEndpoint_SpekeKeyProvider struct {
 	// EncryptionContractConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-encryptioncontractconfiguration
-	EncryptionContractConfiguration *OriginEndpoint_EncryptionContractConfiguration `json:"EncryptionContractConfiguration,omitempty"`
+	EncryptionContractConfiguration *OriginEndpoint_EncryptionContractConfiguration[any] `json:"EncryptionContractConfiguration,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type OriginEndpoint_SpekeKeyProvider struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_SpekeKeyProvider) AWSCloudFormationType() string {
+func (r *OriginEndpoint_SpekeKeyProvider[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.SpekeKeyProvider"
 }

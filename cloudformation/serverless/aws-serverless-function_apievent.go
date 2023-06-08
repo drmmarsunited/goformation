@@ -8,12 +8,12 @@ import (
 
 // Function_ApiEvent AWS CloudFormation Resource (AWS::Serverless::Function.ApiEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-type Function_ApiEvent struct {
+type Function_ApiEvent[T any] struct {
 
 	// Auth AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	Auth *Function_Auth `json:"Auth,omitempty"`
+	Auth *Function_Auth[any] `json:"Auth,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type Function_ApiEvent struct {
 	// RequestModel AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	RequestModel *Function_RequestModel `json:"RequestModel,omitempty"`
+	RequestModel *Function_RequestModel[any] `json:"RequestModel,omitempty"`
 
 	// RequestParameters AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	RequestParameters *Function_RequestParameters `json:"RequestParameters,omitempty"`
+	RequestParameters *Function_RequestParameters[any] `json:"RequestParameters,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Function_ApiEvent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_ApiEvent) AWSCloudFormationType() string {
+func (r *Function_ApiEvent[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.ApiEvent"
 }

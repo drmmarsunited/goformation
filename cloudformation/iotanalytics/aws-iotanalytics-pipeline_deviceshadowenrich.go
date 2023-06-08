@@ -8,7 +8,7 @@ import (
 
 // Pipeline_DeviceShadowEnrich AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceshadowenrich.html
-type Pipeline_DeviceShadowEnrich struct {
+type Pipeline_DeviceShadowEnrich[T any] struct {
 
 	// Attribute AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Pipeline_DeviceShadowEnrich struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_DeviceShadowEnrich) AWSCloudFormationType() string {
+func (r *Pipeline_DeviceShadowEnrich[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich"
 }

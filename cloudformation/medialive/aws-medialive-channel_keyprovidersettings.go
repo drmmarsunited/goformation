@@ -8,12 +8,12 @@ import (
 
 // Channel_KeyProviderSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.KeyProviderSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-keyprovidersettings.html
-type Channel_KeyProviderSettings struct {
+type Channel_KeyProviderSettings[T any] struct {
 
 	// StaticKeySettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-keyprovidersettings.html#cfn-medialive-channel-keyprovidersettings-statickeysettings
-	StaticKeySettings *Channel_StaticKeySettings `json:"StaticKeySettings,omitempty"`
+	StaticKeySettings *Channel_StaticKeySettings[any] `json:"StaticKeySettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_KeyProviderSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_KeyProviderSettings) AWSCloudFormationType() string {
+func (r *Channel_KeyProviderSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.KeyProviderSettings"
 }

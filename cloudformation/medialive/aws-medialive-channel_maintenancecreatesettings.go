@@ -8,7 +8,7 @@ import (
 
 // Channel_MaintenanceCreateSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MaintenanceCreateSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-maintenancecreatesettings.html
-type Channel_MaintenanceCreateSettings struct {
+type Channel_MaintenanceCreateSettings[T any] struct {
 
 	// MaintenanceDay AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_MaintenanceCreateSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MaintenanceCreateSettings) AWSCloudFormationType() string {
+func (r *Channel_MaintenanceCreateSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MaintenanceCreateSettings"
 }

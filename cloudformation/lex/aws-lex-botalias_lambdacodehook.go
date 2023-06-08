@@ -8,7 +8,7 @@ import (
 
 // BotAlias_LambdaCodeHook AWS CloudFormation Resource (AWS::Lex::BotAlias.LambdaCodeHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-lambdacodehook.html
-type BotAlias_LambdaCodeHook struct {
+type BotAlias_LambdaCodeHook[T any] struct {
 
 	// CodeHookInterfaceVersion AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type BotAlias_LambdaCodeHook struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BotAlias_LambdaCodeHook) AWSCloudFormationType() string {
+func (r *BotAlias_LambdaCodeHook[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::BotAlias.LambdaCodeHook"
 }

@@ -11,7 +11,7 @@ import (
 
 // IdentityPoolRoleAttachment AWS CloudFormation Resource (AWS::Cognito::IdentityPoolRoleAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html
-type IdentityPoolRoleAttachment struct {
+type IdentityPoolRoleAttachment[T any] struct {
 
 	// IdentityPoolId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type IdentityPoolRoleAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *IdentityPoolRoleAttachment) AWSCloudFormationType() string {
+func (r *IdentityPoolRoleAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPoolRoleAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r IdentityPoolRoleAttachment) MarshalJSON() ([]byte, error) {
-	type Properties IdentityPoolRoleAttachment
+func (r IdentityPoolRoleAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties IdentityPoolRoleAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r IdentityPoolRoleAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *IdentityPoolRoleAttachment) UnmarshalJSON(b []byte) error {
-	type Properties IdentityPoolRoleAttachment
+func (r *IdentityPoolRoleAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties IdentityPoolRoleAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *IdentityPoolRoleAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = IdentityPoolRoleAttachment(*res.Properties)
+		*r = IdentityPoolRoleAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // FirewallPolicy_StatefulEngineOptions AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.StatefulEngineOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html
-type FirewallPolicy_StatefulEngineOptions struct {
+type FirewallPolicy_StatefulEngineOptions[T any] struct {
 
 	// RuleOrder AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type FirewallPolicy_StatefulEngineOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_StatefulEngineOptions) AWSCloudFormationType() string {
+func (r *FirewallPolicy_StatefulEngineOptions[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.StatefulEngineOptions"
 }

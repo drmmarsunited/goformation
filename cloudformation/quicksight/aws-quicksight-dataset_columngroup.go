@@ -8,12 +8,12 @@ import (
 
 // DataSet_ColumnGroup AWS CloudFormation Resource (AWS::QuickSight::DataSet.ColumnGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columngroup.html
-type DataSet_ColumnGroup struct {
+type DataSet_ColumnGroup[T any] struct {
 
 	// GeoSpatialColumnGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columngroup.html#cfn-quicksight-dataset-columngroup-geospatialcolumngroup
-	GeoSpatialColumnGroup *DataSet_GeoSpatialColumnGroup `json:"GeoSpatialColumnGroup,omitempty"`
+	GeoSpatialColumnGroup *DataSet_GeoSpatialColumnGroup[any] `json:"GeoSpatialColumnGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type DataSet_ColumnGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_ColumnGroup) AWSCloudFormationType() string {
+func (r *DataSet_ColumnGroup[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.ColumnGroup"
 }

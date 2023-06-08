@@ -8,7 +8,7 @@ import (
 
 // Schedule_KinesisParameters AWS CloudFormation Resource (AWS::Scheduler::Schedule.KinesisParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-kinesisparameters.html
-type Schedule_KinesisParameters struct {
+type Schedule_KinesisParameters[T any] struct {
 
 	// PartitionKey AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Schedule_KinesisParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_KinesisParameters) AWSCloudFormationType() string {
+func (r *Schedule_KinesisParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.KinesisParameters"
 }

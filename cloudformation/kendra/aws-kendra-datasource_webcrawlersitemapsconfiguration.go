@@ -8,7 +8,7 @@ import (
 
 // DataSource_WebCrawlerSiteMapsConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerSiteMapsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlersitemapsconfiguration.html
-type DataSource_WebCrawlerSiteMapsConfiguration struct {
+type DataSource_WebCrawlerSiteMapsConfiguration[T any] struct {
 
 	// SiteMaps AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_WebCrawlerSiteMapsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_WebCrawlerSiteMapsConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_WebCrawlerSiteMapsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.WebCrawlerSiteMapsConfiguration"
 }

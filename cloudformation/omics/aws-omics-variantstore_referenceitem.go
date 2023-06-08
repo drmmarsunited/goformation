@@ -8,7 +8,7 @@ import (
 
 // VariantStore_ReferenceItem AWS CloudFormation Resource (AWS::Omics::VariantStore.ReferenceItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-variantstore-referenceitem.html
-type VariantStore_ReferenceItem struct {
+type VariantStore_ReferenceItem[T any] struct {
 
 	// ReferenceArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VariantStore_ReferenceItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VariantStore_ReferenceItem) AWSCloudFormationType() string {
+func (r *VariantStore_ReferenceItem[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::VariantStore.ReferenceItem"
 }

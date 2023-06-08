@@ -8,17 +8,17 @@ import (
 
 // Deployment_IoTJobExecutionsRolloutConfig AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobExecutionsRolloutConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexecutionsrolloutconfig.html
-type Deployment_IoTJobExecutionsRolloutConfig struct {
+type Deployment_IoTJobExecutionsRolloutConfig[T any] struct {
 
 	// ExponentialRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexecutionsrolloutconfig.html#cfn-greengrassv2-deployment-iotjobexecutionsrolloutconfig-exponentialrate
-	ExponentialRate *Deployment_IoTJobExponentialRolloutRate `json:"ExponentialRate,omitempty"`
+	ExponentialRate *Deployment_IoTJobExponentialRolloutRate[any] `json:"ExponentialRate,omitempty"`
 
 	// MaximumPerMinute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobexecutionsrolloutconfig.html#cfn-greengrassv2-deployment-iotjobexecutionsrolloutconfig-maximumperminute
-	MaximumPerMinute *int `json:"MaximumPerMinute,omitempty"`
+	MaximumPerMinute *T `json:"MaximumPerMinute,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Deployment_IoTJobExecutionsRolloutConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobExecutionsRolloutConfig) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobExecutionsRolloutConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobExecutionsRolloutConfig"
 }

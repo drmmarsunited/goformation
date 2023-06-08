@@ -8,22 +8,22 @@ import (
 
 // Dataset_FormatOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.FormatOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html
-type Dataset_FormatOptions struct {
+type Dataset_FormatOptions[T any] struct {
 
 	// Csv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-csv
-	Csv *Dataset_CsvOptions `json:"Csv,omitempty"`
+	Csv *Dataset_CsvOptions[any] `json:"Csv,omitempty"`
 
 	// Excel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-excel
-	Excel *Dataset_ExcelOptions `json:"Excel,omitempty"`
+	Excel *Dataset_ExcelOptions[any] `json:"Excel,omitempty"`
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-json
-	Json *Dataset_JsonOptions `json:"Json,omitempty"`
+	Json *Dataset_JsonOptions[any] `json:"Json,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Dataset_FormatOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_FormatOptions) AWSCloudFormationType() string {
+func (r *Dataset_FormatOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Dataset.FormatOptions"
 }

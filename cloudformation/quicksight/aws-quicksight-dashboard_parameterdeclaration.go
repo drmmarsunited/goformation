@@ -8,27 +8,27 @@ import (
 
 // Dashboard_ParameterDeclaration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ParameterDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdeclaration.html
-type Dashboard_ParameterDeclaration struct {
+type Dashboard_ParameterDeclaration[T any] struct {
 
 	// DateTimeParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdeclaration.html#cfn-quicksight-dashboard-parameterdeclaration-datetimeparameterdeclaration
-	DateTimeParameterDeclaration *Dashboard_DateTimeParameterDeclaration `json:"DateTimeParameterDeclaration,omitempty"`
+	DateTimeParameterDeclaration *Dashboard_DateTimeParameterDeclaration[any] `json:"DateTimeParameterDeclaration,omitempty"`
 
 	// DecimalParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdeclaration.html#cfn-quicksight-dashboard-parameterdeclaration-decimalparameterdeclaration
-	DecimalParameterDeclaration *Dashboard_DecimalParameterDeclaration `json:"DecimalParameterDeclaration,omitempty"`
+	DecimalParameterDeclaration *Dashboard_DecimalParameterDeclaration[any] `json:"DecimalParameterDeclaration,omitempty"`
 
 	// IntegerParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdeclaration.html#cfn-quicksight-dashboard-parameterdeclaration-integerparameterdeclaration
-	IntegerParameterDeclaration *Dashboard_IntegerParameterDeclaration `json:"IntegerParameterDeclaration,omitempty"`
+	IntegerParameterDeclaration *Dashboard_IntegerParameterDeclaration[any] `json:"IntegerParameterDeclaration,omitempty"`
 
 	// StringParameterDeclaration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdeclaration.html#cfn-quicksight-dashboard-parameterdeclaration-stringparameterdeclaration
-	StringParameterDeclaration *Dashboard_StringParameterDeclaration `json:"StringParameterDeclaration,omitempty"`
+	StringParameterDeclaration *Dashboard_StringParameterDeclaration[any] `json:"StringParameterDeclaration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_ParameterDeclaration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_ParameterDeclaration) AWSCloudFormationType() string {
+func (r *Dashboard_ParameterDeclaration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.ParameterDeclaration"
 }

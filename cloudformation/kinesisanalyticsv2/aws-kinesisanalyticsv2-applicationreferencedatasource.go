@@ -11,7 +11,7 @@ import (
 
 // ApplicationReferenceDataSource AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html
-type ApplicationReferenceDataSource struct {
+type ApplicationReferenceDataSource[T any] struct {
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type ApplicationReferenceDataSource struct {
 	// ReferenceDataSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource
-	ReferenceDataSource *ApplicationReferenceDataSource_ReferenceDataSource `json:"ReferenceDataSource"`
+	ReferenceDataSource *ApplicationReferenceDataSource_ReferenceDataSource[any] `json:"ReferenceDataSource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type ApplicationReferenceDataSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationReferenceDataSource) AWSCloudFormationType() string {
+func (r *ApplicationReferenceDataSource[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ApplicationReferenceDataSource) MarshalJSON() ([]byte, error) {
-	type Properties ApplicationReferenceDataSource
+func (r ApplicationReferenceDataSource[any]) MarshalJSON() ([]byte, error) {
+	type Properties ApplicationReferenceDataSource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ApplicationReferenceDataSource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ApplicationReferenceDataSource) UnmarshalJSON(b []byte) error {
-	type Properties ApplicationReferenceDataSource
+func (r *ApplicationReferenceDataSource[any]) UnmarshalJSON(b []byte) error {
+	type Properties ApplicationReferenceDataSource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ApplicationReferenceDataSource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ApplicationReferenceDataSource(*res.Properties)
+		*r = ApplicationReferenceDataSource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

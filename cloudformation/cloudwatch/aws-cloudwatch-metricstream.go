@@ -12,12 +12,12 @@ import (
 
 // MetricStream AWS CloudFormation Resource (AWS::CloudWatch::MetricStream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html
-type MetricStream struct {
+type MetricStream[T any] struct {
 
 	// ExcludeFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-excludefilters
-	ExcludeFilters []MetricStream_MetricStreamFilter `json:"ExcludeFilters,omitempty"`
+	ExcludeFilters []MetricStream_MetricStreamFilter[any] `json:"ExcludeFilters,omitempty"`
 
 	// FirehoseArn AWS CloudFormation Property
 	// Required: true
@@ -27,12 +27,12 @@ type MetricStream struct {
 	// IncludeFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-includefilters
-	IncludeFilters []MetricStream_MetricStreamFilter `json:"IncludeFilters,omitempty"`
+	IncludeFilters []MetricStream_MetricStreamFilter[any] `json:"IncludeFilters,omitempty"`
 
 	// IncludeLinkedAccountsMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-includelinkedaccountsmetrics
-	IncludeLinkedAccountsMetrics *bool `json:"IncludeLinkedAccountsMetrics,omitempty"`
+	IncludeLinkedAccountsMetrics *T `json:"IncludeLinkedAccountsMetrics,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type MetricStream struct {
 	// StatisticsConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-statisticsconfigurations
-	StatisticsConfigurations []MetricStream_MetricStreamStatisticsConfiguration `json:"StatisticsConfigurations,omitempty"`
+	StatisticsConfigurations []MetricStream_MetricStreamStatisticsConfiguration[any] `json:"StatisticsConfigurations,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type MetricStream struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MetricStream) AWSCloudFormationType() string {
+func (r *MetricStream[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::MetricStream"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r MetricStream) MarshalJSON() ([]byte, error) {
-	type Properties MetricStream
+func (r MetricStream[any]) MarshalJSON() ([]byte, error) {
+	type Properties MetricStream[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r MetricStream) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *MetricStream) UnmarshalJSON(b []byte) error {
-	type Properties MetricStream
+func (r *MetricStream[any]) UnmarshalJSON(b []byte) error {
+	type Properties MetricStream[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *MetricStream) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = MetricStream(*res.Properties)
+		*r = MetricStream[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

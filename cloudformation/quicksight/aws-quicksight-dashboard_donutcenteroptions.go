@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DonutCenterOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DonutCenterOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-donutcenteroptions.html
-type Dashboard_DonutCenterOptions struct {
+type Dashboard_DonutCenterOptions[T any] struct {
 
 	// LabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Dashboard_DonutCenterOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DonutCenterOptions) AWSCloudFormationType() string {
+func (r *Dashboard_DonutCenterOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DonutCenterOptions"
 }

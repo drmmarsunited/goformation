@@ -8,22 +8,22 @@ import (
 
 // Function_EventInvokeConfig AWS CloudFormation Resource (AWS::Serverless::Function.EventInvokeConfig)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-config-object
-type Function_EventInvokeConfig struct {
+type Function_EventInvokeConfig[T any] struct {
 
 	// DestinationConfig AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-config-object
-	DestinationConfig *Function_EventInvokeDestinationConfig `json:"DestinationConfig,omitempty"`
+	DestinationConfig *Function_EventInvokeDestinationConfig[any] `json:"DestinationConfig,omitempty"`
 
 	// MaximumEventAgeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-config-object
-	MaximumEventAgeInSeconds *int `json:"MaximumEventAgeInSeconds,omitempty"`
+	MaximumEventAgeInSeconds *T `json:"MaximumEventAgeInSeconds,omitempty"`
 
 	// MaximumRetryAttempts AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#event-invoke-config-object
-	MaximumRetryAttempts *int `json:"MaximumRetryAttempts,omitempty"`
+	MaximumRetryAttempts *T `json:"MaximumRetryAttempts,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Function_EventInvokeConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_EventInvokeConfig) AWSCloudFormationType() string {
+func (r *Function_EventInvokeConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.EventInvokeConfig"
 }

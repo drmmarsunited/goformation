@@ -8,12 +8,12 @@ import (
 
 // Rule_NetworkConfiguration AWS CloudFormation Resource (AWS::Events::Rule.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html
-type Rule_NetworkConfiguration struct {
+type Rule_NetworkConfiguration[T any] struct {
 
 	// AwsVpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html#cfn-events-rule-networkconfiguration-awsvpcconfiguration
-	AwsVpcConfiguration *Rule_AwsVpcConfiguration `json:"AwsVpcConfiguration,omitempty"`
+	AwsVpcConfiguration *Rule_AwsVpcConfiguration[any] `json:"AwsVpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Rule_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.NetworkConfiguration"
 }

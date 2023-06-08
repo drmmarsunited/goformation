@@ -8,7 +8,7 @@ import (
 
 // Template_TrendArrowOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TrendArrowOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-trendarrowoptions.html
-type Template_TrendArrowOptions struct {
+type Template_TrendArrowOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_TrendArrowOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TrendArrowOptions) AWSCloudFormationType() string {
+func (r *Template_TrendArrowOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TrendArrowOptions"
 }

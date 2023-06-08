@@ -9,7 +9,7 @@ import (
 
 // Detector_EntityType AWS CloudFormation Resource (AWS::FraudDetector::Detector.EntityType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-entitytype.html
-type Detector_EntityType struct {
+type Detector_EntityType[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: false
@@ -29,7 +29,7 @@ type Detector_EntityType struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-entitytype.html#cfn-frauddetector-detector-entitytype-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *T `json:"Inline,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
@@ -63,6 +63,6 @@ type Detector_EntityType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Detector_EntityType) AWSCloudFormationType() string {
+func (r *Detector_EntityType[any]) AWSCloudFormationType() string {
 	return "AWS::FraudDetector::Detector.EntityType"
 }

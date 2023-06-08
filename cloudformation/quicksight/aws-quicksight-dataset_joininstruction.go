@@ -8,12 +8,12 @@ import (
 
 // DataSet_JoinInstruction AWS CloudFormation Resource (AWS::QuickSight::DataSet.JoinInstruction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html
-type DataSet_JoinInstruction struct {
+type DataSet_JoinInstruction[T any] struct {
 
 	// LeftJoinKeyProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-leftjoinkeyproperties
-	LeftJoinKeyProperties *DataSet_JoinKeyProperties `json:"LeftJoinKeyProperties,omitempty"`
+	LeftJoinKeyProperties *DataSet_JoinKeyProperties[any] `json:"LeftJoinKeyProperties,omitempty"`
 
 	// LeftOperand AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type DataSet_JoinInstruction struct {
 	// RightJoinKeyProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-rightjoinkeyproperties
-	RightJoinKeyProperties *DataSet_JoinKeyProperties `json:"RightJoinKeyProperties,omitempty"`
+	RightJoinKeyProperties *DataSet_JoinKeyProperties[any] `json:"RightJoinKeyProperties,omitempty"`
 
 	// RightOperand AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type DataSet_JoinInstruction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_JoinInstruction) AWSCloudFormationType() string {
+func (r *DataSet_JoinInstruction[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.JoinInstruction"
 }

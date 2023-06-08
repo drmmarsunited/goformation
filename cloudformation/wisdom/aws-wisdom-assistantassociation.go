@@ -12,7 +12,7 @@ import (
 
 // AssistantAssociation AWS CloudFormation Resource (AWS::Wisdom::AssistantAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html
-type AssistantAssociation struct {
+type AssistantAssociation[T any] struct {
 
 	// AssistantId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,7 @@ type AssistantAssociation struct {
 	// Association AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-association
-	Association *AssistantAssociation_AssociationData `json:"Association"`
+	Association *AssistantAssociation_AssociationData[any] `json:"Association"`
 
 	// AssociationType AWS CloudFormation Property
 	// Required: true
@@ -51,14 +51,15 @@ type AssistantAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssistantAssociation) AWSCloudFormationType() string {
+func (r *AssistantAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::AssistantAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AssistantAssociation) MarshalJSON() ([]byte, error) {
-	type Properties AssistantAssociation
+func (r AssistantAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties AssistantAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -80,8 +81,9 @@ func (r AssistantAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AssistantAssociation) UnmarshalJSON(b []byte) error {
-	type Properties AssistantAssociation
+func (r *AssistantAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties AssistantAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -101,7 +103,7 @@ func (r *AssistantAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AssistantAssociation(*res.Properties)
+		*r = AssistantAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

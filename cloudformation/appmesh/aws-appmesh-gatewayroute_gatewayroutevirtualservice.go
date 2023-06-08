@@ -8,7 +8,7 @@ import (
 
 // GatewayRoute_GatewayRouteVirtualService AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GatewayRouteVirtualService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutevirtualservice.html
-type GatewayRoute_GatewayRouteVirtualService struct {
+type GatewayRoute_GatewayRouteVirtualService[T any] struct {
 
 	// VirtualServiceName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type GatewayRoute_GatewayRouteVirtualService struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GatewayRoute_GatewayRouteVirtualService) AWSCloudFormationType() string {
+func (r *GatewayRoute_GatewayRouteVirtualService[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::GatewayRoute.GatewayRouteVirtualService"
 }

@@ -8,17 +8,17 @@ import (
 
 // VpcAttachment_VpcOptions AWS CloudFormation Resource (AWS::NetworkManager::VpcAttachment.VpcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html
-type VpcAttachment_VpcOptions struct {
+type VpcAttachment_VpcOptions[T any] struct {
 
 	// ApplianceModeSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-appliancemodesupport
-	ApplianceModeSupport *bool `json:"ApplianceModeSupport,omitempty"`
+	ApplianceModeSupport *T `json:"ApplianceModeSupport,omitempty"`
 
 	// Ipv6Support AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-ipv6support
-	Ipv6Support *bool `json:"Ipv6Support,omitempty"`
+	Ipv6Support *T `json:"Ipv6Support,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type VpcAttachment_VpcOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VpcAttachment_VpcOptions) AWSCloudFormationType() string {
+func (r *VpcAttachment_VpcOptions[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::VpcAttachment.VpcOptions"
 }

@@ -8,17 +8,17 @@ import (
 
 // Cluster_ScalingConstraints AWS CloudFormation Resource (AWS::EMR::Cluster.ScalingConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html
-type Cluster_ScalingConstraints struct {
+type Cluster_ScalingConstraints[T any] struct {
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html#cfn-elasticmapreduce-cluster-scalingconstraints-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity T `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html#cfn-elasticmapreduce-cluster-scalingconstraints-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity T `json:"MinCapacity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_ScalingConstraints struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ScalingConstraints) AWSCloudFormationType() string {
+func (r *Cluster_ScalingConstraints[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ScalingConstraints"
 }

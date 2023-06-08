@@ -8,7 +8,7 @@ import (
 
 // Analysis_ListControlSelectAllOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ListControlSelectAllOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontrolselectalloptions.html
-type Analysis_ListControlSelectAllOptions struct {
+type Analysis_ListControlSelectAllOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_ListControlSelectAllOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ListControlSelectAllOptions) AWSCloudFormationType() string {
+func (r *Analysis_ListControlSelectAllOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ListControlSelectAllOptions"
 }

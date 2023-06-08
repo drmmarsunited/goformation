@@ -8,7 +8,7 @@ import (
 
 // Schedule_EventBridgeParameters AWS CloudFormation Resource (AWS::Scheduler::Schedule.EventBridgeParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeparameters.html
-type Schedule_EventBridgeParameters struct {
+type Schedule_EventBridgeParameters[T any] struct {
 
 	// DetailType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Schedule_EventBridgeParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Schedule_EventBridgeParameters) AWSCloudFormationType() string {
+func (r *Schedule_EventBridgeParameters[any]) AWSCloudFormationType() string {
 	return "AWS::Scheduler::Schedule.EventBridgeParameters"
 }

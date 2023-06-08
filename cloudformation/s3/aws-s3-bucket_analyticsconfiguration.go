@@ -8,7 +8,7 @@ import (
 
 // Bucket_AnalyticsConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.AnalyticsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html
-type Bucket_AnalyticsConfiguration struct {
+type Bucket_AnalyticsConfiguration[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Bucket_AnalyticsConfiguration struct {
 	// StorageClassAnalysis AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-storageclassanalysis
-	StorageClassAnalysis *Bucket_StorageClassAnalysis `json:"StorageClassAnalysis"`
+	StorageClassAnalysis *Bucket_StorageClassAnalysis[any] `json:"StorageClassAnalysis"`
 
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-tagfilters
-	TagFilters []Bucket_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Bucket_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bucket_AnalyticsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_AnalyticsConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_AnalyticsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.AnalyticsConfiguration"
 }

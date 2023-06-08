@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_JsonFormatDescriptor AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.JsonFormatDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-jsonformatdescriptor.html
-type AnomalyDetector_JsonFormatDescriptor struct {
+type AnomalyDetector_JsonFormatDescriptor[T any] struct {
 
 	// Charset AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AnomalyDetector_JsonFormatDescriptor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_JsonFormatDescriptor) AWSCloudFormationType() string {
+func (r *AnomalyDetector_JsonFormatDescriptor[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.JsonFormatDescriptor"
 }

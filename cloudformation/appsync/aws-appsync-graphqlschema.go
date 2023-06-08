@@ -11,7 +11,7 @@ import (
 
 // GraphQLSchema AWS CloudFormation Resource (AWS::AppSync::GraphQLSchema)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
-type GraphQLSchema struct {
+type GraphQLSchema[T any] struct {
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type GraphQLSchema struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLSchema) AWSCloudFormationType() string {
+func (r *GraphQLSchema[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLSchema"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r GraphQLSchema) MarshalJSON() ([]byte, error) {
-	type Properties GraphQLSchema
+func (r GraphQLSchema[any]) MarshalJSON() ([]byte, error) {
+	type Properties GraphQLSchema[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r GraphQLSchema) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *GraphQLSchema) UnmarshalJSON(b []byte) error {
-	type Properties GraphQLSchema
+func (r *GraphQLSchema[any]) UnmarshalJSON(b []byte) error {
+	type Properties GraphQLSchema[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *GraphQLSchema) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = GraphQLSchema(*res.Properties)
+		*r = GraphQLSchema[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

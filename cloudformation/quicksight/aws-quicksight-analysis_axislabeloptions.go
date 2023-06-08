@@ -8,12 +8,12 @@ import (
 
 // Analysis_AxisLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.AxisLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislabeloptions.html
-type Analysis_AxisLabelOptions struct {
+type Analysis_AxisLabelOptions[T any] struct {
 
 	// ApplyTo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislabeloptions.html#cfn-quicksight-analysis-axislabeloptions-applyto
-	ApplyTo *Analysis_AxisLabelReferenceOptions `json:"ApplyTo,omitempty"`
+	ApplyTo *Analysis_AxisLabelReferenceOptions[any] `json:"ApplyTo,omitempty"`
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_AxisLabelOptions struct {
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axislabeloptions.html#cfn-quicksight-analysis-axislabeloptions-fontconfiguration
-	FontConfiguration *Analysis_FontConfiguration `json:"FontConfiguration,omitempty"`
+	FontConfiguration *Analysis_FontConfiguration[any] `json:"FontConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_AxisLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_AxisLabelOptions) AWSCloudFormationType() string {
+func (r *Analysis_AxisLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.AxisLabelOptions"
 }

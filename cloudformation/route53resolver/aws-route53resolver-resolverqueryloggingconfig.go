@@ -11,7 +11,7 @@ import (
 
 // ResolverQueryLoggingConfig AWS CloudFormation Resource (AWS::Route53Resolver::ResolverQueryLoggingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html
-type ResolverQueryLoggingConfig struct {
+type ResolverQueryLoggingConfig[T any] struct {
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,15 @@ type ResolverQueryLoggingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverQueryLoggingConfig) AWSCloudFormationType() string {
+func (r *ResolverQueryLoggingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverQueryLoggingConfig"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverQueryLoggingConfig) MarshalJSON() ([]byte, error) {
-	type Properties ResolverQueryLoggingConfig
+func (r ResolverQueryLoggingConfig[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverQueryLoggingConfig[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r ResolverQueryLoggingConfig) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverQueryLoggingConfig) UnmarshalJSON(b []byte) error {
-	type Properties ResolverQueryLoggingConfig
+func (r *ResolverQueryLoggingConfig[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverQueryLoggingConfig[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *ResolverQueryLoggingConfig) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverQueryLoggingConfig(*res.Properties)
+		*r = ResolverQueryLoggingConfig[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

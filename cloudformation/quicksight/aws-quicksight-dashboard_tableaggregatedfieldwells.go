@@ -8,17 +8,17 @@ import (
 
 // Dashboard_TableAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableaggregatedfieldwells.html
-type Dashboard_TableAggregatedFieldWells struct {
+type Dashboard_TableAggregatedFieldWells[T any] struct {
 
 	// GroupBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableaggregatedfieldwells.html#cfn-quicksight-dashboard-tableaggregatedfieldwells-groupby
-	GroupBy []Dashboard_DimensionField `json:"GroupBy,omitempty"`
+	GroupBy []Dashboard_DimensionField[any] `json:"GroupBy,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tableaggregatedfieldwells.html#cfn-quicksight-dashboard-tableaggregatedfieldwells-values
-	Values []Dashboard_MeasureField `json:"Values,omitempty"`
+	Values []Dashboard_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_TableAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Dashboard_TableAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableAggregatedFieldWells"
 }

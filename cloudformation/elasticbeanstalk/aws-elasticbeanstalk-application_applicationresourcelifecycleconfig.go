@@ -8,7 +8,7 @@ import (
 
 // Application_ApplicationResourceLifecycleConfig AWS CloudFormation Resource (AWS::ElasticBeanstalk::Application.ApplicationResourceLifecycleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html
-type Application_ApplicationResourceLifecycleConfig struct {
+type Application_ApplicationResourceLifecycleConfig[T any] struct {
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Application_ApplicationResourceLifecycleConfig struct {
 	// VersionLifecycleConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-versionlifecycleconfig
-	VersionLifecycleConfig *Application_ApplicationVersionLifecycleConfig `json:"VersionLifecycleConfig,omitempty"`
+	VersionLifecycleConfig *Application_ApplicationVersionLifecycleConfig[any] `json:"VersionLifecycleConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_ApplicationResourceLifecycleConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ApplicationResourceLifecycleConfig) AWSCloudFormationType() string {
+func (r *Application_ApplicationResourceLifecycleConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Application.ApplicationResourceLifecycleConfig"
 }

@@ -8,7 +8,7 @@ import (
 
 // MonitoringSchedule_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html
-type MonitoringSchedule_EndpointInput struct {
+type MonitoringSchedule_EndpointInput[T any] struct {
 
 	// EndpointName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type MonitoringSchedule_EndpointInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_EndpointInput) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_EndpointInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.EndpointInput"
 }

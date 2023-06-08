@@ -8,7 +8,7 @@ import (
 
 // Template_TableCellImageSizingConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.TableCellImageSizingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablecellimagesizingconfiguration.html
-type Template_TableCellImageSizingConfiguration struct {
+type Template_TableCellImageSizingConfiguration[T any] struct {
 
 	// TableCellImageScalingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_TableCellImageSizingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableCellImageSizingConfiguration) AWSCloudFormationType() string {
+func (r *Template_TableCellImageSizingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableCellImageSizingConfiguration"
 }

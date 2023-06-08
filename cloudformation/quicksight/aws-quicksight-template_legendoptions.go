@@ -8,7 +8,7 @@ import (
 
 // Template_LegendOptions AWS CloudFormation Resource (AWS::QuickSight::Template.LegendOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-legendoptions.html
-type Template_LegendOptions struct {
+type Template_LegendOptions[T any] struct {
 
 	// Height AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_LegendOptions struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-legendoptions.html#cfn-quicksight-template-legendoptions-title
-	Title *Template_LabelOptions `json:"Title,omitempty"`
+	Title *Template_LabelOptions[any] `json:"Title,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Template_LegendOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_LegendOptions) AWSCloudFormationType() string {
+func (r *Template_LegendOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.LegendOptions"
 }

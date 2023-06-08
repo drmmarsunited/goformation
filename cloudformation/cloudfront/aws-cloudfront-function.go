@@ -11,12 +11,12 @@ import (
 
 // Function AWS CloudFormation Resource (AWS::CloudFront::Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html
-type Function struct {
+type Function[T any] struct {
 
 	// AutoPublish AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-autopublish
-	AutoPublish *bool `json:"AutoPublish,omitempty"`
+	AutoPublish *T `json:"AutoPublish,omitempty"`
 
 	// FunctionCode AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type Function struct {
 	// FunctionConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig
-	FunctionConfig *Function_FunctionConfig `json:"FunctionConfig"`
+	FunctionConfig *Function_FunctionConfig[any] `json:"FunctionConfig"`
 
 	// FunctionMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionmetadata
-	FunctionMetadata *Function_FunctionMetadata `json:"FunctionMetadata,omitempty"`
+	FunctionMetadata *Function_FunctionMetadata[any] `json:"FunctionMetadata,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type Function struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function) AWSCloudFormationType() string {
+func (r *Function[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Function"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Function) MarshalJSON() ([]byte, error) {
-	type Properties Function
+func (r Function[any]) MarshalJSON() ([]byte, error) {
+	type Properties Function[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r Function) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Function) UnmarshalJSON(b []byte) error {
-	type Properties Function
+func (r *Function[any]) UnmarshalJSON(b []byte) error {
+	type Properties Function[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *Function) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Function(*res.Properties)
+		*r = Function[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

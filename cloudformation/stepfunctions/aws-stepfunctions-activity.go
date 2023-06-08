@@ -11,7 +11,7 @@ import (
 
 // Activity AWS CloudFormation Resource (AWS::StepFunctions::Activity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
-type Activity struct {
+type Activity[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Activity struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-tags
-	Tags []Activity_TagsEntry `json:"Tags,omitempty"`
+	Tags []Activity_TagsEntry[any] `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type Activity struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Activity) AWSCloudFormationType() string {
+func (r *Activity[any]) AWSCloudFormationType() string {
 	return "AWS::StepFunctions::Activity"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Activity) MarshalJSON() ([]byte, error) {
-	type Properties Activity
+func (r Activity[any]) MarshalJSON() ([]byte, error) {
+	type Properties Activity[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Activity) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Activity) UnmarshalJSON(b []byte) error {
-	type Properties Activity
+func (r *Activity[any]) UnmarshalJSON(b []byte) error {
+	type Properties Activity[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Activity) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Activity(*res.Properties)
+		*r = Activity[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,7 +8,7 @@ import (
 
 // Rule_NotificationRecipientType AWS CloudFormation Resource (AWS::Connect::Rule.NotificationRecipientType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationrecipienttype.html
-type Rule_NotificationRecipientType struct {
+type Rule_NotificationRecipientType[T any] struct {
 
 	// UserArns AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Rule_NotificationRecipientType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_NotificationRecipientType) AWSCloudFormationType() string {
+func (r *Rule_NotificationRecipientType[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::Rule.NotificationRecipientType"
 }

@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_OrStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.OrStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatement.html
-type RuleGroup_OrStatement struct {
+type RuleGroup_OrStatement[T any] struct {
 
 	// Statements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatement.html#cfn-wafv2-rulegroup-orstatement-statements
-	Statements []RuleGroup_Statement `json:"Statements"`
+	Statements []RuleGroup_Statement[any] `json:"Statements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RuleGroup_OrStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_OrStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_OrStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.OrStatement"
 }

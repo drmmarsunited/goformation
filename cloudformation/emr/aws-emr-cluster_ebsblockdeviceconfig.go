@@ -8,17 +8,17 @@ import (
 
 // Cluster_EbsBlockDeviceConfig AWS CloudFormation Resource (AWS::EMR::Cluster.EbsBlockDeviceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html
-type Cluster_EbsBlockDeviceConfig struct {
+type Cluster_EbsBlockDeviceConfig[T any] struct {
 
 	// VolumeSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumespecification
-	VolumeSpecification *Cluster_VolumeSpecification `json:"VolumeSpecification"`
+	VolumeSpecification *Cluster_VolumeSpecification[any] `json:"VolumeSpecification"`
 
 	// VolumesPerInstance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumesperinstance
-	VolumesPerInstance *int `json:"VolumesPerInstance,omitempty"`
+	VolumesPerInstance *T `json:"VolumesPerInstance,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Cluster_EbsBlockDeviceConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_EbsBlockDeviceConfig) AWSCloudFormationType() string {
+func (r *Cluster_EbsBlockDeviceConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.EbsBlockDeviceConfig"
 }

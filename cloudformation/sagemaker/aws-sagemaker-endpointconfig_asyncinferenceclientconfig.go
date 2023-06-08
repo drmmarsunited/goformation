@@ -8,12 +8,12 @@ import (
 
 // EndpointConfig_AsyncInferenceClientConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.AsyncInferenceClientConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceclientconfig.html
-type EndpointConfig_AsyncInferenceClientConfig struct {
+type EndpointConfig_AsyncInferenceClientConfig[T any] struct {
 
 	// MaxConcurrentInvocationsPerInstance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceclientconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceclientconfig-maxconcurrentinvocationsperinstance
-	MaxConcurrentInvocationsPerInstance *int `json:"MaxConcurrentInvocationsPerInstance,omitempty"`
+	MaxConcurrentInvocationsPerInstance *T `json:"MaxConcurrentInvocationsPerInstance,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EndpointConfig_AsyncInferenceClientConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_AsyncInferenceClientConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_AsyncInferenceClientConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.AsyncInferenceClientConfig"
 }

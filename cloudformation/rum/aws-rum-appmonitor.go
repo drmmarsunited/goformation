@@ -12,22 +12,22 @@ import (
 
 // AppMonitor AWS CloudFormation Resource (AWS::RUM::AppMonitor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html
-type AppMonitor struct {
+type AppMonitor[T any] struct {
 
 	// AppMonitorConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-appmonitorconfiguration
-	AppMonitorConfiguration *AppMonitor_AppMonitorConfiguration `json:"AppMonitorConfiguration,omitempty"`
+	AppMonitorConfiguration *AppMonitor_AppMonitorConfiguration[any] `json:"AppMonitorConfiguration,omitempty"`
 
 	// CustomEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-customevents
-	CustomEvents *AppMonitor_CustomEvents `json:"CustomEvents,omitempty"`
+	CustomEvents *AppMonitor_CustomEvents[any] `json:"CustomEvents,omitempty"`
 
 	// CwLogEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-cwlogenabled
-	CwLogEnabled *bool `json:"CwLogEnabled,omitempty"`
+	CwLogEnabled *T `json:"CwLogEnabled,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type AppMonitor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AppMonitor) AWSCloudFormationType() string {
+func (r *AppMonitor[any]) AWSCloudFormationType() string {
 	return "AWS::RUM::AppMonitor"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AppMonitor) MarshalJSON() ([]byte, error) {
-	type Properties AppMonitor
+func (r AppMonitor[any]) MarshalJSON() ([]byte, error) {
+	type Properties AppMonitor[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r AppMonitor) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AppMonitor) UnmarshalJSON(b []byte) error {
-	type Properties AppMonitor
+func (r *AppMonitor[any]) UnmarshalJSON(b []byte) error {
+	type Properties AppMonitor[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *AppMonitor) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AppMonitor(*res.Properties)
+		*r = AppMonitor[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

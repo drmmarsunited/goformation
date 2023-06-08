@@ -11,12 +11,12 @@ import (
 
 // Channel AWS CloudFormation Resource (AWS::MediaLive::Channel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html
-type Channel struct {
+type Channel[T any] struct {
 
 	// CdiInputSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-cdiinputspecification
-	CdiInputSpecification *Channel_CdiInputSpecification `json:"CdiInputSpecification,omitempty"`
+	CdiInputSpecification *Channel_CdiInputSpecification[any] `json:"CdiInputSpecification,omitempty"`
 
 	// ChannelClass AWS CloudFormation Property
 	// Required: false
@@ -26,22 +26,22 @@ type Channel struct {
 	// Destinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations
-	Destinations []Channel_OutputDestination `json:"Destinations,omitempty"`
+	Destinations []Channel_OutputDestination[any] `json:"Destinations,omitempty"`
 
 	// EncoderSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings
-	EncoderSettings *Channel_EncoderSettings `json:"EncoderSettings,omitempty"`
+	EncoderSettings *Channel_EncoderSettings[any] `json:"EncoderSettings,omitempty"`
 
 	// InputAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments
-	InputAttachments []Channel_InputAttachment `json:"InputAttachments,omitempty"`
+	InputAttachments []Channel_InputAttachment[any] `json:"InputAttachments,omitempty"`
 
 	// InputSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputspecification
-	InputSpecification *Channel_InputSpecification `json:"InputSpecification,omitempty"`
+	InputSpecification *Channel_InputSpecification[any] `json:"InputSpecification,omitempty"`
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type Channel struct {
 	// Maintenance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-maintenance
-	Maintenance *Channel_MaintenanceCreateSettings `json:"Maintenance,omitempty"`
+	Maintenance *Channel_MaintenanceCreateSettings[any] `json:"Maintenance,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -71,7 +71,7 @@ type Channel struct {
 	// Vpc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-vpc
-	Vpc *Channel_VpcOutputSettings `json:"Vpc,omitempty"`
+	Vpc *Channel_VpcOutputSettings[any] `json:"Vpc,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -90,14 +90,15 @@ type Channel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel) AWSCloudFormationType() string {
+func (r *Channel[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Channel) MarshalJSON() ([]byte, error) {
-	type Properties Channel
+func (r Channel[any]) MarshalJSON() ([]byte, error) {
+	type Properties Channel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -119,8 +120,9 @@ func (r Channel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Channel) UnmarshalJSON(b []byte) error {
-	type Properties Channel
+func (r *Channel[any]) UnmarshalJSON(b []byte) error {
+	type Properties Channel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -140,7 +142,7 @@ func (r *Channel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Channel(*res.Properties)
+		*r = Channel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

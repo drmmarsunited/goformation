@@ -8,7 +8,7 @@ import (
 
 // Dataset_TagsItems AWS CloudFormation Resource (AWS::Forecast::Dataset.TagsItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html
-type Dataset_TagsItems struct {
+type Dataset_TagsItems[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dataset_TagsItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_TagsItems) AWSCloudFormationType() string {
+func (r *Dataset_TagsItems[any]) AWSCloudFormationType() string {
 	return "AWS::Forecast::Dataset.TagsItems"
 }

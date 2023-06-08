@@ -8,17 +8,17 @@ import (
 
 // RuleGroup_RuleVariables AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RuleVariables)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulevariables.html
-type RuleGroup_RuleVariables struct {
+type RuleGroup_RuleVariables[T any] struct {
 
 	// IPSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulevariables.html#cfn-networkfirewall-rulegroup-rulevariables-ipsets
-	IPSets map[string]RuleGroup_IPSet `json:"IPSets,omitempty"`
+	IPSets map[string]RuleGroup_IPSet[any] `json:"IPSets,omitempty"`
 
 	// PortSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulevariables.html#cfn-networkfirewall-rulegroup-rulevariables-portsets
-	PortSets map[string]RuleGroup_PortSet `json:"PortSets,omitempty"`
+	PortSets map[string]RuleGroup_PortSet[any] `json:"PortSets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type RuleGroup_RuleVariables struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RuleVariables) AWSCloudFormationType() string {
+func (r *RuleGroup_RuleVariables[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RuleVariables"
 }

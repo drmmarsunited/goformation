@@ -8,7 +8,7 @@ import (
 
 // DeploymentConfig_MinimumHealthyHosts AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html
-type DeploymentConfig_MinimumHealthyHosts struct {
+type DeploymentConfig_MinimumHealthyHosts[T any] struct {
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type DeploymentConfig_MinimumHealthyHosts struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts-value
-	Value int `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DeploymentConfig_MinimumHealthyHosts struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentConfig_MinimumHealthyHosts) AWSCloudFormationType() string {
+func (r *DeploymentConfig_MinimumHealthyHosts[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts"
 }

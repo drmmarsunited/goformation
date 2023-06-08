@@ -8,7 +8,7 @@ import (
 
 // DeploymentGroup_GitHubLocation AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.GitHubLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html
-type DeploymentGroup_GitHubLocation struct {
+type DeploymentGroup_GitHubLocation[T any] struct {
 
 	// CommitId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DeploymentGroup_GitHubLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeploymentGroup_GitHubLocation) AWSCloudFormationType() string {
+func (r *DeploymentGroup_GitHubLocation[any]) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.GitHubLocation"
 }

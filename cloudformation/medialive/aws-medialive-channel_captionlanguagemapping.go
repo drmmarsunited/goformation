@@ -8,12 +8,12 @@ import (
 
 // Channel_CaptionLanguageMapping AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionLanguageMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html
-type Channel_CaptionLanguageMapping struct {
+type Channel_CaptionLanguageMapping[T any] struct {
 
 	// CaptionChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html#cfn-medialive-channel-captionlanguagemapping-captionchannel
-	CaptionChannel *int `json:"CaptionChannel,omitempty"`
+	CaptionChannel *T `json:"CaptionChannel,omitempty"`
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Channel_CaptionLanguageMapping struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_CaptionLanguageMapping) AWSCloudFormationType() string {
+func (r *Channel_CaptionLanguageMapping[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.CaptionLanguageMapping"
 }

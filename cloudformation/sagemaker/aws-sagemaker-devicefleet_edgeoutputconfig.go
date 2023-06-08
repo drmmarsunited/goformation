@@ -8,7 +8,7 @@ import (
 
 // DeviceFleet_EdgeOutputConfig AWS CloudFormation Resource (AWS::SageMaker::DeviceFleet.EdgeOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html
-type DeviceFleet_EdgeOutputConfig struct {
+type DeviceFleet_EdgeOutputConfig[T any] struct {
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DeviceFleet_EdgeOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeviceFleet_EdgeOutputConfig) AWSCloudFormationType() string {
+func (r *DeviceFleet_EdgeOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::DeviceFleet.EdgeOutputConfig"
 }

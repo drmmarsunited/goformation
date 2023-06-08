@@ -8,27 +8,27 @@ import (
 
 // DeliveryStream_DataFormatConversionConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.DataFormatConversionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html
-type DeliveryStream_DataFormatConversionConfiguration struct {
+type DeliveryStream_DataFormatConversionConfiguration[T any] struct {
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *T `json:"Enabled,omitempty"`
 
 	// InputFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-inputformatconfiguration
-	InputFormatConfiguration *DeliveryStream_InputFormatConfiguration `json:"InputFormatConfiguration,omitempty"`
+	InputFormatConfiguration *DeliveryStream_InputFormatConfiguration[any] `json:"InputFormatConfiguration,omitempty"`
 
 	// OutputFormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-outputformatconfiguration
-	OutputFormatConfiguration *DeliveryStream_OutputFormatConfiguration `json:"OutputFormatConfiguration,omitempty"`
+	OutputFormatConfiguration *DeliveryStream_OutputFormatConfiguration[any] `json:"OutputFormatConfiguration,omitempty"`
 
 	// SchemaConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-schemaconfiguration
-	SchemaConfiguration *DeliveryStream_SchemaConfiguration `json:"SchemaConfiguration,omitempty"`
+	SchemaConfiguration *DeliveryStream_SchemaConfiguration[any] `json:"SchemaConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type DeliveryStream_DataFormatConversionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_DataFormatConversionConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_DataFormatConversionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.DataFormatConversionConfiguration"
 }

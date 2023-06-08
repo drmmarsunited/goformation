@@ -8,7 +8,7 @@ import (
 
 // Bot_Button AWS CloudFormation Resource (AWS::Lex::Bot.Button)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-button.html
-type Bot_Button struct {
+type Bot_Button[T any] struct {
 
 	// Text AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Bot_Button struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_Button) AWSCloudFormationType() string {
+func (r *Bot_Button[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.Button"
 }

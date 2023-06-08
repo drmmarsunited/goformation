@@ -8,7 +8,7 @@ import (
 
 // DataSet_InputColumn AWS CloudFormation Resource (AWS::QuickSight::DataSet.InputColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-inputcolumn.html
-type DataSet_InputColumn struct {
+type DataSet_InputColumn[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSet_InputColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_InputColumn) AWSCloudFormationType() string {
+func (r *DataSet_InputColumn[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.InputColumn"
 }

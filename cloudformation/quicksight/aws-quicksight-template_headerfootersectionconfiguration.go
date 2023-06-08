@@ -8,12 +8,12 @@ import (
 
 // Template_HeaderFooterSectionConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.HeaderFooterSectionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-headerfootersectionconfiguration.html
-type Template_HeaderFooterSectionConfiguration struct {
+type Template_HeaderFooterSectionConfiguration[T any] struct {
 
 	// Layout AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-headerfootersectionconfiguration.html#cfn-quicksight-template-headerfootersectionconfiguration-layout
-	Layout *Template_SectionLayoutConfiguration `json:"Layout"`
+	Layout *Template_SectionLayoutConfiguration[any] `json:"Layout"`
 
 	// SectionId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Template_HeaderFooterSectionConfiguration struct {
 	// Style AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-headerfootersectionconfiguration.html#cfn-quicksight-template-headerfootersectionconfiguration-style
-	Style *Template_SectionStyle `json:"Style,omitempty"`
+	Style *Template_SectionStyle[any] `json:"Style,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_HeaderFooterSectionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_HeaderFooterSectionConfiguration) AWSCloudFormationType() string {
+func (r *Template_HeaderFooterSectionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.HeaderFooterSectionConfiguration"
 }

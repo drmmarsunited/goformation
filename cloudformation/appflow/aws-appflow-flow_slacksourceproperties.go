@@ -8,7 +8,7 @@ import (
 
 // Flow_SlackSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SlackSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-slacksourceproperties.html
-type Flow_SlackSourceProperties struct {
+type Flow_SlackSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Flow_SlackSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_SlackSourceProperties) AWSCloudFormationType() string {
+func (r *Flow_SlackSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.SlackSourceProperties"
 }

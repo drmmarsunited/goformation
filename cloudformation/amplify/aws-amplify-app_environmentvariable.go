@@ -8,7 +8,7 @@ import (
 
 // App_EnvironmentVariable AWS CloudFormation Resource (AWS::Amplify::App.EnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-environmentvariable.html
-type App_EnvironmentVariable struct {
+type App_EnvironmentVariable[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type App_EnvironmentVariable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_EnvironmentVariable) AWSCloudFormationType() string {
+func (r *App_EnvironmentVariable[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::App.EnvironmentVariable"
 }

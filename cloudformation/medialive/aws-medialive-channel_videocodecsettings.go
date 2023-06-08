@@ -8,27 +8,27 @@ import (
 
 // Channel_VideoCodecSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoCodecSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html
-type Channel_VideoCodecSettings struct {
+type Channel_VideoCodecSettings[T any] struct {
 
 	// FrameCaptureSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-framecapturesettings
-	FrameCaptureSettings *Channel_FrameCaptureSettings `json:"FrameCaptureSettings,omitempty"`
+	FrameCaptureSettings *Channel_FrameCaptureSettings[any] `json:"FrameCaptureSettings,omitempty"`
 
 	// H264Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h264settings
-	H264Settings *Channel_H264Settings `json:"H264Settings,omitempty"`
+	H264Settings *Channel_H264Settings[any] `json:"H264Settings,omitempty"`
 
 	// H265Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h265settings
-	H265Settings *Channel_H265Settings `json:"H265Settings,omitempty"`
+	H265Settings *Channel_H265Settings[any] `json:"H265Settings,omitempty"`
 
 	// Mpeg2Settings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-mpeg2settings
-	Mpeg2Settings *Channel_Mpeg2Settings `json:"Mpeg2Settings,omitempty"`
+	Mpeg2Settings *Channel_Mpeg2Settings[any] `json:"Mpeg2Settings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Channel_VideoCodecSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_VideoCodecSettings) AWSCloudFormationType() string {
+func (r *Channel_VideoCodecSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.VideoCodecSettings"
 }

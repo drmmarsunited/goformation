@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_EksSecret AWS CloudFormation Resource (AWS::Batch::JobDefinition.EksSecret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekssecret.html
-type JobDefinition_EksSecret struct {
+type JobDefinition_EksSecret[T any] struct {
 
 	// Optional AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekssecret.html#cfn-batch-jobdefinition-ekssecret-optional
-	Optional *bool `json:"Optional,omitempty"`
+	Optional *T `json:"Optional,omitempty"`
 
 	// SecretName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type JobDefinition_EksSecret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EksSecret) AWSCloudFormationType() string {
+func (r *JobDefinition_EksSecret[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EksSecret"
 }

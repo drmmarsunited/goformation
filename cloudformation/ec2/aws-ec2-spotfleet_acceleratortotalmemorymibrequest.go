@@ -8,17 +8,17 @@ import (
 
 // SpotFleet_AcceleratorTotalMemoryMiBRequest AWS CloudFormation Resource (AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html
-type SpotFleet_AcceleratorTotalMemoryMiBRequest struct {
+type SpotFleet_AcceleratorTotalMemoryMiBRequest[T any] struct {
 
 	// Max AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-max
-	Max *int `json:"Max,omitempty"`
+	Max *T `json:"Max,omitempty"`
 
 	// Min AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-min
-	Min *int `json:"Min,omitempty"`
+	Min *T `json:"Min,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type SpotFleet_AcceleratorTotalMemoryMiBRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_AcceleratorTotalMemoryMiBRequest) AWSCloudFormationType() string {
+func (r *SpotFleet_AcceleratorTotalMemoryMiBRequest[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest"
 }

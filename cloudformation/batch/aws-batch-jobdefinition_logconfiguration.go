@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_LogConfiguration AWS CloudFormation Resource (AWS::Batch::JobDefinition.LogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html
-type JobDefinition_LogConfiguration struct {
+type JobDefinition_LogConfiguration[T any] struct {
 
 	// LogDriver AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type JobDefinition_LogConfiguration struct {
 	// SecretOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-secretoptions
-	SecretOptions []JobDefinition_Secret `json:"SecretOptions,omitempty"`
+	SecretOptions []JobDefinition_Secret[any] `json:"SecretOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type JobDefinition_LogConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_LogConfiguration) AWSCloudFormationType() string {
+func (r *JobDefinition_LogConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.LogConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_DnsServiceDiscovery AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.DnsServiceDiscovery)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html
-type VirtualNode_DnsServiceDiscovery struct {
+type VirtualNode_DnsServiceDiscovery[T any] struct {
 
 	// Hostname AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type VirtualNode_DnsServiceDiscovery struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_DnsServiceDiscovery) AWSCloudFormationType() string {
+func (r *VirtualNode_DnsServiceDiscovery[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.DnsServiceDiscovery"
 }

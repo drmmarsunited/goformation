@@ -8,7 +8,7 @@ import (
 
 // AssetModel_AssetModelHierarchy AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.AssetModelHierarchy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelhierarchy.html
-type AssetModel_AssetModelHierarchy struct {
+type AssetModel_AssetModelHierarchy[T any] struct {
 
 	// ChildAssetModelId AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type AssetModel_AssetModelHierarchy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel_AssetModelHierarchy) AWSCloudFormationType() string {
+func (r *AssetModel_AssetModelHierarchy[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel.AssetModelHierarchy"
 }

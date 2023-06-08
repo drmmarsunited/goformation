@@ -8,7 +8,7 @@ import (
 
 // Endpoint_Alarm AWS CloudFormation Resource (AWS::SageMaker::Endpoint.Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html
-type Endpoint_Alarm struct {
+type Endpoint_Alarm[T any] struct {
 
 	// AlarmName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Endpoint_Alarm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Endpoint_Alarm) AWSCloudFormationType() string {
+func (r *Endpoint_Alarm[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Endpoint.Alarm"
 }

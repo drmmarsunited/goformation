@@ -8,7 +8,7 @@ import (
 
 // Template_WhatIfRangeScenario AWS CloudFormation Resource (AWS::QuickSight::Template.WhatIfRangeScenario)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-whatifrangescenario.html
-type Template_WhatIfRangeScenario struct {
+type Template_WhatIfRangeScenario[T any] struct {
 
 	// EndDate AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Template_WhatIfRangeScenario struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-whatifrangescenario.html#cfn-quicksight-template-whatifrangescenario-value
-	Value float64 `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_WhatIfRangeScenario struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_WhatIfRangeScenario) AWSCloudFormationType() string {
+func (r *Template_WhatIfRangeScenario[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.WhatIfRangeScenario"
 }

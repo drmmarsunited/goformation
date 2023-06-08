@@ -8,7 +8,7 @@ import (
 
 // Bucket_LambdaConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.LambdaConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html
-type Bucket_LambdaConfiguration struct {
+type Bucket_LambdaConfiguration[T any] struct {
 
 	// Event AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Bucket_LambdaConfiguration struct {
 	// Filter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-filter
-	Filter *Bucket_NotificationFilter `json:"Filter,omitempty"`
+	Filter *Bucket_NotificationFilter[any] `json:"Filter,omitempty"`
 
 	// Function AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Bucket_LambdaConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_LambdaConfiguration) AWSCloudFormationType() string {
+func (r *Bucket_LambdaConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.LambdaConfiguration"
 }

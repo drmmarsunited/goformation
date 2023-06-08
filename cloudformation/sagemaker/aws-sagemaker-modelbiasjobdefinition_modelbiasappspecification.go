@@ -8,7 +8,7 @@ import (
 
 // ModelBiasJobDefinition_ModelBiasAppSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.ModelBiasAppSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html
-type ModelBiasJobDefinition_ModelBiasAppSpecification struct {
+type ModelBiasJobDefinition_ModelBiasAppSpecification[T any] struct {
 
 	// ConfigUri AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type ModelBiasJobDefinition_ModelBiasAppSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_ModelBiasAppSpecification) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_ModelBiasAppSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasAppSpecification"
 }

@@ -11,7 +11,7 @@ import (
 
 // ServiceAction AWS CloudFormation Resource (AWS::ServiceCatalog::ServiceAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html
-type ServiceAction struct {
+type ServiceAction[T any] struct {
 
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type ServiceAction struct {
 	// Definition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definition
-	Definition []ServiceAction_DefinitionParameter `json:"Definition"`
+	Definition []ServiceAction_DefinitionParameter[any] `json:"Definition"`
 
 	// DefinitionType AWS CloudFormation Property
 	// Required: true
@@ -55,14 +55,15 @@ type ServiceAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceAction) AWSCloudFormationType() string {
+func (r *ServiceAction[any]) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::ServiceAction"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceAction) MarshalJSON() ([]byte, error) {
-	type Properties ServiceAction
+func (r ServiceAction[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceAction[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r ServiceAction) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceAction) UnmarshalJSON(b []byte) error {
-	type Properties ServiceAction
+func (r *ServiceAction[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceAction[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *ServiceAction) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceAction(*res.Properties)
+		*r = ServiceAction[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

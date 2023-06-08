@@ -11,7 +11,7 @@ import (
 
 // Route AWS CloudFormation Resource (AWS::EC2::Route)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
-type Route struct {
+type Route[T any] struct {
 
 	// CarrierGatewayId AWS CloudFormation Property
 	// Required: false
@@ -95,14 +95,15 @@ type Route struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Route) AWSCloudFormationType() string {
+func (r *Route[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Route"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Route) MarshalJSON() ([]byte, error) {
-	type Properties Route
+func (r Route[any]) MarshalJSON() ([]byte, error) {
+	type Properties Route[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -124,8 +125,9 @@ func (r Route) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Route) UnmarshalJSON(b []byte) error {
-	type Properties Route
+func (r *Route[any]) UnmarshalJSON(b []byte) error {
+	type Properties Route[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -145,7 +147,7 @@ func (r *Route) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Route(*res.Properties)
+		*r = Route[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

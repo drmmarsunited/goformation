@@ -8,7 +8,7 @@ import (
 
 // Workgroup_Endpoint AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-endpoint.html
-type Workgroup_Endpoint struct {
+type Workgroup_Endpoint[T any] struct {
 
 	// Address AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Workgroup_Endpoint struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-endpoint.html#cfn-redshiftserverless-workgroup-endpoint-port
-	Port *int `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// VpcEndpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-endpoint.html#cfn-redshiftserverless-workgroup-endpoint-vpcendpoints
-	VpcEndpoints []Workgroup_VpcEndpoint `json:"VpcEndpoints,omitempty"`
+	VpcEndpoints []Workgroup_VpcEndpoint[any] `json:"VpcEndpoints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Workgroup_Endpoint struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Workgroup_Endpoint) AWSCloudFormationType() string {
+func (r *Workgroup_Endpoint[any]) AWSCloudFormationType() string {
 	return "AWS::RedshiftServerless::Workgroup.Endpoint"
 }

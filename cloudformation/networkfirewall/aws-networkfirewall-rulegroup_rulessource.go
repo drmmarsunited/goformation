@@ -8,12 +8,12 @@ import (
 
 // RuleGroup_RulesSource AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RulesSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html
-type RuleGroup_RulesSource struct {
+type RuleGroup_RulesSource[T any] struct {
 
 	// RulesSourceList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-rulessourcelist
-	RulesSourceList *RuleGroup_RulesSourceList `json:"RulesSourceList,omitempty"`
+	RulesSourceList *RuleGroup_RulesSourceList[any] `json:"RulesSourceList,omitempty"`
 
 	// RulesString AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type RuleGroup_RulesSource struct {
 	// StatefulRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-statefulrules
-	StatefulRules []RuleGroup_StatefulRule `json:"StatefulRules,omitempty"`
+	StatefulRules []RuleGroup_StatefulRule[any] `json:"StatefulRules,omitempty"`
 
 	// StatelessRulesAndCustomActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-statelessrulesandcustomactions
-	StatelessRulesAndCustomActions *RuleGroup_StatelessRulesAndCustomActions `json:"StatelessRulesAndCustomActions,omitempty"`
+	StatelessRulesAndCustomActions *RuleGroup_StatelessRulesAndCustomActions[any] `json:"StatelessRulesAndCustomActions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type RuleGroup_RulesSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RulesSource) AWSCloudFormationType() string {
+func (r *RuleGroup_RulesSource[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RulesSource"
 }

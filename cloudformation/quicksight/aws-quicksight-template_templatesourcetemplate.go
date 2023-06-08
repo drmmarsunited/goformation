@@ -8,7 +8,7 @@ import (
 
 // Template_TemplateSourceTemplate AWS CloudFormation Resource (AWS::QuickSight::Template.TemplateSourceTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourcetemplate.html
-type Template_TemplateSourceTemplate struct {
+type Template_TemplateSourceTemplate[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Template_TemplateSourceTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TemplateSourceTemplate) AWSCloudFormationType() string {
+func (r *Template_TemplateSourceTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TemplateSourceTemplate"
 }

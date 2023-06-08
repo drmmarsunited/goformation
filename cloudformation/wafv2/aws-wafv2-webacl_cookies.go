@@ -8,12 +8,12 @@ import (
 
 // WebACL_Cookies AWS CloudFormation Resource (AWS::WAFv2::WebACL.Cookies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-cookies.html
-type WebACL_Cookies struct {
+type WebACL_Cookies[T any] struct {
 
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-cookies.html#cfn-wafv2-webacl-cookies-matchpattern
-	MatchPattern *WebACL_CookieMatchPattern `json:"MatchPattern"`
+	MatchPattern *WebACL_CookieMatchPattern[any] `json:"MatchPattern"`
 
 	// MatchScope AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type WebACL_Cookies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_Cookies) AWSCloudFormationType() string {
+func (r *WebACL_Cookies[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.Cookies"
 }

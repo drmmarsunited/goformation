@@ -8,7 +8,7 @@ import (
 
 // ConnectorProfile_SalesforceConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html
-type ConnectorProfile_SalesforceConnectorProfileProperties struct {
+type ConnectorProfile_SalesforceConnectorProfileProperties[T any] struct {
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type ConnectorProfile_SalesforceConnectorProfileProperties struct {
 	// isSandboxEnvironment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-issandboxenvironment
-	isSandboxEnvironment *bool `json:"isSandboxEnvironment,omitempty"`
+	isSandboxEnvironment *T `json:"isSandboxEnvironment,omitempty"`
 
 	// usePrivateLinkForMetadataAndAuthorization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-useprivatelinkformetadataandauthorization
-	usePrivateLinkForMetadataAndAuthorization *bool `json:"usePrivateLinkForMetadataAndAuthorization,omitempty"`
+	usePrivateLinkForMetadataAndAuthorization *T `json:"usePrivateLinkForMetadataAndAuthorization,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ConnectorProfile_SalesforceConnectorProfileProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorProfile_SalesforceConnectorProfileProperties) AWSCloudFormationType() string {
+func (r *ConnectorProfile_SalesforceConnectorProfileProperties[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileProperties"
 }

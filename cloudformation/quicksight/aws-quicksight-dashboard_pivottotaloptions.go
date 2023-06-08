@@ -8,7 +8,7 @@ import (
 
 // Dashboard_PivotTotalOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.PivotTotalOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottotaloptions.html
-type Dashboard_PivotTotalOptions struct {
+type Dashboard_PivotTotalOptions[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Dashboard_PivotTotalOptions struct {
 	// MetricHeaderCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottotaloptions.html#cfn-quicksight-dashboard-pivottotaloptions-metricheadercellstyle
-	MetricHeaderCellStyle *Dashboard_TableCellStyle `json:"MetricHeaderCellStyle,omitempty"`
+	MetricHeaderCellStyle *Dashboard_TableCellStyle[any] `json:"MetricHeaderCellStyle,omitempty"`
 
 	// Placement AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_PivotTotalOptions struct {
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottotaloptions.html#cfn-quicksight-dashboard-pivottotaloptions-totalcellstyle
-	TotalCellStyle *Dashboard_TableCellStyle `json:"TotalCellStyle,omitempty"`
+	TotalCellStyle *Dashboard_TableCellStyle[any] `json:"TotalCellStyle,omitempty"`
 
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Dashboard_PivotTotalOptions struct {
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottotaloptions.html#cfn-quicksight-dashboard-pivottotaloptions-valuecellstyle
-	ValueCellStyle *Dashboard_TableCellStyle `json:"ValueCellStyle,omitempty"`
+	ValueCellStyle *Dashboard_TableCellStyle[any] `json:"ValueCellStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -62,6 +62,6 @@ type Dashboard_PivotTotalOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_PivotTotalOptions) AWSCloudFormationType() string {
+func (r *Dashboard_PivotTotalOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.PivotTotalOptions"
 }

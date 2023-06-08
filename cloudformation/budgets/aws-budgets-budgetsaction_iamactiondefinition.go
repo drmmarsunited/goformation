@@ -8,7 +8,7 @@ import (
 
 // BudgetsAction_IamActionDefinition AWS CloudFormation Resource (AWS::Budgets::BudgetsAction.IamActionDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-iamactiondefinition.html
-type BudgetsAction_IamActionDefinition struct {
+type BudgetsAction_IamActionDefinition[T any] struct {
 
 	// Groups AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type BudgetsAction_IamActionDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BudgetsAction_IamActionDefinition) AWSCloudFormationType() string {
+func (r *BudgetsAction_IamActionDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Budgets::BudgetsAction.IamActionDefinition"
 }

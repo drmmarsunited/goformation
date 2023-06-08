@@ -8,7 +8,7 @@ import (
 
 // Campaign_Message AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Message)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html
-type Campaign_Message struct {
+type Campaign_Message[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Campaign_Message struct {
 	// SilentPush AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-silentpush
-	SilentPush *bool `json:"SilentPush,omitempty"`
+	SilentPush *T `json:"SilentPush,omitempty"`
 
 	// TimeToLive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-timetolive
-	TimeToLive *int `json:"TimeToLive,omitempty"`
+	TimeToLive *T `json:"TimeToLive,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
@@ -87,6 +87,6 @@ type Campaign_Message struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_Message) AWSCloudFormationType() string {
+func (r *Campaign_Message[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.Message"
 }

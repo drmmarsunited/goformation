@@ -8,7 +8,7 @@ import (
 
 // Analysis_ThousandSeparatorOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.ThousandSeparatorOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-thousandseparatoroptions.html
-type Analysis_ThousandSeparatorOptions struct {
+type Analysis_ThousandSeparatorOptions[T any] struct {
 
 	// Symbol AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Analysis_ThousandSeparatorOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_ThousandSeparatorOptions) AWSCloudFormationType() string {
+func (r *Analysis_ThousandSeparatorOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.ThousandSeparatorOptions"
 }

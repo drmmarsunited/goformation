@@ -8,7 +8,7 @@ import (
 
 // Instance_AutoSnapshotAddOn AWS CloudFormation Resource (AWS::Lightsail::Instance.AutoSnapshotAddOn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-autosnapshotaddon.html
-type Instance_AutoSnapshotAddOn struct {
+type Instance_AutoSnapshotAddOn[T any] struct {
 
 	// SnapshotTimeOfDay AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Instance_AutoSnapshotAddOn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_AutoSnapshotAddOn) AWSCloudFormationType() string {
+func (r *Instance_AutoSnapshotAddOn[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::Instance.AutoSnapshotAddOn"
 }

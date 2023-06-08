@@ -8,7 +8,7 @@ import (
 
 // Bucket_RoutingRuleCondition AWS CloudFormation Resource (AWS::S3::Bucket.RoutingRuleCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html
-type Bucket_RoutingRuleCondition struct {
+type Bucket_RoutingRuleCondition[T any] struct {
 
 	// HttpErrorCodeReturnedEquals AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Bucket_RoutingRuleCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_RoutingRuleCondition) AWSCloudFormationType() string {
+func (r *Bucket_RoutingRuleCondition[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.RoutingRuleCondition"
 }

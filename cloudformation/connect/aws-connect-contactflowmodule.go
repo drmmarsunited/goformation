@@ -12,7 +12,7 @@ import (
 
 // ContactFlowModule AWS CloudFormation Resource (AWS::Connect::ContactFlowModule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html
-type ContactFlowModule struct {
+type ContactFlowModule[T any] struct {
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type ContactFlowModule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ContactFlowModule) AWSCloudFormationType() string {
+func (r *ContactFlowModule[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::ContactFlowModule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ContactFlowModule) MarshalJSON() ([]byte, error) {
-	type Properties ContactFlowModule
+func (r ContactFlowModule[any]) MarshalJSON() ([]byte, error) {
+	type Properties ContactFlowModule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ContactFlowModule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ContactFlowModule) UnmarshalJSON(b []byte) error {
-	type Properties ContactFlowModule
+func (r *ContactFlowModule[any]) UnmarshalJSON(b []byte) error {
+	type Properties ContactFlowModule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ContactFlowModule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ContactFlowModule(*res.Properties)
+		*r = ContactFlowModule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

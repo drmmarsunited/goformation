@@ -8,7 +8,7 @@ import (
 
 // DataSource_AmazonOpenSearchParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.AmazonOpenSearchParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-amazonopensearchparameters.html
-type DataSource_AmazonOpenSearchParameters struct {
+type DataSource_AmazonOpenSearchParameters[T any] struct {
 
 	// Domain AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type DataSource_AmazonOpenSearchParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AmazonOpenSearchParameters) AWSCloudFormationType() string {
+func (r *DataSource_AmazonOpenSearchParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.AmazonOpenSearchParameters"
 }

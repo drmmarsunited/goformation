@@ -11,12 +11,12 @@ import (
 
 // ConnectorDefinition AWS CloudFormation Resource (AWS::Greengrass::ConnectorDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html
-type ConnectorDefinition struct {
+type ConnectorDefinition[T any] struct {
 
 	// InitialVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-initialversion
-	InitialVersion *ConnectorDefinition_ConnectorDefinitionVersion `json:"InitialVersion,omitempty"`
+	InitialVersion *ConnectorDefinition_ConnectorDefinitionVersion[any] `json:"InitialVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -45,14 +45,15 @@ type ConnectorDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectorDefinition) AWSCloudFormationType() string {
+func (r *ConnectorDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::ConnectorDefinition"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConnectorDefinition) MarshalJSON() ([]byte, error) {
-	type Properties ConnectorDefinition
+func (r ConnectorDefinition[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConnectorDefinition[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ConnectorDefinition) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConnectorDefinition) UnmarshalJSON(b []byte) error {
-	type Properties ConnectorDefinition
+func (r *ConnectorDefinition[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConnectorDefinition[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ConnectorDefinition) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConnectorDefinition(*res.Properties)
+		*r = ConnectorDefinition[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

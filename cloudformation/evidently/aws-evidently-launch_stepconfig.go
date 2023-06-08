@@ -8,17 +8,17 @@ import (
 
 // Launch_StepConfig AWS CloudFormation Resource (AWS::Evidently::Launch.StepConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html
-type Launch_StepConfig struct {
+type Launch_StepConfig[T any] struct {
 
 	// GroupWeights AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html#cfn-evidently-launch-stepconfig-groupweights
-	GroupWeights []Launch_GroupToWeight `json:"GroupWeights"`
+	GroupWeights []Launch_GroupToWeight[any] `json:"GroupWeights"`
 
 	// SegmentOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html#cfn-evidently-launch-stepconfig-segmentoverrides
-	SegmentOverrides []Launch_SegmentOverride `json:"SegmentOverrides,omitempty"`
+	SegmentOverrides []Launch_SegmentOverride[any] `json:"SegmentOverrides,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Launch_StepConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_StepConfig) AWSCloudFormationType() string {
+func (r *Launch_StepConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.StepConfig"
 }

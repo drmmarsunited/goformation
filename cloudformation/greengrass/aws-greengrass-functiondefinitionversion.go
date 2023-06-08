@@ -11,12 +11,12 @@ import (
 
 // FunctionDefinitionVersion AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinitionVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html
-type FunctionDefinitionVersion struct {
+type FunctionDefinitionVersion[T any] struct {
 
 	// DefaultConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-defaultconfig
-	DefaultConfig *FunctionDefinitionVersion_DefaultConfig `json:"DefaultConfig,omitempty"`
+	DefaultConfig *FunctionDefinitionVersion_DefaultConfig[any] `json:"DefaultConfig,omitempty"`
 
 	// FunctionDefinitionId AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type FunctionDefinitionVersion struct {
 	// Functions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions
-	Functions []FunctionDefinitionVersion_Function `json:"Functions"`
+	Functions []FunctionDefinitionVersion_Function[any] `json:"Functions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type FunctionDefinitionVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FunctionDefinitionVersion) AWSCloudFormationType() string {
+func (r *FunctionDefinitionVersion[any]) AWSCloudFormationType() string {
 	return "AWS::Greengrass::FunctionDefinitionVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r FunctionDefinitionVersion) MarshalJSON() ([]byte, error) {
-	type Properties FunctionDefinitionVersion
+func (r FunctionDefinitionVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties FunctionDefinitionVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r FunctionDefinitionVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *FunctionDefinitionVersion) UnmarshalJSON(b []byte) error {
-	type Properties FunctionDefinitionVersion
+func (r *FunctionDefinitionVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties FunctionDefinitionVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *FunctionDefinitionVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = FunctionDefinitionVersion(*res.Properties)
+		*r = FunctionDefinitionVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

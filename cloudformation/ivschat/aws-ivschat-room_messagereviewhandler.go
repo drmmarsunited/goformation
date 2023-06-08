@@ -8,7 +8,7 @@ import (
 
 // Room_MessageReviewHandler AWS CloudFormation Resource (AWS::IVSChat::Room.MessageReviewHandler)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-room-messagereviewhandler.html
-type Room_MessageReviewHandler struct {
+type Room_MessageReviewHandler[T any] struct {
 
 	// FallbackResult AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Room_MessageReviewHandler struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Room_MessageReviewHandler) AWSCloudFormationType() string {
+func (r *Room_MessageReviewHandler[any]) AWSCloudFormationType() string {
 	return "AWS::IVSChat::Room.MessageReviewHandler"
 }

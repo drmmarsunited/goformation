@@ -8,17 +8,17 @@ import (
 
 // HoursOfOperation_HoursOfOperationTimeSlice AWS CloudFormation Resource (AWS::Connect::HoursOfOperation.HoursOfOperationTimeSlice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html
-type HoursOfOperation_HoursOfOperationTimeSlice struct {
+type HoursOfOperation_HoursOfOperationTimeSlice[T any] struct {
 
 	// Hours AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html#cfn-connect-hoursofoperation-hoursofoperationtimeslice-hours
-	Hours int `json:"Hours"`
+	Hours T `json:"Hours"`
 
 	// Minutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html#cfn-connect-hoursofoperation-hoursofoperationtimeslice-minutes
-	Minutes int `json:"Minutes"`
+	Minutes T `json:"Minutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type HoursOfOperation_HoursOfOperationTimeSlice struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *HoursOfOperation_HoursOfOperationTimeSlice) AWSCloudFormationType() string {
+func (r *HoursOfOperation_HoursOfOperationTimeSlice[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::HoursOfOperation.HoursOfOperationTimeSlice"
 }

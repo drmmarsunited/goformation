@@ -8,7 +8,7 @@ import (
 
 // Pipeline_EncryptionKey AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.EncryptionKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html
-type Pipeline_EncryptionKey struct {
+type Pipeline_EncryptionKey[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Pipeline_EncryptionKey struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_EncryptionKey) AWSCloudFormationType() string {
+func (r *Pipeline_EncryptionKey[any]) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.EncryptionKey"
 }

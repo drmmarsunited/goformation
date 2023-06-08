@@ -8,12 +8,12 @@ import (
 
 // Bucket_Filter AWS CloudFormation Resource (AWS::S3Outposts::Bucket.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html
-type Bucket_Filter struct {
+type Bucket_Filter[T any] struct {
 
 	// AndOperator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-andoperator
-	AndOperator *Bucket_FilterAndOperator `json:"AndOperator,omitempty"`
+	AndOperator *Bucket_FilterAndOperator[any] `json:"AndOperator,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bucket_Filter struct {
 	// Tag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-tag
-	Tag *Bucket_FilterTag `json:"Tag,omitempty"`
+	Tag *Bucket_FilterTag[any] `json:"Tag,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Bucket_Filter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Filter) AWSCloudFormationType() string {
+func (r *Bucket_Filter[any]) AWSCloudFormationType() string {
 	return "AWS::S3Outposts::Bucket.Filter"
 }

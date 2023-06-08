@@ -8,27 +8,27 @@ import (
 
 // Bot_Message AWS CloudFormation Resource (AWS::Lex::Bot.Message)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html
-type Bot_Message struct {
+type Bot_Message[T any] struct {
 
 	// CustomPayload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-custompayload
-	CustomPayload *Bot_CustomPayload `json:"CustomPayload,omitempty"`
+	CustomPayload *Bot_CustomPayload[any] `json:"CustomPayload,omitempty"`
 
 	// ImageResponseCard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-imageresponsecard
-	ImageResponseCard *Bot_ImageResponseCard `json:"ImageResponseCard,omitempty"`
+	ImageResponseCard *Bot_ImageResponseCard[any] `json:"ImageResponseCard,omitempty"`
 
 	// PlainTextMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-plaintextmessage
-	PlainTextMessage *Bot_PlainTextMessage `json:"PlainTextMessage,omitempty"`
+	PlainTextMessage *Bot_PlainTextMessage[any] `json:"PlainTextMessage,omitempty"`
 
 	// SSMLMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-message.html#cfn-lex-bot-message-ssmlmessage
-	SSMLMessage *Bot_SSMLMessage `json:"SSMLMessage,omitempty"`
+	SSMLMessage *Bot_SSMLMessage[any] `json:"SSMLMessage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Bot_Message struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_Message) AWSCloudFormationType() string {
+func (r *Bot_Message[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.Message"
 }

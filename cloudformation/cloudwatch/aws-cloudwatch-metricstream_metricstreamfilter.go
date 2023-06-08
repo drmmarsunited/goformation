@@ -8,7 +8,7 @@ import (
 
 // MetricStream_MetricStreamFilter AWS CloudFormation Resource (AWS::CloudWatch::MetricStream.MetricStreamFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-metricstream-metricstreamfilter.html
-type MetricStream_MetricStreamFilter struct {
+type MetricStream_MetricStreamFilter[T any] struct {
 
 	// MetricNames AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type MetricStream_MetricStreamFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MetricStream_MetricStreamFilter) AWSCloudFormationType() string {
+func (r *MetricStream_MetricStreamFilter[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::MetricStream.MetricStreamFilter"
 }

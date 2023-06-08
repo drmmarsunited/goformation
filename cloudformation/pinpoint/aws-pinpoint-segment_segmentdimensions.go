@@ -8,7 +8,7 @@ import (
 
 // Segment_SegmentDimensions AWS CloudFormation Resource (AWS::Pinpoint::Segment.SegmentDimensions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html
-type Segment_SegmentDimensions struct {
+type Segment_SegmentDimensions[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type Segment_SegmentDimensions struct {
 	// Behavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior
-	Behavior *Segment_Behavior `json:"Behavior,omitempty"`
+	Behavior *Segment_Behavior[any] `json:"Behavior,omitempty"`
 
 	// Demographic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic
-	Demographic *Segment_Demographic `json:"Demographic,omitempty"`
+	Demographic *Segment_Demographic[any] `json:"Demographic,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location
-	Location *Segment_Location `json:"Location,omitempty"`
+	Location *Segment_Location[any] `json:"Location,omitempty"`
 
 	// Metrics AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type Segment_SegmentDimensions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Segment_SegmentDimensions) AWSCloudFormationType() string {
+func (r *Segment_SegmentDimensions[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Segment.SegmentDimensions"
 }

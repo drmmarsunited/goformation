@@ -8,17 +8,17 @@ import (
 
 // Analysis_FreeFormLayoutElement AWS CloudFormation Resource (AWS::QuickSight::Analysis.FreeFormLayoutElement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html
-type Analysis_FreeFormLayoutElement struct {
+type Analysis_FreeFormLayoutElement[T any] struct {
 
 	// BackgroundStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-backgroundstyle
-	BackgroundStyle *Analysis_FreeFormLayoutElementBackgroundStyle `json:"BackgroundStyle,omitempty"`
+	BackgroundStyle *Analysis_FreeFormLayoutElementBackgroundStyle[any] `json:"BackgroundStyle,omitempty"`
 
 	// BorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-borderstyle
-	BorderStyle *Analysis_FreeFormLayoutElementBorderStyle `json:"BorderStyle,omitempty"`
+	BorderStyle *Analysis_FreeFormLayoutElementBorderStyle[any] `json:"BorderStyle,omitempty"`
 
 	// ElementId AWS CloudFormation Property
 	// Required: true
@@ -38,17 +38,17 @@ type Analysis_FreeFormLayoutElement struct {
 	// LoadingAnimation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-loadinganimation
-	LoadingAnimation *Analysis_LoadingAnimation `json:"LoadingAnimation,omitempty"`
+	LoadingAnimation *Analysis_LoadingAnimation[any] `json:"LoadingAnimation,omitempty"`
 
 	// RenderingRules AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-renderingrules
-	RenderingRules []Analysis_SheetElementRenderingRule `json:"RenderingRules,omitempty"`
+	RenderingRules []Analysis_SheetElementRenderingRule[any] `json:"RenderingRules,omitempty"`
 
 	// SelectedBorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-selectedborderstyle
-	SelectedBorderStyle *Analysis_FreeFormLayoutElementBorderStyle `json:"SelectedBorderStyle,omitempty"`
+	SelectedBorderStyle *Analysis_FreeFormLayoutElementBorderStyle[any] `json:"SelectedBorderStyle,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -87,6 +87,6 @@ type Analysis_FreeFormLayoutElement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FreeFormLayoutElement) AWSCloudFormationType() string {
+func (r *Analysis_FreeFormLayoutElement[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FreeFormLayoutElement"
 }

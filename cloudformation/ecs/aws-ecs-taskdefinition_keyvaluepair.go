@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_KeyValuePair AWS CloudFormation Resource (AWS::ECS::TaskDefinition.KeyValuePair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-keyvaluepair.html
-type TaskDefinition_KeyValuePair struct {
+type TaskDefinition_KeyValuePair[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_KeyValuePair struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_KeyValuePair) AWSCloudFormationType() string {
+func (r *TaskDefinition_KeyValuePair[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.KeyValuePair"
 }

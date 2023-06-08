@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_Body AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Body)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-body.html
-type RuleGroup_Body struct {
+type RuleGroup_Body[T any] struct {
 
 	// OversizeHandling AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type RuleGroup_Body struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_Body) AWSCloudFormationType() string {
+func (r *RuleGroup_Body[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.Body"
 }

@@ -8,7 +8,7 @@ import (
 
 // ResourceDataSync_S3Destination AWS CloudFormation Resource (AWS::SSM::ResourceDataSync.S3Destination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html
-type ResourceDataSync_S3Destination struct {
+type ResourceDataSync_S3Destination[T any] struct {
 
 	// BucketName AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type ResourceDataSync_S3Destination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceDataSync_S3Destination) AWSCloudFormationType() string {
+func (r *ResourceDataSync_S3Destination[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::ResourceDataSync.S3Destination"
 }

@@ -8,27 +8,27 @@ import (
 
 // ApplicationOutput_Output AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationOutput.Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html
-type ApplicationOutput_Output struct {
+type ApplicationOutput_Output[T any] struct {
 
 	// DestinationSchema AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-destinationschema
-	DestinationSchema *ApplicationOutput_DestinationSchema `json:"DestinationSchema"`
+	DestinationSchema *ApplicationOutput_DestinationSchema[any] `json:"DestinationSchema"`
 
 	// KinesisFirehoseOutput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisfirehoseoutput
-	KinesisFirehoseOutput *ApplicationOutput_KinesisFirehoseOutput `json:"KinesisFirehoseOutput,omitempty"`
+	KinesisFirehoseOutput *ApplicationOutput_KinesisFirehoseOutput[any] `json:"KinesisFirehoseOutput,omitempty"`
 
 	// KinesisStreamsOutput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisstreamsoutput
-	KinesisStreamsOutput *ApplicationOutput_KinesisStreamsOutput `json:"KinesisStreamsOutput,omitempty"`
+	KinesisStreamsOutput *ApplicationOutput_KinesisStreamsOutput[any] `json:"KinesisStreamsOutput,omitempty"`
 
 	// LambdaOutput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-lambdaoutput
-	LambdaOutput *ApplicationOutput_LambdaOutput `json:"LambdaOutput,omitempty"`
+	LambdaOutput *ApplicationOutput_LambdaOutput[any] `json:"LambdaOutput,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type ApplicationOutput_Output struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ApplicationOutput_Output) AWSCloudFormationType() string {
+func (r *ApplicationOutput_Output[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationOutput.Output"
 }

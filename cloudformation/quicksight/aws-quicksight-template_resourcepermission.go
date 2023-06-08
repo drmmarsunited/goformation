@@ -8,7 +8,7 @@ import (
 
 // Template_ResourcePermission AWS CloudFormation Resource (AWS::QuickSight::Template.ResourcePermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-resourcepermission.html
-type Template_ResourcePermission struct {
+type Template_ResourcePermission[T any] struct {
 
 	// Actions AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_ResourcePermission struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ResourcePermission) AWSCloudFormationType() string {
+func (r *Template_ResourcePermission[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ResourcePermission"
 }

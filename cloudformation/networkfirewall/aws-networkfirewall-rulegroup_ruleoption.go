@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_RuleOption AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RuleOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruleoption.html
-type RuleGroup_RuleOption struct {
+type RuleGroup_RuleOption[T any] struct {
 
 	// Keyword AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RuleGroup_RuleOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RuleOption) AWSCloudFormationType() string {
+func (r *RuleGroup_RuleOption[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::RuleGroup.RuleOption"
 }

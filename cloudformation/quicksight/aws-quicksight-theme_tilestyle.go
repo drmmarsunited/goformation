@@ -8,12 +8,12 @@ import (
 
 // Theme_TileStyle AWS CloudFormation Resource (AWS::QuickSight::Theme.TileStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html
-type Theme_TileStyle struct {
+type Theme_TileStyle[T any] struct {
 
 	// Border AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-border
-	Border *Theme_BorderStyle `json:"Border,omitempty"`
+	Border *Theme_BorderStyle[any] `json:"Border,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Theme_TileStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_TileStyle) AWSCloudFormationType() string {
+func (r *Theme_TileStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.TileStyle"
 }

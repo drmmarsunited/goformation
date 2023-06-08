@@ -8,7 +8,7 @@ import (
 
 // Member_NetworkFabricConfiguration AWS CloudFormation Resource (AWS::ManagedBlockchain::Member.NetworkFabricConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkfabricconfiguration.html
-type Member_NetworkFabricConfiguration struct {
+type Member_NetworkFabricConfiguration[T any] struct {
 
 	// Edition AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Member_NetworkFabricConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Member_NetworkFabricConfiguration) AWSCloudFormationType() string {
+func (r *Member_NetworkFabricConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ManagedBlockchain::Member.NetworkFabricConfiguration"
 }

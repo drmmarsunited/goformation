@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FreeFormLayoutCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormLayoutCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutcanvassizeoptions.html
-type Dashboard_FreeFormLayoutCanvasSizeOptions struct {
+type Dashboard_FreeFormLayoutCanvasSizeOptions[T any] struct {
 
 	// ScreenCanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformlayoutcanvassizeoptions.html#cfn-quicksight-dashboard-freeformlayoutcanvassizeoptions-screencanvassizeoptions
-	ScreenCanvasSizeOptions *Dashboard_FreeFormLayoutScreenCanvasSizeOptions `json:"ScreenCanvasSizeOptions,omitempty"`
+	ScreenCanvasSizeOptions *Dashboard_FreeFormLayoutScreenCanvasSizeOptions[any] `json:"ScreenCanvasSizeOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_FreeFormLayoutCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormLayoutCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormLayoutCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormLayoutCanvasSizeOptions"
 }

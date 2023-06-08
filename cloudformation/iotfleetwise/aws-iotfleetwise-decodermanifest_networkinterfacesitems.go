@@ -8,12 +8,12 @@ import (
 
 // DecoderManifest_NetworkInterfacesItems AWS CloudFormation Resource (AWS::IoTFleetWise::DecoderManifest.NetworkInterfacesItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html
-type DecoderManifest_NetworkInterfacesItems struct {
+type DecoderManifest_NetworkInterfacesItems[T any] struct {
 
 	// CanInterface AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-caninterface
-	CanInterface *DecoderManifest_CanInterface `json:"CanInterface,omitempty"`
+	CanInterface *DecoderManifest_CanInterface[any] `json:"CanInterface,omitempty"`
 
 	// InterfaceId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DecoderManifest_NetworkInterfacesItems struct {
 	// ObdInterface AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-obdinterface
-	ObdInterface *DecoderManifest_ObdInterface `json:"ObdInterface,omitempty"`
+	ObdInterface *DecoderManifest_ObdInterface[any] `json:"ObdInterface,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type DecoderManifest_NetworkInterfacesItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DecoderManifest_NetworkInterfacesItems) AWSCloudFormationType() string {
+func (r *DecoderManifest_NetworkInterfacesItems[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::DecoderManifest.NetworkInterfacesItems"
 }

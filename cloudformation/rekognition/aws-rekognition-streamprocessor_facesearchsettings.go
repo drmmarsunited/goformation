@@ -8,7 +8,7 @@ import (
 
 // StreamProcessor_FaceSearchSettings AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.FaceSearchSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-facesearchsettings.html
-type StreamProcessor_FaceSearchSettings struct {
+type StreamProcessor_FaceSearchSettings[T any] struct {
 
 	// CollectionId AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type StreamProcessor_FaceSearchSettings struct {
 	// FaceMatchThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-facesearchsettings.html#cfn-rekognition-streamprocessor-facesearchsettings-facematchthreshold
-	FaceMatchThreshold *float64 `json:"FaceMatchThreshold,omitempty"`
+	FaceMatchThreshold *T `json:"FaceMatchThreshold,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type StreamProcessor_FaceSearchSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StreamProcessor_FaceSearchSettings) AWSCloudFormationType() string {
+func (r *StreamProcessor_FaceSearchSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Rekognition::StreamProcessor.FaceSearchSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_RegexPatternSetReferenceStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.RegexPatternSetReferenceStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html
-type RuleGroup_RegexPatternSetReferenceStatement struct {
+type RuleGroup_RegexPatternSetReferenceStatement[T any] struct {
 
 	// Arn AWS CloudFormation Property
 	// Required: true
@@ -18,12 +18,12 @@ type RuleGroup_RegexPatternSetReferenceStatement struct {
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-fieldtomatch
-	FieldToMatch *RuleGroup_FieldToMatch `json:"FieldToMatch"`
+	FieldToMatch *RuleGroup_FieldToMatch[any] `json:"FieldToMatch"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-texttransformations
-	TextTransformations []RuleGroup_TextTransformation `json:"TextTransformations"`
+	TextTransformations []RuleGroup_TextTransformation[any] `json:"TextTransformations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type RuleGroup_RegexPatternSetReferenceStatement struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_RegexPatternSetReferenceStatement) AWSCloudFormationType() string {
+func (r *RuleGroup_RegexPatternSetReferenceStatement[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.RegexPatternSetReferenceStatement"
 }

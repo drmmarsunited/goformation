@@ -8,17 +8,17 @@ import (
 
 // NetworkAclEntry_Icmp AWS CloudFormation Resource (AWS::EC2::NetworkAclEntry.Icmp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html
-type NetworkAclEntry_Icmp struct {
+type NetworkAclEntry_Icmp[T any] struct {
 
 	// Code AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code
-	Code *int `json:"Code,omitempty"`
+	Code *T `json:"Code,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type
-	Type *int `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type NetworkAclEntry_Icmp struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *NetworkAclEntry_Icmp) AWSCloudFormationType() string {
+func (r *NetworkAclEntry_Icmp[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::NetworkAclEntry.Icmp"
 }

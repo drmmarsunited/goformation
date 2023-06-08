@@ -8,7 +8,7 @@ import (
 
 // Template_CalculatedField AWS CloudFormation Resource (AWS::QuickSight::Template.CalculatedField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-calculatedfield.html
-type Template_CalculatedField struct {
+type Template_CalculatedField[T any] struct {
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_CalculatedField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CalculatedField) AWSCloudFormationType() string {
+func (r *Template_CalculatedField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CalculatedField"
 }

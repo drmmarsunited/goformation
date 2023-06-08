@@ -12,13 +12,13 @@ import (
 )
 
 // Application_Location is a helper struct that can hold either a String or ApplicationLocation value
-type Application_Location struct {
+type Application_Location[T any] struct {
 	String *string
 
-	ApplicationLocation *Application_ApplicationLocation
+	ApplicationLocation *Application_ApplicationLocation[any]
 }
 
-func (r Application_Location) value() interface{} {
+func (r Application_Location[any]) value() interface{} {
 	ret := []interface{}{}
 
 	if r.String != nil {
@@ -37,12 +37,12 @@ func (r Application_Location) value() interface{} {
 	return nil
 }
 
-func (r Application_Location) MarshalJSON() ([]byte, error) {
+func (r Application_Location[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *Application_Location) UnmarshalJSON(b []byte) error {
+func (r *Application_Location[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

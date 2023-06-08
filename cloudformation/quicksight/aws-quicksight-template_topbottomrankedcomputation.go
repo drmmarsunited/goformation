@@ -8,12 +8,12 @@ import (
 
 // Template_TopBottomRankedComputation AWS CloudFormation Resource (AWS::QuickSight::Template.TopBottomRankedComputation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-topbottomrankedcomputation.html
-type Template_TopBottomRankedComputation struct {
+type Template_TopBottomRankedComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-topbottomrankedcomputation.html#cfn-quicksight-template-topbottomrankedcomputation-category
-	Category *Template_DimensionField `json:"Category"`
+	Category *Template_DimensionField[any] `json:"Category"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Template_TopBottomRankedComputation struct {
 	// ResultSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-topbottomrankedcomputation.html#cfn-quicksight-template-topbottomrankedcomputation-resultsize
-	ResultSize *float64 `json:"ResultSize,omitempty"`
+	ResultSize *T `json:"ResultSize,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Template_TopBottomRankedComputation struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-topbottomrankedcomputation.html#cfn-quicksight-template-topbottomrankedcomputation-value
-	Value *Template_MeasureField `json:"Value,omitempty"`
+	Value *Template_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Template_TopBottomRankedComputation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TopBottomRankedComputation) AWSCloudFormationType() string {
+func (r *Template_TopBottomRankedComputation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TopBottomRankedComputation"
 }

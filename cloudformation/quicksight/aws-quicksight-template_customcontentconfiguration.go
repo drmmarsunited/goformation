@@ -8,7 +8,7 @@ import (
 
 // Template_CustomContentConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.CustomContentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcontentconfiguration.html
-type Template_CustomContentConfiguration struct {
+type Template_CustomContentConfiguration[T any] struct {
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Template_CustomContentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CustomContentConfiguration) AWSCloudFormationType() string {
+func (r *Template_CustomContentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CustomContentConfiguration"
 }

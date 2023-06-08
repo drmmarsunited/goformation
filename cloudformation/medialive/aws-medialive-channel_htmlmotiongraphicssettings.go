@@ -8,7 +8,7 @@ import (
 
 // Channel_HtmlMotionGraphicsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.HtmlMotionGraphicsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-htmlmotiongraphicssettings.html
-type Channel_HtmlMotionGraphicsSettings struct {
+type Channel_HtmlMotionGraphicsSettings[T any] struct {
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -27,6 +27,6 @@ type Channel_HtmlMotionGraphicsSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_HtmlMotionGraphicsSettings) AWSCloudFormationType() string {
+func (r *Channel_HtmlMotionGraphicsSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.HtmlMotionGraphicsSettings"
 }

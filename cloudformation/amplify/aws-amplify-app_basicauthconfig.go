@@ -8,12 +8,12 @@ import (
 
 // App_BasicAuthConfig AWS CloudFormation Resource (AWS::Amplify::App.BasicAuthConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html
-type App_BasicAuthConfig struct {
+type App_BasicAuthConfig[T any] struct {
 
 	// EnableBasicAuth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html#cfn-amplify-app-basicauthconfig-enablebasicauth
-	EnableBasicAuth *bool `json:"EnableBasicAuth,omitempty"`
+	EnableBasicAuth *T `json:"EnableBasicAuth,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type App_BasicAuthConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *App_BasicAuthConfig) AWSCloudFormationType() string {
+func (r *App_BasicAuthConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Amplify::App.BasicAuthConfig"
 }

@@ -8,22 +8,22 @@ import (
 
 // PackagingConfiguration_MssPackage AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.MssPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html
-type PackagingConfiguration_MssPackage struct {
+type PackagingConfiguration_MssPackage[T any] struct {
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-encryption
-	Encryption *PackagingConfiguration_MssEncryption `json:"Encryption,omitempty"`
+	Encryption *PackagingConfiguration_MssEncryption[any] `json:"Encryption,omitempty"`
 
 	// MssManifests AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-mssmanifests
-	MssManifests []PackagingConfiguration_MssManifest `json:"MssManifests"`
+	MssManifests []PackagingConfiguration_MssManifest[any] `json:"MssManifests"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *T `json:"SegmentDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type PackagingConfiguration_MssPackage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_MssPackage) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_MssPackage[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.MssPackage"
 }

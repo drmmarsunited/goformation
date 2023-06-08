@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_VirtualServiceBackend AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.VirtualServiceBackend)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html
-type VirtualNode_VirtualServiceBackend struct {
+type VirtualNode_VirtualServiceBackend[T any] struct {
 
 	// ClientPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html#cfn-appmesh-virtualnode-virtualservicebackend-clientpolicy
-	ClientPolicy *VirtualNode_ClientPolicy `json:"ClientPolicy,omitempty"`
+	ClientPolicy *VirtualNode_ClientPolicy[any] `json:"ClientPolicy,omitempty"`
 
 	// VirtualServiceName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_VirtualServiceBackend struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_VirtualServiceBackend) AWSCloudFormationType() string {
+func (r *VirtualNode_VirtualServiceBackend[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.VirtualServiceBackend"
 }

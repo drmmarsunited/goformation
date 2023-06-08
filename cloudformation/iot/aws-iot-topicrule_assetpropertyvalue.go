@@ -8,7 +8,7 @@ import (
 
 // TopicRule_AssetPropertyValue AWS CloudFormation Resource (AWS::IoT::TopicRule.AssetPropertyValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html
-type TopicRule_AssetPropertyValue struct {
+type TopicRule_AssetPropertyValue[T any] struct {
 
 	// Quality AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type TopicRule_AssetPropertyValue struct {
 	// Timestamp AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-timestamp
-	Timestamp *TopicRule_AssetPropertyTimestamp `json:"Timestamp"`
+	Timestamp *TopicRule_AssetPropertyTimestamp[any] `json:"Timestamp"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-value
-	Value *TopicRule_AssetPropertyVariant `json:"Value"`
+	Value *TopicRule_AssetPropertyVariant[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type TopicRule_AssetPropertyValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_AssetPropertyValue) AWSCloudFormationType() string {
+func (r *TopicRule_AssetPropertyValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.AssetPropertyValue"
 }

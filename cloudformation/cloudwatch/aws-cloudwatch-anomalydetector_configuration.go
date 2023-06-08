@@ -8,12 +8,12 @@ import (
 
 // AnomalyDetector_Configuration AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.Configuration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html
-type AnomalyDetector_Configuration struct {
+type AnomalyDetector_Configuration[T any] struct {
 
 	// ExcludedTimeRanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-excludedtimeranges
-	ExcludedTimeRanges []AnomalyDetector_Range `json:"ExcludedTimeRanges,omitempty"`
+	ExcludedTimeRanges []AnomalyDetector_Range[any] `json:"ExcludedTimeRanges,omitempty"`
 
 	// MetricTimeZone AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type AnomalyDetector_Configuration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_Configuration) AWSCloudFormationType() string {
+func (r *AnomalyDetector_Configuration[any]) AWSCloudFormationType() string {
 	return "AWS::CloudWatch::AnomalyDetector.Configuration"
 }

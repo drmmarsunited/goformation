@@ -8,7 +8,7 @@ import (
 
 // Channel_EbuTtDDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.EbuTtDDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ebuttddestinationsettings.html
-type Channel_EbuTtDDestinationSettings struct {
+type Channel_EbuTtDDestinationSettings[T any] struct {
 
 	// CopyrightHolder AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Channel_EbuTtDDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_EbuTtDDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_EbuTtDDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.EbuTtDDestinationSettings"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_DonutCenterOptions AWS CloudFormation Resource (AWS::QuickSight::Template.DonutCenterOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-donutcenteroptions.html
-type Template_DonutCenterOptions struct {
+type Template_DonutCenterOptions[T any] struct {
 
 	// LabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_DonutCenterOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_DonutCenterOptions) AWSCloudFormationType() string {
+func (r *Template_DonutCenterOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.DonutCenterOptions"
 }

@@ -12,7 +12,7 @@ import (
 
 // VerifiedAccessInstance AWS CloudFormation Resource (AWS::EC2::VerifiedAccessInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html
-type VerifiedAccessInstance struct {
+type VerifiedAccessInstance[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type VerifiedAccessInstance struct {
 	// LoggingConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-loggingconfigurations
-	LoggingConfigurations *VerifiedAccessInstance_VerifiedAccessLogs `json:"LoggingConfigurations,omitempty"`
+	LoggingConfigurations *VerifiedAccessInstance_VerifiedAccessLogs[any] `json:"LoggingConfigurations,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type VerifiedAccessInstance struct {
 	// VerifiedAccessTrustProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustproviders
-	VerifiedAccessTrustProviders []VerifiedAccessInstance_VerifiedAccessTrustProvider `json:"VerifiedAccessTrustProviders,omitempty"`
+	VerifiedAccessTrustProviders []VerifiedAccessInstance_VerifiedAccessTrustProvider[any] `json:"VerifiedAccessTrustProviders,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -56,14 +56,15 @@ type VerifiedAccessInstance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VerifiedAccessInstance) AWSCloudFormationType() string {
+func (r *VerifiedAccessInstance[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::VerifiedAccessInstance"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VerifiedAccessInstance) MarshalJSON() ([]byte, error) {
-	type Properties VerifiedAccessInstance
+func (r VerifiedAccessInstance[any]) MarshalJSON() ([]byte, error) {
+	type Properties VerifiedAccessInstance[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r VerifiedAccessInstance) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VerifiedAccessInstance) UnmarshalJSON(b []byte) error {
-	type Properties VerifiedAccessInstance
+func (r *VerifiedAccessInstance[any]) UnmarshalJSON(b []byte) error {
+	type Properties VerifiedAccessInstance[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *VerifiedAccessInstance) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VerifiedAccessInstance(*res.Properties)
+		*r = VerifiedAccessInstance[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

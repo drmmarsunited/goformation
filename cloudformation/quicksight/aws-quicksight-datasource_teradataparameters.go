@@ -8,7 +8,7 @@ import (
 
 // DataSource_TeradataParameters AWS CloudFormation Resource (AWS::QuickSight::DataSource.TeradataParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html
-type DataSource_TeradataParameters struct {
+type DataSource_TeradataParameters[T any] struct {
 
 	// Database AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_TeradataParameters struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-port
-	Port float64 `json:"Port"`
+	Port T `json:"Port"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type DataSource_TeradataParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_TeradataParameters) AWSCloudFormationType() string {
+func (r *DataSource_TeradataParameters[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSource.TeradataParameters"
 }

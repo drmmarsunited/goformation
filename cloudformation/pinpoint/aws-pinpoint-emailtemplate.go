@@ -11,7 +11,7 @@ import (
 
 // EmailTemplate AWS CloudFormation Resource (AWS::Pinpoint::EmailTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html
-type EmailTemplate struct {
+type EmailTemplate[T any] struct {
 
 	// DefaultSubstitutions AWS CloudFormation Property
 	// Required: false
@@ -65,14 +65,15 @@ type EmailTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EmailTemplate) AWSCloudFormationType() string {
+func (r *EmailTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::EmailTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EmailTemplate) MarshalJSON() ([]byte, error) {
-	type Properties EmailTemplate
+func (r EmailTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties EmailTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -94,8 +95,9 @@ func (r EmailTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EmailTemplate) UnmarshalJSON(b []byte) error {
-	type Properties EmailTemplate
+func (r *EmailTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties EmailTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -115,7 +117,7 @@ func (r *EmailTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EmailTemplate(*res.Properties)
+		*r = EmailTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

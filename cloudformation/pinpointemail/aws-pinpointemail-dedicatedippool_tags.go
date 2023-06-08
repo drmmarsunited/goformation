@@ -8,7 +8,7 @@ import (
 
 // DedicatedIpPool_Tags AWS CloudFormation Resource (AWS::PinpointEmail::DedicatedIpPool.Tags)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-dedicatedippool-tags.html
-type DedicatedIpPool_Tags struct {
+type DedicatedIpPool_Tags[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DedicatedIpPool_Tags struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DedicatedIpPool_Tags) AWSCloudFormationType() string {
+func (r *DedicatedIpPool_Tags[any]) AWSCloudFormationType() string {
 	return "AWS::PinpointEmail::DedicatedIpPool.Tags"
 }

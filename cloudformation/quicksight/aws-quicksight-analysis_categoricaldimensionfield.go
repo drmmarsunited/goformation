@@ -8,12 +8,12 @@ import (
 
 // Analysis_CategoricalDimensionField AWS CloudFormation Resource (AWS::QuickSight::Analysis.CategoricalDimensionField)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoricaldimensionfield.html
-type Analysis_CategoricalDimensionField struct {
+type Analysis_CategoricalDimensionField[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoricaldimensionfield.html#cfn-quicksight-analysis-categoricaldimensionfield-column
-	Column *Analysis_ColumnIdentifier `json:"Column"`
+	Column *Analysis_ColumnIdentifier[any] `json:"Column"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_CategoricalDimensionField struct {
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-categoricaldimensionfield.html#cfn-quicksight-analysis-categoricaldimensionfield-formatconfiguration
-	FormatConfiguration *Analysis_StringFormatConfiguration `json:"FormatConfiguration,omitempty"`
+	FormatConfiguration *Analysis_StringFormatConfiguration[any] `json:"FormatConfiguration,omitempty"`
 
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Analysis_CategoricalDimensionField struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_CategoricalDimensionField) AWSCloudFormationType() string {
+func (r *Analysis_CategoricalDimensionField[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.CategoricalDimensionField"
 }

@@ -8,12 +8,12 @@ import (
 
 // Bot_TextInputSpecification AWS CloudFormation Resource (AWS::Lex::Bot.TextInputSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textinputspecification.html
-type Bot_TextInputSpecification struct {
+type Bot_TextInputSpecification[T any] struct {
 
 	// StartTimeoutMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textinputspecification.html#cfn-lex-bot-textinputspecification-starttimeoutms
-	StartTimeoutMs int `json:"StartTimeoutMs"`
+	StartTimeoutMs T `json:"StartTimeoutMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_TextInputSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_TextInputSpecification) AWSCloudFormationType() string {
+func (r *Bot_TextInputSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.TextInputSpecification"
 }

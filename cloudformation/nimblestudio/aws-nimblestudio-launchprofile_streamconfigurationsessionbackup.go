@@ -8,12 +8,12 @@ import (
 
 // LaunchProfile_StreamConfigurationSessionBackup AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.StreamConfigurationSessionBackup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html
-type LaunchProfile_StreamConfigurationSessionBackup struct {
+type LaunchProfile_StreamConfigurationSessionBackup[T any] struct {
 
 	// MaxBackupsToRetain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionbackup-maxbackupstoretain
-	MaxBackupsToRetain *float64 `json:"MaxBackupsToRetain,omitempty"`
+	MaxBackupsToRetain *T `json:"MaxBackupsToRetain,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type LaunchProfile_StreamConfigurationSessionBackup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchProfile_StreamConfigurationSessionBackup) AWSCloudFormationType() string {
+func (r *LaunchProfile_StreamConfigurationSessionBackup[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::LaunchProfile.StreamConfigurationSessionBackup"
 }

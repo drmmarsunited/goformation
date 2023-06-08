@@ -11,12 +11,12 @@ import (
 
 // UserPoolClient AWS CloudFormation Resource (AWS::Cognito::UserPoolClient)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html
-type UserPoolClient struct {
+type UserPoolClient[T any] struct {
 
 	// AccessTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-accesstokenvalidity
-	AccessTokenValidity *int `json:"AccessTokenValidity,omitempty"`
+	AccessTokenValidity *T `json:"AccessTokenValidity,omitempty"`
 
 	// AllowedOAuthFlows AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type UserPoolClient struct {
 	// AllowedOAuthFlowsUserPoolClient AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient
-	AllowedOAuthFlowsUserPoolClient *bool `json:"AllowedOAuthFlowsUserPoolClient,omitempty"`
+	AllowedOAuthFlowsUserPoolClient *T `json:"AllowedOAuthFlowsUserPoolClient,omitempty"`
 
 	// AllowedOAuthScopes AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type UserPoolClient struct {
 	// AnalyticsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration
-	AnalyticsConfiguration *UserPoolClient_AnalyticsConfiguration `json:"AnalyticsConfiguration,omitempty"`
+	AnalyticsConfiguration *UserPoolClient_AnalyticsConfiguration[any] `json:"AnalyticsConfiguration,omitempty"`
 
 	// AuthSessionValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-authsessionvalidity
-	AuthSessionValidity *int `json:"AuthSessionValidity,omitempty"`
+	AuthSessionValidity *T `json:"AuthSessionValidity,omitempty"`
 
 	// CallbackURLs AWS CloudFormation Property
 	// Required: false
@@ -61,12 +61,12 @@ type UserPoolClient struct {
 	// EnablePropagateAdditionalUserContextData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-enablepropagateadditionalusercontextdata
-	EnablePropagateAdditionalUserContextData *bool `json:"EnablePropagateAdditionalUserContextData,omitempty"`
+	EnablePropagateAdditionalUserContextData *T `json:"EnablePropagateAdditionalUserContextData,omitempty"`
 
 	// EnableTokenRevocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-enabletokenrevocation
-	EnableTokenRevocation *bool `json:"EnableTokenRevocation,omitempty"`
+	EnableTokenRevocation *T `json:"EnableTokenRevocation,omitempty"`
 
 	// ExplicitAuthFlows AWS CloudFormation Property
 	// Required: false
@@ -76,12 +76,12 @@ type UserPoolClient struct {
 	// GenerateSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
-	GenerateSecret *bool `json:"GenerateSecret,omitempty"`
+	GenerateSecret *T `json:"GenerateSecret,omitempty"`
 
 	// IdTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-idtokenvalidity
-	IdTokenValidity *int `json:"IdTokenValidity,omitempty"`
+	IdTokenValidity *T `json:"IdTokenValidity,omitempty"`
 
 	// LogoutURLs AWS CloudFormation Property
 	// Required: false
@@ -101,7 +101,7 @@ type UserPoolClient struct {
 	// RefreshTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
-	RefreshTokenValidity *int `json:"RefreshTokenValidity,omitempty"`
+	RefreshTokenValidity *T `json:"RefreshTokenValidity,omitempty"`
 
 	// SupportedIdentityProviders AWS CloudFormation Property
 	// Required: false
@@ -111,7 +111,7 @@ type UserPoolClient struct {
 	// TokenValidityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-tokenvalidityunits
-	TokenValidityUnits *UserPoolClient_TokenValidityUnits `json:"TokenValidityUnits,omitempty"`
+	TokenValidityUnits *UserPoolClient_TokenValidityUnits[any] `json:"TokenValidityUnits,omitempty"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
@@ -140,14 +140,15 @@ type UserPoolClient struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolClient) AWSCloudFormationType() string {
+func (r *UserPoolClient[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolClient"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r UserPoolClient) MarshalJSON() ([]byte, error) {
-	type Properties UserPoolClient
+func (r UserPoolClient[any]) MarshalJSON() ([]byte, error) {
+	type Properties UserPoolClient[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -169,8 +170,9 @@ func (r UserPoolClient) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *UserPoolClient) UnmarshalJSON(b []byte) error {
-	type Properties UserPoolClient
+func (r *UserPoolClient[any]) UnmarshalJSON(b []byte) error {
+	type Properties UserPoolClient[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -190,7 +192,7 @@ func (r *UserPoolClient) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = UserPoolClient(*res.Properties)
+		*r = UserPoolClient[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

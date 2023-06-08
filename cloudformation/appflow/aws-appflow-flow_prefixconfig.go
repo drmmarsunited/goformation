@@ -8,7 +8,7 @@ import (
 
 // Flow_PrefixConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.PrefixConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html
-type Flow_PrefixConfig struct {
+type Flow_PrefixConfig[T any] struct {
 
 	// PathPrefixHierarchy AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Flow_PrefixConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_PrefixConfig) AWSCloudFormationType() string {
+func (r *Flow_PrefixConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.PrefixConfig"
 }

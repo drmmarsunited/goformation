@@ -8,12 +8,12 @@ import (
 
 // DomainConfiguration_AuthorizerConfig AWS CloudFormation Resource (AWS::IoT::DomainConfiguration.AuthorizerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-authorizerconfig.html
-type DomainConfiguration_AuthorizerConfig struct {
+type DomainConfiguration_AuthorizerConfig[T any] struct {
 
 	// AllowAuthorizerOverride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-authorizerconfig.html#cfn-iot-domainconfiguration-authorizerconfig-allowauthorizeroverride
-	AllowAuthorizerOverride *bool `json:"AllowAuthorizerOverride,omitempty"`
+	AllowAuthorizerOverride *T `json:"AllowAuthorizerOverride,omitempty"`
 
 	// DefaultAuthorizerName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DomainConfiguration_AuthorizerConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DomainConfiguration_AuthorizerConfig) AWSCloudFormationType() string {
+func (r *DomainConfiguration_AuthorizerConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::DomainConfiguration.AuthorizerConfig"
 }

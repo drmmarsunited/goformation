@@ -8,7 +8,7 @@ import (
 
 // GlobalTable_Projection AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.Projection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-projection.html
-type GlobalTable_Projection struct {
+type GlobalTable_Projection[T any] struct {
 
 	// NonKeyAttributes AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GlobalTable_Projection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalTable_Projection) AWSCloudFormationType() string {
+func (r *GlobalTable_Projection[any]) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::GlobalTable.Projection"
 }

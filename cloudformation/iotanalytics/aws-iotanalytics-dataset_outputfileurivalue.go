@@ -8,7 +8,7 @@ import (
 
 // Dataset_OutputFileUriValue AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.OutputFileUriValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-outputfileurivalue.html
-type Dataset_OutputFileUriValue struct {
+type Dataset_OutputFileUriValue[T any] struct {
 
 	// FileName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Dataset_OutputFileUriValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dataset_OutputFileUriValue) AWSCloudFormationType() string {
+func (r *Dataset_OutputFileUriValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTAnalytics::Dataset.OutputFileUriValue"
 }

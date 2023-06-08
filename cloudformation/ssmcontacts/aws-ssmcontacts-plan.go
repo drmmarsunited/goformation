@@ -11,7 +11,7 @@ import (
 
 // Plan AWS CloudFormation Resource (AWS::SSMContacts::Plan)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html
-type Plan struct {
+type Plan[T any] struct {
 
 	// ContactId AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Plan struct {
 	// Stages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html#cfn-ssmcontacts-plan-stages
-	Stages []Plan_Stage `json:"Stages,omitempty"`
+	Stages []Plan_Stage[any] `json:"Stages,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -45,14 +45,15 @@ type Plan struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Plan) AWSCloudFormationType() string {
+func (r *Plan[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Plan"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Plan) MarshalJSON() ([]byte, error) {
-	type Properties Plan
+func (r Plan[any]) MarshalJSON() ([]byte, error) {
+	type Properties Plan[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r Plan) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Plan) UnmarshalJSON(b []byte) error {
-	type Properties Plan
+func (r *Plan[any]) UnmarshalJSON(b []byte) error {
+	type Properties Plan[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *Plan) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Plan(*res.Properties)
+		*r = Plan[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

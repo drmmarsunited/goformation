@@ -8,7 +8,7 @@ import (
 
 // Certificate_Qualifier AWS CloudFormation Resource (AWS::ACMPCA::Certificate.Qualifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-qualifier.html
-type Certificate_Qualifier struct {
+type Certificate_Qualifier[T any] struct {
 
 	// CpsUri AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Certificate_Qualifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_Qualifier) AWSCloudFormationType() string {
+func (r *Certificate_Qualifier[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.Qualifier"
 }

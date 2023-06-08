@@ -11,7 +11,7 @@ import (
 
 // LogStream AWS CloudFormation Resource (AWS::Logs::LogStream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html
-type LogStream struct {
+type LogStream[T any] struct {
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type LogStream struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LogStream) AWSCloudFormationType() string {
+func (r *LogStream[any]) AWSCloudFormationType() string {
 	return "AWS::Logs::LogStream"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LogStream) MarshalJSON() ([]byte, error) {
-	type Properties LogStream
+func (r LogStream[any]) MarshalJSON() ([]byte, error) {
+	type Properties LogStream[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r LogStream) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LogStream) UnmarshalJSON(b []byte) error {
-	type Properties LogStream
+func (r *LogStream[any]) UnmarshalJSON(b []byte) error {
+	type Properties LogStream[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *LogStream) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LogStream(*res.Properties)
+		*r = LogStream[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

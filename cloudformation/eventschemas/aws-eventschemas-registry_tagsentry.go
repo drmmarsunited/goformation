@@ -8,7 +8,7 @@ import (
 
 // Registry_TagsEntry AWS CloudFormation Resource (AWS::EventSchemas::Registry.TagsEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-registry-tagsentry.html
-type Registry_TagsEntry struct {
+type Registry_TagsEntry[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Registry_TagsEntry struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Registry_TagsEntry) AWSCloudFormationType() string {
+func (r *Registry_TagsEntry[any]) AWSCloudFormationType() string {
 	return "AWS::EventSchemas::Registry.TagsEntry"
 }

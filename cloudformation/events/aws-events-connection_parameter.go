@@ -8,12 +8,12 @@ import (
 
 // Connection_Parameter AWS CloudFormation Resource (AWS::Events::Connection.Parameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html
-type Connection_Parameter struct {
+type Connection_Parameter[T any] struct {
 
 	// IsValueSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-isvaluesecret
-	IsValueSecret *bool `json:"IsValueSecret,omitempty"`
+	IsValueSecret *T `json:"IsValueSecret,omitempty"`
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Connection_Parameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_Parameter) AWSCloudFormationType() string {
+func (r *Connection_Parameter[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Connection.Parameter"
 }

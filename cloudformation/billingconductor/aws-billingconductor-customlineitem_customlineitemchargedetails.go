@@ -8,17 +8,17 @@ import (
 
 // CustomLineItem_CustomLineItemChargeDetails AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem.CustomLineItemChargeDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemchargedetails.html
-type CustomLineItem_CustomLineItemChargeDetails struct {
+type CustomLineItem_CustomLineItemChargeDetails[T any] struct {
 
 	// Flat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemchargedetails.html#cfn-billingconductor-customlineitem-customlineitemchargedetails-flat
-	Flat *CustomLineItem_CustomLineItemFlatChargeDetails `json:"Flat,omitempty"`
+	Flat *CustomLineItem_CustomLineItemFlatChargeDetails[any] `json:"Flat,omitempty"`
 
 	// Percentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitemchargedetails.html#cfn-billingconductor-customlineitem-customlineitemchargedetails-percentage
-	Percentage *CustomLineItem_CustomLineItemPercentageChargeDetails `json:"Percentage,omitempty"`
+	Percentage *CustomLineItem_CustomLineItemPercentageChargeDetails[any] `json:"Percentage,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type CustomLineItem_CustomLineItemChargeDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomLineItem_CustomLineItemChargeDetails) AWSCloudFormationType() string {
+func (r *CustomLineItem_CustomLineItemChargeDetails[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::CustomLineItem.CustomLineItemChargeDetails"
 }

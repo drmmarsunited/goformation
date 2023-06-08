@@ -12,7 +12,7 @@ import (
 
 // ServiceTemplate AWS CloudFormation Resource (AWS::Proton::ServiceTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-servicetemplate.html
-type ServiceTemplate struct {
+type ServiceTemplate[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type ServiceTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ServiceTemplate) AWSCloudFormationType() string {
+func (r *ServiceTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Proton::ServiceTemplate"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ServiceTemplate) MarshalJSON() ([]byte, error) {
-	type Properties ServiceTemplate
+func (r ServiceTemplate[any]) MarshalJSON() ([]byte, error) {
+	type Properties ServiceTemplate[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ServiceTemplate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ServiceTemplate) UnmarshalJSON(b []byte) error {
-	type Properties ServiceTemplate
+func (r *ServiceTemplate[any]) UnmarshalJSON(b []byte) error {
+	type Properties ServiceTemplate[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ServiceTemplate) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ServiceTemplate(*res.Properties)
+		*r = ServiceTemplate[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

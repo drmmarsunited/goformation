@@ -8,7 +8,7 @@ import (
 
 // DirectoryConfig_ServiceAccountCredentials AWS CloudFormation Resource (AWS::AppStream::DirectoryConfig.ServiceAccountCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html
-type DirectoryConfig_ServiceAccountCredentials struct {
+type DirectoryConfig_ServiceAccountCredentials[T any] struct {
 
 	// AccountName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DirectoryConfig_ServiceAccountCredentials struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DirectoryConfig_ServiceAccountCredentials) AWSCloudFormationType() string {
+func (r *DirectoryConfig_ServiceAccountCredentials[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::DirectoryConfig.ServiceAccountCredentials"
 }

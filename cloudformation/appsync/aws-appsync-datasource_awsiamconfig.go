@@ -8,7 +8,7 @@ import (
 
 // DataSource_AwsIamConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.AwsIamConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html
-type DataSource_AwsIamConfig struct {
+type DataSource_AwsIamConfig[T any] struct {
 
 	// SigningRegion AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type DataSource_AwsIamConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_AwsIamConfig) AWSCloudFormationType() string {
+func (r *DataSource_AwsIamConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.AwsIamConfig"
 }

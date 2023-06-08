@@ -8,12 +8,12 @@ import (
 
 // Dashboard_CustomActionSetParametersOperation AWS CloudFormation Resource (AWS::QuickSight::Dashboard.CustomActionSetParametersOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionsetparametersoperation.html
-type Dashboard_CustomActionSetParametersOperation struct {
+type Dashboard_CustomActionSetParametersOperation[T any] struct {
 
 	// ParameterValueConfigurations AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionsetparametersoperation.html#cfn-quicksight-dashboard-customactionsetparametersoperation-parametervalueconfigurations
-	ParameterValueConfigurations []Dashboard_SetParameterValueConfiguration `json:"ParameterValueConfigurations"`
+	ParameterValueConfigurations []Dashboard_SetParameterValueConfiguration[any] `json:"ParameterValueConfigurations"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_CustomActionSetParametersOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_CustomActionSetParametersOperation) AWSCloudFormationType() string {
+func (r *Dashboard_CustomActionSetParametersOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.CustomActionSetParametersOperation"
 }

@@ -8,7 +8,7 @@ import (
 
 // ResponsePlan_ChatChannel AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.ChatChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-chatchannel.html
-type ResponsePlan_ChatChannel struct {
+type ResponsePlan_ChatChannel[T any] struct {
 
 	// ChatbotSns AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ResponsePlan_ChatChannel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResponsePlan_ChatChannel) AWSCloudFormationType() string {
+func (r *ResponsePlan_ChatChannel[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ResponsePlan.ChatChannel"
 }

@@ -8,7 +8,7 @@ import (
 
 // AnnotationStore_ReferenceItem AWS CloudFormation Resource (AWS::Omics::AnnotationStore.ReferenceItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-referenceitem.html
-type AnnotationStore_ReferenceItem struct {
+type AnnotationStore_ReferenceItem[T any] struct {
 
 	// ReferenceArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type AnnotationStore_ReferenceItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnnotationStore_ReferenceItem) AWSCloudFormationType() string {
+func (r *AnnotationStore_ReferenceItem[any]) AWSCloudFormationType() string {
 	return "AWS::Omics::AnnotationStore.ReferenceItem"
 }

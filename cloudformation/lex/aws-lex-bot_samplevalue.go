@@ -8,7 +8,7 @@ import (
 
 // Bot_SampleValue AWS CloudFormation Resource (AWS::Lex::Bot.SampleValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-samplevalue.html
-type Bot_SampleValue struct {
+type Bot_SampleValue[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Bot_SampleValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_SampleValue) AWSCloudFormationType() string {
+func (r *Bot_SampleValue[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.SampleValue"
 }

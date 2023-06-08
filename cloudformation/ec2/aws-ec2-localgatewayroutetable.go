@@ -12,7 +12,7 @@ import (
 
 // LocalGatewayRouteTable AWS CloudFormation Resource (AWS::EC2::LocalGatewayRouteTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html
-type LocalGatewayRouteTable struct {
+type LocalGatewayRouteTable[T any] struct {
 
 	// LocalGatewayId AWS CloudFormation Property
 	// Required: true
@@ -46,14 +46,15 @@ type LocalGatewayRouteTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocalGatewayRouteTable) AWSCloudFormationType() string {
+func (r *LocalGatewayRouteTable[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LocalGatewayRouteTable"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LocalGatewayRouteTable) MarshalJSON() ([]byte, error) {
-	type Properties LocalGatewayRouteTable
+func (r LocalGatewayRouteTable[any]) MarshalJSON() ([]byte, error) {
+	type Properties LocalGatewayRouteTable[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -75,8 +76,9 @@ func (r LocalGatewayRouteTable) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LocalGatewayRouteTable) UnmarshalJSON(b []byte) error {
-	type Properties LocalGatewayRouteTable
+func (r *LocalGatewayRouteTable[any]) UnmarshalJSON(b []byte) error {
+	type Properties LocalGatewayRouteTable[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -96,7 +98,7 @@ func (r *LocalGatewayRouteTable) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LocalGatewayRouteTable(*res.Properties)
+		*r = LocalGatewayRouteTable[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

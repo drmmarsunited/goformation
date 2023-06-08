@@ -8,7 +8,7 @@ import (
 
 // BackupVault_NotificationObjectType AWS CloudFormation Resource (AWS::Backup::BackupVault.NotificationObjectType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html
-type BackupVault_NotificationObjectType struct {
+type BackupVault_NotificationObjectType[T any] struct {
 
 	// BackupVaultEvents AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type BackupVault_NotificationObjectType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BackupVault_NotificationObjectType) AWSCloudFormationType() string {
+func (r *BackupVault_NotificationObjectType[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::BackupVault.NotificationObjectType"
 }

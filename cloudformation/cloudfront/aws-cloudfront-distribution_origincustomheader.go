@@ -8,7 +8,7 @@ import (
 
 // Distribution_OriginCustomHeader AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginCustomHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html
-type Distribution_OriginCustomHeader struct {
+type Distribution_OriginCustomHeader[T any] struct {
 
 	// HeaderName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Distribution_OriginCustomHeader struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginCustomHeader) AWSCloudFormationType() string {
+func (r *Distribution_OriginCustomHeader[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginCustomHeader"
 }

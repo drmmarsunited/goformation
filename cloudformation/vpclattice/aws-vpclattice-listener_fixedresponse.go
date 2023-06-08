@@ -8,12 +8,12 @@ import (
 
 // Listener_FixedResponse AWS CloudFormation Resource (AWS::VpcLattice::Listener.FixedResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-fixedresponse.html
-type Listener_FixedResponse struct {
+type Listener_FixedResponse[T any] struct {
 
 	// StatusCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-fixedresponse.html#cfn-vpclattice-listener-fixedresponse-statuscode
-	StatusCode int `json:"StatusCode"`
+	StatusCode T `json:"StatusCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Listener_FixedResponse struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Listener_FixedResponse) AWSCloudFormationType() string {
+func (r *Listener_FixedResponse[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Listener.FixedResponse"
 }

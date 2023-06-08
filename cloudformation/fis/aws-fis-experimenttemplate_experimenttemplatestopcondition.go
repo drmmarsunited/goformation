@@ -8,7 +8,7 @@ import (
 
 // ExperimentTemplate_ExperimentTemplateStopCondition AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateStopCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatestopcondition.html
-type ExperimentTemplate_ExperimentTemplateStopCondition struct {
+type ExperimentTemplate_ExperimentTemplateStopCondition[T any] struct {
 
 	// Source AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ExperimentTemplate_ExperimentTemplateStopCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ExperimentTemplate_ExperimentTemplateStopCondition) AWSCloudFormationType() string {
+func (r *ExperimentTemplate_ExperimentTemplateStopCondition[any]) AWSCloudFormationType() string {
 	return "AWS::FIS::ExperimentTemplate.ExperimentTemplateStopCondition"
 }

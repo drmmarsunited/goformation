@@ -8,7 +8,7 @@ import (
 
 // Analysis_TableFieldOption AWS CloudFormation Resource (AWS::QuickSight::Analysis.TableFieldOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoption.html
-type Analysis_TableFieldOption struct {
+type Analysis_TableFieldOption[T any] struct {
 
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_TableFieldOption struct {
 	// URLStyling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoption.html#cfn-quicksight-analysis-tablefieldoption-urlstyling
-	URLStyling *Analysis_TableFieldURLConfiguration `json:"URLStyling,omitempty"`
+	URLStyling *Analysis_TableFieldURLConfiguration[any] `json:"URLStyling,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Analysis_TableFieldOption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TableFieldOption) AWSCloudFormationType() string {
+func (r *Analysis_TableFieldOption[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TableFieldOption"
 }

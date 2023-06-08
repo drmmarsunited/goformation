@@ -8,12 +8,12 @@ import (
 
 // Channel_AudioTrack AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioTrack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrack.html
-type Channel_AudioTrack struct {
+type Channel_AudioTrack[T any] struct {
 
 	// Track AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrack.html#cfn-medialive-channel-audiotrack-track
-	Track *int `json:"Track,omitempty"`
+	Track *T `json:"Track,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Channel_AudioTrack struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioTrack) AWSCloudFormationType() string {
+func (r *Channel_AudioTrack[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioTrack"
 }

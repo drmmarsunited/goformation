@@ -8,17 +8,17 @@ import (
 
 // CertificateAuthority_CsrExtensions AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.CsrExtensions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html
-type CertificateAuthority_CsrExtensions struct {
+type CertificateAuthority_CsrExtensions[T any] struct {
 
 	// KeyUsage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html#cfn-acmpca-certificateauthority-csrextensions-keyusage
-	KeyUsage *CertificateAuthority_KeyUsage `json:"KeyUsage,omitempty"`
+	KeyUsage *CertificateAuthority_KeyUsage[any] `json:"KeyUsage,omitempty"`
 
 	// SubjectInformationAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html#cfn-acmpca-certificateauthority-csrextensions-subjectinformationaccess
-	SubjectInformationAccess []CertificateAuthority_AccessDescription `json:"SubjectInformationAccess,omitempty"`
+	SubjectInformationAccess []CertificateAuthority_AccessDescription[any] `json:"SubjectInformationAccess,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type CertificateAuthority_CsrExtensions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CertificateAuthority_CsrExtensions) AWSCloudFormationType() string {
+func (r *CertificateAuthority_CsrExtensions[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::CertificateAuthority.CsrExtensions"
 }

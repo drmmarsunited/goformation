@@ -8,7 +8,7 @@ import (
 
 // Analysis_TextControlPlaceholderOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.TextControlPlaceholderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textcontrolplaceholderoptions.html
-type Analysis_TextControlPlaceholderOptions struct {
+type Analysis_TextControlPlaceholderOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Analysis_TextControlPlaceholderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_TextControlPlaceholderOptions) AWSCloudFormationType() string {
+func (r *Analysis_TextControlPlaceholderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.TextControlPlaceholderOptions"
 }

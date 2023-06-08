@@ -11,7 +11,7 @@ import (
 
 // ResourceVersion AWS CloudFormation Resource (AWS::CloudFormation::ResourceVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html
-type ResourceVersion struct {
+type ResourceVersion[T any] struct {
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
@@ -21,7 +21,7 @@ type ResourceVersion struct {
 	// LoggingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-loggingconfig
-	LoggingConfig *ResourceVersion_LoggingConfig `json:"LoggingConfig,omitempty"`
+	LoggingConfig *ResourceVersion_LoggingConfig[any] `json:"LoggingConfig,omitempty"`
 
 	// SchemaHandlerPackage AWS CloudFormation Property
 	// Required: true
@@ -50,14 +50,15 @@ type ResourceVersion struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceVersion) AWSCloudFormationType() string {
+func (r *ResourceVersion[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFormation::ResourceVersion"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResourceVersion) MarshalJSON() ([]byte, error) {
-	type Properties ResourceVersion
+func (r ResourceVersion[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResourceVersion[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r ResourceVersion) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResourceVersion) UnmarshalJSON(b []byte) error {
-	type Properties ResourceVersion
+func (r *ResourceVersion[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResourceVersion[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *ResourceVersion) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResourceVersion(*res.Properties)
+		*r = ResourceVersion[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

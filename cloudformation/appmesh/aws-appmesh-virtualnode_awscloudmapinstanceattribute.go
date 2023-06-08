@@ -8,7 +8,7 @@ import (
 
 // VirtualNode_AwsCloudMapInstanceAttribute AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html
-type VirtualNode_AwsCloudMapInstanceAttribute struct {
+type VirtualNode_AwsCloudMapInstanceAttribute[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VirtualNode_AwsCloudMapInstanceAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_AwsCloudMapInstanceAttribute) AWSCloudFormationType() string {
+func (r *VirtualNode_AwsCloudMapInstanceAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute"
 }

@@ -8,17 +8,17 @@ import (
 
 // Entity_DataValue AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.DataValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html
-type Entity_DataValue struct {
+type Entity_DataValue[T any] struct {
 
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-booleanvalue
-	BooleanValue *bool `json:"BooleanValue,omitempty"`
+	BooleanValue *T `json:"BooleanValue,omitempty"`
 
 	// DoubleValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-doublevalue
-	DoubleValue *float64 `json:"DoubleValue,omitempty"`
+	DoubleValue *T `json:"DoubleValue,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: false
@@ -28,27 +28,27 @@ type Entity_DataValue struct {
 	// IntegerValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-integervalue
-	IntegerValue *int `json:"IntegerValue,omitempty"`
+	IntegerValue *T `json:"IntegerValue,omitempty"`
 
 	// ListValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-listvalue
-	ListValue []Entity_DataValue `json:"ListValue,omitempty"`
+	ListValue []Entity_DataValue[any] `json:"ListValue,omitempty"`
 
 	// LongValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-longvalue
-	LongValue *float64 `json:"LongValue,omitempty"`
+	LongValue *T `json:"LongValue,omitempty"`
 
 	// MapValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-mapvalue
-	MapValue map[string]Entity_DataValue `json:"MapValue,omitempty"`
+	MapValue map[string]Entity_DataValue[any] `json:"MapValue,omitempty"`
 
 	// RelationshipValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-relationshipvalue
-	RelationshipValue *Entity_RelationshipValue `json:"RelationshipValue,omitempty"`
+	RelationshipValue *Entity_RelationshipValue[any] `json:"RelationshipValue,omitempty"`
 
 	// StringValue AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type Entity_DataValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Entity_DataValue) AWSCloudFormationType() string {
+func (r *Entity_DataValue[any]) AWSCloudFormationType() string {
 	return "AWS::IoTTwinMaker::Entity.DataValue"
 }

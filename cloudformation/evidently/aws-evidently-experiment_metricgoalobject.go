@@ -8,7 +8,7 @@ import (
 
 // Experiment_MetricGoalObject AWS CloudFormation Resource (AWS::Evidently::Experiment.MetricGoalObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-metricgoalobject.html
-type Experiment_MetricGoalObject struct {
+type Experiment_MetricGoalObject[T any] struct {
 
 	// DesiredChange AWS CloudFormation Property
 	// Required: true
@@ -57,6 +57,6 @@ type Experiment_MetricGoalObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment_MetricGoalObject) AWSCloudFormationType() string {
+func (r *Experiment_MetricGoalObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment.MetricGoalObject"
 }

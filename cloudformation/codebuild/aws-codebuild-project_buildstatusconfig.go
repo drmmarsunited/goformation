@@ -8,7 +8,7 @@ import (
 
 // Project_BuildStatusConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.BuildStatusConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-buildstatusconfig.html
-type Project_BuildStatusConfig struct {
+type Project_BuildStatusConfig[T any] struct {
 
 	// Context AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Project_BuildStatusConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_BuildStatusConfig) AWSCloudFormationType() string {
+func (r *Project_BuildStatusConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.BuildStatusConfig"
 }

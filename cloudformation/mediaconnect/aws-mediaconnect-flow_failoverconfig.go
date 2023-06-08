@@ -8,7 +8,7 @@ import (
 
 // Flow_FailoverConfig AWS CloudFormation Resource (AWS::MediaConnect::Flow.FailoverConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html
-type Flow_FailoverConfig struct {
+type Flow_FailoverConfig[T any] struct {
 
 	// FailoverMode AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Flow_FailoverConfig struct {
 	// RecoveryWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-recoverywindow
-	RecoveryWindow *int `json:"RecoveryWindow,omitempty"`
+	RecoveryWindow *T `json:"RecoveryWindow,omitempty"`
 
 	// SourcePriority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-sourcepriority
-	SourcePriority *Flow_SourcePriority `json:"SourcePriority,omitempty"`
+	SourcePriority *Flow_SourcePriority[any] `json:"SourcePriority,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type Flow_FailoverConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_FailoverConfig) AWSCloudFormationType() string {
+func (r *Flow_FailoverConfig[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::Flow.FailoverConfig"
 }

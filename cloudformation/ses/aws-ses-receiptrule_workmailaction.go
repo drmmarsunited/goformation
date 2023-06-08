@@ -8,7 +8,7 @@ import (
 
 // ReceiptRule_WorkmailAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.WorkmailAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html
-type ReceiptRule_WorkmailAction struct {
+type ReceiptRule_WorkmailAction[T any] struct {
 
 	// OrganizationArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type ReceiptRule_WorkmailAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReceiptRule_WorkmailAction) AWSCloudFormationType() string {
+func (r *ReceiptRule_WorkmailAction[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.WorkmailAction"
 }

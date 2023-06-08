@@ -12,7 +12,7 @@ import (
 
 // LoadBalancer AWS CloudFormation Resource (AWS::Lightsail::LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html
-type LoadBalancer struct {
+type LoadBalancer[T any] struct {
 
 	// AttachedInstances AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type LoadBalancer struct {
 	// InstancePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-instanceport
-	InstancePort int `json:"InstancePort"`
+	InstancePort T `json:"InstancePort"`
 
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type LoadBalancer struct {
 	// SessionStickinessEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-sessionstickinessenabled
-	SessionStickinessEnabled *bool `json:"SessionStickinessEnabled,omitempty"`
+	SessionStickinessEnabled *T `json:"SessionStickinessEnabled,omitempty"`
 
 	// SessionStickinessLBCookieDurationSeconds AWS CloudFormation Property
 	// Required: false
@@ -76,14 +76,15 @@ type LoadBalancer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer) AWSCloudFormationType() string {
+func (r *LoadBalancer[any]) AWSCloudFormationType() string {
 	return "AWS::Lightsail::LoadBalancer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r LoadBalancer) MarshalJSON() ([]byte, error) {
-	type Properties LoadBalancer
+func (r LoadBalancer[any]) MarshalJSON() ([]byte, error) {
+	type Properties LoadBalancer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -105,8 +106,9 @@ func (r LoadBalancer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *LoadBalancer) UnmarshalJSON(b []byte) error {
-	type Properties LoadBalancer
+func (r *LoadBalancer[any]) UnmarshalJSON(b []byte) error {
+	type Properties LoadBalancer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -126,7 +128,7 @@ func (r *LoadBalancer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = LoadBalancer(*res.Properties)
+		*r = LoadBalancer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

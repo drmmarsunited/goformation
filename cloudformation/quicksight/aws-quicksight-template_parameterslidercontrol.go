@@ -8,22 +8,22 @@ import (
 
 // Template_ParameterSliderControl AWS CloudFormation Resource (AWS::QuickSight::Template.ParameterSliderControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterslidercontrol.html
-type Template_ParameterSliderControl struct {
+type Template_ParameterSliderControl[T any] struct {
 
 	// DisplayOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterslidercontrol.html#cfn-quicksight-template-parameterslidercontrol-displayoptions
-	DisplayOptions *Template_SliderControlDisplayOptions `json:"DisplayOptions,omitempty"`
+	DisplayOptions *Template_SliderControlDisplayOptions[any] `json:"DisplayOptions,omitempty"`
 
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterslidercontrol.html#cfn-quicksight-template-parameterslidercontrol-maximumvalue
-	MaximumValue float64 `json:"MaximumValue"`
+	MaximumValue T `json:"MaximumValue"`
 
 	// MinimumValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterslidercontrol.html#cfn-quicksight-template-parameterslidercontrol-minimumvalue
-	MinimumValue float64 `json:"MinimumValue"`
+	MinimumValue T `json:"MinimumValue"`
 
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Template_ParameterSliderControl struct {
 	// StepSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterslidercontrol.html#cfn-quicksight-template-parameterslidercontrol-stepsize
-	StepSize float64 `json:"StepSize"`
+	StepSize T `json:"StepSize"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
@@ -62,6 +62,6 @@ type Template_ParameterSliderControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ParameterSliderControl) AWSCloudFormationType() string {
+func (r *Template_ParameterSliderControl[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ParameterSliderControl"
 }

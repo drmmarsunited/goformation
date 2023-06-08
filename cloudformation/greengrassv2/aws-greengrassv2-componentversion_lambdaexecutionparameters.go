@@ -8,7 +8,7 @@ import (
 
 // ComponentVersion_LambdaExecutionParameters AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaExecutionParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html
-type ComponentVersion_LambdaExecutionParameters struct {
+type ComponentVersion_LambdaExecutionParameters[T any] struct {
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type ComponentVersion_LambdaExecutionParameters struct {
 	// EventSources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-eventsources
-	EventSources []ComponentVersion_LambdaEventSource `json:"EventSources,omitempty"`
+	EventSources []ComponentVersion_LambdaEventSource[any] `json:"EventSources,omitempty"`
 
 	// ExecArgs AWS CloudFormation Property
 	// Required: false
@@ -33,37 +33,37 @@ type ComponentVersion_LambdaExecutionParameters struct {
 	// LinuxProcessParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-linuxprocessparams
-	LinuxProcessParams *ComponentVersion_LambdaLinuxProcessParams `json:"LinuxProcessParams,omitempty"`
+	LinuxProcessParams *ComponentVersion_LambdaLinuxProcessParams[any] `json:"LinuxProcessParams,omitempty"`
 
 	// MaxIdleTimeInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxidletimeinseconds
-	MaxIdleTimeInSeconds *int `json:"MaxIdleTimeInSeconds,omitempty"`
+	MaxIdleTimeInSeconds *T `json:"MaxIdleTimeInSeconds,omitempty"`
 
 	// MaxInstancesCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxinstancescount
-	MaxInstancesCount *int `json:"MaxInstancesCount,omitempty"`
+	MaxInstancesCount *T `json:"MaxInstancesCount,omitempty"`
 
 	// MaxQueueSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxqueuesize
-	MaxQueueSize *int `json:"MaxQueueSize,omitempty"`
+	MaxQueueSize *T `json:"MaxQueueSize,omitempty"`
 
 	// Pinned AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-pinned
-	Pinned *bool `json:"Pinned,omitempty"`
+	Pinned *T `json:"Pinned,omitempty"`
 
 	// StatusTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-statustimeoutinseconds
-	StatusTimeoutInSeconds *int `json:"StatusTimeoutInSeconds,omitempty"`
+	StatusTimeoutInSeconds *T `json:"StatusTimeoutInSeconds,omitempty"`
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-timeoutinseconds
-	TimeoutInSeconds *int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *T `json:"TimeoutInSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -82,6 +82,6 @@ type ComponentVersion_LambdaExecutionParameters struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComponentVersion_LambdaExecutionParameters) AWSCloudFormationType() string {
+func (r *ComponentVersion_LambdaExecutionParameters[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::ComponentVersion.LambdaExecutionParameters"
 }

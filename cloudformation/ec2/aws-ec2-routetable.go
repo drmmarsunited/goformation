@@ -12,7 +12,7 @@ import (
 
 // RouteTable AWS CloudFormation Resource (AWS::EC2::RouteTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-routetable.html
-type RouteTable struct {
+type RouteTable[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type RouteTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RouteTable) AWSCloudFormationType() string {
+func (r *RouteTable[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::RouteTable"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r RouteTable) MarshalJSON() ([]byte, error) {
-	type Properties RouteTable
+func (r RouteTable[any]) MarshalJSON() ([]byte, error) {
+	type Properties RouteTable[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r RouteTable) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *RouteTable) UnmarshalJSON(b []byte) error {
-	type Properties RouteTable
+func (r *RouteTable[any]) UnmarshalJSON(b []byte) error {
+	type Properties RouteTable[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *RouteTable) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = RouteTable(*res.Properties)
+		*r = RouteTable[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Application_ComponentConfiguration AWS CloudFormation Resource (AWS::ApplicationInsights::Application.ComponentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentconfiguration.html
-type Application_ComponentConfiguration struct {
+type Application_ComponentConfiguration[T any] struct {
 
 	// ConfigurationDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentconfiguration.html#cfn-applicationinsights-application-componentconfiguration-configurationdetails
-	ConfigurationDetails *Application_ConfigurationDetails `json:"ConfigurationDetails,omitempty"`
+	ConfigurationDetails *Application_ConfigurationDetails[any] `json:"ConfigurationDetails,omitempty"`
 
 	// SubComponentTypeConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentconfiguration.html#cfn-applicationinsights-application-componentconfiguration-subcomponenttypeconfigurations
-	SubComponentTypeConfigurations []Application_SubComponentTypeConfiguration `json:"SubComponentTypeConfigurations,omitempty"`
+	SubComponentTypeConfigurations []Application_SubComponentTypeConfiguration[any] `json:"SubComponentTypeConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Application_ComponentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_ComponentConfiguration) AWSCloudFormationType() string {
+func (r *Application_ComponentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.ComponentConfiguration"
 }

@@ -11,7 +11,7 @@ import (
 
 // TransitGatewayRouteTablePropagation AWS CloudFormation Resource (AWS::EC2::TransitGatewayRouteTablePropagation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html
-type TransitGatewayRouteTablePropagation struct {
+type TransitGatewayRouteTablePropagation[T any] struct {
 
 	// TransitGatewayAttachmentId AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type TransitGatewayRouteTablePropagation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayRouteTablePropagation) AWSCloudFormationType() string {
+func (r *TransitGatewayRouteTablePropagation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayRouteTablePropagation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayRouteTablePropagation) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayRouteTablePropagation
+func (r TransitGatewayRouteTablePropagation[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayRouteTablePropagation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r TransitGatewayRouteTablePropagation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayRouteTablePropagation) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayRouteTablePropagation
+func (r *TransitGatewayRouteTablePropagation[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayRouteTablePropagation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *TransitGatewayRouteTablePropagation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayRouteTablePropagation(*res.Properties)
+		*r = TransitGatewayRouteTablePropagation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

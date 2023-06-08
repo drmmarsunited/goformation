@@ -11,12 +11,12 @@ import (
 
 // SimpleAD AWS CloudFormation Resource (AWS::DirectoryService::SimpleAD)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
-type SimpleAD struct {
+type SimpleAD[T any] struct {
 
 	// CreateAlias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
-	CreateAlias *bool `json:"CreateAlias,omitempty"`
+	CreateAlias *T `json:"CreateAlias,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type SimpleAD struct {
 	// EnableSso AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
-	EnableSso *bool `json:"EnableSso,omitempty"`
+	EnableSso *T `json:"EnableSso,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type SimpleAD struct {
 	// VpcSettings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
-	VpcSettings *SimpleAD_VpcSettings `json:"VpcSettings"`
+	VpcSettings *SimpleAD_VpcSettings[any] `json:"VpcSettings"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -70,14 +70,15 @@ type SimpleAD struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleAD) AWSCloudFormationType() string {
+func (r *SimpleAD[any]) AWSCloudFormationType() string {
 	return "AWS::DirectoryService::SimpleAD"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SimpleAD) MarshalJSON() ([]byte, error) {
-	type Properties SimpleAD
+func (r SimpleAD[any]) MarshalJSON() ([]byte, error) {
+	type Properties SimpleAD[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -99,8 +100,9 @@ func (r SimpleAD) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SimpleAD) UnmarshalJSON(b []byte) error {
-	type Properties SimpleAD
+func (r *SimpleAD[any]) UnmarshalJSON(b []byte) error {
+	type Properties SimpleAD[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -120,7 +122,7 @@ func (r *SimpleAD) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SimpleAD(*res.Properties)
+		*r = SimpleAD[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Distribution_OriginGroups AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginGroups)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html
-type Distribution_OriginGroups struct {
+type Distribution_OriginGroups[T any] struct {
 
 	// Items AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html#cfn-cloudfront-distribution-origingroups-items
-	Items []Distribution_OriginGroup `json:"Items,omitempty"`
+	Items []Distribution_OriginGroup[any] `json:"Items,omitempty"`
 
 	// Quantity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html#cfn-cloudfront-distribution-origingroups-quantity
-	Quantity int `json:"Quantity"`
+	Quantity T `json:"Quantity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Distribution_OriginGroups struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_OriginGroups) AWSCloudFormationType() string {
+func (r *Distribution_OriginGroups[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginGroups"
 }

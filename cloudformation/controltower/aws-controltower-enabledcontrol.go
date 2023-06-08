@@ -11,7 +11,7 @@ import (
 
 // EnabledControl AWS CloudFormation Resource (AWS::ControlTower::EnabledControl)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html
-type EnabledControl struct {
+type EnabledControl[T any] struct {
 
 	// ControlIdentifier AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type EnabledControl struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EnabledControl) AWSCloudFormationType() string {
+func (r *EnabledControl[any]) AWSCloudFormationType() string {
 	return "AWS::ControlTower::EnabledControl"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EnabledControl) MarshalJSON() ([]byte, error) {
-	type Properties EnabledControl
+func (r EnabledControl[any]) MarshalJSON() ([]byte, error) {
+	type Properties EnabledControl[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r EnabledControl) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EnabledControl) UnmarshalJSON(b []byte) error {
-	type Properties EnabledControl
+func (r *EnabledControl[any]) UnmarshalJSON(b []byte) error {
+	type Properties EnabledControl[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *EnabledControl) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EnabledControl(*res.Properties)
+		*r = EnabledControl[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Bucket_ServerSideEncryptionRule AWS CloudFormation Resource (AWS::S3::Bucket.ServerSideEncryptionRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html
-type Bucket_ServerSideEncryptionRule struct {
+type Bucket_ServerSideEncryptionRule[T any] struct {
 
 	// BucketKeyEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-bucketkeyenabled
-	BucketKeyEnabled *bool `json:"BucketKeyEnabled,omitempty"`
+	BucketKeyEnabled *T `json:"BucketKeyEnabled,omitempty"`
 
 	// ServerSideEncryptionByDefault AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault
-	ServerSideEncryptionByDefault *Bucket_ServerSideEncryptionByDefault `json:"ServerSideEncryptionByDefault,omitempty"`
+	ServerSideEncryptionByDefault *Bucket_ServerSideEncryptionByDefault[any] `json:"ServerSideEncryptionByDefault,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_ServerSideEncryptionRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_ServerSideEncryptionRule) AWSCloudFormationType() string {
+func (r *Bucket_ServerSideEncryptionRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ServerSideEncryptionRule"
 }

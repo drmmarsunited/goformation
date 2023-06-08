@@ -8,7 +8,7 @@ import (
 
 // UserPoolResourceServer_ResourceServerScopeType AWS CloudFormation Resource (AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html
-type UserPoolResourceServer_ResourceServerScopeType struct {
+type UserPoolResourceServer_ResourceServerScopeType[T any] struct {
 
 	// ScopeDescription AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type UserPoolResourceServer_ResourceServerScopeType struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPoolResourceServer_ResourceServerScopeType) AWSCloudFormationType() string {
+func (r *UserPoolResourceServer_ResourceServerScopeType[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType"
 }

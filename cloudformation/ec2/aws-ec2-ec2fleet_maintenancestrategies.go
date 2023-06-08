@@ -8,12 +8,12 @@ import (
 
 // EC2Fleet_MaintenanceStrategies AWS CloudFormation Resource (AWS::EC2::EC2Fleet.MaintenanceStrategies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html
-type EC2Fleet_MaintenanceStrategies struct {
+type EC2Fleet_MaintenanceStrategies[T any] struct {
 
 	// CapacityRebalance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html#cfn-ec2-ec2fleet-maintenancestrategies-capacityrebalance
-	CapacityRebalance *EC2Fleet_CapacityRebalance `json:"CapacityRebalance,omitempty"`
+	CapacityRebalance *EC2Fleet_CapacityRebalance[any] `json:"CapacityRebalance,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type EC2Fleet_MaintenanceStrategies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_MaintenanceStrategies) AWSCloudFormationType() string {
+func (r *EC2Fleet_MaintenanceStrategies[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.MaintenanceStrategies"
 }

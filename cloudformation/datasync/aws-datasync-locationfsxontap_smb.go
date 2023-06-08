@@ -8,7 +8,7 @@ import (
 
 // LocationFSxONTAP_SMB AWS CloudFormation Resource (AWS::DataSync::LocationFSxONTAP.SMB)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html
-type LocationFSxONTAP_SMB struct {
+type LocationFSxONTAP_SMB[T any] struct {
 
 	// Domain AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type LocationFSxONTAP_SMB struct {
 	// MountOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-mountoptions
-	MountOptions *LocationFSxONTAP_SmbMountOptions `json:"MountOptions"`
+	MountOptions *LocationFSxONTAP_SmbMountOptions[any] `json:"MountOptions"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type LocationFSxONTAP_SMB struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationFSxONTAP_SMB) AWSCloudFormationType() string {
+func (r *LocationFSxONTAP_SMB[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationFSxONTAP.SMB"
 }

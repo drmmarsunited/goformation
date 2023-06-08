@@ -8,17 +8,17 @@ import (
 
 // Theme_SheetStyle AWS CloudFormation Resource (AWS::QuickSight::Theme.SheetStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html
-type Theme_SheetStyle struct {
+type Theme_SheetStyle[T any] struct {
 
 	// Tile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tile
-	Tile *Theme_TileStyle `json:"Tile,omitempty"`
+	Tile *Theme_TileStyle[any] `json:"Tile,omitempty"`
 
 	// TileLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tilelayout
-	TileLayout *Theme_TileLayoutStyle `json:"TileLayout,omitempty"`
+	TileLayout *Theme_TileLayoutStyle[any] `json:"TileLayout,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Theme_SheetStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_SheetStyle) AWSCloudFormationType() string {
+func (r *Theme_SheetStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.SheetStyle"
 }

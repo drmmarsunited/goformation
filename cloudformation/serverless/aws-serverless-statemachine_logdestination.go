@@ -8,12 +8,12 @@ import (
 
 // StateMachine_LogDestination AWS CloudFormation Resource (AWS::Serverless::StateMachine.LogDestination)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination.html#cfn-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup
-type StateMachine_LogDestination struct {
+type StateMachine_LogDestination[T any] struct {
 
 	// CloudWatchLogsLogGroup AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination.html#cfn-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup
-	CloudWatchLogsLogGroup *StateMachine_CloudWatchLogsLogGroup `json:"CloudWatchLogsLogGroup"`
+	CloudWatchLogsLogGroup *StateMachine_CloudWatchLogsLogGroup[any] `json:"CloudWatchLogsLogGroup"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type StateMachine_LogDestination struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StateMachine_LogDestination) AWSCloudFormationType() string {
+func (r *StateMachine_LogDestination[any]) AWSCloudFormationType() string {
 	return "AWS::Serverless::StateMachine.LogDestination"
 }

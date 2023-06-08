@@ -8,7 +8,7 @@ import (
 
 // UserPool_InviteMessageTemplate AWS CloudFormation Resource (AWS::Cognito::UserPool.InviteMessageTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html
-type UserPool_InviteMessageTemplate struct {
+type UserPool_InviteMessageTemplate[T any] struct {
 
 	// EmailMessage AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type UserPool_InviteMessageTemplate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *UserPool_InviteMessageTemplate) AWSCloudFormationType() string {
+func (r *UserPool_InviteMessageTemplate[any]) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.InviteMessageTemplate"
 }

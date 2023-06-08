@@ -8,17 +8,17 @@ import (
 
 // QuickConnect_QuickConnectConfig AWS CloudFormation Resource (AWS::Connect::QuickConnect.QuickConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html
-type QuickConnect_QuickConnectConfig struct {
+type QuickConnect_QuickConnectConfig[T any] struct {
 
 	// PhoneConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-phoneconfig
-	PhoneConfig *QuickConnect_PhoneNumberQuickConnectConfig `json:"PhoneConfig,omitempty"`
+	PhoneConfig *QuickConnect_PhoneNumberQuickConnectConfig[any] `json:"PhoneConfig,omitempty"`
 
 	// QueueConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-queueconfig
-	QueueConfig *QuickConnect_QueueQuickConnectConfig `json:"QueueConfig,omitempty"`
+	QueueConfig *QuickConnect_QueueQuickConnectConfig[any] `json:"QueueConfig,omitempty"`
 
 	// QuickConnectType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type QuickConnect_QuickConnectConfig struct {
 	// UserConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-userconfig
-	UserConfig *QuickConnect_UserQuickConnectConfig `json:"UserConfig,omitempty"`
+	UserConfig *QuickConnect_UserQuickConnectConfig[any] `json:"UserConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type QuickConnect_QuickConnectConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *QuickConnect_QuickConnectConfig) AWSCloudFormationType() string {
+func (r *QuickConnect_QuickConnectConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::QuickConnect.QuickConnectConfig"
 }

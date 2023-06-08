@@ -8,7 +8,7 @@ import (
 
 // MultiRegionAccessPoint_Region AWS CloudFormation Resource (AWS::S3::MultiRegionAccessPoint.Region)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspoint-region.html
-type MultiRegionAccessPoint_Region struct {
+type MultiRegionAccessPoint_Region[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type MultiRegionAccessPoint_Region struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MultiRegionAccessPoint_Region) AWSCloudFormationType() string {
+func (r *MultiRegionAccessPoint_Region[any]) AWSCloudFormationType() string {
 	return "AWS::S3::MultiRegionAccessPoint.Region"
 }

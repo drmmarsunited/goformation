@@ -8,7 +8,7 @@ import (
 
 // OriginAccessControl_OriginAccessControlConfig AWS CloudFormation Resource (AWS::CloudFront::OriginAccessControl.OriginAccessControlConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html
-type OriginAccessControl_OriginAccessControlConfig struct {
+type OriginAccessControl_OriginAccessControlConfig[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type OriginAccessControl_OriginAccessControlConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginAccessControl_OriginAccessControlConfig) AWSCloudFormationType() string {
+func (r *OriginAccessControl_OriginAccessControlConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::OriginAccessControl.OriginAccessControlConfig"
 }

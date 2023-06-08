@@ -8,37 +8,42 @@ import (
 
 // DataSet_TransformOperation AWS CloudFormation Resource (AWS::QuickSight::DataSet.TransformOperation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html
-type DataSet_TransformOperation struct {
+type DataSet_TransformOperation[T any] struct {
 
 	// CastColumnTypeOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-castcolumntypeoperation
-	CastColumnTypeOperation *DataSet_CastColumnTypeOperation `json:"CastColumnTypeOperation,omitempty"`
+	CastColumnTypeOperation *DataSet_CastColumnTypeOperation[any] `json:"CastColumnTypeOperation,omitempty"`
 
 	// CreateColumnsOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-createcolumnsoperation
-	CreateColumnsOperation *DataSet_CreateColumnsOperation `json:"CreateColumnsOperation,omitempty"`
+	CreateColumnsOperation *DataSet_CreateColumnsOperation[any] `json:"CreateColumnsOperation,omitempty"`
 
 	// FilterOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-filteroperation
-	FilterOperation *DataSet_FilterOperation `json:"FilterOperation,omitempty"`
+	FilterOperation *DataSet_FilterOperation[any] `json:"FilterOperation,omitempty"`
+
+	// OverrideDatasetParameterOperation AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-overridedatasetparameteroperation
+	OverrideDatasetParameterOperation *DataSet_OverrideDatasetParameterOperation[any] `json:"OverrideDatasetParameterOperation,omitempty"`
 
 	// ProjectOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-projectoperation
-	ProjectOperation *DataSet_ProjectOperation `json:"ProjectOperation,omitempty"`
+	ProjectOperation *DataSet_ProjectOperation[any] `json:"ProjectOperation,omitempty"`
 
 	// RenameColumnOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-renamecolumnoperation
-	RenameColumnOperation *DataSet_RenameColumnOperation `json:"RenameColumnOperation,omitempty"`
+	RenameColumnOperation *DataSet_RenameColumnOperation[any] `json:"RenameColumnOperation,omitempty"`
 
 	// TagColumnOperation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-tagcolumnoperation
-	TagColumnOperation *DataSet_TagColumnOperation `json:"TagColumnOperation,omitempty"`
+	TagColumnOperation *DataSet_TagColumnOperation[any] `json:"TagColumnOperation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +62,6 @@ type DataSet_TransformOperation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSet_TransformOperation) AWSCloudFormationType() string {
+func (r *DataSet_TransformOperation[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::DataSet.TransformOperation"
 }

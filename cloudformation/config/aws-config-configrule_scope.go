@@ -8,7 +8,7 @@ import (
 
 // ConfigRule_Scope AWS CloudFormation Resource (AWS::Config::ConfigRule.Scope)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html
-type ConfigRule_Scope struct {
+type ConfigRule_Scope[T any] struct {
 
 	// ComplianceResourceId AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type ConfigRule_Scope struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigRule_Scope) AWSCloudFormationType() string {
+func (r *ConfigRule_Scope[any]) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule.Scope"
 }

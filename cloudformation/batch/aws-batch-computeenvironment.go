@@ -11,7 +11,7 @@ import (
 
 // ComputeEnvironment AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
-type ComputeEnvironment struct {
+type ComputeEnvironment[T any] struct {
 
 	// ComputeEnvironmentName AWS CloudFormation Property
 	// Required: false
@@ -21,17 +21,17 @@ type ComputeEnvironment struct {
 	// ComputeResources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources
-	ComputeResources *ComputeEnvironment_ComputeResources `json:"ComputeResources,omitempty"`
+	ComputeResources *ComputeEnvironment_ComputeResources[any] `json:"ComputeResources,omitempty"`
 
 	// EksConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-eksconfiguration
-	EksConfiguration *ComputeEnvironment_EksConfiguration `json:"EksConfiguration,omitempty"`
+	EksConfiguration *ComputeEnvironment_EksConfiguration[any] `json:"EksConfiguration,omitempty"`
 
 	// ReplaceComputeEnvironment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-replacecomputeenvironment
-	ReplaceComputeEnvironment *bool `json:"ReplaceComputeEnvironment,omitempty"`
+	ReplaceComputeEnvironment *T `json:"ReplaceComputeEnvironment,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type ComputeEnvironment struct {
 	// UnmanagedvCpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-unmanagedvcpus
-	UnmanagedvCpus *int `json:"UnmanagedvCpus,omitempty"`
+	UnmanagedvCpus *T `json:"UnmanagedvCpus,omitempty"`
 
 	// UpdatePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-updatepolicy
-	UpdatePolicy *ComputeEnvironment_UpdatePolicy `json:"UpdatePolicy,omitempty"`
+	UpdatePolicy *ComputeEnvironment_UpdatePolicy[any] `json:"UpdatePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -80,14 +80,15 @@ type ComputeEnvironment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ComputeEnvironment) AWSCloudFormationType() string {
+func (r *ComputeEnvironment[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ComputeEnvironment) MarshalJSON() ([]byte, error) {
-	type Properties ComputeEnvironment
+func (r ComputeEnvironment[any]) MarshalJSON() ([]byte, error) {
+	type Properties ComputeEnvironment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -109,8 +110,9 @@ func (r ComputeEnvironment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ComputeEnvironment) UnmarshalJSON(b []byte) error {
-	type Properties ComputeEnvironment
+func (r *ComputeEnvironment[any]) UnmarshalJSON(b []byte) error {
+	type Properties ComputeEnvironment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -130,7 +132,7 @@ func (r *ComputeEnvironment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ComputeEnvironment(*res.Properties)
+		*r = ComputeEnvironment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

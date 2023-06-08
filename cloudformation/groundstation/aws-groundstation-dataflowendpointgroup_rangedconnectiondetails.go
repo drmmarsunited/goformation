@@ -8,17 +8,17 @@ import (
 
 // DataflowEndpointGroup_RangedConnectionDetails AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.RangedConnectionDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedconnectiondetails.html
-type DataflowEndpointGroup_RangedConnectionDetails struct {
+type DataflowEndpointGroup_RangedConnectionDetails[T any] struct {
 
 	// Mtu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedconnectiondetails.html#cfn-groundstation-dataflowendpointgroup-rangedconnectiondetails-mtu
-	Mtu *int `json:"Mtu,omitempty"`
+	Mtu *T `json:"Mtu,omitempty"`
 
 	// SocketAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedconnectiondetails.html#cfn-groundstation-dataflowendpointgroup-rangedconnectiondetails-socketaddress
-	SocketAddress *DataflowEndpointGroup_RangedSocketAddress `json:"SocketAddress,omitempty"`
+	SocketAddress *DataflowEndpointGroup_RangedSocketAddress[any] `json:"SocketAddress,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataflowEndpointGroup_RangedConnectionDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataflowEndpointGroup_RangedConnectionDetails) AWSCloudFormationType() string {
+func (r *DataflowEndpointGroup_RangedConnectionDetails[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::DataflowEndpointGroup.RangedConnectionDetails"
 }

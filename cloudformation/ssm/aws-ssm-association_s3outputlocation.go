@@ -8,7 +8,7 @@ import (
 
 // Association_S3OutputLocation AWS CloudFormation Resource (AWS::SSM::Association.S3OutputLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html
-type Association_S3OutputLocation struct {
+type Association_S3OutputLocation[T any] struct {
 
 	// OutputS3BucketName AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Association_S3OutputLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Association_S3OutputLocation) AWSCloudFormationType() string {
+func (r *Association_S3OutputLocation[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::Association.S3OutputLocation"
 }

@@ -8,7 +8,7 @@ import (
 
 // Project_DataDeliveryObject AWS CloudFormation Resource (AWS::Evidently::Project.DataDeliveryObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-datadeliveryobject.html
-type Project_DataDeliveryObject struct {
+type Project_DataDeliveryObject[T any] struct {
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Project_DataDeliveryObject struct {
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-project-datadeliveryobject.html#cfn-evidently-project-datadeliveryobject-s3
-	S3 *Project_S3Destination `json:"S3,omitempty"`
+	S3 *Project_S3Destination[any] `json:"S3,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Project_DataDeliveryObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Project_DataDeliveryObject) AWSCloudFormationType() string {
+func (r *Project_DataDeliveryObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Project.DataDeliveryObject"
 }

@@ -8,7 +8,7 @@ import (
 
 // GraphQLApi_UserPoolConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.UserPoolConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html
-type GraphQLApi_UserPoolConfig struct {
+type GraphQLApi_UserPoolConfig[T any] struct {
 
 	// AppIdClientRegex AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type GraphQLApi_UserPoolConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GraphQLApi_UserPoolConfig) AWSCloudFormationType() string {
+func (r *GraphQLApi_UserPoolConfig[any]) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.UserPoolConfig"
 }

@@ -8,17 +8,17 @@ import (
 
 // Template_NumericEqualityFilter AWS CloudFormation Resource (AWS::QuickSight::Template.NumericEqualityFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericequalityfilter.html
-type Template_NumericEqualityFilter struct {
+type Template_NumericEqualityFilter[T any] struct {
 
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericequalityfilter.html#cfn-quicksight-template-numericequalityfilter-aggregationfunction
-	AggregationFunction *Template_AggregationFunction `json:"AggregationFunction,omitempty"`
+	AggregationFunction *Template_AggregationFunction[any] `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericequalityfilter.html#cfn-quicksight-template-numericequalityfilter-column
-	Column *Template_ColumnIdentifier `json:"Column"`
+	Column *Template_ColumnIdentifier[any] `json:"Column"`
 
 	// FilterId AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type Template_NumericEqualityFilter struct {
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericequalityfilter.html#cfn-quicksight-template-numericequalityfilter-value
-	Value *float64 `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -67,6 +67,6 @@ type Template_NumericEqualityFilter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_NumericEqualityFilter) AWSCloudFormationType() string {
+func (r *Template_NumericEqualityFilter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.NumericEqualityFilter"
 }

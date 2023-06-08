@@ -8,7 +8,7 @@ import (
 
 // WebACL_ForwardedIPConfiguration AWS CloudFormation Resource (AWS::WAFv2::WebACL.ForwardedIPConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-forwardedipconfiguration.html
-type WebACL_ForwardedIPConfiguration struct {
+type WebACL_ForwardedIPConfiguration[T any] struct {
 
 	// FallbackBehavior AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type WebACL_ForwardedIPConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *WebACL_ForwardedIPConfiguration) AWSCloudFormationType() string {
+func (r *WebACL_ForwardedIPConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::WebACL.ForwardedIPConfiguration"
 }

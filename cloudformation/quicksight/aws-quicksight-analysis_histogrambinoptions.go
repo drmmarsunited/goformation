@@ -8,17 +8,17 @@ import (
 
 // Analysis_HistogramBinOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.HistogramBinOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogrambinoptions.html
-type Analysis_HistogramBinOptions struct {
+type Analysis_HistogramBinOptions[T any] struct {
 
 	// BinCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogrambinoptions.html#cfn-quicksight-analysis-histogrambinoptions-bincount
-	BinCount *Analysis_BinCountOptions `json:"BinCount,omitempty"`
+	BinCount *Analysis_BinCountOptions[any] `json:"BinCount,omitempty"`
 
 	// BinWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogrambinoptions.html#cfn-quicksight-analysis-histogrambinoptions-binwidth
-	BinWidth *Analysis_BinWidthOptions `json:"BinWidth,omitempty"`
+	BinWidth *Analysis_BinWidthOptions[any] `json:"BinWidth,omitempty"`
 
 	// SelectedBinType AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Analysis_HistogramBinOptions struct {
 	// StartValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogrambinoptions.html#cfn-quicksight-analysis-histogrambinoptions-startvalue
-	StartValue *float64 `json:"StartValue,omitempty"`
+	StartValue *T `json:"StartValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Analysis_HistogramBinOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_HistogramBinOptions) AWSCloudFormationType() string {
+func (r *Analysis_HistogramBinOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.HistogramBinOptions"
 }

@@ -11,7 +11,7 @@ import (
 
 // ClusterSecurityGroupIngress AWS CloudFormation Resource (AWS::Redshift::ClusterSecurityGroupIngress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
-type ClusterSecurityGroupIngress struct {
+type ClusterSecurityGroupIngress[T any] struct {
 
 	// CIDRIP AWS CloudFormation Property
 	// Required: false
@@ -50,14 +50,15 @@ type ClusterSecurityGroupIngress struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClusterSecurityGroupIngress) AWSCloudFormationType() string {
+func (r *ClusterSecurityGroupIngress[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ClusterSecurityGroupIngress"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ClusterSecurityGroupIngress) MarshalJSON() ([]byte, error) {
-	type Properties ClusterSecurityGroupIngress
+func (r ClusterSecurityGroupIngress[any]) MarshalJSON() ([]byte, error) {
+	type Properties ClusterSecurityGroupIngress[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r ClusterSecurityGroupIngress) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ClusterSecurityGroupIngress) UnmarshalJSON(b []byte) error {
-	type Properties ClusterSecurityGroupIngress
+func (r *ClusterSecurityGroupIngress[any]) UnmarshalJSON(b []byte) error {
+	type Properties ClusterSecurityGroupIngress[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *ClusterSecurityGroupIngress) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ClusterSecurityGroupIngress(*res.Properties)
+		*r = ClusterSecurityGroupIngress[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

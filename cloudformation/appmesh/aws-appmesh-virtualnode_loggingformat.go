@@ -8,12 +8,12 @@ import (
 
 // VirtualNode_LoggingFormat AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.LoggingFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html
-type VirtualNode_LoggingFormat struct {
+type VirtualNode_LoggingFormat[T any] struct {
 
 	// Json AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html#cfn-appmesh-virtualnode-loggingformat-json
-	Json []VirtualNode_JsonFormatRef `json:"Json,omitempty"`
+	Json []VirtualNode_JsonFormatRef[any] `json:"Json,omitempty"`
 
 	// Text AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type VirtualNode_LoggingFormat struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualNode_LoggingFormat) AWSCloudFormationType() string {
+func (r *VirtualNode_LoggingFormat[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualNode.LoggingFormat"
 }

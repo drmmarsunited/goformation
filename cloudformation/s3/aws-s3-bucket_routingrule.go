@@ -8,17 +8,17 @@ import (
 
 // Bucket_RoutingRule AWS CloudFormation Resource (AWS::S3::Bucket.RoutingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html
-type Bucket_RoutingRule struct {
+type Bucket_RoutingRule[T any] struct {
 
 	// RedirectRule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule
-	RedirectRule *Bucket_RedirectRule `json:"RedirectRule"`
+	RedirectRule *Bucket_RedirectRule[any] `json:"RedirectRule"`
 
 	// RoutingRuleCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition
-	RoutingRuleCondition *Bucket_RoutingRuleCondition `json:"RoutingRuleCondition,omitempty"`
+	RoutingRuleCondition *Bucket_RoutingRuleCondition[any] `json:"RoutingRuleCondition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Bucket_RoutingRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_RoutingRule) AWSCloudFormationType() string {
+func (r *Bucket_RoutingRule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.RoutingRule"
 }

@@ -8,7 +8,7 @@ import (
 
 // Bot_Slot AWS CloudFormation Resource (AWS::Lex::Bot.Slot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html
-type Bot_Slot struct {
+type Bot_Slot[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Bot_Slot struct {
 	// MultipleValuesSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-multiplevaluessetting
-	MultipleValuesSetting *Bot_MultipleValuesSetting `json:"MultipleValuesSetting,omitempty"`
+	MultipleValuesSetting *Bot_MultipleValuesSetting[any] `json:"MultipleValuesSetting,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type Bot_Slot struct {
 	// ObfuscationSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-obfuscationsetting
-	ObfuscationSetting *Bot_ObfuscationSetting `json:"ObfuscationSetting,omitempty"`
+	ObfuscationSetting *Bot_ObfuscationSetting[any] `json:"ObfuscationSetting,omitempty"`
 
 	// SlotTypeName AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type Bot_Slot struct {
 	// ValueElicitationSetting AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-valueelicitationsetting
-	ValueElicitationSetting *Bot_SlotValueElicitationSetting `json:"ValueElicitationSetting"`
+	ValueElicitationSetting *Bot_SlotValueElicitationSetting[any] `json:"ValueElicitationSetting"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Bot_Slot struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_Slot) AWSCloudFormationType() string {
+func (r *Bot_Slot[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.Slot"
 }

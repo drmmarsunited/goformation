@@ -8,7 +8,7 @@ import (
 
 // Channel_MultiplexProgramChannelDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html
-type Channel_MultiplexProgramChannelDestinationSettings struct {
+type Channel_MultiplexProgramChannelDestinationSettings[T any] struct {
 
 	// MultiplexId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Channel_MultiplexProgramChannelDestinationSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_MultiplexProgramChannelDestinationSettings) AWSCloudFormationType() string {
+func (r *Channel_MultiplexProgramChannelDestinationSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings"
 }

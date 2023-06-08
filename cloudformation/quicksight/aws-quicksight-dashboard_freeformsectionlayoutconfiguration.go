@@ -8,12 +8,12 @@ import (
 
 // Dashboard_FreeFormSectionLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FreeFormSectionLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformsectionlayoutconfiguration.html
-type Dashboard_FreeFormSectionLayoutConfiguration struct {
+type Dashboard_FreeFormSectionLayoutConfiguration[T any] struct {
 
 	// Elements AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-freeformsectionlayoutconfiguration.html#cfn-quicksight-dashboard-freeformsectionlayoutconfiguration-elements
-	Elements []Dashboard_FreeFormLayoutElement `json:"Elements"`
+	Elements []Dashboard_FreeFormLayoutElement[any] `json:"Elements"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_FreeFormSectionLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FreeFormSectionLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_FreeFormSectionLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FreeFormSectionLayoutConfiguration"
 }

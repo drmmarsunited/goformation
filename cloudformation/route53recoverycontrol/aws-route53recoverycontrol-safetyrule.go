@@ -12,12 +12,12 @@ import (
 
 // SafetyRule AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html
-type SafetyRule struct {
+type SafetyRule[T any] struct {
 
 	// AssertionRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-assertionrule
-	AssertionRule *SafetyRule_AssertionRule `json:"AssertionRule,omitempty"`
+	AssertionRule *SafetyRule_AssertionRule[any] `json:"AssertionRule,omitempty"`
 
 	// ControlPanelArn AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type SafetyRule struct {
 	// GatingRule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule
-	GatingRule *SafetyRule_GatingRule `json:"GatingRule,omitempty"`
+	GatingRule *SafetyRule_GatingRule[any] `json:"GatingRule,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type SafetyRule struct {
 	// RuleConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-ruleconfig
-	RuleConfig *SafetyRule_RuleConfig `json:"RuleConfig"`
+	RuleConfig *SafetyRule_RuleConfig[any] `json:"RuleConfig"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type SafetyRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SafetyRule) AWSCloudFormationType() string {
+func (r *SafetyRule[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryControl::SafetyRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r SafetyRule) MarshalJSON() ([]byte, error) {
-	type Properties SafetyRule
+func (r SafetyRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties SafetyRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r SafetyRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *SafetyRule) UnmarshalJSON(b []byte) error {
-	type Properties SafetyRule
+func (r *SafetyRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties SafetyRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *SafetyRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = SafetyRule(*res.Properties)
+		*r = SafetyRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

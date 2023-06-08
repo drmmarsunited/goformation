@@ -8,7 +8,7 @@ import (
 
 // Dashboard_FieldSort AWS CloudFormation Resource (AWS::QuickSight::Dashboard.FieldSort)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldsort.html
-type Dashboard_FieldSort struct {
+type Dashboard_FieldSort[T any] struct {
 
 	// Direction AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_FieldSort struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_FieldSort) AWSCloudFormationType() string {
+func (r *Dashboard_FieldSort[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.FieldSort"
 }

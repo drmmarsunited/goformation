@@ -8,12 +8,12 @@ import (
 
 // Application_SubComponentTypeConfiguration AWS CloudFormation Resource (AWS::ApplicationInsights::Application.SubComponentTypeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponenttypeconfiguration.html
-type Application_SubComponentTypeConfiguration struct {
+type Application_SubComponentTypeConfiguration[T any] struct {
 
 	// SubComponentConfigurationDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponenttypeconfiguration.html#cfn-applicationinsights-application-subcomponenttypeconfiguration-subcomponentconfigurationdetails
-	SubComponentConfigurationDetails *Application_SubComponentConfigurationDetails `json:"SubComponentConfigurationDetails"`
+	SubComponentConfigurationDetails *Application_SubComponentConfigurationDetails[any] `json:"SubComponentConfigurationDetails"`
 
 	// SubComponentType AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_SubComponentTypeConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_SubComponentTypeConfiguration) AWSCloudFormationType() string {
+func (r *Application_SubComponentTypeConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.SubComponentTypeConfiguration"
 }

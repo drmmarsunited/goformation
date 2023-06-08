@@ -8,7 +8,7 @@ import (
 
 // MaintenanceWindowTask_CloudWatchOutputConfig AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.CloudWatchOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html
-type MaintenanceWindowTask_CloudWatchOutputConfig struct {
+type MaintenanceWindowTask_CloudWatchOutputConfig[T any] struct {
 
 	// CloudWatchLogGroupName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type MaintenanceWindowTask_CloudWatchOutputConfig struct {
 	// CloudWatchOutputEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchoutputenabled
-	CloudWatchOutputEnabled *bool `json:"CloudWatchOutputEnabled,omitempty"`
+	CloudWatchOutputEnabled *T `json:"CloudWatchOutputEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type MaintenanceWindowTask_CloudWatchOutputConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MaintenanceWindowTask_CloudWatchOutputConfig) AWSCloudFormationType() string {
+func (r *MaintenanceWindowTask_CloudWatchOutputConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.CloudWatchOutputConfig"
 }

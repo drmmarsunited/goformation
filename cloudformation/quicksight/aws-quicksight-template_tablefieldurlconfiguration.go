@@ -8,17 +8,17 @@ import (
 
 // Template_TableFieldURLConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.TableFieldURLConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldurlconfiguration.html
-type Template_TableFieldURLConfiguration struct {
+type Template_TableFieldURLConfiguration[T any] struct {
 
 	// ImageConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldurlconfiguration.html#cfn-quicksight-template-tablefieldurlconfiguration-imageconfiguration
-	ImageConfiguration *Template_TableFieldImageConfiguration `json:"ImageConfiguration,omitempty"`
+	ImageConfiguration *Template_TableFieldImageConfiguration[any] `json:"ImageConfiguration,omitempty"`
 
 	// LinkConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldurlconfiguration.html#cfn-quicksight-template-tablefieldurlconfiguration-linkconfiguration
-	LinkConfiguration *Template_TableFieldLinkConfiguration `json:"LinkConfiguration,omitempty"`
+	LinkConfiguration *Template_TableFieldLinkConfiguration[any] `json:"LinkConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Template_TableFieldURLConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TableFieldURLConfiguration) AWSCloudFormationType() string {
+func (r *Template_TableFieldURLConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TableFieldURLConfiguration"
 }

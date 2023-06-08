@@ -11,7 +11,7 @@ import (
 
 // EnclaveCertificateIamRoleAssociation AWS CloudFormation Resource (AWS::EC2::EnclaveCertificateIamRoleAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html
-type EnclaveCertificateIamRoleAssociation struct {
+type EnclaveCertificateIamRoleAssociation[T any] struct {
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
@@ -40,14 +40,15 @@ type EnclaveCertificateIamRoleAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EnclaveCertificateIamRoleAssociation) AWSCloudFormationType() string {
+func (r *EnclaveCertificateIamRoleAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EnclaveCertificateIamRoleAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EnclaveCertificateIamRoleAssociation) MarshalJSON() ([]byte, error) {
-	type Properties EnclaveCertificateIamRoleAssociation
+func (r EnclaveCertificateIamRoleAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties EnclaveCertificateIamRoleAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r EnclaveCertificateIamRoleAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EnclaveCertificateIamRoleAssociation) UnmarshalJSON(b []byte) error {
-	type Properties EnclaveCertificateIamRoleAssociation
+func (r *EnclaveCertificateIamRoleAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties EnclaveCertificateIamRoleAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *EnclaveCertificateIamRoleAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EnclaveCertificateIamRoleAssociation(*res.Properties)
+		*r = EnclaveCertificateIamRoleAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

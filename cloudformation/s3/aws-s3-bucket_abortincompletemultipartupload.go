@@ -8,12 +8,12 @@ import (
 
 // Bucket_AbortIncompleteMultipartUpload AWS CloudFormation Resource (AWS::S3::Bucket.AbortIncompleteMultipartUpload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-abortincompletemultipartupload.html
-type Bucket_AbortIncompleteMultipartUpload struct {
+type Bucket_AbortIncompleteMultipartUpload[T any] struct {
 
 	// DaysAfterInitiation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-abortincompletemultipartupload.html#cfn-s3-bucket-abortincompletemultipartupload-daysafterinitiation
-	DaysAfterInitiation int `json:"DaysAfterInitiation"`
+	DaysAfterInitiation T `json:"DaysAfterInitiation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bucket_AbortIncompleteMultipartUpload struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_AbortIncompleteMultipartUpload) AWSCloudFormationType() string {
+func (r *Bucket_AbortIncompleteMultipartUpload[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.AbortIncompleteMultipartUpload"
 }

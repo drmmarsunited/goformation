@@ -8,12 +8,12 @@ import (
 
 // Channel_FrameCaptureSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html
-type Channel_FrameCaptureSettings struct {
+type Channel_FrameCaptureSettings[T any] struct {
 
 	// CaptureInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureinterval
-	CaptureInterval *int `json:"CaptureInterval,omitempty"`
+	CaptureInterval *T `json:"CaptureInterval,omitempty"`
 
 	// CaptureIntervalUnits AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_FrameCaptureSettings struct {
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-timecodeburninsettings
-	TimecodeBurninSettings *Channel_TimecodeBurninSettings `json:"TimecodeBurninSettings,omitempty"`
+	TimecodeBurninSettings *Channel_TimecodeBurninSettings[any] `json:"TimecodeBurninSettings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Channel_FrameCaptureSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_FrameCaptureSettings) AWSCloudFormationType() string {
+func (r *Channel_FrameCaptureSettings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.FrameCaptureSettings"
 }

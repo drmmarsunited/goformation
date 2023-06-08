@@ -8,27 +8,27 @@ import (
 
 // Dashboard_SectionBasedLayoutConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SectionBasedLayoutConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutconfiguration.html
-type Dashboard_SectionBasedLayoutConfiguration struct {
+type Dashboard_SectionBasedLayoutConfiguration[T any] struct {
 
 	// BodySections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutconfiguration.html#cfn-quicksight-dashboard-sectionbasedlayoutconfiguration-bodysections
-	BodySections []Dashboard_BodySectionConfiguration `json:"BodySections"`
+	BodySections []Dashboard_BodySectionConfiguration[any] `json:"BodySections"`
 
 	// CanvasSizeOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutconfiguration.html#cfn-quicksight-dashboard-sectionbasedlayoutconfiguration-canvassizeoptions
-	CanvasSizeOptions *Dashboard_SectionBasedLayoutCanvasSizeOptions `json:"CanvasSizeOptions"`
+	CanvasSizeOptions *Dashboard_SectionBasedLayoutCanvasSizeOptions[any] `json:"CanvasSizeOptions"`
 
 	// FooterSections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutconfiguration.html#cfn-quicksight-dashboard-sectionbasedlayoutconfiguration-footersections
-	FooterSections []Dashboard_HeaderFooterSectionConfiguration `json:"FooterSections"`
+	FooterSections []Dashboard_HeaderFooterSectionConfiguration[any] `json:"FooterSections"`
 
 	// HeaderSections AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutconfiguration.html#cfn-quicksight-dashboard-sectionbasedlayoutconfiguration-headersections
-	HeaderSections []Dashboard_HeaderFooterSectionConfiguration `json:"HeaderSections"`
+	HeaderSections []Dashboard_HeaderFooterSectionConfiguration[any] `json:"HeaderSections"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Dashboard_SectionBasedLayoutConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SectionBasedLayoutConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SectionBasedLayoutConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SectionBasedLayoutConfiguration"
 }

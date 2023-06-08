@@ -8,7 +8,7 @@ import (
 
 // Environment_OptionSetting AWS CloudFormation Resource (AWS::ElasticBeanstalk::Environment.OptionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-environment-optionsetting.html
-type Environment_OptionSetting struct {
+type Environment_OptionSetting[T any] struct {
 
 	// Namespace AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type Environment_OptionSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_OptionSetting) AWSCloudFormationType() string {
+func (r *Environment_OptionSetting[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Environment.OptionSetting"
 }

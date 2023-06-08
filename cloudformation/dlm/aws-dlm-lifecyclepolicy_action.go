@@ -8,12 +8,12 @@ import (
 
 // LifecyclePolicy_Action AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-action.html
-type LifecyclePolicy_Action struct {
+type LifecyclePolicy_Action[T any] struct {
 
 	// CrossRegionCopy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-action.html#cfn-dlm-lifecyclepolicy-action-crossregioncopy
-	CrossRegionCopy []LifecyclePolicy_CrossRegionCopyAction `json:"CrossRegionCopy"`
+	CrossRegionCopy []LifecyclePolicy_CrossRegionCopyAction[any] `json:"CrossRegionCopy"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LifecyclePolicy_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_Action) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_Action[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.Action"
 }

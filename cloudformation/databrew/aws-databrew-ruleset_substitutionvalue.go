@@ -8,7 +8,7 @@ import (
 
 // Ruleset_SubstitutionValue AWS CloudFormation Resource (AWS::DataBrew::Ruleset.SubstitutionValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html
-type Ruleset_SubstitutionValue struct {
+type Ruleset_SubstitutionValue[T any] struct {
 
 	// Value AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Ruleset_SubstitutionValue struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Ruleset_SubstitutionValue) AWSCloudFormationType() string {
+func (r *Ruleset_SubstitutionValue[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Ruleset.SubstitutionValue"
 }

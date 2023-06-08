@@ -8,7 +8,7 @@ import (
 
 // SpotFleet_GroupIdentifier AWS CloudFormation Resource (AWS::EC2::SpotFleet.GroupIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-groupidentifier.html
-type SpotFleet_GroupIdentifier struct {
+type SpotFleet_GroupIdentifier[T any] struct {
 
 	// GroupId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type SpotFleet_GroupIdentifier struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SpotFleet_GroupIdentifier) AWSCloudFormationType() string {
+func (r *SpotFleet_GroupIdentifier[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.GroupIdentifier"
 }

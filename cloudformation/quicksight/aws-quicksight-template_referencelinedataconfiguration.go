@@ -8,7 +8,7 @@ import (
 
 // Template_ReferenceLineDataConfiguration AWS CloudFormation Resource (AWS::QuickSight::Template.ReferenceLineDataConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedataconfiguration.html
-type Template_ReferenceLineDataConfiguration struct {
+type Template_ReferenceLineDataConfiguration[T any] struct {
 
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
@@ -18,12 +18,12 @@ type Template_ReferenceLineDataConfiguration struct {
 	// DynamicConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedataconfiguration.html#cfn-quicksight-template-referencelinedataconfiguration-dynamicconfiguration
-	DynamicConfiguration *Template_ReferenceLineDynamicDataConfiguration `json:"DynamicConfiguration,omitempty"`
+	DynamicConfiguration *Template_ReferenceLineDynamicDataConfiguration[any] `json:"DynamicConfiguration,omitempty"`
 
 	// StaticConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinedataconfiguration.html#cfn-quicksight-template-referencelinedataconfiguration-staticconfiguration
-	StaticConfiguration *Template_ReferenceLineStaticDataConfiguration `json:"StaticConfiguration,omitempty"`
+	StaticConfiguration *Template_ReferenceLineStaticDataConfiguration[any] `json:"StaticConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_ReferenceLineDataConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_ReferenceLineDataConfiguration) AWSCloudFormationType() string {
+func (r *Template_ReferenceLineDataConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.ReferenceLineDataConfiguration"
 }

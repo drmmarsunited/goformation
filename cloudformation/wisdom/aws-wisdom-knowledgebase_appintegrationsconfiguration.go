@@ -8,7 +8,7 @@ import (
 
 // KnowledgeBase_AppIntegrationsConfiguration AWS CloudFormation Resource (AWS::Wisdom::KnowledgeBase.AppIntegrationsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-appintegrationsconfiguration.html
-type KnowledgeBase_AppIntegrationsConfiguration struct {
+type KnowledgeBase_AppIntegrationsConfiguration[T any] struct {
 
 	// AppIntegrationArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type KnowledgeBase_AppIntegrationsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *KnowledgeBase_AppIntegrationsConfiguration) AWSCloudFormationType() string {
+func (r *KnowledgeBase_AppIntegrationsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Wisdom::KnowledgeBase.AppIntegrationsConfiguration"
 }

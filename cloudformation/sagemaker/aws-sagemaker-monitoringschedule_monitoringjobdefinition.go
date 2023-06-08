@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_MonitoringJobDefinition AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html
-type MonitoringSchedule_MonitoringJobDefinition struct {
+type MonitoringSchedule_MonitoringJobDefinition[T any] struct {
 
 	// BaselineConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-baselineconfig
-	BaselineConfig *MonitoringSchedule_BaselineConfig `json:"BaselineConfig,omitempty"`
+	BaselineConfig *MonitoringSchedule_BaselineConfig[any] `json:"BaselineConfig,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
@@ -23,27 +23,27 @@ type MonitoringSchedule_MonitoringJobDefinition struct {
 	// MonitoringAppSpecification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringappspecification
-	MonitoringAppSpecification *MonitoringSchedule_MonitoringAppSpecification `json:"MonitoringAppSpecification"`
+	MonitoringAppSpecification *MonitoringSchedule_MonitoringAppSpecification[any] `json:"MonitoringAppSpecification"`
 
 	// MonitoringInputs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringinputs
-	MonitoringInputs []MonitoringSchedule_MonitoringInput `json:"MonitoringInputs"`
+	MonitoringInputs []MonitoringSchedule_MonitoringInput[any] `json:"MonitoringInputs"`
 
 	// MonitoringOutputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringoutputconfig
-	MonitoringOutputConfig *MonitoringSchedule_MonitoringOutputConfig `json:"MonitoringOutputConfig"`
+	MonitoringOutputConfig *MonitoringSchedule_MonitoringOutputConfig[any] `json:"MonitoringOutputConfig"`
 
 	// MonitoringResources AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringresources
-	MonitoringResources *MonitoringSchedule_MonitoringResources `json:"MonitoringResources"`
+	MonitoringResources *MonitoringSchedule_MonitoringResources[any] `json:"MonitoringResources"`
 
 	// NetworkConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-networkconfig
-	NetworkConfig *MonitoringSchedule_NetworkConfig `json:"NetworkConfig,omitempty"`
+	NetworkConfig *MonitoringSchedule_NetworkConfig[any] `json:"NetworkConfig,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type MonitoringSchedule_MonitoringJobDefinition struct {
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-stoppingcondition
-	StoppingCondition *MonitoringSchedule_StoppingCondition `json:"StoppingCondition,omitempty"`
+	StoppingCondition *MonitoringSchedule_StoppingCondition[any] `json:"StoppingCondition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -72,6 +72,6 @@ type MonitoringSchedule_MonitoringJobDefinition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringJobDefinition) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringJobDefinition[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringJobDefinition"
 }

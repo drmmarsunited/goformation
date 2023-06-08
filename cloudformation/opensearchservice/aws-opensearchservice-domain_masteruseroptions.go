@@ -8,7 +8,7 @@ import (
 
 // Domain_MasterUserOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.MasterUserOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-masteruseroptions.html
-type Domain_MasterUserOptions struct {
+type Domain_MasterUserOptions[T any] struct {
 
 	// MasterUserARN AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Domain_MasterUserOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Domain_MasterUserOptions) AWSCloudFormationType() string {
+func (r *Domain_MasterUserOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OpenSearchService::Domain.MasterUserOptions"
 }

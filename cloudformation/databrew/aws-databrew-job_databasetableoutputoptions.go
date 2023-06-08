@@ -8,7 +8,7 @@ import (
 
 // Job_DatabaseTableOutputOptions AWS CloudFormation Resource (AWS::DataBrew::Job.DatabaseTableOutputOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html
-type Job_DatabaseTableOutputOptions struct {
+type Job_DatabaseTableOutputOptions[T any] struct {
 
 	// TableName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Job_DatabaseTableOutputOptions struct {
 	// TempDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory
-	TempDirectory *Job_S3Location `json:"TempDirectory,omitempty"`
+	TempDirectory *Job_S3Location[any] `json:"TempDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Job_DatabaseTableOutputOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job_DatabaseTableOutputOptions) AWSCloudFormationType() string {
+func (r *Job_DatabaseTableOutputOptions[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job.DatabaseTableOutputOptions"
 }

@@ -8,7 +8,7 @@ import (
 
 // Server_EndpointDetails AWS CloudFormation Resource (AWS::Transfer::Server.EndpointDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html
-type Server_EndpointDetails struct {
+type Server_EndpointDetails[T any] struct {
 
 	// AddressAllocationIds AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Server_EndpointDetails struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Server_EndpointDetails) AWSCloudFormationType() string {
+func (r *Server_EndpointDetails[any]) AWSCloudFormationType() string {
 	return "AWS::Transfer::Server.EndpointDetails"
 }

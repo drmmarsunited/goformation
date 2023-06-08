@@ -8,7 +8,7 @@ import (
 
 // Application_S3ContentBaseLocation AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.S3ContentBaseLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentbaselocation.html
-type Application_S3ContentBaseLocation struct {
+type Application_S3ContentBaseLocation[T any] struct {
 
 	// BasePath AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Application_S3ContentBaseLocation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_S3ContentBaseLocation) AWSCloudFormationType() string {
+func (r *Application_S3ContentBaseLocation[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.S3ContentBaseLocation"
 }

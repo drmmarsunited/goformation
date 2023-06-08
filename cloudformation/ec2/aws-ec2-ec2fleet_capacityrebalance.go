@@ -8,7 +8,7 @@ import (
 
 // EC2Fleet_CapacityRebalance AWS CloudFormation Resource (AWS::EC2::EC2Fleet.CapacityRebalance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityrebalance.html
-type EC2Fleet_CapacityRebalance struct {
+type EC2Fleet_CapacityRebalance[T any] struct {
 
 	// ReplacementStrategy AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type EC2Fleet_CapacityRebalance struct {
 	// TerminationDelay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityrebalance.html#cfn-ec2-ec2fleet-capacityrebalance-terminationdelay
-	TerminationDelay *int `json:"TerminationDelay,omitempty"`
+	TerminationDelay *T `json:"TerminationDelay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type EC2Fleet_CapacityRebalance struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EC2Fleet_CapacityRebalance) AWSCloudFormationType() string {
+func (r *EC2Fleet_CapacityRebalance[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::EC2Fleet.CapacityRebalance"
 }

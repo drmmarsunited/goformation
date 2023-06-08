@@ -8,7 +8,7 @@ import (
 
 // Environment_AttributeMapItems AWS CloudFormation Resource (AWS::FinSpace::Environment.AttributeMapItems)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-attributemapitems.html
-type Environment_AttributeMapItems struct {
+type Environment_AttributeMapItems[T any] struct {
 
 	// Key AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Environment_AttributeMapItems struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_AttributeMapItems) AWSCloudFormationType() string {
+func (r *Environment_AttributeMapItems[any]) AWSCloudFormationType() string {
 	return "AWS::FinSpace::Environment.AttributeMapItems"
 }

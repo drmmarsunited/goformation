@@ -8,7 +8,7 @@ import (
 
 // ImageBuilder_DomainJoinInfo AWS CloudFormation Resource (AWS::AppStream::ImageBuilder.DomainJoinInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html
-type ImageBuilder_DomainJoinInfo struct {
+type ImageBuilder_DomainJoinInfo[T any] struct {
 
 	// DirectoryName AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type ImageBuilder_DomainJoinInfo struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ImageBuilder_DomainJoinInfo) AWSCloudFormationType() string {
+func (r *ImageBuilder_DomainJoinInfo[any]) AWSCloudFormationType() string {
 	return "AWS::AppStream::ImageBuilder.DomainJoinInfo"
 }

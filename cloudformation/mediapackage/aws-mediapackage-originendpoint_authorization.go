@@ -8,7 +8,7 @@ import (
 
 // OriginEndpoint_Authorization AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.Authorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-authorization.html
-type OriginEndpoint_Authorization struct {
+type OriginEndpoint_Authorization[T any] struct {
 
 	// CdnIdentifierSecret AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type OriginEndpoint_Authorization struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OriginEndpoint_Authorization) AWSCloudFormationType() string {
+func (r *OriginEndpoint_Authorization[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::OriginEndpoint.Authorization"
 }

@@ -11,7 +11,7 @@ import (
 
 // Resource AWS CloudFormation Resource (AWS::LakeFormation::Resource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html
-type Resource struct {
+type Resource[T any] struct {
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type Resource struct {
 	// UseServiceLinkedRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-useservicelinkedrole
-	UseServiceLinkedRole bool `json:"UseServiceLinkedRole"`
+	UseServiceLinkedRole T `json:"UseServiceLinkedRole"`
 
 	// WithFederation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-withfederation
-	WithFederation *bool `json:"WithFederation,omitempty"`
+	WithFederation *T `json:"WithFederation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -50,14 +50,15 @@ type Resource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Resource) AWSCloudFormationType() string {
+func (r *Resource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::Resource"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Resource) MarshalJSON() ([]byte, error) {
-	type Properties Resource
+func (r Resource[any]) MarshalJSON() ([]byte, error) {
+	type Properties Resource[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -79,8 +80,9 @@ func (r Resource) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Resource) UnmarshalJSON(b []byte) error {
-	type Properties Resource
+func (r *Resource[any]) UnmarshalJSON(b []byte) error {
+	type Properties Resource[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -100,7 +102,7 @@ func (r *Resource) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Resource(*res.Properties)
+		*r = Resource[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

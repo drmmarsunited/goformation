@@ -8,12 +8,12 @@ import (
 
 // Cluster_InstanceGroupConfig AWS CloudFormation Resource (AWS::EMR::Cluster.InstanceGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html
-type Cluster_InstanceGroupConfig struct {
+type Cluster_InstanceGroupConfig[T any] struct {
 
 	// AutoScalingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-autoscalingpolicy
-	AutoScalingPolicy *Cluster_AutoScalingPolicy `json:"AutoScalingPolicy,omitempty"`
+	AutoScalingPolicy *Cluster_AutoScalingPolicy[any] `json:"AutoScalingPolicy,omitempty"`
 
 	// BidPrice AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Cluster_InstanceGroupConfig struct {
 	// Configurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-configurations
-	Configurations []Cluster_Configuration `json:"Configurations,omitempty"`
+	Configurations []Cluster_Configuration[any] `json:"Configurations,omitempty"`
 
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Cluster_InstanceGroupConfig struct {
 	// EbsConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-ebsconfiguration
-	EbsConfiguration *Cluster_EbsConfiguration `json:"EbsConfiguration,omitempty"`
+	EbsConfiguration *Cluster_EbsConfiguration[any] `json:"EbsConfiguration,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount T `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -72,6 +72,6 @@ type Cluster_InstanceGroupConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_InstanceGroupConfig) AWSCloudFormationType() string {
+func (r *Cluster_InstanceGroupConfig[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.InstanceGroupConfig"
 }

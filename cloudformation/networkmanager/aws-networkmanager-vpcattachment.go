@@ -12,7 +12,7 @@ import (
 
 // VpcAttachment AWS CloudFormation Resource (AWS::NetworkManager::VpcAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html
-type VpcAttachment struct {
+type VpcAttachment[T any] struct {
 
 	// CoreNetworkId AWS CloudFormation Property
 	// Required: true
@@ -22,7 +22,12 @@ type VpcAttachment struct {
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-options
-	Options *VpcAttachment_VpcOptions `json:"Options,omitempty"`
+	Options *VpcAttachment_VpcOptions[any] `json:"Options,omitempty"`
+
+	// ProposedSegmentChange AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-proposedsegmentchange
+	ProposedSegmentChange *VpcAttachment_ProposedSegmentChange[any] `json:"ProposedSegmentChange,omitempty"`
 
 	// SubnetArns AWS CloudFormation Property
 	// Required: true
@@ -56,14 +61,15 @@ type VpcAttachment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VpcAttachment) AWSCloudFormationType() string {
+func (r *VpcAttachment[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::VpcAttachment"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r VpcAttachment) MarshalJSON() ([]byte, error) {
-	type Properties VpcAttachment
+func (r VpcAttachment[any]) MarshalJSON() ([]byte, error) {
+	type Properties VpcAttachment[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +91,9 @@ func (r VpcAttachment) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *VpcAttachment) UnmarshalJSON(b []byte) error {
-	type Properties VpcAttachment
+func (r *VpcAttachment[any]) UnmarshalJSON(b []byte) error {
+	type Properties VpcAttachment[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +113,7 @@ func (r *VpcAttachment) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = VpcAttachment(*res.Properties)
+		*r = VpcAttachment[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

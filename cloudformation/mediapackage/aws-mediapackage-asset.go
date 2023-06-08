@@ -12,12 +12,12 @@ import (
 
 // Asset AWS CloudFormation Resource (AWS::MediaPackage::Asset)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html
-type Asset struct {
+type Asset[T any] struct {
 
 	// EgressEndpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-egressendpoints
-	EgressEndpoints []Asset_EgressEndpoint `json:"EgressEndpoints,omitempty"`
+	EgressEndpoints []Asset_EgressEndpoint[any] `json:"EgressEndpoints,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type Asset struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Asset) AWSCloudFormationType() string {
+func (r *Asset[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::Asset"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Asset) MarshalJSON() ([]byte, error) {
-	type Properties Asset
+func (r Asset[any]) MarshalJSON() ([]byte, error) {
+	type Properties Asset[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r Asset) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Asset) UnmarshalJSON(b []byte) error {
-	type Properties Asset
+func (r *Asset[any]) UnmarshalJSON(b []byte) error {
+	type Properties Asset[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *Asset) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Asset(*res.Properties)
+		*r = Asset[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

@@ -8,17 +8,17 @@ import (
 
 // Table_MagneticStoreWriteProperties AWS CloudFormation Resource (AWS::Timestream::Table.MagneticStoreWriteProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html
-type Table_MagneticStoreWriteProperties struct {
+type Table_MagneticStoreWriteProperties[T any] struct {
 
 	// EnableMagneticStoreWrites AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-enablemagneticstorewrites
-	EnableMagneticStoreWrites bool `json:"EnableMagneticStoreWrites"`
+	EnableMagneticStoreWrites T `json:"EnableMagneticStoreWrites"`
 
 	// MagneticStoreRejectedDataLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-magneticstorerejecteddatalocation
-	MagneticStoreRejectedDataLocation *Table_MagneticStoreRejectedDataLocation `json:"MagneticStoreRejectedDataLocation,omitempty"`
+	MagneticStoreRejectedDataLocation *Table_MagneticStoreRejectedDataLocation[any] `json:"MagneticStoreRejectedDataLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Table_MagneticStoreWriteProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_MagneticStoreWriteProperties) AWSCloudFormationType() string {
+func (r *Table_MagneticStoreWriteProperties[any]) AWSCloudFormationType() string {
 	return "AWS::Timestream::Table.MagneticStoreWriteProperties"
 }

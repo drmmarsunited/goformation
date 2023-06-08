@@ -8,12 +8,12 @@ import (
 
 // Analysis_SheetControlLayout AWS CloudFormation Resource (AWS::QuickSight::Analysis.SheetControlLayout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetcontrollayout.html
-type Analysis_SheetControlLayout struct {
+type Analysis_SheetControlLayout[T any] struct {
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetcontrollayout.html#cfn-quicksight-analysis-sheetcontrollayout-configuration
-	Configuration *Analysis_SheetControlLayoutConfiguration `json:"Configuration"`
+	Configuration *Analysis_SheetControlLayoutConfiguration[any] `json:"Configuration"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Analysis_SheetControlLayout struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_SheetControlLayout) AWSCloudFormationType() string {
+func (r *Analysis_SheetControlLayout[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.SheetControlLayout"
 }

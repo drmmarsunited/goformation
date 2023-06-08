@@ -8,27 +8,27 @@ import (
 
 // Cluster_ComputeLimits AWS CloudFormation Resource (AWS::EMR::Cluster.ComputeLimits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html
-type Cluster_ComputeLimits struct {
+type Cluster_ComputeLimits[T any] struct {
 
 	// MaximumCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcapacityunits
-	MaximumCapacityUnits int `json:"MaximumCapacityUnits"`
+	MaximumCapacityUnits T `json:"MaximumCapacityUnits"`
 
 	// MaximumCoreCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcorecapacityunits
-	MaximumCoreCapacityUnits *int `json:"MaximumCoreCapacityUnits,omitempty"`
+	MaximumCoreCapacityUnits *T `json:"MaximumCoreCapacityUnits,omitempty"`
 
 	// MaximumOnDemandCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumondemandcapacityunits
-	MaximumOnDemandCapacityUnits *int `json:"MaximumOnDemandCapacityUnits,omitempty"`
+	MaximumOnDemandCapacityUnits *T `json:"MaximumOnDemandCapacityUnits,omitempty"`
 
 	// MinimumCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-minimumcapacityunits
-	MinimumCapacityUnits int `json:"MinimumCapacityUnits"`
+	MinimumCapacityUnits T `json:"MinimumCapacityUnits"`
 
 	// UnitType AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Cluster_ComputeLimits struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ComputeLimits) AWSCloudFormationType() string {
+func (r *Cluster_ComputeLimits[any]) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ComputeLimits"
 }

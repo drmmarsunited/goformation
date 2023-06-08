@@ -8,7 +8,7 @@ import (
 
 // LaunchTemplate_CreditSpecification AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.CreditSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-creditspecification.html
-type LaunchTemplate_CreditSpecification struct {
+type LaunchTemplate_CreditSpecification[T any] struct {
 
 	// CpuCredits AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type LaunchTemplate_CreditSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LaunchTemplate_CreditSpecification) AWSCloudFormationType() string {
+func (r *LaunchTemplate_CreditSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.CreditSpecification"
 }

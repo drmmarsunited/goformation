@@ -8,7 +8,7 @@ import (
 
 // Deployment_IoTJobAbortCriteria AWS CloudFormation Resource (AWS::GreengrassV2::Deployment.IoTJobAbortCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortcriteria.html
-type Deployment_IoTJobAbortCriteria struct {
+type Deployment_IoTJobAbortCriteria[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type Deployment_IoTJobAbortCriteria struct {
 	// MinNumberOfExecutedThings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortcriteria.html#cfn-greengrassv2-deployment-iotjobabortcriteria-minnumberofexecutedthings
-	MinNumberOfExecutedThings int `json:"MinNumberOfExecutedThings"`
+	MinNumberOfExecutedThings T `json:"MinNumberOfExecutedThings"`
 
 	// ThresholdPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortcriteria.html#cfn-greengrassv2-deployment-iotjobabortcriteria-thresholdpercentage
-	ThresholdPercentage float64 `json:"ThresholdPercentage"`
+	ThresholdPercentage T `json:"ThresholdPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type Deployment_IoTJobAbortCriteria struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Deployment_IoTJobAbortCriteria) AWSCloudFormationType() string {
+func (r *Deployment_IoTJobAbortCriteria[any]) AWSCloudFormationType() string {
 	return "AWS::GreengrassV2::Deployment.IoTJobAbortCriteria"
 }

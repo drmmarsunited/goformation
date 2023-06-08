@@ -8,7 +8,7 @@ import (
 
 // Template_TextControlPlaceholderOptions AWS CloudFormation Resource (AWS::QuickSight::Template.TextControlPlaceholderOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-textcontrolplaceholderoptions.html
-type Template_TextControlPlaceholderOptions struct {
+type Template_TextControlPlaceholderOptions[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_TextControlPlaceholderOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TextControlPlaceholderOptions) AWSCloudFormationType() string {
+func (r *Template_TextControlPlaceholderOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TextControlPlaceholderOptions"
 }

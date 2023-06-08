@@ -12,7 +12,7 @@ import (
 
 // TransitGatewayRouteTable AWS CloudFormation Resource (AWS::EC2::TransitGatewayRouteTable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html
-type TransitGatewayRouteTable struct {
+type TransitGatewayRouteTable[T any] struct {
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,14 +41,15 @@ type TransitGatewayRouteTable struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TransitGatewayRouteTable) AWSCloudFormationType() string {
+func (r *TransitGatewayRouteTable[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::TransitGatewayRouteTable"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r TransitGatewayRouteTable) MarshalJSON() ([]byte, error) {
-	type Properties TransitGatewayRouteTable
+func (r TransitGatewayRouteTable[any]) MarshalJSON() ([]byte, error) {
+	type Properties TransitGatewayRouteTable[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -70,8 +71,9 @@ func (r TransitGatewayRouteTable) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *TransitGatewayRouteTable) UnmarshalJSON(b []byte) error {
-	type Properties TransitGatewayRouteTable
+func (r *TransitGatewayRouteTable[any]) UnmarshalJSON(b []byte) error {
+	type Properties TransitGatewayRouteTable[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -91,7 +93,7 @@ func (r *TransitGatewayRouteTable) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = TransitGatewayRouteTable(*res.Properties)
+		*r = TransitGatewayRouteTable[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

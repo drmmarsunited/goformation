@@ -8,7 +8,7 @@ import (
 
 // VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextSdsTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextsdstrust.html
-type VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust struct {
+type VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust[T any] struct {
 
 	// SecretName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust) AWSCloudFormationType() string {
+func (r *VirtualGateway_VirtualGatewayTlsValidationContextSdsTrust[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextSdsTrust"
 }

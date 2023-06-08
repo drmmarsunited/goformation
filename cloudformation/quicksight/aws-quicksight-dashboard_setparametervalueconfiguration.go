@@ -8,7 +8,7 @@ import (
 
 // Dashboard_SetParameterValueConfiguration AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SetParameterValueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-setparametervalueconfiguration.html
-type Dashboard_SetParameterValueConfiguration struct {
+type Dashboard_SetParameterValueConfiguration[T any] struct {
 
 	// DestinationParameterName AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_SetParameterValueConfiguration struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-setparametervalueconfiguration.html#cfn-quicksight-dashboard-setparametervalueconfiguration-value
-	Value *Dashboard_DestinationParameterValueConfiguration `json:"Value"`
+	Value *Dashboard_DestinationParameterValueConfiguration[any] `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_SetParameterValueConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SetParameterValueConfiguration) AWSCloudFormationType() string {
+func (r *Dashboard_SetParameterValueConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SetParameterValueConfiguration"
 }

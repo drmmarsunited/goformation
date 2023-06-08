@@ -8,7 +8,7 @@ import (
 
 // Integration_MarketoSourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.MarketoSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-marketosourceproperties.html
-type Integration_MarketoSourceProperties struct {
+type Integration_MarketoSourceProperties[T any] struct {
 
 	// Object AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type Integration_MarketoSourceProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_MarketoSourceProperties) AWSCloudFormationType() string {
+func (r *Integration_MarketoSourceProperties[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.MarketoSourceProperties"
 }

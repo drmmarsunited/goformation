@@ -8,17 +8,17 @@ import (
 
 // DataCatalogEncryptionSettings_DataCatalogEncryptionSettings AWS CloudFormation Resource (AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html
-type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings struct {
+type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[T any] struct {
 
 	// ConnectionPasswordEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings-connectionpasswordencryption
-	ConnectionPasswordEncryption *DataCatalogEncryptionSettings_ConnectionPasswordEncryption `json:"ConnectionPasswordEncryption,omitempty"`
+	ConnectionPasswordEncryption *DataCatalogEncryptionSettings_ConnectionPasswordEncryption[any] `json:"ConnectionPasswordEncryption,omitempty"`
 
 	// EncryptionAtRest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings-encryptionatrest
-	EncryptionAtRest *DataCatalogEncryptionSettings_EncryptionAtRest `json:"EncryptionAtRest,omitempty"`
+	EncryptionAtRest *DataCatalogEncryptionSettings_EncryptionAtRest[any] `json:"EncryptionAtRest,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataCatalogEncryptionSettings_DataCatalogEncryptionSettings) AWSCloudFormationType() string {
+func (r *DataCatalogEncryptionSettings_DataCatalogEncryptionSettings[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings"
 }

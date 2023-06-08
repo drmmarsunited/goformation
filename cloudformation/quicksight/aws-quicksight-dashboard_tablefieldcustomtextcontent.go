@@ -8,12 +8,12 @@ import (
 
 // Dashboard_TableFieldCustomTextContent AWS CloudFormation Resource (AWS::QuickSight::Dashboard.TableFieldCustomTextContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldcustomtextcontent.html
-type Dashboard_TableFieldCustomTextContent struct {
+type Dashboard_TableFieldCustomTextContent[T any] struct {
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldcustomtextcontent.html#cfn-quicksight-dashboard-tablefieldcustomtextcontent-fontconfiguration
-	FontConfiguration *Dashboard_FontConfiguration `json:"FontConfiguration"`
+	FontConfiguration *Dashboard_FontConfiguration[any] `json:"FontConfiguration"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Dashboard_TableFieldCustomTextContent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_TableFieldCustomTextContent) AWSCloudFormationType() string {
+func (r *Dashboard_TableFieldCustomTextContent[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.TableFieldCustomTextContent"
 }

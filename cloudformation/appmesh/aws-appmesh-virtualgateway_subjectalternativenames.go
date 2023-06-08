@@ -8,12 +8,12 @@ import (
 
 // VirtualGateway_SubjectAlternativeNames AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.SubjectAlternativeNames)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html
-type VirtualGateway_SubjectAlternativeNames struct {
+type VirtualGateway_SubjectAlternativeNames[T any] struct {
 
 	// Match AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html#cfn-appmesh-virtualgateway-subjectalternativenames-match
-	Match *VirtualGateway_SubjectAlternativeNameMatchers `json:"Match"`
+	Match *VirtualGateway_SubjectAlternativeNameMatchers[any] `json:"Match"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type VirtualGateway_SubjectAlternativeNames struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VirtualGateway_SubjectAlternativeNames) AWSCloudFormationType() string {
+func (r *VirtualGateway_SubjectAlternativeNames[any]) AWSCloudFormationType() string {
 	return "AWS::AppMesh::VirtualGateway.SubjectAlternativeNames"
 }

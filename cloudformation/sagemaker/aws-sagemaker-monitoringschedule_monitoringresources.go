@@ -8,12 +8,12 @@ import (
 
 // MonitoringSchedule_MonitoringResources AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.MonitoringResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringresources.html
-type MonitoringSchedule_MonitoringResources struct {
+type MonitoringSchedule_MonitoringResources[T any] struct {
 
 	// ClusterConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringresources.html#cfn-sagemaker-monitoringschedule-monitoringresources-clusterconfig
-	ClusterConfig *MonitoringSchedule_ClusterConfig `json:"ClusterConfig"`
+	ClusterConfig *MonitoringSchedule_ClusterConfig[any] `json:"ClusterConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type MonitoringSchedule_MonitoringResources struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *MonitoringSchedule_MonitoringResources) AWSCloudFormationType() string {
+func (r *MonitoringSchedule_MonitoringResources[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::MonitoringSchedule.MonitoringResources"
 }

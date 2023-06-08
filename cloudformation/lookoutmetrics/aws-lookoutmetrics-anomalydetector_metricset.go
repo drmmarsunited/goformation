@@ -8,7 +8,7 @@ import (
 
 // AnomalyDetector_MetricSet AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.MetricSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html
-type AnomalyDetector_MetricSet struct {
+type AnomalyDetector_MetricSet[T any] struct {
 
 	// DimensionList AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type AnomalyDetector_MetricSet struct {
 	// MetricList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metriclist
-	MetricList []AnomalyDetector_Metric `json:"MetricList"`
+	MetricList []AnomalyDetector_Metric[any] `json:"MetricList"`
 
 	// MetricSetDescription AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type AnomalyDetector_MetricSet struct {
 	// MetricSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsource
-	MetricSource *AnomalyDetector_MetricSource `json:"MetricSource"`
+	MetricSource *AnomalyDetector_MetricSource[any] `json:"MetricSource"`
 
 	// Offset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-offset
-	Offset *int `json:"Offset,omitempty"`
+	Offset *T `json:"Offset,omitempty"`
 
 	// TimestampColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-timestampcolumn
-	TimestampColumn *AnomalyDetector_TimestampColumn `json:"TimestampColumn,omitempty"`
+	TimestampColumn *AnomalyDetector_TimestampColumn[any] `json:"TimestampColumn,omitempty"`
 
 	// Timezone AWS CloudFormation Property
 	// Required: false
@@ -72,6 +72,6 @@ type AnomalyDetector_MetricSet struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricSet) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricSet[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.MetricSet"
 }

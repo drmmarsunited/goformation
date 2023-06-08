@@ -8,7 +8,7 @@ import (
 
 // Flow_GlueDataCatalog AWS CloudFormation Resource (AWS::AppFlow::Flow.GlueDataCatalog)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-gluedatacatalog.html
-type Flow_GlueDataCatalog struct {
+type Flow_GlueDataCatalog[T any] struct {
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Flow_GlueDataCatalog struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_GlueDataCatalog) AWSCloudFormationType() string {
+func (r *Flow_GlueDataCatalog[any]) AWSCloudFormationType() string {
 	return "AWS::AppFlow::Flow.GlueDataCatalog"
 }

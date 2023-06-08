@@ -8,7 +8,7 @@ import (
 
 // Rotation_CoverageTime AWS CloudFormation Resource (AWS::SSMContacts::Rotation.CoverageTime)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-coveragetime.html
-type Rotation_CoverageTime struct {
+type Rotation_CoverageTime[T any] struct {
 
 	// EndTime AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Rotation_CoverageTime struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rotation_CoverageTime) AWSCloudFormationType() string {
+func (r *Rotation_CoverageTime[any]) AWSCloudFormationType() string {
 	return "AWS::SSMContacts::Rotation.CoverageTime"
 }

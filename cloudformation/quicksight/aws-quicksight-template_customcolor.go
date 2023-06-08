@@ -8,7 +8,7 @@ import (
 
 // Template_CustomColor AWS CloudFormation Resource (AWS::QuickSight::Template.CustomColor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcolor.html
-type Template_CustomColor struct {
+type Template_CustomColor[T any] struct {
 
 	// Color AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Template_CustomColor struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_CustomColor) AWSCloudFormationType() string {
+func (r *Template_CustomColor[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.CustomColor"
 }

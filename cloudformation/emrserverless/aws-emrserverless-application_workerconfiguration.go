@@ -8,7 +8,7 @@ import (
 
 // Application_WorkerConfiguration AWS CloudFormation Resource (AWS::EMRServerless::Application.WorkerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workerconfiguration.html
-type Application_WorkerConfiguration struct {
+type Application_WorkerConfiguration[T any] struct {
 
 	// Cpu AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Application_WorkerConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_WorkerConfiguration) AWSCloudFormationType() string {
+func (r *Application_WorkerConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::EMRServerless::Application.WorkerConfiguration"
 }

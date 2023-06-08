@@ -8,7 +8,7 @@ import (
 
 // RestApi_S3Location AWS CloudFormation Resource (AWS::ApiGateway::RestApi.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html
-type RestApi_S3Location struct {
+type RestApi_S3Location[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
@@ -47,6 +47,6 @@ type RestApi_S3Location struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RestApi_S3Location) AWSCloudFormationType() string {
+func (r *RestApi_S3Location[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::RestApi.S3Location"
 }

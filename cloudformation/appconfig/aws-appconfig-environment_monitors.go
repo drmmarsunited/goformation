@@ -8,7 +8,7 @@ import (
 
 // Environment_Monitors AWS CloudFormation Resource (AWS::AppConfig::Environment.Monitors)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-monitors.html
-type Environment_Monitors struct {
+type Environment_Monitors[T any] struct {
 
 	// AlarmArn AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Environment_Monitors struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Environment_Monitors) AWSCloudFormationType() string {
+func (r *Environment_Monitors[any]) AWSCloudFormationType() string {
 	return "AWS::AppConfig::Environment.Monitors"
 }

@@ -8,7 +8,7 @@ import (
 
 // Integration_IncrementalPullConfig AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.IncrementalPullConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-incrementalpullconfig.html
-type Integration_IncrementalPullConfig struct {
+type Integration_IncrementalPullConfig[T any] struct {
 
 	// DatetimeTypeFieldName AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Integration_IncrementalPullConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Integration_IncrementalPullConfig) AWSCloudFormationType() string {
+func (r *Integration_IncrementalPullConfig[any]) AWSCloudFormationType() string {
 	return "AWS::CustomerProfiles::Integration.IncrementalPullConfig"
 }

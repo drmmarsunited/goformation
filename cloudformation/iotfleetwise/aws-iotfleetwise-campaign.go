@@ -12,7 +12,7 @@ import (
 
 // Campaign AWS CloudFormation Resource (AWS::IoTFleetWise::Campaign)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html
-type Campaign struct {
+type Campaign[T any] struct {
 
 	// Action AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,17 @@ type Campaign struct {
 	// CollectionScheme AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-collectionscheme
-	CollectionScheme *Campaign_CollectionScheme `json:"CollectionScheme"`
+	CollectionScheme *Campaign_CollectionScheme[any] `json:"CollectionScheme"`
 
 	// Compression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-compression
 	Compression *string `json:"Compression,omitempty"`
+
+	// DataDestinationConfigs AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-datadestinationconfigs
+	DataDestinationConfigs []Campaign_DataDestinationConfig[any] `json:"DataDestinationConfigs,omitempty"`
 
 	// DataExtraDimensions AWS CloudFormation Property
 	// Required: false
@@ -57,12 +62,12 @@ type Campaign struct {
 	// PostTriggerCollectionDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-posttriggercollectionduration
-	PostTriggerCollectionDuration *float64 `json:"PostTriggerCollectionDuration,omitempty"`
+	PostTriggerCollectionDuration *T `json:"PostTriggerCollectionDuration,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// SignalCatalogArn AWS CloudFormation Property
 	// Required: true
@@ -72,7 +77,7 @@ type Campaign struct {
 	// SignalsToCollect AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-signalstocollect
-	SignalsToCollect []Campaign_SignalInformation `json:"SignalsToCollect,omitempty"`
+	SignalsToCollect []Campaign_SignalInformation[any] `json:"SignalsToCollect,omitempty"`
 
 	// SpoolingMode AWS CloudFormation Property
 	// Required: false
@@ -111,14 +116,15 @@ type Campaign struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign) AWSCloudFormationType() string {
+func (r *Campaign[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::Campaign"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Campaign) MarshalJSON() ([]byte, error) {
-	type Properties Campaign
+func (r Campaign[any]) MarshalJSON() ([]byte, error) {
+	type Properties Campaign[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -140,8 +146,9 @@ func (r Campaign) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Campaign) UnmarshalJSON(b []byte) error {
-	type Properties Campaign
+func (r *Campaign[any]) UnmarshalJSON(b []byte) error {
+	type Properties Campaign[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -161,7 +168,7 @@ func (r *Campaign) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Campaign(*res.Properties)
+		*r = Campaign[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

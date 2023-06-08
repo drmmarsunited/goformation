@@ -8,32 +8,32 @@ import (
 
 // AnomalyDetector_MetricSource AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.MetricSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html
-type AnomalyDetector_MetricSource struct {
+type AnomalyDetector_MetricSource[T any] struct {
 
 	// AppFlowConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-appflowconfig
-	AppFlowConfig *AnomalyDetector_AppFlowConfig `json:"AppFlowConfig,omitempty"`
+	AppFlowConfig *AnomalyDetector_AppFlowConfig[any] `json:"AppFlowConfig,omitempty"`
 
 	// CloudwatchConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-cloudwatchconfig
-	CloudwatchConfig *AnomalyDetector_CloudwatchConfig `json:"CloudwatchConfig,omitempty"`
+	CloudwatchConfig *AnomalyDetector_CloudwatchConfig[any] `json:"CloudwatchConfig,omitempty"`
 
 	// RDSSourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-rdssourceconfig
-	RDSSourceConfig *AnomalyDetector_RDSSourceConfig `json:"RDSSourceConfig,omitempty"`
+	RDSSourceConfig *AnomalyDetector_RDSSourceConfig[any] `json:"RDSSourceConfig,omitempty"`
 
 	// RedshiftSourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-redshiftsourceconfig
-	RedshiftSourceConfig *AnomalyDetector_RedshiftSourceConfig `json:"RedshiftSourceConfig,omitempty"`
+	RedshiftSourceConfig *AnomalyDetector_RedshiftSourceConfig[any] `json:"RedshiftSourceConfig,omitempty"`
 
 	// S3SourceConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-s3sourceconfig
-	S3SourceConfig *AnomalyDetector_S3SourceConfig `json:"S3SourceConfig,omitempty"`
+	S3SourceConfig *AnomalyDetector_S3SourceConfig[any] `json:"S3SourceConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type AnomalyDetector_MetricSource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AnomalyDetector_MetricSource) AWSCloudFormationType() string {
+func (r *AnomalyDetector_MetricSource[any]) AWSCloudFormationType() string {
 	return "AWS::LookoutMetrics::AnomalyDetector.MetricSource"
 }

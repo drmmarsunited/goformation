@@ -8,7 +8,7 @@ import (
 
 // Experiment_OnlineAbConfigObject AWS CloudFormation Resource (AWS::Evidently::Experiment.OnlineAbConfigObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-onlineabconfigobject.html
-type Experiment_OnlineAbConfigObject struct {
+type Experiment_OnlineAbConfigObject[T any] struct {
 
 	// ControlTreatmentName AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Experiment_OnlineAbConfigObject struct {
 	// TreatmentWeights AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-onlineabconfigobject.html#cfn-evidently-experiment-onlineabconfigobject-treatmentweights
-	TreatmentWeights []Experiment_TreatmentToWeight `json:"TreatmentWeights,omitempty"`
+	TreatmentWeights []Experiment_TreatmentToWeight[any] `json:"TreatmentWeights,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Experiment_OnlineAbConfigObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Experiment_OnlineAbConfigObject) AWSCloudFormationType() string {
+func (r *Experiment_OnlineAbConfigObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Experiment.OnlineAbConfigObject"
 }

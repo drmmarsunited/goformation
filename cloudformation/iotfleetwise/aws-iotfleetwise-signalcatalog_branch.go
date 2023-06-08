@@ -8,7 +8,7 @@ import (
 
 // SignalCatalog_Branch AWS CloudFormation Resource (AWS::IoTFleetWise::SignalCatalog.Branch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-branch.html
-type SignalCatalog_Branch struct {
+type SignalCatalog_Branch[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type SignalCatalog_Branch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SignalCatalog_Branch) AWSCloudFormationType() string {
+func (r *SignalCatalog_Branch[any]) AWSCloudFormationType() string {
 	return "AWS::IoTFleetWise::SignalCatalog.Branch"
 }

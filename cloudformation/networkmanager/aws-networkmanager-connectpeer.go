@@ -12,12 +12,12 @@ import (
 
 // ConnectPeer AWS CloudFormation Resource (AWS::NetworkManager::ConnectPeer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html
-type ConnectPeer struct {
+type ConnectPeer[T any] struct {
 
 	// BgpOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-bgpoptions
-	BgpOptions *ConnectPeer_BgpOptions `json:"BgpOptions,omitempty"`
+	BgpOptions *ConnectPeer_BgpOptions[any] `json:"BgpOptions,omitempty"`
 
 	// ConnectAttachmentId AWS CloudFormation Property
 	// Required: true
@@ -61,14 +61,15 @@ type ConnectPeer struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConnectPeer) AWSCloudFormationType() string {
+func (r *ConnectPeer[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkManager::ConnectPeer"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ConnectPeer) MarshalJSON() ([]byte, error) {
-	type Properties ConnectPeer
+func (r ConnectPeer[any]) MarshalJSON() ([]byte, error) {
+	type Properties ConnectPeer[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r ConnectPeer) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ConnectPeer) UnmarshalJSON(b []byte) error {
-	type Properties ConnectPeer
+func (r *ConnectPeer[any]) UnmarshalJSON(b []byte) error {
+	type Properties ConnectPeer[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *ConnectPeer) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ConnectPeer(*res.Properties)
+		*r = ConnectPeer[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

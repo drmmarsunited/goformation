@@ -8,7 +8,7 @@ import (
 
 // ReplicationSet_RegionConfiguration AWS CloudFormation Resource (AWS::SSMIncidents::ReplicationSet.RegionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-regionconfiguration.html
-type ReplicationSet_RegionConfiguration struct {
+type ReplicationSet_RegionConfiguration[T any] struct {
 
 	// SseKmsKeyId AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type ReplicationSet_RegionConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ReplicationSet_RegionConfiguration) AWSCloudFormationType() string {
+func (r *ReplicationSet_RegionConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::SSMIncidents::ReplicationSet.RegionConfiguration"
 }

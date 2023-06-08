@@ -8,17 +8,17 @@ import (
 
 // Rule_Action AWS CloudFormation Resource (AWS::VpcLattice::Rule.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-action.html
-type Rule_Action struct {
+type Rule_Action[T any] struct {
 
 	// FixedResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-action.html#cfn-vpclattice-rule-action-fixedresponse
-	FixedResponse *Rule_FixedResponse `json:"FixedResponse,omitempty"`
+	FixedResponse *Rule_FixedResponse[any] `json:"FixedResponse,omitempty"`
 
 	// Forward AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-action.html#cfn-vpclattice-rule-action-forward
-	Forward *Rule_Forward `json:"Forward,omitempty"`
+	Forward *Rule_Forward[any] `json:"Forward,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Rule_Action struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_Action) AWSCloudFormationType() string {
+func (r *Rule_Action[any]) AWSCloudFormationType() string {
 	return "AWS::VpcLattice::Rule.Action"
 }

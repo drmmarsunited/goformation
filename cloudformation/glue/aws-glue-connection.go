@@ -11,7 +11,7 @@ import (
 
 // Connection AWS CloudFormation Resource (AWS::Glue::Connection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html
-type Connection struct {
+type Connection[T any] struct {
 
 	// CatalogId AWS CloudFormation Property
 	// Required: true
@@ -21,7 +21,7 @@ type Connection struct {
 	// ConnectionInput AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput
-	ConnectionInput *Connection_ConnectionInput `json:"ConnectionInput"`
+	ConnectionInput *Connection_ConnectionInput[any] `json:"ConnectionInput"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -40,14 +40,15 @@ type Connection struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection) AWSCloudFormationType() string {
+func (r *Connection[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Connection"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Connection) MarshalJSON() ([]byte, error) {
-	type Properties Connection
+func (r Connection[any]) MarshalJSON() ([]byte, error) {
+	type Properties Connection[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -69,8 +70,9 @@ func (r Connection) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Connection) UnmarshalJSON(b []byte) error {
-	type Properties Connection
+func (r *Connection[any]) UnmarshalJSON(b []byte) error {
+	type Properties Connection[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -90,7 +92,7 @@ func (r *Connection) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Connection(*res.Properties)
+		*r = Connection[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

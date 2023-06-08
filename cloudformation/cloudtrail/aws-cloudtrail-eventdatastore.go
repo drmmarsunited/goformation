@@ -12,12 +12,17 @@ import (
 
 // EventDataStore AWS CloudFormation Resource (AWS::CloudTrail::EventDataStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html
-type EventDataStore struct {
+type EventDataStore[T any] struct {
 
 	// AdvancedEventSelectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-advancedeventselectors
-	AdvancedEventSelectors []EventDataStore_AdvancedEventSelector `json:"AdvancedEventSelectors,omitempty"`
+	AdvancedEventSelectors []EventDataStore_AdvancedEventSelector[any] `json:"AdvancedEventSelectors,omitempty"`
+
+	// IngestionEnabled AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-ingestionenabled
+	IngestionEnabled *T `json:"IngestionEnabled,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -27,7 +32,7 @@ type EventDataStore struct {
 	// MultiRegionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-multiregionenabled
-	MultiRegionEnabled *bool `json:"MultiRegionEnabled,omitempty"`
+	MultiRegionEnabled *T `json:"MultiRegionEnabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,12 +42,12 @@ type EventDataStore struct {
 	// OrganizationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-organizationenabled
-	OrganizationEnabled *bool `json:"OrganizationEnabled,omitempty"`
+	OrganizationEnabled *T `json:"OrganizationEnabled,omitempty"`
 
 	// RetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-retentionperiod
-	RetentionPeriod *int `json:"RetentionPeriod,omitempty"`
+	RetentionPeriod *T `json:"RetentionPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +57,7 @@ type EventDataStore struct {
 	// TerminationProtectionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-terminationprotectionenabled
-	TerminationProtectionEnabled *bool `json:"TerminationProtectionEnabled,omitempty"`
+	TerminationProtectionEnabled *T `json:"TerminationProtectionEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -71,14 +76,15 @@ type EventDataStore struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EventDataStore) AWSCloudFormationType() string {
+func (r *EventDataStore[any]) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::EventDataStore"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EventDataStore) MarshalJSON() ([]byte, error) {
-	type Properties EventDataStore
+func (r EventDataStore[any]) MarshalJSON() ([]byte, error) {
+	type Properties EventDataStore[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -100,8 +106,9 @@ func (r EventDataStore) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EventDataStore) UnmarshalJSON(b []byte) error {
-	type Properties EventDataStore
+func (r *EventDataStore[any]) UnmarshalJSON(b []byte) error {
+	type Properties EventDataStore[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -121,7 +128,7 @@ func (r *EventDataStore) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EventDataStore(*res.Properties)
+		*r = EventDataStore[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

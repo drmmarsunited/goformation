@@ -12,7 +12,7 @@ import (
 
 // ClusterParameterGroup AWS CloudFormation Resource (AWS::Redshift::ClusterParameterGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
-type ClusterParameterGroup struct {
+type ClusterParameterGroup[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type ClusterParameterGroup struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
-	Parameters []ClusterParameterGroup_Parameter `json:"Parameters,omitempty"`
+	Parameters []ClusterParameterGroup_Parameter[any] `json:"Parameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,14 +56,15 @@ type ClusterParameterGroup struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ClusterParameterGroup) AWSCloudFormationType() string {
+func (r *ClusterParameterGroup[any]) AWSCloudFormationType() string {
 	return "AWS::Redshift::ClusterParameterGroup"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ClusterParameterGroup) MarshalJSON() ([]byte, error) {
-	type Properties ClusterParameterGroup
+func (r ClusterParameterGroup[any]) MarshalJSON() ([]byte, error) {
+	type Properties ClusterParameterGroup[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -85,8 +86,9 @@ func (r ClusterParameterGroup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ClusterParameterGroup) UnmarshalJSON(b []byte) error {
-	type Properties ClusterParameterGroup
+func (r *ClusterParameterGroup[any]) UnmarshalJSON(b []byte) error {
+	type Properties ClusterParameterGroup[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -106,7 +108,7 @@ func (r *ClusterParameterGroup) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ClusterParameterGroup(*res.Properties)
+		*r = ClusterParameterGroup[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

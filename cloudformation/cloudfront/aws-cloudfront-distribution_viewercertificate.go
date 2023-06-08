@@ -8,7 +8,7 @@ import (
 
 // Distribution_ViewerCertificate AWS CloudFormation Resource (AWS::CloudFront::Distribution.ViewerCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
-type Distribution_ViewerCertificate struct {
+type Distribution_ViewerCertificate[T any] struct {
 
 	// AcmCertificateArn AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Distribution_ViewerCertificate struct {
 	// CloudFrontDefaultCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
-	CloudFrontDefaultCertificate *bool `json:"CloudFrontDefaultCertificate,omitempty"`
+	CloudFrontDefaultCertificate *T `json:"CloudFrontDefaultCertificate,omitempty"`
 
 	// IamCertificateId AWS CloudFormation Property
 	// Required: false
@@ -52,6 +52,6 @@ type Distribution_ViewerCertificate struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_ViewerCertificate) AWSCloudFormationType() string {
+func (r *Distribution_ViewerCertificate[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.ViewerCertificate"
 }

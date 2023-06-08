@@ -8,17 +8,17 @@ import (
 
 // ConfigurationSet_VdmOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.VdmOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-vdmoptions.html
-type ConfigurationSet_VdmOptions struct {
+type ConfigurationSet_VdmOptions[T any] struct {
 
 	// DashboardOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-vdmoptions.html#cfn-ses-configurationset-vdmoptions-dashboardoptions
-	DashboardOptions *ConfigurationSet_DashboardOptions `json:"DashboardOptions,omitempty"`
+	DashboardOptions *ConfigurationSet_DashboardOptions[any] `json:"DashboardOptions,omitempty"`
 
 	// GuardianOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-vdmoptions.html#cfn-ses-configurationset-vdmoptions-guardianoptions
-	GuardianOptions *ConfigurationSet_GuardianOptions `json:"GuardianOptions,omitempty"`
+	GuardianOptions *ConfigurationSet_GuardianOptions[any] `json:"GuardianOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type ConfigurationSet_VdmOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ConfigurationSet_VdmOptions) AWSCloudFormationType() string {
+func (r *ConfigurationSet_VdmOptions[any]) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSet.VdmOptions"
 }

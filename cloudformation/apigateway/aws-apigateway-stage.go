@@ -12,17 +12,17 @@ import (
 
 // Stage AWS CloudFormation Resource (AWS::ApiGateway::Stage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
-type Stage struct {
+type Stage[T any] struct {
 
 	// AccessLogSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting
-	AccessLogSetting *Stage_AccessLogSetting `json:"AccessLogSetting,omitempty"`
+	AccessLogSetting *Stage_AccessLogSetting[any] `json:"AccessLogSetting,omitempty"`
 
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
-	CacheClusterEnabled *bool `json:"CacheClusterEnabled,omitempty"`
+	CacheClusterEnabled *T `json:"CacheClusterEnabled,omitempty"`
 
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Stage struct {
 	// CanarySetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting
-	CanarySetting *Stage_CanarySetting `json:"CanarySetting,omitempty"`
+	CanarySetting *Stage_CanarySetting[any] `json:"CanarySetting,omitempty"`
 
 	// ClientCertificateId AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Stage struct {
 	// MethodSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings
-	MethodSettings []Stage_MethodSetting `json:"MethodSettings,omitempty"`
+	MethodSettings []Stage_MethodSetting[any] `json:"MethodSettings,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: true
@@ -77,7 +77,7 @@ type Stage struct {
 	// TracingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled
-	TracingEnabled *bool `json:"TracingEnabled,omitempty"`
+	TracingEnabled *T `json:"TracingEnabled,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
@@ -101,14 +101,15 @@ type Stage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Stage) AWSCloudFormationType() string {
+func (r *Stage[any]) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Stage"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Stage) MarshalJSON() ([]byte, error) {
-	type Properties Stage
+func (r Stage[any]) MarshalJSON() ([]byte, error) {
+	type Properties Stage[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -130,8 +131,9 @@ func (r Stage) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Stage) UnmarshalJSON(b []byte) error {
-	type Properties Stage
+func (r *Stage[any]) UnmarshalJSON(b []byte) error {
+	type Properties Stage[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -151,7 +153,7 @@ func (r *Stage) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Stage(*res.Properties)
+		*r = Stage[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

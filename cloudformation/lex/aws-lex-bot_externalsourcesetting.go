@@ -8,12 +8,12 @@ import (
 
 // Bot_ExternalSourceSetting AWS CloudFormation Resource (AWS::Lex::Bot.ExternalSourceSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html
-type Bot_ExternalSourceSetting struct {
+type Bot_ExternalSourceSetting[T any] struct {
 
 	// GrammarSlotTypeSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html#cfn-lex-bot-externalsourcesetting-grammarslottypesetting
-	GrammarSlotTypeSetting *Bot_GrammarSlotTypeSetting `json:"GrammarSlotTypeSetting,omitempty"`
+	GrammarSlotTypeSetting *Bot_GrammarSlotTypeSetting[any] `json:"GrammarSlotTypeSetting,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Bot_ExternalSourceSetting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bot_ExternalSourceSetting) AWSCloudFormationType() string {
+func (r *Bot_ExternalSourceSetting[any]) AWSCloudFormationType() string {
 	return "AWS::Lex::Bot.ExternalSourceSetting"
 }

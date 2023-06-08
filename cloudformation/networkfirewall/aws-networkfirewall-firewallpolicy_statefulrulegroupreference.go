@@ -8,17 +8,17 @@ import (
 
 // FirewallPolicy_StatefulRuleGroupReference AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupreference.html
-type FirewallPolicy_StatefulRuleGroupReference struct {
+type FirewallPolicy_StatefulRuleGroupReference[T any] struct {
 
 	// Override AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statefulrulegroupreference-override
-	Override *FirewallPolicy_StatefulRuleGroupOverride `json:"Override,omitempty"`
+	Override *FirewallPolicy_StatefulRuleGroupOverride[any] `json:"Override,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statefulrulegroupreference-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *T `json:"Priority,omitempty"`
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type FirewallPolicy_StatefulRuleGroupReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *FirewallPolicy_StatefulRuleGroupReference) AWSCloudFormationType() string {
+func (r *FirewallPolicy_StatefulRuleGroupReference[any]) AWSCloudFormationType() string {
 	return "AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupReference"
 }

@@ -8,7 +8,7 @@ import (
 
 // JobDefinition_Secret AWS CloudFormation Resource (AWS::Batch::JobDefinition.Secret)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-secret.html
-type JobDefinition_Secret struct {
+type JobDefinition_Secret[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type JobDefinition_Secret struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_Secret) AWSCloudFormationType() string {
+func (r *JobDefinition_Secret[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Secret"
 }

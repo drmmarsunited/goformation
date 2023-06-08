@@ -8,7 +8,7 @@ import (
 
 // Instance_LaunchTemplateSpecification AWS CloudFormation Resource (AWS::EC2::Instance.LaunchTemplateSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html
-type Instance_LaunchTemplateSpecification struct {
+type Instance_LaunchTemplateSpecification[T any] struct {
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Instance_LaunchTemplateSpecification struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Instance_LaunchTemplateSpecification) AWSCloudFormationType() string {
+func (r *Instance_LaunchTemplateSpecification[any]) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.LaunchTemplateSpecification"
 }

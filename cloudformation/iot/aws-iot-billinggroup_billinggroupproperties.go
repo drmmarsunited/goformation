@@ -8,7 +8,7 @@ import (
 
 // BillingGroup_BillingGroupProperties AWS CloudFormation Resource (AWS::IoT::BillingGroup.BillingGroupProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-billinggroup-billinggroupproperties.html
-type BillingGroup_BillingGroupProperties struct {
+type BillingGroup_BillingGroupProperties[T any] struct {
 
 	// BillingGroupDescription AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type BillingGroup_BillingGroupProperties struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *BillingGroup_BillingGroupProperties) AWSCloudFormationType() string {
+func (r *BillingGroup_BillingGroupProperties[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::BillingGroup.BillingGroupProperties"
 }

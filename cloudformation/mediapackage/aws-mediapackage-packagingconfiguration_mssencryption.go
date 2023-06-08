@@ -8,12 +8,12 @@ import (
 
 // PackagingConfiguration_MssEncryption AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.MssEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssencryption.html
-type PackagingConfiguration_MssEncryption struct {
+type PackagingConfiguration_MssEncryption[T any] struct {
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssencryption.html#cfn-mediapackage-packagingconfiguration-mssencryption-spekekeyprovider
-	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider `json:"SpekeKeyProvider"`
+	SpekeKeyProvider *PackagingConfiguration_SpekeKeyProvider[any] `json:"SpekeKeyProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type PackagingConfiguration_MssEncryption struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *PackagingConfiguration_MssEncryption) AWSCloudFormationType() string {
+func (r *PackagingConfiguration_MssEncryption[any]) AWSCloudFormationType() string {
 	return "AWS::MediaPackage::PackagingConfiguration.MssEncryption"
 }

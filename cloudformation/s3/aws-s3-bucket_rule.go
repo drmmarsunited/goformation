@@ -8,12 +8,12 @@ import (
 
 // Bucket_Rule AWS CloudFormation Resource (AWS::S3::Bucket.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
-type Bucket_Rule struct {
+type Bucket_Rule[T any] struct {
 
 	// AbortIncompleteMultipartUpload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-abortincompletemultipartupload
-	AbortIncompleteMultipartUpload *Bucket_AbortIncompleteMultipartUpload `json:"AbortIncompleteMultipartUpload,omitempty"`
+	AbortIncompleteMultipartUpload *Bucket_AbortIncompleteMultipartUpload[any] `json:"AbortIncompleteMultipartUpload,omitempty"`
 
 	// ExpirationDate AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Bucket_Rule struct {
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationindays
-	ExpirationInDays *int `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *T `json:"ExpirationInDays,omitempty"`
 
 	// ExpiredObjectDeleteMarker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-expiredobjectdeletemarker
-	ExpiredObjectDeleteMarker *bool `json:"ExpiredObjectDeleteMarker,omitempty"`
+	ExpiredObjectDeleteMarker *T `json:"ExpiredObjectDeleteMarker,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -38,32 +38,32 @@ type Bucket_Rule struct {
 	// NoncurrentVersionExpiration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration
-	NoncurrentVersionExpiration *Bucket_NoncurrentVersionExpiration `json:"NoncurrentVersionExpiration,omitempty"`
+	NoncurrentVersionExpiration *Bucket_NoncurrentVersionExpiration[any] `json:"NoncurrentVersionExpiration,omitempty"`
 
 	// NoncurrentVersionExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays
-	NoncurrentVersionExpirationInDays *int `json:"NoncurrentVersionExpirationInDays,omitempty"`
+	NoncurrentVersionExpirationInDays *T `json:"NoncurrentVersionExpirationInDays,omitempty"`
 
 	// NoncurrentVersionTransition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition
-	NoncurrentVersionTransition *Bucket_NoncurrentVersionTransition `json:"NoncurrentVersionTransition,omitempty"`
+	NoncurrentVersionTransition *Bucket_NoncurrentVersionTransition[any] `json:"NoncurrentVersionTransition,omitempty"`
 
 	// NoncurrentVersionTransitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions
-	NoncurrentVersionTransitions []Bucket_NoncurrentVersionTransition `json:"NoncurrentVersionTransitions,omitempty"`
+	NoncurrentVersionTransitions []Bucket_NoncurrentVersionTransition[any] `json:"NoncurrentVersionTransitions,omitempty"`
 
 	// ObjectSizeGreaterThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizegreaterthan
-	ObjectSizeGreaterThan *int64 `json:"ObjectSizeGreaterThan,omitempty"`
+	ObjectSizeGreaterThan *T `json:"ObjectSizeGreaterThan,omitempty"`
 
 	// ObjectSizeLessThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizelessthan
-	ObjectSizeLessThan *int64 `json:"ObjectSizeLessThan,omitempty"`
+	ObjectSizeLessThan *T `json:"ObjectSizeLessThan,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
@@ -78,17 +78,17 @@ type Bucket_Rule struct {
 	// TagFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-tagfilters
-	TagFilters []Bucket_TagFilter `json:"TagFilters,omitempty"`
+	TagFilters []Bucket_TagFilter[any] `json:"TagFilters,omitempty"`
 
 	// Transition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transition
-	Transition *Bucket_Transition `json:"Transition,omitempty"`
+	Transition *Bucket_Transition[any] `json:"Transition,omitempty"`
 
 	// Transitions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transitions
-	Transitions []Bucket_Transition `json:"Transitions,omitempty"`
+	Transitions []Bucket_Transition[any] `json:"Transitions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -107,6 +107,6 @@ type Bucket_Rule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Bucket_Rule) AWSCloudFormationType() string {
+func (r *Bucket_Rule[any]) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Rule"
 }

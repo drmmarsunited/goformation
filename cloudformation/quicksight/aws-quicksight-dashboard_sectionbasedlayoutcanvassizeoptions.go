@@ -8,12 +8,12 @@ import (
 
 // Dashboard_SectionBasedLayoutCanvasSizeOptions AWS CloudFormation Resource (AWS::QuickSight::Dashboard.SectionBasedLayoutCanvasSizeOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutcanvassizeoptions.html
-type Dashboard_SectionBasedLayoutCanvasSizeOptions struct {
+type Dashboard_SectionBasedLayoutCanvasSizeOptions[T any] struct {
 
 	// PaperCanvasSizeOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutcanvassizeoptions.html#cfn-quicksight-dashboard-sectionbasedlayoutcanvassizeoptions-papercanvassizeoptions
-	PaperCanvasSizeOptions *Dashboard_SectionBasedLayoutPaperCanvasSizeOptions `json:"PaperCanvasSizeOptions,omitempty"`
+	PaperCanvasSizeOptions *Dashboard_SectionBasedLayoutPaperCanvasSizeOptions[any] `json:"PaperCanvasSizeOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Dashboard_SectionBasedLayoutCanvasSizeOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_SectionBasedLayoutCanvasSizeOptions) AWSCloudFormationType() string {
+func (r *Dashboard_SectionBasedLayoutCanvasSizeOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.SectionBasedLayoutCanvasSizeOptions"
 }

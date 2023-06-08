@@ -8,7 +8,7 @@ import (
 
 // DataSource_DataSourceVpcConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.DataSourceVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcevpcconfiguration.html
-type DataSource_DataSourceVpcConfiguration struct {
+type DataSource_DataSourceVpcConfiguration[T any] struct {
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type DataSource_DataSourceVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_DataSourceVpcConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_DataSourceVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.DataSourceVpcConfiguration"
 }

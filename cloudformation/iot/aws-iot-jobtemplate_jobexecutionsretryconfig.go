@@ -8,12 +8,12 @@ import (
 
 // JobTemplate_JobExecutionsRetryConfig AWS CloudFormation Resource (AWS::IoT::JobTemplate.JobExecutionsRetryConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsretryconfig.html
-type JobTemplate_JobExecutionsRetryConfig struct {
+type JobTemplate_JobExecutionsRetryConfig[T any] struct {
 
 	// RetryCriteriaList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsretryconfig.html#cfn-iot-jobtemplate-jobexecutionsretryconfig-retrycriterialist
-	RetryCriteriaList []JobTemplate_RetryCriteria `json:"RetryCriteriaList,omitempty"`
+	RetryCriteriaList []JobTemplate_RetryCriteria[any] `json:"RetryCriteriaList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobTemplate_JobExecutionsRetryConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobTemplate_JobExecutionsRetryConfig) AWSCloudFormationType() string {
+func (r *JobTemplate_JobExecutionsRetryConfig[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::JobTemplate.JobExecutionsRetryConfig"
 }

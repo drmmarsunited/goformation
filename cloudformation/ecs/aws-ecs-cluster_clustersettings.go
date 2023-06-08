@@ -8,7 +8,7 @@ import (
 
 // Cluster_ClusterSettings AWS CloudFormation Resource (AWS::ECS::Cluster.ClusterSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-clustersettings.html
-type Cluster_ClusterSettings struct {
+type Cluster_ClusterSettings[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type Cluster_ClusterSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Cluster_ClusterSettings) AWSCloudFormationType() string {
+func (r *Cluster_ClusterSettings[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Cluster.ClusterSettings"
 }

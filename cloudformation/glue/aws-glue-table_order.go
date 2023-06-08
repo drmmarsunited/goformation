@@ -8,7 +8,7 @@ import (
 
 // Table_Order AWS CloudFormation Resource (AWS::Glue::Table.Order)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html
-type Table_Order struct {
+type Table_Order[T any] struct {
 
 	// Column AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Table_Order struct {
 	// SortOrder AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-sortorder
-	SortOrder int `json:"SortOrder"`
+	SortOrder T `json:"SortOrder"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Table_Order struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Table_Order) AWSCloudFormationType() string {
+func (r *Table_Order[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.Order"
 }

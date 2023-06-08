@@ -8,7 +8,7 @@ import (
 
 // RuleGroup_FieldToMatch AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html
-type RuleGroup_FieldToMatch struct {
+type RuleGroup_FieldToMatch[T any] struct {
 
 	// AllQueryArguments AWS CloudFormation Property
 	// Required: false
@@ -18,22 +18,22 @@ type RuleGroup_FieldToMatch struct {
 	// Body AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-body
-	Body *RuleGroup_Body `json:"Body,omitempty"`
+	Body *RuleGroup_Body[any] `json:"Body,omitempty"`
 
 	// Cookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-cookies
-	Cookies *RuleGroup_Cookies `json:"Cookies,omitempty"`
+	Cookies *RuleGroup_Cookies[any] `json:"Cookies,omitempty"`
 
 	// Headers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-headers
-	Headers *RuleGroup_Headers `json:"Headers,omitempty"`
+	Headers *RuleGroup_Headers[any] `json:"Headers,omitempty"`
 
 	// JsonBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-jsonbody
-	JsonBody *RuleGroup_JsonBody `json:"JsonBody,omitempty"`
+	JsonBody *RuleGroup_JsonBody[any] `json:"JsonBody,omitempty"`
 
 	// Method AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type RuleGroup_FieldToMatch struct {
 	// SingleHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-singleheader
-	SingleHeader *RuleGroup_SingleHeader `json:"SingleHeader,omitempty"`
+	SingleHeader *RuleGroup_SingleHeader[any] `json:"SingleHeader,omitempty"`
 
 	// SingleQueryArgument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-singlequeryargument
-	SingleQueryArgument *RuleGroup_SingleQueryArgument `json:"SingleQueryArgument,omitempty"`
+	SingleQueryArgument *RuleGroup_SingleQueryArgument[any] `json:"SingleQueryArgument,omitempty"`
 
 	// UriPath AWS CloudFormation Property
 	// Required: false
@@ -77,6 +77,6 @@ type RuleGroup_FieldToMatch struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RuleGroup_FieldToMatch) AWSCloudFormationType() string {
+func (r *RuleGroup_FieldToMatch[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::RuleGroup.FieldToMatch"
 }

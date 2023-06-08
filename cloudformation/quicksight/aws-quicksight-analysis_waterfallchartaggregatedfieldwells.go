@@ -8,22 +8,22 @@ import (
 
 // Analysis_WaterfallChartAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Analysis.WaterfallChartAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartaggregatedfieldwells.html
-type Analysis_WaterfallChartAggregatedFieldWells struct {
+type Analysis_WaterfallChartAggregatedFieldWells[T any] struct {
 
 	// Breakdowns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartaggregatedfieldwells.html#cfn-quicksight-analysis-waterfallchartaggregatedfieldwells-breakdowns
-	Breakdowns []Analysis_DimensionField `json:"Breakdowns,omitempty"`
+	Breakdowns []Analysis_DimensionField[any] `json:"Breakdowns,omitempty"`
 
 	// Categories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartaggregatedfieldwells.html#cfn-quicksight-analysis-waterfallchartaggregatedfieldwells-categories
-	Categories []Analysis_DimensionField `json:"Categories,omitempty"`
+	Categories []Analysis_DimensionField[any] `json:"Categories,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartaggregatedfieldwells.html#cfn-quicksight-analysis-waterfallchartaggregatedfieldwells-values
-	Values []Analysis_MeasureField `json:"Values,omitempty"`
+	Values []Analysis_MeasureField[any] `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Analysis_WaterfallChartAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_WaterfallChartAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Analysis_WaterfallChartAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.WaterfallChartAggregatedFieldWells"
 }

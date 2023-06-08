@@ -8,7 +8,7 @@ import (
 
 // ListenerRule_HttpRequestMethodConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html
-type ListenerRule_HttpRequestMethodConfig struct {
+type ListenerRule_HttpRequestMethodConfig[T any] struct {
 
 	// Values AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type ListenerRule_HttpRequestMethodConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ListenerRule_HttpRequestMethodConfig) AWSCloudFormationType() string {
+func (r *ListenerRule_HttpRequestMethodConfig[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig"
 }

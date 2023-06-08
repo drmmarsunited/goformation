@@ -8,7 +8,7 @@ import (
 
 // Function_Environment AWS CloudFormation Resource (AWS::Lambda::Function.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html
-type Function_Environment struct {
+type Function_Environment[T any] struct {
 
 	// Variables AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Function_Environment struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Function_Environment) AWSCloudFormationType() string {
+func (r *Function_Environment[any]) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.Environment"
 }

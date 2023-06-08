@@ -8,12 +8,12 @@ import (
 
 // Rule_BatchRetryStrategy AWS CloudFormation Resource (AWS::Events::Rule.BatchRetryStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchretrystrategy.html
-type Rule_BatchRetryStrategy struct {
+type Rule_BatchRetryStrategy[T any] struct {
 
 	// Attempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchretrystrategy.html#cfn-events-rule-batchretrystrategy-attempts
-	Attempts *int `json:"Attempts,omitempty"`
+	Attempts *T `json:"Attempts,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Rule_BatchRetryStrategy struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Rule_BatchRetryStrategy) AWSCloudFormationType() string {
+func (r *Rule_BatchRetryStrategy[any]) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.BatchRetryStrategy"
 }

@@ -8,12 +8,12 @@ import (
 
 // DataSource_WorkDocsConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.WorkDocsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html
-type DataSource_WorkDocsConfiguration struct {
+type DataSource_WorkDocsConfiguration[T any] struct {
 
 	// CrawlComments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-crawlcomments
-	CrawlComments *bool `json:"CrawlComments,omitempty"`
+	CrawlComments *T `json:"CrawlComments,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSource_WorkDocsConfiguration struct {
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-fieldmappings
-	FieldMappings []DataSource_DataSourceToIndexFieldMapping `json:"FieldMappings,omitempty"`
+	FieldMappings []DataSource_DataSourceToIndexFieldMapping[any] `json:"FieldMappings,omitempty"`
 
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type DataSource_WorkDocsConfiguration struct {
 	// UseChangeLog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-usechangelog
-	UseChangeLog *bool `json:"UseChangeLog,omitempty"`
+	UseChangeLog *T `json:"UseChangeLog,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type DataSource_WorkDocsConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DataSource_WorkDocsConfiguration) AWSCloudFormationType() string {
+func (r *DataSource_WorkDocsConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::Kendra::DataSource.WorkDocsConfiguration"
 }

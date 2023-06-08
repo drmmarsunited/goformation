@@ -8,7 +8,7 @@ import (
 
 // Config_TrackingConfig AWS CloudFormation Resource (AWS::GroundStation::Config.TrackingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-trackingconfig.html
-type Config_TrackingConfig struct {
+type Config_TrackingConfig[T any] struct {
 
 	// Autotrack AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Config_TrackingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Config_TrackingConfig) AWSCloudFormationType() string {
+func (r *Config_TrackingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::GroundStation::Config.TrackingConfig"
 }

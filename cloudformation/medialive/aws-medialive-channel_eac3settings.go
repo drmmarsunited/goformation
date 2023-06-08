@@ -8,7 +8,7 @@ import (
 
 // Channel_Eac3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Eac3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html
-type Channel_Eac3Settings struct {
+type Channel_Eac3Settings[T any] struct {
 
 	// AttenuationControl AWS CloudFormation Property
 	// Required: false
@@ -18,7 +18,7 @@ type Channel_Eac3Settings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-bitrate
-	Bitrate *float64 `json:"Bitrate,omitempty"`
+	Bitrate *T `json:"Bitrate,omitempty"`
 
 	// BitstreamMode AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_Eac3Settings struct {
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-dialnorm
-	Dialnorm *int `json:"Dialnorm,omitempty"`
+	Dialnorm *T `json:"Dialnorm,omitempty"`
 
 	// DrcLine AWS CloudFormation Property
 	// Required: false
@@ -63,22 +63,22 @@ type Channel_Eac3Settings struct {
 	// LoRoCenterMixLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lorocentermixlevel
-	LoRoCenterMixLevel *float64 `json:"LoRoCenterMixLevel,omitempty"`
+	LoRoCenterMixLevel *T `json:"LoRoCenterMixLevel,omitempty"`
 
 	// LoRoSurroundMixLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lorosurroundmixlevel
-	LoRoSurroundMixLevel *float64 `json:"LoRoSurroundMixLevel,omitempty"`
+	LoRoSurroundMixLevel *T `json:"LoRoSurroundMixLevel,omitempty"`
 
 	// LtRtCenterMixLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-ltrtcentermixlevel
-	LtRtCenterMixLevel *float64 `json:"LtRtCenterMixLevel,omitempty"`
+	LtRtCenterMixLevel *T `json:"LtRtCenterMixLevel,omitempty"`
 
 	// LtRtSurroundMixLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-ltrtsurroundmixlevel
-	LtRtSurroundMixLevel *float64 `json:"LtRtSurroundMixLevel,omitempty"`
+	LtRtSurroundMixLevel *T `json:"LtRtSurroundMixLevel,omitempty"`
 
 	// MetadataControl AWS CloudFormation Property
 	// Required: false
@@ -127,6 +127,6 @@ type Channel_Eac3Settings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_Eac3Settings) AWSCloudFormationType() string {
+func (r *Channel_Eac3Settings[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.Eac3Settings"
 }

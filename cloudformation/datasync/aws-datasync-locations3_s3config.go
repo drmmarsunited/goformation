@@ -8,7 +8,7 @@ import (
 
 // LocationS3_S3Config AWS CloudFormation Resource (AWS::DataSync::LocationS3.S3Config)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locations3-s3config.html
-type LocationS3_S3Config struct {
+type LocationS3_S3Config[T any] struct {
 
 	// BucketAccessRoleArn AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LocationS3_S3Config struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LocationS3_S3Config) AWSCloudFormationType() string {
+func (r *LocationS3_S3Config[any]) AWSCloudFormationType() string {
 	return "AWS::DataSync::LocationS3.S3Config"
 }

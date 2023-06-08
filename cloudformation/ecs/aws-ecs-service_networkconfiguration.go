@@ -8,12 +8,12 @@ import (
 
 // Service_NetworkConfiguration AWS CloudFormation Resource (AWS::ECS::Service.NetworkConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html
-type Service_NetworkConfiguration struct {
+type Service_NetworkConfiguration[T any] struct {
 
 	// AwsvpcConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration
-	AwsvpcConfiguration *Service_AwsVpcConfiguration `json:"AwsvpcConfiguration,omitempty"`
+	AwsvpcConfiguration *Service_AwsVpcConfiguration[any] `json:"AwsvpcConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Service_NetworkConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Service_NetworkConfiguration) AWSCloudFormationType() string {
+func (r *Service_NetworkConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.NetworkConfiguration"
 }

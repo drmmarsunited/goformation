@@ -8,7 +8,7 @@ import (
 
 // Input_InputDeviceRequest AWS CloudFormation Resource (AWS::MediaLive::Input.InputDeviceRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicerequest.html
-type Input_InputDeviceRequest struct {
+type Input_InputDeviceRequest[T any] struct {
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Input_InputDeviceRequest struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Input_InputDeviceRequest) AWSCloudFormationType() string {
+func (r *Input_InputDeviceRequest[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Input.InputDeviceRequest"
 }

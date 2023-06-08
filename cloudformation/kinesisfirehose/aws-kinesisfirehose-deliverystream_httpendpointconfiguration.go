@@ -8,7 +8,7 @@ import (
 
 // DeliveryStream_HttpEndpointConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HttpEndpointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointconfiguration.html
-type DeliveryStream_HttpEndpointConfiguration struct {
+type DeliveryStream_HttpEndpointConfiguration[T any] struct {
 
 	// AccessKey AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type DeliveryStream_HttpEndpointConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *DeliveryStream_HttpEndpointConfiguration) AWSCloudFormationType() string {
+func (r *DeliveryStream_HttpEndpointConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.HttpEndpointConfiguration"
 }

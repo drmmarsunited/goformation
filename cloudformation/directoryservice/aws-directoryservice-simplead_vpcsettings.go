@@ -8,7 +8,7 @@ import (
 
 // SimpleAD_VpcSettings AWS CloudFormation Resource (AWS::DirectoryService::SimpleAD.VpcSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html
-type SimpleAD_VpcSettings struct {
+type SimpleAD_VpcSettings[T any] struct {
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type SimpleAD_VpcSettings struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *SimpleAD_VpcSettings) AWSCloudFormationType() string {
+func (r *SimpleAD_VpcSettings[any]) AWSCloudFormationType() string {
 	return "AWS::DirectoryService::SimpleAD.VpcSettings"
 }

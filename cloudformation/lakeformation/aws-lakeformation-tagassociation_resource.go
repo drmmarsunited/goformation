@@ -8,7 +8,7 @@ import (
 
 // TagAssociation_Resource AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation.Resource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html
-type TagAssociation_Resource struct {
+type TagAssociation_Resource[T any] struct {
 
 	// Catalog AWS CloudFormation Property
 	// Required: false
@@ -18,17 +18,17 @@ type TagAssociation_Resource struct {
 	// Database AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html#cfn-lakeformation-tagassociation-resource-database
-	Database *TagAssociation_DatabaseResource `json:"Database,omitempty"`
+	Database *TagAssociation_DatabaseResource[any] `json:"Database,omitempty"`
 
 	// Table AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html#cfn-lakeformation-tagassociation-resource-table
-	Table *TagAssociation_TableResource `json:"Table,omitempty"`
+	Table *TagAssociation_TableResource[any] `json:"Table,omitempty"`
 
 	// TableWithColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html#cfn-lakeformation-tagassociation-resource-tablewithcolumns
-	TableWithColumns *TagAssociation_TableWithColumnsResource `json:"TableWithColumns,omitempty"`
+	TableWithColumns *TagAssociation_TableWithColumnsResource[any] `json:"TableWithColumns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type TagAssociation_Resource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TagAssociation_Resource) AWSCloudFormationType() string {
+func (r *TagAssociation_Resource[any]) AWSCloudFormationType() string {
 	return "AWS::LakeFormation::TagAssociation.Resource"
 }

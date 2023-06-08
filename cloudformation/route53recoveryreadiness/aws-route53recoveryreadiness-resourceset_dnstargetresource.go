@@ -8,7 +8,7 @@ import (
 
 // ResourceSet_DNSTargetResource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.DNSTargetResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html
-type ResourceSet_DNSTargetResource struct {
+type ResourceSet_DNSTargetResource[T any] struct {
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ResourceSet_DNSTargetResource struct {
 	// TargetResource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-dnstargetresource.html#cfn-route53recoveryreadiness-resourceset-dnstargetresource-targetresource
-	TargetResource *ResourceSet_TargetResource `json:"TargetResource,omitempty"`
+	TargetResource *ResourceSet_TargetResource[any] `json:"TargetResource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -52,6 +52,6 @@ type ResourceSet_DNSTargetResource struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResourceSet_DNSTargetResource) AWSCloudFormationType() string {
+func (r *ResourceSet_DNSTargetResource[any]) AWSCloudFormationType() string {
 	return "AWS::Route53RecoveryReadiness::ResourceSet.DNSTargetResource"
 }

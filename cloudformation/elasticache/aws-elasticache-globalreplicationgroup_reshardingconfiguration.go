@@ -8,7 +8,7 @@ import (
 
 // GlobalReplicationGroup_ReshardingConfiguration AWS CloudFormation Resource (AWS::ElastiCache::GlobalReplicationGroup.ReshardingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-reshardingconfiguration.html
-type GlobalReplicationGroup_ReshardingConfiguration struct {
+type GlobalReplicationGroup_ReshardingConfiguration[T any] struct {
 
 	// NodeGroupId AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type GlobalReplicationGroup_ReshardingConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GlobalReplicationGroup_ReshardingConfiguration) AWSCloudFormationType() string {
+func (r *GlobalReplicationGroup_ReshardingConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::GlobalReplicationGroup.ReshardingConfiguration"
 }

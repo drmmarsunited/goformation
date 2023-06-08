@@ -8,17 +8,17 @@ import (
 
 // EndpointConfig_DataCaptureConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.DataCaptureConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html
-type EndpointConfig_DataCaptureConfig struct {
+type EndpointConfig_DataCaptureConfig[T any] struct {
 
 	// CaptureContentTypeHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader
-	CaptureContentTypeHeader *EndpointConfig_CaptureContentTypeHeader `json:"CaptureContentTypeHeader,omitempty"`
+	CaptureContentTypeHeader *EndpointConfig_CaptureContentTypeHeader[any] `json:"CaptureContentTypeHeader,omitempty"`
 
 	// CaptureOptions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-captureoptions
-	CaptureOptions []EndpointConfig_CaptureOption `json:"CaptureOptions"`
+	CaptureOptions []EndpointConfig_CaptureOption[any] `json:"CaptureOptions"`
 
 	// DestinationS3Uri AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type EndpointConfig_DataCaptureConfig struct {
 	// EnableCapture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-enablecapture
-	EnableCapture *bool `json:"EnableCapture,omitempty"`
+	EnableCapture *T `json:"EnableCapture,omitempty"`
 
 	// InitialSamplingPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-initialsamplingpercentage
-	InitialSamplingPercentage int `json:"InitialSamplingPercentage"`
+	InitialSamplingPercentage T `json:"InitialSamplingPercentage"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -57,6 +57,6 @@ type EndpointConfig_DataCaptureConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EndpointConfig_DataCaptureConfig) AWSCloudFormationType() string {
+func (r *EndpointConfig_DataCaptureConfig[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::EndpointConfig.DataCaptureConfig"
 }

@@ -8,12 +8,12 @@ import (
 
 // RecordingConfiguration_DestinationConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration.DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-destinationconfiguration.html
-type RecordingConfiguration_DestinationConfiguration struct {
+type RecordingConfiguration_DestinationConfiguration[T any] struct {
 
 	// S3 AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-destinationconfiguration.html#cfn-ivs-recordingconfiguration-destinationconfiguration-s3
-	S3 *RecordingConfiguration_S3DestinationConfiguration `json:"S3"`
+	S3 *RecordingConfiguration_S3DestinationConfiguration[any] `json:"S3"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type RecordingConfiguration_DestinationConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordingConfiguration_DestinationConfiguration) AWSCloudFormationType() string {
+func (r *RecordingConfiguration_DestinationConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::IVS::RecordingConfiguration.DestinationConfiguration"
 }

@@ -8,7 +8,7 @@ import (
 
 // Recipe_ConditionExpression AWS CloudFormation Resource (AWS::DataBrew::Recipe.ConditionExpression)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html
-type Recipe_ConditionExpression struct {
+type Recipe_ConditionExpression[T any] struct {
 
 	// Condition AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type Recipe_ConditionExpression struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Recipe_ConditionExpression) AWSCloudFormationType() string {
+func (r *Recipe_ConditionExpression[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Recipe.ConditionExpression"
 }

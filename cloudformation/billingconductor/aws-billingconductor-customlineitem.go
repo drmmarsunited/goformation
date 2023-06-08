@@ -12,7 +12,7 @@ import (
 
 // CustomLineItem AWS CloudFormation Resource (AWS::BillingConductor::CustomLineItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html
-type CustomLineItem struct {
+type CustomLineItem[T any] struct {
 
 	// BillingGroupArn AWS CloudFormation Property
 	// Required: true
@@ -22,12 +22,12 @@ type CustomLineItem struct {
 	// BillingPeriodRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-billingperiodrange
-	BillingPeriodRange *CustomLineItem_BillingPeriodRange `json:"BillingPeriodRange,omitempty"`
+	BillingPeriodRange *CustomLineItem_BillingPeriodRange[any] `json:"BillingPeriodRange,omitempty"`
 
 	// CustomLineItemChargeDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-customlineitemchargedetails
-	CustomLineItemChargeDetails *CustomLineItem_CustomLineItemChargeDetails `json:"CustomLineItemChargeDetails,omitempty"`
+	CustomLineItemChargeDetails *CustomLineItem_CustomLineItemChargeDetails[any] `json:"CustomLineItemChargeDetails,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type CustomLineItem struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *CustomLineItem) AWSCloudFormationType() string {
+func (r *CustomLineItem[any]) AWSCloudFormationType() string {
 	return "AWS::BillingConductor::CustomLineItem"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r CustomLineItem) MarshalJSON() ([]byte, error) {
-	type Properties CustomLineItem
+func (r CustomLineItem[any]) MarshalJSON() ([]byte, error) {
+	type Properties CustomLineItem[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r CustomLineItem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *CustomLineItem) UnmarshalJSON(b []byte) error {
-	type Properties CustomLineItem
+func (r *CustomLineItem[any]) UnmarshalJSON(b []byte) error {
+	type Properties CustomLineItem[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *CustomLineItem) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = CustomLineItem(*res.Properties)
+		*r = CustomLineItem[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

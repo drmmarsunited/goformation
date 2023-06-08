@@ -8,7 +8,7 @@ import (
 
 // Dashboard_DataSetReference AWS CloudFormation Resource (AWS::QuickSight::Dashboard.DataSetReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetreference.html
-type Dashboard_DataSetReference struct {
+type Dashboard_DataSetReference[T any] struct {
 
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Dashboard_DataSetReference struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_DataSetReference) AWSCloudFormationType() string {
+func (r *Dashboard_DataSetReference[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.DataSetReference"
 }

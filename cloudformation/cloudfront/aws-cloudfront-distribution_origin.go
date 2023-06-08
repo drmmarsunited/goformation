@@ -8,22 +8,22 @@ import (
 
 // Distribution_Origin AWS CloudFormation Resource (AWS::CloudFront::Distribution.Origin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
-type Distribution_Origin struct {
+type Distribution_Origin[T any] struct {
 
 	// ConnectionAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts
-	ConnectionAttempts *int `json:"ConnectionAttempts,omitempty"`
+	ConnectionAttempts *T `json:"ConnectionAttempts,omitempty"`
 
 	// ConnectionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout
-	ConnectionTimeout *int `json:"ConnectionTimeout,omitempty"`
+	ConnectionTimeout *T `json:"ConnectionTimeout,omitempty"`
 
 	// CustomOriginConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig
-	CustomOriginConfig *Distribution_CustomOriginConfig `json:"CustomOriginConfig,omitempty"`
+	CustomOriginConfig *Distribution_CustomOriginConfig[any] `json:"CustomOriginConfig,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type Distribution_Origin struct {
 	// OriginCustomHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders
-	OriginCustomHeaders []Distribution_OriginCustomHeader `json:"OriginCustomHeaders,omitempty"`
+	OriginCustomHeaders []Distribution_OriginCustomHeader[any] `json:"OriginCustomHeaders,omitempty"`
 
 	// OriginPath AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Distribution_Origin struct {
 	// OriginShield AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield
-	OriginShield *Distribution_OriginShield `json:"OriginShield,omitempty"`
+	OriginShield *Distribution_OriginShield[any] `json:"OriginShield,omitempty"`
 
 	// S3OriginConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig
-	S3OriginConfig *Distribution_S3OriginConfig `json:"S3OriginConfig,omitempty"`
+	S3OriginConfig *Distribution_S3OriginConfig[any] `json:"S3OriginConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -77,6 +77,6 @@ type Distribution_Origin struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Distribution_Origin) AWSCloudFormationType() string {
+func (r *Distribution_Origin[any]) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.Origin"
 }

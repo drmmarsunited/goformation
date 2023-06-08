@@ -12,17 +12,17 @@ import (
 
 // Job AWS CloudFormation Resource (AWS::DataBrew::Job)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html
-type Job struct {
+type Job[T any] struct {
 
 	// DataCatalogOutputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datacatalogoutputs
-	DataCatalogOutputs []Job_DataCatalogOutput `json:"DataCatalogOutputs,omitempty"`
+	DataCatalogOutputs []Job_DataCatalogOutput[any] `json:"DataCatalogOutputs,omitempty"`
 
 	// DatabaseOutputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-databaseoutputs
-	DatabaseOutputs []Job_DatabaseOutput `json:"DatabaseOutputs,omitempty"`
+	DatabaseOutputs []Job_DatabaseOutput[any] `json:"DatabaseOutputs,omitempty"`
 
 	// DatasetName AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Job struct {
 	// JobSample AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample
-	JobSample *Job_JobSample `json:"JobSample,omitempty"`
+	JobSample *Job_JobSample[any] `json:"JobSample,omitempty"`
 
 	// LogSubscription AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type Job struct {
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxcapacity
-	MaxCapacity *int `json:"MaxCapacity,omitempty"`
+	MaxCapacity *T `json:"MaxCapacity,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxretries
-	MaxRetries *int `json:"MaxRetries,omitempty"`
+	MaxRetries *T `json:"MaxRetries,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -67,17 +67,17 @@ type Job struct {
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputlocation
-	OutputLocation *Job_OutputLocation `json:"OutputLocation,omitempty"`
+	OutputLocation *Job_OutputLocation[any] `json:"OutputLocation,omitempty"`
 
 	// Outputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputs
-	Outputs []Job_Output `json:"Outputs,omitempty"`
+	Outputs []Job_Output[any] `json:"Outputs,omitempty"`
 
 	// ProfileConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-profileconfiguration
-	ProfileConfiguration *Job_ProfileConfiguration `json:"ProfileConfiguration,omitempty"`
+	ProfileConfiguration *Job_ProfileConfiguration[any] `json:"ProfileConfiguration,omitempty"`
 
 	// ProjectName AWS CloudFormation Property
 	// Required: false
@@ -87,7 +87,7 @@ type Job struct {
 	// Recipe AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-recipe
-	Recipe *Job_Recipe `json:"Recipe,omitempty"`
+	Recipe *Job_Recipe[any] `json:"Recipe,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
@@ -102,7 +102,7 @@ type Job struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -112,7 +112,7 @@ type Job struct {
 	// ValidationConfigurations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-validationconfigurations
-	ValidationConfigurations []Job_ValidationConfiguration `json:"ValidationConfigurations,omitempty"`
+	ValidationConfigurations []Job_ValidationConfiguration[any] `json:"ValidationConfigurations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -131,14 +131,15 @@ type Job struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Job) AWSCloudFormationType() string {
+func (r *Job[any]) AWSCloudFormationType() string {
 	return "AWS::DataBrew::Job"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Job) MarshalJSON() ([]byte, error) {
-	type Properties Job
+func (r Job[any]) MarshalJSON() ([]byte, error) {
+	type Properties Job[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -160,8 +161,9 @@ func (r Job) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Job) UnmarshalJSON(b []byte) error {
-	type Properties Job
+func (r *Job[any]) UnmarshalJSON(b []byte) error {
+	type Properties Job[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -181,7 +183,7 @@ func (r *Job) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Job(*res.Properties)
+		*r = Job[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

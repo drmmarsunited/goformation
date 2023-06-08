@@ -8,7 +8,7 @@ import (
 
 // Campaign_InAppMessageHeaderConfig AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageHeaderConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html
-type Campaign_InAppMessageHeaderConfig struct {
+type Campaign_InAppMessageHeaderConfig[T any] struct {
 
 	// Alignment AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Campaign_InAppMessageHeaderConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Campaign_InAppMessageHeaderConfig) AWSCloudFormationType() string {
+func (r *Campaign_InAppMessageHeaderConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Pinpoint::Campaign.InAppMessageHeaderConfig"
 }

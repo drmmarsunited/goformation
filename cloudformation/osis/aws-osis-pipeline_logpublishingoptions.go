@@ -8,17 +8,17 @@ import (
 
 // Pipeline_LogPublishingOptions AWS CloudFormation Resource (AWS::OSIS::Pipeline.LogPublishingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-logpublishingoptions.html
-type Pipeline_LogPublishingOptions struct {
+type Pipeline_LogPublishingOptions[T any] struct {
 
 	// CloudWatchLogDestination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-logpublishingoptions.html#cfn-osis-pipeline-logpublishingoptions-cloudwatchlogdestination
-	CloudWatchLogDestination *Pipeline_CloudWatchLogDestination `json:"CloudWatchLogDestination,omitempty"`
+	CloudWatchLogDestination *Pipeline_CloudWatchLogDestination[any] `json:"CloudWatchLogDestination,omitempty"`
 
 	// IsLoggingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-logpublishingoptions.html#cfn-osis-pipeline-logpublishingoptions-isloggingenabled
-	IsLoggingEnabled *bool `json:"IsLoggingEnabled,omitempty"`
+	IsLoggingEnabled *T `json:"IsLoggingEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Pipeline_LogPublishingOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipeline_LogPublishingOptions) AWSCloudFormationType() string {
+func (r *Pipeline_LogPublishingOptions[any]) AWSCloudFormationType() string {
 	return "AWS::OSIS::Pipeline.LogPublishingOptions"
 }

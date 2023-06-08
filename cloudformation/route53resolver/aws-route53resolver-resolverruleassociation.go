@@ -11,7 +11,7 @@ import (
 
 // ResolverRuleAssociation AWS CloudFormation Resource (AWS::Route53Resolver::ResolverRuleAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html
-type ResolverRuleAssociation struct {
+type ResolverRuleAssociation[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -45,14 +45,15 @@ type ResolverRuleAssociation struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ResolverRuleAssociation) AWSCloudFormationType() string {
+func (r *ResolverRuleAssociation[any]) AWSCloudFormationType() string {
 	return "AWS::Route53Resolver::ResolverRuleAssociation"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r ResolverRuleAssociation) MarshalJSON() ([]byte, error) {
-	type Properties ResolverRuleAssociation
+func (r ResolverRuleAssociation[any]) MarshalJSON() ([]byte, error) {
+	type Properties ResolverRuleAssociation[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -74,8 +75,9 @@ func (r ResolverRuleAssociation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *ResolverRuleAssociation) UnmarshalJSON(b []byte) error {
-	type Properties ResolverRuleAssociation
+func (r *ResolverRuleAssociation[any]) UnmarshalJSON(b []byte) error {
+	type Properties ResolverRuleAssociation[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -95,7 +97,7 @@ func (r *ResolverRuleAssociation) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = ResolverRuleAssociation(*res.Properties)
+		*r = ResolverRuleAssociation[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

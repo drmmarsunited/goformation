@@ -8,7 +8,7 @@ import (
 
 // Application_RecordColumn AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.RecordColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html
-type Application_RecordColumn struct {
+type Application_RecordColumn[T any] struct {
 
 	// Mapping AWS CloudFormation Property
 	// Required: false
@@ -42,6 +42,6 @@ type Application_RecordColumn struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_RecordColumn) AWSCloudFormationType() string {
+func (r *Application_RecordColumn[any]) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalyticsV2::Application.RecordColumn"
 }

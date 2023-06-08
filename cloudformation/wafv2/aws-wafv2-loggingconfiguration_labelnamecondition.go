@@ -8,7 +8,7 @@ import (
 
 // LoggingConfiguration_LabelNameCondition AWS CloudFormation Resource (AWS::WAFv2::LoggingConfiguration.LabelNameCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-labelnamecondition.html
-type LoggingConfiguration_LabelNameCondition struct {
+type LoggingConfiguration_LabelNameCondition[T any] struct {
 
 	// LabelName AWS CloudFormation Property
 	// Required: true
@@ -32,6 +32,6 @@ type LoggingConfiguration_LabelNameCondition struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoggingConfiguration_LabelNameCondition) AWSCloudFormationType() string {
+func (r *LoggingConfiguration_LabelNameCondition[any]) AWSCloudFormationType() string {
 	return "AWS::WAFv2::LoggingConfiguration.LabelNameCondition"
 }

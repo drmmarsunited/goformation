@@ -8,7 +8,7 @@ import (
 
 // GitHubRepository_S3 AWS CloudFormation Resource (AWS::CodeStar::GitHubRepository.S3)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html
-type GitHubRepository_S3 struct {
+type GitHubRepository_S3[T any] struct {
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
@@ -42,6 +42,6 @@ type GitHubRepository_S3 struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *GitHubRepository_S3) AWSCloudFormationType() string {
+func (r *GitHubRepository_S3[any]) AWSCloudFormationType() string {
 	return "AWS::CodeStar::GitHubRepository.S3"
 }

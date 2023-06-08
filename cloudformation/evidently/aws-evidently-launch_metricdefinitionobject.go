@@ -8,7 +8,7 @@ import (
 
 // Launch_MetricDefinitionObject AWS CloudFormation Resource (AWS::Evidently::Launch.MetricDefinitionObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-metricdefinitionobject.html
-type Launch_MetricDefinitionObject struct {
+type Launch_MetricDefinitionObject[T any] struct {
 
 	// EntityIdKey AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type Launch_MetricDefinitionObject struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Launch_MetricDefinitionObject) AWSCloudFormationType() string {
+func (r *Launch_MetricDefinitionObject[any]) AWSCloudFormationType() string {
 	return "AWS::Evidently::Launch.MetricDefinitionObject"
 }

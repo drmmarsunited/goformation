@@ -8,22 +8,22 @@ import (
 
 // ModelBiasJobDefinition_ModelBiasJobInput AWS CloudFormation Resource (AWS::SageMaker::ModelBiasJobDefinition.ModelBiasJobInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html
-type ModelBiasJobDefinition_ModelBiasJobInput struct {
+type ModelBiasJobDefinition_ModelBiasJobInput[T any] struct {
 
 	// BatchTransformInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-batchtransforminput
-	BatchTransformInput *ModelBiasJobDefinition_BatchTransformInput `json:"BatchTransformInput,omitempty"`
+	BatchTransformInput *ModelBiasJobDefinition_BatchTransformInput[any] `json:"BatchTransformInput,omitempty"`
 
 	// EndpointInput AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-endpointinput
-	EndpointInput *ModelBiasJobDefinition_EndpointInput `json:"EndpointInput,omitempty"`
+	EndpointInput *ModelBiasJobDefinition_EndpointInput[any] `json:"EndpointInput,omitempty"`
 
 	// GroundTruthS3Input AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-groundtruths3input
-	GroundTruthS3Input *ModelBiasJobDefinition_MonitoringGroundTruthS3Input `json:"GroundTruthS3Input"`
+	GroundTruthS3Input *ModelBiasJobDefinition_MonitoringGroundTruthS3Input[any] `json:"GroundTruthS3Input"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type ModelBiasJobDefinition_ModelBiasJobInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *ModelBiasJobDefinition_ModelBiasJobInput) AWSCloudFormationType() string {
+func (r *ModelBiasJobDefinition_ModelBiasJobInput[any]) AWSCloudFormationType() string {
 	return "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasJobInput"
 }

@@ -8,7 +8,7 @@ import (
 
 // Template_SheetElementConfigurationOverrides AWS CloudFormation Resource (AWS::QuickSight::Template.SheetElementConfigurationOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetelementconfigurationoverrides.html
-type Template_SheetElementConfigurationOverrides struct {
+type Template_SheetElementConfigurationOverrides[T any] struct {
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Template_SheetElementConfigurationOverrides struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_SheetElementConfigurationOverrides) AWSCloudFormationType() string {
+func (r *Template_SheetElementConfigurationOverrides[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.SheetElementConfigurationOverrides"
 }

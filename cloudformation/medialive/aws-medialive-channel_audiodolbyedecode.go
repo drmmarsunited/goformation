@@ -8,7 +8,7 @@ import (
 
 // Channel_AudioDolbyEDecode AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioDolbyEDecode)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodolbyedecode.html
-type Channel_AudioDolbyEDecode struct {
+type Channel_AudioDolbyEDecode[T any] struct {
 
 	// ProgramSelection AWS CloudFormation Property
 	// Required: false
@@ -32,6 +32,6 @@ type Channel_AudioDolbyEDecode struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Channel_AudioDolbyEDecode) AWSCloudFormationType() string {
+func (r *Channel_AudioDolbyEDecode[any]) AWSCloudFormationType() string {
 	return "AWS::MediaLive::Channel.AudioDolbyEDecode"
 }

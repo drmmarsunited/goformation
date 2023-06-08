@@ -8,7 +8,7 @@ import (
 
 // Analysis_FunnelChartDataLabelOptions AWS CloudFormation Resource (AWS::QuickSight::Analysis.FunnelChartDataLabelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartdatalabeloptions.html
-type Analysis_FunnelChartDataLabelOptions struct {
+type Analysis_FunnelChartDataLabelOptions[T any] struct {
 
 	// CategoryLabelVisibility AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Analysis_FunnelChartDataLabelOptions struct {
 	// LabelFontConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartdatalabeloptions.html#cfn-quicksight-analysis-funnelchartdatalabeloptions-labelfontconfiguration
-	LabelFontConfiguration *Analysis_FontConfiguration `json:"LabelFontConfiguration,omitempty"`
+	LabelFontConfiguration *Analysis_FontConfiguration[any] `json:"LabelFontConfiguration,omitempty"`
 
 	// MeasureDataLabelStyle AWS CloudFormation Property
 	// Required: false
@@ -62,6 +62,6 @@ type Analysis_FunnelChartDataLabelOptions struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analysis_FunnelChartDataLabelOptions) AWSCloudFormationType() string {
+func (r *Analysis_FunnelChartDataLabelOptions[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Analysis.FunnelChartDataLabelOptions"
 }

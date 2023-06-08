@@ -12,7 +12,7 @@ import (
 
 // EvaluationForm AWS CloudFormation Resource (AWS::Connect::EvaluationForm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html
-type EvaluationForm struct {
+type EvaluationForm[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type EvaluationForm struct {
 	// Items AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-items
-	Items []EvaluationForm_EvaluationFormBaseItem `json:"Items"`
+	Items []EvaluationForm_EvaluationFormBaseItem[any] `json:"Items"`
 
 	// ScoringStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-scoringstrategy
-	ScoringStrategy *EvaluationForm_ScoringStrategy `json:"ScoringStrategy,omitempty"`
+	ScoringStrategy *EvaluationForm_ScoringStrategy[any] `json:"ScoringStrategy,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
@@ -66,14 +66,15 @@ type EvaluationForm struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *EvaluationForm) AWSCloudFormationType() string {
+func (r *EvaluationForm[any]) AWSCloudFormationType() string {
 	return "AWS::Connect::EvaluationForm"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r EvaluationForm) MarshalJSON() ([]byte, error) {
-	type Properties EvaluationForm
+func (r EvaluationForm[any]) MarshalJSON() ([]byte, error) {
+	type Properties EvaluationForm[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -95,8 +96,9 @@ func (r EvaluationForm) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *EvaluationForm) UnmarshalJSON(b []byte) error {
-	type Properties EvaluationForm
+func (r *EvaluationForm[any]) UnmarshalJSON(b []byte) error {
+	type Properties EvaluationForm[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -116,7 +118,7 @@ func (r *EvaluationForm) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = EvaluationForm(*res.Properties)
+		*r = EvaluationForm[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

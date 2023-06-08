@@ -8,7 +8,7 @@ import (
 
 // RecordSet_CidrRoutingConfig AWS CloudFormation Resource (AWS::Route53::RecordSet.CidrRoutingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-cidrroutingconfig.html
-type RecordSet_CidrRoutingConfig struct {
+type RecordSet_CidrRoutingConfig[T any] struct {
 
 	// CollectionId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type RecordSet_CidrRoutingConfig struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *RecordSet_CidrRoutingConfig) AWSCloudFormationType() string {
+func (r *RecordSet_CidrRoutingConfig[any]) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSet.CidrRoutingConfig"
 }

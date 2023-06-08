@@ -8,7 +8,7 @@ import (
 
 // StudioComponent_ActiveDirectoryComputerAttribute AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.ActiveDirectoryComputerAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectorycomputerattribute.html
-type StudioComponent_ActiveDirectoryComputerAttribute struct {
+type StudioComponent_ActiveDirectoryComputerAttribute[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type StudioComponent_ActiveDirectoryComputerAttribute struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_ActiveDirectoryComputerAttribute) AWSCloudFormationType() string {
+func (r *StudioComponent_ActiveDirectoryComputerAttribute[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.ActiveDirectoryComputerAttribute"
 }

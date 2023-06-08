@@ -8,12 +8,12 @@ import (
 
 // Analyzer_ArchiveRule AWS CloudFormation Resource (AWS::AccessAnalyzer::Analyzer.ArchiveRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html
-type Analyzer_ArchiveRule struct {
+type Analyzer_ArchiveRule[T any] struct {
 
 	// Filter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html#cfn-accessanalyzer-analyzer-archiverule-filter
-	Filter []Analyzer_Filter `json:"Filter"`
+	Filter []Analyzer_Filter[any] `json:"Filter"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Analyzer_ArchiveRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Analyzer_ArchiveRule) AWSCloudFormationType() string {
+func (r *Analyzer_ArchiveRule[any]) AWSCloudFormationType() string {
 	return "AWS::AccessAnalyzer::Analyzer.ArchiveRule"
 }

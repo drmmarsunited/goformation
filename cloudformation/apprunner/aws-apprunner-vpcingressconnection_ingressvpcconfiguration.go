@@ -8,7 +8,7 @@ import (
 
 // VpcIngressConnection_IngressVpcConfiguration AWS CloudFormation Resource (AWS::AppRunner::VpcIngressConnection.IngressVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-vpcingressconnection-ingressvpcconfiguration.html
-type VpcIngressConnection_IngressVpcConfiguration struct {
+type VpcIngressConnection_IngressVpcConfiguration[T any] struct {
 
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type VpcIngressConnection_IngressVpcConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *VpcIngressConnection_IngressVpcConfiguration) AWSCloudFormationType() string {
+func (r *VpcIngressConnection_IngressVpcConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::AppRunner::VpcIngressConnection.IngressVpcConfiguration"
 }

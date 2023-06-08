@@ -8,7 +8,7 @@ import (
 
 // LoadBalancer_Policies AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.Policies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html
-type LoadBalancer_Policies struct {
+type LoadBalancer_Policies[T any] struct {
 
 	// Attributes AWS CloudFormation Property
 	// Required: true
@@ -52,6 +52,6 @@ type LoadBalancer_Policies struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LoadBalancer_Policies) AWSCloudFormationType() string {
+func (r *LoadBalancer_Policies[any]) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.Policies"
 }

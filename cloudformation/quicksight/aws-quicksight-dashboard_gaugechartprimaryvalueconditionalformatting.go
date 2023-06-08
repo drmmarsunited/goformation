@@ -8,17 +8,17 @@ import (
 
 // Dashboard_GaugeChartPrimaryValueConditionalFormatting AWS CloudFormation Resource (AWS::QuickSight::Dashboard.GaugeChartPrimaryValueConditionalFormatting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartprimaryvalueconditionalformatting.html
-type Dashboard_GaugeChartPrimaryValueConditionalFormatting struct {
+type Dashboard_GaugeChartPrimaryValueConditionalFormatting[T any] struct {
 
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartprimaryvalueconditionalformatting.html#cfn-quicksight-dashboard-gaugechartprimaryvalueconditionalformatting-icon
-	Icon *Dashboard_ConditionalFormattingIcon `json:"Icon,omitempty"`
+	Icon *Dashboard_ConditionalFormattingIcon[any] `json:"Icon,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartprimaryvalueconditionalformatting.html#cfn-quicksight-dashboard-gaugechartprimaryvalueconditionalformatting-textcolor
-	TextColor *Dashboard_ConditionalFormattingColor `json:"TextColor,omitempty"`
+	TextColor *Dashboard_ConditionalFormattingColor[any] `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_GaugeChartPrimaryValueConditionalFormatting struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_GaugeChartPrimaryValueConditionalFormatting) AWSCloudFormationType() string {
+func (r *Dashboard_GaugeChartPrimaryValueConditionalFormatting[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.GaugeChartPrimaryValueConditionalFormatting"
 }

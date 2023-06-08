@@ -8,27 +8,27 @@ import (
 
 // StudioComponent_StudioComponentConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.StudioComponentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html
-type StudioComponent_StudioComponentConfiguration struct {
+type StudioComponent_StudioComponentConfiguration[T any] struct {
 
 	// ActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-activedirectoryconfiguration
-	ActiveDirectoryConfiguration *StudioComponent_ActiveDirectoryConfiguration `json:"ActiveDirectoryConfiguration,omitempty"`
+	ActiveDirectoryConfiguration *StudioComponent_ActiveDirectoryConfiguration[any] `json:"ActiveDirectoryConfiguration,omitempty"`
 
 	// ComputeFarmConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-computefarmconfiguration
-	ComputeFarmConfiguration *StudioComponent_ComputeFarmConfiguration `json:"ComputeFarmConfiguration,omitempty"`
+	ComputeFarmConfiguration *StudioComponent_ComputeFarmConfiguration[any] `json:"ComputeFarmConfiguration,omitempty"`
 
 	// LicenseServiceConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-licenseserviceconfiguration
-	LicenseServiceConfiguration *StudioComponent_LicenseServiceConfiguration `json:"LicenseServiceConfiguration,omitempty"`
+	LicenseServiceConfiguration *StudioComponent_LicenseServiceConfiguration[any] `json:"LicenseServiceConfiguration,omitempty"`
 
 	// SharedFileSystemConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-sharedfilesystemconfiguration
-	SharedFileSystemConfiguration *StudioComponent_SharedFileSystemConfiguration `json:"SharedFileSystemConfiguration,omitempty"`
+	SharedFileSystemConfiguration *StudioComponent_SharedFileSystemConfiguration[any] `json:"SharedFileSystemConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -47,6 +47,6 @@ type StudioComponent_StudioComponentConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *StudioComponent_StudioComponentConfiguration) AWSCloudFormationType() string {
+func (r *StudioComponent_StudioComponentConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::NimbleStudio::StudioComponent.StudioComponentConfiguration"
 }

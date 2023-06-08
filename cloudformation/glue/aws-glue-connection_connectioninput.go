@@ -8,7 +8,7 @@ import (
 
 // Connection_ConnectionInput AWS CloudFormation Resource (AWS::Glue::Connection.ConnectionInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html
-type Connection_ConnectionInput struct {
+type Connection_ConnectionInput[T any] struct {
 
 	// ConnectionProperties AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Connection_ConnectionInput struct {
 	// PhysicalConnectionRequirements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements
-	PhysicalConnectionRequirements *Connection_PhysicalConnectionRequirements `json:"PhysicalConnectionRequirements,omitempty"`
+	PhysicalConnectionRequirements *Connection_PhysicalConnectionRequirements[any] `json:"PhysicalConnectionRequirements,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -57,6 +57,6 @@ type Connection_ConnectionInput struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Connection_ConnectionInput) AWSCloudFormationType() string {
+func (r *Connection_ConnectionInput[any]) AWSCloudFormationType() string {
 	return "AWS::Glue::Connection.ConnectionInput"
 }

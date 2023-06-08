@@ -8,12 +8,12 @@ import (
 
 // TopicRule_FirehoseAction AWS CloudFormation Resource (AWS::IoT::TopicRule.FirehoseAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
-type TopicRule_FirehoseAction struct {
+type TopicRule_FirehoseAction[T any] struct {
 
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-batchmode
-	BatchMode *bool `json:"BatchMode,omitempty"`
+	BatchMode *T `json:"BatchMode,omitempty"`
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
@@ -47,6 +47,6 @@ type TopicRule_FirehoseAction struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TopicRule_FirehoseAction) AWSCloudFormationType() string {
+func (r *TopicRule_FirehoseAction[any]) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.FirehoseAction"
 }

@@ -8,7 +8,7 @@ import (
 
 // Certificate_OtherName AWS CloudFormation Resource (AWS::ACMPCA::Certificate.OtherName)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-othername.html
-type Certificate_OtherName struct {
+type Certificate_OtherName[T any] struct {
 
 	// TypeId AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Certificate_OtherName struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Certificate_OtherName) AWSCloudFormationType() string {
+func (r *Certificate_OtherName[any]) AWSCloudFormationType() string {
 	return "AWS::ACMPCA::Certificate.OtherName"
 }

@@ -8,7 +8,7 @@ import (
 
 // TaskDefinition_FirelensConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.FirelensConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html
-type TaskDefinition_FirelensConfiguration struct {
+type TaskDefinition_FirelensConfiguration[T any] struct {
 
 	// Options AWS CloudFormation Property
 	// Required: false
@@ -37,6 +37,6 @@ type TaskDefinition_FirelensConfiguration struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *TaskDefinition_FirelensConfiguration) AWSCloudFormationType() string {
+func (r *TaskDefinition_FirelensConfiguration[any]) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.FirelensConfiguration"
 }

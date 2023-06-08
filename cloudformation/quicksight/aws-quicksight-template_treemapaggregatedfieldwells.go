@@ -8,22 +8,22 @@ import (
 
 // Template_TreeMapAggregatedFieldWells AWS CloudFormation Resource (AWS::QuickSight::Template.TreeMapAggregatedFieldWells)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapaggregatedfieldwells.html
-type Template_TreeMapAggregatedFieldWells struct {
+type Template_TreeMapAggregatedFieldWells[T any] struct {
 
 	// Colors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapaggregatedfieldwells.html#cfn-quicksight-template-treemapaggregatedfieldwells-colors
-	Colors []Template_MeasureField `json:"Colors,omitempty"`
+	Colors []Template_MeasureField[any] `json:"Colors,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapaggregatedfieldwells.html#cfn-quicksight-template-treemapaggregatedfieldwells-groups
-	Groups []Template_DimensionField `json:"Groups,omitempty"`
+	Groups []Template_DimensionField[any] `json:"Groups,omitempty"`
 
 	// Sizes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-treemapaggregatedfieldwells.html#cfn-quicksight-template-treemapaggregatedfieldwells-sizes
-	Sizes []Template_MeasureField `json:"Sizes,omitempty"`
+	Sizes []Template_MeasureField[any] `json:"Sizes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -42,6 +42,6 @@ type Template_TreeMapAggregatedFieldWells struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Template_TreeMapAggregatedFieldWells) AWSCloudFormationType() string {
+func (r *Template_TreeMapAggregatedFieldWells[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Template.TreeMapAggregatedFieldWells"
 }

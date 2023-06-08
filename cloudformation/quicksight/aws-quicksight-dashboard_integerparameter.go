@@ -8,7 +8,7 @@ import (
 
 // Dashboard_IntegerParameter AWS CloudFormation Resource (AWS::QuickSight::Dashboard.IntegerParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameter.html
-type Dashboard_IntegerParameter struct {
+type Dashboard_IntegerParameter[T any] struct {
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -18,7 +18,7 @@ type Dashboard_IntegerParameter struct {
 	// Values AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameter.html#cfn-quicksight-dashboard-integerparameter-values
-	Values []float64 `json:"Values"`
+	Values []T `json:"Values"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -37,6 +37,6 @@ type Dashboard_IntegerParameter struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Dashboard_IntegerParameter) AWSCloudFormationType() string {
+func (r *Dashboard_IntegerParameter[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Dashboard.IntegerParameter"
 }

@@ -8,12 +8,12 @@ import (
 
 // Theme_MarginStyle AWS CloudFormation Resource (AWS::QuickSight::Theme.MarginStyle)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-marginstyle.html
-type Theme_MarginStyle struct {
+type Theme_MarginStyle[T any] struct {
 
 	// Show AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-marginstyle.html#cfn-quicksight-theme-marginstyle-show
-	Show *bool `json:"Show,omitempty"`
+	Show *T `json:"Show,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type Theme_MarginStyle struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Theme_MarginStyle) AWSCloudFormationType() string {
+func (r *Theme_MarginStyle[any]) AWSCloudFormationType() string {
 	return "AWS::QuickSight::Theme.MarginStyle"
 }

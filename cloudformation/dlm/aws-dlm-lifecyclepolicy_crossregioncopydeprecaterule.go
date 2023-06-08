@@ -8,12 +8,12 @@ import (
 
 // LifecyclePolicy_CrossRegionCopyDeprecateRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyDeprecateRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopydeprecaterule.html
-type LifecyclePolicy_CrossRegionCopyDeprecateRule struct {
+type LifecyclePolicy_CrossRegionCopyDeprecateRule[T any] struct {
 
 	// Interval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopydeprecaterule.html#cfn-dlm-lifecyclepolicy-crossregioncopydeprecaterule-interval
-	Interval int `json:"Interval"`
+	Interval T `json:"Interval"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type LifecyclePolicy_CrossRegionCopyDeprecateRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *LifecyclePolicy_CrossRegionCopyDeprecateRule) AWSCloudFormationType() string {
+func (r *LifecyclePolicy_CrossRegionCopyDeprecateRule[any]) AWSCloudFormationType() string {
 	return "AWS::DLM::LifecyclePolicy.CrossRegionCopyDeprecateRule"
 }

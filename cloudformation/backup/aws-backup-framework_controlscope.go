@@ -9,7 +9,7 @@ import (
 
 // Framework_ControlScope AWS CloudFormation Resource (AWS::Backup::Framework.ControlScope)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html
-type Framework_ControlScope struct {
+type Framework_ControlScope[T any] struct {
 
 	// ComplianceResourceIds AWS CloudFormation Property
 	// Required: false
@@ -43,6 +43,6 @@ type Framework_ControlScope struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Framework_ControlScope) AWSCloudFormationType() string {
+func (r *Framework_ControlScope[any]) AWSCloudFormationType() string {
 	return "AWS::Backup::Framework.ControlScope"
 }

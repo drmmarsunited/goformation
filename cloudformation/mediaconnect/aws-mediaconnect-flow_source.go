@@ -8,12 +8,12 @@ import (
 
 // Flow_Source AWS CloudFormation Resource (AWS::MediaConnect::Flow.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html
-type Flow_Source struct {
+type Flow_Source[T any] struct {
 
 	// Decryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-decryption
-	Decryption *Flow_Encryption `json:"Decryption,omitempty"`
+	Decryption *Flow_Encryption[any] `json:"Decryption,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -33,22 +33,22 @@ type Flow_Source struct {
 	// IngestPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestport
-	IngestPort *int `json:"IngestPort,omitempty"`
+	IngestPort *T `json:"IngestPort,omitempty"`
 
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxbitrate
-	MaxBitrate *int `json:"MaxBitrate,omitempty"`
+	MaxBitrate *T `json:"MaxBitrate,omitempty"`
 
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxlatency
-	MaxLatency *int `json:"MaxLatency,omitempty"`
+	MaxLatency *T `json:"MaxLatency,omitempty"`
 
 	// MinLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-minlatency
-	MinLatency *int `json:"MinLatency,omitempty"`
+	MinLatency *T `json:"MinLatency,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Flow_Source struct {
 	// SenderControlPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sendercontrolport
-	SenderControlPort *int `json:"SenderControlPort,omitempty"`
+	SenderControlPort *T `json:"SenderControlPort,omitempty"`
 
 	// SenderIpAddress AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type Flow_Source struct {
 	// SourceListenerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelistenerport
-	SourceListenerPort *int `json:"SourceListenerPort,omitempty"`
+	SourceListenerPort *T `json:"SourceListenerPort,omitempty"`
 
 	// StreamId AWS CloudFormation Property
 	// Required: false
@@ -122,6 +122,6 @@ type Flow_Source struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Flow_Source) AWSCloudFormationType() string {
+func (r *Flow_Source[any]) AWSCloudFormationType() string {
 	return "AWS::MediaConnect::Flow.Source"
 }

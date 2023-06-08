@@ -8,12 +8,12 @@ import (
 
 // JobDefinition_EphemeralStorage AWS CloudFormation Resource (AWS::Batch::JobDefinition.EphemeralStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-ephemeralstorage.html
-type JobDefinition_EphemeralStorage struct {
+type JobDefinition_EphemeralStorage[T any] struct {
 
 	// SizeInGiB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-ephemeralstorage.html#cfn-batch-jobdefinition-containerproperties-ephemeralstorage-sizeingib
-	SizeInGiB int `json:"SizeInGiB"`
+	SizeInGiB T `json:"SizeInGiB"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -32,6 +32,6 @@ type JobDefinition_EphemeralStorage struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *JobDefinition_EphemeralStorage) AWSCloudFormationType() string {
+func (r *JobDefinition_EphemeralStorage[any]) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.EphemeralStorage"
 }

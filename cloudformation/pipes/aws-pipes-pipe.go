@@ -11,7 +11,7 @@ import (
 
 // Pipe AWS CloudFormation Resource (AWS::Pipes::Pipe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html
-type Pipe struct {
+type Pipe[T any] struct {
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Pipe struct {
 	// EnrichmentParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-enrichmentparameters
-	EnrichmentParameters *Pipe_PipeEnrichmentParameters `json:"EnrichmentParameters,omitempty"`
+	EnrichmentParameters *Pipe_PipeEnrichmentParameters[any] `json:"EnrichmentParameters,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type Pipe struct {
 	// SourceParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-sourceparameters
-	SourceParameters *Pipe_PipeSourceParameters `json:"SourceParameters,omitempty"`
+	SourceParameters *Pipe_PipeSourceParameters[any] `json:"SourceParameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type Pipe struct {
 	// TargetParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-targetparameters
-	TargetParameters *Pipe_PipeTargetParameters `json:"TargetParameters,omitempty"`
+	TargetParameters *Pipe_PipeTargetParameters[any] `json:"TargetParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -85,14 +85,15 @@ type Pipe struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Pipe) AWSCloudFormationType() string {
+func (r *Pipe[any]) AWSCloudFormationType() string {
 	return "AWS::Pipes::Pipe"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r Pipe) MarshalJSON() ([]byte, error) {
-	type Properties Pipe
+func (r Pipe[any]) MarshalJSON() ([]byte, error) {
+	type Properties Pipe[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -114,8 +115,9 @@ func (r Pipe) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *Pipe) UnmarshalJSON(b []byte) error {
-	type Properties Pipe
+func (r *Pipe[any]) UnmarshalJSON(b []byte) error {
+	type Properties Pipe[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -135,7 +137,7 @@ func (r *Pipe) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = Pipe(*res.Properties)
+		*r = Pipe[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

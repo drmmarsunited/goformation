@@ -12,12 +12,12 @@ import (
 
 // AssetModel AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html
-type AssetModel struct {
+type AssetModel[T any] struct {
 
 	// AssetModelCompositeModels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodels
-	AssetModelCompositeModels []AssetModel_AssetModelCompositeModel `json:"AssetModelCompositeModels,omitempty"`
+	AssetModelCompositeModels []AssetModel_AssetModelCompositeModel[any] `json:"AssetModelCompositeModels,omitempty"`
 
 	// AssetModelDescription AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type AssetModel struct {
 	// AssetModelHierarchies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelhierarchies
-	AssetModelHierarchies []AssetModel_AssetModelHierarchy `json:"AssetModelHierarchies,omitempty"`
+	AssetModelHierarchies []AssetModel_AssetModelHierarchy[any] `json:"AssetModelHierarchies,omitempty"`
 
 	// AssetModelName AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type AssetModel struct {
 	// AssetModelProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelproperties
-	AssetModelProperties []AssetModel_AssetModelProperty `json:"AssetModelProperties,omitempty"`
+	AssetModelProperties []AssetModel_AssetModelProperty[any] `json:"AssetModelProperties,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -61,14 +61,15 @@ type AssetModel struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *AssetModel) AWSCloudFormationType() string {
+func (r *AssetModel[any]) AWSCloudFormationType() string {
 	return "AWS::IoTSiteWise::AssetModel"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r AssetModel) MarshalJSON() ([]byte, error) {
-	type Properties AssetModel
+func (r AssetModel[any]) MarshalJSON() ([]byte, error) {
+	type Properties AssetModel[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -90,8 +91,9 @@ func (r AssetModel) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *AssetModel) UnmarshalJSON(b []byte) error {
-	type Properties AssetModel
+func (r *AssetModel[any]) UnmarshalJSON(b []byte) error {
+	type Properties AssetModel[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -111,7 +113,7 @@ func (r *AssetModel) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = AssetModel(*res.Properties)
+		*r = AssetModel[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {

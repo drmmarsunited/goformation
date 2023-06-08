@@ -8,7 +8,7 @@ import (
 
 // Application_CustomComponent AWS CloudFormation Resource (AWS::ApplicationInsights::Application.CustomComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-customcomponent.html
-type Application_CustomComponent struct {
+type Application_CustomComponent[T any] struct {
 
 	// ComponentName AWS CloudFormation Property
 	// Required: true
@@ -37,6 +37,6 @@ type Application_CustomComponent struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *Application_CustomComponent) AWSCloudFormationType() string {
+func (r *Application_CustomComponent[any]) AWSCloudFormationType() string {
 	return "AWS::ApplicationInsights::Application.CustomComponent"
 }

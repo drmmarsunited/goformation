@@ -11,7 +11,7 @@ import (
 
 // OrganizationConfigRule AWS CloudFormation Resource (AWS::Config::OrganizationConfigRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html
-type OrganizationConfigRule struct {
+type OrganizationConfigRule[T any] struct {
 
 	// ExcludedAccounts AWS CloudFormation Property
 	// Required: false
@@ -26,17 +26,17 @@ type OrganizationConfigRule struct {
 	// OrganizationCustomPolicyRuleMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata
-	OrganizationCustomPolicyRuleMetadata *OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata `json:"OrganizationCustomPolicyRuleMetadata,omitempty"`
+	OrganizationCustomPolicyRuleMetadata *OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata[any] `json:"OrganizationCustomPolicyRuleMetadata,omitempty"`
 
 	// OrganizationCustomRuleMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata
-	OrganizationCustomRuleMetadata *OrganizationConfigRule_OrganizationCustomRuleMetadata `json:"OrganizationCustomRuleMetadata,omitempty"`
+	OrganizationCustomRuleMetadata *OrganizationConfigRule_OrganizationCustomRuleMetadata[any] `json:"OrganizationCustomRuleMetadata,omitempty"`
 
 	// OrganizationManagedRuleMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata
-	OrganizationManagedRuleMetadata *OrganizationConfigRule_OrganizationManagedRuleMetadata `json:"OrganizationManagedRuleMetadata,omitempty"`
+	OrganizationManagedRuleMetadata *OrganizationConfigRule_OrganizationManagedRuleMetadata[any] `json:"OrganizationManagedRuleMetadata,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
@@ -55,14 +55,15 @@ type OrganizationConfigRule struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *OrganizationConfigRule) AWSCloudFormationType() string {
+func (r *OrganizationConfigRule[any]) AWSCloudFormationType() string {
 	return "AWS::Config::OrganizationConfigRule"
 }
 
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r OrganizationConfigRule) MarshalJSON() ([]byte, error) {
-	type Properties OrganizationConfigRule
+func (r OrganizationConfigRule[any]) MarshalJSON() ([]byte, error) {
+	type Properties OrganizationConfigRule[any]
+
 	return json.Marshal(&struct {
 		Type                string
 		Properties          Properties
@@ -84,8 +85,9 @@ func (r OrganizationConfigRule) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *OrganizationConfigRule) UnmarshalJSON(b []byte) error {
-	type Properties OrganizationConfigRule
+func (r *OrganizationConfigRule[any]) UnmarshalJSON(b []byte) error {
+	type Properties OrganizationConfigRule[any]
+
 	res := &struct {
 		Type                string
 		Properties          *Properties
@@ -105,7 +107,7 @@ func (r *OrganizationConfigRule) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = OrganizationConfigRule(*res.Properties)
+		*r = OrganizationConfigRule[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 		switch obj := res.DependsOn.(type) {
