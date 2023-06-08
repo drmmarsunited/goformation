@@ -12,7 +12,7 @@ import (
 )
 
 // {{.Name}} is a helper struct that can hold either a {{.TypesJoined}} value
-type {{.Name}} struct {
+type {{.Name}}[T any] struct {
 	{{range $type := $.Property.PrimitiveTypes}}
 	{{$type}} *{{convertToGoType $type}}{{end}}
 
@@ -23,16 +23,16 @@ type {{.Name}} struct {
     {{$type}}Array *[]{{convertToGoType $type}}{{end}}
 
 	{{range $type := $.Property.Types}}
-	{{$type}} *{{$.Basename}}_{{$type}}{{end}}
+	{{$type}} *{{$.Basename}}_{{$type}}[any]{{end}}
 
 	{{range $type := $.Property.ItemTypes}}
-	{{$type}}Array *[]{{$.Basename}}_{{$type}}{{end}}
+	{{$type}}Array *[]{{$.Basename}}_{{$type}}[any]{{end}}
 
     {{range $type := $.Property.InclusiveItemTypes}}
-    {{$type}}Array *[]{{$.Basename}}_{{$type}}{{end}}
+    {{$type}}Array *[]{{$.Basename}}_{{$type}}[any]{{end}}
 }
 
-func (r {{.Name}}) value() interface{} {
+func (r {{.Name}}[any]) value() interface{} {
 	ret := []interface{}{}
 
 	{{range $type := $.Property.PrimitiveTypes}}
@@ -81,12 +81,12 @@ func (r {{.Name}}) value() interface{} {
 	return nil
 }
 
-func (r {{.Name}}) MarshalJSON() ([]byte, error) {
+func (r {{.Name}}[any]) MarshalJSON() ([]byte, error) {
 	return json.Marshal(r.value())
 }
 
 // Hook into the marshaller
-func (r *{{.Name}}) UnmarshalJSON(b []byte) error {
+func (r *{{.Name}}[any]) UnmarshalJSON(b []byte) error {
 
 	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}

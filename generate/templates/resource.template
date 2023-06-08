@@ -19,7 +19,7 @@ import ({{if .HasTags}}
 
 // {{.StructName}} AWS CloudFormation Resource ({{.Name}})
 // See: {{.Resource.Documentation}}
-type {{.StructName}} struct {
+type {{.StructName}}[T any] struct {
     {{range $name, $property := .Resource.Properties}}
     {{$prop_name := $name}}
     {{if (eq ($prop_name) ("DependsOn"))}}{{$prop_name = "DependsOnProp"}}{{end}}
@@ -52,15 +52,16 @@ type {{.StructName}} struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *{{.StructName}}) AWSCloudFormationType() string {
+func (r *{{.StructName}}[any]) AWSCloudFormationType() string {
     return "{{.Name}}"
 }
 
 {{if not .IsCustomProperty}}
 // MarshalJSON is a custom JSON marshalling hook that embeds this object into
 // an AWS CloudFormation JSON resource's 'Properties' field and adds a 'Type'.
-func (r {{.StructName}}) MarshalJSON() ([]byte, error) {
-	type Properties {{.StructName}}
+func (r {{.StructName}}[any]) MarshalJSON() ([]byte, error) {
+    type Properties {{.StructName}}[any]
+
 	return json.Marshal(&struct{
 		Type string
 		{{if .IsCustomProperty}}Properties{{else}}Properties Properties{{end}}
@@ -88,8 +89,9 @@ func (r {{.StructName}}) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON is a custom JSON unmarshalling hook that strips the outer
 // AWS CloudFormation resource object, and just keeps the 'Properties' field.
-func (r *{{.StructName}}) UnmarshalJSON(b []byte) error {
-	type Properties {{.StructName}}
+func (r *{{.StructName}}[any]) UnmarshalJSON(b []byte) error {
+    type Properties {{.StructName}}[any]
+
 	res := &struct {
 		Type string
 		{{if .IsCustomProperty}}Properties{{else}}Properties *Properties{{end}}
@@ -111,7 +113,7 @@ func (r *{{.StructName}}) UnmarshalJSON(b []byte) error {
 
 	// If the resource has no Properties set, it could be nil
 	if res.Properties != nil {
-		*r = {{.StructName}}(*res.Properties)
+		*r = {{.StructName}}[any](*res.Properties)
 	}
 	if res.DependsOn != nil {
 	  switch obj := res.DependsOn.(type) {

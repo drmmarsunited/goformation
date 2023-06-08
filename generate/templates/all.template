@@ -11,33 +11,33 @@ import (
 // AllResources fetches an iterable map all CloudFormation and SAM resources
 func AllResources() map[string]Resource {
     return map[string]Resource{ {{range $resource := .Resources}}
-        "{{$resource.Name}}": &{{$resource.PackageName}}.{{$resource.StructName}}{},{{end}}
+        "{{$resource.Name}}": &{{$resource.PackageName}}.{{$resource.StructName}}[any]{},{{end}}
     }
 }
 
 {{range $resource := .Resources}}
 {{if $resource.Global}}
-// GetServerlessGlobal{{$resource.StructName}}retrieves the template's Globals.{{$resource.StructName}} items from an AWS SAM template.
+// GetServerlessGlobal{{$resource.StructName}} retrieves the template's Globals.{{$resource.StructName}} items from an AWS SAM template.
 // Returns an error if not found.
-func (t *Template) GetServerlessGlobal{{$resource.StructName}} () (*global.{{$resource.StructName}}, error) {
+func (t *Template) GetServerlessGlobal{{$resource.StructName}} () (*global.{{$resource.StructName}}[any], error) {
 	globals := t.Globals
 	if globals == nil {
 		return nil, fmt.Errorf("globals not found")
 	}
 	if untyped, ok := globals["{{$resource.StructName}}"]; ok {
 		switch resource := untyped.(type) {
-		case *global.{{$resource.StructName}}:
+		case *global.{{$resource.StructName}}[any]:
 			return resource, nil
 		}
 	}
     return nil, fmt.Errorf("resource of type global.{{$resource.StructName}} not found")
 }{{else}}
 // GetAll{{$resource.BaseName}}{{$resource.StructName}}Resources retrieves all {{$resource.PackageName}}.{{$resource.StructName}} items from an AWS CloudFormation template
-func (t *Template) GetAll{{$resource.BaseName}}{{$resource.StructName}}Resources () map[string]*{{$resource.PackageName}}.{{$resource.StructName}} {
-    results := map[string]*{{$resource.PackageName}}.{{$resource.StructName}}{}
+func (t *Template) GetAll{{$resource.BaseName}}{{$resource.StructName}}Resources () map[string]*{{$resource.PackageName}}.{{$resource.StructName}}[any] {
+    results := map[string]*{{$resource.PackageName}}.{{$resource.StructName}}[any]{}
 	for name, untyped := range t.Resources {
 		switch resource := untyped.(type) {
-		case *{{$resource.PackageName}}.{{$resource.StructName}}:
+		case *{{$resource.PackageName}}.{{$resource.StructName}}[any]:
 			results[name] = resource
 		}
 	}
@@ -46,10 +46,10 @@ func (t *Template) GetAll{{$resource.BaseName}}{{$resource.StructName}}Resources
 
 // Get{{$resource.BaseName}}{{$resource.StructName}}WithName retrieves all {{$resource.PackageName}}.{{$resource.StructName}} items from an AWS CloudFormation template
 // whose logical ID matches the provided name. Returns an error if not found.
-func (t *Template) Get{{$resource.BaseName}}{{$resource.StructName}}WithName (name string) (*{{$resource.PackageName}}.{{$resource.StructName}}, error) {
+func (t *Template) Get{{$resource.BaseName}}{{$resource.StructName}}WithName (name string) (*{{$resource.PackageName}}.{{$resource.StructName}}[any], error) {
 	if untyped, ok := t.Resources[name]; ok {
 		switch resource := untyped.(type) {
-		case *{{$resource.PackageName}}.{{$resource.StructName}}:
+		case *{{$resource.PackageName}}.{{$resource.StructName}}[any]:
 			return resource, nil
 		}
 	}

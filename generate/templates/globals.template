@@ -8,7 +8,7 @@ import (
 
 // {{.StructName}} AWS CloudFormation Resource ({{.Name}})
 // See: {{.Documentation}}
-type {{.StructName}} struct {
+type {{.StructName}}[T any] struct {
 	{{$iname := .ImportName}}
     {{range $name, $property := .Properties}}
     {{$prop_name := $name}}
@@ -21,6 +21,6 @@ type {{.StructName}} struct {
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
-func (r *{{.StructName}}) AWSCloudFormationType() string {
+func (r *{{.StructName}}[any]) AWSCloudFormationType() string {
     return "{{.Name}}"
 }
