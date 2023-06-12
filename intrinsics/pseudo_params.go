@@ -2,18 +2,13 @@ package intrinsics
 
 import (
 	"context"
-	"errors"
 	"fmt"
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"strings"
 )
 
-var UnableToLoadAwsConfig = errors.New("unable to load shared local AWS config")
-
 type pseudoParamHelper struct {
-	cfg              aws.Config
+	awsHelper        *awsHelper
 	stsSvc           *sts.Client
 	rawCallerData    *sts.GetCallerIdentityOutput
 	accountId        string
@@ -25,21 +20,49 @@ type pseudoParamHelper struct {
 	stackName        string
 }
 
-func newPseudoParamHelper() (*pseudoParamHelper, error) {
+func newPseudoParamHelper() *pseudoParamHelper {
+	interimHelper := &pseudoParamHelper{}
+
 	// Load the AWS shared config
-	awsConfig, err := config.LoadDefaultConfig(context.TODO())
+	awsHelper, err := newAwsHelper()
 	if err != nil {
-		fmt.Printf("Unable to load AWS config")
-		return nil, UnableToLoadAwsConfig
+		fmt.Println("Unable to load shard AWS SDK credentials, using dummy values")
+
+		interimHelper.awsHelper = awsHelper
+		interimHelper.rawCallerData = nil
+		interimHelper.accountId = "123456789012"
+		interimHelper.notificationArns = []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
+		interimHelper.noValue = nil
+		interimHelper.partition = "aws"
+		interimHelper.region = "us-east-1"
+		interimHelper.stackId = []string{"arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0"}
+		interimHelper.stackName = "goformation-stack"
+
+		return interimHelper
 	}
 
 	// Set up an STS service client
-	svc := sts.NewFromConfig(awsConfig)
+	svc := sts.NewFromConfig(awsHelper.cfg)
+	interimHelper.stsSvc = svc
 
-	return &pseudoParamHelper{
-		cfg:    awsConfig,
-		stsSvc: svc,
-	}, nil
+	// Call the GetCallerIdentity STS API
+	resp, err := svc.GetCallerIdentity(context.TODO(), &sts.GetCallerIdentityInput{})
+	if err != nil {
+		fmt.Println("COULD NOT GET CALLED IDENTITY")
+		fmt.Println("ERROR WAS: ", err.Error())
+		interimHelper.rawCallerData = nil
+		interimHelper.accountId = "123456789012"
+		interimHelper.notificationArns = []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
+		interimHelper.noValue = nil
+		interimHelper.partition = "aws"
+		interimHelper.region = "us-east-1"
+		interimHelper.stackId = []string{"arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0"}
+		interimHelper.stackName = "goformation-stack"
+	}
+
+	interimHelper.rawCallerData = resp
+
+	return interimHelper
 }
 
 // getCallerIdentityData will attempt to call the GetCallerIdentity STS API and load the raw response data
@@ -48,15 +71,8 @@ func (h *pseudoParamHelper) getCallerIdentityData() {
 	// Call the GetCallerIdentity STS API
 	resp, err := h.stsSvc.GetCallerIdentity(context.TODO(), &sts.GetCallerIdentityInput{})
 	if err != nil {
+		fmt.Println("COULD NOT GET CALLED IDENTITY")
 		h.rawCallerData = nil
-
-		h.accountId = "123456789012"
-		h.notificationArns = []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
-		h.noValue = nil
-		h.partition = "aws"
-		h.region = "us-east-1"
-		h.stackId = []string{"arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0"}
-		h.stackName = "goformation-stack"
 	}
 
 	h.rawCallerData = resp
@@ -79,6 +95,6 @@ func (h *pseudoParamHelper) parseAwsPartition() {
 // parseAwsRegion is a helper function to extract the AWS region from the caller ID ARN
 func (h *pseudoParamHelper) parseAwsRegion() {
 	if h.rawCallerData != nil {
-		h.region = h.cfg.Region
+		h.region = h.awsHelper.cfg.Region
 	}
 }

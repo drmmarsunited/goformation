@@ -1,14 +1,11 @@
 package intrinsics
 
-var pph, _ = newPseudoParamHelper()
+var pph = newPseudoParamHelper()
 
 // Ref resolves the 'Ref' AWS CloudFormation intrinsic function.
 // Currently, this only resolves against CloudFormation Parameter default values
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
 func Ref(name string, input interface{}, template interface{}) interface{} {
-	// Load caller data
-	pph.getCallerIdentityData()
-
 	// Dang son, this has got more nest than a bald eagle
 	// Check the input is a string
 	if name, ok := input.(string); ok {
