@@ -79,6 +79,6 @@ func (h *pseudoParamHelper) parseAwsPartition() {
 // parseAwsRegion is a helper function to extract the AWS region from the caller ID ARN
 func (h *pseudoParamHelper) parseAwsRegion() {
 	if h.rawCallerData != nil {
-		h.region = strings.Split(*h.rawCallerData.Arn, ":")[3]
+		h.region = h.cfg.Region
 	}
 }

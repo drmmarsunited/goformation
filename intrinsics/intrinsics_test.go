@@ -1539,6 +1539,693 @@ var _ = Describe("AWS CloudFormation intrinsic function processing", func() {
 
 	})
 
+	Context("with a template that contains primitives, intrinsics, and nested intrinsics 3", func() {
+
+		const template = `AWSTemplateFormatVersion: '2010-09-09'
+Description: The CloudFormation template for AWS resources required by AWS RedShift.
+Metadata:
+  "AWS::CloudFormation::Interface":
+    ParameterGroups:
+      - Label:
+          default: Tag Configuration
+        Parameters:
+          - pSystemOwner
+          - pApplicationName
+          - pApplicationNameLC
+          - pSubDivision
+          - pDataSteward
+          - pDataSensitivity
+          - pResourceOwner
+          - pResourceExposure
+          - pResourceSensitivity
+          - pPurpose
+          - pProject
+          - pSupportGroup
+          - pAppGroup
+      - Label:
+          default: Redshift Configuration
+        Parameters:
+          - pPermissionBoundaryArn
+
+          - pAutomatedSnapshotRetentionPeriod
+          - pClusterIdentifier
+          - pClusterSubnetGroupDescription
+          - pClusterSubnetId1
+          - pClusterSubnetId2
+          - pClusterType
+          - pDBName
+          - pEncrypted
+          - pEnhancedVpcRouting
+          - pMasterUsername
+          - pMasterUserPassword
+          - pNodeType
+          - pNumberOfNodes
+          - pPort
+          - pBucketName
+          - pS3KeyPrefix
+
+    ParameterLabels:
+      pSystemOwner:
+        default: System Owner
+      pApplicationName:
+        default: Application Name
+      pApplicationNameLC:
+        default: Application Name Lowercase
+      pSubDivision:
+        default: Sub Division
+      pDataSteward:
+        default: Data Steward
+      pDataSensitivity:
+        default: Data Sensitivity
+      pResourceOwner:
+        default: Resource Owner
+      pResourceExposure:
+        default: Resource Exposure
+      pResourceSensitivity:
+        default: Resource Sensitivity
+      pPurpose:
+        default: Purpose of the resource
+      pProject:
+        Default: Project
+      pSupportGroup:
+        Default: Support Group
+      pAppGroup:
+        Default: Application Group
+      pPermissionBoundaryArn:
+        default: Permission Boundary Arn
+      pAutomatedSnapshotRetentionPeriod:
+        default: Automated Snapshot Retention Period
+      pClusterIdentifier:
+        default: Cluster Identifier
+      pClusterSubnetGroupDescription:
+        default: Cluster Subnet Group Description
+      pClusterSubnetId1:
+        default: Cluster Subnet Id 1
+      pClusterSubnetId2:
+        default: Cluster Subnet Id 2
+      pClusterType:
+        default: Cluster Type
+      pDBName:
+        default: DB Name
+      pEncrypted:
+        default: Encrypted
+      pEnhancedVpcRouting:
+        default: Enhanced Vpc Routing
+      pMasterUsername:
+        default: Master Username
+      pMasterUserPassword:
+        default: Master User Password
+      pNodeType:
+        default: Node Type
+      pNumberOfNodes:
+        default: Number Of Nodes
+      pPort:
+        default: Port
+      pBucketName:
+        default: Bucket Name
+      pS3KeyPrefix:
+        default: S3 Key Prefix
+
+Parameters:
+  pSystemOwner:
+    Type: String
+    Description: |+
+      Enter the Active Directory ID of the system owner If you are not sure then use the requestor from the account request spreadsheet.
+      It cannot be more than 20 char, and cannot include [ ] : ; | = + * ? < > / \ , @ or non printable characters
+    AllowedPattern: >-
+      (^[^\x00-\x21\x7f-\xff\[\]:;|=+*?<>/\\,@]{1,20}$)
+    Default: "CCoE"
+
+  pApplicationName:
+    Type: String
+    Description: Enter the application name. If you are not sure then use the value from the project name in GitLab.
+    ConstraintDescription: The application name must be between 1 and 8 characters in length.
+    AllowedPattern: >-
+      (^[a-zA-Z0-9][a-zA-Z0-9._()-]{0,7}$)
+    MinLength: 1
+    MaxLength: 8
+    Default: "ACES"
+
+  pApplicationNameLC:
+    Type: String
+    Description: Enter the application name in Lowercase. If you are not sure then use the value from the project name in GitLab.
+    ConstraintDescription: The application name must be between 1 and 8 characters in length.
+    AllowedPattern: >-
+      (^[a-z0-9][a-z0-9._()-]{0,7}$)
+    MinLength: 1
+    MaxLength: 8
+    Default: "aces"
+
+  pSubDivision:
+    Description: Define SubDivision which the resources should be tagged with.
+    Type: String
+    MinLength: 1
+    Default: "-"
+
+  pDataSteward:
+    Type: String
+    Description: Enter the Active Directory group or user that is the data steward of this solution. If you are not sure then use the requestor from the account request spreadsheet.
+    AllowedPattern: >-
+      (^[^\x00-\x21\x7f-\xff\[\]:;|=+*?<>/\\,@]{1,20}$)
+    Default: "CCoE"
+
+  pDataSensitivity:
+    Type: String
+    Description: Select the data sensitivity of data hosted by this solution
+    ConstraintDescription: The data sensitivity must be an allowed value
+    AllowedValues:
+      - Red
+      - Amber
+      - Green
+    Default: Amber
+
+  pResourceOwner:
+    Type: String
+    Description: Enter the Active Directory group or user that is the resource owner of this solution. If you are not sure then use the requestor from the account request spreadsheet.
+    AllowedPattern: >-
+      (^[^\x00-\x21\x7f-\xff\[\]:;|=+*?<>/\\,@]{1,20}$)
+    Default: "CCoE"
+
+  pResourceExposure:
+    Type: String
+    Description: Select the most exposure that this solution is exposed to
+    ConstraintDescription: The resource exposure must be an allowed value
+    AllowedValues:
+      - Public
+      - Partner
+      - Saas
+      - OtherSecCloud
+      - AwsGovCloud
+      - SecOnPremise
+    Default: SecOnPremise
+
+  pResourceSensitivity:
+    Type: String
+    Description: Select the sensitivity of resources in this solution
+    ConstraintDescription: The resource sensitivity must be an allowed value
+    AllowedValues:
+      - Red
+      - Amber
+      - Green
+    Default: Amber
+
+  pPurpose:
+    Type: String
+    Description: Select the general purpose of the resource
+    ConstraintDescription: The resource purpose must be an allowed value
+    AllowedValues:
+      - wwws
+      - appl
+      - daba
+      - devo
+      - netw
+      - secr
+      - comp
+      - dago
+    Default: appl
+
+  pProject:
+    Type: String
+    Description: Enter the project name which is used for naming and tagging project-applicationname-purpose
+    Default: ccoe
+
+  pSupportGroup:
+    Type: String
+    Description: Enter in the contact information for the group supporting the resources
+    Default: 'ACES.CCoE.Foundation@SEC.GOV'
+
+  pAppGroup:
+    Type: String
+    Description: Enter in the AppGroup acronym from https://confluence.ad.sec.gov/display/ACES/ACES+AWS+Organization+Account+Details
+    Default: aces
+
+  pPermissionBoundaryArn:
+    Description: This is permission boundary arn for IAM Role
+    Type: String
+    Default: 'arn:aws:iam::727432730838:policy/ccoe-ScopePermissions-oit_aces-Dev-Developer-Policy'
+
+  # RedShift parameters
+  pAutomatedSnapshotRetentionPeriod:
+    Description: The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
+    Type: Number
+    Default: 7
+    MinValue: 0
+    MaxValue: 35
+  pClusterIdentifier:
+    Description: A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.
+    Type: String
+    Default: ""
+  pClusterSubnetGroupDescription:
+    Description: The Description of a cluster subnet group to be associated with this cluster.
+    Type: String
+    Default: Redshift Cluster Subnet Group Description
+  pClusterSubnetId1:
+    Description: The Cluster Subnet ID 1.
+    Type: String
+    Default: subnet-0c3636c28010a6107
+  pClusterSubnetId2:
+    Description: The Cluster Subnet ID 2.
+    Type: String
+    Default: subnet-06af5b42cc8fc9aa4
+  pClusterType:
+    Description: The type of cluster
+    Type: String
+    Default: single-node
+    AllowedValues:
+      - single-node
+      - multi-node
+  pDBName:
+    Description: The name of the first database to be created when the cluster is created.
+    Type: String
+    Default: dev
+    AllowedPattern: "([a-z]|[0-9])+"
+  pEncrypted:
+    Description: If true, the data in the cluster is encrypted at rest.
+    Type: String
+    Default: true
+    AllowedValues:
+      - true
+      - false
+  pEnhancedVpcRouting:
+    Description: An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+    Type: String
+    Default: true
+    AllowedValues:
+      - true
+      - false
+  pMasterUsername:
+    Description: The user name that is associated with the master user account for the cluster that is being created.
+    Type: String
+    Default: "redshiftadmin"
+    AllowedPattern: "([a-z])([a-z]|[0-9])*"
+  pMasterUserPassword:
+    Description: The password that is associated with the master user account for the cluster that is being created.
+    Type: String
+    Default: "Redshiftadmin123!"
+    NoEcho: true
+  pNodeType:
+    Description: The type of node to be provisioned
+    Type: String
+    Default: ra3.xlplus
+    AllowedValues:
+      - ds2.xlarge
+      - ds2.8xlarge
+      - dc1.large
+      - dc1.8xlarge
+      - dc2.large
+      - dc2.8xlarge
+      - ra3.xlplus
+      - ra3.4xlarge
+      - ra3.16xlarge
+  pNumberOfNodes:
+    Description: The number of compute nodes in the cluster. For multi-node clusters, the NumberOfNodes parameter must be greater than 1
+    Type: Number
+    Default: 1
+  pPort:
+    Description: The port number on which the cluster accepts incoming connections.
+    Type: Number
+    Default: 5439
+  pBucketName:
+    Description: The name of an existing S3 bucket where the log files are to be stored.
+    Type: String
+    Default: "aces-redshift-audit-logging"
+  pS3KeyPrefix:
+    Description: The prefix applied to the log file names.
+    Type: String
+    Default: ""
+
+Conditions:
+  IsNullOrEmptyPermissionBoundaryArn:    !Or [!Equals [!Ref pPermissionBoundaryArn, ''],
+                                              !Equals [!Ref pPermissionBoundaryArn, "AWS::NoValue"]]
+
+Mappings:
+  NameTagPartitionToPartitionAbbreviation:
+    aws-us-gov:
+      PartitionAbbr: G
+    aws:
+      PartitionAbbr: C
+
+  NameTagRegionToRegionAbbreviation:
+    us-east-1:
+      RegionAbbr: USE1
+    us-east-2:
+      RegionAbbr: USE2
+    us-west-1:
+      RegionAbbr: USW1
+    us-west-2:
+      RegionAbbr: USW2
+
+Resources:
+  # RedShift IAM role
+  rRedshiftExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName:
+        "Fn::Join":
+          - "-"
+          - - "{{resolve:ssm:/account/config/BusinessLowercase}}"
+            - Ref: pApplicationNameLC
+            - "RedshiftExecutionRole"
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: [
+              'redshift.amazonaws.com',
+              'resources.cloudformation.amazonaws.com',
+              's3.amazonaws.com'
+            ]
+          Action: 'sts:AssumeRole'
+
+      Path: "/"
+      PermissionsBoundary:
+        "Fn::If":
+          - IsNullOrEmptyPermissionBoundaryArn
+          - !Ref "AWS::NoValue"
+          - !Ref pPermissionBoundaryArn
+
+      Policies:
+        - PolicyName: RedShiftLogsAndS3Policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "cloudwatch:PutMetricData"
+                  - "logs:DescribeLogGroups"
+                  - "logs:CreateLogGroup"
+                  - "logs:DescribeLogStream*"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                  - "s3:ListBucket"
+                  - "s3:ListBucketVersions"
+                  - "s3:GetBucketAcl"
+                  - "s3:GetObject"
+                  - "s3:GetObjectAcl"
+                  - "s3:GetObjectVersion"
+                  - "s3:GetObjectVersionAcl"
+                Resource: '*'
+
+        - PolicyName: RedshiftAuditLogging
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              Effect: Allow
+              Action:
+                - "s3:PutObject"
+                - "s3:PutObjectAcl"
+              Resource:
+                - "Fn::Join":
+                    - ''
+                    - - 'arn:aws:s3:::'
+                      - !Ref pBucketName
+                - "Fn::Join":
+                    - ''
+                    - - 'arn:aws:s3:::'
+                      - !Ref pBucketName
+                      - '/*'
+                - "Fn::Join":
+                    - ''
+                    - - 'arn:aws:s3:::'
+                      - !Ref pBucketName
+                      - '/AWSLogs'
+                - "Fn::Join":
+                    - ''
+                    - - 'arn:aws:s3:::'
+                      - !Ref pBucketName
+                      - '/AWSLogs/*'
+
+        - PolicyName: KMSAccess
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "kms:GetPublicKey"
+                  - "kms:ListKeyPolicies"
+                  - "kms:ListRetirableGrants"
+                  - "kms:GetKeyPolicy"
+                  - "kms:ListResourceTags"
+                  - "kms:ListGrants"
+                  - "kms:GetParametersForImport"
+                  - "kms:DescribeCustomKeyStores"
+                  - "kms:ListKeys"
+                  - "kms:Encrypt"
+                  - "kms:Decrypt"
+                  - "kms:GetKeyRotationStatus"
+                  - "kms:ListAliases"
+                  - "kms:DescribeKey"
+                  - "kms:GenerateDataKey"
+                Resource:
+                  - !ImportValue S3GeneralKeyArn
+
+        - PolicyName: ResourceTypePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "iam:PassRole"
+                  - "redshift:Describe*"
+                  - "redshift:List*"
+                  - "redshift:View*"
+                  - "redshift:Accept*"
+                  - "redshift:Cancel*"
+                  - "redshift:Create*"
+                  - "redshift:*Tags"
+                  - "redshift:ModifyCluster*"
+                  - "redshift:Modify*"
+                  - "redshift:Delete*"
+                  - "redshift:Reboot*"
+                Resource: "*"
+      Tags:
+        - Key: Name
+          Value:
+            "Fn::Sub":
+              - >-
+                A-${Partition}${Region}-${LifeCycle}-${DivisionName}-${pApplicationName}-${Purpose}-${ServiceType}-${RoleName}
+              - Partition: !FindInMap
+                  - NameTagPartitionToPartitionAbbreviation
+                  - !Ref "AWS::Partition"
+                  - PartitionAbbr
+                Region: !FindInMap
+                  - NameTagRegionToRegionAbbreviation
+                  - !Ref "AWS::Region"
+                  - RegionAbbr
+                LifeCycle: "{{resolve:ssm:/account/config/LifeCycleLowercase}}"
+                DivisionName: "{{resolve:ssm:/account/config/BusinessLowercase}}"
+                Purpose: !Ref pPurpose
+                ServiceType: "IAM-Role"
+                RoleName: !Sub "${pApplicationNameLC}-RedshiftExecutionRole"
+        - Key: LifeCycle
+          Value: "{{resolve:ssm:/account/config/LifeCycle}}"
+        - Key: SystemOwner
+          Value: !Ref pSystemOwner
+        - Key: ApplicationName
+          Value: !Ref pApplicationName
+        - Key: Business
+          Value: "{{resolve:ssm:/account/config/Business}}"
+        - Key: SupportBusiness
+          Value: "{{resolve:ssm:/account/config/SupportBusiness}}"
+        - Key: SupportCcoeGroup
+          Value: "{{resolve:ssm:/account/config/SupportCcoeGroup}}"
+        - Key: DataSteward
+          Value: !Ref pDataSteward
+        - Key: DataSensitivity
+          Value: !Ref pDataSensitivity
+        - Key: ResourceOwner
+          Value: !Ref pResourceOwner
+        - Key: ResourceSensitivity
+          Value: !Ref pResourceSensitivity
+        - Key: ResourceExposure
+          Value: !Ref pResourceExposure
+        - Key: SubDivision
+          Value: !Ref pSubDivision
+        - Key: Project
+          Value: !Ref pProject
+        - Key: SupportGroup
+          Value: !Ref pSupportGroup
+        - Key: AppGroup
+          Value: !Ref pAppGroup
+
+  # RedShift ClusterSubnetGroup
+  rRedshiftClusterSubnetGroup:
+    Type: AWS::Redshift::ClusterSubnetGroup
+    Properties:
+      Description: !Ref pClusterSubnetGroupDescription
+      SubnetIds: [!Ref pClusterSubnetId1, !Ref pClusterSubnetId2 ]
+      Tags:
+        - Key: Name
+          Value: !Ref pClusterSubnetGroupDescription
+        - Key: LifeCycle
+          Value: "{{resolve:ssm:/account/config/LifeCycle}}"
+        - Key: SystemOwner
+          Value: !Ref pSystemOwner
+        - Key: ApplicationName
+          Value: !Ref pApplicationName
+        - Key: Business
+          Value: "{{resolve:ssm:/account/config/Business}}"
+        - Key: SupportBusiness
+          Value: "{{resolve:ssm:/account/config/SupportBusiness}}"
+        - Key: SupportCcoeGroup
+          Value: "{{resolve:ssm:/account/config/SupportCcoeGroup}}"
+        - Key: DataSteward
+          Value: !Ref pDataSteward
+        - Key: DataSensitivity
+          Value: !Ref pDataSensitivity
+        - Key: ResourceOwner
+          Value: !Ref pResourceOwner
+        - Key: ResourceSensitivity
+          Value: !Ref pResourceSensitivity
+        - Key: ResourceExposure
+          Value: !Ref pResourceExposure
+        - Key: SubDivision
+          Value: !Ref pSubDivision
+        - Key: Project
+          Value: !Ref pProject
+        - Key: SupportGroup
+          Value: !Ref pSupportGroup
+        - Key: AppGroup
+          Value: !Ref pAppGroup
+
+  rRedshiftClusterParameterGroup:
+    Type: AWS::Redshift::ClusterParameterGroup
+    Properties:
+      Description: Cluster parameter group
+      ParameterGroupFamily: redshift-1.0
+      Parameters:
+        - ParameterName: enable_user_activity_logging
+          ParameterValue: "true"
+        - ParameterName: require_ssl
+          ParameterValue: "true"
+
+  # RedShift Cluster
+  rRedshiftCluster:
+    Type: AWS::Redshift::Cluster
+    Properties:
+      AutomatedSnapshotRetentionPeriod: !Ref pAutomatedSnapshotRetentionPeriod
+      ClusterIdentifier: !Ref pClusterIdentifier
+      ClusterParameterGroupName: !Ref rRedshiftClusterParameterGroup
+      ClusterSubnetGroupName:  !GetAtt 'rRedshiftClusterSubnetGroup.ClusterSubnetGroupName'
+      ClusterType: !Ref pClusterType
+      DBName: !Ref pDBName
+      Encrypted: !Ref pEncrypted
+      EnhancedVpcRouting : !Ref pEnhancedVpcRouting
+      IamRoles: [!GetAtt 'rRedshiftExecutionRole.Arn']
+      KmsKeyId: !ImportValue RedshiftKeyId
+      MasterUsername: !Ref pMasterUsername
+      MasterUserPassword: !Ref pMasterUserPassword
+      NodeType: !Ref pNodeType
+      NumberOfNodes: !Ref pNumberOfNodes
+      Port: !Ref pPort
+      PubliclyAccessible: false
+      LoggingProperties:
+        BucketName: !Ref pBucketName
+        S3KeyPrefix: !Ref pS3KeyPrefix
+      Tags:
+        - Key: Name
+          Value:
+            "Fn::Sub":
+              - >-
+                A-${Partition}-${Region}-${LifeCycle}-${DivisionName}-${pApplicationName}-${Purpose}-${ServiceType}-001-_NONAME
+              - Partition:
+                  "Fn::FindInMap":
+                    - NameTagPartitionToPartitionAbbreviation
+                    - Ref: "AWS::Partition"
+                    - PartitionAbbr
+                Region: !FindInMap
+                  - NameTagRegionToRegionAbbreviation
+                  - Ref: "AWS::Region"
+                  - RegionAbbr
+                LifeCycle: "{{resolve:ssm:/account/config/LifeCycleLowercase}}"
+                DivisionName: "{{resolve:ssm:/account/config/BusinessLowercase}}"
+                pApplicationName: !Ref pApplicationName
+                Purpose: "Redshift Cluster"
+                ServiceType: "Redshift Cluster"
+        - Key: LifeCycle
+          Value: "{{resolve:ssm:/account/config/LifeCycle}}"
+        - Key: SystemOwner
+          Value: !Ref pSystemOwner
+        - Key: ApplicationName
+          Value: !Ref pApplicationName
+        - Key: Business
+          Value: "{{resolve:ssm:/account/config/Business}}"
+        - Key: SupportBusiness
+          Value: "{{resolve:ssm:/account/config/SupportBusiness}}"
+        - Key: SupportCcoeGroup
+          Value: "{{resolve:ssm:/account/config/SupportCcoeGroup}}"
+        - Key: DataSteward
+          Value: !Ref pDataSteward
+        - Key: DataSensitivity
+          Value: !Ref pDataSensitivity
+        - Key: ResourceOwner
+          Value: !Ref pResourceOwner
+        - Key: ResourceSensitivity
+          Value: !Ref pResourceSensitivity
+        - Key: ResourceExposure
+          Value: !Ref pResourceExposure
+        - Key: SubDivision
+          Value: !Ref pSubDivision
+        - Key: Project
+          Value: !Ref pProject
+        - Key: SupportGroup
+          Value: !Ref pSupportGroup
+        - Key: AppGroup
+          Value: !Ref pAppGroup
+
+Outputs:
+  oRedshiftExecutionRoleArn:
+    Description: IAM Role for Executing Redshift
+    Value: !GetAtt 'rRedshiftExecutionRole.Arn'
+  oRedshiftClusterSubnetGroupName:
+    Description: 'Redshift Cluster Subnet Group Name'
+    Value: !GetAtt 'rRedshiftClusterSubnetGroup.ClusterSubnetGroupName'
+  oRedshiftClusterName:
+    Description: The Name of the Redshift Cluster
+    Value: !Ref rRedshiftCluster`
+
+		Context("with no processor options", func() {
+
+			processed, err := ProcessYAML([]byte(template), nil)
+			It("should successfully process the template", func() {
+				Expect(processed).ShouldNot(BeNil())
+				Expect(err).Should(BeNil())
+			})
+
+			var result interface{}
+			err = json.Unmarshal(processed, &result)
+			It("should be valid JSON, and marshal to a Go type", func() {
+				Expect(processed).ToNot(BeNil())
+				Expect(err).To(BeNil())
+			})
+
+			template := result.(map[string]interface{})
+			resources := template["Resources"].(map[string]interface{})
+			resource := resources["rRedshiftCluster"].(map[string]interface{})
+			properties := resource["Properties"].(map[string]interface{})
+			tags := properties["Tags"].([]interface{})
+
+			It("should have the correct value for a primitive integer property", func() {
+				Expect(properties["Port"]).To(Equal(float64(5439)))
+			})
+
+			It("should have the correct length for the Tags property", func() {
+				Expect(properties["Tags"]).To(HaveLen(16))
+			})
+
+			It("should have the correct value for the Tags[0] --> Key", func() {
+				Expect(tags[0].(map[string]interface{})["Key"]).To(Equal("Name"))
+			})
+
+			It("should have the correct value for the Tags --> Name value", func() {
+				Expect(tags[0].(map[string]interface{})["Value"]).To(Equal("A-C-USE1-{{resolve:ssm:/account/config/LifeCycleLowercase}}-{{resolve:ssm:/account/config/BusinessLowercase}}-ACES-Redshift Cluster-Redshift Cluster-001-_NONAME"))
+			})
+
+		})
+
+	})
+
 	Context("with a processor options that has NoProcess set", func() {
 
 		input := `{"Resources":{"MyBucket":{"Type":"AWS::S3::Bucket","Properties":{"BucketName":{"Ref":"BucketNameParameter"}}}}}`
