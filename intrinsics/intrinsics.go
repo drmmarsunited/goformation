@@ -26,7 +26,7 @@ var defaultIntrinsicHandlers = map[string]IntrinsicHandler{
 	"Fn::FindInMap":   FnFindInMap,
 	"Fn::GetAtt":      FnGetAtt,
 	"Fn::GetAZs":      FnGetAZs,
-	"Fn::ImportValue": nonResolvingHandler,
+	"Fn::ImportValue": FnImportValue,
 	"Fn::Join":        FnJoin,
 	"Fn::Select":      FnSelect,
 	"Fn::Split":       FnSplit,
