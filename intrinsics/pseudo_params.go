@@ -28,7 +28,6 @@ func newPseudoParamHelper() *pseudoParamHelper {
 	if err != nil {
 		fmt.Println("Unable to load shard AWS SDK credentials, using dummy values")
 
-		interimHelper.awsHelper = awsHelper
 		interimHelper.rawCallerData = nil
 		interimHelper.accountId = "123456789012"
 		interimHelper.notificationArns = []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
@@ -43,13 +42,12 @@ func newPseudoParamHelper() *pseudoParamHelper {
 
 	// Set up an STS service client
 	svc := sts.NewFromConfig(awsHelper.cfg)
+	interimHelper.awsHelper = awsHelper
 	interimHelper.stsSvc = svc
 
 	// Call the GetCallerIdentity STS API
 	resp, err := svc.GetCallerIdentity(context.TODO(), &sts.GetCallerIdentityInput{})
 	if err != nil {
-		fmt.Println("COULD NOT GET CALLED IDENTITY")
-		fmt.Println("ERROR WAS: ", err.Error())
 		interimHelper.rawCallerData = nil
 		interimHelper.accountId = "123456789012"
 		interimHelper.notificationArns = []string{"arn:aws:sns:us-east-1:123456789012:MyTopic"}
@@ -71,7 +69,6 @@ func (h *pseudoParamHelper) getCallerIdentityData() {
 	// Call the GetCallerIdentity STS API
 	resp, err := h.stsSvc.GetCallerIdentity(context.TODO(), &sts.GetCallerIdentityInput{})
 	if err != nil {
-		fmt.Println("COULD NOT GET CALLED IDENTITY")
 		h.rawCallerData = nil
 	}
 
