@@ -71,7 +71,7 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 	// Loop through param keys
 	newParams := Parameters{}
 	for name, raw := range rawParams {
-		res, err := UnmarshalParameter(name, raw)
+		res, err := UnmarshalParameter(raw)
 		if err != nil {
 			return fmt.Errorf("template: parameter unmarshaller: error when unmarshalling %s: %w", name, err)
 		}
@@ -97,7 +97,7 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func UnmarshalParameter(name string, rawJson json.RawMessage) (*Parameter[any], error) {
+func UnmarshalParameter(rawJson json.RawMessage) (*Parameter[any], error) {
 	var param Parameter[any]
 	err := json.Unmarshal(rawJson, &param)
 
