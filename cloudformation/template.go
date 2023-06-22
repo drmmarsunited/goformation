@@ -130,7 +130,8 @@ func (p *Parameter[T]) getSsmParameterValue() (string, error) {
 	svc := ssm.NewFromConfig(awsHelper.Cfg)
 
 	// Get the SSM parameter value
-	res, err := svc.GetParameter(context.TODO(), &ssm.GetParameterInput{Name: p.Default.(*string)})
+	pn := p.Default.(string)
+	res, err := svc.GetParameter(context.TODO(), &ssm.GetParameterInput{Name: &pn})
 	if err != nil {
 		return "", fmt.Errorf("getSsmParameterValue: error trying to get SSM parameter value: %w", err)
 	}
