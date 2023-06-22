@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"strings"
 )
 
 // ByJSONLength implements the sort interface and enables sorting by JSON length
@@ -34,4 +35,19 @@ func (s ByJSONLength) Less(i, j int) bool {
 	}
 
 	return len(jsoni) > len(jsonj)
+}
+
+// GetStringInBetweenTwoString is a function that will grab the string value between two provided strings
+func GetStringInBetweenTwoString(str string, startS string, endS string) (result string, found bool) {
+	s := strings.Index(str, startS)
+	if s == -1 {
+		return result, false
+	}
+	newS := str[s+len(startS):]
+	e := strings.Index(newS, endS)
+	if e == -1 {
+		return result, false
+	}
+	result = newS[:e]
+	return result, true
 }
