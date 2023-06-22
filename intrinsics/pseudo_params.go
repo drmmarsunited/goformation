@@ -4,11 +4,12 @@ import (
 	"context"
 	"fmt"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/utils"
 	"strings"
 )
 
 type pseudoParamHelper struct {
-	awsHelper        *awsHelper
+	awsHelper        *utils.AwsHelper
 	stsSvc           *sts.Client
 	rawCallerData    *sts.GetCallerIdentityOutput
 	accountId        string
@@ -24,7 +25,7 @@ func newPseudoParamHelper() *pseudoParamHelper {
 	interimHelper := &pseudoParamHelper{}
 
 	// Load the AWS shared config
-	awsHelper, err := newAwsHelper()
+	awsHelper, err := utils.NewAwsHelper()
 	if err != nil {
 		fmt.Println("Unable to load shard AWS SDK credentials, using dummy values")
 
@@ -41,7 +42,7 @@ func newPseudoParamHelper() *pseudoParamHelper {
 	}
 
 	// Set up an STS service client
-	svc := sts.NewFromConfig(awsHelper.cfg)
+	svc := sts.NewFromConfig(awsHelper.Cfg)
 	interimHelper.awsHelper = awsHelper
 	interimHelper.stsSvc = svc
 
@@ -92,6 +93,6 @@ func (h *pseudoParamHelper) parseAwsPartition() {
 // parseAwsRegion is a helper function to extract the AWS region from the caller ID ARN
 func (h *pseudoParamHelper) parseAwsRegion() {
 	if h.rawCallerData != nil {
-		h.region = h.awsHelper.cfg.Region
+		h.region = h.awsHelper.Cfg.Region
 	}
 }

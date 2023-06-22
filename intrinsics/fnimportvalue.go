@@ -3,6 +3,7 @@ package intrinsics
 import (
 	"context"
 	acfn "github.com/aws/aws-sdk-go-v2/service/cloudformation"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/utils"
 )
 
 // FnImportValue is not implemented, and always returns "dummyvalue.
@@ -12,13 +13,13 @@ func FnImportValue(name string, input interface{}, template interface{}) interfa
 	// { "Fn::ImportValue" : sharedValueToImport }
 
 	// Set up the AWS helper
-	awsHelper, err := newAwsHelper()
+	awsHelper, err := utils.NewAwsHelper()
 	if err != nil {
 		return "dummyvalue"
 	}
 
 	// Set up CloudFormation client
-	cfnClient := acfn.NewFromConfig(awsHelper.cfg)
+	cfnClient := acfn.NewFromConfig(awsHelper.Cfg)
 
 	// List CloudFormation exports for region
 	exports, err := cfnClient.ListExports(context.TODO(), &acfn.ListExportsInput{})
