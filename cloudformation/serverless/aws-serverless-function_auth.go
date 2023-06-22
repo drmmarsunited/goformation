@@ -13,7 +13,7 @@ type Function_Auth[T any] struct {
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	ApiKeyRequired *T `json:"ApiKeyRequired,omitempty"`
+	ApiKeyRequired *bool `json:"ApiKeyRequired,omitempty"`
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false

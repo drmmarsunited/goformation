@@ -13,12 +13,12 @@ type SimpleTable_ProvisionedThroughput[T any] struct {
 	// ReadCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
-	ReadCapacityUnits *T `json:"ReadCapacityUnits,omitempty"`
+	ReadCapacityUnits *int `json:"ReadCapacityUnits,omitempty"`
 
 	// WriteCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
-	WriteCapacityUnits T `json:"WriteCapacityUnits"`
+	WriteCapacityUnits int `json:"WriteCapacityUnits"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
