@@ -1,13 +1,10 @@
 package cloudformation
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/drmmarsunited/goformation/v7/cloudformation/utils"
 	"strings"
 
-	"github.com/aws/aws-sdk-go-v2/service/ssm"
 	"github.com/drmmarsunited/goformation/v7/intrinsics"
 	"gopkg.in/yaml.v3"
 )
@@ -76,18 +73,19 @@ func (p *Parameters) UnmarshalJSON(data []byte) error {
 			return fmt.Errorf("template: parameter unmarshaller: error when unmarshalling %s: %w", name, err)
 		}
 
-		// Check and handle SSM type parameters
-		ssmp := res.isSsmParameter()
-		if ssmp {
-			res.Type = "String"
-
-			val, err := res.getSsmParameterValue()
-			if err != nil {
-				return fmt.Errorf("template: parameter unmarshaller: ssm value retriever: %w", err)
-			}
-
-			res.Default = val
-		}
+		//// Check and handle SSM type parameters
+		//ssmp := res.isSsmParameter()
+		//if ssmp {
+		//	res.Type = "String"
+		//
+		//	val, err := res.getSsmParameterValue()
+		//	if err != nil {
+		//		return fmt.Errorf("template: parameter unmarshaller: ssm value retriever: %w", err)
+		//	}
+		//
+		//	res.Default = val
+		//	res.AllowedValues = nil
+		//}
 
 		newParams[name] = *res
 	}
@@ -108,36 +106,40 @@ func UnmarshalParameter(rawJson json.RawMessage) (*Parameter[any], error) {
 	return &param, nil
 }
 
-// isSsmParameter is a receiver function to make a quick determination whether the parameter value
-// comes from SSM
-func (p *Parameter[T]) isSsmParameter() bool {
-	if strings.Contains(p.Type, "AWS::SSM::Parameter::Value") {
-		return true
-	}
-
-	return false
-}
-
-// getSsmParameterValue will attempt to retrieve the value of the SSM parameter from the SSM Parameter Store service
-func (p *Parameter[T]) getSsmParameterValue() (string, error) {
-	// Set up AWS client
-	awsHelper, err := utils.NewAwsHelper()
-	if err != nil {
-		return "", fmt.Errorf("getSsmParameterValue: unable to create AWS helper: %w", err)
-	}
-
-	// Set up SSM client
-	svc := ssm.NewFromConfig(awsHelper.Cfg)
-
-	// Get the SSM parameter value
-	pn := p.Default.(string)
-	res, err := svc.GetParameter(context.TODO(), &ssm.GetParameterInput{Name: &pn})
-	if err != nil {
-		return "", fmt.Errorf("getSsmParameterValue: error trying to get SSM parameter value: %w", err)
-	}
-
-	return *res.Parameter.Value, nil
-}
+//// isSsmParameter is a receiver function to make a quick determination whether the parameter value
+//// comes from SSM
+//func (p *Parameter[T]) isSsmParameter() bool {
+//	if strings.Contains(p.Type, "AWS::SSM::Parameter::Value") {
+//		return true
+//	}
+//
+//	return false
+//}
+//
+//// getSsmParameterValue will attempt to retrieve the value of the SSM parameter from the SSM Parameter Store service
+//func (p *Parameter[T]) getSsmParameterValue() (string, error) {
+//	// Set up AWS client
+//	awsHelper, err := utils.NewAwsHelper()
+//	if err != nil {
+//		return "", fmt.Errorf("getSsmParameterValue: unable to create AWS helper: %w", err)
+//	}
+//
+//	// Set up SSM client
+//	svc := ssm.NewFromConfig(awsHelper.Cfg)
+//
+//	// Get the SSM parameter value
+//	pn := p.Default.(string)
+//	res, err := svc.GetParameter(context.TODO(), &ssm.GetParameterInput{Name: &pn})
+//	if err != nil {
+//		if strings.Contains(err.Error(), "ParameterNotFound") {
+//			return "dummyvalue", nil
+//		}
+//
+//		return "", fmt.Errorf("getSsmParameterValue: error trying to get SSM parameter value for %s: %w", pn, err)
+//	}
+//
+//	return *res.Parameter.Value, nil
+//}
 
 func (resources *Resources) UnmarshalJSON(b []byte) error {
 	// Resources

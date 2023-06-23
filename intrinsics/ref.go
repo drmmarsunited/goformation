@@ -1,5 +1,13 @@
 package intrinsics
 
+import (
+	"context"
+	"fmt"
+	"github.com/aws/aws-sdk-go-v2/service/ssm"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/utils"
+	"strings"
+)
+
 var pph = newPseudoParamHelper()
 
 // Ref resolves the 'Ref' AWS CloudFormation intrinsic function.
@@ -51,6 +59,28 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 							if parameter, ok := uparameter.(map[string]interface{}); ok {
 								// Check the parameter has a default
 								if def, ok := parameter["Default"]; ok {
+									if strings.Contains(parameter["Type"].(string), "AWS::SSM::Parameter::Value") {
+										// Set up AWS helper
+										awsHelper, err := utils.NewAwsHelper()
+										if err != nil {
+											fmt.Printf("Could not setup AWS Helper: %s\n", err.Error())
+											return "dummyvalue"
+										}
+
+										// Set up SSM client
+										svc := ssm.NewFromConfig(awsHelper.Cfg)
+
+										// Get the SSM parameter value
+										pn := def.(string)
+										res, err := svc.GetParameter(context.TODO(), &ssm.GetParameterInput{Name: &pn})
+										if err != nil {
+											fmt.Printf("Could not get SSM parameter %s: %s\n", pn, err.Error())
+											return "dummyvalue"
+										}
+
+										return *res.Parameter.Value
+									}
+
 									return def
 								}
 							}
