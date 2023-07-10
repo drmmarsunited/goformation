@@ -439,8 +439,6 @@ var _ = Describe("Goformation", func() {
 		}
 	})
 
-	// pmaddox@ 2017-08-17:
-	// Commented out until we have support for YAML tag intrinsic functions (e.g. !Sub)
 	Context("with a YAML template containing intrinsic tags (e.g. !Sub)", func() {
 
 		template, err := goformation.Open("test/yaml/yaml-intrinsic-tags.yaml")
@@ -459,7 +457,46 @@ var _ = Describe("Goformation", func() {
 			Expect(function.Runtime).To(Equal(cloudformation.String("4.3")))
 			Expect(function.Timeout).To(Equal(cloudformation.Int(10)))
 		})
+	})
 
+	Context("with a YAML template containing intrinsic tags and NoEcho as bool (e.g. !Sub)", func() {
+
+		template, err := goformation.Open("test/yaml/yaml-intrinsic-tags-noecho2.yaml")
+		It("should successfully validate the SAM template", func() {
+			Expect(err).To(BeNil())
+			Expect(template).ShouldNot(PointTo(BeNil()))
+		})
+
+		function, err := template.GetServerlessFunctionWithName("IntrinsicFunctionTest")
+		It("should have a function named 'IntrinsicFunctionTest'", func() {
+			Expect(function).To(Not(BeNil()))
+			Expect(err).To(BeNil())
+		})
+
+		It("it should have the correct values", func() {
+			Expect(function.Runtime).To(Equal(cloudformation.String("4.3")))
+			Expect(function.Timeout).To(Equal(cloudformation.Int(10)))
+		})
+	})
+
+	Context("with a YAML template containing intrinsic tags and NoEcho as string (e.g. !Sub)", func() {
+
+		template, err := goformation.Open("test/yaml/yaml-intrinsic-tags-noecho.yaml")
+		It("should successfully validate the SAM template", func() {
+			Expect(err).To(BeNil())
+			Expect(template).ShouldNot(PointTo(BeNil()))
+		})
+
+		function, err := template.GetServerlessFunctionWithName("IntrinsicFunctionTest")
+		It("should have a function named 'IntrinsicFunctionTest'", func() {
+			Expect(function).To(Not(BeNil()))
+			Expect(err).To(BeNil())
+		})
+
+		It("it should have the correct values", func() {
+			Expect(function.Runtime).To(Equal(cloudformation.String("4.3")))
+			Expect(function.Timeout).To(Equal(cloudformation.Int(10)))
+		})
 	})
 
 	Context("with a Serverless template containing different CORS configuration formats", func() {
