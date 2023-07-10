@@ -35,7 +35,7 @@ type Parameter[T any] struct {
 	MinLength             *T            `json:"MinLength,omitempty"`
 	MaxValue              *T            `json:"MaxValue,omitempty"`
 	MinValue              *T            `json:"MinValue,omitempty"`
-	NoEcho                *bool         `json:"NoEcho,omitempty"`
+	NoEcho                *T            `json:"NoEcho,omitempty"`
 }
 
 type Output struct {
