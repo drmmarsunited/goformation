@@ -59,6 +59,10 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 							if parameter, ok := uparameter.(map[string]interface{}); ok {
 								// Check the parameter has a default
 								if def, ok := parameter["Default"]; ok {
+									if strings.Contains(parameter["Type"].(string), "CommaDelimitedList") {
+										return strings.Split(def.(string), ",")
+									}
+
 									if strings.Contains(parameter["Type"].(string), "AWS::SSM::Parameter::Value") {
 										// Set up AWS helper
 										awsHelper, err := utils.NewAwsHelper()
