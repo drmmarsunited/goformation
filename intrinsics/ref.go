@@ -49,6 +49,20 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 
 			// Check the template is a map
 			if template, ok := template.(map[string]interface{}); ok {
+				// Check there is a resources section
+				if uresources, ok := template["Resources"]; ok {
+					// Check the resources section is a map
+					if resources, ok := uresources.(map[string]interface{}); ok {
+						// Check there is a resource with the same name as the Ref
+						if uresource, ok := resources[name]; ok {
+							// Check the resource is a map
+							if _, ok := uresource.(map[string]interface{}); ok {
+								return "dummyvalue"
+							}
+						}
+					}
+				}
+
 				// Check there is a parameters section
 				if uparameters, ok := template["Parameters"]; ok {
 					// Check the parameters section is a map

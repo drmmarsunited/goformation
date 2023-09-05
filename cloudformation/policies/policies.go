@@ -62,6 +62,9 @@ type UpdatePolicy struct {
 
 	// CodeDeployLambdaAliasUpdate performs an AWS CodeDeploy deployment when the version changes on an AWS::Lambda::Alias resource.
 	CodeDeployLambdaAliasUpdate *CodeDeployLambdaAliasUpdate `json:"CodeDeployLambdaAliasUpdate,omitempty"`
+
+	// EnableVersionUpgrade upgrades an OpenSearch Service domain to a new version of OpenSearch or Elasticsearch rather than replacing the entire resource
+	EnableVersionUpgrade *EnableVersionUpgrade `json:"EnableVersionUpgrade,omitempty"`
 }
 
 // AutoScalingScheduledAction specifies how AWS CloudFormation handles updates for the MinSize, MaxSize, and DesiredCapacity properties when the AWS::AutoScaling::AutoScalingGroup resource has an associated scheduled action, use the AutoScalingScheduledAction policy.
@@ -114,3 +117,5 @@ type CodeDeployLambdaAliasUpdate struct {
 	// DeploymentGroupName is the name of the AWS CodeDeploy deployment group. This is where the traffic-shifting policy is set.
 	DeploymentGroupName string `json:"DeploymentGroupName"`
 }
+
+type EnableVersionUpgrade bool
