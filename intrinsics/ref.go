@@ -47,6 +47,7 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 			// to see if we can resolve the reference. This implementation just looks at the Parameters section
 			// to see if there is a parameter matching the name, and if so, return the default value.
 
+			// This is where we handle dynamic references to other resources in the same template with a dummy value
 			// Check the template is a map
 			if template, ok := template.(map[string]interface{}); ok {
 				// Check there is a resources section
@@ -73,10 +74,12 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 							if parameter, ok := uparameter.(map[string]interface{}); ok {
 								// Check the parameter has a default
 								if def, ok := parameter["Default"]; ok {
+									// This is where we handle a CommaDelimitedList parameter type
 									if strings.Contains(parameter["Type"].(string), "CommaDelimitedList") {
 										return strings.Split(def.(string), ",")
 									}
 
+									// This is where we handle SSM parameter resolution
 									if strings.Contains(parameter["Type"].(string), "AWS::SSM::Parameter::Value") {
 										// Set up AWS helper
 										awsHelper, err := utils.NewAwsHelper()
@@ -100,6 +103,11 @@ func Ref(name string, input interface{}, template interface{}) interface{} {
 									}
 
 									return def
+								} else {
+									// This is where we handle parameters that do not have default values
+									if strings.HasPrefix(parameter["Type"].(string), "AWS::EC2::Subnet::Id") {
+										return "subnet-xxxxxx"
+									}
 								}
 							}
 						}
