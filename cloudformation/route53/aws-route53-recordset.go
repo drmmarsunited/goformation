@@ -81,7 +81,7 @@ type RecordSet[T any] struct {
 	// TTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-ttl
-	TTL *T `json:"TTL,omitempty"`
+	TTL *string `json:"TTL,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

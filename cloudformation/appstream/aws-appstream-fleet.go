@@ -79,6 +79,11 @@ type Fleet[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxconcurrentsessions
 	MaxConcurrentSessions *T `json:"MaxConcurrentSessions,omitempty"`
 
+	// MaxSessionsPerInstance AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxsessionsperinstance
+	MaxSessionsPerInstance *T `json:"MaxSessionsPerInstance,omitempty"`
+
 	// MaxUserDurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds

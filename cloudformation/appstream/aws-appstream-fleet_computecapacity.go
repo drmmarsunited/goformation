@@ -11,9 +11,14 @@ import (
 type Fleet_ComputeCapacity[T any] struct {
 
 	// DesiredInstances AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredinstances
-	DesiredInstances T `json:"DesiredInstances"`
+	DesiredInstances *T `json:"DesiredInstances,omitempty"`
+
+	// DesiredSessions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredsessions
+	DesiredSessions *T `json:"DesiredSessions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

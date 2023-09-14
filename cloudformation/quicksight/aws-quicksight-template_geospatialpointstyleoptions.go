@@ -15,6 +15,11 @@ type Template_GeospatialPointStyleOptions[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialpointstyleoptions.html#cfn-quicksight-template-geospatialpointstyleoptions-clustermarkerconfiguration
 	ClusterMarkerConfiguration *Template_ClusterMarkerConfiguration[any] `json:"ClusterMarkerConfiguration,omitempty"`
 
+	// HeatmapConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialpointstyleoptions.html#cfn-quicksight-template-geospatialpointstyleoptions-heatmapconfiguration
+	HeatmapConfiguration *Template_GeospatialHeatmapConfiguration[any] `json:"HeatmapConfiguration,omitempty"`
+
 	// SelectedPointStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-geospatialpointstyleoptions.html#cfn-quicksight-template-geospatialpointstyleoptions-selectedpointstyle

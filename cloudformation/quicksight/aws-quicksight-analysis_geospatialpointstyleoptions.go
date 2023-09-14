@@ -15,6 +15,11 @@ type Analysis_GeospatialPointStyleOptions[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html#cfn-quicksight-analysis-geospatialpointstyleoptions-clustermarkerconfiguration
 	ClusterMarkerConfiguration *Analysis_ClusterMarkerConfiguration[any] `json:"ClusterMarkerConfiguration,omitempty"`
 
+	// HeatmapConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html#cfn-quicksight-analysis-geospatialpointstyleoptions-heatmapconfiguration
+	HeatmapConfiguration *Analysis_GeospatialHeatmapConfiguration[any] `json:"HeatmapConfiguration,omitempty"`
+
 	// SelectedPointStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html#cfn-quicksight-analysis-geospatialpointstyleoptions-selectedpointstyle

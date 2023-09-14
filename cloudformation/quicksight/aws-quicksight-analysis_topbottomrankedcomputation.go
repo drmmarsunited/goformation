@@ -11,9 +11,9 @@ import (
 type Analysis_TopBottomRankedComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topbottomrankedcomputation.html#cfn-quicksight-analysis-topbottomrankedcomputation-category
-	Category *Analysis_DimensionField[any] `json:"Category"`
+	Category *Analysis_DimensionField[any] `json:"Category,omitempty"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true

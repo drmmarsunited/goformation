@@ -25,6 +25,16 @@ type Analysis_SmallMultiplesOptions[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-panelconfiguration
 	PanelConfiguration *Analysis_PanelConfiguration[any] `json:"PanelConfiguration,omitempty"`
 
+	// XAxis AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-xaxis
+	XAxis *Analysis_SmallMultiplesAxisProperties[any] `json:"XAxis,omitempty"`
+
+	// YAxis AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-yaxis
+	YAxis *Analysis_SmallMultiplesAxisProperties[any] `json:"YAxis,omitempty"`
+
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
 

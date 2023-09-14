@@ -16,9 +16,9 @@ type Template_MetricComparisonComputation[T any] struct {
 	ComputationId string `json:"ComputationId"`
 
 	// FromValue AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-fromvalue
-	FromValue *Template_MeasureField[any] `json:"FromValue"`
+	FromValue *Template_MeasureField[any] `json:"FromValue,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -26,14 +26,14 @@ type Template_MetricComparisonComputation[T any] struct {
 	Name *string `json:"Name,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-targetvalue
-	TargetValue *Template_MeasureField[any] `json:"TargetValue"`
+	TargetValue *Template_MeasureField[any] `json:"TargetValue,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-time
-	Time *Template_DimensionField[any] `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

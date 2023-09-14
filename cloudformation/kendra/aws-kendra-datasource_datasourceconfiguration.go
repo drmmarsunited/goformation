@@ -50,6 +50,11 @@ type DataSource_DataSourceConfiguration[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-sharepointconfiguration
 	SharePointConfiguration *DataSource_SharePointConfiguration[any] `json:"SharePointConfiguration,omitempty"`
 
+	// TemplateConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-templateconfiguration
+	TemplateConfiguration *DataSource_TemplateConfiguration[any] `json:"TemplateConfiguration,omitempty"`
+
 	// WebCrawlerConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-webcrawlerconfiguration

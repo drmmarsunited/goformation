@@ -25,6 +25,11 @@ type Flow_Source[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-entitlementarn
 	EntitlementArn *string `json:"EntitlementArn,omitempty"`
 
+	// GatewayBridgeSource AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-gatewaybridgesource
+	GatewayBridgeSource *Flow_GatewayBridgeSource[any] `json:"GatewayBridgeSource,omitempty"`
+
 	// IngestIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestip

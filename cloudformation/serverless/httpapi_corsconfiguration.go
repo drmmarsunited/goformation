@@ -44,7 +44,7 @@ func (r HttpApi_CorsConfiguration[any]) MarshalJSON() ([]byte, error) {
 // Hook into the marshaller
 func (r *HttpApi_CorsConfiguration[any]) UnmarshalJSON(b []byte) error {
 
-	// Unmarshal into interface{} to check its type
+	// Unmarshal into interface{} to check it's type
 	var typecheck interface{}
 	if err := json.Unmarshal(b, &typecheck); err != nil {
 		return err

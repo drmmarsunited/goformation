@@ -29,10 +29,20 @@ type AppBlock[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-name
 	Name string `json:"Name"`
 
+	// PackagingType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-packagingtype
+	PackagingType *string `json:"PackagingType,omitempty"`
+
+	// PostSetupScriptDetails AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-postsetupscriptdetails
+	PostSetupScriptDetails *AppBlock_ScriptDetails[any] `json:"PostSetupScriptDetails,omitempty"`
+
 	// SetupScriptDetails AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-setupscriptdetails
-	SetupScriptDetails *AppBlock_ScriptDetails[any] `json:"SetupScriptDetails"`
+	SetupScriptDetails *AppBlock_ScriptDetails[any] `json:"SetupScriptDetails,omitempty"`
 
 	// SourceS3Location AWS CloudFormation Property
 	// Required: true

@@ -23,6 +23,11 @@ type DataLakeSettings[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-allowexternaldatafiltering
 	AllowExternalDataFiltering *T `json:"AllowExternalDataFiltering,omitempty"`
 
+	// AllowFullTableExternalDataAccess AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-allowfulltableexternaldataaccess
+	AllowFullTableExternalDataAccess *T `json:"AllowFullTableExternalDataAccess,omitempty"`
+
 	// AuthorizedSessionTagValueList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-authorizedsessiontagvaluelist
@@ -42,6 +47,11 @@ type DataLakeSettings[T any] struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-externaldatafilteringallowlist
 	ExternalDataFilteringAllowList *DataLakeSettings_ExternalDataFilteringAllowList[any] `json:"ExternalDataFilteringAllowList,omitempty"`
+
+	// MutationType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-mutationtype
+	MutationType *string `json:"MutationType,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

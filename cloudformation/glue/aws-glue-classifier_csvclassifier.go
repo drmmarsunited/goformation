@@ -15,10 +15,20 @@ type Classifier_CsvClassifier[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-allowsinglecolumn
 	AllowSingleColumn *T `json:"AllowSingleColumn,omitempty"`
 
+	// ContainsCustomDatatype AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-containscustomdatatype
+	ContainsCustomDatatype []string `json:"ContainsCustomDatatype,omitempty"`
+
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-containsheader
 	ContainsHeader *string `json:"ContainsHeader,omitempty"`
+
+	// CustomDatatypeConfigured AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-customdatatypeconfigured
+	CustomDatatypeConfigured *T `json:"CustomDatatypeConfigured,omitempty"`
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false

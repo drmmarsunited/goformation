@@ -21,9 +21,9 @@ type Template_PeriodOverPeriodComputation[T any] struct {
 	Name *string `json:"Name,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-periodoverperiodcomputation.html#cfn-quicksight-template-periodoverperiodcomputation-time
-	Time *Template_DimensionField[any] `json:"Time"`
+	Time *Template_DimensionField[any] `json:"Time,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

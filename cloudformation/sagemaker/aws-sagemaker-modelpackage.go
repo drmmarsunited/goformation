@@ -14,11 +14,6 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html
 type ModelPackage[T any] struct {
 
-	// AdditionalInferenceSpecificationDefinition AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition
-	AdditionalInferenceSpecificationDefinition *ModelPackage_AdditionalInferenceSpecificationDefinition[any] `json:"AdditionalInferenceSpecificationDefinition,omitempty"`
-
 	// AdditionalInferenceSpecifications AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-additionalinferencespecifications
@@ -44,11 +39,6 @@ type ModelPackage[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-clienttoken
 	ClientToken *string `json:"ClientToken,omitempty"`
 
-	// CreatedBy AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-createdby
-	CreatedBy *ModelPackage_UserContext[any] `json:"CreatedBy,omitempty"`
-
 	// CustomerMetadataProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-customermetadataproperties
@@ -64,20 +54,10 @@ type ModelPackage[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-driftcheckbaselines
 	DriftCheckBaselines *ModelPackage_DriftCheckBaselines[any] `json:"DriftCheckBaselines,omitempty"`
 
-	// Environment AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-environment
-	Environment map[string]string `json:"Environment,omitempty"`
-
 	// InferenceSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-inferencespecification
 	InferenceSpecification *ModelPackage_InferenceSpecification[any] `json:"InferenceSpecification,omitempty"`
-
-	// LastModifiedBy AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-lastmodifiedby
-	LastModifiedBy *ModelPackage_UserContext[any] `json:"LastModifiedBy,omitempty"`
 
 	// LastModifiedTime AWS CloudFormation Property
 	// Required: false
@@ -118,11 +98,6 @@ type ModelPackage[T any] struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackagestatusdetails
 	ModelPackageStatusDetails *ModelPackage_ModelPackageStatusDetails[any] `json:"ModelPackageStatusDetails,omitempty"`
-
-	// ModelPackageStatusItem AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackagestatusitem
-	ModelPackageStatusItem *ModelPackage_ModelPackageStatusItem[any] `json:"ModelPackageStatusItem,omitempty"`
 
 	// ModelPackageVersion AWS CloudFormation Property
 	// Required: false

@@ -16,9 +16,14 @@ type Endpoint_DeploymentConfig[T any] struct {
 	AutoRollbackConfiguration *Endpoint_AutoRollbackConfig[any] `json:"AutoRollbackConfiguration,omitempty"`
 
 	// BlueGreenUpdatePolicy AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy
-	BlueGreenUpdatePolicy *Endpoint_BlueGreenUpdatePolicy[any] `json:"BlueGreenUpdatePolicy"`
+	BlueGreenUpdatePolicy *Endpoint_BlueGreenUpdatePolicy[any] `json:"BlueGreenUpdatePolicy,omitempty"`
+
+	// RollingUpdatePolicy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-rollingupdatepolicy
+	RollingUpdatePolicy *Endpoint_RollingUpdatePolicy[any] `json:"RollingUpdatePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

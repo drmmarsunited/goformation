@@ -26,9 +26,9 @@ type Analysis_GrowthRateComputation[T any] struct {
 	PeriodSize *T `json:"PeriodSize,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-growthratecomputation.html#cfn-quicksight-analysis-growthratecomputation-time
-	Time *Analysis_DimensionField[any] `json:"Time"`
+	Time *Analysis_DimensionField[any] `json:"Time,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

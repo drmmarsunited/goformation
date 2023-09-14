@@ -15,10 +15,20 @@ type ConfigurationRecorder_RecordingGroup[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-allsupported
 	AllSupported *T `json:"AllSupported,omitempty"`
 
+	// ExclusionByResourceTypes AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-exclusionbyresourcetypes
+	ExclusionByResourceTypes *ConfigurationRecorder_ExclusionByResourceTypes[any] `json:"ExclusionByResourceTypes,omitempty"`
+
 	// IncludeGlobalResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-includeglobalresourcetypes
 	IncludeGlobalResourceTypes *T `json:"IncludeGlobalResourceTypes,omitempty"`
+
+	// RecordingStrategy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-recordingstrategy
+	RecordingStrategy *ConfigurationRecorder_RecordingStrategy[any] `json:"RecordingStrategy,omitempty"`
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false

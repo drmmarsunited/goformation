@@ -116,7 +116,7 @@ type Function[T any] struct {
 	// MemorySize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	MemorySize *int `json:"MemorySize,omitempty"`
+	MemorySize *T `json:"MemorySize,omitempty"`
 
 	// PackageType AWS CloudFormation Property
 	// Required: false
@@ -161,7 +161,7 @@ type Function[T any] struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// Tracing AWS CloudFormation Property
 	// Required: false

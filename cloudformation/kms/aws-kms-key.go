@@ -14,6 +14,11 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html
 type Key[T any] struct {
 
+	// BypassPolicyLockoutSafetyCheck AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-bypasspolicylockoutsafetycheck
+	BypassPolicyLockoutSafetyCheck *T `json:"BypassPolicyLockoutSafetyCheck,omitempty"`
+
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-description
@@ -30,9 +35,9 @@ type Key[T any] struct {
 	Enabled *T `json:"Enabled,omitempty"`
 
 	// KeyPolicy AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keypolicy
-	KeyPolicy interface{} `json:"KeyPolicy"`
+	KeyPolicy interface{} `json:"KeyPolicy,omitempty"`
 
 	// KeySpec AWS CloudFormation Property
 	// Required: false
@@ -48,6 +53,11 @@ type Key[T any] struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-multiregion
 	MultiRegion *T `json:"MultiRegion,omitempty"`
+
+	// Origin AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-origin
+	Origin *string `json:"Origin,omitempty"`
 
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false
